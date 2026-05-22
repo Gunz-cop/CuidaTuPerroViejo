@@ -1,0 +1,308 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Política de Privacidad | Cuida tu perro viejo";
+const description = "Consulta nuestra política de privacidad. Conoce cómo protegemos tus datos, qué datos recopilamos y cuáles son tus derechos.";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Head injection using slots -->
+  <script slot="head" type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Política de Privacidad",
+    "url": "https://www.cuidatuperroviejo.com/politica-de-privacidad",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Cuida tu perro viejo",
+      "url": "https://www.cuidatuperroviejo.com/"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Privacidad y protección de datos"
+    },
+    "dateModified": "2025-10-12"
+  }
+  </script>
+
+  <main class="max-w-3xl mx-auto px-5 py-10 md:py-16 content-body">
+    <!-- Navigation / Breadcrumbs -->
+    <div class="mb-4">
+      <a href="/" class="inline-flex items-center text-sm text-brand-primary hover:text-brand-primary-hover font-semibold gap-1 no-underline transition-colors back-btn">
+        <span>← Volver al inicio</span>
+      </a>
+    </div>
+
+    <!-- Page Header -->
+    <header class="mb-8 border-b border-brand-border pb-6">
+      <h1 class="text-3.5xl md:text-4.5xl font-extrabold text-brand-text mb-3 leading-tight">
+        Política de Privacidad
+      </h1>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-muted font-light">
+        <span>Por <strong>Equipo de Cuida a tu perro viejo</strong></span>
+        <span class="text-brand-border">•</span>
+        <span>Última actualización: <strong>12 de octubre de 2025</strong></span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="mb-8" aria-label="Tabla de contenidos">
+      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-4 transition-all duration-300">
+        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+          <span>Contenido de esta página</span>
+          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <ul class="mt-4 space-y-2 text-sm pl-4 list-disc text-brand-muted border-t border-brand-border/40 pt-4">
+          <li><a href="#responsable" class="hover:text-brand-accent transition-colors no-underline">1. Responsable del tratamiento</a></li>
+          <li><a href="#datos-que-recopilamos" class="hover:text-brand-accent transition-colors no-underline">2. Datos que recopilamos</a></li>
+          <li><a href="#finalidades" class="hover:text-brand-accent transition-colors no-underline">3. Finalidades y bases legales</a></li>
+          <li><a href="#conservacion" class="hover:text-brand-accent transition-colors no-underline">4. Plazos de conservación</a></li>
+          <li><a href="#comparticion" class="hover:text-brand-accent transition-colors no-underline">5. Con quién compartimos datos</a></li>
+          <li><a href="#cookies-analytics" class="hover:text-brand-accent transition-colors no-underline">6. Cookies, analítica y publicidad</a></li>
+          <li><a href="#tus-derechos" class="hover:text-brand-accent transition-colors no-underline">7. Tus derechos de privacidad</a></li>
+          <li><a href="#ubicacion-usuarios" class="hover:text-brand-accent transition-colors no-underline">8. Información por región</a></li>
+          <li><a href="#seguridad" class="hover:text-brand-accent transition-colors no-underline">9. Seguridad</a></li>
+          <li><a href="#menores" class="hover:text-brand-accent transition-colors no-underline">10. Menores de edad</a></li>
+          <li><a href="#cambios" class="hover:text-brand-accent transition-colors no-underline">11. Cambios a esta política</a></li>
+          <li><a href="#contacto" class="hover:text-brand-accent transition-colors no-underline">12. Contacto</a></li>
+        </ul>
+      </details>
+    </nav>
+
+    <!-- Main Content Article -->
+    <article id="privacy-policy" itemscope itemtype="https://schema.org/WebPage" class="space-y-10">
+      
+      <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+        Bienvenido/a a <strong>Cuida tu perro viejo</strong> (<a href="https://www.cuidatuperroviejo.com/" class="text-brand-primary hover:underline">www.cuidatuperroviejo.com</a>). 
+        Esta Política de Privacidad explica qué datos recopilamos, cómo los usamos y qué derechos tienes. 
+        Al usar el sitio aceptas esta política y la <a href="/politica-de-cookies" class="text-brand-primary hover:underline">Política de Cookies</a>.
+      </p>
+
+      <!-- Section 1 -->
+      <section id="responsable" itemprop="mainEntity" class="scroll-mt-20">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          1. Responsable del tratamiento
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          <strong>Cuida tu perro viejo</strong> es un blog informativo sobre el cuidado de perros senior.
+        </p>
+        <ul class="space-y-2.5 text-sm md:text-base text-brand-muted leading-relaxed pl-5 list-disc font-light">
+          <li><strong>URL:</strong> <a href="https://www.cuidatuperroviejo.com/" class="text-brand-primary hover:underline">https://www.cuidatuperroviejo.com/</a></li>
+          <li><strong>Correo de contacto:</strong> <a href="mailto:toxedocat@gmail.com" class="text-brand-primary hover:underline">toxedocat@gmail.com</a></li>
+          <li><strong>Finalidad del sitio:</strong> Contenido educativo y divulgativo; puede incluir publicidad y enlaces de afiliado.</li>
+        </ul>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="datos-que-recopilamos" class="scroll-mt-20">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          2. Datos que recopilamos
+        </h2>
+        <ul class="space-y-2.5 text-sm md:text-base text-brand-muted leading-relaxed pl-5 list-disc font-light">
+          <li>
+            <strong>Datos técnicos</strong>: dirección IP, navegador, sistema operativo, páginas visitadas, tiempo de permanencia (a través de cookies o tecnologías similares).
+          </li>
+          <li>
+            <strong>Comentarios</strong>: nombre/alias, perfil (si comentas con cuenta), contenido del comentario y metadatos (fecha/hora). 
+            Los comentarios en Blogger son gestionados por la propia plataforma de Google.
+          </li>
+          <li>
+            <strong>Formularios de contacto</strong> (si aplica): nombre y correo electrónico para responder tus consultas.
+          </li>
+          <li>
+            <strong>Publicidad y afiliados</strong>: identificadores de cookies/publicidad para medir rendimiento y fraudes, según proveedores (p.ej., Google AdSense).
+          </li>
+        </ul>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          No solicitamos datos sensibles. Si los incluyes en un comentario o mensaje, será bajo tu responsabilidad.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="finalidades" class="scroll-mt-20">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          3. Finalidades y bases legales
+        </h2>
+        <ul class="space-y-2.5 text-sm md:text-base text-brand-muted leading-relaxed pl-5 list-disc font-light">
+          <li><strong>Operar y mejorar el sitio</strong> (interés legítimo): garantizar disponibilidad, seguridad, métricas agregadas.</li>
+          <li><strong>Atender consultas</strong> (ejecución de medidas precontractuales/consentimiento): responder mensajes enviados por formulario o email.</li>
+          <li><strong>Analítica</strong> (consentimiento cuando lo exija la ley): entender qué contenidos funcionan mejor.</li>
+          <li><strong>Publicidad/afiliados</strong> (consentimiento cuando lo exija la ley): mostrar anuncios y medir su rendimiento.</li>
+        </ul>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="conservacion" class="scroll-mt-20">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          4. Plazos de conservación
+        </h2>
+        <ul class="space-y-2.5 text-sm md:text-base text-brand-muted leading-relaxed pl-5 list-disc font-light">
+          <li>Datos de analítica: según la configuración del servicio (p.ej., Google Analytics).</li>
+          <li>Comentarios: mientras permanezcan publicados o hasta que el autor solicite eliminación si corresponde.</li>
+          <li>Mensajes de contacto: hasta 12 meses desde la última interacción, salvo obligaciones legales.</li>
+        </ul>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="comparticion" class="scroll-mt-20">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          5. Con quién compartimos datos
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          No vendemos tus datos personales. Podemos compartirlos con:
+        </p>
+        <ul class="space-y-2.5 text-sm md:text-base text-brand-muted leading-relaxed pl-5 list-disc font-light">
+          <li><strong>Proveedores tecnológicos de Google</strong> (Blogger/Blogspot, Analytics, AdSense) para hosting, comentarios, métricas y anuncios.</li>
+          <li><strong>Plataformas de afiliación</strong> (si aplica) para atribución de comisiones.</li>
+          <li><strong>Autoridades</strong> cuando una ley o requerimiento lo exija.</li>
+        </ul>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Estos terceros pueden procesar datos en países fuera del tuyo. Procuramos usar proveedores con garantías adecuadas (p.ej., cláusulas contractuales tipo de la UE).
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="cookies-analytics" class="scroll-mt-20">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          6. Cookies, analítica y publicidad
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Usamos cookies propias y de terceros para fines funcionales, analíticos y publicitarios. 
+          Puedes gestionar tu consentimiento desde el aviso/botón de cookies del sitio y consultar detalles en la 
+          <a href="/politica-de-cookies" class="text-brand-primary hover:underline">Política de Cookies</a>.
+        </p>
+        <ul class="space-y-2.5 text-sm md:text-base text-brand-muted leading-relaxed pl-5 list-disc font-light">
+          <li><strong>Google Analytics/GA4</strong>: estadísticas de uso. Implementa IP-anonymization cuando sea posible.</li>
+          <li>
+            <strong>Google AdSense</strong>: anuncios contextuales o personalizados (según configuración y tu consentimiento). 
+            Los anuncios personalizados usan cookies publicitarias; puedes desactivarlos desde el aviso de cookies o tu cuenta de Google.
+          </li>
+          <li><strong>Afiliados</strong>: cookies/IDs para atribuir compras referidas por nuestros enlaces.</li>
+        </ul>
+      </section>
+
+      <!-- Section 7 -->
+      <section id="tus-derechos" class="scroll-mt-20">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          7. Tus derechos de privacidad
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light mb-4">
+          Según tu jurisdicción, puedes ejercer: acceso, rectificación/actualización, supresión, oposición, limitación, portabilidad y retiro del consentimiento. 
+          Para ello, escribe a <a href="mailto:toxedocat@gmail.com" class="text-brand-primary hover:underline">toxedocat@gmail.com</a> indicando “Derechos de privacidad” y detalla tu solicitud.
+        </p>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light mb-4">
+          También puedes:
+        </p>
+        <ul class="space-y-2.5 text-sm md:text-base text-brand-muted leading-relaxed pl-5 list-disc font-light">
+          <li>Gestionar cookies desde el aviso/botón de cookies del sitio.</li>
+          <li>Configurar preferencias de anuncios en tu cuenta de Google.</li>
+          <li>Retirar un comentario propio o pedirnos su moderación/eliminación si procede.</li>
+        </ul>
+      </section>
+
+      <!-- Section 8 -->
+      <section id="ubicacion-usuarios" class="scroll-mt-20 space-y-4">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          8. Información por región
+        </h2>
+        
+        <!-- Accordion 1: EU / EEA -->
+        <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+          <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+            <span>Unión Europea (UE/EEE) – GDPR</span>
+            <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+          </summary>
+          <div class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4 space-y-3 font-light">
+            <p>
+              Cuando lo exija la normativa, pedimos consentimiento para cookies analíticas/publicitarias. Tienes derecho a reclamar ante tu autoridad local de protección de datos (como la AEPD en España).
+            </p>
+          </div>
+        </details>
+
+        <!-- Accordion 2: US -->
+        <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+          <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+            <span>Estados Unidos – CCPA/CPRA (California)</span>
+            <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+          </summary>
+          <div class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4 space-y-3 font-light">
+            <p>
+              No vendemos información personal según la definición de CCPA. Puedes solicitarnos acceso/eliminación de tus datos y optar por no recibir publicidad personalizada cuando aplique.
+            </p>
+          </div>
+        </details>
+
+        <!-- Accordion 3: LatAm -->
+        <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+          <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+            <span>Latinoamérica (México, Colombia, Argentina, Chile, Perú, etc.)</span>
+            <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+          </summary>
+          <div class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4 space-y-3 font-light">
+            <p>
+              Atendemos los derechos de acceso, rectificación, cancelación/supresión y oposición (ARCO), conforme a las leyes locales aplicables en cada país.
+            </p>
+          </div>
+        </details>
+
+        <!-- Accordion 4: Brasil -->
+        <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+          <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+            <span>Brasil – LGPD</span>
+            <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+          </summary>
+          <div class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4 space-y-3 font-light">
+            <p>
+              Respetamos los derechos previstos en la Ley General de Protección de Datos (LGPD), incluyendo confirmación del tratamiento, acceso, corrección, anonimización y eliminación cuando proceda.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <!-- Section 9 -->
+      <section id="seguridad" class="scroll-mt-20">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          9. Seguridad
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Aplicamos medidas técnicas y organizativas razonables para proteger tus datos. 
+          Aun así, ninguna transmisión o almacenamiento es 100% seguro.
+        </p>
+      </section>
+
+      <!-- Section 10 -->
+      <section id="menores" class="scroll-mt-20">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          10. Menores de edad
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          El contenido está dirigido a personas adultas. Si eres menor en tu país, navega con autorización de tus tutores.
+        </p>
+      </section>
+
+      <!-- Section 11 -->
+      <section id="cambios" class="scroll-mt-20">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          11. Cambios a esta política
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Podemos actualizar esta Política de Privacidad para reflejar cambios legales o del servicio. 
+          Publicaremos la fecha de la última actualización en la parte superior.
+        </p>
+      </section>
+
+      <!-- Section 12 -->
+      <section id="contacto" class="scroll-mt-20">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          12. Contacto
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Para consultas de privacidad, escribe a <a href="mailto:toxedocat@gmail.com" class="text-brand-primary hover:underline">toxedocat@gmail.com</a> o utiliza el 
+          <a href="/contacto" class="text-brand-primary hover:underline">formulario de contacto</a>.
+        </p>
+      </section>
+
+    </article>
+  </main>
+</BaseLayout>

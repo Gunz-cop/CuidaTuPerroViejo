@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SiloNavigation from '../../components/SiloNavigation.astro';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map(entry => ({
+    params: { pilar: entry.data.pilar, slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const pilarNames: Record<string, string> = {
+  'guia-para-cuidar-tu-perro-senior': 'Guía para Cuidar tu Perro Senior',
+  'salud-perros-mayores': 'Salud de Perros Mayores',
+  'alimentacion-perro-senior': 'Alimentación de Perro Senior',
+  'movilidad-dolor-perros-mayores': 'Movilidad y Dolor en Perros Mayores',
+  'salud-mental-y-emocional-en-perros': 'Salud Mental y Emocional',
+  'higiene-y-hogar-para-perros-senior_7': 'Higiene y Hogar para Perros Senior',
+  'cuidados-paliativos-perros': 'Cuidados Paliativos'
+};
+
+const pilarName = pilarNames[entry.data.pilar] || entry.data.pilar;
+---
+
+<BaseLayout 
+  title={entry.data.seoTitle || entry.data.title}
+  description={entry.data.metaDescription}
+  keywords={entry.data.keywordPrincipal}
+>
+  <main class="max-w-3xl mx-auto px-4 py-8 md:py-16 w-full">
+    <!-- Breadcrumbs / Navigation -->
+    <Breadcrumbs pilarSlug={entry.data.pilar} pilarName={pilarName} title={entry.data.title} />
+
+    <article>
+      <!-- Header -->
+      <header class="mb-8 md:mb-12 border-b border-brand-border pb-8 md:pb-12">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-secondary text-brand-primary border border-brand-primary/20 mb-4 uppercase tracking-wider">
+          {pilarName}
+        </span>
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-brand-text leading-tight mb-4">
+          {entry.data.title}
+        </h1>
+        {entry.data.metaDescription && (
+          <p class="text-lg md:text-xl text-brand-muted leading-relaxed font-light">
+            {entry.data.metaDescription}
+          </p>
+        )}
+      </header>
+
+      <!-- Article Content -->
+      <div class="content-body prose dark:prose-invert max-w-full sm:max-w-3xl">
+        <Content />
+      </div>
+    </article>
+
+    <SiloNavigation currentPilar={entry.data.pilar} currentSlug={entry.slug} />
+  </main>
+</BaseLayout>

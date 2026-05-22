@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "¡Gracias por escribirnos! | Cuida tu perro viejo";
+const description = "Tu mensaje ha sido enviado correctamente. Responderemos a tu consulta a la brevedad posible.";
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="max-w-3xl mx-auto px-5 py-16 md:py-24 flex items-center justify-center min-h-[60vh]">
+    <div class="text-center max-w-md mx-auto bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-8 md:p-12 shadow-sm">
+      <div class="w-16 h-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-primary text-3xl animate-bounce">
+        🐾
+      </div>
+      <h1 class="text-3xl font-extrabold text-brand-text mb-4 leading-tight font-serif">
+        ¡Mensaje Enviado!
+      </h1>
+      <p class="text-brand-muted leading-relaxed font-light mb-8">
+        Muchas gracias por ponerte en contacto. He recibido tu mensaje correctamente y te responderé al correo electrónico indicado tan pronto como me sea posible.
+      </p>
+      <a 
+        href="/" 
+        class="inline-flex items-center justify-center px-6 py-3 bg-brand-primary hover:bg-brand-primary-hover active:scale-[0.98] text-white text-sm font-bold rounded-xl shadow-md transition-all duration-200 cursor-pointer no-underline"
+      >
+        Volver al inicio
+      </a>
+    </div>
+  </main>
+</BaseLayout>

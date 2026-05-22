@@ -1,0 +1,1110 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Obtener los últimos 3 artículos de blog ordenados (o simplemente los primeros 3)
+const blogEntries = await getCollection('blog');
+const recentPosts = blogEntries.slice(0, 3);
+---
+
+<BaseLayout 
+  title="Guía completa para cuidar a tu perro senior"
+  description="Empieza aquí: guía para cuidar a tu perro senior con salud, alimentación, movilidad, higiene y bienestar emocional. Consejos claros y fáciles."
+>
+  <slot name="head" slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.cuidatuperroviejo.com/#website",
+            "url": "https://www.cuidatuperroviejo.com/",
+            "name": "Cuida tu perro viejo",
+            "inLanguage": "es"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.cuidatuperroviejo.com/",
+            "url": "https://www.cuidatuperroviejo.com/",
+            "name": "Guía completa para cuidar a tu perro senior",
+            "isPartOf": { "@id": "https://www.cuidatuperroviejo.com/#website" },
+            "breadcrumb": { "@id": "https://www.cuidatuperroviejo.com/#breadcrumb" },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "@id": "https://www.cuidatuperroviejo.com/#primaryimage",
+              "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgL1bwXO4TGe9u8VLw1VvD9AzfngIkDvfms2g9m7HHQhGb9gNxH6iPGq7o3xd2am92yEynp4NWKA9ZUHb6HwVUL0_CGtnpnOcLKBNwLs4gxzH6EeEMGKBqj0etFIs-w8glDF93KAqWN3ix4MIfak60A-JNJvh4GFyarkCeHCr6IRNUpDnUGQrTZVQoJ9xE/s1600/perro-senior-hero-cama-ortopedica-1200x675.webp",
+              "width": 1200,
+              "height": 675
+            },
+            "hasPart": [
+              { "@id": "https://www.cuidatuperroviejo.com/#faq" },
+              { "@id": "https://www.cuidatuperroviejo.com/#cluster" }
+            ],
+            "inLanguage": "es"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.cuidatuperroviejo.com/#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.cuidatuperroviejo.com/" }
+            ]
+          },
+          {
+            "@type": "BlogPosting",
+            "@id": "https://www.cuidatuperroviejo.com/#article",
+            "headline": "Guía completa para cuidar a tu perro senior",
+            "description": "Empieza aquí: guía para cuidar a tu perro senior con salud, alimentación, movilidad, higiene y bienestar emocional. Consejos claros y fáciles.",
+            "image": [
+              "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgL1bwXO4TGe9u8VLw1VvD9AzfngIkDvfms2g9m7HHQhGb9gNxH6iPGq7o3xd2am92yEynp4NWKA9ZUHb6HwVUL0_CGtnpnOcLKBNwLs4gxzH6EeEMGKBqj0etFIs-w8glDF93KAqWN3ix4MIfak60A-JNJvh4GFyarkCeHCr6IRNUpDnUGQrTZVQoJ9xE/s1600/perro-senior-hero-cama-ortopedica-1200x675.webp"
+            ],
+            "mainEntityOfPage": { "@id": "https://www.cuidatuperroviejo.com/" },
+            "datePublished": "2025-10-01T00:00:00-06:00",
+            "dateModified": "2025-10-01T00:00:00-06:00",
+            "author": {
+              "@type": "Organization",
+              "name": "Cuida tu perro viejo",
+              "url": "https://www.cuidatuperroviejo.com/"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Cuida tu perro viejo",
+              "url": "https://www.cuidatuperroviejo.com/"
+            },
+            "inLanguage": "es"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.cuidatuperroviejo.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿A qué edad se considera senior un perro según su tamaño?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Pequeños/medianos ~7–8 años; grandes/giantes ~5–6 años (orientativo; personalizar por individuo)." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuánto debe caminar un perro mayor al día?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Paseos cortos y frecuentes de bajo impacto; ajusta por dolor, clima y recuperación." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué comida es mejor para perros senior y cuánta proteína?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Dieta equilibrada acorde a condición corporal y comorbilidades; prioriza proteína de calidad salvo indicación contraria." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo saber si mi perro tiene dolor de articulaciones?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Rigidez al levantarse, dificultad para subir/bajar, intolerancia al ejercicio y cambios de conducta." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo adaptar mi casa para un perro mayor con movilidad reducida?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Alfombras antideslizantes, rampas, cama ortopédica, cuencos elevados y zonas de descanso tranquilas." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuándo ir a urgencias con un perro anciano?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Ante dificultad respiratoria, colapso, dolor intenso, vómitos persistentes, anorexia prolongada o convulsiones." }
+              }
+            ],
+            "inLanguage": "es"
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://www.cuidatuperroviejo.com/#cluster",
+            "name": "Explora por tema (pilares secundarios)",
+            "itemListOrder": "https://schema.org/ItemListOrderAscending",
+            "numberOfItems": 6,
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1,
+                "item": { "@type": "WebPage", "name": "Salud en perros mayores", "url": "https://www.cuidatuperroviejo.com/salud-perros-mayores" } },
+              { "@type": "ListItem", "position": 2,
+                "item": { "@type": "WebPage", "name": "Alimentación del perro senior", "url": "https://www.cuidatuperroviejo.com/alimentacion-perro-senior" } },
+              { "@type": "ListItem", "position": 3,
+                "item": { "@type": "WebPage", "name": "Movilidad y dolor", "url": "https://www.cuidatuperroviejo.com/movilidad-dolor-perros-mayores" } },
+              { "@type": "ListItem", "position": 4,
+                "item": { "@type": "WebPage", "name": "Salud mental y emociones", "url": "https://www.cuidatuperroviejo.com/salud-mental-y-emocional-en-perros" } },
+              { "@type": "ListItem", "position": 5,
+                "item": { "@type": "WebPage", "name": "Higiene y hogar", "url": "https://www.cuidatuperroviejo.com/higiene-y-hogar-para-perros-senior_7" } },
+              { "@type": "ListItem", "position": 6,
+                "item": { "@type": "WebPage", "name": "Cuidados paliativos", "url": "https://www.cuidatuperroviejo.com/cuidados-paliativos-perros" } }
+            ],
+            "inLanguage": "es"
+          }
+        ]
+      }
+    </script>
+  </slot>
+
+  <main class="w-full">
+    <!-- HERO SECTION -->
+    <section class="max-w-5xl mx-auto px-5 md:px-4 py-12 md:py-20">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center">
+        <!-- Hero Text -->
+        <div class="md:col-span-7 flex flex-col items-start text-left">
+          <span class="text-xs font-extrabold tracking-widest uppercase text-brand-primary mb-3 flex items-center gap-1.5">
+            <span class="animate-pulse">🐾</span> Cuidado Amoroso y Profesional
+          </span>
+          <h1 class="text-3xl md:text-5xl font-semibold tracking-tight text-brand-text mb-6 leading-tight">
+            El bienestar de tu compañero senior empieza aquí
+          </h1>
+          <p class="text-base md:text-lg text-brand-muted mb-8 leading-relaxed font-light">
+            Aprende a identificar sus necesidades cambiantes, adaptar tu hogar y brindarle una vida plena, activa y libre de dolor durante sus valiosos años dorados.
+          </p>
+          <div class="flex flex-wrap gap-4 w-full sm:w-auto">
+            <a href="#pilares" class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl bg-brand-primary hover:bg-brand-primary-hover text-white text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 transform">
+              Explorar por tema
+            </a>
+            <a href="#calculadora" class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl border border-brand-primary/30 text-brand-primary hover:bg-brand-primary/5 text-sm font-semibold transition-all duration-200">
+              Calcular Edad Canina
+            </a>
+            <a href="#guia-inicio" class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl bg-brand-secondary/35 text-brand-primary hover:bg-brand-secondary/50 text-sm font-semibold transition-all duration-200">
+              Guía de Inicio
+            </a>
+          </div>
+        </div>
+        <!-- Hero Image -->
+        <div class="md:col-span-5 relative">
+          <!-- Decorative frame behind image -->
+          <div class="absolute -inset-2 bg-brand-secondary/40 rounded-3xl -rotate-1 scale-[1.01] -z-10 border border-brand-primary/10"></div>
+          <div class="overflow-hidden rounded-2xl shadow-lg bg-brand-secondary/20">
+            <img 
+              alt="Perro senior descansando cómodamente en una cama ortopédica premium" 
+              decoding="async" 
+              height="675" 
+              loading="eager" 
+              fetchpriority="high"
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgL1bwXO4TGe9u8VLw1VvD9AzfngIkDvfms2g9m7HHQhGb9gNxH6iPGq7o3xd2am92yEynp4NWKA9ZUHb6HwVUL0_CGtnpnOcLKBNwLs4gxzH6EeEMGKBqj0etFIs-w8glDF93KAqWN3ix4MIfak60A-JNJvh4GFyarkCeHCr6IRNUpDnUGQrTZVQoJ9xE/s1600/perro-senior-hero-cama-ortopedica-1200x675.webp" 
+              width="1200" 
+              class="object-cover w-full h-auto"
+            />
+          </div>
+          <p class="text-[11px] text-center text-brand-muted mt-2.5 font-light italic">
+            Pequeños ajustes mejoran la calidad de vida de un <a href="https://www.google.com/search?q=senior+dog" target="_blank" class="text-brand-accent hover:underline font-normal">perro senior</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRODUCTORY TESTIMONIAL BLOCK -->
+    <section class="bg-brand-card/45 border-y border-brand-border py-10 px-5 md:px-0 reveal-on-scroll">
+      <div class="max-w-4xl mx-auto text-center">
+        <blockquote class="italic text-base md:text-lg text-brand-text leading-relaxed font-light">
+          "Un <a href="https://www.google.com/search?q=senior+dog+preventive+checkup" target="_blank" class="text-brand-accent hover:underline font-normal">chequeo preventivo</a> y pequeños ajustes en la rutina y el hogar mejoran de forma notable la calidad de vida de un perro senior."
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE AGE CALCULATOR WIDGET -->
+    <section id="calculadora" class="max-w-4xl mx-auto px-5 py-16 md:py-24 reveal-on-scroll">
+      <div class="bg-brand-card border border-brand-border rounded-3xl p-6 md:p-10 shadow-md">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-6">
+            <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-2 block">Herramienta Interactiva</span>
+            <h2 class="text-2.5xl md:text-3.5xl font-semibold text-brand-text mb-4">Calculadora de Edad Senior</h2>
+            <p class="text-sm text-brand-muted font-light leading-relaxed mb-6">
+              Los perros envejecen a ritmos diferentes según su tamaño. Calcula la edad equivalente en años humanos de tu mascota y obtén recomendaciones veterinarias específicas para su etapa.
+            </p>
+            
+            <div class="space-y-4">
+              <div>
+                <label for="dog-size" class="block text-xs font-bold text-brand-text uppercase mb-1.5">Tamaño de tu perro</label>
+                <select id="dog-size" class="w-full bg-brand-bg text-brand-text border border-brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-primary">
+                  <option value="small">Pequeño (Menos de 10 kg)</option>
+                  <option value="medium">Mediano (10 a 25 kg)</option>
+                  <option value="large">Grande (25 a 40 kg)</option>
+                  <option value="giant">Gigante (Más de 40 kg)</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="dog-age" class="block text-xs font-bold text-brand-text uppercase mb-1.5">Edad cronológica (Años)</label>
+                <select id="dog-age" class="w-full bg-brand-bg text-brand-text border border-brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-primary">
+                  {Array.from({ length: 20 }, (_, i) => i + 1).map(year => (
+                    <option value={year} selected={year === 8}>{year} {year === 1 ? 'año' : 'años'}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="md:col-span-6 flex flex-col justify-center">
+            <div id="calc-result-card" class="bg-brand-bg/60 border border-brand-border rounded-2xl p-6 text-center shadow-sm relative overflow-hidden">
+              <div class="absolute -top-10 -right-10 w-24 h-24 bg-brand-primary/10 rounded-full blur-xl"></div>
+              
+              <p class="text-xs font-bold text-brand-muted uppercase tracking-wider mb-1">Edad Humana Equivalente</p>
+              <div id="human-age-result" class="text-4xl md:text-5xl font-extrabold text-brand-primary my-3">
+                -- años
+              </div>
+              
+              <div class="border-t border-brand-border/60 my-4 pt-4 text-left">
+                <span id="rec-title" class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brand-secondary text-brand-primary uppercase tracking-wider mb-2">
+                  Cargando...
+                </span>
+                <p id="rec-text" class="text-xs text-brand-text leading-relaxed font-light">
+                  Selecciona la edad y el tamaño para ver el plan recomendado.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES HUB ("EXPLORA POR TEMA") -->
+    <section id="pilares" class="bg-brand-card/25 border-y border-brand-border py-16 md:py-24 reveal-on-scroll">
+      <div class="max-w-5xl mx-auto px-5 md:px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-2 block">Categorías principales</span>
+          <h2 class="text-2.5xl md:text-3.5xl font-semibold text-brand-text mb-4">
+            Explora por tema
+          </h2>
+          <p class="text-sm text-brand-muted font-light leading-relaxed">
+            Accede a nuestras guías especializadas diseñadas para abordar los pilares clave del cuidado del perro anciano.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
+          <!-- Tarjeta 1: Salud -->
+          <a href="/salud-perros-mayores" class="group block border border-brand-border rounded-2xl p-6 bg-brand-card hover:shadow-md hover:border-brand-primary/45 hover:scale-[1.01] transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-primary" aria-label="Salud en perros mayores: chequeos, señales de alerta y prevención">
+            <div class="flex flex-col gap-4">
+              <span class="w-12 h-12 rounded-xl flex items-center justify-center bg-brand-secondary text-brand-primary group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24"><path d="M6 3v6a4 4 0 0 0 8 0V3M6 9a6 6 0 1 0 12 0v4a4 4 0 0 1-4 4h-1"/><circle cx="19" cy="17" r="2"/></svg>
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors mb-2">Salud en perros mayores</h3>
+                <p class="text-xs text-brand-muted leading-relaxed font-light">Chequeos, señales de alerta y prevención básica.</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Tarjeta 2: Alimentación -->
+          <a href="/alimentacion-perro-senior" class="group block border border-brand-border rounded-2xl p-6 bg-brand-card hover:shadow-md hover:border-brand-primary/45 hover:scale-[1.01] transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-primary" aria-label="Alimentación del perro senior: porciones, horarios y menús equilibrados">
+            <div class="flex flex-col gap-4">
+              <span class="w-12 h-12 rounded-xl flex items-center justify-center bg-brand-secondary text-brand-primary group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24"><path d="M3 13h18l-1 5H4l-1-5Z"/><path d="M7 13a5 5 0 0 1 10 0"/></svg>
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors mb-2">Alimentación del perro senior</h3>
+                <p class="text-xs text-brand-muted leading-relaxed font-light">Porciones, horarios y menús equilibrados.</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Tarjeta 3: Movilidad -->
+          <div class="group relative border border-brand-border rounded-2xl p-6 bg-brand-card hover:shadow-md hover:border-brand-primary/45 hover:scale-[1.01] transition-all duration-300 focus-within:ring-2 focus-within:ring-brand-primary/50" aria-label="Movilidad y dolor">
+            <div class="flex flex-col gap-4 h-full justify-between">
+              <!-- Enlace principal al pilar -->
+              <a href="/movilidad-dolor-perros-mayores" class="focus:outline-none block" aria-label="Ir al pilar de movilidad y dolor en perros mayores">
+                <!-- Capa absoluta para hacer clicable toda la tarjeta excepto elementos con z-10 -->
+                <span class="absolute inset-0 rounded-2xl z-0" aria-hidden="true"></span>
+                
+                <div class="flex flex-col gap-4 relative z-10">
+                  <span class="w-12 h-12 rounded-xl flex items-center justify-center bg-brand-secondary text-brand-primary group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                    <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24"><path d="M12 14c-3 0-5 2-5 4 0 1.5 1.5 3 5 3s5-1.5 5-3c0-2-2-4-5-4Z"/><circle cx="5.5" cy="9" r="2"/><circle cx="9.5" cy="6" r="2"/><circle cx="14.5" cy="6" r="2"/><circle cx="18.5" cy="9" r="2"/></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors mb-2">Movilidad y dolor</h3>
+                    <p class="text-xs text-brand-muted leading-relaxed font-light">Ejercicios suaves, ayudas ortopédicas y ajustes en casa.</p>
+                  </div>
+                </div>
+              </a>
+              
+              <!-- Enlace secundario al test de movilidad -->
+              <div class="relative z-10 mt-2">
+                <a href="/herramientas/selector-movilidad-perros-mayores" class="inline-flex items-center gap-1 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline" aria-label="Iniciar test de selector de ayudas de movilidad">
+                  <span>⚙️ Encontrar ayuda exacta (Test 30s)</span>
+                  <svg class="w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 4: Salud Mental -->
+          <a href="/salud-mental-y-emocional-en-perros" class="group block border border-brand-border rounded-2xl p-6 bg-brand-card hover:shadow-md hover:border-brand-primary/45 hover:scale-[1.01] transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-primary" aria-label="Salud mental y emociones: DCC, rutinas, juegos de olfato y sueño reparador">
+            <div class="flex flex-col gap-4">
+              <span class="w-12 h-12 rounded-xl flex items-center justify-center bg-brand-secondary text-brand-primary group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24"><path d="M8 7a3 3 0 0 0-3 3v1a3 3 0 0 0 3 3"/><path d="M8 7a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3"/><path d="M16 7a3 3 0 0 1 3 3v1a3 3 0 0 1-3 3"/><path d="M11 6v12M13 6v12"/></svg>
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors mb-2">Salud mental y emociones</h3>
+                <p class="text-xs text-brand-muted leading-relaxed font-light">DCC, rutinas, juegos olfativos y sueño reparador.</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Tarjeta 5: Higiene -->
+          <a href="/higiene-y-hogar-para-perros-senior_7" class="group block border border-brand-border rounded-2xl p-6 bg-brand-card hover:shadow-md hover:border-brand-primary/45 hover:scale-[1.01] transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-primary" aria-label="Higiene y hogar: baño, cepillado, dental y superficies seguras">
+            <div class="flex flex-col gap-4">
+              <span class="w-12 h-12 rounded-xl flex items-center justify-center bg-brand-secondary text-brand-primary group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24"><path d="M3 10l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors mb-2">Higiene y hogar</h3>
+                <p class="text-xs text-brand-muted leading-relaxed font-light">Baño, cepillado, limpieza dental y espacios adaptados.</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Tarjeta 6: Paliativos -->
+          <a href="/cuidados-paliativos-perros" class="group block border border-brand-border rounded-2xl p-6 bg-brand-card hover:shadow-md hover:border-brand-primary/45 hover:scale-[1.01] transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-primary" aria-label="Cuidados paliativos: confort, manejo de síntomas y decisión informada">
+            <div class="flex flex-col gap-4">
+              <span class="w-12 h-12 rounded-xl flex items-center justify-center bg-brand-secondary text-brand-primary group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24"><path d="M12 21s-6-3.5-6-8a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 4.5-6 8-6 8Z"/></svg>
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors mb-2">Cuidados paliativos</h3>
+                <p class="text-xs text-brand-muted leading-relaxed font-light">Confort, manejo de síntomas y decisión informada.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- BANNER DESTACADO DE LA CALCULADORA -->
+        <div class="mt-12 bg-gradient-to-br from-brand-primary/10 via-brand-secondary/15 to-transparent border border-brand-primary/20 rounded-3xl p-6 md:p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden group">
+          <div class="absolute -top-16 -right-16 w-36 h-36 bg-brand-primary/10 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500"></div>
+          <div class="space-y-3 relative z-10 max-w-xl">
+            <span class="inline-block px-3 py-1 rounded-full text-[10px] font-bold bg-brand-primary/20 text-brand-primary uppercase tracking-widest">
+              Test Gratuito e Interactivo
+            </span>
+            <h3 class="text-xl md:text-2xl font-bold text-brand-text font-serif leading-tight">
+              ¿Tu perro sufre? Mide su calidad de vida objetivamente
+            </h3>
+            <p class="text-xs md:text-sm text-brand-muted font-light leading-relaxed">
+              Utiliza la escala científica HHHHHMM de la Dra. Alice Villalobos para evaluar dolor, apetito, movilidad y bienestar general de tu compañero senior en menos de 1 minuto.
+            </p>
+          </div>
+          <div class="w-full md:w-auto relative z-10">
+            <a href="/herramientas/calculadora-calidad-vida-perros" class="inline-block w-full text-center px-6 py-3.5 rounded-xl bg-brand-primary hover:bg-brand-primary-hover text-white text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg no-underline">
+              Iniciar Test HHHHHMM 🐾
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORIAS DE CUIDADO EDITORIAL SECTION -->
+    <section class="max-w-4xl mx-auto py-16 px-5 reveal-on-scroll">
+      <div class="border border-brand-border bg-brand-card/40 rounded-3xl p-6 md:p-10 shadow-sm flex flex-col md:flex-row gap-8 items-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-2 h-full bg-brand-primary"></div>
+        <div class="w-full md:w-1/4 flex justify-center">
+          <div class="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-brand-secondary bg-brand-primary/10 flex items-center justify-center text-4xl shadow-sm select-none">
+            🐶🐾
+          </div>
+        </div>
+        <div class="w-full md:w-3/4">
+          <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-2 block">Historias Reales de Cuidado</span>
+          <p class="italic text-base md:text-lg text-brand-text leading-relaxed font-light mb-4">
+            "Cuando llevo a mis perras al veterinario, reaccionan distinto. <strong>Dakota</strong>, de casi 11 años, no tolera que le toquen las patas y aúlla de estrés; requiere ayuda con cuidado para cortarle las uñas. <strong>Luna</strong>, de 10 años, se inquieta en superficies altas, por lo que el veterinario la revisa directamente a nivel del suelo para darle seguridad. Conocer estas particularidades evita el estrés innecesario."
+          </p>
+          <cite class="not-italic text-sm font-semibold text-brand-primary block mt-2">— Caso Real: Dakota y Luna</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE DETAILED TABS-BASED QUICK START GUIDE -->
+    <section id="guia-inicio" class="bg-brand-card/15 border-y border-brand-border py-16 md:py-24 reveal-on-scroll">
+      <div class="max-w-4xl mx-auto px-5">
+        <div class="text-center mb-12">
+          <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-2 block">Fundamentos Clave</span>
+          <h2 class="text-3xl md:text-4xl font-semibold text-brand-text">Guía de Inicio Rápido</h2>
+          <p class="text-sm text-brand-muted mt-3 font-light leading-relaxed">
+            Pequeños cambios y pautas de control para mejorar el día a día de tu mascota. Explora los módulos temáticos a continuación:
+          </p>
+        </div>
+
+        <!-- TAB NAVIGATION -->
+        <div class="flex flex-wrap justify-center gap-2 mb-8" role="tablist">
+          <button 
+            data-tab-target="#tab-content-etapas"
+            aria-selected="true"
+            role="tab"
+            class="flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-bold tracking-wide uppercase transition-all duration-200 border bg-brand-primary text-white border-transparent"
+          >
+            🐾 Etapa Senior
+          </button>
+          <button 
+            data-tab-target="#tab-content-alimentacion"
+            aria-selected="false"
+            role="tab"
+            class="flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-bold tracking-wide uppercase transition-all duration-200 border bg-brand-card text-brand-text border-brand-border hover:bg-brand-card-hover"
+          >
+            🍎 Alimentación
+          </button>
+          <button 
+            data-tab-target="#tab-content-movilidad"
+            aria-selected="false"
+            role="tab"
+            class="flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-bold tracking-wide uppercase transition-all duration-200 border bg-brand-card text-brand-text border-brand-border hover:bg-brand-card-hover"
+          >
+            🐕 Movilidad y Hogar
+          </button>
+          <button 
+            data-tab-target="#tab-content-bienestar"
+            aria-selected="false"
+            role="tab"
+            class="flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-bold tracking-wide uppercase transition-all duration-200 border bg-brand-card text-brand-text border-brand-border hover:bg-brand-card-hover"
+          >
+            🧠 Mente e Higiene
+          </button>
+        </div>
+
+        <!-- TAB CONTENTS -->
+        <div class="bg-brand-card border border-brand-border rounded-3xl p-6 md:p-10 shadow-sm min-h-[400px]">
+          
+          <!-- TAB 1: ETAPA SENIOR -->
+          <div id="tab-content-etapas" data-tab-content class="block space-y-8 animate-fadeIn">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+              <div class="content-body">
+                <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-1 block">¿Cuándo se es mayor?</span>
+                <h3 class="text-xl md:text-2xl font-semibold text-brand-text mb-4 mt-0">La etapa senior por tamaños</h3>
+                <p class="text-sm leading-relaxed text-brand-text/90">
+                  La edad “senior” depende del <strong>tamaño y la raza</strong>: las razas pequeñas y medianas suelen considerarse senior desde los 7 u 8 años, mientras que las razas grandes y gigantes pueden entrar en esta etapa bastante antes, entre los 5 y 6 años de edad. Esta clasificación sirve para orientar el plan preventivo de cuidados y revisiones clínicas.
+                </p>
+                <p class="text-sm leading-relaxed text-brand-text/90">
+                  <strong>Por qué importa:</strong> a medida que envejecen, cambian su metabolismo y composición corporal, y aumenta el riesgo de sufrir <a href="https://www.google.com/search?q=señales+de+dolor+en+perros+mayores" target="_blank" class="text-brand-accent hover:underline font-normal">dolor</a> articular, enfermedad dental y <em><a href="https://www.google.com/search?q=define+alteraciones+cognitivas" target="_blank" class="text-brand-accent hover:underline font-normal">alteraciones cognitivas</a></em>. Adaptar las rutinas y el entorno a tiempo mejora sustancialmente su bienestar y pronóstico a largo plazo.
+                </p>
+              </div>
+              
+              <div class="bg-brand-bg/50 border border-brand-border rounded-2xl p-6">
+                <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-1 block">Alerta y Conducta</span>
+                <h3 class="text-lg font-semibold text-brand-text mb-4 mt-0">Señales normales vs. de alarma</h3>
+                <ul class="list-disc pl-4 space-y-2 text-xs text-brand-muted leading-relaxed mb-6">
+                  <li><strong>Esperables:</strong> aparición de canas en el hocico, horas de sueño más prolongadas, menor tolerancia al ejercicio físico y una ligera pérdida sensorial.</li>
+                  <li><strong>Alarma:</strong> desorientación en el hogar, cambios marcados en los patrones de sueño, olvidos de los hábitos de eliminación, apatía o inquietud inusual, y choques frecuentes con muebles (<abbr title="Desorientación, Interacciones, Sueño, Higiene, Actividad" class="underline decoration-dotted cursor-help">DISHA</abbr>).</li>
+                </ul>
+
+                <div class="overflow-x-auto border border-brand-border rounded-xl">
+                  <table class="w-full border-collapse text-left text-[11px] leading-snug">
+                    <thead>
+                      <tr class="bg-brand-secondary/25">
+                        <th class="p-2 border-b border-brand-border font-bold text-brand-text">Situación</th>
+                        <th class="p-2 border-b border-brand-border font-bold text-brand-text">Normal</th>
+                        <th class="p-2 border-b border-brand-border font-bold text-brand-text">Consulta ya</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-brand-border bg-brand-card/25">
+                      <tr>
+                        <td class="p-2 text-brand-text font-medium">Coordinación</td>
+                        <td class="p-2 text-brand-muted">Tropezones ocasionales</td>
+                        <td class="p-2 text-brand-accent font-medium">Caídas o incoordinación persistente</td>
+                      </tr>
+                      <tr>
+                        <td class="p-2 text-brand-text font-medium">Movilidad</td>
+                        <td class="p-2 text-brand-muted">Menores ganas de saltar</td>
+                        <td class="p-2 text-brand-accent font-medium">Dolor evidente o rigidez intensa</td>
+                      </tr>
+                      <tr>
+                        <td class="p-2 text-brand-text font-medium">Sueño</td>
+                        <td class="p-2 text-brand-muted">Más horas de sueño diurno</td>
+                        <td class="p-2 text-brand-accent font-medium">Vigilia e inquietud nocturna + desorientación</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: ALIMENTACION -->
+          <div id="tab-content-alimentacion" data-tab-content class="hidden space-y-8 animate-fadeIn">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+              <div class="bg-brand-bg/50 border border-brand-border rounded-2xl p-6">
+                <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-1.5 block">Revisiones Clínicas</span>
+                <div class="overflow-hidden rounded-xl bg-brand-secondary/10 mb-4">
+                  <img 
+                    alt="Veterinario realiza auscultación a un perro senior durante su chequeo preventivo semestral" 
+                    decoding="async" 
+                    height="675" 
+                    loading="lazy" 
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCLNry3H-RoFkvMiP1P8UBwga16AFeIKwqhhyYV06Dp2l0am3yEz_w1wDecxDm-MNw8g0M_TZmn113FUCmzkhmwmSMnUWsdSVW9Eq00TJPX2ibUvudPiksAoB_IwlMIG8II2lbjSf4tL5r5J4DRlYCXuT0BNyPWPzDt5CCCUvDQysduTG-HBXBR8W22gw/s1600/perro-senior-revision-veterinaria-auscultacion-1200x675%20%281%29.webp" 
+                    width="1200" 
+                    class="object-cover w-full h-auto"
+                  />
+                </div>
+                <p class="text-xs text-brand-muted font-light leading-relaxed mb-4">
+                  <strong>Revisiones veterinarias:</strong> como pauta base, se recomienda llevar a cabo revisiones <strong>dos veces al año</strong> en pacientes senior, incluyendo historia clínica, examen físico, peso corporal (<em>Body Condition Score - BCS</em>), toma de presión arterial, analíticas sanguíneas y urianálisis.
+                </p>
+                <div class="border-t border-brand-border pt-3 text-[11px] text-brand-muted italic">
+                  <strong>Consejo útil:</strong> lleva un cuaderno de salud para registrar peso y condición corporal (BCS) en cada visita veterinaria.
+                </div>
+              </div>
+
+              <div class="content-body">
+                <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-1 block">Nutrición Canina</span>
+                <h3 class="text-xl md:text-2xl font-semibold text-brand-text mb-4 mt-0">Alimentación del perro senior</h3>
+                <p class="text-sm leading-relaxed text-brand-text/90 font-light">
+                  Los objetivos nutricionales principales en esta etapa son: <strong>mantener la <a href="https://www.google.com/search?q=senior+dog+muscle+mass" target="_blank" class="text-brand-accent hover:underline font-normal">masa muscular</a></strong>, prevenir la obesidad y proteger tanto la salud articular como la digestión del perro.
+                </p>
+                <ul class="list-disc pl-4 space-y-2 text-sm text-brand-text/90 leading-relaxed mb-6 font-light">
+                  <li><strong>Energía y ración:</strong> ajusta la ingesta de alimento según la escala de condición corporal (<em>BCS del 1 al 9</em>), buscando una meta ideal de 4–5/9. Si la puntuación BCS es ≥ 6/9, reduce la ración diaria entre un 5% y 10%; si es ≤ 3/9, ofrece una <a href="https://www.google.com/search?q=senior+dog+proteina+de+calidad" target="_blank" class="text-brand-accent hover:underline font-normal">proteína de calidad</a> para evitar la sarcopenia (pérdida muscular).</li>
+                  <li><strong>Fibra e hidratación:</strong> favorecen la saciedad y facilitan el tránsito intestinal. Asegúrate de tener agua limpia y fresca siempre disponible.</li>
+                </ul>
+
+                <div class="overflow-x-auto border border-brand-border rounded-xl">
+                  <table class="w-full border-collapse text-left text-[11px] leading-snug">
+                    <thead>
+                      <tr class="bg-brand-secondary/25">
+                        <th class="p-2 border-b border-brand-border font-bold text-brand-text">Peso del perro</th>
+                        <th class="p-2 border-b border-brand-border font-bold text-brand-text">Ración diaria</th>
+                        <th class="p-2 border-b border-brand-border font-bold text-brand-text">Notas clave</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-brand-border bg-brand-card/25">
+                      <tr>
+                        <td class="p-2 text-brand-text font-medium">5–10 kg</td>
+                        <td class="p-2 text-brand-muted">Ver tabla fabricante</td>
+                        <td class="p-2 text-brand-muted font-normal">Meta BCS en 4–5/9</td>
+                      </tr>
+                      <tr>
+                        <td class="p-2 text-brand-text font-medium">11–25 kg</td>
+                        <td class="p-2 text-brand-muted">Ajustar por ejercicio</td>
+                        <td class="p-2 text-brand-muted font-normal">Ajustar ±5-10% si el peso varía</td>
+                      </tr>
+                      <tr>
+                        <td class="p-2 text-brand-text font-medium">26–40 kg</td>
+                        <td class="p-2 text-brand-muted">Consultar con vet</td>
+                        <td class="p-2 text-brand-muted font-normal">Priorizar proteínas altamente digeribles</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: MOVILIDAD Y HOGAR -->
+          <div id="tab-content-movilidad" data-tab-content class="hidden space-y-8 animate-fadeIn">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+              <div class="content-body">
+                <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-1 block">Bienestar Físico</span>
+                <h3 class="text-xl md:text-2xl font-semibold text-brand-text mb-4 mt-0">Articulaciones y movilidad</h3>
+                <p class="text-sm leading-relaxed text-brand-text/90 font-light mb-4">
+                  Mantener a tu perro en movimiento sin forzar sus articulaciones es fundamental para evitar la rigidez.
+                </p>
+                <ul class="list-disc pl-4 space-y-2 text-sm text-brand-text/90 leading-relaxed mb-6 font-light">
+                  <li><strong>Ejercicio de bajo impacto:</strong> es preferible realizar varios paseos cortos a lo largo del día antes que una única caminata larga y extenuante.</li>
+                  <li><strong>Entorno seguro:</strong> coloca alfombras o superficies antideslizantes en zonas resbaladizas, proporciona una <em><a href="https://www.google.com/search?q=cama+ortopédica+perro+senior" target="_blank" class="text-brand-accent hover:underline font-normal">cama ortopédica</a></em> viscoelástica y utiliza rampas para evitar saltos.</li>
+                  <li><strong>Fisioterapia:</strong> la movilización suave de las articulaciones ayuda a mantener el rango de movimiento; consulta un plan personalizado para casa.</li>
+                </ul>
+
+                <div class="border-l-4 border-brand-primary bg-brand-secondary/35 p-4 rounded-r-xl italic text-xs text-brand-text mb-4 leading-relaxed font-light">
+                  <strong>El Caso de Dakota:</strong> "Con Dakota ocurrió algo revelador: corrió a ladrar, resbaló en un escalón y al día siguiente no podía caminar. Tras varias semanas de medicación y apoyo, recuperó la marcha y su autonomía."
+                </div>
+                
+                <div class="border border-brand-primary/20 rounded-xl p-3 bg-brand-secondary/15 text-xs text-brand-text">
+                  <span class="font-bold text-brand-primary">Tip:</span> la constancia en el ejercicio suave y diario es más beneficiosa que las caminatas largas los fines de semana.
+                </div>
+              </div>
+
+              <div class="bg-brand-bg/50 border border-brand-border rounded-2xl p-6">
+                <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-1.5 block">Hogar Adaptado</span>
+                <div class="overflow-hidden rounded-xl bg-brand-secondary/10 mb-4">
+                  <img 
+                    alt="Perro senior subiendo por una rampa antideslizante adaptada para subir al sofá sin forzar articulaciones" 
+                    decoding="async" 
+                    height="675" 
+                    loading="lazy" 
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKkkvI0gM4P_Ng51mpDO1HKOPEaUYtSLzaH5Lic6IDjNH3cnQUKV1-0fb2AAgkcXfueK6p5pUZM54nAxEV87W-1Z5IlNmuJDEE3-yHu5hyphenhyphenWU00H2LO86zqZlUb0gysGhguHtRotsZSSHihBoMs43jqFoUHurQ8CVGQHpwBhcIx3J5plq2yWZEnCtJdQZ8/s1600/perro-senior-movilidad-rampa-antideslizante-1200x675.webp" 
+                    width="1200" 
+                    class="object-cover w-full h-auto"
+                  />
+                </div>
+                <ul class="space-y-3 text-xs text-brand-muted leading-relaxed pl-0 list-none font-light">
+                  <li class="flex gap-2">
+                    <span class="text-brand-primary font-normal">✔</span> <span><a href="https://www.google.com/search?q=cuencos+elevados+perros+mayores" target="_blank" class="text-brand-accent hover:underline font-normal">Cuencos elevados</a> al nivel del codo para reducir la tensión cervical.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="text-brand-primary font-normal">✔</span> <span><a href="https://www.google.com/search?q=alfombrillas+antideslizantes+perros+mayores" target="_blank" class="text-brand-accent hover:underline font-normal">Alfombrillas antideslizantes</a> en pasillos y zonas de tránsito habitual.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="text-brand-primary font-normal">✔</span> <span>Control del clima: limita paseos en horas de calor o humedad extrema.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 4: MENTE E HIGIENE -->
+          <div id="tab-content-bienestar" data-tab-content class="hidden space-y-8 animate-fadeIn">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+              <div class="bg-brand-bg/50 border border-brand-border rounded-2xl p-6">
+                <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-1.5 block">Estimulación Mental</span>
+                <div class="overflow-hidden rounded-xl bg-brand-secondary/10 mb-4">
+                  <img 
+                    alt="Perro mayor estimula su mente buscando comida en una alfombra olfativa interactiva en casa" 
+                    decoding="async" 
+                    height="675" 
+                    loading="lazy" 
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_aJVwLxBI18GrDskQDWVtQUhdXNJwU6xZQlpAWJE4OoXade83oDQoLT3zp92lCqKAftggb3TBHzwBtGXM8cHWkRdX8BTOna0jxY-nByIMy2aW89mUSPGq8pAuh3EZewePuYc4-qDhudRA6OzU5WFPqY49aolP7xrYN66GGn0Ops3tZYdb5u-Oi2MVqas/s1600/perro-senior-cognicion-juego-olfato-1200x675.webp" 
+                    width="1200" 
+                    class="object-cover w-full h-auto"
+                  />
+                </div>
+                <p class="text-xs text-brand-muted leading-relaxed font-light">
+                  Fomentar el <strong><a href="https://www.google.com/search?q=define+enriquecimiento+ambiental" target="_blank" class="text-brand-accent hover:underline font-normal">enriquecimiento ambiental</a></strong> a través de <a href="https://www.google.com/search?q=juegos+de+olfato+perros+mayores" target="_blank" class="text-brand-accent hover:underline font-normal">juegos de olfato</a> y rompecabezas de comida previene y ralentiza el síndrome de disfunción cognitiva canina.
+                </p>
+              </div>
+
+              <div class="content-body">
+                <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-1 block">Salud Oral y Piel</span>
+                <h3 class="text-xl md:text-2xl font-semibold text-brand-text mb-4 mt-0">Salud dental, piel e incontinencia</h3>
+                <ul class="list-disc pl-4 space-y-3 text-sm text-brand-text/90 leading-relaxed font-light mb-6">
+                  <li><strong>Higiene Oral:</strong> la enfermedad periodontal es muy prevalente. Presta atención al mal aliento (halitosis), dolor o dificultad al masticar, y consulta la viabilidad de una limpieza dental profesional.</li>
+                  <li><strong>Detección de bultos:</strong> cepilla regularmente la piel en busca de nuevos bultos. Registra su tamaño y color, y acude al veterinario si crecen rápido.</li>
+                  <li><strong>Incontinencia:</strong> planifica salidas higiénicas más frecuentes (al despertar, comer o jugar) y coloca empapadores estratégicos si la movilidad está reducida. Si notas <a href="https://www.google.com/search?q=aumento+de+sed+en+perros+mayores" target="_blank" class="text-brand-accent hover:underline font-normal">aumento de sed</a> o <a href="https://www.google.com/search?q=sangre+en+orina+perros+mayores" target="_blank" class="text-brand-accent hover:underline font-normal">sangre en orina</a>, acude a consulta.</li>
+                </ul>
+
+                <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-1 block">Cuidados Paliativos</span>
+                <h3 class="text-xl md:text-2xl font-semibold text-brand-text mb-4 mt-0">Apoyo y Calidad de Vida</h3>
+                <p class="text-sm leading-relaxed text-brand-text/90 font-light">
+                  Cuando el tratamiento curativo ya no es viable y la enfermedad limita la vida diaria del animal, la prioridad es el <strong>manejo del dolor</strong>, asegurar el confort térmico, mantener la higiene y ofrecer un soporte nutricional muy apetecible. La evaluación continua de su <strong>calidad de vida</strong> ayuda a tomar decisiones compasivas y centradas en el respeto al animal.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD: WEEKLY CHECKLIST & EMERGENCY ALERTS -->
+    <section class="max-w-5xl mx-auto px-5 py-16 md:py-24 reveal-on-scroll">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Checklist Semanal -->
+        <div id="checklist" class="lg:col-span-7 bg-brand-card border border-brand-border rounded-3xl p-6 md:p-8 shadow-sm">
+          <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-1 block">Autocuidado Semanal</span>
+          <h3 class="text-xl md:text-2xl font-semibold text-brand-text mt-0 mb-3">Checklist semanal de control</h3>
+          <p class="text-xs text-brand-muted font-light leading-relaxed mb-6">
+            Evalúa y haz seguimiento del bienestar de tu mascota de manera periódica. Marca las tareas realizadas:
+          </p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5">
+            <label class="flex items-start gap-3 cursor-pointer group select-none">
+              <input type="checkbox" class="w-4 h-4 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
+                Apetito diario e <a href="https://www.google.com/search?q=ingesta+de+agua+perros+mayores" target="_blank" class="text-brand-accent hover:underline font-normal">ingesta de agua</a> estables.
+              </span>
+            </label>
+            
+            <label class="flex items-start gap-3 cursor-pointer group select-none">
+              <input type="checkbox" class="w-4 h-4 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
+                Control de peso y condición corporal (<strong>BCS</strong>).
+              </span>
+            </label>
+            
+            <label class="flex items-start gap-3 cursor-pointer group select-none">
+              <input type="checkbox" class="w-4 h-4 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
+                Heces y orina: evaluar consistencia y frecuencia.
+              </span>
+            </label>
+            
+            <label class="flex items-start gap-3 cursor-pointer group select-none">
+              <input type="checkbox" class="w-4 h-4 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
+                Movilidad: evaluar rigidez al levantarse.
+              </span>
+            </label>
+            
+            <label class="flex items-start gap-3 cursor-pointer group select-none">
+              <input type="checkbox" class="w-4 h-4 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
+                Ánimo y conducta general en casa.
+              </span>
+            </label>
+            
+            <label class="flex items-start gap-3 cursor-pointer group select-none">
+              <input type="checkbox" class="w-4 h-4 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
+                Patrón del sueño: control de inquietud nocturna.
+              </span>
+            </label>
+            
+            <label class="flex items-start gap-3 cursor-pointer group select-none">
+              <input type="checkbox" class="w-4 h-4 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
+                Higiene: cepillado y revisión dental regular.
+              </span>
+            </label>
+            
+            <label class="flex items-start gap-3 cursor-pointer group select-none">
+              <input type="checkbox" class="w-4 h-4 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
+                Administración de tratamientos pautados.
+              </span>
+            </label>
+            
+            <label class="flex items-start gap-3 cursor-pointer group select-none">
+              <input type="checkbox" class="w-4 h-4 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
+                Dolor latente: detectar jadeos o incomodidad.
+              </span>
+            </label>
+            
+            <label class="flex items-start gap-3 cursor-pointer group select-none">
+              <input type="checkbox" class="w-4 h-4 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
+                Anotaciones de cambios para el veterinario.
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Urgencias Veterinarias -->
+        <div class="lg:col-span-5 bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-900/30 rounded-3xl p-6 md:p-8 shadow-sm">
+          <span class="text-xs font-bold tracking-wider uppercase text-amber-600 dark:text-amber-400 mb-1 block">Urgencias Veterinarias</span>
+          <h3 class="text-xl font-bold text-brand-text mt-0 mb-3">Señales de alarma crítica</h3>
+          <p class="text-xs text-brand-muted font-light leading-relaxed mb-6">
+            Acude de inmediato a un centro de urgencias si notas alguno de los siguientes síntomas en tu perro anciano:
+          </p>
+          
+          <ul class="space-y-3.5 text-xs text-brand-text/90 leading-relaxed font-light pl-0 list-none">
+            <li class="flex gap-2.5">
+              <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
+              <span>Dificultad evidente para respirar (disnea), colapso repentino o dolor agudo.</span>
+            </li>
+            <li class="flex gap-2.5">
+              <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
+              <span>Vómitos repetitivos o <strong><a href="https://www.google.com/search?q=anorexia+perros+mayores" target="_blank" class="text-brand-accent hover:underline font-normal">anorexia</a></strong> total de más de 24 a 48 horas.</span>
+            </li>
+            <li class="flex gap-2.5">
+              <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
+              <span>Desorientación severa repentina, temblores generalizados o convulsiones.</span>
+            </li>
+            <li class="flex gap-2.5">
+              <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
+              <span>Heridas profundas o sangrados que no cesen tras aplicar presión unos minutos.</span>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- RECENT BLOG POSTS SECTION -->
+    {recentPosts.length > 0 && (
+      <section class="bg-brand-card/25 border-y border-brand-border py-16 md:py-24 reveal-on-scroll">
+        <div class="max-w-5xl mx-auto px-5 md:px-4">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-2 block">Información práctica</span>
+            <h2 class="text-2.5xl md:text-3.5xl font-semibold text-brand-text mb-4">Últimos artículos del blog</h2>
+            <p class="text-sm text-brand-muted font-light leading-relaxed">
+              Lee nuestras últimas publicaciones y guías detalladas para el cuidado del perro senior.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {recentPosts.map(post => (
+              <a 
+                href={`/${post.data.pilar}/${post.slug}`} 
+                class="group flex flex-col justify-between bg-brand-card border border-brand-border rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-brand-primary/40 hover:scale-[1.01] transition-all duration-300 relative overflow-hidden"
+              >
+                <div class="absolute top-0 left-0 right-0 h-1 bg-brand-primary transform -translate-y-1 group-hover:translate-y-0 transition-transform duration-300"></div>
+                <div>
+                  <span class="text-[10px] font-bold text-brand-primary uppercase tracking-wider block mb-2 opacity-80">
+                    Guía especializada
+                  </span>
+                  <h3 class="text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors duration-200 line-clamp-2 leading-snug">
+                    {post.data.title}
+                  </h3>
+                  {post.data.metaDescription && (
+                    <p class="text-brand-muted text-xs mt-3 line-clamp-3 leading-relaxed font-light">
+                      {post.data.metaDescription}
+                    </p>
+                  )}
+                </div>
+                <div class="mt-6 flex items-center text-xs font-semibold text-brand-primary group-hover:text-brand-accent transition-colors duration-200">
+                  <span>Leer artículo</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-1.5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- INTERACTIVE FAQ SECTION -->
+    <section class="max-w-3xl mx-auto px-5 py-16 md:py-24 reveal-on-scroll">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-2 block">Dudas Comunes</span>
+        <h2 class="text-2.5xl md:text-3.5xl font-semibold text-brand-text">Preguntas frecuentes</h2>
+        <p class="text-xs text-brand-muted mt-2 font-light leading-relaxed">
+          Respuestas a las dudas habituales de los cuidadores de perros mayores.
+        </p>
+      </div>
+
+      <div class="faq space-y-4">
+        <details class="group border border-brand-border rounded-2xl p-4 bg-brand-card shadow-sm transition-colors hover:border-brand-primary/20">
+          <summary class="font-semibold text-sm text-brand-text cursor-pointer list-none flex items-center justify-between select-none">
+            ¿A qué edad se considera senior un perro según su tamaño?
+            <span class="transition-transform group-open:rotate-180">
+              <svg class="w-4 h-4 text-brand-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-brand-muted text-xs leading-relaxed font-light">
+            <p>Con carácter general, los perros de razas pequeñas y medianas se consideran senior a los 7 u 8 años; los perros de razas grandes y gigantes a los 5 o 6 años. Siempre debe individualizarse según el estado fisiológico de cada animal.</p>
+          </div>
+        </details>
+
+        <details class="group border border-brand-border rounded-2xl p-4 bg-brand-card shadow-sm transition-colors hover:border-brand-primary/20">
+          <summary class="font-semibold text-sm text-brand-text cursor-pointer list-none flex items-center justify-between select-none">
+            ¿Cuánto debe caminar un perro mayor al día?
+            <span class="transition-transform group-open:rotate-180">
+              <svg class="w-4 h-4 text-brand-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-brand-muted text-xs leading-relaxed font-light">
+            <p>Es preferible estructurar paseos cortos y frecuentes de bajo impacto. El tiempo total y ritmo debe ajustarse permanentemente en función de si presenta dolores articulares, fatiga ante temperaturas extremas y su tiempo de recuperación.</p>
+          </div>
+        </details>
+
+        <details class="group border border-brand-border rounded-2xl p-4 bg-brand-card shadow-sm transition-colors hover:border-brand-primary/20">
+          <summary class="font-semibold text-sm text-brand-text cursor-pointer list-none flex items-center justify-between select-none">
+            ¿Qué comida es mejor para perros senior y cuánta proteína?
+            <span class="transition-transform group-open:rotate-180">
+              <svg class="w-4 h-4 text-brand-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-brand-muted text-xs leading-relaxed font-light">
+            <p>Requieren una dieta equilibrada que controle la densidad de calorías para evitar el sobrepeso. Se debe dar prioridad a fuentes de proteínas de alta digestibilidad para preservar masa muscular, salvo indicación veterinaria contraria.</p>
+          </div>
+        </details>
+
+        <details class="group border border-brand-border rounded-2xl p-4 bg-brand-card shadow-sm transition-colors hover:border-brand-primary/20">
+          <summary class="font-semibold text-sm text-brand-text cursor-pointer list-none flex items-center justify-between select-none">
+            ¿Cómo saber si mi perro tiene dolor de articulaciones?
+            <span class="transition-transform group-open:rotate-180">
+              <svg class="w-4 h-4 text-brand-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-brand-muted text-xs leading-relaxed font-light">
+            <p>Las señales habituales son rigidez al levantarse de descansar, dificultad para subir o bajar de muebles, rechazo o intolerancia al ejercicio habitual, apatía o cambios repentinos en su comportamiento (irritabilidad o aislamiento).</p>
+          </div>
+        </details>
+
+        <details class="group border border-brand-border rounded-2xl p-4 bg-brand-card shadow-sm transition-colors hover:border-brand-primary/20">
+          <summary class="font-semibold text-sm text-brand-text cursor-pointer list-none flex items-center justify-between select-none">
+            ¿Cómo adaptar mi casa para un perro mayor con movilidad reducida?
+            <span class="transition-transform group-open:rotate-180">
+              <svg class="w-4 h-4 text-brand-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-brand-muted text-xs leading-relaxed font-light">
+            <p>Colocando alfombras en zonas de suelos resbaladizos, instalando rampas para salvar pequeños desniveles, proporcionando una cama ortopédica confortable, situando cuencos ligeramente elevados y manteniendo zonas tranquilas para su descanso.</p>
+          </div>
+        </details>
+
+        <details class="group border border-brand-border rounded-2xl p-4 bg-brand-card shadow-sm transition-colors hover:border-brand-primary/20">
+          <summary class="font-semibold text-sm text-brand-text cursor-pointer list-none flex items-center justify-between select-none">
+            ¿Cuándo ir a urgencias con un perro anciano?
+            <span class="transition-transform group-open:rotate-180">
+              <svg class="w-4 h-4 text-brand-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </span>
+          </summary>
+          <div class="mt-3 text-brand-muted text-xs leading-relaxed font-light">
+            <p>Acude de forma inmediata si presenta respiración fatigosa o acelerada en reposo, pérdida de conocimiento o colapso, dolor agudo, vómitos repetidos, anorexia total de más de 24 horas o episodios convulsivos.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- DIRECTORY & RESOURCES FOOTER SECTION -->
+    <section class="max-w-4xl mx-auto px-5 md:px-4 py-16 reveal-on-scroll">
+      <span class="block text-xs font-bold tracking-wider uppercase text-brand-primary mb-3">Documentación y Directorio</span>
+
+      <!-- CTA Directorio -->
+      <div class="border border-brand-primary/20 rounded-2xl p-6 bg-brand-secondary/20 my-8 shadow-sm">
+        <h3 class="text-lg font-bold text-brand-text mb-2 font-sans">¿Necesitas atención urgente ahora mismo?</h3>
+        <p class="text-sm text-brand-muted mb-4 leading-relaxed font-light">
+          Encuentra de forma rápida una <strong><a href="https://www.google.com/search?q=veterinaria+24+horas" rel="noopener nofollow" target="_blank" class="text-brand-accent hover:underline font-normal">clínica veterinaria 24/7</a></strong> cerca de ti por provincia.
+        </p>
+        <a href="https://www.google.com/search?q=veterinaria+24+horas" rel="noopener nofollow" target="_blank" class="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-brand-primary hover:bg-brand-primary-hover text-white text-sm font-semibold transition-colors shadow-sm">
+          Abrir directorio de clínicas 24/7
+        </a>
+      </div>
+
+      <!-- Referencias -->
+      <div class="referencias my-8 pt-6 border-t border-brand-border leading-relaxed">
+        <h3 class="text-xs font-bold text-brand-text uppercase tracking-wider mb-4 font-sans">Referencias y fuentes científicas</h3>
+        <ol class="list-decimal list-inside space-y-2 text-xs text-brand-muted font-light">
+          <li><a href="https://www.aaha.org/aaha-guidelines/senior-care/senior-dog-and-cat-care-guidelines/" rel="noopener nofollow" target="_blank" class="text-brand-accent hover:underline font-normal">AAHA (2023). Senior Dog & Cat Care Guidelines.</a></li>
+          <li><a href="https://www.aaha.org/aaha-guidelines/2021-AAHA-Canine-Life-Stage-Guidelines/" rel="noopener nofollow" target="_blank" class="text-brand-accent hover:underline font-normal">AAHA (2019/2021). Canine Life Stage Guidelines.</a></li>
+          <li><a href="https://www.avma.org/resources/pet-owners/petcare/senior-pets" rel="noopener nofollow" target="_blank" class="text-brand-accent hover:underline font-normal">AVMA. Senior pets: increased veterinary care.</a></li>
+          <li><a href="https://wsava.org/wp-content/uploads/2020/01/Body-Condition-Score-Dog.pdf" rel="noopener nofollow" target="_blank" class="text-brand-accent hover:underline font-normal">WSAVA. Body Condition Score (Dog).</a></li>
+          <li><a href="https://www.msdvetmanual.com/behavior/behavior-of-dogs/aging-and-cognitive-dysfunction-in-dogs" rel="noopener nofollow" target="_blank" class="text-brand-accent hover:underline font-normal">MSD Vet Manual. Aging & Cognitive Dysfunction in Dogs.</a></li>
+        </ol>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer text-[11px] text-brand-muted italic my-6 bg-brand-secondary/15 p-3 rounded-lg border border-brand-border font-light">
+        <p><strong>Nota importante:</strong> Este contenido tiene carácter exclusivamente educativo y divulgativo y no sustituye en ningún caso el diagnóstico, criterio o consulta veterinaria profesional.</p>
+      </div>
+
+      <!-- Back to top -->
+      <div class="text-center mt-12 border-t border-brand-border pt-6">
+        <a href="#" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-accent hover:underline">
+          Volver al inicio ↑
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<!-- CLIENT INTERACTIVE SCRIPT -->
+<script is:inline>
+  // 1. CALCULADORA DE EDAD CANINA
+  const sizeSelect = document.getElementById('dog-size');
+  const ageSelect = document.getElementById('dog-age');
+  const humanAgeDisplay = document.getElementById('human-age-result');
+  const recTitle = document.getElementById('rec-title');
+  const recText = document.getElementById('rec-text');
+  const resultCard = document.getElementById('calc-result-card');
+
+  function calculateAge() {
+    if (!sizeSelect || !ageSelect || !humanAgeDisplay || !recTitle || !recText) return;
+    
+    const size = sizeSelect.value;
+    const age = parseInt(ageSelect.value);
+    if (isNaN(age)) return;
+
+    let humanAge = 0;
+    if (size === 'small') {
+      if (age === 1) humanAge = 15;
+      else if (age === 2) humanAge = 24;
+      else humanAge = 24 + (age - 2) * 4;
+    } else if (size === 'medium') {
+      if (age === 1) humanAge = 15;
+      else if (age === 2) humanAge = 24;
+      else humanAge = 24 + (age - 2) * 5;
+    } else if (size === 'large') {
+      if (age === 1) humanAge = 15;
+      else if (age === 2) humanAge = 24;
+      else humanAge = 24 + (age - 2) * 6;
+    } else if (size === 'giant') {
+      if (age === 1) humanAge = 12;
+      else if (age === 2) humanAge = 22;
+      else humanAge = 22 + (age - 2) * 8;
+    }
+
+    humanAgeDisplay.textContent = humanAge + ' años';
+
+    let stage = "";
+    let recommendation = "";
+
+    if (humanAge < 55) {
+      stage = "Senior Inicial (Madurez)";
+      recommendation = "Tu perro está entrando en la etapa senior. Es momento de comenzar con chequeos anuales preventivos y ajustar su dieta si baja su nivel de actividad física.";
+    } else if (humanAge <= 75) {
+      stage = "Senior Madura (Vejez)";
+      recommendation = "Tu perro se encuentra en la madurez de su etapa senior. Considera visitas veterinarias semestrales, suplementos articulares y mantén paseos cortos pero constantes.";
+    } else {
+      stage = "Senior Avanzado / Geriátrico";
+      recommendation = "Tu perro es un senior avanzado. Adapta tu hogar para evitar resbalones, mantén rutinas muy estables, realiza juegos de olfato suaves y presta mucha atención al manejo del dolor.";
+    }
+
+    recTitle.textContent = stage;
+    recText.textContent = recommendation;
+  }
+
+  if (sizeSelect && ageSelect) {
+    sizeSelect.addEventListener('change', calculateAge);
+    ageSelect.addEventListener('change', calculateAge);
+    calculateAge(); // Cómputo inicial
+  }
+
+  // 2. SISTEMA DE PESTAÑAS (TABS)
+  const tabButtons = document.querySelectorAll('[data-tab-target]');
+  const tabContents = document.querySelectorAll('[data-tab-content]');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetSelector = button.getAttribute('data-tab-target');
+      const targetContent = document.querySelector(targetSelector);
+      
+      if (!targetContent) return;
+
+      // Ocultar todos los contenidos de pestañas
+      tabContents.forEach(content => {
+        content.classList.add('hidden');
+        content.classList.remove('block');
+      });
+
+      // Resetear estilos de todos los botones de pestañas
+      tabButtons.forEach(btn => {
+        btn.classList.remove('bg-brand-primary', 'text-white', 'border-transparent');
+        btn.classList.add('bg-brand-card', 'text-brand-text', 'border-brand-border');
+        btn.setAttribute('aria-selected', 'false');
+      });
+
+      // Activar la pestaña clickeada
+      button.classList.remove('bg-brand-card', 'text-brand-text', 'border-brand-border');
+      button.classList.add('bg-brand-primary', 'text-white', 'border-transparent');
+      button.setAttribute('aria-selected', 'true');
+      
+      // Mostrar el contenido de la pestaña seleccionada
+      targetContent.classList.remove('hidden');
+      targetContent.classList.add('block');
+    });
+  });
+
+  // 3. EFECTO SCROLL REVEAL (INTERSECTION OBSERVER)
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  
+  if ('IntersectionObserver' in window && revealElements.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -60px 0px',
+      threshold: 0.05
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    revealElements.forEach(el => observer.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+<style>
+  /* Animación suave al cambiar de pestaña */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  /* Animación suave para la aparición con scroll */
+  :global(.js) .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+  }
+  :global(.js) .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global(.js) .reveal-on-scroll {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>

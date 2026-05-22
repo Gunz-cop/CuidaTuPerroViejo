@@ -1,0 +1,107 @@
+---
+interface Props {
+  pilarSlug: string;
+  pilarName: string;
+  title?: string;
+}
+
+const { pilarSlug, pilarName, title } = Astro.props;
+
+// Build absolute URLs for JSON-LD schema
+const origin = Astro.url.origin || 'https://www.cuidatuperroviejo.com';
+const homeUrl = `${origin}/`;
+const pilarUrl = `${origin}/${pilarSlug}`;
+const articleUrl = Astro.url.href;
+
+// Construct BreadcrumbList JSON-LD
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": homeUrl
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": pilarName,
+      "item": pilarUrl
+    },
+    ...(title ? [
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": title,
+        "item": articleUrl
+      }
+    ] : [])
+  ]
+};
+---
+
+<nav aria-label="Breadcrumb" class="flex items-center w-full mb-8 overflow-x-auto whitespace-nowrap py-1 scrollbar-none">
+  <ol class="flex items-center space-x-1.5 md:space-x-2 text-xs md:text-sm">
+    <!-- Home Link -->
+    <li class="flex items-center">
+      <a 
+        href="/" 
+        class="inline-flex items-center gap-1 text-brand-muted hover:text-brand-primary transition-colors duration-200 font-medium"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+          <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 011.414 0l7 7a1 1 0 01-1.414 1.414L15 9.414V17a1 1 0 01-1 1h-2a1 1 0 01-1-1v-4H9v4a1 1 0 01-1 1H6a1 1 0 01-1-1V9.414L3.707 10.707a1 1 0 01-1.414-1.414l7-7z" clip-rule="evenodd" />
+        </svg>
+        Inicio
+      </a>
+    </li>
+    
+    <!-- Separator -->
+    <li class="text-brand-muted/50 flex items-center select-none" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5 md:w-4 md:h-4">
+        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+      </svg>
+    </li>
+    
+    <!-- Pilar Link -->
+    <li class="flex items-center">
+      <a 
+        href={`/${pilarSlug}`} 
+        class="text-brand-muted hover:text-brand-primary transition-colors duration-200 font-medium"
+      >
+        {pilarName}
+      </a>
+    </li>
+    
+    <!-- Optional Current Article Title -->
+    {title && (
+      <>
+        <!-- Separator -->
+        <li class="text-brand-muted/50 flex items-center select-none" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5 h-3.5 md:w-4 md:h-4">
+            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+          </svg>
+        </li>
+        <li class="text-brand-text font-semibold truncate max-w-[160px] sm:max-w-[240px] md:max-w-xs" aria-current="page">
+          {title}
+        </li>
+      </>
+    )}
+  </ol>
+</nav>
+
+<!-- Google Search Breadcrumb List Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<style>
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-none {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+</style>

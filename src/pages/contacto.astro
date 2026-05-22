@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Contacto | Cuida tu perro viejo";
+const description = "¿Tienes dudas sobre el cuidado de tu perro senior? Escríbenos y resolveremos tus preguntas. Formulario de contacto directo.";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Head injection using slots -->
+  <script slot="head" type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contacto",
+    "url": "https://www.cuidatuperroviejo.com/contacto",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Cuida tu perro viejo",
+      "url": "https://www.cuidatuperroviejo.com/"
+    },
+    "description": "Página de contacto de Cuida tu perro viejo para consultas sobre el cuidado de perros ancianos."
+  }
+  </script>
+
+  <main class="max-w-3xl mx-auto px-5 py-10 md:py-16">
+    <!-- Navigation / Breadcrumbs -->
+    <div class="mb-4">
+      <a href="/" class="inline-flex items-center text-sm text-brand-primary hover:text-brand-primary-hover font-semibold gap-1 no-underline transition-colors back-btn">
+        <span>← Volver al inicio</span>
+      </a>
+    </div>
+
+    <!-- Page Header -->
+    <header class="mb-8 text-center max-w-xl mx-auto">
+      <h1 class="text-3.5xl md:text-4.5xl font-extrabold text-brand-text mb-3 leading-tight font-serif">
+        Contacto
+      </h1>
+      <p class="text-brand-muted font-light leading-relaxed">
+        ¿Tienes dudas sobre el cuidado de tu perro senior? Escríbeme y te responderé personalmente por correo electrónico.
+      </p>
+    </header>
+
+    <!-- Contact Form Container -->
+    <div class="bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-6 md:p-10 shadow-sm max-w-xl mx-auto">
+      <form action="https://formspree.io/f/xgvnpaol" method="POST" class="space-y-6">
+        
+        <!-- Name Input -->
+        <div>
+          <label for="name" class="block text-sm font-semibold text-brand-text mb-2 font-sans">
+            Tu nombre
+          </label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            required 
+            class="w-full px-4 py-3 bg-brand-bg/50 dark:bg-slate-900/50 border border-brand-border/80 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 rounded-xl text-brand-text placeholder-brand-muted/50 focus:outline-none transition-all duration-200"
+            placeholder="Ej. María García"
+          />
+        </div>
+
+        <!-- Email Input -->
+        <div>
+          <label for="email" class="block text-sm font-semibold text-brand-text mb-2 font-sans">
+            Tu correo electrónico
+          </label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            class="w-full px-4 py-3 bg-brand-bg/50 dark:bg-slate-900/50 border border-brand-border/80 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 rounded-xl text-brand-text placeholder-brand-muted/50 focus:outline-none transition-all duration-200"
+            placeholder="Ej. maria@ejemplo.com"
+          />
+        </div>
+
+        <!-- Subject Input -->
+        <div>
+          <label for="subject" class="block text-sm font-semibold text-brand-text mb-2 font-sans">
+            Asunto
+          </label>
+          <input 
+            type="text" 
+            id="subject" 
+            name="subject" 
+            required 
+            class="w-full px-4 py-3 bg-brand-bg/50 dark:bg-slate-900/50 border border-brand-border/80 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 rounded-xl text-brand-text placeholder-brand-muted/50 focus:outline-none transition-all duration-200"
+            placeholder="Ej. Consulta sobre artrosis o alimentación"
+          />
+        </div>
+
+        <!-- Message Textarea -->
+        <div>
+          <label for="message" class="block text-sm font-semibold text-brand-text mb-2 font-sans">
+            Mensaje
+          </label>
+          <textarea 
+            id="message" 
+            name="message" 
+            rows="6" 
+            required 
+            class="w-full px-4 py-3 bg-brand-bg/50 dark:bg-slate-900/50 border border-brand-border/80 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 rounded-xl text-brand-text placeholder-brand-muted/50 focus:outline-none transition-all duration-200 resize-y"
+            placeholder="Describe detalladamente tu consulta, la edad de tu perro y sus síntomas..."
+          ></textarea>
+        </div>
+
+        <!-- Anti-spam (honeypot) -->
+        <input type="text" name="_gotcha" style="display:none" />
+
+        <!-- Redirección tras enviar -->
+        <input type="hidden" name="_redirect" value="https://www.cuidatuperroviejo.com/gracias" />
+
+        <!-- Consentimiento (Checkbox) -->
+        <div class="flex items-start gap-3">
+          <input 
+            type="checkbox" 
+            id="privacy-consent" 
+            required 
+            class="mt-1 h-4.5 w-4.5 rounded border-brand-border/80 text-brand-primary focus:ring-brand-primary/20 focus:ring-offset-0 accent-brand-primary cursor-pointer"
+          />
+          <label for="privacy-consent" class="text-xs text-brand-muted leading-relaxed font-light select-none cursor-pointer">
+            Acepto el uso de mis datos exclusivamente para responder a esta consulta.
+            <span class="block mt-0.5 text-[11px]">
+              Consulta la <a href="/politica-de-privacidad" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline font-normal">Política de Privacidad</a>.
+            </span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-2">
+          <button 
+            type="submit" 
+            class="w-full sm:w-auto px-8 py-3.5 bg-brand-primary hover:bg-brand-primary-hover active:scale-[0.98] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer inline-flex items-center justify-center gap-2"
+          >
+            <span>Enviar mensaje</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Acerca de | Cuida tu perro viejo";
+const description = "Conoce quiénes somos en Cuida tu perro viejo y nuestra misión de ayudar a los dueños de perros senior a darles la mejor calidad de vida en su etapa dorada.";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Head injection using slots -->
+  <script slot="head" type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Acerca de",
+    "url": "https://www.cuidatuperroviejo.com/acerca-de",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Cuida tu perro viejo",
+      "url": "https://www.cuidatuperroviejo.com/"
+    },
+    "description": "Conoce quiénes somos en Cuida tu perro viejo y nuestra misión de ayudar a los dueños de perros senior a darles la mejor calidad de vida en su etapa dorada."
+  }
+  </script>
+
+  <main class="max-w-3xl mx-auto px-5 py-10 md:py-16 content-body">
+    <!-- Navigation / Breadcrumbs -->
+    <div class="mb-4">
+      <a href="/" class="inline-flex items-center text-sm text-brand-primary hover:text-brand-primary-hover font-semibold gap-1 no-underline transition-colors back-btn">
+        <span>← Volver al inicio</span>
+      </a>
+    </div>
+
+    <!-- Page Header -->
+    <header class="mb-8 border-b border-brand-border pb-6">
+      <h1 class="text-3.5xl md:text-4.5xl font-extrabold text-brand-text mb-3 leading-tight">
+        Sobre nosotros
+      </h1>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-muted font-light">
+        <span>Por <strong>Equipo de Cuida a tu perro viejo</strong></span>
+        <span class="text-brand-border">•</span>
+        <span>Última actualización: <strong>12 de octubre de 2025</strong></span>
+      </div>
+    </header>
+
+    <!-- Main Content Article -->
+    <article id="about-us" itemscope itemtype="https://schema.org/AboutPage" class="space-y-8">
+      
+      <div class="space-y-4">
+        <p class="text-lg md:text-xl text-brand-text font-medium leading-relaxed">
+          ¡Hola y bienvenido/a a <strong>Cuida tu perro viejo</strong>! 🐶💛
+        </p>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Soy parte del equipo de <strong>Toxedocat</strong>, un proyecto creado con mucho cariño para ayudar a los dueños de perros senior a darles la mejor calidad de vida en su etapa dorada. Sabemos lo especial que es acompañar a un amigo de cuatro patas cuando ya es mayor, y queremos ofrecerte consejos prácticos, guías claras y apoyo confiable.
+        </p>
+      </div>
+
+      <!-- Mission Section -->
+      <section class="bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-6 md:p-8 shadow-sm">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-primary mb-6 leading-tight mt-0">
+          Nuestra misión
+        </h2>
+        <ul class="space-y-4.5 text-sm md:text-base text-brand-muted list-none pl-0 font-light">
+          <li class="flex items-start gap-3">
+            <span class="text-brand-primary text-lg mt-0.5 select-none">🐾</span>
+            <span>
+              Ayudarte a cuidar la <strong>salud</strong>, <strong>alimentación</strong> y <strong>bienestar emocional</strong> de tu perro mayor.
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-brand-primary text-lg mt-0.5 select-none">🐾</span>
+            <span>
+              Brindarte información de calidad, escrita con un tono cercano y comprensible, como si te lo contara un <em>veterinario-amigo</em>.
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-brand-primary text-lg mt-0.5 select-none">🐾</span>
+            <span>
+              Crear una comunidad de personas que aman y respetan profundamente a sus compañeros peludos en sus últimos años de vida.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Sister Projects / Family Section -->
+      <div class="space-y-4 pt-2">
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Además, formamos parte de una familia de proyectos digitales para amantes de los animales. 
+          Te invito también a visitar nuestra web hermana: 
+          <a href="https://www.housegatitos.com" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline font-semibold inline-flex items-center gap-1">
+            <span>House Gatitos</span>
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>, un espacio dedicado enteramente al cuidado, nutrición y bienestar de los felinos domésticos.
+        </p>
+
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Gracias por confiar en nosotros y por querer darle a tu perro viejo una vida plena y feliz. 💛🐾
+        </p>
+      </div>
+
+    </article>
+  </main>
+</BaseLayout>

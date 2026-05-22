@@ -1,0 +1,253 @@
+---
+import ThemeToggle from '../components/ThemeToggle.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+}
+
+const { title, description = 'Cuida a tu Perro Viejo', keywords } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    
+    <!-- Script inline para prevenir el flash de luz blanca en modo oscuro -->
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <style is:global>
+      :root {
+        --color-bg-base: #F8F6F1; /* Marfil / Papel */
+        --color-bg-card: #F0EDE4; /* Pergamino */
+        --color-bg-card-hover: #E8E5DC; /* Sunken background */
+        --color-text-base: #1A1A18; /* Tinta */
+        --color-text-muted: #4A4A45; /* Carbón */
+        --color-brand-primary: #5C7A62; /* Verde Salvia */
+        --color-brand-primary-hover: #3D5C42; /* Salvia oscuro */
+        --color-brand-secondary: #C8DAC8; /* Salvia suave */
+        --color-brand-accent: #5C7A62; /* Salvia (Acción/Acento) */
+        --color-brand-accent-hover: #3D5C42;
+        --color-brand-border: #E8E5DC;
+      }
+
+      .dark {
+        --color-bg-base: #1A1A18; /* Tinta */
+        --color-bg-card: #222220;
+        --color-bg-card-hover: #2A2A28;
+        --color-text-base: #EDEBE4;
+        --color-text-muted: #B0ADA6;
+        --color-brand-primary: #8FAF95; /* Verde Salvia claro */
+        --color-brand-primary-hover: #A8C4AC;
+        --color-brand-secondary: #2D4030; /* Salvia oscuro */
+        --color-brand-accent: #8FAF95;
+        --color-brand-accent-hover: #A8C4AC;
+        --color-brand-border: #2A2A28;
+      }
+
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      h1, h2 {
+        font-family: 'Lora', Georgia, serif;
+      }
+      h3, h4, h5, h6 {
+        font-family: 'Outfit', sans-serif;
+      }
+
+      /* Estilos globales para renderizar markdown y contenido estructurado de forma premium */
+      .content-body {
+        line-height: 1.8;
+        font-size: 1.125rem;
+        color: var(--color-text-base);
+      }
+      .content-body p {
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+      }
+      .content-body h2 {
+        font-size: 1.875rem;
+        margin-top: 2em;
+        margin-bottom: 0.8em;
+        font-weight: 700;
+        color: var(--color-brand-primary);
+        letter-spacing: -0.025em;
+      }
+      .content-body h3 {
+        font-size: 1.5rem;
+        margin-top: 1.6em;
+        margin-bottom: 0.6em;
+        font-weight: 600;
+        color: var(--color-brand-primary);
+        letter-spacing: -0.02em;
+      }
+      .content-body ul {
+        list-style-type: disc;
+        padding-left: 1.625em;
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+      }
+      .content-body ol {
+        list-style-type: decimal;
+        padding-left: 1.625em;
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+      }
+      .content-body li {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
+      .content-body strong {
+        font-weight: 700;
+        color: var(--color-brand-primary);
+      }
+      .content-body a {
+        color: var(--color-brand-accent);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+      }
+      .content-body a:hover {
+        color: var(--color-brand-accent-hover);
+      }
+
+      /* Estandarización de botones y CTAs dentro del cuerpo del contenido */
+      .content-body a.inline-block,
+      .content-body a.btn,
+      .content-body a[class*="bg-"] {
+        text-decoration: none !important;
+      }
+      .content-body a.inline-block:hover,
+      .content-body a.btn:hover,
+      .content-body a[class*="bg-"]:hover {
+        text-decoration: none !important;
+      }
+      .content-body a.text-white {
+        color: #ffffff !important;
+      }
+      .content-body a.bg-brand-primary,
+      .content-body a.btn-primary {
+        color: #ffffff !important;
+      }
+      .content-body a.bg-brand-primary:hover,
+      .content-body a.btn-primary:hover {
+        color: #ffffff !important;
+        background-color: var(--color-brand-primary-hover) !important;
+      }
+      .dark .content-body a.bg-brand-primary,
+      .dark .content-body a.btn-primary {
+        color: #1a1a18 !important; /* Texto oscuro sobre fondo verde salvia claro para legibilidad y contraste premium */
+      }
+      .dark .content-body a.bg-brand-primary:hover,
+      .dark .content-body a.btn-primary:hover {
+        color: #1a1a18 !important;
+      }
+      .content-body blockquote {
+        border-left: 4px solid var(--color-brand-primary);
+        padding-left: 1.25em;
+        font-style: italic;
+        color: var(--color-text-muted);
+        margin: 1.5em 0;
+        background-color: var(--color-brand-secondary);
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
+        border-radius: 0 8px 8px 0;
+      }
+      .content-body img {
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        margin-top: 2em;
+        margin-bottom: 2em;
+        max-width: 100%;
+        height: auto;
+      }
+      .content-body table {
+        width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+      .content-body th {
+        background-color: var(--color-brand-secondary);
+        border-bottom: 2px solid var(--color-brand-border);
+        padding: 0.75rem 1rem;
+        font-weight: 600;
+        color: var(--color-brand-primary);
+        text-align: left;
+      }
+      .content-body td {
+        border-bottom: 1px solid var(--color-brand-border);
+        padding: 0.75rem 1rem;
+        color: var(--color-text-muted);
+        vertical-align: top;
+      }
+      .content-body tr:hover {
+        background-color: var(--color-bg-card-hover);
+      }
+    </style>
+    <slot name="head" />
+  </head>
+  <body class="bg-brand-bg text-brand-text transition-colors duration-200 antialiased min-h-screen relative flex flex-col justify-between selection:bg-brand-accent selection:text-white">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 dark:bg-brand-primary/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+    <div class="absolute top-[300px] left-0 w-[400px] h-[400px] bg-brand-accent/5 dark:bg-brand-accent/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="border-b border-brand-border bg-brand-bg/85 backdrop-blur-md sticky top-0 z-50 transition-colors">
+      <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 font-extrabold text-xl tracking-tight text-brand-text">
+          <span class="text-brand-primary">🐾</span> CuidaTu<span class="text-brand-primary">PerroViejo</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <a href="/#pilares" class="text-sm font-medium text-brand-muted hover:text-brand-primary transition-colors">Pilares</a>
+          <ThemeToggle />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <slot />
+
+    <!-- Footer -->
+    <footer class="bg-brand-bg border-t border-brand-border py-8 transition-colors mt-auto">
+      <div class="max-w-5xl mx-auto px-4 text-center md:flex md:justify-between md:items-center text-brand-muted text-sm font-light">
+        <div class="flex flex-col items-center md:items-start gap-2">
+          <p>&copy; 2026 Cuida a tu Perro Viejo. Todos los derechos reservados.</p>
+          <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-normal">
+            <a href="/politica-de-cookies" class="hover:text-brand-primary transition-colors underline decoration-dotted underline-offset-2">Política de Cookies</a>
+            <span class="text-brand-border">•</span>
+            <a href="/politica-de-privacidad" class="hover:text-brand-primary transition-colors underline decoration-dotted underline-offset-2">Política de Privacidad</a>
+            <span class="text-brand-border">•</span>
+            <a href="/contacto" class="hover:text-brand-primary transition-colors underline decoration-dotted underline-offset-2">Contacto</a>
+            <span class="text-brand-border">•</span>
+            <a href="/acerca-de" class="hover:text-brand-primary transition-colors underline decoration-dotted underline-offset-2">Acerca de</a>
+          </div>
+        </div>
+        <p class="mt-2 md:mt-0 font-light">Comprometidos con el bienestar animal 🐾</p>
+      </div>
+    </footer>
+  </body>
+</html>

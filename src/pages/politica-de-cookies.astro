@@ -1,0 +1,395 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Política de Cookies | Cuida tu perro viejo";
+const description = "Consulta nuestra política de cookies. Conoce cómo gestionamos y tratamos la privacidad de tu navegación en nuestro portal.";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Head injection using slots -->
+  <script slot="head" type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Política de Cookies",
+    "url": "https://www.cuidatuperroviejo.com/politica-de-cookies",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Cuida tu perro viejo",
+      "url": "https://www.cuidatuperroviejo.com/"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Cookie Policy"
+    },
+    "dateModified": "2025-10-12"
+  }
+  </script>
+
+  <main class="max-w-3xl mx-auto px-5 py-10 md:py-16 content-body">
+    <!-- Navigation / Breadcrumbs -->
+    <div class="mb-4">
+      <a href="/" class="inline-flex items-center text-sm text-brand-primary hover:text-brand-primary-hover font-semibold gap-1 no-underline transition-colors back-btn">
+        <span>← Volver al inicio</span>
+      </a>
+    </div>
+
+    <!-- Page Header -->
+    <header class="mb-8 border-b border-brand-border pb-6">
+      <h1 class="text-3.5xl md:text-4.5xl font-extrabold text-brand-text mb-3 leading-tight">
+        Política de Cookies
+      </h1>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-muted font-light">
+        <span>Por <strong>Equipo de Cuida a tu perro viejo</strong></span>
+        <span class="text-brand-border">•</span>
+        <span>Última actualización: <strong>12 de octubre de 2025</strong></span>
+      </div>
+    </header>
+
+    <!-- Main Content Article -->
+    <article id="cookies-policy" itemscope itemtype="https://schema.org/WebPage" class="space-y-10">
+      
+      <!-- Section 1 -->
+      <section aria-labelledby="que-es" class="scroll-mt-20">
+        <h2 id="que-es" class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          1) ¿Qué son las cookies?
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Las <a href="https://www.google.com/search?q=cookies+privacy" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">cookies</a> y tecnologías similares (p. ej., <a href="https://www.google.com/search?q=define+pixels+tracking" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">píxeles</a>, <a href="https://www.google.com/search?q=define+local+storage+browser" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">almacenamiento local</a>) son pequeños archivos que guardan información en tu navegador para recordar tus preferencias, mejorar la experiencia y, en algunos casos, mostrar anuncios relevantes.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section aria-labelledby="como-usamos" class="scroll-mt-20">
+        <h2 id="como-usamos" class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          2) ¿Cómo las usamos?
+        </h2>
+        <ul class="space-y-2.5 text-sm md:text-base text-brand-muted leading-relaxed pl-5 list-disc font-light">
+          <li>
+            <strong><a href="https://www.google.com/search?q=define+strictly+necessary+cookies" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline font-semibold">Estrictamente necesarias</a>:</strong> habilitan funciones básicas del sitio (p. ej., carga y seguridad). No requieren consentimiento.
+          </li>
+          <li>
+            <strong><a href="https://www.google.com/search?q=define+analytics+and+performance+cookies" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline font-semibold">Analítica y rendimiento</a>:</strong> nos ayudan a entender el uso del sitio para mejorarlo.
+          </li>
+          <li>
+            <strong><a href="https://www.google.com/search?q=define+functionality+cookies" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline font-semibold">Funcionalidad</a>:</strong> recuerdan tus preferencias (idioma, región).
+          </li>
+          <li>
+            <strong><a href="https://www.google.com/search?q=define+advertising+and+measurement+cookies" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline font-semibold">Publicidad y medición</a>:</strong> permiten anuncios personalizados y medición de campañas.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 3 -->
+      <section aria-labelledby="base-legal" class="scroll-mt-20 space-y-4">
+        <h2 id="base-legal" class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          3) Base legal y requisitos por región
+        </h2>
+        
+        <!-- Accordion 1: EU / EEA / UK -->
+        <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+          <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+            <span>Unión Europea (UE) / EEE / Reino Unido</span>
+            <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+          </summary>
+          <div class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4 space-y-3 font-light">
+            <p>
+              Para <a href="https://www.google.com/search?q=define+non+essential+cookies" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">cookies no esenciales</a> (analítica, publicidad) necesitamos tu <em><a href="https://www.google.com/search?q=define+prior+consent+cookies" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">consentimiento previo</a></em>, libre, específico, informado e inequívoco, que puedas <em>retirar tan fácil como otorgar</em>. Las cookies necesarias pueden usarse sin consentimiento. El acceso no debe condicionarse a aceptar cookies (“<a href="https://www.google.com/search?q=define+cookie+walls" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">cookie walls</a>” no son válidos).
+            </p>
+            <p>
+              Referencias: <a href="https://www.google.com/search?q=ICO+PECR+GDPR+cookies" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">ICO/PECR y GDPR</a> (consentimiento y relación PECR-GDPR), y <a href="https://www.google.com/search?q=EDPB+guidelines+cookie+walls" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">criterios EDPB sobre cookie walls</a>.
+            </p>
+          </div>
+        </details>
+
+        <!-- Accordion 2: US -->
+        <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+          <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+            <span>Estados Unidos (incluyendo California)</span>
+            <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+          </summary>
+          <div class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4 space-y-3 font-light">
+            <p>
+              No siempre se exige consentimiento previo para cookies, pero si utilizamos datos para “venta” o <em>“compartir” con fines de publicidad conductual entre contextos</em>, debes poder <strong><a href="https://www.google.com/search?q=define+opt+out+data+privacy" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">optar por no participar</a></strong> (“<a href="https://www.google.com/search?q=define+Do+Not+Sell+or+Share" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">Do Not Sell or Share</a>”).
+            </p>
+            <p>
+              Si ofrecemos contenido dirigido a niños (&lt;13 años), aplican los requisitos de <strong><a href="https://www.google.com/search?q=COPPA+compliance" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">COPPA</a></strong> (como <a href="https://www.google.com/search?q=define+verifiable+parental+consent" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">consentimiento parental verificable</a>, limitaciones de uso y divulgación).
+            </p>
+            <p>
+              Referencias: <a href="https://www.google.com/search?q=CCPA+CPRA+compliance" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">CCPA/CPRA</a> (<a href="https://www.google.com/search?q=opt+out+of+sale+or+sharing" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">opt-out de venta/compartir</a>) y guías de COPPA de la <a href="https://www.google.com/search?q=Federal+Trade+Commission" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">FTC</a>.
+            </p>
+          </div>
+        </details>
+
+        <!-- Accordion 3: LatAm -->
+        <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+          <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+            <span>Latinoamérica (Brasil y México)</span>
+            <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+          </summary>
+          <div class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4 space-y-3 font-light">
+            <p>
+              <strong>Brasil (<a href="https://www.google.com/search?q=LGPD+Brazil" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">LGPD</a>):</strong> las cookies no esenciales requieren <em>consentimiento</em>; debe ser libre, informado e inequívoco, revocable en cualquier momento mediante un mecanismo simple. Las necesarias pueden basarse en interés legítimo u otra base según el caso.
+            </p>
+            <p>
+              <strong>México (LFPDPPP y Lineamientos de Aviso de Privacidad):</strong> exige avisarte sobre el uso de <em><a href="https://www.google.com/search?q=define+tracking+technologies" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">tecnologías de rastreo</a></em> (cookies, web beacons) e incluir mecanismos de <em><a href="https://www.google.com/search?q=define+opt+out" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">opt-out</a></em> cuando proceda, dentro del aviso de privacidad.
+            </p>
+            <p>
+              Referencias: Guía de ANPD (BR) sobre cookies y lineamientos mexicanos de aviso de privacidad.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <!-- Section 4 -->
+      <section aria-labelledby="gestionar" class="scroll-mt-20">
+        <h2 id="gestionar" class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          4) Gestionar o cambiar tus preferencias
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light mb-4">
+          Puedes gestionar las cookies de tres maneras:
+        </p>
+        <ol class="space-y-2.5 text-sm md:text-base text-brand-muted leading-relaxed pl-5 list-decimal mb-6 font-light">
+          <li>
+            <strong>Preferencias de este sitio:</strong> Abre nuestro <button type="button" id="abrir-preferencias-cookies" class="font-bold text-brand-primary dark:text-brand-primary-hover hover:underline cursor-pointer focus:outline-none">panel de preferencias de cookies</button> para activar o desactivar la analítica de navegación.
+          </li>
+          <li>
+            <strong>Navegador:</strong> borra o bloquea cookies desde la configuración propia de tu navegador (consulta el menú de Ayuda del mismo).
+          </li>
+          <li>
+            <strong>Publicidad de terceros:</strong> para anuncios personalizados, puedes ajustar tus preferencias en las plataformas publicitarias principales de forma externa.
+          </li>
+        </ol>
+        <p class="text-xs text-brand-muted/80 italic leading-relaxed font-light">
+          Nota: Si deshabilitas ciertas cookies, es posible que algunas funciones de este sitio web no se ejecuten correctamente.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section aria-labelledby="terceros" class="scroll-mt-20">
+        <h2 id="terceros" class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          5) Cookies de terceros
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Podemos permitir que terceros (p. ej., herramientas de analítica o publicidad como Google Analytics y Google Ads) coloquen cookies para fines de medición y personalización. Estos terceros son responsables de sus propias políticas de privacidad. Te sugerimos revisar sus avisos legales para más detalles.
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section aria-labelledby="retencion" class="scroll-mt-20">
+        <h2 id="retencion" class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          6) Plazos de conservación
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          La duración de las cookies varía: cookies <em>de sesión</em> (se borran automáticamente al cerrar el navegador) o cookies <em>persistentes</em> (permanecen almacenadas hasta su fecha de caducidad establecida o eliminación manual). Mantenemos configuraciones acordes a la finalidad y las revisamos periódicamente.
+        </p>
+      </section>
+
+      <!-- Section 7 -->
+      <section aria-labelledby="menores" class="scroll-mt-20">
+        <h2 id="menores" class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          7) Menores de edad
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          No dirigimos este sitio a menores de 13 años. Si identificamos datos de menores de edad sin la debida tutela, aplicaremos las medidas correspondientes (p. ej., eliminación y, cuando aplique, solicitud de consentimiento parental verificable).
+        </p>
+      </section>
+
+      <!-- Section 8 -->
+      <section aria-labelledby="cambios" class="scroll-mt-20">
+        <h2 id="cambios" class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          8) Cambios en esta política
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Podemos actualizar esta página para reflejar cambios legales o técnicos en la gestión de rastreadores. Siempre publicaremos la fecha de la última actualización en la parte superior del documento.
+        </p>
+      </section>
+
+      <!-- Section 9 -->
+      <section aria-labelledby="contacto" class="scroll-mt-20">
+        <h2 id="contacto" class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          9) Contacto
+        </h2>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Para resolver dudas sobre cookies, tus preferencias o privacidad en este sitio web, puedes escribir a <a href="mailto:toxedocat@gmail.com" class="text-brand-primary hover:underline">toxedocat@gmail.com</a>.
+        </p>
+      </section>
+
+      <!-- Section 10 -->
+      <section aria-labelledby="listado" class="scroll-mt-20">
+        <h2 id="listado" class="text-xl md:text-2xl font-bold font-serif text-brand-text mb-4 leading-tight">
+          10) Listado de cookies
+        </h2>
+        <p class="text-sm text-brand-muted leading-relaxed mb-4 font-light">
+          A continuación se presenta el inventario de cookies y tecnologías de rastreo implementadas en este portal:
+        </p>
+        
+        <div aria-label="Listado de cookies" class="overflow-x-auto border border-brand-border/60 rounded-2xl shadow-sm mb-4" role="region" tabindex="0">
+          <table class="min-w-full text-sm">
+            <thead>
+              <tr class="bg-brand-secondary/25">
+                <th class="p-3 text-left font-bold text-brand-text border-b border-brand-border/60">Nombre</th>
+                <th class="p-3 text-left font-bold text-brand-text border-b border-brand-border/60">Proveedor</th>
+                <th class="p-3 text-left font-bold text-brand-text border-b border-brand-border/60">Finalidad</th>
+                <th class="p-3 text-left font-bold text-brand-text border-b border-brand-border/60">Tipo</th>
+                <th class="p-3 text-left font-bold text-brand-text border-b border-brand-border/60">Duración</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-brand-border/50">
+              <tr>
+                <td class="p-3 text-brand-text font-medium">__ga</td>
+                <td class="p-3 text-brand-muted">Google Analytics</td>
+                <td class="p-3 text-brand-muted">Medir visitas y rutas de navegación anónimas</td>
+                <td class="p-3 text-brand-muted">Analítica (tercero)</td>
+                <td class="p-3 text-brand-muted">13 meses (UE) / según región</td>
+              </tr>
+              <tr>
+                <td class="p-3 text-brand-text font-medium">__gpi / IDE</td>
+                <td class="p-3 text-brand-muted">Google Ads</td>
+                <td class="p-3 text-brand-muted">Publicidad y medición de conversiones</td>
+                <td class="p-3 text-brand-muted">Publicidad (tercero)</td>
+                <td class="p-3 text-brand-muted">Hasta 13 meses (UE) / según región</td>
+              </tr>
+              <tr>
+                <td class="p-3 text-brand-text font-medium">ctpv_pref_analytics</td>
+                <td class="p-3 text-brand-muted">Cuida tu perro viejo</td>
+                <td class="p-3 text-brand-muted">Recordar tus preferencias sobre cookies analíticas</td>
+                <td class="p-3 text-brand-muted">Funcional (propia)</td>
+                <td class="p-3 text-brand-muted">12 meses</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- Interactive Preference Dialog (Modal) -->
+  <dialog id="pref-dialog" class="rounded-3xl p-6 md:p-8 bg-brand-card text-brand-text border border-brand-border shadow-2xl max-w-md w-full backdrop:bg-black/50 backdrop:backdrop-blur-sm focus:outline-none">
+    <div class="flex flex-col gap-4">
+      <div class="flex justify-between items-center border-b border-brand-border pb-3">
+        <h3 class="text-xl font-bold font-serif text-brand-primary">Preferencias de Cookies</h3>
+        <button id="close-pref-dialog" class="text-brand-muted hover:text-brand-text text-xl font-bold select-none cursor-pointer focus:outline-none" aria-label="Cerrar modal">&times;</button>
+      </div>
+      <p class="text-xs text-brand-muted leading-relaxed font-light">
+        Personaliza las cookies que permites en este sitio. Las cookies necesarias garantizan el funcionamiento básico del portal.
+      </p>
+      
+      <div class="space-y-4 my-2">
+        <!-- Cookie 1: Esenciales -->
+        <div class="flex items-center justify-between p-3.5 bg-brand-bg/50 border border-brand-border/60 rounded-2xl">
+          <div>
+            <h4 class="text-sm font-semibold text-brand-text">Cookies Necesarias</h4>
+            <p class="text-xs text-brand-muted font-light mt-0.5">Seguridad, idioma y rendimiento técnico.</p>
+          </div>
+          <span class="text-[10px] font-bold text-brand-primary bg-brand-secondary/40 px-2.5 py-1 rounded-full uppercase tracking-wider">Siempre Activo</span>
+        </div>
+
+        <!-- Cookie 2: Analítica -->
+        <div class="flex items-center justify-between p-3.5 bg-brand-bg/50 border border-brand-border/60 rounded-2xl">
+          <div>
+            <h4 class="text-sm font-semibold text-brand-text">Cookies Analíticas</h4>
+            <p class="text-xs text-brand-muted font-light mt-0.5">Google Analytics para métricas de tráfico anónimas.</p>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer select-none">
+            <input type="checkbox" id="analytics-toggle" checked class="sr-only peer" />
+            <div class="w-11 h-6 bg-brand-border/80 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-brand-border after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-primary"></div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Success Notification inside Dialog -->
+      <div id="save-success-msg" class="hidden text-xs text-center font-bold text-brand-primary bg-brand-secondary/20 p-2.5 rounded-xl border border-brand-primary/20 animate-fadeIn">
+        ¡Preferencias guardadas con éxito!
+      </div>
+
+      <div class="flex gap-3 justify-end border-t border-brand-border pt-4 mt-2">
+        <button id="save-pref-btn" class="px-5 py-2.5 bg-brand-primary hover:bg-brand-primary-hover text-white text-xs font-bold rounded-xl shadow-sm hover:shadow transition-all duration-200 cursor-pointer">
+          Guardar preferencias
+        </button>
+      </div>
+    </div>
+  </dialog>
+</BaseLayout>
+
+<script is:inline>
+(function () {
+  'use strict';
+
+  var dialog, openBtn, closeBtn, saveBtn, toggle, successMsg;
+
+  function init() {
+    dialog = document.getElementById('pref-dialog');
+    openBtn = document.getElementById('abrir-preferencias-cookies');
+    closeBtn = document.getElementById('close-pref-dialog');
+    saveBtn = document.getElementById('save-pref-btn');
+    toggle = document.getElementById('analytics-toggle');
+    successMsg = document.getElementById('save-success-msg');
+
+    if (!dialog || !openBtn || !closeBtn || !saveBtn || !toggle) return;
+
+    // Load initial preference from localStorage
+    var userPref = localStorage.getItem('ctpv_pref_analytics');
+    if (userPref === 'false') {
+      toggle.checked = false;
+    } else {
+      toggle.checked = true; // Default is true (enabled)
+    }
+
+    openBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      successMsg.classList.add('hidden');
+      dialog.showModal();
+    });
+
+    closeBtn.addEventListener('click', function () {
+      dialog.close();
+    });
+
+    // Close when clicking backdrop
+    dialog.addEventListener('click', function (event) {
+      var rect = dialog.getBoundingClientRect();
+      var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+      if (!isInDialog) {
+        dialog.close();
+      }
+    });
+
+    saveBtn.addEventListener('click', function () {
+      var enabled = toggle.checked;
+      localStorage.setItem('ctpv_pref_analytics', enabled ? 'true' : 'false');
+      
+      // If user opt-out, clean cookies starting with _ga
+      if (!enabled) {
+        try {
+          var cookies = document.cookie.split(';');
+          for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            var name = cookie.split('=')[0];
+            if (name.indexOf('_ga') === 0) {
+              document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname;
+              document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + window.location.hostname.replace('www.', '');
+            }
+          }
+        } catch (err) {
+          console.error('Error cleaning cookies: ', err);
+        }
+      }
+
+      // Show success notification inside dialog and close it after a short delay
+      successMsg.classList.remove('hidden');
+      setTimeout(function() {
+        dialog.close();
+      }, 1000);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+}());
+</script>

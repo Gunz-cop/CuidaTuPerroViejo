@@ -1,0 +1,730 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Selector de Ayudas de Movilidad para Perros Mayores | Test Interactivo";
+const description = "Selector interactivo que recomienda la ayuda de movilidad exacta (calcetines, arnés, rampa, silla de ruedas) según el nivel de movilidad real y temperamento de tu perro mayor.";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Head injection using slots -->
+  <script slot="head" type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.cuidatuperroviejo.com/#org",
+        "name": "Cuida tu perro viejo",
+        "url": "https://www.cuidatuperroviejo.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://blogger.googleusercontent.com/img/a/AVvXsEgIoczddeLgDHm-BeHn-Si4vx9Ih1feYIT7T33E2taOsgLp9SOnEBoYJ8AUO_gGMS3DyQ6fvOa05ynnHIqsRTV8ug_Jc1H26Yf0qcG8izFnDjuVroaciHwPOb96rwYfrPAmm7TgBTQwBABOZdn2n93CtLISj6teKwA1bY_tn3yZai4uXe3CojTtxpLe4us"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.cuidatuperroviejo.com/#website",
+        "url": "https://www.cuidatuperroviejo.com/",
+        "name": "Cuida tu perro viejo",
+        "publisher": { "@id": "https://www.cuidatuperroviejo.com/#org" },
+        "inLanguage": "es"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores",
+        "url": "https://www.cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores",
+        "name": "Selector de Ayudas de Movilidad para Perros Mayores | Test Interactivo",
+        "description": "Selector interactivo que recomienda la ayuda de movilidad exacta (calcetines, arnés, rampa, silla de ruedas) según el nivel de movilidad real y temperamento de tu perro mayor.",
+        "isPartOf": { "@id": "https://www.cuidatuperroviejo.com/#website" },
+        "about": { "@id": "https://www.cuidatuperroviejo.com/movilidad-dolor-perros-mayores" },
+        "breadcrumb": { "@id": "https://www.cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores#breadcrumb" },
+        "mainEntity": { "@id": "https://www.cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores#selector" },
+        "lastReviewed": "2026-05-14",
+        "inLanguage": "es"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio",    "item": "https://www.cuidatuperroviejo.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Movilidad", "item": "https://www.cuidatuperroviejo.com/movilidad-dolor-perros-mayores" },
+          { "@type": "ListItem", "position": 3, "name": "Selector de Movilidad", "item": "https://www.cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores" }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://www.cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores#selector",
+        "name": "Selector de Ayudas de Movilidad para Perros Mayores",
+        "operatingSystem": "Web",
+        "applicationCategory": "HealthApplication",
+        "offers": { "@type": "Offer", "price": 0, "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+        "description": "Herramienta interactiva gratuita que recomienda ayudas de movilidad canina (calcetines, arnés, rampa, silla de ruedas, cama ortopédica) según el nivel de movilidad del perro mayor y su temperamento.",
+        "softwareVersion": "1.0"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cómo saber si mi perro necesita silla de ruedas?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Está indicada cuando el perro ha perdido la función motora en sus patas traseras pero conserva buen estado general, apetito y voluntad de moverse. Consulta con tu veterinario antes: las medidas deben ser exactas." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Rampa o escalera adaptada?",
+            "acceptedAnswer": { "@type": "Answer", "text": "La rampa es mejor para perros con displasia de cadera o dolor articular. Las escaleras adaptadas son más compactas y sirven para debilidad leve. Si cojea al bajar escaleras normales, empieza con rampa." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Por qué la cama ortopédica es vital?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Los perros mayores pasan hasta 18 horas tumbados. Una superficie dura genera callosidades y úlceras de decúbito. El memory foam distribuye el peso y facilita que el perro se levante solo." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿El arnés de soporte trasero se puede usar todo el día?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Lo ideal son sesiones de 20-30 minutos para caminar, seguidas de descanso sin arnés. Revisa diariamente las zonas de contacto para evitar rozaduras." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <main class="max-w-3xl mx-auto px-5 py-10 md:py-16 content-body">
+    <!-- Header/Metadata -->
+    <header class="mb-8">
+      <div class="mb-4">
+        <a href="/" class="inline-flex items-center text-sm text-brand-primary hover:text-brand-primary-hover font-semibold gap-1 no-underline transition-colors back-btn">
+          <span>← Volver al inicio</span>
+        </a>
+      </div>
+
+      <figure class="rounded-3xl overflow-hidden shadow-lg border border-brand-border/40 mb-6">
+        <img 
+          alt="Mujer ayudando a un perro senior con debilidad en las patas traseras a caminar dentro de casa usando un arnés de soporte de movilidad" 
+          src="https://blogger.googleusercontent.com/img/a/AVvXsEhQQZ0MdxeErdh6SS8_s1vukasPGEgWWNxipQ5DNVSt7_IQpT7ktXYygynwlebpAivXsvZqHtFOR5s21tMxux7gvZcekbe2EmOMT7UTHtycPYta11xAFea5aI6h6GNtDs6JMSkqXjnP3MWwOhVzSXkxcMcp-pPyKLQ_KAS-XOU3JOTy2eE6hwXmQzhZhnk=s16000-rw" 
+          width="1200" 
+          height="525" 
+          loading="eager" 
+          decoding="async" 
+          title="Selector de ayudas de movilidad para perros ancianos"
+          class="w-full object-cover aspect-[16/7]" 
+        />
+      </figure>
+
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-muted border-b border-brand-border pb-6 mb-8 font-light">
+        <span>Por <strong>Equipo de Cuida a tu perro viejo</strong></span>
+        <span class="text-brand-border">•</span>
+        <span>Actualizado el <strong>14 de mayo de 2026</strong></span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="mb-8" aria-label="Tabla de contenidos">
+      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-4 transition-all duration-300">
+        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+          <span>Contenido de esta página</span>
+          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <ul class="mt-4 space-y-2 text-sm pl-4 list-disc text-brand-muted border-t border-brand-border/40 pt-4">
+          <li><a href="#cm5-selector" class="hover:text-brand-accent transition-colors no-underline">Selector interactivo de movilidad</a></li>
+          <li><a href="#cm5-faq" class="hover:text-brand-accent transition-colors no-underline">Preguntas frecuentes</a></li>
+          <li><a href="#cm5-seo" class="hover:text-brand-accent transition-colors no-underline">La movilidad es autonomía emocional</a></li>
+          <li><a href="#cm5-refs" class="hover:text-brand-accent transition-colors no-underline">Referencias médicas</a></li>
+        </ul>
+      </details>
+    </nav>
+
+    <!-- Empathetic Introduction -->
+    <section class="mb-8">
+      <h2 class="text-3xl font-bold font-serif text-brand-text mb-4 leading-tight">
+        Cuidar a un perro que ya no se mueve bien <span class="text-brand-primary block md:inline">es un acto de amor enorme. Hay ayudas concretas.</span>
+      </h2>
+      <p class="text-lg text-brand-muted leading-relaxed">
+        Si estás aquí es porque ves a tu compañero luchar y quieres hacer algo <em>ahora</em>. Este selector te da una recomendación exacta según su nivel de movilidad actual.
+      </p>
+    </section>
+
+    <!-- Interactive App Selector Container -->
+    <div id="cm5-selector" class="scroll-mt-20"></div>
+    <div aria-label="Selector de ayudas de movilidad para perros mayores" class="bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-6 md:p-10 shadow-sm mb-12 h-calc-container" role="region">
+
+      <!-- PANTALLA 0: Intro -->
+      <div class="text-center" id="m5s0">
+        <div aria-hidden="true" class="text-5xl mb-4 select-none">🦴</div>
+        <span class="inline-block text-[11px] font-bold tracking-widest uppercase text-brand-primary mb-2">Test • 2 preguntas • 30 segundos</span>
+        <h3 class="text-2xl md:text-3xl font-extrabold text-brand-text mb-4 font-serif leading-tight">Encontremos la ayuda exacta para tu perro</h3>
+        <p class="text-brand-muted text-sm max-w-lg mx-auto leading-relaxed mb-8">
+          Responde según cómo está hoy. Al final recibes productos específicos y, si lo necesita, orientación sobre cuidados paliativos.
+        </p>
+        <button class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-brand-primary text-white hover:bg-brand-primary-hover shadow-sm hover:shadow transition-all duration-200 cursor-pointer" id="m5start" type="button">
+          Empezar ahora →
+        </button>
+      </div>
+
+      <!-- PANTALLA 1: Nivel de movilidad -->
+      <div class="off" id="m5s1">
+        <div class="flex items-center gap-4 mb-8">
+          <button class="px-3 py-1.5 rounded-full bg-brand-card/70 hover:bg-brand-card-hover text-brand-text text-xs font-semibold transition-all cursor-pointer border border-brand-border/40" id="m5b1" type="button">← Volver</button>
+          <div aria-valuemax="2" aria-valuemin="0" aria-valuenow="1" class="flex-1 h-2 bg-brand-border/40 rounded-full overflow-hidden" role="progressbar">
+            <div class="h-full bg-brand-primary rounded-full transition-all duration-300" id="m5pb1"></div>
+          </div>
+          <span aria-label="Paso 1 de 2" class="text-xs font-bold text-brand-primary whitespace-nowrap">1 / 2</span>
+        </div>
+        <p class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-2" id="m5lb1"></p>
+        <p class="text-xl md:text-2xl font-bold text-brand-text font-serif mb-6 leading-tight" id="m5qt1"></p>
+        <div class="flex flex-col gap-3" id="m5oo1"></div>
+      </div>
+
+      <!-- PANTALLA 2: Carácter -->
+      <div class="off" id="m5s2">
+        <div class="flex items-center gap-4 mb-8">
+          <button class="px-3 py-1.5 rounded-full bg-brand-card/70 hover:bg-brand-card-hover text-brand-text text-xs font-semibold transition-all cursor-pointer border border-brand-border/40" id="m5b2" type="button">← Volver</button>
+          <div aria-valuemax="2" aria-valuemin="0" aria-valuenow="2" class="flex-1 h-2 bg-brand-border/40 rounded-full overflow-hidden" role="progressbar">
+            <div class="h-full bg-brand-primary rounded-full transition-all duration-300" id="m5pb2"></div>
+          </div>
+          <span aria-label="Paso 2 de 2" class="text-xs font-bold text-brand-primary whitespace-nowrap">2 / 2</span>
+        </div>
+        <p class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-2" id="m5lb2"></p>
+        <p class="text-xl md:text-2xl font-bold text-brand-text font-serif mb-6 leading-tight" id="m5qt2"></p>
+        <div class="flex flex-col gap-3" id="m5oo2"></div>
+      </div>
+
+      <!-- PANTALLA 3: Resultado -->
+      <div class="off" id="m5s3">
+        <!-- Alerta paliativa (visible solo nivel S) -->
+        <div class="off bg-red-500/10 dark:bg-red-950/20 border-l-4 border-l-red-600 rounded-r-2xl rounded-l-md p-5 my-6" id="m5alert" role="alert">
+          <div class="text-xs font-extrabold tracking-widest uppercase text-red-600 dark:text-red-400 mb-3 flex items-center gap-1.5">
+            <span>⚠️</span> Cuidado paliativo importante
+          </div>
+          <ul class="space-y-3 pl-0 list-none text-brand-text text-sm font-light">
+            <li class="relative pl-6 leading-relaxed">
+              <span class="absolute left-0 text-red-600 dark:text-red-400">⚠️</span>
+              Para la higiene: considera <strong>pañales caninos</strong> y <strong>empapadores absorbentes</strong> bajo su zona de descanso. Cámbialos con frecuencia para evitar dermatitis.
+            </li>
+            <li class="relative pl-6 leading-relaxed">
+              <span class="absolute left-0 text-red-600 dark:text-red-400">⚠️</span>
+              <strong>Cambia su posición cada 4 horas</strong> si no puede moverse solo, para prevenir úlceras de decúbito.
+              <a href="/2025/05/articulo-65-prevencion-llagas-perros.html" rel="noopener" target="_blank" class="text-brand-primary hover:underline font-bold block mt-1">Cómo hacerlo sin causarle dolor →</a>
+            </li>
+            <li class="relative pl-6 leading-relaxed">
+              <span class="absolute left-0 text-red-600 dark:text-red-400">⚠️</span>
+              Evalúa si hay <strong>dolor controlado</strong> con nuestra
+              <a href="/herramientas/calculadora-calidad-vida-perros" rel="noopener" target="_blank" class="text-brand-primary hover:underline font-bold block mt-1">Calculadora HHHHHMM →</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Hero del resultado -->
+        <div class="text-center pb-6 mb-6 border-b border-brand-border/40">
+          <div aria-hidden="true" class="text-4xl mb-2" id="m5rico"></div>
+          <div class="inline-block bg-brand-secondary text-brand-primary text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-3" id="m5rbadge"></div>
+          <h3 class="text-2xl font-bold font-serif text-brand-text mb-2" id="m5rtit" itemprop="name"></h3>
+        </div>
+
+        <p class="text-base text-brand-muted leading-relaxed mb-6" id="m5rdesc"></p>
+
+        <!-- Lista de productos -->
+        <div class="flex flex-col gap-4 mb-8" id="m5prods"></div>
+
+        <!-- Acciones -->
+        <div class="flex flex-col gap-3">
+          <button class="w-full py-3.5 px-6 rounded-xl font-semibold border border-brand-border hover:bg-brand-card-hover text-brand-text text-sm transition-all duration-200 cursor-pointer text-center" id="m5rst" type="button">
+            ↻ Repetir el test
+          </button>
+        </div>
+        <p class="text-xs text-brand-muted/70 text-center italic mt-4 max-w-md mx-auto leading-relaxed">
+          Esta recomendación es una guía de apoyo. Ante dudas, consulta siempre a tu veterinario.
+        </p>
+      </div>
+
+    </div><!--/.m5card-->
+
+    <!-- FAQs -->
+    <div id="cm5-faq" class="scroll-mt-20"></div>
+    <section class="mt-12 border-t border-brand-border pt-10">
+      <h3 class="text-2.5xl font-bold text-brand-primary mb-6 font-serif">Preguntas frecuentes</h3>
+
+      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 mb-4 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+          <span>¿Cómo saber si mi perro necesita silla de ruedas?</span>
+          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4">
+          Una silla de ruedas canina está indicada cuando el perro ha perdido la función motora
+          en sus patas traseras pero conserva buen estado general, apetito y voluntad de moverse.
+          Signos claros: arrastra las patas traseras sin corregirse, no puede levantarse ni con ayuda,
+          pero sigue queriendo explorar y sigue comiendo bien. Consulta con tu veterinario antes de comprar:
+          las medidas deben ser exactas para que no cause rozaduras.
+        </p>
+      </details>
+
+      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 mb-4 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+          <span>¿Rampa o escalera adaptada? ¿Cuál es mejor?</span>
+          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4">
+          Depende del peso y del problema articular. <strong>La rampa</strong> es mejor para perros
+          con displasia de cadera o dolor en las articulaciones: la inclinación gradual reduce
+          el estrés en la cadera al subir al sofá o al coche.
+          <strong>Las escaleras adaptadas</strong> ocupan menos espacio y son buenas para perros con
+          debilidad leve que aún pueden doblar las rodillas sin dolor.
+          Regla práctica: si cojea al bajar escaleras normales, empieza con rampa.
+        </p>
+      </details>
+
+      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 mb-4 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+          <span>¿Por qué la cama ortopédica es vital para un perro mayor?</span>
+          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4">
+          Los perros mayores con movilidad reducida pasan hasta 18 horas tumbados. Una superficie dura
+          concentra la presión en los puntos de contacto (codos, caderas, costillas), lo que genera
+          callosidades, úlceras de decúbito y dolor crónico.
+          Las camas de <strong>memory foam ortopédico</strong> distribuyen el peso uniformemente,
+          mantienen el calor y facilitan que el perro se levante solo (bordes firmes como punto de apoyo).
+          Una cama ortopédica no es un lujo: es prevención activa del dolor.
+        </p>
+      </details>
+
+      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 mb-4 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
+        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+          <span>¿El arnés de soporte trasero se puede usar todo el día?</span>
+          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4">
+          No se recomienda un uso continuo. Lo ideal son sesiones de 20–30 minutos para caminar
+          y hacer necesidades, seguidas de descanso sin arnés para evitar rozaduras e irritación
+          en la piel. Revisa diariamente las zonas de contacto (ingles, axilas traseras) y asegúrate
+          de que no esté ni muy apretado ni tan suelto que no sostenga.
+        </p>
+      </details>
+    </section>
+
+    <!-- SEO Content Section -->
+    <div id="cm5-seo" class="scroll-mt-20"></div>
+    <section aria-labelledby="m5seoh" class="bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-3xl p-6 md:p-8 my-12">
+      <h3 id="m5seoh" class="text-xl md:text-2xl font-bold text-brand-text font-serif leading-tight mb-4">La movilidad es autonomía emocional</h3>
+      
+      <p class="text-brand-muted text-sm md:text-base leading-relaxed mb-4">
+        Hay un concepto que los veterinarios repiten y que los dueños rara vez conocen:
+        <strong>sarcopenia canina</strong>. Es la pérdida progresiva e inevitable de masa muscular
+        que ocurre en todos los perros a partir de los 7–8 años (antes en razas grandes).
+        La sarcopenia no duele en sí misma, pero sus consecuencias sí: patas que no responden,
+        fatiga con recorridos cortos, dificultad para levantarse del suelo.
+      </p>
+
+      <div class="bg-brand-secondary/35 border-l-4 border-brand-primary rounded-r-xl rounded-l-md p-4 my-6 italic text-brand-text text-sm md:text-base leading-relaxed" role="note">
+        Un perro que no se mueve pierde el 3–5 % de su masa muscular por semana de inactividad.
+        Cada día que se mueve, aunque sea poco, frena ese reloj.
+      </div>
+
+      <p class="text-brand-muted text-sm md:text-base leading-relaxed mb-4">
+        Junto a la sarcopenia actúa la pérdida <strong>propioceptiva</strong>: el sistema nervioso
+        deja de saber con precisión dónde están las patas en el espacio. Por eso el perro
+        mayor pisa con inseguridad, se resbala al girar o duda antes de bajar un escalón. No es descuido:
+        es que literalmente no siente el suelo con la misma nitidez.
+      </p>
+
+      <p class="text-brand-muted text-sm md:text-base leading-relaxed mb-4">
+        Pero hay algo igual de importante que la física: el impacto emocional.
+        Un perro que no puede seguirte, que no puede llegar al agua solo, que necesita que le levanten
+        para salir al jardín, <em>sufre de forma diferente</em>. La movilidad, aunque sea asistida,
+        le devuelve agencia sobre su entorno. Un arnés que le permite caminar, una rampa que le
+        permite subir al sofá contigo — esas cosas no son accesorios: son calidad de vida medible.
+      </p>
+
+      <p class="text-brand-muted text-sm md:text-base leading-relaxed mb-6">
+        Los estudios del <strong>WSAVA Rehabilitation Committee</strong> destacan que la movilidad asistida
+        reduce los marcadores de estrés en perros con enfermedad degenerativa articular, incluso
+        cuando la causa subyacente no mejora. Mover al perro es cuidarle.
+      </p>
+
+      <div>
+        <a href="/movilidad-dolor-perros-mayores" title="Guía completa de movilidad y dolor en perros mayores" class="inline-block w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 text-center no-underline text-sm">
+          Leer la guía completa: Movilidad y Dolor en Perros Mayores →
+        </a>
+      </div>
+    </section>
+
+    <!-- Medical References -->
+    <div id="cm5-refs" class="scroll-mt-20"></div>
+    <footer class="mt-12 border-t border-brand-border pt-6 text-xs text-brand-muted leading-relaxed">
+      <p class="mb-0">
+        <strong>Referencias médicas:</strong>
+        <a href="https://wsava.org/global-guidelines/global-pain-council-guidelines/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">WSAVA Global Pain Management Guidelines</a>
+        ·
+        <a href="https://www.aaha.org/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">AAHA Senior Care Guidelines 2023</a>
+        ·
+        <a href="https://cvm.ncsu.edu/wp-content/uploads/2024/09/Quality-of-Life-Scale.pdf" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">Villalobos, A. — Quality of Life Scale (NCSU, 2024)</a>
+        ·
+        <a href="/herramientas/calculadora-calidad-vida-perros" class="text-brand-primary hover:underline">Calculadora HHHHHMM — cuidatuperroviejo.com</a>
+      </p>
+    </footer>
+  </main>
+</BaseLayout>
+
+<style>
+  /* Blogger-safe utility: off toggles display */
+  .off {
+    display: none !important;
+  }
+
+  /* Fade-in animation */
+  @keyframes m5in {
+    from {
+      opacity: 0;
+      transform: translateY(7px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .m5anim {
+    animation: m5in 0.26s ease forwards;
+  }
+</style>
+
+<script is:inline>
+(function () {
+  'use strict';
+
+  /* ── Textos ── */
+  var LB1 = 'Nivel de movilidad';
+  var LB2 = 'Car\u00e1cter con su cuerpo';
+  var QT1 = '\u00bfQu\u00e9 ayuda necesita tu perro hoy?';
+  var QT2 = '\u00bfC\u00f3mo es con sus patas y cuerpo?';
+
+  var OPT1 = [
+    {
+      ico: '\uD83D\uDC3E',
+      tx:  'Nivel Ligero',
+      sub: 'Camina pero resbala o tiene miedo al suelo',
+      v:   'L',
+      lvl: 'L'
+    },
+    {
+      ico: '\uD83D\uDEB6',
+      tx:  'Nivel Moderado',
+      sub: 'Se fatiga r\u00e1pido, debilidad trasera o le cuestan las escaleras',
+      v:   'M',
+      lvl: 'M'
+    },
+    {
+      ico: '\uD83D\uDECC',
+      tx:  'Nivel Severo',
+      sub: 'Ya no puede levantarse solo o perdi\u00f3 el uso de las patas traseras',
+      v:   'S',
+      lvl: 'S'
+    }
+  ];
+
+  var OPT2 = [
+    {
+      ico: '\uD83D\uDE0C',
+      tx:  'Se deja manipular con calma',
+      sub: 'Tolera que le toquen las patas y el cuerpo',
+      v:   'A',
+      lvl: ''
+    },
+    {
+      ico: '\uD83D\uDE2C',
+      tx:  'Se estresa o reacciona mal',
+      sub: 'Intenta morder, huye o gru\u00f1e cuando le tocan',
+      v:   'B',
+      lvl: ''
+    }
+  ];
+
+  /* ── Datos de resultados ── */
+  var RES = {
+    LA: {
+      ico:   '\u2705',
+      badge: 'Nivel Ligero \u2013 Tolera accesorios',
+      tit:   'Calcetines y botas antideslizantes',
+      desc:  'Tu perro necesita tracci\u00f3n segura en el suelo. Los calcetines de silicona son el primer paso; las botas de caucho dan soporte lateral extra.',
+      prods: [
+        { name: 'Calcetines antideslizantes de silicona',
+          why:  'Agarre inmediato en parquet. F\u00e1ciles de poner, se lavan a diario.',
+          url:  'https://s.click.aliexpress.com/e/_c4Ksutk5' },
+        { name: 'Botas de caucho con suela estructurada',
+          why:  'Cubren el tobillo. Ideales cuando las patas se abren lateralmente.',
+          url:  'https://s.click.aliexpress.com/e/_c3jZdpHP' }
+      ]
+    },
+
+    LB: {
+      ico:   '\u2705',
+      badge: 'Nivel Ligero \u2013 Mejor sin accesorios en patas',
+      tit:   'Alfombras antideslizantes por toda la casa',
+      desc:  'Como no tolera cosas en las patas, la soluci\u00f3n es el entorno. Cubrir sus rutas elimina el riesgo sin ning\u00fan estr\u00e9s para \u00e9l.',
+      prods: [
+        { name: 'Alfombras de yoga (antideslizantes)',
+          why:  'Bajan el riesgo de ca\u00edda sin que el perro note nada. Una por corredor.',
+          url:  'https://s.click.aliexpress.com/e/_c4EfIVmD' },
+        { name: 'Runners para pasillos',
+          why:  'Cubren tramos largos. Se pueden cortar a medida y no se deslizan.',
+          url:  'https://s.click.aliexpress.com/e/_c3pSeh6p' }
+      ]
+    },
+
+    MA: {
+      ico:   '\u2705',
+      badge: 'Nivel Moderado \u2013 Tolera arn\u00e9s',
+      tit:   'Arn\u00e9s de soporte trasero + rampa de acceso',
+      desc:  'Necesita apoyo activo para caminar y acceder a superficies elevadas. El arn\u00e9s te permite guiarle sin da\u00f1ar su espalda ni la tuya.',
+      prods: [
+        { name: 'Arn\u00e9s de soporte trasero con asa dorsal',
+          why:  'Sostiene las caderas al caminar. Te protege la espalda a ti tambi\u00e9n.',
+          url:  'https://s.click.aliexpress.com/e/_DFhM6S7' },
+        { name: 'Rampa plegable para coches y sof\u00e1s',
+          why:  'Elimina el salto. Superficie antideslizante, inclinaci\u00f3n gradual.',
+          url:  'https://s.click.aliexpress.com/e/_Dk1eTpt' },
+        { name: 'Escaleras adaptadas (espuma + funda lavable)',
+          why:  'Para espacios reducidos. M\u00e1s compactas que la rampa.',
+          url:  'https://s.click.aliexpress.com/e/_Dei2D0J' }
+      ]
+    },
+
+    MB: {
+      ico:   '\u2705',
+      badge: 'Nivel Moderado \u2013 Prefiere manipulaci\u00f3n m\u00ednima',
+      tit:   'Rampa de acceso + alfombras de ruta',
+      desc:  'Como se estresa con el contacto, priorizamos soluciones de entorno. La rampa le da autonom\u00eda; las alfombras crean un camino seguro sin tocarlo.',
+      prods: [
+        { name: 'Rampa plegable con superficie antideslizante',
+          why:  'Se adapta a coches y muebles. \u00c9l sube y baja solo cuando est\u00e9 listo.',
+          url:  'https://s.click.aliexpress.com/e/_Dk1eTpt' },
+        { name: 'Alfombras runner para rutas habituales',
+          why:  'Traza su camino seguro sin que necesite llevar nada encima.',
+          url:  'https://s.click.aliexpress.com/e/_c3pSeh6p' },
+        { name: 'Cama ortop\u00e9dica de memory foam',
+          why:  'Reduce el esfuerzo de levantarse. Bordes firmes como punto de apoyo.',
+          url:  'https://s.click.aliexpress.com/e/_DmRsn9H' }
+      ]
+    },
+
+    SA: {
+      ico:   '\u2764\uFE0F',
+      badge: 'Nivel Severo \u2013 Cuidado paliativo',
+      tit:   'Silla de ruedas canina + cama ortop\u00e9dica + soporte de cadera',
+      desc:  'Tu perro necesita apoyo total. La silla de ruedas le devuelve movilidad; la cama ortop\u00e9dica previene \u00falceras de dec\u00fabito. Revisa la alerta paliativa arriba.',
+      prods: [
+        { name: 'Silla de ruedas canina trasera (a medida)',
+          why:  'Le permite moverse solo. Fundamental para su calidad de vida y estado mental.',
+          url:  'https://s.click.aliexpress.com/e/_DkwyN83' },
+        { name: 'Cama de memory foam ortop\u00e9dico (bordes altos)',
+          why:  'Distribuye el peso, previene llagas. Los bordes firmes ayudan a incorporarse.',
+          url:  'https://s.click.aliexpress.com/e/_DmRsn9H' },
+        { name: 'Soporte de cadera / faja lumbar canina',
+          why:  'Para los momentos en que le ayudas a caminar sin silla.',
+          url:  'https://s.click.aliexpress.com/e/_Dmn5fL1' },
+        { name: 'Pa\u00f1ales caninos + empapadores absorbentes',
+          why:  'Para la higiene cuando ya no controla esfínteres.',
+          url:  'https://s.click.aliexpress.com/e/_Dd80lF9' }
+      ]
+    },
+
+    SB: {
+      ico:   '\u2764\uFE0F',
+      badge: 'Nivel Severo \u2013 Cuidado paliativo',
+      tit:   'Silla de ruedas + cama ortop\u00e9dica + entorno adaptado',
+      desc:  'Como se estresa con el contacto, lo prioritario es darle el m\u00e1ximo de autonom\u00eda posible con ayudas de entorno. Revisa la alerta paliativa arriba.',
+      prods: [
+        { name: 'Silla de ruedas canina trasera (a medida)',
+          why:  'Le permite moverse sin depender de tu ayuda. Reduce su ansiedad.',
+          url:  'https://s.click.aliexpress.com/e/_DkwyN83' },
+        { name: 'Cama de memory foam ortop\u00e9dico',
+          why:  'Previene \u00falceras. Elige una con cubierta de felpa suave: menos fricci\u00f3n.',
+          url:  'https://s.click.aliexpress.com/e/_DmRsn9H' },
+        { name: 'Pa\u00f1ales caninos desechables + empapadores',
+          why:  'Para la higiene. C\u00e1mbialos cada vez que est\u00e9n mojados para evitar dermatitis.',
+          url:  'https://s.click.aliexpress.com/e/_Dd80lF9' }
+      ]
+    }
+  };
+
+  /* ── Estado ── */
+  var a1 = null, a2 = null;
+
+  /* ── DOM (cacheado en init) ── */
+  var D = {};
+
+  function init() {
+    D.s0     = document.getElementById('m5s0');
+    D.s1     = document.getElementById('m5s1');
+    D.s2     = document.getElementById('m5s2');
+    D.s3     = document.getElementById('m5s3');
+    D.start  = document.getElementById('m5start');
+    D.b1     = document.getElementById('m5b1');
+    D.b2     = document.getElementById('m5b2');
+    D.pb1    = document.getElementById('m5pb1');
+    D.pb2    = document.getElementById('m5pb2');
+    D.lb1    = document.getElementById('m5lb1');
+    D.lb2    = document.getElementById('m5lb2');
+    D.qt1    = document.getElementById('m5qt1');
+    D.qt2    = document.getElementById('m5qt2');
+    D.oo1    = document.getElementById('m5oo1');
+    D.oo2    = document.getElementById('m5oo2');
+    D.alert  = document.getElementById('m5alert');
+    D.rico   = document.getElementById('m5rico');
+    D.rbadge = document.getElementById('m5rbadge');
+    D.rtit   = document.getElementById('m5rtit');
+    D.rdesc  = document.getElementById('m5rdesc');
+    D.prods  = document.getElementById('m5prods');
+    D.rst    = document.getElementById('m5rst');
+
+    /* Textos de preguntas */
+    D.lb1.textContent = LB1;
+    D.lb2.textContent = LB2;
+    D.qt1.textContent = QT1;
+    D.qt2.textContent = QT2;
+
+    /* Barras de progreso */
+    D.pb1.style.width = '50%';
+    D.pb2.style.width = '100%';
+
+    /* Construir opciones */
+    mkOpts(D.oo1, OPT1, function (v) { a1 = v; go(D.s1, D.s2); });
+    mkOpts(D.oo2, OPT2, function (v) { a2 = v; showResult(a1 + a2); });
+
+    /* Navegación */
+    D.start.addEventListener('click', function () { go(D.s0, D.s1); });
+    D.b1.addEventListener('click',    function () { go(D.s1, D.s0); });
+    D.b2.addEventListener('click',    function () { go(D.s2, D.s1); a1 = null; });
+    D.rst.addEventListener('click',   reset);
+  }
+
+  /* ── Transición ── */
+  function go(from, to) {
+    from.classList.add('off');
+    to.classList.remove('off');
+    to.classList.remove('m5anim');
+    void to.offsetWidth;
+    to.classList.add('m5anim');
+  }
+
+  /* ── Construir botones de opción ── */
+  function mkOpts(container, opts, cb) {
+    opts.forEach(function (o) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      
+      // Dynamic button with beautiful Tailwind classes
+      btn.className = 'w-full min-h-[68px] p-4 bg-brand-card/50 dark:bg-slate-900/35 hover:bg-brand-card-hover dark:hover:bg-slate-900/60 border-2 border-transparent focus:border-brand-primary hover:border-brand-primary/60 active:border-brand-primary rounded-2xl flex items-center gap-4 text-left transition-all duration-150 outline-none select-none cursor-pointer';
+      
+      if (o.lvl === 'S') {
+        btn.addEventListener('mouseenter', function() { btn.style.borderColor = '#b71c1c'; });
+        btn.addEventListener('mouseleave', function() { btn.style.borderColor = 'transparent'; });
+        btn.addEventListener('focus', function() { btn.style.borderColor = '#b71c1c'; });
+        btn.addEventListener('blur', function() { btn.style.borderColor = 'transparent'; });
+      }
+      
+      btn.setAttribute('aria-label', o.tx + (o.sub ? ': ' + o.sub : ''));
+
+      var ico = document.createElement('span');
+      ico.className = 'text-2xl min-w-[32px] text-center select-none';
+      ico.setAttribute('aria-hidden', 'true');
+      ico.textContent = o.ico;
+
+      var body = document.createElement('span');
+      body.className = 'flex-1 flex flex-col';
+
+      var tx = document.createElement('span');
+      tx.className = 'font-semibold text-brand-text text-sm leading-snug';
+      tx.textContent = o.tx;
+      body.appendChild(tx);
+
+      if (o.sub) {
+        var sub = document.createElement('span');
+        sub.className = 'text-xs text-brand-muted mt-1 leading-normal font-normal';
+        sub.textContent = o.sub;
+        body.appendChild(sub);
+      }
+
+      var arr = document.createElement('span');
+      arr.className = 'text-xl text-brand-muted/40 font-light select-none ml-auto';
+      arr.setAttribute('aria-hidden', 'true');
+      arr.textContent = '\u203a'; // '›'
+
+      btn.appendChild(ico);
+      btn.appendChild(body);
+      btn.appendChild(arr);
+      btn.addEventListener('click', function () { cb(o.v); });
+      container.appendChild(btn);
+    });
+  }
+
+  /* ── Mostrar resultado ── */
+  function showResult(key) {
+    var r = RES[key];
+    if (!r) return;
+
+    /* Alerta paliativa: visible solo si nivel S */
+    if (a1 === 'S') {
+      D.alert.classList.remove('off');
+    } else {
+      D.alert.classList.add('off');
+    }
+
+    D.rico.textContent   = r.ico;
+    D.rbadge.textContent = r.badge;
+    D.rtit.textContent   = r.tit;
+    D.rdesc.textContent  = r.desc;
+
+    /* Construir tarjetas de productos */
+    D.prods.innerHTML = '';
+    r.prods.forEach(function (p) {
+      var card = document.createElement('div');
+      card.className = 'bg-brand-card/30 dark:bg-slate-900/15 border-l-4 border-brand-primary rounded-r-2xl rounded-l-md p-5 flex flex-col gap-2 relative shadow-sm border border-brand-border/40';
+
+      var name = document.createElement('div');
+      name.className = 'font-bold text-brand-text text-base';
+      name.textContent = p.name;
+
+      var why = document.createElement('div');
+      why.className = 'text-sm text-brand-muted leading-relaxed';
+      why.textContent = p.why;
+
+      var link = document.createElement('a');
+      link.className = 'inline-flex self-start items-center gap-1.5 rounded-full border border-brand-primary px-4 py-1.5 text-xs font-bold text-brand-primary hover:bg-brand-primary hover:text-white transition-all no-underline cursor-pointer';
+      link.href = p.url;
+      link.target = '_blank';
+      link.rel = 'noopener sponsored';
+      link.textContent = 'Ver en AliExpress \u2192'; // '→'
+
+      card.appendChild(name);
+      card.appendChild(why);
+      card.appendChild(link);
+      D.prods.appendChild(card);
+    });
+
+    go(D.s2, D.s3);
+  }
+
+  /* ── Reset ── */
+  function reset() {
+    a1 = null;
+    a2 = null;
+    D.s1.classList.add('off');  D.s1.classList.remove('m5anim');
+    D.s2.classList.add('off');  D.s2.classList.remove('m5anim');
+    D.s3.classList.add('off');  D.s3.classList.remove('m5anim');
+    D.s0.classList.remove('off');
+    D.s0.classList.remove('m5anim');
+    void D.s0.offsetWidth;
+    D.s0.classList.add('m5anim');
+  }
+
+  /* ── Arranque robusto para Blogger/Astro ── */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+}());
+</script>
