@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Página no encontrada | Cuida tu perro viejo";
+const description = "Lo sentimos, la página que buscas no existe o ha sido trasladada.";
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="max-w-3xl mx-auto px-5 py-16 md:py-24 flex items-center justify-center min-h-[70vh]">
+    <div class="text-center max-w-md mx-auto bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-8 md:p-12 shadow-sm relative overflow-hidden">
+      <div class="absolute -top-10 -right-10 w-24 h-24 bg-brand-primary/10 rounded-full blur-xl"></div>
+      
+      <div class="w-20 h-20 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-primary text-4xl select-none">
+        🦮💤
+      </div>
+      
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-text mb-4 leading-tight font-serif">
+        Página no encontrada
+      </h1>
+      
+      <p class="text-brand-muted leading-relaxed font-light mb-8 text-sm">
+        Parece que nos hemos desviado del camino. La página que buscas no existe, ha cambiado de nombre o fue movida a otra sección durante nuestra mudanza.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/" 
+          class="inline-flex items-center justify-center px-6 py-3 bg-brand-primary hover:bg-brand-primary-hover active:scale-[0.98] text-white text-sm font-bold rounded-xl shadow-md transition-all duration-200 cursor-pointer no-underline"
+        >
+          Ir al Inicio
+        </a>
+        <a 
+          href="/#pilares" 
+          class="inline-flex items-center justify-center px-6 py-3 border border-brand-primary/30 text-brand-primary hover:bg-brand-primary/5 text-sm font-semibold rounded-xl transition-all duration-200 no-underline"
+        >
+          Explorar Temas
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
