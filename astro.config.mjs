@@ -3,8 +3,12 @@ import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://cuidatuperroviejo.com',
   integrations: [tailwind(), mdx(), sitemap()],
+  output: "hybrid",
+  adapter: cloudflare()
 });
