@@ -193,6 +193,13 @@ const { title, description = 'Cuida a tu Perro Viejo', keywords } = Astro.props;
         font-size: 0.95rem;
         line-height: 1.5;
       }
+      @media (max-width: 768px) {
+        .content-body table {
+          display: block;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
       .content-body th {
         background-color: var(--color-brand-secondary);
         border-bottom: 2px solid var(--color-brand-border);
