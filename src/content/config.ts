@@ -11,10 +11,10 @@ const blog = defineCollection({
     pilar: z.enum([
       'guia-para-cuidar-tu-perro-senior',
       'salud-perros-mayores',
-      'alimentacion-perro-senior',
+      'alimentacion-perros-senior',
       'movilidad-dolor-perros-mayores',
-      'salud-mental-y-emocional-en-perros',
-      'higiene-y-hogar-para-perros-senior_7',
+      'salud-mental-emocional-perros',
+      'higiene-hogar-perros-senior',
       'cuidados-paliativos-perros',
     ]),
     keywordPrincipal: z.string().optional(),
