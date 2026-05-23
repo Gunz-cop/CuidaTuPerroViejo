@@ -8,7 +8,7 @@ interface Props {
 const { pilarSlug, pilarName, title } = Astro.props;
 
 // Build absolute URLs for JSON-LD schema
-const origin = Astro.url.origin || 'https://www.cuidatuperroviejo.com';
+const origin = Astro.url.origin || 'https://cuidatuperroviejo.com';
 const homeUrl = `${origin}/`;
 const pilarUrl = `${origin}/${pilarSlug}`;
 const articleUrl = Astro.url.href;
