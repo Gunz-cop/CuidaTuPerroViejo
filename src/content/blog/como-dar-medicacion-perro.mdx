@@ -8,6 +8,10 @@ legacyUrl: "https://www.cuidatuperroviejo.com/2025/11/como-dar-medicacion-perro.
 status: "Publicado"
 ---
 
+import AlertBox from '../../components/AlertBox.astro';
+
+import FAQ from '../../components/FAQ.astro';
+
 Son las 8 de la noche. Llevas todo el día trabajando, tu perro está enfermo y el veterinario te ha recetado un antibiótico crucial que debe tomar cada 12 horas. Lo intentas esconder en un trozo de jamón, pero él lo huele, lo lame, se come el jamón y escupe la pastilla limpia en el suelo. Lo intentas de nuevo, esta vez forzando un poco, y él se revuelve, gruñe o huye debajo de la cama. La frustración y el miedo a que no se cure empiezan a crecer.
 
 **Autoría:** Equipo Cuida Tu Perro Viejo · **Actualizado:** 5 de octubre de 2025
@@ -35,7 +39,7 @@ Por un lado está **Dakota**. Dakota es una aspiradora biológica. Su motivació
 
 Por otro lado está **Luna**. Luna es la pesadilla de cualquier cuidador novato. Es suspicaz, analítica y nada la engaña. Puede detectar una pastilla pulverizada dentro de una salchicha de alta calidad y comerse la carne escupiendo el polvo. Con Luna, el camuflaje no sirve; es necesario recurrir a la técnica manual veterinaria: abrir el hocico y depositar el fármaco con seguridad y rapidez. Ella representa el "Escenario Difícil" o Nivel 2.
 
-En esta guía técnica, desglosaremos paso a paso cómo abordar ambos casos. Desde los trucos de camuflaje más avanzados para perros tipo Dakota, hasta las maniobras de sujeción seguras para perros tipo Luna, asegurando que el tratamiento se cumpla sin romper el vínculo de confianza con tu animal, algo fundamental cuando hablamos de [cuidados paliativos en casa](/p/cuidados-paliativos-perros.html) y enfermedades crónicas.
+En esta guía técnica, desglosaremos paso a paso cómo abordar ambos casos. Desde los trucos de camuflaje más avanzados para perros tipo Dakota, hasta las maniobras de sujeción seguras para perros tipo Luna, asegurando que el tratamiento se cumpla sin romper el vínculo de confianza con tu animal, algo fundamental cuando hablamos de [cuidados paliativos en casa](/cuidados-paliativos-perros) y enfermedades crónicas.
 
 ## Por qué rechazan la medicación: Fisiología y Dolor
 
@@ -67,7 +71,7 @@ Un perro senior tiene altas probabilidades de sufrir patologías orales que no s
 - **Tumores Orales:** Crecimientos en el paladar o debajo de la lengua (como el melanoma o el carcinoma de células escamosas) que hacen que la manipulación sea insoportable.
 - **Artrosis de la Articulación Temporomandibular (ATM):** Al igual que les duelen las caderas, a los perros viejos les puede doler la mandíbula. Forzar una apertura amplia en un perro con artrosis mandibular provoca un rechazo violento inmediato.
 
-Si tu perro, que normalmente es dócil, intenta morderte, grita o se queda rígido cuando te acercas a su cara, detente. Es probable que necesites un [plan de rescate del dolor](/2025/10/plan-rescate-dolor-perros.html) antes de poder medicarlo con éxito. En estos casos, tratar el dolor base es el prerrequisito para tratar la enfermedad.
+Si tu perro, que normalmente es dócil, intenta morderte, grita o se queda rígido cuando te acercas a su cara, detente. Es probable que necesites un plan de rescate del dolor antes de poder medicarlo con éxito. En estos casos, tratar el dolor base es el prerrequisito para tratar la enfermedad.
 
 ### Anatomía de la garganta y el reflejo nauseoso
 
@@ -139,7 +143,7 @@ Si tu perro es como Dakota, estas estrategias resolverán el 90% de tus problema
 
 ## Nivel 2: La Técnica Manual Veterinaria (El Método "Luna")
 
-Si estás leyendo esto, es porque el camuflaje ha fallado. Tu perro es como **Luna**: un detective forense que disecciona la comida, o tal vez está tan enfermo que ha perdido totalmente el interés por comer (si este es tu caso, te recomiendo leer nuestra [guía sobre pérdida de apetito en perros](/2025/10/perdida-apetito-perros-final-vida.html) para abordar el problema de fondo).
+Si estás leyendo esto, es porque el camuflaje ha fallado. Tu perro es como **Luna**: un detective forense que disecciona la comida, o tal vez está tan enfermo que ha perdido totalmente el interés por comer (si este es tu caso, te recomiendo leer nuestra guía sobre pérdida de apetito en perros para abordar el problema de fondo).
 
 Cuando el engaño no funciona, la única vía ética y segura es la administración manual directa. Muchos propietarios le tienen pavor a esto porque temen ser mordidos o lastimar a su perro. Sin embargo, la técnica veterinaria correcta no se basa en la fuerza, sino en la biomecánica. Si lo haces bien, el proceso dura menos de 5 segundos.
 
@@ -260,11 +264,10 @@ Si tu perro se esconde apenas oye el "click-clack" del blíster o el bote, neces
 - **Cambia el escenario:** No mediques siempre en el mismo rincón "de castigo". Hazlo en la cocina, en el sofá o antes de salir de paseo.
 - **Calma tu propia energía:** Si tú te acercas tenso, anticipando una pelea, tu perro leerá tu lenguaje corporal y entrará en modo defensivo. Respira, actúa con naturalidad y sé rápido.
 
-<div class="border border-gray-200 dark:border-gray-800 p-5 my-6 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
-  <h3 class="font-semibold text-lg mb-2">📥 Descarga el Calendario de Medicación</h3>
-  <p class="text-sm opacity-90 mb-4">No te saltes ninguna dosis. Plantilla imprimible para registrar horarios, tomas y reacciones adversas de tu perro.</p>
-  <a class="inline-block bg-brand-primary text-white hover:bg-brand-primary-hover font-semibold px-4 py-2 rounded-lg transition-colors" href="/descargas/calendario-medicacion-perros.pdf" target="_blank" rel="noopener">Descargar Plantilla PDF</a>
-</div>
+<AlertBox type="info" title="Descarga el Calendario de Medicación">
+<p>No te saltes ninguna dosis. Plantilla imprimible para registrar horarios, tomas y reacciones adversas de tu perro.</p>
+  <a href="/descargas/calendario-medicacion-perros.pdf" target="_blank" rel="noopener">Descargar Plantilla PDF</a>
+</AlertBox>
 
 ## Paciencia, Técnica y Amor: La Receta Final
 
@@ -272,151 +275,35 @@ Medicar a un perro senior no es solo un acto médico, es una prueba de resistenc
 
 Tu calma es su ancla. Si respiras hondo, preparas el entorno y aplicas la técnica adecuada —sea el camuflaje para los días buenos o la maniobra manual para los días difíciles—, transformarás una batalla en una rutina de cuidado. Al final del día, cada pastilla que logras administrar es una pequeña victoria de amor hacia tu viejo amigo.
 
-<section class="group border border-brand-border/60 bg-brand-card/50 dark:bg-slate-900/30 rounded-2xl p-6 mt-8 space-y-4" id="preguntas-frecuentes">
-  <h2 class="text-2xl font-bold mb-6">Preguntas Frecuentes</h2>
-  
-  <details class="group border border-brand-border/40 bg-brand-bg/20 rounded-xl p-4 [&_summary::-webkit-details-marker]:hidden">
-    <summary class="flex items-center justify-between cursor-pointer select-none">
-      <h3 class="text-base font-semibold text-brand-text pr-4">¿Puedo disolver cualquier pastilla en agua?</h3>
-      <span class="text-xl font-light text-brand-primary group-open:hidden">+</span>
-      <span class="text-xl font-light text-brand-primary hidden group-open:block">−</span>
-    </summary>
-    <div class="mt-3 text-brand-muted text-sm leading-relaxed">
-      <p>No. Solo los comprimidos simples (secos y ranurados) suelen ser seguros para disolver. Las pastillas de liberación prolongada (XR/ER) o con cubierta entérica nunca deben disolverse, ya que perderían su efecto o causarían sobredosis.</p>
-    </div>
-  </details>
+## Preguntas frecuentes
 
-  <details class="group border border-brand-border/40 bg-brand-bg/20 rounded-xl p-4 [&_summary::-webkit-details-marker]:hidden">
-    <summary class="flex items-center justify-between cursor-pointer select-none">
-      <h3 class="text-base font-semibold text-brand-text pr-4">¿Qué hago si mi perro intenta morderme?</h3>
-      <span class="text-xl font-light text-brand-primary group-open:hidden">+</span>
-      <span class="text-xl font-light text-brand-primary hidden group-open:block">−</span>
-    </summary>
-    <div class="mt-3 text-brand-muted text-sm leading-relaxed">
-      <p>Detente inmediatamente. El dolor o el miedo pueden hacer reaccionar así incluso al perro más noble. Consulta con tu veterinario para opciones alternativas como inyecciones de larga duración (ej. Convenia para antibióticos) o fórmulas transdérmicas.</p>
-    </div>
-  </details>
-
-  <details class="group border border-brand-border/40 bg-brand-bg/20 rounded-xl p-4 [&_summary::-webkit-details-marker]:hidden">
-    <summary class="flex items-center justify-between cursor-pointer select-none">
-      <h3 class="text-base font-semibold text-brand-text pr-4">¿Funcionan los disparadores de pastillas (pill guns)?</h3>
-      <span class="text-xl font-light text-brand-primary group-open:hidden">+</span>
-      <span class="text-xl font-light text-brand-primary hidden group-open:block">−</span>
-    </summary>
-    <div class="mt-3 text-brand-muted text-sm leading-relaxed">
-      <p>Sí, son muy útiles para dueños con miedo a meter la mano o para perros de boca pequeña. Permiten depositar la pastilla en la base de la lengua sin arriesgar los dedos, pero requieren práctica para no lastimar el paladar blando.</p>
-    </div>
-  </details>
-
-  <details class="group border border-brand-border/40 bg-brand-bg/20 rounded-xl p-4 [&_summary::-webkit-details-marker]:hidden">
-    <summary class="flex items-center justify-between cursor-pointer select-none">
-      <h3 class="text-base font-semibold text-brand-text pr-4">¿Puedo mezclar antibióticos con lácteos (queso/yogur)?</h3>
-      <span class="text-xl font-light text-brand-primary group-open:hidden">+</span>
-      <span class="text-xl font-light text-brand-primary hidden group-open:block">−</span>
-    </summary>
-    <div class="mt-3 text-brand-muted text-sm leading-relaxed">
-      <p>Depende del antibiótico. Algunos, como las [tetraciclinas](https://www.google.com/search?q=tetraciclinas+perros) o doxiciclina, pueden unirse al calcio de los lácteos y perder eficacia (quelación). Consulta siempre el prospecto o a tu veterinario antes de usar queso como vehículo.</p>
-    </div>
-  </details>
-
-  <details class="group border border-brand-border/40 bg-brand-bg/20 rounded-xl p-4 [&_summary::-webkit-details-marker]:hidden">
-    <summary class="flex items-center justify-between cursor-pointer select-none">
-      <h3 class="text-base font-semibold text-brand-text pr-4">¿Cómo medicar a un perro que no come nada?</h3>
-      <span class="text-xl font-light text-brand-primary group-open:hidden">+</span>
-      <span class="text-xl font-light text-brand-primary hidden group-open:block">−</span>
-    </summary>
-    <div class="mt-3 text-brand-muted text-sm leading-relaxed">
-      <p>Si hay anorexia total, el camuflaje fallará. Debes usar la técnica manual (Nivel 2) o suspensión líquida con jeringa. Es vital asegurar que trague para no interrumpir el tratamiento.</p>
-    </div>
-  </details>
-
-  <details class="group border border-brand-border/40 bg-brand-bg/20 rounded-xl p-4 [&_summary::-webkit-details-marker]:hidden">
-    <summary class="flex items-center justify-between cursor-pointer select-none">
-      <h3 class="text-base font-semibold text-brand-text pr-4">¿Es seguro abrir cápsulas y dar el polvo?</h3>
-      <span class="text-xl font-light text-brand-primary group-open:hidden">+</span>
-      <span class="text-xl font-light text-brand-primary hidden group-open:block">−</span>
-    </summary>
-    <div class="mt-3 text-brand-muted text-sm leading-relaxed">
-      <p>Generalmente no se recomienda a menos que el veterinario lo autorice. El polvo suele ser extremadamente amargo, lo que provocará babeo excesivo y rechazo futuro. Además, la cápsula protege el esófago de irritaciones.</p>
-    </div>
-  </details>
-
-  <details class="group border border-brand-border/40 bg-brand-bg/20 rounded-xl p-4 [&_summary::-webkit-details-marker]:hidden">
-    <summary class="flex items-center justify-between cursor-pointer select-none">
-      <h3 class="text-base font-semibold text-brand-text pr-4">Mi perro escupe la pastilla tras 5 minutos, ¿repito la dosis?</h3>
-      <span class="text-xl font-light text-brand-primary group-open:hidden">+</span>
-      <span class="text-xl font-light text-brand-primary hidden group-open:block">−</span>
-    </summary>
-    <div class="mt-3 text-brand-muted text-sm leading-relaxed">
-      <p>Si la pastilla está entera y seca, puedes volver a darla. Si está parcialmente disuelta o no estás seguro de cuánto tragó, NO repitas la dosis para evitar intoxicación. Espera a la siguiente toma.</p>
-    </div>
-  </details>
-</section>
-
-<section class="mt-16 pt-12 border-t border-brand-border">
-  <h3 class="text-2xl font-extrabold text-brand-text mb-8 tracking-tight">Sigue aprendiendo sobre cuidados en casa</h3>
-  
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-    <a 
-      href="/2025/10/perdida-apetito-perros-final-vida.html" 
-      class="group flex flex-col justify-between p-5 bg-brand-card dark:bg-brand-bg/50 border border-brand-border rounded-xl hover:shadow-sm hover:border-brand-primary/40 transition-all duration-300 relative overflow-hidden"
-    >
-      <div class="absolute top-0 left-0 right-0 h-1 bg-brand-primary transform -translate-y-1 group-hover:translate-y-0 transition-transform duration-300"></div>
-      
-      <div>
-        <div class="aspect-video w-full overflow-hidden bg-gray-100 dark:bg-gray-800 rounded-lg mb-4">
-          <img 
-            alt="Perro senior rechazando comida de la mano de su dueño" 
-            src="/images/perro-no-quiere-comer-mano.jpg" 
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-          />
-        </div>
-        <h4 class="text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors leading-snug line-clamp-2">
-          ¿Tu perro no quiere comer?
-        </h4>
-        <p class="text-brand-muted text-sm mt-2 leading-relaxed line-clamp-2">
-          Guía para estimular el apetito en perros enfermos o terminales.
-        </p>
-      </div>
-
-      <div class="mt-4 flex items-center text-xs font-semibold text-brand-primary group-hover:text-brand-accent transition-colors duration-200">
-        <span>Leer guía</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-1.5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-        </svg>
-      </div>
-    </a>
-
-    <a 
-      href="/2025/10/plan-rescate-dolor-perros.html" 
-      class="group flex flex-col justify-between p-5 bg-brand-card dark:bg-brand-bg/50 border border-brand-border rounded-xl hover:shadow-sm hover:border-brand-primary/40 transition-all duration-300 relative overflow-hidden"
-    >
-      <div class="absolute top-0 left-0 right-0 h-1 bg-brand-primary transform -translate-y-1 group-hover:translate-y-0 transition-transform duration-300"></div>
-
-      <div>
-        <div class="aspect-video w-full overflow-hidden bg-gray-100 dark:bg-gray-800 rounded-lg mb-4">
-          <img 
-            alt="Perro mayor descansando con signos de dolor articular en su cama" 
-            src="/images/perro-dolor-articular-cama.jpg" 
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-          />
-        </div>
-        <h4 class="text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors leading-snug line-clamp-2">
-          Plan de Rescate del Dolor
-        </h4>
-        <p class="text-brand-muted text-sm mt-2 leading-relaxed line-clamp-2">
-          Cómo identificar y aliviar el dolor crónico o agudo en tu perro senior.
-        </p>
-      </div>
-
-      <div class="mt-4 flex items-center text-xs font-semibold text-brand-primary group-hover:text-brand-accent transition-colors duration-200">
-        <span>Leer guía</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-1.5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-        </svg>
-      </div>
-    </a>
-  </div>
-</section>
+<FAQ items={[
+  {
+    "question": "¿Puedo disolver cualquier pastilla en agua?",
+    "answer": "No. Solo los comprimidos simples (secos y ranurados) suelen ser seguros para disolver. Las pastillas de liberación prolongada (XR/ER) o con cubierta entérica nunca deben disolverse, ya que perderían su efecto o causarían sobredosis."
+  },
+  {
+    "question": "¿Qué hago si mi perro intenta morderme?",
+    "answer": "Detente inmediatamente. El dolor o el miedo pueden hacer reaccionar así incluso al perro más noble. Consulta con tu veterinario para opciones alternativas como inyecciones de larga duración (ej. Convenia para antibióticos) o fórmulas transdérmicas."
+  },
+  {
+    "question": "¿Funcionan los disparadores de pastillas (pill guns)?",
+    "answer": "Sí, son muy útiles para dueños con miedo a meter la mano o para perros de boca pequeña. Permiten depositar la pastilla en la base de la lengua sin arriesgar los dedos, pero requieren práctica para no lastimar el paladar blando."
+  },
+  {
+    "question": "¿Puedo mezclar antibióticos con lácteos (queso/yogur)?",
+    "answer": "Depende del antibiótico. Algunos, como las <a href=\"https://www.google.com/search?q=tetraciclinas+perros\" target=\"_blank\" rel=\"noopener noreferrer\">tetraciclinas</a> o doxiciclina, pueden unirse al calcio de los lácteos y perder eficacia (quelación). Consulta siempre el prospecto o a tu veterinario antes de usar queso como vehículo."
+  },
+  {
+    "question": "¿Cómo medicar a un perro que no come nada?",
+    "answer": "Si hay anorexia total, el camuflaje fallará. Debes usar la técnica manual (Nivel 2) o suspensión líquida con jeringa. Es vital asegurar que trague para no interrumpir el tratamiento."
+  },
+  {
+    "question": "¿Es seguro abrir cápsulas y dar el polvo?",
+    "answer": "Generalmente no se recomienda a menos que el veterinario lo autorice. El polvo suele ser extremadamente amargo, lo que provocará babeo excesivo y rechazo futuro. Además, la cápsula protege el esófago de irritaciones."
+  },
+  {
+    "question": "Mi perro escupe la pastilla tras 5 minutos, ¿repito la dosis?",
+    "answer": "Si la pastilla está entera y seca, puedes volver a darla. Si está parcialmente disuelta o no estás seguro de cuánto tragó, NO repitas la dosis para evitar intoxicación. Espera a la siguiente toma."
+  }
+]} />
