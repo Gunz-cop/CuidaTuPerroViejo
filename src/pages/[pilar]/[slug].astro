@@ -28,15 +28,27 @@ const pilarNames: Record<string, string> = {
 const pilarName = pilarNames[entry.data.pilar] || entry.data.pilar;
 const heroImage = entry.data.heroImage;
 const heroImageAlt = entry.data.heroImageAlt || entry.data.title;
+
+// CSS para ocultar la heroImage dentro del body del post (evita imagen duplicada)
+const hideHeroCSS = heroImage
+  ? `.content-body img[src="${heroImage}"],
+     .content-body p:has(> img[src="${heroImage}"]) { display: none !important; }
+     .content-body p:has(> img[src="${heroImage}"]) + p:has(> em:only-child) { display: none !important; }`
+  : '';
 ---
 
-<BaseLayout 
+<BaseLayout
   title={entry.data.seoTitle || entry.data.title}
   description={entry.data.metaDescription}
   keywords={entry.data.keywordPrincipal}
 >
+  <!-- Ocultar heroImage donde aparezca repetida en el body -->
+  {heroImage && (
+    <style slot="head" is:inline set:html={hideHeroCSS} />
+  )}
+
   <main class="max-w-3xl mx-auto px-4 py-8 md:py-12 w-full">
-    <!-- Breadcrumbs / Navigation -->
+    <!-- Breadcrumbs -->
     <Breadcrumbs pilarSlug={entry.data.pilar} pilarName={pilarName} title={entry.data.title} />
 
     <article>
@@ -55,12 +67,12 @@ const heroImageAlt = entry.data.heroImageAlt || entry.data.title;
           </a>
         </div>
 
-        <!-- Título H1 -->
+        <!-- H1 -->
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-brand-text leading-tight mb-4">
           {entry.data.title}
         </h1>
 
-        <!-- Meta description como subtítulo -->
+        <!-- Subtítulo -->
         {entry.data.metaDescription && (
           <p class="text-base md:text-lg text-brand-muted leading-relaxed font-light border-l-4 border-brand-primary/40 pl-4 mt-4 mb-6">
             {entry.data.metaDescription}
@@ -77,6 +89,7 @@ const heroImageAlt = entry.data.heroImageAlt || entry.data.title;
                 class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
                 loading="eager"
                 decoding="async"
+                fetchpriority="high"
               />
             </div>
             <figcaption class="mt-2 text-center text-xs text-brand-muted italic px-4 sm:px-0">
@@ -84,7 +97,6 @@ const heroImageAlt = entry.data.heroImageAlt || entry.data.title;
             </figcaption>
           </figure>
         ) : (
-          <!-- Placeholder gradient si no hay imagen -->
           <div class="mt-6 mb-2 -mx-4 sm:mx-0 overflow-hidden rounded-none sm:rounded-2xl h-48 md:h-64 bg-gradient-to-br from-brand-secondary/30 via-brand-primary/10 to-brand-secondary/20 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-brand-primary/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -92,7 +104,6 @@ const heroImageAlt = entry.data.heroImageAlt || entry.data.title;
           </div>
         )}
 
-        <!-- Divider bottom del header -->
         <div class="mt-8 border-b border-brand-border"></div>
       </header>
 

@@ -8,15 +8,10 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
 
   return pilaresEntries.map(pilar => {
-    // Filter posts from the blog collection that belong to this content pilar
     const filteredPosts = blogEntries.filter(post => post.data.pilar === pilar.slug);
-    
     return {
       params: { pilar: pilar.slug },
-      props: {
-        pilar,
-        posts: filteredPosts
-      }
+      props: { pilar, posts: filteredPosts }
     };
   });
 }
@@ -26,51 +21,67 @@ const { Content } = await pilar.render();
 
 const heroImage = pilar.data.heroImage;
 const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
+
+// CSS para ocultar la imagen heroImage dentro del body del pilar (evita duplicado)
+const hideHeroCSS = heroImage
+  ? `.content-body img[src="${heroImage}"],
+     .content-body p:has(> img[src="${heroImage}"]) { display: none !important; }
+     .content-body p:has(> img[src="${heroImage}"]) + p:has(> em:only-child) { display: none !important; }`
+  : '';
 ---
 
-<BaseLayout 
+<BaseLayout
   title={pilar.data.seoTitle}
   description={pilar.data.metaDescription}
 >
-  <!-- ===== PILAR HERO — Full width, image-backed ===== -->
-  <div class="relative w-full overflow-hidden" style="min-height: 320px;">
-    <!-- Background image -->
+  <!-- Inyectar CSS de deduplicación en el <head> -->
+  {heroImage && (
+    <style slot="head" is:inline set:html={hideHeroCSS} />
+  )}
+
+  <!-- ===== PILAR HERO — imagen real con img tag ===== -->
+  <div class="relative w-full overflow-hidden" style="min-height: 360px;">
+
+    <!-- Imagen de fondo real (no CSS background — más compatible con CSP) -->
     {heroImage ? (
-      <div
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={`background-image: url('${heroImage}');`}
-        role="img"
-        aria-label={heroImageAlt}
-      ></div>
+      <img
+        src={heroImage}
+        alt=""
+        aria-hidden="true"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      />
     ) : (
       <div class="absolute inset-0 bg-gradient-to-br from-brand-primary/80 to-brand-secondary/60"></div>
     )}
 
-    <!-- Overlay gradient — stronger on dark mode -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black/75 dark:from-black/40 dark:via-black/65 dark:to-black/85"></div>
+    <!-- Overlay gradiente oscuro -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-black/55 to-black/80 dark:from-black/35 dark:via-black/65 dark:to-black/88"></div>
 
-    <!-- Hero content -->
+    <!-- Contenido del hero sobre la imagen -->
     <div class="relative z-10 max-w-4xl mx-auto px-4 py-14 md:py-20 flex flex-col items-center text-center">
-      <!-- Breadcrumb light version -->
+      <!-- Breadcrumb sobre imagen -->
       <nav class="mb-4 text-xs text-white/70 flex items-center gap-1.5">
         <a href="/" class="hover:text-white transition-colors">Inicio</a>
         <span>/</span>
         <span class="text-white font-medium">{pilar.data.title}</span>
       </nav>
 
-      <!-- Title -->
+      <!-- H1 -->
       <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight drop-shadow-lg mb-4 max-w-3xl">
         {pilar.data.title}
       </h1>
 
-      <!-- Description -->
+      <!-- Descripción -->
       {pilar.data.metaDescription && (
         <p class="text-base md:text-lg text-white/85 leading-relaxed max-w-2xl font-light drop-shadow-sm">
           {pilar.data.metaDescription}
         </p>
       )}
 
-      <!-- Post count chip -->
+      <!-- Chip de conteo de artículos -->
       {posts.length > 0 && (
         <div class="mt-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/30 text-white text-xs font-semibold backdrop-blur-sm">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -84,29 +95,28 @@ const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
 
   <main class="max-w-4xl mx-auto px-4 py-8 sm:py-12 w-full">
 
-    <!-- ===== Pilar Content (MDX body) ===== -->
+    <!-- Contenido MDX del pilar -->
     <div class="content-body prose dark:prose-invert max-w-none mb-12">
       <Content />
     </div>
 
-    <!-- Elegant visual separator -->
+    <!-- Separador -->
     <hr class="border-brand-border my-10" />
 
-    <!-- Intermediate Header (H2) -->
+    <!-- Sección de artículos -->
     <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-text mb-8">
       Guías Especializadas de {pilar.data.title}
     </h2>
 
-    <!-- Adaptable Articles Grid -->
     {posts.length > 0 ? (
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {posts.map(post => (
-          <a 
-            href={`/${pilar.slug}/${post.slug}`} 
+          <a
+            href={`/${pilar.slug}/${post.slug}`}
             class="group flex flex-col justify-between bg-brand-card dark:bg-brand-bg/50 border border-brand-border rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:border-brand-primary/40 transition duration-300 relative"
           >
-            {/* Hero image thumbnail */}
-            {post.data.heroImage && (
+            {/* Thumbnail del post */}
+            {post.data.heroImage ? (
               <div class="overflow-hidden aspect-[16/9] bg-brand-secondary/10">
                 <img
                   src={post.data.heroImage}
@@ -116,13 +126,10 @@ const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
                   decoding="async"
                 />
               </div>
-            )}
-
-            {/* Top border highlight on hover */}
-            {!post.data.heroImage && (
+            ) : (
               <div class="absolute top-0 left-0 right-0 h-1 bg-brand-primary transform -translate-y-1 group-hover:translate-y-0 transition-transform duration-300"></div>
             )}
-            
+
             <div class="p-5 flex flex-col flex-1 justify-between">
               <div>
                 <h3 class="text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors duration-200 line-clamp-2 leading-snug">
@@ -134,7 +141,6 @@ const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
                   </p>
                 )}
               </div>
-
               <div class="mt-4 flex items-center text-xs font-semibold text-brand-primary group-hover:text-brand-accent transition-colors duration-200">
                 <span>Leer artículo</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-1.5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -146,7 +152,6 @@ const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
         ))}
       </div>
     ) : (
-      <!-- Empty State -->
       <div class="text-center py-12 px-4 bg-brand-card border border-brand-border rounded-xl shadow-sm">
         <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-secondary/40 text-brand-primary mb-3">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -154,9 +159,7 @@ const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
           </svg>
         </div>
         <h3 class="text-base font-bold text-brand-text mb-1">Aún no hay artículos</h3>
-        <p class="text-brand-muted text-sm">
-          Estamos preparando el mejor contenido para esta sección. ¡Vuelve pronto!
-        </p>
+        <p class="text-brand-muted text-sm">Estamos preparando el mejor contenido para esta sección. ¡Vuelve pronto!</p>
       </div>
     )}
   </main>
