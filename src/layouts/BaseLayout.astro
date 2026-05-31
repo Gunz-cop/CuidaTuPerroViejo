@@ -35,50 +35,46 @@ const { title, description = 'Cuida a tu Perro Viejo', keywords } = Astro.props;
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" media="print" onload="this.media='all'" />
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
     </noscript>
     <style is:global>
       :root {
-        --color-bg-base: #F8F6F1; /* Marfil / Papel */
-        --color-bg-card: #F0EDE4; /* Pergamino */
-        --color-bg-card-hover: #E8E5DC; /* Sunken background */
-        --color-text-base: #1A1A18; /* Tinta */
-        --color-text-muted: #4A4A45; /* Carbón */
-        --color-brand-primary: #5C7A62; /* Verde Salvia */
-        --color-brand-primary-hover: #3D5C42; /* Salvia oscuro */
-        --color-brand-secondary: #C8DAC8; /* Salvia suave */
-        --color-brand-accent: #5C7A62; /* Salvia (Acción/Acento) */
-        --color-brand-accent-hover: #3D5C42;
-        --color-brand-border: #E8E5DC;
+        --color-bg-base: #faf9f4; /* Marfil base Stitch */
+        --color-bg-card: #f5f4ef; /* surface-container-low */
+        --color-bg-card-hover: #efeee9; /* surface-container */
+        --color-text-base: #1b1c19; /* on-background / on-surface */
+        --color-text-muted: #424843; /* on-surface-variant */
+        --color-brand-primary: #45634f; /* sage green primary */
+        --color-brand-primary-hover: #5d7c67; /* sage green hover */
+        --color-brand-secondary: #fdcb9b; /* tan secondary */
+        --color-brand-accent: #7c5730; /* leather brown accent */
+        --color-brand-accent-hover: #5d7c67;
+        --color-brand-border: #dbdad5; /* surface-dim outline */
       }
 
       .dark {
-        --color-bg-base: #1A1A18; /* Tinta */
-        --color-bg-card: #222220;
-        --color-bg-card-hover: #2A2A28;
-        --color-text-base: #EDEBE4;
-        --color-text-muted: #B0ADA6;
-        --color-brand-primary: #8FAF95; /* Verde Salvia claro */
-        --color-brand-primary-hover: #A8C4AC;
-        --color-brand-secondary: #2D4030; /* Salvia oscuro */
-        --color-brand-accent: #8FAF95;
-        --color-brand-accent-hover: #A8C4AC;
-        --color-brand-border: #2A2A28;
+        --color-bg-base: #121412; /* charcoal green */
+        --color-bg-card: #1b1e1b;
+        --color-bg-card-hover: #242824;
+        --color-text-base: #f8fff7;
+        --color-text-muted: #adcfb6;
+        --color-brand-primary: #adcfb6;
+        --color-brand-primary-hover: #c9ebd1;
+        --color-brand-secondary: #2f4d3a;
+        --color-brand-accent: #eebd8e;
+        --color-brand-accent-hover: #ffdcbd;
+        --color-brand-border: #2f4d3a;
       }
 
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
         line-height: 1.5;
       }
-      h1, h2 {
-        font-family: 'Lora', Georgia, serif;
-        line-height: 1.25;
-      }
-      h3, h4, h5, h6 {
+      h1, h2, h3, h4, h5, h6 {
         font-family: 'Outfit', sans-serif;
-        line-height: 1.35;
+        line-height: 1.25;
       }
 
       /* Estilos globales para renderizar markdown y contenido estructurado de forma premium */
