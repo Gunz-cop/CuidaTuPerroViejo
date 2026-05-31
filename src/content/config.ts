@@ -18,6 +18,8 @@ const blog = defineCollection({
       'cuidados-paliativos-perros',
     ]),
     keywordPrincipal: z.string().optional(),
+    heroImage: z.string().optional(),
+    heroImageAlt: z.string().optional(),
     legacyUrl: z.string().optional(),
     status: z.string().optional(),
   }).strict(),
@@ -29,6 +31,8 @@ const pilares = defineCollection({
     title: z.string(),
     seoTitle: z.string(),
     metaDescription: z.string(),
+    heroImage: z.string().optional(),
+    heroImageAlt: z.string().optional(),
     legacyUrl: z.string().optional(),
   }),
 });

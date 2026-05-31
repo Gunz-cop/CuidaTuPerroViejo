@@ -22,25 +22,30 @@ const description = "Conoce quiénes somos en Cuida tu perro viejo y nuestra mis
   }
   </script>
 
-  <main class="max-w-3xl mx-auto px-5 py-10 md:py-16 content-body">
-    <!-- Navigation / Breadcrumbs -->
-    <div class="mb-4">
-      <a href="/" class="inline-flex items-center text-sm text-brand-primary hover:text-brand-primary-hover font-semibold gap-1 no-underline transition-colors back-btn">
-        <span>← Volver al inicio</span>
-      </a>
-    </div>
-
-    <!-- Page Header -->
-    <header class="mb-8 border-b border-brand-border pb-6">
-      <h1 class="text-3.5xl md:text-4.5xl font-extrabold text-brand-text mb-3 leading-tight">
+  <!-- ===== PAGE HERO BANNER ===== -->
+  <div class="w-full bg-gradient-to-br from-brand-secondary/40 via-brand-primary/8 to-brand-secondary/20 dark:from-brand-primary/10 dark:via-brand-secondary/5 dark:to-transparent border-b border-brand-border">
+    <div class="max-w-3xl mx-auto px-5 py-12 md:py-16 flex flex-col items-center text-center">
+      <!-- Icon -->
+      <div class="w-16 h-16 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center mb-5 shadow-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      </div>
+      <nav class="mb-3 text-xs text-brand-muted flex items-center gap-1.5">
+        <a href="/" class="hover:text-brand-primary transition-colors">Inicio</a>
+        <span>/</span>
+        <span class="text-brand-text font-medium">Acerca de</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-text leading-tight mb-3">
         Sobre nosotros
       </h1>
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-muted font-light">
-        <span>Por <strong>Equipo de Cuida a tu perro viejo</strong></span>
-        <span class="text-brand-border">•</span>
-        <span>Última actualización: <strong>12 de octubre de 2025</strong></span>
-      </div>
-    </header>
+      <p class="text-base md:text-lg text-brand-muted leading-relaxed max-w-xl font-light">
+        Conoce el equipo detrás de <strong class="text-brand-text">Cuida tu perro viejo</strong> y nuestra misión de acompañar a cada perro senior en su etapa dorada.
+      </p>
+    </div>
+  </div>
+
+  <main class="max-w-3xl mx-auto px-5 py-10 md:py-14 content-body">
 
     <!-- Main Content Article -->
     <article id="about-us" itemscope itemtype="https://schema.org/AboutPage" class="space-y-8">

@@ -26,6 +26,8 @@ const pilarNames: Record<string, string> = {
 };
 
 const pilarName = pilarNames[entry.data.pilar] || entry.data.pilar;
+const heroImage = entry.data.heroImage;
+const heroImageAlt = entry.data.heroImageAlt || entry.data.title;
 ---
 
 <BaseLayout 
@@ -33,28 +35,69 @@ const pilarName = pilarNames[entry.data.pilar] || entry.data.pilar;
   description={entry.data.metaDescription}
   keywords={entry.data.keywordPrincipal}
 >
-  <main class="max-w-3xl mx-auto px-4 py-8 md:py-16 w-full">
+  <main class="max-w-3xl mx-auto px-4 py-8 md:py-12 w-full">
     <!-- Breadcrumbs / Navigation -->
     <Breadcrumbs pilarSlug={entry.data.pilar} pilarName={pilarName} title={entry.data.title} />
 
     <article>
-      <!-- Header -->
-      <header class="mb-8 md:mb-12 border-b border-brand-border pb-8 md:pb-12">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-secondary text-brand-primary border border-brand-primary/20 mb-4 uppercase tracking-wider">
-          {pilarName}
-        </span>
-        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-brand-text leading-tight mb-4">
+      <!-- ===== HERO HEADER ===== -->
+      <header class="mb-8 md:mb-10">
+        <!-- Badge de pilar -->
+        <div class="mb-4">
+          <a
+            href={`/${entry.data.pilar}`}
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-secondary text-brand-primary border border-brand-primary/20 uppercase tracking-wider hover:bg-brand-primary/10 transition-colors duration-200"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+            </svg>
+            {pilarName}
+          </a>
+        </div>
+
+        <!-- Título H1 -->
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-brand-text leading-tight mb-4">
           {entry.data.title}
         </h1>
+
+        <!-- Meta description como subtítulo -->
         {entry.data.metaDescription && (
-          <p class="text-lg md:text-xl text-brand-muted leading-relaxed font-light">
+          <p class="text-base md:text-lg text-brand-muted leading-relaxed font-light border-l-4 border-brand-primary/40 pl-4 mt-4 mb-6">
             {entry.data.metaDescription}
           </p>
         )}
+
+        <!-- Feature Image Hero -->
+        {heroImage ? (
+          <figure class="mt-6 mb-2 -mx-4 sm:mx-0">
+            <div class="overflow-hidden rounded-none sm:rounded-2xl shadow-lg aspect-[16/9] bg-brand-secondary/20">
+              <img
+                src={heroImage}
+                alt={heroImageAlt}
+                class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <figcaption class="mt-2 text-center text-xs text-brand-muted italic px-4 sm:px-0">
+              {heroImageAlt}
+            </figcaption>
+          </figure>
+        ) : (
+          <!-- Placeholder gradient si no hay imagen -->
+          <div class="mt-6 mb-2 -mx-4 sm:mx-0 overflow-hidden rounded-none sm:rounded-2xl h-48 md:h-64 bg-gradient-to-br from-brand-secondary/30 via-brand-primary/10 to-brand-secondary/20 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-brand-primary/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+        )}
+
+        <!-- Divider bottom del header -->
+        <div class="mt-8 border-b border-brand-border"></div>
       </header>
 
-      <!-- Article Content -->
-      <div class="content-body prose dark:prose-invert max-w-full sm:max-w-3xl">
+      <!-- ===== ARTICLE CONTENT ===== -->
+      <div class="content-body prose dark:prose-invert max-w-full sm:max-w-3xl mt-8">
         <Content />
       </div>
     </article>
