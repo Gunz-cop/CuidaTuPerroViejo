@@ -1,4 +1,13 @@
 ---
+/**
+ * FAQ.astro — Componente unificado de Preguntas Frecuentes
+ * Usado en posts MDX y como referencia de estilo para toda la web.
+ *
+ * Props:
+ *   items   — Array de { question: string; answer: string (acepta HTML) }
+ *   title   — Título de la sección (default: "Preguntas frecuentes")
+ */
+
 interface FAQItem {
   question: string;
   answer: string;
@@ -6,25 +15,46 @@ interface FAQItem {
 
 interface Props {
   items: FAQItem[];
+  title?: string;
 }
 
-const { items = [] } = Astro.props;
+const { items = [], title = 'Preguntas frecuentes' } = Astro.props;
 ---
 
 {items.length > 0 && (
-  <section class="my-8 space-y-3" aria-label="Preguntas frecuentes">
-    {items.map((item) => (
-      <details class="group rounded-xl border border-brand-border bg-brand-card/60 p-4 shadow-sm transition-colors hover:border-brand-primary/35">
-        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-brand-text">
-          <span>{item.question}</span>
-          <span class="shrink-0 text-brand-primary transition-transform group-open:rotate-180" aria-hidden="true">
-            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" />
-            </svg>
-          </span>
-        </summary>
-        <p class="mt-3 text-sm leading-relaxed text-brand-muted" set:html={item.answer} />
-      </details>
-    ))}
+  <section class="faq-section my-10" aria-labelledby="faq-heading">
+    <!-- Encabezado de sección -->
+    <div class="mb-6 flex items-center gap-3">
+      <div class="h-px flex-1 bg-brand-border/60"></div>
+      <h2
+        id="faq-heading"
+        class="text-xs font-bold tracking-widest uppercase text-brand-primary whitespace-nowrap"
+      >
+        {title}
+      </h2>
+      <div class="h-px flex-1 bg-brand-border/60"></div>
+    </div>
+
+    <!-- Items acordeón -->
+    <div class="space-y-3">
+      {items.map((item) => (
+        <details class="group bg-brand-card/40 dark:bg-slate-900/15 border border-brand-border/50 rounded-2xl overflow-hidden transition-colors duration-200 hover:border-brand-primary/35 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex cursor-pointer select-none items-center justify-between gap-4 px-5 py-4 font-semibold text-sm text-brand-text">
+            <span>{item.question}</span>
+            <!-- Chevron animado -->
+            <span class="shrink-0 text-brand-primary transition-transform duration-300 group-open:rotate-180" aria-hidden="true">
+              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" />
+              </svg>
+            </span>
+          </summary>
+          <!-- Respuesta — acepta HTML básico -->
+          <div
+            class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted"
+            set:html={item.answer}
+          />
+        </details>
+      ))}
+    </div>
   </section>
 )}

@@ -360,39 +360,51 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
     </div>
 
     <!-- PREGUNTAS FRECUENTES -->
-    <div class="mt-12 border-t border-brand-border pt-10">
-      <h3 id="faq" class="text-2xl font-bold text-brand-primary mb-6 font-serif">Preguntas Frecuentes</h3>
-      
-      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 mb-4 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
-        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none">
-          <span>¿Cuál es un puntaje "aceptable" en la escala?</span>
-          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
-        </summary>
-        <p class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4">
-          Un puntaje acumulado superior a 35 sobre 70 se considera aceptable y sugiere que se puede continuar apoyando la calidad de vida con cuidados paliativos o geriátricos ajustados. Un puntaje inferior a 35 indica que la calidad de vida está gravemente comprometida y es imperativo hablar con el veterinario sobre opciones para evitar el sufrimiento.
-        </p>
-      </details>
+    <section class="faq-section mt-12 border-t border-brand-border pt-10" aria-labelledby="faq-heading-calc">
+      <div class="mb-6 flex items-center gap-3">
+        <div class="h-px flex-1 bg-brand-border/60"></div>
+        <h3 id="faq-heading-calc" class="text-xs font-bold tracking-widest uppercase text-brand-primary whitespace-nowrap">Preguntas frecuentes</h3>
+        <div class="h-px flex-1 bg-brand-border/60"></div>
+      </div>
 
-      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 mb-4 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
-        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none">
-          <span>¿Con qué frecuencia debo evaluar a mi perro?</span>
-          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
-        </summary>
-        <p class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4">
-          En fases estables del envejecimiento, evaluarlo una vez al mes es suficiente. Sin embargo, si tu perro sufre de una enfermedad crónica avanzada, oncológica o en fase paliativa, es recomendable hacer el test cada 3 o 7 días para monitorizar la velocidad de declive y ajustar su medicación de dolor.
-        </p>
-      </details>
+      <div class="space-y-3">
+        <details class="group bg-brand-card/40 dark:bg-slate-900/15 border border-brand-border/50 rounded-2xl overflow-hidden transition-colors duration-200 hover:border-brand-primary/35 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex cursor-pointer select-none items-center justify-between gap-4 px-5 py-4 font-semibold text-sm text-brand-text">
+            <span>¿Cuál es un puntaje "aceptable" en la escala?</span>
+            <span class="shrink-0 text-brand-primary transition-transform duration-300 group-open:rotate-180" aria-hidden="true">
+              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" /></svg>
+            </span>
+          </summary>
+          <div class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted">
+            Un puntaje acumulado superior a 35 sobre 70 se considera aceptable y sugiere que se puede continuar apoyando la calidad de vida con cuidados paliativos o geriátricos ajustados. Un puntaje inferior a 35 indica que la calidad de vida está gravemente comprometida y es imperativo hablar con el veterinario sobre opciones para evitar el sufrimiento.
+          </div>
+        </details>
 
-      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 mb-4 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
-        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none">
-          <span>¿Qué debo hacer si el puntaje es bajo?</span>
-          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
-        </summary>
-        <p class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4">
-          Un puntaje bajo (menor a 35) no significa que debas tomar una decisión apresurada tú solo. Su función principal es alertarte para que organices una visita prioritaria con tu veterinario de confianza. El profesional puede ajustar analgésicos, recomendar soporte de movilidad o ayudarte a tomar una decisión compasiva libre de culpa.
-        </p>
-      </details>
-    </div>
+        <details class="group bg-brand-card/40 dark:bg-slate-900/15 border border-brand-border/50 rounded-2xl overflow-hidden transition-colors duration-200 hover:border-brand-primary/35 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex cursor-pointer select-none items-center justify-between gap-4 px-5 py-4 font-semibold text-sm text-brand-text">
+            <span>¿Con qué frecuencia debo evaluar a mi perro?</span>
+            <span class="shrink-0 text-brand-primary transition-transform duration-300 group-open:rotate-180" aria-hidden="true">
+              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" /></svg>
+            </span>
+          </summary>
+          <div class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted">
+            En fases estables del envejecimiento, evaluarlo una vez al mes es suficiente. Sin embargo, si tu perro sufre de una enfermedad crónica avanzada, oncológica o en fase paliativa, es recomendable hacer el test cada 3 o 7 días para monitorizar la velocidad de declive y ajustar su medicación de dolor.
+          </div>
+        </details>
+
+        <details class="group bg-brand-card/40 dark:bg-slate-900/15 border border-brand-border/50 rounded-2xl overflow-hidden transition-colors duration-200 hover:border-brand-primary/35 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex cursor-pointer select-none items-center justify-between gap-4 px-5 py-4 font-semibold text-sm text-brand-text">
+            <span>¿Qué debo hacer si el puntaje es bajo?</span>
+            <span class="shrink-0 text-brand-primary transition-transform duration-300 group-open:rotate-180" aria-hidden="true">
+              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" /></svg>
+            </span>
+          </summary>
+          <div class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted">
+            Un puntaje bajo (menor a 35) no significa que debas tomar una decisión apresurada tú solo. Su función principal es alertarte para que organices una visita prioritaria con tu veterinario de confianza. El profesional puede ajustar analgésicos, recomendar soporte de movilidad o ayudarte a tomar una decisión compasiva libre de culpa.
+          </div>
+        </details>
+      </div>
+    </section>
 
     <!-- REFERENCIAS -->
     <div class="mt-12 border-t border-brand-border pt-6 text-xs text-brand-muted leading-relaxed">

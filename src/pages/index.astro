@@ -1,10 +1,38 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.astro';
 
 // Obtener los últimos 3 artículos de blog ordenados (o simplemente los primeros 3)
 const blogEntries = await getCollection('blog');
 const recentPosts = blogEntries.slice(0, 3);
+
+const faqItems = [
+  {
+    question: "¿A qué edad se considera senior un perro según su tamaño?",
+    answer: "Con carácter general, los perros de razas pequeñas y medianas se consideran senior a los 7 u 8 años; los perros de razas grandes y gigantes a los 5 o 6 años. Siempre debe individualizarse según el estado fisiológico de cada animal."
+  },
+  {
+    question: "¿Cuánto debe caminar un perro mayor al día?",
+    answer: "Es preferible estructurar paseos cortos y frecuentes de bajo impacto. El tiempo total y ritmo debe ajustarse permanentemente en función de si presenta dolores articulares, fatiga ante temperaturas extremas y su tiempo de recuperación."
+  },
+  {
+    question: "¿Qué comida es mejor para perros senior y cuánta proteína?",
+    answer: "Requieren una dieta equilibrada que controle la densidad de calorías para evitar el sobrepeso. Se debe dar prioridad a fuentes de proteínas de alta digestibilidad para preservar masa muscular, salvo indicación veterinaria contraria."
+  },
+  {
+    question: "¿Cómo saber si mi perro tiene dolor de articulaciones?",
+    answer: "Las señales habituales son rigidez al levantarse de descansar, dificultad para subir o bajar de muebles, rechazo o intolerancia al ejercicio habitual, apatía o cambios repentinos en su comportamiento (irritabilidad o aislamiento)."
+  },
+  {
+    question: "¿Cómo adaptar mi casa para un perro mayor con movilidad reducida?",
+    answer: "Colocando alfombras en zonas de suelos resbaladizos, instalando rampas para salvar pequeños desniveles, proporcionando una cama ortopédica confortable, situando cuencos ligeramente elevados y manteniendo zonas tranquilas para su descanso."
+  },
+  {
+    question: "¿Cuándo ir a urgencias con un perro anciano?",
+    answer: "Acude de forma inmediata si presenta respiración fatigosa o acelerada en reposo, pérdida de conocimiento o colapso, dolor agudo, vómitos repetidos, anorexia total de más de 24 horas o episodios convulsivos."
+  }
+];
 ---
 
 <BaseLayout 
@@ -902,88 +930,8 @@ const recentPosts = blogEntries.slice(0, 3);
     )}
 
     <!-- INTERACTIVE FAQ SECTION -->
-    <section class="max-w-3xl mx-auto px-5 py-16 md:py-24 reveal-on-scroll">
-      <div class="text-center mb-12">
-        <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-2 block">Dudas Comunes</span>
-        <h2 class="text-2.5xl md:text-3.5xl font-bold text-brand-text">Preguntas frecuentes</h2>
-        <p class="text-xs text-brand-muted mt-2 font-light leading-relaxed">
-          Respuestas a las dudas habituales de los cuidadores de perros mayores.
-        </p>
-      </div>
-
-      <div class="faq space-y-4">
-        <details class="group border border-brand-border rounded-2xl p-4 bg-brand-card shadow-sm transition-colors hover:border-brand-primary/20">
-          <summary class="font-semibold text-sm text-brand-text cursor-pointer list-none flex items-center justify-between select-none">
-            ¿A qué edad se considera senior un perro según su tamaño?
-            <span class="transition-transform group-open:rotate-180">
-              <span class="material-symbols-outlined text-brand-muted text-base">expand_more</span>
-            </span>
-          </summary>
-          <div class="mt-3 text-brand-muted text-xs leading-relaxed font-light border-t border-brand-border/60 pt-3">
-            <p>Con carácter general, los perros de razas pequeñas y medianas se consideran senior a los 7 u 8 años; los perros de razas grandes y gigantes a los 5 o 6 años. Siempre debe individualizarse según el estado fisiológico de cada animal.</p>
-          </div>
-        </details>
-
-        <details class="group border border-brand-border rounded-2xl p-4 bg-brand-card shadow-sm transition-colors hover:border-brand-primary/20">
-          <summary class="font-semibold text-sm text-brand-text cursor-pointer list-none flex items-center justify-between select-none">
-            ¿Cuánto debe caminar un perro mayor al día?
-            <span class="transition-transform group-open:rotate-180">
-              <span class="material-symbols-outlined text-brand-muted text-base">expand_more</span>
-            </span>
-          </summary>
-          <div class="mt-3 text-brand-muted text-xs leading-relaxed font-light border-t border-brand-border/60 pt-3">
-            <p>Es preferible estructurar paseos cortos y frecuentes de bajo impacto. El tiempo total y ritmo debe ajustarse permanentemente en función de si presenta dolores articulares, fatiga ante temperaturas extremas y su tiempo de recuperación.</p>
-          </div>
-        </details>
-
-        <details class="group border border-brand-border rounded-2xl p-4 bg-brand-card shadow-sm transition-colors hover:border-brand-primary/20">
-          <summary class="font-semibold text-sm text-brand-text cursor-pointer list-none flex items-center justify-between select-none">
-            ¿Qué comida es mejor para perros senior y cuánta proteína?
-            <span class="transition-transform group-open:rotate-180">
-              <span class="material-symbols-outlined text-brand-muted text-base">expand_more</span>
-            </span>
-          </summary>
-          <div class="mt-3 text-brand-muted text-xs leading-relaxed font-light border-t border-brand-border/60 pt-3">
-            <p>Requieren una dieta equilibrada que controle la densidad de calorías para evitar el sobrepeso. Se debe dar prioridad a fuentes de proteínas de alta digestibilidad para preservar masa muscular, salvo indicación veterinaria contraria.</p>
-          </div>
-        </details>
-
-        <details class="group border border-brand-border rounded-2xl p-4 bg-brand-card shadow-sm transition-colors hover:border-brand-primary/20">
-          <summary class="font-semibold text-sm text-brand-text cursor-pointer list-none flex items-center justify-between select-none">
-            ¿Cómo saber si mi perro tiene dolor de articulaciones?
-            <span class="transition-transform group-open:rotate-180">
-              <span class="material-symbols-outlined text-brand-muted text-base">expand_more</span>
-            </span>
-          </summary>
-          <div class="mt-3 text-brand-muted text-xs leading-relaxed font-light border-t border-brand-border/60 pt-3">
-            <p>Las señales habituales son rigidez al levantarse de descansar, dificultad para subir o bajar de muebles, rechazo o intolerancia al ejercicio habitual, apatía o cambios repentinos en su comportamiento (irritabilidad o aislamiento).</p>
-          </div>
-        </details>
-
-        <details class="group border border-brand-border rounded-2xl p-4 bg-brand-card shadow-sm transition-colors hover:border-brand-primary/20">
-          <summary class="font-semibold text-sm text-brand-text cursor-pointer list-none flex items-center justify-between select-none">
-            ¿Cómo adaptar mi casa para un perro mayor con movilidad reducida?
-            <span class="transition-transform group-open:rotate-180">
-              <span class="material-symbols-outlined text-brand-muted text-base">expand_more</span>
-            </span>
-          </summary>
-          <div class="mt-3 text-brand-muted text-xs leading-relaxed font-light border-t border-brand-border/60 pt-3">
-            <p>Colocando alfombras en zonas de suelos resbaladizos, instalando rampas para salvar pequeños desniveles, proporcionando una cama ortopédica confortable, situando cuencos ligeramente elevados y manteniendo zonas tranquilas para su descanso.</p>
-          </div>
-        </details>
-
-        <details class="group border border-brand-border rounded-2xl p-4 bg-brand-card shadow-sm transition-colors hover:border-brand-primary/20">
-          <summary class="font-semibold text-sm text-brand-text cursor-pointer list-none flex items-center justify-between select-none">
-            ¿Cuándo ir a urgencias con un perro anciano?
-            <span class="transition-transform group-open:rotate-180">
-              <span class="material-symbols-outlined text-brand-muted text-base">expand_more</span>
-            </span>
-          </summary>
-          <div class="mt-3 text-brand-muted text-xs leading-relaxed font-light border-t border-brand-border/60 pt-3">
-            <p>Acude de forma inmediata si presenta respiración fatigosa o acelerada en reposo, pérdida de conocimiento o colapso, dolor agudo, vómitos repetidos, anorexia total de más de 24 horas o episodios convulsivos.</p>
-          </div>
-        </details>
-      </div>
+    <section class="max-w-3xl mx-auto px-5 py-8 reveal-on-scroll">
+      <FAQ items={faqItems} title="Preguntas frecuentes" />
     </section>
 
     <!-- DIRECTORY & RESOURCES FOOTER SECTION -->

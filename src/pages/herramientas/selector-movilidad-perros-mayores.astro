@@ -243,65 +243,62 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
 
     <!-- FAQs -->
     <div id="cm5-faq" class="scroll-mt-20"></div>
-    <section class="mt-12 border-t border-brand-border pt-10">
-      <h3 class="text-2.5xl font-bold text-brand-primary mb-6 font-serif">Preguntas frecuentes</h3>
+    <section class="faq-section mt-12 border-t border-brand-border pt-10" aria-labelledby="faq-heading-sel">
+      <div class="mb-6 flex items-center gap-3">
+        <div class="h-px flex-1 bg-brand-border/60"></div>
+        <h3 id="faq-heading-sel" class="text-xs font-bold tracking-widest uppercase text-brand-primary whitespace-nowrap">Preguntas frecuentes</h3>
+        <div class="h-px flex-1 bg-brand-border/60"></div>
+      </div>
 
-      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 mb-4 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
-        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
-          <span>¿Cómo saber si mi perro necesita silla de ruedas?</span>
-          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
-        </summary>
-        <p class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4">
-          Una silla de ruedas canina está indicada cuando el perro ha perdido la función motora
-          en sus patas traseras pero conserva buen estado general, apetito y voluntad de moverse.
-          Signos claros: arrastra las patas traseras sin corregirse, no puede levantarse ni con ayuda,
-          pero sigue queriendo explorar y sigue comiendo bien. Consulta con tu veterinario antes de comprar:
-          las medidas deben ser exactas para que no cause rozaduras.
-        </p>
-      </details>
+      <div class="space-y-3">
+        <details class="group bg-brand-card/40 dark:bg-slate-900/15 border border-brand-border/50 rounded-2xl overflow-hidden transition-colors duration-200 hover:border-brand-primary/35 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex cursor-pointer select-none items-center justify-between gap-4 px-5 py-4 font-semibold text-sm text-brand-text">
+            <span>¿Cómo saber si mi perro necesita silla de ruedas?</span>
+            <span class="shrink-0 text-brand-primary transition-transform duration-300 group-open:rotate-180" aria-hidden="true">
+              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" /></svg>
+            </span>
+          </summary>
+          <div class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted">
+            Una silla de ruedas canina está indicada cuando el perro ha perdido la función motora en sus patas traseras pero conserva buen estado general, apetito y voluntad de moverse. Signos claros: arrastra las patas traseras sin corregirse, no puede levantarse ni con ayuda, pero sigue queriendo explorar y sigue comiendo bien. Consulta con tu veterinario antes de comprar: las medidas deben ser exactas para que no cause rozaduras.
+          </div>
+        </details>
 
-      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 mb-4 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
-        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
-          <span>¿Rampa o escalera adaptada? ¿Cuál es mejor?</span>
-          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
-        </summary>
-        <p class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4">
-          Depende del peso y del problema articular. <strong>La rampa</strong> es mejor para perros
-          con displasia de cadera o dolor en las articulaciones: la inclinación gradual reduce
-          el estrés en la cadera al subir al sofá o al coche.
-          <strong>Las escaleras adaptadas</strong> ocupan menos espacio y son buenas para perros con
-          debilidad leve que aún pueden doblar las rodillas sin dolor.
-          Regla práctica: si cojea al bajar escaleras normales, empieza con rampa.
-        </p>
-      </details>
+        <details class="group bg-brand-card/40 dark:bg-slate-900/15 border border-brand-border/50 rounded-2xl overflow-hidden transition-colors duration-200 hover:border-brand-primary/35 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex cursor-pointer select-none items-center justify-between gap-4 px-5 py-4 font-semibold text-sm text-brand-text">
+            <span>¿Rampa o escalera adaptada? ¿Cuál es mejor?</span>
+            <span class="shrink-0 text-brand-primary transition-transform duration-300 group-open:rotate-180" aria-hidden="true">
+              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" /></svg>
+            </span>
+          </summary>
+          <div class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted">
+            Depende del peso y del problema articular. <strong>La rampa</strong> es mejor para perros con displasia de cadera o dolor en las articulaciones: la inclinación gradual reduce el estrés en la cadera al subir al sofá o al coche. <strong>Las escaleras adaptadas</strong> ocupan menos espacio y son buenas para perros con debilidad leve que aún pueden doblar las rodillas sin dolor. Regla práctica: si cojea al bajar escaleras normales, empieza con rampa.
+          </div>
+        </details>
 
-      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 mb-4 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
-        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
-          <span>¿Por qué la cama ortopédica es vital para un perro mayor?</span>
-          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
-        </summary>
-        <p class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4">
-          Los perros mayores con movilidad reducida pasan hasta 18 horas tumbados. Una superficie dura
-          concentra la presión en los puntos de contacto (codos, caderas, costillas), lo que genera
-          callosidades, úlceras de decúbito y dolor crónico.
-          Las camas de <strong>memory foam ortopédico</strong> distribuyen el peso uniformemente,
-          mantienen el calor y facilitan que el perro se levante solo (bordes firmes como punto de apoyo).
-          Una cama ortopédica no es un lujo: es prevención activa del dolor.
-        </p>
-      </details>
+        <details class="group bg-brand-card/40 dark:bg-slate-900/15 border border-brand-border/50 rounded-2xl overflow-hidden transition-colors duration-200 hover:border-brand-primary/35 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex cursor-pointer select-none items-center justify-between gap-4 px-5 py-4 font-semibold text-sm text-brand-text">
+            <span>¿Por qué la cama ortopédica es vital para un perro mayor?</span>
+            <span class="shrink-0 text-brand-primary transition-transform duration-300 group-open:rotate-180" aria-hidden="true">
+              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" /></svg>
+            </span>
+          </summary>
+          <div class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted">
+            Los perros mayores con movilidad reducida pasan hasta 18 horas tumbados. Una superficie dura concentra la presión en los puntos de contacto (codos, caderas, costillas), lo que genera callosidades, úlceras de decúbito y dolor crónico. Las camas de <strong>memory foam ortopédico</strong> distribuyen el peso uniformemente, mantienen el calor y facilitan que el perro se levante solo. Una cama ortopédica no es un lujo: es prevención activa del dolor.
+          </div>
+        </details>
 
-      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-5 mb-4 [&_summary::-webkit-details-marker]:hidden transition-all duration-300">
-        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
-          <span>¿El arnés de soporte trasero se puede usar todo el día?</span>
-          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
-        </summary>
-        <p class="mt-4 text-brand-muted text-sm leading-relaxed border-t border-brand-border/40 pt-4">
-          No se recomienda un uso continuo. Lo ideal son sesiones de 20–30 minutos para caminar
-          y hacer necesidades, seguidas de descanso sin arnés para evitar rozaduras e irritación
-          en la piel. Revisa diariamente las zonas de contacto (ingles, axilas traseras) y asegúrate
-          de que no esté ni muy apretado ni tan suelto que no sostenga.
-        </p>
-      </details>
+        <details class="group bg-brand-card/40 dark:bg-slate-900/15 border border-brand-border/50 rounded-2xl overflow-hidden transition-colors duration-200 hover:border-brand-primary/35 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex cursor-pointer select-none items-center justify-between gap-4 px-5 py-4 font-semibold text-sm text-brand-text">
+            <span>¿El arnés de soporte trasero se puede usar todo el día?</span>
+            <span class="shrink-0 text-brand-primary transition-transform duration-300 group-open:rotate-180" aria-hidden="true">
+              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" /></svg>
+            </span>
+          </summary>
+          <div class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted">
+            No se recomienda un uso continuo. Lo ideal son sesiones de 20–30 minutos para caminar y hacer necesidades, seguidas de descanso sin arnés para evitar rozaduras e irritación en la piel. Revisa diariamente las zonas de contacto (ingles, axilas traseras) y asegúrate de que no esté ni muy apretado ni tan suelto que no sostenga.
+          </div>
+        </details>
+      </div>
     </section>
 
     <!-- SEO Content Section -->
