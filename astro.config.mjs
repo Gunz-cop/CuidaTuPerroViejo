@@ -9,6 +9,7 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://cuidatuperroviejo.com',
+  trailingSlash: 'never',
   integrations: [tailwind(), mdx(), sitemap()],
   markdown: {
     rehypePlugins: [

@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { title, description = 'Cuida a tu Perro Viejo', keywords } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
@@ -19,6 +20,7 @@ const { title, description = 'Cuida a tu Perro Viejo', keywords } = Astro.props;
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="canonical" href={canonicalURL} />
     
     <!-- Script inline para prevenir el flash de luz blanca en modo oscuro -->
     <script is:inline>
