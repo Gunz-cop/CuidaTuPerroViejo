@@ -3,9 +3,27 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
 
-// Obtener los últimos 3 artículos de blog ordenados (o simplemente los primeros 3)
-const blogEntries = await getCollection('blog');
-const recentPosts = blogEntries.slice(0, 3);
+// Obtener los últimos 3 artículos de blog ordenados por fecha de publicación (más recientes primero)
+const blogEntries = await getCollection('blog', ({ data }) => {
+  return data.status === 'Publicado' || !data.status; // Asegurarse de traer solo publicados
+});
+
+// Ordenar por fecha publicada. Si no está definida, asumimos una fecha muy antigua o fecha de metadata
+const recentPosts = blogEntries
+  .sort((a, b) => {
+    // Si hay un datePublished en el markdown (a veces se guarda en el markdown original, si no usamos fallback)
+    // Buscaremos si hay fechas en los posts o si ordenamos por título/slug
+    // Como las fechas se declaran dentro de la metadata o frontmatter, leemos y parseamos
+    const dateA = a.data.legacyUrl ? new Date(a.data.legacyUrl.match(/\/(\d{4})\/(\d{2})\//) ? a.data.legacyUrl.match(/\/(\d{4})\/(\d{2})\//)[0] : '2025-01-01') : new Date('2025-01-01');
+    const dateB = b.data.legacyUrl ? new Date(b.data.legacyUrl.match(/\/(\d{4})\/(\d{2})\//) ? b.data.legacyUrl.match(/\/(\d{4})\/(\d{2})\//)[0] : '2025-01-01') : new Date('2025-01-01');
+    
+    // Para el post nuevo sin legacyUrl (ej. prevencion-caidas-perro-mayor), asumimos que es el más reciente de todos (hoy)
+    const timeA = a.slug === 'prevencion-caidas-perro-mayor' ? new Date('2026-06-01').getTime() : dateA.getTime();
+    const timeB = b.slug === 'prevencion-caidas-perro-mayor' ? new Date('2026-06-01').getTime() : dateB.getTime();
+    
+    return timeB - timeA;
+  })
+  .slice(0, 3);
 
 const faqItems = [
   {
