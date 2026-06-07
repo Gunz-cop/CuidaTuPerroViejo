@@ -1,0 +1,193 @@
+---
+// src/components/PostReader.astro
+const { entry } = Astro.props;
+const html = await Astro.slots.render('default');
+
+// 1. Clean slugifier function for Spanish
+function slugify(text: string) {
+  return text
+    .toString()
+    .normalize('NFD')                         // Normalize to split accents
+    .replace(/[\u0300-\u036f]/g, '')         // Remove accent marks
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')                     // Replace spaces with -
+    .replace(/[^\w\-]+/g, '')                 // Remove all non-word chars except dash
+    .replace(/\-\-+/g, '-')                   // Replace multiple - with single -
+    .replace(/^-+/, '')                       // Trim - from start
+    .replace(/-+$/, '');                      // Trim - from end
+}
+
+// Strip HTML tags helper
+function stripTags(htmlStr: string) {
+  return htmlStr.replace(/<[^>]*>/g, '');
+}
+
+// 2. Scan and process H2 and H3 headings
+const headings: { text: string; depth: number; id: string }[] = [];
+let headingIndex = 0;
+
+const processedHtml = html.replace(/<h([23])\b([^>]*?)>([\s\S]*?)<\/h\1>/gi, (match, tag, attrs, content) => {
+  const depth = parseInt(tag, 10);
+  const text = stripTags(content).trim();
+  
+  // Check for existing id attribute
+  const idMatch = attrs.match(/id=["']([^"']*)["']/i);
+  let id = '';
+  let newAttrs = attrs;
+  
+  if (idMatch) {
+    id = idMatch[1];
+  } else {
+    id = slugify(text);
+    if (!id) {
+      id = `heading-${headingIndex++}`;
+    }
+    // Inject generated id attribute
+    newAttrs = `${attrs} id="${id}"`;
+  }
+  
+  headings.push({ text, depth, id });
+  
+  return `<h${tag}${newAttrs}>${content}</h${tag}>`;
+});
+---
+
+<div class="relative w-full">
+  <!-- Reading Progress Bar -->
+  <div class="fixed top-0 left-0 w-full h-1 bg-transparent z-[100] pointer-events-none">
+    <div id="reading-progress-bar" class="h-full bg-brand-accent w-0 transition-all duration-100 ease-out"></div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-10 lg:gap-14 items-start">
+    <!-- Sidebar Table of Contents (Sticky on Desktop) -->
+    <aside class="hidden lg:block lg:sticky lg:top-24 max-h-[calc(100vh-8rem)] overflow-y-auto w-full pr-4 border-r border-brand-border/40 py-2">
+      <div class="mb-4">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-brand-primary/80">Contenido del artículo</h4>
+      </div>
+      <nav class="space-y-1 text-sm">
+        {headings.map((heading) => {
+          const depthClass = heading.depth === 3 ? "pl-5 text-xs text-brand-muted/90" : "font-semibold text-brand-muted";
+          return (
+            <a
+              href={`#${heading.id}`}
+              class={`toc-link block py-2 border-l-2 border-transparent pl-3 hover:text-brand-primary hover:border-brand-primary/45 transition-all duration-200 ${depthClass}`}
+            >
+              {heading.text}
+            </a>
+          );
+        })}
+      </nav>
+    </aside>
+
+    <!-- Main Content Column -->
+    <div class="w-full max-w-[740px] mx-auto lg:mx-0">
+      <!-- Mobile Table of Contents (Collapsible Card) -->
+      {headings.length > 0 && (
+        <div class="lg:hidden mb-8">
+          <details class="mobile-toc-container border border-brand-border bg-brand-card/50 rounded-2xl p-4 transition-all">
+            <summary class="font-bold text-brand-text cursor-pointer select-none flex justify-between items-center text-sm">
+              <span>📖 Tabla de Contenidos</span>
+            </summary>
+            <nav class="mt-3 space-y-2 text-sm pl-2 border-l border-brand-primary/20">
+              {headings.map((heading) => {
+                const depthClass = heading.depth === 3 ? "pl-4 text-xs text-brand-muted" : "font-semibold text-brand-text";
+                return (
+                  <a
+                    href={`#${heading.id}`}
+                    class="toc-link block py-1 hover:text-brand-primary transition-colors duration-150"
+                  >
+                    {heading.text}
+                  </a>
+                );
+              })}
+            </nav>
+          </details>
+        </div>
+      )}
+
+      <!-- Rendered HTML Content -->
+      <div class="content-body prose dark:prose-invert max-w-full">
+        <Fragment set:html={processedHtml} />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initProgressAndScrollspy() {
+    // 1. Reading Progress Bar
+    const progressBar = document.getElementById('reading-progress-bar');
+    const updateProgress = () => {
+      if (!progressBar) return;
+      const winScroll = window.scrollY || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      progressBar.style.width = `${scrolled}%`;
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress(); // Run once initially
+
+    // 2. Scrollspy
+    const headings = Array.from(document.querySelectorAll('.content-body h2, .content-body h3'));
+    const tocLinks = document.querySelectorAll('.toc-link');
+
+    if (headings.length === 0 || tocLinks.length === 0) return;
+
+    let activeHeadingId = '';
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-80px 0px -65% 0px', // Trigger when heading enters reading area (top 35%)
+      threshold: [0, 1.0]
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          activeHeadingId = entry.target.id;
+        }
+      });
+
+      if (activeHeadingId) {
+        tocLinks.forEach((link) => {
+          if (link.getAttribute('href') === `#${activeHeadingId}`) {
+            link.classList.add('active-toc-link');
+          } else {
+            link.classList.remove('active-toc-link');
+          }
+        });
+      }
+    }, observerOptions);
+
+    headings.forEach((heading) => {
+      if (heading.id) {
+        observer.observe(heading);
+      }
+    });
+
+    // Fallback for top of page
+    const checkTopFallback = () => {
+      if (window.scrollY < 200 && headings.length > 0) {
+        const firstId = headings[0].id;
+        tocLinks.forEach((link) => {
+          if (link.getAttribute('href') === `#${firstId}`) {
+            link.classList.add('active-toc-link');
+          } else {
+            link.classList.remove('active-toc-link');
+          }
+        });
+      }
+    };
+    window.addEventListener('scroll', checkTopFallback, { passive: true });
+    checkTopFallback();
+  }
+
+  // Handle page transitions & loads
+  document.addEventListener('astro:page-load', initProgressAndScrollspy);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProgressAndScrollspy);
+  } else {
+    initProgressAndScrollspy();
+  }
+</script>

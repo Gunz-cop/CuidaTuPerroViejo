@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiloNavigation from '../../components/SiloNavigation.astro';
+import PostReader from '../../components/PostReader.astro';
+
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
@@ -47,13 +49,13 @@ const hideHeroCSS = heroImage
     <style slot="head" is:inline set:html={hideHeroCSS} />
   )}
 
-  <main class="max-w-3xl mx-auto px-4 py-8 md:py-12 w-full">
+  <main class="max-w-5xl mx-auto px-4 py-8 md:py-12 w-full">
     <!-- Breadcrumbs -->
     <Breadcrumbs pilarSlug={entry.data.pilar} pilarName={pilarName} title={entry.data.title} />
 
     <article>
       <!-- ===== HERO HEADER ===== -->
-      <header class="mb-8 md:mb-10">
+      <header class="mb-8 md:mb-10 max-w-3xl mx-auto lg:max-w-none">
         <!-- Badge de pilar -->
         <div class="mb-4">
           <a
@@ -107,10 +109,10 @@ const hideHeroCSS = heroImage
         <div class="mt-8 border-b border-brand-border"></div>
       </header>
 
-      <!-- ===== ARTICLE CONTENT ===== -->
-      <div class="content-body prose dark:prose-invert max-w-full sm:max-w-3xl mt-8">
+      <!-- ===== ARTICLE CONTENT & TOC ===== -->
+      <PostReader entry={entry}>
         <Content />
-      </div>
+      </PostReader>
     </article>
 
     <SiloNavigation currentPilar={entry.data.pilar} currentSlug={entry.slug} />

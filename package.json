@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "npm run build && wrangler dev",
     "astro": "astro",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy && npx tsx lib/discovery/run.ts",
+    "sdi:run": "tsx lib/discovery/run.ts"
+
   },
   "dependencies": {
     "@astrojs/cloudflare": "11",
