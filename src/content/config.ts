@@ -22,6 +22,7 @@ const blog = defineCollection({
     heroImageAlt: z.string().optional(),
     legacyUrl: z.string().optional(),
     status: z.string().optional(),
+    datePublished: z.string().optional(),
   }).strict(),
 });
 

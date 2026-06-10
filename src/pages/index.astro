@@ -11,17 +11,26 @@ const blogEntries = await getCollection('blog', ({ data }) => {
 // Ordenar por fecha publicada. Si no está definida, asumimos una fecha muy antigua o fecha de metadata
 const recentPosts = blogEntries
   .sort((a, b) => {
-    // Si hay un datePublished en el markdown (a veces se guarda en el markdown original, si no usamos fallback)
-    // Buscaremos si hay fechas en los posts o si ordenamos por título/slug
-    // Como las fechas se declaran dentro de la metadata o frontmatter, leemos y parseamos
-    const dateA = a.data.legacyUrl ? new Date(a.data.legacyUrl.match(/\/(\d{4})\/(\d{2})\//) ? a.data.legacyUrl.match(/\/(\d{4})\/(\d{2})\//)[0] : '2025-01-01') : new Date('2025-01-01');
-    const dateB = b.data.legacyUrl ? new Date(b.data.legacyUrl.match(/\/(\d{4})\/(\d{2})\//) ? b.data.legacyUrl.match(/\/(\d{4})\/(\d{2})\//)[0] : '2025-01-01') : new Date('2025-01-01');
+    const getPostDate = (post) => {
+      if (post.data.datePublished) {
+        return new Date(post.data.datePublished);
+      }
+      if (post.slug === 'prevencion-caidas-perro-mayor') {
+        return new Date('2026-06-01');
+      }
+      if (post.data.legacyUrl) {
+        const match = post.data.legacyUrl.match(/\/(\d{4})\/(\d{2})\//);
+        if (match) {
+          return new Date(match[0]);
+        }
+      }
+      return new Date('2025-01-01');
+    };
+
+    const dateA = getPostDate(a);
+    const dateB = getPostDate(b);
     
-    // Para el post nuevo sin legacyUrl (ej. prevencion-caidas-perro-mayor), asumimos que es el más reciente de todos (hoy)
-    const timeA = a.slug === 'prevencion-caidas-perro-mayor' ? new Date('2026-06-01').getTime() : dateA.getTime();
-    const timeB = b.slug === 'prevencion-caidas-perro-mayor' ? new Date('2026-06-01').getTime() : dateB.getTime();
-    
-    return timeB - timeA;
+    return dateB.getTime() - dateA.getTime();
   })
   .slice(0, 3);
 
