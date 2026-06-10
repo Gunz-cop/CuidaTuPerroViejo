@@ -6,10 +6,11 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "postbuild": "npx tsx lib/discovery/run.ts",
     "preview": "npm run build && wrangler dev",
     "astro": "astro",
-    "deploy": "npm run build && wrangler deploy && npx tsx lib/discovery/run.ts",
-    "sdi:run": "tsx lib/discovery/run.ts"
+    "deploy": "npm run build && wrangler deploy",
+    "sdi:run": "npx tsx lib/discovery/run.ts"
 
   },
   "dependencies": {
