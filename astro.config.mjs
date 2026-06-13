@@ -10,6 +10,9 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: 'https://cuidatuperroviejo.com',
   trailingSlash: 'never',
+  build: {
+    format: 'file'
+  },
   integrations: [tailwind(), mdx(), sitemap()],
   markdown: {
     rehypePlugins: [
