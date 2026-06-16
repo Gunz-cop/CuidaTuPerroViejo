@@ -23,12 +23,10 @@ const description = "Consulta a nuestro asistente virtual inteligente especializ
       "url": "https://cuidatuperroviejo.com/"
     }
   }
-  </script>
-
-  <!-- ===== PAGE HERO BANNER ===== -->
-  <div class="w-full bg-gradient-to-br from-brand-secondary/40 via-brand-primary/8 to-brand-secondary/20 dark:from-brand-primary/10 dark:via-brand-secondary/5 dark:to-transparent border-b border-brand-border">
+  </script>  <!-- ===== PAGE HERO BANNER ===== -->
+  <div class="w-full bg-gradient-to-br from-brand-secondary/30 via-brand-primary/10 to-brand-secondary/10 dark:from-brand-primary/15 dark:via-brand-secondary/5 dark:to-transparent border-b border-brand-border">
     <div class="max-w-4xl mx-auto px-5 py-10 md:py-14 flex flex-col items-center text-center">
-      <div class="w-14 h-14 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center mb-4 shadow-sm text-2xl">
+      <div class="w-14 h-14 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center mb-4 shadow-sm text-2xl animate-pulse">
         🐾
       </div>
       <nav class="mb-3 text-xs text-brand-muted flex items-center gap-1.5">
@@ -52,7 +50,7 @@ const description = "Consulta a nuestro asistente virtual inteligente especializ
       <!-- LEFT COLUMN: Information & Disclaimer (5 cols) -->
       <div class="lg:col-span-4 space-y-6">
         <!-- Medical Disclaimer Card -->
-        <div class="bg-amber-500/10 dark:bg-amber-500/5 border border-amber-500/30 rounded-3xl p-6 shadow-sm">
+        <div class="bg-amber-500/10 dark:bg-amber-500/5 border border-amber-500/25 rounded-[24px] p-6 shadow-sm">
           <div class="flex items-center gap-2.5 text-amber-700 dark:text-amber-400 font-bold text-sm mb-3">
             <span>⚠️</span>
             <h3>Descargo de Responsabilidad</h3>
@@ -66,7 +64,7 @@ const description = "Consulta a nuestro asistente virtual inteligente especializ
         </div>
 
         <!-- Quick Tips & Instructions -->
-        <div class="bg-brand-card/40 dark:bg-slate-900/20 border border-brand-border/60 rounded-3xl p-6 shadow-sm space-y-4">
+        <div class="bg-brand-card/45 dark:bg-[#1b1e1b]/40 border border-brand-border/70 rounded-[24px] p-6 shadow-sm space-y-4">
           <h3 class="text-sm font-bold text-brand-text uppercase tracking-wider">💡 Temas de Consulta</h3>
           <p class="text-xs text-brand-muted font-light leading-relaxed">
             Puedes hacerle preguntas detalladas sobre cualquiera de nuestros pilares de cuidado:
@@ -86,12 +84,12 @@ const description = "Consulta a nuestro asistente virtual inteligente especializ
 
       <!-- RIGHT COLUMN: Embedded Premium Chat Panel (8 cols) -->
       <div class="lg:col-span-8">
-        <div class="w-full h-[620px] bg-white dark:bg-slate-900/80 border border-brand-border/70 dark:border-brand-border/15 rounded-3xl shadow-xl flex flex-col overflow-hidden">
+        <div class="w-full h-[620px] bg-white dark:bg-[#121412]/90 border border-brand-border/70 dark:border-[#2f4d3a]/50 rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex flex-col overflow-hidden">
           
           <!-- Chat Header -->
-          <header class="bg-gradient-to-r from-brand-primary/10 to-brand-primary-hover/5 dark:from-slate-950 dark:to-slate-900 px-6 py-4 flex items-center justify-between border-b border-brand-border/40 dark:border-brand-border/10">
+          <header class="bg-gradient-to-r from-[#45634f]/10 to-[#5d7c67]/5 dark:from-[#1b1e1b] dark:to-[#121412] px-6 py-5 flex items-center justify-between border-b border-brand-border/40 dark:border-[#2f4d3a]/30">
             <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-xl bg-brand-primary/10 flex items-center justify-center text-lg shadow-sm">
+              <div class="w-9 h-9 rounded-xl bg-[#45634f]/10 dark:bg-[#adcfb6]/10 flex items-center justify-center text-lg shadow-sm">
                 🤖
               </div>
               <div>
@@ -105,20 +103,20 @@ const description = "Consulta a nuestro asistente virtual inteligente especializ
                 </span>
               </div>
             </div>
-            <div class="text-[10px] text-brand-muted bg-brand-bg px-2.5 py-1 rounded-full border border-brand-border/40 font-medium">
+            <div class="text-[10px] text-brand-muted bg-[#faf9f4] dark:bg-[#1b1e1b] px-3 py-1 rounded-full border border-brand-border/40 font-medium">
               Llama 3.2
             </div>
           </header>
 
           <!-- Chat Messages Container -->
-          <div id="page-chat-messages" class="flex-1 overflow-y-auto p-6 space-y-4.5 scroll-smooth bg-gradient-to-b from-brand-bg/5 to-brand-bg/20 dark:from-slate-950/20 dark:to-slate-950/40">
+          <div id="page-chat-messages" class="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth bg-gradient-to-b from-[#faf9f4]/20 to-[#f5f4ef]/40 dark:from-[#121412]/30 dark:to-[#121412]/50">
             <!-- Welcome message -->
-            <div class="flex items-start gap-3 max-w-[85%]">
-              <div class="w-7 h-7 rounded-full bg-brand-primary/10 flex items-center justify-center text-xs shrink-0 shadow-sm">
+            <div class="flex items-start gap-3 max-w-[85%] animate-fade-in">
+              <div class="w-8 h-8 rounded-full bg-brand-primary/10 dark:bg-brand-primary/15 flex items-center justify-center text-xs shrink-0 select-none shadow-sm">
                 🐾
               </div>
-              <div class="bg-brand-bg dark:bg-slate-800 border border-brand-border/40 dark:border-brand-border/10 px-4 py-3.5 rounded-2xl rounded-tl-none shadow-sm">
-                <p class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light">
+              <div class="bg-[#f4f6f3] dark:bg-[#1b1e1b] border border-[#dbdad5] dark:border-[#2f4d3a]/60 px-4 py-3.5 rounded-2xl rounded-tl-none shadow-sm">
+                <p class="text-xs text-brand-text dark:text-[#f8fff7]/90 leading-relaxed font-light">
                   ¡Hola! Soy tu asistente de bienestar para perros mayores. Pregúntame sobre alimentación, dolor articular (artrosis), ejercicio o cambios de comportamiento. ¿En qué te ayudo hoy?
                 </p>
               </div>
@@ -126,15 +124,15 @@ const description = "Consulta a nuestro asistente virtual inteligente especializ
 
             <!-- Suggestion Pills -->
             <div id="page-chat-suggestions" class="space-y-3 pt-2">
-              <p class="text-[10px] text-brand-muted dark:text-brand-primary/70 font-semibold uppercase tracking-wider pl-10 select-none">Temas sugeridos para empezar:</p>
-              <div class="flex flex-col sm:flex-row gap-2 pl-10 pr-2">
-                <button class="page-suggest-btn flex items-center gap-2 px-3.5 py-2.5 bg-white dark:bg-slate-850/40 hover:bg-brand-primary/5 dark:hover:bg-slate-800 border border-brand-border/60 dark:border-brand-border/15 text-xs text-brand-text dark:text-brand-text/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.01] active:scale-[0.99] font-medium">
+              <p class="text-[10px] text-brand-muted/80 dark:text-[#adcfb6]/80 font-bold uppercase tracking-wider pl-11 select-none">Temas sugeridos para empezar:</p>
+              <div class="flex flex-wrap gap-2.5 pl-11 pr-2">
+                <button class="page-suggest-btn flex items-center gap-2 px-3.5 py-2.5 bg-[#faf9f4]/80 dark:bg-[#1b1e1b]/80 hover:bg-[#45634f]/5 dark:hover:bg-[#adcfb6]/5 border border-[#dbdad5] dark:border-[#2f4d3a]/60 text-xs text-brand-text dark:text-[#f8fff7]/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] font-medium">
                   🦴 ¿Cómo tratar la artrosis?
                 </button>
-                <button class="page-suggest-btn flex items-center gap-2 px-3.5 py-2.5 bg-white dark:bg-slate-850/40 hover:bg-brand-primary/5 dark:hover:bg-slate-800 border border-brand-border/60 dark:border-brand-border/15 text-xs text-brand-text dark:text-brand-text/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.01] active:scale-[0.99] font-medium">
+                <button class="page-suggest-btn flex items-center gap-2 px-3.5 py-2.5 bg-[#faf9f4]/80 dark:bg-[#1b1e1b]/80 hover:bg-[#45634f]/5 dark:hover:bg-[#adcfb6]/5 border border-[#dbdad5] dark:border-[#2f4d3a]/60 text-xs text-brand-text dark:text-[#f8fff7]/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] font-medium">
                   🍎 Recetas de comida casera
                 </button>
-                <button class="page-suggest-btn flex items-center gap-2 px-3.5 py-2.5 bg-white dark:bg-slate-850/40 hover:bg-brand-primary/5 dark:hover:bg-slate-800 border border-brand-border/60 dark:border-brand-border/15 text-xs text-brand-text dark:text-brand-text/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.01] active:scale-[0.99] font-medium">
+                <button class="page-suggest-btn flex items-center gap-2 px-3.5 py-2.5 bg-[#faf9f4]/80 dark:bg-[#1b1e1b]/80 hover:bg-[#45634f]/5 dark:hover:bg-[#adcfb6]/5 border border-[#dbdad5] dark:border-[#2f4d3a]/60 text-xs text-brand-text dark:text-[#f8fff7]/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] font-medium">
                   🌙 Mi perro se desorienta de noche
                 </button>
               </div>
@@ -142,14 +140,14 @@ const description = "Consulta a nuestro asistente virtual inteligente especializ
           </div>
 
           <!-- Disclaimer Banner at Bottom of Panel -->
-          <div class="px-6 py-2.5 border-t border-brand-border/30 dark:border-brand-border/10 bg-brand-bg/20 dark:bg-slate-950 text-center select-none">
-            <p class="text-[9px] text-brand-muted dark:text-brand-primary/60 leading-relaxed font-light">
-              ⚠️ <em>La información proporcionada es únicamente educativa. Consulta a tu veterinario de confianza ante cualquier síntoma.</em>
+          <div class="px-6 py-2.5 border-t border-[#dbdad5]/30 dark:border-[#2f4d3a]/20 bg-[#faf9f4]/50 dark:bg-[#121613] text-center select-none shadow-[0_-2px_10px_rgba(0,0,0,0.01)]">
+            <p class="text-[9px] text-brand-muted dark:text-[#adcfb6]/70 leading-relaxed font-light">
+              ⚠️ <em>Este asistente virtual no sustituye el diagnóstico de un veterinario. Si tu mascota tiene una urgencia clínica, acude a un centro de inmediato.</em>
             </p>
           </div>
 
           <!-- Chat Input Form -->
-          <form id="page-chat-form" class="p-4 border-t border-brand-border/40 dark:border-brand-border/10 bg-white dark:bg-slate-950 flex items-center gap-3">
+          <form id="page-chat-form" class="p-4 border-t border-[#dbdad5]/30 dark:border-[#2f4d3a]/20 bg-white dark:bg-[#121613] flex items-center gap-3">
             <input 
               type="text" 
               id="page-chat-input" 
@@ -157,11 +155,11 @@ const description = "Consulta a nuestro asistente virtual inteligente especializ
               maxlength="300"
               required
               autocomplete="off"
-              class="flex-1 px-4.5 py-3.5 bg-brand-bg/30 dark:bg-slate-900/60 border border-brand-border/60 dark:border-brand-border/10 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/15 dark:focus:ring-brand-primary/30 rounded-2xl text-xs text-brand-text dark:text-brand-text placeholder-brand-muted/60 focus:outline-none transition-all"
+              class="flex-1 px-4.5 py-3.5 bg-[#faf9f4]/50 dark:bg-[#1b1e1b] border border-[#dbdad5] dark:border-[#2f4d3a]/60 focus:border-brand-primary dark:focus:border-[#adcfb6] focus:ring-2 focus:ring-brand-primary/10 dark:focus:ring-[#adcfb6]/15 rounded-2xl text-base sm:text-sm text-brand-text dark:text-[#f8fff7] placeholder-brand-muted/50 focus:outline-none transition-all"
             />
             <button 
               type="submit" 
-              class="w-11 h-11 bg-brand-primary hover:bg-brand-primary-hover active:scale-95 text-white dark:text-slate-950 rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg transition-all shrink-0 cursor-pointer"
+              class="w-11 h-11 bg-brand-primary hover:bg-[#5d7c67] active:scale-95 text-white dark:text-[#121412] dark:bg-[#adcfb6] dark:hover:bg-[#c9ebd1] rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg transition-all shrink-0 cursor-pointer"
               aria-label="Enviar pregunta"
             >
               <svg xmlns="http://www.w3.org/2050/svg" class="h-5.5 w-5.5 transform rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -280,16 +278,16 @@ const description = "Consulta a nuestro asistente virtual inteligente especializ
       messageRow.className = `flex items-start gap-3 max-w-[85%] animate-fade-in ${sender === 'user' ? 'ml-auto flex-row-reverse' : ''}`;
 
       const iconDiv = document.createElement('div');
-      iconDiv.className = `w-7 h-7 rounded-full flex items-center justify-center text-xs shrink-0 select-none shadow-sm ${
-        sender === 'user' ? 'bg-brand-secondary/15 dark:bg-brand-primary/10' : 'bg-brand-primary/10'
+      iconDiv.className = `w-8 h-8 rounded-full flex items-center justify-center text-xs shrink-0 select-none shadow-sm ${
+        sender === 'user' ? 'bg-[#fdcb9b]/25 dark:bg-[#7c5730]/25' : 'bg-brand-primary/10'
       }`;
       iconDiv.textContent = sender === 'user' ? '👤' : '🐾';
 
       const contentDiv = document.createElement('div');
       contentDiv.className = `px-4 py-3 rounded-2xl shadow-sm ${
         sender === 'user' 
-          ? 'bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-tr-none' 
-          : 'bg-white dark:bg-slate-800 border border-brand-border/40 dark:border-brand-border/10 text-brand-text dark:text-brand-text/90 rounded-tl-none'
+          ? 'bg-[#45634f] dark:bg-[#2f4d3a] text-white dark:text-[#f8fff7] rounded-tr-none border border-transparent dark:border-[#adcfb6]/15' 
+          : 'bg-[#f4f6f3] dark:bg-[#1b1e1b] border border-[#dbdad5] dark:border-[#2f4d3a]/60 text-brand-text dark:text-[#f8fff7]/90 rounded-tl-none'
       }`;
 
       if (sender === 'user') {
@@ -318,11 +316,11 @@ const description = "Consulta a nuestro asistente virtual inteligente especializ
       indicator.className = 'flex items-start gap-3 max-w-[85%] animate-fade-in';
 
       const iconDiv = document.createElement('div');
-      iconDiv.className = 'w-7 h-7 rounded-full bg-brand-primary/10 flex items-center justify-center text-xs shrink-0 select-none shadow-sm';
+      iconDiv.className = 'w-8 h-8 rounded-full bg-brand-primary/10 dark:bg-brand-primary/15 flex items-center justify-center text-xs shrink-0 select-none shadow-sm';
       iconDiv.textContent = '🐾';
 
       const contentDiv = document.createElement('div');
-      contentDiv.className = 'bg-white dark:bg-slate-800 border border-brand-border/40 dark:border-brand-border/10 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-2';
+      contentDiv.className = 'bg-[#f4f6f3] dark:bg-[#1b1e1b] border border-[#dbdad5] dark:border-[#2f4d3a]/60 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-2';
 
       const text = document.createElement('span');
       text.className = 'text-[11px] text-brand-muted dark:text-brand-primary/80 italic font-light';

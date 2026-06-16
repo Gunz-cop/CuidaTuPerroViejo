@@ -24,9 +24,30 @@ const isAsistenteIaPage = Astro.url.pathname.replace(/\/$/, '') === '/asistente-
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="canonical" href={canonicalURL} />
     
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5094917394495886"
-         crossorigin="anonymous"></script>
+    <!-- Google AdSense (Lazy Loaded for Mobile Speed) -->
+    <script is:inline>
+      function loadAdSense() {
+        // Evitar doble carga
+        if (window.adsenseLoaded) return;
+        window.adsenseLoaded = true;
+
+        const script = document.createElement('script');
+        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5094917394495886";
+        script.async = true;
+        script.crossOrigin = "anonymous";
+        document.head.appendChild(script);
+
+        // Remover listeners una vez cargado
+        window.removeEventListener('scroll', loadAdSense);
+        window.removeEventListener('touchstart', loadAdSense);
+        window.removeEventListener('mousemove', loadAdSense);
+      }
+
+      // Iniciar carga tras la primera interacción del usuario
+      window.addEventListener('scroll', loadAdSense, { passive: true });
+      window.addEventListener('touchstart', loadAdSense, { passive: true });
+      window.addEventListener('mousemove', loadAdSense, { passive: true });
+    </script>
     
     <!-- Script inline para prevenir el flash de luz blanca en modo oscuro -->
     <script is:inline>
