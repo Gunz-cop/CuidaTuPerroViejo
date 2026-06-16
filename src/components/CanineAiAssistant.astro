@@ -1,40 +1,46 @@
 ---
-// CanineAiAssistant.astro: Asistente virtual flotante con inteligencia artificial para el cuidado de perros senior
+// CanineAiAssistant.astro: Asistente virtual flotante con diseño premium, animaciones fluidas y alto contraste (soporte para modo claro y oscuro)
 ---
 
 <!-- Toggle Button -->
 <button 
   id="ai-chat-toggle" 
-  class="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4.5 py-3.5 bg-brand-primary hover:bg-brand-primary-hover text-white rounded-full shadow-2xl hover:shadow-primary/20 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer border border-brand-primary/10 select-none group"
+  class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-5 py-4 bg-brand-primary dark:bg-slate-900 text-white dark:text-brand-primary rounded-full shadow-2xl hover:scale-[1.05] active:scale-[0.95] transition-all duration-300 cursor-pointer border border-brand-primary/10 dark:border-brand-primary/20 select-none group"
   aria-label="Abrir asistente de IA"
 >
-  <span class="text-xl animate-pulse group-hover:scale-110 transition-transform">🐾</span>
-  <span class="text-xs font-bold font-sans tracking-wide">Asistente IA</span>
+  <div class="relative flex items-center justify-center">
+    <span class="text-xl group-hover:rotate-12 transition-transform duration-300">🐾</span>
+    <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-brand-secondary dark:bg-brand-accent rounded-full border border-white dark:border-slate-900 animate-ping"></span>
+  </div>
+  <span class="text-xs font-bold font-sans tracking-wide">Pregunta al Asistente</span>
 </button>
 
 <!-- Chat Window Wrapper -->
 <div 
   id="ai-chat-window" 
-  class="fixed bottom-22 right-6 z-50 w-[90vw] sm:w-[380px] h-[500px] bg-brand-card dark:bg-slate-900 border border-brand-border/80 rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-none"
+  class="fixed bottom-24 right-6 z-50 w-[calc(100vw-2rem)] sm:w-[390px] h-[580px] max-h-[calc(100vh-8rem)] bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-brand-border/60 dark:border-brand-border/15 rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-none"
 >
-  <!-- Header -->
-  <header class="bg-brand-primary px-5 py-4 flex items-center justify-between text-white shadow-md">
-    <div class="flex items-center gap-2.5">
-      <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-lg shadow-sm">
+  <!-- Header (Gradient with brand identity) -->
+  <header class="bg-gradient-to-r from-brand-primary to-brand-primary-hover dark:from-slate-950 dark:to-slate-900 px-5 py-4.5 flex items-center justify-between text-white border-b border-brand-border/10 dark:border-brand-border/5 shadow-md">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl bg-white/10 dark:bg-brand-primary/10 flex items-center justify-center text-lg shadow-inner">
         🐶
       </div>
       <div>
-        <h3 class="text-sm font-extrabold tracking-tight font-serif leading-tight">Asistente de Bienestar Canino</h3>
-        <span class="text-[10px] text-white/80 font-light flex items-center gap-1">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-          Conectado con IA
+        <h3 class="text-xs font-bold tracking-wide uppercase text-white/70 dark:text-brand-primary/70 leading-none mb-1">Asistente de Bienestar</h3>
+        <span class="text-sm font-extrabold tracking-tight font-serif flex items-center gap-1.5 leading-none">
+          Canine Advisor
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
         </span>
       </div>
     </div>
     
     <button 
       id="ai-chat-close" 
-      class="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center text-white/85 hover:text-white transition-colors cursor-pointer"
+      class="w-8 h-8 rounded-full hover:bg-white/15 dark:hover:bg-brand-primary/10 flex items-center justify-center text-white/80 dark:text-brand-primary/80 hover:text-white dark:hover:text-brand-primary transition-colors cursor-pointer"
       aria-label="Cerrar chat"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -44,46 +50,49 @@
   </header>
 
   <!-- Messages List -->
-  <div id="ai-chat-messages" class="flex-1 overflow-y-auto p-5 space-y-4 scroll-smooth bg-brand-bg/20 dark:bg-slate-950/10">
+  <div id="ai-chat-messages" class="flex-1 overflow-y-auto p-5 space-y-4.5 scroll-smooth bg-gradient-to-b from-brand-bg/10 to-brand-bg/30 dark:from-slate-950/20 dark:to-slate-950/40">
     
     <!-- Welcome message -->
-    <div class="flex items-start gap-2.5 max-w-[85%]">
-      <div class="w-6.5 h-6.5 rounded-full bg-brand-primary/10 flex items-center justify-center text-xs shrink-0 select-none">
+    <div class="flex items-start gap-2.5 max-w-[85%] animate-fade-in">
+      <div class="w-7 h-7 rounded-full bg-brand-primary/10 dark:bg-brand-primary/10 flex items-center justify-center text-xs shrink-0 select-none shadow-sm">
         🐾
       </div>
-      <div class="bg-white dark:bg-slate-800 border border-brand-border/40 px-3.5 py-2.5 rounded-2xl rounded-tl-none shadow-sm">
-        <p class="text-xs text-brand-text leading-relaxed font-light">
+      <div class="bg-white dark:bg-slate-800 border border-brand-border/40 dark:border-brand-border/10 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm">
+        <p class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light">
           ¡Hola! Soy tu asistente de bienestar para perros mayores. Pregúntame sobre alimentación, dolor articular (artrosis), ejercicio o cambios de comportamiento. ¿En qué te ayudo hoy?
         </p>
       </div>
     </div>
 
-    <!-- Suggested Quick Prompts -->
-    <div id="ai-chat-suggestions" class="space-y-2 pt-2">
-      <p class="text-[10px] text-brand-muted font-semibold uppercase tracking-wider pl-9">Temas sugeridos:</p>
-      <div class="flex flex-wrap gap-1.5 pl-9">
-        <button class="chat-suggest-btn px-3 py-1.5 bg-brand-primary/5 hover:bg-brand-primary/10 border border-brand-primary/15 text-[11px] text-brand-primary rounded-full transition-colors font-medium cursor-pointer">
-          ¿Cómo saber si mi perro tiene dolor?
+    <!-- Suggested Quick Prompts (Redesigned as clean cards) -->
+    <div id="ai-chat-suggestions" class="space-y-3 pt-2">
+      <p class="text-[10px] text-brand-muted dark:text-brand-primary/70 font-semibold uppercase tracking-wider pl-9.5 select-none">Temas sugeridos:</p>
+      <div class="flex flex-col gap-2 pl-9.5 pr-2">
+        <button class="chat-suggest-btn flex items-center gap-2.5 w-full text-left px-4 py-3 bg-white/70 dark:bg-slate-850/40 hover:bg-white dark:hover:bg-slate-800/80 border border-brand-border/60 dark:border-brand-border/10 text-xs text-brand-text dark:text-brand-text/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99] font-medium">
+          <span class="text-brand-primary dark:text-brand-primary/80">💡</span>
+          <span>¿Cómo saber si mi perro tiene dolor?</span>
         </button>
-        <button class="chat-suggest-btn px-3 py-1.5 bg-brand-primary/5 hover:bg-brand-primary/10 border border-brand-primary/15 text-[11px] text-brand-primary rounded-full transition-colors font-medium cursor-pointer">
-          ¿Qué comida dar a un perro de 12 años?
+        <button class="chat-suggest-btn flex items-center gap-2.5 w-full text-left px-4 py-3 bg-white/70 dark:bg-slate-850/40 hover:bg-white dark:hover:bg-slate-800/80 border border-brand-border/60 dark:border-brand-border/10 text-xs text-brand-text dark:text-brand-text/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99] font-medium">
+          <span class="text-brand-primary dark:text-brand-primary/80">🦴</span>
+          <span>¿Qué comida dar a un perro de 12 años?</span>
         </button>
-        <button class="chat-suggest-btn px-3 py-1.5 bg-brand-primary/5 hover:bg-brand-primary/10 border border-brand-primary/15 text-[11px] text-brand-primary rounded-full transition-colors font-medium cursor-pointer">
-          Mi perro senior está desorientado de noche
+        <button class="chat-suggest-btn flex items-center gap-2.5 w-full text-left px-4 py-3 bg-white/70 dark:bg-slate-850/40 hover:bg-white dark:hover:bg-slate-800/80 border border-brand-border/60 dark:border-brand-border/10 text-xs text-brand-text dark:text-brand-text/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:shadow-md hover:scale-[1.01] active:scale-[0.99] font-medium">
+          <span class="text-brand-primary dark:text-brand-primary/80">🌙</span>
+          <span>Mi perro senior está desorientado de noche</span>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Footer Disclaimer -->
-  <div class="px-5 py-2 border-t border-brand-border/40 bg-brand-card dark:bg-slate-900 text-center">
-    <p class="text-[9px] text-brand-muted/80 leading-relaxed font-light">
+  <!-- Footer Disclaimer (High readability) -->
+  <div class="px-5 py-3 border-t border-brand-border/30 dark:border-brand-border/10 bg-white dark:bg-slate-950 text-center select-none shadow-[0_-2px_10px_rgba(0,0,0,0.02)]">
+    <p class="text-[9px] text-brand-muted dark:text-brand-primary/60 leading-relaxed font-light">
       ⚠️ <em>Este asistente virtual no sustituye el diagnóstico de un veterinario. Si tu mascota tiene una urgencia clínica, acude a un centro de inmediato.</em>
     </p>
   </div>
 
   <!-- Input Form -->
-  <form id="ai-chat-form" class="p-3 border-t border-brand-border/60 bg-brand-card dark:bg-slate-900 flex items-center gap-2">
+  <form id="ai-chat-form" class="p-3.5 border-t border-brand-border/40 dark:border-brand-border/10 bg-white dark:bg-slate-950 flex items-center gap-2">
     <input 
       type="text" 
       id="ai-chat-input" 
@@ -91,19 +100,52 @@
       maxlength="300"
       required
       autocomplete="off"
-      class="flex-1 px-4 py-2.5 bg-brand-bg/50 dark:bg-slate-900/50 border border-brand-border/70 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/15 rounded-full text-xs text-brand-text placeholder-brand-muted/60 focus:outline-none transition-all"
+      class="flex-1 px-4.5 py-3 bg-brand-bg/30 dark:bg-slate-900/60 border border-brand-border/60 dark:border-brand-border/10 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/15 dark:focus:ring-brand-primary/30 rounded-2xl text-xs text-brand-text dark:text-brand-text placeholder-brand-muted/60 focus:outline-none transition-all"
     />
     <button 
       type="submit" 
-      class="w-9 h-9 bg-brand-primary hover:bg-brand-primary-hover active:scale-95 text-white rounded-full flex items-center justify-center shadow-md transition-all shrink-0 cursor-pointer"
+      class="w-10 h-10 bg-brand-primary hover:bg-brand-primary-hover active:scale-95 text-white dark:text-slate-950 rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg transition-all shrink-0 cursor-pointer"
       aria-label="Enviar pregunta"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4.5 w-4.5 transform rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <svg xmlns="http://www.w3.org/2050/svg" class="h-5 w-5 transform rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
       </svg>
     </button>
   </form>
 </div>
+
+<style is:global>
+  /* Custom Scrollbar for Chat Messages */
+  #ai-chat-messages::-webkit-scrollbar {
+    width: 6px;
+  }
+  #ai-chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  #ai-chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(69, 99, 79, 0.2);
+    border-radius: 99px;
+  }
+  .dark #ai-chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(173, 207, 182, 0.15);
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeInUp 0.35s ease forwards;
+  }
+</style>
 
 <script>
   const initAiChatWidget = () => {
@@ -139,19 +181,19 @@
     // Renderizar un mensaje en la ventana de chat
     const appendMessage = (sender: 'user' | 'ai', text: string) => {
       const messageRow = document.createElement('div');
-      messageRow.className = `flex items-start gap-2.5 max-w-[85%] ${sender === 'user' ? 'ml-auto flex-row-reverse' : ''}`;
+      messageRow.className = `flex items-start gap-2.5 max-w-[85%] animate-fade-in ${sender === 'user' ? 'ml-auto flex-row-reverse' : ''}`;
 
       const iconDiv = document.createElement('div');
-      iconDiv.className = `w-6.5 h-6.5 rounded-full flex items-center justify-center text-xs shrink-0 select-none ${
-        sender === 'user' ? 'bg-brand-secondary/15' : 'bg-brand-primary/10'
+      iconDiv.className = `w-7 h-7 rounded-full flex items-center justify-center text-xs shrink-0 select-none shadow-sm ${
+        sender === 'user' ? 'bg-brand-secondary/15 dark:bg-brand-primary/10' : 'bg-brand-primary/10'
       }`;
       iconDiv.textContent = sender === 'user' ? '👤' : '🐾';
 
       const contentDiv = document.createElement('div');
-      contentDiv.className = `px-3.5 py-2.5 rounded-2xl shadow-sm ${
+      contentDiv.className = `px-4 py-3 rounded-2xl shadow-sm ${
         sender === 'user' 
-          ? 'bg-brand-primary text-white rounded-tr-none' 
-          : 'bg-white dark:bg-slate-800 border border-brand-border/40 text-brand-text rounded-tl-none'
+          ? 'bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-tr-none' 
+          : 'bg-white dark:bg-slate-800 border border-brand-border/40 dark:border-brand-border/10 text-brand-text dark:text-brand-text/90 rounded-tl-none'
       }`;
 
       const paragraph = document.createElement('p');
@@ -171,25 +213,25 @@
     const appendTypingIndicator = (): HTMLDivElement => {
       const indicator = document.createElement('div');
       indicator.id = 'ai-typing-indicator';
-      indicator.className = 'flex items-start gap-2.5 max-w-[85%]';
+      indicator.className = 'flex items-start gap-2.5 max-w-[85%] animate-fade-in';
 
       const iconDiv = document.createElement('div');
-      iconDiv.className = 'w-6.5 h-6.5 rounded-full bg-brand-primary/10 flex items-center justify-center text-xs shrink-0 select-none';
+      iconDiv.className = 'w-7 h-7 rounded-full bg-brand-primary/10 flex items-center justify-center text-xs shrink-0 select-none shadow-sm';
       iconDiv.textContent = '🐾';
 
       const contentDiv = document.createElement('div');
-      contentDiv.className = 'bg-white dark:bg-slate-800 border border-brand-border/40 px-3.5 py-2.5 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-1.5';
+      contentDiv.className = 'bg-white dark:bg-slate-800 border border-brand-border/40 dark:border-brand-border/10 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-2';
 
       const text = document.createElement('span');
-      text.className = 'text-[11px] text-brand-muted italic font-light';
+      text.className = 'text-[11px] text-brand-muted dark:text-brand-primary/80 italic font-light';
       text.textContent = 'Perrito pensando';
 
       // 3 puntitos de carga
       const dots = document.createElement('div');
-      dots.className = 'flex gap-0.5 items-center mt-1';
+      dots.className = 'flex gap-1 items-center mt-0.5';
       for (let i = 0; i < 3; i++) {
         const dot = document.createElement('span');
-        dot.className = 'w-1 h-1 rounded-full bg-brand-primary animate-bounce';
+        dot.className = 'w-1.5 h-1.5 rounded-full bg-brand-primary animate-bounce';
         dot.style.animationDelay = `${i * 0.15}s`;
         dots.appendChild(dot);
       }
@@ -256,7 +298,10 @@
     suggestBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         const text = btn.textContent?.trim() || '';
-        handleQuestionSubmit(text);
+        // Limpiar emojis decorativos de la pregunta antes de enviar
+        // Remove emoji patterns if they exist
+        const cleanText = text.replace(/^[^\w\s¿?¡!]+/g, '').trim();
+        handleQuestionSubmit(cleanText);
       });
     });
   };
@@ -265,3 +310,4 @@
   document.addEventListener('DOMContentLoaded', initAiChatWidget);
   document.addEventListener('astro:page-load', initAiChatWidget);
 </script>
+
