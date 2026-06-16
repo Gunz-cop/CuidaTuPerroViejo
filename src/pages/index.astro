@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
+import EmergencyGeoWidget from '../components/EmergencyGeoWidget.astro';
 
 // Obtener los últimos 3 artículos de blog ordenados por fecha de publicación (más recientes primero)
 const blogEntries = await getCollection('blog', ({ data }) => {
@@ -908,6 +909,8 @@ const faqItems = [
               <span>Heridas profundas o sangrados que no cesen tras aplicar presión unos minutos.</span>
             </li>
           </ul>
+
+          <EmergencyGeoWidget />
         </div>
         
       </div>

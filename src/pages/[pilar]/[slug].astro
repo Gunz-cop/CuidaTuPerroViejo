@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiloNavigation from '../../components/SiloNavigation.astro';
 import PostReader from '../../components/PostReader.astro';
+import FeedbackWidget from '../../components/FeedbackWidget.astro';
 
 
 export async function getStaticPaths() {
@@ -114,6 +115,8 @@ const hideHeroCSS = heroImage
         <Content />
       </PostReader>
     </article>
+
+    <FeedbackWidget slug={entry.slug} />
 
     <SiloNavigation currentPilar={entry.data.pilar} currentSlug={entry.slug} />
   </main>

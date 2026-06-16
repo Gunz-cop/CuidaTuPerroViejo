@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from '../components/ThemeToggle.astro';
+import CanineAiAssistant from '../components/CanineAiAssistant.astro';
 
 interface Props {
   title: string;
@@ -333,5 +334,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <p class="mt-2 md:mt-0 font-light">Comprometidos con el bienestar animal 🐾</p>
       </div>
     </footer>
+
+    <CanineAiAssistant />
   </body>
 </html>

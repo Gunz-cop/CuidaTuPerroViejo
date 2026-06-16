@@ -13,5 +13,19 @@
   "assets": {
     "binding": "ASSETS",
     "directory": "dist"
-  }
+  },
+  "kv_namespaces": [
+    {
+      "binding": "CONTACT_KV",
+      "id": "YOUR_KV_NAMESPACE_ID_PLACEHOLDER"
+    }
+  ],
+  "ai": {
+    "binding": "AI"
+  },
+  "send_email": [
+    {
+      "name": "EMAIL"
+    }
+  ]
 }
