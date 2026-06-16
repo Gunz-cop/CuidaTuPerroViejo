@@ -36,6 +36,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     const cfEnv = (locals as any).runtime?.env || {};
     const ai = cfEnv.AI;
     let aiResponse = null;
+    let caughtError: string | null = null;
 
     // 2. Si el binding de IA está disponible, intentar ejecutar el modelo
     if (ai) {
@@ -53,15 +54,26 @@ IMPORTANTE: Al final de tu respuesta, añade siempre un párrafo corto de advert
           ]
         });
       } catch (aiError: any) {
-        // Capturar errores del binding AI (como cuando Wrangler requiere modo remoto en desarrollo local)
-        console.warn('SDI AI: Falló la ejecución del modelo AI (usaremos fallback local):', aiError.message);
+        caughtError = aiError.message || String(aiError);
+        console.warn('SDI AI: Falló la ejecución del modelo AI (usaremos fallback local):', caughtError);
       }
     }
+
+    const diagnostics = {
+      hasLocals: typeof locals !== 'undefined',
+      hasRuntime: typeof (locals as any)?.runtime !== 'undefined',
+      envKeys: Object.keys(cfEnv),
+      hasAi: typeof ai !== 'undefined',
+      aiError: caughtError
+    };
 
     // 3. Si obtuvimos respuesta exitosa de la IA, retornarla
     if (aiResponse && aiResponse.response) {
       return new Response(
-        JSON.stringify({ answer: aiResponse.response }),
+        JSON.stringify({ 
+          answer: aiResponse.response,
+          diagnostics
+        }),
         { status: 200, headers: { 'Content-Type': 'application/json' } }
       );
     }
@@ -102,7 +114,10 @@ Puntos clave a tener en cuenta:
     }
 
     return new Response(
-      JSON.stringify({ answer: simulatedAnswer }),
+      JSON.stringify({ 
+        answer: simulatedAnswer,
+        diagnostics
+      }),
       { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
   } catch (error) {
