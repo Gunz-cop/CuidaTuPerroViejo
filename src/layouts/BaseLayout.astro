@@ -10,6 +10,7 @@ interface Props {
 
 const { title, description = 'Cuida a tu Perro Viejo', keywords } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const isAsistenteIaPage = Astro.url.pathname.replace(/\/$/, '') === '/asistente-ia';
 ---
 
 <!DOCTYPE html> <!-- sdi-force-reindex-v0.2 -->
@@ -295,7 +296,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </style>
     <slot name="head" />
   </head>
-  <body class="bg-brand-bg text-brand-text transition-colors duration-200 antialiased min-h-screen relative flex flex-col justify-between selection:bg-brand-accent selection:text-white">
+  <body class={`bg-brand-bg text-brand-text transition-colors duration-200 antialiased min-h-screen relative flex flex-col justify-between selection:bg-brand-accent selection:text-white ${isAsistenteIaPage ? 'path-asistente-ia' : ''}`}>
     <!-- Decorative background elements -->
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 dark:bg-brand-primary/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
     <div class="absolute top-[300px] left-0 w-[400px] h-[400px] bg-brand-accent/5 dark:bg-brand-accent/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
@@ -308,6 +309,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         </a>
         <div class="flex items-center gap-4">
           <a href="/#pilares" class="text-sm font-medium text-brand-muted hover:text-brand-primary transition-colors">Pilares</a>
+          <a href="/asistente-ia" class="text-sm font-medium text-brand-muted hover:text-brand-primary transition-colors">Asistente IA</a>
           <ThemeToggle />
         </div>
       </div>

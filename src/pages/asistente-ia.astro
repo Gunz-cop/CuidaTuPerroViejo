@@ -1,0 +1,405 @@
+---
+// src/pages/asistente-ia.astro: Página dedicada en pantalla completa para consultar al Asistente de Bienestar Canino con IA
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Asistente de Bienestar Canino con IA | Cuida tu perro viejo";
+const description = "Consulta a nuestro asistente virtual inteligente especializado en el cuidado, alimentación y bienestar general de perros senior y ancianos.";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- JSON-LD SEO Structured Data -->
+  <script slot="head" type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Asistente Virtual de Bienestar Canino",
+    "url": "https://cuidatuperroviejo.com/asistente-ia",
+    "description": "Asistente virtual informativo con Inteligencia Artificial para consultas de salud y bienestar de perros ancianos.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Cuida tu perro viejo",
+      "url": "https://cuidatuperroviejo.com/"
+    }
+  }
+  </script>
+
+  <!-- ===== PAGE HERO BANNER ===== -->
+  <div class="w-full bg-gradient-to-br from-brand-secondary/40 via-brand-primary/8 to-brand-secondary/20 dark:from-brand-primary/10 dark:via-brand-secondary/5 dark:to-transparent border-b border-brand-border">
+    <div class="max-w-4xl mx-auto px-5 py-10 md:py-14 flex flex-col items-center text-center">
+      <div class="w-14 h-14 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center mb-4 shadow-sm text-2xl">
+        🐾
+      </div>
+      <nav class="mb-3 text-xs text-brand-muted flex items-center gap-1.5">
+        <a href="/" class="hover:text-brand-primary transition-colors">Inicio</a>
+        <span>/</span>
+        <span class="text-brand-text font-medium">Asistente IA</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-text leading-tight mb-3">
+        Asistente de Bienestar Canino
+      </h1>
+      <p class="text-base md:text-lg text-brand-muted leading-relaxed max-w-2xl font-light">
+        Resuelve dudas al instante sobre el cuidado de tu perro senior y accede directamente a nuestras guías especializadas.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== MAIN CONTAINER ===== -->
+  <main class="max-w-5xl mx-auto px-4 py-8 md:py-12 flex-1">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- LEFT COLUMN: Information & Disclaimer (5 cols) -->
+      <div class="lg:col-span-4 space-y-6">
+        <!-- Medical Disclaimer Card -->
+        <div class="bg-amber-500/10 dark:bg-amber-500/5 border border-amber-500/30 rounded-3xl p-6 shadow-sm">
+          <div class="flex items-center gap-2.5 text-amber-700 dark:text-amber-400 font-bold text-sm mb-3">
+            <span>⚠️</span>
+            <h3>Descargo de Responsabilidad</h3>
+          </div>
+          <p class="text-xs text-brand-muted leading-relaxed font-light">
+            Este asistente es una herramienta de IA únicamente **informativa y orientativa**. No diagnostica enfermedades ni prescribe tratamientos médicos. 
+          </p>
+          <p class="text-xs text-brand-muted leading-relaxed font-light mt-2.5">
+            <strong>Nunca sustituye</strong> la consulta, el diagnóstico o el criterio clínico de un veterinario real. Si tu perro presenta dolor agudo, letargia extrema o una emergencia, acude a un centro clínico de inmediato.
+          </p>
+        </div>
+
+        <!-- Quick Tips & Instructions -->
+        <div class="bg-brand-card/40 dark:bg-slate-900/20 border border-brand-border/60 rounded-3xl p-6 shadow-sm space-y-4">
+          <h3 class="text-sm font-bold text-brand-text uppercase tracking-wider">💡 Temas de Consulta</h3>
+          <p class="text-xs text-brand-muted font-light leading-relaxed">
+            Puedes hacerle preguntas detalladas sobre cualquiera de nuestros pilares de cuidado:
+          </p>
+          <ul class="space-y-2 pl-4 text-xs font-light text-brand-text/95">
+            <li class="list-disc"><strong class="font-medium text-brand-primary dark:text-brand-accent">Artrosis:</strong> Camas ortopédicas y cuidado articular.</li>
+            <li class="list-disc"><strong class="font-medium text-brand-primary dark:text-brand-accent">Hogar:</strong> Prevención de resbalones y caídas.</li>
+            <li class="list-disc"><strong class="font-medium text-brand-primary dark:text-brand-accent">Comida:</strong> Dietas caseras y digestibilidad senior.</li>
+            <li class="list-disc"><strong class="font-medium text-brand-primary dark:text-brand-accent">Mente:</strong> Demencia senil y estimulación cognitiva.</li>
+            <li class="list-disc"><strong class="font-medium text-brand-primary dark:text-brand-accent">Cuidados:</strong> Dar pastillas o úlceras por presión.</li>
+          </ul>
+          <p class="text-[11px] text-brand-muted italic leading-relaxed pt-1.5 border-t border-brand-border/30">
+            El asistente sugerirá automáticamente enlaces directos a nuestras guías cuando detecte que tu consulta está relacionada con alguna de ellas.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Embedded Premium Chat Panel (8 cols) -->
+      <div class="lg:col-span-8">
+        <div class="w-full h-[620px] bg-white dark:bg-slate-900/80 border border-brand-border/70 dark:border-brand-border/15 rounded-3xl shadow-xl flex flex-col overflow-hidden">
+          
+          <!-- Chat Header -->
+          <header class="bg-gradient-to-r from-brand-primary/10 to-brand-primary-hover/5 dark:from-slate-950 dark:to-slate-900 px-6 py-4 flex items-center justify-between border-b border-brand-border/40 dark:border-brand-border/10">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-brand-primary/10 flex items-center justify-center text-lg shadow-sm">
+                🤖
+              </div>
+              <div>
+                <h2 class="text-sm font-bold text-brand-text font-serif leading-tight">Asistente Virtual Canino</h2>
+                <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1 mt-0.5">
+                  <span class="relative flex h-1.5 w-1.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                  </span>
+                  Sistema en línea
+                </span>
+              </div>
+            </div>
+            <div class="text-[10px] text-brand-muted bg-brand-bg px-2.5 py-1 rounded-full border border-brand-border/40 font-medium">
+              Llama 3.2
+            </div>
+          </header>
+
+          <!-- Chat Messages Container -->
+          <div id="page-chat-messages" class="flex-1 overflow-y-auto p-6 space-y-4.5 scroll-smooth bg-gradient-to-b from-brand-bg/5 to-brand-bg/20 dark:from-slate-950/20 dark:to-slate-950/40">
+            <!-- Welcome message -->
+            <div class="flex items-start gap-3 max-w-[85%]">
+              <div class="w-7 h-7 rounded-full bg-brand-primary/10 flex items-center justify-center text-xs shrink-0 shadow-sm">
+                🐾
+              </div>
+              <div class="bg-brand-bg dark:bg-slate-800 border border-brand-border/40 dark:border-brand-border/10 px-4 py-3.5 rounded-2xl rounded-tl-none shadow-sm">
+                <p class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light">
+                  ¡Hola! Soy tu asistente de bienestar para perros mayores. Pregúntame sobre alimentación, dolor articular (artrosis), ejercicio o cambios de comportamiento. ¿En qué te ayudo hoy?
+                </p>
+              </div>
+            </div>
+
+            <!-- Suggestion Pills -->
+            <div id="page-chat-suggestions" class="space-y-3 pt-2">
+              <p class="text-[10px] text-brand-muted dark:text-brand-primary/70 font-semibold uppercase tracking-wider pl-10 select-none">Temas sugeridos para empezar:</p>
+              <div class="flex flex-col sm:flex-row gap-2 pl-10 pr-2">
+                <button class="page-suggest-btn flex items-center gap-2 px-3.5 py-2.5 bg-white dark:bg-slate-850/40 hover:bg-brand-primary/5 dark:hover:bg-slate-800 border border-brand-border/60 dark:border-brand-border/15 text-xs text-brand-text dark:text-brand-text/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.01] active:scale-[0.99] font-medium">
+                  🦴 ¿Cómo tratar la artrosis?
+                </button>
+                <button class="page-suggest-btn flex items-center gap-2 px-3.5 py-2.5 bg-white dark:bg-slate-850/40 hover:bg-brand-primary/5 dark:hover:bg-slate-800 border border-brand-border/60 dark:border-brand-border/15 text-xs text-brand-text dark:text-brand-text/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.01] active:scale-[0.99] font-medium">
+                  🍎 Recetas de comida casera
+                </button>
+                <button class="page-suggest-btn flex items-center gap-2 px-3.5 py-2.5 bg-white dark:bg-slate-850/40 hover:bg-brand-primary/5 dark:hover:bg-slate-800 border border-brand-border/60 dark:border-brand-border/15 text-xs text-brand-text dark:text-brand-text/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.01] active:scale-[0.99] font-medium">
+                  🌙 Mi perro se desorienta de noche
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disclaimer Banner at Bottom of Panel -->
+          <div class="px-6 py-2.5 border-t border-brand-border/30 dark:border-brand-border/10 bg-brand-bg/20 dark:bg-slate-950 text-center select-none">
+            <p class="text-[9px] text-brand-muted dark:text-brand-primary/60 leading-relaxed font-light">
+              ⚠️ <em>La información proporcionada es únicamente educativa. Consulta a tu veterinario de confianza ante cualquier síntoma.</em>
+            </p>
+          </div>
+
+          <!-- Chat Input Form -->
+          <form id="page-chat-form" class="p-4 border-t border-brand-border/40 dark:border-brand-border/10 bg-white dark:bg-slate-950 flex items-center gap-3">
+            <input 
+              type="text" 
+              id="page-chat-input" 
+              placeholder="Escribe tu duda sobre tu perro senior aquí..." 
+              maxlength="300"
+              required
+              autocomplete="off"
+              class="flex-1 px-4.5 py-3.5 bg-brand-bg/30 dark:bg-slate-900/60 border border-brand-border/60 dark:border-brand-border/10 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/15 dark:focus:ring-brand-primary/30 rounded-2xl text-xs text-brand-text dark:text-brand-text placeholder-brand-muted/60 focus:outline-none transition-all"
+            />
+            <button 
+              type="submit" 
+              class="w-11 h-11 bg-brand-primary hover:bg-brand-primary-hover active:scale-95 text-white dark:text-slate-950 rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg transition-all shrink-0 cursor-pointer"
+              aria-label="Enviar pregunta"
+            >
+              <svg xmlns="http://www.w3.org/2050/svg" class="h-5.5 w-5.5 transform rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+</BaseLayout>
+
+<style is:global>
+  /* Custom Scrollbar for Chat Messages */
+  #page-chat-messages::-webkit-scrollbar {
+    width: 6px;
+  }
+  #page-chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  #page-chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(69, 99, 79, 0.2);
+    border-radius: 99px;
+  }
+  .dark #page-chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(173, 207, 182, 0.15);
+  }
+</style>
+
+<script>
+  const initPageChat = () => {
+    const chatForm = document.getElementById('page-chat-form') as HTMLFormElement;
+    const chatInput = document.getElementById('page-chat-input') as HTMLInputElement;
+    const messagesContainer = document.getElementById('page-chat-messages');
+    const suggestionsBlock = document.getElementById('page-chat-suggestions');
+    const suggestBtns = document.querySelectorAll('.page-suggest-btn');
+
+    if (!chatForm || !chatInput || !messagesContainer) return;
+
+    // Markdown Parser
+    const parseMarkdown = (text: string): string => {
+      let html = text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+      html = html.replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 bg-brand-bg/60 dark:bg-slate-900/60 rounded font-mono text-[10px]">$1</code>');
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-brand-text dark:text-white">$1</strong>');
+      html = html.replace(/\*(.*?)\*/g, '<em class="italic">$1</em>');
+
+      html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, url) => {
+        if (url.startsWith('/')) {
+          return `<a href="${url}" class="text-brand-primary dark:text-brand-accent hover:underline font-bold decoration-2 cursor-pointer transition-colors">${linkText}</a>`;
+        }
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-brand-primary dark:text-brand-accent hover:underline font-bold decoration-2 cursor-pointer transition-colors">${linkText} ↗</a>`;
+      });
+
+      const lines = html.split('\n');
+      let result = '';
+      let inList = false;
+      let listType: 'ul' | 'ol' | null = null;
+
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (!line) {
+          if (inList) {
+            result += listType === 'ul' ? '</ul>' : '</ol>';
+            inList = false;
+            listType = null;
+          }
+          continue;
+        }
+
+        const isUnordered = /^[-*]\s+/.test(line);
+        const isOrdered = /^\d+\.\s+/.test(line);
+
+        if (isUnordered) {
+          if (!inList || listType !== 'ul') {
+            if (inList) result += listType === 'ul' ? '</ul>' : '</ol>';
+            result += '<ul class="space-y-1.5 my-2.5 list-disc pl-5">';
+            inList = true;
+            listType = 'ul';
+          }
+          const content = line.replace(/^[-*]\s+/, '').trim();
+          result += `<li class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light">${content}</li>`;
+        } else if (isOrdered) {
+          if (!inList || listType !== 'ol') {
+            if (inList) result += listType === 'ul' ? '</ul>' : '</ol>';
+            result += '<ol class="space-y-1.5 my-2.5 list-decimal pl-5">';
+            inList = true;
+            listType = 'ol';
+          }
+          const content = line.replace(/^\d+\.\s+/, '').trim();
+          result += `<li class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light">${content}</li>`;
+        } else {
+          if (inList) {
+            result += listType === 'ul' ? '</ul>' : '</ol>';
+            inList = false;
+            listType = null;
+          }
+          result += `<p class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light mb-3">${line}</p>`;
+        }
+      }
+
+      if (inList) {
+        result += listType === 'ul' ? '</ul>' : '</ol>';
+      }
+
+      return result;
+    };
+
+    const appendMessage = (sender: 'user' | 'ai', text: string) => {
+      const messageRow = document.createElement('div');
+      messageRow.className = `flex items-start gap-3 max-w-[85%] animate-fade-in ${sender === 'user' ? 'ml-auto flex-row-reverse' : ''}`;
+
+      const iconDiv = document.createElement('div');
+      iconDiv.className = `w-7 h-7 rounded-full flex items-center justify-center text-xs shrink-0 select-none shadow-sm ${
+        sender === 'user' ? 'bg-brand-secondary/15 dark:bg-brand-primary/10' : 'bg-brand-primary/10'
+      }`;
+      iconDiv.textContent = sender === 'user' ? '👤' : '🐾';
+
+      const contentDiv = document.createElement('div');
+      contentDiv.className = `px-4 py-3 rounded-2xl shadow-sm ${
+        sender === 'user' 
+          ? 'bg-brand-primary dark:bg-brand-secondary text-white dark:text-brand-primary rounded-tr-none' 
+          : 'bg-white dark:bg-slate-800 border border-brand-border/40 dark:border-brand-border/10 text-brand-text dark:text-brand-text/90 rounded-tl-none'
+      }`;
+
+      if (sender === 'user') {
+        const paragraph = document.createElement('p');
+        paragraph.className = 'text-xs leading-relaxed font-light whitespace-pre-wrap';
+        paragraph.textContent = text;
+        contentDiv.appendChild(paragraph);
+      } else {
+        const markdownDiv = document.createElement('div');
+        markdownDiv.className = 'markdown-body';
+        markdownDiv.innerHTML = parseMarkdown(text);
+        contentDiv.appendChild(markdownDiv);
+      }
+
+      messageRow.appendChild(iconDiv);
+      messageRow.appendChild(contentDiv);
+      messagesContainer.appendChild(messageRow);
+
+      // Auto-scroll
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    };
+
+    const appendTypingIndicator = (): HTMLDivElement => {
+      const indicator = document.createElement('div');
+      indicator.id = 'page-typing-indicator';
+      indicator.className = 'flex items-start gap-3 max-w-[85%] animate-fade-in';
+
+      const iconDiv = document.createElement('div');
+      iconDiv.className = 'w-7 h-7 rounded-full bg-brand-primary/10 flex items-center justify-center text-xs shrink-0 select-none shadow-sm';
+      iconDiv.textContent = '🐾';
+
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'bg-white dark:bg-slate-800 border border-brand-border/40 dark:border-brand-border/10 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-2';
+
+      const text = document.createElement('span');
+      text.className = 'text-[11px] text-brand-muted dark:text-brand-primary/80 italic font-light';
+      text.textContent = 'Perrito pensando';
+
+      const dots = document.createElement('div');
+      dots.className = 'flex gap-1 items-center mt-0.5';
+      for (let i = 0; i < 3; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'w-1.5 h-1.5 rounded-full bg-brand-primary animate-bounce';
+        dot.style.animationDelay = `${i * 0.15}s`;
+        dots.appendChild(dot);
+      }
+
+      contentDiv.appendChild(text);
+      contentDiv.appendChild(dots);
+      indicator.appendChild(iconDiv);
+      indicator.appendChild(contentDiv);
+      messagesContainer.appendChild(indicator);
+      
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      return indicator;
+    };
+
+    const handleQuestionSubmit = async (questionText: string) => {
+      if (!questionText.trim()) return;
+
+      if (suggestionsBlock) {
+        suggestionsBlock.classList.add('hidden');
+      }
+
+      appendMessage('user', questionText);
+      chatInput.value = '';
+
+      const indicator = appendTypingIndicator();
+
+      try {
+        const res = await fetch('/api/ask', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ question: questionText }),
+        });
+
+        indicator.remove();
+
+        if (res.ok) {
+          const data = await res.json();
+          appendMessage('ai', data.answer);
+        } else {
+          const errData = await res.json();
+          appendMessage('ai', `❌ Ocurrió un error: ${errData.error || 'No se pudo obtener respuesta de la IA.'}`);
+        }
+      } catch (error) {
+        indicator.remove();
+        console.error('Error in page chat submit:', error);
+        appendMessage('ai', '❌ Lo siento, no logré conectarme con el servidor. Revisa tu conexión a internet e inténtalo de nuevo.');
+      }
+    };
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      handleQuestionSubmit(chatInput.value);
+    });
+
+    suggestBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const text = btn.textContent?.trim() || '';
+        // Clean emoji patterns
+        const cleanText = text.replace(/^[^\w\s¿?¡!]+/g, '').trim();
+        handleQuestionSubmit(cleanText);
+      });
+    });
+  };
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', initPageChat);
+  document.addEventListener('astro:page-load', initPageChat);
+</script>
