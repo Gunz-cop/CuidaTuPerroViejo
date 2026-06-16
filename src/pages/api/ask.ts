@@ -36,6 +36,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     const cfEnv = (locals as any).runtime?.env || {};
     const ai = cfEnv.AI;
     let aiResponse = null;
+    let caughtError: string | null = null;
 
     // 2. Si el binding de IA está disponible, intentar ejecutar el modelo
     if (ai) {
@@ -58,16 +59,25 @@ IMPORTANTE: Si la consulta del usuario se relaciona de manera directa con alguno
 
 IMPORTANTE: Al final de tu respuesta, añade siempre un párrafo corto de advertencia en cursiva que recuerde que tus consejos son informativos y de bienestar, y que deben consultar con su veterinario de confianza de forma inmediata ante cualquier síntoma de gravedad o dolor agudo.`;
 
-        aiResponse = await ai.run('@cf/meta/llama-3.1-8b-instruct', {
+        aiResponse = await ai.run('@cf/meta/llama-3.2-3b-instruct', {
           messages: [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: trimmedQuestion }
           ]
         });
       } catch (aiError: any) {
-        console.warn('SDI AI: Falló la ejecución del modelo AI (usaremos fallback local):', aiError.message || String(aiError));
+        caughtError = aiError.message || String(aiError);
+        console.warn('SDI AI: Falló la ejecución del modelo AI (usaremos fallback local):', caughtError);
       }
     }
+
+    const diagnostics = {
+      hasLocals: typeof locals !== 'undefined',
+      hasRuntime: typeof (locals as any)?.runtime !== 'undefined',
+      envKeys: Object.keys(cfEnv),
+      hasAi: typeof ai !== 'undefined',
+      aiError: caughtError
+    };
 
     // 3. Si obtuvimos respuesta exitosa de la IA, retornarla
     if (aiResponse && aiResponse.response) {

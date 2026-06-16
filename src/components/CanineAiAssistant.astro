@@ -191,8 +191,8 @@
           continue;
         }
 
-        const isUnordered = line.startsWith('- ') || line.startsWith('* ');
-        const isOrdered = /^\d+\.\s/.test(line);
+        const isUnordered = /^[-*]\s+/.test(line);
+        const isOrdered = /^\d+\.\s+/.test(line);
 
         if (isUnordered) {
           if (!inList || listType !== 'ul') {
@@ -201,7 +201,7 @@
             inList = true;
             listType = 'ul';
           }
-          const content = line.substring(2);
+          const content = line.replace(/^[-*]\s+/, '').trim();
           result += `<li class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light">${content}</li>`;
         } else if (isOrdered) {
           if (!inList || listType !== 'ol') {
@@ -210,7 +210,7 @@
             inList = true;
             listType = 'ol';
           }
-          const content = line.replace(/^\d+\.\s/, '');
+          const content = line.replace(/^\d+\.\s+/, '').trim();
           result += `<li class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light">${content}</li>`;
         } else {
           if (inList) {
