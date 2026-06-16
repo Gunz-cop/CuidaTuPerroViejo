@@ -149,6 +149,86 @@
 
 <script>
   const initAiChatWidget = () => {
+    // Markdown Parser
+    const parseMarkdown = (text: string): string => {
+      // 1. Escapar HTML para seguridad
+      let html = text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+      // 2. Formato código en línea
+      html = html.replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 bg-brand-bg/60 dark:bg-slate-900/60 rounded font-mono text-[10px]">$1</code>');
+
+      // 3. Negrita (**texto**)
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-brand-text dark:text-white">$1</strong>');
+      
+      // 4. Cursiva (*texto*)
+      html = html.replace(/\*(.*?)\*/g, '<em class="italic">$1</em>');
+
+      // 5. Enlaces ([texto](url))
+      html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, url) => {
+        if (url.startsWith('/')) {
+          return `<a href="${url}" class="text-brand-primary dark:text-brand-accent hover:underline font-bold decoration-2 cursor-pointer transition-colors">${linkText}</a>`;
+        }
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-brand-primary dark:text-brand-accent hover:underline font-bold decoration-2 cursor-pointer transition-colors">${linkText} ↗</a>`;
+      });
+
+      // 6. Procesar por líneas para listas y párrafos
+      const lines = html.split('\n');
+      let result = '';
+      let inList = false;
+      let listType: 'ul' | 'ol' | null = null;
+
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (!line) {
+          if (inList) {
+            result += listType === 'ul' ? '</ul>' : '</ol>';
+            inList = false;
+            listType = null;
+          }
+          continue;
+        }
+
+        const isUnordered = line.startsWith('- ') || line.startsWith('* ');
+        const isOrdered = /^\d+\.\s/.test(line);
+
+        if (isUnordered) {
+          if (!inList || listType !== 'ul') {
+            if (inList) result += listType === 'ul' ? '</ul>' : '</ol>';
+            result += '<ul class="space-y-1.5 my-2.5 list-disc pl-5">';
+            inList = true;
+            listType = 'ul';
+          }
+          const content = line.substring(2);
+          result += `<li class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light">${content}</li>`;
+        } else if (isOrdered) {
+          if (!inList || listType !== 'ol') {
+            if (inList) result += listType === 'ul' ? '</ul>' : '</ol>';
+            result += '<ol class="space-y-1.5 my-2.5 list-decimal pl-5">';
+            inList = true;
+            listType = 'ol';
+          }
+          const content = line.replace(/^\d+\.\s/, '');
+          result += `<li class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light">${content}</li>`;
+        } else {
+          if (inList) {
+            result += listType === 'ul' ? '</ul>' : '</ol>';
+            inList = false;
+            listType = null;
+          }
+          result += `<p class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light mb-3">${line}</p>`;
+        }
+      }
+
+      if (inList) {
+        result += listType === 'ul' ? '</ul>' : '</ol>';
+      }
+
+      return result;
+    };
+
     const toggleBtn = document.getElementById('ai-chat-toggle');
     const closeBtn = document.getElementById('ai-chat-close');
     const chatWindow = document.getElementById('ai-chat-window');
@@ -196,11 +276,18 @@
           : 'bg-white dark:bg-slate-800 border border-brand-border/40 dark:border-brand-border/10 text-brand-text dark:text-brand-text/90 rounded-tl-none'
       }`;
 
-      const paragraph = document.createElement('p');
-      paragraph.className = 'text-xs leading-relaxed font-light whitespace-pre-wrap';
-      paragraph.innerHTML = text.replace(/\n/g, '<br />'); // Mantener saltos de línea
+      if (sender === 'user') {
+        const paragraph = document.createElement('p');
+        paragraph.className = 'text-xs leading-relaxed font-light whitespace-pre-wrap';
+        paragraph.textContent = text;
+        contentDiv.appendChild(paragraph);
+      } else {
+        const markdownDiv = document.createElement('div');
+        markdownDiv.className = 'markdown-body';
+        markdownDiv.innerHTML = parseMarkdown(text);
+        contentDiv.appendChild(markdownDiv);
+      }
 
-      contentDiv.appendChild(paragraph);
       messageRow.appendChild(iconDiv);
       messageRow.appendChild(contentDiv);
       messagesContainer.appendChild(messageRow);
