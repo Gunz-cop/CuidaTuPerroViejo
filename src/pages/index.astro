@@ -6,26 +6,14 @@ import EmergencyGeoWidget from '../components/EmergencyGeoWidget.astro';
 
 // Obtener los últimos 3 artículos de blog ordenados por fecha de publicación (más recientes primero)
 const blogEntries = await getCollection('blog', ({ data }) => {
-  return data.status === 'Publicado' || !data.status; // Asegurarse de traer solo publicados
+  return data.status === 'Publicado'; // Asegurarse de traer solo publicados
 });
 
-// Ordenar por fecha publicada. Si no está definida, asumimos una fecha muy antigua o fecha de metadata
+// Ordenar por fecha publicada. El schema de contenido define un default cuando falta.
 const recentPosts = blogEntries
   .sort((a, b) => {
     const getPostDate = (post) => {
-      if (post.data.datePublished) {
-        return new Date(post.data.datePublished);
-      }
-      if (post.slug === 'prevencion-caidas-perro-mayor') {
-        return new Date('2026-06-01');
-      }
-      if (post.data.legacyUrl) {
-        const match = post.data.legacyUrl.match(/\/(\d{4})\/(\d{2})\//);
-        if (match) {
-          return new Date(match[0]);
-        }
-      }
-      return new Date('2025-01-01');
+      return new Date(post.data.datePublished);
     };
 
     const dateA = getPostDate(a);

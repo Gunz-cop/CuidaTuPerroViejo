@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiloNavigation from '../../components/SiloNavigation.astro';
 import PostReader from '../../components/PostReader.astro';
 import FeedbackWidget from '../../components/FeedbackWidget.astro';
+import { buildSrcset } from '../../utils/image';
 
 
 export async function getStaticPaths() {
@@ -32,13 +33,6 @@ const pilarName = pilarNames[entry.data.pilar] || entry.data.pilar;
 const heroImage = entry.data.heroImage;
 const heroImageAlt = entry.data.heroImageAlt || entry.data.title;
 
-// Construir srcset: incluye -400w (garantizado) y el original como 1200w
-// El -800w no existe para todas las imágenes, se omite para evitar 404s
-function buildSrcset(src: string | undefined): string {
-  if (!src) return '';
-  const base = src.replace(/\.webp$/i, '');
-  return `${base}-400.webp 400w, ${src} 1200w`;
-}
 const heroImageSrcset = buildSrcset(heroImage);
 
 // URL canónica del post
@@ -47,9 +41,7 @@ const pilarURL = new URL(`/${entry.data.pilar}`, Astro.site).href;
 const siteURL = Astro.site?.href ?? 'https://cuidatuperroviejo.com/';
 
 // Fechas — datePublished del frontmatter, dateModified siempre al build
-const datePublished = entry.data.datePublished
-  ? new Date(entry.data.datePublished).toISOString()
-  : '2025-10-01T00:00:00-06:00';
+const datePublished = new Date(entry.data.datePublished).toISOString();
 const dateModified = new Date().toISOString();
 
 // Imagen absoluta para schema

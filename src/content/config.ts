@@ -21,8 +21,8 @@ const blog = defineCollection({
     heroImage: z.string().optional(),
     heroImageAlt: z.string().optional(),
     legacyUrl: z.string().optional(),
-    status: z.string().optional(),
-    datePublished: z.string().optional(),
+    status: z.string().default('Publicado'),
+    datePublished: z.string().default('2025-10-01'),
   }).strict(),
 });
 
