@@ -55,7 +55,7 @@ const description = "¿Tienes dudas sobre el cuidado de tu perro senior? Escríb
 
     <!-- Contact Form Container -->
     <div class="bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-6 md:p-10 shadow-sm max-w-xl mx-auto">
-      <form action="/api/contacto" method="POST" class="space-y-6">
+      <form action="/api/contacto" method="POST" class="space-y-6" data-contact-form>
         
         <!-- Name Input -->
         <div>
@@ -143,15 +143,41 @@ const description = "¿Tienes dudas sobre el cuidado de tu perro senior? Escríb
         <div class="pt-2">
           <button 
             type="submit" 
-            class="w-full sm:w-auto px-8 py-3.5 bg-brand-primary hover:bg-brand-primary-hover active:scale-[0.98] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer inline-flex items-center justify-center gap-2"
+            class="w-full sm:w-auto px-8 py-3.5 bg-brand-primary hover:bg-brand-primary-hover active:scale-[0.98] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer inline-flex items-center justify-center gap-2 disabled:cursor-wait disabled:opacity-75 disabled:hover:bg-brand-primary"
+            data-submit-button
           >
-            <span>Enviar mensaje</span>
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <span class="hidden h-4 w-4 rounded-full border-2 border-white/40 border-t-white motion-safe:animate-spin" data-submit-spinner aria-hidden="true"></span>
+            <span data-submit-label>Enviar mensaje</span>
+            <svg class="w-4 h-4" data-submit-icon fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
             </svg>
           </button>
+          <p class="mt-3 hidden text-xs font-medium text-brand-muted" data-submit-status role="status" aria-live="polite">
+            Enviando tu mensaje...
+          </p>
         </div>
       </form>
     </div>
   </main>
+
+  <script>
+    const contactForm = document.querySelector('[data-contact-form]');
+    const submitButton = document.querySelector('[data-submit-button]');
+    const submitLabel = document.querySelector('[data-submit-label]');
+    const submitIcon = document.querySelector('[data-submit-icon]');
+    const submitSpinner = document.querySelector('[data-submit-spinner]');
+    const submitStatus = document.querySelector('[data-submit-status]');
+
+    contactForm?.addEventListener('submit', () => {
+      if (!(contactForm instanceof HTMLFormElement) || !contactForm.checkValidity()) return;
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.disabled = true;
+        submitButton.setAttribute('aria-busy', 'true');
+      }
+      if (submitLabel) submitLabel.textContent = 'Enviando...';
+      submitIcon?.classList.add('hidden');
+      submitSpinner?.classList.remove('hidden');
+      submitStatus?.classList.remove('hidden');
+    });
+  </script>
 </BaseLayout>

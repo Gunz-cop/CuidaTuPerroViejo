@@ -181,6 +181,19 @@ const processedHtml = html.replace(/<h([23])\b([^>]*?)>([\s\S]*?)<\/h\1>/gi, (ma
     };
     window.addEventListener('scroll', checkTopFallback, { passive: true });
     checkTopFallback();
+
+    document.querySelectorAll('.mobile-toc-container').forEach((toc) => {
+      if (toc.dataset.closeOnClickReady === 'true') return;
+      toc.dataset.closeOnClickReady = 'true';
+
+      toc.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (toc instanceof HTMLDetailsElement) {
+            toc.open = false;
+          }
+        });
+      });
+    });
   }
 
   // Handle page transitions & loads

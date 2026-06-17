@@ -8,13 +8,13 @@ const { slug } = Astro.props;
 
 <div class="feedback-widget my-12 p-6 md:p-8 bg-brand-card/40 dark:bg-slate-900/20 border border-brand-border/60 rounded-3xl shadow-sm text-center max-w-xl mx-auto" data-slug={slug}>
   <!-- Prompt State -->
-  <div id="feedback-prompt" class="transition-opacity duration-300">
+  <div data-feedback-prompt class="transition-opacity duration-300">
     <h3 class="text-lg font-bold text-brand-text mb-2 font-serif">¿Te ha resultado útil esta guía?</h3>
     <p class="text-xs text-brand-muted mb-5 font-light">Tu valoración nos ayuda a mejorar y a priorizar el contenido especializado.</p>
     
     <div class="flex justify-center items-center gap-4">
       <button 
-        id="btn-feedback-yes" 
+        data-feedback-yes
         class="px-6 py-3 bg-brand-primary/10 hover:bg-brand-primary/20 text-brand-primary font-bold rounded-xl text-sm transition-all duration-200 cursor-pointer inline-flex items-center gap-2 active:scale-[0.97] border border-brand-primary/10 hover:border-brand-primary/30"
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -24,7 +24,7 @@ const { slug } = Astro.props;
       </button>
       
       <button 
-        id="btn-feedback-no" 
+        data-feedback-no
         class="px-6 py-3 bg-brand-secondary/5 hover:bg-brand-secondary/15 text-brand-secondary font-bold rounded-xl text-sm transition-all duration-200 cursor-pointer inline-flex items-center gap-2 active:scale-[0.97] border border-brand-secondary/10 hover:border-brand-secondary/30"
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -36,107 +36,104 @@ const { slug } = Astro.props;
   </div>
   
   <!-- Thanks State (Hidden initially) -->
-  <div id="feedback-thanks" class="hidden transition-opacity duration-300 flex flex-col items-center">
+  <div data-feedback-thanks class="hidden transition-opacity duration-300 flex flex-col items-center">
     <div class="w-12 h-12 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary mb-3 text-xl">
       🐾
     </div>
     <h4 class="text-base font-bold text-brand-text mb-1 font-serif">¡Muchas gracias por tu valoración!</h4>
-    <p id="feedback-stats" class="text-xs text-brand-muted font-light leading-relaxed"></p>
+    <p data-feedback-stats class="text-xs text-brand-muted font-light leading-relaxed"></p>
   </div>
 </div>
 
 <script>
   // Script del lado del cliente
   const initFeedbackWidget = () => {
-    const widget = document.querySelector('.feedback-widget');
-    if (!widget) return;
+    document.querySelectorAll('.feedback-widget').forEach((widget) => {
+      if (widget.dataset.feedbackReady === 'true') return;
+      widget.dataset.feedbackReady = 'true';
 
-    const slug = widget.getAttribute('data-slug');
-    const promptDiv = document.getElementById('feedback-prompt');
-    const thanksDiv = document.getElementById('feedback-thanks');
-    const statsPara = document.getElementById('feedback-stats');
-    const btnYes = document.getElementById('btn-feedback-yes');
-    const btnNo = document.getElementById('btn-feedback-no');
+      const slug = widget.getAttribute('data-slug');
+      const promptDiv = widget.querySelector('[data-feedback-prompt]');
+      const thanksDiv = widget.querySelector('[data-feedback-thanks]');
+      const statsPara = widget.querySelector('[data-feedback-stats]');
+      const btnYes = widget.querySelector('[data-feedback-yes]');
+      const btnNo = widget.querySelector('[data-feedback-no]');
 
-    if (!slug || !promptDiv || !thanksDiv || !statsPara || !btnYes || !btnNo) return;
+      if (!slug || !promptDiv || !thanksDiv || !statsPara || !btnYes || !btnNo) return;
 
-    const storageKey = `voted-feedback-${slug}`;
-    const hasVoted = localStorage.getItem(storageKey);
+      const storageKey = `voted-feedback-${slug}`;
+      const hasVoted = localStorage.getItem(storageKey);
 
-    // Cargar estadísticas
-    const loadStats = async (showThanks = false) => {
-      try {
-        const res = await fetch(`/api/feedback?slug=${slug}`);
-        if (res.ok) {
-          const data = await res.json();
-          const yesCount = data.yes || 0;
-          if (yesCount > 0) {
-            statsPara.textContent = `A ${yesCount} persona${yesCount !== 1 ? 's' : ''} le${yesCount !== 1 ? 's' : ''} ha sido útil esta guía para cuidar a su perro.`;
-          } else {
-            statsPara.textContent = 'Sé la primera persona en valorar este artículo.';
+      // Cargar estadísticas
+      const loadStats = async (showThanks = false) => {
+        try {
+          const res = await fetch(`/api/feedback?slug=${slug}`);
+          if (res.ok) {
+            const data = await res.json();
+            const yesCount = data.yes || 0;
+            if (yesCount > 0) {
+              statsPara.textContent = `A ${yesCount} persona${yesCount !== 1 ? 's' : ''} le${yesCount !== 1 ? 's' : ''} ha sido útil esta guía para cuidar a su perro.`;
+            } else {
+              statsPara.textContent = 'Sé la primera persona en valorar este artículo.';
+            }
           }
+        } catch (e) {
+          console.error('Error cargando estadísticas de feedback:', e);
         }
-      } catch (e) {
-        console.error('Error cargando estadísticas de feedback:', e);
+
+        if (showThanks) {
+          promptDiv.classList.add('hidden');
+          thanksDiv.classList.remove('hidden');
+        }
+      };
+
+      // Si ya votó anteriormente, mostramos agradecimiento directo y cargamos estadísticas
+      if (hasVoted) {
+        loadStats(true);
+      } else {
+        // Si no ha votado, cargamos el conteo silenciosamente en segundo plano
+        loadStats(false);
       }
 
-      if (showThanks) {
-        promptDiv.classList.add('hidden');
-        thanksDiv.classList.remove('hidden');
-      }
-    };
-
-    // Si ya votó anteriormente, mostramos agradecimiento directo y cargamos estadísticas
-    if (hasVoted) {
-      loadStats(true);
-    } else {
-      // Si no ha votado, cargamos el conteo silenciosamente en segundo plano
-      loadStats(false);
-    }
-
-    const handleVote = async (type: 'yes' | 'no') => {
-      // Deshabilitar botones optimistamente
-      btnYes.setAttribute('disabled', 'true');
-      btnNo.setAttribute('disabled', 'true');
-      btnYes.classList.add('opacity-50', 'pointer-events-none');
-      btnNo.classList.add('opacity-50', 'pointer-events-none');
-
-      try {
-        const res = await fetch('/api/feedback', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ slug, type }),
-        });
-
-        if (res.ok) {
-          localStorage.setItem(storageKey, type);
-          await loadStats(true);
-        } else {
-          console.error('Fallo al registrar voto.');
-          btnYes.removeAttribute('disabled');
-          btnNo.removeAttribute('disabled');
-          btnYes.classList.remove('opacity-50', 'pointer-events-none');
-          btnNo.classList.remove('opacity-50', 'pointer-events-none');
-        }
-      } catch (error) {
-        console.error('Error registrando voto:', error);
+      const resetButtons = () => {
         btnYes.removeAttribute('disabled');
         btnNo.removeAttribute('disabled');
         btnYes.classList.remove('opacity-50', 'pointer-events-none');
         btnNo.classList.remove('opacity-50', 'pointer-events-none');
-      }
-    };
+      };
 
-    // Remove existing event listeners if re-initializing to prevent duplicate bindings
-    const newBtnYes = btnYes.cloneNode(true);
-    const newBtnNo = btnNo.cloneNode(true);
-    btnYes.parentNode?.replaceChild(newBtnYes, btnYes);
-    btnNo.parentNode?.replaceChild(newBtnNo, btnNo);
+      const handleVote = async (type) => {
+        // Deshabilitar botones optimistamente
+        btnYes.setAttribute('disabled', 'true');
+        btnNo.setAttribute('disabled', 'true');
+        btnYes.classList.add('opacity-50', 'pointer-events-none');
+        btnNo.classList.add('opacity-50', 'pointer-events-none');
 
-    newBtnYes.addEventListener('click', () => handleVote('yes'));
-    newBtnNo.addEventListener('click', () => handleVote('no'));
+        try {
+          const res = await fetch('/api/feedback', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ slug, type }),
+          });
+
+          if (res.ok) {
+            localStorage.setItem(storageKey, type);
+            await loadStats(true);
+          } else {
+            console.error('Fallo al registrar voto.');
+            resetButtons();
+          }
+        } catch (error) {
+          console.error('Error registrando voto:', error);
+          resetButtons();
+        }
+      };
+
+      btnYes.addEventListener('click', () => handleVote('yes'));
+      btnNo.addEventListener('click', () => handleVote('no'));
+    });
   };
 
   // Ejecutar al cargar la página

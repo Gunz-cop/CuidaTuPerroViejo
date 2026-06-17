@@ -7,10 +7,10 @@
   class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#45634f] to-[#5d7c67] dark:from-[#adcfb6] dark:to-[#8eb99a] text-white dark:text-[#121412] rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.15)] dark:shadow-[0_8px_30px_rgba(173,207,182,0.35)] hover:scale-[1.08] active:scale-[0.92] transition-all duration-300 cursor-pointer border border-[#45634f]/15 dark:border-[#adcfb6]/20 select-none group"
   aria-label="Abrir asistente de IA"
 >
-  <span class="absolute inset-0 rounded-full bg-brand-primary opacity-20 group-hover:scale-125 transition-all duration-300 animate-ping pointer-events-none"></span>
+  <span class="ai-chat-attention-ring absolute inset-0 rounded-full bg-brand-primary opacity-20 pointer-events-none"></span>
   <div class="relative flex items-center justify-center">
     <span class="text-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">🐾</span>
-    <span class="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#fdcb9b] dark:bg-[#7c5730] rounded-full border-2 border-white dark:border-[#121412] animate-pulse"></span>
+    <span class="ai-chat-status-pulse absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#fdcb9b] dark:bg-[#7c5730] rounded-full border-2 border-white dark:border-[#121412]"></span>
     <span class="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#fdcb9b] dark:bg-[#7c5730] rounded-full border-2 border-white dark:border-[#121412]"></span>
   </div>
   <!-- Tooltip -->
@@ -156,6 +156,28 @@
   }
   
   /* Animations */
+  @keyframes attentionRing {
+    0% {
+      opacity: 0.22;
+      transform: scale(1);
+    }
+    75%, 100% {
+      opacity: 0;
+      transform: scale(1.55);
+    }
+  }
+
+  @keyframes statusPulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.55;
+      transform: scale(1.35);
+    }
+  }
+
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -169,6 +191,21 @@
   
   .animate-fade-in {
     animation: fadeInUp 0.35s ease forwards;
+  }
+
+  .ai-chat-attention-ring {
+    animation: attentionRing 1.35s ease-out 3;
+  }
+
+  .ai-chat-status-pulse {
+    animation: statusPulse 1.2s ease-in-out 3;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ai-chat-attention-ring,
+    .ai-chat-status-pulse {
+      animation: none;
+    }
   }
 </style>
 
@@ -427,4 +464,3 @@
   document.addEventListener('DOMContentLoaded', initAiChatWidget);
   document.addEventListener('astro:page-load', initAiChatWidget);
 </script>
-
