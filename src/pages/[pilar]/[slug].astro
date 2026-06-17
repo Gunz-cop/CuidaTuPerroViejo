@@ -41,6 +41,77 @@ function buildSrcset(src: string | undefined): string {
 }
 const heroImageSrcset = buildSrcset(heroImage);
 
+// URL canónica del post
+const postURL = new URL(`/${entry.data.pilar}/${entry.slug}`, Astro.site).href;
+const pilarURL = new URL(`/${entry.data.pilar}`, Astro.site).href;
+const siteURL = Astro.site?.href ?? 'https://cuidatuperroviejo.com/';
+
+// Fechas — datePublished del frontmatter, dateModified siempre al build
+const datePublished = entry.data.datePublished
+  ? new Date(entry.data.datePublished).toISOString()
+  : '2025-10-01T00:00:00-06:00';
+const dateModified = new Date().toISOString();
+
+// Imagen absoluta para schema
+const schemaImage = heroImage
+  ? new URL(heroImage, Astro.site).href
+  : new URL('/images/home/perro-senior-hero-cama-ortopedica.webp', Astro.site).href;
+
+// Schema BlogPosting
+const blogPostingSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      '@id': `${postURL}#article`,
+      'headline': entry.data.seoTitle || entry.data.title,
+      'name': entry.data.title,
+      'description': entry.data.metaDescription,
+      'url': postURL,
+      'image': [
+        {
+          '@type': 'ImageObject',
+          'url': schemaImage,
+          'width': 1200,
+          'height': 675,
+          'caption': heroImageAlt,
+        },
+      ],
+      'datePublished': datePublished,
+      'dateModified': dateModified,
+      'author': {
+        '@type': 'Person',
+        'name': 'Equipo Cuida a tu Perro Viejo',
+        'jobTitle': 'Especialistas en bienestar y cuidado canino',
+        'url': `${siteURL}acerca-de`,
+      },
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'Cuida tu Perro Viejo',
+        'url': siteURL,
+        'logo': {
+          '@type': 'ImageObject',
+          'url': new URL('/favicon.png', Astro.site).href,
+        },
+      },
+      'mainEntityOfPage': { '@id': postURL },
+      'isPartOf': { '@id': `${pilarURL}#webpage` },
+      'inLanguage': 'es',
+      'keywords': entry.data.keywordPrincipal ?? '',
+      'articleSection': pilarName,
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${postURL}#breadcrumb`,
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': siteURL },
+        { '@type': 'ListItem', 'position': 2, 'name': pilarName, 'item': pilarURL },
+        { '@type': 'ListItem', 'position': 3, 'name': entry.data.title, 'item': postURL },
+      ],
+    },
+  ],
+};
+
 // CSS para ocultar la heroImage dentro del body del post (evita imagen duplicada)
 const hideHeroCSS = heroImage
   ? `.content-body img[src="${heroImage}"],
@@ -53,7 +124,12 @@ const hideHeroCSS = heroImage
   title={entry.data.seoTitle || entry.data.title}
   description={entry.data.metaDescription}
   keywords={entry.data.keywordPrincipal}
+  image={entry.data.heroImage}
+  ogType="article"
 >
+  <!-- Schema BlogPosting + BreadcrumbList -->
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
+
   <!-- Ocultar heroImage donde aparezca repetida en el body -->
   {heroImage && (
     <style slot="head" is:inline set:html={hideHeroCSS} />

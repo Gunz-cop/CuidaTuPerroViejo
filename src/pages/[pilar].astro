@@ -31,6 +31,48 @@ function buildSrcset(src: string | undefined): string {
 }
 const heroImageSrcset = buildSrcset(heroImage);
 
+// URL canónica del pilar
+const pilarURL = new URL(`/${pilar.slug}`, Astro.site).href;
+const siteURL = Astro.site?.href ?? 'https://cuidatuperroviejo.com/';
+const dateModified = new Date().toISOString();
+
+// Imagen absoluta para schema
+const schemaImage = heroImage
+  ? new URL(heroImage, Astro.site).href
+  : new URL('/images/home/perro-senior-hero-cama-ortopedica.webp', Astro.site).href;
+
+// Schema WebPage + BreadcrumbList
+const pilarSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${pilarURL}#webpage`,
+      'url': pilarURL,
+      'name': pilar.data.seoTitle,
+      'description': pilar.data.metaDescription,
+      'isPartOf': { '@id': `${siteURL}#website` },
+      'breadcrumb': { '@id': `${pilarURL}#breadcrumb` },
+      'primaryImageOfPage': {
+        '@type': 'ImageObject',
+        'url': schemaImage,
+        'width': 1200,
+        'height': 675,
+      },
+      'dateModified': dateModified,
+      'inLanguage': 'es',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pilarURL}#breadcrumb`,
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': siteURL },
+        { '@type': 'ListItem', 'position': 2, 'name': pilar.data.title, 'item': pilarURL },
+      ],
+    },
+  ],
+};
+
 // CSS para ocultar la imagen heroImage dentro del body del pilar (evita duplicado)
 const hideHeroCSS = heroImage
   ? `.content-body img[src="${heroImage}"],
@@ -42,7 +84,12 @@ const hideHeroCSS = heroImage
 <BaseLayout
   title={pilar.data.seoTitle}
   description={pilar.data.metaDescription}
+  image={pilar.data.heroImage}
+  ogType="article"
 >
+  <!-- Schema CollectionPage + BreadcrumbList -->
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(pilarSchema)} />
+
   <!-- Inyectar CSS de deduplicación en el <head> -->
   {heroImage && (
     <style slot="head" is:inline set:html={hideHeroCSS} />

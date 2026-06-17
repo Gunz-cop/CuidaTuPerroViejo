@@ -1,14 +1,14 @@
 ---
 ---
 <button
-  id="theme-toggle"
+  data-theme-toggle
   type="button"
   class="relative inline-flex items-center justify-center p-2 rounded-xl text-brand-muted hover:text-brand-primary hover:bg-brand-secondary/35 focus:outline-none transition-all duration-200 group"
   aria-label="Alternar tema oscuro y claro"
 >
   <!-- Sun Icon (visible in dark mode) -->
   <svg
-    id="theme-toggle-light-icon"
+    data-theme-light-icon
     class="w-5 h-5 hidden transform group-hover:rotate-45 transition-transform duration-300"
     fill="none"
     viewBox="0 0 24 24"
@@ -21,7 +21,7 @@
   
   <!-- Moon Icon (visible in light mode) -->
   <svg
-    id="theme-toggle-dark-icon"
+    data-theme-dark-icon
     class="w-5 h-5 hidden transform group-hover:-rotate-12 transition-transform duration-300"
     fill="none"
     viewBox="0 0 24 24"
@@ -35,32 +35,40 @@
 
 <script>
   function setupThemeToggle() {
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleButtons = document.querySelectorAll('[data-theme-toggle]');
 
     function updateToggleIcon() {
-      if (document.documentElement.classList.contains('dark')) {
-        themeToggleLightIcon?.classList.remove('hidden');
-        themeToggleDarkIcon?.classList.add('hidden');
-      } else {
-        themeToggleLightIcon?.classList.add('hidden');
-        themeToggleDarkIcon?.classList.remove('hidden');
-      }
+      themeToggleButtons.forEach((button) => {
+        const themeToggleLightIcon = button.querySelector('[data-theme-light-icon]');
+        const themeToggleDarkIcon = button.querySelector('[data-theme-dark-icon]');
+
+        if (document.documentElement.classList.contains('dark')) {
+          themeToggleLightIcon?.classList.remove('hidden');
+          themeToggleDarkIcon?.classList.add('hidden');
+        } else {
+          themeToggleLightIcon?.classList.add('hidden');
+          themeToggleDarkIcon?.classList.remove('hidden');
+        }
+      });
     }
 
     // Set initial icon state on load
     updateToggleIcon();
 
-    themeToggleBtn?.addEventListener('click', function() {
-      // Toggle class on root HTML
-      const isDark = document.documentElement.classList.toggle('dark');
-      
-      // Save state
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      
-      // Update icons
-      updateToggleIcon();
+    themeToggleButtons.forEach((themeToggleBtn) => {
+      if (themeToggleBtn.dataset.themeToggleReady === 'true') return;
+      themeToggleBtn.dataset.themeToggleReady = 'true';
+
+      themeToggleBtn.addEventListener('click', function() {
+        // Toggle class on root HTML
+        const isDark = document.documentElement.classList.toggle('dark');
+
+        // Save state
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+        // Update icons
+        updateToggleIcon();
+      });
     });
   }
 

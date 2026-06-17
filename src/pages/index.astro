@@ -66,131 +66,142 @@ const faqItems = [
 <BaseLayout 
   title="Guía completa para cuidar a tu perro senior"
   description="Empieza aquí: guía para cuidar a tu perro senior con salud, alimentación, movilidad, higiene y bienestar emocional. Consejos claros y fáciles."
+  image="/images/home/perro-senior-hero-cama-ortopedica.webp"
+  ogType="website"
 >
   <slot name="head" slot="head">
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://cuidatuperroviejo.com/#website",
-            "url": "https://cuidatuperroviejo.com/",
-            "name": "Cuida tu perro viejo",
-            "inLanguage": "es"
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://cuidatuperroviejo.com/#website",
+          "url": "https://cuidatuperroviejo.com/",
+          "name": "Cuida tu perro viejo",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://cuidatuperroviejo.com/",
+          "url": "https://cuidatuperroviejo.com/",
+          "name": "Guía completa para cuidar a tu perro senior",
+          "isPartOf": { "@id": "https://cuidatuperroviejo.com/#website" },
+          "breadcrumb": { "@id": "https://cuidatuperroviejo.com/#breadcrumb" },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "@id": "https://cuidatuperroviejo.com/#primaryimage",
+            "url": "https://cuidatuperroviejo.com/images/home/perro-senior-hero-cama-ortopedica.webp",
+            "width": 1200,
+            "height": 675
           },
-          {
-            "@type": "WebPage",
-            "@id": "https://cuidatuperroviejo.com/",
-            "url": "https://cuidatuperroviejo.com/",
-            "name": "Guía completa para cuidar a tu perro senior",
-            "isPartOf": { "@id": "https://cuidatuperroviejo.com/#website" },
-            "breadcrumb": { "@id": "https://cuidatuperroviejo.com/#breadcrumb" },
-            "primaryImageOfPage": {
+          "hasPart": [
+            { "@id": "https://cuidatuperroviejo.com/#faq" },
+            { "@id": "https://cuidatuperroviejo.com/#cluster" }
+          ],
+          "dateModified": new Date().toISOString(),
+          "inLanguage": "es"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cuidatuperroviejo.com/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cuidatuperroviejo.com/" }
+          ]
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://cuidatuperroviejo.com/#article",
+          "headline": "Guía completa para cuidar a tu perro senior",
+          "description": "Empieza aquí: guía para cuidar a tu perro senior con salud, alimentación, movilidad, higiene y bienestar emocional. Consejos claros y fáciles.",
+          "image": [
+            {
               "@type": "ImageObject",
-              "@id": "https://cuidatuperroviejo.com/#primaryimage",
-              "url": "/images/home/perro-senior-hero-cama-ortopedica.webp",
+              "url": "https://cuidatuperroviejo.com/images/home/perro-senior-hero-cama-ortopedica.webp",
               "width": 1200,
               "height": 675
+            }
+          ],
+          "mainEntityOfPage": { "@id": "https://cuidatuperroviejo.com/" },
+          "datePublished": "2025-10-01T00:00:00-06:00",
+          "dateModified": new Date().toISOString(),
+          "author": {
+            "@type": "Person",
+            "name": "Equipo Cuida a tu Perro Viejo",
+            "jobTitle": "Especialistas en bienestar y cuidado canino",
+            "url": "https://cuidatuperroviejo.com/acerca-de"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Cuida tu Perro Viejo",
+            "url": "https://cuidatuperroviejo.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://cuidatuperroviejo.com/favicon.png"
+            }
+          },
+          "inLanguage": "es"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://cuidatuperroviejo.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿A qué edad se considera senior un perro según su tamaño?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Pequeños/medianos ~7–8 años; grandes/gigantes ~5–6 años (orientativo; personalizar por individuo)." }
             },
-            "hasPart": [
-              { "@id": "https://cuidatuperroviejo.com/#faq" },
-              { "@id": "https://cuidatuperroviejo.com/#cluster" }
-            ],
-            "inLanguage": "es"
-          },
-          {
-            "@type": "BreadcrumbList",
-            "@id": "https://cuidatuperroviejo.com/#breadcrumb",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cuidatuperroviejo.com/" }
-            ]
-          },
-          {
-            "@type": "BlogPosting",
-            "@id": "https://cuidatuperroviejo.com/#article",
-            "headline": "Guía completa para cuidar a tu perro senior",
-            "description": "Empieza aquí: guía para cuidar a tu perro senior con salud, alimentación, movilidad, higiene y bienestar emocional. Consejos claros y fáciles.",
-            "image": [
-              "/images/home/perro-senior-hero-cama-ortopedica.webp"
-            ],
-            "mainEntityOfPage": { "@id": "https://cuidatuperroviejo.com/" },
-            "datePublished": "2025-10-01T00:00:00-06:00",
-            "dateModified": "2025-10-01T00:00:00-06:00",
-            "author": {
-              "@type": "Organization",
-              "name": "Cuida tu perro viejo",
-              "url": "https://cuidatuperroviejo.com/"
+            {
+              "@type": "Question",
+              "name": "¿Cuánto debe caminar un perro mayor al día?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Paseos cortos y frecuentes de bajo impacto; ajusta por dolor, clima y recuperación." }
             },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Cuida tu perro viejo",
-              "url": "https://cuidatuperroviejo.com/"
+            {
+              "@type": "Question",
+              "name": "¿Qué comida es mejor para perros senior y cuánta proteína?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Dieta equilibrada acorde a condición corporal y comorbilidades; prioriza proteína de calidad salvo indicación contraria." }
             },
-            "inLanguage": "es"
-          },
-          {
-            "@type": "FAQPage",
-            "@id": "https://cuidatuperroviejo.com/#faq",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "¿A qué edad se considera senior un perro según su tamaño?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Pequeños/medianos ~7–8 años; grandes/giantes ~5–6 años (orientativo; personalizar por individuo)." }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cuánto debe caminar un perro mayor al día?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Paseos cortos y frecuentes de bajo impacto; ajusta por dolor, clima y recuperación." }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Qué comida es mejor para perros senior y cuánta proteína?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Dieta equilibrada acorde a condición corporal y comorbilidades; prioriza proteína de calidad salvo indicación contraria." }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cómo saber si mi perro tiene dolor de articulaciones?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Rigidez al levantarse, dificultad para subir/bajar, intolerancia al ejercicio y cambios de conducta." }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cómo adaptar mi casa para un perro mayor con movilidad reducida?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Alfombras antideslizantes, rampas, cama ortopédica, cuencos elevados y zonas de descanso tranquilas." }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cuándo ir a urgencias con un perro anciano?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Ante dificultad respiratoria, colapso, dolor intenso, vómitos persistentes, anorexia prolongada o convulsiones." }
-              }
-            ],
-            "inLanguage": "es"
-          },
-          {
-            "@type": "ItemList",
-            "@id": "https://cuidatuperroviejo.com/#cluster",
-            "name": "Explora por tema (pilares secundarios)",
-            "itemListOrder": "https://schema.org/ItemListOrderAscending",
-            "numberOfItems": 6,
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1,
-                "item": { "@type": "WebPage", "name": "Salud en perros mayores", "url": "https://cuidatuperroviejo.com/salud-perros-mayores" } },
-              { "@type": "ListItem", "position": 2,
-                "item": { "@type": "WebPage", "name": "Alimentación del perro senior", "url": "https://cuidatuperroviejo.com/alimentacion-perros-senior" } },
-              { "@type": "ListItem", "position": 3,
-                "item": { "@type": "WebPage", "name": "Movilidad y dolor", "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores" } },
-              { "@type": "ListItem", "position": 4,
-                "item": { "@type": "WebPage", "name": "Salud mental y emociones", "url": "https://cuidatuperroviejo.com/salud-mental-emocional-perros" } },
-              { "@type": "ListItem", "position": 5,
-                "item": { "@type": "WebPage", "name": "Higiene y hogar", "url": "https://cuidatuperroviejo.com/higiene-hogar-perros-senior" } },
-              { "@type": "ListItem", "position": 6,
-                "item": { "@type": "WebPage", "name": "Cuidados paliativos", "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros" } }
-            ],
-            "inLanguage": "es"
-          }
-        ]
-      }
-    </script>
+            {
+              "@type": "Question",
+              "name": "¿Cómo saber si mi perro tiene dolor de articulaciones?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Rigidez al levantarse, dificultad para subir/bajar, intolerancia al ejercicio y cambios de conducta." }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo adaptar mi casa para un perro mayor con movilidad reducida?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Alfombras antideslizantes, rampas, cama ortopédica, cuencos elevados y zonas de descanso tranquilas." }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuándo ir a urgencias con un perro anciano?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Ante dificultad respiratoria, colapso, dolor intenso, vómitos persistentes, anorexia prolongada o convulsiones." }
+            }
+          ],
+          "inLanguage": "es"
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://cuidatuperroviejo.com/#cluster",
+          "name": "Explora por tema (pilares secundarios)",
+          "itemListOrder": "https://schema.org/ItemListOrderAscending",
+          "numberOfItems": 6,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1,
+              "item": { "@type": "WebPage", "name": "Salud en perros mayores", "url": "https://cuidatuperroviejo.com/salud-perros-mayores" } },
+            { "@type": "ListItem", "position": 2,
+              "item": { "@type": "WebPage", "name": "Alimentación del perro senior", "url": "https://cuidatuperroviejo.com/alimentacion-perros-senior" } },
+            { "@type": "ListItem", "position": 3,
+              "item": { "@type": "WebPage", "name": "Movilidad y dolor", "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores" } },
+            { "@type": "ListItem", "position": 4,
+              "item": { "@type": "WebPage", "name": "Salud mental y emociones", "url": "https://cuidatuperroviejo.com/salud-mental-emocional-perros" } },
+            { "@type": "ListItem", "position": 5,
+              "item": { "@type": "WebPage", "name": "Higiene y hogar", "url": "https://cuidatuperroviejo.com/higiene-hogar-perros-senior" } },
+            { "@type": "ListItem", "position": 6,
+              "item": { "@type": "WebPage", "name": "Cuidados paliativos", "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros" } }
+          ],
+          "inLanguage": "es"
+        }
+      ]
+    })} />
   </slot>
 
   <main class="w-full">
@@ -226,8 +237,8 @@ const faqItems = [
           </div>
           <div class="mt-4 flex items-center justify-center gap-4 text-brand-muted text-sm font-medium border-t border-brand-border pt-6 w-full max-w-md">
             <div class="flex -space-x-2">
-              <img alt="Veterinaria" class="w-8 h-8 rounded-full border-2 border-brand-bg" src="/images/home/avatar-vet-1.webp" width="96" height="96" loading="lazy" decoding="async"/>
-              <img alt="Doctor veterinario" class="w-8 h-8 rounded-full border-2 border-brand-bg" src="/images/home/avatar-vet-2.webp" width="96" height="96" loading="lazy" decoding="async"/>
+              <img alt="Veterinaria" class="w-8 h-8 rounded-full border-2 border-brand-bg" src="/images/home/avatar-vet-1.webp" width="96" height="96" loading="eager" fetchpriority="low" decoding="async"/>
+              <img alt="Doctor veterinario" class="w-8 h-8 rounded-full border-2 border-brand-bg" src="/images/home/avatar-vet-2.webp" width="96" height="96" loading="eager" fetchpriority="low" decoding="async"/>
             </div>
             <span>Respaldado por guías veterinarias (AAHA, WSAVA)</span>
           </div>
@@ -240,13 +251,15 @@ const faqItems = [
               alt="Perro senior descansando placenteramente en una cama ortopédica dentro de un hogar moderno y cálido." 
               class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-1000" 
               src="/images/home/perro-senior-hero-cama-ortopedica.webp"
-              srcset="/images/home/perro-senior-hero-cama-ortopedica.webp 400w,
-                      /images/home/perro-senior-hero-cama-ortopedica.webp 600w,
-                      /images/home/perro-senior-hero-cama-ortopedica.webp 800w,
+              srcset="/images/home/perro-senior-hero-cama-ortopedica-400.webp 400w,
+                      /images/home/perro-senior-hero-cama-ortopedica-800.webp 800w,
                       /images/home/perro-senior-hero-cama-ortopedica.webp 1200w"
-              sizes="(max-width: 768px) 100vw, 960px"
+              sizes="(max-width: 480px) 400px, (max-width: 900px) 800px, 1200px"
               loading="eager"
-              class="w-full h-full object-cover"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="675"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-brand-text/80 via-transparent to-transparent"></div>
             <div class="absolute bottom-0 left-0 p-4 md:p-8 w-full flex justify-center">
@@ -810,78 +823,159 @@ const faqItems = [
             Evalúa y haz seguimiento del bienestar de tu mascota de manera periódica. Marca las tareas realizadas:
           </p>
           
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5" id="checklist-grid">
             <label class="flex items-start gap-3 cursor-pointer group select-none">
-              <input type="checkbox" class="w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <input type="checkbox" data-key="apetito" class="checklist-item w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
               <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
                 Apetito diario e <a href="https://www.google.com/search?q=ingesta+de+agua+perros+mayores" target="_blank" class="text-brand-accent hover:underline font-normal">ingesta de agua</a> estables.
               </span>
             </label>
             
             <label class="flex items-start gap-3 cursor-pointer group select-none">
-              <input type="checkbox" class="w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <input type="checkbox" data-key="peso" class="checklist-item w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
               <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
                 Control de peso y condición corporal (<strong>BCS</strong>).
               </span>
             </label>
             
             <label class="flex items-start gap-3 cursor-pointer group select-none">
-              <input type="checkbox" class="w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <input type="checkbox" data-key="heces" class="checklist-item w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
               <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
                 Heces y orina: evaluar consistencia y frecuencia.
               </span>
             </label>
             
             <label class="flex items-start gap-3 cursor-pointer group select-none">
-              <input type="checkbox" class="w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <input type="checkbox" data-key="movilidad" class="checklist-item w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
               <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
                 Movilidad: evaluar rigidez al levantarse.
               </span>
             </label>
             
             <label class="flex items-start gap-3 cursor-pointer group select-none">
-              <input type="checkbox" class="w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <input type="checkbox" data-key="animo" class="checklist-item w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
               <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
                 Ánimo y conducta general en casa.
               </span>
             </label>
             
             <label class="flex items-start gap-3 cursor-pointer group select-none">
-              <input type="checkbox" class="w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <input type="checkbox" data-key="sueno" class="checklist-item w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
               <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
                 Patrón del sueño: control de inquietud nocturna.
               </span>
             </label>
             
             <label class="flex items-start gap-3 cursor-pointer group select-none">
-              <input type="checkbox" class="w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <input type="checkbox" data-key="higiene" class="checklist-item w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
               <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
                 Higiene: cepillado y revisión dental regular.
               </span>
             </label>
             
             <label class="flex items-start gap-3 cursor-pointer group select-none">
-              <input type="checkbox" class="w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <input type="checkbox" data-key="tratamientos" class="checklist-item w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
               <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
                 Administración de tratamientos pautados.
               </span>
             </label>
             
             <label class="flex items-start gap-3 cursor-pointer group select-none">
-              <input type="checkbox" class="w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <input type="checkbox" data-key="dolor" class="checklist-item w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
               <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
                 Dolor latente: detectar jadeos o incomodidad.
               </span>
             </label>
             
             <label class="flex items-start gap-3 cursor-pointer group select-none">
-              <input type="checkbox" class="w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
+              <input type="checkbox" data-key="anotaciones" class="checklist-item w-5 h-5 mt-0.5 rounded border-brand-border text-brand-primary focus:ring-brand-primary focus:ring-offset-0 bg-brand-bg transition-colors" />
               <span class="text-brand-text text-xs leading-relaxed group-hover:text-brand-primary transition-colors font-light">
                 Anotaciones de cambios para el veterinario.
               </span>
             </label>
           </div>
+
+          <!-- Barra de progreso semanal -->
+          <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between gap-4">
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-brand-primary">Progreso semanal</span>
+                <span id="checklist-count" class="text-[10px] font-bold text-brand-muted">0 / 10</span>
+              </div>
+              <div class="w-full h-1.5 bg-brand-border rounded-full overflow-hidden">
+                <div id="checklist-bar" class="h-full bg-brand-primary rounded-full transition-all duration-500" style="width: 0%"></div>
+              </div>
+            </div>
+            <button
+              id="checklist-reset"
+              class="hidden text-[10px] font-bold text-brand-muted hover:text-rose-500 transition-colors uppercase tracking-wider shrink-0"
+              title="Reiniciar checklist de esta semana"
+            >
+              ↺ Reset
+            </button>
+          </div>
         </div>
+
+        <!-- Script: persistencia del checklist semanal en localStorage -->
+        <script>
+          (() => {
+            // Calcula la clave de semana ISO: "checklist-YYYY-Www"
+            function getWeekKey(): string {
+              const now = new Date();
+              const jan4 = new Date(now.getFullYear(), 0, 4);
+              const startOfWeek1 = new Date(jan4);
+              startOfWeek1.setDate(jan4.getDate() - ((jan4.getDay() + 6) % 7));
+              const diff = now.getTime() - startOfWeek1.getTime();
+              const week = Math.floor(diff / (7 * 24 * 60 * 60 * 1000)) + 1;
+              return `checklist-${now.getFullYear()}-W${String(week).padStart(2, '0')}`;
+            }
+
+            const STORAGE_KEY = getWeekKey();
+            const items = document.querySelectorAll<HTMLInputElement>('.checklist-item');
+            const countEl = document.getElementById('checklist-count');
+            const barEl = document.getElementById('checklist-bar');
+            const resetBtn = document.getElementById('checklist-reset');
+            const total = items.length;
+
+            // Carga estado guardado de esta semana
+            const saved: Record<string, boolean> = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+            function updateUI() {
+              const checked = Array.from(items).filter(i => i.checked).length;
+              if (countEl) countEl.textContent = `${checked} / ${total}`;
+              if (barEl) barEl.style.width = `${Math.round((checked / total) * 100)}%`;
+              if (resetBtn) resetBtn.classList.toggle('hidden', checked === 0);
+            }
+
+            // Restaurar estado
+            items.forEach(item => {
+              const key = item.dataset.key;
+              if (key && saved[key]) item.checked = true;
+              item.addEventListener('change', () => {
+                const k = item.dataset.key;
+                if (!k) return;
+                const state: Record<string, boolean> = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                state[k] = item.checked;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+                updateUI();
+              });
+            });
+
+            // Botón de reset
+            resetBtn?.addEventListener('click', () => {
+              localStorage.removeItem(STORAGE_KEY);
+              items.forEach(i => { i.checked = false; });
+              updateUI();
+            });
+
+            // Limpia claves de semanas anteriores (housekeeping)
+            Object.keys(localStorage)
+              .filter(k => k.startsWith('checklist-') && k !== STORAGE_KEY)
+              .forEach(k => localStorage.removeItem(k));
+
+            updateUI();
+          })();
+        </script>
 
         <!-- Urgencias Veterinarias -->
         <div class="lg:col-span-5 bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-900/30 rounded-3xl p-6 md:p-8 shadow-sm">
