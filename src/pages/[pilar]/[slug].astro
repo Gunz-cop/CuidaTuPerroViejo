@@ -32,6 +32,18 @@ const pilarName = pilarNames[entry.data.pilar] || entry.data.pilar;
 const heroImage = entry.data.heroImage;
 const heroImageAlt = entry.data.heroImageAlt || entry.data.title;
 
+// Construir srcset real usando variantes responsive generadas por scripts/optimize-images.mjs
+function buildSrcset(src: string | undefined): string {
+  if (!src) return '';
+  const base = src.replace(/\.webp$/i, '');
+  return [
+    `${base}-400.webp 400w`,
+    `${base}-800.webp 800w`,
+    `${src} 1200w`,
+  ].join(', ');
+}
+const heroImageSrcset = buildSrcset(heroImage);
+
 // CSS para ocultar la heroImage dentro del body del post (evita imagen duplicada)
 const hideHeroCSS = heroImage
   ? `.content-body img[src="${heroImage}"],
@@ -93,6 +105,10 @@ const hideHeroCSS = heroImage
                 loading="eager"
                 decoding="async"
                 fetchpriority="high"
+                width="1200"
+                height="675"
+                srcset={heroImageSrcset}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px"
               />
             </div>
             <figcaption class="mt-2 text-center text-xs text-brand-muted italic px-4 sm:px-0">

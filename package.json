@@ -10,8 +10,9 @@
     "preview": "npm run build && wrangler dev",
     "astro": "astro",
     "deploy": "npm run build && wrangler deploy",
-    "sdi:run": "npx tsx lib/discovery/run.ts"
-
+    "sdi:run": "npx tsx lib/discovery/run.ts",
+    "images:optimize": "node scripts/optimize-images.mjs --apply --delete-originals --responsive",
+    "images:optimize:dry": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "11",
@@ -23,6 +24,7 @@
     "tailwindcss": "^3.4.4"
   },
   "devDependencies": {
+    "sharp": "^0.35.1",
     "wrangler": "^4.94.0"
   }
 }
