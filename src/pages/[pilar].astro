@@ -22,15 +22,12 @@ const { Content } = await pilar.render();
 const heroImage = pilar.data.heroImage;
 const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
 
-// Construir srcset real usando variantes responsive generadas por scripts/optimize-images.mjs
+// Construir srcset: incluye -400w (garantizado) y el original como 1200w
+// El -800w no existe para todas las imágenes, se omite para evitar 404s
 function buildSrcset(src: string | undefined): string {
   if (!src) return '';
   const base = src.replace(/\.webp$/i, '');
-  return [
-    `${base}-400.webp 400w`,
-    `${base}-800.webp 800w`,
-    `${src} 1200w`,
-  ].join(', ');
+  return `${base}-400.webp 400w, ${src} 1200w`;
 }
 const heroImageSrcset = buildSrcset(heroImage);
 
