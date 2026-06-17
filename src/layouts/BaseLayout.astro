@@ -11,11 +11,16 @@ interface Props {
   image?: string;
   /** Tipo de página para og:type. Default 'website'; usar 'article' en posts y pilares. */
   ogType?: 'website' | 'article';
+  /** Permite ocultar el widget flotante en páginas donde no aporta valor. */
+  showAiAssistant?: boolean;
 }
 
-const { title, description = 'Cuida a tu Perro Viejo', keywords, image, ogType = 'website' } = Astro.props;
+const { title, description = 'Cuida a tu Perro Viejo', keywords, image, ogType = 'website', showAiAssistant = true } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const isAsistenteIaPage = Astro.url.pathname.replace(/\/$/, '') === '/asistente-ia';
+const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isAsistenteIaPage = normalizedPath === '/asistente-ia';
+const pagesWithoutAiAssistant = new Set(['/politica-de-cookies', '/politica-de-privacidad']);
+const shouldShowAiAssistant = showAiAssistant && !pagesWithoutAiAssistant.has(normalizedPath);
 
 // Imagen OG: convierte ruta relativa a URL absoluta.
 // Fallback: imagen hero de la home (1200×675, ya optimizada).
@@ -32,7 +37,9 @@ const ogImageURL = new URL(ogImagePath, Astro.site).href;
     <title>{title}</title>
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
@@ -424,7 +431,7 @@ const ogImageURL = new URL(ogImagePath, Astro.site).href;
       </div>
     </footer>
 
-    <CanineAiAssistant />
+    {shouldShowAiAssistant && <CanineAiAssistant />}
     <script is:inline>
       (() => {
         const toggle = document.querySelector('.mobile-menu-toggle');
