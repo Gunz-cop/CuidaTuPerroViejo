@@ -27,6 +27,8 @@ const shouldShowAiAssistant = showAiAssistant && !pagesWithoutAiAssistant.has(no
 const OG_FALLBACK = '/images/home/perro-senior-hero-cama-ortopedica.webp';
 const ogImagePath = image || OG_FALLBACK;
 const ogImageURL = new URL(ogImagePath, Astro.site).href;
+const textFontsURL = 'https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=optional';
+const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&icon_names=arrow_downward,arrow_forward,calculate,directions_walk,expand_more,format_quote,home_repair_service,menu_book,pest_control_rodent,pets,psychology,restaurant,science,stethoscope,volunteer_activism,workspace_premium&display=block';
 ---
 
 <!DOCTYPE html> <!-- sdi-force-reindex-v0.2 -->
@@ -101,9 +103,11 @@ const ogImageURL = new URL(ogImagePath, Astro.site).href;
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href={textFontsURL} media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href={materialSymbolsURL} media="print" onload="this.media='all'" />
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
+      <link rel="stylesheet" href={textFontsURL} />
+      <link rel="stylesheet" href={materialSymbolsURL} />
     </noscript>
     <style is:global>
       :root {

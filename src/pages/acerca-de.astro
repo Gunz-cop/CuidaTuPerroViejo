@@ -2,25 +2,56 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "Acerca de | Cuida tu perro viejo";
-const description = "Conoce quiénes somos en Cuida tu perro viejo y nuestra misión de ayudar a los dueños de perros senior a darles la mejor calidad de vida en su etapa dorada.";
+const description = "Conoce el perfil editorial, experiencia, fuentes y límites médicos de Cuida tu Perro Viejo, una guía práctica para tutores de perros senior.";
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://cuidatuperroviejo.com/acerca-de#webpage",
+      "name": "Acerca de Cuida tu Perro Viejo",
+      "url": "https://cuidatuperroviejo.com/acerca-de",
+      "description": description,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://cuidatuperroviejo.com/#website",
+        "name": "Cuida tu Perro Viejo",
+        "url": "https://cuidatuperroviejo.com/"
+      },
+      "about": { "@id": "https://cuidatuperroviejo.com/acerca-de#author" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://cuidatuperroviejo.com/acerca-de#author",
+      "name": "Equipo Cuida a tu Perro Viejo",
+      "jobTitle": "Equipo editorial especializado en cuidado y bienestar de perros senior",
+      "description": "Equipo editorial enfocado en traducir guías veterinarias, fuentes académicas y experiencia de cuidado diario en recomendaciones prácticas para tutores de perros mayores.",
+      "url": "https://cuidatuperroviejo.com/acerca-de",
+      "worksFor": { "@id": "https://cuidatuperroviejo.com/#organization" },
+      "knowsAbout": [
+        "cuidado de perros senior",
+        "bienestar canino",
+        "movilidad y dolor en perros mayores",
+        "alimentación de perros senior",
+        "cuidados paliativos veterinarios"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://cuidatuperroviejo.com/#organization",
+      "name": "Cuida tu Perro Viejo",
+      "url": "https://cuidatuperroviejo.com/",
+      "logo": "https://cuidatuperroviejo.com/favicon.png",
+      "sameAs": ["https://www.housegatitos.com"]
+    }
+  ]
+};
 ---
 
 <BaseLayout title={title} description={description}>
   <!-- Head injection using slots -->
-  <script slot="head" type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "Acerca de",
-    "url": "https://cuidatuperroviejo.com/acerca-de",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Cuida tu perro viejo",
-      "url": "https://cuidatuperroviejo.com/"
-    },
-    "description": "Conoce quiénes somos en Cuida tu perro viejo y nuestra misión de ayudar a los dueños de perros senior a darles la mejor calidad de vida en su etapa dorada."
-  }
-  </script>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(aboutSchema)} />
 
   <!-- ===== PAGE HERO BANNER ===== -->
   <div class="w-full bg-gradient-to-br from-brand-secondary/40 via-brand-primary/8 to-brand-secondary/20 dark:from-brand-primary/10 dark:via-brand-secondary/5 dark:to-transparent border-b border-brand-border">
@@ -40,7 +71,7 @@ const description = "Conoce quiénes somos en Cuida tu perro viejo y nuestra mis
         Sobre nosotros
       </h1>
       <p class="text-base md:text-lg text-brand-muted leading-relaxed max-w-xl font-light">
-        Conoce el equipo detrás de <strong class="text-brand-text">Cuida tu perro viejo</strong> y nuestra misión de acompañar a cada perro senior en su etapa dorada.
+        Conoce el equipo editorial, las fuentes y el criterio con el que construimos las guías de <strong class="text-brand-text">Cuida tu Perro Viejo</strong>.
       </p>
     </div>
   </div>
@@ -52,10 +83,13 @@ const description = "Conoce quiénes somos en Cuida tu perro viejo y nuestra mis
       
       <div class="space-y-4">
         <p class="text-lg md:text-xl text-brand-text font-medium leading-relaxed">
-          ¡Hola y bienvenido/a a <strong>Cuida tu perro viejo</strong>! 🐶💛
+          ¡Hola y bienvenido/a a <strong>Cuida tu Perro Viejo</strong>! 🐶💛
         </p>
         <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
-          Soy parte del equipo de <strong>Toxedocat</strong>, un proyecto creado con mucho cariño para ayudar a los dueños de perros senior a darles la mejor calidad de vida en su etapa dorada. Sabemos lo especial que es acompañar a un amigo de cuatro patas cuando ya es mayor, y queremos ofrecerte consejos prácticos, guías claras y apoyo confiable.
+          Somos el equipo editorial de <strong>Cuida tu Perro Viejo</strong>, un proyecto creado para ayudar a tutores de perros senior a tomar mejores decisiones cotidianas sobre salud, movilidad, alimentación, higiene, bienestar emocional y cuidados paliativos.
+        </p>
+        <p class="text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          Nuestro enfoque combina investigación en fuentes veterinarias reconocidas con experiencia práctica de cuidado diario. Convertimos información técnica en guías claras, accionables y prudentes, pensadas para acompañarte en casa sin reemplazar nunca el diagnóstico de tu veterinario.
         </p>
       </div>
 
@@ -84,6 +118,46 @@ const description = "Conoce quiénes somos en Cuida tu perro viejo y nuestra mis
             </span>
           </li>
         </ul>
+      </section>
+
+      <section class="bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-6 md:p-8 shadow-sm">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-primary mb-6 leading-tight mt-0">
+          Cómo trabajamos el contenido
+        </h2>
+        <ul class="space-y-4.5 text-sm md:text-base text-brand-muted list-none pl-0 font-light">
+          <li class="flex items-start gap-3">
+            <span class="text-brand-primary text-lg mt-0.5 select-none">🐾</span>
+            <span>
+              Revisamos guías de referencia como AAHA, WSAVA, AVMA, Merck Veterinary Manual, Cornell y publicaciones veterinarias cuando el tema lo requiere.
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-brand-primary text-lg mt-0.5 select-none">🐾</span>
+            <span>
+              Priorizamos señales de alerta, decisiones seguras en casa y criterios para saber cuándo consultar de forma presencial.
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-brand-primary text-lg mt-0.5 select-none">🐾</span>
+            <span>
+              Actualizamos artículos cuando cambia una recomendación, detectamos una mejora editorial o añadimos fuentes más específicas.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-6 md:p-8 shadow-sm">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-brand-primary mb-6 leading-tight mt-0">
+          Alcance médico y responsabilidad
+        </h2>
+        <div class="space-y-4 text-sm md:text-base text-brand-muted leading-relaxed font-light">
+          <p>
+            El contenido de este sitio es educativo. No sustituye una consulta veterinaria, un diagnóstico, una pauta farmacológica ni una atención de urgencias.
+          </p>
+          <p>
+            Si tu perro presenta dolor agudo, dificultad respiratoria, colapso, convulsiones, heridas profundas, anorexia total, vómitos repetidos o cualquier cambio brusco, busca atención veterinaria presencial de inmediato.
+          </p>
+        </div>
       </section>
 
       <!-- Sister Projects / Family Section -->
