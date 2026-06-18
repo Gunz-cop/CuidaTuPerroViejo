@@ -22,12 +22,12 @@
 <!-- Chat Window Wrapper -->
 <div 
   id="ai-chat-window" 
-  class="fixed bottom-24 right-6 z-50 w-[calc(100vw-2rem)] sm:w-[400px] h-[600px] max-h-[calc(100dvh-8rem)] bg-white/95 dark:bg-[#121412]/98 backdrop-blur-lg border border-[#dbdad5]/70 dark:border-[#2f4d3a]/60 rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)] flex flex-col overflow-hidden transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-none"
+  class="fixed bottom-24 right-6 z-50 w-[calc(100vw-2rem)] sm:w-[400px] h-[600px] max-h-[calc(100dvh-8rem)] bg-white/95 dark:bg-[#151a16]/98 backdrop-blur-lg border border-[#dbdad5]/70 dark:border-[#385842]/70 rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_24px_60px_rgba(0,0,0,0.44)] flex flex-col overflow-hidden transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-none"
 >
   <!-- Header (Gradient with brand identity) -->
-  <header class="bg-gradient-to-r from-[#45634f] to-[#5d7c67] dark:from-[#1b1e1b] dark:to-[#121412] px-6 py-4.5 flex items-center justify-between text-white border-b border-[#dbdad5]/30 dark:border-[#2f4d3a]/30 shadow-md">
+  <header class="bg-gradient-to-r from-[#45634f] to-[#5d7c67] dark:from-[#202820] dark:to-[#182019] px-6 py-4.5 flex items-center justify-between text-white border-b border-[#dbdad5]/30 dark:border-[#385842]/60 shadow-md">
     <div class="flex items-center gap-3">
-      <div class="w-9 h-9 rounded-xl bg-white/10 dark:bg-[#adcfb6]/10 flex items-center justify-center text-lg shadow-inner">
+      <div class="w-9 h-9 rounded-xl bg-white/10 dark:bg-[#adcfb6]/14 flex items-center justify-center text-lg shadow-inner">
         🐶
       </div>
       <div>
@@ -67,15 +67,15 @@
   </header>
 
   <!-- Messages List -->
-  <div id="ai-chat-messages" class="flex-1 overflow-y-auto p-5 space-y-6 scroll-smooth bg-gradient-to-b from-[#faf9f4]/20 to-[#f5f4ef]/40 dark:from-[#121412]/30 dark:to-[#121412]/50">
+  <div id="ai-chat-messages" class="flex-1 overflow-y-auto p-5 space-y-6 scroll-smooth bg-gradient-to-b from-[#faf9f4]/20 to-[#f5f4ef]/40 dark:from-[#131713] dark:to-[#171d18]">
     
     <!-- Welcome message -->
     <div class="flex items-start gap-3 max-w-[85%] animate-fade-in">
-      <div class="w-8 h-8 rounded-full bg-brand-primary/10 dark:bg-brand-primary/15 flex items-center justify-center text-xs shrink-0 select-none shadow-sm">
+      <div class="w-8 h-8 rounded-full bg-brand-primary/10 dark:bg-[#adcfb6]/14 flex items-center justify-center text-xs shrink-0 select-none shadow-sm">
         🐾
       </div>
-      <div class="bg-[#f4f6f3] dark:bg-[#1b1e1b] border border-[#dbdad5] dark:border-[#2f4d3a]/60 px-4 py-3.5 rounded-2xl rounded-tl-none shadow-sm">
-        <p class="text-xs text-brand-text dark:text-[#f8fff7]/90 leading-relaxed font-light">
+      <div class="bg-[#f4f6f3] dark:bg-[#202820] border border-[#dbdad5] dark:border-[#385842]/70 px-4 py-3.5 rounded-2xl rounded-tl-none shadow-sm dark:shadow-[0_10px_28px_rgba(0,0,0,0.18)]">
+        <p class="text-xs text-brand-text dark:text-[#f3fff1] leading-relaxed font-light">
           ¡Hola! Soy tu asistente de bienestar para perros mayores. Pregúntame sobre alimentación, dolor articular (artrosis), ejercicio o cambios de comportamiento. ¿En qué te ayudo hoy?
         </p>
       </div>
@@ -85,15 +85,15 @@
     <div id="ai-chat-suggestions" class="space-y-3 pt-2">
       <p class="text-[10px] text-brand-muted/80 dark:text-[#adcfb6]/80 font-bold uppercase tracking-wider pl-11 select-none">Temas sugeridos:</p>
       <div class="flex flex-col gap-2.5 pl-11 pr-2">
-        <button class="chat-suggest-btn flex items-center gap-2.5 w-full text-left px-4 py-3 bg-[#faf9f4]/80 dark:bg-[#1b1e1b]/80 hover:bg-[#45634f]/5 dark:hover:bg-[#adcfb6]/5 border border-[#dbdad5] dark:border-[#2f4d3a]/60 text-xs text-brand-text dark:text-[#f8fff7]/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] font-medium">
+        <button class="chat-suggest-btn flex items-center gap-2.5 w-full text-left px-4 py-3 bg-[#faf9f4]/80 dark:bg-[#202820] hover:bg-[#45634f]/5 dark:hover:bg-[#273327] border border-[#dbdad5] dark:border-[#385842]/70 text-xs text-brand-text dark:text-[#f3fff1] rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] font-medium">
           <span class="text-brand-primary dark:text-[#adcfb6]">💡</span>
           <span>¿Cómo saber si mi perro tiene dolor?</span>
         </button>
-        <button class="chat-suggest-btn flex items-center gap-2.5 w-full text-left px-4 py-3 bg-[#faf9f4]/80 dark:bg-[#1b1e1b]/80 hover:bg-[#45634f]/5 dark:hover:bg-[#adcfb6]/5 border border-[#dbdad5] dark:border-[#2f4d3a]/60 text-xs text-brand-text dark:text-[#f8fff7]/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] font-medium">
+        <button class="chat-suggest-btn flex items-center gap-2.5 w-full text-left px-4 py-3 bg-[#faf9f4]/80 dark:bg-[#202820] hover:bg-[#45634f]/5 dark:hover:bg-[#273327] border border-[#dbdad5] dark:border-[#385842]/70 text-xs text-brand-text dark:text-[#f3fff1] rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] font-medium">
           <span class="text-brand-primary dark:text-[#adcfb6]">🦴</span>
           <span>¿Qué comida dar a un perro de 12 años?</span>
         </button>
-        <button class="chat-suggest-btn flex items-center gap-2.5 w-full text-left px-4 py-3 bg-[#faf9f4]/80 dark:bg-[#1b1e1b]/80 hover:bg-[#45634f]/5 dark:hover:bg-[#adcfb6]/5 border border-[#dbdad5] dark:border-[#2f4d3a]/60 text-xs text-brand-text dark:text-[#f8fff7]/90 rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] font-medium">
+        <button class="chat-suggest-btn flex items-center gap-2.5 w-full text-left px-4 py-3 bg-[#faf9f4]/80 dark:bg-[#202820] hover:bg-[#45634f]/5 dark:hover:bg-[#273327] border border-[#dbdad5] dark:border-[#385842]/70 text-xs text-brand-text dark:text-[#f3fff1] rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] font-medium">
           <span class="text-brand-primary dark:text-[#adcfb6]">🌙</span>
           <span>Mi perro senior está desorientado de noche</span>
         </button>
@@ -102,14 +102,14 @@
   </div>
 
   <!-- Footer Disclaimer (High readability) -->
-  <div class="px-5 py-3 border-t border-[#dbdad5]/30 dark:border-[#2f4d3a]/20 bg-[#faf9f4]/50 dark:bg-[#121613] text-center select-none shadow-[0_-2px_10px_rgba(0,0,0,0.01)]">
+  <div class="px-5 py-3 border-t border-[#dbdad5]/30 dark:border-[#385842]/45 bg-[#faf9f4]/50 dark:bg-[#151a16] text-center select-none shadow-[0_-2px_10px_rgba(0,0,0,0.01)]">
     <p class="text-[9px] text-brand-muted dark:text-[#adcfb6]/70 leading-relaxed font-light">
       ⚠️ <em>Este asistente virtual no sustituye el diagnóstico de un veterinario. Si tu mascota tiene una urgencia clínica, acude a un centro de inmediato.</em>
     </p>
   </div>
 
   <!-- Input Form -->
-  <form id="ai-chat-form" class="p-3.5 border-t border-[#dbdad5]/30 dark:border-[#2f4d3a]/20 bg-white dark:bg-[#121613] flex items-center gap-2.5">
+  <form id="ai-chat-form" class="p-3.5 border-t border-[#dbdad5]/30 dark:border-[#385842]/45 bg-white dark:bg-[#151a16] flex items-center gap-2.5">
     <input 
       type="text" 
       id="ai-chat-input" 
@@ -117,7 +117,7 @@
       maxlength="300"
       required
       autocomplete="off"
-      class="flex-1 px-4.5 py-3 bg-[#faf9f4]/50 dark:bg-[#1b1e1b] border border-[#dbdad5] dark:border-[#2f4d3a]/60 focus:border-brand-primary dark:focus:border-[#adcfb6] focus:ring-2 focus:ring-brand-primary/10 dark:focus:ring-[#adcfb6]/15 rounded-2xl text-base sm:text-xs text-brand-text dark:text-[#f8fff7] placeholder-brand-muted/50 focus:outline-none transition-all"
+      class="flex-1 px-4.5 py-3 bg-[#faf9f4]/50 dark:bg-[#202820] border border-[#dbdad5] dark:border-[#385842]/70 focus:border-brand-primary dark:focus:border-[#adcfb6] focus:ring-2 focus:ring-brand-primary/10 dark:focus:ring-[#adcfb6]/18 rounded-2xl text-base sm:text-xs text-brand-text dark:text-[#f3fff1] placeholder-brand-muted/50 dark:placeholder-[#9fc6aa]/60 focus:outline-none transition-all"
     />
     <button 
       type="submit" 
@@ -344,15 +344,15 @@
 
       const iconDiv = document.createElement('div');
       iconDiv.className = `w-8 h-8 rounded-full flex items-center justify-center text-xs shrink-0 select-none shadow-sm ${
-        sender === 'user' ? 'bg-[#fdcb9b]/25 dark:bg-[#7c5730]/25' : 'bg-brand-primary/10'
+        sender === 'user' ? 'bg-[#fdcb9b]/25 dark:bg-[#eebd8e]/15' : 'bg-brand-primary/10 dark:bg-[#adcfb6]/14'
       }`;
       iconDiv.textContent = sender === 'user' ? '👤' : '🐾';
 
       const contentDiv = document.createElement('div');
       contentDiv.className = `px-4 py-3 rounded-2xl shadow-sm ${
         sender === 'user' 
-          ? 'bg-[#45634f] dark:bg-[#2f4d3a] text-white dark:text-[#f8fff7] rounded-tr-none border border-transparent dark:border-[#adcfb6]/15' 
-          : 'bg-[#f4f6f3] dark:bg-[#1b1e1b] border border-[#dbdad5] dark:border-[#2f4d3a]/60 text-brand-text dark:text-[#f8fff7]/90 rounded-tl-none'
+          ? 'bg-[#45634f] dark:bg-[#2f4d3a] text-white dark:text-[#f8fff7] rounded-tr-none border border-transparent dark:border-[#adcfb6]/20' 
+          : 'bg-[#f4f6f3] dark:bg-[#202820] border border-[#dbdad5] dark:border-[#385842]/70 text-brand-text dark:text-[#f3fff1] rounded-tl-none'
       }`;
 
       if (sender === 'user') {
@@ -382,11 +382,11 @@
       indicator.className = 'flex items-start gap-3 max-w-[85%] animate-fade-in';
 
       const iconDiv = document.createElement('div');
-      iconDiv.className = 'w-8 h-8 rounded-full bg-brand-primary/10 dark:bg-brand-primary/15 flex items-center justify-center text-xs shrink-0 select-none shadow-sm';
+      iconDiv.className = 'w-8 h-8 rounded-full bg-brand-primary/10 dark:bg-[#adcfb6]/14 flex items-center justify-center text-xs shrink-0 select-none shadow-sm';
       iconDiv.textContent = '🐾';
 
       const contentDiv = document.createElement('div');
-      contentDiv.className = 'bg-[#f4f6f3] dark:bg-[#1b1e1b] border border-[#dbdad5] dark:border-[#2f4d3a]/60 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-2';
+      contentDiv.className = 'bg-[#f4f6f3] dark:bg-[#202820] border border-[#dbdad5] dark:border-[#385842]/70 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-2';
 
       const text = document.createElement('span');
       text.className = 'text-[11px] text-brand-muted dark:text-brand-primary/80 italic font-light';
