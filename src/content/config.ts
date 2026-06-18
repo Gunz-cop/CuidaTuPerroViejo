@@ -32,6 +32,7 @@ const pilares = defineCollection({
     title: z.string(),
     seoTitle: z.string(),
     metaDescription: z.string(),
+    keywords: z.string().optional(),
     heroImage: z.string().optional(),
     heroImageAlt: z.string().optional(),
     legacyUrl: z.string().optional(),
