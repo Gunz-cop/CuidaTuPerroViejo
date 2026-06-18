@@ -1,0 +1,32 @@
+---
+import EmergencyGeoWidget from './EmergencyGeoWidget.astro';
+---
+
+<div class="lg:col-span-5 bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-900/30 rounded-3xl p-6 md:p-8 shadow-sm">
+  <span class="text-xs font-bold tracking-wider uppercase text-amber-600 dark:text-amber-400 mb-1 block">Urgencias Veterinarias</span>
+  <h3 class="text-xl font-bold text-brand-text mt-0 mb-3">Señales de alarma crítica</h3>
+  <p class="text-xs text-brand-muted font-light leading-relaxed mb-6">
+    Acude de inmediato a un centro de urgencias si notas alguno de los siguientes síntomas en tu perro anciano:
+  </p>
+
+  <ul class="space-y-3.5 text-xs text-brand-text/90 leading-relaxed font-light pl-0 list-none">
+    <li class="flex gap-2.5">
+      <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
+      <span>Dificultad evidente para respirar (disnea), colapso repentino o dolor agudo.</span>
+    </li>
+    <li class="flex gap-2.5">
+      <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
+      <span>Vómitos repetitivos o <strong><a href="https://www.google.com/search?q=anorexia+perros+mayores" target="_blank" class="text-brand-accent hover:underline font-normal">anorexia</a></strong> total de más de 24 a 48 horas.</span>
+    </li>
+    <li class="flex gap-2.5">
+      <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
+      <span>Desorientación severa repentina, temblores generalizados o convulsiones.</span>
+    </li>
+    <li class="flex gap-2.5">
+      <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
+      <span>Heridas profundas o sangrados que no cesen tras aplicar presión unos minutos.</span>
+    </li>
+  </ul>
+
+  <EmergencyGeoWidget />
+</div>

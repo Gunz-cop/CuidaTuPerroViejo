@@ -1,8 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FAQ from '../components/FAQ.astro';
-import EmergencyGeoWidget from '../components/EmergencyGeoWidget.astro';
+import HomeEmergencyAlerts from '../components/HomeEmergencyAlerts.astro';
+import HomeFaqSection from '../components/HomeFaqSection.astro';
+import HomeRecentPosts from '../components/HomeRecentPosts.astro';
+import HomeResources from '../components/HomeResources.astro';
 
 // Obtener los últimos 3 artículos de blog ordenados por fecha de publicación (más recientes primero)
 const blogEntries = await getCollection('blog', ({ data }) => {
@@ -984,125 +986,19 @@ const faqItems = [
         </script>
 
         <!-- Urgencias Veterinarias -->
-        <div class="lg:col-span-5 bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-900/30 rounded-3xl p-6 md:p-8 shadow-sm">
-          <span class="text-xs font-bold tracking-wider uppercase text-amber-600 dark:text-amber-400 mb-1 block">Urgencias Veterinarias</span>
-          <h3 class="text-xl font-bold text-brand-text mt-0 mb-3">Señales de alarma crítica</h3>
-          <p class="text-xs text-brand-muted font-light leading-relaxed mb-6">
-            Acude de inmediato a un centro de urgencias si notas alguno de los siguientes síntomas en tu perro anciano:
-          </p>
-          
-          <ul class="space-y-3.5 text-xs text-brand-text/90 leading-relaxed font-light pl-0 list-none">
-            <li class="flex gap-2.5">
-              <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
-              <span>Dificultad evidente para respirar (disnea), colapso repentino o dolor agudo.</span>
-            </li>
-            <li class="flex gap-2.5">
-              <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
-              <span>Vómitos repetitivos o <strong><a href="https://www.google.com/search?q=anorexia+perros+mayores" target="_blank" class="text-brand-accent hover:underline font-normal">anorexia</a></strong> total de más de 24 a 48 horas.</span>
-            </li>
-            <li class="flex gap-2.5">
-              <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
-              <span>Desorientación severa repentina, temblores generalizados o convulsiones.</span>
-            </li>
-            <li class="flex gap-2.5">
-              <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
-              <span>Heridas profundas o sangrados que no cesen tras aplicar presión unos minutos.</span>
-            </li>
-          </ul>
-
-          <EmergencyGeoWidget />
-        </div>
+        <HomeEmergencyAlerts />
         
       </div>
     </section>
 
     <!-- RECENT BLOG POSTS SECTION -->
-    {recentPosts.length > 0 && (
-      <section class="bg-brand-card/25 border-y border-brand-border py-16 md:py-24 reveal-on-scroll">
-        <div class="max-w-5xl mx-auto px-5 md:px-4">
-          <div class="text-center max-w-2xl mx-auto mb-12">
-            <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-2 block">Información práctica</span>
-            <h2 class="text-2.5xl md:text-3.5xl font-bold text-brand-text mb-4">Últimos artículos del blog</h2>
-            <p class="text-sm text-brand-muted font-light leading-relaxed">
-              Lee nuestras últimas publicaciones y guías detalladas para el cuidado del perro senior.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {recentPosts.map(post => (
-              <a 
-                href={`/${post.data.pilar}/${post.slug}`} 
-                class="group flex flex-col justify-between bg-brand-card border border-brand-border rounded-3xl p-6 shadow-sm hover:shadow-md hover:border-brand-primary/40 hover:scale-[1.01] transition-all duration-300 relative overflow-hidden"
-              >
-                <div class="absolute top-0 left-0 right-0 h-1 bg-brand-primary transform -translate-y-1 group-hover:translate-y-0 transition-transform duration-300"></div>
-                <div>
-                  <span class="text-[10px] font-bold text-brand-primary uppercase tracking-wider block mb-2 opacity-80">
-                    Guía especializada
-                  </span>
-                  <h3 class="text-lg font-bold text-brand-text group-hover:text-brand-primary transition-colors duration-200 line-clamp-2 leading-snug">
-                    {post.data.title}
-                  </h3>
-                  {post.data.metaDescription && (
-                    <p class="text-brand-muted text-xs mt-3 line-clamp-3 leading-relaxed font-light">
-                      {post.data.metaDescription}
-                    </p>
-                  )}
-                </div>
-                <div class="mt-6 flex items-center text-xs font-semibold text-brand-primary group-hover:text-brand-primary-hover transition-colors duration-200">
-                  <span>Leer artículo</span>
-                  <span class="material-symbols-outlined text-xs ml-1 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
+    <HomeRecentPosts posts={recentPosts} />
 
     <!-- INTERACTIVE FAQ SECTION -->
-    <section class="max-w-3xl mx-auto px-5 py-8 reveal-on-scroll">
-      <FAQ items={faqItems} title="Preguntas frecuentes" />
-    </section>
+    <HomeFaqSection items={faqItems} />
 
     <!-- DIRECTORY & RESOURCES FOOTER SECTION -->
-    <section class="max-w-4xl mx-auto px-5 md:px-4 py-16 reveal-on-scroll">
-      <span class="block text-xs font-bold tracking-wider uppercase text-brand-primary mb-3">Documentación y Directorio</span>
-
-      <!-- CTA Directorio -->
-      <div class="border border-brand-primary/20 rounded-2xl p-6 bg-brand-secondary/20 my-8 shadow-sm">
-        <h3 class="text-lg font-bold text-brand-text mb-2">¿Necesitas atención urgente ahora mismo?</h3>
-        <p class="text-sm text-brand-muted mb-4 leading-relaxed font-light">
-          Encuentra de forma rápida una <strong><a href="https://www.google.com/search?q=veterinaria+24+horas" rel="noopener nofollow" target="_blank" class="text-brand-accent hover:underline font-normal">clínica veterinaria 24/7</a></strong> cerca de ti por provincia.
-        </p>
-        <a href="https://www.google.com/search?q=veterinaria+24+horas" rel="noopener nofollow" target="_blank" class="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-brand-primary hover:bg-brand-primary-hover text-white text-sm font-semibold transition-colors shadow-sm">
-          Abrir directorio de clínicas 24/7
-        </a>
-      </div>
-
-      <!-- Referencias -->
-      <div class="referencias my-8 pt-6 border-t border-brand-border leading-relaxed">
-        <h3 class="text-xs font-bold text-brand-text uppercase tracking-wider mb-4">Referencias y fuentes científicas</h3>
-        <ol class="list-decimal list-inside space-y-2 text-xs text-brand-muted font-light">
-          <li><a href="https://www.aaha.org/aaha-guidelines/senior-care/senior-dog-and-cat-care-guidelines/" rel="noopener nofollow" target="_blank" class="text-brand-accent hover:underline font-normal">AAHA (2023). Senior Dog & Cat Care Guidelines.</a></li>
-          <li><a href="https://www.aaha.org/aaha-guidelines/2021-AAHA-Canine-Life-Stage-Guidelines/" rel="noopener nofollow" target="_blank" class="text-brand-accent hover:underline font-normal">AAHA (2019/2021). Canine Life Stage Guidelines.</a></li>
-          <li><a href="https://www.avma.org/resources/pet-owners/petcare/senior-pets" rel="noopener nofollow" target="_blank" class="text-brand-accent hover:underline font-normal">AVMA. Senior pets: increased veterinary care.</a></li>
-          <li><a href="https://wsava.org/wp-content/uploads/2020/01/Body-Condition-Score-Dog.pdf" rel="noopener nofollow" target="_blank" class="text-brand-accent hover:underline font-normal">WSAVA. Body Condition Score (Dog).</a></li>
-          <li><a href="https://www.msdvetmanual.com/behavior/behavior-of-dogs/aging-and-cognitive-dysfunction-in-dogs" rel="noopener nofollow" target="_blank" class="text-brand-accent hover:underline font-normal">MSD Vet Manual. Aging & Cognitive Dysfunction in Dogs.</a></li>
-        </ol>
-      </div>
-
-      <!-- Disclaimer -->
-      <div class="disclaimer text-[11px] text-brand-muted italic my-6 bg-brand-secondary/15 p-3 rounded-lg border border-brand-border font-light">
-        <p><strong>Nota importante:</strong> Este contenido tiene carácter exclusivamente educativo y divulgativo y no sustituye en ningún caso el diagnóstico, criterio o consulta veterinaria profesional.</p>
-      </div>
-
-      <!-- Back to top -->
-      <div class="text-center mt-12 border-t border-brand-border pt-6">
-        <a href="#" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-accent hover:underline">
-          Volver al inicio ↑
-        </a>
-      </div>
-    </section>
+    <HomeResources />
   </main>
 </BaseLayout>
 
