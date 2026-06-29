@@ -284,16 +284,20 @@ const variants = [];
 const processedOutputs = new Set();
 
 for (const file of imageFiles) {
-  const outputPath = toWebpPath(file);
-  if (processedOutputs.has(outputPath)) continue;
-  processedOutputs.add(outputPath);
+  try {
+    const outputPath = toWebpPath(file);
+    if (processedOutputs.has(outputPath)) continue;
+    processedOutputs.add(outputPath);
 
-  const result = await optimizeImage(file);
-  if (!result) continue;
-  results.push(result);
+    const result = await optimizeImage(file);
+    if (!result) continue;
+    results.push(result);
 
-  if (shouldGenerateResponsive && (result.kind === 'optimized' || result.kind === 'converted')) {
-    variants.push(...await generateResponsiveVariants(result));
+    if (shouldGenerateResponsive && (result.kind === 'optimized' || result.kind === 'converted')) {
+      variants.push(...await generateResponsiveVariants(result));
+    }
+  } catch (error) {
+    console.warn(`Warning: Failed to process image ${file}:`, error.message);
   }
 }
 
