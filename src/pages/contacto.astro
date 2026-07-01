@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+export const prerender = false;
+
 const title = "Contacto | Cuida tu perro viejo";
 const description = "¿Tienes dudas sobre el cuidado de tu perro senior? Escríbenos y resolveremos tus preguntas. Formulario de contacto directo.";
+const turnstileSiteKey = (Astro.locals as any).runtime?.env?.TURNSTILE_SITE_KEY || import.meta.env.TURNSTILE_SITE_KEY;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -21,6 +24,7 @@ const description = "¿Tienes dudas sobre el cuidado de tu perro senior? Escríb
     "description": "Página de contacto de Cuida tu perro viejo para consultas sobre el cuidado de perros ancianos."
   }
   </script>
+  <script slot="head" src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   <!-- ===== PAGE HERO BANNER ===== -->
   <div class="w-full bg-gradient-to-br from-brand-secondary/40 via-brand-primary/8 to-brand-secondary/20 dark:from-brand-primary/10 dark:via-brand-secondary/5 dark:to-transparent border-b border-brand-border">
@@ -55,7 +59,7 @@ const description = "¿Tienes dudas sobre el cuidado de tu perro senior? Escríb
 
     <!-- Contact Form Container -->
     <div class="bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-6 md:p-10 shadow-sm max-w-xl mx-auto">
-      <form action="/api/contacto" method="POST" class="space-y-6" data-contact-form>
+      <form action="/api/contact" method="POST" class="space-y-6" data-contact-form>
         
         <!-- Name Input -->
         <div>
@@ -117,11 +121,25 @@ const description = "¿Tienes dudas sobre el cuidado de tu perro senior? Escríb
           ></textarea>
         </div>
 
-        <!-- Anti-spam (honeypot) -->
-        <input type="text" name="_gotcha" style="display:none" />
+        <!-- Anti-spam -->
+        <input
+          type="text"
+          name="website"
+          tabindex="-1"
+          autocomplete="off"
+          style="position:absolute; left:-9999px;"
+          aria-hidden="true"
+        />
+        <input type="hidden" name="startedAt" value={Date.now().toString()} data-started-at />
 
         <!-- Redirección tras enviar -->
         <input type="hidden" name="_redirect" value="https://cuidatuperroviejo.com/gracias" />
+
+        <div
+          class="cf-turnstile"
+          data-sitekey={turnstileSiteKey}
+          data-action="turnstile-spin-v1"
+        ></div>
 
         <!-- Consentimiento (Checkbox) -->
         <div class="flex items-start gap-3">
@@ -167,9 +185,16 @@ const description = "¿Tienes dudas sobre el cuidado de tu perro senior? Escríb
     const submitIcon = document.querySelector('[data-submit-icon]');
     const submitSpinner = document.querySelector('[data-submit-spinner]');
     const submitStatus = document.querySelector('[data-submit-status]');
+    const startedAt = document.querySelector('[data-started-at]');
 
-    contactForm?.addEventListener('submit', () => {
+    if (startedAt instanceof HTMLInputElement) {
+      startedAt.value = Date.now().toString();
+    }
+
+    contactForm?.addEventListener('submit', async (event) => {
       if (!(contactForm instanceof HTMLFormElement) || !contactForm.checkValidity()) return;
+      event.preventDefault();
+
       if (submitButton instanceof HTMLButtonElement) {
         submitButton.disabled = true;
         submitButton.setAttribute('aria-busy', 'true');
@@ -178,6 +203,23 @@ const description = "¿Tienes dudas sobre el cuidado de tu perro senior? Escríb
       submitIcon?.classList.add('hidden');
       submitSpinner?.classList.remove('hidden');
       submitStatus?.classList.remove('hidden');
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' },
+        });
+
+        if (response.ok) {
+          window.location.href = '/gracias';
+          return;
+        }
+      } catch {
+        // Keep public feedback generic.
+      }
+
+      window.location.href = '/gracias';
     });
   </script>
 </BaseLayout>

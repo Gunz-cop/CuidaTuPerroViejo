@@ -1,0 +1,143 @@
+---
+import { hasValidBasicAuth, unauthorizedResponse } from '../../lib/contact/security';
+
+export const prerender = false;
+
+const env = ((Astro.locals as any).runtime?.env || {}) as Record<string, any>;
+
+if (!hasValidBasicAuth(Astro.request, env.CONTACT_ADMIN_USER, env.CONTACT_ADMIN_PASSWORD)) {
+  return unauthorizedResponse();
+}
+
+type StatusFilter = 'quarantine' | 'rejected' | 'allowed';
+type ContactRow = {
+  id: number;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  status: StatusFilter;
+  spam_score: number;
+  ham_score: number;
+  final_score: number;
+  reasons: string;
+  ip_hash: string | null;
+  user_agent: string;
+  created_at: string;
+};
+
+const url = new URL(Astro.request.url);
+const requestedStatus = url.searchParams.get('status');
+const status: StatusFilter =
+  requestedStatus === 'allowed' || requestedStatus === 'rejected' || requestedStatus === 'quarantine'
+    ? requestedStatus
+    : 'quarantine';
+const db = env.CONTACT_DB;
+let messages: ContactRow[] = [];
+let loadError = '';
+
+if (db) {
+  try {
+    const result = await db
+      .prepare(
+        `SELECT id, name, email, subject, message, status, spam_score, ham_score, final_score, reasons, ip_hash, user_agent, created_at
+         FROM contact_messages
+         WHERE status = ?
+         ORDER BY created_at DESC
+         LIMIT 100`,
+      )
+      .bind(status)
+      .all();
+    messages = result.results || [];
+  } catch (error) {
+    loadError = error instanceof Error ? error.message : 'No se pudieron cargar los mensajes.';
+  }
+} else {
+  loadError = 'CONTACT_DB no está configurado.';
+}
+
+const statusTabs: StatusFilter[] = ['quarantine', 'rejected', 'allowed'];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Mensajes de contacto</title>
+    <style>
+      body { margin: 0; font-family: system-ui, sans-serif; color: #1f2933; background: #f6f5ef; }
+      main { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+      header { display: flex; justify-content: space-between; gap: 16px; align-items: center; margin-bottom: 24px; }
+      h1 { margin: 0; font-size: 28px; }
+      nav { display: flex; gap: 8px; flex-wrap: wrap; }
+      nav a { color: #45634f; border: 1px solid #c9d3c4; padding: 8px 12px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+      nav a[aria-current="page"] { background: #45634f; color: #fff; border-color: #45634f; }
+      article { background: #fff; border: 1px solid #e2dfd3; border-radius: 8px; padding: 18px; margin-bottom: 16px; }
+      .meta { color: #647067; font-size: 13px; display: flex; gap: 12px; flex-wrap: wrap; margin: 8px 0 14px; }
+      .scores { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+      .score { background: #f1f0e8; border-radius: 999px; padding: 5px 9px; font-size: 12px; font-weight: 700; }
+      .message { white-space: pre-wrap; line-height: 1.5; padding: 12px; background: #faf9f4; border: 1px solid #ece8da; border-radius: 8px; }
+      .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+      button { border: 0; border-radius: 8px; padding: 9px 12px; font-weight: 700; cursor: pointer; }
+      .allow { background: #45634f; color: #fff; }
+      .reject { background: #7f1d1d; color: #fff; }
+      .secondary { background: #e8e6dc; color: #27312a; }
+      .empty, .error { background: #fff; border: 1px solid #e2dfd3; border-radius: 8px; padding: 18px; }
+      .error { border-color: #fecaca; color: #7f1d1d; }
+      code { word-break: break-all; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Mensajes de contacto</h1>
+        <nav aria-label="Filtrar por estado">
+          {statusTabs.map((tab) => (
+            <a href={`/admin/contact-messages?status=${tab}`} aria-current={tab === status ? 'page' : undefined}>{tab}</a>
+          ))}
+        </nav>
+      </header>
+
+      {loadError && <p class="error">{loadError}</p>}
+      {!loadError && messages.length === 0 && <p class="empty">No hay mensajes con estado {status}.</p>}
+
+      {messages.map((item) => (
+        <article>
+          <h2>{item.subject}</h2>
+          <div class="meta">
+            <span>#{item.id}</span>
+            <span>{item.created_at}</span>
+            <span>{item.name} &lt;{item.email}&gt;</span>
+          </div>
+          <div class="scores">
+            <span class="score">status: {item.status}</span>
+            <span class="score">spam: {item.spam_score}</span>
+            <span class="score">ham: {item.ham_score}</span>
+            <span class="score">final: {item.final_score}</span>
+          </div>
+          <p><strong>Reasons:</strong> <code>{item.reasons}</code></p>
+          <p><strong>IP hash:</strong> <code>{item.ip_hash || 'null'}</code></p>
+          <p><strong>User agent:</strong> <code>{item.user_agent}</code></p>
+          <div class="message">{item.message}</div>
+          <div class="actions">
+            <form method="POST" action={`/api/admin/contact-messages/${item.id}`}>
+              <input type="hidden" name="status" value="allowed" />
+              <button class="allow" type="submit">Marcar allowed</button>
+            </form>
+            <form method="POST" action={`/api/admin/contact-messages/${item.id}`}>
+              <input type="hidden" name="status" value="allowed" />
+              <input type="hidden" name="notify" value="true" />
+              <button class="secondary" type="submit">Allowed y notificar</button>
+            </form>
+            <form method="POST" action={`/api/admin/contact-messages/${item.id}`}>
+              <input type="hidden" name="status" value="rejected" />
+              <button class="reject" type="submit">Marcar rejected</button>
+            </form>
+          </div>
+        </article>
+      ))}
+    </main>
+  </body>
+</html>
