@@ -1,0 +1,313 @@
+---
+import HomeEmergencyAlerts from './HomeEmergencyAlerts.astro';
+---
+
+<section
+  id="seguimiento"
+  class="border-y border-brand-border bg-brand-card/25 py-16 md:py-24"
+  aria-labelledby="seguimiento-title"
+>
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+    <div class="mb-10 max-w-2xl">
+      <p class="mb-2 text-sm font-bold uppercase tracking-wider text-brand-primary">
+        Seguimiento en casa
+      </p>
+      <h2 id="seguimiento-title" class="text-3xl font-bold tracking-tight text-brand-text md:text-4xl">
+        Observa los cambios de esta semana
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-brand-muted">
+        Registra diez aspectos cotidianos y lleva tus observaciones a la próxima consulta veterinaria.
+        Este registro no es una puntuación médica ni sustituye una valoración profesional.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+      <div
+        id="checklist"
+        class="rounded-3xl border border-brand-border bg-brand-card p-5 shadow-sm sm:p-7 lg:col-span-7"
+        aria-labelledby="checklist-title"
+        aria-describedby="checklist-help"
+      >
+        <div class="mb-6 flex flex-col gap-3 border-b border-brand-border pb-5 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-wider text-brand-accent">Registro semanal</p>
+            <h3 id="checklist-title" class="mt-1 text-2xl font-bold text-brand-text">
+              Diez señales para revisar
+            </h3>
+          </div>
+          <span class="w-fit rounded-full border border-brand-primary/30 bg-brand-primary/10 px-3 py-2 text-sm font-semibold text-brand-primary">
+            Se guarda en este dispositivo
+          </span>
+        </div>
+
+        <p id="checklist-help" class="mb-5 text-sm leading-relaxed text-brand-muted">
+          Marca cada punto cuando lo hayas observado. Si detectas un cambio, anótalo para comentarlo con tu veterinario.
+        </p>
+
+        <div id="checklist-grid" class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <label class="group flex min-h-[56px] cursor-pointer items-start gap-3 rounded-2xl border border-brand-border bg-brand-bg/45 px-3 py-3 text-brand-text transition-colors duration-200 hover:border-brand-primary/50 hover:bg-brand-primary/5 has-[:checked]:border-brand-primary/60 has-[:checked]:bg-brand-primary/10">
+            <input
+              type="checkbox"
+              data-key="apetito"
+              class="checklist-item mt-1 h-6 w-6 shrink-0 cursor-pointer accent-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-card"
+            />
+            <span class="text-sm leading-relaxed group-has-[:checked]:font-semibold">
+              Apetito diario e ingesta de agua estables.
+            </span>
+          </label>
+
+          <label class="group flex min-h-[56px] cursor-pointer items-start gap-3 rounded-2xl border border-brand-border bg-brand-bg/45 px-3 py-3 text-brand-text transition-colors duration-200 hover:border-brand-primary/50 hover:bg-brand-primary/5 has-[:checked]:border-brand-primary/60 has-[:checked]:bg-brand-primary/10">
+            <input
+              type="checkbox"
+              data-key="peso"
+              class="checklist-item mt-1 h-6 w-6 shrink-0 cursor-pointer accent-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-card"
+            />
+            <span class="text-sm leading-relaxed group-has-[:checked]:font-semibold">
+              Control de peso y condición corporal (BCS).
+            </span>
+          </label>
+
+          <label class="group flex min-h-[56px] cursor-pointer items-start gap-3 rounded-2xl border border-brand-border bg-brand-bg/45 px-3 py-3 text-brand-text transition-colors duration-200 hover:border-brand-primary/50 hover:bg-brand-primary/5 has-[:checked]:border-brand-primary/60 has-[:checked]:bg-brand-primary/10">
+            <input
+              type="checkbox"
+              data-key="heces"
+              class="checklist-item mt-1 h-6 w-6 shrink-0 cursor-pointer accent-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-card"
+            />
+            <span class="text-sm leading-relaxed group-has-[:checked]:font-semibold">
+              Heces y orina: evaluar consistencia y frecuencia.
+            </span>
+          </label>
+
+          <label class="group flex min-h-[56px] cursor-pointer items-start gap-3 rounded-2xl border border-brand-border bg-brand-bg/45 px-3 py-3 text-brand-text transition-colors duration-200 hover:border-brand-primary/50 hover:bg-brand-primary/5 has-[:checked]:border-brand-primary/60 has-[:checked]:bg-brand-primary/10">
+            <input
+              type="checkbox"
+              data-key="movilidad"
+              class="checklist-item mt-1 h-6 w-6 shrink-0 cursor-pointer accent-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-card"
+            />
+            <span class="text-sm leading-relaxed group-has-[:checked]:font-semibold">
+              Movilidad: evaluar rigidez al levantarse.
+            </span>
+          </label>
+
+          <label class="group flex min-h-[56px] cursor-pointer items-start gap-3 rounded-2xl border border-brand-border bg-brand-bg/45 px-3 py-3 text-brand-text transition-colors duration-200 hover:border-brand-primary/50 hover:bg-brand-primary/5 has-[:checked]:border-brand-primary/60 has-[:checked]:bg-brand-primary/10">
+            <input
+              type="checkbox"
+              data-key="animo"
+              class="checklist-item mt-1 h-6 w-6 shrink-0 cursor-pointer accent-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-card"
+            />
+            <span class="text-sm leading-relaxed group-has-[:checked]:font-semibold">
+              Ánimo y conducta general en casa.
+            </span>
+          </label>
+
+          <label class="group flex min-h-[56px] cursor-pointer items-start gap-3 rounded-2xl border border-brand-border bg-brand-bg/45 px-3 py-3 text-brand-text transition-colors duration-200 hover:border-brand-primary/50 hover:bg-brand-primary/5 has-[:checked]:border-brand-primary/60 has-[:checked]:bg-brand-primary/10">
+            <input
+              type="checkbox"
+              data-key="sueno"
+              class="checklist-item mt-1 h-6 w-6 shrink-0 cursor-pointer accent-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-card"
+            />
+            <span class="text-sm leading-relaxed group-has-[:checked]:font-semibold">
+              Patrón del sueño: control de inquietud nocturna.
+            </span>
+          </label>
+
+          <label class="group flex min-h-[56px] cursor-pointer items-start gap-3 rounded-2xl border border-brand-border bg-brand-bg/45 px-3 py-3 text-brand-text transition-colors duration-200 hover:border-brand-primary/50 hover:bg-brand-primary/5 has-[:checked]:border-brand-primary/60 has-[:checked]:bg-brand-primary/10">
+            <input
+              type="checkbox"
+              data-key="higiene"
+              class="checklist-item mt-1 h-6 w-6 shrink-0 cursor-pointer accent-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-card"
+            />
+            <span class="text-sm leading-relaxed group-has-[:checked]:font-semibold">
+              Higiene: cepillado y revisión dental regular.
+            </span>
+          </label>
+
+          <label class="group flex min-h-[56px] cursor-pointer items-start gap-3 rounded-2xl border border-brand-border bg-brand-bg/45 px-3 py-3 text-brand-text transition-colors duration-200 hover:border-brand-primary/50 hover:bg-brand-primary/5 has-[:checked]:border-brand-primary/60 has-[:checked]:bg-brand-primary/10">
+            <input
+              type="checkbox"
+              data-key="tratamientos"
+              class="checklist-item mt-1 h-6 w-6 shrink-0 cursor-pointer accent-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-card"
+            />
+            <span class="text-sm leading-relaxed group-has-[:checked]:font-semibold">
+              Administración de tratamientos pautados.
+            </span>
+          </label>
+
+          <label class="group flex min-h-[56px] cursor-pointer items-start gap-3 rounded-2xl border border-brand-border bg-brand-bg/45 px-3 py-3 text-brand-text transition-colors duration-200 hover:border-brand-primary/50 hover:bg-brand-primary/5 has-[:checked]:border-brand-primary/60 has-[:checked]:bg-brand-primary/10">
+            <input
+              type="checkbox"
+              data-key="dolor"
+              class="checklist-item mt-1 h-6 w-6 shrink-0 cursor-pointer accent-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-card"
+            />
+            <span class="text-sm leading-relaxed group-has-[:checked]:font-semibold">
+              Dolor latente: detectar jadeos o incomodidad.
+            </span>
+          </label>
+
+          <label class="group flex min-h-[56px] cursor-pointer items-start gap-3 rounded-2xl border border-brand-border bg-brand-bg/45 px-3 py-3 text-brand-text transition-colors duration-200 hover:border-brand-primary/50 hover:bg-brand-primary/5 has-[:checked]:border-brand-primary/60 has-[:checked]:bg-brand-primary/10">
+            <input
+              type="checkbox"
+              data-key="anotaciones"
+              class="checklist-item mt-1 h-6 w-6 shrink-0 cursor-pointer accent-brand-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-card"
+            />
+            <span class="text-sm leading-relaxed group-has-[:checked]:font-semibold">
+              Anotaciones de cambios para el veterinario.
+            </span>
+          </label>
+        </div>
+
+        <div class="mt-6 border-t border-brand-border pt-5">
+          <div class="mb-3 flex items-center justify-between gap-4">
+            <span id="checklist-progress-label" class="text-sm font-bold text-brand-primary">
+              Observaciones registradas
+            </span>
+            <span id="checklist-count" class="text-sm font-bold tabular-nums text-brand-text" aria-live="polite">
+              0 / 10
+            </span>
+          </div>
+
+          <div
+            id="checklist-progress"
+            class="h-3 w-full overflow-hidden rounded-full bg-brand-border"
+            role="progressbar"
+            aria-labelledby="checklist-progress-label"
+            aria-valuemin="0"
+            aria-valuemax="10"
+            aria-valuenow="0"
+            aria-valuetext="0 de 10 observaciones registradas"
+          >
+            <div
+              id="checklist-bar"
+              class="h-full rounded-full bg-brand-primary transition-[width] duration-300 ease-out motion-reduce:transition-none"
+              style="width: 0%"
+            ></div>
+          </div>
+
+          <div class="mt-4 flex justify-end">
+            <button
+              id="checklist-reset"
+              type="button"
+              class="min-h-11 rounded-xl border border-brand-border bg-brand-bg px-4 py-2 text-sm font-semibold text-brand-muted transition-colors duration-200 hover:border-brand-accent hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-card disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-brand-border disabled:hover:text-brand-muted"
+              disabled
+            >
+              Reiniciar esta semana
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-care-dashboard-emergency lg:col-span-5">
+        <HomeEmergencyAlerts />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  type ChecklistState = Record<string, boolean>;
+
+  const getChecklistWeekKey = () => {
+    const today = new Date();
+    const date = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
+    const dayNumber = date.getUTCDay() || 7;
+
+    date.setUTCDate(date.getUTCDate() + 4 - dayNumber);
+
+    const isoYear = date.getUTCFullYear();
+    const yearStart = new Date(Date.UTC(isoYear, 0, 1));
+    const weekNumber = Math.ceil((((date.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
+
+    return `checklist-${isoYear}-W${String(weekNumber).padStart(2, '0')}`;
+  };
+
+  const readChecklistState = (key: string): ChecklistState => {
+    try {
+      const saved = localStorage.getItem(key);
+      return saved ? JSON.parse(saved) : {};
+    } catch {
+      return {};
+    }
+  };
+
+  const writeChecklistState = (key: string, state: ChecklistState) => {
+    try {
+      localStorage.setItem(key, JSON.stringify(state));
+    } catch {
+      // El registro sigue funcionando durante la sesión si el almacenamiento no está disponible.
+    }
+  };
+
+  const setupHomeCareDashboard = () => {
+    const dashboard = document.getElementById('seguimiento');
+    if (!dashboard || dashboard.dataset.dashboardReady === 'true') return;
+
+    dashboard.dataset.dashboardReady = 'true';
+
+    const storageKey = getChecklistWeekKey();
+    const items = Array.from(dashboard.querySelectorAll<HTMLInputElement>('.checklist-item'));
+    const count = dashboard.querySelector<HTMLElement>('#checklist-count');
+    const bar = dashboard.querySelector<HTMLElement>('#checklist-bar');
+    const progress = dashboard.querySelector<HTMLElement>('#checklist-progress');
+    const reset = dashboard.querySelector<HTMLButtonElement>('#checklist-reset');
+    const total = items.length;
+    const savedState = readChecklistState(storageKey);
+
+    const updateDashboard = () => {
+      const checked = items.filter((item) => item.checked).length;
+      const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
+
+      if (count) count.textContent = `${checked} / ${total}`;
+      if (bar) bar.style.width = `${percentage}%`;
+
+      if (progress) {
+        progress.setAttribute('aria-valuemax', String(total));
+        progress.setAttribute('aria-valuenow', String(checked));
+        progress.setAttribute('aria-valuetext', `${checked} de ${total} observaciones registradas`);
+      }
+
+      if (reset) reset.disabled = checked === 0;
+    };
+
+    items.forEach((item) => {
+      const key = item.dataset.key;
+      item.checked = Boolean(key && savedState[key]);
+
+      item.addEventListener('change', () => {
+        const itemKey = item.dataset.key;
+        if (!itemKey) return;
+
+        const currentState = readChecklistState(storageKey);
+        currentState[itemKey] = item.checked;
+        writeChecklistState(storageKey, currentState);
+        updateDashboard();
+      });
+    });
+
+    reset?.addEventListener('click', () => {
+      try {
+        localStorage.removeItem(storageKey);
+      } catch {
+        // No hay nada más que hacer si el almacenamiento está bloqueado.
+      }
+
+      items.forEach((item) => {
+        item.checked = false;
+      });
+
+      updateDashboard();
+    });
+
+    try {
+      Object.keys(localStorage)
+        .filter((key) => key.startsWith('checklist-') && key !== storageKey)
+        .forEach((key) => localStorage.removeItem(key));
+    } catch {
+      // La limpieza es opcional y no afecta al funcionamiento del registro.
+    }
+
+    updateDashboard();
+  };
+
+  setupHomeCareDashboard();
+  document.addEventListener('astro:page-load', setupHomeCareDashboard);
+</script>

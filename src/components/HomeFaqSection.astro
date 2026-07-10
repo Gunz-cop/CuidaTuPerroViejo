@@ -13,6 +13,30 @@ interface Props {
 const { items = [] } = Astro.props;
 ---
 
-<section class="max-w-3xl mx-auto px-5 py-8 reveal-on-scroll">
-  <FAQ items={items} title="Preguntas frecuentes" />
+<section class="px-5 py-16 sm:px-6 md:py-24 lg:px-8" aria-labelledby="home-faq-title">
+  <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-12 lg:gap-14">
+    <header class="lg:col-span-4 lg:pt-10">
+      <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-primary/10 text-brand-primary" aria-hidden="true">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9.1 9a3 3 0 1 1 4.8 2.4c-1.2.9-1.9 1.5-1.9 3.1"></path>
+          <path d="M12 18h.01"></path>
+          <circle cx="12" cy="12" r="9"></circle>
+        </svg>
+      </span>
+      <p class="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">Antes de empezar</p>
+      <h2 id="home-faq-title" class="mt-3 text-3xl font-bold leading-tight text-brand-text sm:text-4xl">
+        Dudas comunes, respuestas claras
+      </h2>
+      <p class="mt-4 max-w-md text-sm leading-7 text-brand-muted sm:text-base">
+        Una orientación inicial sobre edad, paseos, alimentación, movilidad y señales que requieren atención veterinaria.
+      </p>
+      <p class="mt-6 rounded-2xl border border-brand-border bg-brand-card/60 p-4 text-xs leading-6 text-brand-muted">
+        Estas respuestas son educativas y no sustituyen la valoración individual de un profesional veterinario.
+      </p>
+    </header>
+
+    <div class="rounded-[2rem] border border-brand-border bg-brand-card/30 px-5 py-1 shadow-[0_20px_60px_-48px_rgba(27,28,25,0.6)] sm:px-7 lg:col-span-8 lg:px-9">
+      <FAQ items={items} title="Preguntas sobre perros senior" />
+    </div>
+  </div>
 </section>

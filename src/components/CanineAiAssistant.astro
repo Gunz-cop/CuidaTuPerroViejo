@@ -4,12 +4,14 @@
 <!-- Toggle Button -->
 <button 
   id="ai-chat-toggle" 
-  class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#45634f] to-[#5d7c67] dark:from-[#adcfb6] dark:to-[#8eb99a] text-white dark:text-[#121412] rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.15)] dark:shadow-[0_8px_30px_rgba(173,207,182,0.35)] hover:scale-[1.08] active:scale-[0.92] transition-all duration-300 cursor-pointer border border-[#45634f]/15 dark:border-[#adcfb6]/20 select-none group"
+  class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#45634f] to-[#5d7c67] dark:from-[#adcfb6] dark:to-[#8eb99a] text-white dark:text-[#121412] rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.15)] dark:shadow-[0_8px_30px_rgba(173,207,182,0.35)] hover:scale-[1.04] active:scale-[0.96] transition-all duration-300 cursor-pointer border border-[#45634f]/15 dark:border-[#adcfb6]/20 select-none group focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/30"
   aria-label="Abrir asistente de IA"
 >
   <span class="ai-chat-attention-ring absolute inset-0 rounded-full bg-brand-primary opacity-20 pointer-events-none"></span>
   <div class="relative flex items-center justify-center">
-    <span class="text-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">🐾</span>
+    <svg class="h-7 w-7 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <circle cx="7.2" cy="8" r="2.2"></circle><circle cx="16.8" cy="8" r="2.2"></circle><circle cx="4.8" cy="12.7" r="1.9"></circle><circle cx="19.2" cy="12.7" r="1.9"></circle><path d="M12 11.2c-3.5 0-6.4 2.7-6.4 6 0 2 1.5 3.2 3.4 3.2 1.1 0 2-.5 3-.5s1.9.5 3 .5c1.9 0 3.4-1.2 3.4-3.2 0-3.3-2.9-6-6.4-6Z"></path>
+    </svg>
     <span class="ai-chat-status-pulse absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#fdcb9b] dark:bg-[#7c5730] rounded-full border-2 border-white dark:border-[#121412]"></span>
     <span class="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#fdcb9b] dark:bg-[#7c5730] rounded-full border-2 border-white dark:border-[#121412]"></span>
   </div>
@@ -28,7 +30,7 @@
   <header class="bg-gradient-to-r from-[#45634f] to-[#5d7c67] dark:from-[#202820] dark:to-[#182019] px-6 py-4.5 flex items-center justify-between text-white border-b border-[#dbdad5]/30 dark:border-[#385842]/60 shadow-md">
     <div class="flex items-center gap-3">
       <div class="w-9 h-9 rounded-xl bg-white/10 dark:bg-[#adcfb6]/14 flex items-center justify-center text-lg shadow-inner">
-        🐶
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="7.2" cy="8" r="2.2"></circle><circle cx="16.8" cy="8" r="2.2"></circle><circle cx="4.8" cy="12.7" r="1.9"></circle><circle cx="19.2" cy="12.7" r="1.9"></circle><path d="M12 11.2c-3.5 0-6.4 2.7-6.4 6 0 2 1.5 3.2 3.4 3.2 1.1 0 2-.5 3-.5s1.9.5 3 .5c1.9 0 3.4-1.2 3.4-3.2 0-3.3-2.9-6-6.4-6Z"></path></svg>
       </div>
       <div>
         <h3 class="text-[10px] font-bold tracking-widest uppercase text-white/70 dark:text-[#adcfb6]/70 leading-none mb-1">Asistente de Bienestar</h3>
@@ -45,7 +47,7 @@
     <div class="flex items-center gap-1">
       <a 
         href="/asistente-ia" 
-        class="w-8 h-8 rounded-full hover:bg-white/10 dark:hover:bg-[#adcfb6]/10 flex items-center justify-center text-white/80 dark:text-[#adcfb6]/80 hover:text-white dark:hover:text-[#adcfb6] transition-colors cursor-pointer"
+        class="w-11 h-11 rounded-full hover:bg-white/10 dark:hover:bg-[#adcfb6]/10 flex items-center justify-center text-white/80 dark:text-[#adcfb6]/80 hover:text-white dark:hover:text-[#adcfb6] transition-colors cursor-pointer"
         title="Ver en pantalla completa"
         aria-label="Ver en pantalla completa"
       >
@@ -56,7 +58,7 @@
       
       <button 
         id="ai-chat-close" 
-        class="w-8 h-8 rounded-full hover:bg-white/10 dark:hover:bg-[#adcfb6]/10 flex items-center justify-center text-white/80 dark:text-[#adcfb6]/80 hover:text-white dark:hover:text-[#adcfb6] transition-colors cursor-pointer"
+        class="w-11 h-11 rounded-full hover:bg-white/10 dark:hover:bg-[#adcfb6]/10 flex items-center justify-center text-white/80 dark:text-[#adcfb6]/80 hover:text-white dark:hover:text-[#adcfb6] transition-colors cursor-pointer"
         aria-label="Cerrar chat"
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -72,7 +74,7 @@
     <!-- Welcome message -->
     <div class="flex items-start gap-3 max-w-[85%] animate-fade-in">
       <div class="w-8 h-8 rounded-full bg-brand-primary/10 dark:bg-[#adcfb6]/14 flex items-center justify-center text-xs shrink-0 select-none shadow-sm">
-        🐾
+        <svg class="h-4 w-4 text-brand-primary" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="7.2" cy="8" r="2.2"></circle><circle cx="16.8" cy="8" r="2.2"></circle><circle cx="4.8" cy="12.7" r="1.9"></circle><circle cx="19.2" cy="12.7" r="1.9"></circle><path d="M12 11.2c-3.5 0-6.4 2.7-6.4 6 0 2 1.5 3.2 3.4 3.2 1.1 0 2-.5 3-.5s1.9.5 3 .5c1.9 0 3.4-1.2 3.4-3.2 0-3.3-2.9-6-6.4-6Z"></path></svg>
       </div>
       <div class="bg-[#f4f6f3] dark:bg-[#202820] border border-[#dbdad5] dark:border-[#385842]/70 px-4 py-3.5 rounded-2xl rounded-tl-none shadow-sm dark:shadow-[0_10px_28px_rgba(0,0,0,0.18)]">
         <p class="text-xs text-brand-text dark:text-[#f3fff1] leading-relaxed font-light">
@@ -121,7 +123,7 @@
     />
     <button 
       type="submit" 
-      class="w-10 h-10 bg-brand-primary hover:bg-[#5d7c67] active:scale-90 text-white dark:text-[#121412] dark:bg-[#adcfb6] dark:hover:bg-[#c9ebd1] rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg transition-all shrink-0 cursor-pointer"
+      class="w-11 h-11 bg-brand-primary hover:bg-[#5d7c67] active:scale-95 text-white dark:text-[#121412] dark:bg-[#adcfb6] dark:hover:bg-[#c9ebd1] rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg transition-all shrink-0 cursor-pointer"
       aria-label="Enviar pregunta"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">

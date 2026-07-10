@@ -1,18 +1,56 @@
-<section class="max-w-4xl mx-auto py-16 px-5 reveal-on-scroll">
-  <div class="bg-brand-primary text-white p-8 md:p-12 rounded-[32px] relative overflow-hidden shadow-lg w-full flex flex-col md:flex-row gap-8 items-center">
-    <span class="material-symbols-outlined text-9xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 select-none pointer-events-none">format_quote</span>
+<section class="px-5 py-16 sm:px-6 md:py-24 lg:px-8" aria-labelledby="care-story-title">
+  <div class="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-brand-border bg-brand-card shadow-[0_24px_70px_-44px_rgba(27,28,25,0.55)]">
+    <div class="grid lg:grid-cols-12">
+      <figure class="relative min-h-[22rem] overflow-hidden bg-brand-secondary/20 lg:col-span-5 lg:min-h-full">
+        <picture class="block h-full">
+          <source
+            srcset="/images/blog/cama-ortopedica/dos-perras-cama-ortopedica-compartida-400.webp 400w, /images/blog/cama-ortopedica/dos-perras-cama-ortopedica-compartida-800.webp 800w, /images/blog/cama-ortopedica/dos-perras-cama-ortopedica-compartida.webp 1024w"
+            sizes="(max-width: 1023px) 100vw, 460px"
+            type="image/webp"
+          />
+          <img
+            src="/images/blog/cama-ortopedica/dos-perras-cama-ortopedica-compartida.webp"
+            alt="Dos perras senior descansando juntas en una cama ortopédica dentro de casa"
+            class="h-full min-h-[22rem] w-full object-cover"
+            width="1024"
+            height="1024"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" aria-hidden="true"></div>
+        <figcaption class="absolute inset-x-0 bottom-0 px-6 pb-6 pt-16 text-sm font-medium leading-6 text-white/90">
+          Cada perro envejece de una forma distinta. Conocer sus límites también es cuidarlo.
+        </figcaption>
+      </figure>
 
-    <div class="w-full md:w-1/4 flex justify-center z-10">
-      <div class="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-white/20 bg-white/10 flex items-center justify-center text-3xl shadow-inner select-none">
-        🐶🐾
+      <div class="relative flex flex-col justify-center p-7 sm:p-10 lg:col-span-7 lg:p-14">
+        <svg class="absolute right-7 top-7 h-16 w-16 text-brand-primary/10 sm:right-10 sm:top-10" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M12 38.5c0-12 5.5-21 17-26.5l3 5.5c-7 4.2-10.6 9-11 14.5h9v19H12V38.5Zm24 0c0-12 5.5-21 17-26.5l3 5.5c-7 4.2-10.6 9-11 14.5h9v19H36V38.5Z" fill="currentColor" />
+        </svg>
+
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">Una historia real de cuidado</p>
+        <h2 id="care-story-title" class="mt-3 max-w-xl text-3xl font-bold leading-tight text-brand-text sm:text-4xl">
+          Cuidar mejor empieza por entender cómo se siente.
+        </h2>
+
+        <blockquote class="mt-7 max-w-2xl border-l-2 border-brand-accent/55 pl-5 text-base leading-8 text-brand-text/90 sm:text-lg">
+          “Cuando llevo a mis perras al veterinario, reaccionan distinto. <strong>Dakota</strong>, de casi 11 años, no tolera que le toquen las patas y aúlla de estrés; requiere ayuda con cuidado para cortarle las uñas. <strong>Luna</strong>, de 10 años, se inquieta en superficies altas, por lo que el veterinario la revisa directamente a nivel del suelo para darle seguridad.”
+        </blockquote>
+
+        <div class="mt-7 flex flex-col gap-4 border-t border-brand-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <cite class="not-italic">
+            <span class="block text-sm font-bold text-brand-text">Dakota y Luna</span>
+            <span class="mt-1 block text-xs leading-5 text-brand-muted">Un caso real sobre atención adaptada y sin estrés innecesario.</span>
+          </cite>
+          <span class="inline-flex w-fit items-center gap-2 rounded-full bg-brand-primary/10 px-3 py-2 text-xs font-semibold text-brand-primary">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m5 12 4 4L19 6"></path>
+            </svg>
+            Observar, adaptar, acompañar
+          </span>
+        </div>
       </div>
-    </div>
-    <div class="w-full md:w-3/4 z-10 text-left">
-      <span class="text-xs font-bold tracking-wider uppercase text-brand-secondary mb-2 block">Historias Reales de Cuidado</span>
-      <p class="italic text-base md:text-lg text-white leading-relaxed font-light mb-4">
-        "Cuando llevo a mis perras al veterinario, reaccionan distinto. <strong>Dakota</strong>, de casi 11 años, no tolera que le toquen las patas y aúlla de estrés; requiere ayuda con cuidado para cortarle las uñas. <strong>Luna</strong>, de 10 años, se inquieta en superficies altas, por lo que el veterinario la revisa directamente a nivel del suelo para darle seguridad. Conocer estas particularidades evita el estrés innecesario."
-      </p>
-      <cite class="not-italic text-sm font-semibold text-brand-secondary block mt-2">— Caso Real: Dakota y Luna</cite>
     </div>
   </div>
 </section>

@@ -1,32 +1,40 @@
 ---
 import EmergencyGeoWidget from './EmergencyGeoWidget.astro';
+
+const warningSigns = [
+  'Dificultad para respirar, colapso repentino o dolor intenso.',
+  'Convulsiones, pérdida de conocimiento o desorientación severa repentina.',
+  'Vómitos repetidos, abdomen muy distendido o incapacidad para retener agua.',
+  'Sangrado abundante o una herida profunda que no deja de sangrar al aplicar presión.',
+];
 ---
 
-<div class="lg:col-span-5 bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-900/30 rounded-3xl p-6 md:p-8 shadow-sm">
-  <span class="text-xs font-bold tracking-wider uppercase text-amber-600 dark:text-amber-400 mb-1 block">Urgencias Veterinarias</span>
-  <h3 class="text-xl font-bold text-brand-text mt-0 mb-3">Señales de alarma crítica</h3>
-  <p class="text-xs text-brand-muted font-light leading-relaxed mb-6">
-    Acude de inmediato a un centro de urgencias si notas alguno de los siguientes síntomas en tu perro anciano:
+<aside id="urgencias" class="scroll-mt-28 rounded-[1.75rem] border border-amber-300/70 bg-amber-50 p-5 shadow-sm dark:border-amber-800/60 dark:bg-amber-950/25 sm:p-7" aria-labelledby="emergency-title">
+  <div class="flex items-start gap-4">
+    <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-amber-600 text-white" aria-hidden="true">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m21.7 18-8-14a2 2 0 0 0-3.4 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3Z"></path>
+        <path d="M12 9v4"></path><path d="M12 17h.01"></path>
+      </svg>
+    </span>
+    <div>
+      <p class="text-xs font-bold uppercase tracking-[0.16em] text-amber-800 dark:text-amber-300">Urgencias veterinarias</p>
+      <h3 id="emergency-title" class="mt-1.5 text-xl font-bold text-brand-text sm:text-2xl">Señales para actuar sin demora</h3>
+    </div>
+  </div>
+
+  <p class="mt-5 text-sm leading-6 text-brand-muted">
+    Acude a un centro veterinario de urgencias si observas cualquiera de estas señales. Si dudas y tu perro empeora rápidamente, llama antes de desplazarte.
   </p>
 
-  <ul class="space-y-3.5 text-xs text-brand-text/90 leading-relaxed font-light pl-0 list-none">
-    <li class="flex gap-2.5">
-      <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
-      <span>Dificultad evidente para respirar (disnea), colapso repentino o dolor agudo.</span>
-    </li>
-    <li class="flex gap-2.5">
-      <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
-      <span>Vómitos repetitivos o <strong><a href="https://www.google.com/search?q=anorexia+perros+mayores" target="_blank" class="text-brand-accent hover:underline font-normal">anorexia</a></strong> total de más de 24 a 48 horas.</span>
-    </li>
-    <li class="flex gap-2.5">
-      <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
-      <span>Desorientación severa repentina, temblores generalizados o convulsiones.</span>
-    </li>
-    <li class="flex gap-2.5">
-      <span class="text-amber-600 dark:text-amber-400 font-bold">⚠️</span>
-      <span>Heridas profundas o sangrados que no cesen tras aplicar presión unos minutos.</span>
-    </li>
+  <ul class="mt-5 grid gap-3">
+    {warningSigns.map((sign) => (
+      <li class="flex gap-3 rounded-xl border border-amber-200/80 bg-white/55 px-3.5 py-3 text-sm leading-6 text-brand-text dark:border-amber-900/60 dark:bg-amber-950/20">
+        <svg class="mt-1 h-4 w-4 shrink-0 text-amber-700 dark:text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8v4"></path><path d="M12 16h.01"></path><circle cx="12" cy="12" r="9"></circle></svg>
+        <span>{sign}</span>
+      </li>
+    ))}
   </ul>
 
   <EmergencyGeoWidget />
-</div>
+</aside>

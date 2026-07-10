@@ -1,0 +1,65 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Observa sin alarmarte',
+    text: 'Anota cambios en apetito, sueño, respiración, movilidad y comportamiento durante varios días.',
+    href: '/salud-perros-mayores',
+    link: 'Reconocer señales',
+  },
+  {
+    number: '02',
+    title: 'Revisa su rutina',
+    text: 'Ajusta horarios, paseos y raciones a su energía actual, sin retirar de golpe lo que todavía disfruta.',
+    href: '/alimentacion-perros-senior',
+    link: 'Cuidar su alimentación',
+  },
+  {
+    number: '03',
+    title: 'Haz su hogar más fácil',
+    text: 'Reduce resbalones, saltos y esfuerzos con superficies firmes, descansos cómodos y accesos seguros.',
+    href: '/movilidad-dolor-perros-mayores',
+    link: 'Mejorar su movilidad',
+  },
+  {
+    number: '04',
+    title: 'Registra y consulta',
+    text: 'Lleva tus observaciones a la revisión veterinaria. Los pequeños cambios cuentan cuando se ven en conjunto.',
+    href: '#seguimiento',
+    link: 'Usar el seguimiento semanal',
+  },
+];
+---
+
+<section id="guia-inicio" class="py-16 sm:py-20 lg:py-24">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+    <div class="grid gap-5 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-7">
+        <span class="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">Guía de inicio</span>
+        <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-[-0.035em] text-brand-text sm:text-4xl">
+          Un plan sencillo para empezar a cuidarle mejor hoy.
+        </h2>
+      </div>
+      <p class="max-w-xl text-base leading-7 text-brand-muted lg:col-span-5 lg:justify-self-end">
+        No hace falta cambiarlo todo de golpe. Empieza por observar, adapta una cosa cada vez y comparte los cambios con su veterinario.
+      </p>
+    </div>
+
+    <ol class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      {steps.map((step) => (
+        <li class="group flex min-h-full flex-col rounded-[1.5rem] border border-brand-border bg-brand-card/45 p-5 transition duration-200 hover:-translate-y-1 hover:border-brand-primary/35 hover:bg-brand-card hover:shadow-lg focus-within:border-brand-primary sm:p-6">
+          <div class="flex items-center justify-between gap-4">
+            <span class="font-serif text-3xl font-semibold italic text-brand-primary/45" aria-hidden="true">{step.number}</span>
+            <span class="h-px flex-1 bg-brand-border" aria-hidden="true"></span>
+          </div>
+          <h3 class="mt-5 text-lg font-bold text-brand-text">{step.title}</h3>
+          <p class="mt-3 flex-1 text-sm leading-6 text-brand-muted">{step.text}</p>
+          <a href={step.href} class="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-brand-primary outline-none transition hover:text-brand-primary-hover focus-visible:rounded-lg focus-visible:ring-4 focus-visible:ring-brand-primary/25">
+            {step.link}
+            <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

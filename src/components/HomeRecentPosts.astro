@@ -4,44 +4,94 @@ interface Props {
 }
 
 const { posts = [] } = Astro.props;
+
+const pilarLabels: Record<string, string> = {
+  'guia-para-cuidar-tu-perro-senior': 'Cuidados esenciales',
+  'salud-perros-mayores': 'Salud',
+  'alimentacion-perros-senior': 'Alimentación',
+  'movilidad-dolor-perros-mayores': 'Movilidad y dolor',
+  'salud-mental-emocional-perros': 'Salud emocional',
+  'higiene-hogar-perros-senior': 'Higiene y hogar',
+  'cuidados-paliativos-perros': 'Cuidados paliativos',
+};
+
+const cards = posts.map((post) => ({
+  post,
+  image: post.data.heroImage,
+  mobileImage: post.data.heroImage?.replace(/\.webp$/i, '-400.webp'),
+}));
 ---
 
-{posts.length > 0 && (
-  <section class="bg-brand-card/25 border-y border-brand-border py-16 md:py-24 reveal-on-scroll">
-    <div class="max-w-5xl mx-auto px-5 md:px-4">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-bold tracking-wider uppercase text-brand-primary mb-2 block">Información práctica</span>
-        <h2 class="text-2.5xl md:text-3.5xl font-bold text-brand-text mb-4">Últimos artículos del blog</h2>
-        <p class="text-sm text-brand-muted font-light leading-relaxed">
-          Lee nuestras últimas publicaciones y guías detalladas para el cuidado del perro senior.
-        </p>
-      </div>
+{cards.length > 0 && (
+  <section class="border-y border-brand-border bg-brand-card/25 px-5 py-16 sm:px-6 md:py-24 lg:px-8" aria-labelledby="recent-posts-title">
+    <div class="mx-auto max-w-6xl">
+      <header class="mb-10 flex flex-col gap-5 sm:mb-12 md:flex-row md:items-end md:justify-between">
+        <div class="max-w-2xl">
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">Para seguir aprendiendo</p>
+          <h2 id="recent-posts-title" class="mt-3 text-3xl font-bold leading-tight text-brand-text sm:text-4xl">
+            Guías recientes para el día a día
+          </h2>
+          <p class="mt-4 max-w-xl text-sm leading-7 text-brand-muted sm:text-base">
+            Información práctica para anticiparte a los cambios y acompañar a tu perro senior con más seguridad.
+          </p>
+        </div>
+        <a
+          href="/#pilares"
+          class="inline-flex min-h-11 w-fit items-center gap-2 rounded-full border border-brand-border bg-brand-bg px-4 py-2.5 text-sm font-bold text-brand-text transition duration-200 hover:border-brand-primary/50 hover:text-brand-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/25"
+        >
+          Ver todos los temas
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"></path>
+            <path d="m13 6 6 6-6 6"></path>
+          </svg>
+        </a>
+      </header>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post) => (
-          <a
-            href={`/${post.data.pilar}/${post.slug}`}
-            class="group flex flex-col justify-between bg-brand-card border border-brand-border rounded-3xl p-6 shadow-sm hover:shadow-md hover:border-brand-primary/40 hover:scale-[1.01] transition-all duration-300 relative overflow-hidden"
-          >
-            <div class="absolute top-0 left-0 right-0 h-1 bg-brand-primary transform -translate-y-1 group-hover:translate-y-0 transition-transform duration-300"></div>
-            <div>
-              <span class="text-[10px] font-bold text-brand-primary uppercase tracking-wider block mb-2 opacity-80">
-                Guía especializada
-              </span>
-              <h3 class="text-lg font-bold text-brand-text group-hover:text-brand-primary transition-colors duration-200 line-clamp-2 leading-snug">
-                {post.data.title}
-              </h3>
-              {post.data.metaDescription && (
-                <p class="text-brand-muted text-xs mt-3 line-clamp-3 leading-relaxed font-light">
-                  {post.data.metaDescription}
-                </p>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {cards.map(({ post, image, mobileImage }) => (
+          <article class="h-full">
+            <a
+              href={`/${post.data.pilar}/${post.slug}`}
+              class="group flex h-full flex-col overflow-hidden rounded-3xl border border-brand-border bg-brand-card shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/30"
+              aria-label={`Leer: ${post.data.title}`}
+            >
+              {image && (
+                <div class="aspect-[4/3] overflow-hidden bg-brand-secondary/15">
+                  <picture class="block h-full">
+                    {mobileImage && <source media="(max-width: 639px)" srcset={mobileImage} type="image/webp" />}
+                    <img
+                      src={image}
+                      alt={post.data.heroImageAlt || `Imagen de portada de ${post.data.title}`}
+                      class="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-[1.035]"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </div>
               )}
-            </div>
-            <div class="mt-6 flex items-center text-xs font-semibold text-brand-primary group-hover:text-brand-primary-hover transition-colors duration-200">
-              <span>Leer artículo</span>
-              <span class="material-symbols-outlined text-xs ml-1 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </div>
-          </a>
+
+              <div class="flex flex-1 flex-col p-6">
+                <p class="text-[0.68rem] font-bold uppercase tracking-[0.15em] text-brand-primary">
+                  {pilarLabels[post.data.pilar] || 'Guía especializada'}
+                </p>
+                <h3 class="mt-3 text-xl font-bold leading-snug text-brand-text transition-colors duration-200 group-hover:text-brand-primary">
+                  {post.data.title}
+                </h3>
+                {post.data.metaDescription && (
+                  <p class="mt-3 line-clamp-3 text-sm leading-6 text-brand-muted">
+                    {post.data.metaDescription}
+                  </p>
+                )}
+                <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-brand-primary">
+                  Leer la guía
+                  <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"></path>
+                    <path d="m13 6 6 6-6 6"></path>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </article>
         ))}
       </div>
     </div>

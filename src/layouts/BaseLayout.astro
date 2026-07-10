@@ -11,11 +11,14 @@ interface Props {
   image?: string;
   /** Tipo de página para og:type. Default 'website'; usar 'article' en posts y pilares. */
   ogType?: 'website' | 'article';
+  /** Dimensiones reales de la imagen social para evitar metadatos de proporción incorrecta. */
+  imageWidth?: number;
+  imageHeight?: number;
   /** Permite ocultar el widget flotante en páginas donde no aporta valor. */
   showAiAssistant?: boolean;
 }
 
-const { title, description = 'Cuida a tu Perro Viejo', keywords, image, ogType = 'website', showAiAssistant = true } = Astro.props;
+const { title, description = 'Cuida a tu Perro Viejo', keywords, image, ogType = 'website', imageWidth = 1200, imageHeight = 800, showAiAssistant = true } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isAsistenteIaPage = normalizedPath === '/asistente-ia';
@@ -23,7 +26,7 @@ const pagesWithoutAiAssistant = new Set(['/politica-de-cookies', '/politica-de-p
 const shouldShowAiAssistant = showAiAssistant && !pagesWithoutAiAssistant.has(normalizedPath);
 
 // Imagen OG: convierte ruta relativa a URL absoluta.
-// Fallback: imagen hero de la home (1200×675, ya optimizada).
+// Fallback: imagen hero de la home (1200×800, ya optimizada).
 const OG_FALLBACK = '/images/home/perro-senior-hero-cama-ortopedica.webp';
 const ogImagePath = image || OG_FALLBACK;
 const ogImageURL = new URL(ogImagePath, Astro.site).href;
@@ -51,8 +54,8 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="675" />
+    <meta property="og:image:width" content={String(imageWidth)} />
+    <meta property="og:image:height" content={String(imageHeight)} />
     <meta property="og:image:alt" content={title} />
     <meta property="og:locale" content="es_ES" />
 
@@ -122,6 +125,17 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
         --color-brand-accent: #7c5730; /* leather brown accent */
         --color-brand-accent-hover: #5d7c67;
         --color-brand-border: #dbdad5; /* surface-dim outline */
+        --color-bg-base-rgb: 250 249 244;
+        --color-bg-card-rgb: 245 244 239;
+        --color-bg-card-hover-rgb: 239 238 233;
+        --color-text-base-rgb: 27 28 25;
+        --color-text-muted-rgb: 66 72 67;
+        --color-brand-primary-rgb: 69 99 79;
+        --color-brand-primary-hover-rgb: 93 124 103;
+        --color-brand-secondary-rgb: 253 203 155;
+        --color-brand-accent-rgb: 124 87 48;
+        --color-brand-accent-hover-rgb: 93 124 103;
+        --color-brand-border-rgb: 219 218 213;
       }
 
       .dark {
@@ -136,15 +150,42 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
         --color-brand-accent: #eebd8e;
         --color-brand-accent-hover: #ffdcbd;
         --color-brand-border: #2f4d3a;
+        --color-bg-base-rgb: 18 20 18;
+        --color-bg-card-rgb: 27 30 27;
+        --color-bg-card-hover-rgb: 36 40 36;
+        --color-text-base-rgb: 248 255 247;
+        --color-text-muted-rgb: 173 207 182;
+        --color-brand-primary-rgb: 173 207 182;
+        --color-brand-primary-hover-rgb: 201 235 209;
+        --color-brand-secondary-rgb: 47 77 58;
+        --color-brand-accent-rgb: 238 189 142;
+        --color-brand-accent-hover-rgb: 255 220 189;
+        --color-brand-border-rgb: 47 77 58;
       }
 
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 6rem;
+      }
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
         line-height: 1.5;
       }
+      :focus-visible {
+        outline: 3px solid var(--color-brand-primary);
+        outline-offset: 3px;
+      }
       h1, h2, h3, h4, h5, h6 {
         font-family: 'Outfit', sans-serif;
         line-height: 1.25;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
       }
 
       /* Estilos globales para renderizar markdown y contenido estructurado de forma premium */
@@ -358,30 +399,45 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
     </style>
     <slot name="head" />
   </head>
-  <body class={`bg-brand-bg text-brand-text transition-colors duration-200 antialiased min-h-screen relative flex flex-col justify-between selection:bg-brand-accent selection:text-white ${isAsistenteIaPage ? 'path-asistente-ia' : ''}`}>
+  <body class={`bg-brand-bg text-brand-text transition-colors duration-200 antialiased min-h-screen relative flex flex-col justify-between overflow-x-hidden selection:bg-brand-accent selection:text-white ${isAsistenteIaPage ? 'path-asistente-ia' : ''}`}>
+    <a href="#main-content" class="sr-only fixed left-4 top-4 z-[100] rounded-xl bg-brand-primary px-4 py-3 font-bold text-white focus:not-sr-only focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/30">
+      Saltar al contenido principal
+    </a>
+
     <!-- Decorative background elements -->
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 dark:bg-brand-primary/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-    <div class="absolute top-[300px] left-0 w-[400px] h-[400px] bg-brand-accent/5 dark:bg-brand-accent/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+    <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+      <div class="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-brand-primary/5 blur-3xl dark:bg-brand-primary/10"></div>
+      <div class="absolute left-0 top-[300px] h-[400px] w-[400px] rounded-full bg-brand-accent/5 blur-3xl dark:bg-brand-accent/10"></div>
+    </div>
 
     <!-- Navigation Bar -->
-    <nav class="border-b border-brand-border bg-brand-bg/85 backdrop-blur-md sticky top-0 z-50 transition-colors">
-      <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
-        <a href="/" class="flex min-w-0 items-center gap-2 font-extrabold text-lg sm:text-xl tracking-tight text-brand-text whitespace-nowrap">
-          <span class="text-brand-primary" aria-hidden="true">🐾</span>
-          <span>CuidaTu<span class="text-brand-primary">PerroViejo</span></span>
+    <nav class="sticky top-0 z-50 border-b border-brand-border bg-brand-bg/90 backdrop-blur-xl transition-colors" aria-label="Navegación principal">
+      <div class="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-4 px-5 sm:px-6 lg:px-8">
+        <a href="/" class="flex min-w-0 items-center gap-3 rounded-xl text-brand-text outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/25" aria-label="Cuida tu Perro Viejo, inicio">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.9rem] bg-brand-primary text-white shadow-sm dark:text-brand-bg" aria-hidden="true">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="7.2" cy="8" r="2.2"></circle><circle cx="16.8" cy="8" r="2.2"></circle><circle cx="4.8" cy="12.7" r="1.9"></circle><circle cx="19.2" cy="12.7" r="1.9"></circle><path d="M12 11.2c-3.5 0-6.4 2.7-6.4 6 0 2 1.5 3.2 3.4 3.2 1.1 0 2-.5 3-.5s1.9.5 3 .5c1.9 0 3.4-1.2 3.4-3.2 0-3.3-2.9-6-6.4-6Z"></path>
+            </svg>
+          </span>
+          <span class="min-w-0 leading-none">
+            <span class="block truncate text-base font-extrabold tracking-[-0.025em] sm:text-lg">Cuida tu Perro Viejo</span>
+            <span class="mt-1 hidden text-[0.62rem] font-bold uppercase tracking-[0.16em] text-brand-primary sm:block">Bienestar canino senior</span>
+          </span>
         </a>
 
-        <div class="hidden md:flex items-center gap-4">
-          <a href="/#pilares" class="text-sm font-medium text-brand-muted hover:text-brand-primary transition-colors">Temas</a>
-          <a href="/asistente-ia" class="text-sm font-medium text-brand-muted hover:text-brand-primary transition-colors">Asistente IA</a>
+        <div class="hidden items-center gap-1 lg:flex">
+          <a href="/#pilares" class="inline-flex min-h-11 items-center rounded-xl px-3.5 text-sm font-semibold text-brand-muted transition-colors hover:bg-brand-card hover:text-brand-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Guías</a>
+          <a href="/#calculadora" class="inline-flex min-h-11 items-center rounded-xl px-3.5 text-sm font-semibold text-brand-muted transition-colors hover:bg-brand-card hover:text-brand-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Herramientas</a>
+          <a href="/acerca-de" class="inline-flex min-h-11 items-center rounded-xl px-3.5 text-sm font-semibold text-brand-muted transition-colors hover:bg-brand-card hover:text-brand-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Sobre nosotros</a>
+          <a href="/asistente-ia" class="ml-1 inline-flex min-h-11 items-center rounded-full border border-brand-primary/25 bg-brand-primary/10 px-4 text-sm font-bold text-brand-primary transition-colors hover:border-brand-primary/40 hover:bg-brand-primary/15 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Asistente IA</a>
           <ThemeToggle />
         </div>
 
-        <div class="md:hidden flex items-center gap-2">
+        <div class="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
           <button
             type="button"
-            class="mobile-menu-toggle inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-border bg-brand-card/70 text-brand-text shadow-sm transition-colors hover:bg-brand-card-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/40"
+            class="mobile-menu-toggle inline-flex h-11 w-11 items-center justify-center rounded-full border border-brand-border bg-brand-card/70 text-brand-text shadow-sm transition-colors hover:bg-brand-card-hover focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/25"
             aria-label="Abrir menú"
             aria-expanded="false"
             aria-controls="mobile-menu"
@@ -399,16 +455,19 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
         </div>
       </div>
 
-      <div id="mobile-menu" class="hidden md:hidden border-t border-brand-border bg-brand-bg/95 backdrop-blur-md shadow-lg">
-        <div class="max-w-5xl mx-auto px-4 py-3 grid gap-2">
-          <a href="/#pilares" class="mobile-menu-link flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-brand-text transition-colors hover:bg-brand-card">
-            <span>Temas</span>
-            <span class="material-symbols-outlined text-base text-brand-primary" aria-hidden="true">arrow_forward</span>
-          </a>
-          <a href="/asistente-ia" class="mobile-menu-link flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-brand-text transition-colors hover:bg-brand-card">
-            <span>Asistente IA</span>
-            <span class="material-symbols-outlined text-base text-brand-primary" aria-hidden="true">arrow_forward</span>
-          </a>
+      <div id="mobile-menu" class="hidden border-t border-brand-border bg-brand-bg/98 shadow-xl lg:hidden">
+        <div class="mx-auto grid max-w-6xl gap-1 px-5 py-4 sm:px-6">
+          {[
+            ['Guías', '/#pilares'],
+            ['Herramientas', '/#calculadora'],
+            ['Sobre nosotros', '/acerca-de'],
+            ['Asistente IA', '/asistente-ia'],
+          ].map(([label, href]) => (
+            <a href={href} class="mobile-menu-link flex min-h-12 items-center justify-between rounded-xl px-4 text-sm font-semibold text-brand-text transition-colors hover:bg-brand-card focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">
+              <span>{label}</span>
+              <svg class="h-4 w-4 text-brand-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+            </a>
+          ))}
         </div>
       </div>
     </nav>
@@ -417,21 +476,40 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
     <slot />
 
     <!-- Footer -->
-    <footer class="bg-brand-bg border-t border-brand-border py-8 transition-colors mt-auto">
-      <div class="max-w-5xl mx-auto px-4 text-center md:flex md:justify-between md:items-center text-brand-muted text-sm font-light">
-        <div class="flex flex-col items-center md:items-start gap-2">
-          <p>&copy; 2026 Cuida a tu Perro Viejo. Todos los derechos reservados.</p>
-          <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-normal">
-            <a href="/politica-de-cookies" class="hover:text-brand-primary transition-colors underline decoration-dotted underline-offset-2">Política de Cookies</a>
-            <span class="text-brand-border">•</span>
-            <a href="/politica-de-privacidad" class="hover:text-brand-primary transition-colors underline decoration-dotted underline-offset-2">Política de Privacidad</a>
-            <span class="text-brand-border">•</span>
-            <a href="/contacto" class="hover:text-brand-primary transition-colors underline decoration-dotted underline-offset-2">Contacto</a>
-            <span class="text-brand-border">•</span>
-            <a href="/acerca-de" class="hover:text-brand-primary transition-colors underline decoration-dotted underline-offset-2">Acerca de</a>
+    <footer class="mt-auto border-t border-brand-border bg-brand-card/30 py-10 transition-colors sm:py-12">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+        <div class="grid gap-8 border-b border-brand-border pb-8 sm:grid-cols-12">
+          <div class="sm:col-span-6">
+            <div class="flex items-center gap-3">
+              <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-primary text-white dark:text-brand-bg" aria-hidden="true">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><circle cx="7.2" cy="8" r="2.2"></circle><circle cx="16.8" cy="8" r="2.2"></circle><circle cx="4.8" cy="12.7" r="1.9"></circle><circle cx="19.2" cy="12.7" r="1.9"></circle><path d="M12 11.2c-3.5 0-6.4 2.7-6.4 6 0 2 1.5 3.2 3.4 3.2 1.1 0 2-.5 3-.5s1.9.5 3 .5c1.9 0 3.4-1.2 3.4-3.2 0-3.3-2.9-6-6.4-6Z"></path></svg>
+              </span>
+              <p class="text-lg font-extrabold tracking-tight text-brand-text">Cuida tu Perro Viejo</p>
+            </div>
+            <p class="mt-4 max-w-md text-sm leading-6 text-brand-muted">Información clara y herramientas prácticas para acompañar con más confianza los años senior de tu perro.</p>
+          </div>
+          <div class="sm:col-span-3">
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-brand-primary">Explorar</p>
+            <div class="mt-3 grid gap-2 text-sm">
+              <a href="/#pilares" class="w-fit text-brand-muted transition-colors hover:text-brand-primary">Guías por tema</a>
+              <a href="/#calculadora" class="w-fit text-brand-muted transition-colors hover:text-brand-primary">Calculadora de edad</a>
+              <a href="/asistente-ia" class="w-fit text-brand-muted transition-colors hover:text-brand-primary">Asistente IA</a>
+            </div>
+          </div>
+          <div class="sm:col-span-3">
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-brand-primary">Información</p>
+            <div class="mt-3 grid gap-2 text-sm">
+              <a href="/acerca-de" class="w-fit text-brand-muted transition-colors hover:text-brand-primary">Sobre nosotros</a>
+              <a href="/contacto" class="w-fit text-brand-muted transition-colors hover:text-brand-primary">Contacto</a>
+              <a href="/politica-de-privacidad" class="w-fit text-brand-muted transition-colors hover:text-brand-primary">Privacidad</a>
+              <a href="/politica-de-cookies" class="w-fit text-brand-muted transition-colors hover:text-brand-primary">Cookies</a>
+            </div>
           </div>
         </div>
-        <p class="mt-2 md:mt-0 font-light">Comprometidos con el bienestar animal 🐾</p>
+        <div class="flex flex-col gap-2 pt-6 text-xs leading-5 text-brand-muted sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; 2026 Cuida tu Perro Viejo. Todos los derechos reservados.</p>
+          <p>La información del sitio no sustituye una consulta veterinaria.</p>
+        </div>
       </div>
     </footer>
 

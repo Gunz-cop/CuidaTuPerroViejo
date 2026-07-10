@@ -4,19 +4,24 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Outfit', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Lora', 'Georgia', 'serif'],
+      },
       colors: {
         brand: {
-          bg: 'var(--color-bg-base)',
-          card: 'var(--color-bg-card)',
-          'card-hover': 'var(--color-bg-card-hover)',
-          text: 'var(--color-text-base)',
-          muted: 'var(--color-text-muted)',
-          primary: 'var(--color-brand-primary)',
-          'primary-hover': 'var(--color-brand-primary-hover)',
-          secondary: 'var(--color-brand-secondary)',
-          accent: 'var(--color-brand-accent)',
-          'accent-hover': 'var(--color-brand-accent-hover)',
-          border: 'var(--color-brand-border)',
+          bg: 'rgb(var(--color-bg-base-rgb) / <alpha-value>)',
+          card: 'rgb(var(--color-bg-card-rgb) / <alpha-value>)',
+          'card-hover': 'rgb(var(--color-bg-card-hover-rgb) / <alpha-value>)',
+          text: 'rgb(var(--color-text-base-rgb) / <alpha-value>)',
+          muted: 'rgb(var(--color-text-muted-rgb) / <alpha-value>)',
+          primary: 'rgb(var(--color-brand-primary-rgb) / <alpha-value>)',
+          'primary-hover': 'rgb(var(--color-brand-primary-hover-rgb) / <alpha-value>)',
+          secondary: 'rgb(var(--color-brand-secondary-rgb) / <alpha-value>)',
+          accent: 'rgb(var(--color-brand-accent-rgb) / <alpha-value>)',
+          'accent-hover': 'rgb(var(--color-brand-accent-hover-rgb) / <alpha-value>)',
+          border: 'rgb(var(--color-brand-border-rgb) / <alpha-value>)',
         }
       }
     },

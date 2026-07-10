@@ -1,0 +1,149 @@
+<section id="calculadora" class="border-y border-brand-border bg-brand-card/35 py-16 sm:py-20 lg:py-24">
+  <div class="mx-auto grid max-w-6xl gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:items-center lg:gap-14 lg:px-8">
+    <div class="lg:col-span-5">
+      <span class="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">Conoce su etapa</span>
+      <h2 class="mt-3 text-3xl font-bold tracking-[-0.035em] text-brand-text sm:text-4xl">
+        No todos los perros envejecen al mismo ritmo.
+      </h2>
+      <p class="mt-5 text-base leading-7 text-brand-muted">
+        El tamaño y la edad influyen en cuándo comienza la etapa senior. Obtén una referencia sencilla para anticipar los cuidados que puede necesitar.
+      </p>
+
+      <div class="mt-7 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+        <div class="flex items-start gap-3">
+          <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-primary/10 text-brand-primary">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+          </span>
+          <p class="text-sm leading-6 text-brand-text"><strong class="font-semibold">Resultado inmediato</strong><br /><span class="text-brand-muted">según tamaño y edad.</span></p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-primary/10 text-brand-primary">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+          </span>
+          <p class="text-sm leading-6 text-brand-text"><strong class="font-semibold">Consejo orientativo</strong><br /><span class="text-brand-muted">para su etapa actual.</span></p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-primary/10 text-brand-primary">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+          </span>
+          <p class="text-sm leading-6 text-brand-text"><strong class="font-semibold">Sin registros</strong><br /><span class="text-brand-muted">ni datos personales.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <form id="age-calculator" class="rounded-[2rem] border border-brand-border bg-brand-bg p-5 shadow-[0_24px_70px_-42px_rgba(27,28,25,0.55)] sm:p-8" aria-labelledby="age-calculator-title">
+        <div class="flex items-center justify-between gap-4 border-b border-brand-border pb-5">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.15em] text-brand-primary">Calculadora orientativa</p>
+            <h3 id="age-calculator-title" class="mt-1 text-xl font-bold text-brand-text sm:text-2xl">¿En qué etapa está?</h3>
+          </div>
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-secondary/35 text-brand-accent" aria-hidden="true">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 7h8"></path><path d="M8 11h2"></path><path d="M14 11h2"></path><path d="M8 15h2"></path><path d="M14 15h2"></path>
+            </svg>
+          </span>
+        </div>
+
+        <fieldset class="mt-6">
+          <legend class="mb-3 text-sm font-bold text-brand-text">1. ¿Cuál es su tamaño?</legend>
+          <div class="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+            <label class="cursor-pointer">
+              <input class="peer sr-only" name="size" type="radio" value="small" />
+              <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
+                <span class="text-sm font-bold text-brand-text">Pequeño</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">Menos de 10 kg</span>
+              </span>
+            </label>
+            <label class="cursor-pointer">
+              <input checked class="peer sr-only" name="size" type="radio" value="medium" />
+              <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
+                <span class="text-sm font-bold text-brand-text">Mediano</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">10–25 kg</span>
+              </span>
+            </label>
+            <label class="cursor-pointer">
+              <input class="peer sr-only" name="size" type="radio" value="large" />
+              <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
+                <span class="text-sm font-bold text-brand-text">Grande</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">25–40 kg</span>
+              </span>
+            </label>
+            <label class="cursor-pointer">
+              <input class="peer sr-only" name="size" type="radio" value="giant" />
+              <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
+                <span class="text-sm font-bold text-brand-text">Gigante</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">Más de 40 kg</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="mt-6">
+          <label for="dog-age" class="mb-3 block text-sm font-bold text-brand-text">2. ¿Cuántos años tiene?</label>
+          <div class="relative">
+            <select id="dog-age" class="min-h-12 w-full appearance-none rounded-2xl border border-brand-border bg-brand-card/45 px-4 pr-12 text-base font-semibold text-brand-text outline-none transition hover:border-brand-primary/40 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/20">
+              {Array.from({ length: 20 }, (_, i) => i + 1).map((year) => (
+                <option value={year} selected={year === 8}>{year} {year === 1 ? 'año' : 'años'}</option>
+              ))}
+            </select>
+            <svg class="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-brand-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </div>
+        </div>
+
+        <div id="calc-result-card" class="mt-6 rounded-2xl bg-brand-primary p-5 text-white sm:p-6 dark:text-brand-bg" role="status" aria-live="polite" aria-atomic="true">
+          <div class="grid gap-4 sm:grid-cols-[auto_1fr] sm:items-center sm:gap-6">
+            <div class="sm:border-r sm:border-white/20 sm:pr-6 dark:sm:border-brand-bg/20">
+              <p class="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-white/70 dark:text-brand-bg/70">Edad equivalente</p>
+              <p id="human-age-result" class="mt-1 text-4xl font-extrabold tracking-tight">— años</p>
+            </div>
+            <div>
+              <p id="rec-title" class="text-sm font-bold">Calculando su etapa…</p>
+              <p id="rec-text" class="mt-1.5 text-xs leading-5 text-white/80 dark:text-brand-bg/80">Selecciona la edad y el tamaño para ver una recomendación.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-4 text-xs leading-5 text-brand-muted">
+          Esta equivalencia es aproximada y no sustituye una valoración veterinaria individual.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const calculator = document.getElementById('age-calculator');
+  const ageSelect = document.getElementById('dog-age');
+  const humanAgeDisplay = document.getElementById('human-age-result');
+  const recTitle = document.getElementById('rec-title');
+  const recText = document.getElementById('rec-text');
+
+  function calculateAge() {
+    const sizeRadio = calculator?.querySelector('input[name="size"]:checked');
+    if (!(sizeRadio instanceof HTMLInputElement) || !(ageSelect instanceof HTMLSelectElement) || !humanAgeDisplay || !recTitle || !recText) return;
+
+    const size = sizeRadio.value;
+    const age = Number.parseInt(ageSelect.value, 10);
+    if (Number.isNaN(age)) return;
+
+    let humanAge = 0;
+    if (size === 'small') humanAge = age === 1 ? 15 : age === 2 ? 24 : 24 + (age - 2) * 4;
+    if (size === 'medium') humanAge = age === 1 ? 15 : age === 2 ? 24 : 24 + (age - 2) * 5;
+    if (size === 'large') humanAge = age === 1 ? 15 : age === 2 ? 24 : 24 + (age - 2) * 6;
+    if (size === 'giant') humanAge = age === 1 ? 12 : age === 2 ? 22 : 22 + (age - 2) * 8;
+
+    humanAgeDisplay.textContent = `${humanAge} años`;
+
+    if (humanAge < 55) {
+      recTitle.textContent = 'Madurez: prepara su etapa senior';
+      recText.textContent = 'Mantén un peso saludable y aprovecha su próxima revisión para definir un plan preventivo.';
+    } else if (humanAge <= 75) {
+      recTitle.textContent = 'Etapa senior: observa los cambios';
+      recText.textContent = 'Valora revisiones semestrales, paseos adaptados y ajustes de alimentación con tu veterinario.';
+    } else {
+      recTitle.textContent = 'Senior avanzado: prioriza el confort';
+      recText.textContent = 'Adapta el hogar, conserva rutinas estables y vigila de cerca el dolor, el apetito y la movilidad.';
+    }
+  }
+
+  calculator?.querySelectorAll('input[name="size"]').forEach((radio) => radio.addEventListener('change', calculateAge));
+  ageSelect?.addEventListener('change', calculateAge);
+  calculateAge();
+</script>
