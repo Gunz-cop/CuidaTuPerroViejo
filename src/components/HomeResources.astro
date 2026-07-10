@@ -28,6 +28,7 @@
           Encuentra rápidamente una clínica veterinaria 24/7 cerca de ti. Si tu perro presenta dificultad para respirar, colapso, convulsiones o dolor agudo, no esperes.
         </p>
         <a
+          id="home-resources-emergency-btn"
           href="https://www.google.com/search?q=veterinaria+24+horas"
           rel="noopener nofollow"
           target="_blank"
@@ -89,3 +90,23 @@
     </div>
   </div>
 </section>
+
+<script>
+  const initResourcesGeo = async () => {
+    const btn = document.getElementById('home-resources-emergency-btn') as HTMLAnchorElement;
+    if (!btn) return;
+    try {
+      const response = await fetch('/api/geo');
+      if (response.ok) {
+        const data = await response.json();
+        if (data.country === 'CR') {
+          btn.href = 'https://vet24cr.com/';
+        }
+      }
+    } catch (e) {
+      console.error('Error detecting geo for HomeResources:', e);
+    }
+  };
+  document.addEventListener('DOMContentLoaded', initResourcesGeo);
+  document.addEventListener('astro:page-load', initResourcesGeo);
+</script>
