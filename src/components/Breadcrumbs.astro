@@ -11,7 +11,7 @@ const { pilarSlug, pilarName, title } = Astro.props;
 const origin = Astro.url.origin || 'https://cuidatuperroviejo.com';
 const homeUrl = `${origin}/`;
 const pilarUrl = `${origin}/${pilarSlug}`;
-const articleUrl = Astro.url.href;
+const articleUrl = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', origin).href;
 
 // Construct BreadcrumbList JSON-LD
 const breadcrumbSchema = {

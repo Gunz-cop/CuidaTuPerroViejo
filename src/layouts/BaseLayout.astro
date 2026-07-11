@@ -19,8 +19,8 @@ interface Props {
 }
 
 const { title, description = 'Cuida a tu Perro Viejo', keywords, image, ogType = 'website', imageWidth = 1200, imageHeight = 800, showAiAssistant = true } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const canonicalURL = new URL(normalizedPath, Astro.site);
 const isAsistenteIaPage = normalizedPath === '/asistente-ia';
 const pagesWithoutAiAssistant = new Set(['/politica-de-cookies', '/politica-de-privacidad']);
 const shouldShowAiAssistant = showAiAssistant && !pagesWithoutAiAssistant.has(normalizedPath);
