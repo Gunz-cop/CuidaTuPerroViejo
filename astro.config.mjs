@@ -15,6 +15,7 @@ const PILLAR_PATHS = new Set([
   '/salud-perros-mayores',
 ]);
 const PILLAR_SLUGS = new Set([...PILLAR_PATHS].map((path) => path.slice(1)));
+const NON_PUBLIC_SITEMAP_PREFIXES = ['/admin/'];
 
 function getSitemapMetadata(pathname) {
   const segments = pathname.split('/').filter(Boolean);
@@ -45,6 +46,10 @@ export default defineConfig({
     tailwind(),
     mdx(),
     sitemap({
+      filter(page) {
+        const { pathname } = new URL(page);
+        return !NON_PUBLIC_SITEMAP_PREFIXES.some((prefix) => pathname.startsWith(prefix));
+      },
       serialize(item) {
         const { pathname } = new URL(item.url);
         return {
