@@ -9,7 +9,7 @@ const blog = defineCollection({
       message: 'La meta descripción no debe superar los 160 caracteres.',
     }),
     pilar: z.enum([
-      'guia-para-cuidar-tu-perro-senior',
+      'herramientas',
       'salud-perros-mayores',
       'alimentacion-perros-senior',
       'movilidad-dolor-perros-mayores',

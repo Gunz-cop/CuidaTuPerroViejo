@@ -66,31 +66,33 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
     <meta name="twitter:image" content={ogImageURL} />
     <meta name="twitter:image:alt" content={title} />
     
-    <!-- Google AdSense (Lazy Loaded for Mobile Speed) -->
+
+
+    <!-- Infolinks (Lazy Loaded for Mobile Speed) -->
     <script is:inline>
-      function loadAdSense() {
-        // Evitar doble carga
-        if (window.adsenseLoaded) return;
-        window.adsenseLoaded = true;
+      var infolinks_pid = 3446472;
+      var infolinks_wsid = 0;
+
+      function loadInfolinks() {
+        if (window.infolinksLoaded) return;
+        window.infolinksLoaded = true;
 
         const script = document.createElement('script');
-        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5094917394495886";
+        script.src = "https://resources.infolinks.com/js/infolinks_main.js";
+        script.type = "text/javascript";
         script.async = true;
-        script.crossOrigin = "anonymous";
         document.head.appendChild(script);
 
-        // Remover listeners una vez cargado
-        window.removeEventListener('scroll', loadAdSense);
-        window.removeEventListener('touchstart', loadAdSense);
-        window.removeEventListener('mousemove', loadAdSense);
+        window.removeEventListener('scroll', loadInfolinks);
+        window.removeEventListener('touchstart', loadInfolinks);
+        window.removeEventListener('mousemove', loadInfolinks);
       }
 
-      // Iniciar carga tras la primera interacción del usuario
-      window.addEventListener('scroll', loadAdSense, { passive: true });
-      window.addEventListener('touchstart', loadAdSense, { passive: true });
-      window.addEventListener('mousemove', loadAdSense, { passive: true });
+      window.addEventListener('scroll', loadInfolinks, { passive: true });
+      window.addEventListener('touchstart', loadInfolinks, { passive: true });
+      window.addEventListener('mousemove', loadInfolinks, { passive: true });
     </script>
-    
+
     <!-- Script inline para prevenir el flash de luz blanca en modo oscuro -->
     <script is:inline>
       document.documentElement.classList.add('js');
