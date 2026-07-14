@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "stage": "6.5",
+  "purpose": "Temporary read-only adoption shadow for CuidaTuPerroViejo.",
+  "startedAt": "2026-07-14T21:34:41.243Z",
+  "approvedArtifact": {
+    "tarballPath": "C:\\Users\\grcx1\\OneDrive\\Documentos\\SDI\\sdi-cli-0.1.0.tgz",
+    "commit": "3546d8d79d4fcc285b2ff662422deb6d13b5eb2d",
+    "sha256": "aac5aec39ce06f988e09f8751c881a989f0ca15f560c77da06c19529ef9088a1",
+    "version": "0.1.0"
+  },
+  "checks": {
+    "approvedArtifact": {
+      "tarballSha256": "aac5aec39ce06f988e09f8751c881a989f0ca15f560c77da06c19529ef9088a1",
+      "tarballSha256Matches": true,
+      "packageVersion": "0.1.0",
+      "packageVersionMatches": true,
+      "repositoryCommit": "3546d8d79d4fcc285b2ff662422deb6d13b5eb2d",
+      "repositoryCommitMatches": true
+    },
+    "build": {
+      "command": "node_modules/.bin/astro build",
+      "executions": 2,
+      "legacyPostbuildExecuted": false
+    },
+    "legacyUnchanged": {
+      "state": true,
+      "manifest": true,
+      "submissions": true
+    }
+  },
+  "legacy": {
+    "paths": {
+      "state": "lib\\discovery\\state\\sdi-state.json",
+      "manifest": "lib\\discovery\\state\\sdi-manifest.json",
+      "submissions": "lib\\discovery\\state\\sdi-submissions.json"
+    },
+    "before": {
+      "state": "23332b84c9ac654d7c9614441450debeb4d1094352079afc2e29d65141c0fbe8",
+      "manifest": "40cfd47c46a7f3e73089939dd402984edb18a3d732c674833f649eeea01d7d27",
+      "submissions": "2978345818c4adfe5d8d2cc8cee3ad244198e3f8d68bead9ed98b089b4b2780e"
+    },
+    "after": {
+      "state": "23332b84c9ac654d7c9614441450debeb4d1094352079afc2e29d65141c0fbe8",
+      "manifest": "40cfd47c46a7f3e73089939dd402984edb18a3d732c674833f649eeea01d7d27",
+      "submissions": "2978345818c4adfe5d8d2cc8cee3ad244198e3f8d68bead9ed98b089b4b2780e"
+    }
+  },
+  "comparison": {
+    "legacyBuild": {
+      "label": "legacy-state-to-current-build",
+      "equal": false,
+      "missing": [],
+      "unexpected": [],
+      "hashMismatches": [
+        {
+          "url": "https://cuidatuperroviejo.com/alimentacion-perros-senior",
+          "left": "b0feb3e1e0c550a96035cc31e892b2716674421eeb9466b485e1969ceae4e8d2",
+          "right": "bade06e5615080308ea91deb79d7ad491b3f1d2e802a055138db395a2439e2b3"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/alimentacion-perros-senior/comida-casera-perros-mayores",
+          "left": "9733208ea55be76ee95e5b6ce71d2b7deb05e34e3c9305c975b08ca61dddf20f",
+          "right": "6e6895221bbd2f64b33ce25360bd3bd9ce763bb2f936d5028cc945ce11435568"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/contacto",
+          "left": "cea76cf1c7fb1fe1171bb48f53753b85665ffb5ecf066aaf7256bb6eb62fd909",
+          "right": "9dde3a724f04b3b55b423e5bb8c6a07a5463e4eef1edbe7336c4af5972e29c70"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros",
+          "left": "e60091fcf0c3b66a1c83a45dde250a00280c11595aea517139ee56e878e3c132",
+          "right": "e7fe6fbf30816edfc18c95bfd83547573eda725efff8681893147364966f8f54"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros/como-dar-medicacion-perro",
+          "left": "ced4eba5974758b08168053ad30c4463ce778f6d765b77ba9f681c3f74f5cdc4",
+          "right": "dbe5a770e4592c785b1e2c933a3fe42726d22902a7a2586358dc8571910e92a2"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros",
+          "left": "16420cc764df64215ce775740600885fa7de48aded29bb3619f55d7eaef4d01c",
+          "right": "0bd418d671fd1052122f806695d8668ec2477c51e9b1be38b92c9b8cab2a4f36"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/higiene-hogar-perros-senior",
+          "left": "47ff8ce4e6b90da08fe333e4c2032e22848bfdb31a80dca22f901584a3fd0e53",
+          "right": "3e7cc9048ed5485b690a4d84762a4c0bfd7891226e03ba338bd5ca40dec6e0e7"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores",
+          "left": "86099d48f31308be6eecd212063eb3271919357e10091733d2dcf754985e91df",
+          "right": "c04374a6db921234922cbbf9d00c524cfc1db46760b6882d96a8033e4830ad67"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+          "left": "ad2e8ef54ad73b60b19cf0f0c1648c06c457d2e580e2d9ee45e8f74cb897d047",
+          "right": "ba9fc5fb0e97b7a4dae52a0e5dd7127b54c1093a049c185a0fb25e6bc95adbfe"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-mental-emocional-perros",
+          "left": "b3b26f7e087d3cedaf226a03197ad6b53bd989067e744edb0c20f2ae5ae2548c",
+          "right": "d655d38a1a99231a21f803acab88b75568f1fc984fdd6bbb656f73f7ce47a0cf"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+          "left": "c45b943bd503135c031244d322feb940903f13659181ebd10c361ac47a410a0b",
+          "right": "cc429e60ec55f3c68744bdb19a6ec292eb7233bfdfe050710eb5962d95d06fce"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores",
+          "left": "5e0003172e4643820d1e45ece2fd1bf6e91db401429097fa967acdd99d759cd1",
+          "right": "19e72ef4700cd151de894dcb0e4ef17dd242825f9df647ba95a7ded675e65ace"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/chequeo-geriatrico-canino",
+          "left": "f8c2c7a43f3d7192a2d66eee45c92269842b66e1e8aa0b88ae56c86ba423d864",
+          "right": "5b96e0d5159be156d1e5b66532a8203d78039fd411f0308ce4d7887d2f61746f"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/salud-dental-perros-mayores",
+          "left": "6d3ede4aaea769a1fddcc2da3ceefce3ff61ee26ce700d04e7268b143a6b9a7f",
+          "right": "3281941a51b373ed0fba6dc5f7259540c451a144f18224cb8e8660e061a7bea4"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+          "left": "1ddf560f6f784b79b5c19b4d6a1f774695bd935a2d60b5b85966bc091dbc71e1",
+          "right": "8a972d5dc75fc0a34954ed1510d49bf6ea0ce2a828fceb56f7b279d5168ca2ea"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+          "left": "a8e9534306490c83de19aceef357989a29c2b1d55d1911d6a4128c00c9901979",
+          "right": "e5a74fe99afd13fab4879f32040110afdd306f4fa8bc9c485e3d6542b066c2a0"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+          "left": "ceb3c5d874f08277ab51bcb0b7ef8aa5591e09c5ebec963db5c289fd63f601f6",
+          "right": "8ca79bbccf6763d349f408ed8692c7b26589e7afb121df3f95d1fe74a4790e75"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/herramientas",
+          "left": "2fa092fa52e5955911feb388429bb0336ceede6793004abbd07e04462954fd01",
+          "right": "0f0fd29645e3bd4e2a4f3f65b7220beab006602fa9b1b6ef2535ae6824758798"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+          "left": "bcbf3c41e2fcb5a0af2a05156e4ed7cf2c38ed8280730664a7ae8cd7958d0eea",
+          "right": "bd4233dedaa6b9437db0b40f8aced0b6721d633d21628366f095831cc78b9ac8"
+        }
+      ],
+      "inventory": {
+        "legacy": 27,
+        "build": 27,
+        "sitemapUrls": 27
+      },
+      "rejectedUrls": [],
+      "collisions": [],
+      "missingHtml": [],
+      "trailingSlash": "never",
+      "manifestMatchesState": true,
+      "submissionsEntries": 1767
+    },
+    "buildReproducibility": {
+      "label": "same-checkout-two-builds",
+      "equal": false,
+      "missing": [],
+      "unexpected": [],
+      "hashMismatches": [
+        {
+          "url": "https://cuidatuperroviejo.com/alimentacion-perros-senior",
+          "left": "5abc06ab7bec347c6de8eeeb8bec7a1084709ff7cd6d77e98cc64c7067285731",
+          "right": "bade06e5615080308ea91deb79d7ad491b3f1d2e802a055138db395a2439e2b3"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/alimentacion-perros-senior/comida-casera-perros-mayores",
+          "left": "de6c94f595ae11b58371135b63b99ca13a7ffb337a1057ff2cc2211723702e6c",
+          "right": "6e6895221bbd2f64b33ce25360bd3bd9ce763bb2f936d5028cc945ce11435568"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/contacto",
+          "left": "bb3ddac2aefadc48c00701328e92003123fc788c6abebff5e9f0d645215d9fdd",
+          "right": "9dde3a724f04b3b55b423e5bb8c6a07a5463e4eef1edbe7336c4af5972e29c70"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros",
+          "left": "ec93f6588f1e101e8ed125a903438900457c09c769c17b56a53731d71d1b3ad8",
+          "right": "e7fe6fbf30816edfc18c95bfd83547573eda725efff8681893147364966f8f54"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros/como-dar-medicacion-perro",
+          "left": "178532b3b16ce4a0f96a74a7c8add8f7d4adaeb5a0b566cb2f41c629e3ab6cbe",
+          "right": "dbe5a770e4592c785b1e2c933a3fe42726d22902a7a2586358dc8571910e92a2"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros",
+          "left": "fc60fce1494f3dd1f562fd5ef360daa9c551a728fdb270ce640d250924787bf8",
+          "right": "0bd418d671fd1052122f806695d8668ec2477c51e9b1be38b92c9b8cab2a4f36"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/herramientas",
+          "left": "24985fb815cac8085673e0f3d5fc608be85ca6dcf96abe889b860802d8f0147c",
+          "right": "0f0fd29645e3bd4e2a4f3f65b7220beab006602fa9b1b6ef2535ae6824758798"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/higiene-hogar-perros-senior",
+          "left": "3818dc998b9a76228ce184d5a97aab37630ade5cb7a500c33eebc83f571eb10e",
+          "right": "3e7cc9048ed5485b690a4d84762a4c0bfd7891226e03ba338bd5ca40dec6e0e7"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+          "left": "f56183b5e3dba444159c39e799c0a34373f5959df9d9895f88d6e52832543797",
+          "right": "8ca79bbccf6763d349f408ed8692c7b26589e7afb121df3f95d1fe74a4790e75"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores",
+          "left": "72142b852b485a15fb3e34a0850ff30f6c4893ce154fa3a920984d3ba1eff402",
+          "right": "c04374a6db921234922cbbf9d00c524cfc1db46760b6882d96a8033e4830ad67"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+          "left": "f41b6bbfbb85decea54b41fcfee36c37abd08eec8062cae028eddcafefdbc554",
+          "right": "e5a74fe99afd13fab4879f32040110afdd306f4fa8bc9c485e3d6542b066c2a0"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+          "left": "6d8107ba7b76e1dfb634489e7820a8a2ac56f67d01b5785d5e13782352134e36",
+          "right": "ba9fc5fb0e97b7a4dae52a0e5dd7127b54c1093a049c185a0fb25e6bc95adbfe"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-mental-emocional-perros",
+          "left": "a188baa6ed4006b24980d6c67a05dd1215e59214d536c50bccb789c051a6647e",
+          "right": "d655d38a1a99231a21f803acab88b75568f1fc984fdd6bbb656f73f7ce47a0cf"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+          "left": "ea70929f44c3cf75e48d8dd6128341e5edbe2877a7f9faf097b7871c0cfb9b39",
+          "right": "cc429e60ec55f3c68744bdb19a6ec292eb7233bfdfe050710eb5962d95d06fce"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores",
+          "left": "195bbc93565baada3a9c1c08fded989db47bf070ed3d4eaec7df76ab0b1a9b42",
+          "right": "19e72ef4700cd151de894dcb0e4ef17dd242825f9df647ba95a7ded675e65ace"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/chequeo-geriatrico-canino",
+          "left": "59f5e2a67889688682bcb1ee20ffea0d7b1708437b1d7eabc68fdd0873fba5ef",
+          "right": "5b96e0d5159be156d1e5b66532a8203d78039fd411f0308ce4d7887d2f61746f"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+          "left": "4e84c92d2d14c6e01653f504bfdf5b40ce7c0e054f0448ef661f448f0f630641",
+          "right": "bd4233dedaa6b9437db0b40f8aced0b6721d633d21628366f095831cc78b9ac8"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/salud-dental-perros-mayores",
+          "left": "5d81b9a6a63bbecac0ae28fbb498b805a656f3168179fc39bdb93f31eb125ce0",
+          "right": "3281941a51b373ed0fba6dc5f7259540c451a144f18224cb8e8660e061a7bea4"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+          "left": "d19780f5a06b5ef48ead0654eefdeef8db7aecd15474a0672a7ca89a47d20179",
+          "right": "8a972d5dc75fc0a34954ed1510d49bf6ea0ce2a828fceb56f7b279d5168ca2ea"
+        }
+      ],
+      "firstBuildInventory": 27,
+      "secondBuildInventory": 27
+    },
+    "sdiDryRuns": {
+      "publicBinary": "sdi",
+      "version": "0.1.0",
+      "runs": [
+        {
+          "status": "success",
+          "source": {
+            "sitemapUsed": true,
+            "discovered": 27,
+            "rejected": 0,
+            "duplicates": 0
+          },
+          "changes": {
+            "created": 0,
+            "updated": 19,
+            "unchanged": 8,
+            "deleted": 0
+          },
+          "changeUrls": {
+            "created": [],
+            "updated": [
+              "https://cuidatuperroviejo.com/alimentacion-perros-senior",
+              "https://cuidatuperroviejo.com/alimentacion-perros-senior/comida-casera-perros-mayores",
+              "https://cuidatuperroviejo.com/contacto",
+              "https://cuidatuperroviejo.com/cuidados-paliativos-perros",
+              "https://cuidatuperroviejo.com/cuidados-paliativos-perros/como-dar-medicacion-perro",
+              "https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros",
+              "https://cuidatuperroviejo.com/herramientas",
+              "https://cuidatuperroviejo.com/higiene-hogar-perros-senior",
+              "https://cuidatuperroviejo.com/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+              "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores",
+              "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+              "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+              "https://cuidatuperroviejo.com/salud-mental-emocional-perros",
+              "https://cuidatuperroviejo.com/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+              "https://cuidatuperroviejo.com/salud-perros-mayores",
+              "https://cuidatuperroviejo.com/salud-perros-mayores/chequeo-geriatrico-canino",
+              "https://cuidatuperroviejo.com/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+              "https://cuidatuperroviejo.com/salud-perros-mayores/salud-dental-perros-mayores",
+              "https://cuidatuperroviejo.com/salud-perros-mayores/vacunas-desparasitacion-perros-senior"
+            ],
+            "deleted": []
+          },
+          "indexNowPresent": false,
+          "trailingSlash": "never"
+        },
+        {
+          "status": "success",
+          "source": {
+            "sitemapUsed": true,
+            "discovered": 27,
+            "rejected": 0,
+            "duplicates": 0
+          },
+          "changes": {
+            "created": 0,
+            "updated": 19,
+            "unchanged": 8,
+            "deleted": 0
+          },
+          "changeUrls": {
+            "created": [],
+            "updated": [
+              "https://cuidatuperroviejo.com/alimentacion-perros-senior",
+              "https://cuidatuperroviejo.com/alimentacion-perros-senior/comida-casera-perros-mayores",
+              "https://cuidatuperroviejo.com/contacto",
+              "https://cuidatuperroviejo.com/cuidados-paliativos-perros",
+              "https://cuidatuperroviejo.com/cuidados-paliativos-perros/como-dar-medicacion-perro",
+              "https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros",
+              "https://cuidatuperroviejo.com/herramientas",
+              "https://cuidatuperroviejo.com/higiene-hogar-perros-senior",
+              "https://cuidatuperroviejo.com/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+              "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores",
+              "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+              "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+              "https://cuidatuperroviejo.com/salud-mental-emocional-perros",
+              "https://cuidatuperroviejo.com/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+              "https://cuidatuperroviejo.com/salud-perros-mayores",
+              "https://cuidatuperroviejo.com/salud-perros-mayores/chequeo-geriatrico-canino",
+              "https://cuidatuperroviejo.com/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+              "https://cuidatuperroviejo.com/salud-perros-mayores/salud-dental-perros-mayores",
+              "https://cuidatuperroviejo.com/salud-perros-mayores/vacunas-desparasitacion-perros-senior"
+            ],
+            "deleted": []
+          },
+          "indexNowPresent": false,
+          "trailingSlash": "never"
+        }
+      ],
+      "sameSemanticResult": true,
+      "noNetwork": true,
+      "noAuxiliaryStateWritten": true
+    }
+  },
+  "differences": [
+    {
+      "scope": "legacy-state-to-current-build",
+      "classification": "defecto legacy",
+      "explanation": "The 19 hashes are the same URLs that SDI classifies as updated, and two builds of the same checkout produced different hashes for that same inventory. The legacy raw-HTML snapshot cannot remain equivalent across reproducible source inputs when the compiled output is unstable.",
+      "label": "legacy-state-to-current-build",
+      "equal": false,
+      "missing": [],
+      "unexpected": [],
+      "hashMismatches": [
+        {
+          "url": "https://cuidatuperroviejo.com/alimentacion-perros-senior",
+          "left": "b0feb3e1e0c550a96035cc31e892b2716674421eeb9466b485e1969ceae4e8d2",
+          "right": "bade06e5615080308ea91deb79d7ad491b3f1d2e802a055138db395a2439e2b3"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/alimentacion-perros-senior/comida-casera-perros-mayores",
+          "left": "9733208ea55be76ee95e5b6ce71d2b7deb05e34e3c9305c975b08ca61dddf20f",
+          "right": "6e6895221bbd2f64b33ce25360bd3bd9ce763bb2f936d5028cc945ce11435568"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/contacto",
+          "left": "cea76cf1c7fb1fe1171bb48f53753b85665ffb5ecf066aaf7256bb6eb62fd909",
+          "right": "9dde3a724f04b3b55b423e5bb8c6a07a5463e4eef1edbe7336c4af5972e29c70"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros",
+          "left": "e60091fcf0c3b66a1c83a45dde250a00280c11595aea517139ee56e878e3c132",
+          "right": "e7fe6fbf30816edfc18c95bfd83547573eda725efff8681893147364966f8f54"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros/como-dar-medicacion-perro",
+          "left": "ced4eba5974758b08168053ad30c4463ce778f6d765b77ba9f681c3f74f5cdc4",
+          "right": "dbe5a770e4592c785b1e2c933a3fe42726d22902a7a2586358dc8571910e92a2"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros",
+          "left": "16420cc764df64215ce775740600885fa7de48aded29bb3619f55d7eaef4d01c",
+          "right": "0bd418d671fd1052122f806695d8668ec2477c51e9b1be38b92c9b8cab2a4f36"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/higiene-hogar-perros-senior",
+          "left": "47ff8ce4e6b90da08fe333e4c2032e22848bfdb31a80dca22f901584a3fd0e53",
+          "right": "3e7cc9048ed5485b690a4d84762a4c0bfd7891226e03ba338bd5ca40dec6e0e7"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores",
+          "left": "86099d48f31308be6eecd212063eb3271919357e10091733d2dcf754985e91df",
+          "right": "c04374a6db921234922cbbf9d00c524cfc1db46760b6882d96a8033e4830ad67"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+          "left": "ad2e8ef54ad73b60b19cf0f0c1648c06c457d2e580e2d9ee45e8f74cb897d047",
+          "right": "ba9fc5fb0e97b7a4dae52a0e5dd7127b54c1093a049c185a0fb25e6bc95adbfe"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-mental-emocional-perros",
+          "left": "b3b26f7e087d3cedaf226a03197ad6b53bd989067e744edb0c20f2ae5ae2548c",
+          "right": "d655d38a1a99231a21f803acab88b75568f1fc984fdd6bbb656f73f7ce47a0cf"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+          "left": "c45b943bd503135c031244d322feb940903f13659181ebd10c361ac47a410a0b",
+          "right": "cc429e60ec55f3c68744bdb19a6ec292eb7233bfdfe050710eb5962d95d06fce"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores",
+          "left": "5e0003172e4643820d1e45ece2fd1bf6e91db401429097fa967acdd99d759cd1",
+          "right": "19e72ef4700cd151de894dcb0e4ef17dd242825f9df647ba95a7ded675e65ace"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/chequeo-geriatrico-canino",
+          "left": "f8c2c7a43f3d7192a2d66eee45c92269842b66e1e8aa0b88ae56c86ba423d864",
+          "right": "5b96e0d5159be156d1e5b66532a8203d78039fd411f0308ce4d7887d2f61746f"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/salud-dental-perros-mayores",
+          "left": "6d3ede4aaea769a1fddcc2da3ceefce3ff61ee26ce700d04e7268b143a6b9a7f",
+          "right": "3281941a51b373ed0fba6dc5f7259540c451a144f18224cb8e8660e061a7bea4"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+          "left": "1ddf560f6f784b79b5c19b4d6a1f774695bd935a2d60b5b85966bc091dbc71e1",
+          "right": "8a972d5dc75fc0a34954ed1510d49bf6ea0ce2a828fceb56f7b279d5168ca2ea"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+          "left": "a8e9534306490c83de19aceef357989a29c2b1d55d1911d6a4128c00c9901979",
+          "right": "e5a74fe99afd13fab4879f32040110afdd306f4fa8bc9c485e3d6542b066c2a0"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+          "left": "ceb3c5d874f08277ab51bcb0b7ef8aa5591e09c5ebec963db5c289fd63f601f6",
+          "right": "8ca79bbccf6763d349f408ed8692c7b26589e7afb121df3f95d1fe74a4790e75"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/herramientas",
+          "left": "2fa092fa52e5955911feb388429bb0336ceede6793004abbd07e04462954fd01",
+          "right": "0f0fd29645e3bd4e2a4f3f65b7220beab006602fa9b1b6ef2535ae6824758798"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+          "left": "bcbf3c41e2fcb5a0af2a05156e4ed7cf2c38ed8280730664a7ae8cd7958d0eea",
+          "right": "bd4233dedaa6b9437db0b40f8aced0b6721d633d21628366f095831cc78b9ac8"
+        }
+      ]
+    },
+    {
+      "scope": "same-checkout-two-builds",
+      "classification": "defecto legacy",
+      "explanation": "Two Astro builds without source changes produced different raw HTML SHA-256 values. Legacy persists that raw compiled HTML fingerprint, so its state reports false updates on a clean rebuild.",
+      "label": "same-checkout-two-builds",
+      "equal": false,
+      "missing": [],
+      "unexpected": [],
+      "hashMismatches": [
+        {
+          "url": "https://cuidatuperroviejo.com/alimentacion-perros-senior",
+          "left": "5abc06ab7bec347c6de8eeeb8bec7a1084709ff7cd6d77e98cc64c7067285731",
+          "right": "bade06e5615080308ea91deb79d7ad491b3f1d2e802a055138db395a2439e2b3"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/alimentacion-perros-senior/comida-casera-perros-mayores",
+          "left": "de6c94f595ae11b58371135b63b99ca13a7ffb337a1057ff2cc2211723702e6c",
+          "right": "6e6895221bbd2f64b33ce25360bd3bd9ce763bb2f936d5028cc945ce11435568"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/contacto",
+          "left": "bb3ddac2aefadc48c00701328e92003123fc788c6abebff5e9f0d645215d9fdd",
+          "right": "9dde3a724f04b3b55b423e5bb8c6a07a5463e4eef1edbe7336c4af5972e29c70"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros",
+          "left": "ec93f6588f1e101e8ed125a903438900457c09c769c17b56a53731d71d1b3ad8",
+          "right": "e7fe6fbf30816edfc18c95bfd83547573eda725efff8681893147364966f8f54"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros/como-dar-medicacion-perro",
+          "left": "178532b3b16ce4a0f96a74a7c8add8f7d4adaeb5a0b566cb2f41c629e3ab6cbe",
+          "right": "dbe5a770e4592c785b1e2c933a3fe42726d22902a7a2586358dc8571910e92a2"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros",
+          "left": "fc60fce1494f3dd1f562fd5ef360daa9c551a728fdb270ce640d250924787bf8",
+          "right": "0bd418d671fd1052122f806695d8668ec2477c51e9b1be38b92c9b8cab2a4f36"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/herramientas",
+          "left": "24985fb815cac8085673e0f3d5fc608be85ca6dcf96abe889b860802d8f0147c",
+          "right": "0f0fd29645e3bd4e2a4f3f65b7220beab006602fa9b1b6ef2535ae6824758798"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/higiene-hogar-perros-senior",
+          "left": "3818dc998b9a76228ce184d5a97aab37630ade5cb7a500c33eebc83f571eb10e",
+          "right": "3e7cc9048ed5485b690a4d84762a4c0bfd7891226e03ba338bd5ca40dec6e0e7"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+          "left": "f56183b5e3dba444159c39e799c0a34373f5959df9d9895f88d6e52832543797",
+          "right": "8ca79bbccf6763d349f408ed8692c7b26589e7afb121df3f95d1fe74a4790e75"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores",
+          "left": "72142b852b485a15fb3e34a0850ff30f6c4893ce154fa3a920984d3ba1eff402",
+          "right": "c04374a6db921234922cbbf9d00c524cfc1db46760b6882d96a8033e4830ad67"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+          "left": "f41b6bbfbb85decea54b41fcfee36c37abd08eec8062cae028eddcafefdbc554",
+          "right": "e5a74fe99afd13fab4879f32040110afdd306f4fa8bc9c485e3d6542b066c2a0"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+          "left": "6d8107ba7b76e1dfb634489e7820a8a2ac56f67d01b5785d5e13782352134e36",
+          "right": "ba9fc5fb0e97b7a4dae52a0e5dd7127b54c1093a049c185a0fb25e6bc95adbfe"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-mental-emocional-perros",
+          "left": "a188baa6ed4006b24980d6c67a05dd1215e59214d536c50bccb789c051a6647e",
+          "right": "d655d38a1a99231a21f803acab88b75568f1fc984fdd6bbb656f73f7ce47a0cf"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+          "left": "ea70929f44c3cf75e48d8dd6128341e5edbe2877a7f9faf097b7871c0cfb9b39",
+          "right": "cc429e60ec55f3c68744bdb19a6ec292eb7233bfdfe050710eb5962d95d06fce"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores",
+          "left": "195bbc93565baada3a9c1c08fded989db47bf070ed3d4eaec7df76ab0b1a9b42",
+          "right": "19e72ef4700cd151de894dcb0e4ef17dd242825f9df647ba95a7ded675e65ace"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/chequeo-geriatrico-canino",
+          "left": "59f5e2a67889688682bcb1ee20ffea0d7b1708437b1d7eabc68fdd0873fba5ef",
+          "right": "5b96e0d5159be156d1e5b66532a8203d78039fd411f0308ce4d7887d2f61746f"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+          "left": "4e84c92d2d14c6e01653f504bfdf5b40ce7c0e054f0448ef661f448f0f630641",
+          "right": "bd4233dedaa6b9437db0b40f8aced0b6721d633d21628366f095831cc78b9ac8"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/salud-dental-perros-mayores",
+          "left": "5d81b9a6a63bbecac0ae28fbb498b805a656f3168179fc39bdb93f31eb125ce0",
+          "right": "3281941a51b373ed0fba6dc5f7259540c451a144f18224cb8e8660e061a7bea4"
+        },
+        {
+          "url": "https://cuidatuperroviejo.com/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+          "left": "d19780f5a06b5ef48ead0654eefdeef8db7aecd15474a0672a7ca89a47d20179",
+          "right": "8a972d5dc75fc0a34954ed1510d49bf6ea0ce2a828fceb56f7b279d5168ca2ea"
+        }
+      ]
+    }
+  ],
+  "temporaryState": {
+    "path": "sdi-stage-6-5-FL1Lb0",
+    "removed": true
+  },
+  "completedAt": "2026-07-14T21:35:13.701Z",
+  "result": "differences-classified"
+}
