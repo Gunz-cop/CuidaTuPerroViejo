@@ -2,8 +2,25 @@
 
 ## Estado
 
-Esta etapa es evidencia read-only. CuidaTuPerroViejo no migra a SDI, no cambia
-su postbuild legacy y no realiza llamadas a IndexNow ni Google.
+**Cerrada y aprobada tras la investigación 6.5.1.** Esta etapa fue evidencia
+read-only: CuidaTuPerroViejo no migra a SDI, no cambia su postbuild legacy y
+no realiza llamadas a IndexNow ni Google.
+
+## Conclusión de la investigación 6.5.1
+
+Las 19 diferencias de SHA-256 no proceden de SDI, state, comparador ni
+normalización. Ocurren en las 8 rutas de pilar y los 11 posts generados por:
+
+- `src/pages/[pilar].astro`
+- `src/pages/[pilar]/[slug].astro`
+
+Ambos generan el campo JSON-LD `dateModified` con
+`new Date().toISOString()` durante el build. Por ello, dos builds del mismo
+commit producen timestamps y HTML distintos en esas 19 páginas.
+
+No se requieren cambios en SDI ni un ADR. Corregir la generación de
+`dateModified` queda explícitamente fuera de la Etapa 6.5: será una mejora
+independiente de CuidaTuPerroViejo.
 
 ## Artefacto aprobado
 
@@ -22,10 +39,11 @@ Desde la raíz del checkout limpio de Cuida:
 node scripts/sdi-shadow-compare.mjs
 ```
 
-El harness construye Astro dos veces con su binario directo, por lo que no ejecuta el
-`postbuild` legacy, y distingue cambios reales de inestabilidad del HTML compilado. Instala exclusivamente el tarball aprobado dentro de un
-directorio temporal con npm offline, invoca solo el binario público `sdi`, hace
-dos `run --dry-run` y elimina ese directorio incluso ante fallo.
+El harness construye Astro dos veces con su binario directo, por lo que no
+ejecuta el `postbuild` legacy, e identifica inestabilidad del HTML compilado.
+Instala exclusivamente el tarball aprobado dentro de un directorio temporal
+con npm offline, invoca solo el binario público `sdi`, hace dos
+`run --dry-run` y elimina ese directorio incluso ante fallo.
 
 Compara el sitemap/HTML compilado contra `sdi-state.json`, valida que el
 manifest coincide con el inventario, verifica los hashes de los tres artefactos
