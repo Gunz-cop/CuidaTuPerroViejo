@@ -65,33 +65,6 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
     <meta name="twitter:image:alt" content={title} />
-    
-
-
-    <!-- Infolinks (Lazy Loaded for Mobile Speed) -->
-    <script is:inline>
-      var infolinks_pid = 3446472;
-      var infolinks_wsid = 0;
-
-      function loadInfolinks() {
-        if (window.infolinksLoaded) return;
-        window.infolinksLoaded = true;
-
-        const script = document.createElement('script');
-        script.src = "https://resources.infolinks.com/js/infolinks_main.js";
-        script.type = "text/javascript";
-        script.async = true;
-        document.head.appendChild(script);
-
-        window.removeEventListener('scroll', loadInfolinks);
-        window.removeEventListener('touchstart', loadInfolinks);
-        window.removeEventListener('mousemove', loadInfolinks);
-      }
-
-      window.addEventListener('scroll', loadInfolinks, { passive: true });
-      window.addEventListener('touchstart', loadInfolinks, { passive: true });
-      window.addEventListener('mousemove', loadInfolinks, { passive: true });
-    </script>
 
     <!-- Script inline para prevenir el flash de luz blanca en modo oscuro -->
     <script is:inline>
