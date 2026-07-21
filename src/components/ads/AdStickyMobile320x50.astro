@@ -1,0 +1,19 @@
+---
+// src/components/ads/AdStickyMobile320x50.astro
+// Banner sticky 320x50 (Adsterra), fijo al pie de pantalla SOLO en mobile/tablet.
+// Se omite por completo en desktop (md:hidden). Altura reservada de 50px para
+// evitar CLS y que no tape la navegación del sitio.
+---
+
+<div
+  class="ad-slot ad-slot--sticky-320x50 fixed inset-x-0 bottom-0 z-40 flex h-[50px] justify-center border-t border-brand-border/40 bg-brand-bg/95 backdrop-blur md:hidden"
+  data-ad-pending="true"
+  aria-label="Espacio publicitario"
+>
+  <div class="ad-slot__placeholder flex h-[50px] w-[320px] max-w-full items-center justify-center text-[10px] uppercase tracking-wide text-brand-muted/50">
+    <span aria-hidden="true">Publicidad</span>
+  </div>
+  <template>
+    <!-- ADSTERRA_STICKY_320x50 -->
+  </template>
+</div>

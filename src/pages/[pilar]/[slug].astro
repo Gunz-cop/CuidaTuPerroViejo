@@ -5,6 +5,9 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiloNavigation from '../../components/SiloNavigation.astro';
 import PostReader from '../../components/PostReader.astro';
 import FeedbackWidget from '../../components/FeedbackWidget.astro';
+import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
+import AdNativeBanner from '../../components/ads/AdNativeBanner.astro';
+import AdStickyMobile320x50 from '../../components/ads/AdStickyMobile320x50.astro';
 import { buildSrcset } from '../../utils/image';
 
 
@@ -199,6 +202,13 @@ const hideHeroCSS = heroImage
 
     <FeedbackWidget slug={entry.slug} />
 
+    <!-- Native Banner (Adsterra): entre el contenido y los artículos relacionados -->
+    <AdNativeBanner />
+
     <SiloNavigation currentPilar={entry.data.pilar} currentSlug={entry.slug} />
   </main>
+
+  <!-- Sticky 320x50 (Adsterra): solo mobile/tablet, fijo al pie de pantalla -->
+  <AdStickyMobile320x50 />
+  <AdSlotLoader />
 </BaseLayout>

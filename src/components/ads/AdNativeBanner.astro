@@ -1,0 +1,19 @@
+---
+// src/components/ads/AdNativeBanner.astro
+// Native Banner (Adsterra), entre el contenido del artículo y la sección
+// de artículos relacionados (SiloNavigation). Altura mínima reservada
+// aproximada para evitar CLS; el native banner se adapta al ancho del contenedor.
+---
+
+<div
+  class="ad-slot ad-slot--native not-prose my-10 w-full"
+  data-ad-pending="true"
+  aria-label="Espacio publicitario"
+>
+  <div class="ad-slot__placeholder flex min-h-[100px] w-full items-center justify-center rounded-xl border border-brand-border/40 bg-brand-card/30 text-[10px] uppercase tracking-wide text-brand-muted/50">
+    <span aria-hidden="true">Publicidad</span>
+  </div>
+  <template>
+    <!-- ADSTERRA_NATIVE_BANNER -->
+  </template>
+</div>
