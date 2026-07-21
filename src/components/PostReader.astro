@@ -59,17 +59,31 @@ const processedHtml = html.replace(/<h([23])\b([^>]*?)>([\s\S]*?)<\/h\1>/gi, (ma
 // 3. Insertar banner 300x250 (Adsterra) tras el 1º/2º párrafo del artículo.
 // Contenedor con dimensiones fijas reservadas para evitar CLS; el código real
 // se carga de forma diferida (ver AdSlotLoader.astro) cuando entra en viewport.
-const AD_300x250_HTML = `<div class="ad-slot ad-slot--300x250 not-prose my-8 flex w-full justify-center" data-ad-pending="true" aria-label="Espacio publicitario"><div class="ad-slot__placeholder flex h-[250px] w-[300px] max-w-full items-center justify-center overflow-hidden rounded-xl border border-brand-border/40 bg-brand-card/30 text-[10px] uppercase tracking-wide text-brand-muted/50"><span aria-hidden="true">Publicidad</span></div><template><!-- ADSTERRA_BANNER_300x250 --></template></div>`;
+const AD_300x250_HTML = `<div class="ad-slot ad-slot--300x250 not-prose my-8 flex w-full justify-center" data-ad-pending="true" aria-label="Espacio publicitario"><div class="ad-slot__placeholder flex h-[250px] w-[300px] max-w-full items-center justify-center overflow-hidden rounded-xl border border-brand-border/40 bg-brand-card/30 text-[10px] uppercase tracking-wide text-brand-muted/50"><span aria-hidden="true">Publicidad</span></div><template><script is:inline>atOptions = {'key' : '10df6b95565e4b70f014e77906b6218c','format' : 'iframe','height' : 250,'width' : 300,'params' : {}};</script><script is:inline src="https://www.highperformanceformat.com/10df6b95565e4b70f014e77906b6218c/invoke.js"></script></template></div>`;
+
+// 4. Insertar banner horizontal 320x50 (Adsterra) aprox. a la mitad del artículo,
+// al estilo housegatitos.com. Se calcula el párrafo del medio en base al total.
+const AD_320x50_MID_HTML = `<div class="ad-slot ad-slot--320x50-mid not-prose my-8 flex w-full justify-center" data-ad-pending="true" aria-label="Espacio publicitario"><div class="ad-slot__placeholder flex h-[50px] w-[320px] max-w-full items-center justify-center overflow-hidden rounded-xl border border-brand-border/40 bg-brand-card/30 text-[10px] uppercase tracking-wide text-brand-muted/50"><span aria-hidden="true">Publicidad</span></div><template><script is:inline>atOptions = {'key' : '77fb25612074d9660a62a330b778e5ad','format' : 'iframe','height' : 50,'width' : 320,'params' : {}};</script><script is:inline src="https://www.highperformanceformat.com/77fb25612074d9660a62a330b778e5ad/invoke.js"></script></template></div>`;
+
+const totalParagraphs = (processedHtml.match(/<p\b[^>]*>[\s\S]*?<\/p>/gi) || []).length;
+// Si el artículo es muy corto, el párrafo "medio" quedaría pegado al 300x250 (índice 2); en ese caso se omite el segundo banner.
+const midParagraphIndex = Math.ceil(totalParagraphs / 2) > 2 ? Math.ceil(totalParagraphs / 2) : 0;
 
 let paragraphCount = 0;
-let adInserted = false;
+let ad300Inserted = false;
+let ad320Inserted = false;
 const withInContentAd = processedHtml.replace(/<p\b[^>]*>[\s\S]*?<\/p>/gi, (match) => {
   paragraphCount++;
-  if (!adInserted && paragraphCount === 2) {
-    adInserted = true;
-    return `${match}${AD_300x250_HTML}`;
+  let result = match;
+  if (!ad300Inserted && paragraphCount === 2) {
+    ad300Inserted = true;
+    result += AD_300x250_HTML;
   }
-  return match;
+  if (midParagraphIndex && !ad320Inserted && paragraphCount === midParagraphIndex) {
+    ad320Inserted = true;
+    result += AD_320x50_MID_HTML;
+  }
+  return result;
 });
 ---
 
