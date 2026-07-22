@@ -91,29 +91,29 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
   }
   </script>
 
-  <main class="max-w-3xl mx-auto px-5 py-10 md:py-16 content-body">
+  <main class="max-w-3xl mx-auto px-5 py-6 sm:py-10 md:py-16 content-body">
     <!-- Header/Metadata -->
-    <header class="mb-8">
-      <div class="mb-4">
+    <header class="mb-5 sm:mb-8">
+      <div class="mb-3 sm:mb-4">
         <a href="/" class="inline-flex items-center text-sm text-brand-primary hover:text-brand-primary-hover font-semibold gap-1 no-underline transition-colors back-btn">
           <span>← Volver al inicio</span>
         </a>
       </div>
 
-      <figure class="rounded-3xl overflow-hidden shadow-lg border border-brand-border/40 mb-6">
-        <img 
-          alt="Mujer ayudando a un perro senior con debilidad en las patas traseras a caminar dentro de casa usando un arnés de soporte de movilidad" 
-          src="/images/home/selector-movilidad-perro.webp" 
-          width="1200" 
-          height="525" 
-          loading="eager" 
-          decoding="async" 
+      <figure class="rounded-3xl overflow-hidden shadow-lg border border-brand-border/40 mb-4 sm:mb-6">
+        <img
+          alt="Mujer ayudando a un perro senior con debilidad en las patas traseras a caminar dentro de casa usando un arnés de soporte de movilidad"
+          src="/images/home/selector-movilidad-perro.webp"
+          width="1200"
+          height="525"
+          loading="eager"
+          decoding="async"
           title="Selector de ayudas de movilidad para perros ancianos"
-          class="w-full object-cover aspect-[16/7]" 
+          class="w-full object-cover aspect-[16/7]"
         />
       </figure>
 
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-muted border-b border-brand-border pb-6 mb-8 font-light">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-muted border-b border-brand-border pb-4 mb-5 sm:pb-6 sm:mb-8 font-light">
         <span>Por <strong>Equipo de Cuida a tu perro viejo</strong></span>
         <span class="text-brand-border">•</span>
         <span>Actualizado el <strong>14 de mayo de 2026</strong></span>
@@ -121,7 +121,7 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
     </header>
 
     <!-- Table of Contents -->
-    <nav class="mb-8" aria-label="Tabla de contenidos">
+    <nav class="mb-5 sm:mb-8" aria-label="Tabla de contenidos">
       <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-4 transition-all duration-300">
         <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
           <span>Contenido de esta página</span>
@@ -137,28 +137,33 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
     </nav>
 
     <!-- Empathetic Introduction -->
-    <section class="mb-8">
-      <h2 class="text-3xl font-bold font-serif text-brand-text mb-4 leading-tight">
+    <section class="mb-5 sm:mb-8">
+      <h2 class="text-2xl sm:text-3xl font-bold font-serif text-brand-text mb-3 sm:mb-4 leading-tight">
         Cuidar a un perro que ya no se mueve bien <span class="text-brand-primary block md:inline">es un acto de amor enorme. Hay ayudas concretas.</span>
       </h2>
-      <p class="text-lg text-brand-muted leading-relaxed">
+      <p class="text-base sm:text-lg text-brand-muted leading-relaxed">
         Si estás aquí es porque ves a tu compañero luchar y quieres hacer algo <em>ahora</em>. Este selector te da una recomendación exacta según su nivel de movilidad actual.
       </p>
     </section>
 
     <!-- Interactive App Selector Container -->
     <div id="cm5-selector" class="scroll-mt-20"></div>
-    <div aria-label="Selector de ayudas de movilidad para perros mayores" class="bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-6 md:p-10 shadow-sm mb-12 h-calc-container" role="region">
+    <div id="m5widget" aria-label="Selector de ayudas de movilidad para perros mayores" class="scroll-mt-20 bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-6 md:p-10 shadow-sm mb-12 h-calc-container" role="region">
 
       <!-- PANTALLA 0: Intro -->
       <div class="text-center" id="m5s0">
-        <div aria-hidden="true" class="text-5xl mb-4 select-none">🦴</div>
+        <div aria-hidden="true" class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-brand-secondary/50 dark:bg-slate-800/50 text-4xl mb-5 select-none">🦴</div>
         <span class="inline-block text-[11px] font-bold tracking-widest uppercase text-brand-primary mb-2">Test • 2 preguntas • 30 segundos</span>
         <h3 class="text-2xl md:text-3xl font-extrabold text-brand-text mb-4 font-serif leading-tight">Encontremos la ayuda exacta para tu perro</h3>
-        <p class="text-brand-muted text-sm max-w-lg mx-auto leading-relaxed mb-8">
-          Responde según cómo está hoy. Al final recibes productos específicos y, si lo necesita, orientación sobre cuidados paliativos.
+        <p class="text-brand-muted text-sm max-w-lg mx-auto leading-relaxed mb-6">
+          Responde según cómo está hoy. Al final recibes un plan de acción claro y, si lo necesita, orientación sobre cuidados paliativos.
         </p>
-        <button class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-brand-primary text-white hover:bg-brand-primary-hover shadow-sm hover:shadow transition-all duration-200 cursor-pointer" id="m5start" type="button">
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-green-500/10 text-green-700 dark:text-green-300"><span aria-hidden="true">🐾</span> Ligero</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300"><span aria-hidden="true">🚶</span> Moderado</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-red-500/10 text-red-700 dark:text-red-300"><span aria-hidden="true">🛏️</span> Severo</span>
+        </div>
+        <button class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-brand-primary text-white hover:bg-brand-primary-hover active:bg-brand-primary-hover active:scale-[0.98] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-150 cursor-pointer" id="m5start" type="button">
           Empezar ahora →
         </button>
       </div>
@@ -166,7 +171,7 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
       <!-- PANTALLA 1: Nivel de movilidad -->
       <div class="off" id="m5s1">
         <div class="flex items-center gap-4 mb-8">
-          <button class="px-3 py-1.5 rounded-full bg-brand-card/70 hover:bg-brand-card-hover text-brand-text text-xs font-semibold transition-all cursor-pointer border border-brand-border/40" id="m5b1" type="button">← Volver</button>
+          <button class="px-3 py-1.5 rounded-full bg-brand-card/70 hover:bg-brand-card-hover active:bg-brand-card-hover active:scale-95 text-brand-text text-xs font-semibold transition-all duration-150 cursor-pointer border border-brand-border/40" id="m5b1" type="button">← Volver</button>
           <div aria-valuemax="2" aria-valuemin="0" aria-valuenow="1" class="flex-1 h-2 bg-brand-border/40 rounded-full overflow-hidden" role="progressbar">
             <div class="h-full bg-brand-primary rounded-full transition-all duration-300" id="m5pb1"></div>
           </div>
@@ -180,7 +185,7 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
       <!-- PANTALLA 2: Carácter -->
       <div class="off" id="m5s2">
         <div class="flex items-center gap-4 mb-8">
-          <button class="px-3 py-1.5 rounded-full bg-brand-card/70 hover:bg-brand-card-hover text-brand-text text-xs font-semibold transition-all cursor-pointer border border-brand-border/40" id="m5b2" type="button">← Volver</button>
+          <button class="px-3 py-1.5 rounded-full bg-brand-card/70 hover:bg-brand-card-hover active:bg-brand-card-hover active:scale-95 text-brand-text text-xs font-semibold transition-all duration-150 cursor-pointer border border-brand-border/40" id="m5b2" type="button">← Volver</button>
           <div aria-valuemax="2" aria-valuemin="0" aria-valuenow="2" class="flex-1 h-2 bg-brand-border/40 rounded-full overflow-hidden" role="progressbar">
             <div class="h-full bg-brand-primary rounded-full transition-all duration-300" id="m5pb2"></div>
           </div>
@@ -218,28 +223,65 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
 
         <!-- Hero del resultado -->
         <div class="text-center pb-6 mb-6 border-b border-brand-border/40">
-          <div aria-hidden="true" class="text-4xl mb-2" id="m5rico"></div>
-          <div class="inline-block bg-brand-secondary text-brand-primary text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-3" id="m5rbadge"></div>
+          <div aria-hidden="true" class="inline-flex items-center justify-center w-16 h-16 rounded-2xl text-3xl mb-3" id="m5ricowrap">
+            <span id="m5rico"></span>
+          </div>
+          <div class="inline-block text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-3" id="m5rbadge"></div>
           <h3 class="text-2xl font-bold font-serif text-brand-text mb-2" id="m5rtit" itemprop="name"></h3>
+          <p class="text-base text-brand-muted leading-relaxed max-w-lg mx-auto" id="m5rdesc"></p>
         </div>
 
-        <p class="text-base text-brand-muted leading-relaxed mb-6" id="m5rdesc"></p>
+        <!-- Plan de acción -->
+        <div class="mb-8">
+          <h4 class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-4 flex items-center gap-2">
+            <span aria-hidden="true">🧭</span> Tu plan de acción
+          </h4>
+          <div class="flex flex-col gap-3" id="m5prods"></div>
+        </div>
 
-        <!-- Lista de productos -->
-        <div class="flex flex-col gap-4 mb-8" id="m5prods"></div>
+        <!-- CTA a la guía -->
+        <div class="mb-8 text-center">
+          <a href="/movilidad-dolor-perros-mayores" class="inline-block w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 text-center no-underline text-sm">
+            📖 Leer la guía completa de movilidad y dolor →
+          </a>
+        </div>
 
-        <!-- Acciones -->
-        <div class="flex flex-col gap-3">
-          <button class="w-full py-3.5 px-6 rounded-xl font-semibold border border-brand-border hover:bg-brand-card-hover text-brand-text text-sm transition-all duration-200 cursor-pointer text-center" id="m5rst" type="button">
-            ↻ Repetir el test
+        <!-- Acciones (en móvil, WhatsApp y Repetir viven en la barra fija de abajo) -->
+        <div class="flex flex-col sm:flex-row gap-3 border-t border-brand-border/40 pt-6">
+          <button class="w-full sm:w-auto flex-1 py-3.5 px-6 rounded-xl font-semibold border border-brand-primary text-brand-primary hover:bg-brand-primary/5 active:bg-brand-primary/10 active:scale-[0.98] text-sm transition-all duration-150 cursor-pointer text-center" id="m5copy" type="button">
+            📋 Copiar resultado
+          </button>
+          <button class="hidden sm:flex sm:w-auto flex-1 items-center justify-center py-3.5 px-6 rounded-xl font-semibold bg-brand-primary hover:bg-brand-primary-hover active:bg-brand-primary-hover active:scale-[0.98] text-white text-sm transition-all duration-150 cursor-pointer text-center" id="m5wa" type="button">
+            📲 Enviar por WhatsApp
+          </button>
+          <button class="hidden sm:flex sm:w-auto items-center justify-center py-3.5 px-6 rounded-xl font-semibold border border-brand-border hover:bg-brand-card-hover active:bg-brand-card-hover active:scale-[0.98] text-brand-text text-sm transition-all duration-150 cursor-pointer text-center" id="m5rst" type="button">
+            ↻ Repetir
           </button>
         </div>
+        <p aria-live="polite" id="m5copyok" class="text-sm font-semibold text-green-600 text-center mt-3" style="display:none;">
+          ¡Copiado! Ahora pégalo donde quieras.
+        </p>
         <p class="text-xs text-brand-muted/70 text-center italic mt-4 max-w-md mx-auto leading-relaxed">
           Esta recomendación es una guía de apoyo. Ante dudas, consulta siempre a tu veterinario.
         </p>
+
+        <!-- Espaciador para que la barra fija de móvil no tape el contenido -->
+        <div class="h-24 sm:h-0" aria-hidden="true"></div>
       </div>
 
     </div><!--/.m5card-->
+
+    <!-- Barra de acciones fija (solo móvil, solo mientras se ve el resultado) -->
+    <div id="m5stickybar" class="off sm:hidden fixed bottom-0 inset-x-0 z-40 border-t border-brand-border bg-brand-bg/95 backdrop-blur-md px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
+      <div class="flex items-center gap-3">
+        <button class="shrink-0 flex items-center justify-center w-12 h-12 rounded-full border border-brand-border text-brand-text text-lg active:bg-brand-card-hover active:scale-95 transition-all duration-150 cursor-pointer" id="m5rstFixed" type="button" aria-label="Repetir el test">
+          ↻
+        </button>
+        <button class="flex-1 flex items-center justify-center gap-2 h-12 rounded-full font-semibold bg-brand-primary text-white text-sm active:bg-brand-primary-hover active:scale-[0.98] transition-all duration-150 cursor-pointer" id="m5waFixed" type="button">
+          📲 Enviar por WhatsApp
+        </button>
+      </div>
+    </div>
 
     <!-- FAQs -->
     <div id="cm5-faq" class="scroll-mt-20"></div>
@@ -378,17 +420,35 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
     }
   }
   .m5anim {
     animation: m5in 0.26s ease forwards;
+  }
+
+  /* Mientras se ve el resultado en móvil, ocultamos el botón flotante del
+     asistente IA para que no choque con la barra de acciones fija de abajo. */
+  @media (max-width: 639px) {
+    :global(body.m5-result-active #ai-chat-toggle) {
+      display: none !important;
+    }
   }
 </style>
 
 <script is:inline>
 (function () {
   'use strict';
+
+  /* ── Enlaces de afiliados: ocultos por el momento ── */
+  var SHOW_AFFILIATE_LINKS = false;
+
+  /* ── Tema visual por nivel de severidad ── */
+  var THEME = {
+    L: { icon: 'bg-green-500/10', badge: 'bg-green-500/15 text-green-700 dark:text-green-300' },
+    M: { icon: 'bg-amber-500/10', badge: 'bg-amber-500/15 text-amber-700 dark:text-amber-300' },
+    S: { icon: 'bg-red-500/10',   badge: 'bg-red-500/15 text-red-700 dark:text-red-300' }
+  };
 
   /* ── Textos ── */
   var LB1 = 'Nivel de movilidad';
@@ -568,12 +628,19 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
     D.oo1    = document.getElementById('m5oo1');
     D.oo2    = document.getElementById('m5oo2');
     D.alert  = document.getElementById('m5alert');
+    D.ricowr = document.getElementById('m5ricowrap');
     D.rico   = document.getElementById('m5rico');
     D.rbadge = document.getElementById('m5rbadge');
     D.rtit   = document.getElementById('m5rtit');
     D.rdesc  = document.getElementById('m5rdesc');
     D.prods  = document.getElementById('m5prods');
     D.rst    = document.getElementById('m5rst');
+    D.copy   = document.getElementById('m5copy');
+    D.wa     = document.getElementById('m5wa');
+    D.copyok = document.getElementById('m5copyok');
+    D.stickybar  = document.getElementById('m5stickybar');
+    D.rstFixed   = document.getElementById('m5rstFixed');
+    D.waFixed    = document.getElementById('m5waFixed');
 
     /* Textos de preguntas */
     D.lb1.textContent = LB1;
@@ -594,6 +661,17 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
     D.b1.addEventListener('click',    function () { go(D.s1, D.s0); });
     D.b2.addEventListener('click',    function () { go(D.s2, D.s1); a1 = null; });
     D.rst.addEventListener('click',   reset);
+    D.copy.addEventListener('click',  copyResult);
+    D.wa.addEventListener('click',    shareWhatsApp);
+    D.rstFixed.addEventListener('click', reset);
+    D.waFixed.addEventListener('click',  shareWhatsApp);
+  }
+
+  /* ── Mantener el widget a la vista en cada paso (clave en móvil) ── */
+  function scrollToWidget() {
+    var el = document.getElementById('m5widget');
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   /* ── Transición ── */
@@ -603,6 +681,7 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
     to.classList.remove('m5anim');
     void to.offsetWidth;
     to.classList.add('m5anim');
+    scrollToWidget();
   }
 
   /* ── Construir botones de opción ── */
@@ -612,7 +691,7 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
       btn.type = 'button';
       
       // Dynamic button with beautiful Tailwind classes
-      btn.className = 'w-full min-h-[68px] p-4 bg-brand-card/50 dark:bg-slate-900/35 hover:bg-brand-card-hover dark:hover:bg-slate-900/60 border-2 border-transparent focus:border-brand-primary hover:border-brand-primary/60 active:border-brand-primary rounded-2xl flex items-center gap-4 text-left transition-all duration-150 outline-none select-none cursor-pointer';
+      btn.className = 'w-full min-h-[72px] p-4 md:p-5 bg-brand-card/50 dark:bg-slate-900/35 hover:bg-brand-card-hover active:bg-brand-card-hover dark:hover:bg-slate-900/60 dark:active:bg-slate-900/60 border-2 border-transparent focus:border-brand-primary hover:border-brand-primary/60 active:border-brand-primary rounded-2xl flex items-center gap-4 text-left transition-all duration-150 outline-none select-none cursor-pointer hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]';
       
       if (o.lvl === 'S') {
         btn.addEventListener('mouseenter', function() { btn.style.borderColor = '#b71c1c'; });
@@ -624,7 +703,7 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
       btn.setAttribute('aria-label', o.tx + (o.sub ? ': ' + o.sub : ''));
 
       var ico = document.createElement('span');
-      ico.className = 'text-2xl min-w-[32px] text-center select-none';
+      ico.className = 'flex items-center justify-center w-11 h-11 shrink-0 rounded-xl bg-brand-secondary/50 dark:bg-slate-800/60 text-xl select-none';
       ico.setAttribute('aria-hidden', 'true');
       ico.textContent = o.ico;
 
@@ -657,9 +736,12 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
   }
 
   /* ── Mostrar resultado ── */
+  var lastResult = null;
+
   function showResult(key) {
     var r = RES[key];
     if (!r) return;
+    lastResult = r;
 
     /* Alerta paliativa: visible solo si nivel S */
     if (a1 === 'S') {
@@ -668,16 +750,29 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
       D.alert.classList.add('off');
     }
 
+    /* Tema visual por severidad */
+    var theme = THEME[a1] || THEME.L;
+    D.ricowr.className = 'inline-flex items-center justify-center w-16 h-16 rounded-2xl text-3xl mb-3 ' + theme.icon;
+    D.rbadge.className = 'inline-block text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-3 ' + theme.badge;
+
     D.rico.textContent   = r.ico;
     D.rbadge.textContent = r.badge;
     D.rtit.textContent   = r.tit;
     D.rdesc.textContent  = r.desc;
 
-    /* Construir tarjetas de productos */
+    /* Construir el plan de acción (sin enlaces de compra por el momento) */
     D.prods.innerHTML = '';
-    r.prods.forEach(function (p) {
+    r.prods.forEach(function (p, i) {
       var card = document.createElement('div');
-      card.className = 'bg-brand-card/30 dark:bg-slate-900/15 border-l-4 border-brand-primary rounded-r-2xl rounded-l-md p-5 flex flex-col gap-2 relative shadow-sm border border-brand-border/40';
+      card.className = 'flex items-start gap-4 bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-4 md:p-5 shadow-sm';
+
+      var num = document.createElement('div');
+      num.className = 'shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-brand-primary/10 text-brand-primary font-bold text-sm select-none';
+      num.setAttribute('aria-hidden', 'true');
+      num.textContent = String(i + 1);
+
+      var body = document.createElement('div');
+      body.className = 'flex-1 flex flex-col gap-1';
 
       var name = document.createElement('div');
       name.className = 'font-bold text-brand-text text-base';
@@ -687,20 +782,59 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
       why.className = 'text-sm text-brand-muted leading-relaxed';
       why.textContent = p.why;
 
+      body.appendChild(name);
+      body.appendChild(why);
+      if (SHOW_AFFILIATE_LINKS && p.url) {
       var link = document.createElement('a');
       link.className = 'inline-flex self-start items-center gap-1.5 rounded-full border border-brand-primary px-4 py-1.5 text-xs font-bold text-brand-primary hover:bg-brand-primary hover:text-white transition-all no-underline cursor-pointer';
       link.href = p.url;
       link.target = '_blank';
       link.rel = 'noopener sponsored';
-      link.textContent = 'Ver en AliExpress \u2192'; // '→'
+      link.textContent = 'Ver en AliExpress';
+      body.appendChild(link);
+      }
 
-      card.appendChild(name);
-      card.appendChild(why);
-      card.appendChild(link);
+      card.appendChild(num);
+      card.appendChild(body);
       D.prods.appendChild(card);
     });
 
     go(D.s2, D.s3);
+    D.stickybar.classList.remove('off');
+    document.body.classList.add('m5-result-active');
+  }
+
+  /* ── Texto plano del resultado (para copiar / compartir) ── */
+  function resultText() {
+    if (!lastResult) return '';
+    var lines = ['Resultado: ' + lastResult.tit, '', lastResult.desc, '', 'Plan de acción:'];
+    lastResult.prods.forEach(function (p, i) {
+      lines.push('  ' + (i + 1) + '. ' + p.name + ' - ' + p.why);
+    });
+    lines.push('');
+    lines.push('https://cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores');
+    return lines.join('\n');
+  }
+
+  /* ── Copiar resultado ── */
+  function copyResult() {
+    var text = resultText();
+    if (!text || !navigator.clipboard) return;
+    navigator.clipboard.writeText(text).then(function () {
+      if (D.copyok) {
+        D.copyok.style.display = 'block';
+        setTimeout(function () { D.copyok.style.display = 'none'; }, 3000);
+      }
+    }).catch(function (err) {
+      console.error('Error al copiar: ', err);
+    });
+  }
+
+  /* ── Compartir por WhatsApp ── */
+  function shareWhatsApp() {
+    var text = resultText();
+    if (!text) return;
+    window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
   }
 
   /* ── Reset ── */
@@ -714,6 +848,9 @@ const description = "Selector interactivo que recomienda la ayuda de movilidad e
     D.s0.classList.remove('m5anim');
     void D.s0.offsetWidth;
     D.s0.classList.add('m5anim');
+    D.stickybar.classList.add('off');
+    document.body.classList.remove('m5-result-active');
+    scrollToWidget();
   }
 
   /* ── Arranque robusto para Blogger/Astro ── */
