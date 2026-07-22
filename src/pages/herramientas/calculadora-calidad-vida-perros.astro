@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = "Calculadora de Calidad de Vida Canina (Escala HHHHHMM) | Test Interactivo";
@@ -39,7 +39,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
         "about": { "@id": "https://cuidatuperroviejo.com/cuidados-paliativos-perros" },
         "breadcrumb": { "@id": "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros#breadcrumb" },
         "mainEntity": { "@id": "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros#calculator" },
-        "lastReviewed": "2026-05-03",
+        "lastReviewed": "2026-07-21",
         "inLanguage": "es"
       },
       {
@@ -68,7 +68,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
           "availability": "https://schema.org/InStock"
         },
         "description": "Herramienta interactiva gratuita para calcular el puntaje HHHHHMM de calidad de vida en perros mayores, basada en la escala de la Dra. Alice Villalobos.",
-        "softwareVersion": "1.0"
+        "softwareVersion": "2.0"
       },
       {
         "@type": "FAQPage",
@@ -88,47 +88,62 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
   }
   </script>
 
-  <main class="max-w-3xl mx-auto px-5 py-10 md:py-16 content-body">
+  <main class="max-w-3xl mx-auto px-5 py-6 sm:py-10 md:py-16 content-body">
     <!-- Header of the article -->
-    <header class="mb-8">
-      <div class="mb-4">
+    <header class="mb-5 sm:mb-8">
+      <div class="mb-3 sm:mb-4">
         <a href="/" class="inline-flex items-center text-sm text-brand-primary hover:text-brand-primary-hover font-semibold gap-1 no-underline transition-colors back-btn">
           <span>← Volver al inicio</span>
         </a>
       </div>
-      
-      <figure class="rounded-3xl overflow-hidden shadow-lg border border-brand-border/40 mb-6">
-        <img 
-          alt="Mujer abrazando a su perro anciano en casa durante cuidados paliativos, momento tranquilo que refleja calidad de vida y bienestar en perros senior" 
-          src="/images/home/calculadora-hhhhhmm-perro.webp" 
-          width="1672" 
-          height="941" 
-          loading="eager" 
-          decoding="async" 
+
+      <figure class="rounded-3xl overflow-hidden shadow-lg border border-brand-border/40 mb-4 sm:mb-6">
+        <img
+          alt="Mujer abrazando a su perro anciano en casa durante cuidados paliativos, momento tranquilo que refleja calidad de vida y bienestar en perros senior"
+          src="/images/home/calculadora-hhhhhmm-perro.webp"
+          width="1672"
+          height="941"
+          loading="eager"
+          decoding="async"
           title="Cuidados paliativos en perros: evaluar calidad de vida con amor y calma"
-          class="w-full object-cover aspect-video" 
+          class="w-full object-cover aspect-video"
         />
       </figure>
-      
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-text mb-6 leading-tight font-serif">
+
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-text mb-4 sm:mb-6 leading-tight font-serif">
         Calculadora de Calidad de Vida Canina (Escala HHHHHMM)
       </h1>
-      
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-muted border-b border-brand-border pb-6 mb-8 font-light">
+
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-muted border-b border-brand-border pb-4 mb-5 sm:pb-6 sm:mb-8 font-light">
         <span>Por <strong>Equipo de Cuida a tu perro viejo</strong></span>
         <span class="text-brand-border">•</span>
-        <span>Actualizado el <strong>03 de mayo de 2026</strong></span>
+        <span>Actualizado el <strong>21 de julio de 2026</strong></span>
       </div>
     </header>
 
-    <div id="intro-text" class="text-lg text-brand-muted leading-relaxed mb-8">
+    <!-- Table of Contents -->
+    <nav class="mb-5 sm:mb-8" aria-label="Tabla de contenidos">
+      <details class="group bg-brand-card/30 dark:bg-slate-900/15 border border-brand-border/40 rounded-2xl p-4 transition-all duration-300">
+        <summary class="flex justify-between items-center font-semibold text-brand-text cursor-pointer list-none select-none">
+          <span>Contenido de esta página</span>
+          <span class="text-brand-primary text-xl transition-transform duration-300 group-open:rotate-45">+</span>
+        </summary>
+        <ul class="mt-4 space-y-2 text-sm pl-4 list-disc text-brand-muted border-t border-brand-border/40 pt-4">
+          <li><a href="#cvc-calc" class="hover:text-brand-accent transition-colors no-underline">Calculadora interactiva HHHHHMM</a></li>
+          <li><a href="#criterios" class="hover:text-brand-accent transition-colors no-underline">Qué significan los 7 criterios</a></li>
+          <li><a href="#cvc-faq" class="hover:text-brand-accent transition-colors no-underline">Preguntas frecuentes</a></li>
+          <li><a href="#cvc-refs" class="hover:text-brand-accent transition-colors no-underline">Referencias médicas</a></li>
+        </ul>
+      </details>
+    </nav>
+
+    <div id="intro-text" class="text-lg text-brand-muted leading-relaxed mb-5 sm:mb-8">
       <p>Ver envejecer a nuestro perro es un acto de amor profundo, pero a menudo viene acompañado de dudas dolorosas. Nos preguntamos: <em>"¿Está sufriendo?", "¿Tiene todavía calidad de vida?", "¿Estoy tomando la decisión correcta?"</em>.</p>
-      <p>Para ayudarte a encontrar respuestas objetivas en medio de tantas emociones, hemos digitalizado la reconocida <strong>Escala de Calidad de Vida HHHHHMM</strong>. Esta herramienta, desarrollada por la Dra. Alice Villalobos (especialista en oncología veterinaria), te permitirá evaluar los 7 criterios vitales del bienestar de tu perro en cuestión de segundos.</p>
-      <p class="font-semibold text-brand-text"><strong>Instrucciones:</strong> Sé sincero/a en cada respuesta. Desliza los controles basándote en cómo ha estado tu perro durante los últimos 3 días.</p>
+      <p>Para ayudarte a encontrar respuestas objetivas en medio de tantas emociones, hemos digitalizado la reconocida <strong>Escala de Calidad de Vida HHHHHMM</strong>, desarrollada por la Dra. Alice Villalobos (especialista en oncología veterinaria).</p>
     </div>
 
     <!-- Banner PDF -->
-    <div class="flex items-center gap-4 bg-brand-primary/10 border border-brand-primary/20 rounded-2xl p-5 my-8 callout">
+    <div class="flex items-center gap-4 bg-brand-primary/10 border border-brand-primary/20 rounded-2xl p-5 my-6 sm:my-8 callout">
       <div class="text-3xl text-brand-primary">📄</div>
       <div class="text-sm">
         <strong class="text-brand-text font-bold block mb-1">¿Prefieres papel para la consulta veterinaria?</strong>
@@ -137,222 +152,187 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
     </div>
 
     <!-- CALCULADORA INTERACTIVA -->
-    <div id="calculadora"></div>
-    <div id="h-calc-wrapper" class="my-10">
-      <div class="bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-6 md:p-10 shadow-sm h-calc-container">
-        <h3 class="text-2xl md:text-3xl font-extrabold text-brand-primary text-center mb-2 font-['Outfit']">Calculadora Interactiva HHHHHMM</h3>
-        <p class="text-brand-muted text-sm text-center mb-8">Desliza del 0 (Pésimo) al 10 (Ideal)</p>
+    <div id="cvc-calc" class="scroll-mt-20"></div>
+    <div id="qol-widget" aria-label="Calculadora interactiva de calidad de vida HHHHHMM" class="scroll-mt-20 bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-6 md:p-10 shadow-sm mb-10 sm:mb-12 qol-container" role="region">
 
-        <!-- 1. Hurt -->
-        <div class="h-calc-item mb-8 pb-6 border-b border-brand-border/40 last:border-b-0 last:pb-0 last:mb-0">
-          <span class="h-calc-label font-bold text-lg text-brand-text mb-1 block font-['Outfit']">❤️ 1. Hurt (Dolor)</span>
-          <span class="h-calc-desc text-brand-muted text-sm mb-4 block leading-relaxed">¿Control adecuado del dolor y la respiración? (0 = Mucho dolor, 10 = Sin dolor)</span>
-          <div class="h-range-wrap flex flex-col sm:flex-row items-center gap-4 bg-brand-bg/85 dark:bg-brand-bg/40 p-4 rounded-2xl border border-brand-border/30">
-            <div class="flex items-center w-full gap-4">
-              <span class="text-xs text-brand-muted font-bold w-4">0</span>
-              <input aria-label="Dolor: 0 mucho dolor, 10 sin dolor" class="h-slider w-full accent-brand-primary h-2 rounded-lg cursor-pointer bg-brand-border dark:bg-brand-border/20" min="0" max="10" oninput="updateHCalc()" type="range" value="5">
-              <span class="text-xs text-brand-muted font-bold w-4 text-right">10</span>
-            </div>
-            <span class="h-score-val font-extrabold text-brand-primary min-w-[40px] text-center text-lg bg-brand-card px-3 py-1 rounded-lg border border-brand-border shadow-sm">5</span>
+      <!-- PANTALLA 0: Intro -->
+      <div class="text-center" id="qol-intro">
+        <div aria-hidden="true" class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-brand-secondary/50 dark:bg-slate-800/50 text-4xl mb-5 select-none">🩺</div>
+        <span class="inline-block text-[11px] font-bold tracking-widest uppercase text-brand-primary mb-2">Test • 7 preguntas • ~1 minuto</span>
+        <h3 class="text-2xl md:text-3xl font-extrabold text-brand-text mb-4 font-serif leading-tight">Evaluemos la calidad de vida de tu perro</h3>
+        <p class="text-brand-muted text-sm max-w-lg mx-auto leading-relaxed mb-2">
+          Responde según cómo ha estado tu perro en los <strong>últimos 3 días</strong>. Sé sincero/a en cada respuesta: al final verás su puntaje y qué hacer con él.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-8 mt-4">
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-green-500/10 text-green-700 dark:text-green-300"><span aria-hidden="true">✅</span> ≥ 50 Buena</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300"><span aria-hidden="true">⚠️</span> 35–49 Aceptable</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-red-500/10 text-red-700 dark:text-red-300"><span aria-hidden="true">🛑</span> &lt; 35 Comprometida</span>
+        </div>
+        <button class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-brand-primary text-white hover:bg-brand-primary-hover active:bg-brand-primary-hover active:scale-[0.98] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-150 cursor-pointer" id="qol-start" type="button">
+          Empezar ahora →
+        </button>
+      </div>
+
+      <!-- PANTALLA 1..7: Pregunta (contenido reutilizado dinámicamente) -->
+      <div class="off" id="qol-question">
+        <div class="flex items-center gap-4 mb-8">
+          <button class="px-3 py-1.5 rounded-full bg-brand-card/70 hover:bg-brand-card-hover active:bg-brand-card-hover active:scale-95 text-brand-text text-xs font-semibold transition-all duration-150 cursor-pointer border border-brand-border/40" id="qol-back" type="button">← Volver</button>
+          <div aria-label="Progreso del test" class="flex-1 h-2 bg-brand-border/40 rounded-full overflow-hidden" id="qol-progress-wrap" role="progressbar" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1">
+            <div class="h-full bg-brand-primary rounded-full transition-all duration-300" id="qol-progress-bar"></div>
           </div>
+          <span class="text-xs font-bold text-brand-primary whitespace-nowrap" id="qol-step-label">1 / 7</span>
         </div>
 
-        <!-- 2. Hunger -->
-        <div class="h-calc-item mb-8 pb-6 border-b border-brand-border/40 last:border-b-0 last:pb-0 last:mb-0">
-          <span class="h-calc-label font-bold text-lg text-brand-text mb-1 block font-['Outfit']">🍖 2. Hunger (Apetito)</span>
-          <span class="h-calc-desc text-brand-muted text-sm mb-4 block leading-relaxed">¿Come por su cuenta o necesita ayuda? (0 = No come nada, 10 = Come con ganas)</span>
-          <div class="h-range-wrap flex flex-col sm:flex-row items-center gap-4 bg-brand-bg/85 dark:bg-brand-bg/40 p-4 rounded-2xl border border-brand-border/30">
-            <div class="flex items-center w-full gap-4">
-              <span class="text-xs text-brand-muted font-bold w-4">0</span>
-              <input aria-label="Apetito: 0 no come, 10 come con ganas" class="h-slider w-full accent-brand-primary h-2 rounded-lg cursor-pointer bg-brand-border dark:bg-brand-border/20" min="0" max="10" oninput="updateHCalc()" type="range" value="5">
-              <span class="text-xs text-brand-muted font-bold w-4 text-right">10</span>
-            </div>
-            <span class="h-score-val font-extrabold text-brand-primary min-w-[40px] text-center text-lg bg-brand-card px-3 py-1 rounded-lg border border-brand-border shadow-sm">5</span>
-          </div>
+        <div class="flex items-center gap-3 mb-2">
+          <span class="text-2xl" aria-hidden="true" id="qol-q-emoji"></span>
+          <p class="text-xs font-bold tracking-widest uppercase text-brand-primary" id="qol-q-name"></p>
         </div>
+        <p class="text-xl md:text-2xl font-bold text-brand-text font-serif mb-6 leading-tight" id="qol-q-text"></p>
 
-        <!-- 3. Hydration -->
-        <div class="h-calc-item mb-8 pb-6 border-b border-brand-border/40 last:border-b-0 last:pb-0 last:mb-0">
-          <span class="h-calc-label font-bold text-lg text-brand-text mb-1 block font-['Outfit']">💧 3. Hydration (Hidratación)</span>
-          <span class="h-calc-desc text-brand-muted text-sm mb-4 block leading-relaxed">¿Bebe suficiente agua? (0 = Deshidratado, 10 = Bien hidratado)</span>
-          <div class="h-range-wrap flex flex-col sm:flex-row items-center gap-4 bg-brand-bg/85 dark:bg-brand-bg/40 p-4 rounded-2xl border border-brand-border/30">
-            <div class="flex items-center w-full gap-4">
-              <span class="text-xs text-brand-muted font-bold w-4">0</span>
-              <input aria-label="Hidratación: 0 deshidratado, 10 bien hidratado" class="h-slider w-full accent-brand-primary h-2 rounded-lg cursor-pointer bg-brand-border dark:bg-brand-border/20" min="0" max="10" oninput="updateHCalc()" type="range" value="5">
-              <span class="text-xs text-brand-muted font-bold w-4 text-right">10</span>
-            </div>
-            <span class="h-score-val font-extrabold text-brand-primary min-w-[40px] text-center text-lg bg-brand-card px-3 py-1 rounded-lg border border-brand-border shadow-sm">5</span>
-          </div>
+        <div class="flex items-center justify-between text-xs text-brand-muted font-semibold mb-2 px-0.5">
+          <span id="qol-q-help-lo"></span>
+          <span id="qol-q-help-hi"></span>
         </div>
+        <div class="grid grid-cols-6 sm:grid-cols-11 gap-2 sm:gap-3" id="qol-q-chips" role="radiogroup"></div>
+      </div>
 
-        <!-- 4. Hygiene -->
-        <div class="h-calc-item mb-8 pb-6 border-b border-brand-border/40 last:border-b-0 last:pb-0 last:mb-0">
-          <span class="h-calc-label font-bold text-lg text-brand-text mb-1 block font-['Outfit']">✨ 4. Hygiene (Higiene)</span>
-          <span class="h-calc-desc text-brand-muted text-sm mb-4 block leading-relaxed">¿Se mantiene limpio? (0 = Sucio/Llagas, 10 = Limpio)</span>
-          <div class="h-range-wrap flex flex-col sm:flex-row items-center gap-4 bg-brand-bg/85 dark:bg-brand-bg/40 p-4 rounded-2xl border border-brand-border/30">
-            <div class="flex items-center w-full gap-4">
-              <span class="text-xs text-brand-muted font-bold w-4">0</span>
-              <input aria-label="Higiene: 0 sucio o con llagas, 10 limpio" class="h-slider w-full accent-brand-primary h-2 rounded-lg cursor-pointer bg-brand-border dark:bg-brand-border/20" min="0" max="10" oninput="updateHCalc()" type="range" value="5">
-              <span class="text-xs text-brand-muted font-bold w-4 text-right">10</span>
-            </div>
-            <span class="h-score-val font-extrabold text-brand-primary min-w-[40px] text-center text-lg bg-brand-card px-3 py-1 rounded-lg border border-brand-border shadow-sm">5</span>
-          </div>
-        </div>
-
-        <!-- 5. Happiness -->
-        <div class="h-calc-item mb-8 pb-6 border-b border-brand-border/40 last:border-b-0 last:pb-0 last:mb-0">
-          <span class="h-calc-label font-bold text-lg text-brand-text mb-1 block font-['Outfit']">🐕 5. Happiness (Felicidad)</span>
-          <span class="h-calc-desc text-brand-muted text-sm mb-4 block leading-relaxed">¿Muestra alegría? (0 = Deprimido, 10 = Feliz)</span>
-          <div class="h-range-wrap flex flex-col sm:flex-row items-center gap-4 bg-brand-bg/85 dark:bg-brand-bg/40 p-4 rounded-2xl border border-brand-border/30">
-            <div class="flex items-center w-full gap-4">
-              <span class="text-xs text-brand-muted font-bold w-4">0</span>
-              <input aria-label="Felicidad: 0 deprimido, 10 feliz y activo" class="h-slider w-full accent-brand-primary h-2 rounded-lg cursor-pointer bg-brand-border dark:bg-brand-border/20" min="0" max="10" oninput="updateHCalc()" type="range" value="5">
-              <span class="text-xs text-brand-muted font-bold w-4 text-right">10</span>
-            </div>
-            <span class="h-score-val font-extrabold text-brand-primary min-w-[40px] text-center text-lg bg-brand-card px-3 py-1 rounded-lg border border-brand-border shadow-sm">5</span>
-          </div>
-        </div>
-
-        <!-- 6. Mobility -->
-        <div class="h-calc-item mb-8 pb-6 border-b border-brand-border/40 last:border-b-0 last:pb-0 last:mb-0">
-          <span class="h-calc-label font-bold text-lg text-brand-text mb-1 block font-['Outfit']">🐾 6. Mobility (Movilidad)</span>
-          <span class="h-calc-desc text-brand-muted text-sm mb-4 block leading-relaxed">¿Puede moverse solo? (0 = Inmóvil, 10 = Camina solo)</span>
-          <div class="h-range-wrap flex flex-col sm:flex-row items-center gap-4 bg-brand-bg/85 dark:bg-brand-bg/40 p-4 rounded-2xl border border-brand-border/30">
-            <div class="flex items-center w-full gap-4">
-              <span class="text-xs text-brand-muted font-bold w-4">0</span>
-              <input aria-label="Movilidad: 0 inmóvil, 10 camina solo" class="h-slider w-full accent-brand-primary h-2 rounded-lg cursor-pointer bg-brand-border dark:bg-brand-border/20" min="0" max="10" oninput="updateHCalc()" type="range" value="5">
-              <span class="text-xs text-brand-muted font-bold w-4 text-right">10</span>
-            </div>
-            <span class="h-score-val font-extrabold text-brand-primary min-w-[40px] text-center text-lg bg-brand-card px-3 py-1 rounded-lg border border-brand-border shadow-sm">5</span>
-          </div>
-        </div>
-
-        <!-- 7. More Good Days -->
-        <div class="h-calc-item mb-8 pb-6 border-b border-brand-border/40 last:border-b-0 last:pb-0 last:mb-0">
-          <span class="h-calc-label font-bold text-lg text-brand-text mb-1 block font-['Outfit']">☀️ 7. More Good Days (Balance)</span>
-          <span class="h-calc-desc text-brand-muted text-sm mb-4 block leading-relaxed">¿Hay más días buenos que malos? (0 = Lucha constante, 10 = Plenitud)</span>
-          <div class="h-range-wrap flex flex-col sm:flex-row items-center gap-4 bg-brand-bg/85 dark:bg-brand-bg/40 p-4 rounded-2xl border border-brand-border/30">
-            <div class="flex items-center w-full gap-4">
-              <span class="text-xs text-brand-muted font-bold w-4">0</span>
-              <input aria-label="Balance: 0 lucha constante, 10 plenitud de días buenos" class="h-slider w-full accent-brand-primary h-2 rounded-lg cursor-pointer bg-brand-border dark:bg-brand-border/20" min="0" max="10" oninput="updateHCalc()" type="range" value="5">
-              <span class="text-xs text-brand-muted font-bold w-4 text-right">10</span>
-            </div>
-            <span class="h-score-val font-extrabold text-brand-primary min-w-[40px] text-center text-lg bg-brand-card px-3 py-1 rounded-lg border border-brand-border shadow-sm">5</span>
-          </div>
-        </div>
-
-        <!-- RESULT BOX -->
-        <div class="p-6 md:p-8 rounded-2xl border text-center transition-all duration-300 shadow-sm my-6 bg-amber-500/10 border-amber-500/20 text-amber-900 dark:text-amber-100" id="result-box">
+      <!-- PANTALLA 8: Resultado -->
+      <div class="off" id="qol-result">
+        <div class="p-6 md:p-8 rounded-2xl border text-center transition-all duration-300 shadow-sm my-2 sm:my-4" id="qol-result-box">
           <span class="text-xs font-semibold tracking-wider uppercase text-brand-muted">Puntaje Total (Mín 0 – Máx 70)</span>
-          <span class="block text-5xl font-extrabold my-3 font-['Outfit']" id="h-final-score">35</span>
-          
-          <div class="font-semibold text-lg" id="h-interpretation">Mueve los controles para ver el resultado...</div>
-          <p class="mt-2 text-sm italic opacity-90 animate-pulse" id="h-human-msg"></p>
-          
+          <span class="block text-5xl font-extrabold my-3 font-['Outfit']" id="qol-result-score">35</span>
+
+          <div class="font-semibold text-lg" id="qol-interpretation">—</div>
+          <p class="mt-2 text-sm italic opacity-90" id="qol-human-msg"></p>
+
           <!-- PROGRESS BAR -->
-          <div aria-label="Progreso de calidad de vida" aria-valuemax="70" aria-valuemin="0" aria-valuenow="35" class="h-progress-wrap mt-4" role="progressbar">
-            <div class="h-progress-bar h-2.5 bg-brand-border/40 rounded-full overflow-hidden">
-              <div class="h-progress-fill h-full rounded-full transition-all duration-500 bg-amber-500" id="h-progress-fill" style="width:50%"></div>
+          <div aria-label="Progreso de calidad de vida" aria-valuemax="70" aria-valuemin="0" aria-valuenow="35" class="qol-progress-wrap mt-4" id="qol-result-progress" role="progressbar">
+            <div class="h-2.5 bg-brand-border/40 rounded-full overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-500 bg-amber-500" id="qol-result-fill" style="width:50%"></div>
             </div>
           </div>
           <p class="mt-4 text-xs font-light">💛 Esta herramienta es una guía. Tu amor y criterio siempre son lo más importante.</p>
         </div>
 
         <!-- RECOMENDACIÓN DINÁMICA -->
-        <div class="bg-blue-500/10 border border-blue-500/20 text-brand-text text-sm rounded-2xl p-5 my-6 leading-relaxed shadow-sm transition-all" id="dynamic-recommendation" style="display:none"></div>
+        <div class="bg-blue-500/10 border border-blue-500/20 text-brand-text text-sm rounded-2xl p-5 my-6 leading-relaxed shadow-sm" id="qol-recommendation"></div>
+
+        <!-- DESGLOSE POR CRITERIO -->
+        <div class="mb-6">
+          <h4 class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-3 flex items-center gap-2">
+            <span aria-hidden="true">📋</span> Desglose por criterio
+          </h4>
+          <div class="bg-brand-bg/60 dark:bg-brand-bg/25 border border-brand-border/30 rounded-2xl px-4" id="qol-breakdown"></div>
+        </div>
 
         <!-- CTA PILAR -->
-        <div class="h-cta-pilar my-6 text-center" id="h-cta-pilar" style="display:none">
+        <div class="qol-cta-pilar my-6 text-center" id="qol-cta-pilar" style="display:none">
           <a href="/cuidados-paliativos-perros" class="inline-block w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 text-center no-underline">
             📖 Entender mejor los cuidados paliativos y las opciones disponibles
           </a>
         </div>
 
-        <p class="h-anti-guilt text-xs text-brand-muted text-center italic mt-4 max-w-md mx-auto leading-relaxed">
+        <p class="qol-anti-guilt text-xs text-brand-muted text-center italic mt-4 max-w-md mx-auto leading-relaxed">
           Esta herramienta no toma decisiones por ti. Solo te ayuda a ver con más claridad lo que ya estás sintiendo.
         </p>
 
-        <!-- ACCIONES -->
-        <div class="calc-actions flex flex-wrap gap-3 justify-center mt-8 border-t border-brand-border/40 pt-8">
-          <button class="w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all bg-brand-primary hover:bg-brand-primary-hover text-white text-center shadow-sm flex items-center justify-center gap-2 cursor-pointer" onclick="copyToClipboard()">
+        <!-- ACCIONES (en móvil, WhatsApp y Repetir viven en la barra fija de abajo) -->
+        <div class="qol-actions flex flex-wrap gap-3 justify-center mt-8 border-t border-brand-border/40 pt-8">
+          <button class="w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all bg-brand-primary hover:bg-brand-primary-hover active:scale-[0.98] text-white text-center shadow-sm flex items-center justify-center gap-2 cursor-pointer" id="qol-copy" type="button">
             📋 Copiar resultado
           </button>
-          <button class="w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 text-center flex items-center justify-center gap-2 cursor-pointer" onclick="shareWhatsApp()">
+          <button class="hidden sm:flex sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 active:scale-[0.98] text-center items-center justify-center gap-2 cursor-pointer" id="qol-wa" type="button">
             📲 Enviar por WhatsApp
           </button>
-          <button class="w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 text-center flex items-center justify-center gap-2 cursor-pointer" onclick="downloadICS()">
+          <button class="w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 active:scale-[0.98] text-center flex items-center justify-center gap-2 cursor-pointer" id="qol-ics" type="button">
             📅 Recordar en 3 días
           </button>
-          <button class="w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 text-center flex items-center justify-center gap-2 cursor-pointer" onclick="window.print()">
+          <button class="w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 active:scale-[0.98] text-center flex items-center justify-center gap-2 cursor-pointer" id="qol-print" type="button">
             🖨️ Guardar PDF
           </button>
-          <button class="w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-border text-brand-muted hover:bg-brand-card-hover text-center flex items-center justify-center gap-2 cursor-pointer" onclick="resetHCalc()">
+          <button class="hidden sm:flex sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-border text-brand-muted hover:bg-brand-card-hover active:scale-[0.98] text-center items-center justify-center gap-2 cursor-pointer" id="qol-reset" type="button">
             🔄 Reiniciar
           </button>
         </div>
-        
-        <p aria-live="polite" id="copy-confirm" class="text-sm font-semibold text-green-600 text-center mt-3" style="display:none;">
+
+        <p aria-live="polite" id="qol-copy-confirm" class="text-sm font-semibold text-green-600 text-center mt-3" style="display:none;">
           ¡Copiado! Ahora pégalo donde quieras.
         </p>
+
+        <!-- Espaciador para que la barra fija de móvil no tape el contenido -->
+        <div class="h-24 sm:h-0" aria-hidden="true"></div>
+      </div>
+
+    </div><!--/.qol-container-->
+
+    <!-- Barra de acciones fija (solo móvil, solo mientras se ve el resultado) -->
+    <div id="qol-stickybar" class="off sm:hidden fixed bottom-0 inset-x-0 z-40 border-t border-brand-border bg-brand-bg/95 backdrop-blur-md px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
+      <div class="flex items-center gap-3">
+        <button class="shrink-0 flex items-center justify-center w-12 h-12 rounded-full border border-brand-border text-brand-text text-lg active:bg-brand-card-hover active:scale-95 transition-all duration-150 cursor-pointer" id="qol-reset-fixed" type="button" aria-label="Repetir el test">
+          ↻
+        </button>
+        <button class="flex-1 flex items-center justify-center gap-2 h-12 rounded-full font-semibold bg-brand-primary text-white text-sm active:bg-brand-primary-hover active:scale-[0.98] transition-all duration-150 cursor-pointer" id="qol-wa-fixed" type="button">
+          📲 Enviar por WhatsApp
+        </button>
       </div>
     </div>
 
     <!-- DETALLES DE LOS CRITERIOS -->
-    <div class="mt-12 border-t border-brand-border pt-10">
-      <h3 id="criterios" class="text-2xl font-bold text-brand-primary mb-6 font-serif">
+    <div class="mt-10 sm:mt-12 border-t border-brand-border pt-8 sm:pt-10">
+      <h3 id="criterios" class="scroll-mt-20 text-2xl font-bold text-brand-primary mb-6 font-serif">
         ¿Qué significan los criterios de la escala HHHHHMM?
       </h3>
       <p class="text-brand-muted mb-6 leading-relaxed">
         La Dra. Alice Villalobos diseñó esta escala para ayudar a los cuidadores y veterinarios a evaluar de manera objetiva hechos observables de la vida diaria del animal, reduciendo el sesgo emocional al tomar decisiones difíciles:
       </p>
-      
+
       <ul class="space-y-4 text-brand-muted leading-relaxed list-none pl-0">
         <li class="flex items-start gap-3">
           <span class="text-xl">❤️</span>
           <div>
-            <strong class="text-brand-text">Hurt (Dolor):</strong> 
+            <strong class="text-brand-text">Hurt (Dolor):</strong>
             ¿Tiene un control adecuado del dolor y puede respirar con facilidad? El dolor no controlado es el principal factor de sufrimiento.
           </div>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-xl">🍖</span>
           <div>
-            <strong class="text-brand-text">Hunger (Hambre):</strong> 
+            <strong class="text-brand-text">Hunger (Hambre):</strong>
             ¿Come suficiente por su cuenta o necesita asistencia/sonda? La falta de apetito sostenida compromete la energía del perro.
           </div>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-xl">💧</span>
           <div>
-            <strong class="text-brand-text">Hydration (Hidratación):</strong> 
+            <strong class="text-brand-text">Hydration (Hidratación):</strong>
             ¿Bebe agua o necesita fluidoterapia subcutánea para combatir la deshidratación?
           </div>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-xl">✨</span>
           <div>
-            <strong class="text-brand-text">Hygiene (Higiene):</strong> 
+            <strong class="text-brand-text">Hygiene (Higiene):</strong>
             ¿Se le puede mantener limpio y cepillado? ¿Tiene llagas por decúbito? La incontinencia o falta de aseo afecta su dignidad y salud cutánea.
           </div>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-xl">🐕</span>
           <div>
-            <strong class="text-brand-text">Happiness (Felicidad):</strong> 
+            <strong class="text-brand-text">Happiness (Felicidad):</strong>
             ¿Muestra alegría, interés en la familia, responde a caricias o juguetes? ¿Sigue experimentando pequeños placeres?
           </div>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-xl">🐾</span>
           <div>
-            <strong class="text-brand-text">Mobility (Movilidad):</strong> 
+            <strong class="text-brand-text">Mobility (Movilidad):</strong>
             ¿Puede levantarse y caminar solo, o necesita ayuda/carrito? ¿Tiene deseos de moverse a pesar de sus limitaciones físicas?
           </div>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-xl">☀️</span>
           <div>
-            <strong class="text-brand-text">More Good Days (Más días buenos):</strong> 
+            <strong class="text-brand-text">More Good Days (Más días buenos):</strong>
             Cuando hay más días malos que días buenos (donde domina el dolor o la inactividad), el balance indica que su bienestar general está muy comprometido.
           </div>
         </li>
@@ -360,7 +340,8 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
     </div>
 
     <!-- PREGUNTAS FRECUENTES -->
-    <section class="faq-section mt-12 border-t border-brand-border pt-10" aria-labelledby="faq-heading-calc">
+    <div id="cvc-faq" class="scroll-mt-20"></div>
+    <section class="faq-section mt-10 sm:mt-12 border-t border-brand-border pt-8 sm:pt-10" aria-labelledby="faq-heading-calc">
       <div class="mb-6 flex items-center gap-3">
         <div class="h-px flex-1 bg-brand-border/60"></div>
         <h3 id="faq-heading-calc" class="text-xs font-bold tracking-widest uppercase text-brand-primary whitespace-nowrap">Preguntas frecuentes</h3>
@@ -407,23 +388,61 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
     </section>
 
     <!-- REFERENCIAS -->
-    <div class="mt-12 border-t border-brand-border pt-6 text-xs text-brand-muted leading-relaxed">
-      <p>
-        <strong>Referencias:</strong> Villalobos, A. (2004). <em>Quality of Life Scale Helps Make Final Decisions (HHHHHMM Scale)</em>. 
-        Puedes consultar el <a href="https://cvm.ncsu.edu/wp-content/uploads/2024/09/Quality-of-Life-Scale.pdf" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">protocolo original en PDF (NCSU)</a> para mayor detalle científico.
+    <div id="cvc-refs" class="scroll-mt-20"></div>
+    <footer class="mt-10 sm:mt-12 border-t border-brand-border pt-6 text-xs text-brand-muted leading-relaxed">
+      <p class="mb-0">
+        <strong>Referencias médicas:</strong>
+        <a href="https://cvm.ncsu.edu/wp-content/uploads/2024/09/Quality-of-Life-Scale.pdf" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">Villalobos, A. — Quality of Life Scale, "HHHHHMM" (NCSU, 2024)</a>
+        ·
+        <a href="https://www.aaha.org/wp-content/uploads/globalassets/02-guidelines/end-of-life-care/2016_aaha_iaahpc_eolc_guidelines.pdf" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">2016 AAHA/IAAHPC End-of-Life Care Guidelines</a>
+        ·
+        <a href="https://iaahpc.org/veterinary-guidelines/general-practice-guidelines/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">IAAHPC — General Practice Guidelines</a>
+        ·
+        <a href="https://www.aaha.org/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats/end-of-life-and-euthanasia/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">2023 AAHA Senior Care Guidelines — End of Life</a>
+        ·
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10044252/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">Validación científica de la escala HHHHHMM (estudio revisado por pares)</a>
       </p>
-    </div>
+    </footer>
   </main>
 </BaseLayout>
 
 <style>
+  /* Blogger-safe utility: off toggles display */
+  .off {
+    display: none !important;
+  }
+
+  /* Fade-in animation */
+  @keyframes qolin {
+    from {
+      opacity: 0;
+      transform: translateY(7px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .qolanim {
+    animation: qolin 0.26s ease forwards;
+  }
+
+  /* Mientras se ve el resultado en móvil, ocultamos el botón flotante del
+     asistente IA para que no choque con la barra de acciones fija de abajo. */
+  @media (max-width: 639px) {
+    :global(body.qol-result-active #ai-chat-toggle) {
+      display: none !important;
+    }
+  }
+
   @media print {
     /* Ocultar elementos innecesarios */
-    .calc-actions,
-    .h-cta-pilar,
-    #dynamic-recommendation,
-    #copy-confirm,
-    .h-anti-guilt,
+    .qol-actions,
+    .qol-cta-pilar,
+    #qol-recommendation,
+    #qol-copy-confirm,
+    .qol-anti-guilt,
+    #qol-stickybar,
     nav,
     footer,
     .callout,
@@ -432,170 +451,293 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
     .back-btn {
       display: none !important;
     }
-    
-    /* Cuerpo del artículo principal */
+
     body {
       background: white !important;
       color: black !important;
     }
-    
-    #h-calc-wrapper {
+
+    #qol-widget {
       margin: 0 !important;
       padding: 0 !important;
     }
-    
-    .h-calc-container {
+
+    .qol-container {
       box-shadow: none !important;
       border: 1px solid #ccc !important;
       background: white !important;
       color: black !important;
       padding: 1.5rem !important;
     }
-    
-    #h-calc-wrapper input[type=range] {
-      -webkit-appearance: none !important;
-      appearance: none !important;
-      height: 4px !important;
-      background: #ddd !important;
+
+    #qol-result-score {
+      color: #000 !important;
+      font-size: 3rem !important;
     }
-    
-    /* Mostrar score de forma muy visible en impresión */
-    #result-box {
+
+    #qol-result-box {
       border: 2px solid #000 !important;
       background: #fff !important;
       color: #000 !important;
       box-shadow: none !important;
-      margin-top: 2rem !important;
-    }
-    
-    #h-final-score {
-      color: #000 !important;
-      font-size: 3rem !important;
     }
   }
 </style>
 
 <script is:inline>
 (function () {
+  'use strict';
 
-  /* ── Etiquetas para el resumen de copia ── */
-  var LABELS = ['Dolor','Apetito','Hidratación','Higiene','Felicidad','Movilidad','Balance'];
+  /* ── Los 7 criterios de la escala HHHHHMM ── */
+  var CRITERIA = [
+    { emoji: '❤️', name: 'Hurt (Dolor)',              label: 'Dolor',       question: '¿Control adecuado del dolor y la respiración?',            lo: 'Mucho dolor',       hi: 'Sin dolor' },
+    { emoji: '🍖', name: 'Hunger (Apetito)',           label: 'Apetito',     question: '¿Come por su cuenta o necesita ayuda?',                     lo: 'No come nada',      hi: 'Come con ganas' },
+    { emoji: '💧', name: 'Hydration (Hidratación)',    label: 'Hidratación', question: '¿Bebe suficiente agua?',                                    lo: 'Deshidratado',      hi: 'Bien hidratado' },
+    { emoji: '✨', name: 'Hygiene (Higiene)',          label: 'Higiene',     question: '¿Se mantiene limpio?',                                      lo: 'Sucio/Llagas',      hi: 'Limpio' },
+    { emoji: '🐕', name: 'Happiness (Felicidad)',      label: 'Felicidad',   question: '¿Muestra alegría?',                                         lo: 'Deprimido',         hi: 'Feliz' },
+    { emoji: '🐾', name: 'Mobility (Movilidad)',       label: 'Movilidad',   question: '¿Puede moverse solo?',                                      lo: 'Inmóvil',           hi: 'Camina solo' },
+    { emoji: '☀️', name: 'More Good Days (Balance)',   label: 'Balance',     question: '¿Hay más días buenos que malos?',                           lo: 'Lucha constante',   hi: 'Plenitud' }
+  ];
 
-  /* ── Cache de nodos (cacheados una sola vez en init) ── */
-  var sliders, displays;
+  var MAX = CRITERIA.length * 10; /* 70 */
+
+  /* ── Estado ── */
+  var answers = new Array(CRITERIA.length).fill(null);
+  var currentIndex = 0;
+  var lastScore = null;
+
+  /* ── DOM (cacheado en init) ── */
+  var D = {};
 
   function init() {
-    sliders  = document.querySelectorAll('.h-slider');
-    displays = document.querySelectorAll('.h-score-val');
-    updateHCalc();
+    D.intro     = document.getElementById('qol-intro');
+    D.question  = document.getElementById('qol-question');
+    D.result    = document.getElementById('qol-result');
+    D.start     = document.getElementById('qol-start');
+    D.back      = document.getElementById('qol-back');
+    D.progWrap  = document.getElementById('qol-progress-wrap');
+    D.progBar   = document.getElementById('qol-progress-bar');
+    D.stepLabel = document.getElementById('qol-step-label');
+    D.qEmoji    = document.getElementById('qol-q-emoji');
+    D.qName     = document.getElementById('qol-q-name');
+    D.qText     = document.getElementById('qol-q-text');
+    D.qHelpLo   = document.getElementById('qol-q-help-lo');
+    D.qHelpHi   = document.getElementById('qol-q-help-hi');
+    D.qChips    = document.getElementById('qol-q-chips');
+    D.resultBox = document.getElementById('qol-result-box');
+    D.score     = document.getElementById('qol-result-score');
+    D.interp    = document.getElementById('qol-interpretation');
+    D.humanMsg  = document.getElementById('qol-human-msg');
+    D.resultProg= document.getElementById('qol-result-progress');
+    D.resultFill= document.getElementById('qol-result-fill');
+    D.recBox    = document.getElementById('qol-recommendation');
+    D.breakdown = document.getElementById('qol-breakdown');
+    D.ctaPilar  = document.getElementById('qol-cta-pilar');
+    D.copy      = document.getElementById('qol-copy');
+    D.wa        = document.getElementById('qol-wa');
+    D.ics       = document.getElementById('qol-ics');
+    D.print     = document.getElementById('qol-print');
+    D.reset     = document.getElementById('qol-reset');
+    D.copyOk    = document.getElementById('qol-copy-confirm');
+    D.stickybar = document.getElementById('qol-stickybar');
+    D.resetFixed= document.getElementById('qol-reset-fixed');
+    D.waFixed   = document.getElementById('qol-wa-fixed');
+
+    D.start.addEventListener('click', function () {
+      currentIndex = 0;
+      renderQuestion(currentIndex);
+      go(D.intro, D.question);
+    });
+
+    D.back.addEventListener('click', function () {
+      if (currentIndex === 0) {
+        go(D.question, D.intro);
+      } else {
+        currentIndex -= 1;
+        renderQuestion(currentIndex);
+        replay(D.question);
+        scrollToWidget();
+      }
+    });
+
+    D.copy.addEventListener('click', copyToClipboard);
+    D.wa.addEventListener('click', shareWhatsApp);
+    D.ics.addEventListener('click', downloadICS);
+    D.print.addEventListener('click', function () { window.print(); });
+    D.reset.addEventListener('click', reset);
+    D.resetFixed.addEventListener('click', reset);
+    D.waFixed.addEventListener('click', shareWhatsApp);
   }
 
-  /* ── Actualizar calculadora ── */
-  function updateHCalc() {
-    if (!sliders || !displays) return;
-    var MAX   = sliders.length * 10;
-    var total = 0;
+  /* ── Mantener el widget a la vista en cada paso (clave en móvil) ── */
+  function scrollToWidget() {
+    var el = document.getElementById('qol-widget');
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
-    for (var i = 0; i < sliders.length; i++) {
-      var val = parseInt(sliders[i].value, 10);
-      displays[i].textContent = val;
-      total += val;
-    }
+  /* ── Transición entre pantallas ── */
+  function go(from, to) {
+    from.classList.add('off');
+    to.classList.remove('off');
+    replay(to);
+    scrollToWidget();
+  }
 
-    /* Puntaje */
-    var scoreEl = document.getElementById('h-final-score');
-    if (scoreEl) scoreEl.textContent = total;
+  function replay(el) {
+    el.classList.remove('qolanim');
+    void el.offsetWidth;
+    el.classList.add('qolanim');
+  }
 
-    /* Barra de progreso */
-    var fill = document.getElementById('h-progress-fill');
-    if (fill) {
-      fill.style.width = Math.round((total / MAX) * 100) + '%';
-    }
+  /* ── Pintar la pregunta N (0-indexada) ── */
+  function renderQuestion(i) {
+    var c = CRITERIA[i];
 
-    /* ARIA progressbar */
-    var box = document.getElementById('result-box');
-    if (box) {
-      var wrap = box.querySelector('[role=progressbar]');
-      if (wrap) { wrap.setAttribute('aria-valuenow', total); }
-    }
+    D.qEmoji.textContent = c.emoji;
+    D.qName.textContent  = c.name;
+    D.qText.textContent  = c.question;
+    D.qHelpLo.textContent = '0 = ' + c.lo;
+    D.qHelpHi.textContent = '10 = ' + c.hi;
+    D.stepLabel.textContent = (i + 1) + ' / ' + CRITERIA.length;
+    D.stepLabel.setAttribute('aria-label', 'Pregunta ' + (i + 1) + ' de ' + CRITERIA.length);
 
-    /* Nodos de resultado */
-    var interpEl = document.getElementById('h-interpretation');
-    var humanMsg = document.getElementById('h-human-msg');
-    var recBox   = document.getElementById('dynamic-recommendation');
-    var ctaPilar = document.getElementById('h-cta-pilar');
+    D.progBar.style.width = Math.round(((i + 1) / CRITERIA.length) * 100) + '%';
+    D.progWrap.setAttribute('aria-valuenow', i + 1);
+    D.qChips.setAttribute('aria-label', c.name + ': ' + c.question);
 
-    if (box && fill) {
-      // Restablecer clases base de Tailwind
-      box.className = 'p-6 md:p-8 rounded-2xl border text-center transition-all duration-300 shadow-sm my-6';
-      fill.className = 'h-full rounded-full transition-all duration-500';
-
-      if (total >= 50) {
-        box.classList.add('bg-green-500/10', 'border-green-500/20', 'text-green-900', 'dark:text-green-100');
-        fill.classList.add('bg-green-600');
-        if (interpEl) interpEl.innerHTML = '<strong>✅ Calidad de Vida BUENA.</strong>';
-        if (humanMsg) humanMsg.textContent = 'Tu perro aún disfruta momentos importantes contigo.';
-        if (recBox) recBox.innerHTML = '💡 <strong>Sigue así:</strong> Mantén los cuidados actuales y visita al veterinario en los controles rutinarios. Tu perro está respondiendo bien.';
-        if (ctaPilar) ctaPilar.style.display = 'none';
-      } else if (total >= 35) {
-        box.classList.add('bg-amber-500/10', 'border-amber-500/20', 'text-amber-900', 'dark:text-amber-100');
-        fill.classList.add('bg-amber-500');
-        if (interpEl) interpEl.innerHTML = '<strong>⚠️ Calidad de Vida ACEPTABLE.</strong>';
-        if (humanMsg) humanMsg.textContent = 'Estás en un punto donde observar y acompañar es clave.';
-        if (recBox) recBox.innerHTML = '💡 <strong>Atención:</strong> Hay áreas que merecen seguimiento. Consulta a tu veterinario pronto para ajustar el plan de cuidados.';
-        if (ctaPilar) {
-          var aLink = ctaPilar.querySelector('a');
-          if (aLink) aLink.textContent = '📖 Cómo mejorar la calidad de vida de tu perro';
-          ctaPilar.style.display = 'block';
-        }
+    buildChips(D.qChips, answers[i], function (v) {
+      answers[i] = v;
+      if (i < CRITERIA.length - 1) {
+        currentIndex = i + 1;
+        renderQuestion(currentIndex);
+        replay(D.question);
+        scrollToWidget();
       } else {
-        box.classList.add('bg-red-500/10', 'border-red-500/20', 'text-red-900', 'dark:text-red-100');
-        fill.classList.add('bg-red-600');
-        if (interpEl) interpEl.innerHTML = '<strong>🛑 Calidad de Vida COMPROMETIDA.</strong>';
-        if (humanMsg) humanMsg.textContent = 'Es un momento difícil. Buscar claridad ahora también es una forma de cuidar de él.';
-        if (recBox) recBox.innerHTML = '💡 <strong>Importante:</strong> El puntaje indica sufrimiento significativo. Consulta a tu veterinario lo antes posible para evaluar opciones paliativas.';
-        if (ctaPilar) {
-          var aLink = ctaPilar.querySelector('a');
-          if (aLink) aLink.textContent = '📖 Entender los cuidados paliativos y las opciones disponibles';
-          ctaPilar.style.display = 'block';
-        }
+        showResult();
       }
+    });
+  }
+
+  /* ── Construir la fila de chips 0-10 ── */
+  function buildChips(container, selected, onPick) {
+    container.innerHTML = '';
+    var base = 'aspect-square w-full flex items-center justify-center rounded-xl font-bold text-base sm:text-lg border-2 transition-all duration-150 cursor-pointer select-none active:scale-90 outline-none focus-visible:border-brand-primary ';
+    var unselected = base + 'bg-brand-card/50 dark:bg-slate-900/35 border-transparent hover:border-brand-primary/50 text-brand-text';
+    var selectedCls = base + 'bg-brand-primary border-brand-primary text-white shadow-sm';
+
+    for (var v = 0; v <= 10; v++) {
+      (function (v) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = String(v);
+        btn.setAttribute('role', 'radio');
+        btn.setAttribute('aria-checked', v === selected ? 'true' : 'false');
+        btn.setAttribute('aria-label', 'Valor ' + v + ' de 10');
+        btn.className = v === selected ? selectedCls : unselected;
+        btn.addEventListener('click', function () { onPick(v); });
+        container.appendChild(btn);
+      })(v);
+    }
+  }
+
+  /* ── Mostrar resultado ── */
+  function showResult() {
+    var total = 0;
+    for (var i = 0; i < answers.length; i++) { total += (answers[i] || 0); }
+    lastScore = total;
+
+    D.score.textContent = total;
+    D.resultFill.style.width = Math.round((total / MAX) * 100) + '%';
+    D.resultProg.setAttribute('aria-valuenow', total);
+
+    /* Desglose por criterio */
+    D.breakdown.innerHTML = '';
+    CRITERIA.forEach(function (c, idx) {
+      var row = document.createElement('div');
+      row.className = 'flex items-center justify-between gap-3 py-2.5 border-b border-brand-border/30 last:border-b-0';
+
+      var label = document.createElement('span');
+      label.className = 'text-sm text-brand-text flex items-center gap-2';
+      var ico = document.createElement('span');
+      ico.setAttribute('aria-hidden', 'true');
+      ico.textContent = c.emoji;
+      label.appendChild(ico);
+      label.appendChild(document.createTextNode(' ' + c.label));
+
+      var val = document.createElement('span');
+      val.className = 'font-bold text-brand-primary text-sm bg-brand-card px-2.5 py-0.5 rounded-lg border border-brand-border shrink-0';
+      val.textContent = answers[idx] + '/10';
+
+      row.appendChild(label);
+      row.appendChild(val);
+      D.breakdown.appendChild(row);
+    });
+
+    /* Restablecer clases base */
+    D.resultBox.className = 'p-6 md:p-8 rounded-2xl border text-center transition-all duration-300 shadow-sm my-2 sm:my-4';
+    D.resultFill.className = 'h-full rounded-full transition-all duration-500';
+
+    if (total >= 50) {
+      D.resultBox.classList.add('bg-green-500/10', 'border-green-500/20', 'text-green-900', 'dark:text-green-100');
+      D.resultFill.classList.add('bg-green-600');
+      D.interp.innerHTML = '<strong>✅ Calidad de Vida BUENA.</strong>';
+      D.humanMsg.textContent = 'Tu perro aún disfruta momentos importantes contigo.';
+      D.recBox.innerHTML = '💡 <strong>Sigue así:</strong> Mantén los cuidados actuales y visita al veterinario en los controles rutinarios. Tu perro está respondiendo bien.';
+      D.ctaPilar.style.display = 'none';
+    } else if (total >= 35) {
+      D.resultBox.classList.add('bg-amber-500/10', 'border-amber-500/20', 'text-amber-900', 'dark:text-amber-100');
+      D.resultFill.classList.add('bg-amber-500');
+      D.interp.innerHTML = '<strong>⚠️ Calidad de Vida ACEPTABLE.</strong>';
+      D.humanMsg.textContent = 'Estás en un punto donde observar y acompañar es clave.';
+      D.recBox.innerHTML = '💡 <strong>Atención:</strong> Hay áreas que merecen seguimiento. Consulta a tu veterinario pronto para ajustar el plan de cuidados.';
+      D.ctaPilar.querySelector('a').textContent = '📖 Cómo mejorar la calidad de vida de tu perro';
+      D.ctaPilar.style.display = 'block';
+    } else {
+      D.resultBox.classList.add('bg-red-500/10', 'border-red-500/20', 'text-red-900', 'dark:text-red-100');
+      D.resultFill.classList.add('bg-red-600');
+      D.interp.innerHTML = '<strong>🛑 Calidad de Vida COMPROMETIDA.</strong>';
+      D.humanMsg.textContent = 'Es un momento difícil. Buscar claridad ahora también es una forma de cuidar de él.';
+      D.recBox.innerHTML = '💡 <strong>Importante:</strong> El puntaje indica sufrimiento significativo. Consulta a tu veterinario lo antes posible para evaluar opciones paliativas.';
+      D.ctaPilar.querySelector('a').textContent = '📖 Entender los cuidados paliativos y las opciones disponibles';
+      D.ctaPilar.style.display = 'block';
     }
 
-    if (recBox) recBox.style.display = 'block';
+    go(D.question, D.result);
+    D.stickybar.classList.remove('off');
+    document.body.classList.add('qol-result-active');
+  }
+
+  /* ── Texto plano del resultado (para copiar / compartir) ── */
+  function resultText() {
+    if (lastScore === null) return '';
+    var lines = ['📊 *Puntaje HHHHHMM: ' + lastScore + '/70*', ''];
+    CRITERIA.forEach(function (c, i) {
+      lines.push('  • ' + c.label + ': ' + answers[i] + '/10');
+    });
+    lines.push('');
+    lines.push('🔗 https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros');
+    return lines.join('\n');
   }
 
   /* ── Copiar resultado detallado ── */
   function copyToClipboard() {
-    var scoreEl = document.getElementById('h-final-score');
-    var score = scoreEl ? scoreEl.textContent : '35';
-    var lines = ['📊 *Puntaje HHHHHMM: ' + score + '/70*', ''];
-    if (sliders) {
-      for (var i = 0; i < sliders.length; i++) {
-        lines.push('  \u2022 ' + LABELS[i] + ': ' + sliders[i].value + '/10');
-      }
-    }
-    lines.push('');
-    lines.push('🔗 https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros');
-    
-    navigator.clipboard.writeText(lines.join('\n')).then(function () {
-      var msg = document.getElementById('copy-confirm');
-      if (msg) {
-        msg.style.display = 'block';
-        setTimeout(function () { msg.style.display = 'none'; }, 3000);
-      }
-    }).catch(function(err) {
+    var text = resultText();
+    if (!text || !navigator.clipboard) return;
+    navigator.clipboard.writeText(text).then(function () {
+      D.copyOk.style.display = 'block';
+      setTimeout(function () { D.copyOk.style.display = 'none'; }, 3000);
+    }).catch(function (err) {
       console.error('Error al copiar: ', err);
     });
   }
 
-  /* ── Compartir por WhatsApp (v4.1: texto más humano y compartible) ── */
+  /* ── Compartir por WhatsApp ── */
   function shareWhatsApp() {
-    var scoreEl = document.getElementById('h-final-score');
-    var score = scoreEl ? scoreEl.textContent : '35';
-    var text  =
+    if (lastScore === null) return;
+    var text =
       '📊 *Evalué la calidad de vida de mi perro*\n' +
-      'Resultado: ' + score + '/70\n\n' +
+      'Resultado: ' + lastScore + '/70\n\n' +
       'Hazlo aquí:\n' +
       'https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros';
     window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
@@ -603,8 +745,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
 
   /* ── Descargar recordatorio .ics ── */
   function downloadICS() {
-    var scoreEl = document.getElementById('h-final-score');
-    var score = scoreEl ? scoreEl.textContent : '35';
+    var score = lastScore === null ? '' : lastScore;
     var now    = new Date();
     var future = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
 
@@ -640,24 +781,25 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
   }
 
   /* ── Reiniciar ── */
-  function resetHCalc() {
-    if (sliders && displays) {
-      for (var i = 0; i < sliders.length; i++) {
-        sliders[i].value         = 5;
-        displays[i].textContent  = '5';
-      }
-    }
-    updateHCalc();
+  function reset() {
+    answers = new Array(CRITERIA.length).fill(null);
+    currentIndex = 0;
+    lastScore = null;
+
+    D.result.classList.add('off');
+    D.result.classList.remove('qolanim');
+    D.question.classList.add('off');
+    D.question.classList.remove('qolanim');
+
+    D.intro.classList.remove('off');
+    replay(D.intro);
+
+    D.stickybar.classList.add('off');
+    document.body.classList.remove('qol-result-active');
+    scrollToWidget();
   }
 
-  /* ── Exponer al scope global para onclick inline ── */
-  window.updateHCalc     = updateHCalc;
-  window.copyToClipboard = copyToClipboard;
-  window.shareWhatsApp   = shareWhatsApp;
-  window.downloadICS     = downloadICS;
-  window.resetHCalc      = resetHCalc;
-
-  /* ── Init ── */
+  /* ── Arranque robusto ── */
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
