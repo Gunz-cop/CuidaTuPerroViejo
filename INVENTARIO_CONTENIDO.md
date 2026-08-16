@@ -29,9 +29,20 @@ Las herramientas interactivas funcionan como un hub estratégico que atrae tráf
 | **Selector de Movilidad y Soporte** | `src/pages/herramientas/selector-movilidad-perros-mayores.astro` | `/herramientas/selector-movilidad-perros-mayores` | **Publicado** |
 | **Asistente de IA Cuida tu perro viejo** | `src/pages/asistente-ia.astro` | `/asistente-ia` | **Publicado** |
 
+### 🎯 Próximas Herramientas (Priorizadas)
+
+Siguiendo el patrón "artículo clínico → herramienta interactiva que aplica ese contenido". Orden de prioridad definido el 2026-07-22:
+
+1. **Test de Disfunción Cognitiva Canina (escala CCDR)** — Pilar 5. Cuestionario con puntaje basado en la escala clínica validada (Canine Cognitive Dysfunction Rating). Se apoya en el artículo ya publicado *Demencia senil en perros: señales de Disfunción Cognitiva (CCD)*. Primer candidato para probar histórico de resultados guardados por perro/fecha (visión de base de datos a futuro).
+2. **Calculadora de porciones/calorías para perro senior con necesidades especiales** — Pilar 3 (actualmente sin ninguna herramienta). Entrada: peso actual, peso objetivo, condición (perder/mantener/ganar), condición especial (IPE, Cushing). Se apoya en los artículos pendientes de dieta con sobrepeso, transición senior, IPE y el nuevo tema de huevo/multi-perro.
+3. **Escala visual de dolor articular y óseo** — Pilar 4. Cuestionario con puntaje, complemento directo del Selector de Movilidad ya publicado. Se apoya en el artículo pendiente *Cómo saber si tu perro siente dolor*.
+4. **Recordatorio y registro de medicación** — cruza Pilar 2/7. Registro de fármaco, dosis y última toma. Se apoya en el artículo ya publicado *Cómo dar medicación a un perro que no quiere*. Precursor directo de la ficha clínica (base de datos) descrita en la visión de producto a futuro.
+
+> **Visión de producto a futuro (2026-07-22):** convertir estas herramientas en una ficha clínica del perro con base de datos: histórico de escalas (HHHHHMM, CCDR, dolor) guardado por fecha, registro de medicación, notas de visitas veterinarias en palabras del usuario, y posible acceso de solo lectura para el veterinario. Las herramientas #1 y #4 de esta lista son los primeros candidatos para validar ese modelo de datos (perro + registro con fecha) antes de construir el sistema completo (cuentas de usuario, invitación a veterinario, etc.).
+
 ---
 
-## 📝 Inventario de Artículos Publicados (10 Artículos Activos)
+## 📝 Inventario de Artículos Publicados (13 Artículos Activos)
 
 A continuación se listan los artículos de blog ya implementados en el código de Astro, clasificados por su pilar correspondiente con su ruta física y sus URLs reales de redireccionamiento SEO.
 
@@ -48,10 +59,21 @@ A continuación se listan los artículos de blog ya implementados en el código 
   - **Archivo físico:** `src/content/blog/vacunas-desparasitacion-perros-senior.mdx`
   - **URL real:** `/salud-perros-mayores/vacunas-desparasitacion-perros-senior`
   - **URL de origen (Blogger):** `https://cuidatuperroviejo.com/2025/10/vacunas-desparasitacion-perros-senior.html`
-- **Mi perro viejo defeca mucho: causas de la poliquezia y tránsito intestinal**
+- **Mi perro viejo defeca mucho: causas reales de la poliquezia y cómo solucionarla**
   - **Archivo físico:** `src/content/blog/mi-perro-viejo-defeca-mucho-poliquezia.mdx`
   - **URL real:** `/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia`
   - **URL de origen:** *Nuevo artículo de la versión Astro (sin URL legacy)*
+  - **Última reescritura:** 2026-07-20 (6.095 palabras — ver `briefings/briefing-mi-perro-viejo-defeca-mucho-poliquezia.md`)
+- **Insuficiencia Pancreática Exocrina (IPE) y síndrome de malabsorción en perros mayores**
+  - **Archivo físico:** `src/content/blog/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.mdx`
+  - **URL real:** `/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion`
+  - **URL de origen:** *Nuevo artículo de la versión Astro (sin URL legacy)*
+  - **Última reescritura:** 2026-07-21 (5.694 palabras — ver `briefings/briefing-ipe-perdida-peso-perros-mayores.md`)
+- **Síndrome de Cushing en perros mayores: causas, síntomas y tratamiento**
+  - **Archivo físico:** `src/content/blog/sindrome-cushing-perros-mayores.mdx`
+  - **URL real:** `/salud-perros-mayores/sindrome-cushing-perros-mayores`
+  - **URL de origen:** *Nuevo artículo de la versión Astro (sin URL legacy)*
+  - **Última reescritura:** 2026-07-21 (ver `briefings/briefing-sindrome-cushing-perros-mayores-v2.md`)
 
 ### Pilar 3: Alimentación de Perros Senior
 - **Comida casera para perros mayores: recetas y pautas de nutrición**
@@ -97,14 +119,21 @@ A continuación se listan los artículos de blog ya implementados en el código 
 
 Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, se proponen los siguientes contenidos futuros basados en búsquedas reales:
 
-### Pilar 2: Salud de Perros Mayores (13 artículos totales propuestos)
-*Estado: 4 publicados, 9 por redactar*
+**Leyenda de estado:**
+- `[ ]` **Pendiente** — sin brief ni artículo.
+- `[~]` **En Briefing** — el brief ya existe en `/briefings/briefing-{{slug}}.md`, el artículo `.mdx` todavía no. Lo marca la skill `generar-briefing-contenido` al guardar el brief.
+- `[x]` **Publicado** — el `.mdx` ya está en `src/content/blog/`. Lo marca la skill `redactar-articulo-blog` al guardar el artículo.
+
+### Pilar 2: Salud de Perros Mayores (15 artículos totales propuestos)
+*Estado: 6 publicados, 9 por redactar*
 - [x] *Chequeo geriátrico canino* (Publicado)
 - [x] *Salud dental en perros mayores* (Publicado)
 - [x] *Vacunas y desparasitación* (Publicado)
-- [x] *Mi perro viejo defeca mucho más de lo normal* (Publicado)
-- [ ] *Síndrome de Cushing en perros mayores: disfunción de las glándulas adrenales, síntomas y diagnóstico* **[Urgente - Cushing / Adrenales]**
-- [ ] *Pérdida de peso extrema en la vejez canina: ¿qué es la Insuficiencia Pancreática Exocrina (IPE) y el síndrome de malabsorción?* **[Urgente - Pérdida peso]**
+- [x] *Mi perro viejo defeca mucho: causas reales de la poliquezia y cómo solucionarla* (Publicado — reescrito 2026-07-20)
+- [x] *Síndrome de Cushing en perros mayores: causas, síntomas y tratamiento* (Publicado — 2026-07-21) **[Urgente - Cushing / Adrenales]**
+- [x] *Pérdida de peso extrema en la vejez canina: ¿qué es la Insuficiencia Pancreática Exocrina (IPE) y el síndrome de malabsorción?* (Publicado) **[Urgente - Pérdida peso]**
+- [ ] *Glándulas adrenales agrandadas en la ecografía de tu perro senior: qué significa la hiperplasia bilateral y cuándo apunta a Cushing hipofisario* (Complementario al artículo de Cushing — caso propio: Luna, ambas adrenales del mismo tamaño y agrandadas) **[Nuevo - Adrenales]**
+- [ ] *Mi perro mayor pierde peso y los análisis salen normales: qué pruebas faltan y cuándo pedir una segunda opinión* (Enfoque en el proceso diagnóstico frustrante, distinto del artículo de IPE que ya tiene causa confirmada — caso propio: Luna, más de un año sin diagnóstico) **[Nuevo - Pérdida de peso sin dx]**
 - [ ] *Mal aliento (halitosis) en perros viejos: causas subyacentes y soluciones reales* (Búsqueda GSC)
 - [ ] *Limpieza bucal y anestesia en perros ancianos: balanceando riesgos y beneficios de la profilaxis* (Búsqueda GSC)
 - [ ] *Convulsiones y ataques epilépticos en la vejez: causas, riesgos y cómo actuar en una crisis* (Búsqueda GSC)
@@ -113,9 +142,10 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [ ] *Diabetes canina en la tercera edad: control de glucosa, síntomas y tratamiento*
 - [ ] *Cáncer y tumores geriátricos: señales de advertencia física que no debes pasar por alto*
 
-### Pilar 3: Alimentación de Perros Senior (10 artículos totales propuestos)
-*Estado: 1 publicado, 9 por redactar*
+### Pilar 3: Alimentación de Perros Senior (11 artículos totales propuestos)
+*Estado: 1 publicado, 10 por redactar*
 - [x] *Comida casera para perros mayores* (Publicado)
+- [ ] *Yema o clara de huevo para perros senior: cómo alimentar a dos perros con necesidades opuestas (uno debe subir y otro bajar de peso) en la misma casa* (Título tentativo, pendiente de ajustar — caso propio: Luna con yema para engordar, Dakota con clara para adelgazar) **[Nuevo - Huevo / multi-perro]**
 - [ ] *Cómo alimentar a un perro senior sin dientes: recetas blandas y papillas caseras* (Búsqueda GSC)
 - [ ] *Dieta BARF para perros senior: pros, contras y cómo adaptarla de forma segura* (Búsqueda GSC)
 - [ ] *Pienso senior con condroprotectores: qué buscar en las etiquetas nutricionales* (Búsqueda GSC)
@@ -139,31 +169,33 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [ ] *Ejercicios terapéuticos de bajo impacto para prevenir la atrofia muscular geriátrica*
 - [ ] *Cómo saber si tu perro siente dolor: escala visual de dolor articular y óseo*
 
-### Pilar 5: Salud Mental y Emocional (10 artículos totales propuestos)
-*Estado: 1 publicado, 9 por redactar*
+### Pilar 5: Salud Mental y Emocional (11 artículos totales propuestos)
+*Estado: 1 publicado, 10 en briefing (tanda de briefings del 2026-08-14)*
 - [x] *Demencia senil en perros: señales de Disfunción Cognitiva (CCD)* (Publicado)
-- [ ] *Ansiedad por separación y apego en perros senior: causas y pautas de alivio* (Búsqueda GSC)
-- [ ] *El síndrome del ocaso (sundowning) en perros: por qué empeoran al atardecer* (Búsqueda GSC)
-- [ ] *Trastornos del sueño en perros ancianos: por qué tu perro se despierta de noche y llora* (Búsqueda GSC)
-- [ ] *¿Es normal que mi perro viejo duerma tanto? Diferencias entre cansancio y letargo* (Búsqueda GSC)
-- [ ] *Juegos de olfato y estimulación cognitiva para frenar el Alzheimer canino*
-- [ ] *Pérdida de sentidos (ceguera y sordera) en perros mayores: cómo adaptar tu comunicación*
-- [ ] *Depresión en perros ancianos: cómo identificarla y devolverles el entusiasmo*
-- [ ] *La importancia de una rutina diaria rígida para perros con disfunción cognitiva*
-- [ ] *Feromonas, fitoterapia y terapias naturales para calmar la ansiedad geriátrica*
+- [~] *Ansiedad por separación y apego en perros senior: causas y pautas de alivio* (En Briefing — ver `briefings/briefing-ansiedad-separacion-perros-senior.md`)
+- [~] *El síndrome del ocaso (sundowning) en perros: por qué empeoran al atardecer* (En Briefing — ver `briefings/briefing-sindrome-ocaso-sundowning-perros.md`)
+- [~] *Trastornos del sueño en perros ancianos: por qué tu perro se despierta de noche y llora* (En Briefing — ver `briefings/briefing-trastornos-sueno-perros-ancianos-llora-noche.md`)
+- [~] *¿Es normal que mi perro viejo duerma tanto? Diferencias entre cansancio y letargo* (En Briefing — ver `briefings/briefing-perro-viejo-duerme-mucho-letargo.md`)
+- [~] *Juegos de olfato y estimulación cognitiva para frenar el Alzheimer canino* (En Briefing — ver `briefings/briefing-juegos-olfato-estimulacion-cognitiva-perros-mayores.md`)
+- [~] *Pérdida de sentidos (ceguera y sordera) en perros mayores: cómo adaptar tu comunicación* (En Briefing — ver `briefings/briefing-ceguera-sordera-perros-mayores-comunicacion.md`)
+- [~] *Depresión en perros ancianos: cómo identificarla y devolverles el entusiasmo* (En Briefing — ver `briefings/briefing-depresion-perros-ancianos.md`)
+- [~] *La importancia de una rutina diaria rígida para perros con disfunción cognitiva* (En Briefing — ver `briefings/briefing-rutina-diaria-perros-disfuncion-cognitiva.md`)
+- [~] *Feromonas, fitoterapia y terapias naturales para calmar la ansiedad geriátrica* (En Briefing — ver `briefings/briefing-feromonas-terapias-naturales-ansiedad-perros-mayores.md`)
+- [x] *Agresividad de aparición tardía en perros mayores: cuándo es dolor y cuándo es deterioro cognitivo* (Publicado — 2026-08-15) **[Nuevo - Tema añadido 2026-08-14, no previsto en el catálogo original]**
 
-### Pilar 6: Higiene y Hogar para Perros Senior (10 artículos totales propuestos)
-*Estado: 1 publicado, 9 por redactar*
+### Pilar 6: Higiene y Hogar para Perros Senior (11 artículos totales propuestos)
+*Estado: 1 publicado, 10 en briefing (tanda de briefings del 2026-08-14)*
 - [x] *Incontinencia urinaria en perros mayores: causas y soluciones* (Publicado)
-- [ ] *Incontinencia fecal en perros senior: manejo de higiene, alimentación y consejos de limpieza*
-- [ ] *Cómo bañar y asear a un perro viejo con problemas de movilidad sin causarle dolor*
-- [ ] *Verrugas, bultos y quistes cutáneos en la vejez: guía visual de dermatología geriátrica* (Búsqueda GSC)
-- [ ] *Cuidado de la piel y el pelo del perro senior: sequedad, descamación y callos de apoyo*
-- [ ] *Limpieza segura de ojos y oídos en perros ancianos con secreciones frecuentes*
-- [ ] *Productos de higiene indispensables: empapadores, pañales y limpiadores enzimáticos*
-- [ ] *Corte de uñas y cuidado de almohadillas en perros que ya no desgastan por caminar*
-- [ ] *Eliminación de olores a orina y accidentes de perros ancianos en el hogar*
-- [ ] *Prevención y tratamiento de callosidades (higromas) en codos y articulaciones de perros senior*
+- [~] *Incontinencia fecal en perros senior: manejo de higiene, alimentación y consejos de limpieza* (En Briefing — ver `briefings/briefing-incontinencia-fecal-perros-senior.md`)
+- [~] *Cómo bañar y asear a un perro viejo con problemas de movilidad sin causarle dolor* (En Briefing — ver `briefings/briefing-banar-perro-viejo-movilidad-reducida.md`)
+- [~] *Verrugas, bultos y quistes cutáneos en la vejez: guía visual de dermatología geriátrica* (En Briefing — ver `briefings/briefing-verrugas-bultos-quistes-perros-mayores.md`)
+- [~] *Cuidado de la piel y el pelo del perro senior: sequedad, descamación y callos de apoyo* (En Briefing — ver `briefings/briefing-cuidado-piel-pelo-perro-senior.md`)
+- [~] *Limpieza segura de ojos y oídos en perros ancianos con secreciones frecuentes* (En Briefing — ver `briefings/briefing-limpieza-ojos-oidos-perros-ancianos.md`)
+- [~] *Productos de higiene indispensables: empapadores, pañales y limpiadores enzimáticos* (En Briefing — ver `briefings/briefing-empapadores-panales-limpiadores-enzimaticos-perros.md`)
+- [~] *Corte de uñas y cuidado de almohadillas en perros que ya no desgastan por caminar* (En Briefing — ver `briefings/briefing-corte-unas-almohadillas-perros-mayores.md`)
+- [~] *Eliminación de olores a orina y accidentes de perros ancianos en el hogar* (En Briefing — ver `briefings/briefing-eliminar-olor-orina-perro-casa.md`)
+- [~] *Prevención y tratamiento de callosidades (higromas) en codos y articulaciones de perros senior* (En Briefing — ver `briefings/briefing-callosidades-higromas-codos-perros-senior.md`)
+- [~] *Dermatitis por humedad en perros mayores incontinentes: cómo prevenir la quemadura por orina* (En Briefing — ver `briefings/briefing-dermatitis-humedad-quemadura-orina-perros.md`) **[Nuevo - Tema añadido 2026-08-14, no previsto en el catálogo original]**
 
 ### Pilar 7: Cuidados Paliativos y Eutanasia (10 artículos totales propuestos)
 *Estado: 2 publicados, 8 por redactar*

@@ -58,8 +58,9 @@ La experiencia real debe integrarse como el hilo narrativo del artículo. No es 
 
 > [!IMPORTANT]
 > A continuación se detallan las **mínimo 6 fuentes de alta autoridad** científicas o veterinarias. Toda la base médica, datos fisiopatológicos y recomendaciones de seguridad de este artículo se originan directamente de este listado.
+> Cada enlace debe apuntar al documento/estudio específico citado, no a la homepage genérica de la institución. Si no puedes verificar la URL exacta, no la inventes: escribe el nombre completo del estudio/institución y marca `[URL no verificada — confirmar antes de publicar]`. Si el tema no tiene 6 fuentes de esta autoridad disponibles, documenta las que sí encontraste y explica la limitación en vez de rellenar con enlaces débiles.
 
-1.  **Fuente 1 (Estudio/Directriz):** [Nombre del estudio/entidad y URL en texto plano]
+1.  **Fuente 1 (Estudio/Directriz):** [Nombre del estudio/entidad y URL profunda en texto plano, o `[URL no verificada]` si no se pudo confirmar]
     *   *Dato clave:* [Mecanismo fisiológico, estadísticas o pauta médica extraída]
 2.  **Fuente 2 (Estudio/Directriz):** [Detalles]
 3.  **Fuente 3 (Estudio/Directriz):** [Detalles]
@@ -98,6 +99,9 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 | **Spoke 1** | {{TITULO_ARTICULO_1}} | `/{{SLUG_DEL_PILAR}}/{{SLUG_1}}` | ✅ Publicado |
 | **Spoke 2** | {{TITULO_ARTICULO_2}} | `/{{SLUG_DEL_PILAR}}/{{SLUG_2}}` | ✅ Publicado |
 | **Calculadora** | Calculadora de Calidad de Vida Canina | `/herramientas/calculadora-calidad-vida-perros` | ✅ Publicado |
+
+> [!NOTE]
+> Si el pilar es nuevo o el inventario tiene menos de 2 artículos publicados en esta sección, no inventes filas: sustituye la fila del spoke faltante por `Pendiente — aún no hay artículo publicado en este pilar` y deja solo el pilar y/o la calculadora como enlaces reales.
 
 ---
 
@@ -180,6 +184,9 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 ---
 
 ### [H2 - {{TITULO_DE_CASO_REAL_Y_RESULTADOS_5}}] — Target: ~700 palabras
+> [!IMPORTANT]
+> **Sección de inclusión obligatoria.** Es el 3er y último momento del arco narrativo del caso real (Apertura en Intro → Desarrollo en H2 intermedio → Cierre aquí). No se puede omitir ni fusionar silenciosamente con la sección de Conclusión.
+
 *   *Objetivo:* Cierre narrativo y emocional uniendo el desenlace de la historia real con la esperanza práctica.
 
 *   [Detalles de la recuperación y vida diaria actual del perro de la historia]
@@ -213,31 +220,77 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 
 ## 8. GUÍA VISUAL — 3 PROMPTS DE IMAGEN
 
+> [!IMPORTANT]
+> **Sujeto/raza fija en los 3 prompts:** `{{RAZA_Y_RASGOS_DEL_PROTAGONISTA_REAL}}` (ej. "Beagle senior, pelaje tricolor, complexión robusta") debe aparecer nombrado explícitamente en el prompt de **cada una** de las 3 imágenes — nunca sustituido por "a dog" o "a senior dog" genérico en ninguna. Si la historia tiene más de un perro, indica en cada prompt cuál protagoniza esa imagen específica.
+
 ### Imagen 1 — [Tipo de Imagen (Educativa / Resolutiva / Emocional)]
 *   **Nombre de archivo SEO:** `{{keyword-principal-descriptiva}}.jpg`
-*   **Prompt visual:** [Tipo de plano | Escenario realista | Acción concreta | Sujeto principal | Contexto emocional | Iluminación natural cálida | Profundidad de campo muy estrecha (shallow DOF) | Detalle de texturas | Estilo fotoperiodismo tipo National Geographic, cero stock]
+*   **Prompt visual:** [Tipo de plano | Escenario realista y concreto (no genérico) | Acción específica | **`{{RAZA_Y_RASGOS_DEL_PROTAGONISTA_REAL}}`** | Contexto emocional/narrativo ligado a la historia real | Iluminación natural cálida | Profundidad de campo estrecha (shallow DOF) | Detalle de texturas (pelaje, piel, entorno) | Estilo fotoperiodístico/cinematográfico, cero apariencia de banco de imágenes]
 *   **Caption (Pie de foto):** [Máximo 2 líneas de texto que aporta valor e información adicional]
 
 ### Imagen 2 — [Tipo]
 *   **Nombre de archivo SEO:** `{{nombre-archivo-2}}.jpg`
-*   **Prompt visual:** [Detalles]
+*   **Prompt visual:** [Mismo nivel de detalle que Imagen 1, con **`{{RAZA_Y_RASGOS_DEL_PROTAGONISTA_REAL}}`** nombrada explícitamente de nuevo — no la des por sobreentendida]
 *   **Caption:** [Pie de foto]
 
 ### Imagen 3 — [Tipo]
 *   **Nombre de archivo SEO:** `{{nombre-archivo-3}}.jpg`
-*   **Prompt visual:** [Detalles]
+*   **Prompt visual:** [Mismo nivel de detalle, con **`{{RAZA_Y_RASGOS_DEL_PROTAGONISTA_REAL}}`** nombrada explícitamente una tercera vez]
 *   **Caption:** [Pie de foto]
 
 ---
 
-## 9. CHECKLIST DE VALIDACIÓN FINAL DEL REDACTOR
-- [ ] ¿El frontmatter YAML es idéntico al configurado en la Sección 1?
+## 9. CONTRATO DE ENTREGA — NO NEGOCIABLES
+
+> [!IMPORTANT]
+> Esta sección es el contrato mínimo entre el brief y el artículo final. El artículo `.mdx` **no se considera terminado** si incumple cualquiera de estos puntos, sin importar que el texto "se lea bien" o "suene completo". Sirve como checklist de auditoría independiente del brief — para el redactor humano y para la futura skill de redacción automatizada.
+
+**1. Volumen mínimo real (no estimado):**
+El artículo final debe medir entre **{{PALABRAS_MIN}} y {{PALABRAS_MAX}} palabras** (tolerancia ±15% sobre el target de la Sección 6), contadas sobre el cuerpo `.mdx` real, no sobre la suma de targets del brief. Si el conteo real cae por debajo del mínimo, el artículo se rechaza y se completa antes de publicar — no se marca como listo "porque cubre los temas".
+
+**2. Fuentes que deben aparecer citadas por nombre en el cuerpo, no solo en el brief:**
+Cada una de las fuentes listadas en la Sección 3 debe aparecer **mencionada por su nombre** (autor/institución) en el H2/H3 al que fue asignada en la Sección 6. Lista de control:
+| # | Fuente | H2 asignado | ¿Citada en el artículo final? |
+|---|---|---|---|
+| 1 | {{NOMBRE_FUENTE_1}} | {{H2_ASIGNADO_1}} | ☐ |
+| 2 | {{NOMBRE_FUENTE_2}} | {{H2_ASIGNADO_2}} | ☐ |
+| 3 | {{NOMBRE_FUENTE_3}} | {{H2_ASIGNADO_3}} | ☐ |
+| 4 | {{NOMBRE_FUENTE_4}} | {{H2_ASIGNADO_4}} | ☐ |
+| 5 | {{NOMBRE_FUENTE_5}} | {{H2_ASIGNADO_5}} | ☐ |
+| 6 | {{NOMBRE_FUENTE_6}} | {{H2_ASIGNADO_6}} | ☐ |
+Si una fuente termina sin citar en el artículo final, el H2 correspondiente se considera sin sustento científico y debe corregirse antes de publicar.
+
+**3. Componentes estructurales obligatorios (checklist de conteo exacto):**
+- [ ] 3 `AlertBox` presentes, uno de cada tipo (`info`, `danger`, `warning`) — no menos, no repetidos del mismo tipo.
+- [ ] 1 `FAQ` con las {{N}} preguntas definidas en la Sección 6.
+- [ ] El enlace a la calculadora de calidad de vida presente, si el pilar es Salud o Cuidados Paliativos (ver Sección 5).
+- [ ] Los enlaces internos de la Sección 5 (pilar + spokes) presentes tal como se definieron.
+
+**4. Arco narrativo del caso real presente en el artículo, no solo planificado:**
+- [ ] Apertura del caso real en la Introducción.
+- [ ] Desarrollo del caso real en el H2 intermedio asignado.
+- [ ] **Cierre del caso real en el último H2 antes de Conclusión/FAQ** — este es el punto que más se ha saltado en entregas anteriores; verificar explícitamente que existe como sección propia, no como una frase suelta en la conclusión.
+
+---
+
+## 10. CHECKLIST DE VALIDACIÓN FINAL DEL REDACTOR
+
+**A validar en este briefing (antes de pasar a redacción):**
+- [ ] ¿El frontmatter YAML es idéntico al configurado en la Sección 1 y el `pilar` es un enum válido de `config.ts`?
+- [ ] ¿El `seoTitle` mide ≤55 caracteres y la `metaDescription` ≤160 caracteres (contados, no estimados)?
+- [ ] ¿Se incluyeron las 6 fuentes al inicio, cada una con URL profunda verificable (o marcada `[URL no verificada]`)?
+- [ ] ¿Los enlaces internos usan rutas reales hacia artículos publicados en el inventario, o están marcados como "Pendiente" si no existen aún?
+- [ ] ¿La keyword/slug no canibaliza un artículo ya existente?
+- [ ] ¿La suma de los targets de palabras por sección está entre 6.000 y 6.500?
+- [ ] ¿Se completó la tabla de trazabilidad de fuentes de la Sección 9 (las 6 fuentes tienen H2 asignado)?
+
+**A validar en el artículo `.mdx` final contra el Contrato de Entrega (Sección 9):**
 - [ ] ¿Se importan correctamente AlertBox y FAQ al inicio del MDX?
 - [ ] ¿El texto empieza directamente sin título H1 `#`?
-- [ ] ¿Se incluyeron las 6 fuentes al inicio de la guía?
-- [ ] ¿Se referencia la historia real en mínimo 3 H2 del cuerpo del texto?
-- [ ] ¿Los enlaces internos usan rutas relativas válidas hacia artículos publicados?
+- [ ] ¿Se referencia la historia real en sus 3 momentos obligatorios (apertura, desarrollo y **cierre**)?
 - [ ] ¿Ningún párrafo supera las 3 líneas en pantallas móviles?
 - [ ] ¿Los H3 están colocados cada 150-200 palabras?
 - [ ] ¿Las imágenes tienen nombres SEO y prompts descriptivos sin estilo publicitario?
-- [ ] ¿El recuento de palabras totales está entre 6.000 y 6.500 palabras respetando los targets?
+- [ ] ¿El recuento de palabras real del artículo está entre 6.000 y 6.500 palabras (contado sobre el `.mdx`, no estimado)?
+- [ ] ¿Las 6 fuentes de la tabla de trazabilidad quedaron efectivamente citadas por nombre en el artículo?
+- [ ] ¿Los 3 `AlertBox`, el `FAQ` completo y el enlace a la calculadora (si aplica) están presentes en el `.mdx` publicado?

@@ -47,17 +47,17 @@ La experiencia con Toby es el hilo conductor del artículo. Debe aparecer en tre
 2.  **Merck Veterinary Manual - Cushing's Disease:**
     *   *Enlace:* https://www.merckvetmanual.com/endocrine-system/the-adrenal-glands/cushing-disease-hyperadrenocorticism
     *   *Dato clave:* Fisiopatología del hiperadrenocorticismo. Diferencia entre el origen hipofisario/pituitario (85% de los casos provocado por adenomas en la glándula pituitaria) y el origen adrenal (15% por tumores funcionales de las glándulas adrenales).
-3.  **WSAVA Global Pain Management & Clinical Guidelines:**
-    *   *Enlace:* https://wsava.org/ (Sección de Pautas Clínicas de Endocrinología)
+3.  **WSAVA - Guías de la Asociación Mundial de Veterinarios de Pequeños Animales sobre Hiperadrenocorticismo:**
+    *   *Enlace:* `[URL no verificada — confirmar antes de publicar: documento específico de WSAVA sobre protocolo diagnóstico de Cushing]`
     *   *Dato clave:* Protocolo de diagnóstico estricto: combinación del test de estimulación con ACTH y el test de supresión con dexametasona a dosis bajas (LDDST) para clasificar la tipología del Cushing.
 4.  **Journal of Veterinary Internal Medicine (ACVIM):**
     *   *Enlace:* https://pubmed.ncbi.nlm.nih.gov/29451731/ (PMID: 29451731)
     *   *Dato clave:* Consenso de sensibilidad y especificidad diagnóstica del test de estimulación con ACTH. Utilidad del test para el monitoreo post-tratamiento farmacológico en caninos geriátricos.
-5.  **AVMA (American Veterinary Medical Association) Publications:**
-    *   *Enlace:* https://www.avma.org/
+5.  **AVMA (American Veterinary Medical Association) - ficha clínica de hiperadrenocorticismo canino:**
+    *   *Enlace:* `[URL no verificada — confirmar antes de publicar: ficha clínica específica de AVMA sobre Cushing canino]`
     *   *Dato clave:* Predisposición racial y epidemiología del Cushing (Cocker Spaniel, Caniches, Teckels) y comorbilidades asociadas (hipertensión arterial sistémica, tromboembolismo pulmonar, infecciones urinarias recurrentes).
-6.  **UC Davis School of Veterinary Medicine (Endocrinology Service):**
-    *   *Enlace:* https://www.vetmed.ucdavis.edu/
+6.  **UC Davis School of Veterinary Medicine (Endocrinology Service) - hoja informativa sobre manejo de polidipsia en Cushing canino:**
+    *   *Enlace:* `[URL no verificada — confirmar antes de publicar: hoja informativa específica de UC Davis Endocrinology sobre polidipsia y Cushing]`
     *   *Dato clave:* Manejo doméstico de la polidipsia canina. Recomendaciones de no limitar el acceso al agua a menos que lo determine explícitamente el veterinario por riesgo de deshidratación grave.
 
 ---
@@ -236,21 +236,59 @@ La experiencia con Toby es el hilo conductor del artículo. Debe aparecer en tre
 
 ### Imagen 3 — Emocional
 *   **Nombre de archivo SEO:** `perro-senior-feliz-comiendo.jpg`
-*   **Prompt visual:** `Close-up of a senior dog with a grey face looking up happily at the camera next to a clean metal food dish. A human hand is gently scratching the dog behind the ear. Warm indoor lighting, shallow depth of field. Natural, non-commercial look.`
+*   **Prompt visual:** `Close-up of a senior Cocker Spaniel with a graying muzzle looking up happily at the camera next to a clean metal food dish. A human hand is gently scratching the dog behind the ear. Warm indoor lighting, shallow depth of field. Natural, non-commercial look.`
 *   **Caption:** "Un perro con Cushing bajo tratamiento adecuado recupera su vitalidad y disfruta de su rutina diaria con dignidad."
 
 ---
 
-## 9. CHECKLIST DE VALIDACIÓN FINAL DEL REDACTOR
-- [ ] ¿El frontmatter YAML tiene la estructura y enums válidos de `pilar`?
-- [ ] ¿El `seoTitle` en el frontmatter tiene como máximo 55 caracteres (para evitar recorte en Bing/Google)?
+## 9. CONTRATO DE ENTREGA — NO NEGOCIABLES
+
+> [!IMPORTANT]
+> El artículo `.mdx` no se considera terminado si incumple cualquiera de estos puntos, sin importar que el texto se lea completo.
+
+**1. Volumen mínimo real:** El artículo final debe medir entre **6.000 y 6.500 palabras** (tolerancia ±15%), contadas sobre el `.mdx` real, no sobre la suma de targets del brief.
+
+**2. Fuentes que deben aparecer citadas por nombre en el cuerpo:**
+| # | Fuente | H2 asignado | ¿Citada en el artículo final? |
+|---|---|---|---|
+| 1 | FDA Center for Veterinary Medicine | H2-4 (Tratamiento) | ☐ |
+| 2 | Merck Veterinary Manual | H2-1 (Qué es el Cushing) | ☐ |
+| 3 | WSAVA Clinical Guidelines | H2-3 (Diagnóstico) | ☐ |
+| 4 | Journal of Veterinary Internal Medicine (PMID 29451731) | H2-3 (Diagnóstico) | ☐ |
+| 5 | AVMA Publications | H2-1 y H2-5 (Epidemiología / Calidad de vida) | ☐ |
+| 6 | UC Davis School of Veterinary Medicine | H2-4 (Manejo de agua en casa) | ☐ |
+
+**3. Componentes estructurales obligatorios:**
+- [ ] 3 `AlertBox` presentes, uno de cada tipo (`info` en Intro, `danger` en H2-1, `warning` en H2-4).
+- [ ] 1 `FAQ` con las 7 preguntas definidas en la Sección 6.
+- [ ] Enlace a `/herramientas/calculadora-calidad-vida-perros` presente en H2-5.
+- [ ] Enlaces internos a `/salud-perros-mayores`, `/salud-perros-mayores/chequeo-geriatrico-canino` y `/salud-perros-mayores/salud-dental-perros-mayores` presentes.
+
+**4. Arco narrativo del caso real presente en el artículo:**
+- [ ] Apertura de Toby en la Introducción (el cuenco de agua vaciado 3 veces al día).
+- [ ] Desarrollo de Toby en H2-2 (abdomen péndulo y pérdida de masa muscular).
+- [ ] **Cierre de Toby en H2-5** (Trilostano diario, corriendo a su plato a los 13 años) — sección propia, no una frase suelta en la conclusión.
+
+---
+
+## 10. CHECKLIST DE VALIDACIÓN FINAL DEL REDACTOR
+
+**Validado en este briefing:**
+- [ ] ¿El frontmatter YAML tiene la estructura y enums válidos de `pilar` según `config.ts`?
+- [ ] ¿El `seoTitle` mide ≤55 caracteres y la `metaDescription` ≤160 caracteres?
+- [ ] ¿Se listan las 6 fuentes al inicio, con 3 marcadas como `[URL no verificada]` pendientes de confirmar antes de publicar?
+- [ ] ¿El enlace del pilar apunta a `/salud-perros-mayores` y los spokes a artículos reales publicados en el inventario?
+- [ ] ¿Se verificó que "síndrome de cushing en perros mayores" no canibaliza otro artículo del inventario?
+- [ ] ¿La suma de los targets de palabras por sección está entre 6.000 y 6.500?
+- [ ] ¿Se completó la tabla de trazabilidad de fuentes de la Sección 9 (las 6 fuentes tienen H2 asignado)?
+
+**Pendiente de validar en el `.mdx` final contra el Contrato de Entrega (Sección 9):**
 - [ ] ¿Se importan correctamente AlertBox y FAQ al inicio del MDX?
 - [ ] ¿El texto empieza directamente sin título H1 `#`?
-- [ ] ¿Se listan y detallan las 6 fuentes científicas de autoridad al inicio del briefing?
-- [ ] ¿Se referencia la historia de Toby en la introducción, en H2-2 y en H2-5?
-- [ ] ¿El enlace del pilar apunta a `/salud-perros-mayores`?
-- [ ] ¿Los enlaces spokes apuntan a artículos reales marcados como publicados en el inventario?
+- [ ] ¿Se referencia la historia de Toby en sus 3 momentos obligatorios: apertura (Intro), desarrollo (H2-2) y **cierre (H2-5)**?
 - [ ] ¿Ningún párrafo supera las 3 líneas en pantallas móviles?
 - [ ] ¿Los H3 están colocados cada 150-200 palabras?
 - [ ] ¿Las imágenes tienen nombres SEO y prompts descriptivos sin estilo publicitario?
-- [ ] ¿El recuento de palabras totales está entre 6.000 y 6.500 palabras respetando los targets?
+- [ ] ¿El recuento de palabras real del artículo está entre 6.000 y 6.500 palabras (contado sobre el `.mdx`, no estimado)?
+- [ ] ¿Las 6 fuentes de la tabla de trazabilidad quedaron efectivamente citadas por nombre en el artículo?
+- [ ] ¿Los 3 `AlertBox`, el `FAQ` completo y el enlace a la calculadora están presentes en el `.mdx` publicado?

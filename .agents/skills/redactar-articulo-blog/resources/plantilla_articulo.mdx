@@ -1,0 +1,85 @@
+---
+title: "{{TITULO_H1_LEGIBLE_Y_DIRECTO}}"
+seoTitle: "{{TITULO_SEO_MAX_55_CARACTERES}}"
+metaDescription: "{{META_DESCRIPCION_MAX_160_CARACTERES}}"
+pilar: "{{ENUM_PILAR_SEGUN_CONFIG_TS}}"
+keywordPrincipal: "{{KEYWORD_PRINCIPAL}}"
+heroImage: "/images/blog/{{SLUG}}/{{NOMBRE_IMAGEN_HERO}}.webp"
+heroImageAlt: "{{ALT_DESCRIPTIVO_IMAGEN_HERO}}"
+datePublished: "{{FECHA_AAAA-MM-DD}}"
+---
+
+import AlertBox from '../../components/AlertBox.astro';
+import FAQ from '../../components/FAQ.astro';
+
+{{PARRAFO_1_GANCHO_HISTORIA_REAL}}
+
+**Autoría:** Equipo Cuida a tu Perro Viejo · **Actualizado:** {{FECHA_EN_ESPANOL}}
+
+{{PARRAFO_2_CONTEXTO_PROBLEMA}}
+
+{{PARRAFO_3_PROMESA_DEL_ARTICULO_CON_ENLACE_A_PILAR}}
+
+<AlertBox type="info" title="{{TITULO_NOTA_EMPATIA}}">
+  {{TEXTO_ACOMPANAMIENTO}}
+</AlertBox>
+
+---
+
+## 1. {{TITULO_H2_FISIOLOGIA_O_CONTEXTO}}
+
+{{DESARROLLO}}
+
+### {{SUBTEMA_H3}}
+
+{{DESARROLLO}}
+
+<AlertBox type="danger" title="{{TITULO_ALERTA_SALUD}}">
+  {{ADVERTENCIA_CLINICA_URGENTE}}
+</AlertBox>
+
+---
+
+## 2. {{TITULO_H2_SINTOMAS_O_DESARROLLO_CON_HISTORIA_REAL}}
+
+{{DESARROLLO_CONECTADO_A_LA_HISTORIA_REAL}}
+
+![{{ALT_IMAGEN_2}}](/images/blog/{{SLUG}}/{{ARCHIVO_IMAGEN_2}}.webp)
+*{{CAPTION_IMAGEN_2}}*
+
+---
+
+## 3. {{TITULO_H2_TRATAMIENTO_O_MANEJO}}
+
+{{DESARROLLO}}
+
+<AlertBox type="warning" title="{{TITULO_SEGURIDAD_MEDICACION}}">
+  {{ADVERTENCIA_DOSIS_O_MANEJO}}
+</AlertBox>
+
+---
+
+## 4. {{TITULO_H2_CIERRE_HISTORIA_REAL}}
+
+{{CIERRE_NARRATIVO_DEL_CASO_REAL_CON_ESPERANZA_REALISTA}}
+
+---
+
+## Conclusión
+
+{{PARRAFO_INTEGRADOR_DE_CIERRE}}
+
+<AlertBox type="info" title="Fuentes científicas y de autoridad">
+Este artículo se basa en evidencia publicada por organizaciones veterinarias internacionales y revistas indexadas:
+
+- **{{INSTITUCION_O_AUTOR_1}}**: [{{TITULO_REAL_DEL_DOCUMENTO}}]({{URL_PROFUNDA}}) ({{DESCRIPCION_BREVE}}).
+- **{{INSTITUCION_O_AUTOR_2}}**: [{{TITULO_REAL_DEL_DOCUMENTO}}]({{URL_PROFUNDA}}) ({{DESCRIPCION_BREVE}}).
+
+**Nota de responsabilidad:** Las recomendaciones aquí presentadas son de carácter meramente educativo e informativo. Siempre debes consultar con un médico veterinario ante cualquier cambio en el comportamiento, la marcha o la salud general de tu compañero mayor.
+</AlertBox>
+
+<FAQ items={[
+  { question: '{{PREGUNTA_1}}', answer: '{{RESPUESTA_1}}' },
+  { question: '{{PREGUNTA_2}}', answer: '{{RESPUESTA_2}}' },
+  { question: '{{PREGUNTA_3}}', answer: '{{RESPUESTA_3}}' }
+]} />
