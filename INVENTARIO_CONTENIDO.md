@@ -186,7 +186,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 ### Pilar 6: Higiene y Hogar para Perros Senior (11 artículos totales propuestos)
 *Estado: 1 publicado, 10 en briefing (tanda de briefings del 2026-08-14)*
 - [x] *Incontinencia urinaria en perros mayores: causas y soluciones* (Publicado)
-- [~] *Incontinencia fecal en perros senior: manejo de higiene, alimentación y consejos de limpieza* (En Briefing — ver `briefings/briefing-incontinencia-fecal-perros-senior.md`)
+- [x] *Incontinencia fecal en perros senior: manejo de higiene, alimentación y consejos de limpieza* (Publicado)
 - [~] *Cómo bañar y asear a un perro viejo con problemas de movilidad sin causarle dolor* (En Briefing — ver `briefings/briefing-banar-perro-viejo-movilidad-reducida.md`)
 - [~] *Verrugas, bultos y quistes cutáneos en la vejez: guía visual de dermatología geriátrica* (En Briefing — ver `briefings/briefing-verrugas-bultos-quistes-perros-mayores.md`)
 - [~] *Cuidado de la piel y el pelo del perro senior: sequedad, descamación y callos de apoyo* (En Briefing — ver `briefings/briefing-cuidado-piel-pelo-perro-senior.md`)
