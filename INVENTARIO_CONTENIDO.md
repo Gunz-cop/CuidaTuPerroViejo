@@ -172,7 +172,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 ### Pilar 5: Salud Mental y Emocional (11 artículos totales propuestos)
 *Estado: 1 publicado, 10 en briefing (tanda de briefings del 2026-08-14)*
 - [x] *Demencia senil en perros: señales de Disfunción Cognitiva (CCD)* (Publicado)
-- [~] *Ansiedad por separación y apego en perros senior: causas y pautas de alivio* (En Briefing — ver `briefings/briefing-ansiedad-separacion-perros-senior.md`)
+- [x] *Ansiedad por separación en perros senior: por qué aparece de golpe a los 12 años* (Publicado)
 - [~] *El síndrome del ocaso (sundowning) en perros: por qué empeoran al atardecer* (En Briefing — ver `briefings/briefing-sindrome-ocaso-sundowning-perros.md`)
 - [~] *Trastornos del sueño en perros ancianos: por qué tu perro se despierta de noche y llora* (En Briefing — ver `briefings/briefing-trastornos-sueno-perros-ancianos-llora-noche.md`)
 - [~] *¿Es normal que mi perro viejo duerma tanto? Diferencias entre cansancio y letargo* (En Briefing — ver `briefings/briefing-perro-viejo-duerme-mucho-letargo.md`)
