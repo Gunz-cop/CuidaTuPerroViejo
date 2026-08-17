@@ -57,6 +57,7 @@ Esta habilidad es la continuación natural de **`generar-briefing-contenido`**: 
     ```mdx
     **Autoría:** Equipo Cuida a tu Perro Viejo · **Actualizado:** {{fecha en español, ej. "20 de julio de 2026"}}
     ```
+    **Sincroniza `datePublished` del frontmatter con esta misma fecha si es un artículo nuevo.** El brief trae `datePublished` con la fecha en que se generó el brief, que puede ser días antes de la redacción real (confirmado en producción: brief del día 14, artículo redactado y guardado el 16, `datePublished` se dejó en 14 mientras el byline decía 16 — desincronizados). Actualiza `datePublished` a la fecha real de guardado antes de escribir el archivo. **Excepción:** si el brief es una reescritura de un artículo ya publicado, `datePublished` se mantiene en la fecha original (ver brief) para no perder la señal de antigüedad SEO — ahí sí es correcto que difiera de `Actualizado`.
 *   Usa enlaces internos **contextuales dentro de los párrafos** (`[texto ancla](/pilar/slug)`) hacia el pilar y los spokes que define el brief — esta es la sustitución real del antiguo `cluster_cards`, y sigue siendo trabajo manual porque el layout no lo hace por ti.
 *   Imágenes de cuerpo en sintaxis Markdown simple, seguidas de una línea en cursiva con el pie de foto (patrón real usado en todo el blog):
     ```mdx
@@ -104,6 +105,7 @@ La redacción de un artículo de 6.000+ palabras de un tirón degrada la calidad
 Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra el `.mdx` real (no contra lo planeado):
 *   Cuenta las palabras reales del cuerpo (excluyendo frontmatter e imports) con un conteo real, no una estimación a ojo: aísla el texto que va después del segundo `---` y de las líneas `import`, y cuenta con una herramienta (p. ej. `wc -w` sobre ese fragmento, o el archivo ya guardado en disco). Si cae por debajo del mínimo, complétalo — no lo marques como listo "porque cubre los temas". Si se pasa por encima del máximo con tolerancia (±15% sobre el target de la Sección 6), no lo entregues así "porque el contenido es bueno" — recórtalo (ver Fase 3, aviso anti-scope-creep) antes de darlo por terminado.
 *   **Repite el conteo H2 por H2**, no solo el total: cada `## ` hasta el siguiente `## ` es un H2; compara sus palabras reales contra su target individual de la Sección 6 del brief (±15%) — un total correcto puede esconder un H2 muy por debajo compensado por otro muy por encima. Si el H2 de cierre narrativo (el último antes de Conclusión) queda por debajo de su target mientras otro H2 lo supera, no lo dejes así: recorta el H2 sobrante y desarrolla más el cierre, porque ese es el que sostiene el caso clínico real del artículo.
+    *   **Deja constancia por escrito, no solo en tu razonamiento interno:** una regla de verificación que no produce un artefacto visible se puede dar por "cumplida" sin haberla corrido de verdad (confirmado en producción: la regla de conteo por H2 existía en esta misma skill y el redactor igual reportó solo el total). Construye la tabla H2 / palabras reales / target / desviación (ver formato exacto en Fase 5) mientras haces este conteo — no la reconstruyas de memoria al final.
 *   Confirma que cada una de las fuentes que el brief realmente documentó en la Sección 3 aparece citada **por su nombre dentro de su H2 asignado**, no solo en el cuadro de cierre. Si son menos de 6 porque el brief ya justificó esa limitación (tema nicho, poca literatura disponible), eso no es un fallo — no lo confundas con fuentes faltantes, y no aceptes que se hayan añadido fuentes débiles o inventadas solo para completar el número.
 *   Confirma que existe el cuadro de cierre `<AlertBox type="info" title="Fuentes científicas y de autoridad">` con las fuentes de la Sección 3, cada una como enlace real con texto ancla descriptivo (el título del documento, no "leer más" ni la URL en crudo) — salvo las marcadas `[URL no verificada]`, que van citadas sin enlace.
 *   Si alguna fuente estaba marcada `[URL no verificada]`, confirma que quedó citada por nombre sin enlace (ni placeholder literal ni URL inventada) y que está anotada para el resumen de entrega.
@@ -115,17 +117,42 @@ Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra 
 *   Valida el frontmatter contra el `z.object(...).strict()` de `config.ts`: solo `title`, `seoTitle`, `metaDescription` (≤160 car.), `pilar`, `keywordPrincipal`, `heroImage`, `heroImageAlt`, `legacyUrl`, `status`, `datePublished` — ningún campo extra.
 *   Confirma que el byline `**Autoría:** Equipo Cuida a tu Perro Viejo · **Actualizado:** {{fecha}}` está presente tras el primer párrafo, con el nombre escrito exactamente así (no una de las variantes que existen en el corpus histórico).
 *   Revisa el formato mobile-first: ningún párrafo debería superar ~3 líneas en pantalla móvil (aprox. 30-40 palabras), y cada `H2` debería traer al menos un `H3` por cada 150-200 palabras de desarrollo. Si encuentras un párrafo largo o un tramo sin subtítulos, córtalo antes de entregar — no lo dejes pasar "porque el contenido está bien".
+*   **Mide la densidad de párrafo, no la estimes a ojo** (regla existente, método nuevo — verificado que sin un comando exacto la regla no se aplica en la práctica). Corre esto sobre el `.mdx` real:
+    ```bash
+    awk '/^---$/{c++; next} c>=2' ARCHIVO.mdx \
+      | grep -v "^import \|^#\|^!\[\|^\*\|^<\|^ \|^-\|^]" \
+      | awk 'NF>5{print NF}' | sort -n \
+      | awk '{a[NR]=$1; s+=$1} END{print "media:",int(s/NR); \
+          print "mediana:",a[int(NR/2)]; c=0; \
+          for(i=1;i<=NR;i++) if(a[i]>50) c++; \
+          print ">50 palabras:",int(c*100/NR)"%"}'
+    ```
+    Referencia real: un artículo con media 30 / mediana 29 / 3% de párrafos >50 palabras se considera bien aireado; uno con media 56 / mediana 57 / 66% >50 está al doble de densidad de lo que pide el formato mobile-first, aunque el conteo total de palabras sea correcto.
+    **Causalidad, no solo síntoma:** si el artículo va corto de palabras Y la densidad sale alta, el orden de la corrección importa — **primero divide los párrafos densos, después evalúa si sigue faltando volumen**. Ampliar párrafos ya densos "arregla" el conteo total y empeora exactamente lo que el formato mobile-first existe para evitar. Un artículo corto y aireado es más fácil de completar bien que uno denso al que solo le falta relleno.
 
 ### Fase 5: Guardado del Artículo
 
 1.  **Ruta de guardado:** `src/content/blog/{{slug}}.mdx` — a diferencia del brief (que vive en `/briefings/`, ignorado por Git), este archivo **sí se versiona**.
-2.  **Confirmación:** muestra el artículo completo (o al menos frontmatter + lista de H2 + conteo de palabras real, medido con el mismo método de la Fase 4, no estimado) y pregunta antes de escribir el archivo.
-3.  **Colisión de nombres:** si ya existe `src/content/blog/{{slug}}.mdx`, no lo sobrescribas en silencio — pregunta si reemplazar, versionar el slug, o cancelar.
-4.  **Recordatorios post-guardado:**
-    *   Las imágenes referenciadas deben añadirse en `public/images/blog/{{slug}}/` antes de que carguen en producción.
+2.  **Gate de completitud — no escribas ahí un artículo que la Fase 4 no aprobó.** `src/content/blog/` no es una carpeta de borradores: `getStaticPaths()` en `[slug].astro` genera una ruta por cada entrada de la colección `blog` sin excepción, y el campo `status` del frontmatter (`z.string().default('Publicado')` en `config.ts`) **no se lee en ningún filtro de build** — es una etiqueta decorativa, no un mecanismo de bloqueo. Poner `status: "Borrador"` en un artículo incompleto **no impide que se compile a `dist/` y se sirva en el próximo deploy** (confirmado en producción: un artículo con déficit de palabras ya declarado por el propio redactor llegó a `dist/`). Si la Fase 4 encontró cualquier fallo sin resolver — déficit de palabras, fuente sin citar en su H2, componente faltante — **no guardes el archivo en `src/content/blog/` todavía**: muestra el avance en el chat o guárdalo en el scratchpad, y dile explícitamente al usuario qué falta y por qué no se guarda aún. El campo `status` del brief puede copiarse tal cual (`"Publicado"`) únicamente cuando el artículo ya pasó la Fase 4 completa — no antes, y no como sustituto de este gate.
+3.  **Confirmación:** muestra el artículo completo (o al menos frontmatter + lista de H2 + conteo de palabras real, medido con el mismo método de la Fase 4, no estimado) **junto con la Tabla de Verificación** (formato exacto abajo) y pregunta antes de escribir el archivo.
+4.  **Tabla de Verificación — inclúyela siempre en la entrega, no la reemplaces por un resumen en prosa:**
+    ```
+    | H2 | Palabras reales | Target (Sección 6) | Desviación |
+    |---|---|---|---|
+    | Introducción | {{n}} | ~{{target}} | {{%}} |
+    | {{Título H2-1}} | {{n}} | ~{{target}} | {{%}} |
+    | ... | | | |
+    | {{H2 de cierre narrativo}} | {{n}} | ~{{target}} | {{%}} |
+    | Conclusión | {{n}} | ~{{target}} | {{%}} |
+
+    Densidad de párrafo: media {{n}} / mediana {{n}} / párrafos >50 palabras {{%}}
+    ```
+5.  **Colisión de nombres:** si ya existe `src/content/blog/{{slug}}.mdx`, no lo sobrescribas en silencio — pregunta si reemplazar, versionar el slug, o cancelar.
+6.  **Recordatorios post-guardado:**
+    *   Las imágenes referenciadas deben añadirse en `public/images/blog/{{slug}}/` antes de que carguen en producción — **cuenta la `heroImage` del frontmatter junto con las de cuerpo**, no solo estas últimas (confirmado en producción: el aviso decía "faltan 2" contando solo cuerpo, cuando el total real —hero incluida— era 3).
     *   Si quedaron fuentes citadas sin URL (marcadas `[URL no verificada]` en el brief), lístalas explícitamente para que el usuario las confirme o agregue el enlace antes de publicar.
     *   No hagas commit ni push a menos que el usuario lo pida explícitamente.
-5.  **Marca el estado del brief y del inventario** (una vez el artículo esté guardado y aprobado):
+7.  **Marca el estado del brief y del inventario** (una vez el artículo esté guardado y aprobado):
     *   **En el brief** (`/briefings/briefing-{{slug}}.md`): agrega una línea de estado cerca del título, por ejemplo:
         ```
         > [!NOTE]
@@ -133,7 +160,7 @@ Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra 
         ```
         No muevas ni borres el archivo del brief a otra carpeta — sigue siendo referencia útil (fuentes verificadas, plan de imágenes) para una futura reescritura, y moverlo rompería cualquier ruta que ya se haya compartido hacia él (en un prompt, en otra conversación, etc.).
     *   **En `INVENTARIO_CONTENIDO.md`:** actualiza la entrada del artículo — el título si cambió, y la casilla de su pilar a `[x] *Título* (Publicado)`. Si es una reescritura de un artículo que ya existía, dilo explícitamente: `(Publicado — reescrito {{fecha}})`, para que quede claro que no es contenido nuevo desde cero y para que futuros brief no lo canibalicen por error.
-    *   No hace falta un estado más granular (borrador/en revisión/etc.): en este repo, guardar el `.mdx` en `src/content/blog/` ya equivale a "listo para el próximo build" — no existe una etapa de staging separada que rastrear.
+    *   No inventes un campo de estado más granular en el frontmatter (el schema de `config.ts` no lo soporta y `status` no filtra nada en el build de todas formas, ver punto 2 de esta fase): el gate real es *no escribir el archivo* hasta pasar la Fase 4, no una etiqueta dentro de un archivo ya escrito.
 
 ---
 
@@ -149,9 +176,12 @@ Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra 
 *   [ ] ¿Las fuentes que el brief documentó (aunque sean menos de 6, si el brief ya justificó por qué) están citadas por nombre en los H2 a los que fueron asignadas?
 *   [ ] ¿Existe el cuadro `<AlertBox type="info" title="Fuentes científicas y de autoridad">` de cierre, con enlaces reales y texto ancla descriptivo (no genérico, no URL en crudo)?
 *   [ ] ¿Está el byline `Autoría`/`Actualizado` tras el primer párrafo, con el nombre estandarizado ("Equipo Cuida a tu Perro Viejo")?
-*   [ ] ¿Los párrafos se mantienen en ~3 líneas de pantalla móvil (aprox. 30-40 palabras) y hay un `H3` cada 150-200 palabras dentro de cada `H2`?
+*   [ ] ¿Los párrafos se mantienen en ~3 líneas de pantalla móvil (aprox. 30-40 palabras) y hay un `H3` cada 150-200 palabras dentro de cada `H2`? ¿Se midió la densidad real con el comando de Fase 4 (media/mediana/%>50), no a ojo?
 *   [ ] ¿El conteo real de palabras del cuerpo está dentro del rango pactado en el brief, **y cada H2 individual está dentro de su propio target de la Sección 6** (no solo el total agregado), con el H2 de cierre narrativo especialmente protegido?
+*   [ ] ¿Se construyó la Tabla de Verificación (H2/real/target/desviación + densidad) y se mostró junto con el artículo, en vez de resumir "está dentro de rango" sin desglose?
+*   [ ] Si algo de lo anterior falló, ¿se evitó guardar el archivo en `src/content/blog/` (el gate de completitud, no el campo `status`, que no bloquea nada)?
+*   [ ] ¿`datePublished` coincide con la fecha real de guardado (o se mantuvo la fecha original si es una reescritura declarada)?
 *   [ ] ¿Se preguntó al usuario antes de guardar el `.mdx`, y se manejó correctamente cualquier colisión de slug?
-*   [ ] ¿Se avisó sobre las imágenes pendientes de colocar en `public/images/blog/{{slug}}/`?
+*   [ ] ¿Se avisó sobre las imágenes pendientes de colocar en `public/images/blog/{{slug}}/`, **contando la hero además de las de cuerpo**?
 *   [ ] ¿Se avisó sobre las fuentes citadas sin URL (`[URL no verificada]`), si las hubo?
 *   [ ] ¿Se marcó el estado en el brief (redactado + fecha + ruta del `.mdx`) y se actualizó `INVENTARIO_CONTENIDO.md` (título, casilla, y si aplica, "reescrito {{fecha}}")?
