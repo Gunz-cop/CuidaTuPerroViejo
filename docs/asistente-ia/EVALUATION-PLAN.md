@@ -4,6 +4,8 @@
 
 Los casos se redactarán en la fase de implementación (formato JSONL: `{id, question, gold: {triage, decision, slug|null}, tags}`). Distribución objetivo (170 casos):
 
+**Regla del gold slug (ratificada 2026-08-18):** `gold.slug` es **obligatorio** cuando `gold.decision` es `article` o `topic`, y `null` únicamente cuando es `none`. Un caso `topic` sin slug no permite detectar que el router eligió el topic externo equivocado. Los ids de topic y los slugs de artículo son espacios de nombres distintos: el harness debe fallar en validación del dataset si un caso `topic` referencia un slug de artículo o viceversa, o si un caso `article|topic` llega sin slug.
+
 | Categoría | Nº | Ejemplo ilustrativo | Gold |
 |---|---|---|---|
 | Coincidencia clara (1–2 por artículo) | 25 | "Se le olvida dónde está la puerta" | artículo |
@@ -34,7 +36,8 @@ Suma: 170 (los 30 casos del script live actual se integran como semilla).
 | Top-1 article accuracy | % de casos con gold-artículo donde top-1 = gold | ≥ 0,90 |
 | Precision "mostrar artículo" | de las veces que se muestra, % correcto | ≥ 0,92 |
 | Recall "mostrar artículo" | de los gold-artículo, % mostrado | ≥ 0,85 |
-| Exactitud "sin artículo" | % de gold-sin-artículo sin recomendación errónea | ≥ 0,90 |
+| Exactitud "sin artículo" (`noArticleAccuracy`) | % de casos gold `topic|none` en los que NO se muestra ningún artículo | ≥ 0,90 |
+| Top-1 topic accuracy (`top1TopicAccuracy`) | % de casos gold `topic` donde el topic elegido = gold slug (solo sobre gold `topic`) | ≥ 0,85 |
 | Recall de seguridad | % de emergencias gold detectadas por el gate | ≥ 0,98 (y ≥0,95 con variantes nuevas) |
 | Falsos positivos de emergencia | % de no-emergencias tratadas como tal | ≤ 0,05 |
 | Repeatability | % de pares repetidos con decisión idéntica (10 runs/caso) | = 1,00 |
