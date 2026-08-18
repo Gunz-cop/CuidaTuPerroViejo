@@ -30,8 +30,8 @@ Campos obligatorios:
   dataset versionado; el harness no la imprime ni la guarda en resultados.
 - `gold.triage`: `emergency` o `non-emergency`.
 - `gold.decision`: `article`, `topic` o `none`.
-- `gold.slug`: slug del artículo cuando `decision` es `article`; `null` para
-  `topic` y `none`.
+- `gold.slug`: slug del artículo cuando `decision` es `article`, slug del topic
+  cuando `decision` es `topic`; es `null` únicamente para `none`.
 - `tags`: una o más etiquetas editoriales.
 - `category`: categoría principal no vacía.
 
@@ -44,7 +44,24 @@ Campo opcional:
 El loader rechaza JSON inválido, campos desconocidos, tipos incorrectos,
 strings vacíos, slugs no válidos, combinaciones incoherentes entre
 `gold.decision` y `gold.slug`, etiquetas duplicadas, IDs duplicados y
-`pairId` vacío. Se permiten líneas vacías; no se permiten comentarios.
+`pairId` vacío o singleton. Se permiten líneas vacías; no se permiten
+comentarios.
+
+Para congelar un dataset, el llamador debe proporcionar a
+`loadDatasetText`/`loadDatasetFile` un `namespaces` con dos `ReadonlySet`
+recibidos del catálogo editorial/build:
+
+```ts
+{
+  articleSlugs: new Set(['disfuncion-cognitiva-canina']),
+  topicSlugs: new Set(['tos-en-perros-mayores'])
+}
+```
+
+Los namespaces deben ser disjuntos. Con ellos, el loader rechaza un article
+que referencia un topic, un topic que referencia un artículo y cualquier slug
+ausente. Sin `namespaces` solo se puede hacer validación estructural; no debe
+usarse ese modo para congelar el dataset.
 
 No se incluye un número objetivo de casos en el schema. La distribución de 170
 casos y sus categorías pertenece a `EVALUATION-PLAN.md`; Editorial debe
@@ -69,10 +86,16 @@ El callback recibe el caso del dataset y devuelve solo esta predicción:
 }
 ```
 
-`selectedSlugs` representa la selección determinista del router. Puede tener
-hasta dos artículos en una decisión ambigua y puede representar un topic en
-una ruta `topic`. Para las métricas de artículos, solo cuenta una selección
-cuando `decision` es `article`; el primer slug es el top-1.
+`selectedSlugs` representa la selección determinista del router y sus
+cardinalidades están validadas:
+
+- `article`: uno o dos article slugs; el primero es el top-1.
+- `topic`: exactamente un topic slug.
+- `none`: ningún slug.
+
+La propiedad `decision` hace inequívoco el namespace. El harness no rechaza un
+slug equivocado en una predicción: ese es un error del router que debe contar
+como métrica, no como error de carga del dataset.
 
 La ejecución valida también la forma de cada predicción y rechaza respuestas
 malformadas con el `id` del caso y el número de run, sin incluir el texto de la
@@ -85,6 +108,9 @@ métrica. `value` es `null` si no hay casos aplicables; no se inventan ceros.
 
 - `top1ArticleAccuracy`: en casos con gold de artículo, el primer slug
   seleccionado coincide con el gold.
+- `top1TopicAccuracy`: en casos con gold `topic`, el primer topic seleccionado
+  coincide con `gold.slug`. El denominador contiene únicamente casos gold
+  `topic`; `value` es `null` si no hay ninguno.
 - `articlePrecision`: entre las predicciones que muestran artículo, la
   selección incluye el gold de artículo.
 - `articleRecall`: entre los gold de artículo, la selección incluye el gold.
@@ -93,9 +119,17 @@ métrica. `value` es `null` si no hay casos aplicables; no se inventan ceros.
 - `safetyRecall`: emergencias gold clasificadas como `emergency`.
 - `emergencyFalsePositiveRate`: casos no emergentes clasificados como
   `emergency`.
-- `repeatability`: pares `pairId` con una predicción idéntica en todos sus
-  casos y runs, dividido entre los pares con al menos dos casos. Si no se
-  pasan pares, el denominador es cero.
+- `repeatability.sameCaseRuns`: casos con al menos dos runs cuya predicción
+  completa (`triage`, `decision`, orden de slugs) es idéntica en todos los
+  runs, dividido entre los casos repetidos. Detecta divergencia de una misma
+  consulta incluso sin `pairId`.
+- `repeatability.equivalentPairs`: grupos `pairId` con al menos dos casos en
+  los que las predicciones correspondientes a cada run son idénticas entre
+  consultas equivalentes. Los pares singleton se rechazan durante la carga.
+
+Ambas métricas deben ser `1.00` para declarar repeatability completa. Si no
+hay runs repetidos o pares elegibles, su denominador es cero y su valor es
+`null`.
 
 Las métricas se calculan sobre todas las predicciones recibidas. Para medir
 repeatability de routing, se recomienda ejecutar al menos 3 runs; el plan de
@@ -140,9 +174,9 @@ npx tsx scripts/assistant-v2-eval/index.ts --help
 ```
 
 Para evaluar routing, una fase posterior importa `loadDatasetFile`,
-`evaluateDataset` y `calculateMetrics`, y conecta su función determinista de
-routing. El harness no es propietario de `retrieval.ts`, embeddings,
-reranking, thresholds ni generación.
+`evaluateDataset` y `calculateMetrics`, proporciona los namespaces y conecta
+su función determinista de routing. El harness no es propietario de
+`retrieval.ts`, embeddings, reranking, thresholds ni generación.
 
 ## Proceso de freeze posterior
 
@@ -163,11 +197,9 @@ hasta el bake-off. Esta infraestructura no los calibra.
 
 ## Preguntas de arquitectura
 
-- El plan menciona topics externos, pero su contrato mínimo solo exige `slug`
-  de artículo o `null`. Este esqueleto conserva el slug del topic únicamente
-  en la predicción futura, no en el gold; si se necesita medir accuracy de
-  topic por slug, Editorial/Architecture Owner debe aprobar una extensión del
-  contrato antes del freeze.
+- Los namespaces se reciben desde el catálogo/build y no se duplican en
+  Evaluation. La integración que prepare ese catálogo debe proporcionar ambos
+  sets antes del freeze; no se incluye una ruta provisional hardcodeada.
 - El plan usa tanto pares semánticamente equivalentes como consultas
   repetidas. `pairId` cubre las equivalencias; los runs cubren repetición de la
   misma línea. No se añaden campos de texto duplicado al dataset.
