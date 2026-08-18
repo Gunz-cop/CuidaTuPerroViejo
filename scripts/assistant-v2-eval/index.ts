@@ -21,6 +21,16 @@ export type EvaluationCase = {
   readonly pairId?: string;
 };
 
+export type EvaluationNamespaces = {
+  readonly articleSlugs: ReadonlySet<string>;
+  readonly topicSlugs: ReadonlySet<string>;
+};
+
+export type DatasetLoadOptions = {
+  /** Supply the editorial namespaces before freezing a dataset. */
+  readonly namespaces?: EvaluationNamespaces;
+};
+
 export type RoutingPrediction = {
   readonly triage: GoldTriage;
   readonly decision: GoldDecision;
@@ -53,17 +63,19 @@ export class EvaluationDatasetError extends Error {
   }
 }
 
+export type EvaluationPredictionFailure = 'callback-threw' | 'malformed-prediction';
+
 export class EvaluationPredictionError extends Error {
   readonly caseId: string;
   readonly run: number;
-  readonly issues: readonly string[];
+  readonly failure: EvaluationPredictionFailure;
 
-  constructor(caseId: string, run: number, issues: readonly string[]) {
-    super(`Malformed routing prediction for case ${caseId}, run ${run}: ${issues.join('; ')}`);
+  constructor(caseId: string, run: number, failure: EvaluationPredictionFailure) {
+    super(`Routing evaluation failed [${failure}] for case ${caseId}, run ${run}.`);
     this.name = 'EvaluationPredictionError';
     this.caseId = caseId;
     this.run = run;
-    this.issues = issues;
+    this.failure = failure;
   }
 }
 
@@ -82,7 +94,15 @@ const assertAllowedKeys = (value: Record<string, unknown>, allowed: readonly str
   }
 };
 
-const parseCase = (value: unknown, line: number): EvaluationCase => {
+const validateNamespaces = (namespaces: EvaluationNamespaces): void => {
+  for (const slug of namespaces.articleSlugs) {
+    if (namespaces.topicSlugs.has(slug)) {
+      throw new EvaluationDatasetError('Invalid evaluation namespaces', [`slug appears in both namespaces: ${slug}`]);
+    }
+  }
+};
+
+const parseCase = (value: unknown, line: number, namespaces?: EvaluationNamespaces): EvaluationCase => {
   const issues: string[] = [];
   if (!isRecord(value)) {
     throw new EvaluationDatasetError('Invalid JSONL case', ['case must be an object'], line);
@@ -118,8 +138,20 @@ const parseCase = (value: unknown, line: number): EvaluationCase => {
     if (value.gold.decision === 'article' && (typeof value.gold.slug !== 'string' || !isSlug(value.gold.slug))) {
       issues.push('gold.slug is required when gold.decision is article');
     }
-    if (value.gold.decision !== 'article' && value.gold.slug !== null) {
-      issues.push('gold.slug must be null when gold.decision is topic or none');
+    if (value.gold.decision === 'topic' && (typeof value.gold.slug !== 'string' || !isSlug(value.gold.slug))) {
+      issues.push('gold.slug is required when gold.decision is topic');
+    }
+    if (value.gold.decision === 'none' && value.gold.slug !== null) {
+      issues.push('gold.slug must be null when gold.decision is none');
+    }
+    if (namespaces && (value.gold.decision === 'article' || value.gold.decision === 'topic') && typeof value.gold.slug === 'string' && isSlug(value.gold.slug)) {
+      const expectedNamespace = value.gold.decision === 'article' ? namespaces.articleSlugs : namespaces.topicSlugs;
+      const otherNamespace = value.gold.decision === 'article' ? namespaces.topicSlugs : namespaces.articleSlugs;
+      if (otherNamespace.has(value.gold.slug)) {
+        issues.push(`gold.slug crosses namespaces for gold.decision ${value.gold.decision}`);
+      } else if (!expectedNamespace.has(value.gold.slug)) {
+        issues.push(`gold.slug is not present in the ${value.gold.decision} namespace`);
+      }
     }
     if (issues.length === 0) {
       gold = {
@@ -142,7 +174,8 @@ const parseCase = (value: unknown, line: number): EvaluationCase => {
 };
 
 /** Parse and validate JSONL without retaining or printing source text outside the returned cases. */
-export const loadDatasetText = (text: string): readonly EvaluationCase[] => {
+export const loadDatasetText = (text: string, options: DatasetLoadOptions = {}): readonly EvaluationCase[] => {
+  if (options.namespaces) validateNamespaces(options.namespaces);
   const cases: EvaluationCase[] = [];
   const ids = new Set<string>();
   const lines = text.split(/\r?\n/);
@@ -155,18 +188,25 @@ export const loadDatasetText = (text: string): readonly EvaluationCase[] => {
     } catch {
       throw new EvaluationDatasetError('Invalid JSONL case', ['line is not valid JSON'], index + 1);
     }
-    const evaluationCase = parseCase(parsed, index + 1);
+    const evaluationCase = parseCase(parsed, index + 1, options.namespaces);
     if (ids.has(evaluationCase.id)) {
       throw new EvaluationDatasetError('Duplicate dataset id', [`duplicate id: ${evaluationCase.id}`], index + 1);
     }
     ids.add(evaluationCase.id);
     cases.push(evaluationCase);
   }
+  const pairCounts = new Map<string, number>();
+  for (const evaluationCase of cases) {
+    if (evaluationCase.pairId) pairCounts.set(evaluationCase.pairId, (pairCounts.get(evaluationCase.pairId) ?? 0) + 1);
+  }
+  for (const [pairId, count] of pairCounts) {
+    if (count < 2) throw new EvaluationDatasetError('Invalid pairId', [`pairId must identify at least two cases: ${pairId}`]);
+  }
   return cases;
 };
 
-export const loadDatasetFile = async (filePath: string): Promise<readonly EvaluationCase[]> =>
-  loadDatasetText(await readFile(filePath, 'utf8'));
+export const loadDatasetFile = async (filePath: string, options: DatasetLoadOptions = {}): Promise<readonly EvaluationCase[]> =>
+  loadDatasetText(await readFile(filePath, 'utf8'), options);
 
 const validatePrediction = (value: unknown): RoutingPrediction => {
   const issues: string[] = [];
@@ -181,6 +221,15 @@ const validatePrediction = (value: unknown): RoutingPrediction => {
   }
   if (value.decision === 'article' && (!Array.isArray(value.selectedSlugs) || value.selectedSlugs.length === 0)) {
     issues.push('article decision requires at least one selected slug');
+  }
+  if (Array.isArray(value.selectedSlugs) && value.selectedSlugs.length > 2) {
+    issues.push('selectedSlugs may contain at most two slugs');
+  }
+  if (value.decision === 'article' && Array.isArray(value.selectedSlugs) && (value.selectedSlugs.length < 1 || value.selectedSlugs.length > 2)) {
+    issues.push('article decision requires one or two selected slugs');
+  }
+  if (value.decision === 'topic' && (!Array.isArray(value.selectedSlugs) || value.selectedSlugs.length !== 1)) {
+    issues.push('topic decision requires exactly one selected slug');
   }
   if (value.decision === 'none' && Array.isArray(value.selectedSlugs) && value.selectedSlugs.length > 0) {
     issues.push('none decision must not select slugs');
@@ -207,15 +256,13 @@ export const evaluateDataset = async (
       let rawPrediction: unknown;
       try {
         rawPrediction = await route(evaluationCase);
-      } catch (error) {
-        const message = error instanceof Error ? error.message : 'routing callback failed';
-        throw new EvaluationPredictionError(evaluationCase.id, run, [message]);
+      } catch {
+        throw new EvaluationPredictionError(evaluationCase.id, run, 'callback-threw');
       }
       try {
         results.push({ caseId: evaluationCase.id, run, prediction: validatePrediction(rawPrediction) });
-      } catch (error) {
-        const message = error instanceof Error ? error.message : 'invalid prediction';
-        throw new EvaluationPredictionError(evaluationCase.id, run, [message]);
+      } catch {
+        throw new EvaluationPredictionError(evaluationCase.id, run, 'malformed-prediction');
       }
     }
   }
