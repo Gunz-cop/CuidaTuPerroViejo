@@ -9,7 +9,7 @@ doNotDo:
   - "No aprietes ni masajees el abdomen o la vejiga."
   - "No intentes introducir sondas ni administrar diuréticos o analgésicos humanos."
   - "No confundas unas gotas con una micción normal si sigue haciendo fuerza o tiene dolor."
-editorialVersion: "2026-08-18.1"
+editorialVersion: "2026-08-18.2"
 ---
 
-Fuente editorial: [VCA, Bladder Stones in Dogs](https://vcahospitals.com/southside/know-your-pet/bladder-stones-in-dogs).
+Fuentes editoriales: [Merck Veterinary Manual, Introduction to Emergencies](https://www.merckvetmanual.com/special-pet-topics/emergencies/introduction-to-emergencies); [Merck Veterinary Manual, Initial Triage and Resuscitation](https://www.merckvetmanual.com/emergency-medicine-and-critical-care/evaluation-and-initial-treatment-of-small-animal-emergency-patients/initial-triage-and-resuscitation-of-small-animal-emergency-patients); [VCA, Bladder Stones in Dogs](https://vcahospitals.com/southside/know-your-pet/bladder-stones-in-dogs).

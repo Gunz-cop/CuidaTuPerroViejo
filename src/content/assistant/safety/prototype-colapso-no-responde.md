@@ -7,13 +7,14 @@ protocolSlug: "colapso-no-responde"
 canonicalExamples:
   - "Mi perro se desplomó y no responde"
   - "Se desmayó y no reacciona"
-  - "No responde cuando lo llamo"
+  - "Está inconsciente y no responde a la voz ni al tacto"
 lexicalPatterns:
-  - "se desplomo"
-  - "se desmayó"
-  - "no responde"
-  - "inconsciente"
-  - "no reacciona"
+  - "perro se desplomo"
+  - "se desplomo y no responde"
+  - "perro se desmayó"
+  - "no responde a la voz"
+  - "no responde al tacto"
+  - "inconsciente y no reacciona"
 riskTags: ["emergency", "unknown-risk"]
-editorialVersion: "2026-08-18.1"
+editorialVersion: "2026-08-18.2"
 ---

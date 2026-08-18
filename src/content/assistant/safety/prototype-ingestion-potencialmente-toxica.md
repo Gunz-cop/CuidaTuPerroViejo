@@ -11,9 +11,9 @@ canonicalExamples:
 lexicalPatterns:
   - "comió veneno"
   - "se trago una pastilla"
-  - "ingirio"
+  - "ingirio algo toxico"
   - "producto de limpieza"
   - "chicle sin azucar"
 riskTags: ["emergency", "ingestion"]
-editorialVersion: "2026-08-18.1"
+editorialVersion: "2026-08-18.2"
 ---
