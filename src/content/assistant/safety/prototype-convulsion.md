@@ -6,14 +6,15 @@ title: "Convulsión en un perro"
 protocolSlug: "convulsion"
 canonicalExamples:
   - "Mi perro está convulsionando"
-  - "Le dio un ataque y tiembla"
+  - "Le dio un ataque convulsivo y tiembla"
   - "Tiene convulsiones repetidas"
 lexicalPatterns:
   - "convulsion"
   - "convulsiona"
-  - "ataque"
+  - "ataque convulsivo"
+  - "ataque con temblores"
   - "tiembla sin control"
   - "patas rigidas"
 riskTags: ["emergency", "unknown-risk"]
-editorialVersion: "2026-08-18.1"
+editorialVersion: "2026-08-18.2"
 ---

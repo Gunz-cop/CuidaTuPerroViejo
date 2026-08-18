@@ -9,7 +9,7 @@ doNotDo:
   - "No lo sujetes ni intentes detener los movimientos a la fuerza."
   - "No le des agua, comida o medicación durante el episodio o mientras no esté plenamente recuperado."
   - "No conduzcas sin asegurar el traslado ni dejes que se acerquen niños u otros animales."
-editorialVersion: "2026-08-18.1"
+editorialVersion: "2026-08-18.2"
 ---
 
-Fuente editorial: [VCA, Seizures in Dogs](https://vcahospitals.com/know-your-pet/seizures-general-for-dogs).
+Fuentes editoriales: [Merck Veterinary Manual, Initial Triage and Resuscitation](https://www.merckvetmanual.com/emergency-medicine-and-critical-care/evaluation-and-initial-treatment-of-small-animal-emergency-patients/initial-triage-and-resuscitation-of-small-animal-emergency-patients); [VCA, Seizures in Dogs](https://vcahospitals.com/know-your-pet/seizures-general-for-dogs).

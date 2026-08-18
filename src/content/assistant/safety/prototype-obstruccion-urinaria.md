@@ -13,7 +13,8 @@ lexicalPatterns:
   - "no sale orina"
   - "hace fuerza para orinar"
   - "solo salen gotas"
-  - "llora al orinar"
+  - "hace fuerza y llora al orinar"
+  - "llora sin poder orinar"
 riskTags: ["emergency", "urinary-obstruction"]
-editorialVersion: "2026-08-18.1"
+editorialVersion: "2026-08-18.2"
 ---

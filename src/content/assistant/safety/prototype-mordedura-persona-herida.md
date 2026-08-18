@@ -9,11 +9,11 @@ canonicalExamples:
   - "Mi perro mordió a una persona"
   - "me a mordido pero no tiene rabia"
 lexicalPatterns:
-  - "mordio"
+  - "mordio a una persona"
   - "me a mordido"
-  - "me mordió"
+  - "me mordió y me hizo una herida"
   - "persona herida"
   - "sangra por una mordedura"
 riskTags: ["emergency", "bite", "person-injured"]
-editorialVersion: "2026-08-18.1"
+editorialVersion: "2026-08-18.2"
 ---

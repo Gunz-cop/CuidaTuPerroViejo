@@ -13,7 +13,7 @@ lexicalPatterns:
   - "abdomen inflado"
   - "arcadas sin vomitar"
   - "intenta vomitar y no sale"
-  - "retches improductivas"
+  - "arcadas improductivas"
 riskTags: ["emergency", "pain", "unknown-risk"]
 editorialVersion: "2026-08-18.1"
 ---
