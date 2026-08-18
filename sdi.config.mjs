@@ -1,4 +1,4 @@
-// Stage 6.5 only: configuration for the read-only SDI adoption shadow.
+// SDI CLI configuration. The legacy runner remains separate until live migration.
 export default {
   siteId: "cuida-tu-perro-viejo",
   siteUrl: "https://cuidatuperroviejo.com",
@@ -11,6 +11,5 @@ export default {
     trailingSlash: "never",
   },
   statePath: "./.sdi/state.json",
-  legacyStatePath: "./lib/discovery/state/sdi-state.json",
   reportPath: "./.sdi/last-run.json",
 };
