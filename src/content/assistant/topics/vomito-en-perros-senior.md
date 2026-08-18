@@ -1,0 +1,30 @@
+---
+kind: "topic"
+schemaVersion: "assistant-topic/v1"
+slug: "vomito-en-perros-senior"
+title: "Vómito en perros senior: orientación inicial y cuándo es urgente"
+intents:
+  - "mi perro mayor está vomitando"
+  - "vómito repetido o arcadas en un perro senior"
+  - "qué observar después de que el perro vomita"
+  - "vómito tras comer basura o algo inusual"
+exclusions:
+  - "arcadas improductivas con abdomen hinchado o doloroso: protocolo de posible GDV"
+  - "ingestión potencialmente tóxica: protocolo de ingestión tóxica"
+  - "regurgitación pasiva o tos como motivo principal"
+  - "pérdida de peso con apetito voraz y heces grasas: intent de IPE"
+groundingSummary: "El vómito puede deberse a problemas digestivos, enfermedades de otros órganos, pancreatitis, obstrucción o sustancias irritantes. La repetición, la sangre, el dolor abdominal, la debilidad, la deshidratación, la pérdida de peso o la incapacidad para retener agua requieren evaluación veterinaria; no conviene provocar el vómito ni administrar fármacos humanos en casa."
+fallbackAdvice: "Anota cuántas veces vomitó tu perro, el aspecto del vómito, lo que pudo comer y si hay dolor, diarrea o debilidad. No provoques el vómito ni le des medicación humana. Si vomita repetidamente, hay sangre, abdomen doloroso o hinchado, arcadas sin producir nada, debilidad o no retiene líquidos, ve a urgencias veterinarias."
+approvedSources:
+  - name: "Merck Veterinary Manual"
+    url: "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/vomiting-in-dogs"
+    authority: "veterinary-reference"
+    accessedAt: "2026-08-18T00:00:00.000Z"
+  - name: "Merck Veterinary Manual"
+    url: "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-of-the-stomach-and-intestines-in-dogs"
+    authority: "veterinary-reference"
+    accessedAt: "2026-08-18T00:00:00.000Z"
+lastReviewedAt: "2026-08-18T00:00:00.000Z"
+editorialReviewStatus: "pending"
+editorialVersion: "2026-08-18.1"
+---
