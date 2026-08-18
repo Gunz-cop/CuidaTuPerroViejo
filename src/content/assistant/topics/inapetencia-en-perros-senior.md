@@ -1,0 +1,30 @@
+---
+kind: "topic"
+schemaVersion: "assistant-topic/v1"
+slug: "inapetencia-en-perros-senior"
+title: "Inapetencia en perros senior: cuando deja de comer"
+intents:
+  - "mi perro mayor no quiere comer"
+  - "pérdida de apetito en un perro senior"
+  - "perro que rechaza su comida de repente"
+  - "cómo observar a un perro mayor que come menos"
+exclusions:
+  - "come con voracidad, pierde peso y hace heces voluminosas o grasientas: intent de IPE"
+  - "pregunta sobre cambiar a comida casera sin pérdida de apetito como motivo principal"
+  - "vómitos, diarrea, abdomen doloroso, dificultad respiratoria o colapso: topic/protocolo correspondiente"
+  - "dolor de boca, sarro o dificultad para masticar como motivo principal: salud dental"
+groundingSummary: "La pérdida de apetito en un perro mayor puede acompañar problemas dentales, digestivos, dolor, enfermedades sistémicas, estrés u otras causas. Hay que observar cuánto tiempo lleva, si bebe, vomita, tiene diarrea, dolor, pérdida de peso o cambios de conducta y consultar con el veterinario; no se resuelve de forma segura ocultando medicamentos o forzando comida."
+fallbackAdvice: "Si tu perro mayor deja de comer, anota desde cuándo, cuánto acepta, si bebe y si aparecen vómitos, diarrea, dolor, decaimiento o pérdida de peso. No lo fuerces ni le des estimulantes, suplementos o medicamentos humanos. Contacta con el veterinario, y busca atención urgente si también está muy débil, dolorido, vomita repetidamente o no responde."
+approvedSources:
+  - name: "Merck Veterinary Manual"
+    url: "https://www.merckvetmanual.com/dog-owners/routine-care-of-dogs/routine-health-care-of-dogs"
+    authority: "veterinary-reference"
+    accessedAt: "2026-08-18T00:00:00.000Z"
+  - name: "AAHA"
+    url: "https://www.aaha.org/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats/introduction-3/"
+    authority: "veterinary-guideline"
+    accessedAt: "2026-08-18T00:00:00.000Z"
+lastReviewedAt: "2026-08-18T00:00:00.000Z"
+editorialReviewStatus: "pending"
+editorialVersion: "2026-08-18.1"
+---
