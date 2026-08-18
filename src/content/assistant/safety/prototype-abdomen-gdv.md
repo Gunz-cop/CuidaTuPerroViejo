@@ -15,5 +15,5 @@ lexicalPatterns:
   - "intenta vomitar y no sale"
   - "arcadas improductivas"
 riskTags: ["emergency", "pain", "unknown-risk"]
-editorialVersion: "2026-08-18.1"
+editorialVersion: "2026-08-18.2"
 ---
