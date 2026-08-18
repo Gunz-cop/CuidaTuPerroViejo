@@ -6,6 +6,21 @@
 read-only: CuidaTuPerroViejo no migra a SDI, no cambia su postbuild legacy y
 no realiza llamadas a IndexNow ni Google.
 
+## Adopción posterior — 18-ago-2026
+
+La etapa histórica de shadow permanece cerrada y no se reescribe. Después de
+esa validación, el proyecto instaló `sdi-cli@0.1.0` desde npm y añadió el
+workflow manual `.github/workflows/sdi-baseline.yml` para crear la primera
+línea base real en GitHub Actions.
+
+La configuración actual está en `sdi.config.mjs` y ya no importa el estado
+legacy: el baseline nuevo se guarda en `.sdi/state.json`. El workflow construye
+Astro sin ejecutar el `postbuild` legacy, persiste `.sdi` mediante la caché de
+Actions y conserva un artefacto de evidencia durante 30 días.
+
+Esto todavía no es una migración live. El `postbuild`, `sdi:run` y los
+destinos legacy siguen intactos; la línea base no envía notificaciones.
+
 ## Conclusión de la investigación 6.5.1
 
 Las 19 diferencias de SHA-256 no proceden de SDI, state, comparador ni

@@ -48,6 +48,32 @@ Rate limiting recomendado en Cloudflare para `/api/contact`: máximo 3 a 5 enví
 
 ## Indexación y Descubrimiento (SDI)
 
+### SDI CLI instalado
+
+El proyecto ya tiene instalado `sdi-cli@0.1.0` como dependencia de desarrollo.
+La configuración del CLI está en `sdi.config.mjs`, con salida estática en
+`dist/`, sitemap en `dist/sitemap-0.xml`, normalización sin slash final y
+estado en `.sdi/state.json`.
+
+La línea base se crea manualmente desde GitHub Actions:
+
+1. Abrí la pestaña **Actions** del repositorio.
+2. Elegí **SDI baseline** y pulsá **Run workflow**.
+3. Seleccioná la rama correcta y confirmá con `yes`.
+
+El workflow construye Astro sin ejecutar el `postbuild` legacy, corre
+`sdi baseline --confirm`, guarda `.sdi/state.json` en la caché de GitHub
+Actions y sube un artefacto con la evidencia. La línea base no notifica a
+IndexNow ni Google y no modifica los archivos legacy de
+`lib/discovery/state/`. Si ya existe una línea base para la rama, SDI aborta
+de forma segura en vez de reemplazarla.
+
+La migración del flujo live todavía no está activada: el `postbuild` y el
+script `sdi:run` de abajo siguen usando el runner legacy hasta validar una
+etapa posterior.
+
+### Runner legacy (todavía activo)
+
 El script de indexación local (`lib/discovery/run.ts`) está automatizado para ejecutarse en el ciclo de vida de Node.js después de cada compilación mediante el script **`postbuild`** de `package.json`.
 
 - **Indexación automática**: Cada vez que se compila el proyecto (`npm run build` o `npm run deploy`), se ejecuta `npx tsx lib/discovery/run.ts`.
