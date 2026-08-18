@@ -1,0 +1,30 @@
+---
+kind: "topic"
+schemaVersion: "assistant-topic/v1"
+slug: "tos-en-perros-senior"
+title: "Tos en perros senior: orientación inicial y cuándo consultar"
+intents:
+  - "mi perro mayor tose"
+  - "tos seca o con flema en un perro senior"
+  - "tos nocturna o después de caminar"
+  - "perro que tose desde hace varios días"
+exclusions:
+  - "dificultad respiratoria, respiración trabajosa, lengua azulada, colapso o falta de respuesta: protocolo respiratorio o de colapso"
+  - "arcadas sin vomitar con abdomen hinchado: protocolo de urgencia abdominal"
+  - "tos acompañada de una consulta principal sobre vacunación o prevención"
+  - "agresividad o ansiedad como motivo principal sin tos"
+groundingSummary: "La tos es un signo inespecífico: puede relacionarse con vías respiratorias, irritación, infección, enfermedad cardiaca u otras causas. La duración, el tipo de tos, la respiración, el esfuerzo, la exposición y los signos acompañantes ayudan al veterinario a orientar la evaluación; una tos persistente, con sangre, debilidad o intolerancia al ejercicio no debe manejarse con remedios caseros."
+fallbackAdvice: "La tos de un perro mayor puede tener muchas causas y no permite diagnosticarlo en casa. Graba un episodio, anota cuándo ocurre y pide una valoración veterinaria, sobre todo si persiste o se repite. Si respira con esfuerzo, se debilita, tose sangre, tiene encías azuladas o colapsa, acude a urgencias. No le des jarabes ni medicamentos humanos."
+approvedSources:
+  - name: "Merck Veterinary Manual"
+    url: "https://www.merckvetmanual.com/respiratory-system/respiratory-system-introduction/clinical-signs-of-respiratory-disease-in-animals"
+    authority: "veterinary-reference"
+    accessedAt: "2026-08-18T00:00:00.000Z"
+  - name: "Merck Veterinary Manual"
+    url: "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/introduction-to-lung-and-airway-disorders-of-dogs"
+    authority: "veterinary-reference"
+    accessedAt: "2026-08-18T00:00:00.000Z"
+lastReviewedAt: "2026-08-18T00:00:00.000Z"
+editorialReviewStatus: "pending"
+editorialVersion: "2026-08-18.1"
+---

@@ -1,0 +1,30 @@
+---
+kind: "topic"
+schemaVersion: "assistant-topic/v1"
+slug: "diarrea-en-perros-senior"
+title: "Diarrea en perros senior: orientación inicial y señales de alarma"
+intents:
+  - "mi perro mayor tiene diarrea"
+  - "heces líquidas, blandas o con moco"
+  - "diarrea después de comer algo distinto"
+  - "diarrea que se repite en un perro senior"
+exclusions:
+  - "heces formadas pero muchas deposiciones: intent de poliquezia"
+  - "heces voluminosas o grasientas con mucha hambre y pérdida de peso: intent de IPE"
+  - "pérdida involuntaria de heces sin diarrea: intent de incontinencia fecal"
+  - "diarrea profusa, con sangre, vómitos repetidos, debilidad, dolor, abdomen hinchado o colapso: urgencias"
+groundingSummary: "La diarrea es un signo con causas variadas, desde cambios dietéticos o parásitos hasta enfermedades digestivas o sistémicas. En un perro senior importa valorar duración, cantidad, sangre, vómitos, apetito, hidratación y estado general; la sangre, el decaimiento, el dolor o la deshidratación elevan la urgencia y no deben tratarse con medicación humana."
+fallbackAdvice: "Si tu perro mayor tiene diarrea, guarda una foto o muestra si la clínica la solicita y anota duración, frecuencia, sangre, vómitos, apetito y posibles cambios de comida. No le des antidiarreicos ni medicamentos humanos sin indicación veterinaria. Si hay sangre, vómitos repetidos, debilidad, dolor, abdomen hinchado o no puede mantenerse hidratado, acude a urgencias."
+approvedSources:
+  - name: "Merck Veterinary Manual"
+    url: "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/introduction-to-digestive-disorders-of-dogs"
+    authority: "veterinary-reference"
+    accessedAt: "2026-08-18T00:00:00.000Z"
+  - name: "Merck Veterinary Manual"
+    url: "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-of-the-stomach-and-intestines-in-dogs"
+    authority: "veterinary-reference"
+    accessedAt: "2026-08-18T00:00:00.000Z"
+lastReviewedAt: "2026-08-18T00:00:00.000Z"
+editorialReviewStatus: "pending"
+editorialVersion: "2026-08-18.1"
+---
