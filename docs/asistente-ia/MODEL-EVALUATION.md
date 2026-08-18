@@ -60,7 +60,8 @@ Se eligen **dos**: primario y fallback (familias distintas para no compartir mod
 |---|---|
 | Top-1 accuracy (casos con artículo) | ≥ 0,90 |
 | Precisión de "mostrar" (no mostrar erróneo) | ≥ 0,92 |
-| Exactitud de "sin artículo" | ≥ 0,90 |
+| Exactitud de "sin artículo" (`noArticleAccuracy`: gold `topic|none` sin artículo mostrado) | ≥ 0,90 |
+| Top-1 topic accuracy (`top1TopicAccuracy`: topic elegido = gold, solo gold `topic`) | ≥ 0,85 |
 | Repetibilidad (3 runs idénticos) | = 1,00 (descalificador) |
 | Margen medio top1−top2 en aciertos | informativa (para calibrar M) |
 | Latencia p95 del embed | ≤ 300 ms |
