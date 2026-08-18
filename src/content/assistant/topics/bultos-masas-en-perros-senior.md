@@ -21,6 +21,7 @@ approvedSources:
     authority: "veterinary-reference"
     accessedAt: "2026-08-18T00:00:00.000Z"
 lastReviewedAt: "2026-08-18T00:00:00.000Z"
-editorialReviewStatus: "pending"
-editorialVersion: "2026-08-18.1"
+editorialReviewStatus: "approved"
+reviewedBy: "Product Owner"
+editorialVersion: "2026-08-18.2"
 ---
