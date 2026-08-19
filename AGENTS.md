@@ -2,6 +2,12 @@
 
 Instrucciones compartidas para agentes de código (Claude Code, Codex, Antigravity u otros) que trabajen en este repositorio.
 
+## Enlazado interno del sitio
+
+Cuando el usuario pida revisar, mejorar, reorganizar o documentar el enlazado interno de `cuidatuperroviejo.com`, usa la skill [`.agents/skills/enlazado-interno-sitio/SKILL.md`](.agents/skills/enlazado-interno-sitio/SKILL.md). Esta skill mantiene la arquitectura de silos, los puentes entre artículos y los enlaces a herramientas.
+
+La implementación vive principalmente en [`src/data/internal-links.ts`](src/data/internal-links.ts) y [`src/components/SiloNavigation.astro`](src/components/SiloNavigation.astro). Las reglas y el mapa operativo están documentados en [`docs/seo/enlazado-interno.md`](docs/seo/enlazado-interno.md). Antes de modificar enlaces, revisa esos tres recursos y valida con `npm run build`.
+
 ## Redacción de contenido de blog
 
 Antes de generar un briefing o redactar un artículo de blog para `cuidatuperroviejo.com`, consulta primero las skills en `.agents/skills/`:
