@@ -2,6 +2,8 @@
 
 Última revisión: 2026-08-18
 
+Skill operativa: [`.agents/skills/enlazado-interno-sitio/SKILL.md`](../../.agents/skills/enlazado-interno-sitio/SKILL.md). Úsala cuando haya que volver a analizar, ajustar o ampliar el enlazado interno del sitio.
+
 ## Objetivo
 
 El enlazado debe ayudar a una persona a continuar su cuidado y a Google a descubrir y relacionar las páginas. No se busca acumular enlaces ni repetir keywords: cada enlace debe resolver el siguiente paso lógico de lectura.
