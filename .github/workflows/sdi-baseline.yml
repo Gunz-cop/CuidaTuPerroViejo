@@ -60,7 +60,7 @@ jobs:
           test -f dist/sitemap-0.xml
 
       - name: Create baseline
-        run: npx --no-install sdi baseline --confirm --config sdi.config.mjs
+        run: node node_modules/sdi-cli/dist/cli.js baseline --confirm --config sdi.config.mjs
 
       - name: Show baseline report
         run: cat .sdi/last-run.json
