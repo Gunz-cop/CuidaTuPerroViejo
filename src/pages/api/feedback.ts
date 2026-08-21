@@ -15,7 +15,7 @@ export const GET: APIRoute = async ({ request, locals }) => {
       );
     }
 
-    const cfEnv = (locals as any).runtime?.env || {};
+    const cfEnv = locals.runtime?.env ?? {};
     const contactKv = cfEnv.CONTACT_KV;
 
     let yesCount = 0;
@@ -53,7 +53,7 @@ export const GET: APIRoute = async ({ request, locals }) => {
 // POST: Registra un voto para un artículo (útil o no útil)
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
-    let body;
+    let body: unknown;
     try {
       body = await request.json();
     } catch {
@@ -63,16 +63,21 @@ export const POST: APIRoute = async ({ request, locals }) => {
       );
     }
 
-    const { slug, type } = body;
+    const slug = typeof body === 'object' && body !== null && 'slug' in body
+      ? (body as { slug?: unknown }).slug
+      : undefined;
+    const type = typeof body === 'object' && body !== null && 'type' in body
+      ? (body as { type?: unknown }).type
+      : undefined;
 
-    if (!slug || (type !== 'yes' && type !== 'no')) {
+    if (typeof slug !== 'string' || !slug.trim() || (type !== 'yes' && type !== 'no')) {
       return new Response(
         JSON.stringify({ error: 'Parámetros inválidos. Se requiere "slug" y "type" ("yes" o "no").' }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
-    const cfEnv = (locals as any).runtime?.env || {};
+    const cfEnv = locals.runtime?.env ?? {};
     const contactKv = cfEnv.CONTACT_KV;
 
     let newCount = 1;
