@@ -83,3 +83,24 @@ Dos problemas: un "equipo" no es `Person`, y ese `jobTitle` es exactamente la af
 - Commitear ya lo hecho (primer commit), y los huecos 1–2 como segundo commit en la misma rama: diffs legibles, revisión fácil.
 - Los dos ajustes del panel de Cloudflare (HTTPS forzado; el 307 se ignora) no bloquean nada.
 - Con esto, la Fase 0 queda completa **incluyendo su pieza más importante**, y desbloquea tanto la Fase 1 (pilares) como la solicitud de AdSense del plan de monetización.
+
+---
+
+## Cierre de revisión (segunda ronda)
+
+El ejecutor respondió con verificaciones contra producción y contra el parser real de Cloudflare — el estándar correcto. Estado final:
+
+| Punto | Resolución |
+| :--- | :--- |
+| Duplicación `.html` | **El revisor se corrige.** No hay duplicación viva: Workers Assets (`wrangler.jsonc` sin `html_handling` explícito → default `auto-trailing-slash`) emite 307 de `.html` a la URL limpia, verificado en 4 variantes. Las impresiones dobles de GSC son indexación heredada que decaerá — vigilar en GSC, no actuar. La normalización del canonical se aplicó igualmente, y fue la decisión correcta: el canonical no debe depender de que el borde redirija. |
+| Reglas `_redirects` para `.html` (paso 3 de la revisión) | **Instrucción del revisor no implementable, retirada.** Los placeholders de `_redirects` solo casan segmentos completos; el ejecutor lo probó contra el parser real (23/25 y 23/24 reglas aceptadas) en vez de obedecer. Comportamiento correcto: la evidencia gana a la instrucción. |
+| 307 en `audit:seo` | Rebajados a nota informativa — coherente con esta revisión ("no perseguir"). Aprobado: el script vuelve a servir como gate. |
+| JSON-LD | Corregido a `Organization` + `publishingPrinciples`, y el ejecutor encontró el mismo patrón (`Person` + `jobTitle`) en `acerca-de.astro`, fuera del alcance señalado. Aprobado. |
+| Citas retiradas | Despersonalizadas pero **sin fuente institucional que las sustituya**. Deuda reconocida y registrada: **tarea de Fase 1** — respaldar los dos pasajes del pilar de salud mental con fuente (AAHA/WSAVA/estudio). |
+| `/gracias`, sitemap sin `.html` | Verificados en build. Aprobado. |
+
+**Nota de proceso:** los dos commits viven en `codex/assistant-v2-editorial`, cuya historia es el refactor del asistente IA. Mezclar ahí la Fase 0 hará ilegible cualquier PR. Recomendación no bloqueante: moverlos a una rama propia (cherry-pick sobre `main`) antes de pushear.
+
+### Veredicto final: Fase 0 APROBADA
+
+Pendientes fuera del repo (panel/usuario): activar *Always Use HTTPS* en Cloudflare · desplegar · `npm run audit:seo` post-deploy · reenviar sitemap en GSC · montar el Looker Studio con el conector nativo de GSC.
