@@ -76,16 +76,19 @@ const blogPostingSchema = {
       ],
       'datePublished': datePublished,
       'dateModified': dateModified,
+      // Autoría de organización, sin jobTitle: el equipo editorial no son
+      // veterinarios en ejercicio y el dato estructurado no debe afirmar una
+      // autoridad que el texto visible no reclama.
       'author': {
-        '@type': 'Person',
-        'name': 'Equipo Cuida a tu Perro Viejo',
-        'jobTitle': 'Especialistas en bienestar y cuidado canino',
-        'url': `${siteURL}acerca-de`,
+        '@type': 'Organization',
+        'name': 'Cuida tu Perro Viejo',
+        'url': siteURL,
       },
       'publisher': {
         '@type': 'Organization',
         'name': 'Cuida tu Perro Viejo',
         'url': siteURL,
+        'publishingPrinciples': `${siteURL}politica-editorial`,
         'logo': {
           '@type': 'ImageObject',
           'url': new URL('/favicon.png', Astro.site).href,

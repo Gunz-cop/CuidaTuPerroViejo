@@ -18,6 +18,8 @@ const OFFLINE = process.argv.includes('--offline');
 const problems = [];
 const flag = (msg) => { problems.push(msg); console.log(`  ✗ ${msg}`); };
 const ok = (msg) => console.log(`  ✓ ${msg}`);
+/** Observación que no es un fallo: no cuenta para el código de salida. */
+const note = (msg) => console.log(`  · ${msg}`);
 
 function readContentFiles() {
   return ['src/content/blog', 'src/content/pilares'].flatMap((dir) =>
@@ -81,7 +83,10 @@ if (OFFLINE) {
     } else if (hops.length > 2) {
       flag(`${src} encadena ${hops.length - 1} saltos: ${hops.map((h) => h.status).join(' → ')}`);
     } else if (hops.length === 2 && hops[0].status !== 301) {
-      flag(`${src} redirige con ${hops[0].status} en vez de 301`);
+      // El 307 de barra final / .html lo emite Cloudflare Assets y no es
+      // configurable. Google trata los 30x como equivalentes para
+      // canonicalización, así que se registra pero no se persigue.
+      note(`${src} redirige con ${hops[0].status} (redirección integrada de Cloudflare, no configurable)`);
     }
   }
   const httpHops = await chain(`http://cuidatuperroviejo.com/salud-perros-mayores`);
@@ -91,10 +96,26 @@ if (OFFLINE) {
   const xml = await fetch(`${SITE}/sitemap-0.xml`).then((r) => r.text());
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
   for (const loc of locs) {
+    if (loc.endsWith('.html')) flag(`sitemap incluye una variante .html: ${loc}`);
     const res = await fetch(loc, { redirect: 'manual' });
     if (res.status !== 200) flag(`sitemap incluye ${loc} → ${res.status}`);
   }
   ok(`${locs.length} URLs en el sitemap`);
+
+  // `build.format: 'file'` genera cada página como .html. Esa variante nunca
+  // debe servirse con 200 y canonical propio: sería contenido duplicado con dos
+  // canonicals para la misma página.
+  console.log('\n5. Variantes .html de las URLs canónicas');
+  for (const loc of locs.filter((l) => l !== SITE && !l.endsWith('.html')).slice(0, 12)) {
+    const res = await fetch(`${loc}.html`, { redirect: 'manual' });
+    if (res.status === 200) {
+      const canonical = (await res.text()).match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+      if (canonical !== loc) flag(`${loc}.html sirve 200 con canonical ${canonical ?? 'ausente'}`);
+    } else if (res.status >= 400) {
+      flag(`${loc}.html devuelve ${res.status}`);
+    }
+  }
+  ok('variantes .html no duplican contenido');
 }
 
 console.log(`\n${problems.length ? `${problems.length} problema(s) detectado(s).` : 'Sin problemas detectados.'}`);

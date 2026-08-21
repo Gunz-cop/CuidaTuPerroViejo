@@ -19,30 +19,26 @@ const aboutSchema = {
         "name": "Cuida tu Perro Viejo",
         "url": "https://cuidatuperroviejo.com/"
       },
-      "about": { "@id": "https://cuidatuperroviejo.com/acerca-de#author" }
+      "about": { "@id": "https://cuidatuperroviejo.com/#organization" }
     },
     {
-      "@type": "Person",
-      "@id": "https://cuidatuperroviejo.com/acerca-de#author",
-      "name": "Equipo Cuida a tu Perro Viejo",
-      "jobTitle": "Equipo editorial especializado en cuidado y bienestar de perros senior",
+      // Un equipo editorial no es una Person, y su descripción no debe reclamar
+      // una titulación que nadie del equipo tiene. La autoría de los artículos
+      // apunta a esta misma Organization.
+      "@type": "Organization",
+      "@id": "https://cuidatuperroviejo.com/#organization",
+      "name": "Cuida tu Perro Viejo",
       "description": "Equipo editorial enfocado en traducir guías veterinarias, fuentes académicas y experiencia de cuidado diario en recomendaciones prácticas para tutores de perros mayores.",
-      "url": "https://cuidatuperroviejo.com/acerca-de",
-      "worksFor": { "@id": "https://cuidatuperroviejo.com/#organization" },
+      "url": "https://cuidatuperroviejo.com/",
+      "logo": "https://cuidatuperroviejo.com/favicon.png",
+      "publishingPrinciples": "https://cuidatuperroviejo.com/politica-editorial",
       "knowsAbout": [
         "cuidado de perros senior",
         "bienestar canino",
         "movilidad y dolor en perros mayores",
         "alimentación de perros senior",
         "cuidados paliativos veterinarios"
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://cuidatuperroviejo.com/#organization",
-      "name": "Cuida tu Perro Viejo",
-      "url": "https://cuidatuperroviejo.com/",
-      "logo": "https://cuidatuperroviejo.com/favicon.png",
+      ],
       "sameAs": ["https://www.housegatitos.com"]
     }
   ]

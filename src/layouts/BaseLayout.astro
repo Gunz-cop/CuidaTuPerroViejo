@@ -21,7 +21,10 @@ interface Props {
 }
 
 const { title, description = 'Cuida a tu Perro Viejo', keywords, image, ogType = 'website', imageWidth = 1200, imageHeight = 800, showAiAssistant = true, noindex = false } = Astro.props;
-const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+// La URL canónica (y og:url, que usa la misma variable) apunta siempre a la
+// variante limpia. `build.format: 'file'` genera cada página como .html, así que
+// se normaliza aquí en vez de depender de que el borde redirija.
+const normalizedPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 const canonicalURL = new URL(normalizedPath, Astro.site);
 const isAsistenteIaPage = normalizedPath === '/asistente-ia';
 const pagesWithoutAiAssistant = new Set(['/politica-de-cookies', '/politica-de-privacidad']);
