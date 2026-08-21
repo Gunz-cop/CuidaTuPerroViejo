@@ -5,16 +5,12 @@ import type { ContactInput, ContactStatus } from '../../../../lib/contact/types'
 
 export const prerender = false;
 
-function getEnv(locals: unknown): Record<string, any> {
-  return ((locals as any).runtime?.env || {}) as Record<string, any>;
-}
-
 function isContactStatus(value: string): value is ContactStatus {
   return value === 'allowed' || value === 'quarantine' || value === 'rejected';
 }
 
 export const POST: APIRoute = async ({ request, params, locals, redirect }) => {
-  const env = getEnv(locals);
+  const env = locals.runtime?.env ?? {};
   if (!hasValidBasicAuth(request, env.CONTACT_ADMIN_USER, env.CONTACT_ADMIN_PASSWORD)) {
     return unauthorizedResponse();
   }

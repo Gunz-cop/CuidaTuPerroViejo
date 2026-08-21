@@ -1,420 +1,250 @@
 ---
-// src/pages/asistente-ia.astro: Página dedicada en pantalla completa para consultar al Asistente de Bienestar Canino con IA
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Asistente de Bienestar Canino con IA | Cuida tu perro viejo";
-const description = "Consulta a nuestro asistente virtual inteligente especializado en el cuidado, alimentación y bienestar general de perros senior y ancianos.";
+const title = 'Asistente para cuidar a tu perro mayor | Cuida tu Perro Viejo';
+const description = 'Cuéntanos qué le ocurre a tu perro senior y recibe orientación inicial junto con las guías más relevantes de nuestro sitio.';
 ---
 
-<BaseLayout title={title} description={description}>
-  <!-- JSON-LD SEO Structured Data -->
+<BaseLayout title={title} description={description} showAiAssistant={false}>
   <script slot="head" type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Asistente Virtual de Bienestar Canino",
-    "url": "https://cuidatuperroviejo.com/asistente-ia",
-    "description": "Asistente virtual informativo con Inteligencia Artificial para consultas de salud y bienestar de perros ancianos.",
-    "applicationCategory": "HealthApplication",
-    "operatingSystem": "All",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Cuida tu perro viejo",
-      "url": "https://cuidatuperroviejo.com/"
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Asistente de bienestar para perros mayores",
+      "url": "https://cuidatuperroviejo.com/asistente-ia",
+      "description": "Orientación inicial y recomendaciones de lectura sobre el bienestar de perros mayores.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "All",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Cuida tu Perro Viejo",
+        "url": "https://cuidatuperroviejo.com/"
+      }
     }
-  }
-  </script>  <!-- ===== PAGE HERO BANNER ===== -->
-  <div class="w-full bg-gradient-to-br from-brand-secondary/30 via-brand-primary/10 to-brand-secondary/10 dark:from-brand-primary/15 dark:via-brand-secondary/5 dark:to-transparent border-b border-brand-border">
-    <div class="max-w-4xl mx-auto px-5 py-10 md:py-14 flex flex-col items-center text-center">
-      <div class="w-14 h-14 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center mb-4 shadow-sm text-2xl animate-pulse">
-        🐾
+  </script>
+
+  <main id="main-content" class="mx-auto w-full max-w-5xl flex-1 px-4 pb-14 pt-6 sm:px-6 sm:pb-20 sm:pt-10 lg:px-8">
+    <header class="mx-auto max-w-3xl text-left sm:text-center">
+      <div class="mb-4 inline-flex min-h-9 items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-primary/10 px-3 text-xs font-bold uppercase tracking-[0.12em] text-brand-primary">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a5 5 0 0 0-5 5v1a4 4 0 0 1-2 3.46V14h14v-1.54A4 4 0 0 1 17 9V8a5 5 0 0 0-5-5Z"></path>
+          <path d="M9.5 18a2.5 2.5 0 0 0 5 0"></path>
+        </svg>
+        Orientación y guías del sitio
       </div>
-      <nav class="mb-3 text-xs text-brand-muted flex items-center gap-1.5">
-        <a href="/" class="hover:text-brand-primary transition-colors">Inicio</a>
-        <span>/</span>
-        <span class="text-brand-text font-medium">Asistente IA</span>
-      </nav>
-      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-text leading-tight mb-3">
-        Asistente de Bienestar Canino
+      <h1 class="font-display text-3xl font-extrabold leading-[1.08] tracking-[-0.035em] text-brand-text sm:text-5xl">
+        Cuéntanos qué le pasa a tu perro mayor
       </h1>
-      <p class="text-base md:text-lg text-brand-muted leading-relaxed max-w-2xl font-light">
-        Resuelve dudas al instante sobre el cuidado de tu perro senior y accede directamente a nuestras guías especializadas.
+      <p class="mt-4 max-w-2xl text-base leading-7 text-brand-muted sm:mx-auto sm:text-lg">
+        Te damos una orientación inicial y, si ya tenemos una guía sobre el tema, te llevamos directamente a ella.
       </p>
-    </div>
-  </div>
+    </header>
 
-  <!-- ===== MAIN CONTAINER ===== -->
-  <main class="max-w-5xl mx-auto px-4 py-8 md:py-12 flex-1">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      
-      <!-- LEFT COLUMN: Information & Disclaimer (5 cols) -->
-      <div class="lg:col-span-4 space-y-6">
-        <!-- Medical Disclaimer Card -->
-        <div class="bg-amber-500/10 dark:bg-[#241f16] border border-amber-500/25 dark:border-amber-400/20 rounded-[24px] p-6 shadow-sm dark:shadow-[0_16px_40px_rgba(0,0,0,0.28)]">
-          <div class="flex items-center gap-2.5 text-amber-700 dark:text-amber-400 font-bold text-sm mb-3">
-            <span>⚠️</span>
-            <h3>Descargo de Responsabilidad</h3>
+    <section class="mx-auto mt-7 max-w-3xl overflow-hidden rounded-[1.75rem] border border-brand-border bg-brand-card shadow-[0_18px_50px_rgba(25,50,32,0.08)] dark:shadow-[0_20px_55px_rgba(0,0,0,0.25)] sm:mt-10" aria-labelledby="assistant-title">
+      <div class="border-b border-brand-border px-5 py-5 sm:px-7 sm:py-6">
+        <div class="flex items-center gap-3">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-primary text-white dark:text-brand-bg" aria-hidden="true">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="7.2" cy="8" r="2.2"></circle><circle cx="16.8" cy="8" r="2.2"></circle><circle cx="4.8" cy="12.7" r="1.9"></circle><circle cx="19.2" cy="12.7" r="1.9"></circle><path d="M12 11.2c-3.5 0-6.4 2.7-6.4 6 0 2 1.5 3.2 3.4 3.2 1.1 0 2-.5 3-.5s1.9.5 3 .5c1.9 0 3.4-1.2 3.4-3.2 0-3.3-2.9-6-6.4-6Z"></path>
+            </svg>
+          </span>
+          <div class="min-w-0">
+            <h2 id="assistant-title" class="font-display text-lg font-bold tracking-tight text-brand-text">¿Qué has notado?</h2>
+            <p class="mt-0.5 text-sm leading-5 text-brand-muted">Describe desde cuándo ocurre y qué ha cambiado.</p>
           </div>
-          <p class="text-xs text-brand-muted dark:text-[#d7c8a5] leading-relaxed font-light">
-            Este asistente es una herramienta de IA únicamente **informativa y orientativa**. No diagnostica enfermedades ni prescribe tratamientos médicos. 
-          </p>
-          <p class="text-xs text-brand-muted dark:text-[#d7c8a5] leading-relaxed font-light mt-2.5">
-            <strong>Nunca sustituye</strong> la consulta, el diagnóstico o el criterio clínico de un veterinario real. Si tu perro presenta dolor agudo, letargia extrema o una emergencia, acude a un centro clínico de inmediato.
-          </p>
         </div>
 
-        <!-- Quick Tips & Instructions -->
-        <div class="bg-brand-card/45 dark:bg-[#182019] border border-brand-border/70 dark:border-[#385842]/55 rounded-[24px] p-6 shadow-sm dark:shadow-[0_16px_40px_rgba(0,0,0,0.24)] space-y-4">
-          <h3 class="text-sm font-bold text-brand-text uppercase tracking-wider">💡 Temas de Consulta</h3>
-          <p class="text-xs text-brand-muted dark:text-[#bddbc4] font-light leading-relaxed">
-            Puedes hacerle preguntas detalladas sobre cualquiera de nuestros pilares de cuidado:
-          </p>
-          <ul class="space-y-2 pl-4 text-xs font-light text-brand-text/95 dark:text-[#eef7ee]">
-            <li class="list-disc"><strong class="font-medium text-brand-primary dark:text-brand-accent">Artrosis:</strong> Camas ortopédicas y cuidado articular.</li>
-            <li class="list-disc"><strong class="font-medium text-brand-primary dark:text-brand-accent">Hogar:</strong> Prevención de resbalones y caídas.</li>
-            <li class="list-disc"><strong class="font-medium text-brand-primary dark:text-brand-accent">Comida:</strong> Dietas caseras y digestibilidad senior.</li>
-            <li class="list-disc"><strong class="font-medium text-brand-primary dark:text-brand-accent">Mente:</strong> Demencia senil y estimulación cognitiva.</li>
-            <li class="list-disc"><strong class="font-medium text-brand-primary dark:text-brand-accent">Cuidados:</strong> Dar pastillas o úlceras por presión.</li>
-          </ul>
-          <p class="text-[11px] text-brand-muted dark:text-[#9fc6aa] italic leading-relaxed pt-1.5 border-t border-brand-border/30 dark:border-[#385842]/40">
-            El asistente sugerirá automáticamente enlaces directos a nuestras guías cuando detecte que tu consulta está relacionada con alguna de ellas.
-          </p>
-        </div>
-      </div>
-
-      <!-- RIGHT COLUMN: Embedded Premium Chat Panel (8 cols) -->
-      <div class="lg:col-span-8">
-        <div class="w-full h-[620px] bg-white dark:bg-[#151a16] border border-brand-border/70 dark:border-[#385842]/70 rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.06)] dark:shadow-[0_24px_60px_rgba(0,0,0,0.42)] flex flex-col overflow-hidden">
-          
-          <!-- Chat Header -->
-          <header class="bg-gradient-to-r from-[#45634f]/10 to-[#5d7c67]/5 dark:from-[#202820] dark:to-[#182019] px-6 py-5 flex items-center justify-between border-b border-brand-border/40 dark:border-[#385842]/60">
-            <div class="flex items-center gap-3">
-              <div class="w-9 h-9 rounded-xl bg-[#45634f]/10 dark:bg-[#adcfb6]/14 flex items-center justify-center text-lg shadow-sm dark:shadow-inner">
-                🤖
-              </div>
-              <div>
-                <h2 class="text-sm font-bold text-brand-text font-serif leading-tight">Asistente Virtual Canino</h2>
-                <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1 mt-0.5">
-                  <span class="relative flex h-1.5 w-1.5">
-                    <span class="ai-online-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-                  </span>
-                  Sistema en línea
-                </span>
-              </div>
-            </div>
-            <div class="text-[10px] text-brand-muted dark:text-[#bddbc4] bg-[#faf9f4] dark:bg-[#111511] px-3 py-1 rounded-full border border-brand-border/40 dark:border-[#385842]/60 font-medium">
-              Llama 3.2
-            </div>
-          </header>
-
-          <!-- Chat Messages Container -->
-          <div id="page-chat-messages" class="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth bg-gradient-to-b from-[#faf9f4]/20 to-[#f5f4ef]/40 dark:from-[#131713] dark:to-[#171d18]">
-            <!-- Welcome message -->
-            <div class="flex items-start gap-3 max-w-[85%] animate-fade-in">
-              <div class="w-8 h-8 rounded-full bg-brand-primary/10 dark:bg-[#adcfb6]/14 flex items-center justify-center text-xs shrink-0 select-none shadow-sm">
-                🐾
-              </div>
-              <div class="bg-[#f4f6f3] dark:bg-[#202820] border border-[#dbdad5] dark:border-[#385842]/70 px-4 py-3.5 rounded-2xl rounded-tl-none shadow-sm dark:shadow-[0_10px_28px_rgba(0,0,0,0.18)]">
-                <p class="text-xs text-brand-text dark:text-[#f3fff1] leading-relaxed font-light">
-                  ¡Hola! Soy tu asistente de bienestar para perros mayores. Pregúntame sobre alimentación, dolor articular (artrosis), ejercicio o cambios de comportamiento. ¿En qué te ayudo hoy?
-                </p>
-              </div>
-            </div>
-
-            <!-- Suggestion Pills -->
-            <div id="page-chat-suggestions" class="space-y-3 pt-2">
-              <p class="text-[10px] text-brand-muted/80 dark:text-[#adcfb6]/80 font-bold uppercase tracking-wider pl-11 select-none">Temas sugeridos para empezar:</p>
-              <div class="flex flex-wrap gap-2.5 pl-11 pr-2">
-                <button class="page-suggest-btn flex items-center gap-2 px-3.5 py-2.5 bg-[#faf9f4]/80 dark:bg-[#202820] hover:bg-[#45634f]/5 dark:hover:bg-[#273327] border border-[#dbdad5] dark:border-[#385842]/70 text-xs text-brand-text dark:text-[#f3fff1] rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] font-medium">
-                  🦴 ¿Cómo tratar la artrosis?
-                </button>
-                <button class="page-suggest-btn flex items-center gap-2 px-3.5 py-2.5 bg-[#faf9f4]/80 dark:bg-[#202820] hover:bg-[#45634f]/5 dark:hover:bg-[#273327] border border-[#dbdad5] dark:border-[#385842]/70 text-xs text-brand-text dark:text-[#f3fff1] rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] font-medium">
-                  🍎 Recetas de comida casera
-                </button>
-                <button class="page-suggest-btn flex items-center gap-2 px-3.5 py-2.5 bg-[#faf9f4]/80 dark:bg-[#202820] hover:bg-[#45634f]/5 dark:hover:bg-[#273327] border border-[#dbdad5] dark:border-[#385842]/70 text-xs text-brand-text dark:text-[#f3fff1] rounded-2xl transition-all cursor-pointer shadow-sm hover:scale-[1.02] active:scale-[0.98] font-medium">
-                  🌙 Mi perro se desorienta de noche
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Disclaimer Banner at Bottom of Panel -->
-          <div class="px-6 py-2.5 border-t border-[#dbdad5]/30 dark:border-[#385842]/45 bg-[#faf9f4]/50 dark:bg-[#151a16] text-center select-none shadow-[0_-2px_10px_rgba(0,0,0,0.01)]">
-            <p class="text-[9px] text-brand-muted dark:text-[#adcfb6]/70 leading-relaxed font-light">
-              ⚠️ <em>Este asistente virtual no sustituye el diagnóstico de un veterinario. Si tu mascota tiene una urgencia clínica, acude a un centro de inmediato.</em>
-            </p>
-          </div>
-
-          <!-- Chat Input Form -->
-          <form id="page-chat-form" class="p-4 border-t border-[#dbdad5]/30 dark:border-[#385842]/45 bg-white dark:bg-[#151a16] flex items-center gap-3">
-            <input 
-              type="text" 
-              id="page-chat-input" 
-              placeholder="Escribe tu duda sobre tu perro senior aquí..." 
-              maxlength="300"
-              required
-              autocomplete="off"
-              class="flex-1 px-4.5 py-3.5 bg-[#faf9f4]/50 dark:bg-[#202820] border border-[#dbdad5] dark:border-[#385842]/70 focus:border-brand-primary dark:focus:border-[#adcfb6] focus:ring-2 focus:ring-brand-primary/10 dark:focus:ring-[#adcfb6]/18 rounded-2xl text-base sm:text-sm text-brand-text dark:text-[#f3fff1] placeholder-brand-muted/50 dark:placeholder-[#9fc6aa]/60 focus:outline-none transition-all"
-            />
-            <button 
-              type="submit" 
-              class="w-11 h-11 bg-brand-primary hover:bg-[#5d7c67] active:scale-95 text-white dark:text-[#121412] dark:bg-[#adcfb6] dark:hover:bg-[#c9ebd1] rounded-2xl flex items-center justify-center shadow-md hover:shadow-lg transition-all shrink-0 cursor-pointer"
-              aria-label="Enviar pregunta"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5.5 w-5.5 transform rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-              </svg>
+        <form id="assistant-form" class="mt-5" novalidate>
+          <label for="assistant-question" class="sr-only">Consulta sobre tu perro mayor</label>
+          <textarea
+            id="assistant-question"
+            name="question"
+            rows="3"
+            maxlength="500"
+            required
+            placeholder="Ej.: Mi perro de 13 años se resbala y le cuesta levantarse desde hace una semana…"
+            class="min-h-[7.5rem] w-full resize-y rounded-2xl border border-brand-border bg-brand-bg px-4 py-3.5 text-base leading-6 text-brand-text outline-none transition-colors placeholder:text-brand-muted/70 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/15"
+            aria-describedby="question-help question-error"
+          ></textarea>
+          <div class="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p id="question-help" class="text-xs leading-5 text-brand-muted">No incluyas nombres, teléfonos ni otros datos personales.</p>
+            <button id="assistant-submit" type="submit" class="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl bg-brand-primary px-5 text-sm font-bold text-white shadow-sm transition-colors hover:bg-brand-primary-hover focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/25 disabled:cursor-wait disabled:opacity-65 dark:text-brand-bg sm:w-auto">
+              <span id="submit-label">Obtener orientación</span>
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
             </button>
-          </form>
+          </div>
+          <p id="question-error" class="mt-3 hidden text-sm font-semibold text-red-700 dark:text-red-300" role="alert"></p>
+        </form>
+
+        <div class="mt-5 border-t border-brand-border pt-4">
+          <p class="text-xs font-bold uppercase tracking-[0.12em] text-brand-muted">Prueba con una consulta</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <button type="button" class="suggestion min-h-11 rounded-full border border-brand-border bg-brand-bg px-4 text-left text-sm font-semibold text-brand-text transition-colors hover:border-brand-primary/40 hover:bg-brand-primary/10 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Le cuesta levantarse</button>
+            <button type="button" class="suggestion min-h-11 rounded-full border border-brand-border bg-brand-bg px-4 text-left text-sm font-semibold text-brand-text transition-colors hover:border-brand-primary/40 hover:bg-brand-primary/10 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Se desorienta de noche</button>
+            <button type="button" class="suggestion min-h-11 rounded-full border border-brand-border bg-brand-bg px-4 text-left text-sm font-semibold text-brand-text transition-colors hover:border-brand-primary/40 hover:bg-brand-primary/10 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Llora cuando se queda solo</button>
+          </div>
         </div>
       </div>
-      
-    </div>
+
+      <div id="assistant-result" class="hidden px-5 py-6 sm:px-7 sm:py-7" aria-live="polite" aria-busy="false">
+        <div id="assistant-loading" class="hidden items-center gap-3 text-sm font-semibold text-brand-muted">
+          <span class="assistant-spinner h-5 w-5 rounded-full border-2 border-brand-primary/25 border-t-brand-primary" aria-hidden="true"></span>
+          Revisando nuestras guías…
+        </div>
+
+        <div id="assistant-response" class="hidden">
+          <p class="text-xs font-bold uppercase tracking-[0.12em] text-brand-primary">Orientación inicial</p>
+          <p id="assistant-answer" class="mt-3 whitespace-pre-line text-base leading-7 text-brand-text"></p>
+
+          <div id="recommendations-section" class="mt-7 hidden border-t border-brand-border pt-6">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary" aria-hidden="true">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path></svg>
+              </span>
+              <div>
+                <h3 class="font-display text-lg font-bold text-brand-text">Tenemos contenido sobre este tema</h3>
+                <p class="mt-1 text-sm leading-5 text-brand-muted">Estas recomendaciones salen de los artículos publicados en el sitio.</p>
+              </div>
+            </div>
+            <div id="recommendations-list" class="mt-4 grid gap-3"></div>
+          </div>
+
+          <p id="no-recommendations" class="mt-6 hidden rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm leading-6 text-brand-muted">
+            Aún no tenemos una guía específica para esta consulta. La orientación anterior es general y no sustituye una revisión veterinaria.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="mx-auto mt-5 flex max-w-3xl items-start gap-3 rounded-2xl border border-amber-500/25 bg-amber-500/10 px-4 py-3.5 text-sm leading-6 text-brand-text" aria-label="Aviso veterinario">
+      <svg class="mt-0.5 h-5 w-5 shrink-0 text-amber-700 dark:text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 2.9 1.8 17a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 2.9a2 2 0 0 0-3.4 0Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+      <p><strong>Esto no es un diagnóstico.</strong> Si hay dificultad para respirar, colapso, convulsiones, sangrado abundante o dolor intenso, contacta a un veterinario de urgencia.</p>
+    </aside>
   </main>
 </BaseLayout>
 
-<style is:global>
-  /* Custom Scrollbar for Chat Messages */
-  #page-chat-messages::-webkit-scrollbar {
-    width: 6px;
-  }
-  #page-chat-messages::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  #page-chat-messages::-webkit-scrollbar-thumb {
-    background: rgba(69, 99, 79, 0.2);
-    border-radius: 99px;
-  }
-  .dark #page-chat-messages::-webkit-scrollbar-thumb {
-    background: rgba(173, 207, 182, 0.15);
-  }
-
-  @keyframes onlinePing {
-    75%, 100% {
-      transform: scale(2);
-      opacity: 0;
-    }
-  }
-
-  .ai-online-ping {
-    animation: onlinePing 1s cubic-bezier(0, 0, 0.2, 1) 3;
-  }
-
+<style>
+  @keyframes assistant-spin { to { transform: rotate(360deg); } }
+  .assistant-spinner { animation: assistant-spin 0.8s linear infinite; }
   @media (prefers-reduced-motion: reduce) {
-    .ai-online-ping {
-      animation: none;
-    }
+    .assistant-spinner { animation-duration: 1.8s; }
   }
 </style>
 
 <script>
-  const initPageChat = () => {
-    const chatForm = document.getElementById('page-chat-form') as HTMLFormElement;
-    const chatInput = document.getElementById('page-chat-input') as HTMLInputElement;
-    const messagesContainer = document.getElementById('page-chat-messages');
-    const suggestionsBlock = document.getElementById('page-chat-suggestions');
-    const suggestBtns = document.querySelectorAll('.page-suggest-btn');
+  type Recommendation = {
+    title: string;
+    description: string;
+    href: string;
+    pillar: string;
+  };
 
-    if (!chatForm || !chatInput || !messagesContainer) return;
+  const form = document.getElementById('assistant-form') as HTMLFormElement | null;
+  const question = document.getElementById('assistant-question') as HTMLTextAreaElement | null;
+  const submit = document.getElementById('assistant-submit') as HTMLButtonElement | null;
+  const submitLabel = document.getElementById('submit-label');
+  const error = document.getElementById('question-error');
+  const result = document.getElementById('assistant-result');
+  const loading = document.getElementById('assistant-loading');
+  const response = document.getElementById('assistant-response');
+  const answer = document.getElementById('assistant-answer');
+  const recommendationsSection = document.getElementById('recommendations-section');
+  const recommendationsList = document.getElementById('recommendations-list');
+  const noRecommendations = document.getElementById('no-recommendations');
 
-    // Markdown Parser
-    const parseMarkdown = (text: string): string => {
-      let html = text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
+  const setLoading = (isLoading: boolean) => {
+    if (!submit || !submitLabel || !result || !loading || !response) return;
+    submit.disabled = isLoading;
+    submitLabel.textContent = isLoading ? 'Consultando…' : 'Obtener orientación';
+    result.classList.remove('hidden');
+    result.setAttribute('aria-busy', String(isLoading));
+    loading.classList.toggle('hidden', !isLoading);
+    loading.classList.toggle('flex', isLoading);
+    response.classList.toggle('hidden', isLoading);
+  };
 
-      html = html.replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 bg-brand-bg/60 dark:bg-slate-900/60 rounded font-mono text-[10px]">$1</code>');
-      html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-brand-text dark:text-white">$1</strong>');
-      html = html.replace(/\*(.*?)\*/g, '<em class="italic">$1</em>');
+  const renderRecommendations = (items: Recommendation[]) => {
+    if (!recommendationsList || !recommendationsSection || !noRecommendations) return;
+    recommendationsList.replaceChildren();
+    recommendationsSection.classList.toggle('hidden', items.length === 0);
+    noRecommendations.classList.toggle('hidden', items.length > 0);
 
-      html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, url) => {
-        if (url.startsWith('/')) {
-          return `<a href="${url}" class="text-brand-primary dark:text-brand-accent hover:underline font-bold decoration-2 cursor-pointer transition-colors">${linkText}</a>`;
-        }
-        return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-brand-primary dark:text-brand-accent hover:underline font-bold decoration-2 cursor-pointer transition-colors">${linkText} ↗</a>`;
-      });
+    items.forEach((item) => {
+      const link = document.createElement('a');
+      link.href = item.href;
+      link.className = 'group flex min-h-20 items-center justify-between gap-4 rounded-2xl border border-brand-border bg-brand-bg p-4 transition-colors hover:border-brand-primary/40 hover:bg-brand-primary/10 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20';
 
-      const lines = html.split('\n');
-      let result = '';
-      let inList = false;
-      let listType: 'ul' | 'ol' | null = null;
+      const copy = document.createElement('span');
+      copy.className = 'min-w-0';
+      const title = document.createElement('strong');
+      title.className = 'block text-sm font-bold leading-5 text-brand-text group-hover:text-brand-primary';
+      title.textContent = item.title;
+      const description = document.createElement('span');
+      description.className = 'mt-1 block text-xs leading-5 text-brand-muted';
+      description.textContent = item.description;
+      copy.append(title, description);
 
-      for (let i = 0; i < lines.length; i++) {
-        const line = lines[i].trim();
-        if (!line) {
-          if (inList) {
-            result += listType === 'ul' ? '</ul>' : '</ol>';
-            inList = false;
-            listType = null;
-          }
-          continue;
-        }
-
-        const isUnordered = /^[-*]\s+/.test(line);
-        const isOrdered = /^\d+\.\s+/.test(line);
-
-        if (isUnordered) {
-          if (!inList || listType !== 'ul') {
-            if (inList) result += listType === 'ul' ? '</ul>' : '</ol>';
-            result += '<ul class="space-y-1.5 my-2.5 list-disc pl-5">';
-            inList = true;
-            listType = 'ul';
-          }
-          const content = line.replace(/^[-*]\s+/, '').trim();
-          result += `<li class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light">${content}</li>`;
-        } else if (isOrdered) {
-          if (!inList || listType !== 'ol') {
-            if (inList) result += listType === 'ul' ? '</ul>' : '</ol>';
-            result += '<ol class="space-y-1.5 my-2.5 list-decimal pl-5">';
-            inList = true;
-            listType = 'ol';
-          }
-          const content = line.replace(/^\d+\.\s+/, '').trim();
-          result += `<li class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light">${content}</li>`;
-        } else {
-          if (inList) {
-            result += listType === 'ul' ? '</ul>' : '</ol>';
-            inList = false;
-            listType = null;
-          }
-          result += `<p class="text-xs text-brand-text dark:text-brand-text/90 leading-relaxed font-light mb-3">${line}</p>`;
-        }
-      }
-
-      if (inList) {
-        result += listType === 'ul' ? '</ul>' : '</ol>';
-      }
-
-      return result;
-    };
-
-    const appendMessage = (sender: 'user' | 'ai', text: string) => {
-      const messageRow = document.createElement('div');
-      messageRow.className = `flex items-start gap-3 max-w-[85%] animate-fade-in ${sender === 'user' ? 'ml-auto flex-row-reverse' : ''}`;
-
-      const iconDiv = document.createElement('div');
-      iconDiv.className = `w-8 h-8 rounded-full flex items-center justify-center text-xs shrink-0 select-none shadow-sm ${
-        sender === 'user' ? 'bg-[#fdcb9b]/25 dark:bg-[#eebd8e]/15' : 'bg-brand-primary/10 dark:bg-[#adcfb6]/14'
-      }`;
-      iconDiv.textContent = sender === 'user' ? '👤' : '🐾';
-
-      const contentDiv = document.createElement('div');
-      contentDiv.className = `px-4 py-3 rounded-2xl shadow-sm ${
-        sender === 'user' 
-          ? 'bg-[#45634f] dark:bg-[#2f4d3a] text-white dark:text-[#f8fff7] rounded-tr-none border border-transparent dark:border-[#adcfb6]/20' 
-          : 'bg-[#f4f6f3] dark:bg-[#202820] border border-[#dbdad5] dark:border-[#385842]/70 text-brand-text dark:text-[#f3fff1] rounded-tl-none'
-      }`;
-
-      if (sender === 'user') {
-        const paragraph = document.createElement('p');
-        paragraph.className = 'text-xs leading-relaxed font-light whitespace-pre-wrap';
-        paragraph.textContent = text;
-        contentDiv.appendChild(paragraph);
-      } else {
-        const markdownDiv = document.createElement('div');
-        markdownDiv.className = 'markdown-body';
-        markdownDiv.innerHTML = parseMarkdown(text);
-        contentDiv.appendChild(markdownDiv);
-      }
-
-      messageRow.appendChild(iconDiv);
-      messageRow.appendChild(contentDiv);
-      messagesContainer.appendChild(messageRow);
-
-      // Auto-scroll
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    };
-
-    const appendTypingIndicator = (): HTMLDivElement => {
-      const indicator = document.createElement('div');
-      indicator.id = 'page-typing-indicator';
-      indicator.className = 'flex items-start gap-3 max-w-[85%] animate-fade-in';
-
-      const iconDiv = document.createElement('div');
-      iconDiv.className = 'w-8 h-8 rounded-full bg-brand-primary/10 dark:bg-[#adcfb6]/14 flex items-center justify-center text-xs shrink-0 select-none shadow-sm';
-      iconDiv.textContent = '🐾';
-
-      const contentDiv = document.createElement('div');
-      contentDiv.className = 'bg-[#f4f6f3] dark:bg-[#202820] border border-[#dbdad5] dark:border-[#385842]/70 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-2';
-
-      const text = document.createElement('span');
-      text.className = 'text-[11px] text-brand-muted dark:text-brand-primary/80 italic font-light';
-      text.textContent = 'Perrito pensando';
-
-      const dots = document.createElement('div');
-      dots.className = 'flex gap-1 items-center mt-0.5';
-      for (let i = 0; i < 3; i++) {
-        const dot = document.createElement('span');
-        dot.className = 'w-1.5 h-1.5 rounded-full bg-brand-primary animate-bounce';
-        dot.style.animationDelay = `${i * 0.15}s`;
-        dots.appendChild(dot);
-      }
-
-      contentDiv.appendChild(text);
-      contentDiv.appendChild(dots);
-      indicator.appendChild(iconDiv);
-      indicator.appendChild(contentDiv);
-      messagesContainer.appendChild(indicator);
-      
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
-      return indicator;
-    };
-
-    const handleQuestionSubmit = async (questionText: string) => {
-      if (!questionText.trim()) return;
-
-      if (suggestionsBlock) {
-        suggestionsBlock.classList.add('hidden');
-      }
-
-      appendMessage('user', questionText);
-      chatInput.value = '';
-
-      const indicator = appendTypingIndicator();
-
-      try {
-        const res = await fetch('/api/ask', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ question: questionText }),
-        });
-
-        indicator.remove();
-
-        if (res.ok) {
-          const data = await res.json();
-          appendMessage('ai', data.answer);
-        } else {
-          const errData = await res.json();
-          appendMessage('ai', `❌ Ocurrió un error: ${errData.error || 'No se pudo obtener respuesta de la IA.'}`);
-        }
-      } catch (error) {
-        indicator.remove();
-        console.error('Error in page chat submit:', error);
-        appendMessage('ai', '❌ Lo siento, no logré conectarme con el servidor. Revisa tu conexión a internet e inténtalo de nuevo.');
-      }
-    };
-
-    chatForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      handleQuestionSubmit(chatInput.value);
-    });
-
-    suggestBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const text = btn.textContent?.trim() || '';
-        // Clean emoji patterns
-        const cleanText = text.replace(/^[^\w\s¿?¡!]+/g, '').trim();
-        handleQuestionSubmit(cleanText);
-      });
+      const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      icon.setAttribute('viewBox', '0 0 24 24');
+      icon.setAttribute('fill', 'none');
+      icon.setAttribute('stroke', 'currentColor');
+      icon.setAttribute('stroke-width', '2');
+      icon.setAttribute('aria-hidden', 'true');
+      icon.setAttribute('class', 'h-5 w-5 shrink-0 text-brand-primary');
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', 'M5 12h14m-6-6 6 6-6 6');
+      path.setAttribute('stroke-linecap', 'round');
+      path.setAttribute('stroke-linejoin', 'round');
+      icon.appendChild(path);
+      link.append(copy, icon);
+      recommendationsList.appendChild(link);
     });
   };
 
-  // Initialize
-  document.addEventListener('DOMContentLoaded', initPageChat);
-  document.addEventListener('astro:page-load', initPageChat);
+  const ask = async (value: string) => {
+    const cleanQuestion = value.trim();
+    if (!question || !error || !answer) return;
+
+    error.classList.add('hidden');
+    if (cleanQuestion.length < 3) {
+      error.textContent = 'Cuéntanos un poco más para poder orientarte.';
+      error.classList.remove('hidden');
+      question.focus();
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const request = await fetch('/api/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: cleanQuestion }),
+      });
+      const data = await request.json();
+      if (!request.ok) throw new Error(data.error || 'No pudimos procesar la consulta.');
+
+      answer.textContent = data.answer;
+      renderRecommendations(Array.isArray(data.recommendations) ? data.recommendations : []);
+      setLoading(false);
+      result?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+    } catch (requestError) {
+      setLoading(false);
+      error.textContent = requestError instanceof Error ? requestError.message : 'No pudimos conectar. Inténtalo de nuevo.';
+      error.classList.remove('hidden');
+      result?.classList.add('hidden');
+    }
+  };
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (question) ask(question.value);
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('.suggestion').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!question) return;
+      question.value = button.textContent?.trim() || '';
+      ask(question.value);
+    });
+  });
 </script>
