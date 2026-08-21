@@ -16,6 +16,9 @@ const PILLAR_PATHS = new Set([
 ]);
 const PILLAR_SLUGS = new Set([...PILLAR_PATHS].map((path) => path.slice(1)));
 const NON_PUBLIC_SITEMAP_PREFIXES = ['/admin/'];
+// Páginas reales pero sin intención de búsqueda propia: se sirven con noindex
+// y se excluyen del sitemap para que sólo contenga URLs canónicas indexables.
+const NON_CANONICAL_SITEMAP_PATHS = new Set(['/gracias']);
 
 function getSitemapMetadata(pathname) {
   const segments = pathname.split('/').filter(Boolean);
@@ -48,6 +51,7 @@ export default defineConfig({
     sitemap({
       filter(page) {
         const { pathname } = new URL(page);
+        if (NON_CANONICAL_SITEMAP_PATHS.has(pathname)) return false;
         return !NON_PUBLIC_SITEMAP_PREFIXES.some((prefix) => pathname.startsWith(prefix));
       },
       serialize(item) {

@@ -1,0 +1,56 @@
+---
+/**
+ * Firma editorial de artículos y pilares.
+ *
+ * La autoría y las fechas se declaran una sola vez (en el frontmatter) y se
+ * renderizan aquí, para que lo que lee el usuario y lo que declara el schema
+ * no puedan divergir. Antes esta línea se escribía a mano en cada .mdx, lo que
+ * produjo cinco variantes del nombre del equipo y fechas contradictorias.
+ */
+interface Props {
+  /** ISO date de publicación. Los pilares no la declaran. */
+  datePublished?: string;
+  /** ISO date de la última revisión editorial real, si la hubo. */
+  dateModified?: string;
+}
+
+const { datePublished, dateModified } = Astro.props;
+
+const AUTHOR = 'Equipo Cuida a tu Perro Viejo';
+
+const formatDate = (value: string) =>
+  new Date(value).toLocaleDateString('es', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+
+const revised = dateModified && dateModified !== datePublished ? dateModified : null;
+---
+
+<p class="not-prose flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-brand-muted">
+  <span>
+    Por <a href="/acerca-de" class="font-semibold text-brand-text hover:text-brand-primary transition-colors">{AUTHOR}</a>
+  </span>
+  {datePublished && (
+    <>
+      <span aria-hidden="true">·</span>
+      <span>
+        Publicado el <time datetime={datePublished}>{formatDate(datePublished)}</time>
+      </span>
+    </>
+  )}
+  {revised && (
+    <>
+      <span aria-hidden="true">·</span>
+      <span>
+        Revisado el <time datetime={revised}>{formatDate(revised)}</time>
+      </span>
+    </>
+  )}
+  <span aria-hidden="true">·</span>
+  <a href="/politica-editorial" class="underline decoration-brand-primary/40 underline-offset-2 hover:text-brand-primary transition-colors">
+    Cómo escribimos
+  </a>
+</p>

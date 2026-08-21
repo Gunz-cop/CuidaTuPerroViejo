@@ -14,6 +14,7 @@
     "deploy": "npm run build && wrangler deploy",
     "sdi:run": "npx tsx lib/discovery/run.ts",
     "images:optimize": "node scripts/optimize-images.mjs --apply --delete-originals --responsive",
+    "audit:seo": "node scripts/audit-seo.mjs",
     "images:optimize:dry": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
