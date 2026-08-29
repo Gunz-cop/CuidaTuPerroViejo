@@ -106,7 +106,9 @@ Para cada fuente de la tabla de trazabilidad, comprueba tres cosas distintas:
    un paper posterior del mismo equipo (Salvin et al., 2011). El artículo
    obedeció, y el error estaba además en dos briefs sin redactar. **Cuando
    encuentres un fallo de fuente, comprueba si nace en el brief**: cambia a
-   quién hay que corregir y si el fallo va a repetirse.
+   quién hay que corregir y si el fallo va a repetirse. Para auditar el brief en
+   profundidad, usa la skill [auditar-briefing-contenido](../auditar-briefing-contenido/SKILL.md)
+   en una sesión aparte — no lo audites tú: quien redacta no audita.
 
 Notas de método:
 
