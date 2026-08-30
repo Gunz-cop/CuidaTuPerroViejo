@@ -70,11 +70,18 @@ jobs:
       - name: Tests
         run: npm test
 
+      - name: Build
+        run: npx --no-install astro build
+
       # Los bindings de `wrangler.jsonc` y los tipos generados tienen que contar
-      # lo mismo. `--check` no regenera: compara y falla si divergen, que es lo
-      # que pasa cuando alguien añade un binding y no vuelve a correr
-      # `wrangler types`. Sin este paso el `Env` miente y el typecheck lo da por
-      # bueno.
+      # lo mismo: sin este paso, el `Env` miente cuando alguien añade un binding
+      # y no regenera, y el typecheck lo da por bueno.
+      #
+      # Va DESPUÉS del build a propósito. Wrangler solo emite el bloque
+      # `GlobalProps` con `mainModule` cuando `main` resuelve a un fichero que
+      # existe, así que el fichero generado depende de si `dist/` está
+      # construido. Colocado antes del build, este paso falla siempre en un
+      # checkout limpio y pasa siempre en una máquina que ya había compilado.
       #
       # Las banderas tienen que ser EXACTAMENTE las mismas con las que se generó
       # `worker-configuration.d.ts`: `wrangler types` escribe el comando entero
@@ -94,9 +101,6 @@ jobs:
           npx --no-install wrangler types --env-file wrangler-types.env --strict-vars=false
           git diff --exit-code -- worker-configuration.d.ts \
             || { echo "::error::worker-configuration.d.ts esta desactualizado. Ejecuta 'npm run types:worker' y commitea."; exit 1; }
-
-      - name: Build
-        run: npx --no-install astro build
 
       # Valida que el Worker se empaqueta y que `wrangler.jsonc` es coherente,
       # sin desplegar nada.

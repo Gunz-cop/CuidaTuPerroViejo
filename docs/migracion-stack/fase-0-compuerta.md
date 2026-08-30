@@ -125,8 +125,12 @@ el runner de Linux sale 1.
 ## Lo que solo se vio al leer el check de GitHub
 
 La compuerta pasaba entera en local y **falló en el primer PR**, en 40 segundos,
-en el paso de los tipos del Worker. Es la razón exacta por la que el criterio se
-verifica leyendo el check y no corriendo el comando a mano.
+en el paso de los tipos del Worker. Y volvió a fallar en el segundo. Es la razón
+exacta por la que el criterio se verifica leyendo el check y no corriendo el
+comando a mano: `worker-configuration.d.ts` resultó depender de **dos** cosas de
+la máquina, y ninguna se ve desde local.
+
+### Causa 1: el `.env` del desarrollador
 
 `wrangler types` carga el `.env` local del desarrollador y mete sus claves en el
 `Env` generado. El fichero commiteado traía seis entradas que no están en
@@ -148,6 +152,39 @@ ruta absoluta vuelve a hacerlo dependiente de la máquina.
 El `Env` resultante describe lo que declara `wrangler.jsonc` —`CONTACT_KV`,
 `CONTACT_DB`, `EMAIL`, `AI`, `ASSETS`— y nada más, que es lo que debía describir
 desde el principio.
+
+### Causa 2: el fichero depende del build
+
+Con el `.env` fuera, el paso siguió fallando. El `--check` de wrangler solo dice
+que los ficheros no coinciden, no en qué, así que se sustituyó por regenerar y
+comparar con `git diff --exit-code`. Eso puso el diff en el log del PR:
+
+```diff
+ declare namespace Cloudflare {
+-	interface GlobalProps {
+-		mainModule: typeof import("./dist/_worker.js/index");
+-	}
+ 	interface Env extends __BaseEnv_Env {}
+ }
+```
+
+Wrangler emite el bloque `GlobalProps` **solo cuando `main` resuelve a un fichero
+que existe**. En una máquina que ya había compilado, existe; en un checkout
+limpio, no. El paso estaba colocado antes del build, así que pasaba siempre en
+local y fallaba siempre en CI.
+
+La corrección es de orden, no de contenido: **el paso va después del build**.
+Reproducido en local para confirmarlo — borrando `dist/` el fichero generado
+pierde esas cuatro líneas; reconstruyendo, el diff vuelve a ser vacío.
+
+Generaliza a una regla: *cualquier fichero generado que se versione y se
+compruebe en CI hay que generarlo en las mismas condiciones en las que se
+comprueba*. Si depende de artefactos de build, su comprobación va después del
+build.
+
+Se comparan además los contenidos con `git diff` y no con `--check`, porque
+cuando falla hay que poder arreglarlo sin adivinar. `npm run types:worker` deja
+el comando de regeneración, con sus banderas, en un solo sitio.
 
 ## Verificación contra la línea base
 
