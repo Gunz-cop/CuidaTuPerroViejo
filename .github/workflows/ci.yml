@@ -85,8 +85,15 @@ jobs:
       # el `Env` generado: el fichero pasa a depender de la máquina y aquí, donde
       # `.env` no existe, este paso falla siempre. La ruta va relativa por el
       # mismo motivo.
+      #
+      # Se regenera y se compara con `git diff` en vez de usar `--check`: cuando
+      # divergen, esto imprime EN QUÉ divergen. `--check` solo dice que no
+      # coinciden, que no alcanza para arreglarlo.
       - name: Tipos del Worker al día
-        run: npx --no-install wrangler types --check --env-file wrangler-types.env --strict-vars=false
+        run: |
+          npx --no-install wrangler types --env-file wrangler-types.env --strict-vars=false
+          git diff --exit-code -- worker-configuration.d.ts \
+            || { echo "::error::worker-configuration.d.ts esta desactualizado. Ejecuta 'npm run types:worker' y commitea."; exit 1; }
 
       - name: Build
         run: npx --no-install astro build
