@@ -442,10 +442,12 @@
         indicator.remove();
 
         if (res.ok) {
-          const data = await res.json();
-          appendMessage('ai', data.answer);
+          const data = await res.json() as { answer?: string };
+          // Una respuesta 200 sin `answer` es posible y antes pintaba
+          // "undefined" en el chat.
+          appendMessage('ai', data.answer || 'No conseguimos preparar una respuesta. Inténtalo de nuevo en unos segundos.');
         } else {
-          const errData = await res.json();
+          const errData = await res.json() as { error?: string };
           appendMessage('ai', `❌ Hubo un inconveniente: ${errData.error || 'No se pudo obtener respuesta de la IA.'}`);
         }
       } catch (error) {

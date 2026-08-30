@@ -182,7 +182,12 @@ const description = 'Cuéntanos qué le ocurre a tu perro senior y recibe orient
       const description = document.createElement('span');
       description.className = 'mt-1 block text-xs leading-5 text-brand-muted';
       description.textContent = item.description;
-      copy.append(title, description);
+      // appendChild y no append: @cloudflare/workers-types declara su propio
+      // `interface Element` (el de HTMLRewriter, con `append(content: string)`)
+      // que se fusiona con el del DOM y rechaza pasarle nodos. Revisar cuando
+      // cambie el adaptador.
+      copy.appendChild(title);
+      copy.appendChild(description);
 
       const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       icon.setAttribute('viewBox', '0 0 24 24');
@@ -196,7 +201,8 @@ const description = 'Cuéntanos qué le ocurre a tu perro senior y recibe orient
       path.setAttribute('stroke-linecap', 'round');
       path.setAttribute('stroke-linejoin', 'round');
       icon.appendChild(path);
-      link.append(copy, icon);
+      link.appendChild(copy);
+      link.appendChild(icon);
       recommendationsList.appendChild(link);
     });
   };
@@ -220,10 +226,14 @@ const description = 'Cuéntanos qué le ocurre a tu perro senior y recibe orient
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: cleanQuestion }),
       });
-      const data = await request.json();
+      const data = await request.json() as {
+        answer?: string;
+        error?: string;
+        recommendations?: unknown;
+      };
       if (!request.ok) throw new Error(data.error || 'No pudimos procesar la consulta.');
 
-      answer.textContent = data.answer;
+      answer.textContent = data.answer || 'No conseguimos preparar una orientación. Inténtalo de nuevo en unos segundos.';
       renderRecommendations(Array.isArray(data.recommendations) ? data.recommendations : []);
       setLoading(false);
       result?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });

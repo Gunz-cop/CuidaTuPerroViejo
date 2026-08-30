@@ -98,7 +98,7 @@
     try {
       const response = await fetch('/api/geo');
       if (response.ok) {
-        const data = await response.json();
+        const data = await response.json() as { country?: string };
         if (data.country === 'CR') {
           btn.href = 'https://vet24cr.com/';
         }

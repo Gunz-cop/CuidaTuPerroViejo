@@ -35,7 +35,7 @@
 
 <script>
   function setupThemeToggle() {
-    const themeToggleButtons = document.querySelectorAll('[data-theme-toggle]');
+    const themeToggleButtons = document.querySelectorAll<HTMLElement>('[data-theme-toggle]');
 
     function updateToggleIcon() {
       themeToggleButtons.forEach((button) => {

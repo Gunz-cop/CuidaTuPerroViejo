@@ -1,9 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { CROSS_PILLAR_LINKS, PILAR_NAMES, TOOL_LINKS } from '../data/internal-links';
 
 interface Props {
-  currentPilar: 'guia-para-cuidar-tu-perro-senior' | 'salud-perros-mayores' | 'alimentacion-perros-senior' | 'movilidad-dolor-perros-mayores' | 'salud-mental-emocional-perros' | 'higiene-hogar-perros-senior' | 'cuidados-paliativos-perros';
+  /** Se deriva del esquema de la colección en vez de copiar la unión a mano:
+   *  la lista escrita aquí había divergido (le faltaba 'herramientas' y
+   *  arrastraba 'guia-para-cuidar-tu-perro-senior', que ya no existe). */
+  currentPilar: CollectionEntry<'blog'>['data']['pilar'];
   currentSlug: string;
 }
 
