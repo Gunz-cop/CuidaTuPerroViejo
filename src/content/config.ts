@@ -23,6 +23,9 @@ const blog = defineCollection({
     legacyUrl: z.string().optional(),
     status: z.string().default('Publicado'),
     datePublished: z.string().default('2025-10-01'),
+    /** Fecha de la última revisión editorial/clínica real. Sin este campo,
+     *  el schema no declara una actualización que no ha ocurrido. */
+    dateModified: z.string().optional(),
   }).strict(),
 });
 
@@ -36,6 +39,8 @@ const pilares = defineCollection({
     heroImage: z.string().optional(),
     heroImageAlt: z.string().optional(),
     legacyUrl: z.string().optional(),
+    /** Fecha de la última revisión editorial/clínica real del pilar. */
+    dateModified: z.string().optional(),
   }),
 });
 

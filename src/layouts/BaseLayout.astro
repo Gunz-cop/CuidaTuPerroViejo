@@ -16,10 +16,15 @@ interface Props {
   imageHeight?: number;
   /** Permite ocultar el widget flotante en páginas donde no aporta valor. */
   showAiAssistant?: boolean;
+  /** Marca la página como no indexable (utilidades, confirmaciones, pasarelas). */
+  noindex?: boolean;
 }
 
-const { title, description = 'Cuida a tu Perro Viejo', keywords, image, ogType = 'website', imageWidth = 1200, imageHeight = 800, showAiAssistant = true } = Astro.props;
-const normalizedPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const { title, description = 'Cuida a tu Perro Viejo', keywords, image, ogType = 'website', imageWidth = 1200, imageHeight = 800, showAiAssistant = true, noindex = false } = Astro.props;
+// La URL canónica (y og:url, que usa la misma variable) apunta siempre a la
+// variante limpia. `build.format: 'file'` genera cada página como .html, así que
+// se normaliza aquí en vez de depender de que el borde redirija.
+const normalizedPath = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 const canonicalURL = new URL(normalizedPath, Astro.site);
 const isAsistenteIaPage = normalizedPath === '/asistente-ia';
 const pagesWithoutAiAssistant = new Set(['/politica-de-cookies', '/politica-de-privacidad']);
@@ -46,6 +51,7 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
     <link rel="alternate icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonicalURL} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="Cuida tu Perro Viejo" />
@@ -475,6 +481,7 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
             <p class="text-xs font-bold uppercase tracking-[0.15em] text-brand-primary">Información</p>
             <div class="mt-3 grid gap-2 text-sm">
               <a href="/acerca-de" class="w-fit text-brand-muted transition-colors hover:text-brand-primary">Sobre nosotros</a>
+              <a href="/politica-editorial" class="w-fit text-brand-muted transition-colors hover:text-brand-primary">Política editorial</a>
               <a href="/contacto" class="w-fit text-brand-muted transition-colors hover:text-brand-primary">Contacto</a>
               <a href="/politica-de-privacidad" class="w-fit text-brand-muted transition-colors hover:text-brand-primary">Privacidad</a>
               <a href="/politica-de-cookies" class="w-fit text-brand-muted transition-colors hover:text-brand-primary">Cookies</a>

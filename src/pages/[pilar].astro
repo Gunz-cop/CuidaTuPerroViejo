@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ArticleByline from '../components/ArticleByline.astro';
 import { buildSrcset } from '../utils/image';
 
 export async function getStaticPaths() {
@@ -28,7 +29,10 @@ const heroImageSrcset = buildSrcset(heroImage);
 // URL canónica del pilar
 const pilarURL = new URL(`/${pilar.slug}`, Astro.site).href;
 const siteURL = Astro.site?.href ?? 'https://cuidatuperroviejo.com/';
-const dateModified = new Date().toISOString();
+// Sólo se declara si el pilar registra una revisión real en su frontmatter.
+const dateModified = pilar.data.dateModified
+  ? new Date(pilar.data.dateModified).toISOString()
+  : null;
 
 // Imagen absoluta para schema
 const schemaImage = heroImage
@@ -53,7 +57,7 @@ const pilarSchema = {
         'width': 1200,
         'height': 675,
       },
-      'dateModified': dateModified,
+      ...(dateModified ? { 'dateModified': dateModified } : {}),
       'inLanguage': 'es',
     },
     {
@@ -148,6 +152,11 @@ const hideHeroCSS = heroImage
   </div>
 
   <main class="max-w-4xl mx-auto px-4 py-8 sm:py-12 w-full">
+
+    <!-- Firma editorial: autoría y fecha de revisión, desde el frontmatter -->
+    <div class="mb-6 pb-6 border-b border-brand-border">
+      <ArticleByline dateModified={pilar.data.dateModified} />
+    </div>
 
     <!-- Contenido MDX del pilar -->
     <div class="content-body prose dark:prose-invert max-w-none mb-12">

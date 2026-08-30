@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiloNavigation from '../../components/SiloNavigation.astro';
 import PostReader from '../../components/PostReader.astro';
+import ArticleByline from '../../components/ArticleByline.astro';
 import FeedbackWidget from '../../components/FeedbackWidget.astro';
 import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
 import AdStickyMobile320x50 from '../../components/ads/AdStickyMobile320x50.astro';
@@ -42,9 +43,11 @@ const postURL = new URL(`/${entry.data.pilar}/${entry.slug}`, Astro.site).href;
 const pilarURL = new URL(`/${entry.data.pilar}`, Astro.site).href;
 const siteURL = Astro.site?.href ?? 'https://cuidatuperroviejo.com/';
 
-// Fechas — datePublished del frontmatter, dateModified siempre al build
+// Fechas — ambas salen del frontmatter. dateModified sólo se declara cuando
+// existe una revisión editorial real; si no la hay, equivale a la publicación.
+// Nunca se usa la fecha del build: comunicaría una actualización inexistente.
 const datePublished = new Date(entry.data.datePublished).toISOString();
-const dateModified = new Date().toISOString();
+const dateModified = new Date(entry.data.dateModified ?? entry.data.datePublished).toISOString();
 
 // Imagen absoluta para schema
 const schemaImage = heroImage
@@ -73,16 +76,19 @@ const blogPostingSchema = {
       ],
       'datePublished': datePublished,
       'dateModified': dateModified,
+      // Autoría de organización, sin jobTitle: el equipo editorial no son
+      // veterinarios en ejercicio y el dato estructurado no debe afirmar una
+      // autoridad que el texto visible no reclama.
       'author': {
-        '@type': 'Person',
-        'name': 'Equipo Cuida a tu Perro Viejo',
-        'jobTitle': 'Especialistas en bienestar y cuidado canino',
-        'url': `${siteURL}acerca-de`,
+        '@type': 'Organization',
+        'name': 'Cuida tu Perro Viejo',
+        'url': siteURL,
       },
       'publisher': {
         '@type': 'Organization',
         'name': 'Cuida tu Perro Viejo',
         'url': siteURL,
+        'publishingPrinciples': `${siteURL}politica-editorial`,
         'logo': {
           '@type': 'ImageObject',
           'url': new URL('/favicon.png', Astro.site).href,
@@ -153,6 +159,11 @@ const hideHeroCSS = heroImage
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-brand-text leading-tight mb-4">
           {entry.data.title}
         </h1>
+
+        <!-- Firma editorial: autoría y fechas, siempre desde el frontmatter -->
+        <div class="mb-5">
+          <ArticleByline datePublished={entry.data.datePublished} dateModified={entry.data.dateModified} />
+        </div>
 
         <!-- Subtítulo -->
         {entry.data.metaDescription && (

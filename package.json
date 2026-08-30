@@ -9,9 +9,12 @@
     "postbuild": "npx tsx lib/discovery/run.ts",
     "preview": "npm run build && wrangler dev",
     "astro": "astro",
+    "test:assistant": "tsx scripts/test-assistant-retrieval.ts",
+    "test:assistant:live": "tsx scripts/test-assistant-live.ts",
     "deploy": "npm run build && wrangler deploy",
     "sdi:run": "npx tsx lib/discovery/run.ts",
     "images:optimize": "node scripts/optimize-images.mjs --apply --delete-originals --responsive",
+    "audit:seo": "node scripts/audit-seo.mjs",
     "images:optimize:dry": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
@@ -24,8 +27,10 @@
     "tailwindcss": "^3.4.4"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260702.1",
     "sdi-cli": "^0.1.0",
     "sharp": "^0.35.1",
-    "wrangler": "^4.94.0"
+    "tsx": "^4.23.12",
+    "wrangler": "~4.107.0"
   }
 }

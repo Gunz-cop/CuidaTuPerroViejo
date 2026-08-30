@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Política editorial | Cuida tu perro viejo";
+const description = "Cómo escribimos, qué fuentes usamos, cómo fechamos las revisiones y dónde están los límites de lo que publicamos sobre perros mayores.";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cuidatuperroviejo.com/politica-editorial#webpage",
+      "name": "Política editorial de Cuida tu Perro Viejo",
+      "url": "https://cuidatuperroviejo.com/politica-editorial",
+      "description": description,
+      "isPartOf": { "@id": "https://cuidatuperroviejo.com/#website" },
+      "publisher": { "@id": "https://cuidatuperroviejo.com/#organization" },
+      "inLanguage": "es"
+    }
+  ]
+};
+
+/** Cada bloque responde a una pregunta que un lector puede hacerse antes de fiarse de una guía. */
+const secciones = [
+  {
+    titulo: "Quién escribe",
+    parrafos: [
+      "Las guías de este sitio las escribe el equipo editorial de Cuida tu Perro Viejo. No somos veterinarios en ejercicio y no lo decimos en ninguna parte: nuestro trabajo es leer literatura veterinaria publicada, consensos profesionales y guías de instituciones reconocidas, y traducirlos a decisiones prácticas para quien cuida un perro mayor en casa.",
+      "Cuando un contenido incluya la revisión de un profesional colegiado, aparecerá con su nombre, su titulación y la fecha de la revisión. Si esa línea no aparece, es que esa revisión no se ha producido."
+    ]
+  },
+  {
+    titulo: "Qué fuentes usamos",
+    parrafos: [
+      "Priorizamos estudios revisados por pares, series de casos clínicos publicadas, guías de asociaciones veterinarias y manuales de referencia. Los enlazamos directamente donde sostienen una afirmación concreta, no en un bloque de bibliografía al final.",
+      "No citamos a profesionales cuyas declaraciones no podamos documentar, ni atribuimos a “veterinarios” en general afirmaciones que en realidad son criterio editorial nuestro."
+    ]
+  },
+  {
+    titulo: "Cómo fechamos las revisiones",
+    parrafos: [
+      "Cada guía muestra su fecha de publicación y, si ha habido una revisión posterior con cambios de contenido, la fecha de esa revisión. Esas mismas fechas son las que se declaran en los datos estructurados de la página.",
+      "No regeneramos automáticamente la fecha de actualización en cada publicación del sitio. Una fecha reciente en una de nuestras guías significa que alguien la revisó de verdad."
+    ]
+  },
+  {
+    titulo: "Correcciones",
+    parrafos: [
+      "Si detectas un error —clínico, factual o de fuente— escríbenos y lo revisamos. Cuando una corrección cambia el sentido de una recomendación, actualizamos el texto y la fecha de revisión."
+    ]
+  },
+  {
+    titulo: "Límites de lo que publicamos",
+    parrafos: [
+      "Nada de lo que hay en este sitio sustituye a una consulta veterinaria. No diagnosticamos, no prescribimos fármacos ni dosis, y no recomendamos retrasar una visita profesional.",
+      "Nuestras herramientas, incluida la escala de calidad de vida, son ayudas de observación para ordenar lo que ves en casa y llevarlo a la consulta. No emiten un veredicto médico ni deben usarse solas para tomar decisiones de final de vida."
+    ]
+  },
+  {
+    titulo: "Publicidad y enlaces",
+    parrafos: [
+      "El sitio se financia con publicidad y, en algunos casos, con enlaces de afiliación. Ningún anunciante decide qué recomendamos ni revisa los textos antes de publicarse. Cuando un producto aparece en una guía es porque encaja con el problema que esa guía resuelve."
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <div class="w-full bg-gradient-to-br from-brand-secondary/40 via-brand-primary/8 to-brand-secondary/20 dark:from-brand-primary/10 dark:via-brand-secondary/5 dark:to-transparent border-b border-brand-border">
+    <div class="max-w-3xl mx-auto px-5 py-12 md:py-16 flex flex-col items-center text-center">
+      <nav class="mb-3 text-xs text-brand-muted flex items-center gap-1.5">
+        <a href="/" class="hover:text-brand-primary transition-colors">Inicio</a>
+        <span aria-hidden="true">/</span>
+        <span class="text-brand-text font-medium">Política editorial</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-text leading-tight mb-3">
+        Política editorial
+      </h1>
+      <p class="text-base md:text-lg text-brand-muted leading-relaxed max-w-xl font-light">
+        Cómo escribimos, qué fuentes usamos y dónde están los límites de lo que puedes esperar de estas guías.
+      </p>
+    </div>
+  </div>
+
+  <main class="max-w-3xl mx-auto px-5 py-10 md:py-14">
+    <div class="flex flex-col gap-10">
+      {secciones.map((seccion) => (
+        <section>
+          <h2 class="text-xl md:text-2xl font-extrabold tracking-tight text-brand-text mb-3">
+            {seccion.titulo}
+          </h2>
+          <div class="flex flex-col gap-3">
+            {seccion.parrafos.map((parrafo) => (
+              <p class="text-brand-muted leading-relaxed font-light">{parrafo}</p>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <div class="mt-12 rounded-2xl border border-brand-border bg-brand-card/50 p-6 md:p-8">
+      <p class="text-brand-muted leading-relaxed font-light">
+        ¿Has visto algo que no cuadra en una de nuestras guías?
+        <a href="/contacto" class="font-semibold text-brand-primary hover:underline">Escríbenos</a>
+        y lo revisamos. Puedes conocer mejor al equipo en
+        <a href="/acerca-de" class="font-semibold text-brand-primary hover:underline">Sobre nosotros</a>.
+      </p>
+    </div>
+  </main>
+</BaseLayout>
