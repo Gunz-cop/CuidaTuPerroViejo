@@ -1,0 +1,90 @@
+name: CI (pull requests)
+
+# Convierte los criterios de aceptación en una compuerta real.
+#
+# Hasta ahora este repositorio no compilaba nada en CI: el único workflow era
+# `sdi-baseline.yml`, manual. Eso significa que quien declaraba cumplido un
+# criterio era la misma sesión que escribía el código. Cuando se montó este
+# workflow aparecieron de inmediato 19 errores de tipos ya fusionados en main,
+# en un repo que llevaba meses declarando `astro/tsconfigs/strict`.
+#
+# Cada paso es un criterio y aparece por separado en el PR: si algo falla, se ve
+# cuál sin abrir los logs.
+#
+# No ejecuta `npm run build`: ese script encadena un hook `postbuild` que envía
+# URLs a la Google Indexing API y a IndexNow. Aquí se llama a `astro build`
+# directamente. Mientras ese hook exista, ningún automatismo debe usar
+# `npm run build`.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+# Un PR que recibe varios push seguidos cancela la corrida anterior: solo
+# importa el último commit.
+concurrency:
+  group: ci-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  compuerta:
+    name: Criterios de aceptación
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      # `npm ci` y no `npm install`: instala exactamente el lockfile y falla si
+      # el árbol es irresoluble. Es la comprobación que faltaba cuando hubo que
+      # fijar wrangler en ~4.107.0 a mano.
+      - name: Instalar dependencias
+        run: npm ci
+
+      # `astro sync` genera `.astro/types.d.ts` (el módulo virtual
+      # `astro:content`). Ese directorio está en `.gitignore`, así que un
+      # checkout limpio de CI nunca lo tiene: sin este paso el typecheck falla
+      # con "Cannot find module 'astro:content'" en cualquier PR, y nadie lo ve
+      # porque en una máquina local el directorio ya existe de una corrida
+      # anterior de `astro dev` o `astro build`.
+      - name: Generar tipos de Astro
+        run: npx --no-install astro sync
+
+      # --no-install es deliberado, y va en todos los pasos: sin él, `npx` puede
+      # no encontrar el binario en node_modules/.bin y descargarse de npm un
+      # paquete con ese nombre que no es la herramienta. Pasa de silencioso a
+      # error, y de error a código ajeno ejecutándose en CI.
+      - name: Tipos
+        run: npx --no-install astro check
+
+      - name: Tests
+        run: npm test
+
+      # Los bindings de `wrangler.jsonc` y los tipos generados tienen que contar
+      # lo mismo. `--check` no regenera: compara y falla si divergen, que es lo
+      # que pasa cuando alguien añade un binding y no vuelve a correr
+      # `wrangler types`. Sin este paso el `Env` miente y el typecheck lo da por
+      # bueno.
+      #
+      # `--strict-vars=false` no es opcional: tiene que ser el MISMO juego de
+      # banderas con el que se generó `worker-configuration.d.ts`.
+      - name: Tipos del Worker al día
+        run: npx --no-install wrangler types --check --strict-vars=false
+
+      - name: Build
+        run: npx --no-install astro build
+
+      # Valida que el Worker se empaqueta y que `wrangler.jsonc` es coherente,
+      # sin desplegar nada.
+      - name: Worker empaqueta
+        run: npx --no-install wrangler deploy --dry-run --outdir=/tmp/wrangler-dry-run

@@ -9,6 +9,8 @@
     "postbuild": "npx tsx lib/discovery/run.ts",
     "preview": "npm run build && wrangler dev",
     "astro": "astro",
+    "check": "astro check",
+    "test": "tsx --test \"tests/**/*.test.ts\"",
     "test:assistant": "tsx scripts/test-assistant-retrieval.ts",
     "test:assistant:live": "tsx scripts/test-assistant-live.ts",
     "deploy": "npm run build && wrangler deploy",
@@ -27,10 +29,12 @@
     "tailwindcss": "^3.4.4"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "@cloudflare/workers-types": "^4.20260702.1",
     "sdi-cli": "^0.1.0",
     "sharp": "^0.35.1",
     "tsx": "^4.23.12",
+    "typescript": "^5.9.3",
     "wrangler": "~4.107.0"
   }
 }
