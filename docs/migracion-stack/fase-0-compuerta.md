@@ -122,6 +122,33 @@ En Windows, el fallo de `wrangler types --check` sale con 127 por una aserción
 de libuv posterior al mensaje de error. El mensaje y el fallo son correctos; en
 el runner de Linux sale 1.
 
+## Lo que solo se vio al leer el check de GitHub
+
+La compuerta pasaba entera en local y **falló en el primer PR**, en 40 segundos,
+en el paso de los tipos del Worker. Es la razón exacta por la que el criterio se
+verifica leyendo el check y no corriendo el comando a mano.
+
+`wrangler types` carga el `.env` local del desarrollador y mete sus claves en el
+`Env` generado. El fichero commiteado traía seis entradas que no están en
+`wrangler.jsonc`: `INDEXNOW_KEY`, `INDEXNOW_HOST`, `GOOGLE_CLIENT_EMAIL`,
+`GOOGLE_PRIVATE_KEY`, `SDI_SITE_URL` y `CONTACT_DESTINATION_EMAIL`.
+
+Dos problemas, no uno:
+
+1. El fichero dependía de la máquina, así que `--check` no podía pasar nunca en
+   CI, donde `.env` no existe porque está gitignoreado.
+2. Publicaba en el repositorio **los nombres de los secretos locales**. Los
+   valores no, pero los nombres tampoco tienen por qué estar.
+
+Se resuelve con `--env-file wrangler-types.env`, un fichero vacío a propósito y
+documentado en su propia cabecera. La ruta va **relativa**: `wrangler types`
+escribe el comando completo en la cabecera del fichero generado, así que una
+ruta absoluta vuelve a hacerlo dependiente de la máquina.
+
+El `Env` resultante describe lo que declara `wrangler.jsonc` —`CONTACT_KV`,
+`CONTACT_DB`, `EMAIL`, `AI`, `ASSETS`— y nada más, que es lo que debía describir
+desde el principio.
+
 ## Verificación contra la línea base
 
 Los arreglos de tipos tocan código de cliente, así que hay que demostrar que el

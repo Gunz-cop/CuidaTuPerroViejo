@@ -76,10 +76,17 @@ jobs:
       # `wrangler types`. Sin este paso el `Env` miente y el typecheck lo da por
       # bueno.
       #
-      # `--strict-vars=false` no es opcional: tiene que ser el MISMO juego de
-      # banderas con el que se generó `worker-configuration.d.ts`.
+      # Las banderas tienen que ser EXACTAMENTE las mismas con las que se generó
+      # `worker-configuration.d.ts`: `wrangler types` escribe el comando entero
+      # en la cabecera del fichero, así que cualquier diferencia lo invalida.
+      #
+      # `--env-file wrangler-types.env` apunta a un fichero vacío a propósito.
+      # Sin él, wrangler carga el `.env` del desarrollador y mete sus claves en
+      # el `Env` generado: el fichero pasa a depender de la máquina y aquí, donde
+      # `.env` no existe, este paso falla siempre. La ruta va relativa por el
+      # mismo motivo.
       - name: Tipos del Worker al día
-        run: npx --no-install wrangler types --check --strict-vars=false
+        run: npx --no-install wrangler types --check --env-file wrangler-types.env --strict-vars=false
 
       - name: Build
         run: npx --no-install astro build
