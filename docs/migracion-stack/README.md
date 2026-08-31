@@ -120,10 +120,34 @@ Si una de las dos sesiones se sale de su lista de «Archivos que posee», el
 paralelismo se pierde y aparece un conflicto. Por eso las dos specs tienen un
 criterio de aceptación que compara el diff contra esa lista.
 
-**Punto de reunión antes de F3.** F1B va a `main` y F2 a `migracion/astro-7`.
-Antes de arrancar F3 hay que **fusionar `main` en `migracion/astro-7`**: la fase 3
-reescribe los accesos a bindings de los mismos ficheros que F1B modificó, y si no
-están, se migran unos ficheros que ya no son los que hay en producción.
+## El punto de reunión de las dos ramas
+
+F1A y F1B van a `main`. F2, F3 y F4 van a `migracion/astro-7`, que se creó de
+`main` **antes** de que F1A se fusionara. Las dos ramas divergen, y hay que
+volver a juntarlas.
+
+**El orden importa, y no es el intuitivo.** La tentación es fusionar `main` en la
+rama de integración en cuanto haya algo nuevo. Es un error:
+
+```
+  1. F2 se verifica contra la base sobre la que se construyó   ← NO tocar la base antes
+  2. Se fusiona el PR de F2 en migracion/astro-7
+  3. Se fusiona main en migracion/astro-7                       ← aquí, y en un commit propio
+  4. Se verifica ESE merge por separado
+  5. Empieza F3
+```
+
+Si se fusiona `main` en la rama de integración mientras la verificación de F2
+está pendiente, el verificador ve a la vez los cambios de F2 y los de F1A —
+cabeceras nuevas, middleware distinto, otro bundle— y **no puede atribuir
+ninguno**. Es exactamente la trampa que `references/verificacion.md` de la skill
+llama «para atribuir un cambio, construí las dos versiones sobre la misma base».
+
+El paso 4 no es ceremonia: F1A tocó `src/middleware.ts`, `wrangler.jsonc` y
+`public/_headers`, y F2 migró el sitio a Astro 5. Que git funda los dos sin
+conflictos textuales no prueba que el resultado funcione.
+
+
 
 ## El paralelismo que de verdad escala
 
