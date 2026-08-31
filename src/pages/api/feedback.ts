@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { hashIp } from '../../../lib/contact/security';
+import { hashIp } from '../../lib/contact/security';
 
 export const prerender = false;
 
