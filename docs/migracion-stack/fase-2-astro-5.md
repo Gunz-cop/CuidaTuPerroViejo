@@ -1,11 +1,17 @@
 # F2 — Astro 4 → 5
 
 **Proyecto:** [`README.md`](README.md) de esta carpeta — manda sobre esta spec.
-**Rama base:** `migracion/astro-7` · **Depende de:** F1
+**Rama base:** `migracion/astro-7` · **Depende de:** F1A
 **Método:** skill `upgrade-astro-cloudflare`. Leé
 `references/saltos.md` (sección «Astro 4 → 5») **antes de empezar**: las rupturas
 generales del salto están ahí y no se repiten aquí.
 
+> **Se ejecuta en paralelo con F1B.** Las dos no comparten un solo fichero:
+> aquella posee `src/pages/api/` y `src/pages/admin/`, esta posee la
+> configuración, las colecciones y las páginas de contenido. **No toques
+> `src/pages/api/` ni `src/pages/admin/`**, ni siquiera para un arreglo obvio: se
+> pierde el paralelismo y aparece un conflicto.
+>
 > **Este salto no tiene precedente en ninguno de estos repos.** Presupuestalo
 > como territorio nuevo. La guía de Astro dice qué cambia, no qué se rompe aquí.
 
@@ -19,8 +25,8 @@ adaptador 12 aún arrastra `@cloudflare/workers-types` v4.
 
 - La compuerta de CI en verde sobre `main`, con `astro check`, `npm test` y los
   tipos del Worker.
-- La fase 1 fusionada: el Worker ya no importa `astro:content`, lo que reduce lo
-  que este salto puede romper.
+- Fase 1A fusionada. **F1B puede estar en curso o ya fusionada**: es indiferente
+  para esta fase, porque no comparten ningún fichero.
 - Línea base regenerable desde `ac7a9bb` (ver README).
 
 ## Contrato de salida
