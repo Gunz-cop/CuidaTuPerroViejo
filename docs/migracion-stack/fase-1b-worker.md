@@ -46,6 +46,7 @@ Además ya existe:
 - `src/pages/api/admin/contact-messages/[id].ts` (editar — solo el rate limit)
 - `src/pages/admin/contact-messages.astro` (editar — solo el rate limit)
 - `migrations/0002_feedback_counts.sql` (nuevo)
+- `src/middleware.ts` (editar — **solo** el trabajo 4)
 
 **Nada más.** En particular: ni `wrangler.jsonc`, ni `package.json`, ni
 `src/lib/assistant/catalog.ts`. Si creés que necesitás alguno, el bug es de la
@@ -56,7 +57,7 @@ spec: reportalo.
 - `.github/workflows/`
 - `tests/`
 - `docs/migracion-stack/`
-- `public/_redirects`, `public/_headers`, `src/middleware.ts` (son de F1A)
+- `public/_redirects`, `public/_headers` (son de F1A)
 - `wrangler.jsonc`, `worker-configuration.d.ts` (son de F1A)
 - `package.json` (es de F1A y F2)
 - Todo `src/pages/` que no esté en la lista de arriba (es de F2)
@@ -128,10 +129,40 @@ actuales (`wrangler kv key list --binding CONTACT_KV` y generar los INSERT). **S
 no lo tenés, no lo inventes ni te bloquees:** dejá los contadores empezando en
 cero, decilo en el PR, y anotalo como pendiente. Es una salida legal.
 
+### 4. Endurecer la caché de borde del panel de administración
+
+**Sale de una revisión de F1A y es lo más urgente de esta fase.**
+
+El middleware cachea respuestas en la Cache API de Cloudflare, que es
+**compartida entre visitantes**. Hasta F1A, `/admin/contact-messages` entraba en
+ese camino: es `prerender = false`, devolvía 200 `text/html` sin `Cache-Control`,
+así que el middleware le ponía `public, s-maxage=86400` y la guardaba. Una
+petición posterior **sin `Authorization`** encontraba esa entrada y recibía el
+panel entero —nombres, correos, mensajes, hashes de IP— sin que
+`hasValidBasicAuth` llegara a ejecutarse.
+
+F1A lo cerró añadiendo `/admin/` a la lista de rutas que no se cachean. Eso
+basta hoy, pero **depende de una lista de prefijos**: la próxima ruta
+autenticada que alguien añada vuelve a abrirlo. Añadí dos defensas más:
+
+1. **En `src/pages/admin/contact-messages.astro`**, devolvé
+   `Cache-Control: no-store` también en la respuesta autenticada, no solo en el
+   401. Así la página se protege sola aunque el middleware cambie.
+2. **En `src/middleware.ts`**, no guardes en caché ninguna respuesta a una
+   petición que traiga cabecera `Authorization`, sea cual sea su ruta. Es la
+   regla que no depende de acordarse de nada.
+
+**Probalo saboteando:** quitá temporalmente `/admin/` de la lista de prefijos y
+comprobá que, con las dos defensas puestas, la página **sigue sin cachearse**. Si
+se cachea, la defensa no vale.
+
 ## Fuera de alcance
 
 - **Cualquier cambio de versión de dependencia.**
-- **Tocar `wrangler.jsonc`.** Los bindings los declara F1A. Si falta uno,
+- **Tocar `wrangler.jsonc`.** Los bindings los declara F1A. (De `src/middleware.ts`
+  sí sos dueño, pero **solo** para el trabajo 4: no toques la lógica de caché de
+  borde por lo demás.)
+- **Nada más de F1A.** Si falta uno,
   reportalo en el issue en vez de añadirlo: romperías el paralelismo con F2.
 - **Migrar `locals.runtime`.** Es la fase 3, y estos mismos ficheros se vuelven a
   tocar allí. Escribí el código nuevo con el estilo actual del fichero.
@@ -151,6 +182,7 @@ cero, decilo en el PR, y anotalo como pendiente. Es una salida legal.
 - [ ] **Propiedad de ficheros:** `git diff --name-only origin/main...HEAD` está contenido en la lista «Archivos que posee». Cualquier fichero de más rompe el paralelismo con F2
 - [ ] `[manual]` Con `wrangler dev`: `/api/ask` responde 200 a una consulta normal y 429 a la petición número 11 dentro del mismo minuto
 - [ ] `[manual]` Con `wrangler dev`: dos votos seguidos en `/api/feedback` para el mismo slug dejan el contador en 2, y un tercero desde la misma IP no lo incrementa
+- [ ] `[manual]` **Sabotaje de la caché de admin:** quitando `/admin/` de la lista de prefijos del middleware, una carga autenticada de `/admin/contact-messages` **no** queda en caché, y una petición posterior sin `Authorization` recibe 401
 
 ## Riesgos conocidos
 

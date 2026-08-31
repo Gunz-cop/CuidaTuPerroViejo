@@ -28,8 +28,8 @@ sin pisarse con nada.
 Lo que otras fases van a dar por hecho:
 
 - `public/_headers` con caché y cabeceras de seguridad.
-- `src/middleware.ts` exportando `onRequest`, que aplica las mismas cabeceras a
-  las respuestas del Worker.
+- `src/middleware.ts` aplicando las mismas cabeceras a **todos** sus caminos de
+  retorno, incluido el que se salta la caché para `/api/*` y `/admin/*`.
 - **`wrangler.jsonc` declara los bindings `ASK_LIMIT` y `ADMIN_LIMIT`**, listos
   para que F1B los use. Esta fase los declara pero **no** los usa.
 - `assets` con `not_found_handling` y `run_worker_first`.
@@ -38,7 +38,7 @@ Lo que otras fases van a dar por hecho:
 ## Archivos que posee
 
 - `public/_headers` (nuevo)
-- `src/middleware.ts` (nuevo)
+- `src/middleware.ts` (editar — **ya existía**, hacía caché de borde)
 - `wrangler.jsonc` (editar)
 - `worker-configuration.d.ts` (regenerar)
 - `package.json` (editar — **solo scripts, ninguna dependencia**)
@@ -92,9 +92,18 @@ Va aparte, en `report-only` primero.
 `_headers` **no se aplica a las respuestas que genera el Worker**. Las rutas
 `/api/*` y `/admin/*` necesitan las mismas cabeceras por middleware.
 
-Astro 4 lo soporta con `defineMiddleware` de `astro:middleware`. Exportá la
-lista de cabeceras de un módulo y usala en los dos sitios, o dejá un comentario
-cruzado en ambos ficheros: duplicarla a mano garantiza que diverjan.
+**Corrección de esta spec (2026-08-30):** la primera versión decía que
+`src/middleware.ts` era un fichero nuevo. **No lo es.** Existe desde `20374e9` y
+hace caché de borde con la Cache API de Cloudflare. El error era mío: la
+auditoría no lo detectó y afirmó que el sitio no tenía middleware.
+
+Eso cambia el trabajo: no es escribir un fichero, es **envolver todos los caminos
+de retorno que ya tiene** —el early return para peticiones no-GET, el que se
+salta la caché, el HIT, el MISS y el fallback—. Perder uno deja sin cabeceras
+exactamente las rutas que había que cubrir.
+
+Duplicar la lista de cabeceras entre `_headers` y el middleware es inevitable
+(son dos capas distintas): dejá un comentario cruzado en ambos ficheros.
 
 ### 3. Configuración de assets
 
