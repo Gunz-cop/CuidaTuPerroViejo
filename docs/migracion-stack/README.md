@@ -64,13 +64,17 @@ pasado la verificación completa.
 
 ## Las fases
 
-| | Fase | Spec | Rama base | Depende de |
-|---|---|---|---|---|
-| ✅ | 0 — Compuerta y línea base | [`fase-0-compuerta.md`](fase-0-compuerta.md) | `main` | — |
-| | 1 — Plataforma, sobre Astro 4 | [`fase-1-plataforma.md`](fase-1-plataforma.md) | `main` | F0 |
-| | 2 — Astro 4 → 5 | [`fase-2-astro-5.md`](fase-2-astro-5.md) | `migracion/astro-7` | F1 |
-| | 3 — Astro 5 → 6 | [`fase-3-astro-6.md`](fase-3-astro-6.md) | `migracion/astro-7` | F2 |
-| | 4 — Astro 6 → 7 | [`fase-4-astro-7.md`](fase-4-astro-7.md) | `migracion/astro-7` | F3 |
+| | Fase | Spec | Issue | Rama base | Depende de |
+|---|---|---|---|---|---|
+| ✅ | 0 — Compuerta y línea base | [`fase-0-compuerta.md`](fase-0-compuerta.md) | [#9](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/9) | `main` | — |
+| 🟢 | 1 — Plataforma, sobre Astro 4 | [`fase-1-plataforma.md`](fase-1-plataforma.md) | [#11](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/11) | `main` | F0 |
+| 🔒 | 2 — Astro 4 → 5 | [`fase-2-astro-5.md`](fase-2-astro-5.md) | [#12](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/12) | `migracion/astro-7` | F1 |
+| 🔒 | 3 — Astro 5 → 6 | [`fase-3-astro-6.md`](fase-3-astro-6.md) | [#13](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/13) | `migracion/astro-7` | F2 |
+| 🔒 | 4 — Astro 6 → 7 | [`fase-4-astro-7.md`](fase-4-astro-7.md) | [#14](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/14) | `migracion/astro-7` | F3 |
+
+🟢 lista para tomar · 🔒 bloqueada por la anterior. La rama `migracion/astro-7` ya existe, creada desde `main`.
+
+> **El estado vive en las etiquetas de los issues, no en esta tabla.** Si divergen, gana el issue: en el proyecto anterior una columna de estado duplicada derivó de la realidad en menos de un día.
 
 **Todas son secuenciales, y no se disimula.** El método prefiere fases paralelas
 con propiedad de archivos disjunta, pero aquí no es posible: las cuatro tocan
