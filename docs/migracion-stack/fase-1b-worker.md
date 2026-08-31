@@ -11,7 +11,8 @@
 
 ## Objetivo
 
-Que el Worker deje de cargar el blog entero, que el endpoint de IA no se pueda
+Cerrar del todo la exposición del panel de administración por la caché de borde,
+que el Worker deje de cargar el blog entero, que el endpoint de IA no se pueda
 abusar, y que el contador de feedback deje de perder votos.
 
 ## Contrato de entrada
@@ -37,6 +38,8 @@ Además ya existe:
   `env.ASSETS`.
 - Tabla D1 `feedback_counts` y `/api/feedback` operando contra ella, con
   deduplicación.
+- El panel de administración no se puede cachear **aunque alguien quite `/admin/`
+  de la lista de prefijos del middleware**.
 
 ## Archivos que posee
 
@@ -46,7 +49,7 @@ Además ya existe:
 - `src/pages/api/admin/contact-messages/[id].ts` (editar — solo el rate limit)
 - `src/pages/admin/contact-messages.astro` (editar — solo el rate limit)
 - `migrations/0002_feedback_counts.sql` (nuevo)
-- `src/middleware.ts` (editar — **solo** el trabajo 4)
+- `src/middleware.ts` (editar — **solo** el trabajo 1)
 
 **Nada más.** En particular: ni `wrangler.jsonc`, ni `package.json`, ni
 `src/lib/assistant/catalog.ts`. Si creés que necesitás alguno, el bug es de la
@@ -64,9 +67,38 @@ spec: reportalo.
 
 ## Instrucciones
 
-Tres trabajos. **Un commit por trabajo.**
+Cuatro trabajos, **en este orden**: el primero cierra un problema de seguridad
+en producción y por eso va delante. **Un commit por trabajo.**
 
-### 1. Sacar el blog del bundle del Worker
+### 1. Endurecer la caché de borde del panel de administración
+
+**Sale de una revisión de F1A y va primero porque cierra un problema de seguridad
+que hoy está en producción.**
+
+El middleware cachea respuestas en la Cache API de Cloudflare, que es
+**compartida entre visitantes**. Hasta F1A, `/admin/contact-messages` entraba en
+ese camino: es `prerender = false`, devolvía 200 `text/html` sin `Cache-Control`,
+así que el middleware le ponía `public, s-maxage=86400` y la guardaba. Una
+petición posterior **sin `Authorization`** encontraba esa entrada y recibía el
+panel entero —nombres, correos, mensajes, hashes de IP— sin que
+`hasValidBasicAuth` llegara a ejecutarse.
+
+F1A lo cerró añadiendo `/admin/` a la lista de rutas que no se cachean. Eso
+basta hoy, pero **depende de una lista de prefijos**: la próxima ruta
+autenticada que alguien añada vuelve a abrirlo. Añadí dos defensas más:
+
+1. **En `src/pages/admin/contact-messages.astro`**, devolvé
+   `Cache-Control: no-store` también en la respuesta autenticada, no solo en el
+   401. Así la página se protege sola aunque el middleware cambie.
+2. **En `src/middleware.ts`**, no guardes en caché ninguna respuesta a una
+   petición que traiga cabecera `Authorization`, sea cual sea su ruta. Es la
+   regla que no depende de acordarse de nada.
+
+**Probalo saboteando:** quitá temporalmente `/admin/` de la lista de prefijos y
+comprobá que, con las dos defensas puestas, la página **sigue sin cachearse**. Si
+se cachea, la defensa no vale.
+
+### 2. Sacar el blog del bundle del Worker
 
 **El de más impacto.** `dist/_worker.js` pesa 2,6 MB en 189 chunks, y los
 mayores son artículos completos. La causa: `src/lib/assistant/catalog.ts` llama
@@ -92,7 +124,7 @@ El sitio es estático: nada de eso hace falta en runtime.
 
 Una sola fuente de verdad: el JSON sale de la misma colección que genera el HTML.
 
-### 2. Rate limit en `/api/ask` y `/admin/*`
+### 3. Rate limit en `/api/ask` y `/admin/*`
 
 Los bindings ya están declarados por F1A. Llamá a `limit({ key })` con el hash
 de `cf-connecting-ip` **antes de tocar el binding `AI`**, y devolvé 429 con
@@ -105,7 +137,7 @@ El límite es local a cada ubicación de Cloudflare y eventualmente consistente:
 sirve para frenar abuso, no para contabilidad exacta. No lo documentes como otra
 cosa.
 
-### 3. Contador de feedback a D1
+### 4. Contador de feedback a D1
 
 `/api/feedback` hace `get` → `parseInt + 1` → `put` sobre KV. KV es
 eventualmente consistente y admite del orden de una escritura por segundo y
@@ -129,38 +161,11 @@ actuales (`wrangler kv key list --binding CONTACT_KV` y generar los INSERT). **S
 no lo tenés, no lo inventes ni te bloquees:** dejá los contadores empezando en
 cero, decilo en el PR, y anotalo como pendiente. Es una salida legal.
 
-### 4. Endurecer la caché de borde del panel de administración
-
-**Sale de una revisión de F1A y es lo más urgente de esta fase.**
-
-El middleware cachea respuestas en la Cache API de Cloudflare, que es
-**compartida entre visitantes**. Hasta F1A, `/admin/contact-messages` entraba en
-ese camino: es `prerender = false`, devolvía 200 `text/html` sin `Cache-Control`,
-así que el middleware le ponía `public, s-maxage=86400` y la guardaba. Una
-petición posterior **sin `Authorization`** encontraba esa entrada y recibía el
-panel entero —nombres, correos, mensajes, hashes de IP— sin que
-`hasValidBasicAuth` llegara a ejecutarse.
-
-F1A lo cerró añadiendo `/admin/` a la lista de rutas que no se cachean. Eso
-basta hoy, pero **depende de una lista de prefijos**: la próxima ruta
-autenticada que alguien añada vuelve a abrirlo. Añadí dos defensas más:
-
-1. **En `src/pages/admin/contact-messages.astro`**, devolvé
-   `Cache-Control: no-store` también en la respuesta autenticada, no solo en el
-   401. Así la página se protege sola aunque el middleware cambie.
-2. **En `src/middleware.ts`**, no guardes en caché ninguna respuesta a una
-   petición que traiga cabecera `Authorization`, sea cual sea su ruta. Es la
-   regla que no depende de acordarse de nada.
-
-**Probalo saboteando:** quitá temporalmente `/admin/` de la lista de prefijos y
-comprobá que, con las dos defensas puestas, la página **sigue sin cachearse**. Si
-se cachea, la defensa no vale.
-
 ## Fuera de alcance
 
 - **Cualquier cambio de versión de dependencia.**
 - **Tocar `wrangler.jsonc`.** Los bindings los declara F1A. (De `src/middleware.ts`
-  sí sos dueño, pero **solo** para el trabajo 4: no toques la lógica de caché de
+  sí sos dueño, pero **solo** para el trabajo 1: no toques la lógica de caché de
   borde por lo demás.)
 - **Nada más de F1A.** Si falta uno,
   reportalo en el issue en vez de añadirlo: romperías el paralelismo con F2.
@@ -188,7 +193,7 @@ se cachea, la defensa no vale.
 
 - **`env.ASSETS.fetch` necesita una URL absoluta.** Construila desde
   `request.url`.
-- **El criterio del bundle es el que dice si el trabajo 1 salió bien**, no que la
+- **El criterio del bundle es el que dice si el trabajo 2 salió bien**, no que la
   build pase: el import puede seguir vivo por otra ruta y el sitio compilar
   igual. Mirá el número.
 - **Estos ficheros los vuelve a tocar la fase 3.** No inviertas en refactorizarlos

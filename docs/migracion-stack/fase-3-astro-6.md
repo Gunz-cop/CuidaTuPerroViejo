@@ -55,7 +55,12 @@ y el pin de wrangler eliminado.
 
 - `.github/workflows/`
 - `tests/`
-- `docs/migracion-stack/` salvo el fichero de evidencia propio
+- `docs/migracion-stack/README.md`
+- `docs/migracion-stack/fase-0-compuerta.md`
+- `docs/migracion-stack/fase-1a-entrega.md`
+- `docs/migracion-stack/fase-1b-worker.md`
+- `docs/migracion-stack/fase-2-astro-5.md`
+- `docs/migracion-stack/fase-4-astro-7.md`
 - `public/_redirects`, `public/_headers`
 - `src/data/internal-links.ts`
 
