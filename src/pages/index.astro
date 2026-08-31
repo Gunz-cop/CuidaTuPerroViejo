@@ -15,7 +15,10 @@ import HomeStatsBand from '../components/HomeStatsBand.astro';
 const blogEntries = await getCollection('blog', ({ data }) => data.status === 'Publicado');
 const recentPosts = blogEntries
   .sort((a, b) => new Date(b.data.datePublished).getTime() - new Date(a.data.datePublished).getTime())
-  .slice(0, 3);
+  .slice(0, 3)
+  // HomeRecentPosts.astro (fuera de esta fase) sigue leyendo post.slug: se
+  // conserva ese campo aunque la Content Layer API ya no lo exponga en la entry.
+  .map((entry) => ({ ...entry, slug: entry.id }));
 
 const faqItems = [
   {
