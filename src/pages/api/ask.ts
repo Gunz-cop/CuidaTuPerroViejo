@@ -1,5 +1,4 @@
 import type { APIRoute } from 'astro';
-import { getArticleCatalog } from '../../lib/assistant/catalog';
 import { generateAssistantDecision } from '../../lib/assistant/generation';
 import {
   getArticleContingencyAnswer,
@@ -7,7 +6,7 @@ import {
   getUrinaryClarificationAnswer,
 } from '../../lib/assistant/guidance';
 import { findFallbackRecommendations, verifyCatalogRecommendation } from '../../lib/assistant/retrieval';
-import type { AssistantSource, RetrievalMethod } from '../../lib/assistant/types';
+import type { ArticleCandidate, AssistantSource, RetrievalMethod } from '../../lib/assistant/types';
 
 export const prerender = false;
 
@@ -27,6 +26,15 @@ const logError = (event: string, error: unknown) => {
     event,
     error: error instanceof Error ? error.message : String(error),
   }));
+};
+
+const loadArticleCatalog = async (request: Request, locals: App.Locals): Promise<ArticleCandidate[]> => {
+  const env = locals.runtime?.env as { ASSETS?: Fetcher } | undefined;
+  if (!env?.ASSETS) throw new Error('ASSETS no está configurado.');
+
+  const response = await env.ASSETS.fetch(new URL('/api/assistant-catalog.json', request.url));
+  if (!response.ok) throw new Error(`El catálogo respondió con HTTP ${response.status}.`);
+  return response.json() as Promise<ArticleCandidate[]>;
 };
 
 const parseQuestion = async (request: Request): Promise<string | Response> => {
@@ -62,7 +70,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     if (parsedQuestion instanceof Response) return parsedQuestion;
 
     const startedAt = Date.now();
-    const catalog = await getArticleCatalog();
+    const catalog = await loadArticleCatalog(request, locals);
     const emergencyAnswer = getEmergencyAnswer(parsedQuestion);
     const urinaryClarificationAnswer = getUrinaryClarificationAnswer(parsedQuestion);
     const ai = locals.runtime?.env?.AI;
