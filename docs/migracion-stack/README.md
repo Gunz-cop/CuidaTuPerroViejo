@@ -68,7 +68,7 @@ pasado la verificación completa.
 |---|---|---|---|---|---|
 | ✅ | 0 — Compuerta y línea base | [`fase-0-compuerta.md`](fase-0-compuerta.md) | [#9](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/9) | `main` | — |
 | 🟢 | 1A — Entrega y configuración | [`fase-1a-entrega.md`](fase-1a-entrega.md) | [#11](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/11) | `main` | F0 |
-| 🔒 | 1B — Worker: tamaño, abuso y datos | [`fase-1b-worker.md`](fase-1b-worker.md) | [#16](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/16) | `main` | F1A |
+| 🔒 | 1B — Worker: tamaño, abuso y datos | [`fase-1b-worker.md`](fase-1b-worker.md) | [#17](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/17) | `main` | F1A |
 | 🔒 | 2 — Astro 4 → 5 | [`fase-2-astro-5.md`](fase-2-astro-5.md) | [#12](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/12) | `migracion/astro-7` | F1A |
 | 🔒 | 3 — Astro 5 → 6 | [`fase-3-astro-6.md`](fase-3-astro-6.md) | [#13](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/13) | `migracion/astro-7` | F2 + F1B |
 | 🔒 | 4 — Astro 6 → 7 | [`fase-4-astro-7.md`](fase-4-astro-7.md) | [#14](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/14) | `migracion/astro-7` | F3 |
