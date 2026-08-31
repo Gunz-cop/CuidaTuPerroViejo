@@ -54,7 +54,12 @@ adaptador 12 aún arrastra `@cloudflare/workers-types` v4.
 
 - `.github/workflows/`
 - `tests/`
-- `docs/migracion-stack/` salvo el fichero de evidencia propio
+- `docs/migracion-stack/README.md`
+- `docs/migracion-stack/fase-0-compuerta.md`
+- `docs/migracion-stack/fase-1a-entrega.md`
+- `docs/migracion-stack/fase-1b-worker.md`
+- `docs/migracion-stack/fase-3-astro-6.md`
+- `docs/migracion-stack/fase-4-astro-7.md`
 - `public/_redirects`
 - `src/data/internal-links.ts`
 - `public/_headers`, `src/middleware.ts` (son de la fase 1)

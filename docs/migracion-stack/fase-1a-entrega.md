@@ -1,5 +1,7 @@
 # F1A — Entrega y configuración
 
+<!-- fase-cerrada -->
+
 **Proyecto:** [`README.md`](README.md) de esta carpeta — manda sobre esta spec.
 **Rama base:** `main` · **Depende de:** F0 (fusionada)
 **Método:** skill `upgrade-astro-cloudflare` (`~/.claude/skills/`)

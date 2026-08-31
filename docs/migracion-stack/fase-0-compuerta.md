@@ -1,5 +1,7 @@
 # Fase 0 — Compuerta y línea base
 
+<!-- fase-cerrada -->
+
 > **Qué hay en `docs/migracion-stack/`:** la evidencia de *esta* migración —
 > estado de partida, decisiones con su motivo, y lo que quedó sin verificar.
 > El **método** no vive aquí: vive en la skill compartida
