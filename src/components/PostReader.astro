@@ -216,7 +216,7 @@ const withInContentAd = processedHtml.replace(/<p\b[^>]*>[\s\S]*?<\/p>/gi, (matc
     window.addEventListener('scroll', checkTopFallback, { passive: true });
     checkTopFallback();
 
-    document.querySelectorAll('.mobile-toc-container').forEach((toc) => {
+    document.querySelectorAll<HTMLElement>('.mobile-toc-container').forEach((toc) => {
       if (toc.dataset.closeOnClickReady === 'true') return;
       toc.dataset.closeOnClickReady = 'true';
 
