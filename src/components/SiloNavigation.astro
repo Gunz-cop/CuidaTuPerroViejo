@@ -19,12 +19,12 @@ const allPosts = await getCollection('blog');
 
 // Filter posts belonging to the same pilar, excluding the current article
 const samePilarPosts = allPosts
-  .filter((post) => post.data.pilar === currentPilar && post.slug !== currentSlug)
+  .filter((post) => post.data.pilar === currentPilar && post.id !== currentSlug)
   .sort((a, b) => new Date(b.data.datePublished).getTime() - new Date(a.data.datePublished).getTime())
   .slice(0, 4);
 
 const crossPilarPosts = (CROSS_PILLAR_LINKS[currentSlug] || [])
-  .map((slug) => allPosts.find((post) => post.slug === slug))
+  .map((slug) => allPosts.find((post) => post.id === slug))
   .filter((post): post is (typeof allPosts)[number] => Boolean(post));
 
 const toolLink = TOOL_LINKS[currentSlug];
@@ -39,7 +39,7 @@ const toolLink = TOOL_LINKS[currentSlug];
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {samePilarPosts.map((post) => (
         <a 
-          href={`/${currentPilar}/${post.slug}`}
+          href={`/${currentPilar}/${post.id}`}
           class="group flex flex-col justify-between p-5 bg-brand-card dark:bg-brand-bg/50 border border-brand-border rounded-xl hover:shadow-sm hover:border-brand-primary/40 transition-all duration-300 relative overflow-hidden"
         >
           {/* Top border highlight on hover */}
@@ -74,7 +74,7 @@ const toolLink = TOOL_LINKS[currentSlug];
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {crossPilarPosts.map((post) => (
         <a
-          href={`/${post.data.pilar}/${post.slug}`}
+          href={`/${post.data.pilar}/${post.id}`}
           class="group flex flex-col justify-between p-5 bg-brand-secondary/15 dark:bg-brand-bg/50 border border-brand-border rounded-xl hover:shadow-sm hover:border-brand-primary/40 transition-all duration-300"
         >
           <div>
