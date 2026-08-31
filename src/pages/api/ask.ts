@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { hashIp } from '../../lib/contact/security';
 import { generateAssistantDecision } from '../../lib/assistant/generation';
 import {
   getArticleContingencyAnswer,
@@ -37,6 +38,18 @@ const loadArticleCatalog = async (request: Request, locals: App.Locals): Promise
   return response.json() as Promise<ArticleCandidate[]>;
 };
 
+const rateLimitResponse = () => new Response(
+  JSON.stringify({ error: 'Demasiadas consultas. Inténtalo de nuevo en un minuto.' }),
+  {
+    status: 429,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
+      'Retry-After': '60',
+    },
+  },
+);
+
 const parseQuestion = async (request: Request): Promise<string | Response> => {
   const contentLength = Number(request.headers.get('content-length') ?? '0');
   if (Number.isFinite(contentLength) && contentLength > MAX_REQUEST_BYTES) {
@@ -66,6 +79,14 @@ const parseQuestion = async (request: Request): Promise<string | Response> => {
 
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
+    const env = (locals.runtime?.env ?? {}) as Record<string, any>;
+    if (env.ASK_LIMIT) {
+      const ip = request.headers.get('cf-connecting-ip') || 'unknown';
+      const key = await hashIp(ip, env.CONTACT_IP_HASH_SALT || 'ask-rate-limit');
+      const outcome = await env.ASK_LIMIT.limit({ key });
+      if (!outcome.success) return rateLimitResponse();
+    }
+
     const parsedQuestion = await parseQuestion(request);
     if (parsedQuestion instanceof Response) return parsedQuestion;
 
