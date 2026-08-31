@@ -1,7 +1,7 @@
 # F3 — Astro 5 → 6 · la fase dura
 
 **Proyecto:** [`README.md`](README.md) de esta carpeta — manda sobre esta spec.
-**Rama base:** `migracion/astro-7` · **Depende de:** F2
+**Rama base:** `migracion/astro-7` · **Depende de:** F2 **y** F1B
 **Método:** skill `upgrade-astro-cloudflare`. Leé `references/saltos.md`
 (sección «Astro 5 → 6») y `references/base-2026.md` **antes de empezar**.
 
@@ -18,6 +18,11 @@ y el pin de wrangler eliminado.
 
 - Fase 2 fusionada en `migracion/astro-7`: Content Layer API ya migrada, las 34
   URLs verificadas sin moverse.
+- **`main` fusionado en `migracion/astro-7`**, con F1A y F1B dentro. Esta fase
+  reescribe los accesos a bindings de los mismos ficheros que F1B modificó: sin
+  ese merge migrarías unos ficheros que ya no son los de producción.
+  **Comprobalo antes de empezar** —`git log --oneline origin/main ^HEAD` tiene que
+  salir vacío— y si falta, hacé el merge en un commit propio antes de tocar nada.
 - `src/env.d.ts` todavía declara `App.Locals` a mano, y hay **9 accesos a
   `locals.runtime` en 7 archivos** (`api/ask.ts`, `api/feedback.ts`,
   `api/contact.ts`, `api/geo.ts`, `api/admin/contact-messages/[id].ts`,
