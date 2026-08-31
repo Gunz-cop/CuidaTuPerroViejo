@@ -1,52 +1,54 @@
 import type { APIRoute } from 'astro';
+import { hashIp } from '../../../lib/contact/security';
 
-export const prerender = false; // Indica a Astro que esta ruta se ejecute dinámicamente en el servidor (Cloudflare Worker)
+export const prerender = false;
+
+type FeedbackKind = 'yes' | 'no';
+type FeedbackEnv = {
+  CONTACT_DB?: D1Database;
+  CONTACT_IP_HASH_SALT?: string;
+};
+
+const json = (body: unknown, status = 200) => new Response(JSON.stringify(body), {
+  status,
+  headers: {
+    'Content-Type': 'application/json; charset=utf-8',
+    'Cache-Control': 'no-store',
+  },
+});
+
+const getEnv = (locals: App.Locals): FeedbackEnv => (
+  (locals.runtime?.env ?? {}) as FeedbackEnv
+);
+
+const readCount = async (db: D1Database, slug: string, kind: FeedbackKind): Promise<number> => {
+  const row = await db
+    .prepare('SELECT n FROM feedback_counts WHERE slug = ? AND kind = ?')
+    .bind(slug, kind)
+    .first<{ n: number | string }>();
+
+  const count = row?.n === undefined ? 0 : Number.parseInt(String(row.n), 10);
+  return Number.isFinite(count) ? count : 0;
+};
 
 // GET: Obtiene las estadísticas de feedback para un artículo
 export const GET: APIRoute = async ({ request, locals }) => {
   try {
-    const url = new URL(request.url);
-    const slug = url.searchParams.get('slug')?.trim();
+    const slug = new URL(request.url).searchParams.get('slug')?.trim();
+    if (!slug) return json({ error: 'Falta el parámetro slug.' }, 400);
 
-    if (!slug) {
-      return new Response(
-        JSON.stringify({ error: 'Falta el parámetro slug.' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
-      );
-    }
+    const db = getEnv(locals).CONTACT_DB;
+    if (!db) return json({ error: 'El almacenamiento de feedback no está configurado.' }, 503);
 
-    const cfEnv = locals.runtime?.env ?? {};
-    const contactKv = cfEnv.CONTACT_KV;
+    const [yes, no] = await Promise.all([
+      readCount(db, slug, 'yes'),
+      readCount(db, slug, 'no'),
+    ]);
 
-    let yesCount = 0;
-    let noCount = 0;
-
-    if (contactKv) {
-      const yesVal = await contactKv.get(`feedback:yes:${slug}`);
-      const noVal = await contactKv.get(`feedback:no:${slug}`);
-      
-      yesCount = yesVal ? parseInt(yesVal, 10) : 0;
-      noCount = noVal ? parseInt(noVal, 10) : 0;
-    } else {
-      console.warn('SDI Feedback: No se encontró la vinculación CONTACT_KV en GET.');
-    }
-
-    return new Response(
-      JSON.stringify({ yes: yesCount, no: noCount }),
-      { 
-        status: 200, 
-        headers: { 
-          'Content-Type': 'application/json',
-          'Cache-Control': 'public, max-age=15, s-maxage=15' // Cachear por 15 segundos en navegador y CDN
-        } 
-      }
-    );
+    return json({ yes, no });
   } catch (error) {
     console.error('SDI Feedback GET Error:', error);
-    return new Response(
-      JSON.stringify({ error: 'Error interno del servidor.' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
-    );
+    return json({ error: 'Error interno del servidor.' }, 500);
   }
 };
 
@@ -57,10 +59,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     try {
       body = await request.json();
     } catch {
-      return new Response(
-        JSON.stringify({ error: 'Cuerpo de petición inválido. Debe ser JSON.' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
-      );
+      return json({ error: 'Cuerpo de petición inválido. Debe ser JSON.' }, 400);
     }
 
     const slug = typeof body === 'object' && body !== null && 'slug' in body
@@ -71,40 +70,41 @@ export const POST: APIRoute = async ({ request, locals }) => {
       : undefined;
 
     if (typeof slug !== 'string' || !slug.trim() || (type !== 'yes' && type !== 'no')) {
-      return new Response(
-        JSON.stringify({ error: 'Parámetros inválidos. Se requiere "slug" y "type" ("yes" o "no").' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
-      );
+      return json({ error: 'Parámetros inválidos. Se requiere "slug" y "type" ("yes" o "no").' }, 400);
     }
 
-    const cfEnv = locals.runtime?.env ?? {};
-    const contactKv = cfEnv.CONTACT_KV;
+    const normalizedSlug = slug.trim();
+    const kind = type as FeedbackKind;
+    const env = getEnv(locals);
+    const db = env.CONTACT_DB;
+    if (!db) return json({ error: 'El almacenamiento de feedback no está configurado.' }, 503);
 
-    let newCount = 1;
+    const ip = request.headers.get('cf-connecting-ip') || 'unknown';
+    const ipHash = await hashIp(ip, env.CONTACT_IP_HASH_SALT || 'feedback-rate-limit');
+    const vote = await db
+      .prepare(
+        `INSERT INTO feedback_votes (slug, kind, ip_hash)
+         VALUES (?, ?, ?)
+         ON CONFLICT(slug, kind, ip_hash) DO NOTHING`,
+      )
+      .bind(normalizedSlug, kind, ipHash)
+      .run();
 
-    if (contactKv) {
-      const kvKey = `feedback:${type}:${slug}`;
-      const currentVal = await contactKv.get(kvKey);
-      
-      if (currentVal) {
-        newCount = parseInt(currentVal, 10) + 1;
-      }
-      
-      await contactKv.put(kvKey, newCount.toString());
-      console.log(`SDI Feedback: Registrado voto "${type}" para ${slug}. Nuevo total: ${newCount}`);
-    } else {
-      console.warn('SDI Feedback: Vinculación CONTACT_KV ausente en POST. Ejecutando de forma simulada.');
+    if (Number(vote.meta.changes ?? 0) > 0) {
+      await db
+        .prepare(
+          `INSERT INTO feedback_counts (slug, kind, n) VALUES (?, ?, 1)
+           ON CONFLICT(slug, kind) DO UPDATE SET n = n + 1`,
+        )
+        .bind(normalizedSlug, kind)
+        .run();
     }
 
-    return new Response(
-      JSON.stringify({ success: true, count: newCount }),
-      { status: 200, headers: { 'Content-Type': 'application/json' } }
-    );
+    const count = await readCount(db, normalizedSlug, kind);
+    console.log(`SDI Feedback: ${vote.meta.changes ? 'Registrado' : 'Duplicado'} voto "${kind}" para ${normalizedSlug}. Total: ${count}`);
+    return json({ success: true, count });
   } catch (error) {
     console.error('SDI Feedback POST Error:', error);
-    return new Response(
-      JSON.stringify({ error: 'Error interno del servidor.' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
-    );
+    return json({ error: 'Error interno del servidor.' }, 500);
   }
 };
