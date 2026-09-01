@@ -12,6 +12,7 @@
     "check": "astro check",
     "test": "tsx --test \"tests/**/*.test.ts\"",
     "types:worker": "wrangler types --env-file wrangler-types.env --strict-vars=false",
+    "audit:migration": "node scripts/audit-specs-migracion.mjs",
     "test:assistant": "tsx scripts/test-assistant-retrieval.ts",
     "test:assistant:live": "tsx scripts/test-assistant-live.ts",
     "deploy": "npm run build && wrangler deploy",
