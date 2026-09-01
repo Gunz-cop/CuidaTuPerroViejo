@@ -25,9 +25,32 @@
 - `npx --no-install wrangler deploy --dry-run`: correcto.
 - Rutas HTML: 34 en la línea base y 34 después, sin diferencias de ruta.
 
-## Pendiente de verificación independiente
+## Verificación independiente
 
-Los peldaños 1–5 de `references/verificacion.md`, incluido el formulario de `/contacto` con `wrangler dev`, deben ser ejecutados y reportados por otra sesión. Este archivo no declara la fase aprobada.
+### Idéntico
+
+- CI de GitHub y Workers Builds estaban verdes para `2b4362638a689e0b2e5d8e3fc2064126ea0213dd`.
+- El diff contra `origin/migracion/astro-7` contiene únicamente archivos propios de F2 y esta evidencia; no contiene archivos protegidos.
+- Se verificaron las 34 rutas HTML, sin altas, bajas ni slugs cambiados.
+- La comparación HTML normalizada produjo texto visible y enlaces idénticos en las 34 páginas.
+- No existen `/undefined` ni URLs HTML con `undefined`; los consumidores migrados usan `post.id`/`entry.id`.
+- El orden de tarjetas de pilares coincide con la base, incluido salud mental y emocional e higiene y hogar.
+- Con claves oficiales de prueba de Turnstile, el formulario aceptó interacción sintética, el POST respondió `200 {"ok":true}` y el navegador redirigió a `/gracias`.
+
+### Diferencia aceptada
+
+- `dist/` cambia en hashes, bundles y estructura interna de `_worker.js`: 465 archivos en la base frente a 340 en F2. Es el resultado esperado del cambio de versión, Content Layer y adaptador Cloudflare.
+- Las diferencias de serialización HTML —espacios, comentarios, ubicación de scripts y nombres de assets— no cambian el contenido visible, los enlaces ni las rutas.
+- El endpoint devuelve `200 {"ok":true}` para el token dummy, conforme a la lógica existente de rechazo silencioso de Turnstile en `src/pages/api/contact.ts`.
+
+### No verificado
+
+- No se aprobó el diff visual base/F2: la API del navegador no permitió inyectar CSS para desactivar animaciones y transiciones. El control consigo mismo de la base sí fue determinista byte a byte, pero no se interpretó el diff sin cumplir la condición solicitada.
+- El iframe de Turnstile no se pudo observar en el navegador y registró el error externo `Invalid or missing type for parameter "sitekey"`. La API oficial sí respondió correctamente al token dummy mediante `curl`; ese resultado no se atribuye al iframe del navegador.
+
+### Hallazgos
+
+- **P2 — configuración local incompleta, preexistente y no introducida por este PR.** `src/pages/contacto.astro:8` no obtiene una sitekey en un checkout normal ni en `wrangler dev` sin configuración adicional. Arreglo exacto: proporcionar `TURNSTILE_SITE_KEY` durante el build/prerender y `TURNSTILE_SECRET_KEY` como secreto del Worker; mantener ambas fuera del commit y no usar las claves de prueba en producción.
 
 ## Correcciones solicitadas por el revisor-coordinador
 
