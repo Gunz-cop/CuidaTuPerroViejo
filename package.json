@@ -22,11 +22,11 @@
     "images:optimize:dry": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12",
-    "@astrojs/mdx": "^4",
+    "@astrojs/cloudflare": "^13.7.0",
+    "@astrojs/mdx": "^6.0.3",
     "@astrojs/sitemap": "3.6.0",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^5",
+    "astro": "^6.4.8",
     "rehype-external-links": "3.0.0",
     "tailwindcss": "^3.4.4"
   },
