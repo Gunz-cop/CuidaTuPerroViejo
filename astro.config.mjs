@@ -75,7 +75,8 @@ export default defineConfig({
   },
   output: 'static',
   adapter: cloudflare({
-    imageService: 'passthrough'
+    imageService: 'passthrough',
+    remoteBindings: false
   }),
   vite: {
     plugins: [tailwindcss()]
