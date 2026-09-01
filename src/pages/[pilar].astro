@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ArticleByline from '../components/ArticleByline.astro';
@@ -10,16 +10,18 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
 
   return pilaresEntries.map(pilar => {
-    const filteredPosts = blogEntries.filter(post => post.data.pilar === pilar.slug);
+    const filteredPosts = blogEntries
+      .filter(post => post.data.pilar === pilar.id)
+      .sort((a, b) => a.id.localeCompare(b.id));
     return {
-      params: { pilar: pilar.slug },
+      params: { pilar: pilar.id },
       props: { pilar, posts: filteredPosts }
     };
   });
 }
 
 const { pilar, posts } = Astro.props;
-const { Content } = await pilar.render();
+const { Content } = await render(pilar);
 
 const heroImage = pilar.data.heroImage;
 const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
@@ -27,7 +29,7 @@ const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
 const heroImageSrcset = buildSrcset(heroImage);
 
 // URL canónica del pilar
-const pilarURL = new URL(`/${pilar.slug}`, Astro.site).href;
+const pilarURL = new URL(`/${pilar.id}`, Astro.site).href;
 const siteURL = Astro.site?.href ?? 'https://cuidatuperroviejo.com/';
 // Sólo se declara si el pilar registra una revisión real en su frontmatter.
 const dateModified = pilar.data.dateModified
@@ -175,7 +177,7 @@ const hideHeroCSS = heroImage
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {posts.map(post => (
           <a
-            href={`/${pilar.slug}/${post.slug}`}
+            href={`/${pilar.id}/${post.id}`}
             class="group flex flex-col justify-between bg-brand-card dark:bg-brand-bg/50 border border-brand-border rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:border-brand-primary/40 transition duration-300 relative"
           >
             {/* Thumbnail del post */}

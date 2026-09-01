@@ -25,12 +25,12 @@ export const getArticleCatalog = async (): Promise<ArticleCandidate[]> => {
 
   return articles.map((article: CollectionEntry<'blog'>) => {
     const keyword = article.data.keywordPrincipal ?? '';
-    const excerpt = toRoutingExcerpt(article.body);
+    const excerpt = toRoutingExcerpt(article.body ?? '');
     return {
-      slug: article.slug,
+      slug: article.id,
       title: article.data.title,
       description: article.data.metaDescription,
-      href: `/${article.data.pilar}/${article.slug}`,
+      href: `/${article.data.pilar}/${article.id}`,
       pillar: PILLAR_LABELS[article.data.pilar] ?? 'Guía',
       keyword,
       routingText: [article.data.title, article.data.metaDescription, keyword, excerpt].join('. '),
