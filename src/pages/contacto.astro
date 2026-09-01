@@ -1,11 +1,12 @@
 ---
+import { env } from 'cloudflare:workers';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 export const prerender = true;
 
 const title = "Contacto | Cuida tu perro viejo";
 const description = "¿Tienes dudas sobre el cuidado de tu perro senior? Escríbenos y resolveremos tus preguntas. Formulario de contacto directo.";
-const turnstileSiteKey = (Astro.locals as any).runtime?.env?.TURNSTILE_SITE_KEY || import.meta.env.TURNSTILE_SITE_KEY;
+const turnstileSiteKey = env.TURNSTILE_SITE_KEY || import.meta.env.TURNSTILE_SITE_KEY;
 ---
 
 <BaseLayout title={title} description={description}>

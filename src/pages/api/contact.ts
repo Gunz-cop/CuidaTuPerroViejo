@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { env } from 'cloudflare:workers';
 import { sendContactEmail } from '../../lib/contact/email';
 import { hashIp, isValidEmail } from '../../lib/contact/security';
 import { scoreContact } from '../../lib/contact/scoring';
@@ -15,10 +16,6 @@ const jsonOk = () =>
       'Cache-Control': 'no-store',
     },
   });
-
-function getEnv(locals: unknown): Record<string, any> {
-  return ((locals as any).runtime?.env || {}) as Record<string, any>;
-}
 
 function readField(formData: FormData, field: string): string {
   return formData.get(field)?.toString().trim() || '';
@@ -38,7 +35,7 @@ function isTechnicallyValid(input: ContactInput): boolean {
   );
 }
 
-async function verifyTurnstile(token: string, secret: string, ip: string): Promise<boolean> {
+async function verifyTurnstile(token: string, secret: string | undefined, ip: string): Promise<boolean> {
   if (!token || !secret) return false;
 
   const body = new FormData();
@@ -78,8 +75,7 @@ async function maybeStoreHoneypotSubmission(db: any, input: ContactInput, reques
   });
 }
 
-export const POST: APIRoute = async ({ request, locals }) => {
-  const env = getEnv(locals);
+export const POST: APIRoute = async ({ request }) => {
   const ip = request.headers.get('cf-connecting-ip') || 'unknown';
   const db = env.CONTACT_DB;
 
