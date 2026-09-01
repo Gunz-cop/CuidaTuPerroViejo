@@ -10,7 +10,9 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
 
   return pilaresEntries.map(pilar => {
-    const filteredPosts = blogEntries.filter(post => post.data.pilar === pilar.id);
+    const filteredPosts = blogEntries
+      .filter(post => post.data.pilar === pilar.id)
+      .sort((a, b) => a.id.localeCompare(b.id));
     return {
       params: { pilar: pilar.id },
       props: { pilar, posts: filteredPosts }
