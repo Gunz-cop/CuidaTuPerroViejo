@@ -24,6 +24,49 @@ const raiz = process.cwd();
 const fallos = [];
 const err = (spec, msg) => fallos.push(`${spec}: ${msg}`);
 
+function fail(message) {
+  console.error(`::error::${message}`);
+  process.exit(1);
+}
+
+function parseArgs(argv) {
+  let base;
+  let phase;
+
+  for (let index = 0; index < argv.length; index += 1) {
+    const argument = argv[index];
+
+    if (argument === '--base') {
+      if (base !== undefined) fail('El argumento --base no puede repetirse.');
+      const value = argv[index + 1];
+      if (!value || value.startsWith('--')) {
+        fail('El argumento --base requiere una referencia: --base <ref>.');
+      }
+      base = value;
+      index += 1;
+      continue;
+    }
+
+    if (argument === '--phase') {
+      if (phase !== undefined) fail('El argumento --phase no puede repetirse.');
+      const value = argv[index + 1];
+      if (!value || value.startsWith('--')) {
+        fail('El argumento --phase requiere un número de fase: --phase <n>.');
+      }
+      if (!/^[1-4]$/.test(value)) {
+        fail(`Fase inválida: "${value}". Usá un número entre 1 y 4.`);
+      }
+      phase = Number(value);
+      index += 1;
+      continue;
+    }
+
+    fail(`Argumento inválido: "${argument}". Opciones válidas: --base <ref> y --phase <n>.`);
+  }
+
+  return { base, phase };
+}
+
 /**
  * Las comprobaciones que miran el árbol de ficheros solo valen sobre una spec
  * que esta rama esté escribiendo o modificando.
@@ -36,10 +79,7 @@ const err = (spec, msg) => fallos.push(`${spec}: ${msg}`);
  * Sin base contra la que comparar (uso local, repo sin remoto) se comprueban
  * todas: ahí el escenario habitual es justo el de estar escribiendo una spec.
  */
-function specsModificadas() {
-  const base = process.env.GITHUB_BASE_REF
-    ? `origin/${process.env.GITHUB_BASE_REF}`
-    : 'origin/main';
+function specsModificadas(base) {
   try {
     const salida = execFileSync('git', ['diff', '--name-only', `${base}...HEAD`], {
       encoding: 'utf8',
@@ -51,12 +91,24 @@ function specsModificadas() {
   }
 }
 
-const modificadas = specsModificadas();
+const { base: explicitBase, phase } = parseArgs(process.argv.slice(2));
+const base = explicitBase
+  ?? (process.env.GITHUB_BASE_REF ? `origin/${process.env.GITHUB_BASE_REF}` : 'origin/main');
+const modificadas = specsModificadas(base);
 const tocaArbol = (rel) => modificadas === null || modificadas.has(rel);
 
-const specs = fs
+const todasLasSpecs = fs
   .readdirSync(path.join(raiz, DIR))
   .filter((f) => f.endsWith('.md') && f !== 'README.md' && !f.includes('-evidencia'));
+const specsPorFase = {
+  1: ['fase-1a-entrega.md', 'fase-1b-worker.md'],
+  2: ['fase-2-astro-5.md'],
+  3: ['fase-3-astro-6.md'],
+  4: ['fase-4-astro-7.md'],
+};
+const specs = phase === undefined
+  ? todasLasSpecs
+  : todasLasSpecs.filter((nombre) => specsPorFase[phase].includes(nombre));
 
 for (const nombre of specs) {
   const rel = path.posix.join(DIR, nombre);
