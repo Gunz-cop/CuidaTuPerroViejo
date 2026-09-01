@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
+
+  --color-brand-bg: rgb(var(--color-bg-base-rgb) / <alpha-value>);
+  --color-brand-card: rgb(var(--color-bg-card-rgb) / <alpha-value>);
+  --color-brand-card-hover: rgb(var(--color-bg-card-hover-rgb) / <alpha-value>);
+  --color-brand-text: rgb(var(--color-text-base-rgb) / <alpha-value>);
+  --color-brand-muted: rgb(var(--color-text-muted-rgb) / <alpha-value>);
+  --color-brand-primary: rgb(var(--color-brand-primary-rgb) / <alpha-value>);
+  --color-brand-primary-hover: rgb(var(--color-brand-primary-hover-rgb) / <alpha-value>);
+  --color-brand-secondary: rgb(var(--color-brand-secondary-rgb) / <alpha-value>);
+  --color-brand-accent: rgb(var(--color-brand-accent-rgb) / <alpha-value>);
+  --color-brand-accent-hover: rgb(var(--color-brand-accent-hover-rgb) / <alpha-value>);
+  --color-brand-border: rgb(var(--color-brand-border-rgb) / <alpha-value>);
+}

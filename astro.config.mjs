@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from 'rehype-external-links';
@@ -46,7 +46,6 @@ export default defineConfig({
     format: 'file'
   },
   integrations: [
-    tailwind(),
     mdx(),
     sitemap({
       filter(page) {
@@ -77,5 +76,8 @@ export default defineConfig({
   output: 'static',
   adapter: cloudflare({
     imageService: 'passthrough'
-  })
+  }),
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });
