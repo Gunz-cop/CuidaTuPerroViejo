@@ -64,22 +64,109 @@ pasado la verificación completa.
 
 ## Las fases
 
-| | Fase | Spec | Rama base | Depende de |
-|---|---|---|---|---|
-| ✅ | 0 — Compuerta y línea base | [`fase-0-compuerta.md`](fase-0-compuerta.md) | `main` | — |
-| | 1 — Plataforma, sobre Astro 4 | [`fase-1-plataforma.md`](fase-1-plataforma.md) | `main` | F0 |
-| | 2 — Astro 4 → 5 | [`fase-2-astro-5.md`](fase-2-astro-5.md) | `migracion/astro-7` | F1 |
-| | 3 — Astro 5 → 6 | [`fase-3-astro-6.md`](fase-3-astro-6.md) | `migracion/astro-7` | F2 |
-| | 4 — Astro 6 → 7 | [`fase-4-astro-7.md`](fase-4-astro-7.md) | `migracion/astro-7` | F3 |
+| | Fase | Spec | Issue | Rama base | Depende de |
+|---|---|---|---|---|---|
+| ✅ | 0 — Compuerta y línea base | [`fase-0-compuerta.md`](fase-0-compuerta.md) | [#9](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/9) | `main` | — |
+| 🟢 | 1A — Entrega y configuración | [`fase-1a-entrega.md`](fase-1a-entrega.md) | [#11](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/11) | `main` | F0 |
+| 🔒 | 1B — Worker: tamaño, abuso y datos | [`fase-1b-worker.md`](fase-1b-worker.md) | [#17](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/17) | `main` | F1A |
+| 🔒 | 2 — Astro 4 → 5 | [`fase-2-astro-5.md`](fase-2-astro-5.md) | [#12](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/12) | `migracion/astro-7` | F1A |
+| 🔒 | 3 — Astro 5 → 6 | [`fase-3-astro-6.md`](fase-3-astro-6.md) | [#13](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/13) | `migracion/astro-7` | F2 + F1B |
+| 🔒 | 4 — Astro 6 → 7 | [`fase-4-astro-7.md`](fase-4-astro-7.md) | [#14](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/14) | `migracion/astro-7` | F3 |
 
-**Todas son secuenciales, y no se disimula.** El método prefiere fases paralelas
-con propiedad de archivos disjunta, pero aquí no es posible: las cuatro tocan
-`package.json` y `astro.config.mjs`, y cada salto de major se apoya en el
-anterior. Intentar paralelizarlas produciría conflictos en cada PR.
+🟢 lista para tomar · 🔒 bloqueada. La rama `migracion/astro-7` ya existe, creada desde `main`.
 
-Después de la fase 4 quedan mejoras que la migración desbloquea —`imageService`
-de Cloudflare, sesiones en KV, retirar el pipeline manual de imágenes— pero no
-son parte de la migración y se planifican aparte.
+> **El estado vive en las etiquetas de los issues, no en esta tabla.** Si divergen, gana el issue: en el proyecto anterior una columna de estado duplicada derivó de la realidad en menos de un día.
+
+## El mapa
+
+```mermaid
+graph LR
+  F0["F0 ✅<br/>compuerta"] --> F1A["F1A<br/>entrega"]
+  F1A --> F1B["F1B<br/>worker"]
+  F1A --> F2["F2<br/>Astro 5"]
+  F1B -.->|merge main| F3
+  F2 --> F3["F3<br/>Astro 6"]
+  F3 --> F4["F4<br/>Astro 7"]
+  F4 --> FIN["merge a main<br/>= despliegue"]
+```
+
+**F1A es el cuello de botella y por eso es corta.** En cuanto esté fusionada,
+**F1B y F2 corren a la vez, en dos sesiones distintas**. Es el único paralelismo
+real de la migración, y no es casualidad: las specs de esas dos fases se
+repartieron los ficheros a propósito para conseguirlo.
+
+## Qué puede ir en paralelo, y por qué
+
+El paralelismo sale de la **propiedad de ficheros**, no de las ganas. Estas son
+las intersecciones reales:
+
+| Par | ¿Paralelo? | Ficheros en común |
+|---|---|---|
+| **F1B ∥ F2** | **Sí** | ninguno |
+| F1A ∥ F1B | No | F1B usa los bindings que F1A declara en `wrangler.jsonc` |
+| F1A ∥ F2 | No | `package.json` |
+| F2 ∥ F3 ∥ F4 | No | `package.json`, `astro.config.mjs`, y cada salto se apoya en el anterior |
+
+**Cómo se consiguió F1B ∥ F2.** Tres decisiones concretas, no un descubrimiento:
+
+1. **F1A declara los bindings de rate limit pero no los usa.** Así F1B no tiene
+   que tocar `wrangler.jsonc`, que es de F1A.
+2. **F1B no edita `src/lib/assistant/catalog.ts`.** El endpoint nuevo importa
+   `getArticleCatalog()` sin modificarlo, así que ese fichero queda entero para
+   F2, que sí lo migra a la Content Layer API.
+3. **F1B no toca `package.json`.** Ni scripts ni dependencias.
+
+Si una de las dos sesiones se sale de su lista de «Archivos que posee», el
+paralelismo se pierde y aparece un conflicto. Por eso las dos specs tienen un
+criterio de aceptación que compara el diff contra esa lista.
+
+## El punto de reunión de las dos ramas
+
+F1A y F1B van a `main`. F2, F3 y F4 van a `migracion/astro-7`, que se creó de
+`main` **antes** de que F1A se fusionara. Las dos ramas divergen, y hay que
+volver a juntarlas.
+
+**El orden importa, y no es el intuitivo.** La tentación es fusionar `main` en la
+rama de integración en cuanto haya algo nuevo. Es un error:
+
+```
+  1. F2 se verifica contra la base sobre la que se construyó   ← NO tocar la base antes
+  2. Se fusiona el PR de F2 en migracion/astro-7
+  3. Se fusiona main en migracion/astro-7                       ← aquí, y en un commit propio
+  4. Se verifica ESE merge por separado
+  5. Empieza F3
+```
+
+Si se fusiona `main` en la rama de integración mientras la verificación de F2
+está pendiente, el verificador ve a la vez los cambios de F2 y los de F1A —
+cabeceras nuevas, middleware distinto, otro bundle— y **no puede atribuir
+ninguno**. Es exactamente la trampa que `references/verificacion.md` de la skill
+llama «para atribuir un cambio, construí las dos versiones sobre la misma base».
+
+El paso 4 no es ceremonia: F1A tocó `src/middleware.ts`, `wrangler.jsonc` y
+`public/_headers`, y F2 migró el sitio a Astro 5. Que git funda los dos sin
+conflictos textuales no prueba que el resultado funcione.
+
+
+
+## El paralelismo que de verdad escala
+
+Dentro de este repositorio solo hay un par de fases que puedan solaparse. **El
+paralelismo grande está entre repositorios:** hay ocho repos Astro pendientes y
+la skill `upgrade-astro-cloudflare` es la misma para todos. Nada impide que
+`HouseGatitos` o `RuletaWeb` avancen a la vez que este, en sesiones
+independientes, porque no comparten un solo fichero.
+
+Este repositorio es además el más atrasado de los ocho, así que sirve de banco de
+pruebas del método: lo que aparezca aquí se recoge en la skill y abarata los
+otros siete.
+
+## Cómo se lanza una sesión
+
+La plantilla de prompt —ejecutor, verificador y coordinador— está en la skill:
+`~/.claude/skills/upgrade-astro-cloudflare/templates/prompt-sesion.md`. Cada
+issue trae además su versión ya rellenada.
+
 
 ## Roles
 

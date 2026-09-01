@@ -38,6 +38,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      # El auditor compara contra origin/${GITHUB_BASE_REF}; el checkout de
+      # un PR puede no crear ese remote-tracking ref aunque traiga todo el
+      # historial, así que se obtiene de forma explícita.
+      - name: Obtener rama base
+        run: git fetch --no-tags origin "refs/heads/${GITHUB_BASE_REF}:refs/remotes/origin/${GITHUB_BASE_REF}"
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -64,6 +72,13 @@ jobs:
       # no encontrar el binario en node_modules/.bin y descargarse de npm un
       # paquete con ese nombre que no es la herramienta. Pasa de silencioso a
       # error, y de error a código ajeno ejecutándose en CI.
+      # Coherencia interna de las specs de migracion. No necesita dependencias, asi
+      # que va antes que nada: si una spec se contradice, la sesion que la ejecute se
+      # detiene, y eso ya pasó dos veces. Un fallo de spec tiene que costar un check
+      # rojo, no una sesión entera.
+      - name: Specs de migración coherentes
+        run: node scripts/audit-specs-migracion.mjs
+
       - name: Tipos
         run: npx --no-install astro check
 
