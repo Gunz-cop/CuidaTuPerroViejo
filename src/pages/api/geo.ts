@@ -9,7 +9,7 @@ export const GET: APIRoute = async ({ request }) => {
 
     // 2. Intentar leer de las propiedades cf provistas por Cloudflare Workers
     if (!country) {
-      const cfProperties = request.cf as { country?: string } | undefined;
+      const cfProperties = (request as Request & { cf?: { country?: string } }).cf;
       if (cfProperties?.country) {
         country = cfProperties.country;
       }

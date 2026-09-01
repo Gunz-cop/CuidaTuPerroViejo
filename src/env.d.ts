@@ -1,7 +1,5 @@
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
-/// <reference types="@cloudflare/workers-types" />
-
 declare namespace Cloudflare {
   interface Env {
     TURNSTILE_SITE_KEY?: string;
