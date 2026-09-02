@@ -27,3 +27,40 @@
     line-height: 1;
   }
 }
+
+/* Tailwind 3 emitted responsive text utilities after leading utilities. Keep
+   those computed line-heights when a responsive text-* and leading-* coexist. */
+@media (min-width: 40rem) {
+  .sm\:text-xs { line-height: 1rem; }
+  .sm\:text-sm { line-height: 1.25rem; }
+  .sm\:text-base { line-height: 1.5rem; }
+  .sm\:text-lg { line-height: 1.75rem; }
+  .sm\:text-xl { line-height: 1.75rem; }
+  .sm\:text-2xl { line-height: 2rem; }
+  .sm\:text-3xl { line-height: 2.25rem; }
+  .sm\:text-4xl { line-height: 2.5rem; }
+  .sm\:text-5xl { line-height: 1; }
+}
+
+@media (min-width: 48rem) {
+  .md\:text-xs { line-height: 1rem; }
+  .md\:text-sm { line-height: 1.25rem; }
+  .md\:text-base { line-height: 1.5rem; }
+  .md\:text-lg { line-height: 1.75rem; }
+  .md\:text-xl { line-height: 1.75rem; }
+  .md\:text-2xl { line-height: 2rem; }
+  .md\:text-3xl { line-height: 2.25rem; }
+  .md\:text-4xl { line-height: 2.5rem; }
+}
+
+@media (min-width: 64rem) {
+  .lg\:text-xs { line-height: 1rem; }
+  .lg\:text-sm { line-height: 1.25rem; }
+  .lg\:text-base { line-height: 1.5rem; }
+  .lg\:text-lg { line-height: 1.75rem; }
+  .lg\:text-xl { line-height: 1.75rem; }
+  .lg\:text-2xl { line-height: 2rem; }
+  .lg\:text-3xl { line-height: 2.25rem; }
+  .lg\:text-4xl { line-height: 2.5rem; }
+  .lg\:text-5xl { line-height: 1; }
+}

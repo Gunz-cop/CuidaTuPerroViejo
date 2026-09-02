@@ -13,10 +13,13 @@
 - `src/styles/global.css` conserva los 11 tokens `brand-*` y elimina los 11 usos de `/ <alpha-value>`.
 - Regresión reportada por la revisión de PR #32: en Edge real, modo oscuro y viewport 1280×900, `HomeHero` calculaba 64 px de line-height en la base y 80 px en F3 para `lg:text-[4rem]`; la comparación reportada fue 617.883/1.124.585 píxeles distintos.
 - Corrección aplicada únicamente en `src/styles/global.css`: en `min-width: 64rem`, el selector generado por `lg:text-[4rem]` fuerza `line-height: 1`, que produce 64 px y coincide con la base. La regla anterior `1.03` producía 65,92 px en la verificación independiente. `src/components/HomeHero.astro` no fue modificado.
+- Regresión global reportada en la revisión visual: `/salud-perros-mayores.html` 68,14 %, un artículo 53,07 %, `/herramientas.html` 51,30 % y `/acerca-de.html` 26,70 % de píxeles distintos; ejemplos: `text-5xl` 48 px en la base frente a 60 px en F3, y `text-lg` 28 px frente a 29,25 px.
+- Compatibilidad global aplicada únicamente en `src/styles/global.css`: las variantes responsive `sm:text-*`, `md:text-*` y `lg:text-*` usadas por el sitio fijan los line-heights de Tailwind 3 para que no queden subordinadas a `--tw-leading` de Tailwind 4.
 - `npx --no-install astro build` terminó con exit 0.
 - `dist/client` contiene 34 rutas HTML.
 - Búsqueda en `dist/client`: 0 ocurrencias de `<alpha-value>`.
 - CSS generado comprobado: `@media(min-width:64rem){h1.lg\:text-\[4rem\]{line-height:1}}`.
+- CSS generado comprobado: los bloques responsive contienen los valores esperados, por ejemplo `.md\:text-lg{line-height:1.75rem}` y `.lg\:text-5xl{line-height:1}`.
 
 ## Criterios técnicos
 
@@ -58,7 +61,7 @@
 
 ### No verificado
 
-- La verificación independiente solicitada se intentó con Edge externo, viewport 1280×900, contra `http://127.0.0.1:4331/index.html` (base) y `http://127.0.0.1:4332/index.html` (F3); ambos accesos fueron bloqueados por el navegador con `net::ERR_BLOCKED_BY_CLIENT`.
+- La verificación independiente posterior a esta corrección se intentó con Edge externo, viewport 1280×900, contra `http://127.0.0.1:4331/index.html` (base) y `http://127.0.0.1:4332/index.html` (F3); ambos accesos fueron bloqueados por el navegador con `net::ERR_BLOCKED_BY_CLIENT`.
 - Se reintentó con `http://localhost:4331/index.html` y `http://localhost:4332/index.html`; ambos fueron bloqueados con el mismo error.
 - Por el bloqueo no se capturaron imágenes ni hashes, no se pudo ejecutar honestamente el control base/base, la comparación por píxeles base/F3, las rutas representativas de las plantillas, ni los viewports adicionales.
 - Por el mismo motivo no se pudo interactuar con ThemeToggle ni verificar modo oscuro, persistencia tras recarga, ausencia de destello blanco o consola sin errores.
