@@ -11,6 +11,8 @@
 ## Corrección Tailwind 4
 
 - `src/styles/global.css` conserva los 11 tokens `brand-*` y elimina los 11 usos de `/ <alpha-value>`.
+- Regresión reportada por la revisión de PR #32: en Edge real, modo oscuro y viewport 1280×900, `HomeHero` calculaba 64 px de line-height en la base y 80 px en F3 para `lg:text-[4rem]`; la comparación reportada fue 617.883/1.124.585 píxeles distintos.
+- Corrección aplicada únicamente en `src/styles/global.css`: en `min-width: 64rem`, el selector generado por `lg:text-[4rem]` fuerza `line-height: 1.03`. `src/components/HomeHero.astro` no fue modificado.
 - `npx --no-install astro build` terminó con exit 0.
 - `dist/client` contiene 34 rutas HTML.
 - Búsqueda en `dist/client`: 0 ocurrencias de `<alpha-value>`.
@@ -45,11 +47,26 @@
 
 ## Verificación visual y ThemeToggle
 
-- Navegador local operativo sobre `http://127.0.0.1:4322/`; la home cargó y la inspección visual no mostró regresión evidente.
-- ThemeToggle cambió `<html>` de `js` a `js dark`, alternó los iconos y persistió el estado oscuro tras recargar.
-- No se observó destello blanco durante la recarga en oscuro.
-- Errores de consola después de la interacción: 0.
-- No verificado: diferencias en navegadores antiguos, incluido Safari 16.4–17; el navegador disponible fue Chromium del navegador integrado.
+### Idéntico
+
+- No verificado: no se obtuvieron capturas válidas.
+
+### Diferencia aceptada
+
+- Ninguna diferencia visual fue aceptada en esta ejecución.
+
+### No verificado
+
+- La verificación independiente solicitada se intentó con Edge externo, viewport 1280×900, contra `http://127.0.0.1:4331/index.html` (base) y `http://127.0.0.1:4332/index.html` (F3); ambos accesos fueron bloqueados por el navegador con `net::ERR_BLOCKED_BY_CLIENT`.
+- Se reintentó con `http://localhost:4331/index.html` y `http://localhost:4332/index.html`; ambos fueron bloqueados con el mismo error.
+- Por el bloqueo no se capturaron imágenes ni hashes, no se pudo ejecutar honestamente el control base/base, la comparación por píxeles base/F3, las rutas representativas de las plantillas, ni los viewports adicionales.
+- Por el mismo motivo no se pudo interactuar con ThemeToggle ni verificar modo oscuro, persistencia tras recarga, ausencia de destello blanco o consola sin errores.
+- No se sustituye esta prueba por inspección visual integrada, HTML o métricas inventadas.
+
+### Hallazgos
+
+- El bloqueo del acceso a servidores locales en el Edge externo es el único bloqueo de esta verificación; no implica un fallo del sitio ni una regresión adicional comprobada.
+- Rutas, viewport, hashes y porcentajes: sin valores porque no hubo capturas.
 
 ## Diferencias aceptadas
 

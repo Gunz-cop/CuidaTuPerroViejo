@@ -19,3 +19,11 @@
   --color-brand-accent-hover: rgb(var(--color-brand-accent-hover-rgb));
   --color-brand-border: rgb(var(--color-brand-border-rgb));
 }
+
+/* Tailwind 4's arbitrary lg font-size utility must keep the hero's original
+   line-height contract from Tailwind 3. */
+@media (min-width: 64rem) {
+  h1.lg\:text-\[4rem\] {
+    line-height: 1.03;
+  }
+}
