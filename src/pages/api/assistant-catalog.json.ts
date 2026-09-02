@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { getArticleCatalog } from '../../../lib/assistant/catalog';
+import { getArticleCatalog } from '../../lib/assistant/catalog';
 
 export const prerender = true;
 
