@@ -2,6 +2,9 @@
   "name": "cuida-tu-perro-viejo",
   "type": "module",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=22.12"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -22,10 +25,10 @@
     "images:optimize:dry": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^13.7.0",
-    "@astrojs/mdx": "^6.0.3",
+    "@astrojs/cloudflare": "^14.2.6",
+    "@astrojs/mdx": "^7.0.8",
     "@astrojs/sitemap": "^3.7.4",
-    "astro": "^6.4.8",
+    "astro": "^7.2.10",
     "rehype-external-links": "3.0.0"
   },
   "devDependencies": {
