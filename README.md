@@ -8,9 +8,14 @@ Sitio estático en Astro para guías, recursos y herramientas interactivas sobre
 npm install
 npm run dev      # Servidor de desarrollo local
 npm run build    # Compila el sitio (y ejecuta automáticamente la indexación)
-npm run preview  # Previsualiza la build de forma local
+npm run preview  # Compila y previsualiza localmente sobre workerd
 npm run sdi:run  # Ejecuta el script de indexación (Search Discovery) manualmente
 ```
+
+`astro dev` y `astro preview` usan el runtime workerd del adaptador de
+Cloudflare. En desarrollo los bindings se resuelven localmente para no
+requerir autenticación OAuth; los secretos se proporcionan mediante `.env` o
+la configuración local de Wrangler.
 
 ## Contacto: Turnstile, D1 y email
 

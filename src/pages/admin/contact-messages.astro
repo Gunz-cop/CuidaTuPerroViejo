@@ -1,9 +1,8 @@
 ---
+import { env } from 'cloudflare:workers';
 import { hasValidBasicAuth, unauthorizedResponse } from '../../lib/contact/security';
 
 export const prerender = false;
-
-const env = ((Astro.locals as any).runtime?.env || {}) as Record<string, any>;
 
 if (!hasValidBasicAuth(Astro.request, env.CONTACT_ADMIN_USER, env.CONTACT_ADMIN_PASSWORD)) {
   return unauthorizedResponse();
@@ -47,7 +46,7 @@ if (db) {
          LIMIT 100`,
       )
       .bind(status)
-      .all();
+      .all<ContactRow>();
     messages = result.results || [];
   } catch (error) {
     loadError = error instanceof Error ? error.message : 'No se pudieron cargar los mensajes.';

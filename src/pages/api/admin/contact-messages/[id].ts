@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { env } from 'cloudflare:workers';
 import { sendContactEmail } from '../../../../lib/contact/email';
 import { hasValidBasicAuth, unauthorizedResponse } from '../../../../lib/contact/security';
 import type { ContactInput, ContactStatus } from '../../../../lib/contact/types';
@@ -9,8 +10,7 @@ function isContactStatus(value: string): value is ContactStatus {
   return value === 'allowed' || value === 'quarantine' || value === 'rejected';
 }
 
-export const POST: APIRoute = async ({ request, params, locals, redirect }) => {
-  const env = locals.runtime?.env ?? {};
+export const POST: APIRoute = async ({ request, params, redirect }) => {
   if (!hasValidBasicAuth(request, env.CONTACT_ADMIN_USER, env.CONTACT_ADMIN_PASSWORD)) {
     return unauthorizedResponse();
   }

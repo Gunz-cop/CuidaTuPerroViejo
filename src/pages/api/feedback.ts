@@ -1,9 +1,10 @@
 import type { APIRoute } from 'astro';
+import { env } from 'cloudflare:workers';
 
 export const prerender = false; // Indica a Astro que esta ruta se ejecute dinámicamente en el servidor (Cloudflare Worker)
 
 // GET: Obtiene las estadísticas de feedback para un artículo
-export const GET: APIRoute = async ({ request, locals }) => {
+export const GET: APIRoute = async ({ request }) => {
   try {
     const url = new URL(request.url);
     const slug = url.searchParams.get('slug')?.trim();
@@ -15,8 +16,7 @@ export const GET: APIRoute = async ({ request, locals }) => {
       );
     }
 
-    const cfEnv = locals.runtime?.env ?? {};
-    const contactKv = cfEnv.CONTACT_KV;
+    const contactKv = env.CONTACT_KV;
 
     let yesCount = 0;
     let noCount = 0;
@@ -51,7 +51,7 @@ export const GET: APIRoute = async ({ request, locals }) => {
 };
 
 // POST: Registra un voto para un artículo (útil o no útil)
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   try {
     let body: unknown;
     try {
@@ -77,8 +77,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
       );
     }
 
-    const cfEnv = locals.runtime?.env ?? {};
-    const contactKv = cfEnv.CONTACT_KV;
+    const contactKv = env.CONTACT_KV;
 
     let newCount = 1;
 

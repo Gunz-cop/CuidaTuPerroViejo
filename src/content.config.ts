@@ -7,7 +7,7 @@ const blog = defineCollection({
     base: './src/content/blog',
     generateId: ({ entry }) => entry.replace(/\.[^/.]+$/, ''),
   }),
-  schema: z.object({
+  schema: z.strictObject({
     title: z.string(),
     seoTitle: z.string(),
     metaDescription: z.string().max(160, {
@@ -31,7 +31,7 @@ const blog = defineCollection({
     /** Fecha de la última revisión editorial/clínica real. Sin este campo,
      *  el schema no declara una actualización que no ha ocurrido. */
     dateModified: z.string().optional(),
-  }).strict(),
+  }),
 });
 
 const pilares = defineCollection({

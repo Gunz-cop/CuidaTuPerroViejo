@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { env } from 'cloudflare:workers';
 import { getArticleCatalog } from '../../lib/assistant/catalog';
 import { generateAssistantDecision } from '../../lib/assistant/generation';
 import {
@@ -56,7 +57,7 @@ const parseQuestion = async (request: Request): Promise<string | Response> => {
   return question.trim();
 };
 
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   try {
     const parsedQuestion = await parseQuestion(request);
     if (parsedQuestion instanceof Response) return parsedQuestion;
@@ -65,7 +66,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     const catalog = await getArticleCatalog();
     const emergencyAnswer = getEmergencyAnswer(parsedQuestion);
     const urinaryClarificationAnswer = getUrinaryClarificationAnswer(parsedQuestion);
-    const ai = locals.runtime?.env?.AI;
+    const ai = env.AI;
     let recommendations = findFallbackRecommendations(parsedQuestion, catalog);
     let retrieval: RetrievalMethod = recommendations.length > 0 ? 'fallback' : 'none';
 
