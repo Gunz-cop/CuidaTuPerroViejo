@@ -266,7 +266,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
     </div><!--/.qol-container-->
 
     <!-- Barra de acciones fija (solo móvil, solo mientras se ve el resultado) -->
-    <div id="qol-stickybar" class="off sm:hidden fixed bottom-0 inset-x-0 z-40 border-t border-brand-border bg-brand-bg/95 backdrop-blur-md px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
+    <div id="qol-stickybar" class="off sm:hidden fixed bottom-0 inset-x-0 z-40 border-t border-brand-border bg-brand-bg/95 backdrop-blur-md [-webkit-backdrop-filter:blur(12px)] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
       <div class="flex items-center gap-3">
         <button class="shrink-0 flex items-center justify-center w-12 h-12 rounded-full border border-brand-border text-brand-text text-lg active:bg-brand-card-hover active:scale-95 transition-all duration-150 cursor-pointer" id="qol-reset-fixed" type="button" aria-label="Repetir el test">
           ↻
@@ -290,49 +290,49 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
         <li class="flex items-start gap-3">
           <span class="text-xl">❤️</span>
           <div>
-            <strong class="text-brand-text">Hurt (Dolor):</strong>
+            <strong class="text-brand-text">Hurt (Dolor):</strong>{' '}
             ¿Tiene un control adecuado del dolor y puede respirar con facilidad? El dolor no controlado es el principal factor de sufrimiento.
           </div>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-xl">🍖</span>
           <div>
-            <strong class="text-brand-text">Hunger (Hambre):</strong>
+            <strong class="text-brand-text">Hunger (Hambre):</strong>{' '}
             ¿Come suficiente por su cuenta o necesita asistencia/sonda? La falta de apetito sostenida compromete la energía del perro.
           </div>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-xl">💧</span>
           <div>
-            <strong class="text-brand-text">Hydration (Hidratación):</strong>
+            <strong class="text-brand-text">Hydration (Hidratación):</strong>{' '}
             ¿Bebe agua o necesita fluidoterapia subcutánea para combatir la deshidratación?
           </div>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-xl">✨</span>
           <div>
-            <strong class="text-brand-text">Hygiene (Higiene):</strong>
+            <strong class="text-brand-text">Hygiene (Higiene):</strong>{' '}
             ¿Se le puede mantener limpio y cepillado? ¿Tiene llagas por decúbito? La incontinencia o falta de aseo afecta su dignidad y salud cutánea.
           </div>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-xl">🐕</span>
           <div>
-            <strong class="text-brand-text">Happiness (Felicidad):</strong>
+            <strong class="text-brand-text">Happiness (Felicidad):</strong>{' '}
             ¿Muestra alegría, interés en la familia, responde a caricias o juguetes? ¿Sigue experimentando pequeños placeres?
           </div>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-xl">🐾</span>
           <div>
-            <strong class="text-brand-text">Mobility (Movilidad):</strong>
+            <strong class="text-brand-text">Mobility (Movilidad):</strong>{' '}
             ¿Puede levantarse y caminar solo, o necesita ayuda/carrito? ¿Tiene deseos de moverse a pesar de sus limitaciones físicas?
           </div>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-xl">☀️</span>
           <div>
-            <strong class="text-brand-text">More Good Days (Más días buenos):</strong>
+            <strong class="text-brand-text">More Good Days (Más días buenos):</strong>{' '}
             Cuando hay más días malos que días buenos (donde domina el dolor o la inactividad), el balance indica que su bienestar general está muy comprometido.
           </div>
         </li>
@@ -391,15 +391,15 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
     <div id="cvc-refs" class="scroll-mt-20"></div>
     <footer class="mt-10 sm:mt-12 border-t border-brand-border pt-6 text-xs text-brand-muted leading-relaxed">
       <p class="mb-0">
-        <strong>Referencias médicas:</strong>
-        <a href="https://cvm.ncsu.edu/wp-content/uploads/2024/09/Quality-of-Life-Scale.pdf" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">Villalobos, A. — Quality of Life Scale, "HHHHHMM" (NCSU, 2024)</a>
-        ·
-        <a href="https://www.aaha.org/wp-content/uploads/globalassets/02-guidelines/end-of-life-care/2016_aaha_iaahpc_eolc_guidelines.pdf" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">2016 AAHA/IAAHPC End-of-Life Care Guidelines</a>
-        ·
-        <a href="https://iaahpc.org/veterinary-guidelines/general-practice-guidelines/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">IAAHPC — General Practice Guidelines</a>
-        ·
-        <a href="https://www.aaha.org/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats/end-of-life-and-euthanasia/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">2023 AAHA Senior Care Guidelines — End of Life</a>
-        ·
+        <strong>Referencias médicas:</strong>{' '}
+        <a href="https://cvm.ncsu.edu/wp-content/uploads/2024/09/Quality-of-Life-Scale.pdf" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">Villalobos, A. — Quality of Life Scale, "HHHHHMM" (NCSU, 2024)</a>{' '}
+        ·{' '}
+        <a href="https://www.aaha.org/wp-content/uploads/globalassets/02-guidelines/end-of-life-care/2016_aaha_iaahpc_eolc_guidelines.pdf" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">2016 AAHA/IAAHPC End-of-Life Care Guidelines</a>{' '}
+        ·{' '}
+        <a href="https://iaahpc.org/veterinary-guidelines/general-practice-guidelines/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">IAAHPC — General Practice Guidelines</a>{' '}
+        ·{' '}
+        <a href="https://www.aaha.org/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats/end-of-life-and-euthanasia/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">2023 AAHA Senior Care Guidelines — End of Life</a>{' '}
+        ·{' '}
         <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10044252/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">Validación científica de la escala HHHHHMM (estudio revisado por pares)</a>
       </p>
     </footer>

@@ -1,8 +1,12 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
+import { satteri } from '@astrojs/markdown-satteri';
 import sitemap from '@astrojs/sitemap';
-import rehypeExternalLinks from 'rehype-external-links';
+import {
+  externalLinks,
+  secureExternalLinksIntegration,
+} from './scripts/satteri-external-links.mjs';
 
 import cloudflare from "@astrojs/cloudflare";
 
@@ -47,6 +51,7 @@ export default defineConfig({
   },
   integrations: [
     mdx(),
+    secureExternalLinksIntegration(),
     sitemap({
       filter(page) {
         const { pathname } = new URL(page);
@@ -63,15 +68,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        {
-          target: '_blank',
-          rel: ['noopener', 'noreferrer']
-        }
-      ]
-    ]
+    processor: satteri({ hastPlugins: [externalLinks] })
   },
   output: 'static',
   adapter: cloudflare({
