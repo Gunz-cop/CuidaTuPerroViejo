@@ -6,43 +6,56 @@
 - Commit base: `59d11ec`
 - Rama ejecutora: `codex/f3-astro6-v2`
 - Worktree: `../CuidaTuPerroViejo-f3-astro6-v2`
-- Build de referencia: 34 rutas HTML.
+- La línea base se regeneró desde `59d11ec` con `npx --no-install astro build`.
 
-## Implementado
+## Corrección Tailwind 4
 
-La rama contiene seis commits, uno por motivo de la fase:
+- `src/styles/global.css` conserva los 11 tokens `brand-*` y elimina los 11 usos de `/ <alpha-value>`.
+- `npx --no-install astro build` terminó con exit 0.
+- `dist/client` contiene 34 rutas HTML.
+- Búsqueda en `dist/client`: 0 ocurrencias de `<alpha-value>`.
 
-1. Astro 6, `@astrojs/cloudflare` 13 y `@astrojs/mdx` 6.
-2. Bindings mediante `cloudflare:workers`, sin `locals.runtime` ni casts `as any` de runtime; `App.Locals` fue eliminado y las seis variables externas quedaron declaradas en `Cloudflare.Env`.
-3. Tailwind 4 mediante `@tailwindcss/vite`, con tokens, variante oscura y variables de color conservadas; se eliminaron `@astrojs/tailwind` y `tailwind.config.mjs`.
-4. Zod 4 mediante `z.strictObject`.
-5. Wrangler sin pin, tipos regenerados y actualización compatible de `@astrojs/sitemap` requerida por Astro 6.
-6. `astro dev` y `astro preview` sobre el adaptador Cloudflare/workerd, con bindings locales sin OAuth durante el desarrollo.
+## Criterios técnicos
 
-## Comprobaciones locales del ejecutor
+- `npm ci` — exit 0.
+- `npx --no-install astro check` — exit 0: 0 errores, 0 warnings, 38 hints.
+- `npm test` — exit 0: 1 prueba pasada, 0 fallos.
+- `npx --no-install astro build` — exit 0: 34 rutas HTML.
+- `npm run types:worker` — exit 0; `git diff --exit-code -- worker-configuration.d.ts` — sin diferencias.
+- `npx --no-install wrangler deploy --dry-run` — exit 0; bindings detectados: `SESSION`, `CONTACT_KV`, `EMAIL`, `CONTACT_DB`, `AI`, `ASK_LIMIT`, `ADMIN_LIMIT`, `ASSETS`.
+- `npm run audit:migration -- --base origin/migracion/astro-7 --phase 3` — exit 0; 1 spec auditada.
+- `locals.runtime` en `src/` — 0 ocurrencias.
+- `as any` asociado a `runtime` en `src/pages/` — 0 ocurrencias.
+- `@astrojs/tailwind` en `package.json` — 0; `tailwind.config.mjs` — ausente.
+- Wrangler sin pin — comprobado; `devDependencies.wrangler` es `^4.128.0`.
+- Archivos protegidos modificados en `origin/migracion/astro-7...HEAD` — 0.
 
-Ejecutadas en el worktree de la rama:
+## Checks negativos deliberados
 
-- `npm ci` — correcto.
-- `npx --no-install astro check` — correcto: 0 errores, 0 warnings, 38 hints.
-- `npm test` — correcto: 1 suite, 1 prueba.
-- `npx --no-install astro build` — correcto: 34 rutas HTML.
-- `npm run types:worker && git diff --exit-code -- worker-configuration.d.ts` — correcto.
-- `npx --no-install wrangler deploy --dry-run` — correcto.
-- `npm run audit:migration -- --base origin/migracion/astro-7 --phase 3` — correcto.
-- `npm run preview -- --host 127.0.0.1 --port 4322` — correcto; respuesta HTTP 200.
-- `npm run dev -- --host 127.0.0.1 --port 4321` — correcto; respuesta HTTP 200.
-- Comparación automatizada contra la línea base — 34/34 rutas HTML, conjuntos idénticos.
-- Archivos protegidos modificados — ninguno.
+- Binding inexistente: se añadió temporalmente `env.F3_NONEXISTENT_BINDING`; `astro check` falló con TS2339 (`Property ... does not exist on type Env`). El sabotaje fue retirado.
+- Frontmatter desconocido: se añadió temporalmente `f3UnknownField` a un `.mdx`; la build falló con `Unrecognized key`. El sabotaje fue retirado.
 
-Durante `astro check` y el build local, el plugin informó el fallback de `Request.cf` por la certificación TLS local; no produjo errores ni alteró el resultado del build. También permanecen los hints preexistentes de configuración Markdown.
+## Rutas y ejecución local
 
-## Verificación independiente
+- Línea base `59d11ec` frente a F3: conjuntos de rutas HTML idénticos, 34/34.
+- `npm run preview -- --host 127.0.0.1 --port 4322` — build y servidor sobre workerd correctos; HTTP 200.
+- `npm run dev -- --host 127.0.0.1 --port 4321` — servidor sobre workerd correcto; HTTP 200.
+- El primer arranque concurrente de dev y preview produjo una carrera del optimizador SSR de Vite; se repitió de forma aislada y pasó. No es un fallo del código.
+- Los comandos locales muestran el fallback TLS de `Request.cf` y la advertencia de bindings AI remotos; no produjeron errores ni alteraron la build.
 
-Pendiente de otra sesión. Esta evidencia no declara la fase aprobada.
+## Verificación visual y ThemeToggle
 
-Quedan por ejecutar independientemente los peldaños 1–5 de `references/verificacion.md`, incluyendo los checks de fallo deliberado para binding inexistente y frontmatter desconocido, la comprobación de bindings reales, la inspección visual de ThemeToggle/modo oscuro sin destello blanco y la revisión final del diff.
+- Navegador local operativo sobre `http://127.0.0.1:4322/`; la home cargó y la inspección visual no mostró regresión evidente.
+- ThemeToggle cambió `<html>` de `js` a `js dark`, alternó los iconos y persistió el estado oscuro tras recargar.
+- No se observó destello blanco durante la recarga en oscuro.
+- Errores de consola después de la interacción: 0.
+- No verificado: diferencias en navegadores antiguos, incluido Safari 16.4–17; el navegador disponible fue Chromium del navegador integrado.
+
+## Diferencias aceptadas
+
+- El CSS compilado cambia por la migración a Tailwind 4 y emite `color-mix()` para utilidades con opacidad; es el efecto esperado de reemplazar `<alpha-value>` y no una ruta o contenido nuevo.
+- `astro check` mantiene 38 hints preexistentes, principalmente de Zod, scripts inline y código no utilizado; no hay errores ni warnings.
 
 ## Estado
 
-Implementación lista para revisión independiente y CI. No se fusiona el PR ni se declara aprobada la fase desde esta sesión.
+La corrección y las verificaciones locales de esta sesión están documentadas. La evidencia no declara F3 aprobada: queda pendiente la revisión final independiente y el estado final de CI de GitHub. El PR no se fusiona.
