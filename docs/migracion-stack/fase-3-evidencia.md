@@ -12,10 +12,11 @@
 
 - `src/styles/global.css` conserva los 11 tokens `brand-*` y elimina los 11 usos de `/ <alpha-value>`.
 - Regresión reportada por la revisión de PR #32: en Edge real, modo oscuro y viewport 1280×900, `HomeHero` calculaba 64 px de line-height en la base y 80 px en F3 para `lg:text-[4rem]`; la comparación reportada fue 617.883/1.124.585 píxeles distintos.
-- Corrección aplicada únicamente en `src/styles/global.css`: en `min-width: 64rem`, el selector generado por `lg:text-[4rem]` fuerza `line-height: 1.03`. `src/components/HomeHero.astro` no fue modificado.
+- Corrección aplicada únicamente en `src/styles/global.css`: en `min-width: 64rem`, el selector generado por `lg:text-[4rem]` fuerza `line-height: 1`, que produce 64 px y coincide con la base. La regla anterior `1.03` producía 65,92 px en la verificación independiente. `src/components/HomeHero.astro` no fue modificado.
 - `npx --no-install astro build` terminó con exit 0.
 - `dist/client` contiene 34 rutas HTML.
 - Búsqueda en `dist/client`: 0 ocurrencias de `<alpha-value>`.
+- CSS generado comprobado: `@media(min-width:64rem){h1.lg\:text-\[4rem\]{line-height:1}}`.
 
 ## Criterios técnicos
 
