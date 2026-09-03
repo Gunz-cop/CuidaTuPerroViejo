@@ -9,7 +9,6 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "postbuild": "npx tsx lib/discovery/run.ts",
     "preview": "astro build && astro preview",
     "astro": "astro",
     "check": "astro check",

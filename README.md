@@ -7,7 +7,7 @@ Sitio estático en Astro para guías, recursos y herramientas interactivas sobre
 ```bash
 npm install
 npm run dev      # Servidor de desarrollo local
-npm run build    # Compila el sitio (y ejecuta automáticamente la indexación)
+npm run build    # Compila el sitio (sin indexación automática)
 npm run preview  # Compila y previsualiza localmente sobre workerd
 npm run sdi:run  # Ejecuta el script de indexación (Search Discovery) manualmente
 ```
@@ -66,22 +66,23 @@ La línea base se crea manualmente desde GitHub Actions:
 2. Elegí **SDI baseline** y pulsá **Run workflow**.
 3. Seleccioná la rama correcta y confirmá con `yes`.
 
-El workflow construye Astro sin ejecutar el `postbuild` legacy, corre
+El workflow construye Astro sin ejecutar el runner de indexación legacy, corre
 `sdi baseline --confirm`, guarda `.sdi/state.json` en la caché de GitHub
 Actions y sube un artefacto con la evidencia. La línea base no notifica a
 IndexNow ni Google y no modifica los archivos legacy de
 `lib/discovery/state/`. Si ya existe una línea base para la rama, SDI aborta
 de forma segura en vez de reemplazarla.
 
-La migración del flujo live todavía no está activada: el `postbuild` y el
-script `sdi:run` de abajo siguen usando el runner legacy hasta validar una
-etapa posterior.
+La migración del flujo live todavía no está activada: el script `sdi:run`
+que dispara Cloudflare Workers Builds sigue usando el runner legacy hasta
+validar una etapa posterior.
 
 ### Runner legacy (todavía activo)
 
-El script de indexación local (`lib/discovery/run.ts`) está automatizado para ejecutarse en el ciclo de vida de Node.js después de cada compilación mediante el script **`postbuild`** de `package.json`.
+El script de indexación local (`lib/discovery/run.ts`) ya no se dispara solo desde el ciclo de vida de `npm` — no existe un hook `postbuild` en `package.json`. Se ejecuta explícitamente con `npm run sdi:run`.
 
-- **Indexación automática**: Cada vez que se compila el proyecto (`npm run build` o `npm run deploy`), se ejecuta `npx tsx lib/discovery/run.ts`.
+- **Cloudflare Workers Builds**: el comando de build configurado en el dashboard de `cuidatuperroviejo` es `npx astro build && npm run sdi:run`, así que la indexación sigue corriendo después de cada deploy, pero como paso explícito y visible en el log de build en vez de un efecto colateral silencioso de `npm run build`.
+- **Local**: `npm run build` y `npm run deploy` ya no ejecutan la indexación. Para correrla a mano, usá `npm run sdi:run`.
 - **Destinos**: Envía automáticamente las URLs nuevas o modificadas a **Google Indexing API** y a **IndexNow**.
-- **Configuración**: Lee las claves API y de servicio directamente desde el archivo `.env` local (`INDEXNOW_KEY`, `GOOGLE_CLIENT_EMAIL`, `GOOGLE_PRIVATE_KEY`).
+- **Configuración**: Lee las claves API y de servicio desde el archivo `.env` local (`INDEXNOW_KEY`, `GOOGLE_CLIENT_EMAIL`, `GOOGLE_PRIVATE_KEY`) o, en Cloudflare, desde los secrets del Worker.
 - **Logs de envío**: Puedes monitorear los resultados y envíos consultando el archivo de estado generado en `lib/discovery/state/sdi-submissions.json`.
