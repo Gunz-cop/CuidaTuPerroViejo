@@ -11,10 +11,8 @@ name: CI (pull requests)
 # Cada paso es un criterio y aparece por separado en el PR: si algo falla, se ve
 # cuál sin abrir los logs.
 #
-# No ejecuta `npm run build`: ese script encadena un hook `postbuild` que envía
-# URLs a la Google Indexing API y a IndexNow. Aquí se llama a `astro build`
-# directamente. Mientras ese hook exista, ningún automatismo debe usar
-# `npm run build`.
+# Usa `astro build` directamente para mantener explícito el build de CI y
+# evitar depender de scripts npm o hooks de build con efectos externos.
 
 on:
   pull_request:

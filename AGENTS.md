@@ -9,7 +9,7 @@ El sitio está migrando de Astro 4 a Astro 7 sobre Cloudflare Workers. **Antes d
 Dos reglas de esa migración que valen para cualquier trabajo en el repo mientras dure:
 
 - **`main` despliega a producción.** Cloudflare Workers Builds está conectado al repositorio. Las fases de versión van contra la rama de integración `migracion/astro-7`, nunca contra `main`.
-- **`npm run build` dispara un hook `postbuild`** que envía URLs a la Google Indexing API y a IndexNow. Para compilar sin efectos externos, usá `npx astro build`. El CI hace eso.
+- **El hook npm `postbuild` fue eliminado.** Los builds ya no envían URLs a la Google Indexing API ni a IndexNow. Para compilar de forma explícita, usá `npx astro build`; el CI hace eso.
 
 El método —qué rompe en cada salto, cómo se verifica que un upgrade no rompió el sitio— **no vive en este repo**: vive en la skill compartida `upgrade-astro-cloudflare` (`Proyectos/Generalidades`, instalada en `~/.claude/skills/`), porque es la misma para los ocho repos Astro pendientes. Aquí solo vive la evidencia de esta migración.
 
