@@ -1,5 +1,7 @@
 # F1B — Worker: tamaño, abuso y datos
 
+<!-- fase-cerrada -->
+
 **Proyecto:** [`README.md`](README.md) de esta carpeta — manda sobre esta spec.
 **Rama base:** `main` · **Depende de:** F1A
 **Método:** skill `upgrade-astro-cloudflare` (`~/.claude/skills/`)

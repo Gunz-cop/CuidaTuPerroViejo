@@ -1,5 +1,7 @@
 # F2 — Astro 4 → 5
 
+<!-- fase-cerrada -->
+
 **Proyecto:** [`README.md`](README.md) de esta carpeta — manda sobre esta spec.
 **Rama base:** `migracion/astro-7` · **Depende de:** F1A
 **Método:** skill `upgrade-astro-cloudflare`. Leé
