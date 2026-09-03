@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { getArticleCatalog } from '../../lib/assistant/catalog';
+import { hashIp } from '../../lib/contact/security';
 import { generateAssistantDecision } from '../../lib/assistant/generation';
 import {
   getArticleContingencyAnswer,
@@ -7,7 +7,7 @@ import {
   getUrinaryClarificationAnswer,
 } from '../../lib/assistant/guidance';
 import { findFallbackRecommendations, verifyCatalogRecommendation } from '../../lib/assistant/retrieval';
-import type { AssistantSource, RetrievalMethod } from '../../lib/assistant/types';
+import type { ArticleCandidate, AssistantSource, RetrievalMethod } from '../../lib/assistant/types';
 
 export const prerender = false;
 
@@ -28,6 +28,27 @@ const logError = (event: string, error: unknown) => {
     error: error instanceof Error ? error.message : String(error),
   }));
 };
+
+const loadArticleCatalog = async (request: Request, locals: App.Locals): Promise<ArticleCandidate[]> => {
+  const env = locals.runtime?.env as { ASSETS?: Fetcher } | undefined;
+  if (!env?.ASSETS) throw new Error('ASSETS no está configurado.');
+
+  const response = await env.ASSETS.fetch(new URL('/api/assistant-catalog.json', request.url));
+  if (!response.ok) throw new Error(`El catálogo respondió con HTTP ${response.status}.`);
+  return response.json() as Promise<ArticleCandidate[]>;
+};
+
+const rateLimitResponse = () => new Response(
+  JSON.stringify({ error: 'Demasiadas consultas. Inténtalo de nuevo en un minuto.' }),
+  {
+    status: 429,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
+      'Retry-After': '60',
+    },
+  },
+);
 
 const parseQuestion = async (request: Request): Promise<string | Response> => {
   const contentLength = Number(request.headers.get('content-length') ?? '0');
@@ -58,11 +79,19 @@ const parseQuestion = async (request: Request): Promise<string | Response> => {
 
 export const POST: APIRoute = async ({ request, locals }) => {
   try {
+    const env = (locals.runtime?.env ?? {}) as Record<string, any>;
+    if (env.ASK_LIMIT) {
+      const ip = request.headers.get('cf-connecting-ip') || 'unknown';
+      const key = await hashIp(ip, env.CONTACT_IP_HASH_SALT || 'ask-rate-limit');
+      const outcome = await env.ASK_LIMIT.limit({ key });
+      if (!outcome.success) return rateLimitResponse();
+    }
+
     const parsedQuestion = await parseQuestion(request);
     if (parsedQuestion instanceof Response) return parsedQuestion;
 
     const startedAt = Date.now();
-    const catalog = await getArticleCatalog();
+    const catalog = await loadArticleCatalog(request, locals);
     const emergencyAnswer = getEmergencyAnswer(parsedQuestion);
     const urinaryClarificationAnswer = getUrinaryClarificationAnswer(parsedQuestion);
     const ai = locals.runtime?.env?.AI;
