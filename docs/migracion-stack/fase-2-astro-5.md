@@ -159,6 +159,9 @@ adaptala a la forma que pida Astro 5.
   reportalo**: no publiques URLs nuevas para salir del paso.
 - **`getCollection` con filtros** — `catalog.ts` y `index.astro` filtran por
   `data.status`. La Content Layer API cambia cuándo se evalúan los filtros;
-  comprobá que siguen saliendo los mismos 23 artículos.
+  comprobá que siguen saliendo los mismos 16 artículos de `blog`. Las 7 páginas
+  de `pilares` son una colección distinta: junto con los artículos forman las
+  23 páginas de contenido del sitio, pero no son entradas del catálogo del
+  asistente.
 - **La tentación de `legacy.collections`.** Está prohibido por spec. Si la fase
   no cierra sin él, es un bug de la spec: reportalo.
