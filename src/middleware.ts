@@ -39,7 +39,8 @@ export const onRequest = defineMiddleware(async (context, next) => {
   if (
     url.pathname.startsWith('/api/') ||
     url.pathname.startsWith('/admin/') ||
-    ASSET_PATH_PATTERN.test(url.pathname)
+    ASSET_PATH_PATTERN.test(url.pathname) ||
+    context.request.headers.has('Authorization')
   ) {
     return withSecurityHeaders(await next());
   }

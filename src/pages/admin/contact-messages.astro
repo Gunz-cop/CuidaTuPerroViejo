@@ -1,12 +1,26 @@
 ---
 import { env } from 'cloudflare:workers';
-import { hasValidBasicAuth, unauthorizedResponse } from '../../lib/contact/security';
+import { hashIp, hasValidBasicAuth, unauthorizedResponse } from '../../lib/contact/security';
 
 export const prerender = false;
+
+if (env.ADMIN_LIMIT) {
+  const ip = Astro.request.headers.get('cf-connecting-ip') || 'unknown';
+  const key = await hashIp(ip, env.CONTACT_IP_HASH_SALT || 'admin-rate-limit');
+  const outcome = await env.ADMIN_LIMIT.limit({ key });
+  if (!outcome.success) {
+    return new Response('Demasiadas solicitudes. Inténtalo de nuevo en un minuto.', {
+      status: 429,
+      headers: { 'Retry-After': '60', 'Cache-Control': 'no-store' },
+    });
+  }
+}
 
 if (!hasValidBasicAuth(Astro.request, env.CONTACT_ADMIN_USER, env.CONTACT_ADMIN_PASSWORD)) {
   return unauthorizedResponse();
 }
+
+Astro.response.headers.set('Cache-Control', 'no-store');
 
 type StatusFilter = 'quarantine' | 'rejected' | 'allowed';
 type ContactRow = {
