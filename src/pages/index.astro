@@ -15,8 +15,7 @@ import HomeStatsBand from '../components/HomeStatsBand.astro';
 const blogEntries = await getCollection('blog', ({ data }) => data.status === 'Publicado');
 const recentPosts = blogEntries
   .sort((a, b) => new Date(b.data.datePublished).getTime() - new Date(a.data.datePublished).getTime())
-  .slice(0, 3)
-  .map((post) => ({ ...post, slug: post.id }));
+  .slice(0, 3);
 
 const faqItems = [
   {
