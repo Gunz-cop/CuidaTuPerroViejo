@@ -33,7 +33,8 @@ Además ya existe:
 
 ## Contrato de salida
 
-- `dist/api/assistant-catalog.json` generado en build, con las 23 entradas.
+- `dist/api/assistant-catalog.json` generado en build, con una entrada por cada
+  artículo publicado de `blog`; en la línea base actual son 16 entradas.
 - `/api/ask` sin ningún import de `astro:content`, leyendo el catálogo desde
   `env.ASSETS`.
 - Tabla D1 `feedback_counts` y `/api/feedback` operando contra ella, con
@@ -103,8 +104,8 @@ se cachea, la defensa no vale.
 **El de más impacto.** `dist/_worker.js` pesa 2,6 MB en 189 chunks, y los
 mayores son artículos completos. La causa: `src/lib/assistant/catalog.ts` llama
 a `getCollection('blog')` y lee `article.body`, y `/api/ask` lo importa. Como
-`/api/ask` corre en el Worker, el bundler mete el cuerpo MDX de los 23 artículos
-dentro.
+`/api/ask` corre en el Worker, el bundler mete el cuerpo MDX de los 16 artículos
+de `blog` dentro.
 
 El sitio es estático: nada de eso hace falta en runtime.
 
@@ -182,8 +183,12 @@ cero, decilo en el PR, y anotalo como pendiente. Es una salida legal.
 - [ ] `npx --no-install astro build` sale 0
 - [ ] `npx --no-install wrangler deploy --dry-run` sale 0
 - [ ] **El bundle del Worker baja de 500 KB:** `du -sk dist/_worker.js` da menos de 500
-- [ ] **No queda contenido en el Worker:** `ls dist/_worker.js/chunks/ | wc -l` da menos de 40
-- [ ] `test -f dist/api/assistant-catalog.json` y el JSON tiene 23 entradas
+- [ ] `test -f dist/api/assistant-catalog.json`; el JSON es válido y contiene una
+      entrada por cada artículo publicado de `blog` —en la línea base actual,
+      16 entradas—
+- [ ] El runtime de `/api/ask` no alcanza `src/lib/assistant/catalog.ts` ni
+      `astro:content`; lee el catálogo desde el asset estático generado en
+      `dist/api/assistant-catalog.json`
 - [ ] **Propiedad de ficheros:** `git diff --name-only origin/main...HEAD` está contenido en la lista «Archivos que posee». Cualquier fichero de más rompe el paralelismo con F2
 - [ ] `[manual]` Con `wrangler dev`: `/api/ask` responde 200 a una consulta normal y 429 a la petición número 11 dentro del mismo minuto
 - [ ] `[manual]` Con `wrangler dev`: dos votos seguidos en `/api/feedback` para el mismo slug dejan el contador en 2, y un tercero desde la misma IP no lo incrementa
