@@ -3,8 +3,9 @@
 ## Estado
 
 **Cerrada y aprobada tras la investigación 6.5.1.** Esta etapa fue evidencia
-read-only: CuidaTuPerroViejo no migra a SDI, no cambia su postbuild legacy y
-no realiza llamadas a IndexNow ni Google.
+read-only: en el estado auditado entonces, CuidaTuPerroViejo no migraba a SDI,
+no modificaba su `postbuild` legacy y no realizaba llamadas a IndexNow ni
+Google. Ese hook se eliminó posteriormente durante la migración a Astro 7.
 
 ## Adopción posterior — 18-ago-2026
 
@@ -15,11 +16,13 @@ línea base real en GitHub Actions.
 
 La configuración actual está en `sdi.config.mjs` y ya no importa el estado
 legacy: el baseline nuevo se guarda en `.sdi/state.json`. El workflow construye
-Astro sin ejecutar el `postbuild` legacy, persiste `.sdi` mediante la caché de
-Actions y conserva un artefacto de evidencia durante 30 días.
+Astro con el binario directo, persiste `.sdi` mediante la caché de Actions y
+conserva un artefacto de evidencia durante 30 días.
 
-Esto todavía no es una migración live. El `postbuild`, `sdi:run` y los
-destinos legacy siguen intactos; la línea base no envía notificaciones.
+Esto todavía no es una migración live. `sdi:run` y los destinos legacy siguen
+intactos; la línea base no envía notificaciones. El hook npm `postbuild` que
+existía durante la investigación fue eliminado posteriormente y ya no forma
+parte del flujo actual.
 
 ## Conclusión de la investigación 6.5.1
 
@@ -54,8 +57,8 @@ Desde la raíz del checkout limpio de Cuida:
 node scripts/sdi-shadow-compare.mjs
 ```
 
-El harness construye Astro dos veces con su binario directo, por lo que no
-ejecuta el `postbuild` legacy, e identifica inestabilidad del HTML compilado.
+El harness construye Astro dos veces con su binario directo, sin ejecutar hooks
+npm de build, e identifica inestabilidad del HTML compilado.
 Instala exclusivamente el tarball aprobado dentro de un directorio temporal
 con npm offline, invoca solo el binario público `sdi`, hace dos
 `run --dry-run` y elimina ese directorio incluso ante fallo.

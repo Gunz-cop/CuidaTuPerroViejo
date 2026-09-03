@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ArticleByline from '../components/ArticleByline.astro';
@@ -10,16 +10,18 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
 
   return pilaresEntries.map(pilar => {
-    const filteredPosts = blogEntries.filter(post => post.data.pilar === pilar.slug);
+    const filteredPosts = blogEntries
+      .filter(post => post.data.pilar === pilar.id)
+      .sort((a, b) => a.id.localeCompare(b.id));
     return {
-      params: { pilar: pilar.slug },
+      params: { pilar: pilar.id },
       props: { pilar, posts: filteredPosts }
     };
   });
 }
 
 const { pilar, posts } = Astro.props;
-const { Content } = await pilar.render();
+const { Content } = await render(pilar);
 
 const heroImage = pilar.data.heroImage;
 const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
@@ -27,7 +29,7 @@ const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
 const heroImageSrcset = buildSrcset(heroImage);
 
 // URL canónica del pilar
-const pilarURL = new URL(`/${pilar.slug}`, Astro.site).href;
+const pilarURL = new URL(`/${pilar.id}`, Astro.site).href;
 const siteURL = Astro.site?.href ?? 'https://cuidatuperroviejo.com/';
 // Sólo se declara si el pilar registra una revisión real en su frontmatter.
 const dateModified = pilar.data.dateModified
@@ -141,7 +143,7 @@ const hideHeroCSS = heroImage
 
       <!-- Chip de conteo de artículos -->
       {posts.length > 0 && (
-        <div class="mt-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/30 text-white text-xs font-semibold backdrop-blur-sm">
+        <div class="mt-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/30 text-white text-xs font-semibold backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)]">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
@@ -175,7 +177,7 @@ const hideHeroCSS = heroImage
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {posts.map(post => (
           <a
-            href={`/${pilar.slug}/${post.slug}`}
+            href={`/${pilar.id}/${post.id}`}
             class="group flex flex-col justify-between bg-brand-card dark:bg-brand-bg/50 border border-brand-border rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:border-brand-primary/40 transition duration-300 relative"
           >
             {/* Thumbnail del post */}

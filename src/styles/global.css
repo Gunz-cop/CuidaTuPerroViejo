@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
+
+  --color-brand-bg: rgb(var(--color-bg-base-rgb));
+  --color-brand-card: rgb(var(--color-bg-card-rgb));
+  --color-brand-card-hover: rgb(var(--color-bg-card-hover-rgb));
+  --color-brand-text: rgb(var(--color-text-base-rgb));
+  --color-brand-muted: rgb(var(--color-text-muted-rgb));
+  --color-brand-primary: rgb(var(--color-brand-primary-rgb));
+  --color-brand-primary-hover: rgb(var(--color-brand-primary-hover-rgb));
+  --color-brand-secondary: rgb(var(--color-brand-secondary-rgb));
+  --color-brand-accent: rgb(var(--color-brand-accent-rgb));
+  --color-brand-accent-hover: rgb(var(--color-brand-accent-hover-rgb));
+  --color-brand-border: rgb(var(--color-brand-border-rgb));
+}
+
+/* Tailwind 4's arbitrary lg font-size utility must keep the hero's original
+   line-height contract from Tailwind 3. */
+@media (min-width: 64rem) {
+  h1.lg\:text-\[4rem\] {
+    line-height: 1;
+  }
+}
+
+/* Tailwind 3 emitted responsive text utilities after leading utilities. Keep
+   those computed line-heights when a responsive text-* and leading-* coexist. */
+@media (min-width: 40rem) {
+  .sm\:text-xs { line-height: 1rem; }
+  .sm\:text-sm { line-height: 1.25rem; }
+  .sm\:text-base { line-height: 1.5rem; }
+  .sm\:text-lg { line-height: 1.75rem; }
+  .sm\:text-xl { line-height: 1.75rem; }
+  .sm\:text-2xl { line-height: 2rem; }
+  .sm\:text-3xl { line-height: 2.25rem; }
+  .sm\:text-4xl { line-height: 2.5rem; }
+  .sm\:text-5xl { line-height: 1; }
+}
+
+@media (min-width: 48rem) {
+  .md\:text-xs { line-height: 1rem; }
+  .md\:text-sm { line-height: 1.25rem; }
+  .md\:text-base { line-height: 1.5rem; }
+  .md\:text-lg { line-height: 1.75rem; }
+  .md\:text-xl { line-height: 1.75rem; }
+  .md\:text-2xl { line-height: 2rem; }
+  .md\:text-3xl { line-height: 2.25rem; }
+  .md\:text-4xl { line-height: 2.5rem; }
+}
+
+@media (min-width: 64rem) {
+  .lg\:text-xs { line-height: 1rem; }
+  .lg\:text-sm { line-height: 1.25rem; }
+  .lg\:text-base { line-height: 1.5rem; }
+  .lg\:text-lg { line-height: 1.75rem; }
+  .lg\:text-xl { line-height: 1.75rem; }
+  .lg\:text-2xl { line-height: 2rem; }
+  .lg\:text-3xl { line-height: 2.25rem; }
+  .lg\:text-4xl { line-height: 2.5rem; }
+  .lg\:text-5xl { line-height: 1; }
+}

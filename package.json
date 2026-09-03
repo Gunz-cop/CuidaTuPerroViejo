@@ -2,13 +2,19 @@
   "name": "cuida-tu-perro-viejo",
   "type": "module",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=22.12"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "postbuild": "npx tsx lib/discovery/run.ts",
-    "preview": "npm run build && wrangler dev",
+    "preview": "astro build && astro preview",
     "astro": "astro",
+    "check": "astro check",
+    "test": "tsx --test \"tests/**/*.test.ts\"",
+    "types:worker": "wrangler types --env-file wrangler-types.env --strict-vars=false",
+    "audit:migration": "node scripts/audit-specs-migracion.mjs",
     "test:assistant": "tsx scripts/test-assistant-retrieval.ts",
     "test:assistant:live": "tsx scripts/test-assistant-live.ts",
     "deploy": "npm run build && wrangler deploy",
@@ -18,19 +24,20 @@
     "images:optimize:dry": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "11",
-    "@astrojs/mdx": "^3.1.0",
-    "@astrojs/sitemap": "3.6.0",
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.10.0",
-    "rehype-external-links": "3.0.0",
-    "tailwindcss": "^3.4.4"
+    "@astrojs/cloudflare": "^14.2.6",
+    "@astrojs/mdx": "^7.0.8",
+    "@astrojs/markdown-satteri": "0.3.8",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.2.10"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260702.1",
+    "@astrojs/check": "^0.9.10",
+    "@tailwindcss/vite": "^4.3.3",
     "sdi-cli": "^0.1.0",
     "sharp": "^0.35.1",
+    "tailwindcss": "^4.3.3",
     "tsx": "^4.23.12",
-    "wrangler": "~4.107.0"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.128.0"
   }
 }

@@ -5,19 +5,25 @@
   "observability": {
     "enabled": true
   },
-  "main": "dist/_worker.js/index.js",
+  "main": "@astrojs/cloudflare/entrypoints/server",
   "compatibility_flags": [
     "global_fetch_strictly_public",
     "nodejs_compat"
   ],
   "assets": {
     "binding": "ASSETS",
-    "directory": "dist"
+    "directory": "dist",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*", "/admin/*"]
   },
   "kv_namespaces": [
     {
       "binding": "CONTACT_KV",
       "id": "707dd02ce0434005a78d89fd138d0647"
+    },
+    {
+      "binding": "SESSION",
+      "id": "5ddddc3cfd974b47a261fe067dbaa885"
     }
   ],
   "d1_databases": [
@@ -34,5 +40,9 @@
     {
       "name": "EMAIL"
     }
+  ],
+  "ratelimits": [
+    { "name": "ASK_LIMIT", "namespace_id": "1001", "simple": { "limit": 10, "period": 60 } },
+    { "name": "ADMIN_LIMIT", "namespace_id": "1002", "simple": { "limit": 20, "period": 60 } }
   ]
 }

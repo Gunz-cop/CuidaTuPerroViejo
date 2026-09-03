@@ -51,7 +51,7 @@ const cards = posts.map((post) => ({
         {cards.map(({ post, image, mobileImage }) => (
           <article class="h-full">
             <a
-              href={`/${post.data.pilar}/${post.slug}`}
+              href={`/${post.data.pilar}/${post.id}`}
               class="group flex h-full flex-col overflow-hidden rounded-3xl border border-brand-border bg-brand-card shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/30"
               aria-label={`Leer: ${post.data.title}`}
             >

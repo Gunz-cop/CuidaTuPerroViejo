@@ -48,7 +48,7 @@ const { slug } = Astro.props;
 <script>
   // Script del lado del cliente
   const initFeedbackWidget = () => {
-    document.querySelectorAll('.feedback-widget').forEach((widget) => {
+    document.querySelectorAll<HTMLElement>('.feedback-widget').forEach((widget) => {
       if (widget.dataset.feedbackReady === 'true') return;
       widget.dataset.feedbackReady = 'true';
 
@@ -69,7 +69,7 @@ const { slug } = Astro.props;
         try {
           const res = await fetch(`/api/feedback?slug=${slug}`);
           if (res.ok) {
-            const data = await res.json();
+            const data = await res.json() as { yes?: number; no?: number };
             const yesCount = data.yes || 0;
             if (yesCount > 0) {
               statsPara.textContent = `A ${yesCount} persona${yesCount !== 1 ? 's' : ''} le${yesCount !== 1 ? 's' : ''} ha sido útil esta guía para cuidar a su perro.`;
@@ -102,7 +102,7 @@ const { slug } = Astro.props;
         btnNo.classList.remove('opacity-50', 'pointer-events-none');
       };
 
-      const handleVote = async (type) => {
+      const handleVote = async (type: 'yes' | 'no') => {
         // Deshabilitar botones optimistamente
         btnYes.setAttribute('disabled', 'true');
         btnNo.setAttribute('disabled', 'true');

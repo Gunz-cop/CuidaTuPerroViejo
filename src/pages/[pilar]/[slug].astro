@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiloNavigation from '../../components/SiloNavigation.astro';
@@ -14,13 +14,13 @@ import { buildSrcset } from '../../utils/image';
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
   return blogEntries.map(entry => ({
-    params: { pilar: entry.data.pilar, slug: entry.slug },
+    params: { pilar: entry.data.pilar, slug: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 const pilarNames: Record<string, string> = {
   'guia-para-cuidar-tu-perro-senior': 'Guía para Cuidar tu Perro Senior',
@@ -39,7 +39,7 @@ const heroImageAlt = entry.data.heroImageAlt || entry.data.title;
 const heroImageSrcset = buildSrcset(heroImage);
 
 // URL canónica del post
-const postURL = new URL(`/${entry.data.pilar}/${entry.slug}`, Astro.site).href;
+const postURL = new URL(`/${entry.data.pilar}/${entry.id}`, Astro.site).href;
 const pilarURL = new URL(`/${entry.data.pilar}`, Astro.site).href;
 const siteURL = Astro.site?.href ?? 'https://cuidatuperroviejo.com/';
 
@@ -210,13 +210,13 @@ const hideHeroCSS = heroImage
       </PostReader>
     </article>
 
-    <FeedbackWidget slug={entry.slug} />
+    <FeedbackWidget slug={entry.id} />
 
     <!-- Native Banner (Adsterra) pausado: la zona nativa servía anuncios de citas, fuera de marca.
          Componente y código quedan listos en AdNativeBanner.astro para reactivar cuando se ajusten
          las categorías bloqueadas en el panel de Adsterra. -->
 
-    <SiloNavigation currentPilar={entry.data.pilar} currentSlug={entry.slug} />
+    <SiloNavigation currentPilar={entry.data.pilar} currentSlug={entry.id} />
   </main>
 
   <!-- Sticky 320x50 (Adsterra): solo mobile/tablet, fijo al pie de pantalla -->

@@ -2,16 +2,16 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false; // Indica a Astro que esta ruta se ejecute dinámicamente en el servidor (Cloudflare Worker)
 
-export const GET: APIRoute = async ({ request, locals }) => {
+export const GET: APIRoute = async ({ request }) => {
   try {
     // 1. Intentar leer del header estándar de geolocalización de Cloudflare
     let country = request.headers.get('cf-ipcountry') || request.headers.get('CF-IPCountry');
 
-    // 2. Intentar leer de las propiedades cf provistas en locals.runtime de Cloudflare Pages/Workers
+    // 2. Intentar leer de las propiedades cf provistas por Cloudflare Workers
     if (!country) {
-      const cfEnv = (locals as any).runtime?.cf;
-      if (cfEnv && cfEnv.country) {
-        country = cfEnv.country;
+      const cfProperties = (request as Request & { cf?: { country?: string } }).cf;
+      if (cfProperties?.country) {
+        country = cfProperties.country;
       }
     }
 

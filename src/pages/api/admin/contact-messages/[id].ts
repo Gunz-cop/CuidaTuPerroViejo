@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
+import { env } from 'cloudflare:workers';
 import { sendContactEmail } from '../../../../lib/contact/email';
-import { hasValidBasicAuth, unauthorizedResponse } from '../../../../lib/contact/security';
+import { hashIp, hasValidBasicAuth, unauthorizedResponse } from '../../../../lib/contact/security';
 import type { ContactInput, ContactStatus } from '../../../../lib/contact/types';
 
 export const prerender = false;
@@ -9,8 +10,19 @@ function isContactStatus(value: string): value is ContactStatus {
   return value === 'allowed' || value === 'quarantine' || value === 'rejected';
 }
 
-export const POST: APIRoute = async ({ request, params, locals, redirect }) => {
-  const env = locals.runtime?.env ?? {};
+export const POST: APIRoute = async ({ request, params, redirect }) => {
+  if (env.ADMIN_LIMIT) {
+    const ip = request.headers.get('cf-connecting-ip') || 'unknown';
+    const key = await hashIp(ip, env.CONTACT_IP_HASH_SALT || 'admin-rate-limit');
+    const outcome = await env.ADMIN_LIMIT.limit({ key });
+    if (!outcome.success) {
+      return new Response('Demasiadas solicitudes. Inténtalo de nuevo en un minuto.', {
+        status: 429,
+        headers: { 'Retry-After': '60', 'Cache-Control': 'no-store' },
+      });
+    }
+  }
+
   if (!hasValidBasicAuth(request, env.CONTACT_ADMIN_USER, env.CONTACT_ADMIN_PASSWORD)) {
     return unauthorizedResponse();
   }

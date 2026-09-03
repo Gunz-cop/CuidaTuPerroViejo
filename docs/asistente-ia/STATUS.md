@@ -36,7 +36,7 @@ Ninguno.
 
 ## Verificación de Foundation
 
-- `npm run build`: **OK** (incluido el `postbuild` preexistente).
+- Verificación histórica: `npm run build`: **OK** (en ese momento incluía el `postbuild` preexistente, eliminado posteriormente durante la migración).
 - `npx tsc --noEmit`: **OK**.
 - `npx tsx tests/assistant-v2/contracts.test.ts`: **OK**.
 - `npm run check`: **no ejecutable** porque `package.json` preexistente no define el script `check`; no se modificó `package.json` ni se instalaron dependencias para ocultar el problema.

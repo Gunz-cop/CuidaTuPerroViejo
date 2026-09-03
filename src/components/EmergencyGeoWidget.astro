@@ -92,7 +92,7 @@
     try {
       const response = await fetch('/api/geo');
       if (response.ok) {
-        const data = await response.json();
+        const data = await response.json() as { country?: string };
         const country = data.country || 'UNKNOWN';
 
         if (countryConfig[country]) {

@@ -2,6 +2,17 @@
 
 Instrucciones compartidas para agentes de código (Claude Code, Codex, Antigravity u otros) que trabajen en este repositorio.
 
+## Migración de stack en curso
+
+El sitio está migrando de Astro 4 a Astro 7 sobre Cloudflare Workers. **Antes de tocar `package.json`, `astro.config.mjs`, `wrangler.jsonc`, `tsconfig.json` o los estilos globales, leé [`docs/migracion-stack/README.md`](docs/migracion-stack/README.md)**: es la spec de producto y dice qué fase toca, contra qué rama va y qué está decidido.
+
+Dos reglas de esa migración que valen para cualquier trabajo en el repo mientras dure:
+
+- **`main` despliega a producción.** Cloudflare Workers Builds está conectado al repositorio. Las fases de versión van contra la rama de integración `migracion/astro-7`, nunca contra `main`.
+- **El hook npm `postbuild` fue eliminado.** Los builds ya no envían URLs a la Google Indexing API ni a IndexNow. Para compilar de forma explícita, usá `npx astro build`; el CI hace eso.
+
+El método —qué rompe en cada salto, cómo se verifica que un upgrade no rompió el sitio— **no vive en este repo**: vive en la skill compartida `upgrade-astro-cloudflare` (`Proyectos/Generalidades`, instalada en `~/.claude/skills/`), porque es la misma para los ocho repos Astro pendientes. Aquí solo vive la evidencia de esta migración.
+
 ## Enlazado interno del sitio
 
 Cuando el usuario pida revisar, mejorar, reorganizar o documentar el enlazado interno de `cuidatuperroviejo.com`, usa la skill [`.agents/skills/enlazado-interno-sitio/SKILL.md`](.agents/skills/enlazado-interno-sitio/SKILL.md). Esta skill mantiene la arquitectura de silos, los puentes entre artículos y los enlaces a herramientas.
