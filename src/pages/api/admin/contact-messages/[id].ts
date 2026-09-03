@@ -9,8 +9,18 @@ function isContactStatus(value: string): value is ContactStatus {
   return value === 'allowed' || value === 'quarantine' || value === 'rejected';
 }
 
+type AdminEnv = {
+  CONTACT_DB?: D1Database;
+  ADMIN_LIMIT?: RateLimit;
+  CONTACT_IP_HASH_SALT?: string;
+  CONTACT_ADMIN_USER?: string;
+  CONTACT_ADMIN_PASSWORD?: string;
+  EMAIL?: SendEmail;
+  CONTACT_DESTINATION_EMAIL?: string;
+};
+
 export const POST: APIRoute = async ({ request, params, locals, redirect }) => {
-  const env = (locals.runtime?.env ?? {}) as Record<string, any>;
+  const env = (locals.runtime?.env ?? {}) as AdminEnv;
   if (env.ADMIN_LIMIT) {
     const ip = request.headers.get('cf-connecting-ip') || 'unknown';
     const key = await hashIp(ip, env.CONTACT_IP_HASH_SALT || 'admin-rate-limit');
