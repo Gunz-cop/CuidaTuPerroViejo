@@ -23,6 +23,7 @@ export async function getStaticPaths() {
 const { pilar, posts } = Astro.props;
 const { Content } = await render(pilar);
 const isHealthPilar = pilar.id === 'salud-perros-mayores';
+const isNutritionPilar = pilar.id === 'alimentacion-perros-senior';
 
 const heroImage = pilar.data.heroImage;
 const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
@@ -80,6 +81,48 @@ const healthToc = [
   { id: 'preguntas', label: 'Preguntas frecuentes' },
 ];
 
+const nutritionToc = [
+  { id: 'que-cambia', label: 'Qué cambia' },
+  { id: 'que-dar', label: 'Qué darle' },
+  { id: 'racion', label: 'Ración y peso' },
+  { id: 'casera', label: 'Comida casera' },
+  { id: 'apetito', label: 'Apetito e hidratación' },
+  { id: 'senales', label: 'Cuándo consultar' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const modernToc = isNutritionPilar ? nutritionToc : healthToc;
+const modernEyebrow = isNutritionPilar
+  ? 'Guía central · alimentación senior'
+  : 'Guía central · salud senior';
+const modernPrimaryAction = isNutritionPilar
+  ? { href: '#racion', label: 'Ajustar la ración' }
+  : { href: '#urgencias', label: 'Ver señales de alarma' };
+const modernSecondaryAction = isNutritionPilar
+  ? { href: '#casera', label: 'Ver comida casera' }
+  : { href: '#chequeos', label: 'Plan preventivo' };
+const modernMeta = isNutritionPilar
+  ? 'Revisada el 18 de septiembre de 2026 · Lectura práctica'
+  : 'Revisada el 18 de septiembre de 2026 · Lectura práctica';
+const modernHeroCaption = isNutritionPilar
+  ? 'La mejor ración es la que mantiene un peso y una masa muscular saludables.'
+  : 'Un hogar adaptado ayuda a conservar independencia y confianza.';
+const modernSignalCards = isNutritionPilar
+  ? [
+      { label: 'Primero', title: 'Mira su condición corporal', text: 'Peso, músculo, apetito y heces dicen más que la palabra “senior” del envase.', href: '#que-cambia', danger: false },
+      { label: 'Después', title: 'Elige una base completa', text: 'La dieta debe cubrir sus necesidades y adaptarse a su salud, actividad y presupuesto.', href: '#que-dar', danger: false },
+      { label: 'Cada día', title: 'Pesa y observa', text: 'Ración medida, agua accesible y cambios anotados para decidir con menos ensayo.', href: '#racion', danger: false },
+    ]
+  : [
+      { label: 'Primero', title: 'Descarta una urgencia', text: 'Dificultad respiratoria, colapso, convulsiones o abdomen hinchado.', href: '#urgencias', danger: true },
+      { label: 'Después', title: 'Ordena el seguimiento', text: 'Consulta, dolor, boca, peso, prevención y pruebas según el caso.', href: '#chequeos', danger: false },
+      { label: 'Cada día', title: 'Hazlo más fácil', text: 'Tracción, rutina, paseos adaptados y observación sin dramatismo.', href: '#casa', danger: false },
+    ];
+const modernRelatedTitle = isNutritionPilar ? 'Una duda concreta sobre su comida' : 'Guías para una duda concreta';
+const modernRelatedDescription = isNutritionPilar
+  ? 'Continúa con una guía especializada para convertir esta orientación en decisiones prácticas.'
+  : `${posts.length} recursos especializados para seguir cuidando con contexto.`;
+
 const hideHeroCSS = heroImage
   ? `.content-body img[src="${heroImage}"],
      .content-body p:has(> img[src="${heroImage}"]) { display: none !important; }
@@ -96,21 +139,21 @@ const hideHeroCSS = heroImage
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(pilarSchema)} />
 
-  {heroImage && !isHealthPilar && <style slot="head" is:inline set:html={hideHeroCSS} />}
+  {heroImage && !isHealthPilar && !isNutritionPilar && <style slot="head" is:inline set:html={hideHeroCSS} />}
 
-  {isHealthPilar ? (
+  {isHealthPilar || isNutritionPilar ? (
     <>
       <section class="health-hero" aria-labelledby="health-title">
         <div class="health-shell health-hero__shell">
           <div class="health-hero__copy">
-            <a class="health-hero__eyebrow" href="/salud-perros-mayores">Guía central · salud senior</a>
+            <a class="health-hero__eyebrow" href={`/${pilar.id}`}>{modernEyebrow}</a>
             <h1 id="health-title">{pilar.data.title}</h1>
             <p class="health-hero__lede">{pilar.data.metaDescription}</p>
             <div class="health-hero__actions">
-              <a class="health-button health-button--primary" href="#urgencias">Ver señales de alarma</a>
-              <a class="health-button health-button--quiet" href="#chequeos">Plan preventivo <span aria-hidden="true">↓</span></a>
+              <a class="health-button health-button--primary" href={modernPrimaryAction.href}>{modernPrimaryAction.label}</a>
+              <a class="health-button health-button--quiet" href={modernSecondaryAction.href}>{modernSecondaryAction.label} <span aria-hidden="true">↓</span></a>
             </div>
-            <p class="health-hero__meta"><span aria-hidden="true">●</span> Revisada el 18 de septiembre de 2026 · Lectura práctica</p>
+            <p class="health-hero__meta"><span aria-hidden="true">●</span> {modernMeta}</p>
           </div>
           <figure class="health-hero__media">
             <img
@@ -124,7 +167,7 @@ const hideHeroCSS = heroImage
               decoding="async"
               fetchpriority="high"
             />
-            <figcaption>Un hogar adaptado ayuda a conservar independencia y confianza.</figcaption>
+            <figcaption>{modernHeroCaption}</figcaption>
           </figure>
         </div>
       </section>
@@ -133,28 +176,20 @@ const hideHeroCSS = heroImage
         <div class="health-byline"><ArticleByline dateModified={pilar.data.dateModified} /></div>
 
         <section class="health-signal-strip" aria-label="Cómo usar esta guía">
-          <a class="health-signal-card health-signal-card--danger" href="#urgencias">
-            <span class="health-signal-card__label">Primero</span>
-            <strong>Descarta una urgencia</strong>
-            <span>Dificultad respiratoria, colapso, convulsiones o abdomen hinchado.</span>
-          </a>
-          <a class="health-signal-card" href="#chequeos">
-            <span class="health-signal-card__label">Después</span>
-            <strong>Ordena el seguimiento</strong>
-            <span>Consulta, dolor, boca, peso, prevención y pruebas según el caso.</span>
-          </a>
-          <a class="health-signal-card" href="#casa">
-            <span class="health-signal-card__label">Cada día</span>
-            <strong>Hazlo más fácil</strong>
-            <span>Tracción, rutina, paseos adaptados y observación sin dramatismo.</span>
-          </a>
+          {modernSignalCards.map((card) => (
+            <a class:list={['health-signal-card', card.danger && 'health-signal-card--danger']} href={card.href}>
+              <span class="health-signal-card__label">{card.label}</span>
+              <strong>{card.title}</strong>
+              <span>{card.text}</span>
+            </a>
+          ))}
         </section>
 
         <div class="health-layout">
           <aside class="health-toc" aria-label="En esta guía">
             <p class="health-toc__title">En esta guía</p>
             <nav>
-              {healthToc.map((item) => (
+              {modernToc.map((item) => (
                 <a href={`#${item.id}`}>{item.label}</a>
               ))}
             </nav>
@@ -173,9 +208,9 @@ const hideHeroCSS = heroImage
           <div class="health-related__heading">
             <div>
               <p class="health-kicker">Siguiente paso</p>
-              <h2 id="health-related-title">Guías para una duda concreta</h2>
-            </div>
-            <p>{posts.length} recursos especializados para seguir cuidando con contexto.</p>
+            <h2 id="health-related-title">{modernRelatedTitle}</h2>
+          </div>
+            <p>{modernRelatedDescription}</p>
           </div>
 
           {posts.length > 0 ? (
@@ -261,7 +296,7 @@ const hideHeroCSS = heroImage
   )}
 </BaseLayout>
 
-{isHealthPilar && (
+{(isHealthPilar || isNutritionPilar) && (
   <style is:global>
       .health-shell,
       .health-main { width: min(100% - 2rem, 72rem); margin-inline: auto; }
@@ -283,7 +318,7 @@ const hideHeroCSS = heroImage
       .health-hero__meta { display: flex; align-items: center; gap: .5rem; margin-top: 1.25rem; color: var(--color-text-muted); font-size: .78rem; }
       .health-hero__meta span { color: var(--color-brand-accent); font-size: .8rem; }
       .health-hero__media { position: relative; margin: 0; min-height: 20rem; overflow: hidden; border-radius: 1.5rem; background: var(--color-bg-card); box-shadow: 0 20px 50px rgb(27 28 25 / .12); }
-      .health-hero__media img { display: block; height: 100%; width: 100%; object-fit: cover; }
+      .health-hero__media img { display: block; height: 100%; width: 100%; object-fit: cover; object-position: center center; }
       .health-hero__media figcaption { position: absolute; right: 1rem; bottom: 1rem; max-width: 18rem; border-radius: .8rem; padding: .65rem .8rem; background: rgb(20 24 20 / .72); color: #fff; font-size: .75rem; line-height: 1.45; backdrop-filter: blur(8px); }
       .health-byline { margin-block: 1.5rem 1.25rem; }
       .health-signal-strip { display: grid; gap: .75rem; margin-bottom: clamp(2.25rem, 5vw, 4rem); }
