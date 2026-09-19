@@ -24,6 +24,11 @@ const { pilar, posts } = Astro.props;
 const { Content } = await render(pilar);
 const isHealthPilar = pilar.id === 'salud-perros-mayores';
 const isNutritionPilar = pilar.id === 'alimentacion-perros-senior';
+const isMentalPilar = pilar.id === 'salud-mental-emocional-perros';
+const isPalliativePilar = pilar.id === 'cuidados-paliativos-perros';
+const isMobilityPilar = pilar.id === 'movilidad-dolor-perros-mayores';
+const isHygienePilar = pilar.id === 'higiene-hogar-perros-senior';
+const isModernPilar = isHealthPilar || isNutritionPilar || isMentalPilar || isPalliativePilar || isMobilityPilar || isHygienePilar;
 
 const heroImage = pilar.data.heroImage;
 const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
@@ -91,37 +96,153 @@ const nutritionToc = [
   { id: 'preguntas', label: 'Preguntas frecuentes' },
 ];
 
-const modernToc = isNutritionPilar ? nutritionToc : healthToc;
-const modernEyebrow = isNutritionPilar
-  ? 'Guía central · alimentación senior'
-  : 'Guía central · salud senior';
-const modernPrimaryAction = isNutritionPilar
-  ? { href: '#racion', label: 'Ajustar la ración' }
-  : { href: '#urgencias', label: 'Ver señales de alarma' };
-const modernSecondaryAction = isNutritionPilar
-  ? { href: '#casera', label: 'Ver comida casera' }
-  : { href: '#chequeos', label: 'Plan preventivo' };
-const modernMeta = isNutritionPilar
-  ? 'Revisada el 18 de septiembre de 2026 · Lectura práctica'
-  : 'Revisada el 18 de septiembre de 2026 · Lectura práctica';
-const modernHeroCaption = isNutritionPilar
-  ? 'La mejor ración es la que mantiene un peso y una masa muscular saludables.'
-  : 'Un hogar adaptado ayuda a conservar independencia y confianza.';
-const modernSignalCards = isNutritionPilar
-  ? [
-      { label: 'Primero', title: 'Mira su condición corporal', text: 'Peso, músculo, apetito y heces dicen más que la palabra “senior” del envase.', href: '#que-cambia', danger: false },
-      { label: 'Después', title: 'Elige una base completa', text: 'La dieta debe cubrir sus necesidades y adaptarse a su salud, actividad y presupuesto.', href: '#que-dar', danger: false },
-      { label: 'Cada día', title: 'Pesa y observa', text: 'Ración medida, agua accesible y cambios anotados para decidir con menos ensayo.', href: '#racion', danger: false },
-    ]
-  : [
+const mentalToc = [
+  { id: 'que-cambia', label: 'Qué cambia' },
+  { id: 'senales', label: 'Señales y ansiedad' },
+  { id: 'diferenciales', label: 'Qué descartar' },
+  { id: 'consulta', label: 'Cuándo consultar' },
+  { id: 'rutina', label: 'Rutina y entorno' },
+  { id: 'enriquecimiento', label: 'Estimulación mental' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const palliativeToc = [
+  { id: 'que-es', label: 'Qué son' },
+  { id: 'confort', label: 'Confort diario' },
+  { id: 'calidad', label: 'Calidad de vida' },
+  { id: 'plan', label: 'Plan en casa' },
+  { id: 'eutanasia', label: 'Decisiones de final de vida' },
+  { id: 'duelo', label: 'Acompañar el duelo' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const mobilityToc = [
+  { id: 'senales', label: 'Señales de dolor' },
+  { id: 'consulta', label: 'Cuándo consultar' },
+  { id: 'plan', label: 'Plan multimodal' },
+  { id: 'casa', label: 'Casa adaptada' },
+  { id: 'movimiento', label: 'Movimiento seguro' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const hygieneToc = [
+  { id: 'rutina', label: 'Rutina de higiene' },
+  { id: 'piel', label: 'Piel y pelaje' },
+  { id: 'incontinencia', label: 'Humedad e incontinencia' },
+  { id: 'casa', label: 'Hogar seguro' },
+  { id: 'prevencion', label: 'Qué vigilar' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const modernConfigs: Record<string, {
+  toc: { id: string; label: string }[];
+  eyebrow: string;
+  primaryAction: { href: string; label: string };
+  secondaryAction: { href: string; label: string };
+  heroCaption: string;
+  signalCards: { label: string; title: string; text: string; href: string; danger: boolean }[];
+  relatedTitle: string;
+  relatedDescription: string;
+}> = {
+  'salud-perros-mayores': {
+    toc: healthToc,
+    eyebrow: 'Guía central · salud senior',
+    primaryAction: { href: '#urgencias', label: 'Ver señales de alarma' },
+    secondaryAction: { href: '#chequeos', label: 'Plan preventivo' },
+    heroCaption: 'Un hogar adaptado ayuda a conservar independencia y confianza.',
+    signalCards: [
       { label: 'Primero', title: 'Descarta una urgencia', text: 'Dificultad respiratoria, colapso, convulsiones o abdomen hinchado.', href: '#urgencias', danger: true },
       { label: 'Después', title: 'Ordena el seguimiento', text: 'Consulta, dolor, boca, peso, prevención y pruebas según el caso.', href: '#chequeos', danger: false },
       { label: 'Cada día', title: 'Hazlo más fácil', text: 'Tracción, rutina, paseos adaptados y observación sin dramatismo.', href: '#casa', danger: false },
-    ];
-const modernRelatedTitle = isNutritionPilar ? 'Una duda concreta sobre su comida' : 'Guías para una duda concreta';
-const modernRelatedDescription = isNutritionPilar
-  ? 'Continúa con una guía especializada para convertir esta orientación en decisiones prácticas.'
-  : `${posts.length} recursos especializados para seguir cuidando con contexto.`;
+    ],
+    relatedTitle: 'Guías para una duda concreta',
+    relatedDescription: `${posts.length} recursos especializados para seguir cuidando con contexto.`,
+  },
+  'alimentacion-perros-senior': {
+    toc: nutritionToc,
+    eyebrow: 'Guía central · alimentación senior',
+    primaryAction: { href: '#racion', label: 'Ajustar la ración' },
+    secondaryAction: { href: '#casera', label: 'Ver comida casera' },
+    heroCaption: 'La mejor ración es la que mantiene un peso y una masa muscular saludables.',
+    signalCards: [
+      { label: 'Primero', title: 'Mira su condición corporal', text: 'Peso, músculo, apetito y heces dicen más que la palabra “senior” del envase.', href: '#que-cambia', danger: false },
+      { label: 'Después', title: 'Elige una base completa', text: 'La dieta debe cubrir sus necesidades y adaptarse a su salud, actividad y presupuesto.', href: '#que-dar', danger: false },
+      { label: 'Cada día', title: 'Pesa y observa', text: 'Ración medida, agua accesible y cambios anotados para decidir con menos ensayo.', href: '#racion', danger: false },
+    ],
+    relatedTitle: 'Una duda concreta sobre su comida',
+    relatedDescription: 'Continúa con una guía especializada para convertir esta orientación en decisiones prácticas.',
+  },
+  'salud-mental-emocional-perros': {
+    toc: mentalToc,
+    eyebrow: 'Guía central · bienestar emocional',
+    primaryAction: { href: '#senales', label: 'Ver señales' },
+    secondaryAction: { href: '#rutina', label: 'Adaptar la rutina' },
+    heroCaption: 'La previsibilidad, el vínculo y los estímulos adecuados ayudan a orientarse mejor.',
+    signalCards: [
+      { label: 'Primero', title: 'Mira el cambio', text: 'Sueño, orientación, interacción, hábitos y ansiedad cuentan una historia.', href: '#senales', danger: true },
+      { label: 'Después', title: 'Descarta causas', text: 'Dolor, pérdida sensorial y enfermedad pueden parecer un problema de conducta.', href: '#diferenciales', danger: false },
+      { label: 'Cada día', title: 'Hazlo predecible', text: 'Rutina, caminos despejados y juegos breves sin frustración.', href: '#rutina', danger: false },
+    ],
+    relatedTitle: 'Una duda sobre su conducta',
+    relatedDescription: 'Continúa con una guía especializada para entender un cambio concreto sin perder el contexto.',
+  },
+  'cuidados-paliativos-perros': {
+    toc: palliativeToc,
+    eyebrow: 'Guía central · confort y acompañamiento',
+    primaryAction: { href: '#calidad', label: 'Evaluar su bienestar' },
+    secondaryAction: { href: '#plan', label: 'Preparar la casa' },
+    heroCaption: 'El objetivo de los cuidados paliativos es sumar confort, claridad y compañía.',
+    signalCards: [
+      { label: 'Primero', title: 'Mide cómo está hoy', text: 'Dolor, respiración, apetito, descanso y vínculo orientan la conversación.', href: '#calidad', danger: true },
+      { label: 'Después', title: 'Diseña un plan realista', text: 'Veterinario, familia, medicación y ambiente deben apuntar al mismo objetivo.', href: '#plan', danger: false },
+      { label: 'Cada día', title: 'Protege su confort', text: 'Agua accesible, descanso, higiene, temperatura y presencia sin forzar.', href: '#confort', danger: false },
+    ],
+    relatedTitle: 'Acompañar una etapa delicada',
+    relatedDescription: 'Recursos para tomar decisiones de confort con información y sin cargar todo sobre una sola persona.',
+  },
+  'movilidad-dolor-perros-mayores': {
+    toc: mobilityToc,
+    eyebrow: 'Guía central · movilidad y dolor',
+    primaryAction: { href: '#senales', label: 'Reconocer señales' },
+    secondaryAction: { href: '#casa', label: 'Adaptar la casa' },
+    heroCaption: 'Moverse con seguridad empieza por reconocer el dolor y quitar obstáculos.',
+    signalCards: [
+      { label: 'Primero', title: 'Observa cómo se mueve', text: 'Rigidez, resbalones, dificultad al levantarse o cambios en el paseo importan.', href: '#senales', danger: true },
+      { label: 'Después', title: 'Busca un plan completo', text: 'Dolor, peso, rehabilitación y entorno se ajustan juntos con el veterinario.', href: '#plan', danger: false },
+      { label: 'Cada día', title: 'Reduce el esfuerzo', text: 'Tracción, rampas, descansos y paseos cortos pueden devolver confianza.', href: '#casa', danger: false },
+    ],
+    relatedTitle: 'Una duda sobre su movilidad',
+    relatedDescription: 'Sigue con recursos concretos para aliviar el día a día sin improvisar tratamientos.',
+  },
+  'higiene-hogar-perros-senior': {
+    toc: hygieneToc,
+    eyebrow: 'Guía central · higiene y hogar',
+    primaryAction: { href: '#rutina', label: 'Crear una rutina' },
+    secondaryAction: { href: '#casa', label: 'Hacer la casa segura' },
+    heroCaption: 'La higiene senior funciona mejor cuando es suave, predecible y fácil de repetir.',
+    signalCards: [
+      { label: 'Primero', title: 'Mantén piel y pelo secos', text: 'La humedad atrapada, el mal olor o el lamido persistente merecen atención.', href: '#piel', danger: true },
+      { label: 'Después', title: 'Simplifica el entorno', text: 'Superficies con agarre, cama estable y materiales lavables reducen accidentes.', href: '#casa', danger: false },
+      { label: 'Cada día', title: 'Revisa sin invadir', text: 'Cepillado breve, patas limpias y una observación tranquila detectan cambios pronto.', href: '#rutina', danger: false },
+    ],
+    relatedTitle: 'Una duda sobre sus cuidados diarios',
+    relatedDescription: 'Guías prácticas para convertir la limpieza, la prevención y el entorno en una rutina sostenible.',
+  },
+};
+
+const modernConfig = modernConfigs[pilar.id] ?? modernConfigs['salud-perros-mayores'];
+const modernToc = modernConfig.toc;
+const modernEyebrow = modernConfig.eyebrow;
+const modernPrimaryAction = modernConfig.primaryAction;
+const modernSecondaryAction = modernConfig.secondaryAction;
+const displayDate = dateModified
+  ? new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(dateModified))
+  : 'fecha por confirmar';
+const modernMeta = `Revisada el ${displayDate} · Lectura práctica`;
+const modernHeroCaption = modernConfig.heroCaption;
+const modernSignalCards = modernConfig.signalCards;
+const modernRelatedTitle = modernConfig.relatedTitle;
+const modernRelatedDescription = modernConfig.relatedDescription;
 
 const hideHeroCSS = heroImage
   ? `.content-body img[src="${heroImage}"],
@@ -139,9 +260,9 @@ const hideHeroCSS = heroImage
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(pilarSchema)} />
 
-  {heroImage && !isHealthPilar && !isNutritionPilar && <style slot="head" is:inline set:html={hideHeroCSS} />}
+  {heroImage && !isModernPilar && <style slot="head" is:inline set:html={hideHeroCSS} />}
 
-  {isHealthPilar || isNutritionPilar ? (
+  {isModernPilar ? (
     <>
       <section class="health-hero" aria-labelledby="health-title">
         <div class="health-shell health-hero__shell">
@@ -296,7 +417,7 @@ const hideHeroCSS = heroImage
   )}
 </BaseLayout>
 
-{(isHealthPilar || isNutritionPilar) && (
+{isModernPilar && (
   <style is:global>
       .health-shell,
       .health-main { width: min(100% - 2rem, 72rem); margin-inline: auto; }
