@@ -2,6 +2,8 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleByline from '../components/ArticleByline.astro';
+import AdBanner300x250 from '../components/ads/AdBanner300x250.astro';
+import AdSlotLoader from '../components/ads/AdSlotLoader.astro';
 import { buildSrcset } from '../utils/image';
 
 export async function getStaticPaths() {
@@ -325,6 +327,8 @@ const hideHeroCSS = heroImage
           </article>
         </div>
 
+        <AdBanner300x250 />
+
         <section class="health-related" id="guias" aria-labelledby="health-related-title">
           <div class="health-related__heading">
             <div>
@@ -400,6 +404,7 @@ const hideHeroCSS = heroImage
       <main class="mx-auto w-full max-w-4xl px-4 py-8 sm:py-12">
         <div class="mb-6 border-b border-brand-border pb-6"><ArticleByline dateModified={pilar.data.dateModified} /></div>
         <div class="content-body prose dark:prose-invert max-w-none mb-12"><Content /></div>
+        <AdBanner300x250 />
         <hr class="my-10 border-brand-border" />
         <h2 class="mb-8 text-2xl font-extrabold tracking-tight text-brand-text md:text-3xl">Guías Especializadas de {pilar.data.title}</h2>
         {posts.length > 0 ? (
@@ -415,6 +420,7 @@ const hideHeroCSS = heroImage
       </main>
     </>
   )}
+  <AdSlotLoader />
 </BaseLayout>
 
 {isModernPilar && (
