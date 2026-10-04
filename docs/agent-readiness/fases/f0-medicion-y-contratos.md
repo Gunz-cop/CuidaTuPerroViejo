@@ -154,7 +154,7 @@ El ejecutor propone decisiones; el coordinador las ratifica y actualiza la arqui
 | C11 | Cinco decisiones propuestas con pruebas reproducibles y límites | decisiones/spike docs; revisión independiente |
 | C12 | CI existente y pasos offline nuevos pasan; sin efectos externos | comandos locales y checks del PR |
 
-Todos son obligatorios. Para C05, una indisponibilidad externa justifica entrega parcial documentada, pero no marcar F0 aceptada: el replay y pruebas offline pueden terminar mientras se espera el servicio. No exigir mejorar score para aceptar F0; sí exigir conservar la comparabilidad.
+Todos son obligatorios. Para C05, una indisponibilidad externa bloquea la sesión: abrir el bug de SDD, entregar el estado/commits y evidencia parcial ya existentes y detenerse. No continuar con trabajo offline después de detectar ese bloqueo, ni marcar F0 aceptada o C05 cumplido. Solo el coordinador puede autorizar la reanudación tras resolverlo. No exigir mejorar score para aceptar F0; sí exigir conservar la comparabilidad.
 
 ## 9. Comandos de validación
 
