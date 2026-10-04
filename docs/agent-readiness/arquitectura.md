@@ -43,7 +43,7 @@ Cada entrada tendrá identidad estable, tipo, título, descripción, URL canóni
 
 ## A03 — Negociación HTTP en el borde
 
-Decisión propuesta: servir Markdown precompilado en la **misma URL** mediante `Accept: text/markdown`, con `Vary: Accept`. Publicar también una URL explícita para la representación, cuya convención se congelará en F0/F2. Las URLs HTML existentes no cambian.
+Decisión propuesta: servir Markdown precompilado en la **misma URL** mediante `Accept: text/markdown`, con `Vary: Accept`. La [SDD F0](fases/f0-contratos.md) fija para el spike la representación explícita `/agent-content/v1/documents/<documentId>.md` y el índice `/agent-content/v1/index.json`; F2 la incorpora tras ratificar la prueba. Las URLs HTML existentes no cambian.
 
 La ruta debe ejecutarse antes del enrutamiento de assets en las páginas negociables. La documentación actual de Astro permite un entrypoint propio en Wrangler utilizando el handler del adaptador. F0 demostrará cómo delegar al adaptador y a `ASSETS` sin romper rutas; F2 incorporará esa solución. No utilizar la opción antigua `workerEntryPoint`, eliminada del adaptador actual.
 
