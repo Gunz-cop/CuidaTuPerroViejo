@@ -1,11 +1,11 @@
 # Cuida tu Perro Viejo: arquitectura para agentes
 
 Fecha: 2026-10-01. Base técnica: `main@cdb0adece5d629f6b2473be7ea6e30c0b372ef1c`.
-Estado: **plan propuesto; implementación no iniciada**.
+Estado de cada fase: consultar su SDD y el issue de lanzamiento con el informe de auditoría; implementación no iniciada.
 
 El objetivo es maximizar la puntuación verificable de [isitagentready.com](https://isitagentready.com) y que un agente pueda descubrir el sitio, leer una guía con sus fuentes y advertencias, citarla y utilizar las herramientas existentes.
 
-Esta sesión es responsable de arquitectura, planificación, especificaciones y revisión. Otras sesiones implementan. Este cambio contiene documentación y evidencia; no cambia el sitio.
+Esta sesión es responsable de arquitectura, planificación, especificaciones y revisión. Otras sesiones implementan. Este cambio contiene documentación, evidencia y la corrección semántica H2 → H1 del título principal del selector de movilidad, autorizada por el propietario. No publica capacidades del programa.
 
 ## Documentos y autoridad
 
@@ -14,6 +14,7 @@ Esta sesión es responsable de arquitectura, planificación, especificaciones y 
 3. [Plan por fases](plan.md): entregables, dependencias, ownership, aceptación y reversión.
 4. [Método SDD y traspaso](sdd.md): cómo convertir cada fase en una especificación ejecutable.
 5. [Evidencia](evidencia/README.md): respuestas originales, solicitudes y referencias.
+6. [SDD F0](fases/f0-medicion-y-contratos.md), [contratos F0](fases/f0-contratos.md) y [prompts de sesiones](fases/f0-prompts.md): primer encargo ejecutable.
 
 Este README fija el objetivo y el estado; arquitectura fija las decisiones; el plan fija el orden; una futura spec fija la ejecución de una fase. Una spec no puede contradecir estos documentos sin registrar la decisión que los modifica. La evidencia describe observaciones, no decisiones.
 
@@ -35,6 +36,6 @@ Confirmada en esta conversación: `search=yes`, `ai-input=yes`, `ai-train=no`. L
 
 ## Próximo paso
 
-Concretar la spec de F0: medición reproducible, inventario público y compuerta de evidencia. Después, concretar F1. Las fases siguientes tienen alcance de planificación; todavía no autorizan a un ejecutor a improvisar contratos o arquitectura.
+Tras PASS de auditoría de bloqueantes y publicación de la base exacta en el issue, asignar F0 a una sesión de **Luna 6, razonamiento alto**, usando su [prompt de lanzamiento](fases/f0-prompts.md). Entrega tooling, evidencia y un spike aislado; una sesión distinta verifica sus doce criterios. El coordinador ratifica las decisiones técnicas y concreta F1/F2 sobre esos resultados. Las fases siguientes conservan alcance de planificación.
 
-Los implementadores parten de una rama de trabajo. `main` despliega producción al recibir cambios: este plan se entrega en PR de documentación y no se fusiona automáticamente.
+Los implementadores parten de una rama de trabajo. `main` despliega producción al recibir cambios: este plan y el ajuste H1 se entregan en PR y no se fusiona automáticamente.
