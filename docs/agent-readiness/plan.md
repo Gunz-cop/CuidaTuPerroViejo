@@ -1,6 +1,6 @@
 # Plan por fases
 
-Estado global: propuesto. Ninguna fase de implementación se ha ejecutado. Las cifras futuras son estimaciones con la selección actual del evaluador congelada; se recalculan con evidencia después de cada promoción.
+Plan aceptado por el propietario; ninguna fase de implementación se ha ejecutado. Las cifras futuras son estimaciones con la selección actual del evaluador congelada; se recalculan con evidencia después de cada promoción. El estado de ejecución de F0 vive en [su SDD](fases/f0-medicion-y-contratos.md), con [contratos](fases/f0-contratos.md) y [prompts de lanzamiento](fases/f0-prompts.md).
 
 ## Orden y dependencias
 
@@ -33,7 +33,7 @@ Entregar un harness de auditoría, perfiles explícitos, inventario de rutas y c
 
 Una sesión exploratoria prueba la delegación del entrypoint del adaptador, la lectura de assets en preview, el orden del build y el aislamiento de caché, sin promocionar el spike a producción. El coordinador convierte los resultados en decisiones exactas para F2. F0 también congela qué texto y fuentes deben sobrevivir para home, pilar, artículo MDX con FAQ/AlertBox y herramienta.
 
-Ownership previsto: `scripts/agent-readiness/`, `tests/agent-readiness/fixtures/`, `docs/agent-readiness/evidencia/f0/`. El spike vive en una rama temporal con su diff adjunto. Cambios necesarios a scripts npm/CI se especifican y los integra la sesión de plataforma; no se introducen hooks de indexación.
+Ownership concreto en la SDD: `scripts/agent-readiness/`, tests/fixtures y evidencia F0, dos devDependencies directas ya presentes transitivamente y dos pasos offline de CI. F0 posee temporalmente esos archivos compartidos, en serie. El spike vive en un worktree temporal con su diff adjunto; sus cambios de runtime no se fusionan al producto. No se introducen hooks de indexación.
 
 Aceptación: la puntuación de los JSON actuales se reproduce; una diferencia entre selección de UI y API se detecta; inventario justificable frente a sitemap; resueltas las cinco preguntas de arquitectura A07/F0. Reversión: quitar el harness/spike, sin cambio de producto.
 
