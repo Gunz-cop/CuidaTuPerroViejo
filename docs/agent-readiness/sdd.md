@@ -1,6 +1,6 @@
 # Método SDD y contrato de traspaso
 
-SDD se usa aquí como **desarrollo dirigido por especificaciones**. Cada fase se concreta antes de implementarse. Este documento define el método; no reemplaza las specs de fase que todavía no existen.
+SDD se usa aquí como **desarrollo dirigido por especificaciones**. Cada fase se concreta antes de implementarse. Este documento define el método; la primera spec ejecutable es [F0](fases/f0-medicion-y-contratos.md), con [contratos normativos](fases/f0-contratos.md).
 
 ## Estados
 
@@ -29,6 +29,16 @@ Cuando sea necesario modificar un archivo fuera de ownership o tomar una decisi�
 
 No ejecutar `npm run sdi:run` ni mutar APIs con efectos para verificar lectura pública. Build explícito mediante `npx --no-install astro build` tras instalación del lockfile. Las verificaciones de fase que afecten al runtime deben probar en workerd y en una URL de preview; `astro dev` o inspección de fuente no bastan para afirmar cómo sirve assets Cloudflare.
 
+## Bloqueos y bugs de SDD
+
+Las sesiones implementadoras usan **Luna 6 con razonamiento alto** (`gpt-6-luna`, `high`). El coordinador fija en cada issue una SDD auditada, SHA completo, dependencias, ownership y criterios de aceptación. Una fase solo planificada no autoriza programar.
+
+Si la sesión no puede avanzar sin inventar una decisión, si hay contradicción o falta de contrato, si la base/dependencia/entorno requerido no está disponible, **se detiene y abre un issue de GitHub `[SDD bug] <fase>: <bloqueo>`**. También enlaza ese bug en el issue implementador y entrega al coordinador el estado y sus commits, sin marcar completado el trabajo ni modificar unilateralmente la SDD. Si GitHub está inaccesible, guarda el mismo reporte en `docs/agent-readiness/evidencia/<fase>/bug-sdd-pendiente.md`, comunica que la publicación está pendiente y se detiene; no continúa a pesar del bloqueo.
+
+El bug debe contener: issue padre; fase y enlaces a SDD en SHA exacto; SHA de implementación/spike si existen; criterio afectado; resultado esperado/observado; reproducción y salida sanitizada; por qué el contrato o entorno impide avanzar; número de auditorías realizadas; impacto; pregunta o propuesta al arquitecto. No necesita etiqueta preexistente para poder publicarse. Un fallo de código reparable se corrige dentro del encargo; un hueco normativo nunca se rellena para cerrar el issue.
+
+Cada issue de implementación lanza una **sesión independiente de auditoría** sobre un SHA de entrega fijo. El autor no es su auditor. Cada informe declara intento, SHA, criterios, evidencia y PASS/FAIL por bloqueantes. Máximo **cinco auditorías totales por issue**, contando la primera; cada FAIL de código puede dar lugar a corrección y nueva auditoría mientras queden intentos. Tras FAIL en intento 5, abrir el bug y detenerse sin nuevas correcciones, sexta auditoría ni cierre del issue. Un PASS permite cerrar solo el alcance implementado; no autoriza merge ni despliegue. Observaciones opcionales se registran y no obligan a abrir ciclos.
+
 ## Reglas para el verificador
 
 Usar el commit entregado y la misma base fijada por la spec. Verificar criterios y propiedad del diff. Producir resultados separados: verificado, diferencia aceptable con motivo, no verificado y fallo. No corregir el producto durante la verificación; devolver fallos al ejecutor y problemas de contrato al coordinador.
@@ -46,12 +56,13 @@ Base exacta: <SHA>; rama destino: <rama>; rama de trabajo: <rama propia>.
 Comprueba que la spec está lista y sus dependencias aceptadas.
 Implementa solo su alcance y respeta ownership.
 Entrega un PR con criterios/evidencia, commit y rollback.
-Reporta huecos de spec al coordinador; no inventes contratos.
+Ante un bloqueo, detente y crea un bug de SDD enlazado al issue; no inventes contratos.
+Lanza auditoría independiente, máximo 5 intentos por issue; tras quinto FAIL, bug y detención.
 La promoción a main se realiza por separado porque despliega producción.
 ```
 
 La plantilla es intencionalmente incompleta hasta que exista la spec de fase. No lanzar otra sesión con solo el título de una fase o una lista de tecnologías.
 
-## Primera spec pendiente
+## Primera spec ejecutable
 
-F0 convertirá la línea base actual en un proceso reproducible y encargará las pruebas exploratorias mínimas de routing/build/caché. El coordinador revisará sus resultados y cerrará contratos de F1/F2. Se concretan las specs conforme se elimina incertidumbre, sin escribir una spec detallada de OAuth/A2A antes de saber si esas funciones se necesitan.
+F0 convierte la línea base actual en un proceso reproducible y encarga pruebas exploratorias de routing/build/caché en worktree aislado. Incluye base, ownership, contratos CLI/JSON, perfiles, política de proyección, doce criterios y prompts de implementación/verificación. El coordinador revisará resultados y cerrará contratos de F1/F2. Las specs posteriores se concretan conforme se elimina incertidumbre.
