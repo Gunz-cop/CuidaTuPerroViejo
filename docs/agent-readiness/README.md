@@ -1,7 +1,7 @@
 # Cuida tu Perro Viejo: arquitectura para agentes
 
 Fecha: 2026-10-01. Base técnica: `main@cdb0adece5d629f6b2473be7ea6e30c0b372ef1c`.
-Estado: F0 aceptada técnicamente con auditoría independiente PASS 3/5 y [ratificación del coordinador](evidencia/f0/cierre-arquitectonico.md). F1 tiene [SDD concreta](fases/f1-politica-y-descubrimiento.md), aprobada por [auditoría PASS 2/2](evidencia/f1/auditoria/auditoria-sdd-f1-r2.md); lanzamiento fijado por SHA en su issue. Ninguna mejora de estas ramas se ha promovido a producción.
+Estado: F0 aceptada técnicamente con auditoría independiente PASS 3/5 y [ratificación del coordinador](evidencia/f0/cierre-arquitectonico.md). F1 aceptada técnicamente con [auditoría de implementación PASS 1/5](evidencia/f1/auditoria/auditoria-f1-implementacion-r1.md), [cierre arquitectónico](evidencia/f1/cierre-arquitectonico.md) y SDD previamente aprobada PASS 2/2. Ninguna mejora de estas ramas se ha promovido a producción.
 
 El objetivo es maximizar la puntuación verificable de [isitagentready.com](https://isitagentready.com) y que un agente pueda descubrir el sitio, leer una guía con sus fuentes y advertencias, citarla y utilizar las herramientas existentes.
 
@@ -14,7 +14,7 @@ Esta sesión es responsable de arquitectura, planificación, especificaciones y 
 3. [Plan por fases](plan.md): entregables, dependencias, ownership, aceptación y reversión.
 4. [Método SDD y traspaso](sdd.md): cómo convertir cada fase en una especificación ejecutable.
 5. [Evidencia](evidencia/README.md): respuestas originales, solicitudes y referencias.
-6. [SDD F1](fases/f1-politica-y-descubrimiento.md): siguiente encargo, tras su auditoría.
+6. [SDD F1](fases/f1-politica-y-descubrimiento.md): implementación aceptada; publicación pendiente.
 7. [SDD F0](fases/f0-medicion-y-contratos.md), [contratos F0](fases/f0-contratos.md) y [prompts de sesiones](fases/f0-prompts.md): primer encargo ejecutable.
 
 Este README fija el objetivo y el estado; arquitectura fija las decisiones; el plan fija el orden; una futura spec fija la ejecución de una fase. Una spec no puede contradecir estos documentos sin registrar la decisión que los modifica. La evidencia describe observaciones, no decisiones.
@@ -37,6 +37,6 @@ Confirmada en esta conversación: `search=yes`, `ai-input=yes`, `ai-train=no`. L
 
 ## Próximo paso
 
-Fijar la SDD aprobada de F1 en su issue y lanzar una sesión de **Luna 6, razonamiento alto** para implementar política y descubrimiento. Su auditoría será independiente, con máximo cinco revisiones por issue. F2–F6 conservan alcance de planificación.
+Solicitar autorización para promocionar la cadena de PR aceptada y verificar P01–P03 de F1. Preparar la SDD de F2 con sus contratos de paridad y preview pública; no lanzar implementación sin spec auditada y SHA fijo. Los programadores continúan siendo **Luna 6, razonamiento alto**, con auditoría independiente y máximo cinco revisiones por issue. F2–F6 conservan alcance de planificación.
 
 Los implementadores parten de una rama de trabajo. `main` despliega producción al recibir cambios: documentación, H1 y corrección del canonical se entregan en PR apilados y no se fusionan automáticamente.
