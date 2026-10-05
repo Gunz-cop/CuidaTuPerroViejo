@@ -92,6 +92,9 @@ jobs:
       - name: Inventory offline del build
         run: node scripts/agent-readiness/index.mjs inventory --build-dir dist --out-dir "${RUNNER_TEMP}/agent-readiness-inventory"
 
+      - name: Verificar descubrimiento agent-readiness
+        run: node scripts/agent-readiness/discovery.mjs check --build-dir dist
+
       # Los bindings de `wrangler.jsonc` y los tipos generados tienen que contar
       # lo mismo: sin este paso, el `Env` miente cuando alguien añade un binding
       # y no regenera, y el typecheck lo da por bueno.
