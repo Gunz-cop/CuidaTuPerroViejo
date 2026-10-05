@@ -200,6 +200,13 @@ test('compare exits with contract error for inconsistent summary envelopes', asy
     assert.equal(futureResult.scoreDelta, null);
     assert.ok(futureResult.reasons.includes('SCORING_CHANGED'));
 
+    const futureNull = { ...good, scoringRuleId: 'future-rule/2', score: null };
+    const futureNullPath = join(root, 'future-rule-null.json');
+    const futureNullOut = join(root, 'future-rule-null-comparison.json');
+    await writeFile(futureNullPath, JSON.stringify(futureNull));
+    assert.equal(await main(['compare', '--before', futureNullPath, '--after', futureNullPath, '--out', futureNullOut]), 3);
+    await assert.rejects(readFile(futureNullOut), { code: 'ENOENT' });
+
     const cases = [
       ['hash', { ...good, checkUniverseHash: 'f'.repeat(64) }],
       ['counts', { ...good, counts: { ...good.counts, pass: good.counts.pass + 1 } }],

@@ -127,7 +127,7 @@ function validateSummary(summary) {
   if (summary.state === 'complete') {
     const semanticError = summary.errors.length > 0 || summary.targetUrl === null ||
       typeof summary.isCommerce !== 'boolean' || summary.counts.scoredTotal === 0 ||
-      summary.responseSha256 === null ||
+      summary.responseSha256 === null || summary.score === null ||
       (summary.scoringRuleId === SCORING_RULE && summary.score !== Math.round(100 * counts.pass / counts.scoredTotal)) ||
       summary.level === null || summary.levelName === null || summary.scannedAt === null ||
       summary.checks.some(({ category, status, id }) => !id || !KNOWN_CATEGORIES.has(category) ||
