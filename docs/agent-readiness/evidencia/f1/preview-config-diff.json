@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "agent-readiness-f1-preview-config/1",
+  "measuredSourceCommit": "252e4df137492c6c74562480584acc8b7a09d811",
+  "measuredSourceTree": "dad7d9e54d744517bfdce5379cb73d4c23669a51",
+  "compiledConfig": {
+    "path": "dist/server/wrangler.json",
+    "sha256": "952f31ddee6c111afd0373832c5e967aefa96cbf6f2ecee6f0a42dd823d32de1"
+  },
+  "localCopy": {
+    "temporaryPath": "/tmp/ctpv-f1-preview-wrangler-final.json",
+    "sha256": "9473ebb5e15f86ff7c16e0ede7b93f100d815956fbece2fa88e78f09a3b3513d",
+    "wranglerVersion": "4.128.0",
+    "main": "/workspace/ctpv-f1/dist/server/entry.mjs",
+    "assetsDirectory": "/workspace/ctpv-f1/dist/client",
+    "runWorkerFirst": ["/api/*", "/admin/*"],
+    "localKvBindings": ["SESSION"],
+    "removedResourceBindings": ["AI", "EMAIL", "CONTACT_DB", "ASK_LIMIT", "ADMIN_LIMIT", "CONTACT_KV", "services"],
+    "sessionNamespaceId": "removed",
+    "sessionPreviewId": "removed",
+    "sessionRemote": "removed",
+    "observabilityEnabled": false,
+    "remoteTrueRemaining": false,
+    "deployRoutesOrTriggers": false,
+    "compatibilityAndAssetsRoutingPreserved": true
+  }
+}
