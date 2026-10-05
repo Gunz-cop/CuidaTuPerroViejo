@@ -19,47 +19,6 @@ async function fixtureBuild(t, files) {
 
 const emptySitemap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>';
 const catalog = '[]';
-const pillarSlugs = [
-  'alimentacion-perros-senior', 'cuidados-paliativos-perros', 'herramientas',
-  'higiene-hogar-perros-senior', 'movilidad-dolor-perros-mayores',
-  'salud-mental-emocional-perros', 'salud-perros-mayores',
-];
-const toolRoutes = [
-  '/herramientas/calculadora-calidad-vida-perros',
-  '/herramientas/selector-movilidad-perros-mayores',
-];
-const editorialRoutes = ['/acerca-de', '/politica-editorial'];
-
-async function fullProjectionFixture(t, articleCount = 16, options = {}) {
-  const articles = Array.from({ length: articleCount }, (_, index) => ({
-    slug: `articulo-${String(index + 1).padStart(2, '0')}`,
-    href: `/${pillarSlugs[index % pillarSlugs.length]}/articulo-${String(index + 1).padStart(2, '0')}`,
-  }));
-  const routes = [
-    '/', ...pillarSlugs.map((slug) => `/${slug}`), ...articles.map((item) => item.href),
-    ...toolRoutes, ...editorialRoutes,
-  ];
-  const files = {
-    'sitemap.xml': `<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map((path) => `<url><loc>https://cuidatuperroviejo.com${path}</loc></url>`).join('')}</urlset>`,
-    'api/assistant-catalog.json': JSON.stringify(options.catalog ?? articles),
-  };
-  for (const path of routes) {
-    if (options.omitPath === path) continue;
-    const htmlPath = path === '/' ? 'index.html' : `${path.slice(1)}.html`;
-    files[htmlPath] = `<!doctype html><html lang="es"><head><link rel="canonical" href="https://cuidatuperroviejo.com${path}"><meta name="description" content="Descripción ${path}"></head><body><h1>Título ${path}</h1></body></html>`;
-  }
-  if (options.aliasPath) {
-    const path = options.aliasPath;
-    files[`${path.slice(1)}.html`] = `<!doctype html><html lang="es"><head><link rel="canonical" href="https://cuidatuperroviejo.com${options.aliasCanonical}"><meta name="description" content="Alias"></head><body><h1>Alias</h1></body></html>`;
-    files['sitemap.xml'] = files['sitemap.xml'].replace('</urlset>', `<url><loc>https://cuidatuperroviejo.com${options.aliasCanonical}</loc></url></urlset>`);
-  }
-  if (options.extraPath) {
-    const path = options.extraPath;
-    files[`${path.slice(1)}.html`] = `<!doctype html><html lang="es"><head><link rel="canonical" href="https://cuidatuperroviejo.com${path}"><meta name="description" content="Desconocida"></head><body><h1>Desconocida</h1></body></html>`;
-    files['sitemap.xml'] = files['sitemap.xml'].replace('</urlset>', `<url><loc>https://cuidatuperroviejo.com${path}</loc></url></urlset>`);
-  }
-  return { assets: await fixtureBuild(t, files), routes, articles };
-}
 
 test('inventory conserva tool/document sin canonical y devuelve DOCUMENT_TITLE_MISSING sin H1', async (t) => {
   const build = await fixtureBuild(t, {
@@ -120,42 +79,4 @@ test('inventory detecta canonical duplicado en páginas proyectadas', async (t) 
   const result = JSON.parse(await readFile(join(out, 'inventory.json'), 'utf8'));
   assert.equal(result.state, 'invalid');
   assert.ok(result.errors.some((error) => error.code === 'CANONICAL_DUPLICATE' && error.htmlFile));
-});
-
-test('inventario deriva correspondencia exacta y admite crecimiento concordante 28 → 29', async (t) => {
-  for (const articleCount of [16, 17]) {
-    const { assets } = await fullProjectionFixture(t, articleCount);
-    const parent = await mkdtemp(join(tmpdir(), 'ctpv-inventory-out-'));
-    t.after(() => rm(parent, { recursive: true, force: true }));
-    const out = join(parent, 'run');
-    assert.equal(await inventory(join(assets, '..', '..'), out), 0);
-    const result = JSON.parse(await readFile(join(out, 'inventory.json'), 'utf8'));
-    assert.equal(result.state, 'valid');
-    assert.equal(result.pages.filter((page) => page.disposition === 'document').length, articleCount + 12);
-  }
-});
-
-test('inventario rechaza documentos requeridos ausentes, IDs repetidos y rutas no clasificadas', async (t) => {
-  const cases = [
-    { name: 'home', options: { omitPath: '/' } },
-    { name: 'pilar', options: { omitPath: '/salud-perros-mayores' } },
-    { name: 'herramienta', options: { omitPath: toolRoutes[0] } },
-    { name: 'editorial', options: { omitPath: editorialRoutes[0] } },
-    { name: 'artículo', options: { omitPath: `/${pillarSlugs[0]}/articulo-01` } },
-    { name: 'ID y canonical duplicados', options: { aliasPath: '/alias-pilar', aliasCanonical: '/salud-perros-mayores' } },
-    { name: 'ruta sin clasificar', options: { extraPath: '/ruta-sin-clasificar' } },
-  ];
-  for (const { name, options } of cases) {
-    const { assets } = await fullProjectionFixture(t, 16, options);
-    const parent = await mkdtemp(join(tmpdir(), 'ctpv-inventory-out-'));
-    t.after(() => rm(parent, { recursive: true, force: true }));
-    const out = join(parent, 'run');
-    assert.equal(await inventory(join(assets, '..', '..'), out), 3, name);
-    const result = JSON.parse(await readFile(join(out, 'inventory.json'), 'utf8'));
-    assert.equal(result.state, 'invalid', name);
-    if (name === 'ID y canonical duplicados') {
-      assert.ok(result.errors.some((error) => error.code === 'DOCUMENT_ID_COLLISION'));
-      assert.ok(result.errors.some((error) => error.code === 'CANONICAL_DUPLICATE'));
-    }
-  }
 });

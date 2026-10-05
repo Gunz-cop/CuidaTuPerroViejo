@@ -4,14 +4,7 @@
 /images/*
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 
-/robots.txt
-  Content-Type: text/plain; charset=utf-8
-
-/llms.txt
-  Content-Type: text/plain; charset=utf-8
-
 /*
-  Link: <https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()

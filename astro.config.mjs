@@ -3,7 +3,6 @@ import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 import { satteri } from '@astrojs/markdown-satteri';
 import sitemap from '@astrojs/sitemap';
-import { discoveryIntegration } from './scripts/agent-readiness/discovery.mjs';
 import {
   externalLinks,
   secureExternalLinksIntegration,
@@ -67,7 +66,6 @@ export default defineConfig({
         };
       },
     }),
-    discoveryIntegration(),
   ],
   markdown: {
     processor: satteri({ hastPlugins: [externalLinks] })
