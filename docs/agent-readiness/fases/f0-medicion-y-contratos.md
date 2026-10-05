@@ -1,9 +1,9 @@
 # F0 — Medición reproducible y contratos de entrega
 
-**Estado: especificada; pendiente de auditoría de bloqueantes y publicación fijada por SHA en el issue.** Revisión: 2026-10-04.
+**Estado: especificada para reanudación; requiere auditoría de esta revisión y publicación fijada por SHA en el issue #43.** Revisión: 2026-10-05.
 El issue de lanzamiento registra el veredicto, la versión auditada y su base exacta; solo entonces puede empezar la implementación.
 Responsable de arquitectura y aceptación: coordinador del programa.
-Implementador y verificador: sesiones distintas; todavía no asignadas.
+Implementador: la misma sesión de Luna 6 con razonamiento alto; verificador: una sesión independiente. Las asignaciones y la autorización efectiva de reanudación se registran en el issue #43.
 
 ## 1. Resultado de la fase
 
@@ -20,15 +20,21 @@ F0 **no aumenta la puntuación** ni publica Markdown, API, skills, MCP, DNS o Co
 | Base de producto | `cdb0adece5d629f6b2473be7ea6e30c0b372ef1c` |
 | Commit del plan | `493f82e93cdfca3ea804dcea656ad8bdd2151212` |
 | Rama documental | `docs/agent-readiness-plan`, PR #42 |
+| Rama documental de reanudación | `docs/f0-reanudacion-canonical`, apilada sobre el fix de #45 |
 | Rama implementadora | `agent-ready/f0-medicion` |
 | Rama/worktree del spike | `agent-ready/f0-spike` desde la base de arranque de F0 |
-| Destino inicial del PR F0 | `docs/agent-readiness-plan`, mientras #42 no esté fusionado |
+| Destino del PR F0 tras reanudación | `docs/f0-reanudacion-canonical`, mientras siga abierta su integración |
 
 La **base de arranque** es el SHA completo publicado y auditado que el coordinador fija en el issue de lanzamiento. Traer ese commit exacto, no resolver el último HEAD de una rama móvil. El issue debe enlazar el informe PASS y los documentos normativos de ese SHA. Sin esos datos, detenerse y registrar un bug de SDD.
 
-Desde la base de producto solo se permiten documentación en `docs/agent-readiness/` y la corrección H1 autorizada por el propietario: en `src/pages/herramientas/selector-movilidad-perros-mayores.astro`, cambiar únicamente la apertura/cierre del primer título editorial de `h2` a `h1`. SHA-256 del archivo corregido: `8c11028f8a8afc50fce0a7df19b0236421eb68191d5e16eedeedc29d05c0767a`. Comparar el diff y ese hash al preparar F0. La corrección pertenece al coordinador y ya debe estar incluida en la base publicada; F0 no puede modificar la página. Cualquier otro cambio de producto bloquea la preparación.
+Desde la base de producto solo se permiten documentación en `docs/agent-readiness/` y estas dos correcciones de producto, autorizadas y ya incluidas en la base publicada:
 
-No usar la rama histórica de migración. Si #42 se fusiona antes de empezar, el coordinador fija la base de arranque y destino nuevos conservando esta base de producto como comparación; el ejecutor no resuelve esa transición por su cuenta. El PR no se fusiona automáticamente: `main` publica producción.
+- H1 del selector: en `src/pages/herramientas/selector-movilidad-perros-mayores.astro`, cambiar únicamente la apertura/cierre del primer título editorial de `h2` a `h1`. SHA-256 del archivo corregido: `8c11028f8a8afc50fce0a7df19b0236421eb68191d5e16eedeedc29d05c0767a`.
+- Canonical de la home, resolución del bug #45: en `src/layouts/BaseLayout.astro`, conservar la normalización existente y convertir únicamente su resultado `/index` en `/`, compartido por canonical y `og:url`. El diff debe ser exactamente el de `b1887a8eab8178442a191eae52d61b4315a37003` a `307ebffb73dd4f68d64f4ccda851e15a876a0455` para ese archivo; SHA-256 corregido `dd86228f856240d3e05e4e0a09f6b17d58b4c292fd796c229c539d7a88df1a86`, blob Git `68990f06839225674cc7fc698c9879bea927e600`.
+
+Comparar paths, diffs y ambos hashes al preparar F0. Ninguna corrección concede ownership de esos archivos al implementador F0. Cualquier otro cambio de producto bloquea la preparación. El [registro de reanudación](f0-reanudacion-2026-10-05.md) explica la resolución y las comprobaciones antes de continuar; no cambia los contratos ni C01–C12.
+
+No usar la rama histórica de migración. Si se integra o cambia una rama de la cadena documental/fix antes de continuar, el coordinador fija la base de arranque y destino nuevos conservando esta base de producto como comparación; el ejecutor no resuelve esa transición por su cuenta. El PR no se fusiona automáticamente: `main` publica producción.
 
 ## 3. Lecturas obligatorias y decisiones aplicables
 
