@@ -43,9 +43,9 @@ Cada entrada tendrá identidad estable, tipo, título, descripción, URL canóni
 
 ## A03 — Negociación HTTP en el borde
 
-Decisión propuesta: servir Markdown precompilado en la **misma URL** mediante `Accept: text/markdown`, con `Vary: Accept`. La [SDD F0](fases/f0-contratos.md) fija para el spike la representación explícita `/agent-content/v1/documents/<documentId>.md` y el índice `/agent-content/v1/index.json`; F2 la incorpora tras ratificar la prueba. Las URLs HTML existentes no cambian.
+Decisión ratificada D01/D04 para la futura SDD F2: servir Markdown precompilado en la **misma URL** mediante `Accept: text/markdown`, con `Vary: Accept`. La [SDD F0](fases/f0-contratos.md) fija para el spike la representación explícita `/agent-content/v1/documents/<documentId>.md` y el índice `/agent-content/v1/index.json`; F2 la incorpora tras ratificar la prueba. Las URLs HTML existentes no cambian.
 
-La ruta debe ejecutarse antes del enrutamiento de assets en las páginas negociables. La documentación actual de Astro permite un entrypoint propio en Wrangler utilizando el handler del adaptador. F0 demostrará cómo delegar al adaptador y a `ASSETS` sin romper rutas; F2 incorporará esa solución. No utilizar la opción antigua `workerEntryPoint`, eliminada del adaptador actual.
+La ruta debe ejecutarse antes del enrutamiento de assets en las páginas negociables. La documentación actual de Astro permite un entrypoint propio en Wrangler utilizando el handler del adaptador. F0 demostró delegación al handler vigente y a `ASSETS` en workerd; F2 concretará e incorporará esa solución para todo el corpus, con preview pública. No utilizar la opción antigua `workerEntryPoint`, eliminada del adaptador actual.
 
 No convertir todas las páginas en SSR ni activar globalmente `run_worker_first` sin justificar su alcance. La lista de rutas negociables se genera del inventario, manteniendo explícitas `/api/*` y `/admin/*`. Si los límites/configuración del routing no permiten esa lista, la spec deberá resolver la alternativa antes de que un ejecutor empiece.
 
@@ -96,7 +96,7 @@ F6 es una fase de diseño condicionado, con objetivo explorar 100/100 general y 
 
 No añadir un proveedor OAuth, claves de firma o un sistema de tareas únicamente para que el escáner encuentre un JSON. La lectura pública no se bloquea para justificar auth. Web Bot Auth describe identidad de bots emisores; publicar su directorio no habilita automáticamente el acceso de bots visitantes.
 
-## Decisiones que F0 debe resolver
+## Decisiones resueltas por F0 y límites pendientes
 
 | Pregunta | Prueba necesaria | Salida antes de F2/F3 |
 |---|---|---|
@@ -106,4 +106,4 @@ No añadir un proveedor OAuth, claves de firma o un sistema de tareas únicament
 | ¿Cómo aislar variantes en las dos capas de caché? | HTML→MD→HTML y MD→HTML→MD, validadores | Clave, política y pruebas |
 | ¿Qué rutas corresponden a cada entry? | Inventario contra sitemap y rutas generadas | IDs/paths públicos versionados |
 
-Las pruebas exploratorias que requieran código se harán por una sesión implementadora, en rama temporal, a partir de la spec F0. Esta sesión fija las decisiones a partir de sus resultados.
+F0 pasó su auditoría independiente 3/5. El [cierre arquitectónico](evidencia/f0/cierre-arquitectonico.md) ratifica D01–D05 y conserva los límites: serializador completo, schema final y CDN se verifican en F2. El spike no se promociona. La SDD F1 concreta D02/D05: generación de llms después de sitemap y cardinalidad derivada del corpus público.
