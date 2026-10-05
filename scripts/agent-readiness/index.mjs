@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { readFile, stat } from 'node:fs/promises';
-import { join, relative, resolve, sep } from 'node:path';
+import { isAbsolute, join, relative, resolve, sep } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { inventory as runInventoryCommand } from './inventory.mjs';
 import { exclusiveDir, exclusiveFile, jsonBytes, manifestFor, saveJson, sha256, sourceState } from './shared.mjs';
@@ -81,8 +81,11 @@ function validateSummary(summary) {
   if (summary.profile === 'api-unconfigured') {
     if (summary.mode !== 'replay' || summary.enabledChecks !== null) invalid('api-unconfigured solo admite replay sin enabledChecks.');
   } else {
+    const expectedChecks = PROFILES[summary.profile];
     if (!Array.isArray(summary.enabledChecks) ||
-        JSON.stringify(summary.enabledChecks) !== JSON.stringify(PROFILES[summary.profile])) {
+        summary.enabledChecks.length !== expectedChecks.length ||
+        new Set(summary.enabledChecks).size !== summary.enabledChecks.length ||
+        JSON.stringify([...summary.enabledChecks].sort(stableAscii)) !== JSON.stringify([...expectedChecks].sort(stableAscii))) {
       invalid('enabledChecks no coincide con el perfil congelado.');
     }
   }
@@ -125,7 +128,7 @@ function validateSummary(summary) {
     const semanticError = summary.errors.length > 0 || summary.targetUrl === null ||
       typeof summary.isCommerce !== 'boolean' || summary.counts.scoredTotal === 0 ||
       summary.responseSha256 === null ||
-      summary.score !== Math.round(100 * counts.pass / counts.scoredTotal) ||
+      (summary.scoringRuleId === SCORING_RULE && summary.score !== Math.round(100 * counts.pass / counts.scoredTotal)) ||
       summary.level === null || summary.levelName === null || summary.scannedAt === null ||
       summary.checks.some(({ category, status, id }) => !id || !KNOWN_CATEGORIES.has(category) ||
         !['pass', 'fail', 'neutral'].includes(status)) ||

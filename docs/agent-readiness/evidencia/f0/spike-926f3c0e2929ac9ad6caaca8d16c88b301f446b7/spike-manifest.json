@@ -1,0 +1,162 @@
+{
+  "schemaVersion": "f0-spike-manifest/1",
+  "status": "exploratory spike; not product runtime or F0 acceptance",
+  "baseCommit": "4dced4155788af926ef7b4e3d2d7e8259e1978be",
+  "spikeCommit": "926f3c0e2929ac9ad6caaca8d16c88b301f446b7",
+  "runtimeEvidenceCommit": "4d0863c67e147027cf734e8333f978be5bcbe285",
+  "branch": "agent-ready/f0-spike",
+  "worktreeCleanAtFreeze": true,
+  "changeSinceRuntimeEvidence": "one P4 fixture path identity correction; no Worker, middleware, negotiation, cache, or sample logic changed",
+  "changedPaths": [
+    {
+      "path": "astro.config.mjs",
+      "sha256": "115fd9ca37200fd688c213fc98f0433f7a039947789fd35ffc40a1b8b5115789"
+    },
+    {
+      "path": "scripts/f0-spike/content-build-integration.mjs",
+      "sha256": "b9eb1c802c48ce50b0c40f9ca1782ad42f2987a642d8228ee55183388dfbc874"
+    },
+    {
+      "path": "scripts/f0-spike/verify-preview.mjs",
+      "sha256": "c044ed710cad4b29b3757fef1935e244702a222ef47249eb5a7d9137b601debf"
+    },
+    {
+      "path": "src/middleware.ts",
+      "sha256": "bd51765b4fd63f6ffa8476b302123aae4192e7b7951e907fb85d5673207e07c7"
+    },
+    {
+      "path": "src/worker.ts",
+      "sha256": "d0f3ab4b408cd0f032b191daf113e04d397de6f4a060945f45ae90da882c3b9f"
+    },
+    {
+      "path": "wrangler.jsonc",
+      "sha256": "3514ceb5992182ac1b788cd248d93c63f5819a1265c8304e1add57e72a180302"
+    }
+  ],
+  "versions": {
+    "node": "24.19",
+    "astro": "7.2.10",
+    "@astrojs/cloudflare": "14.2.6",
+    "wrangler": "4.128.0",
+    "parse5": "7.3.0 (existing transitive dependency)"
+  },
+  "dependenciesChanged": false,
+  "correctedFixture": {
+    "canonicalPath": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+    "sourceHtml": "higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html",
+    "parityManifestSourceCommit": "926f3c0e2929ac9ad6caaca8d16c88b301f446b7"
+  },
+  "effectiveConfig": {
+    "sourceConfig": "wrangler.jsonc contains ASSETS only; adapter remoteBindings=false",
+    "generatedConfig": "dist/server/wrangler.json uses main entry.mjs; SESSION KV without namespace id and ASSETS only",
+    "generatedRuntimeTypes": "SESSION and ASSETS only",
+    "preview": "prior runtime-evidence SHA; Wrangler dev --local on loopback 127.0.0.1:8791",
+    "remoteBindingsObserved": false,
+    "deployPerformed": false
+  },
+  "cacheLayers": [
+    {
+      "layer": "Astro middleware Cache API",
+      "scope": "HTML synthetic key /html path without visitor query",
+      "runtimeEvidence": "static routes short-circuit before middleware in adapter; no HIT/MISS claim"
+    },
+    {
+      "layer": "Cloudflare Assets",
+      "scope": "prebuilt HTML and separate Markdown paths",
+      "runtimeEvidence": "local workerd preview on runtimeEvidenceCommit; 40 checks passed"
+    },
+    {
+      "layer": "Cloudflare CDN",
+      "scope": "unknown",
+      "runtimeEvidence": "not tested; future F2 edge preview"
+    }
+  ],
+  "commands": {
+    "negativeBuild": "F0_FAIL_GENERATOR=1 ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install astro build (historical run on f9b72539c3c55242f0526ffdb2160a28815a651e)",
+    "correctedPositiveBuild": "F0_SOURCE_COMMIT=926f3c0e2929ac9ad6caaca8d16c88b301f446b7 ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install astro build",
+    "typegen": "ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install wrangler types /tmp/ctpv-f0-spike-compiled-types.d.ts --config dist/server/wrangler.json --strict-vars=false --include-runtime=true (historical config-equivalent run)",
+    "dryRun": "ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install wrangler deploy --dry-run --config dist/server/wrangler.json --outdir /tmp/ctpv-f0-spike-dry-run (historical source SHA f9b72539c3c55242f0526ffdb2160a28815a651e)",
+    "priorPreview": "ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install wrangler dev --local --config dist/server/wrangler.json --ip 127.0.0.1 --port 8791 --persist-to /tmp/ctpv-f0-spike-state-4d0863c-8791 --show-interactive-dev-session=false",
+    "priorVerify": "node scripts/f0-spike/verify-preview.mjs --origin http://127.0.0.1:8791 --out /tmp/ctpv-f0-spike-preview-4d0863c-8791.json"
+  },
+  "results": {
+    "correctedBuildExit": 0,
+    "correctedBuildFixtures": 7,
+    "samples": 2,
+    "priorPreviewChecksPassed": 40,
+    "priorPreviewCommit": "4d0863c67e147027cf734e8333f978be5bcbe285",
+    "formalAuditHistory": "attempt 1/5 FAIL on original spike; sole spike blocker was corrected fixture path; independent follow-up pending",
+    "cdn": "unverified"
+  },
+  "limitations": [
+    "only home and Cushing are Markdown samples",
+    "middleware Cache API hot-entry behavior not demonstrated for static routes",
+    "CDN not tested",
+    "40-check preview is tied to prior runtimeEvidenceCommit; no preview rerun after P4-only metadata change",
+    "formal follow-up audit is pending"
+  ],
+  "deliverables": [
+    {
+      "path": "spike.patch",
+      "bytes": 30925,
+      "sha256": "3669c027432d8fbc438031567dedb2bbb11da477043ee2277cdaf2e7f20f53d1"
+    },
+    {
+      "path": "spike.md",
+      "bytes": 11182,
+      "sha256": "eb3be2de7c1fd3181f669d9567e90c1f414525bf14ec34462c3f70abd356b0a5"
+    },
+    {
+      "path": "decisiones.md",
+      "bytes": 5474,
+      "sha256": "d971f858e91232b607c776a0a563411bfe9efd9ca0c2a08dadd46dd3a0a2be95"
+    }
+  ],
+  "evidenceFiles": [
+    {
+      "path": "evidence/article--sindrome-cushing-perros-mayores.md",
+      "bytes": 30537,
+      "sha256": "b83a0e428246845e87935dc0ce9ae6e9c6990bdcf85fc9bb1c85f1d48c83399f"
+    },
+    {
+      "path": "evidence/build-proof.json",
+      "bytes": 2128,
+      "sha256": "fdf06638747f0109f67a6f9b3a022966ead83456cb7b57c6839ffc1fa0fe7816"
+    },
+    {
+      "path": "evidence/effective-worker-types.d.ts",
+      "bytes": 591010,
+      "sha256": "4550f02d4d6bc8e7405181cd23001841b0bb2853ac8da3322a4b5f2e26bb7101"
+    },
+    {
+      "path": "evidence/effective-wrangler.json",
+      "bytes": 1581,
+      "sha256": "4b70928088d084c6e1267e35089d7524c2dbf169def86c273e1d696484a17d13"
+    },
+    {
+      "path": "evidence/home.md",
+      "bytes": 8976,
+      "sha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab"
+    },
+    {
+      "path": "evidence/parity-manifest.json",
+      "bytes": 51897,
+      "sha256": "16c25ba77037ae46202d86b9ddff2559a875d36d7d29f8b2ea495edfcfa3fc15"
+    },
+    {
+      "path": "evidence/preview-verification.json",
+      "bytes": 18997,
+      "sha256": "01f3a96c27b5bb34b3b5709f9f271afdc20219e198a8aa9b7a74b01e7bbf092a"
+    },
+    {
+      "path": "evidence/run-summary.json",
+      "bytes": 5098,
+      "sha256": "262d9899d7238d52848bda2ac7856480f501918dc69d9acf3aaaddc19c6b30d3"
+    },
+    {
+      "path": "evidence/sample-index.json",
+      "bytes": 792,
+      "sha256": "ff1e8dd44b257304db234f1bb44ba171220ef9f1bba89e48c54b3da9faf42e86"
+    }
+  ]
+}

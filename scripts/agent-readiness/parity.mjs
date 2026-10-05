@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { parse as parseHtml } from 'parse5';
-import { allNodes, attrs, nodeText, normalize, SITE } from './inventory.mjs';
+import { allNodes, attrs, normalize, SITE } from './inventory.mjs';
 import { sha256 } from './shared.mjs';
 
 export const PARITY_FIXTURES = Object.freeze([
@@ -14,14 +14,47 @@ export const PARITY_FIXTURES = Object.freeze([
 ]);
 
 const isHeading = (node) => /^h[1-6]$/.test(node.tagName ?? '');
+const NON_EDITORIAL_TAGS = new Set(['button', 'footer', 'form', 'iframe', 'input', 'nav', 'noscript', 'script', 'select', 'style', 'template', 'textarea']);
+const NON_EDITORIAL_CLASSES = new Set(['ad-slot', 'adsbygoogle', 'feedback-widget', 'health-toc', 'mobile-menu', 'toc']);
+
+function classNames(node) {
+  return (attrs(node).class ?? '').split(/\s+/u).filter(Boolean);
+}
+
+function isNonEditorial(node, insideMain = false) {
+  if (NON_EDITORIAL_TAGS.has(node.tagName)) return true;
+  if (node.tagName === 'header' && !insideMain) return true;
+  const attributes = attrs(node);
+  const classes = classNames(node);
+  if (classes.some((name) => NON_EDITORIAL_CLASSES.has(name)) ||
+      attributes.id === 'mobile-menu' ||
+      Object.hasOwn(attributes, 'data-ad') ||
+      Object.hasOwn(attributes, 'data-ad-pending') ||
+      (node.tagName === 'aside' && classes.includes('hidden') && classes.includes('lg:block'))) return true;
+  return false;
+}
+
+function editorialNodes(root, predicate) {
+  const result = [];
+  const visit = (node, insideMain = false) => {
+    if (isNonEditorial(node, insideMain)) return;
+    const currentInsideMain = insideMain || node.tagName === 'main';
+    if (predicate(node)) result.push(node);
+    for (const child of node.childNodes ?? []) visit(child, currentInsideMain);
+    if (node.content) visit(node.content, currentInsideMain);
+  };
+  visit(root);
+  return result;
+}
 
 function textWithout(node, excluded) {
   let value = '';
-  const visit = (current) => {
-    if (!current || current === excluded) return;
+  const visit = (current, insideMain = false) => {
+    if (!current || current === excluded || isNonEditorial(current, insideMain)) return;
+    const currentInsideMain = insideMain || current.tagName === 'main';
     if (current.nodeName === '#text') value += current.value;
-    for (const child of current.childNodes ?? []) visit(child);
-    if (current.content) visit(current.content);
+    for (const child of current.childNodes ?? []) visit(child, currentInsideMain);
+    if (current.content) visit(current.content, currentInsideMain);
   };
   visit(node);
   return normalize(value);
@@ -29,16 +62,16 @@ function textWithout(node, excluded) {
 
 function warningTexts(document) {
   const candidates = new Set([
-    ...allNodes(document, (node) => node.tagName === 'aside'),
-    ...allNodes(document, (node) => node.tagName === 'div' && attrs(node).role === 'alert'),
+    ...editorialNodes(document, (node) => node.tagName === 'aside'),
+    ...editorialNodes(document, (node) => node.tagName === 'div' && attrs(node).role === 'alert'),
   ]);
   return [...candidates].flatMap((node) => {
-    const heading = allNodes(node, isHeading)[0];
+    const heading = editorialNodes(node, isHeading)[0];
     const alertTitle = attrs(node).role === 'alert'
       ? (node.childNodes ?? []).find((child) => child.tagName)
       : null;
     const titleNode = heading ?? alertTitle;
-    const title = titleNode ? nodeText(titleNode) : '';
+    const title = titleNode ? textWithout(titleNode) : '';
     if (!title || /^(contenido del artículo|contenido de esta página|fuentes científicas|fuentes veterinarias|referencias médicas)$/iu.test(title)) return [];
     const body = textWithout(node, titleNode);
     return body ? [{ title, body }] : [];
@@ -46,9 +79,9 @@ function warningTexts(document) {
 }
 
 function faqPairs(document) {
-  return allNodes(document, (node) => node.tagName === 'details').flatMap((details) => {
-    const summary = allNodes(details, (node) => node.tagName === 'summary')[0];
-    const question = summary ? nodeText(summary) : '';
+  return editorialNodes(document, (node) => node.tagName === 'details').flatMap((details) => {
+    const summary = editorialNodes(details, (node) => node.tagName === 'summary')[0];
+    const question = summary ? textWithout(summary) : '';
     if (!question.endsWith('?')) return [];
     const answer = textWithout(details, summary);
     return answer ? [{ question, answer }] : [];
@@ -69,10 +102,10 @@ function sourceUrls(document) {
 }
 
 const EXCLUDED_NODES = Object.freeze([
-  { selector: 'header, nav, footer', reason: 'Global navigation and site chrome are repeated around editorial content.' },
-  { selector: 'script, style, noscript', reason: 'Executable code and presentation rules are not editorial content.' },
+  { selector: 'header outside main, nav, footer', reason: 'Global navigation and site chrome are repeated around editorial content; article headers inside main remain.' },
+  { selector: 'script, style, noscript, iframe, template', reason: 'Executable code, embedded frames, and presentation rules are not editorial text.' },
   { selector: 'form, input, textarea, select, button', reason: 'Interactive controls and submitted user data are excluded.' },
-  { selector: '[data-ad], .adsbygoogle', reason: 'Advertising blocks are not part of the document.' },
+  { selector: '[data-ad], [data-ad-pending], .ad-slot, .adsbygoogle', reason: 'Advertising containers and their embedded scripts are not editorial text.' },
   { selector: 'aside.hidden.lg\\:block', reason: 'The sticky table of contents is excluded; warning and source asides are retained.' },
 ]);
 
@@ -81,7 +114,7 @@ export async function buildParityManifest({ sourceCommit, root = process.cwd() }
   for (const fixture of PARITY_FIXTURES) {
     const bytes = await readFile(`${root}/${fixture.inputHtml}`);
     const document = parseHtml(bytes.toString('utf8'));
-    const headings = allNodes(document, isHeading).map((node) => ({ tag: node.tagName, text: nodeText(node) }));
+    const headings = editorialNodes(document, isHeading).map((node) => ({ tag: node.tagName, text: textWithout(node) }));
     const h1 = headings.find((heading) => heading.tag === 'h1')?.text ?? null;
     fixtures.push({
       ...fixture,

@@ -27,6 +27,8 @@ test('siete fixtures DOM conservan identidad editorial, avisos, FAQ completas y 
   ]) assert.ok(cushing.warningTexts.some((warning) => warning.title === title && warning.body.length > 40));
   assert.ok(cushing.faqPairs.length >= 2);
   assert.ok(cushing.sourceUrls.includes('https://pubmed.ncbi.nlm.nih.gov/24118359/'));
+  assert.ok(cushing.warningTexts.every(({ title, body }) => !/atOptions\s*=|77fb25612074d9660a62a330b778e5ad|globalThis\.process/iu.test(`${title} ${body}`)));
+  assert.ok(cushing.faqPairs.every(({ question, answer }) => !/atOptions\s*=|globalThis\.process/iu.test(`${question} ${answer}`)));
 
   const incontinence = manifest.fixtures.find(({ path }) => path.endsWith('/incontinencia-fecal-perros-senior'));
   for (const title of ['Señales de alarma', 'Seguridad de manejo y medicación']) {
@@ -41,4 +43,13 @@ test('siete fixtures DOM conservan identidad editorial, avisos, FAQ completas y 
   const calculator = manifest.fixtures.find(({ path }) => path.endsWith('/calculadora-calidad-vida-perros'));
   assert.ok(calculator.faqPairs.some(({ question, answer }) => question.includes('puntaje') && answer.length > 80));
   assert.ok(calculator.sourceUrls.some((url) => url.includes('?usp=drive_link')));
+
+  const home = manifest.fixtures.find(({ path }) => path === '/');
+  const emergency = home.warningTexts.find(({ title }) => title === 'Señales para actuar sin demora');
+  assert.ok(emergency);
+  assert.match(emergency.body, /Urgencias veterinarias/u);
+  assert.match(emergency.body, /Dificultad para respirar, colapso repentino o dolor intenso/u);
+  assert.doesNotMatch(`${emergency.title} ${emergency.body}`, /globalThis\.process|process\.env|document\.querySelector/iu);
+  assert.ok(cushing.warningTexts.some(({ title, body }) => title === 'Señales de Alarma Médica Inmediata' && /acude a urgencias veterinarias sin demora/iu.test(body)));
+  assert.ok(manifest.fixtures.every(({ excludedNodes }) => excludedNodes.some(({ selector }) => selector.includes('.ad-slot'))));
 });

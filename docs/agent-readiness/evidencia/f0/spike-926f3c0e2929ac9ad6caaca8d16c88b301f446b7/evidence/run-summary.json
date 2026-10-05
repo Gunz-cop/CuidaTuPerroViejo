@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "f0-spike-run-summary/1",
+  "baseCommit": "4dced4155788af926ef7b4e3d2d7e8259e1978be",
+  "finalSpikeCommit": "926f3c0e2929ac9ad6caaca8d16c88b301f446b7",
+  "failedSpikeCommit": "f9b72539c3c55242f0526ffdb2160a28815a651e",
+  "formalAuditCount": "0/5",
+  "runs": [
+    {
+      "name": "P2 intentional hook failure",
+      "sourceCommit": "f9b72539c3c55242f0526ffdb2160a28815a651e",
+      "command": "F0_FAIL_GENERATOR=1 ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install astro build",
+      "exitCode": 1,
+      "observed": "F0_GENERATOR_FAILURE at astro:build:done; no indexing notification"
+    },
+    {
+      "name": "P2 successful explicit build",
+      "sourceCommit": "4d0863c67e147027cf734e8333f978be5bcbe285",
+      "command": "F0_SOURCE_COMMIT=4d0863c67e147027cf734e8333f978be5bcbe285 ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install astro build",
+      "exitCode": 0,
+      "observed": "7 rendered HTML fixtures selected; 2 deterministic Markdown assets and index generated in dist/client/agent-content/v1"
+    },
+    {
+      "name": "effective config type generation",
+      "sourceCommit": "f9b72539c3c55242f0526ffdb2160a28815a651e",
+      "command": "ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install wrangler types /tmp/ctpv-f0-spike-compiled-types-f9b7253.d.ts --config dist/server/wrangler.json --strict-vars=false --include-runtime=true",
+      "exitCode": 0,
+      "observed": "effective Env bindings are SESSION and ASSETS; no AI, CONTACT, D1, email, or rate-limit bindings"
+    },
+    {
+      "name": "effective config dry run",
+      "sourceCommit": "f9b72539c3c55242f0526ffdb2160a28815a651e",
+      "command": "ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install wrangler deploy --dry-run --config dist/server/wrangler.json --outdir /tmp/ctpv-f0-spike-dryrun-f9b7253",
+      "exitCode": 0,
+      "observed": "24 modules; 329 asset files; 675.50 KiB total Worker bundle; effective bindings SESSION and ASSETS"
+    },
+    {
+      "name": "P1/P3 local workerd preview",
+      "sourceCommit": "4d0863c67e147027cf734e8333f978be5bcbe285",
+      "command": "ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install wrangler dev --local --config dist/server/wrangler.json --ip 127.0.0.1 --port 8791 --persist-to /tmp/ctpv-f0-spike-state-4d0863c-8791 --show-interactive-dev-session=false",
+      "exitCode": 0,
+      "observed": "40 verification checks passed; local diagnostic header present; SESSION binding remained local"
+    },
+    {
+      "name": "P3 preview verification",
+      "sourceCommit": "4d0863c67e147027cf734e8333f978be5bcbe285",
+      "command": "node scripts/f0-spike/verify-preview.mjs --origin http://127.0.0.1:8791 --out /tmp/ctpv-f0-spike-preview-4d0863c-8791.json",
+      "exitCode": 0,
+      "resultPath": "evidence/preview-verification.json",
+      "resultSha256": "01f3a96c27b5bb34b3b5709f9f271afdc20219e198a8aa9b7a74b01e7bbf092a"
+    },
+    {
+      "name": "P2/P4 corrected canonical fixture build",
+      "sourceCommit": "926f3c0e2929ac9ad6caaca8d16c88b301f446b7",
+      "command": "F0_SOURCE_COMMIT=926f3c0e2929ac9ad6caaca8d16c88b301f446b7 ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install astro build",
+      "exitCode": 0,
+      "observed": "2 Markdown samples and index generated; seven HTML fixtures selected; fecal-incontinence identity is canonical /higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+      "evidencePaths": [
+        "evidence/build-proof.json",
+        "evidence/parity-manifest.json"
+      ]
+    }
+  ],
+  "nonResults": [
+    "A first preview launch attempted port 8787 while an earlier Wrangler child still held it; its 404 came from the wrong listener and was not treated as a code result.",
+    "A first conditional-response check observed HTTP 200 for same-representation HTML ETag because adapter matchStaticAsset calls ASSETS.fetch with a URL string and drops request headers. The spike then implemented representation-local conditional handling; final preview returned same-representation 304 and both cross-representation requests 200.",
+    "The final one-line P4 fixture identity correction does not change Worker/runtime behavior. The prior 40-check local preview remains tied to 4d0863c67e147027cf734e8333f978be5bcbe285 and was not rerun."
+  ],
+  "runtimeEvidenceCommit": "4d0863c67e147027cf734e8333f978be5bcbe285",
+  "formalAuditHistory": {
+    "originalCommit": "4d0863c67e147027cf734e8333f978be5bcbe285",
+    "result": "FAIL 1/5; sole blocker was the P4 fixture path not matching the canonical rendered route",
+    "correctedCommit": "926f3c0e2929ac9ad6caaca8d16c88b301f446b7",
+    "followUp": "pending independent audit; historical result is not represented as passing"
+  }
+}

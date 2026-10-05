@@ -1,51 +1,50 @@
-# Entrega de implementación F0 para auditoría
+# Entrega F0 corregida para auditoría 2/5
 
-Estado: preparada para la primera auditoría independiente (1/5). Esta entrega no marca la fase aceptada. El coordinador conserva la autoridad para ratificar las cinco decisiones y publicar el conjunto.
+Estado: correcciones de FAIL 1/5 preparadas para revisión del mismo auditor. Esta entrega no declara C01–C12 aceptados ni F0 cerrada.
 
-## SHAs y publicación
+## Identidad y publicación
 
 - Base exacta de arranque: `4dced4155788af926ef7b4e3d2d7e8259e1978be`.
-- Tooling limpio medido: `35e767647a05034baa3b4e371bee4f7a3849545d`.
-- Evidence-only commit previo: `6e1639e4f0ff662cc9752d0d8f69deb38a4decb5`.
-- Spike patch aislado: `4d0863c67e147027cf734e8333f978be5bcbe285`; base verificada `4dced4155788af926ef7b4e3d2d7e8259e1978be`.
-- Destino de PR: `docs/f0-reanudacion-canonical`; la publicación GitHub por Contents API y la comprobación de equivalencia remota las coordina root. No se hizo push directo, merge ni deploy. El SHA de entrega final lo fijará el coordinador al cerrar esta serie documental.
+- Tooling limpio corregido: `4d3ab0e5df1e09e3b36115a305e639e87d5aea27`.
+- Evidencia/C05 LIVE histórica: sourceCommit `35e767647a05034baa3b4e371bee4f7a3849545d`, `dirtySource=false`, deploymentCommit `null`; son las dos únicas llamadas autorizadas.
+- Spike corregido: `926f3c0e2929ac9ad6caaca8d16c88b301f446b7`, sobre la misma base. Runtime de 40 checks: `4d0863c67e147027cf734e8333f978be5bcbe285`; el spike corregido solo arregla la ruta del fixture P4 y regeneró la evidencia/build, sin volver a ejecutar preview.
+- Auditoría formal anterior: [`auditoria-f0-implementacion-r1.md`](auditoria/auditoria-f0-implementacion-r1.md), copia byte por byte del FAIL 1/5. No alterar su veredicto ni sus reproducciones.
+- Los commits permanentes congelados antes del FAIL fueron `0c4da50`, `ad93416`, `35e7676`, `6e1639e` y `c2bf4d6`. La corrección limpia es `4d3ab0e`; el commit de entrega actual de esta serie documental será el HEAD que root publique.
+- Destino de PR: `docs/f0-reanudacion-canonical`. Root coordina GitHub Contents API y la equivalencia local/remota. No se hizo push directo, merge ni deploy; checks del PR remoto siguen pendientes.
 
-El `sourceCommit` de replay, inventory y ambos perfiles live sigue siendo el tooling limpio `35e7676…`; la medición live obtuvo `deploymentCommit=null`. La evidencia LIVE observó el sitio público el 2026-10-05. No valida el build local ni los PRs todavía no integrados. El commit posterior de evidencia/documentación no sustituye al sourceCommit registrado.
+Las mediciones LIVE observaron el sitio público el 2026-10-05 y dieron Content 43, All UI 20, HTTP 200, completos. No identifican un build local ni los PRs sin integrar. El tooling posterior corrigió compare, guardas de inventory y extracción de paridad; las respuestas y `sourceCommit=35e…` se conservan intactos y no se reescanean. API sin configurar solo aparece en replay.
 
-La carpeta `bloqueo-c06-home/` conserva el snapshot de la base previa a resolver #45; su nota está rotulada HISTÓRICO/RESUELTO y no es el resultado actual. El inventario vigente está en `medicion-35e767647a05034baa3b4e371bee4f7a3849545d/inventory/`.
+El bloqueo inicial de canonical de home es histórico/resuelto: el snapshot previo a #45 conserva sus bytes en `bloqueo-c06-home/`. El inventory vigente está en `medicion-4d3ab0e5df1e09e3b36115a305e639e87d5aea27/inventory/`. El parity manifest anterior de `medicion-35e…` también queda como histórico: R1 B04 halló scripts/ads dentro de texto de warnings; está supersedido por el manifest filtrado bajo `medicion-4d3ab0e…/parity/`.
 
-## Matriz C01–C12: evidencia entregada, pendiente de auditor
+## C01–C12: evidencia para la nueva revisión
 
-| Criterio | Evidencia y comandos/resultados | Estado para revisión |
+| Criterio | Evidencia | Estado para revisión |
 |---|---|---|
-| C01 Base y ownership | Tooling de `35e7676…`; spike patch de base `4dced415…` con seis paths experimentales; `git apply --check spike.patch` pasó en el checkout permanente sin aplicar el patch. Dos correcciones de producto ya vienen de la base aprobada. | Evidencia lista; auditor debe revisar paths/diffs. |
-| C02 Replay 43/20/19 | `node scripts/agent-readiness/index.mjs replay --baseline-dir docs/agent-readiness/evidencia --out-dir /tmp/ctpv-f0-replay-final-35e767647a05034baa3b4e371bee4f7a3849545d`; exit 0; Content 43, All UI 20, API sin configurar 19; estados completos, niveles/nextLevel y bytes originales conservados; dirtySource false. | Evidencia lista; auditor debe comprobar envelopes/hashes. |
-| C03 Comparación | `node --test tests/agent-readiness/*.test.mjs`; 13/13. Casos perfil/universo/IDs incompatibles, drift, fail→pass, neutral→pass, regla de score desconocida/malformada y redondeo 1/8→13. | Evidencia lista; auditor debe revisar negativos. |
-| C04 Transporte/schema/originales | Mismo Node test suite: timeout/schema/oversize/HTTP/error metadata, un fetch sin retry, redirects manuales, validación baseline previa a escritura parcial, raw bytes y tamper hashes. Rechazo pre-fetch inicial conservado fuera del repo en `/workspace/ctpv-sdd-correcciones/rechazo-scan-content.md`. | Evidencia lista; auditor debe confirmar el reporte previo no es una llamada enviada. |
-| C05 Dos scans reales | `node --use-env-proxy scripts/agent-readiness/index.mjs scan --url https://cuidatuperroviejo.com --profile content --out-dir /tmp/ctpv-f0-live-content-35e767647a05034baa3b4e371bee4f7a3849545d` y mismo CLI con `--profile all-ui --out-dir /tmp/ctpv-f0-live-all-ui-35e767647a05034baa3b4e371bee4f7a3849545d`; una petición por perfil, HTTP 200, complete; 43 y 20. `dirtySource=false`; `deploymentCommit=null`. Outputs/hash manifests preservados. | Evidencia lista; auditor independiente debe validar autorización, request y respuesta. Límite de dos llamadas agotado. |
-| C06 Inventario | `ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install astro build`; exit 0. Luego `node scripts/agent-readiness/index.mjs inventory --build-dir dist --out-dir /tmp/ctpv-f0-inventory-final-35e767647a05034baa3b4e371bee4f7a3849545d`; valid/errors[], `dist/client`, 34 HTML/28 docs, home canonical `/` en sitemap. | Evidencia lista; aceptación sujeta a inspección del inventario completo. |
-| C07 IDs y paridad | Siete fixtures HTML y `parity/parity-manifest.json`; H1, headings, avisos, FAQ completas, URLs de fuentes y exclusiones. Negativo sintético sin H1 y negativos de inventario en suite. | Evidencia lista; revisión editorial/contractual pendiente. |
-| C08 Worker-first/delegación | Spike exacto; handler `@astrojs/cloudflare/handler`, allowlist, static assistant catalog, worker diagnostic local; preview workerd reporta 40/40 checks. | Evidencia lista; limitada a entorno local sin CDN. |
-| C09 Hook/empaquetado | Build explícito positivo en spike, artefactos hashados; dry-run de config compilada; build negativo intencional exit 1 en `astro:build:done`, sin notificación. | Evidencia lista; Workers Builds de cuenta no probado. |
-| C10 Negociación/HEAD/404/cache | Preview local 40 checks: q/MIME/Vary, GET/HEAD, legacy redirect, 404, alternancias, ETags propios/cruzados. HTML estático retorna desde ASSETS antes del middleware: la Cache API no tuvo un HIT/MISS de runtime en estas rutas. `edgeCache=null`; CDN no verificado. | Evidencia lista; limitar afirmación a workerd local. |
-| C11 Cinco decisiones | `decisiones.md`, propuestas no ratificadas, cada una con evidencia, alternativa, límite y criterio para F2. | Propuesta entregada; root debe ratificar. |
-| C12 CI y efectos | `node scripts/audit-specs-migracion.mjs` exit0 (7 specs); `astro sync` exit0; `astro check` exit0 (0 errores/advertencias); `npm test` 1/1; Node tests 13/13; build/inventory/replay pasan. CI incorpora únicamente dos pasos offline. | Evidencia lista; auditor debe validar diff y comandos. |
+| C01 Base y ownership | Tooling de `4d3ab0e…`; patch spike final `926f3c0…` aplica sobre base `4dced415…`. Paths permanentes dentro de ownership; spike permanece como patch/evidencia, sin runtime aplicado. Manifiesto registra 6 paths. | Revisar diffs y hashes en 2/5. |
+| C02 Replay | `replay/` desde `4d3ab0e…`: Content 43, All UI 20, API histórica 19; complete; `dirtySource=false`; niveles/nextLevel y bytes originales conservados. Response hashes coinciden con baseline. | Evidencia corregida lista. |
+| C03 Compare | `node --test tests/agent-readiness/*.test.mjs`: 14/14. Permutación enabledChecks exacta → exit0/comparable; regla `future-rule/2`, score99 → exit2/`SCORING_CHANGED`/delta null; conserva validaciones de perfil, IDs, universo y denominador. | B01/B02 corregidos para 2/5. |
+| C04 Transporte/schema/originales | Suite Node: HTTP 500, timeout, schema/oversize, un fetch y sin retry, redirects manuales, errores incompletos y baseline tamper bloqueado. Registro de join pre-fetch/rechazo pre-CreateProcess queda fuera del repo en `/workspace/ctpv-sdd-correcciones/rechazo-scan-content.md`; su resolución y autorización se verificaron en R1. | Revisión y límite de dos llamadas conservados. |
+| C05 Dos scans LIVE | Capturas originales `medicion-35e…/live-content` y `live-all-ui`: una por perfil, HTTP 200, complete, 43/20, sourceCommit limpio `35e…`, `deploymentCommit=null`. No se alteraron ni repitieron después de R1. | Evidencia sin cambio; R1 ya la verificó. |
+| C06 Inventory | Build explícito de `4d3ab0e…` exit0; `inventory` exit0/valid/errors[], 34 HTML/28 docs, home canonical `/` en sitemap. Nueva regresión de CLI rechaza build/output solapados exit3 sin crear directorio. | B03 corregido; revisar nuevo manifest. |
+| C07 Identidad/paridad | Siete fixtures originales intactos; nuevo `parity-manifest.json` desde `4d3ab0e…`. Avisos/FAQ conservan el texto visible; scripts y ads no entran en warning/FAQ. Spike `926f3c0…` corrige la canonical del fixture fecal; su build regeneró índice/manifest P4. | B04/B05 corregidos; runtime de spike no se rerun tras ajuste P4-only. |
+| C08 Worker-first/delegación | Patch final conserva el worker de `4d0863c…`; handler actual del adapter, allowlist, catálogo Assistant y preview workerd local. | R1 verificó comportamiento local; confirmar delta del patch final. |
+| C09 Hook/empaquetado | Build positivo de spike final `926f3c0…` exit0. Build negativo hook exit1 y dry-run de 329 assets se ejecutaron sobre commits anteriores con hook/config intactos; evidencia marca el SHA exacto. Sin postbuild ni indexación. | Límite documentado; Workers Builds remoto no probado. |
+| C10 Negociación/cache | La preview de 40 checks está ligada a runtime SHA `4d0863c…`: Accept, GET/HEAD, 400/406, 404, redirect, alternancias y ETags propios/cruzados. HTML estático sale desde ASSETS antes del middleware; no se afirma HIT/MISS de Cache API. CDN no verificado. | Evidencia local histórica más delta P4 identificado; CDN queda para F2. |
+| C11 Decisiones | `decisiones.md` contiene las cinco propuestas con recomendación, alternativa, evidencia, límite y prueba requerida en F2. Ninguna está ratificada por el implementador. | Espera decisión del coordinador. |
+| C12 CI/validación | Node tests 14/14, `npm test` 1/1, build/replay/inventory actuales pasan; dos pasos nuevos de CI son offline. R1 verificó sync/audit/check/build/types/package en worktree independiente, pero los checks remotos y equivalencia del tree son gate de root. | Local verificado; PASS definitivo requiere CI remoto/publicación equivalente. |
 
-## Lista de comandos finales desde tooling SHA
+## Comandos de validación desde tooling corregido
 
 ```sh
-ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install astro sync
-node scripts/audit-specs-migracion.mjs
-ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install astro check
-npm test
 node --test tests/agent-readiness/*.test.mjs
+npm test
 ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install astro build
-node scripts/agent-readiness/index.mjs replay --baseline-dir docs/agent-readiness/evidencia --out-dir /tmp/ctpv-f0-replay-final-35e767647a05034baa3b4e371bee4f7a3849545d
-node scripts/agent-readiness/index.mjs inventory --build-dir dist --out-dir /tmp/ctpv-f0-inventory-final-35e767647a05034baa3b4e371bee4f7a3849545d
+node scripts/agent-readiness/index.mjs replay --baseline-dir docs/agent-readiness/evidencia --out-dir /tmp/ctpv-f0-replay-final-4d3ab0e5df1e09e3b36115a305e639e87d5aea27
+node scripts/agent-readiness/index.mjs inventory --build-dir dist --out-dir /tmp/ctpv-f0-inventory-final-4d3ab0e5df1e09e3b36115a305e639e87d5aea27
 ```
 
-Para el spike, los comandos explícitos y resultados están en `spike-4d0863c67e147027cf734e8333f978be5bcbe285/spike.md`. No reejecutar scans: ambas llamadas autorizadas ya se consumieron.
+Los comandos y outputs completos del spike están en `spike-926f3c0e2929ac9ad6caaca8d16c88b301f446b7/`. No ejecutar más scans: Content y All UI ya consumieron los dos perfiles autorizados.
 
 ## Reversión
 
-Revertir en grupo los commits de harness, inventario/fixtures/deps/CI y evidencia permanente si se decide cancelar F0. El patch aislado se conserva como evidencia y no requiere revert de runtime porque no fue aplicado al producto. No se han cambiado producción ni deploy.
+Si se cancela F0, revertir en grupo commits de tooling/fixtures/deps/CI y evidencia permanente. Los spikes son parches exploratorios adjuntos y nunca se aplicaron al runtime permanente. No hubo cambio de producción ni despliegue.

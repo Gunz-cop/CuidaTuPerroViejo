@@ -129,6 +129,13 @@ test('compare bloquea perfiles y denominadores distintos, y permite fail→pass'
   assert.equal(compatible.scoreDelta, 50);
   assert.deepEqual(compatible.checkChanges, [{ category: 'discoverability', id: 'sitemap', beforeStatus: 'fail', afterStatus: 'pass' }]);
 
+  const reorderedChecks = compareSummaries(a, summary({
+    enabledChecks: [...a.enabledChecks].reverse(), checks: a.checks, counts: a.counts, score: a.score,
+  }));
+  assert.equal(reorderedChecks.comparable, true);
+  assert.equal(reorderedChecks.scoreDelta, 0);
+  assert.ok(!reorderedChecks.reasons.includes('ENABLED_CHECKS_CHANGED'));
+
   const profileDrift = compareSummaries(a, summary({ profile: 'all-ui' }));
   assert.equal(profileDrift.comparable, false);
   assert.equal(profileDrift.scoreDelta, null);
@@ -173,6 +180,26 @@ test('compare detects ID universe and scoring rule changes, and uses Math.round 
 test('compare exits with contract error for inconsistent summary envelopes', async (t) => {
   await withTemp(t, async (root) => {
     const good = summary();
+    const reordered = { ...good, enabledChecks: [...good.enabledChecks].reverse() };
+    const before = join(root, 'permuted-before.json');
+    const after = join(root, 'permuted-after.json');
+    const out = join(root, 'permuted-comparison.json');
+    await writeFile(before, JSON.stringify(good));
+    await writeFile(after, JSON.stringify(reordered));
+    assert.equal(await main(['compare', '--before', before, '--after', after, '--out', out]), 0);
+    const orderResult = JSON.parse(await readFile(out, 'utf8'));
+    assert.equal(orderResult.comparable, true);
+    assert.equal(orderResult.scoreDelta, 0);
+
+    const futureRule = { ...good, scoringRuleId: 'future-rule/2', score: 99 };
+    await writeFile(after, JSON.stringify(futureRule));
+    const futureOut = join(root, 'future-rule-comparison.json');
+    assert.equal(await main(['compare', '--before', before, '--after', after, '--out', futureOut]), 2);
+    const futureResult = JSON.parse(await readFile(futureOut, 'utf8'));
+    assert.equal(futureResult.comparable, false);
+    assert.equal(futureResult.scoreDelta, null);
+    assert.ok(futureResult.reasons.includes('SCORING_CHANGED'));
+
     const cases = [
       ['hash', { ...good, checkUniverseHash: 'f'.repeat(64) }],
       ['counts', { ...good, counts: { ...good.counts, pass: good.counts.pass + 1 } }],
@@ -295,5 +322,15 @@ test('scan CLI valida flags y target URL sin hacer requests', async (t) => {
     assert.equal(await main(['scan', '--url', 'https://cuidatuperroviejo.com/path', '--profile', 'content', '--out-dir', out]), 3);
     assert.equal(await main(['replay', '--baseline-dir', baseline, '--out-dir', out, '--extra', 'x']), 3);
     assert.equal(await main(['inventory', '--build-dir', 'dist', '--out-dir', 'dist']), 3);
+  });
+});
+
+test('inventory CLI rechaza build/output solapados antes de crear output', async (t) => {
+  await withTemp(t, async (root) => {
+    const build = join(root, 'dist');
+    const out = join(build, 'audit-no-create');
+    await mkdir(build);
+    assert.equal(await main(['inventory', '--build-dir', build, '--out-dir', out]), 3);
+    await assert.rejects(readFile(out), { code: 'ENOENT' });
   });
 });

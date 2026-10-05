@@ -14,6 +14,6 @@ El snapshot y el manifest registran exactamente aquella base anterior. No deben 
 
 ## Resolución y evidencia vigente
 
-El fix de canonical #45 se integró en la base exacta de reanudación `4dced4155788af926ef7b4e3d2d7e8259e1978be`. El build explícito sobre el tooling limpio `35e767647a05034baa3b4e371bee4f7a3849545d` produjo el home canónico `/`; el inventario final dio `state=valid`, `errors=[]`, 34 páginas HTML, 28 documentos, catálogo y sitemap consistentes, con home en sitemap.
+El fix de canonical #45 se integró en la base exacta de reanudación `4dced4155788af926ef7b4e3d2d7e8259e1978be`. El build explícito y el inventario sobre el tooling limpio `4d3ab0e5df1e09e3b36115a305e639e87d5aea27` produjeron el home canónico `/` y `state=valid`, `errors=[]`, 34 páginas HTML, 28 documentos, catálogo y sitemap consistentes, con home en sitemap.
 
-El resultado actualizado, separado de este snapshot histórico, está en [`../medicion-35e767647a05034baa3b4e371bee4f7a3849545d/inventory/`](../medicion-35e767647a05034baa3b4e371bee4f7a3849545d/inventory/). Este cierre es evidencia de implementación, no aceptación independiente de C06 ni de F0.
+El resultado actualizado, separado de este snapshot histórico, está en [`../medicion-4d3ab0e5df1e09e3b36115a305e639e87d5aea27/inventory/`](../medicion-4d3ab0e5df1e09e3b36115a305e639e87d5aea27/inventory/). Este cierre es evidencia de implementación, no aceptación independiente de C06 ni de F0.
