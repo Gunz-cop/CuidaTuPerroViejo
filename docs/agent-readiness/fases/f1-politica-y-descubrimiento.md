@@ -1,6 +1,6 @@
 # F1 — Política y descubrimiento básico
 
-**Estado: especificada; pendiente de auditoría de SDD y de base publicada fijada en el issue de lanzamiento.** Revisión: 2026-10-05. Arquitecto/coordinador: sesión principal. Implementador: Luna 6, razonamiento alto; auditor: sesión distinta. El PASS de SDD y el SHA exacto se registran en el issue antes de empezar.
+**Estado: lista; SDD aprobada por auditoría independiente PASS 2/2, sin bloqueantes.** Revisión: 2026-10-05. [Informe final](../evidencia/f1/auditoria/auditoria-sdd-f1-r2.md) sobre local `0623dd23eaf422414262c4c7c738ea74b1e9a5e3`, publicado equivalente `173a6afcd817a4beac909dac0c7ee9e4033ae168`. El issue fija la base de arranque publicada que añade solo este estado y el informe preservado. Arquitecto/coordinador: sesión principal. Implementador: Luna 6, razonamiento alto; auditor: sesión distinta. El PASS de SDD y el SHA exacto de arranque se registran en el issue antes de empezar.
 
 ## 1. Problema y resultado
 
