@@ -1,0 +1,569 @@
+diff --git a/astro.config.mjs b/astro.config.mjs
+index a29ab16..3409406 100644
+--- a/astro.config.mjs
++++ b/astro.config.mjs
+@@ -9,6 +9,7 @@ import {
+ } from './scripts/satteri-external-links.mjs';
+ 
+ import cloudflare from "@astrojs/cloudflare";
++import f0ContentBuildIntegration from './scripts/f0-spike/content-build-integration.mjs';
+ 
+ const PILLAR_PATHS = new Set([
+   '/alimentacion-perros-senior',
+@@ -52,6 +53,7 @@ export default defineConfig({
+   integrations: [
+     mdx(),
+     secureExternalLinksIntegration(),
++    f0ContentBuildIntegration(),
+     sitemap({
+       filter(page) {
+         const { pathname } = new URL(page);
+diff --git a/scripts/f0-spike/content-build-integration.mjs b/scripts/f0-spike/content-build-integration.mjs
+new file mode 100644
+index 0000000..3702460
+--- /dev/null
++++ b/scripts/f0-spike/content-build-integration.mjs
+@@ -0,0 +1,189 @@
++import { createHash } from 'node:crypto';
++import { mkdir, readFile, writeFile } from 'node:fs/promises';
++import { parse } from 'parse5';
++
++const fixtures = [
++  { path: '/', html: 'index.html', kind: 'home', id: 'home', selector: '#main-content', required: ['Ayúdale a envejecer con'] },
++  { path: '/salud-perros-mayores', html: 'salud-perros-mayores.html', kind: 'pillar', id: null, selector: 'h1 + main.health-main', required: [] },
++  { path: '/herramientas', html: 'herramientas.html', kind: 'pillar', id: null, selector: 'h1 + main', required: [] },
++  { path: '/salud-perros-mayores/sindrome-cushing-perros-mayores', html: 'salud-perros-mayores/sindrome-cushing-perros-mayores.html', kind: 'article', id: 'article--sindrome-cushing-perros-mayores', selector: 'main article', required: ['Señales de Alarma Médica Inmediata', 'Seguridad de Medicación y Riesgo de Crisis Addisoniana'] },
++  { path: '/higiene-hogar-perros-senior/incontinencia-fecal-perros-mayores', html: 'higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html', kind: 'article', id: null, selector: 'main article', required: ['Señales de alarma', 'Seguridad de manejo y medicación'] },
++  { path: '/herramientas/calculadora-calidad-vida-perros', html: 'herramientas/calculadora-calidad-vida-perros.html', kind: 'tool', id: null, selector: 'main', required: [] },
++  { path: '/herramientas/selector-movilidad-perros-mayores', html: 'herramientas/selector-movilidad-perros-mayores.html', kind: 'tool', id: null, selector: 'main', required: [] },
++];
++export const F0_SPIKE_FIXTURES = fixtures;
++
++const excludedTagNames = new Set(['nav', 'script', 'style', 'iframe']);
++const attr = (node, name) => node.attrs?.find((item) => item.name === name)?.value ?? '';
++const classList = (node) => attr(node, 'class').split(/\s+/).filter(Boolean);
++function children(node) { return node.childNodes ?? []; }
++function walk(node, fn, blocked = false) {
++  const classes = classList(node);
++  const exclude = blocked || excludedTagNames.has(node.tagName) || classes.some((name) => /^(ad-slot|feedback-widget|health-toc|toc|mobile-menu)$/.test(name)) || attr(node, 'data-ad-pending') === 'true' || attr(node, 'id') === 'mobile-menu';
++  if (!exclude) fn(node);
++  for (const child of children(node)) walk(child, fn, exclude);
++}
++function textOf(node) {
++  let value = '';
++  walk(node, (current) => { if (current.nodeName === '#text') value += `${current.value} `; });
++  return value.replace(/\s+/g, ' ').trim();
++}
++function elements(node, tagName) {
++  const result = [];
++  walk(node, (current) => { if (current.tagName === tagName) result.push(current); });
++  return result;
++}
++function byId(node, id) {
++  let found = null;
++  walk(node, (current) => { if (attr(current, 'id') === id) found = current; });
++  return found;
++}
++function hasClass(node, name) { return classList(node).includes(name); }
++function matchesSelector(ast, selector) {
++  if (selector === '#main-content') return byId(ast, 'main-content');
++  if (selector === 'h1 + main.health-main') return elements(ast, 'main').find((node) => hasClass(node, 'health-main'));
++  if (selector === 'h1 + main') return elements(ast, 'main')[0] ?? null;
++  if (selector === 'main article') return elements(ast, 'article').find((node) => elements(node, 'h1').length || elements(node, 'h2').length) ?? elements(ast, 'main')[0] ?? null;
++  if (selector === 'main') return elements(ast, 'main')[0] ?? null;
++  return null;
++}
++function normalizeLink(node) {
++  const href = attr(node, 'href');
++  const label = textOf(node);
++  return href ? { href, label } : null;
++}
++function faqPairs(root) {
++  const result = [];
++  for (const details of elements(root, 'details')) {
++    const summary = elements(details, 'summary')[0];
++    if (!summary) continue;
++    const answer = children(details).filter((child) => child !== summary).map(textOf).filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
++    result.push({ question: textOf(summary), answer });
++  }
++  return result;
++}
++function headings(root) {
++  const result = [];
++  walk(root, (node) => {
++    if (/^h[2-4]$/.test(node.tagName ?? '')) result.push({ level: Number(node.tagName[1]), text: textOf(node) });
++  });
++  return result;
++}
++function extractFixture(fixture, html) {
++  const ast = parse(html);
++  const h1 = elements(ast, 'h1')[0] ?? null;
++  const main = matchesSelector(ast, fixture.selector);
++  const selectedText = [h1 && textOf(h1), main && textOf(main)].filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
++  const selectedLinks = [];
++  if (main) walk(main, (node) => { if (node.tagName === 'a') { const link = normalizeLink(node); if (link) selectedLinks.push(link); } });
++  const excludedNodes = [
++    { selector: 'nav', reason: 'navigation is site chrome, not page content' },
++    { selector: 'script, style, iframe', reason: 'runtime and embedded advertising code are not editorial text' },
++    { selector: '.ad-slot, [data-ad-pending="true"]', reason: 'advertising placement' },
++    { selector: '.health-toc, .toc', reason: 'repeated table of contents; heading hierarchy remains in content' },
++    { selector: '.feedback-widget', reason: 'visitor feedback control' },
++  ];
++  const warnings = elements(main ?? ast, 'aside')
++    .filter((aside) => elements(aside, 'nav').length === 0 && !classList(aside).some((name) => /toc/i.test(name)))
++    .map((aside) => ({ title: headings(aside).map((heading) => heading.text).join(' '), body: textOf(aside) }))
++    .filter((warning) => warning.body);
++  return {
++    path: fixture.path,
++    inputHtml: fixture.html,
++    sha256: createHash('sha256').update(html).digest('hex'),
++    kind: fixture.kind,
++    id: fixture.id,
++    selector: fixture.selector,
++    h1: h1 ? textOf(h1) : null,
++    orderedHeadings: headings(main ?? ast),
++    warningTexts: warnings,
++    faqPairs: faqPairs(main ?? ast),
++    sourceUrls: selectedLinks.filter(({ href }) => /^https?:/i.test(href)),
++    excludedNodes,
++    requiredSentinels: fixture.required,
++    missingSentinels: fixture.required.filter((sentinel) => !selectedText.includes(sentinel)),
++    selectedText,
++  };
++}
++export { extractFixture as inspectF0Fixture };
++
++export default function f0ContentBuildIntegration() {
++  let clientDir;
++  let rootDir;
++  let sourceConfig;
++  return {
++    name: 'f0-content-spike',
++    hooks: {
++      'astro:config:done'({ config }) {
++        clientDir = config.build.client;
++        rootDir = config.root;
++      },
++      async 'astro:build:done'({ logger }) {
++        if (process.env.F0_FAIL_GENERATOR === '1') throw new Error('F0_GENERATOR_FAILURE: intentional negative P2 run');
++        const outputRoot = new URL('./agent-content/v1/', clientDir);
++        const documentsRoot = new URL('./documents/', outputRoot);
++        await mkdir(documentsRoot, { recursive: true });
++        const extracted = [];
++        sourceConfig = JSON.parse(await readFile(new URL('./wrangler.jsonc', rootDir), 'utf8'));
++        for (const fixture of fixtures) {
++          const htmlUrl = new URL(fixture.html, clientDir);
++          const html = await readFile(htmlUrl, 'utf8');
++          extracted.push(extractFixture(fixture, html));
++        }
++        const home = extracted.find((item) => item.id === 'home');
++        const cushing = extracted.find((item) => item.id === 'article--sindrome-cushing-perros-mayores');
++        if (!home?.h1 || !cushing?.h1 || extracted.some((item) => item.missingSentinels.length)) {
++          throw new Error(`F0_SELECTION_FAILURE: ${JSON.stringify(extracted.filter((item) => item.missingSentinels.length))}`);
++        }
++        const samples = [home, cushing].map((item) => ({
++          id: item.id,
++          title: item.h1,
++          path: item.path,
++          url: `https://cuidatuperroviejo.com${item.path}`,
++          language: 'es',
++          markdown: `# ${item.h1}\n\n${item.selectedText}\n`,
++        }));
++        const artifactFiles = [];
++        for (const sample of samples) {
++          const name = `${sample.id}.md`;
++          const bytes = Buffer.from(sample.markdown, 'utf8');
++          await writeFile(new URL(name, documentsRoot), bytes);
++          artifactFiles.push({ path: `agent-content/v1/documents/${name}`, bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') });
++        }
++        const index = {
++          schemaVersion: 'agent-content/1',
++          generatedFrom: 'rendered-html',
++          documents: samples.map(({ id, title, path, url, language }) => ({ id, title, path, url, language, markdownPath: `/agent-content/v1/documents/${id}.md` })),
++        };
++        const indexBytes = Buffer.from(`${JSON.stringify(index, null, 2)}\n`, 'utf8');
++        await writeFile(new URL('./index.json', outputRoot), indexBytes);
++        artifactFiles.push({ path: 'agent-content/v1/index.json', bytes: indexBytes.length, sha256: createHash('sha256').update(indexBytes).digest('hex') });
++        const parity = { schemaVersion: 'agent-content-parity/1', sourceCommit: process.env.F0_SOURCE_COMMIT ?? null, fixtures: extracted.map(({ selectedText, missingSentinels, ...fixture }) => fixture), selectionSummary: extracted.map(({ path, selector, missingSentinels }) => ({ path, selector, selected: missingSentinels.length === 0, missingSentinels })) };
++        const parityBytes = Buffer.from(`${JSON.stringify(parity, null, 2)}\n`, 'utf8');
++        const proof = {
++          schemaVersion: 'f0-build-hook-proof/1',
++          hook: 'astro:build:done',
++          observedOrder: 'HTML outputs already exist -> seven fixtures selected -> Markdown and index written during astro:build:done -> pack verification is performed by Wrangler dry-run after Astro build',
++          clientDirectory: new URL('.', clientDir).pathname,
++          effectiveWranglerSource: {
++            main: sourceConfig.main,
++            compatibilityDate: sourceConfig.compatibility_date,
++            assets: sourceConfig.assets,
++            namedBindings: Object.keys(sourceConfig).filter((key) => ['ai', 'kv_namespaces', 'd1_databases', 'send_email', 'ratelimits', 'services', 'r2_buckets', 'queues', 'durable_objects'].includes(key)),
++          },
++          activeCacheLayers: [
++            { layer: 'Astro middleware Cache API', representation: 'HTML responses only; internal key includes /html and excludes visitor query', exercised: 'only when Astro handler reaches middleware; static asset hits may short-circuit it' },
++            { layer: 'Cloudflare Assets local worker', representation: 'prebuilt HTML paths and separate Markdown asset paths', exercised: 'workerd local preview' },
++            { layer: 'Cloudflare CDN', representation: 'unknown from local workerd', exercised: false },
++          ],
++          sampleCount: samples.length,
++          fixtureCount: extracted.length,
++          emitted: [...artifactFiles, { path: 'agent-content/v1/.f0-spike-parity-manifest.json', bytes: parityBytes.length, sha256: createHash('sha256').update(parityBytes).digest('hex') }],
++        };
++        await writeFile(new URL('./.f0-spike-parity-manifest.json', outputRoot), parityBytes);
++        await writeFile(new URL('./build-proof.json', outputRoot), `${JSON.stringify(proof, null, 2)}\n`);
++        logger.info(`F0 spike generated ${samples.length} Markdown samples from ${extracted.length} rendered HTML fixtures in ${new URL('.', clientDir).pathname}`);
++      },
++    },
++  };
++}
+diff --git a/scripts/f0-spike/verify-preview.mjs b/scripts/f0-spike/verify-preview.mjs
+new file mode 100644
+index 0000000..c802a76
+--- /dev/null
++++ b/scripts/f0-spike/verify-preview.mjs
+@@ -0,0 +1,142 @@
++import { createHash } from 'node:crypto';
++import { mkdir, writeFile } from 'node:fs/promises';
++import { dirname, resolve } from 'node:path';
++
++const args = new Map();
++for (let index = 2; index < process.argv.length; index += 2) {
++  const key = process.argv[index];
++  const value = process.argv[index + 1];
++  if (!key?.startsWith('--') || !value || args.has(key)) throw new Error(`invalid or repeated argument: ${key ?? ''}`);
++  args.set(key, value);
++}
++if (args.size !== 2 || !args.has('--origin') || !args.has('--out')) throw new Error('usage: node scripts/f0-spike/verify-preview.mjs --origin http://127.0.0.1:8787 --out /tmp/f0-preview.json');
++const origin = new URL(args.get('--origin'));
++if (origin.protocol !== 'http:' || !['127.0.0.1', 'localhost', '[::1]'].includes(origin.hostname)) throw new Error('preview origin must be loopback HTTP');
++const target = new URL('/', origin);
++const checks = [];
++const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
++
++async function request(path = '/', { accept, method = 'GET', headers = {}, redirect = 'manual' } = {}) {
++  const requestHeaders = new Headers(headers);
++  if (accept !== undefined) requestHeaders.set('Accept', accept);
++  const response = await fetch(new URL(path, origin), { method, headers: requestHeaders, redirect });
++  const bytes = new Uint8Array(await response.arrayBuffer());
++  return {
++    status: response.status,
++    bodyBytes: bytes.length,
++    bodySha256: hash(bytes),
++    contentType: response.headers.get('Content-Type'),
++    vary: response.headers.get('Vary'),
++    etag: response.headers.get('ETag'),
++    location: response.headers.get('Location'),
++    workerPath: response.headers.get('X-F0-Worker-Path'),
++    edgeCache: response.headers.get('X-Edge-Cache'),
++    body: new TextDecoder().decode(bytes),
++  };
++}
++
++function assert(condition, message) { if (!condition) throw new Error(message); }
++async function record(name, run) {
++  const result = await run();
++  const { body, ...safeResult } = result;
++  checks.push({ name, ...safeResult });
++  return result;
++}
++
++const matrix = [
++  ['no Accept', undefined, 200, 'text/html'],
++  ['wildcard', '*/*', 200, 'text/html'],
++  ['HTML explicit', 'text/html', 200, 'text/html'],
++  ['Markdown explicit', 'text/markdown', 200, 'text/markdown'],
++  ['Markdown q0 exclusion', 'text/markdown;q=0, text/html;q=1', 200, 'text/html'],
++  ['Markdown preferred', 'text/markdown;q=1, text/html;q=0.5', 200, 'text/markdown'],
++  ['HTML preferred', 'text/markdown;q=0.5, text/html;q=1', 200, 'text/html'],
++  ['equal quality tie', 'text/markdown;q=1, text/html;q=1', 200, 'text/html'],
++  ['specific q0 beats text wildcard', 'text/*;q=0.8, text/markdown;q=0', 200, 'text/html'],
++  ['specific Markdown beats wildcard', 'text/markdown;q=1, */*;q=0.1', 200, 'text/markdown'],
++  ['Markdown q0 beats all wildcard', 'text/markdown;q=0, */*;q=1', 200, 'text/html'],
++  ['unsupported media type', 'application/json', 406, null],
++  ['all accepted representations excluded', 'text/html;q=0, text/markdown;q=0', 406, null],
++  ['invalid q only', 'text/markdown;q=wat', 400, null],
++];
++for (const [name, accept, status, contentPrefix] of matrix) {
++  const response = await record(`Accept: ${name}`, () => request('/', { accept }));
++  assert(response.status === status, `${name}: expected ${status}, got ${response.status}`);
++  if (contentPrefix) assert(response.contentType?.startsWith(contentPrefix), `${name}: unexpected MIME ${response.contentType}`);
++  if (status === 200) assert(response.vary?.toLowerCase().includes('accept'), `${name}: Vary: Accept absent`);
++}
++
++const cushingPath = '/salud-perros-mayores/sindrome-cushing-perros-mayores';
++for (const [representation, accept, mime] of [['HTML', 'text/html', 'text/html'], ['Markdown', 'text/markdown', 'text/markdown']]) {
++  const response = await record(`Cushing ${representation} route`, () => request(cushingPath, { accept }));
++  assert(response.status === 200 && response.contentType?.startsWith(mime), `Cushing ${representation} route failed: ${response.status}/${response.contentType}`);
++  assert(response.vary?.toLowerCase().includes('accept'), `Cushing ${representation} lacks Vary: Accept`);
++  if (representation === 'Markdown') assert(response.body.startsWith('# Síndrome de Cushing'), 'Cushing Markdown asset is not the matching document');
++}
++
++const assistantCatalog = await record('static assistant catalog delegation', () => request('/api/assistant-catalog.json'));
++assert(assistantCatalog.status === 200 && assistantCatalog.contentType?.includes('json'), `assistant catalog delegation failed: ${assistantCatalog.status}/${assistantCatalog.contentType}`);
++
++for (const order of [['html', 'markdown', 'html'], ['markdown', 'html', 'markdown']]) {
++  const representations = [];
++  for (let round = 0; round < 2; round += 1) {
++    for (const representation of order) {
++      const accept = representation === 'html' ? 'text/html' : 'text/markdown';
++      const response = await record(`alternation ${order.join('→')} round ${round + 1} ${representation}`, () => request('/', { accept }));
++      assert(response.status === 200, `alternation returned ${response.status}`);
++      assert(response.contentType?.startsWith(representation === 'html' ? 'text/html' : 'text/markdown'), `alternation returned wrong MIME for ${representation}`);
++      if (response.workerPath !== 'worker-first') throw new Error('loopback diagnostic header absent; request did not prove local worker path');
++      representations.push(response);
++    }
++  }
++  checks.push({ name: `alternation-summary ${order.join('→')}`, representations: representations.map(({ contentType, etag, edgeCache, bodySha256 }) => ({ contentType, etag, edgeCache, bodySha256 })) });
++}
++
++for (const [label, accept] of [['html', 'text/html'], ['markdown', 'text/markdown']]) {
++  const head = await record(`HEAD ${label}`, () => request('/', { method: 'HEAD', accept }));
++  assert(head.status === 200 && head.bodyBytes === 0, `HEAD ${label} status/body mismatch`);
++}
++
++const html = await request('/', { accept: 'text/html' });
++const markdown = await request('/', { accept: 'text/markdown' });
++if (html.etag) {
++  const same = await record('same representation validator HTML', () => request('/', { accept: 'text/html', headers: { 'If-None-Match': html.etag } }));
++  assert(same.status === 304, `same HTML ETag should return 304, got ${same.status}`);
++} else checks.push({ name: 'same representation validator HTML', result: 'HTML ETag absent' });
++if (markdown.etag) {
++  const same = await record('same representation validator Markdown', () => request('/', { accept: 'text/markdown', headers: { 'If-None-Match': markdown.etag } }));
++  assert(same.status === 304, `same Markdown ETag should return 304, got ${same.status}`);
++} else checks.push({ name: 'same representation validator Markdown', result: 'Markdown ETag absent' });
++const cross = await record('cross representation HTML validator sent to Markdown', () => request('/', { accept: 'text/markdown', headers: html.etag ? { 'If-None-Match': html.etag } : {} }));
++assert(cross.status !== 304, `HTML validator leaked to Markdown as 304 (${html.etag ?? 'no HTML ETag'})`);
++const crossReverse = await record('cross representation Markdown validator sent to HTML', () => request('/', { accept: 'text/html', headers: markdown.etag ? { 'If-None-Match': markdown.etag } : {} }));
++assert(crossReverse.status !== 304, `Markdown validator leaked to HTML as 304 (${markdown.etag ?? 'no Markdown ETag'})`);
++
++const missing = await record('missing negotiated document', () => request('/not-a-document', { accept: 'text/markdown' }));
++assert(missing.status === 404 && !missing.body.includes('agent-content/v1'), `missing route did not remain 404: ${missing.status}`);
++const legacy = await record('legacy redirect remains redirect', () => request('/2025/10/revision-veterinaria-perros-mayores.html', { accept: 'text/markdown' }));
++assert(legacy.status === 301 && legacy.location === '/salud-perros-mayores/chequeo-geriatrico-canino', `legacy redirect changed: ${legacy.status} ${legacy.location}`);
++const auth = await record('Authorization is not stored or logged', () => request('/', { accept: 'text/html', headers: { Authorization: 'Bearer F0-FICTITIOUS-NEVER-STORE' } }));
++assert(auth.status === 200, `Authorization check failed with ${auth.status}`);
++assert(!JSON.stringify(checks).includes('F0-FICTITIOUS-NEVER-STORE'), 'fictitious Authorization value entered evidence');
++const queryOne = await request('/?visitor=one', { accept: 'text/html' });
++const queryTwo = await request('/?visitor=two', { accept: 'text/html' });
++assert(queryOne.status === 200 && queryTwo.status === 200, 'visitor query changed static HTML status');
++
++const report = {
++  schemaVersion: 'f0-preview-verification/1',
++  target: target.origin,
++  remoteBindings: false,
++  checkedAt: new Date().toISOString(),
++  checks,
++  htmlMarkdownBodiesDiffer: html.bodySha256 !== markdown.bodySha256,
++  visitorQueryBodiesSame: queryOne.bodySha256 === queryTwo.bodySha256,
++};
++assert(report.htmlMarkdownBodiesDiffer, 'HTML and Markdown body hashes unexpectedly match');
++assert(report.visitorQueryBodiesSame, 'visitor query changed generated static HTML body');
++delete html.body;
++delete markdown.body;
++const output = resolve(args.get('--out'));
++await mkdir(dirname(output), { recursive: true });
++await writeFile(output, `${JSON.stringify(report, null, 2)}\n`, { flag: 'wx' });
++console.log(JSON.stringify({ output, checks: checks.length, remoteBindings: false, result: 'pass' }));
+diff --git a/src/middleware.ts b/src/middleware.ts
+index c5e977f..3518d8c 100644
+--- a/src/middleware.ts
++++ b/src/middleware.ts
+@@ -32,6 +32,10 @@ export const onRequest = defineMiddleware(async (context, next) => {
+   }
+ 
+   const url = new URL(context.request.url);
++  // F0 spike: only the HTML representation enters this pre-existing cache.
++  // The internal URL deliberately drops visitor query parameters so they do
++  // not become part of a generated-content cache key.
++  const cacheKey = new Request(`https://f0-cache.invalid/__f0-cache/html${url.pathname}`);
+ 
+   // 2. Evitar cachear APIs, admin y assets. Las APIs y el admin dependen del
+   // visitante o mutan estado; los assets estáticos ya reciben manejo de
+@@ -53,7 +57,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
+ 
+     try {
+       // Buscar coincidencia en la caché de Cloudflare para la petición actual
+-      const cachedResponse = await cache.match(context.request);
++      const cachedResponse = await cache.match(cacheKey);
+       if (cachedResponse) {
+         // Clonar la respuesta y añadir un header de diagnóstico
+         const response = withSecurityHeaders(new Response(cachedResponse.body, cachedResponse));
+@@ -82,7 +86,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
+         !cacheControl.includes('private')
+       ) {
+         // Guardar la respuesta clonada en la caché de Cloudflare
+-        await cache.put(context.request, newResponse.clone());
++        await cache.put(cacheKey, newResponse.clone());
+       }
+ 
+       // Retornar la respuesta original con cabecera de diagnóstico MISS
+diff --git a/src/worker.ts b/src/worker.ts
+new file mode 100644
+index 0000000..f471d0c
+--- /dev/null
++++ b/src/worker.ts
+@@ -0,0 +1,109 @@
++import { handle as astroHandler } from '@astrojs/cloudflare/handler';
++
++const markdownAssets = new Map<string, string>([
++  ['/', '/agent-content/v1/documents/home.md'],
++  [
++    '/salud-perros-mayores/sindrome-cushing-perros-mayores',
++    '/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md',
++  ],
++]);
++
++function acceptedQuality(accept: string | null, mediaType: string): number | null {
++  if (accept === null || accept.trim() === '') return 1;
++  const validRanges = accept.split(',').flatMap((member, order) => {
++    const [rawType, ...parameters] = member.trim().split(';');
++    const type = rawType?.trim().toLowerCase();
++    if (!type || !/^(\*|[a-z0-9!#$&^_.+-]+)\/(\*|[a-z0-9!#$&^_.+-]+)$/.test(type)) return [];
++    if (type.startsWith('*/') && type !== '*/*') return [];
++    let q = 1;
++    for (const parameter of parameters) {
++      const pair = parameter.trim().match(/^q\s*=\s*(.*)$/i);
++      if (!pair) continue;
++      if (!/^(?:0(?:\.\d{0,3})?|1(?:\.0{0,3})?)$/.test(pair[1] ?? '')) return [];
++      q = Number(pair[1]);
++    }
++    return [{ type, q, order }];
++  });
++  if (validRanges.length === 0) return null;
++  const ranges = validRanges.flatMap(({ type, q, order }) => {
++    const [major, minor] = type.split('/');
++    const [targetMajor, targetMinor] = mediaType.split('/');
++    if (major !== '*' && major !== targetMajor) return [];
++    if (minor !== '*' && minor !== targetMinor) return [];
++    return [{ q, specificity: Number(major !== '*') + Number(minor !== '*'), order }];
++  });
++  if (ranges.length === 0) return 0;
++  const specificity = Math.max(...ranges.map((range) => range.specificity));
++  return Math.max(...ranges.filter((range) => range.specificity === specificity).map((range) => range.q));
++}
++
++function negotiate(accept: string | null): 'html' | 'markdown' | 'bad' | 'none' {
++  if (accept === null || accept.trim() === '') return 'html';
++  const htmlQ = acceptedQuality(accept, 'text/html');
++  const markdownQ = acceptedQuality(accept, 'text/markdown');
++  if (htmlQ === null && markdownQ === null) return 'bad';
++  if ((htmlQ ?? 0) === 0 && (markdownQ ?? 0) === 0) return 'none';
++  if ((markdownQ ?? 0) > (htmlQ ?? 0)) return 'markdown';
++  if ((htmlQ ?? 0) > 0) return 'html';
++  if ((markdownQ ?? 0) > 0) return 'markdown';
++  return 'none';
++}
++
++function withLocalDiagnostic(response: Response, request: Request): Response {
++  const host = new URL(request.url).hostname;
++  if (host !== '127.0.0.1' && host !== 'localhost' && host !== '[::1]') return response;
++  const headers = new Headers(response.headers);
++  headers.set('X-F0-Worker-Path', 'worker-first');
++  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
++}
++
++function matchesIfNoneMatch(request: Request, response: Response): boolean {
++  const validator = response.headers.get('ETag');
++  const condition = request.headers.get('If-None-Match');
++  if (!validator || !condition) return false;
++  if (condition.trim() === '*') return true;
++  const weakTag = (tag: string) => tag.trim().replace(/^W\//i, '');
++  return condition.split(',').some((candidate) => weakTag(candidate) === weakTag(validator));
++}
++
++function asNotModified(response: Response): Response {
++  const headers = new Headers(response.headers);
++  headers.delete('Content-Type');
++  headers.delete('Content-Length');
++  return new Response(null, { status: 304, headers });
++}
++
++export default {
++  async fetch(request: Request, env: Env, context: ExecutionContext): Promise<Response> {
++    const url = new URL(request.url);
++    const assetPath = markdownAssets.get(url.pathname);
++    if (assetPath && (request.method === 'GET' || request.method === 'HEAD')) {
++      const representation = negotiate(request.headers.get('Accept'));
++      if (representation === 'bad' || representation === 'none') {
++        const status = representation === 'bad' ? 400 : 406;
++        return withLocalDiagnostic(new Response(representation === 'bad' ? 'Invalid Accept header' : null, { status, headers: { Vary: 'Accept' } }), request);
++      }
++      if (representation === 'markdown') {
++        const assetResponse = await env.ASSETS.fetch(new Request(new URL(assetPath, url), { method: request.method }));
++        const headers = new Headers(assetResponse.headers);
++        headers.set('Vary', 'Accept');
++        headers.set('Content-Type', 'text/markdown; charset=utf-8');
++        const markdownResponse = new Response(request.method === 'HEAD' ? null : assetResponse.body, {
++          status: assetResponse.status,
++          statusText: assetResponse.statusText,
++          headers,
++        });
++        return withLocalDiagnostic(matchesIfNoneMatch(request, markdownResponse) ? asNotModified(markdownResponse) : markdownResponse, request);
++      }
++    }
++
++    const response = await astroHandler(request, env, context);
++    if (assetPath && (request.method === 'GET' || request.method === 'HEAD')) {
++      const headers = new Headers(response.headers);
++      headers.set('Vary', 'Accept');
++      const htmlResponse = new Response(response.body, { status: response.status, statusText: response.statusText, headers });
++      return withLocalDiagnostic(matchesIfNoneMatch(request, htmlResponse) ? asNotModified(htmlResponse) : htmlResponse, request);
++    }
++    return withLocalDiagnostic(response, request);
++  },
++};
+diff --git a/wrangler.jsonc b/wrangler.jsonc
+index 2107757..1a9c645 100644
+--- a/wrangler.jsonc
++++ b/wrangler.jsonc
+@@ -1,48 +1,19 @@
+ {
+   "$schema": "node_modules/wrangler/config-schema.json",
+-  "name": "cuidatuperroviejo",
++  "name": "cuidatuperroviejo-f0-spike-local",
+   "compatibility_date": "2026-05-23",
+   "observability": {
+     "enabled": true
+   },
+-  "main": "@astrojs/cloudflare/entrypoints/server",
++  "main": "src/worker.ts",
+   "compatibility_flags": [
+     "global_fetch_strictly_public",
+     "nodejs_compat"
+   ],
+   "assets": {
+     "binding": "ASSETS",
+-    "directory": "dist",
++    "directory": "dist/client",
+     "not_found_handling": "404-page",
+-    "run_worker_first": ["/api/*", "/admin/*"]
+-  },
+-  "kv_namespaces": [
+-    {
+-      "binding": "CONTACT_KV",
+-      "id": "707dd02ce0434005a78d89fd138d0647"
+-    },
+-    {
+-      "binding": "SESSION",
+-      "id": "5ddddc3cfd974b47a261fe067dbaa885"
+-    }
+-  ],
+-  "d1_databases": [
+-    {
+-      "binding": "CONTACT_DB",
+-      "database_name": "cuidatuperroviejo-contact",
+-      "database_id": "99649da3-f224-47be-b0d6-1e037234d9b2"
+-    }
+-  ],
+-  "ai": {
+-    "binding": "AI"
+-  },
+-  "send_email": [
+-    {
+-      "name": "EMAIL"
+-    }
+-  ],
+-  "ratelimits": [
+-    { "name": "ASK_LIMIT", "namespace_id": "1001", "simple": { "limit": 10, "period": 60 } },
+-    { "name": "ADMIN_LIMIT", "namespace_id": "1002", "simple": { "limit": 20, "period": 60 } }
+-  ]
++    "run_worker_first": ["/", "/salud-perros-mayores/sindrome-cushing-perros-mayores", "/api/*", "/admin/*"]
++  }
+ }
