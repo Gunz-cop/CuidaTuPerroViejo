@@ -1,6 +1,6 @@
 # Lanzamiento de F0
 
-Estos prompts delegan implementación y verificación a sesiones distintas. No es necesario fusionar el PR documental para leerlos. La rama documental incluye únicamente el ajuste de producto H1 autorizado y descrito en la base F0; el ejecutor abre un PR apilado mientras siga abierta. Implementación: Luna 6 con razonamiento alto (`gpt-6-luna`, `high`).
+Estos prompts delegan implementación y verificación a sesiones distintas. No es necesario fusionar los PR previos para leerlos. La base de reanudación incluye los dos ajustes de producto autorizados en §2 de F0: H1 del selector y canonical de la home. El ejecutor abre un PR apilado contra la rama fijada en el issue. Implementación: Luna 6 con razonamiento alto (`gpt-6-luna`, `high`).
 
 ## Sesión implementadora
 
@@ -16,10 +16,14 @@ Lee el issue de lanzamiento: exige el SHA completo publicado y el informe PASS
 sobre esa versión. Trae ese SHA exacto y regístralo como base de arranque.
 Confirma que contiene ambos documentos F0; compara contra
 cdb0adece5d629f6b2473be7ea6e30c0b372ef1c: solo docs/agent-readiness/
-y el ajuste H1 con el hash fijado en §2 de F0. Otro cambio bloquea el trabajo.
+y los ajustes H1 y canonical, con los diffs y hashes exactos fijados en §2 de F0.
+Otro cambio de producto bloquea el trabajo. Lee también el registro de reanudación
+fases/f0-reanudacion-2026-10-05.md; no modifiques esos archivos de producto.
 
-Crea agent-ready/f0-medicion desde esa base. El PR se dirige a
-docs/agent-readiness-plan mientras el PR #42 siga sin fusionarse.
+Crea agent-ready/f0-medicion desde esa base. Si reanudas la misma sesión, conserva
+el trabajo previo y adopta deliberadamente la nueva base, sin reset/stash ni
+sobrescribir trabajo ajeno. El coordinador fija el procedimiento en el issue.
+El PR se dirige a docs/f0-reanudacion-canonical mientras su integración siga abierta.
 Mantén el spike en otro worktree/rama agent-ready/f0-spike, desde la misma base.
 
 Implementa T0.1-T0.4 y reproduce P1-P4 de la spec. Respeta ownership:
