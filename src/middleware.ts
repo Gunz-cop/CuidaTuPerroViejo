@@ -2,6 +2,7 @@ import { defineMiddleware } from 'astro:middleware';
 
 const STATIC_HTML_CACHE_CONTROL = 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800';
 const ASSET_PATH_PATTERN = /\.[a-z0-9]+$/i;
+const DISCOVERY_LINK = '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"';
 
 // Mismas cabeceras que public/_headers. Ese fichero no se aplica a las
 // respuestas que genera el Worker (rutas dinámicas como /api/* y /admin/*),
@@ -15,6 +16,10 @@ const SECURITY_HEADERS: ReadonlyArray<readonly [string, string]> = [
 
 function withSecurityHeaders(response: Response): Response {
   const headers = new Headers(response.headers);
+  const existingLink = headers.get('Link');
+  if (!existingLink?.includes(DISCOVERY_LINK)) {
+    headers.set('Link', existingLink ? `${existingLink}, ${DISCOVERY_LINK}` : DISCOVERY_LINK);
+  }
   for (const [key, value] of SECURITY_HEADERS) {
     if (!headers.has(key)) headers.set(key, value);
   }
