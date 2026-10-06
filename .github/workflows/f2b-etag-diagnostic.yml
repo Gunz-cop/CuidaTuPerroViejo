@@ -12,7 +12,10 @@ permissions: {}
 
 jobs:
   f2b-etag-client-diagnostic:
-    if: github.event.pull_request.number == 61 && github.event.pull_request.head.ref == 'spike/f2b-etag-observabilidad'
+    if: >-
+      github.event.pull_request.number == 61 &&
+      github.event.pull_request.head.ref == 'spike/f2b-etag-observabilidad' &&
+      github.event.pull_request.head.sha == '1c77bd14e217ba70ed6cadc5bad3b08a25f3fe94'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
