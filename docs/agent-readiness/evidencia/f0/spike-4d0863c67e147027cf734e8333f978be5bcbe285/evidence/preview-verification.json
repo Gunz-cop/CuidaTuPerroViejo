@@ -1,0 +1,548 @@
+{
+  "schemaVersion": "f0-preview-verification/1",
+  "target": "http://127.0.0.1:8791",
+  "remoteBindings": false,
+  "checkedAt": "2026-10-05T14:42:01.860Z",
+  "checks": [
+    {
+      "name": "Accept: no Accept",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: wildcard",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: HTML explicit",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: Markdown explicit",
+      "status": 200,
+      "bodyBytes": 8976,
+      "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab",
+      "contentType": "text/markdown; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: Markdown q0 exclusion",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: Markdown preferred",
+      "status": 200,
+      "bodyBytes": 8976,
+      "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab",
+      "contentType": "text/markdown; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: HTML preferred",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: equal quality tie",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: specific q0 beats text wildcard",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: specific Markdown beats wildcard",
+      "status": 200,
+      "bodyBytes": 8976,
+      "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab",
+      "contentType": "text/markdown; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: Markdown q0 beats all wildcard",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: unsupported media type",
+      "status": 406,
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": null,
+      "vary": "Accept",
+      "etag": null,
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: all accepted representations excluded",
+      "status": 406,
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": null,
+      "vary": "Accept",
+      "etag": null,
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Accept: invalid q only",
+      "status": 400,
+      "bodyBytes": 21,
+      "bodySha256": "09f5164f795745196523f5c0e811c44cb5f90bcc868772c8124749cee49441b6",
+      "contentType": "text/plain;charset=UTF-8",
+      "vary": "Accept",
+      "etag": null,
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Cushing HTML route",
+      "status": 200,
+      "bodyBytes": 110770,
+      "bodySha256": "7aaaef0e39577c2510e1d1028c182e996f2d213c607165e1ba32d15162885ec3",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"8aafa852c1779b8d39e10308cb8a8b1a\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "Cushing Markdown route",
+      "status": 200,
+      "bodyBytes": 30537,
+      "bodySha256": "b83a0e428246845e87935dc0ce9ae6e9c6990bdcf85fc9bb1c85f1d48c83399f",
+      "contentType": "text/markdown; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"af4e0d38e00691c7bde39f3f7ec17d2b\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "static assistant catalog delegation",
+      "status": 200,
+      "bodyBytes": 76467,
+      "bodySha256": "682386bbe38c36ac799b978d870a79da764af11b4f4902735be2e7a2c82b204c",
+      "contentType": "application/json",
+      "vary": null,
+      "etag": "\"1023f64c4ac5423bd1cec6e26f2f4ed6\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation html→markdown→html round 1 html",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation html→markdown→html round 1 markdown",
+      "status": 200,
+      "bodyBytes": 8976,
+      "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab",
+      "contentType": "text/markdown; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation html→markdown→html round 1 html",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation html→markdown→html round 2 html",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation html→markdown→html round 2 markdown",
+      "status": 200,
+      "bodyBytes": 8976,
+      "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab",
+      "contentType": "text/markdown; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation html→markdown→html round 2 html",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation-summary html→markdown→html",
+      "representations": [
+        {
+          "contentType": "text/html; charset=utf-8",
+          "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+          "edgeCache": null,
+          "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b"
+        },
+        {
+          "contentType": "text/markdown; charset=utf-8",
+          "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+          "edgeCache": null,
+          "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab"
+        },
+        {
+          "contentType": "text/html; charset=utf-8",
+          "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+          "edgeCache": null,
+          "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b"
+        },
+        {
+          "contentType": "text/html; charset=utf-8",
+          "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+          "edgeCache": null,
+          "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b"
+        },
+        {
+          "contentType": "text/markdown; charset=utf-8",
+          "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+          "edgeCache": null,
+          "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab"
+        },
+        {
+          "contentType": "text/html; charset=utf-8",
+          "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+          "edgeCache": null,
+          "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b"
+        }
+      ]
+    },
+    {
+      "name": "alternation markdown→html→markdown round 1 markdown",
+      "status": 200,
+      "bodyBytes": 8976,
+      "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab",
+      "contentType": "text/markdown; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation markdown→html→markdown round 1 html",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation markdown→html→markdown round 1 markdown",
+      "status": 200,
+      "bodyBytes": 8976,
+      "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab",
+      "contentType": "text/markdown; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation markdown→html→markdown round 2 markdown",
+      "status": 200,
+      "bodyBytes": 8976,
+      "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab",
+      "contentType": "text/markdown; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation markdown→html→markdown round 2 html",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation markdown→html→markdown round 2 markdown",
+      "status": 200,
+      "bodyBytes": 8976,
+      "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab",
+      "contentType": "text/markdown; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "alternation-summary markdown→html→markdown",
+      "representations": [
+        {
+          "contentType": "text/markdown; charset=utf-8",
+          "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+          "edgeCache": null,
+          "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab"
+        },
+        {
+          "contentType": "text/html; charset=utf-8",
+          "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+          "edgeCache": null,
+          "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b"
+        },
+        {
+          "contentType": "text/markdown; charset=utf-8",
+          "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+          "edgeCache": null,
+          "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab"
+        },
+        {
+          "contentType": "text/markdown; charset=utf-8",
+          "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+          "edgeCache": null,
+          "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab"
+        },
+        {
+          "contentType": "text/html; charset=utf-8",
+          "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+          "edgeCache": null,
+          "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b"
+        },
+        {
+          "contentType": "text/markdown; charset=utf-8",
+          "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+          "edgeCache": null,
+          "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab"
+        }
+      ]
+    },
+    {
+      "name": "HEAD html",
+      "status": 200,
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "HEAD markdown",
+      "status": 200,
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": "text/markdown; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "same representation validator HTML",
+      "status": 304,
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": null,
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "same representation validator Markdown",
+      "status": 304,
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": null,
+      "vary": "Accept",
+      "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "cross representation HTML validator sent to Markdown",
+      "status": 200,
+      "bodyBytes": 8976,
+      "bodySha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab",
+      "contentType": "text/markdown; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"069ade7a1dc62abd2a0a973ca7313ede\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "cross representation Markdown validator sent to HTML",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    },
+    {
+      "name": "missing negotiated document",
+      "status": 404,
+      "bodyBytes": 28876,
+      "bodySha256": "3108a9a0b21fdd92aa30acae8d494748a7c8c694d061b20edde344ea575288ad",
+      "contentType": "text/html; charset=utf-8",
+      "vary": null,
+      "etag": "\"a532fd77802fdd0b2fd74da978ccb525\"",
+      "location": null,
+      "workerPath": null,
+      "edgeCache": null
+    },
+    {
+      "name": "legacy redirect remains redirect",
+      "status": 301,
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": null,
+      "vary": null,
+      "etag": null,
+      "location": "/salud-perros-mayores/chequeo-geriatrico-canino",
+      "workerPath": null,
+      "edgeCache": null
+    },
+    {
+      "name": "Authorization is not stored or logged",
+      "status": 200,
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentType": "text/html; charset=utf-8",
+      "vary": "Accept",
+      "etag": "\"5564884a8c05d58c6bca4dd21c36c9f7\"",
+      "location": null,
+      "workerPath": "worker-first",
+      "edgeCache": null
+    }
+  ],
+  "htmlMarkdownBodiesDiffer": true,
+  "visitorQueryBodiesSame": true
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "f0-build-hook-proof/1",
+  "hook": "astro:build:done",
+  "observedOrder": "HTML outputs already exist -> seven fixtures selected -> Markdown and index written during astro:build:done -> pack verification is performed by Wrangler dry-run after Astro build",
+  "clientDirectory": "/workspace/ctpv-f0-spike/dist/client/",
+  "effectiveWranglerSource": {
+    "main": "src/worker.ts",
+    "compatibilityDate": "2026-05-23",
+    "assets": {
+      "binding": "ASSETS",
+      "directory": "dist/client",
+      "not_found_handling": "404-page",
+      "run_worker_first": [
+        "/",
+        "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+        "/api/*",
+        "/admin/*"
+      ]
+    },
+    "namedBindings": []
+  },
+  "activeCacheLayers": [
+    {
+      "layer": "Astro middleware Cache API",
+      "representation": "HTML responses only; internal key includes /html and excludes visitor query",
+      "exercised": "only when Astro handler reaches middleware; static asset hits may short-circuit it"
+    },
+    {
+      "layer": "Cloudflare Assets local worker",
+      "representation": "prebuilt HTML paths and separate Markdown asset paths",
+      "exercised": "workerd local preview"
+    },
+    {
+      "layer": "Cloudflare CDN",
+      "representation": "unknown from local workerd",
+      "exercised": false
+    }
+  ],
+  "sampleCount": 2,
+  "fixtureCount": 7,
+  "emitted": [
+    {
+      "path": "agent-content/v1/documents/home.md",
+      "bytes": 8976,
+      "sha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab"
+    },
+    {
+      "path": "agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+      "bytes": 30537,
+      "sha256": "b83a0e428246845e87935dc0ce9ae6e9c6990bdcf85fc9bb1c85f1d48c83399f"
+    },
+    {
+      "path": "agent-content/v1/index.json",
+      "bytes": 792,
+      "sha256": "ff1e8dd44b257304db234f1bb44ba171220ef9f1bba89e48c54b3da9faf42e86"
+    },
+    {
+      "path": "agent-content/v1/.f0-spike-parity-manifest.json",
+      "bytes": 51899,
+      "sha256": "bd341fb2ece72d086e84d35db877a6566a6f6be0eef2beab24e8d33157ba0282"
+    }
+  ]
+}

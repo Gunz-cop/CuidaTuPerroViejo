@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "f0-spike-manifest/1",
+  "status": "exploratory spike; not product runtime or F0 acceptance",
+  "baseCommit": "4dced4155788af926ef7b4e3d2d7e8259e1978be",
+  "spikeCommit": "4d0863c67e147027cf734e8333f978be5bcbe285",
+  "branch": "agent-ready/f0-spike",
+  "worktreeCleanAtFreeze": true,
+  "changedPaths": [
+    {
+      "path": "astro.config.mjs",
+      "sha256": "115fd9ca37200fd688c213fc98f0433f7a039947789fd35ffc40a1b8b5115789"
+    },
+    {
+      "path": "scripts/f0-spike/content-build-integration.mjs",
+      "sha256": "3c76b62025ba8c89b92f3eb949209f1c63a2a0cb262f5ee0e9d63d079a638ae8"
+    },
+    {
+      "path": "scripts/f0-spike/verify-preview.mjs",
+      "sha256": "c044ed710cad4b29b3757fef1935e244702a222ef47249eb5a7d9137b601debf"
+    },
+    {
+      "path": "src/middleware.ts",
+      "sha256": "bd51765b4fd63f6ffa8476b302123aae4192e7b7951e907fb85d5673207e07c7"
+    },
+    {
+      "path": "src/worker.ts",
+      "sha256": "d0f3ab4b408cd0f032b191daf113e04d397de6f4a060945f45ae90da882c3b9f"
+    },
+    {
+      "path": "wrangler.jsonc",
+      "sha256": "3514ceb5992182ac1b788cd248d93c63f5819a1265c8304e1add57e72a180302"
+    }
+  ],
+  "versions": {
+    "node": "24.19",
+    "astro": "7.2.10",
+    "@astrojs/cloudflare": "14.2.6",
+    "wrangler": "4.128.0",
+    "parse5": "7.3.0 (already transitive; not added)"
+  },
+  "dependenciesChanged": false,
+  "effectiveConfig": {
+    "sourceConfig": "wrangler.jsonc: ASSETS only; remoteBindings=false",
+    "generatedConfig": "dist/server/wrangler.json: main entry.mjs; SESSION KV (no namespace id) and ASSETS only",
+    "generatedRuntimeTypes": "evidence/effective-worker-types.d.ts; SESSION + ASSETS only",
+    "preview": "wrangler dev --local; loopback 127.0.0.1:8791; no credentials or remote bindings",
+    "remoteBindingsObserved": false,
+    "deployPerformed": false
+  },
+  "cacheLayers": [
+    {
+      "layer": "Astro middleware Cache API",
+      "scope": "HTML synthetic key /html path; visitor query excluded",
+      "runtimeEvidence": "not exercised for static HTML routes because adapter Assets response short-circuits middleware; no HIT/MISS claim"
+    },
+    {
+      "layer": "Cloudflare Assets",
+      "scope": "separate prebuilt HTML paths and Markdown sample paths",
+      "runtimeEvidence": "exercised in local workerd preview; representation-specific responses and validators verified"
+    },
+    {
+      "layer": "Cloudflare CDN",
+      "scope": "unknown",
+      "runtimeEvidence": "not tested; requires F2 edge preview"
+    }
+  ],
+  "commands": {
+    "negativeBuild": "F0_FAIL_GENERATOR=1 ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install astro build",
+    "positiveBuild": "F0_SOURCE_COMMIT=4d0863c67e147027cf734e8333f978be5bcbe285 ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install astro build",
+    "typegen": "ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install wrangler types /tmp/ctpv-f0-spike-compiled-types.d.ts --config dist/server/wrangler.json --strict-vars=false --include-runtime=true",
+    "dryRun": "ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install wrangler deploy --dry-run --config dist/server/wrangler.json --outdir /tmp/ctpv-f0-spike-dry-run",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 XDG_CONFIG_HOME=/tmp/ctpv-f0-config npm_config_cache=/tmp/ctpv-f0-npm-cache npx --no-install wrangler dev --local --config dist/server/wrangler.json --ip 127.0.0.1 --port 8791 --persist-to /tmp/ctpv-f0-spike-state-4d0863c-8791 --show-interactive-dev-session=false",
+    "verify": "node scripts/f0-spike/verify-preview.mjs --origin http://127.0.0.1:8791 --out /tmp/ctpv-f0-spike-preview-4d0863c-8791.json"
+  },
+  "results": {
+    "negativeBuildExit": 1,
+    "positiveBuildExit": 0,
+    "previewChecksPassed": 40,
+    "formalAuditCount": "0/5",
+    "sampleDocuments": 2,
+    "fixturePages": 7,
+    "previewReportSha256": "01f3a96c27b5bb34b3b5709f9f271afdc20219e198a8aa9b7a74b01e7bbf092a"
+  },
+  "limitations": [
+    "samples are home and Cushing only",
+    "middleware Cache API hot-entry behavior not demonstrated for static routes",
+    "CDN not tested",
+    "spike does not imply formal F0 acceptance"
+  ],
+  "deliverables": [
+    {
+      "path": "spike.patch",
+      "bytes": 30926,
+      "sha256": "197335828f612462f29462bda1e28dff6dec39a66c2737fc2cc9b273f9f3dc50"
+    },
+    {
+      "path": "spike.md",
+      "bytes": 9730,
+      "sha256": "bc2887d4b9c64d972c23cf8b2764aa3f64204b3320f209828521ab8ee0a3f8a6"
+    },
+    {
+      "path": "decisiones.md",
+      "bytes": 5179,
+      "sha256": "5bda8609aafe553ecc9655edf3720e69f52677ae58eea37da1ba7744506ea180"
+    }
+  ],
+  "evidenceFiles": [
+    {
+      "path": "evidence/article--sindrome-cushing-perros-mayores.md",
+      "bytes": 30537,
+      "sha256": "b83a0e428246845e87935dc0ce9ae6e9c6990bdcf85fc9bb1c85f1d48c83399f"
+    },
+    {
+      "path": "evidence/build-proof.json",
+      "bytes": 2128,
+      "sha256": "38f5c8ab9e9e537727baf7c7a0bbc15d89bf027696e9f54f4e7a2c9c19d78f88"
+    },
+    {
+      "path": "evidence/effective-worker-types.d.ts",
+      "bytes": 591010,
+      "sha256": "4550f02d4d6bc8e7405181cd23001841b0bb2853ac8da3322a4b5f2e26bb7101"
+    },
+    {
+      "path": "evidence/effective-wrangler.json",
+      "bytes": 1581,
+      "sha256": "4b70928088d084c6e1267e35089d7524c2dbf169def86c273e1d696484a17d13"
+    },
+    {
+      "path": "evidence/home.md",
+      "bytes": 8976,
+      "sha256": "96bb31308b2e547a8250994de78e6a8380c891e0f7597b8b07b4a2685dfcf1ab"
+    },
+    {
+      "path": "evidence/parity-manifest.json",
+      "bytes": 51899,
+      "sha256": "bd341fb2ece72d086e84d35db877a6566a6f6be0eef2beab24e8d33157ba0282"
+    },
+    {
+      "path": "evidence/preview-verification.json",
+      "bytes": 18997,
+      "sha256": "01f3a96c27b5bb34b3b5709f9f271afdc20219e198a8aa9b7a74b01e7bbf092a"
+    },
+    {
+      "path": "evidence/run-summary.json",
+      "bytes": 3785,
+      "sha256": "db096ba3da0baa438757b92f859006deb3e128ff13007252743abbd089e29887"
+    },
+    {
+      "path": "evidence/sample-index.json",
+      "bytes": 792,
+      "sha256": "ff1e8dd44b257304db234f1bb44ba171220ef9f1bba89e48c54b3da9faf42e86"
+    }
+  ]
+}

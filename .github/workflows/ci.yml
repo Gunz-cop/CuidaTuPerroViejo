@@ -83,8 +83,14 @@ jobs:
       - name: Tests
         run: npm test
 
+      - name: Tests offline de agent-readiness
+        run: node --test tests/agent-readiness/*.test.mjs
+
       - name: Build
         run: npx --no-install astro build
+
+      - name: Inventory offline del build
+        run: node scripts/agent-readiness/index.mjs inventory --build-dir dist --out-dir "${RUNNER_TEMP}/agent-readiness-inventory"
 
       # Los bindings de `wrangler.jsonc` y los tipos generados tienen que contar
       # lo mismo: sin este paso, el `Env` miente cuando alguien añade un binding

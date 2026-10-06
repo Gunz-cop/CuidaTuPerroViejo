@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "agent-readiness-run/1",
+  "scoringRuleId": "pass-over-counted-round/1",
+  "mode": "replay",
+  "profile": "api-unconfigured",
+  "requestedUrl": "https://cuidatuperroviejo.com",
+  "targetUrl": "https://cuidatuperroviejo.com",
+  "enabledChecks": null,
+  "sourceCommit": "4d3ab0e5df1e09e3b36115a305e639e87d5aea27",
+  "deploymentCommit": null,
+  "dirtySource": false,
+  "recordedAt": "2026-10-05T15:11:16.698Z",
+  "scannedAt": "2026-10-01T00:58:00.424Z",
+  "state": "complete",
+  "score": 19,
+  "level": 1,
+  "levelName": "Basic Web Presence",
+  "isCommerce": false,
+  "counts": {
+    "pass": 3,
+    "fail": 13,
+    "neutral": 6,
+    "scoredTotal": 16
+  },
+  "checks": [
+    {
+      "category": "discoverability",
+      "id": "robotsTxt",
+      "status": "pass",
+      "message": "robots.txt exists with valid format",
+      "counted": true
+    },
+    {
+      "category": "discoverability",
+      "id": "sitemap",
+      "status": "pass",
+      "message": "sitemap.xml exists with valid structure",
+      "counted": true
+    },
+    {
+      "category": "discoverability",
+      "id": "linkHeaders",
+      "status": "fail",
+      "message": "No Link headers found on target page",
+      "counted": true
+    },
+    {
+      "category": "discoverability",
+      "id": "dnsAid",
+      "status": "fail",
+      "message": "DNS for AI Discovery (DNS-AID) well-known entrypoint records not found",
+      "counted": true
+    },
+    {
+      "category": "contentAccessibility",
+      "id": "markdownNegotiation",
+      "status": "fail",
+      "message": "Site does not support Markdown for Agents",
+      "counted": true
+    },
+    {
+      "category": "botAccessControl",
+      "id": "robotsTxtAiRules",
+      "status": "pass",
+      "message": "No AI-specific bot rules; wildcard rules apply to all crawlers including AI bots",
+      "counted": true
+    },
+    {
+      "category": "botAccessControl",
+      "id": "contentSignals",
+      "status": "fail",
+      "message": "No Content Signals found in robots.txt",
+      "counted": true
+    },
+    {
+      "category": "botAccessControl",
+      "id": "webBotAuth",
+      "status": "neutral",
+      "message": "Web Bot Auth directory not found (informational only)",
+      "counted": false
+    },
+    {
+      "category": "discovery",
+      "id": "apiCatalog",
+      "status": "fail",
+      "message": "API Catalog not found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "oauthDiscovery",
+      "status": "fail",
+      "message": "No OAuth/OIDC discovery metadata found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "oauthProtectedResource",
+      "status": "fail",
+      "message": "No OAuth Protected Resource Metadata found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "authMd",
+      "status": "fail",
+      "message": "auth.md not found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "mcpServerCard",
+      "status": "fail",
+      "message": "MCP Server Card not found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "a2aAgentCard",
+      "status": "fail",
+      "message": "A2A Agent Card not found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "agentSkills",
+      "status": "fail",
+      "message": "Agent Skills index not found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "webMcp",
+      "status": "fail",
+      "message": "No WebMCP tools detected on page load",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "ard",
+      "status": "fail",
+      "message": "ARD capability manifest not found",
+      "counted": true
+    },
+    {
+      "category": "commerce",
+      "id": "x402",
+      "status": "neutral",
+      "message": "x402 payment protocol not detected (not a commerce site)",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "mpp",
+      "status": "neutral",
+      "message": "MPP payment discovery not detected (not a commerce site)",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "ucp",
+      "status": "neutral",
+      "message": "UCP profile not found (not a commerce site)",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "acp",
+      "status": "neutral",
+      "message": "ACP discovery document not found (not a commerce site)",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "ap2",
+      "status": "neutral",
+      "message": "AP2 not detected (no A2A Agent Card) (not a commerce site)",
+      "counted": false
+    }
+  ],
+  "checkUniverseHash": "9037cb57950a0c49322aae6ca44c3cfd55c65d4826e88d8c4c2284a93566e99a",
+  "requestSha256": "9439b22d1d454a5ec88d807da8f048889c32a9603c5d97187ddb20d0020aa180",
+  "responseSha256": "8cc927a1085e5ce83225d1d921a3dc60b658f1aee1e36e3b785371a4331f2bf9",
+  "nextLevel": {
+    "target": 2,
+    "name": "Bot-Aware",
+    "requirements": [
+      {
+        "check": "contentSignals",
+        "description": "Declare AI content usage preferences with Content Signals in robots.txt",
+        "shortPrompt": "Add Content-Signal directives to your robots.txt declaring preferences for ai-train, search, and ai-input.",
+        "specUrls": [
+          "https://contentsignals.org/",
+          "https://datatracker.ietf.org/doc/draft-romm-aipref-contentsignals/"
+        ],
+        "prompt": "Add Content-Signal directives to your robots.txt declaring preferences for ai-train, search, and ai-input. For example:\nContent-Signal: ai-train=no, search=yes, ai-input=no",
+        "skillUrl": "https://isitagentready.com/.well-known/agent-skills/content-signals/SKILL.md"
+      }
+    ]
+  },
+  "errors": []
+}
