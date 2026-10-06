@@ -1,0 +1,356 @@
+﻿2026-10-06T18:24:15.7259411Z Current runner version: '2.337.0'
+2026-10-06T18:24:15.7285131Z ##[group]Runner Image Provisioner
+2026-10-06T18:24:15.7286089Z Hosted Compute Agent
+2026-10-06T18:24:15.7286702Z Version: 20260901.588
+2026-10-06T18:24:15.7287642Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-06T18:24:15.7288582Z Build Date: 2026-09-01T19:56:44Z
+2026-10-06T18:24:15.7289279Z Worker ID: {b6e3bed6-722b-487b-8af5-cddc227bffb6}
+2026-10-06T18:24:15.7290077Z Azure Region: westus
+2026-10-06T18:24:15.7290653Z ##[endgroup]
+2026-10-06T18:24:15.7292145Z ##[group]Operating System
+2026-10-06T18:24:15.7292912Z Ubuntu
+2026-10-06T18:24:15.7293434Z 24.04.5
+2026-10-06T18:24:15.7293987Z LTS
+2026-10-06T18:24:15.7294523Z ##[endgroup]
+2026-10-06T18:24:15.7295080Z ##[group]Runner Image
+2026-10-06T18:24:15.7295808Z Image: ubuntu-24.04
+2026-10-06T18:24:15.7296373Z Version: 20260927.320.1
+2026-10-06T18:24:15.7297922Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-06T18:24:15.7299491Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-06T18:24:15.7300562Z ##[endgroup]
+2026-10-06T18:24:15.7301555Z ##[group]GITHUB_TOKEN Permissions
+2026-10-06T18:24:15.7303482Z Metadata: read
+2026-10-06T18:24:15.7304094Z ##[endgroup]
+2026-10-06T18:24:15.7306622Z Secret source: Actions
+2026-10-06T18:24:15.7307831Z Cache mode: write
+2026-10-06T18:24:15.7308617Z Prepare workflow directory
+2026-10-06T18:24:15.7647068Z Prepare all required actions
+2026-10-06T18:24:15.7759131Z Complete job name: f2b-etag-client-diagnostic
+2026-10-06T18:24:15.8612488Z ##[group]Run set -euo pipefail
+2026-10-06T18:24:15.8613310Z [36;1mset -euo pipefail[0m
+2026-10-06T18:24:15.8614056Z [36;1mproxy_present=false[0m
+2026-10-06T18:24:15.8615089Z [36;1mfor name in HTTPS_PROXY https_proxy HTTP_PROXY http_proxy ALL_PROXY all_proxy; do[0m
+2026-10-06T18:24:15.8616124Z [36;1m  if [[ -n "${!name:-}" ]]; then[0m
+2026-10-06T18:24:15.8616976Z [36;1m    proxy_present=true[0m
+2026-10-06T18:24:15.8617900Z [36;1m  fi[0m
+2026-10-06T18:24:15.8618500Z [36;1mdone[0m
+2026-10-06T18:24:15.8619032Z [36;1m{[0m
+2026-10-06T18:24:15.8619935Z [36;1m  echo "capture_start_utc=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"[0m
+2026-10-06T18:24:15.8620916Z [36;1m  echo "job=${GITHUB_JOB}"[0m
+2026-10-06T18:24:15.8621637Z [36;1m  echo "run_id=${GITHUB_RUN_ID}"[0m
+2026-10-06T18:24:15.8622428Z [36;1m  echo "run_attempt=${GITHUB_RUN_ATTEMPT}"[0m
+2026-10-06T18:24:15.8623214Z [36;1m  echo "event=${GITHUB_EVENT_NAME}"[0m
+2026-10-06T18:24:15.8624078Z [36;1m  echo "pr_number=61"[0m
+2026-10-06T18:24:15.8624830Z [36;1m  echo "pr_head_ref=spike/f2b-etag-observabilidad"[0m
+2026-10-06T18:24:15.8625895Z [36;1m  echo "workflow_source_sha=1c77bd14e217ba70ed6cadc5bad3b08a25f3fe94"[0m
+2026-10-06T18:24:15.8627032Z [36;1m  echo "measured_http_source_sha=b87616f72d4ff3446f005f87761bfd65d9f43b62"[0m
+2026-10-06T18:24:15.8628545Z [36;1m  echo "fixed_preview=https://5c55fc8d-cuidatuperroviejo.g1721m.workers.dev/"[0m
+2026-10-06T18:24:15.8629654Z [36;1m  echo "preview_receipt_comment=6022505218"[0m
+2026-10-06T18:24:15.8630520Z [36;1m  echo "proxy_configured=${proxy_present}"[0m
+2026-10-06T18:24:15.8631394Z [36;1m} | tee "$RUNNER_TEMP/f2b-etag-client-provenance.txt"[0m
+2026-10-06T18:24:15.8632239Z [36;1mif [[ "$proxy_present" == true ]]; then[0m
+2026-10-06T18:24:15.8633211Z [36;1m  echo "capture=aborted; no requests sent because proxy configuration is present"[0m
+2026-10-06T18:24:15.8634179Z [36;1m  exit 2[0m
+2026-10-06T18:24:15.8634723Z [36;1mfi[0m
+2026-10-06T18:24:15.9683251Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-06T18:24:15.9684955Z ##[endgroup]
+2026-10-06T18:24:16.0071334Z capture_start_utc=2026-10-06T18:24:16Z
+2026-10-06T18:24:16.0072424Z job=f2b-etag-client-diagnostic
+2026-10-06T18:24:16.0073330Z run_id=37511028097
+2026-10-06T18:24:16.0074084Z run_attempt=1
+2026-10-06T18:24:16.0074822Z event=pull_request
+2026-10-06T18:24:16.0075568Z pr_number=61
+2026-10-06T18:24:16.0077004Z pr_head_ref=spike/f2b-etag-observabilidad
+2026-10-06T18:24:16.0083218Z workflow_source_sha=1c77bd14e217ba70ed6cadc5bad3b08a25f3fe94
+2026-10-06T18:24:16.0084713Z measured_http_source_sha=b87616f72d4ff3446f005f87761bfd65d9f43b62
+2026-10-06T18:24:16.0086256Z fixed_preview=https://5c55fc8d-cuidatuperroviejo.g1721m.workers.dev/
+2026-10-06T18:24:16.0088237Z preview_receipt_comment=6022505218
+2026-10-06T18:24:16.0089285Z proxy_configured=false
+2026-10-06T18:24:16.0311219Z ##[group]Run set -uo pipefail
+2026-10-06T18:24:16.0312408Z [36;1mset -uo pipefail[0m
+2026-10-06T18:24:16.0313285Z [36;1mout="$RUNNER_TEMP/f2b-etag-client"[0m
+2026-10-06T18:24:16.0314306Z [36;1mmkdir -p "$out"[0m
+2026-10-06T18:24:16.0315525Z [36;1mpreview='https://5c55fc8d-cuidatuperroviejo.g1721m.workers.dev/'[0m
+2026-10-06T18:24:16.0316863Z [36;1mcapture_head() {[0m
+2026-10-06T18:24:16.0317953Z [36;1m  local name="$1"[0m
+2026-10-06T18:24:16.0318803Z [36;1m  local accept="$2"[0m
+2026-10-06T18:24:16.0319647Z [36;1m  local rc=0[0m
+2026-10-06T18:24:16.0320626Z [36;1m  curl --head --verbose --silent --show-error \[0m
+2026-10-06T18:24:16.0322078Z [36;1m    --connect-timeout 15 --max-time 30 --retry 0 --max-redirs 0 \[0m
+2026-10-06T18:24:16.0323456Z [36;1m    --user-agent 'ctpv-f2b-etag-spike/1.0' \[0m
+2026-10-06T18:24:16.0324613Z [36;1m    --header "Accept: ${accept}" \[0m
+2026-10-06T18:24:16.0325718Z [36;1m    --header 'Accept-Encoding: identity' \[0m
+2026-10-06T18:24:16.0326878Z [36;1m    --dump-header "$out/${name}.headers" \[0m
+2026-10-06T18:24:16.0328260Z [36;1m    --stderr "$out/${name}.trace" \[0m
+2026-10-06T18:24:16.0329329Z [36;1m    --output /dev/null \[0m
+2026-10-06T18:24:16.0330685Z [36;1m    --write-out 'curl_http_status=%{http_code}\nhttp_version=%{http_version}\n' \[0m
+2026-10-06T18:24:16.0332379Z [36;1m    "$preview" > "$out/${name}.status" || rc=$?[0m
+2026-10-06T18:24:16.0333786Z [36;1m  printf 'curl_exit_code=%s\n' "$rc" >> "$out/${name}.status"[0m
+2026-10-06T18:24:16.0335055Z [36;1m}[0m
+2026-10-06T18:24:16.0335942Z [36;1mcapture_head home-html-head 'text/html'[0m
+2026-10-06T18:24:16.0337129Z [36;1mcapture_head home-markdown-head 'text/markdown'[0m
+2026-10-06T18:24:16.0338544Z [36;1m{[0m
+2026-10-06T18:24:16.0339596Z [36;1m  echo 'capture_end_utc='"$(date -u +'%Y-%m-%dT%H:%M:%SZ')"[0m
+2026-10-06T18:24:16.0341032Z [36;1m  for name in home-html-head home-markdown-head; do[0m
+2026-10-06T18:24:16.0342269Z [36;1m    echo "===== ${name}.status ====="[0m
+2026-10-06T18:24:16.0343345Z [36;1m    cat "$out/${name}.status" 2>/dev/null || true[0m
+2026-10-06T18:24:16.0344585Z [36;1m    echo "===== ${name}.headers ====="[0m
+2026-10-06T18:24:16.0345734Z [36;1m    cat "$out/${name}.headers" 2>/dev/null || true[0m
+2026-10-06T18:24:16.0346958Z [36;1m    echo "===== ${name}.trace ====="[0m
+2026-10-06T18:24:16.0348439Z [36;1m    cat "$out/${name}.trace" 2>/dev/null || true[0m
+2026-10-06T18:24:16.0349530Z [36;1m  done[0m
+2026-10-06T18:24:16.0350527Z [36;1m} | tee "$RUNNER_TEMP/f2b-etag-client-capture.log"[0m
+2026-10-06T18:24:16.0351715Z [36;1m{[0m
+2026-10-06T18:24:16.0352722Z [36;1m  cat "$RUNNER_TEMP/f2b-etag-client-provenance.txt"[0m
+2026-10-06T18:24:16.0354127Z [36;1m  cat "$RUNNER_TEMP/f2b-etag-client-capture.log"[0m
+2026-10-06T18:24:16.0355304Z [36;1m} | sha256sum[0m
+2026-10-06T18:24:16.0357070Z [36;1mfor file in "$RUNNER_TEMP/f2b-etag-client-provenance.txt" "$RUNNER_TEMP/f2b-etag-client-capture.log" "$out"/*; do[0m
+2026-10-06T18:24:16.0359362Z [36;1m  [[ -f "$file" ]] || continue[0m
+2026-10-06T18:24:16.0360364Z [36;1m  wc -c "$file"[0m
+2026-10-06T18:24:16.0361246Z [36;1m  sha256sum "$file"[0m
+2026-10-06T18:24:16.0362142Z [36;1mdone[0m
+2026-10-06T18:24:16.0439410Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-06T18:24:16.0440138Z ##[endgroup]
+2026-10-06T18:24:17.1779552Z capture_end_utc=2026-10-06T18:24:17Z
+2026-10-06T18:24:17.1780979Z ===== home-html-head.status =====
+2026-10-06T18:24:17.1788525Z curl_http_status=200
+2026-10-06T18:24:17.1789854Z http_version=2
+2026-10-06T18:24:17.1791302Z curl_exit_code=0
+2026-10-06T18:24:17.1792143Z ===== home-html-head.headers =====
+2026-10-06T18:24:17.1800792Z HTTP/2 200 
+2026-10-06T18:24:17.1802647Z date: Tue, 06 Oct 2026 18:24:16 GMT
+2026-10-06T18:24:17.1804939Z content-type: text/html; charset=utf-8
+2026-10-06T18:24:17.1806953Z cf-cache-status: HIT
+2026-10-06T18:24:17.1808713Z cache-control: private, no-store
+2026-10-06T18:24:17.1810671Z link: <https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"
+2026-10-06T18:24:17.1813609Z strict-transport-security: max-age=31536000; includeSubDomains
+2026-10-06T18:24:17.1815424Z vary: Accept
+2026-10-06T18:24:17.1816610Z x-f2b-diag-assets-index-etag: "e0a08d20cffa737788d0811bd118b755"
+2026-10-06T18:24:17.1818960Z x-f2b-diag-assets-representation-etag: "a791cc206d8b7a5dc2c8f993dce7c454"
+2026-10-06T18:24:17.1820803Z x-f2b-diag-wrapper-etag: "a791cc206d8b7a5dc2c8f993dce7c454"
+2026-10-06T18:24:17.1822165Z x-robots-tag: noindex
+2026-10-06T18:24:17.1823792Z permissions-policy: geolocation=(), microphone=(), camera=()
+2026-10-06T18:24:17.1826479Z referrer-policy: strict-origin-when-cross-origin
+2026-10-06T18:24:17.1828371Z x-content-type-options: nosniff
+2026-10-06T18:24:17.1834375Z report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ozhEI92y3wI8FY2YWj7UbQMBzPa08%2FY1EY13JomH9mJQblP68XV9JbPvkwrShtvQPcCW0yvaO0KirmrdFg8xDjKtqqSvBY5pSb8mLlFOO4nRosTTBxu0DheroUyQM7l%2BJJDEgGl0ADEi%2FF9U6eRgeqF1P3xOYJV1B2aBvL%2B6UI8%3D"}]}
+2026-10-06T18:24:17.1842258Z nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+2026-10-06T18:24:17.1844205Z server: cloudflare
+2026-10-06T18:24:17.1845615Z cf-ray: a466b3b50ff7e809-SEA
+2026-10-06T18:24:17.1847660Z alt-svc: h3=":443"; ma=86400
+2026-10-06T18:24:17.1848867Z 
+2026-10-06T18:24:17.1849436Z ===== home-html-head.trace =====
+2026-10-06T18:24:17.1851337Z * Host 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev:443 was resolved.
+2026-10-06T18:24:17.1868595Z * IPv6: 2606:4700:3033::ac43:8bda, 2606:4700:3034::6815:46d7
+2026-10-06T18:24:17.1871166Z * IPv4: 104.21.70.215, 172.67.139.218
+2026-10-06T18:24:17.1873191Z *   Trying 104.21.70.215:443...
+2026-10-06T18:24:17.1876288Z * Connected to 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev (104.21.70.215) port 443
+2026-10-06T18:24:17.1879893Z * ALPN: curl offers h2,http/1.1
+2026-10-06T18:24:17.1881240Z } [5 bytes data]
+2026-10-06T18:24:17.1882523Z * TLSv1.3 (OUT), TLS handshake, Client hello (1):
+2026-10-06T18:24:17.1884076Z } [512 bytes data]
+2026-10-06T18:24:17.1885321Z *  CAfile: /etc/ssl/certs/ca-certificates.crt
+2026-10-06T18:24:17.1886826Z *  CApath: /etc/ssl/certs
+2026-10-06T18:24:17.1888491Z { [5 bytes data]
+2026-10-06T18:24:17.1889747Z * TLSv1.3 (IN), TLS handshake, Server hello (2):
+2026-10-06T18:24:17.1891248Z { [122 bytes data]
+2026-10-06T18:24:17.1892548Z * TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+2026-10-06T18:24:17.1894210Z { [19 bytes data]
+2026-10-06T18:24:17.1895360Z * TLSv1.3 (IN), TLS handshake, Certificate (11):
+2026-10-06T18:24:17.1896808Z { [2509 bytes data]
+2026-10-06T18:24:17.1898210Z * TLSv1.3 (IN), TLS handshake, CERT verify (15):
+2026-10-06T18:24:17.1899816Z { [78 bytes data]
+2026-10-06T18:24:17.1901164Z * TLSv1.3 (IN), TLS handshake, Finished (20):
+2026-10-06T18:24:17.1903345Z { [52 bytes data]
+2026-10-06T18:24:17.1904619Z * TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+2026-10-06T18:24:17.1906143Z } [1 bytes data]
+2026-10-06T18:24:17.1907258Z * TLSv1.3 (OUT), TLS handshake, Finished (20):
+2026-10-06T18:24:17.1908926Z } [52 bytes data]
+2026-10-06T18:24:17.1910459Z * SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / id-ecPublicKey
+2026-10-06T18:24:17.1912335Z * ALPN: server accepted h2
+2026-10-06T18:24:17.1913478Z * Server certificate:
+2026-10-06T18:24:17.1914732Z *  subject: CN=g1721m.workers.dev
+2026-10-06T18:24:17.1916334Z *  start date: Sep 18 17:21:13 2026 GMT
+2026-10-06T18:24:17.1918523Z *  expire date: Dec 17 18:18:35 2026 GMT
+2026-10-06T18:24:17.1920929Z *  subjectAltName: host "5c55fc8d-cuidatuperroviejo.g1721m.workers.dev" matched cert's "*.g1721m.workers.dev"
+2026-10-06T18:24:17.1923744Z *  issuer: C=US; O=Google Trust Services; CN=WE1
+2026-10-06T18:24:17.1925345Z *  SSL certificate verify ok.
+2026-10-06T18:24:17.1928546Z *   Certificate level 0: Public key type EC/prime256v1 (256/128 Bits/secBits), signed using ecdsa-with-SHA256
+2026-10-06T18:24:17.1932407Z *   Certificate level 1: Public key type EC/prime256v1 (256/128 Bits/secBits), signed using ecdsa-with-SHA384
+2026-10-06T18:24:17.1935584Z *   Certificate level 2: Public key type EC/secp384r1 (384/192 Bits/secBits), signed using ecdsa-with-SHA384
+2026-10-06T18:24:17.1938081Z } [5 bytes data]
+2026-10-06T18:24:17.1939071Z * using HTTP/2
+2026-10-06T18:24:17.1940905Z * [HTTP/2] [1] OPENED stream for https://5c55fc8d-cuidatuperroviejo.g1721m.workers.dev/
+2026-10-06T18:24:17.1943866Z * [HTTP/2] [1] [:method: HEAD]
+2026-10-06T18:24:17.1945091Z * [HTTP/2] [1] [:scheme: https]
+2026-10-06T18:24:17.1946706Z * [HTTP/2] [1] [:authority: 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev]
+2026-10-06T18:24:17.1948829Z * [HTTP/2] [1] [:path: /]
+2026-10-06T18:24:17.1950094Z * [HTTP/2] [1] [user-agent: ctpv-f2b-etag-spike/1.0]
+2026-10-06T18:24:17.1951711Z * [HTTP/2] [1] [accept: text/html]
+2026-10-06T18:24:17.1953413Z * [HTTP/2] [1] [accept-encoding: identity]
+2026-10-06T18:24:17.1955312Z } [5 bytes data]
+2026-10-06T18:24:17.1956300Z > HEAD / HTTP/2
+2026-10-06T18:24:17.1957767Z > Host: 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev
+2026-10-06T18:24:17.1959355Z > User-Agent: ctpv-f2b-etag-spike/1.0
+2026-10-06T18:24:17.1960619Z > Accept: text/html
+2026-10-06T18:24:17.1961667Z > Accept-Encoding: identity
+2026-10-06T18:24:17.1962785Z > 
+2026-10-06T18:24:17.1963647Z { [5 bytes data]
+2026-10-06T18:24:17.1964766Z * TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+2026-10-06T18:24:17.1966399Z { [230 bytes data]
+2026-10-06T18:24:17.1968402Z * TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+2026-10-06T18:24:17.1970286Z { [230 bytes data]
+2026-10-06T18:24:17.1971303Z * old SSL session ID is stale, removing
+2026-10-06T18:24:17.1972504Z { [5 bytes data]
+2026-10-06T18:24:17.1973402Z < HTTP/2 200 
+2026-10-06T18:24:17.1974320Z < date: Tue, 06 Oct 2026 18:24:16 GMT
+2026-10-06T18:24:17.1975567Z < content-type: text/html; charset=utf-8
+2026-10-06T18:24:17.1977057Z < cf-cache-status: HIT
+2026-10-06T18:24:17.1978863Z < cache-control: private, no-store
+2026-10-06T18:24:17.1981258Z < link: <https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"
+2026-10-06T18:24:17.1983596Z < strict-transport-security: max-age=31536000; includeSubDomains
+2026-10-06T18:24:17.1985182Z < vary: Accept
+2026-10-06T18:24:17.1986468Z < x-f2b-diag-assets-index-etag: "e0a08d20cffa737788d0811bd118b755"
+2026-10-06T18:24:17.1988934Z < x-f2b-diag-assets-representation-etag: "a791cc206d8b7a5dc2c8f993dce7c454"
+2026-10-06T18:24:17.1991210Z < x-f2b-diag-wrapper-etag: "a791cc206d8b7a5dc2c8f993dce7c454"
+2026-10-06T18:24:17.1993388Z < x-robots-tag: noindex
+2026-10-06T18:24:17.1995187Z < permissions-policy: geolocation=(), microphone=(), camera=()
+2026-10-06T18:24:17.1996920Z < referrer-policy: strict-origin-when-cross-origin
+2026-10-06T18:24:17.1998645Z < x-content-type-options: nosniff
+2026-10-06T18:24:17.2005225Z < report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ozhEI92y3wI8FY2YWj7UbQMBzPa08%2FY1EY13JomH9mJQblP68XV9JbPvkwrShtvQPcCW0yvaO0KirmrdFg8xDjKtqqSvBY5pSb8mLlFOO4nRosTTBxu0DheroUyQM7l%2BJJDEgGl0ADEi%2FF9U6eRgeqF1P3xOYJV1B2aBvL%2B6UI8%3D"}]}
+2026-10-06T18:24:17.2011444Z < nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+2026-10-06T18:24:17.2012985Z < server: cloudflare
+2026-10-06T18:24:17.2013961Z < cf-ray: a466b3b50ff7e809-SEA
+2026-10-06T18:24:17.2015066Z < alt-svc: h3=":443"; ma=86400
+2026-10-06T18:24:17.2016284Z < 
+2026-10-06T18:24:17.2018366Z * Connection #0 to host 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev left intact
+2026-10-06T18:24:17.2020917Z ===== home-markdown-head.status =====
+2026-10-06T18:24:17.2022402Z curl_http_status=200
+2026-10-06T18:24:17.2023362Z http_version=2
+2026-10-06T18:24:17.2024254Z curl_exit_code=0
+2026-10-06T18:24:17.2025244Z ===== home-markdown-head.headers =====
+2026-10-06T18:24:17.2026559Z HTTP/2 200 
+2026-10-06T18:24:17.2027787Z date: Tue, 06 Oct 2026 18:24:17 GMT
+2026-10-06T18:24:17.2029800Z content-type: text/markdown; charset=utf-8
+2026-10-06T18:24:17.2031417Z cf-cache-status: HIT
+2026-10-06T18:24:17.2032694Z cache-control: private, no-store
+2026-10-06T18:24:17.2033925Z etag: "c262365b8aeb7213ef529ce3e9d9fa15"
+2026-10-06T18:24:17.2035810Z link: <https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"
+2026-10-06T18:24:17.2038306Z strict-transport-security: max-age=31536000; includeSubDomains
+2026-10-06T18:24:17.2040209Z vary: Accept
+2026-10-06T18:24:17.2041679Z x-f2b-diag-assets-index-etag: "e0a08d20cffa737788d0811bd118b755"
+2026-10-06T18:24:17.2044848Z x-f2b-diag-assets-representation-etag: "c262365b8aeb7213ef529ce3e9d9fa15"
+2026-10-06T18:24:17.2046952Z x-f2b-diag-wrapper-etag: "c262365b8aeb7213ef529ce3e9d9fa15"
+2026-10-06T18:24:17.2048678Z x-robots-tag: noindex
+2026-10-06T18:24:17.2049981Z permissions-policy: geolocation=(), microphone=(), camera=()
+2026-10-06T18:24:17.2051800Z referrer-policy: strict-origin-when-cross-origin
+2026-10-06T18:24:17.2053620Z x-content-type-options: nosniff
+2026-10-06T18:24:17.2059930Z report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=WDvEwrbjOVkBljm3qtYyCP15Nk%2B668yzodkqNIYirE58ID2Pexzyd%2BylEdQrnCklYtRx5GMzRnb9X1f5vtqBvH7XgxuH1gqbqIUtjaphaIAB7swebMwiCGJ2uYczHEz396B1WuYi7L8evU5NJ4O%2B%2F2iG30MCq4t4WU6K0prI04s%3D"}]}
+2026-10-06T18:24:17.2065649Z nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+2026-10-06T18:24:17.2067519Z server: cloudflare
+2026-10-06T18:24:17.2069092Z cf-ray: a466b3b91ee99d6b-PDX
+2026-10-06T18:24:17.2070725Z alt-svc: h3=":443"; ma=86400
+2026-10-06T18:24:17.2071412Z 
+2026-10-06T18:24:17.2071860Z ===== home-markdown-head.trace =====
+2026-10-06T18:24:17.2073678Z * Host 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev:443 was resolved.
+2026-10-06T18:24:17.2076195Z * IPv6: 2606:4700:3034::6815:46d7, 2606:4700:3033::ac43:8bda
+2026-10-06T18:24:17.2078225Z * IPv4: 104.21.70.215, 172.67.139.218
+2026-10-06T18:24:17.2080111Z *   Trying 104.21.70.215:443...
+2026-10-06T18:24:17.2082196Z * Connected to 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev (104.21.70.215) port 443
+2026-10-06T18:24:17.2084172Z * ALPN: curl offers h2,http/1.1
+2026-10-06T18:24:17.2085251Z } [5 bytes data]
+2026-10-06T18:24:17.2086287Z * TLSv1.3 (OUT), TLS handshake, Client hello (1):
+2026-10-06T18:24:17.2087869Z } [512 bytes data]
+2026-10-06T18:24:17.2088908Z *  CAfile: /etc/ssl/certs/ca-certificates.crt
+2026-10-06T18:24:17.2090194Z *  CApath: /etc/ssl/certs
+2026-10-06T18:24:17.2091410Z { [5 bytes data]
+2026-10-06T18:24:17.2092462Z * TLSv1.3 (IN), TLS handshake, Server hello (2):
+2026-10-06T18:24:17.2094470Z { [122 bytes data]
+2026-10-06T18:24:17.2096681Z * TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+2026-10-06T18:24:17.2098959Z { [19 bytes data]
+2026-10-06T18:24:17.2100013Z * TLSv1.3 (IN), TLS handshake, Certificate (11):
+2026-10-06T18:24:17.2101320Z { [2509 bytes data]
+2026-10-06T18:24:17.2102363Z * TLSv1.3 (IN), TLS handshake, CERT verify (15):
+2026-10-06T18:24:17.2103657Z { [79 bytes data]
+2026-10-06T18:24:17.2104666Z * TLSv1.3 (IN), TLS handshake, Finished (20):
+2026-10-06T18:24:17.2105938Z { [52 bytes data]
+2026-10-06T18:24:17.2107083Z * TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+2026-10-06T18:24:17.2108791Z } [1 bytes data]
+2026-10-06T18:24:17.2109817Z * TLSv1.3 (OUT), TLS handshake, Finished (20):
+2026-10-06T18:24:17.2111081Z } [52 bytes data]
+2026-10-06T18:24:17.2112495Z * SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / id-ecPublicKey
+2026-10-06T18:24:17.2114268Z * ALPN: server accepted h2
+2026-10-06T18:24:17.2115305Z * Server certificate:
+2026-10-06T18:24:17.2116316Z *  subject: CN=g1721m.workers.dev
+2026-10-06T18:24:17.2117951Z *  start date: Sep 18 17:21:13 2026 GMT
+2026-10-06T18:24:17.2119190Z *  expire date: Dec 17 18:18:35 2026 GMT
+2026-10-06T18:24:17.2121428Z *  subjectAltName: host "5c55fc8d-cuidatuperroviejo.g1721m.workers.dev" matched cert's "*.g1721m.workers.dev"
+2026-10-06T18:24:17.2123843Z *  issuer: C=US; O=Google Trust Services; CN=WE1
+2026-10-06T18:24:17.2125165Z *  SSL certificate verify ok.
+2026-10-06T18:24:17.2127528Z *   Certificate level 0: Public key type EC/prime256v1 (256/128 Bits/secBits), signed using ecdsa-with-SHA256
+2026-10-06T18:24:17.2130761Z *   Certificate level 1: Public key type EC/prime256v1 (256/128 Bits/secBits), signed using ecdsa-with-SHA384
+2026-10-06T18:24:17.2133815Z *   Certificate level 2: Public key type EC/secp384r1 (384/192 Bits/secBits), signed using ecdsa-with-SHA384
+2026-10-06T18:24:17.2135917Z } [5 bytes data]
+2026-10-06T18:24:17.2136821Z * using HTTP/2
+2026-10-06T18:24:17.2138598Z * [HTTP/2] [1] OPENED stream for https://5c55fc8d-cuidatuperroviejo.g1721m.workers.dev/
+2026-10-06T18:24:17.2140486Z * [HTTP/2] [1] [:method: HEAD]
+2026-10-06T18:24:17.2141586Z * [HTTP/2] [1] [:scheme: https]
+2026-10-06T18:24:17.2143095Z * [HTTP/2] [1] [:authority: 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev]
+2026-10-06T18:24:17.2144745Z * [HTTP/2] [1] [:path: /]
+2026-10-06T18:24:17.2145918Z * [HTTP/2] [1] [user-agent: ctpv-f2b-etag-spike/1.0]
+2026-10-06T18:24:17.2147296Z * [HTTP/2] [1] [accept: text/markdown]
+2026-10-06T18:24:17.2148829Z * [HTTP/2] [1] [accept-encoding: identity]
+2026-10-06T18:24:17.2150044Z } [5 bytes data]
+2026-10-06T18:24:17.2150940Z > HEAD / HTTP/2
+2026-10-06T18:24:17.2152044Z > Host: 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev
+2026-10-06T18:24:17.2153497Z > User-Agent: ctpv-f2b-etag-spike/1.0
+2026-10-06T18:24:17.2154688Z > Accept: text/markdown
+2026-10-06T18:24:17.2155688Z > Accept-Encoding: identity
+2026-10-06T18:24:17.2156696Z > 
+2026-10-06T18:24:17.2157727Z { [5 bytes data]
+2026-10-06T18:24:17.2158815Z * TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+2026-10-06T18:24:17.2160153Z { [230 bytes data]
+2026-10-06T18:24:17.2161235Z * TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+2026-10-06T18:24:17.2162559Z { [230 bytes data]
+2026-10-06T18:24:17.2163532Z * old SSL session ID is stale, removing
+2026-10-06T18:24:17.2164709Z { [5 bytes data]
+2026-10-06T18:24:17.2165589Z < HTTP/2 200 
+2026-10-06T18:24:17.2166487Z < date: Tue, 06 Oct 2026 18:24:17 GMT
+2026-10-06T18:24:17.2167964Z < content-type: text/markdown; charset=utf-8
+2026-10-06T18:24:17.2169239Z < cf-cache-status: HIT
+2026-10-06T18:24:17.2170267Z < cache-control: private, no-store
+2026-10-06T18:24:17.2171459Z < etag: "c262365b8aeb7213ef529ce3e9d9fa15"
+2026-10-06T18:24:17.2173312Z < link: <https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"
+2026-10-06T18:24:17.2175532Z < strict-transport-security: max-age=31536000; includeSubDomains
+2026-10-06T18:24:17.2177053Z < vary: Accept
+2026-10-06T18:24:17.2178534Z < x-f2b-diag-assets-index-etag: "e0a08d20cffa737788d0811bd118b755"
+2026-10-06T18:24:17.2180629Z < x-f2b-diag-assets-representation-etag: "c262365b8aeb7213ef529ce3e9d9fa15"
+2026-10-06T18:24:17.2182681Z < x-f2b-diag-wrapper-etag: "c262365b8aeb7213ef529ce3e9d9fa15"
+2026-10-06T18:24:17.2184178Z < x-robots-tag: noindex
+2026-10-06T18:24:17.2185487Z < permissions-policy: geolocation=(), microphone=(), camera=()
+2026-10-06T18:24:17.2187188Z < referrer-policy: strict-origin-when-cross-origin
+2026-10-06T18:24:17.2188896Z < x-content-type-options: nosniff
+2026-10-06T18:24:17.2194015Z < report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=WDvEwrbjOVkBljm3qtYyCP15Nk%2B668yzodkqNIYirE58ID2Pexzyd%2BylEdQrnCklYtRx5GMzRnb9X1f5vtqBvH7XgxuH1gqbqIUtjaphaIAB7swebMwiCGJ2uYczHEz396B1WuYi7L8evU5NJ4O%2B%2F2iG30MCq4t4WU6K0prI04s%3D"}]}
+2026-10-06T18:24:17.2199736Z < nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+2026-10-06T18:24:17.2201249Z < server: cloudflare
+2026-10-06T18:24:17.2202225Z < cf-ray: a466b3b91ee99d6b-PDX
+2026-10-06T18:24:17.2203299Z < alt-svc: h3=":443"; ma=86400
+2026-10-06T18:24:17.2204498Z < 
+2026-10-06T18:24:17.2205881Z * Connection #0 to host 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev left intact
+2026-10-06T18:24:17.2208331Z 818f9756bb156f5ab59d0ddffae5bb9b85c0be1ffa34caf5457e33e549bd5b24  -
+2026-10-06T18:24:17.2210220Z 431 /home/runner/work/_temp/f2b-etag-client-provenance.txt
+2026-10-06T18:24:17.2212989Z 20663c533e0747edd44650421144c57b796b52888b7ef6a862fe369943e3fb5d  /home/runner/work/_temp/f2b-etag-client-provenance.txt
+2026-10-06T18:24:17.2215636Z 10339 /home/runner/work/_temp/f2b-etag-client-capture.log
+2026-10-06T18:24:17.2218407Z 98958b133c24048f5f0a0adaf7c3d4110ddfe861152f268eb21fe84e21515306  /home/runner/work/_temp/f2b-etag-client-capture.log
+2026-10-06T18:24:17.2221135Z 1127 /home/runner/work/_temp/f2b-etag-client/home-html-head.headers
+2026-10-06T18:24:17.2223950Z 2205bb7e736b95b5d00f87aef43b4924ef63422e843a03df375103fb5223e7db  /home/runner/work/_temp/f2b-etag-client/home-html-head.headers
+2026-10-06T18:24:17.2226773Z 53 /home/runner/work/_temp/f2b-etag-client/home-html-head.status
+2026-10-06T18:24:17.2229871Z 2144f3a0cdaadd813217b9df0fb4e7a797bef6a7b02a7f448fe1d278d3c4496b  /home/runner/work/_temp/f2b-etag-client/home-html-head.status
+2026-10-06T18:24:17.2232692Z 3812 /home/runner/work/_temp/f2b-etag-client/home-html-head.trace
+2026-10-06T18:24:17.2235466Z 63b45ea821321107453009c34cff100e4db3fe34ac2edac03c3ac589c391f199  /home/runner/work/_temp/f2b-etag-client/home-html-head.trace
+2026-10-06T18:24:17.2238600Z 1173 /home/runner/work/_temp/f2b-etag-client/home-markdown-head.headers
+2026-10-06T18:24:17.2241578Z 944d8f7ba076f01e0c6daaff6b9d5f4da1d81cbdbc9ed652ee921b6d6fbfb90c  /home/runner/work/_temp/f2b-etag-client/home-markdown-head.headers
+2026-10-06T18:24:17.2244525Z 53 /home/runner/work/_temp/f2b-etag-client/home-markdown-head.status
+2026-10-06T18:24:17.2247686Z 2144f3a0cdaadd813217b9df0fb4e7a797bef6a7b02a7f448fe1d278d3c4496b  /home/runner/work/_temp/f2b-etag-client/home-markdown-head.status
+2026-10-06T18:24:17.2250721Z 3868 /home/runner/work/_temp/f2b-etag-client/home-markdown-head.trace
+2026-10-06T18:24:17.2253611Z dd080c54a88412f5c584ac3dcb187df1307241d43a286a4fc0ef12b2a71d9385  /home/runner/work/_temp/f2b-etag-client/home-markdown-head.trace
+2026-10-06T18:24:17.2361731Z Cleaning up orphan processes
