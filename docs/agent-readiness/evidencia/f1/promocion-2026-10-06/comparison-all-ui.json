@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "agent-readiness-comparison/1",
+  "comparable": true,
+  "reasons": [],
+  "before": {
+    "requestSha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+    "responseSha256": "42be1970d05251bc9ad351a678eac898866613330799caf44f8232b58edbd1c3",
+    "sourceCommit": "35e767647a05034baa3b4e371bee4f7a3849545d",
+    "score": 20
+  },
+  "after": {
+    "requestSha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+    "responseSha256": "89c5057f84591a183b35709391a94382118cd691af3521da3e9fdb5efa707a15",
+    "sourceCommit": "34517cfd8af3c28f4840f9d0abc253741049ee9e",
+    "score": 33
+  },
+  "scoreDelta": 13,
+  "checkChanges": [
+    {
+      "category": "botAccessControl",
+      "id": "contentSignals",
+      "beforeStatus": "fail",
+      "afterStatus": "pass"
+    },
+    {
+      "category": "discoverability",
+      "id": "linkHeaders",
+      "beforeStatus": "fail",
+      "afterStatus": "pass"
+    }
+  ]
+}

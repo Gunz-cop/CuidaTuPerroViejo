@@ -1,7 +1,7 @@
 # Cuida tu Perro Viejo: arquitectura para agentes
 
 Fecha: 2026-10-01. Base técnica: `main@cdb0adece5d629f6b2473be7ea6e30c0b372ef1c`.
-Estado: F0 aceptada técnicamente con auditoría independiente PASS 3/5 y [ratificación del coordinador](evidencia/f0/cierre-arquitectonico.md). F1 aceptada técnicamente con [auditoría de implementación PASS 1/5](evidencia/f1/auditoria/auditoria-f1-implementacion-r1.md), [cierre arquitectónico](evidencia/f1/cierre-arquitectonico.md) y SDD previamente aprobada PASS 2/2. Ninguna mejora de estas ramas se ha promovido a producción.
+Estado: F0 aceptada técnicamente con auditoría independiente PASS 3/5 y [ratificación del coordinador](evidencia/f0/cierre-arquitectonico.md). F1 aceptada técnicamente con [auditoría de implementación PASS 1/5](evidencia/f1/auditoria/auditoria-f1-implementacion-r1.md), [cierre arquitectónico](evidencia/f1/cierre-arquitectonico.md) y SDD previamente aprobada PASS 2/2. F1 [publicada y verificada](evidencia/f1/promocion-2026-10-06/resultado.md) el 2026-10-06 tras autorización del propietario: 71/100 Content Site, 33/100 All Checks y nivel 2/5.
 
 El objetivo es maximizar la puntuación verificable de [isitagentready.com](https://isitagentready.com) y que un agente pueda descubrir el sitio, leer una guía con sus fuentes y advertencias, citarla y utilizar las herramientas existentes.
 
@@ -37,6 +37,6 @@ Confirmada en esta conversación: `search=yes`, `ai-input=yes`, `ai-train=no`. L
 
 ## Próximo paso
 
-Solicitar autorización para promocionar la cadena de PR aceptada y verificar P01–P03 de F1. Preparar la SDD de F2 con sus contratos de paridad y preview pública; no lanzar implementación sin spec auditada y SHA fijo. Los programadores continúan siendo **Luna 6, razonamiento alto**, con auditoría independiente y máximo cinco revisiones por issue. F2–F6 conservan alcance de planificación.
+F1 está publicada y P01–P03 pasan con evidencia real. Preparar la SDD de F2 con sus contratos de paridad y preview pública; no lanzar implementación sin spec auditada y SHA fijo. Los programadores continúan siendo **Luna 6, razonamiento alto**, con auditoría independiente y máximo cinco revisiones por issue. F2–F6 conservan alcance de planificación.
 
-Los implementadores parten de una rama de trabajo. `main` despliega producción al recibir cambios: documentación, H1 y corrección del canonical se entregan en PR apilados y no se fusionan automáticamente.
+La cadena de PR de F0/F1 se integró por autorización expresa del propietario; las fases siguientes requieren su propia entrega y autorización de promoción. Los implementadores parten de una rama de trabajo. `main` despliega producción al recibir cambios: documentación, H1 y corrección del canonical se entregan en PR apilados y no se fusionan automáticamente.
