@@ -23,8 +23,9 @@ class ProjectionError extends Error {
 }
 
 function canonicalPathValid(value) {
+  if (typeof value !== 'string' || value.length > 100) return false;
   if (value === '/') return true;
-  if (typeof value !== 'string' || !value.startsWith('/') || value.endsWith('/') || /[%?#\\]/u.test(value) || value.includes('//')) return false;
+  if (!value.startsWith('/') || value.endsWith('/') || /[%?#\\]/u.test(value) || value.includes('//')) return false;
   const segments = value.slice(1).split('/');
   return segments.every((part) => part !== '.' && part !== '..' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(part));
 }

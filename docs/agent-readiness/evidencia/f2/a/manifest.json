@@ -2,6 +2,13 @@
   "schemaVersion": "f2a-evidence/1",
   "baseSha": "cac7ee039607ee9923a403a4e2f299437ff94af2",
   "baseTree": "fcb639ddc7680ec69b5fb862731ab9174ee37a8a",
+  "historicalCapture": {
+    "sha": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+    "tree": "279a754c5ed26d53958baa556d0584db40b1ad89",
+    "previewReceipt": "auditoria-r1-bundle/receipt.json",
+    "previewUrl": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev",
+    "source": "Independent implementation auditor R1; none of these measurements describe the local corrected candidate."
+  },
   "index": {
     "path": "index.json",
     "sha256": "d2868aa542def5a6ea7bd2b18956d3a15016b792de8b05b79789d87db9e6df73",
@@ -58,7 +65,159 @@
     "limitMutation": "Inventory recognizes 99 concordant docs; generator fails at cap 98 and creates no projection directory"
   },
   "limitations": [
-    "Commit Preview GET/HEAD and CI receipts require published frozen PR HEAD; production gate and deployment intentionally out of scope.",
-    "Workerd HEAD omitted Content-Length; contract permits omission and requires it to match only if present."
-  ]
+    "Historical top-level index/build/workerd/preview measurements remain exclusively d628 values. The corrected source code 54e51a2 has three successful clean Astro builds and local Workerd evidence; the final PR Commit Preview and CI/Workers receipt for the published source/evidence head and R2 report are still pending.",
+    "The implementer’s former dist/f2-preview-evidence-d628 capture directory is absent; the independent auditor’s R1 bundle is preserved with its original source SHA.",
+    "The R1 auditor’s Python default client received HTTP 403 / Cloudflare 1010; the explicitly identified auditor client received 200 for 60/60 requests. This remains a client limitation, not a general preview outage.",
+    "Historical d628 Workerd HEAD responses omitted Content-Length; the contract permits omission and requires matching length only when present.",
+    "The final local Workerd run used an isolated copy of the compiled configuration with only ASSETS and SESSION local. It does not validate the public Commit Preview or remote bindings."
+  ],
+  "r1Audit": {
+    "report": "auditoria-r1-implementacion.md",
+    "reportSha256": "0673b6955f957059f5be752c3b4477f91bd65c5e137aa143f55dc204176f58b0",
+    "bundle": "auditoria-r1-bundle/",
+    "bundleManifestSha256": "a212172c2d1e1ffa22cbf0f2c8111c92b1e17d7ccf2500eadc18b72f570aea6d",
+    "result": "FAIL B01-B05; R1 of 5 consumed. No R2 has started."
+  },
+  "localCorrectionValidation": {
+    "status": "offline source-HTML validation only; not an Astro build, public preview, CI result, or acceptance",
+    "sourceHtml": "Temporary copy of the preserved dist output associated with public candidate d628f371b32cd7c4bb698ba906b2648c4cd6178a / tree 279a754c5ed26d53958baa556d0584db40b1ad89. The final Astro build was not repeated.",
+    "projectionCheck": "PASS: 28 inventory documents and closed 29-file projection; exact byte check in temporary build copy.",
+    "independentSemanticGuard": "PASS: all 28 source HTML documents; mutation guards detected loss, duplication, reordering, and removed URL in temporary build copy.",
+    "focusedTests": "PASS: 42 agent-readiness tests, including GFM list-card structure, growth to concordant 29, and isolated canonical paths 100/101/115.",
+    "determinism": "PASS: two expected-artifact calculations over the same preserved HTML produced identical 28 Markdown documents plus index (558220 Markdown bytes; 29 artifacts).",
+    "generalHarness": "Initial default-sandbox run recorded Git spawnSync EPERM; the single rerun with additional process permissions passed all 42 agent-readiness tests.",
+    "migrationSpecAudit": "PASS: node scripts/audit-specs-migracion.mjs.",
+    "records": [
+      "projection-r1-local-tests.log",
+      "projection-r1-local-guard.log",
+      "projection-r1-local-check.log",
+      "projection-r1-local-determinism.json",
+      "projection-r1-local-spec-audit.log",
+      "projection-r1-local-harness.log",
+      "projection-r1-local-harness-recheck.log",
+      "projection-r1-local-hardbreak-mismatch.log",
+      "projection-r1-local-artifacts.json"
+    ]
+  },
+  "candidateMeasurement": {
+    "sourceCodeSha": "54e51a2138d90e822e5a6e6c12a0e56345ec1173",
+    "sourceCodeTree": "47790c1d300e47ee38db464f7dcec2c6e693baad",
+    "branch": "agent-ready/f2a-proyeccion",
+    "measurementNote": "These builds validate the product source code at sourceCodeSha. Evidence and documentation added after those builds are tracked separately; this manifest does not claim the later documentation closure was the build input.",
+    "authorization": "Owner explicitly authorized Astro builds and PR validation on 2026-10-06, accepting possible AI binding charges; no AI binding, API, admin, contact, or other remote endpoint was invoked directly.",
+    "builds": {
+      "cleanBuildCount": 3,
+      "sourceShaForAll": "54e51a2138d90e822e5a6e6c12a0e56345ec1173",
+      "exitCodes": [
+        0,
+        0,
+        0
+      ],
+      "logs": [
+        "build-final-1.log",
+        "build-final-2.log",
+        "build-final-3.log"
+      ],
+      "fullOutputManifests": [
+        "build-final-1.sha256",
+        "build-final-2.sha256",
+        "build-final-3.sha256"
+      ],
+      "contractCorpus": {
+        "schemaVersion": "agent-content/1",
+        "documentCount": 28,
+        "artifactCount": 29,
+        "indexSha256": "9a0b0a3d765d4f59110edf30631ccb5fddb30449b129f25fb893f4f19154aa32",
+        "corpusSha256": "4fa610349e6233f5b3a83d8b93a015799ebe02943b6742e82f890914b7483087",
+        "indexBytes": 26284,
+        "totalMarkdownBytes": 558220,
+        "minDocumentBytes": 2477,
+        "maxDocumentBytes": 47785,
+        "identicalAcrossAllThreeBuilds": true,
+        "htmlInputsIdenticalAcrossAllThreeBuilds": true
+      },
+      "fullOutputDifferencesOutsideF2Contract": [
+        "dist/client/contacto.html",
+        "dist/server/chunks/entrypoints_BZDcIFRV.mjs"
+      ],
+      "warning": "Each build recorded Wrangler warning that AI bindings always access remote resources and may incur usage charges even in local dev. This was config validation/build only; no AI request was issued.",
+      "projectionOutputManifests": [
+        "agent-content-v1-build-1.sha256",
+        "agent-content-v1-build-2.sha256",
+        "agent-content-v1-build-3.sha256"
+      ],
+      "sourceHtmlHashManifest": "source-html-final.json"
+    },
+    "checks": {
+      "astroCheck": {
+        "exitCode": 0,
+        "errors": 0,
+        "warnings": 0,
+        "hints": 50,
+        "log": "astro-check-final.log"
+      },
+      "npmTest": {
+        "exitCode": 0,
+        "tests": 1,
+        "passed": 1,
+        "failed": 0,
+        "log": "npm-test-final.log"
+      },
+      "agentReadinessSuite": {
+        "result": "PASS 42/42",
+        "log": "projection-r1-local-harness-recheck.log",
+        "sourceCodeSha": "54e51a2138d90e822e5a6e6c12a0e56345ec1173"
+      },
+      "discoveryCheck": {
+        "result": "PASS",
+        "log": "discovery-final.log"
+      },
+      "projectionCheck": {
+        "result": "PASS exact index and Markdown bytes / exact closed set",
+        "log": "projection-check-final.log"
+      },
+      "semanticGuard": {
+        "result": "PASS 28/28; detected loss, duplication, reordering and removed URL",
+        "log": "semantic-guard-final.log"
+      }
+    },
+    "wranglerDryRun": {
+      "command": "npx --no-install wrangler deploy --config dist/server/wrangler.json --dry-run --outdir /tmp/ctpv-f2a-dryrun-final",
+      "runtime": "Wrangler 4.128.0",
+      "exitCode": 0,
+      "deployed": false,
+      "compiledConfigSha256": "8e0e1977d9e511795264a2891a866d657a115cf474284cdd7691326bcd09f46d",
+      "log": "wrangler-dryrun-final.log",
+      "bindingWarningPreserved": true,
+      "redactions": [
+        "Two 32-character KV namespace resource identifiers in Wrangler dry-run output; binding names/types and AI binding warning remain visible."
+      ],
+      "logNote": "CLI evidence with resource identifiers redacted; dry-run completed with exit 0 and did not deploy."
+    },
+    "workerd": {
+      "runtime": "Wrangler 4.128.0 local workerd",
+      "isolatedConfig": "dist/server/wrangler.f2a.workerd.json (ignored build output; only ASSETS and SESSION local)",
+      "isolatedConfigSha256": "d04855ad268717801d68c33b473b4066d99ab4f979cc8c16c8baa2d958f91d83",
+      "productConfigChanged": false,
+      "directRemoteBindingCalls": 0,
+      "httpEvidence": "workerd-http-final.json",
+      "rawEvidence": "workerd-final-raw/",
+      "requests": {
+        "indexAndDocumentsGetHead": 58,
+        "homeGetHeadAcceptMarkdown": 2,
+        "failed": 0
+      },
+      "homeAcceptMarkdownStillHtml": true,
+      "firstPortAttempt": "8790 already in use; preserved in workerd-final-port-conflict.log; no request was made against that process",
+      "successfulLocalPort": 8798,
+      "rawManifestSha256": "98b9ceec0afb9d88832430e9552268c8b75a4a297e52a1dec1e826b7a4ff5b27"
+    },
+    "publicPreview": {
+      "status": "pending PR publication, CI/Workers receipts and official Commit Preview capture for exact published HEAD"
+    },
+    "audit": {
+      "r1": "FAIL B01-B05 consumed 1/5",
+      "r2": "not started; independent reviewer required"
+    }
+  }
 }

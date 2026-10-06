@@ -1,0 +1,22 @@
+✔ tests/agent-readiness/discovery.test.mjs (277.410073ms)
+✖ tests/agent-readiness/harness.test.mjs (253.840043ms)
+✔ tests/agent-readiness/inventory.test.mjs (520.155693ms)
+✔ tests/agent-readiness/parity.test.mjs (221.688532ms)
+✔ tests/agent-readiness/projection-growth.mjs (5254.078616ms)
+✔ tests/agent-readiness/projection.test.mjs (557.896003ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7096.405606
+
+✖ failing tests:
+
+test at tests/agent-readiness/harness.test.mjs:1:1
+✖ tests/agent-readiness/harness.test.mjs (253.840043ms)
+  'test failed'
+
+HARNESS_EXIT_CODE=1

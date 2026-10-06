@@ -1,0 +1,23 @@
+{
+  "explicitRequests": 58,
+  "explicitFailures": 0,
+  "home": [
+    {
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/html",
+      "bodyMatches": true,
+      "security": true,
+      "link": true
+    },
+    {
+      "method": "HEAD",
+      "status": 200,
+      "contentType": "text/html",
+      "bodyMatches": true,
+      "security": true,
+      "link": true
+    }
+  ],
+  "note": "Home F2A requires HTML retained for Accept MD; exact charset contract applies explicit index/MD here. Initial harness applied negotiated HTML MIME requirement prematurely; original captures/checks preserved. No requests repeated for MIME correction."
+}

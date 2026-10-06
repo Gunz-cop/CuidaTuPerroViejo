@@ -1,0 +1,2942 @@
+{
+  "sourceCommit": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+  "origin": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev",
+  "requests": 60,
+  "failed": [
+    {
+      "method": "GET",
+      "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/",
+      "checks": {
+        "status": true,
+        "mime": false,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/",
+      "checks": {
+        "status": true,
+        "mime": false,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    }
+  ],
+  "records": [
+    {
+      "timestamp": "2026-10-06T06:31:11.574547+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/index.json",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:12 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "26284",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"5f80c466d006e13e0ca3873f625b7497\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=dIZ8O%2FrAEgsfazVfvBlv07oGC4OsbTfDwgOe7pYOXfen9OST89MxlxHN50qWJFbxB5%2FruxW%2B3nJVXMUNvviwWzflVdff8w2AX0Fr5GGJ5FqO%2Ft44exicYUpItk6GQI5v7Wot3ceI9ihkWP2GlV7hlePmV2MWKIJHzGtTosCRlb0%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f2acaa54184-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "361",
+        "connection": "close"
+      },
+      "bodyBytes": 26284,
+      "bodySha256": "d2868aa542def5a6ea7bd2b18956d3a15016b792de8b05b79789d87db9e6df73",
+      "expectedBytes": 26284,
+      "expectedSha256": "d2868aa542def5a6ea7bd2b18956d3a15016b792de8b05b79789d87db9e6df73",
+      "rawBody": "raw/00-get.body",
+      "rawHeaders": "raw/00-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:12.058009+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/index.json",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:12 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"5f80c466d006e13e0ca3873f625b7497\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=SCiJvurvrGEahLqNkWR5UVS6VkIr7n9qL6VKlYNrjThpxQHuaA14wvnVII1X6h8sTqWm2MuSSE2Qbsz7k14CjIvaklU2L2wwcDUAtG0FQJ818xtm6pDEbkfSNkOXjMUIgoxzUR%2BLwshB99jhDb6Z%2FJYIpswtt0XEeJ2J75jwtMI%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f2d48814184-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "45",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 26284,
+      "expectedSha256": "d2868aa542def5a6ea7bd2b18956d3a15016b792de8b05b79789d87db9e6df73",
+      "rawBody": "raw/00-head.body",
+      "rawHeaders": "raw/00-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:12.242341+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:12 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "44229",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"2f5bf818a6bda19f5cc6df3f8297ac5c\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=zdyLfL3YdQDRexyWBXeYe5Wx0czXCDWeavkmvieokITORBwIbCHsiVXeeyQHGCci8XMPRbA8K1rRdXs%2BvcwVGAlDUCCVR5fB6dc4A8cjsnnqwRGQ%2BikOP%2BpPu0f57jSn5ZI7UmxIn7FAcBTtXWE7e7Z7KtG6CuCazTh%2BjmA99sc%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f2e0a365823-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "99",
+        "connection": "close"
+      },
+      "bodyBytes": 44229,
+      "bodySha256": "fa20b6374b189939a29a53cb63134b544a0e34ea82a60a0957efc4757a5dad80",
+      "expectedBytes": 44229,
+      "expectedSha256": "fa20b6374b189939a29a53cb63134b544a0e34ea82a60a0957efc4757a5dad80",
+      "rawBody": "raw/01-get.body",
+      "rawHeaders": "raw/01-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:12.377797+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:12 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"2f5bf818a6bda19f5cc6df3f8297ac5c\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=BWolJ3uyP8gj20B%2BRER3tErLqLvLbMetFYZMtOEq6LiAIRNXU6dVkdkfce3fix7z5NRFH2z10J796m%2BUXJvH%2BTgu3iRDit0fAAGiJffK4DYbaY90W%2FrKOOGi2%2BceqS4oXG6SnS4e9phJzPmujlx69AXOelDp9Hz1vgtkLAd89Ss%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f2f590f2c89-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "221",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 44229,
+      "expectedSha256": "fa20b6374b189939a29a53cb63134b544a0e34ea82a60a0957efc4757a5dad80",
+      "rawBody": "raw/01-head.body",
+      "rawHeaders": "raw/01-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:12.639988+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:12 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "40793",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"0ff57b0999b68444087bbb528c324283\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=vm3O7lEYTg2Z3HXKHwkmFx7%2FczMrMoIx2MX2pnbOI%2FISq9WglO3wTfriGKeDLsZAlHNsLD3NcU8TD2%2B9iATzPKPW0KqsdtE0Przxph6lS0dz4gzBfFAte8st%2Bb4t1oTzc6cvApKMnMjXBxHm%2FdDjD%2FhytLRjIG6jvYc5UI98Phw%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f304ca05823-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "40",
+        "connection": "close"
+      },
+      "bodyBytes": 40793,
+      "bodySha256": "326f17f31cd3ba070211e3c8b135a88db4d1938518907b51d50851e1aabed28f",
+      "expectedBytes": 40793,
+      "expectedSha256": "326f17f31cd3ba070211e3c8b135a88db4d1938518907b51d50851e1aabed28f",
+      "rawBody": "raw/02-get.body",
+      "rawHeaders": "raw/02-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:12.723330+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:12 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"0ff57b0999b68444087bbb528c324283\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=UjXRfM7LN%2Bq5632KmSg2r1HnMlbR1eS5BinfWMIlyHid1uxhDTK6wFo%2Bz47x1cGJN%2BFWZPrAqF%2FeZVG3fcSfzRTzmYBjm3BMD4Jh9kz3R8F4DbqKDeCZIifjPlU7dEbzchTnGVN7MlZyCv3gEQTUbgn%2FPRD2E0oUQwigltwLaow%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f30bd055823-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "40",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 40793,
+      "expectedSha256": "326f17f31cd3ba070211e3c8b135a88db4d1938518907b51d50851e1aabed28f",
+      "rawBody": "raw/02-head.body",
+      "rawHeaders": "raw/02-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:12.784633+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:12 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "35047",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"b74e9a0475a706f05aa923716bef140d\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=TmriAo5UFh4qOuZGXHNZi%2FoSnCl9B0EI97NxIpurBmZuDhi9dDqKQYkiS05dth2Avk8DJkWn6%2BPb78sn4%2FMNL54X2%2BtiitWHtjFEgbn5e5O6rxbLgO8uFblGwMGy%2FRuJ8U%2BUFB64h84VBf1zTwgz1uqBZI113qI9BASKp2wjdio%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3118f9e718-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "39",
+        "connection": "close"
+      },
+      "bodyBytes": 35047,
+      "bodySha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4",
+      "expectedBytes": 35047,
+      "expectedSha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4",
+      "rawBody": "raw/03-get.body",
+      "rawHeaders": "raw/03-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:12.846472+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:13 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"b74e9a0475a706f05aa923716bef140d\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=PLMxRCDG5XcZAzf34DT5aki3bnjfIeIJZIwj1wN%2BsTIvowOBcIqpSdpzYHKWKR%2B9vaW1QcUvF2tKRvQVKT4TXP3tlfqHzcDMoPgh%2Fun949iwjf%2BDoEPzKnRtwbosgPxWXJA9lUjJft9rDGoleXlIPxybTBAN7GKpgAyBE%2B2KulI%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f327ae94797-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "170",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 35047,
+      "expectedSha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4",
+      "rawBody": "raw/03-head.body",
+      "rawHeaders": "raw/03-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:13.090101+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--chequeo-geriatrico-canino.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:13 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "10293",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"674a9841a2f5e20912d3496451b7f0d6\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=TuVw4uZEPYscDJA3t1OYTdvQukZG72JQ5nY1BxxVwoUJ94yv7gboH51QP8%2BsuHzDXaIMAMyX90MZ88nOwXujzLvNgMKnP%2FrhvUqoy5SXdq33pJ%2B7jcEavaFp7wJJROJxHgZhxiIYNCoRprQxZczGHnDxF366BsM0C86BK1U%2BRCs%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f32fa902c89-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "58",
+        "connection": "close"
+      },
+      "bodyBytes": 10293,
+      "bodySha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+      "expectedBytes": 10293,
+      "expectedSha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+      "rawBody": "raw/04-get.body",
+      "rawHeaders": "raw/04-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:13.169820+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--chequeo-geriatrico-canino.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:13 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"674a9841a2f5e20912d3496451b7f0d6\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=IciyCU5O%2BwVsTwTAAVjvWF3DJStV4yKPaDJ1CLccGdwmvzDBgjv6ncRm%2B0E7cQaoSBaC4cjKA4496AD%2Fl7uZzjxqA1%2FmVLm54HIAEmuw4aNCQDlG4QF%2B7pCNGcRB3gvv5SYifZPY4OGFrC2g6VluVvApnzExt0j0X7pEVzS%2F7KA%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f34398b52e4-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "163",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 10293,
+      "expectedSha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+      "rawBody": "raw/04-head.body",
+      "rawHeaders": "raw/04-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:13.360018+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--comida-casera-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:13 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "23195",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"1193c85a2d213d10f4458b5abedda86f\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=CG1SJb1CNvbwCDb5KZsdsi%2FILl2xfxiiag1MU7wrOwan57T1rc7ZBUl5q3GaqJqlZKsGrGKtRuAFdNyca30ag07mOBl6NvNLa0RTq3GPFRu0y%2FNJ1dE86y7lPgR70ugYFLB%2F%2B4T1pvUBosPDrEz%2FThlTrUL1e%2FTGfTsQ%2FzLceGU%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f34a9335823-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "39",
+        "connection": "close"
+      },
+      "bodyBytes": 23195,
+      "bodySha256": "a6ce54c82b0288eb46641a86c8efc1e70f253904cb16bb2c8f89e3f9076c38e8",
+      "expectedBytes": 23195,
+      "expectedSha256": "a6ce54c82b0288eb46641a86c8efc1e70f253904cb16bb2c8f89e3f9076c38e8",
+      "rawBody": "raw/05-get.body",
+      "rawHeaders": "raw/05-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:13.419049+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--comida-casera-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:13 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"1193c85a2d213d10f4458b5abedda86f\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=WnZGoofqpIuA7CRku2cUd3M0SVyU7HhEMA5A5c4PBEfDkH9%2B5cikYOUYl2ZHEls0W%2F1SsF6FT0b32cmgtZ8u0puC1Lh%2FKb6LCSCxyn0pj9PLRvnQS8g1yhlrUzE0ZX2%2FA6d9yPEBNv3IwD0vk%2F8zDrTjVNc2qOovNEFuhD9f1RY%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f350a4a4184-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "41",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 23195,
+      "expectedSha256": "a6ce54c82b0288eb46641a86c8efc1e70f253904cb16bb2c8f89e3f9076c38e8",
+      "rawBody": "raw/05-head.body",
+      "rawHeaders": "raw/05-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:13.475849+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:13 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "32330",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"77883c9cd8f38ee094b89bd6c1fa176a\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2FyXOET56Hmbs5QvqJUryZRDvd4EehZTOQGz5%2FZ6Fc6p%2FLFc7Rtm7FhFI2qDo2bO6b%2BSPtk2sIsr%2BGWYWvMTbMqfay2fbOWA3yIljCv9B%2F4v74OVMZnnhOiK4buMyWjl4vmdWbOG6%2FrelpRc%2BbzfkatGkLM%2BD7Tdc887PNaq6AKU%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3639847dce-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "196",
+        "connection": "close"
+      },
+      "bodyBytes": 32330,
+      "bodySha256": "c785ab5c1442e3d9c0146e6947de1cda1e95657457701f871a0348db9386e244",
+      "expectedBytes": 32330,
+      "expectedSha256": "c785ab5c1442e3d9c0146e6947de1cda1e95657457701f871a0348db9386e244",
+      "rawBody": "raw/06-get.body",
+      "rawHeaders": "raw/06-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:13.717591+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:13 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"77883c9cd8f38ee094b89bd6c1fa176a\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=8ao1R2qrJ78lnRJYn%2BNag7jQRO3Kd8ug2mPvDvS%2B6il8fXKU5ZDhOU%2FzYLpJBUGPJuq%2BC7VUQaSJaHA2R7ih9pixC7nsodroYhFv1%2BuEXuWe5h%2FSL%2F%2BT9knPucVe6rKx7%2F%2BT2eN%2Fme9zYhWZZQ3be4Sqh0mNwizbEslHqW5Cvrg%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f36ebfc5823-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "43",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 32330,
+      "expectedSha256": "c785ab5c1442e3d9c0146e6947de1cda1e95657457701f871a0348db9386e244",
+      "rawBody": "raw/06-head.body",
+      "rawHeaders": "raw/06-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:13.782100+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:13 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "25780",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"0438d7adcd6146cce7dd0b5455e2162d\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=vkA8mn6skPd0K36F8y6KX9EtSPRpfCkzmuqI6q9AeDy8YJcPpox%2BWZEC2M7nGDR2ai8xuK9HmqbuQIYZF2cdq5Kr99oAfk81MuXQtoQAbeUuSuVnKp6j1xIDRttj61jOYV9BRlt7NwVN2Tbzjj2Wqw0b8aeJixa4Dbe6ZuIClik%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f374c995823-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "38",
+        "connection": "close"
+      },
+      "bodyBytes": 25780,
+      "bodySha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9",
+      "expectedBytes": 25780,
+      "expectedSha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9",
+      "rawBody": "raw/07-get.body",
+      "rawHeaders": "raw/07-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:13.839218+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:13 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"0438d7adcd6146cce7dd0b5455e2162d\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=ILy3RdkrVtwA0HjEFoKbpVcXTr%2BnD6zkPu05M0wr1Wq1piZHwA7Rm%2FPhNOKYN83KaM%2BUlIXFFO%2FfLQrGIK0Kv1qWkUAnWf1DStJtMRmjb9CLFsMavAfsxxzE4vaeZicd3uSM7hs4SxUU%2BGdq5or8JpPuzVO%2Fun8wPA9kbDIKF2E%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f37aceb5823-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "37",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 25780,
+      "expectedSha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9",
+      "rawBody": "raw/07-head.body",
+      "rawHeaders": "raw/07-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:13.893958+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:13 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "39883",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"030d458bcb3bfd06c60750b19a1c1a21\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=RZrLG8Z8qmW5auyQA7W4Yw1dxYliw6OBUOr7mhM9O44N%2FNIGyhwaJRkPoZHD0QKPy1Guh147fxARgVwCDx06bll%2BGcAh%2BPjwCjELPWoC1gBQJW0ptqOpD9jio59bwraRx%2Fn1EJuK6zRIJT0foMtT0jjTZvu6uD%2FCl%2BwthWFXloY%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f37fc2be718-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "39",
+        "connection": "close"
+      },
+      "bodyBytes": 39883,
+      "bodySha256": "63d32181a6000c9beb3693134675e1ba30f69b0260001920a5cf3adbbdb4155d",
+      "expectedBytes": 39883,
+      "expectedSha256": "63d32181a6000c9beb3693134675e1ba30f69b0260001920a5cf3adbbdb4155d",
+      "rawBody": "raw/08-get.body",
+      "rawHeaders": "raw/08-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:13.952209+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"030d458bcb3bfd06c60750b19a1c1a21\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=fRt2oRDsXXhMKdKoxuZrlTCp%2FYAg8aYLw39Fz983vuMIuBG7PZslMO%2BgxB1HOywmyY4R9Y5jxTu%2Bxuh9otymMS7VZXep%2BcE6mL8cifp4izpBPAjCUNGOJNfXUXXtMCtIeF0nuIpMcEzdfj7sHvxoV0MGgFAMv9q75mPPvLAW4Lk%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f389cb7b421-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "95",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 39883,
+      "expectedSha256": "63d32181a6000c9beb3693134675e1ba30f69b0260001920a5cf3adbbdb4155d",
+      "rawBody": "raw/08-head.body",
+      "rawHeaders": "raw/08-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.066818+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "16795",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"3b4b5b1a67daf2aeb37c87fc6d7c28aa\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=0G%2FAYlDnK5p3509a6m8ZRCsqvpBuhWOGKqLGtBEfXFFHxrgy4ZlA3wUZL%2BBpB7lFp%2B%2BAK0iSSvcJeXDvA4XncgNuS%2FIkUvU%2BKdNlcHGsMUINciOMOKvnEp1nSvLyaM9EZUyHWs6r%2FFhADfANEPGy2tpPhoXyr18pF6EjtveOTY4%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f391c0d7dce-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "73",
+        "connection": "close"
+      },
+      "bodyBytes": 16795,
+      "bodySha256": "fd1f6ffd98034aa875e060c1bd27b6fb30c12b7649eb3446f1f44a3c7aad8580",
+      "expectedBytes": 16795,
+      "expectedSha256": "fd1f6ffd98034aa875e060c1bd27b6fb30c12b7649eb3446f1f44a3c7aad8580",
+      "rawBody": "raw/09-get.body",
+      "rawHeaders": "raw/09-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.158229+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"3b4b5b1a67daf2aeb37c87fc6d7c28aa\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=NJL%2BZQAJSRHpbltdkAEwFYXu3J3x2AykKx5%2BO9wLm7pWtZSt37SaBBgB8On6NyGOo0VFsL8KhqQaAQFyUH%2FrFWW9%2FwpzRDCqklUSHVoG8K9%2FrEB4I%2B3sCGByxyPrQeiyxlkhRnCueOMJ%2BmknyTgR%2FCfi70hFaEka5XIEQQFchFY%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f39aa8e52e4-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "38",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 16795,
+      "expectedSha256": "fd1f6ffd98034aa875e060c1bd27b6fb30c12b7649eb3446f1f44a3c7aad8580",
+      "rawBody": "raw/09-head.body",
+      "rawHeaders": "raw/09-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.214345+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "41948",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"6168fcbd94e93a71646992b4f2a5a05c\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=gCLK5DL%2Bhuyj36xzES82Onc%2F0BGgxQAe%2FBcmr8z5ManxGx7CbCOOmosAdzeffhMSZESDj2EvtA%2FzKBQQfCoC8cM3yjQ%2F%2Bse9atGCfP%2B26euWdX34OuJDLV8vFjxp7QLSvTlm%2BPgY6PQeRxIHB2HnUf%2BEJIpkrUuhA8pplseg5y0%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3a0de42c89-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "56",
+        "connection": "close"
+      },
+      "bodyBytes": 41948,
+      "bodySha256": "11e5a99c261d478b999dc45807bf9e0f28cca1156f4173a9753402b86815556f",
+      "expectedBytes": 41948,
+      "expectedSha256": "11e5a99c261d478b999dc45807bf9e0f28cca1156f4173a9753402b86815556f",
+      "rawBody": "raw/10-get.body",
+      "rawHeaders": "raw/10-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.293070+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"6168fcbd94e93a71646992b4f2a5a05c\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=b%2B8Utb%2FJwBZzLDCZcYG7iNhkfEU4MIaubFX3uN3nNpzcIlVDd63eYTDMXbT%2BnLQ9C%2FGlq5mVdK9XZ4A%2F7ti6nBlrDx557%2BnbZfHPiKsURu04ADeF9cZMg%2FAgyHp%2FQcRW2o6Hx4DJ2uvZEOIWmQao%2BflwaRd%2BEOGIZkqkXxhuHzY%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3a7b9ab421-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "46",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 41948,
+      "expectedSha256": "11e5a99c261d478b999dc45807bf9e0f28cca1156f4173a9753402b86815556f",
+      "rawBody": "raw/10-head.body",
+      "rawHeaders": "raw/10-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.357110+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "40851",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"d6e761e11d4383bdcd200050eb462dc7\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2BVdPT%2B03VXha65YsIzYOX%2BAAvBfWA3hjtmS7j4Cfcpd25g%2FQ8GSHYbCvIANn5H4YE3HU95bf%2B%2BCke0ZV6bNDD85JUmbrZIafstL6BwLjXV8CN4ofqXRB%2FUIhA35NVYvGJjjMr5CKApDd%2BtPIKMNZvR4smd4%2FcSBfI%2B9GK%2FPOy8k%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3aecf2b421-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "42",
+        "connection": "close"
+      },
+      "bodyBytes": 40851,
+      "bodySha256": "4fb867ebf37eb2e58d1f0522839acbac35189df43f005e02ae9352ee9dbf68b3",
+      "expectedBytes": 40851,
+      "expectedSha256": "4fb867ebf37eb2e58d1f0522839acbac35189df43f005e02ae9352ee9dbf68b3",
+      "rawBody": "raw/11-get.body",
+      "rawHeaders": "raw/11-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.418181+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"d6e761e11d4383bdcd200050eb462dc7\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=TXvevzeZSemvGkRNj9zfXkyv1Vu0bNveokdQhgwhhLXnlsnmRqTFBQ8CHDzSQt1vEWFJsQedvlzy9wr6B6ldYouTIcif%2FV2zUGG5PQctWAdN9Fpb%2FaWtTmRPHTSJpEtgIzpVClne6bR3bdre4aPvB8pLU5kAi4ysMHvdb1TsnNc%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3b4f704184-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "43",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 40851,
+      "expectedSha256": "4fb867ebf37eb2e58d1f0522839acbac35189df43f005e02ae9352ee9dbf68b3",
+      "rawBody": "raw/11-head.body",
+      "rawHeaders": "raw/11-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.478652+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "47807",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"925fa29c24198e9fc99713cd02899023\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=51MPgQ7VaYStsqfM0i86axGruGUxLIkKrVEhucDbx54BgdqYYY9gfcJJDYrrlqI9ykHER72iJahEjjUFYyQiPS%2B9dxpbweb0UsuqM5cTYUoCCvRASF3kb42458ivXmbAnY2Q8iFjPcwRRVp1R2ZDmKkTkdpH3emndleZ0vZXR%2B8%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3bba54e718-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "41",
+        "connection": "close"
+      },
+      "bodyBytes": 47807,
+      "bodySha256": "95b3ea51ecf5b4c4a87807202b3b74b9dbab57d99bbc0e27e9a5f3c44e14a607",
+      "expectedBytes": 47807,
+      "expectedSha256": "95b3ea51ecf5b4c4a87807202b3b74b9dbab57d99bbc0e27e9a5f3c44e14a607",
+      "rawBody": "raw/12-get.body",
+      "rawHeaders": "raw/12-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.549188+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"925fa29c24198e9fc99713cd02899023\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=iIGsDWMQtiCvJTajhMgPYOpiudhD95F%2BuPJ198%2BU8Mpw06DjRHT0iLF5HoPmHIpt0Ewg3%2FkX8Ds2BQhM30ytn6ypnVQ2%2FxKgVZpJfGuQ414f2VJ8vxXJbMDTjEmG7TwLdiNQ4JkZc6SSdHPvCsPNPIFJMEwy5AtxJmkc5nhglZU%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3c4efc7dce-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "49",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 47807,
+      "expectedSha256": "95b3ea51ecf5b4c4a87807202b3b74b9dbab57d99bbc0e27e9a5f3c44e14a607",
+      "rawBody": "raw/12-head.body",
+      "rawHeaders": "raw/12-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.647784+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--salud-dental-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "12307",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"7aee9265d60a9629d7500eea0b010709\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=fBlUM%2FqND%2FtVoNE5fDUWJ2JwBcH0cJ6Gmx21lJ9hixDbhV2uvxlTwIOgO67nDSkzzTgqqx%2F2GQORa6icXlj2KQNwQUrJkwDg8uFyLUZ39m8yd5QT04DiqLD25iNYVcyBU0nicXtR2JhPjKmBCABWtrvzmMjyNAjZPRIDVwh4oRs%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3cbaa74184-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "40",
+        "connection": "close"
+      },
+      "bodyBytes": 12307,
+      "bodySha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6",
+      "expectedBytes": 12307,
+      "expectedSha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6",
+      "rawBody": "raw/13-get.body",
+      "rawHeaders": "raw/13-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.706551+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--salud-dental-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"7aee9265d60a9629d7500eea0b010709\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=UpkRWpLjSkzRwB8RaPwWkWepYeWvKTQLafWQeRNxlm9ocoLbu%2BSS2hCVAGYE7sGhIdbK4FjYv%2FCS3dbsyLt8dC15pn%2BCJr8jRC7tGjM6luMIWqG0JLHvU%2BMG9MX3w1sMbLGfEHwu9a1h2uUyDrvJSEwBaTABsvvdczj6%2BPPJI0w%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3d1c82e718-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "41",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 12307,
+      "expectedSha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6",
+      "rawBody": "raw/13-head.body",
+      "rawHeaders": "raw/13-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.768137+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "32562",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"98f298a0e3736227d6881d0dba7e11ac\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=iv8aXP0ahSD2JCps%2Fpc7y5kubBoNxStJ6uwEppb6N49al%2FL1nlp4yralIAEnA83ZojVd24lDxUODwd1%2Fzy6Dp7u4aVxKBxy3uCP7IGMFT8lZS%2BuU8PjaDLLC91HZuAJRIs%2BX7YXM5bB3p805eKUEIgHCcS%2FXMUzN%2B462O4qzP6k%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3d880c7dce-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "83",
+        "connection": "close"
+      },
+      "bodyBytes": 32562,
+      "bodySha256": "e12d5527c3ca942f753173fde3dc7f4c7462a7f3006c4ae138d54403878d084d",
+      "expectedBytes": 32562,
+      "expectedSha256": "e12d5527c3ca942f753173fde3dc7f4c7462a7f3006c4ae138d54403878d084d",
+      "rawBody": "raw/14-get.body",
+      "rawHeaders": "raw/14-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.883085+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"98f298a0e3736227d6881d0dba7e11ac\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=kVLfqUVOhf0uvEsjxK3geV56CZI%2Fjmy6rJH2xLVJSde5ekPe5lO6niiSRWFAGSQsFdRkxV7hBTZRMjk%2BfZ4C4FPo5wWNORKEoUlmwlhuyFeV4jCVD9t26vXA3xpzIDjyZW3jE5pw7DUvt4qkxURwWlrhac4DeiI87rzDt9BIe1M%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3e3c175823-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "37",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 32562,
+      "expectedSha256": "e12d5527c3ca942f753173fde3dc7f4c7462a7f3006c4ae138d54403878d084d",
+      "rawBody": "raw/14-head.body",
+      "rawHeaders": "raw/14-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.941358+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--ulceras-presion-perros.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:14 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "8303",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"52f2c4c8d15ef5b069491b12a8ba61cb\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=R%2Ft0B0vMRgzU8rrghREdFdkjso%2BckRwJpgpJ6ZSRDmZZ%2F1Bk9bi%2B%2BXaxL09nTuZNMHhHbPNkNfwV3z3iHgTe3qhJ3jkkTqa3YXG%2BXZa0eMoZUBTmcY1XimTXdZdmkS4mMZkSnnfn4%2BM5fdDrPstN3gd6jyRtIKx9AEN1A6pxW64%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3e8f08e718-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "38",
+        "connection": "close"
+      },
+      "bodyBytes": 8303,
+      "bodySha256": "00a669b47df1fa5c1644ea9d3ddf78e183d95903595d736343742cc4e0f360cc",
+      "expectedBytes": 8303,
+      "expectedSha256": "00a669b47df1fa5c1644ea9d3ddf78e183d95903595d736343742cc4e0f360cc",
+      "rawBody": "raw/15-get.body",
+      "rawHeaders": "raw/15-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:14.995563+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--ulceras-presion-perros.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"52f2c4c8d15ef5b069491b12a8ba61cb\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=MqDovOtqvAxBS590nd2xSNQAxnAM9sTkpTy0icHOdVwglaWwnlrpZ3ZNYxpaegoo2gJxzZXiB08FZ8%2BN1sa25a5nSJErFHIPLqz17WlewP7m9BovnhxUTjwb1TKzuKrRUoHCm7%2F2Mvep%2Bt%2Bvg5yyrleioERD87QXOAcGwTFTiDA%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3ee9357dce-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "47",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 8303,
+      "expectedSha256": "00a669b47df1fa5c1644ea9d3ddf78e183d95903595d736343742cc4e0f360cc",
+      "rawBody": "raw/15-head.body",
+      "rawHeaders": "raw/15-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.061216+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "14785",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"a4a01211419f12991a74e9a07e2c9fdc\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=M2eQeTZLaJI3nNFR35UpbLbZsAM%2FHuO5JFfjsjdetxj153OtdS9577tRzEQQwrWN3c3QJzEwAagCXloSgnMIHHeuClitSM6RjKAUCXx34qmnjAAjMFd85nEaVdsPqOCNdkk5%2Bzri50cCwiUXfv6X6XjO1KXBNQuM6%2BAAbjj3FaE%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3f488de718-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "37",
+        "connection": "close"
+      },
+      "bodyBytes": 14785,
+      "bodySha256": "f39b578b0fb9cd0db3eca5068a61061998f334328e0d83d14186b28292d8a357",
+      "expectedBytes": 14785,
+      "expectedSha256": "f39b578b0fb9cd0db3eca5068a61061998f334328e0d83d14186b28292d8a357",
+      "rawBody": "raw/16-get.body",
+      "rawHeaders": "raw/16-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.119287+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"a4a01211419f12991a74e9a07e2c9fdc\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=JEVzvaENevQloNXNghYrTYo0%2FK80zdW%2B9ZPE1SYtL4V5k72rLjTRrSf6u9ySxA9xFXcv7QPvNyc%2F%2BNasc7%2FnnmkTwJkNvLlSU9iTZmr4%2BLzZjQiLFdCvDN2OY9ODy8Bs1TXMFEfAZ4i6k%2BF7z8duIicH8FULn1H2QHLG4ibDX4w%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f3fa93de718-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "42",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 14785,
+      "expectedSha256": "f39b578b0fb9cd0db3eca5068a61061998f334328e0d83d14186b28292d8a357",
+      "rawBody": "raw/16-head.body",
+      "rawHeaders": "raw/16-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.181559+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/home.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "11046",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"5b7cd7763a630fa40145f126ada629cf\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=1ZG%2BMZeA%2FNQ9%2BPZv6UIzWC%2FdkMUy8fDGsEgTLDayCWq0BfKxrbbWu6ey5vabzTKKzgHzs9RxMpKpWRyKfBZ%2Berr7MHZiP1nFmhP4B6r8lxU2oCnDkA5D0%2FuSx0PRG7nnC2TsrsG%2FsEmbKvfR1NPeoZ90CEQBvMvIoliiX3Fd%2Fnc%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f401a367dce-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "70",
+        "connection": "close"
+      },
+      "bodyBytes": 11046,
+      "bodySha256": "fa5b17f5e8691bcaeba827c9d3dea5ffe35425f8223f3eb495dadec2551c84e3",
+      "expectedBytes": 11046,
+      "expectedSha256": "fa5b17f5e8691bcaeba827c9d3dea5ffe35425f8223f3eb495dadec2551c84e3",
+      "rawBody": "raw/17-get.body",
+      "rawHeaders": "raw/17-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.276061+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/home.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"5b7cd7763a630fa40145f126ada629cf\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=83ZG2Wc4NAW17r2AQGrEkTgvuzmYS0Fc4hJJRItIeUPHLSMmEBxm%2FEr0fzlDGFycr3DBZ6Z%2FPbgoahbtRZt4TlKDE0jIc1IBfZfQksaEcUiRXMLr3J3cnXwwzmSObR9l5ZOVbkALemRGXCUabSezmyKhzc2X4cGIvkcjrGMUc6Q%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f40aadd7dce-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "37",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 11046,
+      "expectedSha256": "fa5b17f5e8691bcaeba827c9d3dea5ffe35425f8223f3eb495dadec2551c84e3",
+      "rawBody": "raw/17-head.body",
+      "rawHeaders": "raw/17-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.336509+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/page--acerca-de.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "2477",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"64c40e75290822094ec2d2cdc967ef56\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=9oEgXudQEuU8yJtAap56RI8ln0QX70KBCLMo%2FQ6sSiTTxOxJXoGNphcz8kA1B9vsVfP5SzPP4HZA96QzAcSrMf5MEY9ttjy0J1%2F3oyqWFhhFelZrZtHCyIX6H6VxJ0an2ytwWB%2FFyIO8hLFOZijF%2FYSj2qVe6DqVFvXBoNZ8PCI%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f410c174184-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "48",
+        "connection": "close"
+      },
+      "bodyBytes": 2477,
+      "bodySha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3",
+      "expectedBytes": 2477,
+      "expectedSha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3",
+      "rawBody": "raw/18-get.body",
+      "rawHeaders": "raw/18-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.402744+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/page--acerca-de.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"64c40e75290822094ec2d2cdc967ef56\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=LBrQn58NIBBT%2FL1wLxP0ccAHwgpU80GtyujM3Dpj2okP0lIeZN1S0C1g0RHsnRw4blFSXLcOzAtHUKB9saiW65MgMpEHBB7afrAwhqgHXbUQyVZ50157H5cPbsIT0lEL6EUKN4ixOaNZ7BMdXSjWjFnlEd9uE3H1gDFrKKYilic%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f416c3cb421-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "39",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 2477,
+      "expectedSha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3",
+      "rawBody": "raw/18-head.body",
+      "rawHeaders": "raw/18-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.459991+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/page--politica-editorial.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "2925",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"add3f9f75e65e6e64efab1deb50232f8\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=1Z3Z3HvF2bqAuTTkDb5AlJd2r5t7fsRhtQOm4Fkr2%2FsbylFasTwratZKhtwEm8CbR7hxkA0qCZp22gBgO%2BVW4I4oUj7I76J7y0w1VngUe%2Bm4QCNyH9oclJKdMp%2Bn97REW2Fo9MkQ6iVPkk5LjeavVSED5j4%2F2aZXjzUWaAzBObk%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f41cd5eb421-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "46",
+        "connection": "close"
+      },
+      "bodyBytes": 2925,
+      "bodySha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "expectedBytes": 2925,
+      "expectedSha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "rawBody": "raw/19-get.body",
+      "rawHeaders": "raw/19-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.523180+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/page--politica-editorial.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"add3f9f75e65e6e64efab1deb50232f8\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=ZQqggEc93Pub5Lq4oawxeNOJ0xgy%2FhZ9OCI%2FGMhlA7RqAeOhM8JHOedhgRK3g1gslMu8SMq19mOUTrcLwSGR75Cvi693EOzu232XnIaiFeHOAqsMQq45Gbd1UtX7Nm%2FtovqEg6XoqN%2BG4AVE%2B5LZYX1TfstbsiOKxChZX8OLJLU%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f423dfce718-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "41",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 2925,
+      "expectedSha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "rawBody": "raw/19-head.body",
+      "rawHeaders": "raw/19-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.589069+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "12034",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"9aa5e875b7f9818fb46b0867b7951205\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=AD%2Fm7s4cg41Ds6eTZvCHbtSg%2FxXqY9pnDwGAH6pdn%2Fr2ad3BBLLNZkUu9TqrGqcNB7eIq2AT495SJ8hXmi8buNdFic2TxbXGpIFemd1N2j0E2dXwZ9aJFTln5gb5%2BhR8OMAH%2FOBZGKRUpodxCpNnjCgiO56%2BbQOyUpZWZWdklWc%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f429cee7dce-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "65",
+        "connection": "close"
+      },
+      "bodyBytes": 12034,
+      "bodySha256": "c89db065713cbaf4c4605f1aee0545a9679b375bcab061f8ead2afbf221c718c",
+      "expectedBytes": 12034,
+      "expectedSha256": "c89db065713cbaf4c4605f1aee0545a9679b375bcab061f8ead2afbf221c718c",
+      "rawBody": "raw/20-get.body",
+      "rawHeaders": "raw/20-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.671663+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"9aa5e875b7f9818fb46b0867b7951205\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=65XN55riRbKJpMjaxF4M2DCO1X1RcMY1eunfFbfwPy%2FyZpco6W2DZE15U71DQcKimgV%2FeOZ7zzq3WXGM%2FYs%2BG53W7JY%2BUHX67%2FVnvsVPi47bdNKIhlXfBs5MKgxRgDseoVwZzpw3AykA29kZ0JZ4XpjJzgQgBX4py4o5jx975FU%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f431d7f7dce-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "87",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 12034,
+      "expectedSha256": "c89db065713cbaf4c4605f1aee0545a9679b375bcab061f8ead2afbf221c718c",
+      "rawBody": "raw/20-head.body",
+      "rawHeaders": "raw/20-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.778414+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "8084",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"d7ab87d6cba7f9e1a92d1b9174c15f36\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=LvtwlLVTu%2FlCr0LXdeZrN8TpT4%2FPCDYCWje4rQVsz7MzGw4%2Bo18PL0pXfXcL7Gi2MwNMFkK5Is7t0RmySqPqrVrGuhVQ%2Bu9LNSddwZ%2FgvPpxV8fIBww5zcZR6UYWlc%2BtkFT8lQDnaSmSurbnKxyM7%2FDh27Gf8Bw%2FaBv62Sa4KRM%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f43c897e718-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "37",
+        "connection": "close"
+      },
+      "bodyBytes": 8084,
+      "bodySha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939",
+      "expectedBytes": 8084,
+      "expectedSha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939",
+      "rawBody": "raw/21-get.body",
+      "rawHeaders": "raw/21-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.833783+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"d7ab87d6cba7f9e1a92d1b9174c15f36\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=LJd51mCDbaZCxkRH2AYS4tBt%2BDvaaEf%2FXAcv487brmTPN4NdAV62dItksjQmVzQ8eqLmj%2FcxT%2BJmwvR%2F1uzy%2F1hxU09megG8%2F8PihieENNyD3zgXSWFiFqrYG%2FrNAbUHWh4zIPfPWkp3OFrT9sCdE4mJwhthh8%2B2LQ93bJg7v2U%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f442dd9b421-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "41",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 8084,
+      "expectedSha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939",
+      "rawBody": "raw/21-head.body",
+      "rawHeaders": "raw/21-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.900046+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--herramientas.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:15 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "3756",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"5aaf7e0f06f85d14bdf90971d9a36636\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=mbwWqC1d0U1pSTq%2FmEnZ32r1q7drNs290pGKG63ObRPRIv%2FTDP31w54hSXpiPooI1hLqjzPRut7lo0U4UrkjsiQeV8dmTNHUOvjgKV%2BE97yfBw8y2uiL0k3ZRGDm5lI3hTCOyxs4ImevB6hjt9JU%2FIDdGsyN1X9WGNbQwpzZKGk%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f448cc752e4-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "42",
+        "connection": "close"
+      },
+      "bodyBytes": 3756,
+      "bodySha256": "ffd6bf31f715af0b5fc778922ed329bb58ac09d40dc877572b1f181082afe222",
+      "expectedBytes": 3756,
+      "expectedSha256": "ffd6bf31f715af0b5fc778922ed329bb58ac09d40dc877572b1f181082afe222",
+      "rawBody": "raw/22-get.body",
+      "rawHeaders": "raw/22-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:15.957625+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--herramientas.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"5aaf7e0f06f85d14bdf90971d9a36636\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=iIUh7bXtPYtSFmYr%2BAndBAeS6LiDcVGfpZsxibwZJVnlepnV1sf%2BNW4fpyVO3mq66Bj3AWsaldZvovOB9vYVs29jPPin2DLGqGzBJhLSVzk2S3L3HMezSN%2FgHQqfHV8GrSfZjvsOVi1XePUtCtl8%2BD4GSylw50JAVJRzltUxjH0%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f44ef6b7dce-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "67",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 3756,
+      "expectedSha256": "ffd6bf31f715af0b5fc778922ed329bb58ac09d40dc877572b1f181082afe222",
+      "rawBody": "raw/22-head.body",
+      "rawHeaders": "raw/22-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.042559+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "7794",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"74dfedf5437073843d0ced73ab51f072\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2F19Pbx8L10Gec6K9V8q3vpZ6TVzwoEg9GvT6pyDgLjftvnxK%2BBGmZBX98gDRv3BVjvLdJM6jlPIctOaf7zEl0EGvRH%2F%2B0rg6JnBkIJSq0zdLU0Mz9%2BY5Z%2FQSStfaRK06jpu3JeJU53gazNsh7lcvopu54fLOp9kttFY7oqeCJGY%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f458a41b421-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "44",
+        "connection": "close"
+      },
+      "bodyBytes": 7794,
+      "bodySha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58",
+      "expectedBytes": 7794,
+      "expectedSha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58",
+      "rawBody": "raw/23-get.body",
+      "rawHeaders": "raw/23-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.119579+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"74dfedf5437073843d0ced73ab51f072\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=v14ee%2FdJPF%2BsOWyCQRGl6zYS7HiNtWS5tEeCIDBxVVFgZsVhJawvRQFc%2BvjL8pzJxemwUZL4RXcW89vtLxXynl7USNWOAmJ63F%2F5QsxBpIfTaS5Xz5Qxrqukwjm4Ftidhtcz%2BFxomTz9XC0SfRHc9Z5HhpsiGwmFgXEA99DGCSg%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f45f8857dce-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "38",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 7794,
+      "expectedSha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58",
+      "rawBody": "raw/23-head.body",
+      "rawHeaders": "raw/23-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.187375+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "7261",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"7a79fdc03afda9be6d846866615f88a1\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=xWGhensw0J78dtV%2FLjoDjyfuMuEClulnWJ8wp8OjI106Pj1S4K05%2F9qu7Kq4mmXe1%2F8kqKR70PA7dyYjsZpJYV5p7SqSThhexPE6VN43ud4PCguLfM02%2FJiieFjbZ0rpb5vmA1R2%2FpoWpBTOuFhxTK6i2taVBa982%2Fx1vKWh9AQ%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f465c77e718-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "40",
+        "connection": "close"
+      },
+      "bodyBytes": 7261,
+      "bodySha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6",
+      "expectedBytes": 7261,
+      "expectedSha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6",
+      "rawBody": "raw/24-get.body",
+      "rawHeaders": "raw/24-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.246668+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"7a79fdc03afda9be6d846866615f88a1\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=nz6zxRU24Z2xTWufw1cvQ5b3mdbZITtzERNrNpO2Gz0SkpRNy2%2FQP06v6iuPCm3NMutKkgcrxXnZjxcbobh0Ulm2yo7lcZuiGLuOMafX71RLuhl39X0S3SLf8uT7pw4laaOCAT2Ie%2FwdggYo2HS82mNMETDmftwdNTiAFh%2FHaHw%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f46bda35823-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "41",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 7261,
+      "expectedSha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6",
+      "rawBody": "raw/24-head.body",
+      "rawHeaders": "raw/24-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.308605+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "11135",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"4cd19da91fdc82889e1a58377ab665fa\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=nMS4PFpHZJWnh2zGzmFxH08F21qOFKhkPHivbNOub7vUJjO298%2FuMng04Wq9VXWd%2B%2BaK2N9a3s%2F7DtQC9pnR6kimmmM8A1QQ1LIXZtpSoiU68LkqNsf8507lQ0lERIRGGpe%2FzGFUZiUoCp56Q3PDn%2BIaKjos8asX3owc2UzZgRg%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f471e2c4797-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "48",
+        "connection": "close"
+      },
+      "bodyBytes": 11135,
+      "bodySha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949",
+      "expectedBytes": 11135,
+      "expectedSha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949",
+      "rawBody": "raw/25-get.body",
+      "rawHeaders": "raw/25-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.372198+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"4cd19da91fdc82889e1a58377ab665fa\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=QGQykg9pw%2Faq5FnUc%2BEiowXKwN9JE%2Bs31n6hOFSYJr2cKyNo3pLNS6Ar%2BGL6vzKRahz%2FOuoEFhboB3QFUAbj%2BXsa%2FuCQvdAzX8tDNOECdPTVaxJqd4prC7Lz7JzFJIY7Kx5ufKfQltub1svvDMv1lgBkCpdwwq6aKTttx6OfXrg%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f477e4de718-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "44",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 11135,
+      "expectedSha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949",
+      "rawBody": "raw/25-head.body",
+      "rawHeaders": "raw/25-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.436691+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--salud-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "12040",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"66acddb8812b33d743499640b3650f85\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=KOwqn%2BtHsN0laaTmQpboo6tdI3YKB%2F2xSCKZH2ExU%2FmwqW3BjfXLDiqNdHJRJT1t70lSBpXoD4VRuHEUHjmvJZ8xVOFoNthaYlp78dPnW2%2FOSZdZIjAj0pq%2Fw7C1KvxIhw8iDdG5umZur7GewpeYXLtkCR682uxysc6co5dpHVM%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f47ee974797-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "54",
+        "connection": "close"
+      },
+      "bodyBytes": 12040,
+      "bodySha256": "04d25b0c2406b47b9156182dd044b7bae2e9fa32135f464f6b9504c4fa20b042",
+      "expectedBytes": 12040,
+      "expectedSha256": "04d25b0c2406b47b9156182dd044b7bae2e9fa32135f464f6b9504c4fa20b042",
+      "rawBody": "raw/26-get.body",
+      "rawHeaders": "raw/26-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.508674+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--salud-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"66acddb8812b33d743499640b3650f85\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=C9p4AhxBQpD6B4fmI1iE%2B61gIP%2B%2Bo%2Bnwll82CBOnAtArdd5OPCwJ9ePHpVyJwID%2Fj%2Fet89crrfuSUSEVuWJeAxXzBuAIks%2BcCK8LuaY7hXnbDPjsZ%2F4bKaQ962I%2F2RA7dZc1NRC0uVVe87DoN35Ewf1496rwHZ91Tn6JTDvTFjg%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f486ee34797-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "44",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 12040,
+      "expectedSha256": "04d25b0c2406b47b9156182dd044b7bae2e9fa32135f464f6b9504c4fa20b042",
+      "rawBody": "raw/26-head.body",
+      "rawHeaders": "raw/26-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.583368+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/tool--calidad-vida.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "5049",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"0fd6a9da9e3895ba4a09859d4abf29f8\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=ER9lreOPruPKF8dTdsIgYNZucL5LHTO4lSiUyeMzPeN0AQjdcIdmmlPtRE5%2Bv5cSPTeer55ATFEEUhji7PMfA4dil0%2BJdGWRMKNntsiAJzXIKfz%2FRWDkqJOvgtmwJjICeeFVrslqjwijmVKA36HgubseKv6hij6Ctsi7tGm0I8U%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f48ddfab421-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "44",
+        "connection": "close"
+      },
+      "bodyBytes": 5049,
+      "bodySha256": "00028fb42759631a88b4440580b467c6d39b03d9897e04805909230886705db5",
+      "expectedBytes": 5049,
+      "expectedSha256": "00028fb42759631a88b4440580b467c6d39b03d9897e04805909230886705db5",
+      "rawBody": "raw/27-get.body",
+      "rawHeaders": "raw/27-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.648131+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/tool--calidad-vida.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"0fd6a9da9e3895ba4a09859d4abf29f8\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=S3PxaQwtN96uUd0an90cWsy0No%2FmcU2IClMCeF8BEp8QhcYRHR%2BLiCjxHgbgpgd0WTgQOxZ%2FjEGM5CnCK9WpJF1kZ2363TQuTd%2BwhBXmzPfyADibUkxCCXdlPKJkO%2FEzSzzV2TrK6apaG%2BzOTmpAD0uodScWCnCh8%2FWESSn%2BA5A%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f492d6852e4-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "37",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 5049,
+      "expectedSha256": "00028fb42759631a88b4440580b467c6d39b03d9897e04805909230886705db5",
+      "rawBody": "raw/27-head.body",
+      "rawHeaders": "raw/27-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.699790+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/tool--movilidad.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "5893",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"cd9e57674dad4ec1728026848ad81044\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Mn3572xwzzi0YkPybi%2FLfgdKgRxmYMZPYCUySNyIYz9yO3NX%2BkcieZk4%2FsW0kjmFgOUKETD%2F4vA0vSOEtti4NyoZB8s%2B8aD11Ncly4Sj2f6L8dl8joGgbpM7jcpWGvZjivNYJpb1ilwY%2FFBqChIsDjY2rg%2B4i%2Ff5E2b2Fx7yZqI%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f498cbb2c89-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "54",
+        "connection": "close"
+      },
+      "bodyBytes": 5893,
+      "bodySha256": "e41bdadc9a5c4a0e7804323082c37926df9d84a9dc4b3763187a538502923956",
+      "expectedBytes": 5893,
+      "expectedSha256": "e41bdadc9a5c4a0e7804323082c37926df9d84a9dc4b3763187a538502923956",
+      "rawBody": "raw/28-get.body",
+      "rawHeaders": "raw/28-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.770549+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/tool--movilidad.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/markdown; charset=utf-8",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"cd9e57674dad4ec1728026848ad81044\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=sdjTEWqYd7DUQ5zVCCN5yOAe0%2FdIDlGhwUMLX0EudXBr2n2HoOeq0mX3tgBJcxSIbBr%2F9tmR%2FJcUiKjtlxt5nRommuZN1xzmwE9nXVryDoR%2BRItkJWBhYMZqWe2GWXjauwNpSMkM6qpopoX6TnQdAZWlg5Gl3pZFNH%2F0A72idb0%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f49f9fbb421-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "45",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 5893,
+      "expectedSha256": "e41bdadc9a5c4a0e7804323082c37926df9d84a9dc4b3763187a538502923956",
+      "rawBody": "raw/28-head.body",
+      "rawHeaders": "raw/28-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.836616+00:00",
+      "method": "GET",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0",
+          "Accept": "text/markdown"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:16 GMT",
+        "content-type": "text/html",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=86V6p2hOX86iqpXcYe0rBJhKUEBmck0MgLy7eB39hCuOJF5owZzrGf2OZNesfbnlp%2Fxd7aaet0xkWr%2Bbihsd23aJCIBUQVDHmBGo1oNHAmArLLB3KohzSbgiUOt7VaoWXGcE5xz397V4Z9%2FO9bNyJb%2BvxrxjEBy9FJ5D8rEX%2BxI%3D\"}]}",
+        "server": "envoy",
+        "cf-ray": "a4629f4a6d457dce-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "53",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "expectedBytes": 119418,
+      "expectedSha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "rawBody": "raw/29-get.body",
+      "rawHeaders": "raw/29-get.headers",
+      "checks": {
+        "status": true,
+        "mime": false,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T06:31:16.921427+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev/",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/1.0",
+          "Accept": "text/markdown"
+        }
+      },
+      "head": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+      "status": 200,
+      "headers": {
+        "date": "Tue, 06 Oct 2026 06:31:17 GMT",
+        "content-type": "text/html",
+        "cf-cache-status": "HIT",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-robots-tag": "noindex",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff",
+        "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=UVM%2BFVSvF6XYxHRd2DVRlFtHz3qBBk64BuJDj%2FbIaEk08k118p0LSKR4MYgeYlPXYEDg9R6RAMAvzeVYEa2%2BspM8g9Vn9JuGEdeiBZ8Pg%2Bkyxzk4OZxwJH25FgeSOL2wpRCjGHATJFV4qJq%2B7QcPxdu8a3AmG2HvKzdPthAhEJw%3D\"}]}",
+        "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "server": "envoy",
+        "cf-ray": "a4629f4aecfab421-DFW",
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "x-envoy-upstream-service-time": "180",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 119418,
+      "expectedSha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "rawBody": "raw/29-head.body",
+      "rawHeaders": "raw/29-head.headers",
+      "checks": {
+        "status": true,
+        "mime": false,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    }
+  ]
+}

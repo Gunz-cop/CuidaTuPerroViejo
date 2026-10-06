@@ -96,3 +96,59 @@ test('sitemap + catálogo + HTML concordantes amplían el build a 29 y pasan pro
   await assert.rejects(writeProjection(temp), /PROJECTION_DOCUMENT_COUNT documents=99 limit=98/u);
   await assert.rejects(readFile(projectedRoot), { code: 'ENOENT' }, 'no se publica artefacto al superar el límite');
 });
+
+test('canonicalPath de 100 caracteres se acepta; 101 y el probe 115 fallan sin publicar salida', async (t) => {
+  const temp = await mkdtemp(join(projectRoot, 'tests/agent-readiness/.projection-path-limit-'));
+  t.after(() => rm(temp, { recursive: true, force: true }));
+  const sourceClient = join(projectRoot, 'dist/client');
+  const prefix = '/salud-perros-mayores/';
+
+  async function makeCase(length, slug, pathname) {
+    const caseDir = join(temp, String(length));
+    const clientDir = join(caseDir, 'client');
+    await cp(sourceClient, clientDir, { recursive: true });
+    await rm(join(clientDir, 'agent-content'), { recursive: true, force: true });
+    const catalogPath = join(clientDir, 'api/assistant-catalog.json');
+    const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
+    const source = catalog.find((item) => item.slug === 'chequeo-geriatrico-canino');
+    assert.ok(source);
+    const sitemapPath = join(clientDir, 'sitemap-0.xml');
+    const sourceHtmlPath = join(clientDir, 'salud-perros-mayores/chequeo-geriatrico-canino.html');
+    const sourceHtml = await readFile(sourceHtmlPath, 'utf8');
+    const sourceUrl = 'https://cuidatuperroviejo.com/salud-perros-mayores/chequeo-geriatrico-canino';
+    const title = `Ruta de ${length} caracteres`;
+    const url = `https://cuidatuperroviejo.com${pathname}`;
+    const description = `Prueba canónica sintética ${title}.`;
+    catalog.push({ ...source, slug, title, description, href: pathname });
+    let sitemapText = await readFile(sitemapPath, 'utf8');
+    sitemapText = sitemapText.replace('</urlset>', `<url><loc>${url}</loc><changefreq>monthly</changefreq><priority>0.6</priority></url></urlset>`);
+    await writeFile(sitemapPath, sitemapText);
+    const html = sourceHtml.replaceAll(sourceUrl, url)
+      .replaceAll(source.title, title)
+      .replaceAll(source.description, description);
+    await writeFile(join(clientDir, `${pathname}.html`), html);
+    await writeFile(catalogPath, `${JSON.stringify(catalog)}\n`);
+    const inventoryPath = join(caseDir, 'inventory');
+    assert.equal(await inventory(caseDir, inventoryPath), 0, `la fuente, HTML, catálogo y sitemap de ${length} siguen concordantes`);
+    const data = JSON.parse(await readFile(join(inventoryPath, 'inventory.json'), 'utf8'));
+    assert.equal(data.pages.filter((page) => page.disposition === 'document').length, 29);
+    return caseDir;
+  }
+
+  const validSlug = 'a'.repeat(100 - prefix.length);
+  const validPath = `${prefix}${validSlug}`;
+  assert.equal(validPath.length, 100);
+  const validCase = await makeCase(100, `f2-${validSlug}`, validPath);
+  await writeProjection(validCase);
+  assert.equal(await runProjectionCheck(['check', '--build-dir', validCase]), 0);
+
+  for (const length of [101, 115]) {
+    const slug = length === 115 ? `f2-${'a'.repeat(90)}` : `b${'a'.repeat(101 - prefix.length - 1)}`;
+    const pathname = `${prefix}${slug}`;
+    assert.equal(pathname.length, length);
+    const invalidCase = await makeCase(length, slug, pathname);
+    assert.equal(await runProjectionCheck(['check', '--build-dir', invalidCase]), 1, 'check rechaza el límite antes de producir artefactos');
+    await assert.rejects(writeProjection(invalidCase), /PROJECTION_CANONICAL_INVALID/u);
+    await assert.rejects(readFile(join(invalidCase, 'client/agent-content')), { code: 'ENOENT' }, 'no queda salida parcial ni entregable');
+  }
+});
