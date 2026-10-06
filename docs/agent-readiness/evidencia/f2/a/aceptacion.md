@@ -21,7 +21,7 @@ Comprobaciones ejecutadas sobre el checkout propio:
 - `npx --no-install astro build` — PASS, dos builds limpios idénticos.
 - `node scripts/agent-readiness/projection.mjs check --build-dir dist` — PASS.
 - `node scripts/agent-readiness/discovery.mjs check --build-dir dist` — PASS.
-- `node --test tests/agent-readiness/*.test.mjs` — PASS, 37 tests (existing F0/F1 suites, 16 golden/mutation cases and 1 growth e2e); CI vuelve a ejecutar el growth tras build.
+- `node --test tests/agent-readiness/*.test.mjs` — PASS, 36 tests (existing F0/F1 suites and 16 golden/mutation cases); `node --test tests/agent-readiness/projection-growth.mjs` — PASS, crecimiento e2e/límites 29/99, ejecutado en CI después del build.
 - `npx --no-install wrangler deploy --config dist/server/wrangler.json --dry-run --outdir /tmp/ctpv-f2a-dryrun-1661787` — PASS; assets leídos de la config compilada.
 - Wrangler 4.128.0 local workerd — PASS con copia temporal aislada de configuración; solo `ASSETS` y `SESSION` locales, sin AI, correo, D1 ni limitadores. No se cambió la configuración de producto.
 
