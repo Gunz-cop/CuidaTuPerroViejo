@@ -1,0 +1,94 @@
+name: F2B ETag external client diagnostic (temporary)
+
+on:
+  pull_request:
+    types: [synchronize]
+    branches:
+      - agent-ready/f2b-negociacion
+    paths:
+      - .github/workflows/f2b-etag-diagnostic.yml
+
+permissions: {}
+
+jobs:
+  f2b-etag-client-diagnostic:
+    if: github.event.pull_request.number == 61 && github.event.pull_request.head.ref == 'spike/f2b-etag-observabilidad'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Record provenance and check proxy presence
+        id: preflight
+        shell: bash
+        run: |
+          set -euo pipefail
+          proxy_present=false
+          for name in HTTPS_PROXY https_proxy HTTP_PROXY http_proxy ALL_PROXY all_proxy; do
+            if [[ -n "${!name:-}" ]]; then
+              proxy_present=true
+            fi
+          done
+          {
+            echo "capture_start_utc=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            echo "job=${GITHUB_JOB}"
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "run_attempt=${GITHUB_RUN_ATTEMPT}"
+            echo "event=${GITHUB_EVENT_NAME}"
+            echo "pr_number=${{ github.event.pull_request.number }}"
+            echo "pr_head_ref=${{ github.event.pull_request.head.ref }}"
+            echo "workflow_source_sha=${{ github.event.pull_request.head.sha }}"
+            echo "measured_http_source_sha=b87616f72d4ff3446f005f87761bfd65d9f43b62"
+            echo "fixed_preview=https://5c55fc8d-cuidatuperroviejo.g1721m.workers.dev/"
+            echo "preview_receipt_comment=6022505218"
+            echo "proxy_configured=${proxy_present}"
+          } | tee "$RUNNER_TEMP/f2b-etag-client-provenance.txt"
+          if [[ "$proxy_present" == true ]]; then
+            echo "capture=aborted; no requests sent because proxy configuration is present"
+            exit 2
+          fi
+
+      - name: Capture exactly two fixed-preview HEAD responses
+        if: steps.preflight.outcome == 'success'
+        shell: bash
+        run: |
+          set -uo pipefail
+          out="$RUNNER_TEMP/f2b-etag-client"
+          mkdir -p "$out"
+          preview='https://5c55fc8d-cuidatuperroviejo.g1721m.workers.dev/'
+          capture_head() {
+            local name="$1"
+            local accept="$2"
+            local rc=0
+            curl --head --verbose --silent --show-error \
+              --connect-timeout 15 --max-time 30 --retry 0 --max-redirs 0 \
+              --user-agent 'ctpv-f2b-etag-spike/1.0' \
+              --header "Accept: ${accept}" \
+              --header 'Accept-Encoding: identity' \
+              --dump-header "$out/${name}.headers" \
+              --stderr "$out/${name}.trace" \
+              --output /dev/null \
+              --write-out 'curl_http_status=%{http_code}\nhttp_version=%{http_version}\n' \
+              "$preview" > "$out/${name}.status" || rc=$?
+            printf 'curl_exit_code=%s\n' "$rc" >> "$out/${name}.status"
+          }
+          capture_head home-html-head 'text/html'
+          capture_head home-markdown-head 'text/markdown'
+          {
+            echo 'capture_end_utc='"$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            for name in home-html-head home-markdown-head; do
+              echo "===== ${name}.status ====="
+              cat "$out/${name}.status" 2>/dev/null || true
+              echo "===== ${name}.headers ====="
+              cat "$out/${name}.headers" 2>/dev/null || true
+              echo "===== ${name}.trace ====="
+              cat "$out/${name}.trace" 2>/dev/null || true
+            done
+          } | tee "$RUNNER_TEMP/f2b-etag-client-capture.log"
+          {
+            cat "$RUNNER_TEMP/f2b-etag-client-provenance.txt"
+            cat "$RUNNER_TEMP/f2b-etag-client-capture.log"
+          } | sha256sum
+          for file in "$RUNNER_TEMP/f2b-etag-client-provenance.txt" "$RUNNER_TEMP/f2b-etag-client-capture.log" "$out"/*; do
+            [[ -f "$file" ]] || continue
+            wc -c "$file"
+            sha256sum "$file"
+          done
