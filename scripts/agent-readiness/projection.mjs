@@ -202,6 +202,7 @@ export function projectionIntegration() {
         const assetRoot = fileURLToPath(resolvedConfig.build.client);
         const result = await writeProjection(resolve(process.cwd(), 'dist'));
         if (resolve(result.assetRoot) !== resolve(assetRoot)) throw new Error(`F2A: assets del inventario (${result.assetRoot}) no coinciden con config.build.client (${assetRoot}).`);
+        await writeCompiledRouting(resolve(process.cwd(), 'dist'), result.index);
         logger.info(`Proyección agent-content/v1 generada: ${result.index.documents.length} documentos, ${result.artifacts.get(INDEX_PATH).length} bytes de índice.`);
       },
     },
@@ -249,6 +250,85 @@ function parseCheckArgs(args) {
   return resolve(process.cwd(), args[2]);
 }
 
+export function expectedWorkerRoutes(index) {
+  if (!index || !Array.isArray(index.documents) || index.documents.length > MAX_DOCUMENTS) {
+    throw new ProjectionError('ROUTING_DOCUMENT_COUNT', 1);
+  }
+  const canonicals = index.documents.map((entry) => entry.canonicalPath);
+  if (new Set(canonicals).size !== canonicals.length || canonicals.some((path) => !canonicalPathValid(path))) {
+    throw new ProjectionError('ROUTING_CANONICAL_PATH_INVALID_OR_DUPLICATE', 1);
+  }
+  const routes = ['/api/*', '/admin/*', ...canonicals.sort(ascii)];
+  if (routes.length > 100 || routes.some((route) => route.length > 100 || !/^[\x21-\x7e]+$/u.test(route))) {
+    throw new ProjectionError(`ROUTING_RULE_LIMIT rules=${routes.length}`, 1);
+  }
+  return routes;
+}
+
+export function assertWorkerRouting(config, index) {
+  const expectedRoutes = expectedWorkerRoutes(index);
+  if (!config || !config.assets || !Array.isArray(config.assets.run_worker_first)
+    || JSON.stringify(config.assets.run_worker_first) !== JSON.stringify(expectedRoutes)) {
+    throw new ProjectionError('ROUTING_RULES_MISMATCH', 1);
+  }
+  return expectedRoutes;
+}
+
+async function writeCompiledRouting(buildDir, index) {
+  const configPath = join(buildDir, 'server', 'wrangler.json');
+  let compiled;
+  try { compiled = JSON.parse(await readFile(configPath, 'utf8')); }
+  catch (error) { throw new ProjectionError(`ROUTING_COMPILED_CONFIG_UNAVAILABLE ${error.code ?? ''}`, 1); }
+  const routes = expectedWorkerRoutes(index);
+  if (!compiled.assets || typeof compiled.assets !== 'object' || Array.isArray(compiled.assets)) {
+    throw new ProjectionError('ROUTING_COMPILED_ASSETS_MISSING', 1);
+  }
+  compiled.assets.run_worker_first = routes;
+  const temporary = `${configPath}.f2b-tmp`;
+  await writeFile(temporary, `${JSON.stringify(compiled, null, 2)}\n`, { flag: 'w' });
+  await rename(temporary, configPath);
+}
+
+async function checkRouting(buildDir) {
+  await checkBuild(buildDir);
+  const buildArtifacts = await expectedArtifactsForRouting(buildDir);
+  const rawIndex = await readFile(join(buildArtifacts.assetRoot, 'agent-content', 'v1', 'index.json'));
+  const index = JSON.parse(rawIndex.toString('utf8'));
+  const configPath = join(buildDir, 'server', 'wrangler.json');
+  const config = JSON.parse(await readFile(configPath, 'utf8'));
+  assertWorkerRouting(config, index);
+  if (typeof config.main !== 'string' || !config.main) throw new ProjectionError('ROUTING_MAIN_INVALID', 1);
+  const serverDir = dirname(configPath);
+  const mainPath = resolve(serverDir, config.main);
+  if (!mainPath.startsWith(`${serverDir}${sep}`) || !(await stat(mainPath)).isFile()) throw new ProjectionError('ROUTING_WORKER_BUNDLE_MISSING', 1);
+  const source = JSON.parse((await readFile(resolve(process.cwd(), 'wrangler.jsonc'), 'utf8')).replace(/^\s*\/\/.*$/gmu, ''));
+  if (source.main !== './src/worker.ts') throw new ProjectionError('ROUTING_SOURCE_ENTRYPOINT_MISMATCH', 1);
+  if (!buildArtifacts.index) throw new ProjectionError('ROUTING_EXPECTED_INDEX_MISSING', 1);
+}
+
+async function expectedArtifactsForRouting(buildDir) {
+  try { return await expectedArtifacts(buildDir); }
+  catch (error) {
+    if (error instanceof ProjectionError) throw error;
+    if (error.code === 'ENOENT' || error.code === 'EACCES' || error.code === 'EPERM') throw new ProjectionError(`ROUTING_IO_ERROR ${error.code}`, 3);
+    throw new ProjectionError(`ROUTING_BUILD_ERROR ${error.message}`, 1);
+  }
+}
+
+async function runRoutingCheck(args) {
+  try {
+    if (args.length !== 3 || args[0] !== 'check-routing' || args[1] !== '--build-dir' || !args[2] || args[2].startsWith('-')) {
+      throw new ProjectionError('Uso: node scripts/agent-readiness/projection.mjs check-routing --build-dir <directorio>', 3);
+    }
+    await checkRouting(resolve(process.cwd(), args[2]));
+    process.stdout.write('OK: routing compilado exacto, entrypoint y bundle F2B verificados.\n');
+    return 0;
+  } catch (error) {
+    process.stderr.write(`${error.message}\n`);
+    return error.exitCode ?? 3;
+  }
+}
+
 export async function runProjectionCheck(args) {
   try {
     const buildDir = parseCheckArgs(args);
@@ -262,7 +342,8 @@ export async function runProjectionCheck(args) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  process.exitCode = await runProjectionCheck(process.argv.slice(2));
+  const args = process.argv.slice(2);
+  process.exitCode = args[0] === 'check-routing' ? await runRoutingCheck(args) : await runProjectionCheck(args);
 }
 
 export { expectedArtifacts, makeIndex, writeProjection };

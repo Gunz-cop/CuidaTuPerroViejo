@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "f2b-blocker-captures/1",
+  "status": "BLOCKED_B05",
+  "sourceSha": "8727217a6ba6c326763eed8abedf766b5c55992e",
+  "treeSha": "1d65bad586cde385327e3911fef8fa77479a49ea",
+  "baseSha": "c0a7280378c009fcd3ed8fbb60b10c54f048c718",
+  "preview": "https://fa7f59e2-cuidatuperroviejo.g1721m.workers.dev",
+  "officialBotComment": "https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/59#issuecomment-6018839007",
+  "bug": "https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/60",
+  "auditAttempts": "0/5",
+  "records": [
+    {
+      "id": "001",
+      "requestId": "ctpv-f2b-001",
+      "method": "GET",
+      "path": "/agent-content/v1/index.json",
+      "requestHeaders": [],
+      "status": 200,
+      "headers": "001_index-get.headers",
+      "body": "001_index-get.body",
+      "headersSha256": "1ce40333cff92ef8e2156bd6738de7813142303ddfc44a7bacb517d442a5d997",
+      "bodySha256": "fd5e032df2852f0aa3e4cf3bb5ba4d2ff93114a15646652ed485323bf69ab341",
+      "bodyBytes": 26284
+    },
+    {
+      "id": "002",
+      "requestId": "ctpv-f2b-002",
+      "method": "GET",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "requestHeaders": [
+        "Accept: text/html"
+      ],
+      "status": 200,
+      "headers": "002_article--agresividad-tardia-perros-mayores-dolor-html-get.headers",
+      "body": "002_article--agresividad-tardia-perros-mayores-dolor-html-get.body",
+      "headersSha256": "6ff17b7b29541c71915acd80079e3b68472d1b71e49f92710974af893b404bdc",
+      "bodySha256": "166b9d4258f950a65b62d71e9b3b16edc5e77b7d231b5b2584dd68be7d9e68f6",
+      "bodyBytes": 126650
+    },
+    {
+      "id": "003",
+      "requestId": "ctpv-f2b-003",
+      "method": "HEAD",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "requestHeaders": [
+        "Accept: text/html"
+      ],
+      "status": 200,
+      "headers": "003_article--agresividad-tardia-perros-mayores-dolor-html-head.headers",
+      "body": "003_article--agresividad-tardia-perros-mayores-dolor-html-head.body",
+      "headersSha256": "dc092c9d086a1f67e57dee6758c465d744ddfffda5ab2bc7dfe7e0cccc52157d",
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyBytes": 0
+    },
+    {
+      "id": "004",
+      "requestId": "ctpv-f2b-004",
+      "method": "GET",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "requestHeaders": [
+        "Accept: text/markdown"
+      ],
+      "status": 200,
+      "headers": "004_article--agresividad-tardia-perros-mayores-dolor-md-get.headers",
+      "body": "004_article--agresividad-tardia-perros-mayores-dolor-md-get.body",
+      "headersSha256": "5b3e9239ec906e82e1e63bfeae0a7f8ce5f6f0360543fe2bb7e2f817e525957a",
+      "bodySha256": "3feb00d4f978db51b3da7300557001f6ff54b8e3ef743c7ca86b38eebf0eb913",
+      "bodyBytes": 44223
+    },
+    {
+      "id": "005",
+      "requestId": "ctpv-f2b-005",
+      "method": "HEAD",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "requestHeaders": [
+        "Accept: text/markdown"
+      ],
+      "status": 200,
+      "headers": "005_article--agresividad-tardia-perros-mayores-dolor-md-head.headers",
+      "body": "005_article--agresividad-tardia-perros-mayores-dolor-md-head.body",
+      "headersSha256": "f26263f57eebf8aa2f9a55a5b6c3df4b0f323c6580b2bd68db12aff6d313d530",
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyBytes": 0
+    },
+    {
+      "id": "diag-home-html-get",
+      "requestId": "ctpv-f2b-diag-1",
+      "method": "GET",
+      "path": "/",
+      "requestHeaders": [
+        "Accept: text/html",
+        "Cache-Control: no-cache"
+      ],
+      "status": 200,
+      "headers": "diag-home-html-get.headers",
+      "body": "diag-home-html-get.body",
+      "headersSha256": "4d6d79a510945a35aa841b8420b27c2f468074bb8b5f537006a0224ef0d73be1",
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "bodyBytes": 119418
+    },
+    {
+      "id": "diag-home-html-head",
+      "requestId": "ctpv-f2b-diag-2",
+      "method": "HEAD",
+      "path": "/",
+      "requestHeaders": [
+        "Accept: text/html",
+        "Cache-Control: no-cache"
+      ],
+      "status": 200,
+      "headers": "diag-home-html-head.headers",
+      "body": "diag-home-html-head.body",
+      "headersSha256": "edc22194a6c3483c914312e046d409f5c0940fd12744e6580cad4c6dcd61f9bd",
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyBytes": 0
+    },
+    {
+      "id": "diag-cushing-html-get",
+      "requestId": "ctpv-f2b-diag-3",
+      "method": "GET",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "requestHeaders": [
+        "Accept: text/html",
+        "Cache-Control: no-cache"
+      ],
+      "status": 200,
+      "headers": "diag-cushing-html-get.headers",
+      "body": "diag-cushing-html-get.body",
+      "headersSha256": "0037c53e113b83b66dbceb287243d79ff065598ef1d17181153f0503142da3f9",
+      "bodySha256": "7aaaef0e39577c2510e1d1028c182e996f2d213c607165e1ba32d15162885ec3",
+      "bodyBytes": 110770
+    },
+    {
+      "id": "diag-home-md-get",
+      "requestId": "ctpv-f2b-diag-4",
+      "method": "GET",
+      "path": "/",
+      "requestHeaders": [
+        "Accept: text/markdown",
+        "Cache-Control: no-cache"
+      ],
+      "status": 200,
+      "headers": "diag-home-md-get.headers",
+      "body": "diag-home-md-get.body",
+      "headersSha256": "6c984b9aad0b5b84d337309adb88c92edf31febb1a59c27a44aef3a57f2ad803",
+      "bodySha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+      "bodyBytes": 12878
+    }
+  ]
+}
