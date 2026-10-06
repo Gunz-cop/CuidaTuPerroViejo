@@ -1,0 +1,98 @@
+# SDD sucesora F2B — validadores Markdown y compresión HTML
+
+Estado: propuesta pendiente de auditoría independiente. Autor: coordinador de arquitectura. El dueño autorizó expresamente este cambio de alcance y la publicación documental corregida con «Autorizo», después de la propuesta que preserva compresión HTML y exige validadores para Markdown. No hay autorización de integración a main ni aceptación técnica de F2B.
+
+## 1. Problema y decisión de producto
+
+El contrato F2 original exigía ETag exterior y revalidación completa para HTML y Markdown. En el preview de F2B, el ETag HTML originado en ASSETS desaparece antes de llegar al cliente; Markdown conserva su validador. El experimento aislado de no-transform conservó ETag HTML en HEAD/GET de la home, con cuerpos idénticos, pero esa directiva puede impedir compresión. Para un blog leído también desde celulares, no se justifica bloquear compresión HTML para cumplir aquella exigencia de validadores.
+
+Esta SDD conserva la negociación y la integridad de ambas representaciones. Markdown sigue ofreciendo un ETag nativo y revalidación completa para agentes. HTML permite compresión de plataforma y puede carecer de ETag exterior; si lo anuncia, debe revalidar correctamente. La ausencia HTML se registra como tal y no se convierte en un validador ficticio. If-None-Match: * sigue teniendo semántica de existencia para ambos formatos.
+
+No se introduce no-transform en el producto, compresión propia, encabezados diagnósticos, API nueva ni cambios editoriales. No se asegura que la plataforma comprima cada respuesta: se conserva esa posibilidad y se registra la codificación efectivamente observada.
+
+## 2. Fuentes, bases y precedencia
+
+La SDD F2 original conserva su PASS2/2, sus dos informes y sus bytes: [F2](f2-lectura-markdown.md), [contratos v1](f2-contratos.md). Contrato auditado b9355ea55e718017954a6f9ca0ef3f75f431f605/tree a2203cae0f7a0f5fe95d7dd8edd3d845ff4a29f2. Esta SDD es una sucesora autorizada, no una tercera revisión de la anterior ni una reclasificación de sus fallos.
+
+F2A aceptada: cierre c0a7280378c009fcd3ed8fbb60b10c54f048c718/tree39d3ffac8279e9c7eb0c5e9937d6639e1442ab3f, PASS R3/5. Producto F2B congelado previo: 8727217a6ba6c326763eed8abedf766b5c55992e/tree1d65bad586cde385327e3911fef8fa77479a49ea. Base exacta de esta rama documental: 39ffb4cc7484da7b1145be40e9c19766c12b5bbf/treec0efe1d3b313b765977e2a7785669c41c8848fc5, que sólo añade la evidencia del bloqueo al producto previo. PR de producto #59, issue de ejecución #56.
+
+El diagnóstico auditado se conserva en [PR62](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/62), archivo documental 2d38042973499bdeecadd34f7b45f46997e44ef3/treeedf54d3ad3a449e31aae797784773a396cfb1bda. Informe experimental e991ac1d8b28d668bd179417fd6610ccb4228993622c0873ecab55b3d6954b3f. Los originales completos se auditaron localmente; la copia Git tiene omisiones explícitas de trazas/datos de entorno y una procedencia mínima derivada. No se copian archivos de los spikes al producto. Cada experimento cerró su propio presupuesto8/8; ninguno se reabre.
+
+Sólo se sustituyen: contratos F2 §6 en la obligatoriedad exterior de ETag HTML, sus condicionales y su validación; F2 §5 en esos mismos puntos; B03/B05/B06/B09, el alcance de los gates P01/P02 y la evidencia relacionada descritos abajo. Todo el resto se hereda íntegramente: selección DOM, schema/índice, límites, Accept, corpus, bytes, errores, seguridad, routing, delegación, configuración, stack, F2A, F1, P03/evaluador y rollback. Ante conflicto sobre estos puntos rige esta SDD; ante un hueco ajeno, abrir bug y detenerse.
+
+## 3. Headers y existencia de la representación
+
+Canónicas negociadas mantienen HTML text/html; charset=utf-8 y Markdown text/markdown; charset=utf-8. En ambos formatos, incluidos HEAD/304/errores: Cache-Control: private, no-store; Vary incluye Accept una vez y conserva otros tokens necesarios; CDN-Cache-Control/Cloudflare-CDN-Cache-Control heredados se reemplazan con no-store. Link F1 y cuatro headers de seguridad siguen exactos. No cookies, auth, Content-Location de preview, Last-Modified, Accept-Ranges ni X-Edge-Cache documentales. No añadir no-transform.
+
+Las respuestas200 contienen exclusivamente el asset elegido, sin transformación del contenido por el Worker. Sus hashes corresponden a la entidad decodificada. Content-Length/Content-Encoding pertenecen a ese stream, nunca a la otra variante; no borrar Content-Encoding dejando un cuerpo comprimido ni recomprimir en código propio. La plataforma puede elegir una codificación compatible con el request. Vary conserva Accept-Encoding si la respuesta ya lo requiere. HEAD usa HEAD real y carece de cuerpo; para la misma variante/codificación, sus headers de contenido y validador son coherentes con GET.
+
+Markdown: copiar el ETag opaco que entregue ASSETS para el documento seleccionado, sin sintetizar, debilitar ni restaurar tags en código. Un200/304 de ASSETS sin ETag para Markdown es representación no disponible:503 literal existente, con HEAD vacío y headers de error vigentes. El cliente público debe observar un ETag utilizable; si la plataforma lo elimina, es bloqueo real, no N/A. Un cambio nativo de formato fuerte/débil por codificación no autoriza fabricar tokens: se registra el tag exterior y se prueba su revalidación con esa misma codificación. No comparar tags opacos de despliegues distintos ni con hashes del índice.
+
+HTML: copiar ETag nativo si ASSETS lo entrega. Su presencia en ASSETS, wrapper o exterior no se exige como requisito de producto. No eliminarlo deliberadamente para saltar pruebas ni añadir un validador calculado. Si falta en el exterior, registrar ausencia. Si se anuncia, exigir coherencia GET/HEAD y revalidación propia con el tag realmente observado. La transformación o pérdida de un header por plataforma no justifica alterar los bytes editoriales ni la política de caché.
+
+Un documento conocido con asset ausente, índice inválido o status de ASSETS inesperado conserva503; HTML sin ETag y asset200 no equivale a asset ausente. El índice/métodos/rutas se siguen validando con los contratos originales.
+
+## 4. If-None-Match y matriz obligatoria
+
+La selección Accept ocurre antes del condicional. El request interno sigue el contrato de allowlist, método y sólo If-None-Match válido del visitante; no transfiere cookies, auth, query, Range, If-Range o If-Modified-Since. Matching por comparación débil para GET/HEAD, lista válida y asterisco único. Evaluar sólo la representación seleccionada, nunca contra un tag de la otra variante. No hay304 por fecha ni206 por rango.
+
+Gramática de If-None-Match: OWS alrededor del campo y miembros; o asterisco único, o lista de entity-tags. Entity-tag es un opaque-tag entre comillas, opcionalmente prefijado con W/ mayúsculo; etagc admite byte0x21,0x23–0x7e,0x80–0xff. Comparar opaque-tag exacto, case-sensitive, ignorando sólo W/. Comas dentro de las comillas pertenecen al tag; no son separadores ni quoted-pair escapes. Ignorar hasta16 miembros vacíos de lista (regla de recepción de listas HTTP), exigir al menos un tag válido. Un miembro no vacío inválido, comillas desequilibradas, caracteres fuera de etagc, más de16 vacíos o * mezclado con tags invalida todo el condicional: no hacer matching parcial, no reenviarlo a ASSETS y tratarlo como ausencia de condición, sin nuevo error400. Header vacío también se trata como ausencia. Son casos locales obligatorios en ambas variantes: lista con coma dentro de tag, vacíos permitidos, miembro inválido junto a tag propio, quote sin cerrar y wildcard mezclado con propio; estos últimos no pueden producir304. Esto sustituye el reenvío indiscriminado de condicionales de la SDD anterior.
+
+Cuando ASSETS devuelve200 de la representación existente y el condicional es *, convertir a304 aunque HTML no tenga ETag. No necesita leer ni calcular un hash del cuerpo. Esta conversión sólo aplica a un asset existente confirmado, no a un404/503. Para tag/lista, si la representación seleccionada no tiene ETag, no hay coincidencia; una respuesta200 continúa200. Si ASSETS resuelve304, conservar esa respuesta sólo en el contexto del condicional permitido. No aceptar un304 sin If-None-Match válido: es status inesperado y503. Markdown siempre exige ETag nativo en200/304.
+
+304 y HEAD nunca tienen cuerpo; retirar Content-Length de200 al convertir a304 y conservar Vary/política/Link/seguridad y el ETag seleccionado si existe. Cancelar el cuerpo descartado según el runtime actual. No transportar Content-Length/Content-Encoding de otra representación ni anunciar un validador que no identifique la seleccionada.
+
+| Caso GET y HEAD | Markdown, local y público | HTML local controlado | HTML público |
+|---|---|---|---|
+| Sin condicional |200, ETag obligatorio, cuerpo GET íntegro |200; mock con ETag y mock sin ETag válidos |200; presencia o ausencia ETag registrada |
+| Tag propio |304, usando tag observado |304 en ASSETS con tag; sin tag no match |304 si200 anuncia tag; de otro modo N/A con evidencia de ausencia |
+| Forma débil del tag propio |304 |304 si hay tag |304 si hay tag observado; de otro modo N/A |
+| Lista válida que contiene propio y token diferente |304 |304 si hay tag |304 si hay tag observado; de otro modo N/A |
+| Token distinto de los tags observados |200 |200, con y sin ETag |200, con y sin ETag exterior |
+| * |304 con ETag, sin cuerpo |304, incluidos mock200 sin ETag y ASSETS304 con condicional |304 sin cuerpo; ETag opcional |
+| Tag de otra representación |200 |200 cuando existe el tag opaco de la otra variante |Tag MD observado hacia HTML:200 obligatorio; tag HTML hacia MD:200 si HTML lo anuncia, o N/A documentado |
+| Range/If-Range/If-Modified-Since sin match ETag |200 completo, no206/304porfecha |200 completo |200 completo |
+| Rango/fecha junto a tag propio coincidente |304 por ETag |304 si hay tag |304 si hay tag observado; de otro modo caso no aplicable |
+
+Las pruebas locales aisladas mantienen la matriz completa HTML/MD con ETags nativos/mock distintos y prueban adicionalmente HTML sin ETag, Markdown sin ETag→503, wildcard sobre asset existente sin ETag→304, asset ausente con *→503 y304 inesperado sin condicional→503. Así se conserva el soporte real de condicionales HTML, aunque un edge concreto no anuncie su token.
+
+En público, cada decisión N/A de HTML depende de un GET y HEAD200 del mismo candidato/ruta/Accept-Encoding. Si se observa un tag, todas las filas correspondientes se prueban: no seleccionar sólo rutas sin tag, importar tags de otro despliegue, usar headers diagnósticos, inventar un token HTML desde índice ni llamar una falta de evidencia N/A. Distintas rutas pueden tener distinta disponibilidad; el registro es por ruta y variante. N/A es exclusivo de filas que requieren un tag HTML anunciado; no exime status, bytes, wildcard, cruces desde Markdown, seguridad ni los tests locales.
+
+## 5. Compresión y evidencia finita
+
+No añadir no-transform ni implementar compresión propia. El objetivo es conservar compresión de plataforma, no imponer gzip/Brotli ni demostrar velocidad con una medición offline. La estimación de119418 bytes HTML identity frente a22731 bytes gzip local explica la decisión, pero no acredita transferencia en producción.
+
+Después de congelar el candidato y obtener CI/Workers/Commit Preview oficiales, verificar todo el corpus canónico GET/HEAD HTML/MD con Accept-Encoding: identity, más recursos explícitos y demás casos del contrato original. Capturar status, MIME, Cache-Control, Vary, ETag presente/ausente, encoding, seguridad/Link y hashes decodificados. La matriz pública de condicionales anterior se aplica a cada ruta; la dependencia de tag se resuelve con sus capturas200. El ejecutor enumera antes de iniciar todos los casos y el total esperado derivado del índice actual, sin fijar28 como límite del corpus ni hacer reintentos para obtener verde.
+
+Añadir únicamente ocho casos de codificación HTML: home y Cushing, GET/HEAD, Accept-Encoding: gzip y Accept-Encoding: br. No requiere que el servidor comprima;200 identity sigue siendo negociación de codificación válida. Si anuncia gzip/br, verificar con un cliente que decodifique correctamente y registrar bytes/hash de la entidad; GET decodificado debe coincidir con build, HEAD carece de cuerpo y anuncia headers coherentes para esa codificación. Registrar codificación/tamaño observados sin atribuir la configuración de producción al preview. Si se advierte una regresión de negociación o integridad, abrir bug y detenerse. No medir tiempos para prometer una mejora de rendimiento.
+
+En cada tanda, cualquier error de transporte, status, hash o regla aplicable detiene los casos públicos restantes y abre bug; no repetir ni relanzar jobs para ocultarlo. La lista anticipada permite prever filas condicionales por tag; los registros N/A justifican exactamente qué casos no se ejecutaron. El presupuesto de las dos pruebas diagnósticas antiguas no se usa para estas pruebas de aceptación de producto, y permanece cerrado.
+
+La evidencia pública versionada evita metadata personal y de infraestructura: headers/status/cuerpos, resultados, fuente, timestamps, hashes y recibos mínimos. Traces de red, logs completos o snapshots con autoría personal quedan en artifact/local si hacen falta, con un índice explícito de omisiones y sus hashes; no afirmar que la copia Git contiene esos bytes. Los informes independientes evalúan los originales completos si están disponibles; si faltan datos necesarios para auditar un criterio, se detiene y abre bug.
+
+No introducir workflows diagnósticos, checkout de credenciales, nuevas acciones ni herramientas de red en la rama de producto. Respetar proxies/CA y allowlist original de pruebas públicas; no APIs/admin/Assistant/calculadoras/POST, no evaluator en previews. La inspección de compresión es parte de aceptación B, no habilitación de un tercer experimento.
+
+## 6. Criterios sustituidos y criterios heredados
+
+| Criterio | Requisito sucesor y evidencia obligatoria |
+|---|---|
+| B03 | Corpus íntegro GET/HEAD HTML/MD, status/MIME y hash decodificado correctos. ETag MD obligatorio; HTML presente/ausente registrado por ruta y codificación. Evidencia local y pública del SHA congelado. |
+| B05 | Matriz §4: Markdown completa local/pública; HTML completa local con fixtures con/sin ETag, pública según tag observado, wildcard siempre. Cruces desde MD hacia HTML siempre y de HTML hacia MD cuando haya tag anunciado.304 vacíos y Range/fecha ignorados. Toda N/A debe tener captura200 de ausencia, nunca un PASS de la SDD antigua. |
+| B06 | Ambas alternancias HTML→MD→HTML y MD→HTML→MD repetidas dos veces en home/Cushing, política private/no-store/Vary constante, ETag MD estable por representación/codificación y HTML coherente si existe. Sin Cache API documental ni no-transform; no inventar HIT/MISS. |
+| B09 | Seguridad/Link/caché en200/304/HEAD/errores y requests internos sin credenciales.304 HTML sin ETag permitido sólo por la condición definida; ausencia ETag MD falla. Incluir ocho muestras de codificación HTML de §5. |
+
+B01/B02/B04/B07/B08/B10 siguen completos y obligatorios. En B01 la comparación de artefactos contra F2A mantiene HTML/Markdown/índice idénticos; las nuevas decisiones afectan runtime/tests/evidencia y contrato, no proyección/editorial. Las capturas locales previas y el diagnóstico no sustituyen entrega final, matriz completa ni auditoría formal de producto.
+
+P01/P02 conservan su alcance de producción y emplean §3–§5 para validadores HTML opcionales/Markdown obligatorios. Se mantiene recorrido completo, headers/cuerpo, alternancias y ocho muestras de codificación; no heredar resultados de preview para WAF/CDN de dominio. P03 conserva exactamente un scan content y uno all-ui con perfiles/fórmula fijados; una caída real del evaluador detiene el trabajo sin retries ni simulaciones. La puntuación objetivo sigue siendo una estimación del plan anterior, no una promesa ni motivo para añadir capacidades que el blog no tiene.
+
+## 7. Desarrollo, auditorías y autorización
+
+Esta rama documental parte exactamente de39ffb4c y sólo añade esta SDD y sus informes/ratificación bajo docs/agent-readiness. No rebasear las ramas de diagnóstico sobre producto ni incorporarlas por merge. Después de PASS independiente y cierre documental publicado, el issue56 fija el SHA público completo de esta rama sucesora como nueva base de trabajo de B; el implementador parte de ella en worktree/rama propia. PR draft contra la rama sucesora. Esta base contiene F2A aceptada, producto B anterior y esta decisión documental; debe verificarse tree/diff antes de empezar. Los PR59/54 anteriores se conservan como historia, con estado actualizado y sin presentarlos como aprobaciones del contrato sucesor.
+
+El ownership B original se conserva. Cambios mínimos esperados: tests/evidencia que distingan ETag HTML opcional, manejo explícito de wildcard por existencia y error por falta de ETag Markdown si el código previo no los satisface. Entry point de producto sigue siendo el wrapper normal sin instrumentation/proxyASSETS; package/lock/runtime ajeno, plantillas/editorial/F2A, middleware, APIs, bindings y configuración no se rediseñan. Si una necesidad exige otro archivo, no se inventa una ampliación: bug de SDD y STOP.
+
+Implementación: sesión Luna6, razonamiento alto, distinta del coordinador arquitecto. Auditor independiente del autor/corrector. El issue56 conserva el contador formal de B en0/5; la primera revisión del producto sucesor será1/5, máximo cinco totales incluido el primer intento, sin reinicios o una sexta revisión. FAIL de código permite corregir dentro del contador; FAIL5, hueco SDD/base/entorno o falta de evidencia necesaria→bug y STOP. Sólo bloqueantes; observaciones opcionales no abren ciclos.
+
+La SDD sucesora tiene contador propio explícito: primera revisión y, si falla por bloqueantes, un único ciclo de corrección y segunda revisión. FAIL2→STOP con el dueño, sin tercer intento. El contador de la SDD original PASS2/2 permanece intacto. Publicar instrucciones ejecutables/actualizar issue56 para reanudar sólo después del PASS y ratificación del coordinador sobre un SHA fijo.
+
+No declarar #60 resuelto por una reparación de Cloudflare que no se hizo: el cambio de alcance autorizado puede resolver su bloqueo normativo, conservando el síntoma y evidencia originales. Registrar esa resolución después de aceptar esta SDD; nuevos fallos de Markdown, HTTP o entorno abren un bug concreto. PASS de SDD no es PASS de código ni permiso de main. La promoción de F2A+B seguirá requiriendo autorización específica sobre commits concretos y checks/PASS/rollback revisables. El rollback conjunto B→A y la preservación F1 siguen los contratos originales.
