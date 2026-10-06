@@ -1,0 +1,144 @@
+diff --git a/astro.config.mjs b/astro.config.mjs
+index 0006fcf..ce96ee6 100644
+--- a/astro.config.mjs
++++ b/astro.config.mjs
+@@ -4,6 +4,7 @@ import mdx from '@astrojs/mdx';
+ import { satteri } from '@astrojs/markdown-satteri';
+ import sitemap from '@astrojs/sitemap';
+ import { discoveryIntegration } from './scripts/agent-readiness/discovery.mjs';
++import { f2ProbeIntegration } from './scripts/f2-probe-platform.mjs';
+ import {
+   externalLinks,
+   secureExternalLinksIntegration,
+@@ -68,6 +69,7 @@ export default defineConfig({
+       },
+     }),
+     discoveryIntegration(),
++    f2ProbeIntegration(),
+   ],
+   markdown: {
+     processor: satteri({ hastPlugins: [externalLinks] })
+diff --git a/scripts/f2-probe-platform.mjs b/scripts/f2-probe-platform.mjs
+new file mode 100644
+index 0000000..b335c66
+--- /dev/null
++++ b/scripts/f2-probe-platform.mjs
+@@ -0,0 +1,47 @@
++import { mkdir, readFile, writeFile } from 'node:fs/promises';
++import { join } from 'node:path';
++import { fileURLToPath } from 'node:url';
++import { inventory } from './agent-readiness/inventory.mjs';
++
++const CONTENT_PREFIX = '/agent-content/v1';
++
++export function f2ProbeIntegration() {
++  let config;
++  return {
++    name: 'f2-probe-platform',
++    hooks: {
++      'astro:config:done': ({ config: resolved }) => { config = resolved; },
++      'astro:build:done': async ({ logger }) => {
++        const assetsDir = fileURLToPath(config.build.client);
++        const inventoryDir = join(config.root.pathname, '.f2-probe-inventory');
++        const exit = await inventory(assetsDir, inventoryDir);
++        const inventoryData = JSON.parse(await readFile(join(inventoryDir, 'inventory.json'), 'utf8'));
++        if (exit !== 0 || inventoryData.state !== 'valid') throw new Error('F2 probe: inventory inválido');
++
++        const documents = inventoryData.pages.filter(({ disposition }) => disposition === 'document');
++        const docIndex = {
++          schemaVersion: 'probe-index/1',
++          documents: documents.map(({ documentId, canonicalPath, htmlFile }) => ({
++            documentId,
++            canonicalPath,
++            htmlPath: `/${htmlFile}`,
++            markdownPath: `${CONTENT_PREFIX}/documents/${documentId}.md`,
++          })),
++        };
++        const contentDir = join(assetsDir, CONTENT_PREFIX.slice(1), 'documents');
++        await mkdir(contentDir, { recursive: true });
++        await writeFile(join(assetsDir, CONTENT_PREFIX.slice(1), 'index.json'), JSON.stringify(docIndex));
++        for (const doc of documents) {
++          const body = `# Probe: ${doc.documentId}\n\nCanonical: ${doc.canonicalPath}\n`;
++          await writeFile(join(contentDir, `${doc.documentId}.md`), body);
++        }
++
++        const compiledConfig = join(fileURLToPath(config.build.server), 'wrangler.json');
++        const wrangler = JSON.parse(await readFile(compiledConfig, 'utf8'));
++        wrangler.assets.run_worker_first = [...documents.map(({ canonicalPath }) => canonicalPath), '/api/*', '/admin/*'];
++        await writeFile(compiledConfig, JSON.stringify(wrangler));
++        logger.info(`F2 probe generated post-HTML: ${documents.length} docs; ${wrangler.assets.run_worker_first.length} routes; index and Markdown in ASSETS.`);
++      },
++    },
++  };
++}
+diff --git a/scripts/f2-probe-worker.mjs b/scripts/f2-probe-worker.mjs
+new file mode 100644
+index 0000000..c57863b
+--- /dev/null
++++ b/scripts/f2-probe-worker.mjs
+@@ -0,0 +1,65 @@
++import currentWorker from '../dist/server/entry.mjs';
++
++const INDEX_PATH = '/agent-content/v1/index.json';
++let indexMetadata;
++let indexPromise;
++
++async function getIndex(env, request) {
++  if (indexMetadata) return indexMetadata;
++  indexPromise ??= (async () => {
++    const url = new URL(INDEX_PATH, request.url);
++    const response = await env.ASSETS.fetch(new Request(url));
++    if (!response.ok || !response.headers.get('content-type')?.includes('application/json')) {
++      throw new Error('Probe index unavailable or wrong MIME');
++    }
++    const candidate = await response.json();
++    if (candidate.schemaVersion !== 'probe-index/1' || !Array.isArray(candidate.documents)) {
++      throw new Error('Probe index schema invalid');
++    }
++    indexMetadata = candidate;
++    return candidate;
++  })();
++  try {
++    return await indexPromise;
++  } catch (error) {
++    indexPromise = undefined;
++    throw error;
++  }
++}
++
++function wantsMarkdown(request) {
++  return (request.headers.get('accept') ?? '').split(',').some((item) => item.trim().split(';')[0] === 'text/markdown');
++}
++
++export default {
++  async fetch(request, env, context) {
++    const index = await getIndex(env, request);
++    const doc = index.documents.find(({ canonicalPath }) => canonicalPath === new URL(request.url).pathname);
++    if (doc) {
++      const markdown = wantsMarkdown(request);
++      const path = markdown ? doc.markdownPath : doc.htmlPath;
++      const allowed = markdown
++        ? /^\/agent-content\/v1\/documents\/[a-z0-9-]+\.md$/
++        : /^\/(?:[a-z0-9/-]+\.html|index\.html)$/;
++      if (typeof path !== 'string' || !allowed.test(path)) {
++        return new Response('Invalid representation path', { status: 500 });
++      }
++      const headersIn = new Headers();
++      for (const name of ['if-none-match', 'if-modified-since', 'if-range', 'range']) {
++        const value = request.headers.get(name);
++        if (value) headersIn.set(name, value);
++      }
++      const asset = await env.ASSETS.fetch(new Request(new URL(path, request.url), {
++        method: request.method,
++        headers: headersIn,
++      }));
++      const headers = new Headers(asset.headers);
++      if (markdown) headers.set('content-type', 'text/markdown; charset=utf-8');
++      const vary = headers.get('vary');
++      if (!vary) headers.set('vary', 'Accept');
++      else if (!vary.split(',').some((value) => value.trim().toLowerCase() === 'accept')) headers.set('vary', `${vary}, Accept`);
++      return new Response(request.method === 'HEAD' || asset.status === 304 ? null : asset.body, { status: asset.status, headers });
++    }
++    return currentWorker.fetch(request, env, context);
++  },
++};

@@ -14,8 +14,9 @@ Esta sesión es responsable de arquitectura, planificación, especificaciones y 
 3. [Plan por fases](plan.md): entregables, dependencias, ownership, aceptación y reversión.
 4. [Método SDD y traspaso](sdd.md): cómo convertir cada fase en una especificación ejecutable.
 5. [Evidencia](evidencia/README.md): respuestas originales, solicitudes y referencias.
-6. [SDD F1](fases/f1-politica-y-descubrimiento.md): implementación aceptada; publicación pendiente.
-7. [SDD F0](fases/f0-medicion-y-contratos.md), [contratos F0](fases/f0-contratos.md) y [prompts de sesiones](fases/f0-prompts.md): primer encargo ejecutable.
+6. [SDD F1](fases/f1-politica-y-descubrimiento.md): publicada y verificada.
+7. [SDD F2](fases/f2-lectura-markdown.md) y [contratos F2](fases/f2-contratos.md): proyección y negociación en entregas consecutivas; estado y auditorías en su encabezado.
+8. [SDD F0](fases/f0-medicion-y-contratos.md), [contratos F0](fases/f0-contratos.md) y [prompts de sesiones](fases/f0-prompts.md): primer encargo ejecutable.
 
 Este README fija el objetivo y el estado; arquitectura fija las decisiones; el plan fija el orden; una futura spec fija la ejecución de una fase. Una spec no puede contradecir estos documentos sin registrar la decisión que los modifica. La evidencia describe observaciones, no decisiones.
 
@@ -37,6 +38,6 @@ Confirmada en esta conversación: `search=yes`, `ai-input=yes`, `ai-train=no`. L
 
 ## Próximo paso
 
-F1 está publicada y P01–P03 pasan con evidencia real. Preparar la SDD de F2 con sus contratos de paridad y preview pública; no lanzar implementación sin spec auditada y SHA fijo. Los programadores continúan siendo **Luna 6, razonamiento alto**, con auditoría independiente y máximo cinco revisiones por issue. F2–F6 conservan alcance de planificación.
+F1 está publicada y P01–P03 pasan con evidencia real. La SDD F2 concreta paridad y preview pública en F2A → F2B; no lanzar implementación sin spec auditada y SHA fijo. Los programadores continúan siendo **Luna 6, razonamiento alto**, con auditoría independiente y máximo cinco revisiones por issue. F2–F6 conservan alcance de planificación.
 
 La cadena de PR de F0/F1 se integró por autorización expresa del propietario; las fases siguientes requieren su propia entrega y autorización de promoción. Los implementadores parten de una rama de trabajo. `main` despliega producción al recibir cambios: documentación, H1 y corrección del canonical se entregan en PR apilados y no se fusionan automáticamente.

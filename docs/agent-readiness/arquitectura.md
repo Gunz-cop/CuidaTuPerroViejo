@@ -43,6 +43,8 @@ Cada entrada tendrá identidad estable, tipo, título, descripción, URL canóni
 
 ## A03 — Negociación HTTP en el borde
 
+Concreción F2: [D06–D10](evidencia/f2/decisiones.md) y [contratos](fases/f2-contratos.md). Documentos GET/HEAD se sirven con ASSETS Request para preservar método/validadores; el resto delega Astro. No-store exterior, VaryAccept y representaciones internas separadas; preview pública y producción verifican alternancias. Corpus hasta98 documentos (100 reglas incluyendo API/admin); exceder falla build. No se cambia normativa histórica F0/F1.
+
 Decisión ratificada D01/D04 para la futura SDD F2: servir Markdown precompilado en la **misma URL** mediante `Accept: text/markdown`, con `Vary: Accept`. La [SDD F0](fases/f0-contratos.md) fija para el spike la representación explícita `/agent-content/v1/documents/<documentId>.md` y el índice `/agent-content/v1/index.json`; F2 la incorpora tras ratificar la prueba. Las URLs HTML existentes no cambian.
 
 La ruta debe ejecutarse antes del enrutamiento de assets en las páginas negociables. La documentación actual de Astro permite un entrypoint propio en Wrangler utilizando el handler del adaptador. F0 demostró delegación al handler vigente y a `ASSETS` en workerd; F2 concretará e incorporará esa solución para todo el corpus, con preview pública. No utilizar la opción antigua `workerEntryPoint`, eliminada del adaptador actual.

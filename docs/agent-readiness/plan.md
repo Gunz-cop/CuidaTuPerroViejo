@@ -8,7 +8,7 @@ Plan aceptado por el propietario; F0 aceptada técnicamente con [PASS 3/5 y rati
 |---|---|---|---|
 | F0 — Medición, inventario y decisiones de entrega | Evidencia repetible y contratos técnicos congelados | Plan | Línea base: 43 contenido / 20 general |
 | F1 — Política y descubrimiento básico | Content Signals, llms.txt y Link funcional | F0 | 71 contenido / 33 general; nivel 2 |
-| F2 — Lectura íntegra y negociación Markdown | Proyección pública, routing y caché correctos | F1 y decisiones F0 resueltas | 86 contenido / 40 general; nivel 3 |
+| F2 — Lectura íntegra y negociación Markdown | F2A proyección → F2B routing/negociación; serie | F1 y decisiones F0 resueltas | 86 contenido / 40 general; nivel 3 |
 | F3 — API y skills de producto | Catálogo, búsqueda/lectura, OpenAPI, skills y ARD | F2 | 60 general; nivel 4 previsto |
 | F4A — Herramientas compartidas y WebMCP | Paridad UI/API y registro en navegador | F3 | 67 general |
 | F4B — MCP remoto | Servidor real, transporte y card | F4A | 73 general |
@@ -48,6 +48,8 @@ Aceptación de implementación: política exacta, llms construido con enlaces ca
 Reversión: commit de política/headers/llms, conservando la evidencia histórica. La política elegida no se cambia incidentalmente al revertir otra fase.
 
 ## F2 — Markdown y publicación determinista
+
+Contrato concreto: [SDD F2](fases/f2-lectura-markdown.md), [contratos v1](fases/f2-contratos.md) y [decisiones D06–D10](evidencia/f2/decisiones.md). Dos issues consecutivos: F2A genera contenido; F2B negocia HTTP sobre A aceptada. No solapamiento, mismo objetivo de fase. D08 precisa ASSETS Request para documentos; D09 fija no-store exterior y cache interna ASSETS con alternancias repetidas públicas, sin fingir TTL/purga de una capa deshabilitada.
 
 Entregar generador basado en HTML renderizado, índice público, documentos Markdown, URL explícita de representación y negociación en la URL canónica. Definir selección de contenido, renderizado de enlaces/tablas/FAQ/avisos, normalización de URLs, headers, validators y límites en la spec.
 
