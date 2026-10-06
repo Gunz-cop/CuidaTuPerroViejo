@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "f2a-evidence/1",
+  "baseSha": "cac7ee039607ee9923a403a4e2f299437ff94af2",
+  "baseTree": "fcb639ddc7680ec69b5fb862731ab9174ee37a8a",
+  "index": {
+    "path": "index.json",
+    "sha256": "d2868aa542def5a6ea7bd2b18956d3a15016b792de8b05b79789d87db9e6df73",
+    "schemaVersion": "agent-content/1",
+    "documentCount": 28,
+    "corpusSha256": "29a6147e978da7d92c4a5f49068e92bb05dc28ecb75a0c9f3231d1aef8f81184",
+    "totalMarkdownBytes": 556402,
+    "maxDocumentBytes": 47807,
+    "minDocumentBytes": 2477,
+    "indexBytes": 26284,
+    "limits": {
+      "documents": 98,
+      "indexBytes": 524288,
+      "documentBytes": 524288,
+      "totalMarkdownBytes": 16777216
+    },
+    "withinLimits": true,
+    "idMaxChars": 160
+  },
+  "determinism": {
+    "builds": 2,
+    "assetHashEntries": 29,
+    "identical": true,
+    "manifestSha256": "a39b25eddaac7eb05386a23e3193fb63804ac6a790f5101c68fb302585b0d858"
+  },
+  "http": {
+    "workerdEvidence": "workerd-http.json",
+    "explicitResources": 29,
+    "methods": [
+      "GET",
+      "HEAD"
+    ],
+    "requestsExpected": 58,
+    "requestsRecorded": 58,
+    "failed": 0,
+    "homeAcceptMarkdownStillHtml": true
+  },
+  "coverage": {
+    "goldens": 11,
+    "regressionTests": 37,
+    "corpusCoverage": "Every source page in baseline inventory represented in generated closed-schema index; HTML/Markdown paired expected files cover all prescribed profile shapes; full-body checks on every corpus item are applied in projection check.",
+    "f2ProjectionCases": 16,
+    "growthEndToEnd": "29 derived inventory documents from concordant sitemap, published catalogue and built HTML; projection generation and read-only check pass in temporary build copy",
+    "lossMutations": [
+      "conditional mobility alert",
+      "FAQ detail",
+      "table cell text",
+      "source URL",
+      "visible article author",
+      "expected document removed from output",
+      "orphan Markdown added to output"
+    ],
+    "growthEndToEndTests": 1,
+    "limitMutation": "Inventory recognizes 99 concordant docs; generator fails at cap 98 and creates no projection directory"
+  },
+  "limitations": [
+    "Commit Preview GET/HEAD and CI receipts require published frozen PR HEAD; production gate and deployment intentionally out of scope.",
+    "Workerd HEAD omitted Content-Length; contract permits omission and requires it to match only if present."
+  ]
+}

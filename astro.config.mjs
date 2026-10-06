@@ -4,6 +4,7 @@ import mdx from '@astrojs/mdx';
 import { satteri } from '@astrojs/markdown-satteri';
 import sitemap from '@astrojs/sitemap';
 import { discoveryIntegration } from './scripts/agent-readiness/discovery.mjs';
+import { projectionIntegration } from './scripts/agent-readiness/projection.mjs';
 import {
   externalLinks,
   secureExternalLinksIntegration,
@@ -68,6 +69,7 @@ export default defineConfig({
       },
     }),
     discoveryIntegration(),
+    projectionIntegration(),
   ],
   markdown: {
     processor: satteri({ hastPlugins: [externalLinks] })
