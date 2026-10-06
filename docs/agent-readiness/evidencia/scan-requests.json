@@ -1,0 +1,60 @@
+[
+  {
+    "file": "scan-content.json",
+    "endpoint": "https://isitagentready.com/api/scan",
+    "method": "POST",
+    "body": {
+      "url": "https://cuidatuperroviejo.com",
+      "enabledChecks": [
+        "robotsTxt",
+        "sitemap",
+        "linkHeaders",
+        "dnsAid",
+        "markdownNegotiation",
+        "robotsTxtAiRules",
+        "contentSignals"
+      ]
+    },
+    "sha256": "7881b99e3e24b0c71023897b1f3dcdc8778fcdb00999a22d4c13ac26abad2643"
+  },
+  {
+    "file": "scan-ui-default.json",
+    "endpoint": "https://isitagentready.com/api/scan",
+    "method": "POST",
+    "body": {
+      "url": "https://cuidatuperroviejo.com",
+      "enabledChecks": [
+        "robotsTxt",
+        "sitemap",
+        "linkHeaders",
+        "dnsAid",
+        "markdownNegotiation",
+        "robotsTxtAiRules",
+        "contentSignals",
+        "webBotAuth",
+        "apiCatalog",
+        "oauthDiscovery",
+        "oauthProtectedResource",
+        "authMd",
+        "mcpServerCard",
+        "agentSkills",
+        "webMcp",
+        "ard",
+        "x402",
+        "mpp",
+        "ucp",
+        "acp"
+      ]
+    },
+    "sha256": "5385f0295d5badf66bf339f45f46a2a5eb4ef276bd4f6123d6e3788013b4a99f"
+  },
+  {
+    "file": "scan-all.json",
+    "endpoint": "https://isitagentready.com/api/scan",
+    "method": "POST",
+    "body": {
+      "url": "https://cuidatuperroviejo.com"
+    },
+    "sha256": "8cc927a1085e5ce83225d1d921a3dc60b658f1aee1e36e3b785371a4331f2bf9"
+  }
+]
