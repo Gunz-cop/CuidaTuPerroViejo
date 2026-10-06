@@ -1,11 +1,11 @@
 # Cuida tu Perro Viejo: arquitectura para agentes
 
 Fecha: 2026-10-01. Base técnica: `main@cdb0adece5d629f6b2473be7ea6e30c0b372ef1c`.
-Estado de cada fase: consultar su SDD y el issue de lanzamiento con el informe de auditoría; implementación no iniciada.
+Estado de cada fase: consultar su SDD y el issue de lanzamiento con el informe de auditoría. F0 se inició y se detuvo por un defecto de canonical; su reanudación se rige por la nueva base auditada y fijada en el issue #43. Ninguna fase ha sido aceptada.
 
 El objetivo es maximizar la puntuación verificable de [isitagentready.com](https://isitagentready.com) y que un agente pueda descubrir el sitio, leer una guía con sus fuentes y advertencias, citarla y utilizar las herramientas existentes.
 
-Esta sesión es responsable de arquitectura, planificación, especificaciones y revisión. Otras sesiones implementan. Este cambio contiene documentación, evidencia y la corrección semántica H2 → H1 del título principal del selector de movilidad, autorizada por el propietario. No publica capacidades del programa.
+Esta sesión es responsable de arquitectura, planificación, especificaciones y revisión. Otras sesiones implementan. La base contiene documentación, evidencia y dos correcciones autorizadas: H2 → H1 del título principal del selector de movilidad y canonical/og:url de la home a `/`. La segunda resuelve el bug #45 mediante una sesión separada de Luna 6 con razonamiento bajo y auditoría independiente PASS (intento 1/5). No publica capacidades del programa.
 
 ## Documentos y autoridad
 
@@ -36,6 +36,6 @@ Confirmada en esta conversación: `search=yes`, `ai-input=yes`, `ai-train=no`. L
 
 ## Próximo paso
 
-Tras PASS de auditoría de bloqueantes y publicación de la base exacta en el issue, asignar F0 a una sesión de **Luna 6, razonamiento alto**, usando su [prompt de lanzamiento](fases/f0-prompts.md). Entrega tooling, evidencia y un spike aislado; una sesión distinta verifica sus doce criterios. El coordinador ratifica las decisiones técnicas y concreta F1/F2 sobre esos resultados. Las fases siguientes conservan alcance de planificación.
+Tras PASS de auditoría de esta revisión de reanudación y publicación de la base exacta en el issue, reanudar la misma sesión F0 de **Luna 6, razonamiento alto**, usando su [prompt](fases/f0-prompts.md) y el [registro de reanudación](fases/f0-reanudacion-2026-10-05.md). Entrega tooling, evidencia y un spike aislado; una sesión distinta verifica sus doce criterios. El coordinador ratifica las decisiones técnicas y concreta F1/F2 sobre esos resultados. Las fases siguientes conservan alcance de planificación.
 
-Los implementadores parten de una rama de trabajo. `main` despliega producción al recibir cambios: este plan y el ajuste H1 se entregan en PR y no se fusiona automáticamente.
+Los implementadores parten de una rama de trabajo. `main` despliega producción al recibir cambios: documentación, H1 y corrección del canonical se entregan en PR apilados y no se fusionan automáticamente.
