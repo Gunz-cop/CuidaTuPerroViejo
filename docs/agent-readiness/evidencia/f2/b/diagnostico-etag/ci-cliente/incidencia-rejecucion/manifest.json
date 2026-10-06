@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "f2b-etag-ci-rerun-incident/1",
+  "incident": "second automatic run caused by cumulative pull_request paths diff",
+  "requestCount": {
+    "firstManualPreviewRequests": 4,
+    "firstHostedRunRequests": 2,
+    "incidentHostedRunRequests": 2,
+    "totalObserved": 8,
+    "maximum": 8,
+    "remaining": 0,
+    "parentManifestAtCreationStillSaid": "6/8 at its historical snapshot"
+  },
+  "measuredHttpSource": {
+    "commit": "b87616f72d4ff3446f005f87761bfd65d9f43b62",
+    "tree": "e0b4f080984b24241ddd4a68767ff82f334ec00f",
+    "preview": "https://5c55fc8d-cuidatuperroviejo.g1721m.workers.dev/",
+    "receiptComment": 6022505218,
+    "receiptAt": "2026-10-06T18:11:43Z"
+  },
+  "rerunWorkflowSource": {
+    "commit": "2f64180f7951b91a38d164cac36ef4efd0338ac9",
+    "tree": "343032193a00bc76e5fee7ffdaa7c018f5dca892",
+    "event": "pull_request/synchronize",
+    "pr": 61,
+    "headRef": "spike/f2b-etag-observabilidad",
+    "baseRef": "agent-ready/f2b-negociacion",
+    "runId": 37511444678,
+    "jobId": 112433328883,
+    "workflowConclusion": "success",
+    "jobConclusion": "success",
+    "captureStartUtc": "2026-10-06T18:27:29Z",
+    "captureEndUtc": "2026-10-06T18:27:30Z",
+    "proxyConfigured": false
+  },
+  "log": {
+    "file": "raw/job-112433328883.log",
+    "bytes": 26960,
+    "sha256": "cc0f5dd28b6fe53205f565096e88c092dba5f3a7eec4a7dff7c10ebc25514101",
+    "retrieval": "full decoded GitHub Actions job log via authorized GitHub connector"
+  },
+  "runnerFiles": [
+    {"file": "provenance.txt", "bytes": 431, "sha256": "438685721676ccfae53c5b46bed15ad3bf9e9c1d9759cab95a5f4b3a2f295709"},
+    {"file": "capture.log", "bytes": 10357, "sha256": "22b56650ad91c5f1dcc27dd55d51bd9787648aab23652e6f3e34e0784b913e04"},
+    {"file": "home-html-head.headers", "bytes": 1133, "sha256": "fb036adbe759cd1a11a90436675fe94dc9194876b72733b8113e3b4335dce610"},
+    {"file": "home-html-head.status", "bytes": 53, "sha256": "2144f3a0cdaadd813217b9df0fb4e7a797bef6a7b02a7f448fe1d278d3c4496b"},
+    {"file": "home-html-head.trace", "bytes": 3818, "sha256": "e92840195e701bf24b041ec2a11d040a0c5f2596ec6b150f20711d5dd25c3225"},
+    {"file": "home-markdown-head.headers", "bytes": 1175, "sha256": "4fbedf66b74b31db2913a56064f3eca59d62b00344c078176133e4f1a1fa705c"},
+    {"file": "home-markdown-head.status", "bytes": 53, "sha256": "2144f3a0cdaadd813217b9df0fb4e7a797bef6a7b02a7f448fe1d278d3c4496b"},
+    {"file": "home-markdown-head.trace", "bytes": 3872, "sha256": "4a13d5db03d2a8b835c7bf7f813fa87dee7b08cbc0320b69ec66ff1d5c48e39c"}
+  ],
+  "records": [
+    {
+      "name": "home-html-head",
+      "method": "HEAD",
+      "path": "/",
+      "requestHeaders": {"user-agent": "ctpv-f2b-etag-spike/1.0", "accept": "text/html", "accept-encoding": "identity"},
+      "status": 200,
+      "curlExit": 0,
+      "httpVersion": "2",
+      "outerEtag": null,
+      "assetsRepresentationEtag": "\"a791cc206d8b7a5dc2c8f993dce7c454\"",
+      "wrapperEtag": "\"a791cc206d8b7a5dc2c8f993dce7c454\"",
+      "cfRay": "a466b86d1ff9bfd1-ATL",
+      "responseServer": "cloudflare"
+    },
+    {
+      "name": "home-markdown-head",
+      "method": "HEAD",
+      "path": "/",
+      "requestHeaders": {"user-agent": "ctpv-f2b-etag-spike/1.0", "accept": "text/markdown", "accept-encoding": "identity"},
+      "status": 200,
+      "curlExit": 0,
+      "httpVersion": "2",
+      "outerEtag": "\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "assetsRepresentationEtag": "\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "wrapperEtag": "\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "cfRay": "a466b8705e12b48a-MEM",
+      "responseServer": "cloudflare"
+    }
+  ],
+  "guard": {
+    "localCommit": "183ed860487b78e7a03d1396b9ad76a1d1eeb0f2",
+    "publicCommit": "52596d254b114326f91c68cf66f096549f6db96b",
+    "tree": "cfb66576b9b89205e0bcee9b38e39350da6c8945",
+    "addedCondition": "github.event.pull_request.head.sha == '1c77bd14e217ba70ed6cadc5bad3b08a25f3fe94'",
+    "prNumber": 61,
+    "headRef": "spike/f2b-etag-observabilidad",
+    "verificationRunId": 37511989881,
+    "verificationJobId": 112435202003,
+    "runConclusion": "skipped",
+    "jobConclusion": "skipped"
+  },
+  "cause": "The pull_request paths filter was evaluated against the cumulative PR diff against its base. The workflow file therefore remained a changed path after a docs-only commit; the previous PR/ref-only job condition permitted another capture. The exact-head guard is now published and verified skipped.",
+  "status": {
+    "f2b": "blocked",
+    "b05": "not passed",
+    "formalAudit": "0/5",
+    "moreHttpAllowed": false,
+    "mergeAllowed": false
+  },
+  "closureNote": "This manifest is included in its evidence-closure commit; its commit SHA is reported separately."
+}

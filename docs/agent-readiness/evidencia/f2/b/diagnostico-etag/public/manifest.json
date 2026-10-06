@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "f2b-etag-spike-public/1",
+  "experiment": "diagnostic-only; no B acceptance and no formal audit consumed",
+  "requestBudget": {"maximum": 8, "used": 4},
+  "sourceBuild": {
+    "localCommitSha": "9d6ad480ce1234fefd6e2be476f762f2fc734734",
+    "treeSha": "e0b4f080984b24241ddd4a68767ff82f334ec00f",
+    "publicCandidateCommitSha": "b87616f72d4ff3446f005f87761bfd65d9f43b62",
+    "publicTreeSha": "e0b4f080984b24241ddd4a68767ff82f334ec00f",
+    "parentSha": "39ffb4cc7484da7b1145be40e9c19766c12b5bbf",
+    "runtimeBlob": "42dc14f36ab12858107f0aa4cb250c6d39b6d3af"
+  },
+  "ci": {
+    "ciCheckId": 112425303103,
+    "ciConclusion": "success",
+    "workersCheckId": 112425434177,
+    "workersConclusion": "success"
+  },
+  "receipt": {
+    "pr": 61,
+    "commentId": 6022505218,
+    "permalink": "https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/61#issuecomment-6022505218",
+    "bot": "cloudflare-workers-and-pages[bot]",
+    "updatedAt": "2026-10-06T18:11:43Z",
+    "latestCommit": "b87616f7",
+    "commitPreview": "https://5c55fc8d-cuidatuperroviejo.g1721m.workers.dev"
+  },
+  "client": {
+    "userAgent": "ctpv-f2b-etag-spike/1.0",
+    "proxy": "https_proxy environment proxy; values not recorded",
+    "acceptEncoding": "identity"
+  },
+  "records": [
+    {
+      "name": "home-html-head",
+      "method": "HEAD",
+      "path": "/",
+      "requestHeaders": {"user-agent": "ctpv-f2b-etag-spike/1.0", "accept": "text/html", "accept-encoding": "identity"},
+      "responseDateUtc": "2026-10-06T18:12:30Z",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "etagOuter": null,
+      "etagAssetsIndex": "\"e0a08d20cffa737788d0811bd118b755\"",
+      "etagAssetsRepresentation": "\"a791cc206d8b7a5dc2c8f993dce7c454\"",
+      "etagWrapper": "\"a791cc206d8b7a5dc2c8f993dce7c454\"",
+      "bodyBytes": 0,
+      "headersFile": "home-html-head.headers",
+      "headersSha256": "47e257a8d39a94157a0fd325555ead2bddf2205a51b184df2d9f7eae1c80dabf",
+      "traceFile": "home-html-head.trace",
+      "traceSha256": "ffc24ae815558b82b6af5530dbeb48885da2502601e92449b945fd3c32ee77f7"
+    },
+    {
+      "name": "home-markdown-head",
+      "method": "HEAD",
+      "path": "/",
+      "requestHeaders": {"user-agent": "ctpv-f2b-etag-spike/1.0", "accept": "text/markdown", "accept-encoding": "identity"},
+      "responseDateUtc": "2026-10-06T18:12:31Z",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "etagOuter": "\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "etagAssetsIndex": "\"e0a08d20cffa737788d0811bd118b755\"",
+      "etagAssetsRepresentation": "\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "etagWrapper": "\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "bodyBytes": 0,
+      "headersFile": "home-markdown-head.headers",
+      "headersSha256": "9aa1ffb310b1f251f9cbb1c1a0d0ebe4306f9eff4f6b9f03772eca783824f82e",
+      "traceFile": "home-markdown-head.trace",
+      "traceSha256": "5a7b29529d5ed587e6a167750c5a1f1defb6859b4c315ef7259b92ad7a5e3d2a"
+    },
+    {
+      "name": "home-html-get",
+      "method": "GET",
+      "path": "/",
+      "requestHeaders": {"user-agent": "ctpv-f2b-etag-spike/1.0", "accept": "text/html", "accept-encoding": "identity"},
+      "responseDateUtc": "2026-10-06T18:13:06Z",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "etagOuter": null,
+      "etagAssetsIndex": "\"e0a08d20cffa737788d0811bd118b755\"",
+      "etagAssetsRepresentation": "\"a791cc206d8b7a5dc2c8f993dce7c454\"",
+      "etagWrapper": "\"a791cc206d8b7a5dc2c8f993dce7c454\"",
+      "bodyFile": "home-html-get.body",
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "bodyMatchesBuiltAsset": "dist/client/index.html",
+      "headersFile": "home-html-get.headers",
+      "headersSha256": "a15911b4bb40abfd378416fa26ce5ebd9a90e56b9b96eb0e4426d0726e5b8020",
+      "traceFile": "home-html-get.trace",
+      "traceSha256": "8a309ef75097404d87f157a17899c5fb66a969ca853164f1d260164c3ea8be97"
+    },
+    {
+      "name": "home-markdown-get",
+      "method": "GET",
+      "path": "/",
+      "requestHeaders": {"user-agent": "ctpv-f2b-etag-spike/1.0", "accept": "text/markdown", "accept-encoding": "identity"},
+      "responseDateUtc": "2026-10-06T18:13:06Z",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "etagOuter": "\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "etagAssetsIndex": "\"e0a08d20cffa737788d0811bd118b755\"",
+      "etagAssetsRepresentation": "\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "etagWrapper": "\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "bodyFile": "home-markdown-get.body",
+      "bodyBytes": 12878,
+      "bodySha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+      "bodyMatchesBuiltAsset": "dist/client/agent-content/v1/documents/home.md",
+      "headersFile": "home-markdown-get.headers",
+      "headersSha256": "5b5371b91e4e2536813306ff9dd6e94d8cf560c6ae9795ad57b4cf0181674207",
+      "traceFile": "home-markdown-get.trace",
+      "traceSha256": "017b79a4ced04dbf966f928a2c8f6dcd3feca63810f035f1ad05971726fdd872"
+    }
+  ]
+}
