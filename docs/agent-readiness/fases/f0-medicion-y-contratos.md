@@ -1,7 +1,6 @@
 # F0 — Medición reproducible y contratos de entrega
 
-**Estado: especificada para reanudación; requiere auditoría de esta revisión y publicación fijada por SHA en el issue #43.** Revisión: 2026-10-05.
-El issue de lanzamiento registra el veredicto, la versión auditada y su base exacta; solo entonces puede empezar la implementación.
+**Estado: aceptada técnicamente, sin promoción.** Cierre: 2026-10-05; auditoría independiente PASS 3/5 sobre entrega publicada `6c74dbc5a61decee96465b5b6ab2c10a2ddb094c`. [Informe R3](../evidencia/f0/auditoria/auditoria-f0-implementacion-r3.md) y [ratificación D01–D05](../evidencia/f0/cierre-arquitectonico.md). La normativa ejecutada permanece fijada en `4dced4155788af926ef7b4e3d2d7e8259e1978be` por el issue #43; este estado no modifica retrospectivamente sus contratos.
 Responsable de arquitectura y aceptación: coordinador del programa.
 Implementador: la misma sesión de Luna 6 con razonamiento alto; verificador: una sesión independiente. Las asignaciones y la autorización efectiva de reanudación se registran en el issue #43.
 

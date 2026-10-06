@@ -1,6 +1,6 @@
 # Plan por fases
 
-Plan aceptado por el propietario; F0 se inició y todavía no hay una fase aceptada. Las cifras futuras son estimaciones con la selección actual del evaluador congelada; se recalculan con evidencia después de cada promoción. El estado de ejecución de F0 vive en [su SDD](fases/f0-medicion-y-contratos.md), con [contratos](fases/f0-contratos.md), [prompts](fases/f0-prompts.md) y [registro de reanudación tras el bug #45](fases/f0-reanudacion-2026-10-05.md).
+Plan aceptado por el propietario; F0 aceptada técnicamente con [PASS 3/5 y ratificación](evidencia/f0/cierre-arquitectonico.md). F1 se concreta en [su SDD](fases/f1-politica-y-descubrimiento.md); aprobada por auditoría independiente PASS 2/2; su lanzamiento requiere SHA fijo en el issue. Las cifras futuras son estimaciones con la selección actual del evaluador congelada; se recalculan con evidencia después de cada promoción. El estado de ejecución de F0 vive en [su SDD](fases/f0-medicion-y-contratos.md), con [contratos](fases/f0-contratos.md), [prompts](fases/f0-prompts.md) y [registro de reanudación tras el bug #45](fases/f0-reanudacion-2026-10-05.md).
 
 ## Orden y dependencias
 
@@ -41,9 +41,9 @@ Aceptación: la puntuación de los JSON actuales se reproduce; una diferencia en
 
 Entregar política confirmada en robots, llms.txt con enlaces reales, Link de descubrimiento y copia HTML de enlaces útiles en head cuando corresponda. No anunciar APIs o capacidades futuras. Mantener sitemap y URLs legacy.
 
-Ownership previsto: `public/robots.txt`, `public/_headers`, `src/pages/llms.txt.ts` (endpoint estático propuesto), cambios acotados al head de `src/layouts/BaseLayout.astro`, fixtures/tests propios. No modificar la arquitectura de enlaces internos.
+Ownership concretado por la SDD F1: robots, _headers, middleware para headers Worker, integración final de Astro, generador de descubrimiento, evolución acotada del inventario, tests y check offline de CI. Se sustituye el endpoint prerenderizado propuesto por generación después de sitemap: necesita HTML del mismo build. No hace falta cambiar el head ni la arquitectura de enlaces internos.
 
-Aceptación: search/ai-input permitidos, ai-train denegado; destinos Link y llms accesibles y canónicos; pasan Content Signals y Link en el evaluador; los tres passes previos siguen pasando. Los headers se comprueban en assets y respuestas Worker cuando aplique.
+Aceptación de implementación: política exacta, llms construido con enlaces canónicos, headers en assets/Worker, tests/build/workerd/CI y auditoría independiente. Publicación posterior: HTTP público y scans verifican Content Signals/Link y conservan los tres passes previos. Esta separación permite desarrollar sin desplegar ni atribuir cambios de una rama a producción.
 
 Reversión: commit de política/headers/llms, conservando la evidencia histórica. La política elegida no se cambia incidentalmente al revertir otra fase.
 
