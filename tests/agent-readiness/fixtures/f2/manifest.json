@@ -1,0 +1,394 @@
+{
+  "schemaVersion": "f2-projection-golden/1",
+  "baseSha": "cac7ee039607ee9923a403a4e2f299437ff94af2",
+  "reviewBasis": "Fixed expected Markdown is checked in beside the canonical built HTML and matched against independent editorial DOM inventory. Tests only read these files; they never regenerate expected output.",
+  "documents": [
+    {
+      "documentId": "article--chequeo-geriatrico-canino",
+      "kind": "article",
+      "htmlFile": "article--chequeo-geriatrico-canino.html",
+      "markdownFile": "article--chequeo-geriatrico-canino.md",
+      "canonicalPath": "/salud-perros-mayores/chequeo-geriatrico-canino",
+      "canonicalUrl": "https://cuidatuperroviejo.com/salud-perros-mayores/chequeo-geriatrico-canino",
+      "title": "Revisión veterinaria en perros mayores: frecuencia y pruebas",
+      "description": "Cada cuánto revisar a tu perro mayor con el veterinario, qué análisis se hacen y cómo anticipar problemas de salud comunes.",
+      "language": "es",
+      "sourceSha256": "fc39406cb6690a9c9f4f0c11aea7a7d63c5da6e7fc32ac61e4991b10cbbefb6b",
+      "expectedSha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+      "expectedBytes": 10293,
+      "reference": {
+        "headings": {
+          "h2": 6,
+          "h3": 9,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "counts": {
+          "details": 0,
+          "tables": 1,
+          "blockquotes": 2,
+          "images": 4
+        },
+        "sourceLinks": []
+      }
+    },
+    {
+      "documentId": "article--comida-casera-perros-mayores",
+      "kind": "article",
+      "htmlFile": "article--comida-casera-perros-mayores.html",
+      "markdownFile": "article--comida-casera-perros-mayores.md",
+      "canonicalPath": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "canonicalUrl": "https://cuidatuperroviejo.com/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "title": "Comida casera para perros mayores: Guía de nutrición natural y segura",
+      "description": "Aprende a preparar comida casera para perros senior. Estrategias para apetito difícil, recetas seguras y cómo mejorar la absorción de nutrientes.",
+      "language": "es",
+      "sourceSha256": "87a5227520a72c0c5809d0ad20a0da83e5ebdf0672928930e7c161abacc7ffab",
+      "expectedSha256": "f0f66b8c4c873e9b42b6af49a51dfe8a08dfbaaed34561ec7a596f5f9fe26554",
+      "expectedBytes": 23205,
+      "reference": {
+        "headings": {
+          "h2": 5,
+          "h3": 21,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "counts": {
+          "details": 1,
+          "tables": 4,
+          "blockquotes": 9,
+          "images": 5
+        },
+        "sourceLinks": [
+          "https://wsava.org/global-guidelines/global-nutrition-guidelines/",
+          "https://pubmed.ncbi.nlm.nih.gov/6286909/",
+          "https://www.vetmed.ucdavis.edu/hospital/small-animal/nutrition",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8914307/",
+          "https://www.aaha.org/trends-magazine/publications/homemade-pet-food-guidance/",
+          "https://www.fda.gov/animal-veterinary/animal-health-literacy/get-facts-raw-pet-food-diets-can-be-dangerous-you-and-your-pet",
+          "https://www.aaha.org/wp-content/uploads/globalassets/02-guidelines/2023-aaha-senior-care-guidelines-for-dogs-and-cats/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats.pdf",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC12181554/",
+          "https://wsava.org/global-guidelines/global-nutrition-guidelines/",
+          "https://www.aaha.org/wp-content/uploads/globalassets/02-guidelines/2023-aaha-senior-care-guidelines-for-dogs-and-cats/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats.pdf",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8914307/",
+          "https://www.vetmed.ucdavis.edu/hospital/small-animal/nutrition",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC12181554/",
+          "https://www.fda.gov/animal-veterinary/animal-health-literacy/get-facts-raw-pet-food-diets-can-be-dangerous-you-and-your-pet",
+          "https://www.acvn.org/"
+        ]
+      }
+    },
+    {
+      "documentId": "article--salud-dental-perros-mayores",
+      "kind": "article",
+      "htmlFile": "article--salud-dental-perros-mayores.html",
+      "markdownFile": "article--salud-dental-perros-mayores.md",
+      "canonicalPath": "/salud-perros-mayores/salud-dental-perros-mayores",
+      "canonicalUrl": "https://cuidatuperroviejo.com/salud-perros-mayores/salud-dental-perros-mayores",
+      "title": "Salud dental en perros mayores: prevención y limpieza segura",
+      "description": "Previene la enfermedad periodontal en tu perro mayor con limpiezas seguras, cepillado y revisiones veterinarias regulares.",
+      "language": "es",
+      "sourceSha256": "65ef648599c04262be76840fcea0bb1c8510c0b6f69c5cad9b13b0f44e516355",
+      "expectedSha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6",
+      "expectedBytes": 12307,
+      "reference": {
+        "headings": {
+          "h2": 8,
+          "h3": 6,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "counts": {
+          "details": 0,
+          "tables": 1,
+          "blockquotes": 1,
+          "images": 4
+        },
+        "sourceLinks": [
+          "https://drive.google.com/file/d/153x1KXmhDbiE9SDQhKXIE61utPqkZtnl/view",
+          "https://www.avma.org/resources-tools/pet-owners/petcare/pet-dental-care",
+          "https://www.merckvetmanual.com/digestive-system/dentistry-in-small-animals/periodontal-disease-in-small-animals",
+          "https://www.vet.cornell.edu/departments-centers-and-institutes/riney-canine-health-center/health-topics/canine-health-information/periodontal-disease"
+        ]
+      }
+    },
+    {
+      "documentId": "article--sindrome-cushing-perros-mayores",
+      "kind": "article",
+      "htmlFile": "article--sindrome-cushing-perros-mayores.html",
+      "markdownFile": "article--sindrome-cushing-perros-mayores.md",
+      "canonicalPath": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "canonicalUrl": "https://cuidatuperroviejo.com/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "title": "Síndrome de Cushing en perros mayores: causas, síntomas y tratamiento",
+      "description": "Guía clínica sobre el síndrome de Cushing en perros mayores. Detecta síntomas, pruebas diagnósticas, tratamiento con trilostano y manejo de calidad de vida.",
+      "language": "es",
+      "sourceSha256": "7aaaef0e39577c2510e1d1028c182e996f2d213c607165e1ba32d15162885ec3",
+      "expectedSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+      "expectedBytes": 32561,
+      "reference": {
+        "headings": {
+          "h2": 7,
+          "h3": 20,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "counts": {
+          "details": 7,
+          "tables": 0,
+          "blockquotes": 0,
+          "images": 3
+        },
+        "sourceLinks": [
+          "https://pubmed.ncbi.nlm.nih.gov/24118359/",
+          "https://pubmed.ncbi.nlm.nih.gov/16298516/",
+          "https://pubmed.ncbi.nlm.nih.gov/37071661/",
+          "https://pubmed.ncbi.nlm.nih.gov/33274787/",
+          "https://pubmed.ncbi.nlm.nih.gov/23701195/"
+        ]
+      }
+    },
+    {
+      "documentId": "home",
+      "kind": "home",
+      "htmlFile": "home.html",
+      "markdownFile": "home.md",
+      "canonicalPath": "/",
+      "canonicalUrl": "https://cuidatuperroviejo.com/",
+      "title": "Ayúdale a envejecer con bienestar y calma.",
+      "description": "Reconoce cambios, adapta su rutina y encuentra guías claras para cuidar la salud y el bienestar de tu perro senior.",
+      "language": "es",
+      "sourceSha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "expectedSha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+      "expectedBytes": 12878,
+      "reference": {
+        "headings": {
+          "h2": 10,
+          "h3": 19,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "counts": {
+          "details": 7,
+          "tables": 0,
+          "blockquotes": 1,
+          "images": 7
+        },
+        "sourceLinks": [
+          "https://www.google.com/search?q=clinicas+veterinarias+urgencias+cerca+de+mi",
+          "https://www.google.com/search?q=veterinaria+24+horas",
+          "https://www.aaha.org/aaha-guidelines/senior-care/senior-dog-and-cat-care-guidelines/",
+          "https://www.aaha.org/aaha-guidelines/2021-AAHA-Canine-Life-Stage-Guidelines/",
+          "https://www.avma.org/resources/pet-owners/petcare/senior-pets",
+          "https://wsava.org/wp-content/uploads/2020/01/Body-Condition-Score-Dog.pdf",
+          "https://www.msdvetmanual.com/behavior/behavior-of-dogs/aging-and-cognitive-dysfunction-in-dogs"
+        ]
+      }
+    },
+    {
+      "documentId": "page--acerca-de",
+      "kind": "editorial",
+      "htmlFile": "page--acerca-de.html",
+      "markdownFile": "page--acerca-de.md",
+      "canonicalPath": "/acerca-de",
+      "canonicalUrl": "https://cuidatuperroviejo.com/acerca-de",
+      "title": "Sobre nosotros",
+      "description": "Conoce el perfil editorial, experiencia, fuentes y límites médicos de Cuida tu Perro Viejo, una guía práctica para tutores de perros senior.",
+      "language": "es",
+      "sourceSha256": "b06d27c8f409dda2c094f439e3b51bd2e4831124f564c6872e58a7b4d5171698",
+      "expectedSha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3",
+      "expectedBytes": 2477,
+      "reference": {
+        "headings": {
+          "h2": 3,
+          "h3": 0,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "counts": {
+          "details": 0,
+          "tables": 0,
+          "blockquotes": 0,
+          "images": 0
+        },
+        "sourceLinks": [
+          "https://www.housegatitos.com"
+        ]
+      }
+    },
+    {
+      "documentId": "page--politica-editorial",
+      "kind": "editorial",
+      "htmlFile": "page--politica-editorial.html",
+      "markdownFile": "page--politica-editorial.md",
+      "canonicalPath": "/politica-editorial",
+      "canonicalUrl": "https://cuidatuperroviejo.com/politica-editorial",
+      "title": "Política editorial",
+      "description": "Cómo escribimos, qué fuentes usamos, cómo fechamos las revisiones y dónde están los límites de lo que publicamos sobre perros mayores.",
+      "language": "es",
+      "sourceSha256": "502cf5afcbea2deeebdb0f5d252d2e52b2878bae5ca1329f64b074664bbd5d72",
+      "expectedSha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "expectedBytes": 2925,
+      "reference": {
+        "headings": {
+          "h2": 6,
+          "h3": 0,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "counts": {
+          "details": 0,
+          "tables": 0,
+          "blockquotes": 0,
+          "images": 0
+        },
+        "sourceLinks": []
+      }
+    },
+    {
+      "documentId": "pillar--herramientas",
+      "kind": "pillar",
+      "htmlFile": "pillar--herramientas.html",
+      "markdownFile": "pillar--herramientas.md",
+      "canonicalPath": "/herramientas",
+      "canonicalUrl": "https://cuidatuperroviejo.com/herramientas",
+      "title": "Herramientas interactivas y Apps de cuidado",
+      "description": "Hub de apps y herramientas interactivas para el cuidado de tu perro mayor. Evalúa su calidad de vida, analiza su movilidad y consulta a nuestro asistente IA.",
+      "language": "es",
+      "sourceSha256": "1ffebed8d1bf71a3874659bd788f11ec96b0f5aaf28b9af0ee7f2b3fbef9a0f8",
+      "expectedSha256": "ffd6bf31f715af0b5fc778922ed329bb58ac09d40dc877572b1f181082afe222",
+      "expectedBytes": 3756,
+      "reference": {
+        "headings": {
+          "h2": 1,
+          "h3": 3,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "counts": {
+          "details": 0,
+          "tables": 0,
+          "blockquotes": 0,
+          "images": 1
+        },
+        "sourceLinks": [
+          "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros",
+          "https://cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores",
+          "https://cuidatuperroviejo.com/asistente-ia"
+        ]
+      }
+    },
+    {
+      "documentId": "pillar--salud-perros-mayores",
+      "kind": "pillar",
+      "htmlFile": "pillar--salud-perros-mayores.html",
+      "markdownFile": "pillar--salud-perros-mayores.md",
+      "canonicalPath": "/salud-perros-mayores",
+      "canonicalUrl": "https://cuidatuperroviejo.com/salud-perros-mayores",
+      "title": "Salud de perros mayores: señales, chequeos y cuidados prácticos",
+      "description": "Guía práctica para cuidar la salud de un perro mayor: señales de alarma, chequeos, vacunas, movilidad, alimentación y calidad de vida.",
+      "language": "es",
+      "sourceSha256": "af3b14d7722c0763b617fe8b10634a03c7762a9fb7898abc512e24a01f27b6e8",
+      "expectedSha256": "04d25b0c2406b47b9156182dd044b7bae2e9fa32135f464f6b9504c4fa20b042",
+      "expectedBytes": 12040,
+      "reference": {
+        "headings": {
+          "h2": 8,
+          "h3": 5,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "counts": {
+          "details": 4,
+          "tables": 1,
+          "blockquotes": 0,
+          "images": 4
+        },
+        "sourceLinks": [
+          "https://www.aaha.org/trends-magazine/february-2023/gl-senior-care-feb23/",
+          "https://ebusiness.avma.org/files/ProductDownloads/mcm-client-brochures-senior-pets-2023.pdf",
+          "https://wsava.org/Global-Guidelines/Vaccination-Guidelines/",
+          "https://www.merckvetmanual.com/special-pet-topics/emergencies/evaluation-and-initial-treatment-of-dog-and-cat-emergencies"
+        ]
+      }
+    },
+    {
+      "documentId": "tool--calidad-vida",
+      "kind": "tool",
+      "htmlFile": "tool--calidad-vida.html",
+      "markdownFile": "tool--calidad-vida.md",
+      "canonicalPath": "/herramientas/calculadora-calidad-vida-perros",
+      "canonicalUrl": "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros",
+      "title": "Calculadora de Calidad de Vida Canina (Escala HHHHHMM)",
+      "description": "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calculadora HHHHHMM interactiva. Evalúa dolor y bienestar en segundos. Test gratuito.",
+      "language": "es",
+      "sourceSha256": "753ef76f45dbf8165d5af7b521b3f33bf82329a2dc184d5c65dbab326f222555",
+      "expectedSha256": "00028fb42759631a88b4440580b467c6d39b03d9897e04805909230886705db5",
+      "expectedBytes": 5049,
+      "reference": {
+        "headings": {
+          "h2": 0,
+          "h3": 3,
+          "h4": 1,
+          "h5": 0,
+          "h6": 0
+        },
+        "counts": {
+          "details": 4,
+          "tables": 0,
+          "blockquotes": 0,
+          "images": 1
+        },
+        "sourceLinks": [
+          "https://drive.google.com/file/d/1WwCP4ortGvG6FtfO4TGPFtBpr3jH3bby/view?usp=drive_link",
+          "https://cvm.ncsu.edu/wp-content/uploads/2024/09/Quality-of-Life-Scale.pdf",
+          "https://www.aaha.org/wp-content/uploads/globalassets/02-guidelines/end-of-life-care/2016_aaha_iaahpc_eolc_guidelines.pdf",
+          "https://iaahpc.org/veterinary-guidelines/general-practice-guidelines/",
+          "https://www.aaha.org/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats/end-of-life-and-euthanasia/",
+          "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10044252/"
+        ]
+      }
+    },
+    {
+      "documentId": "tool--movilidad",
+      "kind": "tool",
+      "htmlFile": "tool--movilidad.html",
+      "markdownFile": "tool--movilidad.md",
+      "canonicalPath": "/herramientas/selector-movilidad-perros-mayores",
+      "canonicalUrl": "https://cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores",
+      "title": "Cuidar a un perro que ya no se mueve bien es un acto de amor enorme. Hay ayudas concretas.",
+      "description": "Selector interactivo que recomienda la ayuda de movilidad exacta (calcetines, arnés, rampa, silla de ruedas) según el nivel de movilidad real y temperamento de tu perro mayor.",
+      "language": "es",
+      "sourceSha256": "59d38b98384eea0318dd25fc670d32e25060eb716627f60b364769f87d42531f",
+      "expectedSha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37",
+      "expectedBytes": 5899,
+      "reference": {
+        "headings": {
+          "h2": 0,
+          "h3": 4,
+          "h4": 1,
+          "h5": 0,
+          "h6": 0
+        },
+        "counts": {
+          "details": 5,
+          "tables": 0,
+          "blockquotes": 0,
+          "images": 1
+        },
+        "sourceLinks": [
+          "https://wsava.org/global-guidelines/global-pain-council-guidelines/",
+          "https://www.aaha.org/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats/",
+          "https://cvm.ncsu.edu/wp-content/uploads/2024/09/Quality-of-Life-Scale.pdf"
+        ]
+      }
+    }
+  ]
+}

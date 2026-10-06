@@ -10,6 +10,12 @@
 /llms.txt
   Content-Type: text/plain; charset=utf-8
 
+/agent-content/v1/index.json
+  Content-Type: application/json; charset=utf-8
+
+/agent-content/v1/documents/*.md
+  Content-Type: text/markdown; charset=utf-8
+
 /*
   Link: <https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"
   X-Content-Type-Options: nosniff

@@ -1,0 +1,72 @@
+✔ serialización llms es determinista, ordena canonicales y escapa Markdown (2.49125ms)
+✔ serialización rechaza inventario, descripción, canonical y tamaño inválidos (0.78736ms)
+OK: llms.txt, robots.txt y Link/MIME F1 verificados sin modificar assets.
+Uso: node scripts/agent-readiness/discovery.mjs check --build-dir <directorio>
+llms.txt del build no coincide byte por byte con el inventario.
+ENOENT: no such file or directory, open '/workspace/ctpv-f2a/tests/agent-readiness/.discovery-fixture-Pb6XDv/dist/client/llms.txt'
+✔ check CLI verifica bytes sin reescribir y rechaza artefactos o flags inválidos (164.994371ms)
+✔ hook real falla sin sitemap, no escribe llms y limpia su scratch (15.640628ms)
+✔ replay verifica bytes originales y reproduce 43/20/19 con levels y nextLevel (31.294616ms)
+✔ replay rechaza deriva de hashes y nunca cambia los originales (13.78935ms)
+✔ compare bloquea perfiles y denominadores distintos, y permite fail→pass (2.257992ms)
+✔ compare detects ID universe and scoring rule changes, and uses Math.round semantics (0.497301ms)
+Envelope inválido: un estado complete contiene datos incompletos o incoherentes.
+Envelope inválido: checkUniverseHash no corresponde con IDs y categorías.
+Envelope inválido: counts incoherentes.
+Envelope inválido: ID repetido robotsTxt.
+Envelope inválido: campos ausentes o adicionales.
+✔ compare exits with contract error for inconsistent summary envelopes (9.210649ms)
+✔ sourceState consulta Git real para clean, tracked, staged, untracked e ignored (52.283897ms)
+✔ sourceState falla explícitamente fuera de un checkout Git (3.029539ms)
+✔ scan classifica HTTP, timeout, schema e oversize come incomplete, una llamada y sin retry (74.325117ms)
+--url no puede tener userinfo, query, fragment ni path distinto de /.
+Flag desconocido para replay: --extra
+Build y output no pueden coincidir ni contenerse.
+✔ scan CLI valida flags y target URL sin hacer requests (1.684195ms)
+Build y output no pueden coincidir ni contenerse.
+✔ inventory CLI rechaza build/output solapados antes de crear output (1.949837ms)
+✔ inventory conserva tool/document sin canonical y devuelve DOCUMENT_TITLE_MISSING sin H1 (35.535214ms)
+✔ inventory no sustituye canonical, no inventa clasificaciones y valida sitemap child local (19.915048ms)
+✔ inventory detecta canonical duplicado en páginas proyectadas (17.361138ms)
+✔ inventario deriva correspondencia exacta y admite crecimiento concordante 28 → 29 (112.604098ms)
+✔ inventario rechaza documentos requeridos ausentes, IDs repetidos y rutas no clasificadas (273.72126ms)
+✔ siete fixtures DOM conservan identidad editorial, avisos, FAQ completas y fuentes (140.274617ms)
+OK: índice y Markdown F2 reproducidos byte por byte; conjunto exacto sin modificar assets.
+OK: índice y Markdown F2 reproducidos byte por byte; conjunto exacto sin modificar assets.
+PROJECTION_OUTPUT_SET_MISMATCH
+PROJECTION_OUTPUT_SET_MISMATCH
+✔ sitemap + catálogo + HTML concordantes amplían el build a 29 y pasan projection check (3023.203608ms)
+OK: índice y Markdown F2 reproducidos byte por byte; conjunto exacto sin modificar assets.
+PROJECTION_CANONICAL_INVALID documentId=article--baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+PROJECTION_CANONICAL_INVALID documentId=article--f2-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+✔ canonicalPath de 100 caracteres se acepta; 101 y el probe 115 fallan sin publicar salida (2243.687137ms)
+✔ golden F2 article--chequeo-geriatrico-canino conserva el documento completo (47.466055ms)
+✔ golden F2 article--comida-casera-perros-mayores conserva el documento completo (31.665686ms)
+✔ golden F2 article--salud-dental-perros-mayores conserva el documento completo (12.354381ms)
+✔ golden F2 article--sindrome-cushing-perros-mayores conserva el documento completo (15.315296ms)
+✔ golden F2 home conserva el documento completo (23.842764ms)
+✔ golden F2 page--acerca-de conserva el documento completo (5.017864ms)
+✔ golden F2 page--politica-editorial conserva el documento completo (4.360269ms)
+✔ golden F2 pillar--herramientas conserva el documento completo (6.303848ms)
+✔ golden F2 pillar--salud-perros-mayores conserva el documento completo (8.750254ms)
+✔ golden F2 tool--calidad-vida conserva el documento completo (10.663816ms)
+✔ golden F2 tool--movilidad conserva el documento completo (8.506596ms)
+✔ los goldens cubren los perfiles editoriales, FAQ, tablas, citas e imágenes solicitados (3.332336ms)
+✔ selectores fallan cerrados ante H1 duplicado, perfil ausente o tag semántico nuevo (27.242082ms)
+✔ tabla no representable falla en lugar de perder celdas (10.750247ms)
+✔ párrafos que empiezan con sintaxis de heading/lista siguen siendo texto literal (81.278362ms)
+✔ pre y code conservan LF internos y finales según el parser CommonMark (36.905ms)
+✔ un pipe de texto ocupa una sola celda GFM sin doble escape (41.474731ms)
+✔ las seis tarjetas de inicio siguen siendo seis li con heading, texto y enlaces (53.717874ms)
+✔ mutaciones de aviso, FAQ, celda, fuente y autor se detectan contra los goldens fijos (55.01218ms)
+✔ el índice permite crecimiento derivado a 29 entradas (0.718927ms)
+ℹ tests 42
+ℹ suites 0
+ℹ pass 42
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7397.259707
+
+HARNESS_RECHECK_EXIT_CODE=0

@@ -1,0 +1,13 @@
+
+> cuida-tu-perro-viejo@1.0.0 check
+> astro check
+
+ENOENT: no such file or directory, mkdir '/home/agent/.config/astro'
+  Location:
+    /workspace/ctpv-f2a-audit-r3/node_modules/@astrojs/telemetry/dist/config.js:56:8
+  Stack trace:
+    at Object.mkdirSync (node:fs:1411:26)
+    at get store (file:///workspace/ctpv-f2a-audit-r3/node_modules/@astrojs/telemetry/dist/config.js:38:10)
+    at AstroTelemetry.getConfigWithFallback (file:///workspace/ctpv-f2a-audit-r3/node_modules/@astrojs/telemetry/dist/index.js:40:38)
+    at get isDisabled (file:///workspace/ctpv-f2a-audit-r3/node_modules/@astrojs/telemetry/dist/index.js:69:17)
+    at notify (file:///workspace/ctpv-f2a-audit-r3/node_modules/astro/dist/cli/telemetry/index.js:5:19)

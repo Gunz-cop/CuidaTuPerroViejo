@@ -1,0 +1,2349 @@
+{
+  "sourceCommit": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+  "origin": "http://127.0.0.1:8798",
+  "requests": 60,
+  "failed": [],
+  "records": [
+    {
+      "timestamp": "2026-10-06T12:50:20.143360+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/index.json",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "26284",
+        "content-type": "application/json; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"55328fffab65a84c88beb6464b4eb6ad\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 26284,
+      "bodySha256": "9a0b0a3d765d4f59110edf30631ccb5fddb30449b129f25fb893f4f19154aa32",
+      "expectedBytes": 26284,
+      "expectedSha256": "9a0b0a3d765d4f59110edf30631ccb5fddb30449b129f25fb893f4f19154aa32",
+      "rawBody": "raw/00-get.body",
+      "rawHeaders": "raw/00-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.165157+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/index.json",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"55328fffab65a84c88beb6464b4eb6ad\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 26284,
+      "expectedSha256": "9a0b0a3d765d4f59110edf30631ccb5fddb30449b129f25fb893f4f19154aa32",
+      "rawBody": "raw/00-head.body",
+      "rawHeaders": "raw/00-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.170555+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "44223",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"5a61e6ef895fa8f532f0680d522747e0\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 44223,
+      "bodySha256": "3feb00d4f978db51b3da7300557001f6ff54b8e3ef743c7ca86b38eebf0eb913",
+      "expectedBytes": 44223,
+      "expectedSha256": "3feb00d4f978db51b3da7300557001f6ff54b8e3ef743c7ca86b38eebf0eb913",
+      "rawBody": "raw/01-get.body",
+      "rawHeaders": "raw/01-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.177001+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"5a61e6ef895fa8f532f0680d522747e0\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 44223,
+      "expectedSha256": "3feb00d4f978db51b3da7300557001f6ff54b8e3ef743c7ca86b38eebf0eb913",
+      "rawBody": "raw/01-head.body",
+      "rawHeaders": "raw/01-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.185914+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "40785",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"904ceac500db7bdb1aefd8c29130ecf0\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 40785,
+      "bodySha256": "59145955fe0e09bdad14dcb702a2c12458efb3e10a2855e45f3d4cbec6ad8043",
+      "expectedBytes": 40785,
+      "expectedSha256": "59145955fe0e09bdad14dcb702a2c12458efb3e10a2855e45f3d4cbec6ad8043",
+      "rawBody": "raw/02-get.body",
+      "rawHeaders": "raw/02-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.191347+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"904ceac500db7bdb1aefd8c29130ecf0\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 40785,
+      "expectedSha256": "59145955fe0e09bdad14dcb702a2c12458efb3e10a2855e45f3d4cbec6ad8043",
+      "rawBody": "raw/02-head.body",
+      "rawHeaders": "raw/02-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.196289+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "35047",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"a14ef817b52f4052a3ac01912182b224\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 35047,
+      "bodySha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4",
+      "expectedBytes": 35047,
+      "expectedSha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4",
+      "rawBody": "raw/03-get.body",
+      "rawHeaders": "raw/03-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.201959+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"a14ef817b52f4052a3ac01912182b224\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 35047,
+      "expectedSha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4",
+      "rawBody": "raw/03-head.body",
+      "rawHeaders": "raw/03-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.237497+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--chequeo-geriatrico-canino.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "10293",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"1ca3c212e23d6dcac8d622a72759d8e8\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 10293,
+      "bodySha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+      "expectedBytes": 10293,
+      "expectedSha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+      "rawBody": "raw/04-get.body",
+      "rawHeaders": "raw/04-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.245642+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--chequeo-geriatrico-canino.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"1ca3c212e23d6dcac8d622a72759d8e8\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 10293,
+      "expectedSha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+      "rawBody": "raw/04-head.body",
+      "rawHeaders": "raw/04-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.250080+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--comida-casera-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "23205",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"859c2dceb3aa71ac6ba1a16c9b31d3e4\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 23205,
+      "bodySha256": "f0f66b8c4c873e9b42b6af49a51dfe8a08dfbaaed34561ec7a596f5f9fe26554",
+      "expectedBytes": 23205,
+      "expectedSha256": "f0f66b8c4c873e9b42b6af49a51dfe8a08dfbaaed34561ec7a596f5f9fe26554",
+      "rawBody": "raw/05-get.body",
+      "rawHeaders": "raw/05-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.253716+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--comida-casera-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"859c2dceb3aa71ac6ba1a16c9b31d3e4\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 23205,
+      "expectedSha256": "f0f66b8c4c873e9b42b6af49a51dfe8a08dfbaaed34561ec7a596f5f9fe26554",
+      "rawBody": "raw/05-head.body",
+      "rawHeaders": "raw/05-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.257538+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "32347",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"eb2c3732f05bc91ac633ef74b8a72920\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 32347,
+      "bodySha256": "374ef833a6275c65218921444a4650e1064cf5af08baea9780cf60a87fe7eff8",
+      "expectedBytes": 32347,
+      "expectedSha256": "374ef833a6275c65218921444a4650e1064cf5af08baea9780cf60a87fe7eff8",
+      "rawBody": "raw/06-get.body",
+      "rawHeaders": "raw/06-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.262203+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"eb2c3732f05bc91ac633ef74b8a72920\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 32347,
+      "expectedSha256": "374ef833a6275c65218921444a4650e1064cf5af08baea9780cf60a87fe7eff8",
+      "rawBody": "raw/06-head.body",
+      "rawHeaders": "raw/06-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.267074+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "25780",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"5c1649cbf32988abfa51a3b6f9c59f4e\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 25780,
+      "bodySha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9",
+      "expectedBytes": 25780,
+      "expectedSha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9",
+      "rawBody": "raw/07-get.body",
+      "rawHeaders": "raw/07-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.280291+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"5c1649cbf32988abfa51a3b6f9c59f4e\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 25780,
+      "expectedSha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9",
+      "rawBody": "raw/07-head.body",
+      "rawHeaders": "raw/07-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.285169+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "39877",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"24d243947b97f2459add72cb1be718ef\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 39877,
+      "bodySha256": "702173abb49c8f674ba1bc9622046fd305552ca68ebbbe56e9c249f206d16df7",
+      "expectedBytes": 39877,
+      "expectedSha256": "702173abb49c8f674ba1bc9622046fd305552ca68ebbbe56e9c249f206d16df7",
+      "rawBody": "raw/08-get.body",
+      "rawHeaders": "raw/08-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.288950+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"24d243947b97f2459add72cb1be718ef\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 39877,
+      "expectedSha256": "702173abb49c8f674ba1bc9622046fd305552ca68ebbbe56e9c249f206d16df7",
+      "rawBody": "raw/08-head.body",
+      "rawHeaders": "raw/08-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.292330+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "16806",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"a86580bfe1cf853a36cb7a3efe4c3120\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 16806,
+      "bodySha256": "4d636b98123ff6841e83382868ba570cd49b301263009474f72212e6ff390628",
+      "expectedBytes": 16806,
+      "expectedSha256": "4d636b98123ff6841e83382868ba570cd49b301263009474f72212e6ff390628",
+      "rawBody": "raw/09-get.body",
+      "rawHeaders": "raw/09-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.297149+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"a86580bfe1cf853a36cb7a3efe4c3120\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 16806,
+      "expectedSha256": "4d636b98123ff6841e83382868ba570cd49b301263009474f72212e6ff390628",
+      "rawBody": "raw/09-head.body",
+      "rawHeaders": "raw/09-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.335089+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "41947",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"90ad22ec78ae20ecc352022030f252f6\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 41947,
+      "bodySha256": "fa11e470e647bd9ca346e5b84e9977f079af5574e01ce096eeb9486987eac34c",
+      "expectedBytes": 41947,
+      "expectedSha256": "fa11e470e647bd9ca346e5b84e9977f079af5574e01ce096eeb9486987eac34c",
+      "rawBody": "raw/10-get.body",
+      "rawHeaders": "raw/10-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.341316+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"90ad22ec78ae20ecc352022030f252f6\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 41947,
+      "expectedSha256": "fa11e470e647bd9ca346e5b84e9977f079af5574e01ce096eeb9486987eac34c",
+      "rawBody": "raw/10-head.body",
+      "rawHeaders": "raw/10-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.346723+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "40845",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"c752e4b75be9ec4162fe61beb4a8e1ea\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 40845,
+      "bodySha256": "b53a7bcb8accaad5025f6a0e7b318f059edcffb31c0943d61c70cbd4d2babe2e",
+      "expectedBytes": 40845,
+      "expectedSha256": "b53a7bcb8accaad5025f6a0e7b318f059edcffb31c0943d61c70cbd4d2babe2e",
+      "rawBody": "raw/11-get.body",
+      "rawHeaders": "raw/11-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.351571+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"c752e4b75be9ec4162fe61beb4a8e1ea\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 40845,
+      "expectedSha256": "b53a7bcb8accaad5025f6a0e7b318f059edcffb31c0943d61c70cbd4d2babe2e",
+      "rawBody": "raw/11-head.body",
+      "rawHeaders": "raw/11-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.356002+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "47785",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"184b43bb87060170bbd738e91fff130d\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 47785,
+      "bodySha256": "59c57d26a8d8d2704bac2535d51715aaf22b63c00ca02f0966eb96725efde838",
+      "expectedBytes": 47785,
+      "expectedSha256": "59c57d26a8d8d2704bac2535d51715aaf22b63c00ca02f0966eb96725efde838",
+      "rawBody": "raw/12-get.body",
+      "rawHeaders": "raw/12-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.359862+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"184b43bb87060170bbd738e91fff130d\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 47785,
+      "expectedSha256": "59c57d26a8d8d2704bac2535d51715aaf22b63c00ca02f0966eb96725efde838",
+      "rawBody": "raw/12-head.body",
+      "rawHeaders": "raw/12-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.365570+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--salud-dental-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "12307",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"a2a38496971f9e4d3518c09b2056f886\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 12307,
+      "bodySha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6",
+      "expectedBytes": 12307,
+      "expectedSha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6",
+      "rawBody": "raw/13-get.body",
+      "rawHeaders": "raw/13-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.369439+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--salud-dental-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"a2a38496971f9e4d3518c09b2056f886\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 12307,
+      "expectedSha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6",
+      "rawBody": "raw/13-head.body",
+      "rawHeaders": "raw/13-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.372780+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "32561",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"57ec9d8f8b8b602098579607bdc6e1ae\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 32561,
+      "bodySha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+      "expectedBytes": 32561,
+      "expectedSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+      "rawBody": "raw/14-get.body",
+      "rawHeaders": "raw/14-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.375970+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"57ec9d8f8b8b602098579607bdc6e1ae\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 32561,
+      "expectedSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+      "rawBody": "raw/14-head.body",
+      "rawHeaders": "raw/14-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.379932+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--ulceras-presion-perros.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "8303",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"31650dc8797ce08d8c4ed5f587c01369\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 8303,
+      "bodySha256": "00a669b47df1fa5c1644ea9d3ddf78e183d95903595d736343742cc4e0f360cc",
+      "expectedBytes": 8303,
+      "expectedSha256": "00a669b47df1fa5c1644ea9d3ddf78e183d95903595d736343742cc4e0f360cc",
+      "rawBody": "raw/15-get.body",
+      "rawHeaders": "raw/15-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.382657+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--ulceras-presion-perros.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"31650dc8797ce08d8c4ed5f587c01369\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 8303,
+      "expectedSha256": "00a669b47df1fa5c1644ea9d3ddf78e183d95903595d736343742cc4e0f360cc",
+      "rawBody": "raw/15-head.body",
+      "rawHeaders": "raw/15-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.386605+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "14780",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"1a6e215e84b23ce3195ae3d72c0f09eb\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 14780,
+      "bodySha256": "da8155374059c711c9323722f4882562238252973b277ca450eb6e475aef7aa9",
+      "expectedBytes": 14780,
+      "expectedSha256": "da8155374059c711c9323722f4882562238252973b277ca450eb6e475aef7aa9",
+      "rawBody": "raw/16-get.body",
+      "rawHeaders": "raw/16-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.392192+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"1a6e215e84b23ce3195ae3d72c0f09eb\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 14780,
+      "expectedSha256": "da8155374059c711c9323722f4882562238252973b277ca450eb6e475aef7aa9",
+      "rawBody": "raw/16-head.body",
+      "rawHeaders": "raw/16-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.396700+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/home.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "12878",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"1f80778c15c22ff295ad07d19a0777b2\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 12878,
+      "bodySha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+      "expectedBytes": 12878,
+      "expectedSha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+      "rawBody": "raw/17-get.body",
+      "rawHeaders": "raw/17-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.400521+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/home.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"1f80778c15c22ff295ad07d19a0777b2\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 12878,
+      "expectedSha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+      "rawBody": "raw/17-head.body",
+      "rawHeaders": "raw/17-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.436308+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/page--acerca-de.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "2477",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"aa206a10d303852012b70da7e977f1e1\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 2477,
+      "bodySha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3",
+      "expectedBytes": 2477,
+      "expectedSha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3",
+      "rawBody": "raw/18-get.body",
+      "rawHeaders": "raw/18-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.447751+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/page--acerca-de.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"aa206a10d303852012b70da7e977f1e1\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 2477,
+      "expectedSha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3",
+      "rawBody": "raw/18-head.body",
+      "rawHeaders": "raw/18-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.454282+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/page--politica-editorial.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "2925",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"1369c3545a6e66b440156c0f975d5fca\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 2925,
+      "bodySha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "expectedBytes": 2925,
+      "expectedSha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "rawBody": "raw/19-get.body",
+      "rawHeaders": "raw/19-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.460075+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/page--politica-editorial.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"1369c3545a6e66b440156c0f975d5fca\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 2925,
+      "expectedSha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "rawBody": "raw/19-head.body",
+      "rawHeaders": "raw/19-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.464508+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "12031",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"9c334fe53bf7c877e59789c4db8a217e\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 12031,
+      "bodySha256": "fad888dbf741908da5bf6ab17a8288d4bef02af901c2585159c8286318345305",
+      "expectedBytes": 12031,
+      "expectedSha256": "fad888dbf741908da5bf6ab17a8288d4bef02af901c2585159c8286318345305",
+      "rawBody": "raw/20-get.body",
+      "rawHeaders": "raw/20-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.470358+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"9c334fe53bf7c877e59789c4db8a217e\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 12031,
+      "expectedSha256": "fad888dbf741908da5bf6ab17a8288d4bef02af901c2585159c8286318345305",
+      "rawBody": "raw/20-head.body",
+      "rawHeaders": "raw/20-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.474200+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "8084",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"ef8f206d6f79aa2a9a79ba3ba5f940e6\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 8084,
+      "bodySha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939",
+      "expectedBytes": 8084,
+      "expectedSha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939",
+      "rawBody": "raw/21-get.body",
+      "rawHeaders": "raw/21-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.480110+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"ef8f206d6f79aa2a9a79ba3ba5f940e6\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 8084,
+      "expectedSha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939",
+      "rawBody": "raw/21-head.body",
+      "rawHeaders": "raw/21-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.487777+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--herramientas.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "3756",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"b403bc2912f44bd9dab285d5508a7ac8\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 3756,
+      "bodySha256": "ffd6bf31f715af0b5fc778922ed329bb58ac09d40dc877572b1f181082afe222",
+      "expectedBytes": 3756,
+      "expectedSha256": "ffd6bf31f715af0b5fc778922ed329bb58ac09d40dc877572b1f181082afe222",
+      "rawBody": "raw/22-get.body",
+      "rawHeaders": "raw/22-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.492815+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--herramientas.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"b403bc2912f44bd9dab285d5508a7ac8\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 3756,
+      "expectedSha256": "ffd6bf31f715af0b5fc778922ed329bb58ac09d40dc877572b1f181082afe222",
+      "rawBody": "raw/22-head.body",
+      "rawHeaders": "raw/22-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.497173+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "7794",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"c4727a143cf6f3ede04f1a1c2dbbe796\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 7794,
+      "bodySha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58",
+      "expectedBytes": 7794,
+      "expectedSha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58",
+      "rawBody": "raw/23-get.body",
+      "rawHeaders": "raw/23-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.534858+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"c4727a143cf6f3ede04f1a1c2dbbe796\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 7794,
+      "expectedSha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58",
+      "rawBody": "raw/23-head.body",
+      "rawHeaders": "raw/23-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.539917+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "7261",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"d243cb28f3ce279e09f48171797a2d7b\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 7261,
+      "bodySha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6",
+      "expectedBytes": 7261,
+      "expectedSha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6",
+      "rawBody": "raw/24-get.body",
+      "rawHeaders": "raw/24-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.546097+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"d243cb28f3ce279e09f48171797a2d7b\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 7261,
+      "expectedSha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6",
+      "rawBody": "raw/24-head.body",
+      "rawHeaders": "raw/24-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.550123+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "11135",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"927763f29eff55ba3aa80352d7b1ffde\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 11135,
+      "bodySha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949",
+      "expectedBytes": 11135,
+      "expectedSha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949",
+      "rawBody": "raw/25-get.body",
+      "rawHeaders": "raw/25-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.568661+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"927763f29eff55ba3aa80352d7b1ffde\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 11135,
+      "expectedSha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949",
+      "rawBody": "raw/25-head.body",
+      "rawHeaders": "raw/25-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.572364+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--salud-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "12040",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"0b2da7cb84d618fd6335c916027b0b07\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 12040,
+      "bodySha256": "04d25b0c2406b47b9156182dd044b7bae2e9fa32135f464f6b9504c4fa20b042",
+      "expectedBytes": 12040,
+      "expectedSha256": "04d25b0c2406b47b9156182dd044b7bae2e9fa32135f464f6b9504c4fa20b042",
+      "rawBody": "raw/26-get.body",
+      "rawHeaders": "raw/26-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.575203+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/pillar--salud-perros-mayores.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"0b2da7cb84d618fd6335c916027b0b07\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 12040,
+      "expectedSha256": "04d25b0c2406b47b9156182dd044b7bae2e9fa32135f464f6b9504c4fa20b042",
+      "rawBody": "raw/26-head.body",
+      "rawHeaders": "raw/26-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.578585+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/tool--calidad-vida.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "5049",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"d16dad3f4444a6956c7c28db66ab4ded\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 5049,
+      "bodySha256": "00028fb42759631a88b4440580b467c6d39b03d9897e04805909230886705db5",
+      "expectedBytes": 5049,
+      "expectedSha256": "00028fb42759631a88b4440580b467c6d39b03d9897e04805909230886705db5",
+      "rawBody": "raw/27-get.body",
+      "rawHeaders": "raw/27-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.582044+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/tool--calidad-vida.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"d16dad3f4444a6956c7c28db66ab4ded\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 5049,
+      "expectedSha256": "00028fb42759631a88b4440580b467c6d39b03d9897e04805909230886705db5",
+      "rawBody": "raw/27-head.body",
+      "rawHeaders": "raw/27-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.585167+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/tool--movilidad.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-length": "5899",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"4c1ca6f7e4bf496e5187e3134672df06\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 5899,
+      "bodySha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37",
+      "expectedBytes": 5899,
+      "expectedSha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37",
+      "rawBody": "raw/28-get.body",
+      "rawHeaders": "raw/28-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true,
+        "length": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.588464+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/agent-content/v1/documents/tool--movilidad.md",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"4c1ca6f7e4bf496e5187e3134672df06\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 5899,
+      "expectedSha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37",
+      "rawBody": "raw/28-head.body",
+      "rawHeaders": "raw/28-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.591217+00:00",
+      "method": "GET",
+      "request": {
+        "url": "http://127.0.0.1:8798/",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0",
+          "Accept": "text/markdown"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "transfer-encoding": "chunked",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"6d9039c9d9b4109617509984cd76ac12\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "expectedBytes": 119418,
+      "expectedSha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "rawBody": "raw/29-get.body",
+      "rawHeaders": "raw/29-get.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    },
+    {
+      "timestamp": "2026-10-06T12:50:20.596345+00:00",
+      "method": "HEAD",
+      "request": {
+        "url": "http://127.0.0.1:8798/",
+        "headers": {
+          "Accept-Encoding": "identity",
+          "User-Agent": "ctpv-independent-f2a-auditor/2.0",
+          "Accept": "text/markdown"
+        }
+      },
+      "head": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "etag": "\"6d9039c9d9b4109617509984cd76ac12\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "cf-cache-status": "HIT",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedBytes": 119418,
+      "expectedSha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "rawBody": "raw/29-head.body",
+      "rawHeaders": "raw/29-head.headers",
+      "checks": {
+        "status": true,
+        "mime": true,
+        "body": true,
+        "security": true,
+        "link": true,
+        "noCookie": true
+      }
+    }
+  ]
+}

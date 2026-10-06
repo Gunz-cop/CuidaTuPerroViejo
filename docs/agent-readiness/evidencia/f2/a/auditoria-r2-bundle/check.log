@@ -1,0 +1,263 @@
+
+> cuida-tu-perro-viejo@1.0.0 check
+> astro check
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+12:49:57 [@astrojs/cloudflare] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+12:49:58 [content] Syncing content
+12:49:58 [content] Synced content
+12:49:58 [types] Generated 1.10s
+12:49:58 [check] Getting diagnostics for Astro files in /workspace/ctpv-f2a-audit-r2...
+[96mscripts/sdi-shadow-compare.mjs[0m:[93m116[0m:[93m10[0m - [93mwarning[0m[90m ts(80006): [0mThis may be converted to an async function.
+
+[7m116[0m function makeTemporaryConfig(tempDirectory) {
+[7m   [0m [93m         ~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscripts/agent-readiness/index.mjs[0m:[93m354[0m:[93m25[0m - [93mwarning[0m[90m ts(6133): [0m'filename' is declared but its value is never read.
+
+[7m354[0m   for (const { profile, filename, body, responseBytes, enabledChecks } of prepared) {
+[7m   [0m [93m                        ~~~~~~~~[0m
+[96mscripts/agent-readiness/index.mjs[0m:[93m12[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'EVIDENCE_SCHEMA' is declared but its value is never read.
+
+[7m12[0m const EVIDENCE_SCHEMA = 'agent-readiness-evidence/1';
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96mscripts/agent-readiness/inventory.mjs[0m:[93m324[0m:[93m9[0m - [93mwarning[0m[90m ts(6133): [0m'allHtmlPaths' is declared but its value is never read.
+
+[7m324[0m   const allHtmlPaths = new Set(pages.filter((page) => page.canonicalPath).map((page) => page.canonicalPath));
+[7m   [0m [93m        ~~~~~~~~~~~~[0m
+[96mscripts/agent-readiness/inventory.mjs[0m:[93m157[0m:[93m48[0m - [93mwarning[0m[90m ts(6133): [0m'assetDirectory' is declared but its value is never read.
+
+[7m157[0m function extractSitemapPaths(xmlText, xmlFile, assetDirectory, errors) {
+[7m   [0m [93m                                               ~~~~~~~~~~~~~~[0m
+[96mscripts/agent-readiness/inventory.mjs[0m:[93m132[0m:[93m35[0m - [93mwarning[0m[90m ts(6133): [0m'buildDir' is declared but its value is never read.
+
+[7m132[0m async function findAssetDirectory(buildDir, files) {
+[7m   [0m [93m                                  ~~~~~~~~[0m
+[96mscripts/agent-readiness/inventory.mjs[0m:[93m102[0m:[93m34[0m - [93mwarning[0m[90m ts(6133): [0m'htmlFile' is declared but its value is never read.
+
+[7m102[0m function canonicalFrom(document, htmlFile) {
+[7m   [0m [93m                                 ~~~~~~~~[0m
+[96mscripts/agent-readiness/inventory.mjs[0m:[93m51[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'hasRel' is declared but its value is never read.
+
+[7m51[0m function hasRel(children, tagName, predicate = () => true) {
+[7m  [0m [93m         ~~~~~~[0m
+[96mscripts/agent-readiness/inventory.mjs[0m:[93m5[0m:[93m24[0m - [93mwarning[0m[90m ts(6133): [0m'exclusiveFile' is declared but its value is never read.
+
+[7m5[0m import { exclusiveDir, exclusiveFile, manifestFor, saveJson, sha256, sourceState } from './shared.mjs';
+[7m [0m [93m                       ~~~~~~~~~~~~~[0m
+
+[96mscripts/agent-readiness/projection-dom.mjs[0m:[93m507[0m:[93m38[0m - [93mwarning[0m[90m ts(6133): [0m'h1' is declared but its value is never read.
+
+[7m507[0m function projectToolMain(root, page, h1) {
+[7m   [0m [93m                                     ~~[0m
+[96mscripts/agent-readiness/projection-dom.mjs[0m:[93m360[0m:[93m34[0m - [93mwarning[0m[90m ts(6133): [0m'canonicalUrl' is declared but its value is never read.
+
+[7m360[0m function renderTable(node, page, canonicalUrl) {
+[7m   [0m [93m                                 ~~~~~~~~~~~~[0m
+[96mscripts/agent-readiness/projection-dom.mjs[0m:[93m3[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'SITE' is declared but its value is never read.
+
+[7m3[0m const SITE = 'https://cuidatuperroviejo.com';
+[7m [0m [93m      ~~~~[0m
+
+[96mscripts/agent-readiness/projection.mjs[0m:[93m12[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'DOCUMENTS_DIR' is declared but its value is never read.
+
+[7m12[0m const DOCUMENTS_DIR = 'agent-content/v1/documents';
+[7m  [0m [93m      ~~~~~~~~~~~~~[0m
+[96mscripts/agent-readiness/projection.mjs[0m:[93m4[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'basename' is declared but its value is never read.
+
+[7m4[0m import { basename, dirname, join, relative, resolve, sep } from 'node:path';
+[7m [0m [93m         ~~~~~~~~[0m
+
+[96msrc/content.config.ts[0m:[93m52[0m:[93m19[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m52[0m     dateModified: z.string().optional(),
+[7m  [0m [93m                  ~[0m
+[96msrc/content.config.ts[0m:[93m50[0m:[93m16[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m50[0m     legacyUrl: z.string().optional(),
+[7m  [0m [93m               ~[0m
+[96msrc/content.config.ts[0m:[93m49[0m:[93m19[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m49[0m     heroImageAlt: z.string().optional(),
+[7m  [0m [93m                  ~[0m
+[96msrc/content.config.ts[0m:[93m48[0m:[93m16[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m48[0m     heroImage: z.string().optional(),
+[7m  [0m [93m               ~[0m
+[96msrc/content.config.ts[0m:[93m47[0m:[93m15[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m47[0m     keywords: z.string().optional(),
+[7m  [0m [93m              ~[0m
+[96msrc/content.config.ts[0m:[93m46[0m:[93m22[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m46[0m     metaDescription: z.string(),
+[7m  [0m [93m                     ~[0m
+[96msrc/content.config.ts[0m:[93m45[0m:[93m15[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m45[0m     seoTitle: z.string(),
+[7m  [0m [93m              ~[0m
+[96msrc/content.config.ts[0m:[93m44[0m:[93m12[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m44[0m     title: z.string(),
+[7m  [0m [93m           ~[0m
+[96msrc/content.config.ts[0m:[93m43[0m:[93m11[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m43[0m   schema: z.object({
+[7m  [0m [93m          ~[0m
+[96msrc/content.config.ts[0m:[93m33[0m:[93m19[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m33[0m     dateModified: z.string().optional(),
+[7m  [0m [93m                  ~[0m
+[96msrc/content.config.ts[0m:[93m30[0m:[93m20[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m30[0m     datePublished: z.string().default('2025-10-01'),
+[7m  [0m [93m                   ~[0m
+[96msrc/content.config.ts[0m:[93m29[0m:[93m13[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m29[0m     status: z.string().default('Publicado'),
+[7m  [0m [93m            ~[0m
+[96msrc/content.config.ts[0m:[93m28[0m:[93m16[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m28[0m     legacyUrl: z.string().optional(),
+[7m  [0m [93m               ~[0m
+[96msrc/content.config.ts[0m:[93m27[0m:[93m19[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m27[0m     heroImageAlt: z.string().optional(),
+[7m  [0m [93m                  ~[0m
+[96msrc/content.config.ts[0m:[93m26[0m:[93m16[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m26[0m     heroImage: z.string().optional(),
+[7m  [0m [93m               ~[0m
+[96msrc/content.config.ts[0m:[93m25[0m:[93m23[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m25[0m     keywordPrincipal: z.string().optional(),
+[7m  [0m [93m                      ~[0m
+[96msrc/content.config.ts[0m:[93m16[0m:[93m12[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m16[0m     pilar: z.enum([
+[7m  [0m [93m           ~[0m
+[96msrc/content.config.ts[0m:[93m13[0m:[93m22[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m13[0m     metaDescription: z.string().max(160, {
+[7m  [0m [93m                     ~[0m
+[96msrc/content.config.ts[0m:[93m12[0m:[93m15[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m12[0m     seoTitle: z.string(),
+[7m  [0m [93m              ~[0m
+[96msrc/content.config.ts[0m:[93m11[0m:[93m12[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m11[0m     title: z.string(),
+[7m  [0m [93m           ~[0m
+[96msrc/content.config.ts[0m:[93m10[0m:[93m11[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m10[0m   schema: z.strictObject({
+[7m  [0m [93m          ~[0m
+[96msrc/content.config.ts[0m:[93m2[0m:[93m28[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m2[0m import { defineCollection, z } from 'astro:content';
+[7m [0m [93m                           ~[0m
+
+[96msrc/components/Breadcrumbs.astro[0m:[93m95[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m95[0m <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+[7m  [0m [93m        ~~~~[0m
+
+[96msrc/components/CanineAiAssistant.astro[0m:[93m243[0m:[93m56[0m - [93mwarning[0m[90m ts(6133): [0m'match' is declared but its value is never read.
+
+[7m243[0m       html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, url) => {
+[7m   [0m [93m                                                       ~~~~~[0m
+
+[96msrc/components/PostReader.astro[0m:[93m128[0m:[93m23[0m - [93mwarning[0m[90m ts(6133): [0m'depthClass' is declared but its value is never read.
+
+[7m128[0m                 const depthClass = heading.depth === 3 ? "pl-4 text-xs text-brand-muted" : "font-semibold text-brand-text";
+[7m   [0m [93m                      ~~~~~~~~~~[0m
+[96msrc/components/PostReader.astro[0m:[93m3[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'entry' is declared but its value is never read.
+
+[7m3[0m const { entry } = Astro.props;
+[7m [0m [93m      ~~~~~~~~~[0m
+
+[96msrc/layouts/BaseLayout.astro[0m:[93m95[0m:[93m81[0m - [93mwarning[0m[90m ts(6133): [0m'media' is declared but its value is never read.
+
+[7m95[0m     <link rel="stylesheet" href={materialSymbolsURL} media="print" onload="this.media='all'" />
+[7m  [0m [93m                                                                                ~~~~~[0m
+[96msrc/layouts/BaseLayout.astro[0m:[93m94[0m:[93m75[0m - [93mwarning[0m[90m ts(6133): [0m'media' is declared but its value is never read.
+
+[7m94[0m     <link rel="stylesheet" href={textFontsURL} media="print" onload="this.media='all'" />
+[7m  [0m [93m                                                                          ~~~~~[0m
+
+[96msrc/lib/assistant/v2/contracts.ts[0m:[93m12[0m:[93m3[0m - [93mwarning[0m[90m ts(6196): [0m'RiskTag' is declared but never used.
+
+[7m12[0m   RiskTag,
+[7m  [0m [93m  ~~~~~~~[0m
+
+[96msrc/pages/[pilar].astro[0m:[93m263[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m263[0m   <script slot="head" type="application/ld+json" set:html={JSON.stringify(pilarSchema)} />
+[7m   [0m [93m          ~~~~[0m
+
+[96msrc/pages/acerca-de.astro[0m:[93m50[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m50[0m   <script slot="head" type="application/ld+json" set:html={JSON.stringify(aboutSchema)} />
+[7m  [0m [93m          ~~~~[0m
+
+[96msrc/pages/contacto.astro[0m:[93m28[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m28[0m   <script slot="head" src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+[7m  [0m [93m          ~~~~[0m
+
+[96msrc/pages/index.astro[0m:[93m117[0m:[93m13[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m117[0m     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+[7m   [0m [93m            ~~~~[0m
+
+[96msrc/pages/politica-editorial.astro[0m:[93m69[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m69[0m   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
+[7m  [0m [93m          ~~~~[0m
+
+[96msrc/pages/[pilar]/[slug].astro[0m:[93m131[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m131[0m   <script slot="head" type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
+[7m   [0m [93m          ~~~~[0m
+
+[96msrc/pages/admin/contact-messages.astro[0m:[93m3[0m:[93m37[0m - [93mwarning[0m[90m ts(6133): [0m'unauthorizedResponse' is declared but its value is never read.
+
+[7m3[0m import { hashIp, hasValidBasicAuth, unauthorizedResponse } from '../../lib/contact/security';
+[7m [0m [93m                                    ~~~~~~~~~~~~~~~~~~~~[0m
+
+Result (105 files): 
+- 0 errors
+- 0 warnings
+- 50 hints
+

@@ -1,0 +1,444 @@
+{
+  "schemaVersion": "f2a-evidence/1",
+  "baseSha": "cac7ee039607ee9923a403a4e2f299437ff94af2",
+  "baseTree": "fcb639ddc7680ec69b5fb862731ab9174ee37a8a",
+  "historicalCapture": {
+    "sha": "d628f371b32cd7c4bb698ba906b2648c4cd6178a",
+    "tree": "279a754c5ed26d53958baa556d0584db40b1ad89",
+    "previewReceipt": "auditoria-r1-bundle/receipt.json",
+    "previewUrl": "https://a9654c00-cuidatuperroviejo.g1721m.workers.dev",
+    "source": "Independent implementation auditor R1; none of these measurements describe the local corrected candidate."
+  },
+  "index": {
+    "path": "index.json",
+    "sha256": "d2868aa542def5a6ea7bd2b18956d3a15016b792de8b05b79789d87db9e6df73",
+    "schemaVersion": "agent-content/1",
+    "documentCount": 28,
+    "corpusSha256": "29a6147e978da7d92c4a5f49068e92bb05dc28ecb75a0c9f3231d1aef8f81184",
+    "totalMarkdownBytes": 556402,
+    "maxDocumentBytes": 47807,
+    "minDocumentBytes": 2477,
+    "indexBytes": 26284,
+    "limits": {
+      "documents": 98,
+      "indexBytes": 524288,
+      "documentBytes": 524288,
+      "totalMarkdownBytes": 16777216
+    },
+    "withinLimits": true,
+    "idMaxChars": 160
+  },
+  "determinism": {
+    "builds": 2,
+    "assetHashEntries": 29,
+    "identical": true,
+    "manifestSha256": "a39b25eddaac7eb05386a23e3193fb63804ac6a790f5101c68fb302585b0d858"
+  },
+  "http": {
+    "workerdEvidence": "workerd-http.json",
+    "explicitResources": 29,
+    "methods": [
+      "GET",
+      "HEAD"
+    ],
+    "requestsExpected": 58,
+    "requestsRecorded": 58,
+    "failed": 0,
+    "homeAcceptMarkdownStillHtml": true
+  },
+  "coverage": {
+    "goldens": 11,
+    "regressionTests": 37,
+    "corpusCoverage": "Every source page in baseline inventory represented in generated closed-schema index; HTML/Markdown paired expected files cover all prescribed profile shapes; full-body checks on every corpus item are applied in projection check.",
+    "f2ProjectionCases": 16,
+    "growthEndToEnd": "29 derived inventory documents from concordant sitemap, published catalogue and built HTML; projection generation and read-only check pass in temporary build copy",
+    "lossMutations": [
+      "conditional mobility alert",
+      "FAQ detail",
+      "table cell text",
+      "source URL",
+      "visible article author",
+      "expected document removed from output",
+      "orphan Markdown added to output"
+    ],
+    "growthEndToEndTests": 1,
+    "limitMutation": "Inventory recognizes 99 concordant docs; generator fails at cap 98 and creates no projection directory"
+  },
+  "limitations": [
+    "Historical top-level index/build/workerd/preview fields remain exclusively d628 values. The earlier R1 and R2 candidate receipts retain their original public SHAs; corrected source measurements are separately recorded in correctedCandidateMeasurement.",
+    "F2A final acceptance is pending exact-head CI/Workers/Commit Preview and independent R3 implementation review. R1 and R2 consumed attempts 1/5 and 2/5 respectively; no self-acceptance is recorded.",
+    "The R2 report preserves the single FAIL: third-level list nesting parsed as code. The correction is limited to Markdown list indentation; the 28 source HTML documents are unchanged.",
+    "The first pre-freeze build completed but its artifact hash helper used the wrong dist path; it is preserved as diagnostic only. The standard sandbox build attempt failed uv_interface_addresses; the authorized retry and two final fixed-source builds succeeded.",
+    "The R1 auditor’s Python default client received HTTP 403 / Cloudflare 1010; its explicitly identified client received 200 for 60/60. This remains a client limitation, not a general preview outage.",
+    "The final local Workerd run used an isolated compiled-config copy with only ASSETS and local SESSION; it does not validate remote bindings. No AI/API/admin endpoint was invoked."
+  ],
+  "r1Audit": {
+    "report": "auditoria-r1-implementacion.md",
+    "reportSha256": "0673b6955f957059f5be752c3b4477f91bd65c5e137aa143f55dc204176f58b0",
+    "bundle": "auditoria-r1-bundle/",
+    "bundleManifestSha256": "a212172c2d1e1ffa22cbf0f2c8111c92b1e17d7ccf2500eadc18b72f570aea6d",
+    "result": "FAIL B01-B05; R1 of 5 consumed. No R2 has started."
+  },
+  "localCorrectionValidation": {
+    "status": "offline source-HTML validation only; not an Astro build, public preview, CI result, or acceptance",
+    "sourceHtml": "Temporary copy of the preserved dist output associated with public candidate d628f371b32cd7c4bb698ba906b2648c4cd6178a / tree 279a754c5ed26d53958baa556d0584db40b1ad89. The final Astro build was not repeated.",
+    "projectionCheck": "PASS: 28 inventory documents and closed 29-file projection; exact byte check in temporary build copy.",
+    "independentSemanticGuard": "PASS: all 28 source HTML documents; mutation guards detected loss, duplication, reordering, and removed URL in temporary build copy.",
+    "focusedTests": "PASS: 42 agent-readiness tests, including GFM list-card structure, growth to concordant 29, and isolated canonical paths 100/101/115.",
+    "determinism": "PASS: two expected-artifact calculations over the same preserved HTML produced identical 28 Markdown documents plus index (558220 Markdown bytes; 29 artifacts).",
+    "generalHarness": "Initial default-sandbox run recorded Git spawnSync EPERM; the single rerun with additional process permissions passed all 42 agent-readiness tests.",
+    "migrationSpecAudit": "PASS: node scripts/audit-specs-migracion.mjs.",
+    "records": [
+      "projection-r1-local-tests.log",
+      "projection-r1-local-guard.log",
+      "projection-r1-local-check.log",
+      "projection-r1-local-determinism.json",
+      "projection-r1-local-spec-audit.log",
+      "projection-r1-local-harness.log",
+      "projection-r1-local-harness-recheck.log",
+      "projection-r1-local-hardbreak-mismatch.log",
+      "projection-r1-local-artifacts.json"
+    ]
+  },
+  "candidateMeasurement": {
+    "sourceCodeSha": "54e51a2138d90e822e5a6e6c12a0e56345ec1173",
+    "sourceCodeTree": "47790c1d300e47ee38db464f7dcec2c6e693baad",
+    "branch": "agent-ready/f2a-proyeccion",
+    "measurementNote": "These builds validate the product source code at sourceCodeSha. Evidence and documentation added after those builds are tracked separately; this manifest does not claim the later documentation closure was the build input.",
+    "authorization": "Owner explicitly authorized Astro builds and PR validation on 2026-10-06, accepting possible AI binding charges; no AI binding, API, admin, contact, or other remote endpoint was invoked directly.",
+    "builds": {
+      "cleanBuildCount": 3,
+      "sourceShaForAll": "54e51a2138d90e822e5a6e6c12a0e56345ec1173",
+      "exitCodes": [
+        0,
+        0,
+        0
+      ],
+      "logs": [
+        "build-final-1.log",
+        "build-final-2.log",
+        "build-final-3.log"
+      ],
+      "fullOutputManifests": [
+        "build-final-1.sha256",
+        "build-final-2.sha256",
+        "build-final-3.sha256"
+      ],
+      "contractCorpus": {
+        "schemaVersion": "agent-content/1",
+        "documentCount": 28,
+        "artifactCount": 29,
+        "indexSha256": "9a0b0a3d765d4f59110edf30631ccb5fddb30449b129f25fb893f4f19154aa32",
+        "corpusSha256": "4fa610349e6233f5b3a83d8b93a015799ebe02943b6742e82f890914b7483087",
+        "indexBytes": 26284,
+        "totalMarkdownBytes": 558220,
+        "minDocumentBytes": 2477,
+        "maxDocumentBytes": 47785,
+        "identicalAcrossAllThreeBuilds": true,
+        "htmlInputsIdenticalAcrossAllThreeBuilds": true
+      },
+      "fullOutputDifferencesOutsideF2Contract": [
+        "dist/client/contacto.html",
+        "dist/server/chunks/entrypoints_BZDcIFRV.mjs"
+      ],
+      "warning": "Each build recorded Wrangler warning that AI bindings always access remote resources and may incur usage charges even in local dev. This was config validation/build only; no AI request was issued.",
+      "projectionOutputManifests": [
+        "agent-content-v1-build-1.sha256",
+        "agent-content-v1-build-2.sha256",
+        "agent-content-v1-build-3.sha256"
+      ],
+      "sourceHtmlHashManifest": "source-html-final.json"
+    },
+    "checks": {
+      "astroCheck": {
+        "exitCode": 0,
+        "errors": 0,
+        "warnings": 0,
+        "hints": 50,
+        "log": "astro-check-final.log"
+      },
+      "npmTest": {
+        "exitCode": 0,
+        "tests": 1,
+        "passed": 1,
+        "failed": 0,
+        "log": "npm-test-final.log"
+      },
+      "agentReadinessSuite": {
+        "result": "PASS 42/42",
+        "log": "projection-r1-local-harness-recheck.log",
+        "sourceCodeSha": "54e51a2138d90e822e5a6e6c12a0e56345ec1173"
+      },
+      "discoveryCheck": {
+        "result": "PASS",
+        "log": "discovery-final.log"
+      },
+      "projectionCheck": {
+        "result": "PASS exact index and Markdown bytes / exact closed set",
+        "log": "projection-check-final.log"
+      },
+      "semanticGuard": {
+        "result": "PASS 28/28; detected loss, duplication, reordering and removed URL",
+        "log": "semantic-guard-final.log"
+      }
+    },
+    "wranglerDryRun": {
+      "command": "npx --no-install wrangler deploy --config dist/server/wrangler.json --dry-run --outdir /tmp/ctpv-f2a-dryrun-final",
+      "runtime": "Wrangler 4.128.0",
+      "exitCode": 0,
+      "deployed": false,
+      "compiledConfigSha256": "8e0e1977d9e511795264a2891a866d657a115cf474284cdd7691326bcd09f46d",
+      "log": "wrangler-dryrun-final.log",
+      "bindingWarningPreserved": true,
+      "redactions": [
+        "Two 32-character KV namespace resource identifiers in Wrangler dry-run output; binding names/types and AI binding warning remain visible."
+      ],
+      "logNote": "CLI evidence with resource identifiers redacted; dry-run completed with exit 0 and did not deploy."
+    },
+    "workerd": {
+      "runtime": "Wrangler 4.128.0 local workerd",
+      "isolatedConfig": "dist/server/wrangler.f2a.workerd.json (ignored build output; only ASSETS and SESSION local)",
+      "isolatedConfigSha256": "d04855ad268717801d68c33b473b4066d99ab4f979cc8c16c8baa2d958f91d83",
+      "productConfigChanged": false,
+      "directRemoteBindingCalls": 0,
+      "httpEvidence": "workerd-http-final.json",
+      "rawEvidence": "workerd-final-raw/",
+      "requests": {
+        "indexAndDocumentsGetHead": 58,
+        "homeGetHeadAcceptMarkdown": 2,
+        "failed": 0
+      },
+      "homeAcceptMarkdownStillHtml": true,
+      "firstPortAttempt": "8790 already in use; preserved in workerd-final-port-conflict.log; no request was made against that process",
+      "successfulLocalPort": 8798,
+      "rawManifestSha256": "98b9ceec0afb9d88832430e9552268c8b75a4a297e52a1dec1e826b7a4ff5b27"
+    },
+    "publicPreview": {
+      "status": "PASS for the public candidate; independent R2 acceptance pending",
+      "publicCommitSha": "1651d4246efbc991e436f20e9a417e64896a9c79",
+      "publicTreeSha": "30230ec14a28648acbf6a5ff9a176f1e39f3cb47",
+      "localCommitSha": "34596ce2595afcf87246d0369425a863035f0f4e",
+      "localTreeSha": "30230ec14a28648acbf6a5ff9a176f1e39f3cb47",
+      "sourceCodeShaMeasuredByBuilds": "54e51a2138d90e822e5a6e6c12a0e56345ec1173",
+      "sourceCodeTreeMeasuredByBuilds": "47790c1d300e47ee38db464f7dcec2c6e693baad",
+      "commitPreviewUrl": "https://1ead4aad-cuidatuperroviejo.g1721m.workers.dev",
+      "officialBotComment": "https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/57#issuecomment-6010340357",
+      "botSnapshot": "bot-snapshot-1651.md",
+      "receipt": "preview-receipt-1651.json",
+      "ciRunId": 37460373304,
+      "ciRunNumber": 76,
+      "ciConclusion": "success",
+      "ciJobId": 112258158319,
+      "workersCheckRunId": 112258474486,
+      "workersConclusion": "success",
+      "headShaForBothChecks": "1651d4246efbc991e436f20e9a417e64896a9c79",
+      "httpSummary": "public-preview-1651-http.json",
+      "rawDirectory": "public-preview-1651-raw/",
+      "rawFileCount": 180,
+      "rawManifestSha256": "4717fac240d8739398ce5d9905adc41273fd8b451bf9ec90921228c3f04c9574",
+      "requests": {
+        "indexAnd28Markdown": 58,
+        "homeAcceptMarkdown": 2,
+        "total": 60,
+        "failed": 0
+      },
+      "homeAcceptMarkdownStillHtml": true,
+      "checkedMethods": [
+        "GET",
+        "HEAD"
+      ],
+      "checkedResources": "Only /agent-content/v1/index.json, its 28 indexed Markdown resources, and / with Accept:text/markdown. No JS, API, admin, contact, or assistant route was queried.",
+      "noBranchAliasUsed": true
+    },
+    "audit": {
+      "r1": "FAIL B01-B05 consumed 1/5",
+      "r2": "pending independent implementation audit; R1 FAIL remains one of five reviews consumed; no self-acceptance"
+    }
+  },
+  "r2Audit": {
+    "attempt": "2/5",
+    "sourceCandidateSha": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+    "localEquivalentSha": "559e79d18b081e662cbdb64ccbd50b53ca5fecc1",
+    "treeSha": "76c062fcf3533c38bbe5e361d930ebc8d860e6f3",
+    "report": "auditoria-r2-implementacion.md",
+    "reportSha256": "af77239ff58bb28661eedfdc390f3f2b100975435a5a454e7d9780a2c5746a0a",
+    "bundle": "auditoria-r2-bundle/",
+    "bundleManifestSha256": "198eeba2c31248020d3f257c429959466a6b41522c83fefc685aa369b0f7167f",
+    "sealedEvidenceFileCount": 399,
+    "result": "FAIL R2-B01 only; corrected in source 97cfa and queued for independent R3. R2 consumed attempt 2/5.",
+    "correctedInSourceSha": "97cfa4361944837bb6ea7f4402c8d622837cdf8e",
+    "nextIndependentReview": "R3 pending after exact-head delivery; no self-acceptance"
+  },
+  "correctedCandidateMeasurement": {
+    "sourceCodeSha": "97cfa4361944837bb6ea7f4402c8d622837cdf8e",
+    "sourceCodeTree": "385ad65386a2e88731f93f8be9d9807989b93cd4",
+    "changeScope": [
+      "scripts/agent-readiness/projection-dom.mjs",
+      "tests/agent-readiness/projection.test.mjs"
+    ],
+    "fix": "renderList applies continuation indentation exactly once through each parent list item; no depth-dependent pre-indent.",
+    "builds": {
+      "cleanBuildCount": 2,
+      "exitCodes": [
+        0,
+        0
+      ],
+      "logs": [
+        "build-r2-final-1.log",
+        "build-r2-final-2.log"
+      ],
+      "projectionManifests": [
+        "agent-content-v1-r2-final-1.sha256",
+        "agent-content-v1-r2-final-2.sha256"
+      ],
+      "projectionManifestSha256": "cf02d8e925365caa223537094ccad98bb74d35a19f95ae5123caea5e78656d2b",
+      "artifactCount": 29,
+      "identicalAcrossBothBuilds": true,
+      "indexSha256": "fd5e032df2852f0aa3e4cf3bb5ba4d2ff93114a15646652ed485323bf69ab341",
+      "indexBytes": 26284,
+      "corpusSha256": "912082d0a00775bbe30d03270bc55c3cef466dd68dff92b1921a122e197c3b0a",
+      "documentCount": 28,
+      "totalMarkdownBytes": 558214,
+      "minDocumentBytes": 2477,
+      "maxDocumentBytes": 47785,
+      "sourceHtmlManifest": [
+        "source-html-r2-final-1.json",
+        "source-html-r2-final-2.json"
+      ],
+      "sourceHtmlManifestSha256": "91b59d67c3d3a3d0eac8970df494136c42c1e0c201dfb6c5b25198eb82145dde",
+      "sourceHtmlDocumentsIdenticalAcrossBothBuilds": true,
+      "all28SourceHtmlUnchangedFromEarlierCandidate": true,
+      "changedProjectionPathsVs54e": [
+        "agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+        "agent-content/v1/index.json"
+      ]
+    },
+    "checks": {
+      "agentReadinessSuite": "PASS 43/43",
+      "agentReadinessLog": "suite-r2-final-summary.txt (result record; full harness output was returned by exec)",
+      "projectionCheck": "PASS exact index/document bytes and closed output set",
+      "projectionCheckLog": "projection-check-r2-final.log",
+      "discoveryCheck": "PASS",
+      "discoveryCheckLog": "discovery-check-r2-final.log",
+      "semanticGuard": "PASS 28/28 independent parse5 + Markdown/GFM",
+      "semanticGuardLog": "semantic-guard-r2-final.log",
+      "nestedListRegression": "PASS three levels UL→OL start=4→UL; list node at each depth, zero code nodes",
+      "test": "tests/agent-readiness/projection.test.mjs",
+      "astroCheck": {
+        "exitCode": 0,
+        "errors": 0,
+        "warnings": 0,
+        "hints": 50,
+        "log": "astro-check-r2-final.log"
+      },
+      "npmTest": {
+        "exitCode": 0,
+        "tests": 1,
+        "passed": 1,
+        "log": "npm-test-r2-final-retry.log",
+        "initialSandboxFailure": "npm-test-r2-final.log"
+      },
+      "publicPreviewHttp": "PASS 60/60 exact Commit Preview GET/HEAD, including home with Accept:text/markdown remaining HTML; raw evidence and manifest listed below."
+    },
+    "wranglerDryRun": {
+      "exitCode": 0,
+      "deployed": false,
+      "compiledConfigSha256": "8e0e1977d9e511795264a2891a866d657a115cf474284cdd7691326bcd09f46d",
+      "log": "wrangler-dryrun-r2-final.log",
+      "namespaceIdRedactions": 2
+    },
+    "workerd": {
+      "runtime": "Wrangler 4.128.0",
+      "isolatedConfig": "dist/server/wrangler.f2a.workerd.json",
+      "isolatedConfigSha256": "cef38146c475f27d3c7338b3d7f5a2b631fd0bc2247551f001a4e2f2fbc6e141",
+      "bindings": [
+        "ASSETS local",
+        "SESSION local synthetic namespace"
+      ],
+      "removedBindings": [
+        "CONTACT_KV",
+        "EMAIL",
+        "CONTACT_DB",
+        "AI",
+        "ASK_LIMIT",
+        "ADMIN_LIMIT",
+        "remote preview bindings"
+      ],
+      "productConfigChanged": false,
+      "remoteBindingCalls": 0,
+      "httpSummary": "workerd-http-r2-final.json",
+      "rawDirectory": "workerd-r2-final-raw/",
+      "rawManifestSha256": "ca71b44bae10c9c0cf942cc10d4ca46bce01884ac64c807e6695d1a78089c637",
+      "requests": 60,
+      "failed": 0,
+      "homeAcceptMarkdownStillHtml": true,
+      "port": 8799,
+      "processStopped": true,
+      "startupLog": "workerd-r2-final.log",
+      "stopRecord": "workerd-r2-stop.json"
+    },
+    "publicPreview": {
+      "status": "PASS for exact public candidate; independent R3 implementation audit pending",
+      "publicCommitSha": "810f5b7d1a05b910db7cd4016e9d225a49267489",
+      "publicTreeSha": "cef7663c83e51d5fcc74f9c7b127232875aff440",
+      "localEquivalentCommit": "48989870eea5943c51474e94eefbebca0b80fcde",
+      "localTreeSha": "cef7663c83e51d5fcc74f9c7b127232875aff440",
+      "sourceCodeShaMeasuredByBuilds": "97cfa4361944837bb6ea7f4402c8d622837cdf8e",
+      "sourceCodeTreeMeasuredByBuilds": "385ad65386a2e88731f93f8be9d9807989b93cd4",
+      "codeDiffFromMeasuredSource": [],
+      "commitPreviewUrl": "https://d40f9725-cuidatuperroviejo.g1721m.workers.dev",
+      "officialBotComment": "https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/57#issuecomment-6010340357",
+      "botSnapshot": "bot-snapshot-810f.md",
+      "receipt": "preview-receipt-810f.json",
+      "ciRunId": 37471926410,
+      "ciRunNumber": 78,
+      "ciConclusion": "success",
+      "acceptanceCheckRunId": 112297337878,
+      "workersCheckRunId": 112297661615,
+      "workersConclusion": "success",
+      "headShaForAllChecks": "810f5b7d1a05b910db7cd4016e9d225a49267489",
+      "deploymentVersionId": "d40f9725-ff14-4017-9bf3-7441daaf6148",
+      "httpSummary": "public-preview-810f-http.json",
+      "rawDirectory": "public-preview-810f-raw/",
+      "rawFileCount": 180,
+      "rawManifest": "public-preview-810f-raw.sha256",
+      "rawManifestSha256": "cb5606ccbea073ac03936da874c3b6a364f05de012c0178d62989ba489f1b158",
+      "requests": {
+        "indexAndDocuments": 58,
+        "homeAcceptMarkdown": 2,
+        "total": 60,
+        "failed": 0
+      },
+      "homeAcceptMarkdownStillHtml": true,
+      "checkedMethods": [
+        "GET",
+        "HEAD"
+      ],
+      "checkedResources": "Only /agent-content/v1/index.json, its 28 indexed Markdown resources, and / with Accept:text/markdown. No JS, API, admin, contact, or assistant route was queried.",
+      "noBranchAliasUsed": true
+    },
+    "acceptance": "R2 correction validated locally; R3 independent audit pending",
+    "auditStatus": {
+      "r1": "FAIL; attempt 1/5 consumed",
+      "r2": "FAIL R2-B01 only; corrected; attempt 2/5 consumed",
+      "r3": "Pending independent implementation audit; no self-acceptance"
+    }
+  },
+  "architecturalAcceptance": {
+    "verdict": "PASS",
+    "attempt": 3,
+    "maxAudits": 5,
+    "blockers": [],
+    "criteria": "A01-A08",
+    "auditedPublicCommit": "644cd3d8ace36ac69fee4938a115d22c158e5e63",
+    "auditedTree": "03f49e2a67d8fa028b6c174a7329412caa7ad2f9",
+    "report": "auditoria-r3-implementacion.md",
+    "reportSha256": "c98eaa399b4d16c17d397e8b609677ed0d5c5d07cf7fae610f5e1c9760ae5c6f",
+    "bundle": "auditoria-r3-bundle",
+    "bundleManifestSha256": "7d964133ecdc75b4a2e8210906b0a343806afb0cf0dfb213315b226e74133a5e",
+    "bundleFilesVerified": 282,
+    "F2B": "base assigned by coordinator after public documentary closure",
+    "promotionAuthorized": false,
+    "newEvaluatorRequests": 0
+  }
+}

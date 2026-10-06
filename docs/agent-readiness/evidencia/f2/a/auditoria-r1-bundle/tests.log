@@ -1,0 +1,57 @@
+✔ serialización llms es determinista, ordena canonicales y escapa Markdown (2.696897ms)
+✔ serialización rechaza inventario, descripción, canonical y tamaño inválidos (1.801654ms)
+OK: llms.txt, robots.txt y Link/MIME F1 verificados sin modificar assets.
+Uso: node scripts/agent-readiness/discovery.mjs check --build-dir <directorio>
+llms.txt del build no coincide byte por byte con el inventario.
+ENOENT: no such file or directory, open '/workspace/ctpv-f2a-audit-r1/tests/agent-readiness/.discovery-fixture-nkdVoU/dist/client/llms.txt'
+✔ check CLI verifica bytes sin reescribir y rechaza artefactos o flags inválidos (253.037667ms)
+✔ hook real falla sin sitemap, no escribe llms y limpia su scratch (22.842098ms)
+✔ replay verifica bytes originales y reproduce 43/20/19 con levels y nextLevel (60.489709ms)
+✔ replay rechaza deriva de hashes y nunca cambia los originales (23.176964ms)
+✔ compare bloquea perfiles y denominadores distintos, y permite fail→pass (3.120939ms)
+✔ compare detects ID universe and scoring rule changes, and uses Math.round semantics (0.995114ms)
+Envelope inválido: un estado complete contiene datos incompletos o incoherentes.
+Envelope inválido: checkUniverseHash no corresponde con IDs y categorías.
+Envelope inválido: counts incoherentes.
+Envelope inválido: ID repetido robotsTxt.
+Envelope inválido: campos ausentes o adicionales.
+✔ compare exits with contract error for inconsistent summary envelopes (22.216231ms)
+✔ sourceState consulta Git real para clean, tracked, staged, untracked e ignored (102.107814ms)
+✔ sourceState falla explícitamente fuera de un checkout Git (10.706392ms)
+✔ scan classifica HTTP, timeout, schema e oversize come incomplete, una llamada y sin retry (115.300819ms)
+--url no puede tener userinfo, query, fragment ni path distinto de /.
+Flag desconocido para replay: --extra
+Build y output no pueden coincidir ni contenerse.
+✔ scan CLI valida flags y target URL sin hacer requests (1.184791ms)
+Build y output no pueden coincidir ni contenerse.
+✔ inventory CLI rechaza build/output solapados antes de crear output (2.118914ms)
+✔ inventory conserva tool/document sin canonical y devuelve DOCUMENT_TITLE_MISSING sin H1 (57.262891ms)
+✔ inventory no sustituye canonical, no inventa clasificaciones y valida sitemap child local (39.920557ms)
+✔ inventory detecta canonical duplicado en páginas proyectadas (31.208977ms)
+✔ inventario deriva correspondencia exacta y admite crecimiento concordante 28 → 29 (174.979747ms)
+✔ inventario rechaza documentos requeridos ausentes, IDs repetidos y rutas no clasificadas (340.813363ms)
+✔ siete fixtures DOM conservan identidad editorial, avisos, FAQ completas y fuentes (134.669476ms)
+✔ golden F2 article--chequeo-geriatrico-canino conserva el documento completo (40.21659ms)
+✔ golden F2 article--comida-casera-perros-mayores conserva el documento completo (21.466984ms)
+✔ golden F2 article--salud-dental-perros-mayores conserva el documento completo (17.321077ms)
+✔ golden F2 article--sindrome-cushing-perros-mayores conserva el documento completo (16.148504ms)
+✔ golden F2 home conserva el documento completo (17.095445ms)
+✔ golden F2 page--acerca-de conserva el documento completo (4.041279ms)
+✔ golden F2 page--politica-editorial conserva el documento completo (4.799065ms)
+✔ golden F2 pillar--herramientas conserva el documento completo (4.939107ms)
+✔ golden F2 pillar--salud-perros-mayores conserva el documento completo (5.617724ms)
+✔ golden F2 tool--calidad-vida conserva el documento completo (10.049733ms)
+✔ golden F2 tool--movilidad conserva el documento completo (7.672269ms)
+✔ los goldens cubren los perfiles editoriales, FAQ, tablas, citas e imágenes solicitados (3.088309ms)
+✔ selectores fallan cerrados ante H1 duplicado, perfil ausente o tag semántico nuevo (25.175101ms)
+✔ tabla no representable falla en lugar de perder celdas (10.171267ms)
+✔ mutaciones de aviso, FAQ, celda, fuente y autor se detectan contra los goldens fijos (40.476953ms)
+✔ el índice permite crecimiento derivado a 29 entradas (0.703103ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2239.085115

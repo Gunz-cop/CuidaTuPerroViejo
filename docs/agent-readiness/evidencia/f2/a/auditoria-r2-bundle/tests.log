@@ -1,0 +1,61 @@
+✔ serialización llms es determinista, ordena canonicales y escapa Markdown (2.642253ms)
+✔ serialización rechaza inventario, descripción, canonical y tamaño inválidos (1.156989ms)
+OK: llms.txt, robots.txt y Link/MIME F1 verificados sin modificar assets.
+Uso: node scripts/agent-readiness/discovery.mjs check --build-dir <directorio>
+llms.txt del build no coincide byte por byte con el inventario.
+ENOENT: no such file or directory, open '/workspace/ctpv-f2a-audit-r2/tests/agent-readiness/.discovery-fixture-HBdMUf/dist/client/llms.txt'
+✔ check CLI verifica bytes sin reescribir y rechaza artefactos o flags inválidos (499.78085ms)
+✔ hook real falla sin sitemap, no escribe llms y limpia su scratch (30.686753ms)
+✔ replay verifica bytes originales y reproduce 43/20/19 con levels y nextLevel (66.953178ms)
+✔ replay rechaza deriva de hashes y nunca cambia los originales (56.16021ms)
+✔ compare bloquea perfiles y denominadores distintos, y permite fail→pass (3.297804ms)
+✔ compare detects ID universe and scoring rule changes, and uses Math.round semantics (0.565375ms)
+Envelope inválido: un estado complete contiene datos incompletos o incoherentes.
+Envelope inválido: checkUniverseHash no corresponde con IDs y categorías.
+Envelope inválido: counts incoherentes.
+Envelope inválido: ID repetido robotsTxt.
+Envelope inválido: campos ausentes o adicionales.
+✔ compare exits with contract error for inconsistent summary envelopes (22.603966ms)
+✔ sourceState consulta Git real para clean, tracked, staged, untracked e ignored (94.713757ms)
+✔ sourceState falla explícitamente fuera de un checkout Git (5.568796ms)
+✔ scan classifica HTTP, timeout, schema e oversize come incomplete, una llamada y sin retry (182.415344ms)
+--url no puede tener userinfo, query, fragment ni path distinto de /.
+Flag desconocido para replay: --extra
+Build y output no pueden coincidir ni contenerse.
+✔ scan CLI valida flags y target URL sin hacer requests (2.125803ms)
+Build y output no pueden coincidir ni contenerse.
+✔ inventory CLI rechaza build/output solapados antes de crear output (1.91839ms)
+✔ inventory conserva tool/document sin canonical y devuelve DOCUMENT_TITLE_MISSING sin H1 (99.056291ms)
+✔ inventory no sustituye canonical, no inventa clasificaciones y valida sitemap child local (74.232665ms)
+✔ inventory detecta canonical duplicado en páginas proyectadas (27.852118ms)
+✔ inventario deriva correspondencia exacta y admite crecimiento concordante 28 → 29 (289.048897ms)
+✔ inventario rechaza documentos requeridos ausentes, IDs repetidos y rutas no clasificadas (494.474666ms)
+✔ siete fixtures DOM conservan identidad editorial, avisos, FAQ completas y fuentes (309.154567ms)
+✔ golden F2 article--chequeo-geriatrico-canino conserva el documento completo (97.162306ms)
+✔ golden F2 article--comida-casera-perros-mayores conserva el documento completo (95.671313ms)
+✔ golden F2 article--salud-dental-perros-mayores conserva el documento completo (59.179157ms)
+✔ golden F2 article--sindrome-cushing-perros-mayores conserva el documento completo (30.633671ms)
+✔ golden F2 home conserva el documento completo (79.666874ms)
+✔ golden F2 page--acerca-de conserva el documento completo (8.010077ms)
+✔ golden F2 page--politica-editorial conserva el documento completo (7.723153ms)
+✔ golden F2 pillar--herramientas conserva el documento completo (12.90829ms)
+✔ golden F2 pillar--salud-perros-mayores conserva el documento completo (45.873131ms)
+✔ golden F2 tool--calidad-vida conserva el documento completo (16.67215ms)
+✔ golden F2 tool--movilidad conserva el documento completo (9.716045ms)
+✔ los goldens cubren los perfiles editoriales, FAQ, tablas, citas e imágenes solicitados (3.787144ms)
+✔ selectores fallan cerrados ante H1 duplicado, perfil ausente o tag semántico nuevo (67.448977ms)
+✔ tabla no representable falla en lugar de perder celdas (13.974493ms)
+✔ párrafos que empiezan con sintaxis de heading/lista siguen siendo texto literal (238.998709ms)
+✔ pre y code conservan LF internos y finales según el parser CommonMark (97.764182ms)
+✔ un pipe de texto ocupa una sola celda GFM sin doble escape (106.369098ms)
+✔ las seis tarjetas de inicio siguen siendo seis li con heading, texto y enlaces (195.012385ms)
+✔ mutaciones de aviso, FAQ, celda, fuente y autor se detectan contra los goldens fijos (170.063936ms)
+✔ el índice permite crecimiento derivado a 29 entradas (3.907206ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4817.382829

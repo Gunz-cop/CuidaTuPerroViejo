@@ -1,0 +1,14 @@
+{
+  "config": "dist/server/wrangler.f2a-audit-r3.json",
+  "port": 8803,
+  "ownNpmPid": 81920,
+  "ownWorkerdPid": 81976,
+  "ctrlCSession62917Exit": 1,
+  "cleanup": "CtrlC exited session1 but left npm/wrapper; SIGTERM own npm and both confirmed Wrangler wrapper nodes; SIGKILL own initial and respawned workerd children. No other session targeted.",
+  "otherProcessesUntouched": true,
+  "ownWrapperPids": [
+    81933,
+    81940
+  ],
+  "respawnedOwnWorkerdPid": 82021
+}

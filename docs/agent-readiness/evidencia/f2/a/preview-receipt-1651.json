@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "f2a-commit-preview-receipt/1",
+  "repository": "Gunz-cop/CuidaTuPerroViejo",
+  "pullRequest": 57,
+  "branch": "agent-ready/f2a-proyeccion",
+  "baseBranch": "docs/agent-readiness-f2",
+  "publicCommitSha": "1651d4246efbc991e436f20e9a417e64896a9c79",
+  "publicTreeSha": "30230ec14a28648acbf6a5ff9a176f1e39f3cb47",
+  "localEvidenceCommitSha": "34596ce2595afcf87246d0369425a863035f0f4e",
+  "localTreeSha": "30230ec14a28648acbf6a5ff9a176f1e39f3cb47",
+  "sourceCodeCommitMeasuredByCleanBuilds": "54e51a2138d90e822e5a6e6c12a0e56345ec1173",
+  "sourceCodeTreeMeasuredByCleanBuilds": "47790c1d300e47ee38db464f7dcec2c6e693baad",
+  "gitDataTreeMatchesLocal": true,
+  "ci": {
+    "runId": 37460373304,
+    "runNumber": 76,
+    "runUrl": "https://github.com/Gunz-cop/CuidaTuPerroViejo/actions/runs/37460373304",
+    "jobId": 112258158319,
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "1651d4246efbc991e436f20e9a417e64896a9c79"
+  },
+  "workersBuild": {
+    "checkRunId": 112258474486,
+    "name": "Workers Builds: cuidatuperroviejo",
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "1651d4246efbc991e436f20e9a417e64896a9c79",
+    "detailsUrl": "https://dash.cloudflare.com/972ab3666747a93c084965dd4585d4cc/workers/services/view/cuidatuperroviejo/production/builds/acb4458f-cb60-4095-8d7e-9712cc18b656"
+  },
+  "cloudflareBot": {
+    "commentId": 6010340357,
+    "commentUrl": "https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/57#issuecomment-6010340357",
+    "login": "cloudflare-workers-and-pages[bot]",
+    "updatedAt": "2026-10-06T12:02:56Z",
+    "status": "Deployment successful!",
+    "latestCommitAbbrev": "1651d424",
+    "commitPreviewUrl": "https://1ead4aad-cuidatuperroviejo.g1721m.workers.dev",
+    "snapshot": "bot-snapshot-1651.md"
+  },
+  "publicHttpCapture": {
+    "summary": "public-preview-1651-http.json",
+    "rawDirectory": "public-preview-1651-raw/",
+    "rawManifest": "public-preview-1651-raw/manifest.sha256",
+    "methods": [
+      "GET",
+      "HEAD"
+    ],
+    "requests": 60,
+    "failed": 0,
+    "homeAcceptMarkdownStillHtml": true,
+    "rawFileCount": 180,
+    "rawManifestSha256": "4717fac240d8739398ce5d9905adc41273fd8b451bf9ec90921228c3f04c9574"
+  },
+  "audit": {
+    "implementationR1": "FAIL B01-B05; 1/5 consumed",
+    "implementationR2": "not started; independent reviewer required"
+  },
+  "noMergeNoMainNoProductionDeploy": true
+}

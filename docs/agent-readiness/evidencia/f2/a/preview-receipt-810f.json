@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "f2a-preview-receipt/1",
+  "capturedAt": "2026-10-06T13:38:04.047944+00:00",
+  "publicCandidateSha": "810f5b7d1a05b910db7cd4016e9d225a49267489",
+  "publicTreeSha": "cef7663c83e51d5fcc74f9c7b127232875aff440",
+  "localEquivalentCommit": "48989870eea5943c51474e94eefbebca0b80fcde",
+  "localEquivalentTree": "cef7663c83e51d5fcc74f9c7b127232875aff440",
+  "sourceCodeShaMeasuredByBuilds": "97cfa4361944837bb6ea7f4402c8d622837cdf8e",
+  "sourceCodeTreeMeasuredByBuilds": "385ad65386a2e88731f93f8be9d9807989b93cd4",
+  "codeDiffFromMeasuredSource": [],
+  "pullRequest": "https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/57",
+  "issue": "https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/55",
+  "ci": {
+    "workflowRunId": 37471926410,
+    "runNumber": 78,
+    "name": "CI (pull requests)",
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "810f5b7d1a05b910db7cd4016e9d225a49267489",
+    "url": "https://github.com/Gunz-cop/CuidaTuPerroViejo/actions/runs/37471926410"
+  },
+  "acceptanceCheck": {
+    "id": 112297337878,
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "810f5b7d1a05b910db7cd4016e9d225a49267489",
+    "verifiedByCoordinator": true
+  },
+  "workersCheck": {
+    "id": 112297661615,
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "810f5b7d1a05b910db7cd4016e9d225a49267489",
+    "deploymentVersionId": "d40f9725-ff14-4017-9bf3-7441daaf6148",
+    "verifiedByCoordinator": true
+  },
+  "workersBotComment": {
+    "id": 6010340357,
+    "url": "https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/57#issuecomment-6010340357",
+    "author": "cloudflare-workers-and-pages[bot]",
+    "authorId": 73139402,
+    "updatedAt": "2026-10-06T13:35:44Z",
+    "status": "Deployment successful!",
+    "latestCommitShortSha": "810f5b7d",
+    "commitPreviewUrl": "https://d40f9725-cuidatuperroviejo.g1721m.workers.dev",
+    "branchPreviewUrl": "https://agent-ready-f2a-proyeccion-cuidatuperroviejo.g1721m.workers.dev",
+    "snapshot": "bot-snapshot-810f.md"
+  },
+  "httpCapture": {
+    "summary": "public-preview-810f-http.json",
+    "rawDirectory": "public-preview-810f-raw/",
+    "rawManifest": "public-preview-810f-raw.sha256",
+    "rawManifestSha256": "cb5606ccbea073ac03936da874c3b6a364f05de012c0178d62989ba489f1b158",
+    "rawFiles": 180,
+    "resources": [
+      "/agent-content/v1/index.json",
+      "28 indexed Markdown paths",
+      "/ with Accept: text/markdown"
+    ],
+    "methods": [
+      "GET",
+      "HEAD"
+    ],
+    "requests": 60,
+    "failed": 0,
+    "homeAcceptMarkdownStillHtml": true,
+    "branchPreviewQueried": false,
+    "nonDocumentRoutesQueried": false
+  },
+  "noMergeOrProductionDeploy": true,
+  "auditStatus": "R1 FAIL and R2 FAIL are historical; R3 independent implementation audit pending. No self-acceptance."
+}

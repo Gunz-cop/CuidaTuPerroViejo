@@ -1,0 +1,23 @@
+{
+  "h1Count": 1,
+  "literalParagraphs": [
+    "# Texto literal editorial",
+    "1. No es lista",
+    "- No es lista tampoco"
+  ],
+  "codeValue": "línea A\n\n\nlínea B\n\n",
+  "codeExpected": "línea A\n\n\nlínea B\n\n",
+  "nestedListExcerpt": "- Primer nivel\n\n  - Segundo nivel\n\n    - Tercer nivel\n",
+  "pipeCells": [
+    "Alimento Seco (Croquetas)",
+    "Alimento Casero (Licuado)",
+    "A | B",
+    "Alta (Aromas naturales)",
+    "Aporte de fibra y betacarotenos.",
+    "Solución Adaptativa",
+    "Dolor Cervical/Artrosis",
+    "Anorexia Social",
+    "Alimentación asistida (con la mano o cuchara)."
+  ],
+  "pipeExact": true
+}

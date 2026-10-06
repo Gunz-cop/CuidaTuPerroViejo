@@ -95,6 +95,15 @@ jobs:
       - name: Verificar descubrimiento agent-readiness
         run: node scripts/agent-readiness/discovery.mjs check --build-dir dist
 
+      - name: Verificar proyección Markdown agent-readiness
+        run: node scripts/agent-readiness/projection.mjs check --build-dir dist
+
+      - name: Probar crecimiento concordante de proyección a 29 documentos
+        run: node --test tests/agent-readiness/projection-growth.mjs
+
+      - name: Verificar semántica independiente del corpus inventariado contra HTML/GFM
+        run: node tests/agent-readiness/projection-semantic.mjs dist
+
       # Los bindings de `wrangler.jsonc` y los tipos generados tienen que contar
       # lo mismo: sin este paso, el `Env` miente cuando alguien añade un binding
       # y no regenera, y el typecheck lo da por bueno.

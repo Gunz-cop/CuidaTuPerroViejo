@@ -1,0 +1,74 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+
+ ⛅️ wrangler 4.128.0
+────────────────────
+Attaching additional modules:
+┌───────────────────────────────────────────────────────────┬──────┬────────────┐
+│ Name                                                      │ Type │ Size       │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/_astro_assets_DJLSRPyi.mjs                         │ esm  │ 21.27 KiB  │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/_id__BgEqgRTg.mjs                                  │ esm  │ 2.15 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/_virtual_astro_server-island-manifest_q0HM18kM.mjs │ esm  │ 0.27 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/_virtual_astro_session-driver_TyipGO2P.mjs         │ esm  │ 2.88 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/ask_CXUtHJ9V.mjs                                   │ esm  │ 15.81 KiB  │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/assets_DGbNNf9q.mjs                                │ esm  │ 14.48 KiB  │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/compiler_g6_Xq_kp.mjs                              │ esm  │ 1.19 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/contact-messages_CC1Km3v6.mjs                      │ esm  │ 5.63 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/contact_CZp7MTkQ.mjs                               │ esm  │ 0.24 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/contact_D7pTFIbM.mjs                               │ esm  │ 7.87 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/contacto_DeIxkhgb.mjs                              │ esm  │ 0.44 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/email_C8A9mQLs.mjs                                 │ esm  │ 1.22 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/entrypoints_BZDcIFRV.mjs                           │ esm  │ 249.59 KiB │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/feedback_CBRxbbOc.mjs                              │ esm  │ 3.20 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/geo_pdsrN3jB.mjs                                   │ esm  │ 1.10 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/image-passthrough-endpoint_aTRyGCND.mjs            │ esm  │ 2.24 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/noop-entrypoint_BYLrzUxc.mjs                       │ esm  │ 0.15 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/noop_BJYRoTFg.mjs                                  │ esm  │ 0.66 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/rolldown-runtime_D7vh-g_o.mjs                      │ esm  │ 0.41 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/security_CODFIENT.mjs                              │ esm  │ 1.75 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/sequence_R51OORtO.mjs                              │ esm  │ 287.53 KiB │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/service_TRza9GRh.mjs                               │ esm  │ 41.69 KiB  │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ chunks/static-image-collection_BSaNJHyh.mjs               │ esm  │ 2.30 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ virtual_astro_middleware.mjs                              │ esm  │ 2.80 KiB   │
+├───────────────────────────────────────────────────────────┼──────┼────────────┤
+│ Total (24 modules)                                        │      │ 666.87 KiB │
+└───────────────────────────────────────────────────────────┴──────┴────────────┘
+✨ Read 354 files from the assets directory /workspace/ctpv-f2a/dist/client
+Total Upload: 671.27 KiB / gzip: 164.94 KiB
+Your Worker has access to the following bindings:
+Binding                                                 Resource          
+env.CONTACT_KV (<redacted-32-hex-namespace-id>)       KV Namespace      
+env.SESSION (<redacted-32-hex-namespace-id>)          KV Namespace      
+env.EMAIL (unrestricted)                                Send Email        
+env.CONTACT_DB (cuidatuperroviejo-contact)              D1 Database       
+env.AI                                                  AI                
+env.ASK_LIMIT (10 requests/60s)                         Rate Limit        
+env.ADMIN_LIMIT (20 requests/60s)                       Rate Limit        
+env.ASSETS                                              Assets            
+
+--dry-run: exiting now.

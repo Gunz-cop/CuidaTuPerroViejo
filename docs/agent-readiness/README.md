@@ -38,6 +38,8 @@ Confirmada en esta conversación: `search=yes`, `ai-input=yes`, `ai-train=no`. L
 
 ## Próximo paso
 
-F1 está publicada y P01–P03 pasan con evidencia real. La SDD F2 concreta paridad y preview pública en F2A → F2B; no lanzar implementación sin spec auditada y SHA fijo. Los programadores continúan siendo **Luna 6, razonamiento alto**, con auditoría independiente y máximo cinco revisiones por issue. F2–F6 conservan alcance de planificación.
+F2A aceptada técnicamente con [auditoría PASS 3/5](evidencia/f2/a/auditoria-r3-implementacion.md) y [cierre arquitectónico](evidencia/f2/a/cierre-arquitectonico.md). F2B continúa desde el SHA público exacto del cierre fijado en issue #56, con sesión distinta y contador propio. F2 completa y promoción siguen pendientes.
+
+F1 está publicada y P01–P03 pasan con evidencia real. La SDD F2 concreta paridad y preview pública en F2A → F2B; no lanzar implementación sin spec auditada y SHA fijo. Los programadores continúan siendo **Luna 6, razonamiento alto**, con auditoría independiente y máximo cinco revisiones por issue. F2 tiene contrato aprobado; F3–F6 conservan alcance de planificación.
 
 La cadena de PR de F0/F1 se integró por autorización expresa del propietario; las fases siguientes requieren su propia entrega y autorización de promoción. Los implementadores parten de una rama de trabajo. `main` despliega producción al recibir cambios: documentación, H1 y corrección del canonical se entregan en PR apilados y no se fusionan automáticamente.

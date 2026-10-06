@@ -1,0 +1,239 @@
+{
+  "h1Count": 1,
+  "literalParagraphs": [
+    "# Texto literal editorial",
+    "1. No es lista",
+    "- No es lista tampoco"
+  ],
+  "codeValue": "línea A\n\n\nlínea B\n\n",
+  "codeExpected": "línea A\n\n\nlínea B\n\n",
+  "nestedListTree": {
+    "type": "list",
+    "ordered": false,
+    "start": null,
+    "spread": false,
+    "children": [
+      {
+        "type": "listItem",
+        "spread": true,
+        "checked": null,
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "value": "Primer nivel",
+                "position": {
+                  "start": {
+                    "line": 271,
+                    "column": 3,
+                    "offset": 12815
+                  },
+                  "end": {
+                    "line": 271,
+                    "column": 15,
+                    "offset": 12827
+                  }
+                }
+              }
+            ],
+            "position": {
+              "start": {
+                "line": 271,
+                "column": 3,
+                "offset": 12815
+              },
+              "end": {
+                "line": 271,
+                "column": 15,
+                "offset": 12827
+              }
+            }
+          },
+          {
+            "type": "list",
+            "ordered": false,
+            "start": null,
+            "spread": false,
+            "children": [
+              {
+                "type": "listItem",
+                "spread": true,
+                "checked": null,
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Segundo nivel",
+                        "position": {
+                          "start": {
+                            "line": 273,
+                            "column": 5,
+                            "offset": 12833
+                          },
+                          "end": {
+                            "line": 273,
+                            "column": 18,
+                            "offset": 12846
+                          }
+                        }
+                      }
+                    ],
+                    "position": {
+                      "start": {
+                        "line": 273,
+                        "column": 5,
+                        "offset": 12833
+                      },
+                      "end": {
+                        "line": 273,
+                        "column": 18,
+                        "offset": 12846
+                      }
+                    }
+                  },
+                  {
+                    "type": "list",
+                    "ordered": false,
+                    "start": null,
+                    "spread": false,
+                    "children": [
+                      {
+                        "type": "listItem",
+                        "spread": false,
+                        "checked": null,
+                        "children": [
+                          {
+                            "type": "paragraph",
+                            "children": [
+                              {
+                                "type": "text",
+                                "value": "Tercer nivel",
+                                "position": {
+                                  "start": {
+                                    "line": 275,
+                                    "column": 7,
+                                    "offset": 12854
+                                  },
+                                  "end": {
+                                    "line": 275,
+                                    "column": 19,
+                                    "offset": 12866
+                                  }
+                                }
+                              }
+                            ],
+                            "position": {
+                              "start": {
+                                "line": 275,
+                                "column": 7,
+                                "offset": 12854
+                              },
+                              "end": {
+                                "line": 275,
+                                "column": 19,
+                                "offset": 12866
+                              }
+                            }
+                          }
+                        ],
+                        "position": {
+                          "start": {
+                            "line": 275,
+                            "column": 5,
+                            "offset": 12852
+                          },
+                          "end": {
+                            "line": 275,
+                            "column": 19,
+                            "offset": 12866
+                          }
+                        }
+                      }
+                    ],
+                    "position": {
+                      "start": {
+                        "line": 275,
+                        "column": 5,
+                        "offset": 12852
+                      },
+                      "end": {
+                        "line": 275,
+                        "column": 19,
+                        "offset": 12866
+                      }
+                    }
+                  }
+                ],
+                "position": {
+                  "start": {
+                    "line": 273,
+                    "column": 3,
+                    "offset": 12831
+                  },
+                  "end": {
+                    "line": 275,
+                    "column": 19,
+                    "offset": 12866
+                  }
+                }
+              }
+            ],
+            "position": {
+              "start": {
+                "line": 273,
+                "column": 3,
+                "offset": 12831
+              },
+              "end": {
+                "line": 275,
+                "column": 19,
+                "offset": 12866
+              }
+            }
+          }
+        ],
+        "position": {
+          "start": {
+            "line": 271,
+            "column": 1,
+            "offset": 12813
+          },
+          "end": {
+            "line": 275,
+            "column": 19,
+            "offset": 12866
+          }
+        }
+      }
+    ],
+    "position": {
+      "start": {
+        "line": 271,
+        "column": 1,
+        "offset": 12813
+      },
+      "end": {
+        "line": 275,
+        "column": 19,
+        "offset": 12866
+      }
+    }
+  },
+  "nestedListExcerpt": "- Primer nivel\n\n  - Segundo nivel\n\n    - Tercer nivel\n",
+  "pipeCells": [
+    "Alimento Seco (Croquetas)",
+    "Alimento Casero (Licuado)",
+    "A | B",
+    "Alta (Aromas naturales)",
+    "Aporte de fibra y betacarotenos.",
+    "Solución Adaptativa",
+    "Dolor Cervical/Artrosis",
+    "Anorexia Social",
+    "Alimentación asistida (con la mano o cuchara)."
+  ],
+  "pipeExact": true
+}

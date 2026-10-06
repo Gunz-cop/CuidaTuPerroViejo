@@ -1,0 +1,28 @@
+{
+  "compatibility_date": "2026-05-23",
+  "compatibility_flags": [
+    "global_fetch_strictly_public",
+    "nodejs_compat"
+  ],
+  "name": "ctpv-f2a-audit-r2-local",
+  "main": "entry.mjs",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "../client",
+    "not_found_handling": "404-page",
+    "run_worker_first": [
+      "/api/*",
+      "/admin/*"
+    ]
+  },
+  "kv_namespaces": [
+    {
+      "binding": "SESSION",
+      "id": "local-session"
+    }
+  ],
+  "dev": {
+    "ip": "127.0.0.1",
+    "local_protocol": "http"
+  }
+}
