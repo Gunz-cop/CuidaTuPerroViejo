@@ -1,0 +1,15 @@
+# F2B — captura de bloqueo de validación HTTP pública
+
+Candidato medido: commit `8727217a6ba6c326763eed8abedf766b5c55992e`, árbol `1d65bad586cde385327e3911fef8fa77479a49ea`, padre/base `c0a7280378c009fcd3ed8fbb60b10c54f048c718`. PR draft [#59](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/59), dirigido a `agent-ready/f2a-proyeccion`.
+
+El comentario oficial `cloudflare-workers-and-pages[bot]` [#6018839007](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/59#issuecomment-6018839007), actualizado `2026-10-06T14:48:13Z`, reportó Workers `success` para `8727217a` y este Commit Preview exacto: <https://fa7f59e2-cuidatuperroviejo.g1721m.workers.dev>. Checks del mismo SHA: CI `112332291106` PASS y Workers `112332185999` PASS.
+
+La validación pública se detuvo en B05. GET/HEAD canónicos con `Accept: text/html` respondieron 200, pero omitieron `ETag`; los controles `text/markdown` sí devolvieron ETag. Repetí controles en `/`, en el artículo de Cushing y en el artículo de agresividad tardía. Los controles HTML con `Cache-Control: no-cache` mantuvieron `cf-cache-status: HIT` y siguieron sin ETag. El cuerpo HTML observado coincide con su hash local. El smoke workerd local del mismo árbol sí expuso ETag para ambas variantes. La capa causante no está demostrada: puede estar en ASSETS, el runtime Worker, el edge del Commit Preview o la ruta proxy, y estas capturas no distinguen entre ellas.
+
+El contrato F2 §6 y SDD §5 (implementación) y §7/B05 (aceptación) exigen ETag opaco del asset seleccionado para la matriz If-None-Match de ambas variantes. Sin ETag HTML observable no se pudo acreditar la condición propia 304 frente a condición cruzada 200. No inferí un validator ni cambié el contrato. La matriz pública completa no se ejecutó.
+
+El bloqueo se registró como [[SDD bug] F2B: Commit Preview omite ETag en HTML canónico](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/60), vinculado al contexto de issue #56. Auditoría independiente B: `0/5` intentos consumidos; no se inició R1. La rama no modifica código después del commit candidato. Este commit documental preserva las capturas y el reporte con diff de código cero.
+
+`public/raw/` conserva las cinco capturas del primer lote que detuvo la matriz y cuatro controles puntuales posteriores; `manifest.json` registra cada solicitud, headers, cuerpo y SHA-256. Las cabeceras crudas incluyen el bloque del proxy CONNECT y el bloque HTTP final, tal como los emitió curl. Las respuestas HEAD tienen cuerpo vacío. Los GET fueron sólo al índice y rutas canónicas documentales del Commit Preview; no se llamó a API, admin, formularios, asistente ni producción.
+
+Validación local antes de publicar el candidato: `npm test` (37/37), pruebas Agent Readiness (45/45), auditoría de migración (7 specs), `astro check` (0 errores/0 warnings; 50 hints existentes), build (28 documentos, índice de 26.284 bytes), checks de proyección/routing, Wrangler dry-run (354 assets/24 módulos), smoke workerd (167 casos) y copia local con índice corrupto (503 literal/no-store, sin cookie). Ninguno sustituye el gate HTTP público B05.
