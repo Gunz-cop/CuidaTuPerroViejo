@@ -1,0 +1,176 @@
+name: F2B no-transform diagnostic (single capture)
+
+on:
+  push:
+    branches:
+      - spike/f2b-no-transform
+    paths:
+      - .github/workflows/f2b-no-transform-diagnostic.yml
+
+permissions: {}
+
+jobs:
+  f2b-no-transform-capture:
+    # Guarded version first: publish and verify this job is skipped before enabling capture.
+    if: ${{ github.run_attempt == 1 && github.event_name == 'push' && github.ref == 'refs/heads/spike/f2b-no-transform' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Capture fixed control and treatment previews
+        id: capture
+        shell: bash
+        run: |
+          set -uo pipefail
+          out="$RUNNER_TEMP/f2b-no-transform"
+          mkdir -p "$out/raw"
+          control_preview='https://5c55fc8d-cuidatuperroviejo.g1721m.workers.dev/'
+          treatment_preview='https://6b2c9502-cuidatuperroviejo.g1721m.workers.dev/'
+          expected_html_sha256='4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b'
+          expected_markdown_sha256='859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079'
+          requests_attempted=0
+          capture_transport=pass
+          proxy_configured=false
+          for name in HTTPS_PROXY https_proxy HTTP_PROXY http_proxy ALL_PROXY all_proxy; do
+            if [[ -n "${!name:-}" ]]; then
+              proxy_configured=true
+            fi
+          done
+
+          {
+            echo "capture_start_utc=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            echo "workflow_source_sha=${GITHUB_SHA}"
+            echo "workflow_ref=${GITHUB_REF}"
+            echo "event=${GITHUB_EVENT_NAME}"
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "run_attempt=${GITHUB_RUN_ATTEMPT}"
+            echo "job=${GITHUB_JOB}"
+            echo 'control_source_sha=b87616f72d4ff3446f005f87761bfd65d9f43b62'
+            echo "control_preview=${control_preview}"
+            echo 'control_receipt_comment=6022505218'
+            echo 'treatment_source_sha=69a50652f62cec62d5355056a54eab0722b676a5'
+            echo "treatment_preview=${treatment_preview}"
+            echo 'treatment_receipt_comment=6026971114'
+            echo 'user_agent=ctpv-f2b-etag-spike/1.0'
+            echo 'accept_encoding=identity'
+            echo "proxy_configured=${proxy_configured}"
+          } > "$out/provenance.txt"
+
+          if [[ "$proxy_configured" == true ]]; then
+            capture_transport=aborted_proxy_present
+            echo 'capture_transport=aborted_proxy_present' >> "$out/provenance.txt"
+          else
+            capture_one() {
+              local source="$1" variant="$2" method="$3" accept="$4" url="$5"
+              local name="${source}-${variant}-${method,,}" rc=0 status_code hash expected body
+              local headers="$out/raw/${name}.headers"
+              local trace="$out/raw/${name}.trace"
+              local status="$out/raw/${name}.status"
+              body="$out/raw/${name}.body"
+              requests_attempted=$((requests_attempted + 1))
+              {
+                echo "request_start_utc=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+                echo "name=${name}"
+                echo "source=${source}"
+                echo "method=${method}"
+                echo "accept=${accept}"
+                echo 'accept_encoding=identity'
+                echo "url=${url}"
+              } > "$status"
+              local args=(--silent --show-error --verbose --trace-time --retry 0 --max-redirs 0 --connect-timeout 15 --max-time 35 --user-agent 'ctpv-f2b-etag-spike/1.0' --header "Accept: ${accept}" --header 'Accept-Encoding: identity' --dump-header "$headers" --stderr "$trace" --write-out $'http_status=%{http_code}\nhttp_version=%{http_version}\n')
+              if [[ "$method" == 'HEAD' ]]; then
+                args+=(--head --output /dev/null)
+              else
+                args+=(--output "$body")
+              fi
+              curl "${args[@]}" "$url" >> "$status" || rc=$?
+              status_code=$(sed -n 's/^http_status=//p' "$status" | tail -n 1)
+              {
+                echo "request_end_utc=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+                echo "curl_exit_code=${rc}"
+                echo "http_status=${status_code:-000}"
+              } >> "$status"
+              if [[ "$rc" -ne 0 || "${status_code:-000}" != '200' ]]; then
+                capture_transport=fail
+                return
+              fi
+              if [[ "$method" == 'GET' ]]; then
+                hash=$(sha256sum "$body" | awk '{print $1}')
+                if [[ "$variant" == 'html' ]]; then expected="$expected_html_sha256"; else expected="$expected_markdown_sha256"; fi
+                {
+                  echo "body_bytes=$(wc -c < "$body" | tr -d ' ')"
+                  echo "body_sha256=${hash}"
+                  echo "expected_body_sha256=${expected}"
+                  echo "body_hash_match=$([[ "$hash" == "$expected" ]] && echo true || echo false)"
+                } >> "$status"
+              fi
+            }
+
+            capture_one control html HEAD text/html "$control_preview"
+            if [[ "$capture_transport" == pass ]]; then capture_one control html GET text/html "$control_preview"; fi
+            if [[ "$capture_transport" == pass ]]; then capture_one control markdown HEAD text/markdown "$control_preview"; fi
+            if [[ "$capture_transport" == pass ]]; then capture_one control markdown GET text/markdown "$control_preview"; fi
+            if [[ "$capture_transport" == pass ]]; then capture_one treatment html HEAD text/html "$treatment_preview"; fi
+            if [[ "$capture_transport" == pass ]]; then capture_one treatment html GET text/html "$treatment_preview"; fi
+            if [[ "$capture_transport" == pass ]]; then capture_one treatment markdown HEAD text/markdown "$treatment_preview"; fi
+            if [[ "$capture_transport" == pass ]]; then capture_one treatment markdown GET text/markdown "$treatment_preview"; fi
+            echo "requests_attempted=${requests_attempted}" >> "$out/provenance.txt"
+            echo "capture_transport=${capture_transport}" >> "$out/provenance.txt"
+          fi
+
+          header_value() {
+            awk -v key="$2" 'BEGIN { IGNORECASE=1 } tolower(substr($0,1,length(key)+1)) == tolower(key ":") { sub(/^[^:]*:[[:space:]]*/, ""); gsub(/\r/, ""); value=$0 } END { print value }' "$1"
+          }
+          {
+            echo "capture_end_utc=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            echo "requests_attempted=${requests_attempted}"
+            echo "capture_transport=${capture_transport}"
+            if [[ "$proxy_configured" == false ]]; then
+              for source in control treatment; do
+                for variant in html markdown; do
+                  for method in head get; do
+                    name="${source}-${variant}-${method}"
+                    headers="$out/raw/${name}.headers"
+                    [[ -f "$headers" ]] || continue
+                    outer=$(header_value "$headers" etag)
+                    outer_encoding=$(header_value "$headers" content-encoding)
+                    cache_control=$(header_value "$headers" cache-control)
+                    native=$(header_value "$headers" x-f2b-diag-assets-representation-etag)
+                    wrapper=$(header_value "$headers" x-f2b-diag-wrapper-etag)
+                    encoding=$(header_value "$headers" x-f2b-diag-assets-representation-content-encoding)
+                    wrapper_encoding=$(header_value "$headers" x-f2b-diag-wrapper-content-encoding)
+                    [[ -n "$outer" ]] || outer='absent'
+                    echo "${name}_outer_etag=${outer}"
+                    echo "${name}_outer_content_encoding=${outer_encoding:-absent}"
+                    echo "${name}_cache_control=${cache_control:-absent}"
+                    echo "${name}_assets_etag=${native:-absent}"
+                    echo "${name}_wrapper_etag=${wrapper:-absent}"
+                    echo "${name}_outer_matches_assets=$([[ "$outer" == "$native" && "$outer" != absent ]] && echo true || echo false)"
+                    echo "${name}_assets_content_encoding=${encoding:-absent}"
+                    echo "${name}_wrapper_content_encoding=${wrapper_encoding:-absent}"
+                  done
+                done
+              done
+            fi
+          } > "$out/summary.txt"
+          (
+            cd "$out"
+            find . -type f ! -name 'manifest.sha256' ! -name 'manifest.bytes' -print0 | sort -z | xargs -0 sha256sum > manifest.sha256
+            find . -type f ! -name 'manifest.sha256' ! -name 'manifest.bytes' -print0 | sort -z | xargs -0 wc -c > manifest.bytes
+          )
+          cat "$out/provenance.txt"
+          cat "$out/summary.txt"
+          cat "$out/manifest.sha256"
+          cat "$out/manifest.bytes"
+          if [[ "$capture_transport" != pass || "$requests_attempted" -ne 8 ]]; then
+            exit 1
+          fi
+
+      - name: Preserve raw evidence even after a capture failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: f2b-no-transform-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/f2b-no-transform/
+          if-no-files-found: error
+          retention-days: 1
+          overwrite: false

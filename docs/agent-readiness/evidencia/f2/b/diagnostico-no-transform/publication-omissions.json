@@ -1,0 +1,69 @@
+{
+  "schema": "ctpv-f2b-no-transform-publication-omissions/1",
+  "artifact_id": 11449199667,
+  "artifact_sha256": "d657a634e0b2fd9777a2ee53c5a55e8ccc53b05454ca1ad7747fb0484d62a32c",
+  "artifact_original_location": "/workspace/ctpv-sdd-correcciones/f2b-no-transform-artifact-37544456977",
+  "decoded_job_log_original_location": "/workspace/ctpv-sdd-correcciones/f2b-no-transform-job112544967268-decoded.log",
+  "omissions": [
+    {
+      "path": "hosted/raw/control-html-get.trace",
+      "bytes": 5185,
+      "sha256": "6cdbb44ff02fb5f229c7d7cad195030656260b27fa04429ebdd2ca1c25b34a5f",
+      "reason": "Raw TLS/HTTP trace omitted from Git publication by auto-review; exact artifact copy retained locally."
+    },
+    {
+      "path": "hosted/raw/control-html-head.trace",
+      "bytes": 5158,
+      "sha256": "a954ec864d0be857278f93ef08d2d9eabf818c3b9ea0a398023c2a915b8d7afb",
+      "reason": "Raw TLS/HTTP trace omitted from Git publication by auto-review; exact artifact copy retained locally."
+    },
+    {
+      "path": "hosted/raw/control-markdown-get.trace",
+      "bytes": 5305,
+      "sha256": "d38605b1a4265f315d99b31dc020d935b5d8c5b4038f7dc2d0bda7d90a5af9ef",
+      "reason": "Raw TLS/HTTP trace omitted from Git publication by auto-review; exact artifact copy retained locally."
+    },
+    {
+      "path": "hosted/raw/control-markdown-head.trace",
+      "bytes": 5238,
+      "sha256": "32a5bd215bb2e70b45a1d03bee7f223ab700de1638a9f903af865d6e9d100852",
+      "reason": "Raw TLS/HTTP trace omitted from Git publication by auto-review; exact artifact copy retained locally."
+    },
+    {
+      "path": "hosted/raw/treatment-html-get.trace",
+      "bytes": 5442,
+      "sha256": "0304c43a4df9b7885d821aad810ef005e275d56c6c4e25acf27626f20eb1dfe8",
+      "reason": "Raw TLS/HTTP trace omitted from Git publication by auto-review; exact artifact copy retained locally."
+    },
+    {
+      "path": "hosted/raw/treatment-html-head.trace",
+      "bytes": 5374,
+      "sha256": "e340522067e4f63f5f77c8a9720292d720fa97ef6ff07b4f0fd2eca2b1e027b2",
+      "reason": "Raw TLS/HTTP trace omitted from Git publication by auto-review; exact artifact copy retained locally."
+    },
+    {
+      "path": "hosted/raw/treatment-markdown-get.trace",
+      "bytes": 5455,
+      "sha256": "7512e94049107afb26ba2b73b8807a01210fa9709a5603f138a714f9a3aa5492",
+      "reason": "Raw TLS/HTTP trace omitted from Git publication by auto-review; exact artifact copy retained locally."
+    },
+    {
+      "path": "hosted/raw/treatment-markdown-head.trace",
+      "bytes": 5390,
+      "sha256": "5e348edca91ccfe76a797c344d18cb99309baee96ad5fa44ecb46c0d2c8ffa2e",
+      "reason": "Raw TLS/HTTP trace omitted from Git publication by auto-review; exact artifact copy retained locally."
+    },
+    {
+      "path": "workflow/f2b-no-transform-job112544967268-decoded.log",
+      "bytes": 29976,
+      "sha256": "9b10081f8c49c271130f3a8899be129ae33ce832643599e44f8854bc53772e26",
+      "reason": "Full hosted job log omitted from Git publication; may contain environment metadata. Exact decoded copy retained locally."
+    },
+    {
+      "path": "local/manifest.json",
+      "bytes": 4048,
+      "sha256": "dbc5badaadfe3eccc53130cc06a6c7976458783f1d07ddfd41214b99cc50c455",
+      "reason": "Local request manifest contains loopback URL values; omitted from Git publication. Exact local copy retained."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "ctpv-f2b-no-transform-activation-provenance-minimal/1",
+  "derivation": "Whitelist of commit/tree/parent/path/blob identity and pinned workflow response; author, committer, patch text and personal metadata omitted.",
+  "commit": {
+    "sha": "e7cfdf45eba576ff78a99b6b8098802c0ef815ba",
+    "tree_sha": "a30c980d24836ac390aaf5a514149e472712781a",
+    "parent_shas": [
+      "6cd027d1375fadcbfefbed4216c6c9f945724f81"
+    ],
+    "files": [
+      {
+        "filename": ".github/workflows/f2b-no-transform-diagnostic.yml",
+        "blob_sha": "2f2f476cc525ce70754f085a42c65f9c4ada531b"
+      }
+    ]
+  },
+  "workflowFetch": {
+    "url": "https://api.github.com/repos/Gunz-cop/CuidaTuPerroViejo/contents/.github/workflows/f2b-no-transform-diagnostic.yml?ref=e7cfdf45eba576ff78a99b6b8098802c0ef815ba",
+    "representation": "connector returns decoded YAML string",
+    "expectedSha256": "7961c8d67c3392aa17b999318caa998206dc8b154d9929fbaca7f7fb94ec02fe"
+  }
+}
