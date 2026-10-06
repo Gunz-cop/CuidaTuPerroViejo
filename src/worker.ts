@@ -22,6 +22,7 @@ async function diagnosticFetch(request: Request, env: Env, context: ExecutionCon
   const originalAssets = env.ASSETS;
   let indexEtag = 'absent';
   let representationEtag = 'absent';
+  let representationEncoding = 'absent';
   const observedAssets = new Proxy(originalAssets, {
     get(target, property, receiver) {
       if (property !== 'fetch') return Reflect.get(target, property, receiver);
@@ -37,6 +38,7 @@ async function diagnosticFetch(request: Request, env: Env, context: ExecutionCon
           indexEtag = response.headers.get('ETag') ?? 'absent';
         } else if (assetUrl.pathname === url.pathname || MARKDOWN_PATHS.has(assetUrl.pathname)) {
           representationEtag = response.headers.get('ETag') ?? 'absent';
+          representationEncoding = response.headers.get('Content-Encoding') ?? 'absent';
         }
         return response;
       };
@@ -54,6 +56,18 @@ async function diagnosticFetch(request: Request, env: Env, context: ExecutionCon
   headers.set('X-F2B-Diag-Assets-Index-ETag', indexEtag);
   headers.set('X-F2B-Diag-Assets-Representation-ETag', representationEtag);
   headers.set('X-F2B-Diag-Wrapper-ETag', response.headers.get('ETag') ?? 'absent');
+  headers.set('X-F2B-Diag-Assets-Representation-Content-Encoding', representationEncoding);
+  headers.set('X-F2B-Diag-Wrapper-Content-Encoding', response.headers.get('Content-Encoding') ?? 'absent');
+
+  // Isolated treatment: apply no-transform only to the externally returned home response.
+  // Keep all existing cache directives and the real ETag untouched.
+  if (url.pathname === '/') {
+    const cacheControl = headers.get('Cache-Control');
+    if (cacheControl && !cacheControl.split(',').some((directive) => directive.trim().toLowerCase() === 'no-transform')) {
+      headers.set('Cache-Control', `${cacheControl}, no-transform`);
+    }
+  }
+
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
