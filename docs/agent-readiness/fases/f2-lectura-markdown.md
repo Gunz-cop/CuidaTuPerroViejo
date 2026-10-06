@@ -1,6 +1,6 @@
 # F2 — Lectura íntegra y negociación Markdown
 
-**Estado: especificada; auditoría de SDD pendiente.** Arquitecto: coordinador. Implementadores: sesiones distintas de **Luna 6, razonamiento alto**. Auditor independiente del autor. F2 se entrega en **F2A → F2B**, sin ejecución simultánea; cada issue tiene su contador de hasta cinco auditorías. Ninguna entrega parcial equivale a F2 publicada.
+**Estado: lista para F2A; F2B bloqueada hasta aceptación de A. SDD PASS 2/2, cero bloqueantes.** [Informe final](../evidencia/f2/auditoria/auditoria-sdd-f2-r2.md), sobre local `0a5390dbfa96b05b05cc4ad7df635fca5976f869` y público `b9355ea55e718017954a6f9ca0ef3f75f431f605`, tree idéntico `a2203cae0f7a0f5fe95d7dd8edd3d845ff4a29f2`. Primera revisión FAIL y único ciclo de corrección preservados; no cambia el contrato aprobado. Arquitecto: coordinador. Implementadores: sesiones distintas de **Luna 6, razonamiento alto**. Auditor independiente del autor. F2 se entrega en **F2A → F2B**, sin ejecución simultánea; cada issue tiene su contador de hasta cinco auditorías. Ninguna entrega parcial equivale a F2 publicada.
 
 ## 1. Problema, resultado y base
 
