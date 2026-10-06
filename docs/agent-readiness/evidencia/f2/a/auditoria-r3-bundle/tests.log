@@ -1,0 +1,62 @@
+✔ serialización llms es determinista, ordena canonicales y escapa Markdown (1.903738ms)
+✔ serialización rechaza inventario, descripción, canonical y tamaño inválidos (0.953151ms)
+OK: llms.txt, robots.txt y Link/MIME F1 verificados sin modificar assets.
+Uso: node scripts/agent-readiness/discovery.mjs check --build-dir <directorio>
+llms.txt del build no coincide byte por byte con el inventario.
+ENOENT: no such file or directory, open '/workspace/ctpv-f2a-audit-r3/tests/agent-readiness/.discovery-fixture-bwgqpX/dist/client/llms.txt'
+✔ check CLI verifica bytes sin reescribir y rechaza artefactos o flags inválidos (318.612505ms)
+✔ hook real falla sin sitemap, no escribe llms y limpia su scratch (21.832897ms)
+✔ replay verifica bytes originales y reproduce 43/20/19 con levels y nextLevel (89.111239ms)
+✔ replay rechaza deriva de hashes y nunca cambia los originales (30.805378ms)
+✔ compare bloquea perfiles y denominadores distintos, y permite fail→pass (3.371947ms)
+✔ compare detects ID universe and scoring rule changes, and uses Math.round semantics (0.597413ms)
+Envelope inválido: un estado complete contiene datos incompletos o incoherentes.
+Envelope inválido: checkUniverseHash no corresponde con IDs y categorías.
+Envelope inválido: counts incoherentes.
+Envelope inválido: ID repetido robotsTxt.
+Envelope inválido: campos ausentes o adicionales.
+✔ compare exits with contract error for inconsistent summary envelopes (13.654015ms)
+✔ sourceState consulta Git real para clean, tracked, staged, untracked e ignored (101.634366ms)
+✔ sourceState falla explícitamente fuera de un checkout Git (5.30008ms)
+✔ scan classifica HTTP, timeout, schema e oversize come incomplete, una llamada y sin retry (184.42379ms)
+--url no puede tener userinfo, query, fragment ni path distinto de /.
+Flag desconocido para replay: --extra
+Build y output no pueden coincidir ni contenerse.
+✔ scan CLI valida flags y target URL sin hacer requests (2.377954ms)
+Build y output no pueden coincidir ni contenerse.
+✔ inventory CLI rechaza build/output solapados antes de crear output (2.115947ms)
+✔ inventory conserva tool/document sin canonical y devuelve DOCUMENT_TITLE_MISSING sin H1 (97.771773ms)
+✔ inventory no sustituye canonical, no inventa clasificaciones y valida sitemap child local (73.263959ms)
+✔ inventory detecta canonical duplicado en páginas proyectadas (31.987855ms)
+✔ inventario deriva correspondencia exacta y admite crecimiento concordante 28 → 29 (290.469954ms)
+✔ inventario rechaza documentos requeridos ausentes, IDs repetidos y rutas no clasificadas (625.182942ms)
+✔ siete fixtures DOM conservan identidad editorial, avisos, FAQ completas y fuentes (396.419462ms)
+✔ golden F2 article--chequeo-geriatrico-canino conserva el documento completo (141.979843ms)
+✔ golden F2 article--comida-casera-perros-mayores conserva el documento completo (96.864317ms)
+✔ golden F2 article--salud-dental-perros-mayores conserva el documento completo (18.32096ms)
+✔ golden F2 article--sindrome-cushing-perros-mayores conserva el documento completo (20.85549ms)
+✔ golden F2 home conserva el documento completo (56.919195ms)
+✔ golden F2 page--acerca-de conserva el documento completo (5.41242ms)
+✔ golden F2 page--politica-editorial conserva el documento completo (5.119497ms)
+✔ golden F2 pillar--herramientas conserva el documento completo (10.997792ms)
+✔ golden F2 pillar--salud-perros-mayores conserva el documento completo (12.277275ms)
+✔ golden F2 tool--calidad-vida conserva el documento completo (22.407225ms)
+✔ golden F2 tool--movilidad conserva el documento completo (46.364745ms)
+✔ los goldens cubren los perfiles editoriales, FAQ, tablas, citas e imágenes solicitados (7.294074ms)
+✔ selectores fallan cerrados ante H1 duplicado, perfil ausente o tag semántico nuevo (99.551117ms)
+✔ tabla no representable falla en lugar de perder celdas (16.464464ms)
+✔ párrafos que empiezan con sintaxis de heading/lista siguen siendo texto literal (279.956585ms)
+✔ listas anidadas de tres niveles conservan AST, tipo y comienzo ordered (46.171021ms)
+✔ pre y code conservan LF internos y finales según el parser CommonMark (82.076472ms)
+✔ un pipe de texto ocupa una sola celda GFM sin doble escape (98.554166ms)
+✔ las seis tarjetas de inicio siguen siendo seis li con heading, texto y enlaces (112.200951ms)
+✔ mutaciones de aviso, FAQ, celda, fuente y autor se detectan contra los goldens fijos (118.765167ms)
+✔ el índice permite crecimiento derivado a 29 entradas (32.246491ms)
+ℹ tests 41
+ℹ suites 0
+ℹ pass 41
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4586.422102

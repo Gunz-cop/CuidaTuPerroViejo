@@ -1,3 +1,5 @@
+**Actualizacion del coordinador, 2026-10-06: F2A aceptada PASS 3/5, cero bloqueantes. Ver [cierre arquitectonico](cierre-arquitectonico.md). El registro anterior al veredicto se conserva debajo como evidencia historica.**
+
 # F2A: estado de aceptación y evidencia
 
 Base aprobada: `cac7ee039607ee9923a403a4e2f299437ff94af2` (tree `fcb639ddc7680ec69b5fb862731ab9174ee37a8a`). La SDD no cambió. R1 encontró B01–B05 en `d628f371…`; R2 revisó el cierre público `69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca` y reportó un solo fallo reparable en la anidación de listas a tercer nivel. El código corregido se selló localmente en `97cfa4361944837bb6ea7f4402c8d622837cdf8e` (tree `385ad65386a2e88731f93f8be9d9807989b93cd4`). La autorización explícita para builds y validaciones PR, aceptando posible cargo de binding AI, sigue vigente. El bloqueo de entorno #58 se resolvió. El candidato público corregido es `810f5b7d1a05b910db7cd4016e9d225a49267489`; el source de código medido por builds sigue siendo `97cfa4361944837bb6ea7f4402c8d622837cdf8e`.

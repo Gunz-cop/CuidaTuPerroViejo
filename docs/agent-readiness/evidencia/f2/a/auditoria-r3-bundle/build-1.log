@@ -1,0 +1,70 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+13:54:19 [@astrojs/cloudflare] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+13:54:21 [content] Syncing content
+13:54:21 [content] Synced content
+13:54:21 [types] Generated 1.70s
+13:54:21 [build] output: "static"
+13:54:21 [build] mode: "server"
+13:54:21 [build] directory: /workspace/ctpv-f2a-audit-r3/dist/
+13:54:21 [build] adapter: @astrojs/cloudflare
+13:54:21 [build] Collecting build info...
+13:54:21 [build] ✓ Completed in 2.10s.
+13:54:21 [build] Building server entrypoints...
+13:54:23 [vite] ✓ built in 2.21s
+13:54:24 [vite] ✓ built in 559ms
+13:54:24 [vite] ✓ built in 102ms
+Default inspector port 9229 not available, using 9233 instead
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mAI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.[0m
+
+
+
+ prerendering static routes 
+✨ Parsed 23 valid redirect rules.
+✨ Parsed 7 valid header rules.
+13:54:26   ├─ /404.html (+34ms) 
+13:54:26   ├─ /acerca-de.html (+19ms) 
+13:54:26   ├─ /api/assistant-catalog.json (+74ms) 
+13:54:27   ├─ /asistente-ia.html (+18ms) 
+13:54:27   ├─ /contacto.html (+57ms) 
+13:54:27   ├─ /gracias.html (+13ms) 
+13:54:27   ├─ /herramientas/calculadora-calidad-vida-perros.html (+24ms) 
+13:54:27   ├─ /herramientas/selector-movilidad-perros-mayores.html (+24ms) 
+13:54:27   ├─ /politica-de-cookies.html (+50ms) 
+13:54:27   ├─ /politica-de-privacidad.html (+19ms) 
+13:54:27   ├─ /politica-editorial.html (+12ms) 
+13:54:27   ├─ /salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor.html (+71ms) 
+13:54:27   ├─ /salud-mental-emocional-perros/ansiedad-separacion-perros-senior.html (+24ms) 
+13:54:27   ├─ /movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis.html (+20ms) 
+13:54:27   ├─ /salud-perros-mayores/chequeo-geriatrico-canino.html (+68ms) 
+13:54:27   ├─ /alimentacion-perros-senior/comida-casera-perros-mayores.html (+32ms) 
+13:54:27   ├─ /cuidados-paliativos-perros/como-dar-medicacion-perro.html (+58ms) 
+13:54:27   ├─ /salud-mental-emocional-perros/disfuncion-cognitiva-canina.html (+29ms) 
+13:54:27   ├─ /higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html (+16ms) 
+13:54:27   ├─ /higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores.html (+52ms) 
+13:54:27   ├─ /salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.html (+29ms) 
+13:54:27   ├─ /salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html (+62ms) 
+13:54:27   ├─ /movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor.html (+24ms) 
+13:54:27   ├─ /salud-perros-mayores/salud-dental-perros-mayores.html (+20ms) 
+13:54:27   ├─ /salud-perros-mayores/sindrome-cushing-perros-mayores.html (+55ms) 
+13:54:27   ├─ /cuidados-paliativos-perros/ulceras-presion-perros.html (+18ms) 
+13:54:27   ├─ /salud-perros-mayores/vacunas-desparasitacion-perros-senior.html (+21ms) 
+13:54:27   ├─ /alimentacion-perros-senior.html (+20ms) 
+13:54:27   ├─ /cuidados-paliativos-perros.html (+50ms) 
+13:54:27   ├─ /herramientas.html (+20ms) 
+13:54:27   ├─ /higiene-hogar-perros-senior.html (+19ms) 
+13:54:27   ├─ /movilidad-dolor-perros-mayores.html (+50ms) 
+13:54:28   ├─ /salud-mental-emocional-perros.html (+22ms) 
+13:54:28   ├─ /salud-perros-mayores.html (+16ms) 
+13:54:28   ├─ /index.html (+17ms) 
+13:54:28 ✓ Completed in 3.49s.
+
+13:54:28 [build] Rearranging server assets...
+13:54:28 [build] ✓ Completed in 6.55s.
+13:54:28 [@astrojs/sitemap] `sitemap-index.xml` created at `dist/client`
+13:54:28 [agent-readiness-discovery] llms.txt generado después de sitemap (3516 bytes).
+13:54:29 [agent-readiness-markdown-projection] Proyección agent-content/v1 generada: 28 documentos, 26284 bytes de índice.
+13:54:29 [build] Server built in 10.30s
+13:54:29 [build] Complete!

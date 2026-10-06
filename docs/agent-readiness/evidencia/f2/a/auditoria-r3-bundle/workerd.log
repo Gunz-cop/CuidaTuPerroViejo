@@ -1,0 +1,90 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+
+ ⛅️ wrangler 4.128.0
+────────────────────
+Your Worker has access to the following bindings:
+Binding                          Resource          Mode
+env.SESSION (local-session)      KV Namespace      local
+env.ASSETS                       Assets            local
+
+Wrangler detected this dev session is running in an AI agent.
+The Local Explorer API is available at http://127.0.0.1:8803/cdn-cgi/local/explorer/api
+Useful routes:
+  GET http://127.0.0.1:8803/cdn-cgi/local/explorer/api/local/workers - local Workers and bindings
+  GET http://127.0.0.1:8803/cdn-cgi/local/explorer/api/storage/kv/namespaces - KV namespaces
+  GET http://127.0.0.1:8803/cdn-cgi/local/explorer/api/d1/database - D1 databases
+  GET http://127.0.0.1:8803/cdn-cgi/local/explorer/api/r2/buckets - R2 buckets
+  GET http://127.0.0.1:8803/cdn-cgi/local/explorer/api/workers/durable_objects/namespaces - Durable Object namespaces
+  GET http://127.0.0.1:8803/cdn-cgi/local/explorer/api/workflows - Workflows
+  POST http://127.0.0.1:8803/cdn-cgi/local/explorer/api/local/observability/query - run a read-only SQL query (SELECT/WITH only) over captured request traces and console logs. Tables: spans, logs (read attributes via json(attributes)). Example:
+    curl -X POST http://127.0.0.1:8803/cdn-cgi/local/explorer/api/local/observability/query -H 'Content-Type: application/json' -d '{"sql":"SELECT service, name, outcome, duration_ms FROM spans WHERE parent_id IS NULL LIMIT 20"}'
+If the routes above don't cover what you need, fetch the full OpenAPI schema (large - use only as a last resort):
+  GET http://127.0.0.1:8803/cdn-cgi/local/explorer/api - OpenAPI schema
+⎔ Starting local server...
+[wrangler:info] ✨ Parsed 23 valid redirect rules.
+[wrangler:info] ✨ Parsed 7 valid header rules.
+[wrangler:info] Ready on http://127.0.0.1:8803
+[wrangler:info] GET /agent-content/v1/index.json 200 OK (12ms)
+[wrangler:info] HEAD /agent-content/v1/index.json 200 OK (5ms)
+[wrangler:info] GET /agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md 200 OK (3ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md 200 OK (3ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md 200 OK (2ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/article--chequeo-geriatrico-canino.md 200 OK (2ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--chequeo-geriatrico-canino.md 200 OK (4ms)
+[wrangler:info] GET /agent-content/v1/documents/article--comida-casera-perros-mayores.md 200 OK (2ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--comida-casera-perros-mayores.md 200 OK (3ms)
+[wrangler:info] GET /agent-content/v1/documents/article--como-dar-medicacion-perro.md 200 OK (2ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--como-dar-medicacion-perro.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/article--disfuncion-cognitiva-canina.md 200 OK (5ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--disfuncion-cognitiva-canina.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md 200 OK (3ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md 200 OK (3ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md 200 OK (2ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md 200 OK (1ms)
+[wrangler:info] GET /agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md 200 OK (1ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md 200 OK (3ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/article--salud-dental-perros-mayores.md 200 OK (6ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--salud-dental-perros-mayores.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md 200 OK (1ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/article--ulceras-presion-perros.md 200 OK (2ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--ulceras-presion-perros.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md 200 OK (2ms)
+[wrangler:info] HEAD /agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md 200 OK (4ms)
+[wrangler:info] GET /agent-content/v1/documents/home.md 200 OK (4ms)
+[wrangler:info] HEAD /agent-content/v1/documents/home.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/page--acerca-de.md 200 OK (1ms)
+[wrangler:info] HEAD /agent-content/v1/documents/page--acerca-de.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/page--politica-editorial.md 200 OK (3ms)
+[wrangler:info] HEAD /agent-content/v1/documents/page--politica-editorial.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/pillar--alimentacion-perros-senior.md 200 OK (40ms)
+[wrangler:info] HEAD /agent-content/v1/documents/pillar--alimentacion-perros-senior.md 200 OK (3ms)
+[wrangler:info] GET /agent-content/v1/documents/pillar--cuidados-paliativos-perros.md 200 OK (3ms)
+[wrangler:info] HEAD /agent-content/v1/documents/pillar--cuidados-paliativos-perros.md 200 OK (3ms)
+[wrangler:info] GET /agent-content/v1/documents/pillar--herramientas.md 200 OK (2ms)
+[wrangler:info] HEAD /agent-content/v1/documents/pillar--herramientas.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md 200 OK (3ms)
+[wrangler:info] HEAD /agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md 200 OK (3ms)
+[wrangler:info] HEAD /agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md 200 OK (2ms)
+[wrangler:info] GET /agent-content/v1/documents/pillar--salud-mental-emocional-perros.md 200 OK (3ms)
+[wrangler:info] HEAD /agent-content/v1/documents/pillar--salud-mental-emocional-perros.md 200 OK (3ms)
+[wrangler:info] GET /agent-content/v1/documents/pillar--salud-perros-mayores.md 200 OK (2ms)
+[wrangler:info] HEAD /agent-content/v1/documents/pillar--salud-perros-mayores.md 200 OK (1ms)
+[wrangler:info] GET /agent-content/v1/documents/tool--calidad-vida.md 200 OK (2ms)
+[wrangler:info] HEAD /agent-content/v1/documents/tool--calidad-vida.md 200 OK (38ms)
+[wrangler:info] GET /agent-content/v1/documents/tool--movilidad.md 200 OK (4ms)
+[wrangler:info] HEAD /agent-content/v1/documents/tool--movilidad.md 200 OK (5ms)
+[wrangler:info] GET / 200 OK (5ms)
+[wrangler:info] HEAD / 200 OK (2ms)
+[wrangler:warn] The Workers runtime crashed unexpectedly and is being restarted (crash #1). Any additional runtime output above may indicate the cause.
+[wrangler:info] Updated and ready on http://127.0.0.1:8803
