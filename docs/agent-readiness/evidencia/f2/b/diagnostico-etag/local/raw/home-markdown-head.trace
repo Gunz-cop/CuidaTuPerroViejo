@@ -1,0 +1,26 @@
+* Uses proxy env variable no_proxy == 'localhost,127.0.0.1,::1'
+*   Trying 127.0.0.1:8810...
+* Connected to 127.0.0.1 (127.0.0.1) port 8810
+* using HTTP/1.x
+> HEAD / HTTP/1.1
+> Host: 127.0.0.1:8810
+> User-Agent: ctpv-f2b-etag-spike/1.0
+> Accept: text/markdown
+> 
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Content-Type: text/markdown; charset=utf-8
+< Cache-Control: private, no-store
+< ETag: "437fc73d1a53fdbf40315bfb5ac92882"
+< Link: <https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"
+< Strict-Transport-Security: max-age=31536000; includeSubDomains
+< Vary: Accept
+< CF-Cache-Status: HIT
+< X-F2B-Diag-Assets-Index-ETag: "e190c16d896fa27b2b546d002ce0a901"
+< X-F2B-Diag-Assets-Representation-ETag: "437fc73d1a53fdbf40315bfb5ac92882"
+< X-F2B-Diag-Wrapper-ETag: "437fc73d1a53fdbf40315bfb5ac92882"
+< permissions-policy: geolocation=(), microphone=(), camera=()
+< referrer-policy: strict-origin-when-cross-origin
+< x-content-type-options: nosniff
+< 
+* Connection #0 to host 127.0.0.1 left intact

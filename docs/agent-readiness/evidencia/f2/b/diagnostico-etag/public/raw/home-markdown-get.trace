@@ -1,0 +1,106 @@
+* Uses proxy env variable no_proxy == 'localhost,127.0.0.1,::1'
+* Uses proxy env variable https_proxy == 'http://proxy:8080'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Host proxy:8080 was resolved.
+* IPv6: (none)
+* IPv4: 172.31.0.61
+*   Trying 172.31.0.61:8080...
+* CONNECT tunnel: HTTP/1.1 negotiated
+* allocate connect buffer
+* Establish HTTP proxy tunnel to 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev:443
+> CONNECT 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev:443 HTTP/1.1
+> Host: 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev:443
+> User-Agent: ctpv-f2b-etag-spike/1.0
+> Proxy-Connection: Keep-Alive
+> 
+< HTTP/1.1 200 OK
+< date: Tue, 06 Oct 2026 18:13:06 GMT
+< server: envoy
+< 
+* CONNECT phase completed
+* CONNECT tunnel established, response 200
+* ALPN: curl offers h2,http/1.1
+} [5 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [1600 bytes data]
+*  CAfile: /etc/ssl/certs/ca-certificates.crt
+*  CApath: /etc/ssl/certs
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* TLSv1.3 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+{ [15 bytes data]
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+{ [1859 bytes data]
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+{ [80 bytes data]
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+{ [52 bytes data]
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+} [52 bytes data]
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / x25519 / id-ecPublicKey
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=5c55fc8d-cuidatuperroviejo.g1721m.workers.dev
+*  start date: Oct  6 18:11:29 2026 GMT
+*  expire date: Oct  6 18:12:29 2027 GMT
+*  subjectAltName: host "5c55fc8d-cuidatuperroviejo.g1721m.workers.dev" matched cert's "5c55fc8d-cuidatuperroviejo.g1721m.workers.dev"
+*  issuer: C=US; ST=California; L=San Francisco; O=OpenAI, LLC; CN=openai.com
+*  SSL certificate verify ok.
+*   Certificate level 0: Public key type EC/prime256v1 (256/128 Bits/secBits), signed using sha256WithRSAEncryption
+*   Certificate level 1: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+* Connected to proxy (172.31.0.61) port 8080
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://5c55fc8d-cuidatuperroviejo.g1721m.workers.dev/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: ctpv-f2b-etag-spike/1.0]
+* [HTTP/2] [1] [accept: text/markdown]
+* [HTTP/2] [1] [accept-encoding: identity]
+} [5 bytes data]
+> GET / HTTP/2
+> Host: 5c55fc8d-cuidatuperroviejo.g1721m.workers.dev
+> User-Agent: ctpv-f2b-etag-spike/1.0
+> Accept: text/markdown
+> Accept-Encoding: identity
+> 
+* Request completely sent off
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [230 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [230 bytes data]
+< HTTP/2 200 
+< date: Tue, 06 Oct 2026 18:13:06 GMT
+< content-type: text/markdown; charset=utf-8
+< content-length: 12878
+< cf-cache-status: HIT
+< cache-control: private, no-store
+< etag: "c262365b8aeb7213ef529ce3e9d9fa15"
+< link: <https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"
+< strict-transport-security: max-age=31536000; includeSubDomains
+< vary: Accept
+< x-f2b-diag-assets-index-etag: "e0a08d20cffa737788d0811bd118b755"
+< x-f2b-diag-assets-representation-etag: "c262365b8aeb7213ef529ce3e9d9fa15"
+< x-f2b-diag-wrapper-etag: "c262365b8aeb7213ef529ce3e9d9fa15"
+< x-robots-tag: noindex
+< permissions-policy: geolocation=(), microphone=(), camera=()
+< referrer-policy: strict-origin-when-cross-origin
+< x-content-type-options: nosniff
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=taiMyQo7oEuUmpY%2FiYcrmxy4TWI0cfc5Qwxqv0NjPMxpQQ3yedWrk9dlZEPf%2FvwPwxp2kgepliWml%2F%2BjrY7Udz%2B8SfY6fXmeXc1%2Fh%2FuC96MKtCr%2FChCuz%2FZiBI57zMeaFYPZx16t7%2BelpGK2cotY2sGMkaPJ0moCBWRe4Y1HQT0%3D"}]}
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< server: envoy
+< cf-ray: a466a35cce05f0b5-DFW
+< alt-svc: h3=":443"; ma=86400
+< x-envoy-upstream-service-time: 190
+< 
+{ [5 bytes data]
+100 12878  100 12878    0     0  51764      0 --:--:-- --:--:-- --:--:-- 51927
+* Connection #0 to host proxy left intact

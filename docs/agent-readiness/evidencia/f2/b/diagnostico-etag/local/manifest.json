@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "f2b-etag-spike-local/1",
+  "sourceSha": "9d6ad480ce1234fefd6e2be476f762f2fc734734",
+  "treeSha": "e0b4f080984b24241ddd4a68767ff82f334ec00f",
+  "baseSha": "39ffb4cc7484da7b1145be40e9c19766c12b5bbf",
+  "runtimeBlobAtBase": "42dc14f36ab12858107f0aa4cb250c6d39b6d3af",
+  "startedAt": "2026-10-06T18:08:06.193Z",
+  "localOrigin": "http://127.0.0.1:8810",
+  "bindingScope": [
+    "ASSETS",
+    "SESSION local"
+  ],
+  "corpusIndexSha256": "fd5e032df2852f0aa3e4cf3bb5ba4d2ff93114a15646652ed485323bf69ab341",
+  "getBytesEqualBuiltAssets": true,
+  "records": [
+    {
+      "name": "home-html-head",
+      "requestId": null,
+      "method": "HEAD",
+      "path": "/",
+      "requestHeaders": {
+        "user-agent": "ctpv-f2b-etag-spike/1.0",
+        "accept": "text/html"
+      },
+      "status": 200,
+      "responseHeaders": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "private, no-store",
+        "etag": "\"f5fccbeffdc7ad6ab4dd27e4661a2d1b\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "vary": "Accept",
+        "cf-cache-status": "HIT",
+        "x-f2b-diag-assets-index-etag": "\"e190c16d896fa27b2b546d002ce0a901\"",
+        "x-f2b-diag-assets-representation-etag": "\"f5fccbeffdc7ad6ab4dd27e4661a2d1b\"",
+        "x-f2b-diag-wrapper-etag": "\"f5fccbeffdc7ad6ab4dd27e4661a2d1b\"",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "headersFile": "home-html-head.headers",
+      "headersSha256": "7411c9961d5f68600f9d7ffb54b90a0922b223d70d07f3f0ec1a8dcc98511c5d",
+      "bodyFile": "home-html-head.body",
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "traceFile": "home-html-head.trace"
+    },
+    {
+      "name": "home-markdown-head",
+      "requestId": null,
+      "method": "HEAD",
+      "path": "/",
+      "requestHeaders": {
+        "user-agent": "ctpv-f2b-etag-spike/1.0",
+        "accept": "text/markdown"
+      },
+      "status": 200,
+      "responseHeaders": {
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "private, no-store",
+        "etag": "\"437fc73d1a53fdbf40315bfb5ac92882\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "vary": "Accept",
+        "cf-cache-status": "HIT",
+        "x-f2b-diag-assets-index-etag": "\"e190c16d896fa27b2b546d002ce0a901\"",
+        "x-f2b-diag-assets-representation-etag": "\"437fc73d1a53fdbf40315bfb5ac92882\"",
+        "x-f2b-diag-wrapper-etag": "\"437fc73d1a53fdbf40315bfb5ac92882\"",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "headersFile": "home-markdown-head.headers",
+      "headersSha256": "8f7bd46646b2da279c32bc441a0fbd4f4da83713757c5076b554a74fe0d03cbb",
+      "bodyFile": "home-markdown-head.body",
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "traceFile": "home-markdown-head.trace"
+    },
+    {
+      "name": "home-html-get",
+      "requestId": null,
+      "method": "GET",
+      "path": "/",
+      "requestHeaders": {
+        "user-agent": "ctpv-f2b-etag-spike/1.0",
+        "accept": "text/html"
+      },
+      "status": 200,
+      "responseHeaders": {
+        "transfer-encoding": "chunked",
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "private, no-store",
+        "etag": "\"f5fccbeffdc7ad6ab4dd27e4661a2d1b\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "vary": "Accept",
+        "cf-cache-status": "HIT",
+        "x-f2b-diag-assets-index-etag": "\"e190c16d896fa27b2b546d002ce0a901\"",
+        "x-f2b-diag-assets-representation-etag": "\"f5fccbeffdc7ad6ab4dd27e4661a2d1b\"",
+        "x-f2b-diag-wrapper-etag": "\"f5fccbeffdc7ad6ab4dd27e4661a2d1b\"",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "headersFile": "home-html-get.headers",
+      "headersSha256": "3135c41ae224e88a2c43f932ce0d20a3ba48daa340da992e1daddf31c9554525",
+      "bodyFile": "home-html-get.body",
+      "bodyBytes": 119418,
+      "bodySha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "traceFile": "home-html-get.trace"
+    },
+    {
+      "name": "home-markdown-get",
+      "requestId": null,
+      "method": "GET",
+      "path": "/",
+      "requestHeaders": {
+        "user-agent": "ctpv-f2b-etag-spike/1.0",
+        "accept": "text/markdown"
+      },
+      "status": 200,
+      "responseHeaders": {
+        "content-length": "12878",
+        "content-type": "text/markdown; charset=utf-8",
+        "cache-control": "private, no-store",
+        "etag": "\"437fc73d1a53fdbf40315bfb5ac92882\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "vary": "Accept",
+        "cf-cache-status": "HIT",
+        "x-f2b-diag-assets-index-etag": "\"e190c16d896fa27b2b546d002ce0a901\"",
+        "x-f2b-diag-assets-representation-etag": "\"437fc73d1a53fdbf40315bfb5ac92882\"",
+        "x-f2b-diag-wrapper-etag": "\"437fc73d1a53fdbf40315bfb5ac92882\"",
+        "permissions-policy": "geolocation=(), microphone=(), camera=()",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "x-content-type-options": "nosniff"
+      },
+      "headersFile": "home-markdown-get.headers",
+      "headersSha256": "0a323e25d0e111a87d3c0a3a480bdfbdbacb6b83c8d1d25e64418c849cf02ae2",
+      "bodyFile": "home-markdown-get.body",
+      "bodyBytes": 12878,
+      "bodySha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+      "traceFile": "home-markdown-get.trace"
+    }
+  ]
+}
