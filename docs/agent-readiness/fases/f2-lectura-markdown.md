@@ -31,7 +31,7 @@ El coordinador reserva los archivos compartidos para la sesión de plataforma de
 | Subfase | Archivos propios | Cambios permitidos |
 |---|---|---|
 | A | `scripts/agent-readiness/projection.mjs`, `projection-dom.mjs` | Integración, serializador, perfiles, schema/check offline. |
-| A | `astro.config.mjs` | Importar y añadir integración de proyección después de F1, antes del adapter agregado por Astro; nada más. |
+| A | `astro.config.mjs` | Importar y añadir integración de proyección después de F1; nada más. Astro inserta el adapter primero: orden efectivo adapter → sitemap → F1 → proyección. |
 | A | `public/_headers` | MIME específico de índice y `.md`; mantener seguridad, Link y reglas de caché previas. |
 | A | `.github/workflows/ci.yml` | Test node de proyección y check offline después de build; preservar checks anteriores. |
 | A | `tests/agent-readiness/projection.test.mjs`, `fixtures/f2/` | Goldens reales, perfiles negativos y crecimiento. No editar goldens históricos F0. |
