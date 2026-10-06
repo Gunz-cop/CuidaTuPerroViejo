@@ -12,7 +12,7 @@ permissions: {}
 jobs:
   f2b-no-transform-capture:
     # Guarded version first: publish and verify this job is skipped before enabling capture.
-    if: ${{ false }}
+    if: ${{ github.run_attempt == 1 && github.event_name == 'push' && github.ref == 'refs/heads/spike/f2b-no-transform' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
