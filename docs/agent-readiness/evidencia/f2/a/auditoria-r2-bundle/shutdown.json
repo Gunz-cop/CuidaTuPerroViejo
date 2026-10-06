@@ -1,0 +1,9 @@
+{
+  "ownNpmPid": 70170,
+  "config": "dist/server/wrangler.f2a-audit-r2.json",
+  "localPort": 8801,
+  "stop": "SIGTERM own process; exec session8775 exited143",
+  "otherProcessesUntouched": true,
+  "ownWorkerdChildPid": 70234,
+  "childStop": "SIGTERM exact own child, then SIGKILL70234 after it remained Sl; no other session targeted"
+}

@@ -1,0 +1,24 @@
+
+> cuida-tu-perro-viejo@1.0.0 test
+> tsx --test "tests/**/*.test.ts"
+
+node:net:2145
+      const error = new UVExceptionWithHostPort(rval, 'listen', address, port);
+                    ^
+
+Error: listen EPERM: operation not permitted /tmp/tsx-1000/71917.pipe
+    at Server.setupListenHandle [as _listen2] (node:net:2145:21)
+    at listenInCluster (node:net:2224:12)
+    at Server.listen (node:net:2361:5)
+    at file:///workspace/ctpv-f2a/node_modules/tsx/dist/cli.mjs:53:31472
+    at new Promise (<anonymous>)
+    at createIpcServer (file:///workspace/ctpv-f2a/node_modules/tsx/dist/cli.mjs:53:31450)
+    at async file:///workspace/ctpv-f2a/node_modules/tsx/dist/cli.mjs:55:542 {
+  code: 'EPERM',
+  errno: -1,
+  syscall: 'listen',
+  address: '/tmp/tsx-1000/71917.pipe',
+  port: -1
+}
+
+Node.js v24.19.0

@@ -1,0 +1,16 @@
+{
+  "configPath": "dist/server/wrangler.f2a.workerd.json",
+  "bindings": [
+    "ASSETS local",
+    "SESSION local"
+  ],
+  "removed": [
+    "CONTACT_KV",
+    "EMAIL",
+    "CONTACT_DB",
+    "AI",
+    "ASK_LIMIT",
+    "ADMIN_LIMIT",
+    "previews/remote bindings"
+  ]
+}

@@ -65,12 +65,12 @@
     "limitMutation": "Inventory recognizes 99 concordant docs; generator fails at cap 98 and creates no projection directory"
   },
   "limitations": [
-    "Historical top-level index/build/workerd/preview fields are exclusively d628 values. Candidate source code 54e51a2 has three successful clean Astro builds; the public exact-head Commit Preview for PR SHA 1651d424, CI, Workers check, and allowlisted 60-request capture are recorded separately in candidateMeasurement.",
-    "Final F2A acceptance remains pending independent R2 implementation review. R1 FAIL B01-B05 is preserved as 1/5 reviews consumed; no self-acceptance is recorded.",
-    "The implementer’s former dist/f2-preview-evidence-d628 capture directory is absent; the independent auditor’s R1 bundle is preserved with its original source SHA.",
-    "The R1 auditor’s Python default client received HTTP 403 / Cloudflare 1010; the explicitly identified auditor client received 200 for 60/60 requests. This remains a client limitation, not a general preview outage.",
-    "Historical d628 Workerd HEAD responses omitted Content-Length; the contract permits omission and requires matching length only when present.",
-    "The final local Workerd run used an isolated copy of the compiled configuration with only ASSETS and SESSION local. It does not validate remote bindings. Public Commit Preview checks queried only the allowed documentation/index/home paths."
+    "Historical top-level index/build/workerd/preview fields remain exclusively d628 values. The earlier R1 and R2 candidate receipts retain their original public SHAs; corrected source measurements are separately recorded in correctedCandidateMeasurement.",
+    "F2A final acceptance is pending exact-head CI/Workers/Commit Preview and independent R3 implementation review. R1 and R2 consumed attempts 1/5 and 2/5 respectively; no self-acceptance is recorded.",
+    "The R2 report preserves the single FAIL: third-level list nesting parsed as code. The correction is limited to Markdown list indentation; the 28 source HTML documents are unchanged.",
+    "The first pre-freeze build completed but its artifact hash helper used the wrong dist path; it is preserved as diagnostic only. The standard sandbox build attempt failed uv_interface_addresses; the authorized retry and two final fixed-source builds succeeded.",
+    "The R1 auditor’s Python default client received HTTP 403 / Cloudflare 1010; its explicitly identified client received 200 for 60/60. This remains a client limitation, not a general preview outage.",
+    "The final local Workerd run used an isolated compiled-config copy with only ASSETS and local SESSION; it does not validate remote bindings. No AI/API/admin endpoint was invoked."
   ],
   "r1Audit": {
     "report": "auditoria-r1-implementacion.md",
@@ -254,5 +254,129 @@
       "r1": "FAIL B01-B05 consumed 1/5",
       "r2": "pending independent implementation audit; R1 FAIL remains one of five reviews consumed; no self-acceptance"
     }
+  },
+  "r2Audit": {
+    "attempt": "2/5",
+    "sourceCandidateSha": "69a212c2d7e7f0f58c2bdd8fb66bf433cd995cca",
+    "localEquivalentSha": "559e79d18b081e662cbdb64ccbd50b53ca5fecc1",
+    "treeSha": "76c062fcf3533c38bbe5e361d930ebc8d860e6f3",
+    "report": "auditoria-r2-implementacion.md",
+    "reportSha256": "af77239ff58bb28661eedfdc390f3f2b100975435a5a454e7d9780a2c5746a0a",
+    "bundle": "auditoria-r2-bundle/",
+    "bundleManifestSha256": "198eeba2c31248020d3f257c429959466a6b41522c83fefc685aa369b0f7167f",
+    "sealedEvidenceFileCount": 399,
+    "result": "FAIL R2-B01 only: third-level nested list parsed as code; R1 B02-B05 remain resolved; no SDD gap.",
+    "correctedInSourceSha": "97cfa4361944837bb6ea7f4402c8d622837cdf8e",
+    "nextIndependentReview": "R3 pending after exact-head delivery; no self-acceptance"
+  },
+  "correctedCandidateMeasurement": {
+    "sourceCodeSha": "97cfa4361944837bb6ea7f4402c8d622837cdf8e",
+    "sourceCodeTree": "385ad65386a2e88731f93f8be9d9807989b93cd4",
+    "changeScope": [
+      "scripts/agent-readiness/projection-dom.mjs",
+      "tests/agent-readiness/projection.test.mjs"
+    ],
+    "fix": "renderList applies continuation indentation exactly once through each parent list item; no depth-dependent pre-indent.",
+    "builds": {
+      "cleanBuildCount": 2,
+      "exitCodes": [
+        0,
+        0
+      ],
+      "logs": [
+        "build-r2-final-1.log",
+        "build-r2-final-2.log"
+      ],
+      "projectionManifests": [
+        "agent-content-v1-r2-final-1.sha256",
+        "agent-content-v1-r2-final-2.sha256"
+      ],
+      "projectionManifestSha256": "cf02d8e925365caa223537094ccad98bb74d35a19f95ae5123caea5e78656d2b",
+      "artifactCount": 29,
+      "identicalAcrossBothBuilds": true,
+      "indexSha256": "fd5e032df2852f0aa3e4cf3bb5ba4d2ff93114a15646652ed485323bf69ab341",
+      "indexBytes": 26284,
+      "corpusSha256": "912082d0a00775bbe30d03270bc55c3cef466dd68dff92b1921a122e197c3b0a",
+      "documentCount": 28,
+      "totalMarkdownBytes": 558214,
+      "minDocumentBytes": 2477,
+      "maxDocumentBytes": 47785,
+      "sourceHtmlManifest": [
+        "source-html-r2-final-1.json",
+        "source-html-r2-final-2.json"
+      ],
+      "sourceHtmlManifestSha256": "91b59d67c3d3a3d0eac8970df494136c42c1e0c201dfb6c5b25198eb82145dde",
+      "sourceHtmlDocumentsIdenticalAcrossBothBuilds": true,
+      "all28SourceHtmlUnchangedFromEarlierCandidate": true,
+      "changedProjectionPathsVs54e": [
+        "agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+        "agent-content/v1/index.json"
+      ]
+    },
+    "checks": {
+      "agentReadinessSuite": "PASS 43/43",
+      "agentReadinessLog": "suite-r2-final-summary.txt (result record; full harness output was returned by exec)",
+      "projectionCheck": "PASS exact index/document bytes and closed output set",
+      "projectionCheckLog": "projection-check-r2-final.log",
+      "discoveryCheck": "PASS",
+      "discoveryCheckLog": "discovery-check-r2-final.log",
+      "semanticGuard": "PASS 28/28 independent parse5 + Markdown/GFM",
+      "semanticGuardLog": "semantic-guard-r2-final.log",
+      "nestedListRegression": "PASS three levels UL→OL start=4→UL; list node at each depth, zero code nodes",
+      "test": "tests/agent-readiness/projection.test.mjs",
+      "astroCheck": {
+        "exitCode": 0,
+        "errors": 0,
+        "warnings": 0,
+        "hints": 50,
+        "log": "astro-check-r2-final.log"
+      },
+      "npmTest": {
+        "exitCode": 0,
+        "tests": 1,
+        "passed": 1,
+        "log": "npm-test-r2-final-retry.log",
+        "initialSandboxFailure": "npm-test-r2-final.log"
+      }
+    },
+    "wranglerDryRun": {
+      "exitCode": 0,
+      "deployed": false,
+      "compiledConfigSha256": "8e0e1977d9e511795264a2891a866d657a115cf474284cdd7691326bcd09f46d",
+      "log": "wrangler-dryrun-r2-final.log",
+      "namespaceIdRedactions": 2
+    },
+    "workerd": {
+      "runtime": "Wrangler 4.128.0",
+      "isolatedConfig": "dist/server/wrangler.f2a.workerd.json",
+      "isolatedConfigSha256": "cef38146c475f27d3c7338b3d7f5a2b631fd0bc2247551f001a4e2f2fbc6e141",
+      "bindings": [
+        "ASSETS local",
+        "SESSION local synthetic namespace"
+      ],
+      "removedBindings": [
+        "CONTACT_KV",
+        "EMAIL",
+        "CONTACT_DB",
+        "AI",
+        "ASK_LIMIT",
+        "ADMIN_LIMIT",
+        "remote preview bindings"
+      ],
+      "productConfigChanged": false,
+      "remoteBindingCalls": 0,
+      "httpSummary": "workerd-http-r2-final.json",
+      "rawDirectory": "workerd-r2-final-raw/",
+      "rawManifestSha256": "ca71b44bae10c9c0cf942cc10d4ca46bce01884ac64c807e6695d1a78089c637",
+      "requests": 60,
+      "failed": 0,
+      "homeAcceptMarkdownStillHtml": true,
+      "port": 8799,
+      "processStopped": true,
+      "startupLog": "workerd-r2-final.log",
+      "stopRecord": "workerd-r2-stop.json"
+    },
+    "publicPreview": "pending for corrected candidate exact SHA; previous 69a212 receipt remains R2 historical evidence",
+    "acceptance": "R2 correction validated locally; R3 independent audit pending"
   }
 }

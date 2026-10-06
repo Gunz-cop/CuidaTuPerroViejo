@@ -1,0 +1,7 @@
+Validation result record (exec output summarized, not a raw terminal transcript)
+Source code commit: 97cfa4361944837bb6ea7f4402c8d622837cdf8e
+Command: node --test tests/agent-readiness/*.test.mjs tests/agent-readiness/projection-growth.mjs
+Sandbox: with_additional_permissions, network.enabled=true; needed for local Git subprocesses in harness.
+Exit: 0
+Node test summary: 43 tests, 43 passed, 0 failed, 0 cancelled, 0 skipped.
+The output included expected negative-case diagnostics from CLI, projection, and inventory tests. New regression: UL -> OL start=4 -> UL, three nested list nodes in mdast/GFM and no accidental code nodes.

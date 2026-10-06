@@ -304,12 +304,14 @@ function compactInline(value) {
     .trim();
 }
 
-function renderList(node, page, canonicalUrl, depth = 0) {
+function renderList(node, page, canonicalUrl) {
   const ordered = node.tagName === 'ol';
   const start = Number.parseInt(attrs(node).start ?? '1', 10);
   let index = Number.isFinite(start) && start > 0 ? start : 1;
   const rows = [];
-  const indent = '  '.repeat(depth);
+  // Indent nested lists exactly once: the parent list item adds the marker
+  // continuation indent when it embeds this list block.
+  const indent = '';
   for (const item of children(node).filter((child) => child.tagName === 'li')) {
     const nested = children(item).filter((child) => child.tagName === 'ul' || child.tagName === 'ol');
     const blocks = [];
@@ -330,7 +332,7 @@ function renderList(node, page, canonicalUrl, depth = 0) {
       ));
       if (nested.includes(child)) {
         flushInline();
-        const value = renderList(child, page, canonicalUrl, depth + 1);
+        const value = renderList(child, page, canonicalUrl);
         if (value) blocks.push(value);
       } else if (blockChild) {
         flushInline();

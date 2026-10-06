@@ -122,6 +122,37 @@ test('párrafos que empiezan con sintaxis de heading/lista siguen siendo texto l
   assert.ok(parsed.children.some((node) => node.type === 'paragraph' && mdText(node) === '- Tampoco es lista'));
 });
 
+test('listas anidadas de tres niveles conservan AST, tipo y comienzo ordered', async () => {
+  const golden = manifest.documents.find((item) => item.documentId === 'home');
+  const html = await readFile(join(ROOT, golden.htmlFile), 'utf8');
+  const nested = '<ul><li>Primer nivel<ol start="4"><li>Segundo nivel<ul><li>Tercer nivel</li></ul></li></ol></li></ul>';
+  const injected = html.replace('</main>', `${nested}</main>`);
+  assert.notEqual(injected, html, 'HTML de prueba incorpora una lista revisada de tres niveles');
+  const markdown = projectDocument(pageFor(golden), Buffer.from(injected)).markdown.toString('utf8');
+  const tree = parseGfm(markdown);
+  const text = (node) => mdText(node).replace(/\s+/gu, ' ').trim();
+  const nestedList = (node) => (node.children ?? []).find((child) => child.type === 'list');
+  const rootList = tree.children.find((node) => node.type === 'list' && node.children.some((item) => text(item).includes('Primer nivel')));
+  assert.ok(rootList, 'AST contiene la lista raíz del HTML de prueba');
+  assert.equal(rootList.ordered, false);
+  assert.equal(rootList.children.length, 1);
+  assert.ok(text(rootList.children[0]).includes('Primer nivel'));
+
+  const secondList = nestedList(rootList.children[0]);
+  assert.ok(secondList, 'Primer nivel contiene una lista anidada');
+  assert.equal(secondList.ordered, true);
+  assert.equal(secondList.start, 4, 'el atributo start se conserva desde HTML');
+  assert.equal(secondList.children.length, 1);
+  assert.ok(text(secondList.children[0]).includes('Segundo nivel'));
+
+  const thirdList = nestedList(secondList.children[0]);
+  assert.ok(thirdList, 'Segundo nivel contiene la tercera lista, no un bloque de código');
+  assert.equal(thirdList.ordered, false);
+  assert.equal(thirdList.children.length, 1);
+  assert.ok(text(thirdList.children[0]).includes('Tercer nivel'));
+  assert.equal(tree.children.filter((node) => node.type === 'code').length, 0, 'no se crea código accidental');
+});
+
 test('pre y code conservan LF internos y finales según el parser CommonMark', async () => {
   const golden = manifest.documents.find((item) => item.documentId === 'home');
   const html = await readFile(join(ROOT, golden.htmlFile), 'utf8');

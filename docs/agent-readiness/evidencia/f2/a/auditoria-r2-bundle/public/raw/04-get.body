@@ -1,0 +1,118 @@
+# Revisión veterinaria en perros mayores: frecuencia y pruebas
+
+> URL canónica: [https://cuidatuperroviejo.com/salud-perros-mayores/chequeo-geriatrico-canino](<https://cuidatuperroviejo.com/salud-perros-mayores/chequeo-geriatrico-canino>)
+> Idioma: es
+> Publicación: 2025-10-01T00:00:00.000Z
+> Modificación editorial: 2025-10-12T00:00:00.000Z
+
+[Salud de Perros Mayores](<https://cuidatuperroviejo.com/salud-perros-mayores>)
+
+Por [Equipo Cuida a tu Perro Viejo](<https://cuidatuperroviejo.com/acerca-de>) Publicado el 1 de octubre de 2025 Revisado el 12 de octubre de 2025 [Cómo escribimos](<https://cuidatuperroviejo.com/politica-editorial>)
+
+Cada cuánto revisar a tu perro mayor con el veterinario, qué análisis se hacen y cómo anticipar problemas de salud comunes.
+
+![Revisión veterinaria completa en un perro mayor](<https://cuidatuperroviejo.com/images/blog/chequeo-geriatrico-canino/perro-mayor-consulta-veterinaria.webp>)
+
+Revisión veterinaria completa en un perro mayor
+A partir de cierta edad, las revisiones veterinarias dejan de ser “por si acaso” y se vuelven la herramienta más potente para **prevenir**, **detectar temprano** y **mejorar la calidad de vida** de tu perro mayor. En esta guía práctica te explico la *frecuencia recomendada*, qué pruebas suelen realizarse y cómo preparar a tu compañero para que la experiencia sea lo más tranquila y útil posible.
+
+![Revisión veterinaria completa en un perro mayor](<https://cuidatuperroviejo.com/images/blog/chequeo-geriatrico-canino/perro-mayor-consulta-veterinaria.webp>) *Revisión veterinaria completa en un perro mayor.*
+
+El envejecimiento canino no es una enfermedad, pero sí implica **cambios fisiológicos y de comportamiento** que conviene monitorear. Un calendario de revisiones bien planificado permite ajustar la dieta, la actividad, los fármacos (si los hay) y el entorno del hogar para acompañar mejor esta etapa.
+
+Además, un buen chequeo geriátrico crea una **línea base de salud** (peso, analítica, presión arterial, función renal y hepática, movilidad, conducta) con la que comparar en visitas futuras. Esa comparación año a año —o cada seis meses si corresponde— es lo que da poder preventivo real.
+
+Si estás armando una rutina completa de prevención, este chequeo funciona como punto de partida dentro de la guía de [salud en perros mayores](<https://cuidatuperroviejo.com/salud-perros-mayores>), donde se ordenan señales de alerta, controles y cuidados clínicos esenciales.
+
+![El vínculo emocional ayuda a reducir el estrés en la consulta](<https://cuidatuperroviejo.com/images/blog/chequeo-geriatrico-canino/tutora-acariciando-perro-anciano.webp>) *El vínculo emocional ayuda a reducir el estrés en la consulta.*
+
+> **Nota:** Esta guía es educativa y no sustituye la consulta veterinaria. Si notas dolor agudo, vómitos persistentes, desorientación repentina, pérdida marcada de apetito o cambios en la respiración, **no demores la cita**.
+
+## 🕒 Cada cuánto hacer una revisión veterinaria en perros mayores
+
+La frecuencia ideal depende de la **edad, tamaño, historial clínico y estilo de vida** del perro. A medida que los años avanzan, el organismo pierde capacidad para compensar pequeños desajustes internos. Por eso, los principales organismos veterinarios —AAHA, AVMA y WSAVA— recomiendan realizar revisiones **al menos cada seis meses** en perros mayores de 8 a 10 años.
+
+Este intervalo permite detectar a tiempo alteraciones en la función renal o hepática, cambios hormonales (como hipotiroidismo o síndrome de Cushing) y patologías articulares incipientes. Las razas grandes suelen envejecer antes que las pequeñas, por lo que un Pastor Alemán de 9 años puede requerir el mismo control que un Caniche de 12.
+
+### Frecuencia según edad y condición
+
+A continuación se muestra una guía orientativa basada en tamaño y estado general. Cada perro es único; el veterinario puede ajustar los intervalos según su condición crónica, tratamientos en curso o antecedentes.
+
+**Frecuencia recomendada de revisión veterinaria en perros mayores**
+
+| Edad aproximada | Tamaño o condición | Frecuencia mínima | Observaciones |
+| --- | --- | --- | --- |
+| **7–9 años** | Pequeño / mediano saludable | 1 vez al año | Inicio de controles geriátricos básicos (analítica completa). |
+| **9–11 años** | Grande o con enfermedad crónica | 2 veces al año | Monitoreo renal y hepático cada 6 meses. |
+| **12+ años** | Cualquier tamaño | 2 veces al año o más | Chequeo cognitivo y control de dolor. |
+
+### Señales para adelantar la cita
+
+Aunque sigas un calendario, hay síntomas que justifican acudir antes de lo previsto:
+
+- Pérdida repentina de peso o apetito.
+- Cambios en la frecuencia de orina o sed excesiva.
+- Tos persistente, jadeo constante o fatiga rápida.
+- Dolor al moverse o dificultad para levantarse.
+- Conductas nuevas: desorientación, ansiedad nocturna o apatía.
+
+## 🧬 Qué esperar durante una revisión geriátrica
+
+Una revisión geriátrica va más allá del examen físico habitual. Se trata de una **evaluación integral de todos los sistemas del cuerpo**, complementada con pruebas diagnósticas y una conversación detallada sobre los hábitos del perro en casa.
+
+### Evaluación física completa
+
+El veterinario observa la postura, el tono muscular, el estado del pelaje y la piel. Evalúa los ojos y oídos en busca de signos de degeneración, revisa la boca (encías, dientes, halitosis) y palpa el abdomen, el corazón y las articulaciones.
+
+Es habitual que se mida la presión arterial y el peso corporal. Estos parámetros ayudan a identificar cambios tempranos de hipertensión o pérdida muscular que podrían pasar desapercibidos en casa.
+
+### Pruebas diagnósticas básicas
+
+El pilar de un buen chequeo geriátrico son los **análisis de sangre y orina**. En ellos se revisan glóbulos rojos, blancos, plaquetas, electrolitos, urea, creatinina y enzimas hepáticas. También se incluyen hormonas como T4 (tiroides) o cortisol, según síntomas.
+
+Complementan la evaluación radiografías, ecografía abdominal y, en algunos casos, electrocardiograma. Estas pruebas permiten detectar tumores, artrosis, insuficiencia cardíaca o masas abdominales antes de que produzcan síntomas graves.
+
+### Evaluación cognitiva y comportamiento
+
+Los perros mayores pueden sufrir un deterioro similar a la demencia humana, llamado **síndrome de disfunción cognitiva**. Incluye confusión, pérdida de rutinas o de reconocimiento. El veterinario aplicará cuestionarios de comportamiento y te orientará sobre estimulación mental y rutinas que preservan la orientación.
+
+## 🐕🩺 Cómo calmar y preparar a un perro que odia las revisiones veterinarias
+
+Muchos tutores coinciden en que la visita al veterinario puede convertirse en una de las experiencias más estresantes tanto para el perro como para ellos mismos. Los ruidos, los olores y la manipulación corporal pueden despertar **ansiedad o miedo**, sobre todo en animales mayores con sensibilidad al tacto o a las superficies resbaladizas. Afortunadamente, hay estrategias sencillas para mejorar esa vivencia y fortalecer la confianza mutua.
+
+### Manejo del miedo y habituación
+
+Lo ideal es comenzar la habituación incluso antes de que haya problemas. Llevar al perro ocasionalmente a la clínica solo para recibir caricias y premios, permitir que explore la sala o que salude al personal veterinario sin ser examinado, ayuda a que asocie el entorno con experiencias positivas.
+
+### Qué hacer si el perro no tolera el tacto
+
+Algunos perros mayores tienen dolor crónico o sensibilidad muscular que los hace reaccionar al contacto. Aquí es donde la comunicación con el veterinario es clave: avisar qué zonas generan molestia y buscar **formas de contención amable** (arneses acolchados, toallas antideslizantes, mesas bajas o revisión en el suelo).
+
+> “Cuando llevo a mis perras al veterinario, ambas reaccionan distinto. **Dakota**, de casi 11 años, es muy dócil y se deja acariciar, pero no tolera que le toquen las patas: si alguien intenta hacerlo, aúlla, se pone nerviosa e incluso puede morder. Para cortarle las uñas, el veterinario necesita ayuda de uno o dos enfermeros que la sostienen con cuidado para evitarle estrés. **Luna**, de casi 10 años, siempre ha sido tranquila y cooperativa, aunque últimamente se inquieta cuando la suben a superficies altas. En esos casos, el veterinario trabaja a su nivel o la revisa en el suelo para que se sienta segura.”
+
+![Cortar las uñas con ayuda y calma durante la revisión](<https://cuidatuperroviejo.com/images/blog/chequeo-geriatrico-canino/veterinario-corte-unas-perro-mayor.webp>) *Cortar las uñas con ayuda y calma durante la revisión.*
+
+## 💚 Cuidados preventivos y seguimiento
+
+### Medicina preventiva y nutrición
+
+La prevención es el corazón de la medicina geriátrica. Una dieta adaptada a la edad, el control de peso y los suplementos articulares (glucosamina, condroitina, omega 3) contribuyen a conservar la movilidad y reducir la inflamación.
+
+### Movilidad y fisioterapia
+
+Los ejercicios suaves y la fisioterapia ayudan a conservar la masa muscular. Subir y bajar escaleras con asistencia, caminar sobre superficies antideslizantes y usar rampas para el coche o la cama evitan lesiones.
+
+## ✅ Checklist: preparación y seguimiento
+
+![Checklist visual de revisión geriátrica para perros mayores](<https://cuidatuperroviejo.com/images/blog/chequeo-geriatrico-canino/infografia-checklist-perros-mayores.webp>) *Checklist visual de revisión geriátrica para perros mayores.*
+
+- Llevar historial médico, analíticas previas y lista de medicamentos.
+- Anotar cambios en apetito, sueño, comportamiento y movilidad.
+- Preguntar por análisis de sangre, orina y control de presión arterial.
+- Solicitar revisión dental y ocular.
+- Pedir recomendaciones sobre dieta y suplementos.
+- Programar la próxima cita antes de salir de la clínica.
+
+## 🌟 Conclusión — Prevención y vínculo saludable
+
+Las revisiones veterinarias en perros mayores no son un trámite, sino una **inversión en bienestar y años de calidad**. Con ellas puedes anticipar dolencias, ajustar tratamientos y acompañar con serenidad la etapa senior de tu compañero.

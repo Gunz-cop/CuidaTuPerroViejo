@@ -1,0 +1,20 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+
+ ⛅️ wrangler 4.128.0
+────────────────────
+Your Worker has access to the following bindings:
+Binding                          Resource          Mode
+env.SESSION (local-session)      KV Namespace      local
+env.ASSETS                       Assets            local
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1m*** Fatal uncaught kj::Exception: kj/async-io-unix.c++:941: failed: ::bind(sockfd, &addr.generic, addrlen): Address already in use; toString() = 127.0.0.1:8798[0m
+
+
+stack: /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@562bdd6 /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@562bba9 /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@5629efc /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2456bac /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2457501 /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@245802d /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@24595fa /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@238ea69 /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@59f49b5 /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@59f4f06 /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@59f293e /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@59f273e /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2375d6c /lib/x86_64-linux-gnu/libc.so.6@29ca7 /lib/x86_64-linux-gnu/libc.so.6@29d64 /workspace/ctpv-f2a-audit-r2/node_modules/@cloudflare/workerd-linux-64/bin/workerd@2375024
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mAddress already in use (127.0.0.1:8798). Please check that you are not already running a server on this address or specify a different port with --port.[0m
+
+
+🪵  Logs were written to "/tmp/ctpv-f2a-audit-r2-config/.wrangler/logs/wrangler-2026-10-06_12-49-39_785.log"

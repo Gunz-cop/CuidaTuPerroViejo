@@ -1,0 +1,26 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+13:01:27 [@astrojs/cloudflare] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+13:01:29 [content] Syncing content
+13:01:29 [content] Synced content
+13:01:29 [types] Generated 1.24s
+13:01:29 [build] output: "static"
+13:01:29 [build] mode: "server"
+13:01:29 [build] directory: /workspace/ctpv-f2a/dist/
+13:01:29 [build] adapter: @astrojs/cloudflare
+13:01:29 [build] Collecting build info...
+13:01:29 [build] ✓ Completed in 1.40s.
+13:01:29 [build] Building server entrypoints...
+13:01:31 [vite] ✓ built in 2.55s
+13:01:32 [vite] ✓ built in 525ms
+13:01:32 [vite] ✓ built in 105ms
+A system error occurred: uv_interface_addresses returned Unknown system error 1 (Unknown system error 1)
+  Location:
+    /workspace/ctpv-f2a/node_modules/@cloudflare/vite-plugin/dist/index.mjs:47889:24
+  Stack trace:
+    at Object.networkInterfaces (node:os:218:16)
+    at getPorts (file:///workspace/ctpv-f2a/node_modules/@cloudflare/vite-plugin/dist/index.mjs:47944:16)
+    at getInputInspectorPort (file:///workspace/ctpv-f2a/node_modules/@cloudflare/vite-plugin/dist/index.mjs:68369:77)
+    at async BasicMinimalPluginContext.configurePreviewServer (file:///workspace/ctpv-f2a/node_modules/@cloudflare/vite-plugin/dist/index.mjs:81889:58)
+    at async Object.setup (file:///workspace/ctpv-f2a/node_modules/@astrojs/cloudflare/dist/prerenderer.js:106:23)
