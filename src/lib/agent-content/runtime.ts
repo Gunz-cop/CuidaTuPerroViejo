@@ -365,6 +365,62 @@ function errorResponse(status: 400 | 406 | 503, method: string, source?: Headers
   return new Response(method === 'HEAD' ? null : text, { status, headers });
 }
 
+type IfNoneMatchCondition =
+  | { kind: 'wildcard'; raw: string }
+  | { kind: 'entity-tags'; raw: string; opaqueTags: string[] };
+
+function trimOws(value: string): string {
+  return value.replace(/^[ \t]+|[ \t]+$/gu, '');
+}
+
+function parseEntityTag(value: string): string | undefined {
+  const candidate = trimOws(value);
+  const weak = candidate.startsWith('W/');
+  const tag = weak ? candidate.slice(2) : candidate;
+  if (tag.length < 2 || tag[0] !== '"' || tag.at(-1) !== '"') return undefined;
+  for (let index = 1; index < tag.length - 1; index += 1) {
+    const code = tag.charCodeAt(index);
+    if (!(code === 0x21 || (code >= 0x23 && code <= 0x7e) || (code >= 0x80 && code <= 0xff))) return undefined;
+  }
+  return tag.slice(1, -1);
+}
+
+function parseIfNoneMatch(value: string | null): IfNoneMatchCondition | undefined {
+  if (value === null) return undefined;
+  const field = trimOws(value);
+  if (field === '') return undefined;
+  if (field === '*') return { kind: 'wildcard', raw: field };
+  return parseIfNoneMatchList(field);
+}
+
+function parseIfNoneMatchList(field: string): IfNoneMatchCondition | undefined {
+  const members: string[] = [];
+  let start = 0;
+  let quoted = false;
+  for (let index = 0; index < field.length; index += 1) {
+    const char = field[index]!;
+    if (char === '"') quoted = !quoted;
+    else if (char === ',' && !quoted) { members.push(field.slice(start, index)); start = index + 1; }
+  }
+  members.push(field.slice(start));
+
+  let emptyMembers = 0;
+  const opaqueTags: string[] = [];
+  for (const rawMember of members) {
+    const member = trimOws(rawMember);
+    if (member === '') {
+      emptyMembers += 1;
+      if (emptyMembers > 16) return undefined;
+      continue;
+    }
+    if (member === '*') return undefined;
+    const opaqueTag = parseEntityTag(member);
+    if (opaqueTag === undefined) return undefined;
+    opaqueTags.push(opaqueTag);
+  }
+  return opaqueTags.length > 0 ? { kind: 'entity-tags', raw: field, opaqueTags } : undefined;
+}
+
 function documentRequest(url: URL, path: string, method: 'GET' | 'HEAD', ifNoneMatch: string | null): Request {
   const target = new URL(path, url.origin);
   const headers = new Headers();
@@ -372,31 +428,12 @@ function documentRequest(url: URL, path: string, method: 'GET' | 'HEAD', ifNoneM
   return new Request(target, { method, headers, redirect: 'manual' });
 }
 
-function splitEntityTags(value: string): string[] {
-  const tags: string[] = [];
-  let start = 0;
-  let quoted = false;
-  for (let index = 0; index < value.length; index += 1) {
-    const char = value[index]!;
-    if (char === '"') quoted = !quoted;
-    else if (char === ',' && !quoted) { tags.push(value.slice(start, index)); start = index + 1; }
-  }
-  tags.push(value.slice(start));
-  return tags;
-}
-
-function weakEntityTag(tag: string): string | undefined {
-  const candidate = tag.trim().replace(/^W\//u, '');
-  if (!/^"[\x21\x23-\x7e\x80-\xff]*"$/u.test(candidate)) return undefined;
-  return candidate;
-}
-
-function ifNoneMatchMatches(header: string | null, etag: string | null): boolean {
-  if (!header || !etag) return false;
-  if (header.trim() === '*') return true;
-  const selected = weakEntityTag(etag);
-  if (!selected) return false;
-  return splitEntityTags(header).some((member) => weakEntityTag(member) === selected);
+function ifNoneMatchMatches(condition: IfNoneMatchCondition | undefined, etag: string | null): boolean {
+  if (!condition) return false;
+  if (condition.kind === 'wildcard') return true;
+  if (etag === null) return false;
+  const selected = parseEntityTag(etag);
+  return selected !== undefined && condition.opaqueTags.includes(selected);
 }
 
 async function serveRepresentation(
@@ -404,13 +441,25 @@ async function serveRepresentation(
   url: URL,
   path: string,
   method: 'GET' | 'HEAD',
-  ifNoneMatch: string | null,
+  ifNoneMatch: IfNoneMatchCondition | undefined,
   representation: 'html' | 'markdown',
 ): Promise<Response> {
-  const response = await assets.fetch(documentRequest(url, path, method, ifNoneMatch));
-  if (response.status !== 200 && response.status !== 304) return errorResponse(503, method, response.headers);
+  const response = await assets.fetch(documentRequest(url, path, method, ifNoneMatch?.raw ?? null));
+  if (response.status !== 200 && response.status !== 304) {
+    if (response.body) await response.body.cancel();
+    return errorResponse(503, method, response.headers);
+  }
+  const etag = response.headers.get('ETag');
+  if (representation === 'markdown' && parseEntityTag(etag ?? '') === undefined) {
+    if (response.body) await response.body.cancel();
+    return errorResponse(503, method, response.headers);
+  }
+  if (response.status === 304 && !ifNoneMatchMatches(ifNoneMatch, etag)) {
+    if (response.body) await response.body.cancel();
+    return errorResponse(503, method, response.headers);
+  }
   if (response.status === 200 && method === 'GET' && !response.body) return errorResponse(503, method, response.headers);
-  const weakOrListMatch = response.status === 200 && ifNoneMatchMatches(ifNoneMatch, response.headers.get('ETag'));
+  const weakOrListMatch = response.status === 200 && ifNoneMatchMatches(ifNoneMatch, etag);
   if ((response.status === 304 || weakOrListMatch) && response.body) {
     await response.body.cancel();
   }
@@ -446,8 +495,9 @@ export function createAgentContentWorker<Env extends AgentEnv = AgentEnv>(astroH
     const selected = negotiateAccept(request.headers.get('Accept'));
     if (!selected.ok) return errorResponse(selected.status, request.method);
     const path = selected.representation === 'markdown' ? document.markdownPath : document.canonicalPath;
+    const ifNoneMatch = parseIfNoneMatch(request.headers.get('If-None-Match'));
     try {
-      return await serveRepresentation(env.ASSETS, url, path, request.method as 'GET' | 'HEAD', request.headers.get('If-None-Match'), selected.representation);
+      return await serveRepresentation(env.ASSETS, url, path, request.method as 'GET' | 'HEAD', ifNoneMatch, selected.representation);
     } catch {
       return errorResponse(503, request.method);
     }
