@@ -1,0 +1,91 @@
+{
+  "fixture": "truncated index JSON in an isolated copy of dist/client",
+  "requests": [
+    {
+      "method": "GET",
+      "accept": "text/html",
+      "status": 503,
+      "headers": [
+        [
+          "Content-Length",
+          "37"
+        ],
+        [
+          "Content-Type",
+          "text/plain; charset=utf-8"
+        ],
+        [
+          "Cache-Control",
+          "private, no-store"
+        ],
+        [
+          "Link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "Strict-Transport-Security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "Vary",
+          "Accept"
+        ],
+        [
+          "Permissions-Policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "Referrer-Policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "X-Content-Type-Options",
+          "nosniff"
+        ]
+      ],
+      "bodyBytes": 37,
+      "bodySha256": "763ce9c206d57dbc240314521af33125e8850245d373ee0f6e7c5f5834cc6cc1"
+    },
+    {
+      "method": "HEAD",
+      "accept": "text/markdown",
+      "status": 503,
+      "headers": [
+        [
+          "Content-Type",
+          "text/plain; charset=utf-8"
+        ],
+        [
+          "Cache-Control",
+          "private, no-store"
+        ],
+        [
+          "Link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "Strict-Transport-Security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "Vary",
+          "Accept"
+        ],
+        [
+          "Permissions-Policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "Referrer-Policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "X-Content-Type-Options",
+          "nosniff"
+        ]
+      ],
+      "bodyBytes": 0,
+      "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema": "f2b-successor-b07-documentary-block/1",
+  "status": "STOP bug65, public0, formalB0/5, successorSDDPASS2/2",
+  "publicFiles": [
+    {
+      "path": "b07-invalid-json-index.json",
+      "bytes": 2089,
+      "sha256": "b924aa03c062e1910a119503f02627f45155ac3b3d1325646eed7cb38a483d7d"
+    },
+    {
+      "path": "b07-missing-index.json",
+      "bytes": 2022,
+      "sha256": "b7f4e00c3038c76050c5bccdc0cdd8c4c3222ef4cc62b736b55bc2d9a7b1254f"
+    },
+    {
+      "path": "cierre-bloqueo.md",
+      "bytes": 2897,
+      "sha256": "4b3dae027527f3deab47254fcada9e54ba36220c227e47d90dfb747af9b86e1c"
+    },
+    {
+      "path": "verificacion-independiente-publica.md",
+      "bytes": 7491,
+      "sha256": "c75016786467b0620be77b50fb393f93d3d49bf0638699512b1d2dda3cf347ec"
+    }
+  ],
+  "scope": "Only this five-document directory, no source/runtime/normative contract changes",
+  "incompleteOriginalSummaries": [
+    "b07-invalid-json-index.json",
+    "b07-missing-index.json"
+  ],
+  "privateOmissions": [
+    {
+      "file": "verificacion-bloqueo-f2b-sucesora-b07.md",
+      "sha256": "b18581d1d60712822de4179cbabdd927c0edf6a24d19e13cec9288e6b6e5acc7",
+      "reason": "Original private report; public derivative only replaces absolute environment path references"
+    },
+    {
+      "file": "f2b-sucesora-b07-verificacion-offline.json",
+      "sha256": "0d0303e6d81aa33532741023894215ba6674971bf894c71636d822fea2ee8bc0",
+      "reason": "Offline private provenance/search receipt; not included in Git"
+    },
+    {
+      "file": "bug-f2b-sucesora-b07-evidencia.md",
+      "sha256": "1da30dd17645d95a16471092e797df39293e20b05750fa70e8598538f05ee94b",
+      "reason": "Private programmer report; findings represented in documentary closure"
+    },
+    {
+      "file": "bug-f2b-sucesora-b07-derivative-index.json",
+      "sha256": "a6c017e667c68fa9482c5df272052c17cc737f9c5c6e41ae4bb18be1c68f5c1a",
+      "reason": "Private index of unsealed/excluded work products; absolute local locations omitted"
+    }
+  ],
+  "rawEvidenceMissing": "37-byte B07 GET body and raw CRLF headers/exact requests were not retained and cannot be reconstructed from expected literal/hash",
+  "derivativesExcluded": "Inferred B07 response/request fields and unsealed local capture package are not published as original evidence",
+  "permissions": "No public capture, product corrections, main promotion or resumption authorized by this documentary package"
+}
