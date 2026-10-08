@@ -1,0 +1,71 @@
+{
+  "schema": "bug65-r1-stop-safe-subset/1",
+  "status": "FAIL R1/5 and STOP66; documentary facts only",
+  "publicParent": "5641030535715b54e1e9f61985e8c0cb2ccfde61",
+  "sourceLocalCandidate": "45a1dc725cf063e54d8955b186ad3824d98e66e3",
+  "sourceCandidateTree": "da37cc8cf78721906e75f2e5fe305e32d4f493fa",
+  "files": [
+    {
+      "path": "auditoria-r1-comprobante.json",
+      "bytes": 15791,
+      "sha256": "b48026cbfa51fab68fbec2d38737af852128aa72c2765f8445eceaff5c86a0d9"
+    },
+    {
+      "path": "auditoria-r1.md",
+      "bytes": 11508,
+      "sha256": "8fbc3a9c3b7044a3db4cf47befe5b65264d349c72a7fc2a98406fa425c6d45c0"
+    },
+    {
+      "path": "cierre-stop-r1.md",
+      "bytes": 4514,
+      "sha256": "470389a7b928d03325762aff31009f19dab9e5134d5f1c6cf722f2f6db455247"
+    },
+    {
+      "path": "propuesta-recuperacion-r2.md",
+      "bytes": 3716,
+      "sha256": "b944630538d172059278f0f912d8f36c733fa090bfad307ffabeab22c500cab6"
+    }
+  ],
+  "selfExcluded": true,
+  "excludedAuthorPackage": {
+    "files": 66,
+    "freezeIndexSha256": "c1c46f9761e66681de3244877c2b7bbb36f8637a8a1d7f84ba0d099aee4ee57c",
+    "reason": "contains pre-audit PASS assertions superseded by FAIL and internal details; retained locally, not published"
+  },
+  "retainedPrivateAuditorArtifacts": [
+    {
+      "path": "integrated-stop.json",
+      "bytes": 7330,
+      "sha256": "87dd181e772e58a527a4f5fef6454b482627d963ee96fcb926b44da39788a52f"
+    },
+    {
+      "path": "integrated.py",
+      "bytes": 4447,
+      "sha256": "21e9bacc24a31b74266fbbaa56d7f1ee4fbe83c411b91fb797dda20461347dea"
+    },
+    {
+      "path": "offline-tests.log",
+      "bytes": 1827,
+      "sha256": "b243b59bf4e8b4ca2262588e99df1834de53abe3a3565a56382004f98fc1aa30"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 5540,
+      "sha256": "dccf6fd92c7cfccfcd9bc5a6be99301f94137295e3bd4ad8f112965dd04092da"
+    },
+    {
+      "path": "verify_b07.py",
+      "bytes": 6175,
+      "sha256": "054b0071397a2196a75f8a5dc2997456ba9fed7fd2128f1c24d9e9ebfef48943"
+    }
+  ],
+  "retainedPrivateAuthorRaws": {
+    "count": 71,
+    "manifestSha256": "08ed918655547723a4f76cc322555fa98e1e1f54638a68c364797fe8d56bb820"
+  },
+  "missingInputEvidence": "not retained; no reconstruction",
+  "recoveryAudits": "1/5",
+  "formalBAudits": "0/5",
+  "publicRequests": 0,
+  "mainAuthorized": false
+}

@@ -1,0 +1,334 @@
+{
+  "freezeIndexSha256": "c1c46f9761e66681de3244877c2b7bbb36f8637a8a1d7f84ba0d099aee4ee57c",
+  "package": {
+    "count": 65,
+    "passed": 65,
+    "failures": []
+  },
+  "capture-manifest-before-validation.json": {
+    "count": 78,
+    "passed": 78,
+    "failures": [],
+    "publicPrivateIdentical": true
+  },
+  "capture-manifest.json": {
+    "count": 71,
+    "passed": 71,
+    "failures": [],
+    "publicPrivateIdentical": true
+  },
+  "oldSummaries": {
+    "b07-invalid-json-index.json": "b924aa03c062e1910a119503f02627f45155ac3b3d1325646eed7cb38a483d7d",
+    "b07-missing-index.json": "b7f4e00c3038c76050c5bccdc0cdd8c4c3222ef4cc62b736b55bc2d9a7b1254f"
+  },
+  "productDiff": [
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/README.md",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/b07/capture-manifest-before-validation.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/b07/capture-manifest.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/b07/public-safe/chunks/001.jsonl",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/b07/public-safe/index.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/b07/public-safe/objects/182fe70488d05b55f3eab7eafeb55b6aecd4e6a53bf64007991e309097d87f1c.raw",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/b07/public-safe/objects/1cfa4bd678279f01337ab75f4297fd5dfeb94caa85f94669d9979f03bddbf0f2.raw",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/b07/public-safe/objects/763ce9c206d57dbc240314521af33125e8850245d373ee0f6e7c5f5834cc6cc1.raw",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/b07/public-safe/omissions.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/b07/validation-result.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/freeze-index.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-acceptance-plan-index.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/001.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/002.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/003.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/004.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/005.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/006.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/007.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/008.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/009.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/010.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/011.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/012.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/013.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/014.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/015.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/016.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/017.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/018.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/019.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/020.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/021.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/022.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/023.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/024.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/025.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/026.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/027.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/028.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/029.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/030.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/031.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/032.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/033.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/034.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/035.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/036.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/037.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/038.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/039.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/040.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/041.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/042.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/plan/public-plan-requests/043.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/results/bug65-criteria-results.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/results/build-parity-result.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/results/build-result.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/results/offline-test-results.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/results/plan-preflight-result.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/results/startup-preflight-stop.json",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/runner/ASSEMBLY.txt",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/runner/reassemble.py",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/runner/runner.py.part-001.txt",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/runner/runner.py.part-002.txt",
+    "docs/agent-readiness/evidencia/f2/b/recuperacion-bug65/tests/test_runner.py"
+  ],
+  "normSha256": "842c225f79f3eda680e968dbcd673ee760f9d75b83299d241480dc4ae86068f0",
+  "syntheticTests": {
+    "run": 10,
+    "failures": 0,
+    "errors": 0,
+    "excluded": "test_curl_real_head_keeps_output_headers_separate_and_download_zero; no new loopback HTTP"
+  },
+  "plan": {
+    "requests": 1284,
+    "counts": {
+      "identity-identity": 112,
+      "conditional-identity": 896,
+      "accept-negotiation": 25,
+      "alternation": 24,
+      "explicit-resource": 70,
+      "routing-delegation": 8,
+      "unknown-routes": 4,
+      "legacy-redirect": 1,
+      "compression-supplement-144": 144
+    },
+    "idsUnique": true
+  },
+  "dateProbe": "Forbidden response header at identity:auditor:html:GET",
+  "retarget": {
+    "configuredSourcePreview": "https://65e92bb6-cuidatuperroviejo.g1721m.workers.dev",
+    "runtimeBase": "https://65e92bb6-cuidatuperroviejo.g1721m.workers.dev",
+    "mainSetsBase": false,
+    "codeReference": "runner.py:7,326,407-412; changing index source has no BASE assignment"
+  },
+  "alternationRow": {
+    "requestId": "alternation:alternation-article--sindrome-cushing-perros-mayores-r1-html-first-2",
+    "group": "alternation",
+    "method": "GET",
+    "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+    "headers": {
+      "Accept-Encoding": "identity",
+      "User-Agent": "ctpv-f2b-public-acceptance/1.0",
+      "Accept": "text/markdown"
+    },
+    "dependsOn": null,
+    "expected": {
+      "status": 200,
+      "bodySha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3"
+    }
+  },
+  "alternationChangedTag": "accepted",
+  "cdnPolicyProbe": "accepted public, max-age=3600",
+  "B07RawVerification": {
+    "count": 8,
+    "cases": [
+      {
+        "caseId": "missing-index--html--get",
+        "status": 503,
+        "entityBytes": 37,
+        "headersBytes": 440,
+        "metricsExact": true,
+        "requestOriginalVerified": true
+      },
+      {
+        "caseId": "missing-index--html--head",
+        "status": 503,
+        "entityBytes": 0,
+        "headersBytes": 420,
+        "metricsExact": true,
+        "requestOriginalVerified": true
+      },
+      {
+        "caseId": "missing-index--markdown--get",
+        "status": 503,
+        "entityBytes": 37,
+        "headersBytes": 440,
+        "metricsExact": true,
+        "requestOriginalVerified": true
+      },
+      {
+        "caseId": "missing-index--markdown--head",
+        "status": 503,
+        "entityBytes": 0,
+        "headersBytes": 420,
+        "metricsExact": true,
+        "requestOriginalVerified": true
+      },
+      {
+        "caseId": "truncated-index--html--get",
+        "status": 503,
+        "entityBytes": 37,
+        "headersBytes": 440,
+        "metricsExact": true,
+        "requestOriginalVerified": true
+      },
+      {
+        "caseId": "truncated-index--html--head",
+        "status": 503,
+        "entityBytes": 0,
+        "headersBytes": 420,
+        "metricsExact": true,
+        "requestOriginalVerified": true
+      },
+      {
+        "caseId": "truncated-index--markdown--get",
+        "status": 503,
+        "entityBytes": 37,
+        "headersBytes": 440,
+        "metricsExact": true,
+        "requestOriginalVerified": true
+      },
+      {
+        "caseId": "truncated-index--markdown--head",
+        "status": 503,
+        "entityBytes": 0,
+        "headersBytes": 420,
+        "metricsExact": true,
+        "requestOriginalVerified": true
+      }
+    ],
+    "publicRowsMatchOriginals": true,
+    "originalsNotReconstructed": true
+  },
+  "omissions": {
+    "count": 71,
+    "failures": []
+  },
+  "buildParityReadOnly": {
+    "originalSha256": "805fe058ac6a94551fa7e55b119cafbb4adcd04ea17614b2c46bf3095efb8daf",
+    "declaredOriginalSha256": "805fe058ac6a94551fa7e55b119cafbb4adcd04ea17614b2c46bf3095efb8daf",
+    "derivativeArtifactRowsIdentical": true,
+    "actualPreservedArtifactsEqual": 57,
+    "rebuilds": 0
+  },
+  "B07Fixtures": [
+    {
+      "fixture": "missing-index",
+      "aiAbsent": true,
+      "d1Absent": true,
+      "servicesAbsent": true,
+      "exit": {
+        "returnCode": 143,
+        "terminatedAfterFixture": true
+      },
+      "entryShaMatchesSourceReceipt": true,
+      "generatedFixtureDirectoryPresentAtAudit": false,
+      "limitation": "Post-build dist/b07-fixtures absent; compiled-config and raw captures retained; did not recreate fixture."
+    },
+    {
+      "fixture": "truncated-index",
+      "aiAbsent": true,
+      "d1Absent": true,
+      "servicesAbsent": true,
+      "exit": {
+        "returnCode": 143,
+        "terminatedAfterFixture": true
+      },
+      "entryShaMatchesSourceReceipt": true,
+      "generatedFixtureDirectoryPresentAtAudit": false,
+      "limitation": "Post-build dist/b07-fixtures absent; compiled-config and raw captures retained; did not recreate fixture."
+    }
+  ],
+  "alternationActualBodyChangedTag": "accepted although exact same route/Accept-Encoding baseline has another tag",
+  "alternationWrongMimeAndNoMdETag": "accepted with real expected Markdown bytes, HTML MIME, no ETag",
+  "conditionalWrongMimeAndNoMdETag": "accepted with real expected Markdown bytes, HTML MIME, no ETag",
+  "activePublicExecution": false,
+  "newHttpRequests": 0,
+  "formalBReviewCounter": "0/5",
+  "recoveryReview": "1/5",
+  "independentIntegratedRunOne": {
+    "status": "FAIL",
+    "calls": 1160,
+    "error": "Unexpected KeyError at supplement:home-gzip:html:GET:different-tag: 'etagSourceRequestId'; partial evidence retained"
+  },
+  "staleDelegatedHash": {
+    "requestId": "delegation:delegation-discovery-contacto-get",
+    "frozenExpectedSha256": "e782ca49dcd4202d1646c78a3d9042512fad9dd60b13c9a82b89632acbc27645",
+    "preservedCurrentBuildSha256": "e5b74bda2dc14cbbc465cbda8f0451f4a5b9579cc79f2a98e02db57fa7329a40",
+    "identifiedDifference": "input hidden startedAt: 1791332467871 versus 1791478502268; src/pages/contacto.astro uses Date.now()",
+    "contractScope": "delegation; not canonical index corpus"
+  },
+  "gitCleanAfterAudit": true,
+  "source": {
+    "commit": "45a1dc725cf063e54d8955b186ad3824d98e66e3",
+    "tree": "da37cc8cf78721906e75f2e5fe305e32d4f493fa",
+    "parent": "5641030535715b54e1e9f61985e8c0cb2ccfde61",
+    "parentTree": "5f1ceec8edeaaecd56daf81d5923704fe2aab4ff",
+    "runnerSha256": "a9b7fa9e90ca8f4311bc509f8f6002d6076d539ff786ee5d165212a6798587e7"
+  },
+  "newProcesses": 0,
+  "matchingRecoveryWranglerWorkerdPids": [],
+  "commandSummary": [
+    "python runner/reassemble.py <external temporary runner.py>",
+    "python external/verify.py (10 non-network unit fixtures, hashes, probes)",
+    "python external/verify_b07.py (8 retained captures, raw bytes, 57 preserved artifacts)",
+    "python external/integrated.py (mocked curl; real run_one/validate_response; STOP at case1160)",
+    "git status/rev-parse/diff; read-only ps and source/docs reads"
+  ],
+  "auditorArtifacts": [
+    {
+      "path": "integrated-stop.json",
+      "bytes": 7330,
+      "sha256": "87dd181e772e58a527a4f5fef6454b482627d963ee96fcb926b44da39788a52f"
+    },
+    {
+      "path": "integrated.py",
+      "bytes": 4447,
+      "sha256": "21e9bacc24a31b74266fbbaa56d7f1ee4fbe83c411b91fb797dda20461347dea"
+    },
+    {
+      "path": "offline-tests.log",
+      "bytes": 1827,
+      "sha256": "b243b59bf4e8b4ca2262588e99df1834de53abe3a3565a56382004f98fc1aa30"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 5540,
+      "sha256": "dccf6fd92c7cfccfcd9bc5a6be99301f94137295e3bd4ad8f112965dd04092da"
+    },
+    {
+      "path": "verify_b07.py",
+      "bytes": 6175,
+      "sha256": "054b0071397a2196a75f8a5dc2997456ba9fed7fd2128f1c24d9e9ebfef48943"
+    }
+  ],
+  "verdict": "FAIL; STOP for missing fixture input evidence",
+  "closedBlockerGroups": [
+    "R1-B01 Date false STOP",
+    "R1-B02 retarget BASE + stale delegated hash",
+    "R1-B03 supplement dependency KeyError",
+    "R1-B04 MIME/expected Markdown/native validator false PASS",
+    "R1-B05 alternation ETag stability",
+    "R1-B06 inherited CDN no-store",
+    "R1-B07 missing proof of corrupt fixture input"
+  ],
+  "B07InputEvidenceGap": {
+    "requiredBy": "F2 B07 workerd with corrupt local artifact; successor §§5/7 evidence STOP",
+    "retainedEvidence": [
+      "compiled config points at fixture directory",
+      "capture script consumes already-prepared fixture",
+      "stdout readiness and four503 responses",
+      "eight complete HTTP raw requests/responses"
+    ],
+    "generatedInputsAfterBuild": "absent; not reconstructed",
+    "existingProofOfInvalidVersusMissingIndex": "none located; author and coordinator read-only confirmations",
+    "conclusion": "8 observations valid; malformed input not independently established; STOP"
+  }
+}
