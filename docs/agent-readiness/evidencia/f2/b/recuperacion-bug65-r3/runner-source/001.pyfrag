@@ -1,0 +1,301 @@
+#!/usr/bin/env python3
+"""Strict sequential F2B acceptance runner. No network unless --execute is explicit."""
+from __future__ import annotations
+import argparse, base64, datetime, gzip, hashlib, json, pathlib, re, subprocess, sys, time
+from collections import Counter, defaultdict
+from urllib.parse import urlsplit
+
+MAX_CHUNK = 24 * 1024
+EMPTY_SHA = hashlib.sha256(b'').hexdigest()
+ERROR_BODIES = {
+    400: b'Invalid Accept header.\n',
+    406: b'No acceptable representation.\n',
+}
+SECURITY = {
+    'strict-transport-security': 'max-age=31536000; includeSubDomains',
+    'permissions-policy': 'geolocation=(), microphone=(), camera=()',
+    'referrer-policy': 'strict-origin-when-cross-origin',
+    'x-content-type-options': 'nosniff',
+}
+LINK = '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"'
+EXPECTED_GROUP_COUNTS = {
+    'identity-identity': 112, 'conditional-identity': 896,
+    'accept-negotiation': 25, 'alternation': 24, 'explicit-resource': 70,
+    'routing-delegation': 8, 'unknown-routes': 4, 'legacy-redirect': 1,
+    'compression-supplement-144': 144,
+}
+CONDITIONAL_STATUSES = {
+    'own-tag': 304, 'weak-own-tag': 304, 'list-own-plus-other': 304,
+    'different-tag': 200, 'wildcard': 304, 'other-variant-tag': 200,
+    'range-date-without-match': 200, 'range-date-with-own-match': 304,
+}
+FORBIDDEN = {'cookie','authorization','proxy-authorization','set-cookie','www-authenticate',
+             'proxy-authenticate','content-location','last-modified','accept-ranges','content-range','x-edge-cache'}
+CDN_NO_STORE_HEADERS = ('cdn-cache-control','cloudflare-cdn-cache-control')
+PLAN_TOKENS={'${selected-native-tag}','${html-tag-from-same-candidate-route}','${markdown-tag-from-same-candidate-route}',
+             '${html-tag-same-context}','${markdown-tag-same-context}'}
+class Stop(Exception): pass
+
+def sha(data: bytes) -> str: return hashlib.sha256(data).hexdigest()
+def utc_now(): return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='microseconds').replace('+00:00','Z')
+def read_json(path: pathlib.Path): return json.loads(path.read_text(encoding='utf-8'))
+def write_json(path: pathlib.Path, value): path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+def header_values(pairs):
+    result=defaultdict(list)
+    for k,v in pairs: result[k.lower()].append(v)
+    return result
+
+def parse_header_block(raw: bytes):
+    """Return the exact final status block, retaining bytes without normalization."""
+    lines=raw.splitlines(keepends=True); blocks=[]; current=[]
+    for line in lines:
+        if line.startswith(b'HTTP/'):
+            if current: blocks.append(current)
+            current=[line]
+        elif current: current.append(line)
+    if current: blocks.append(current)
+    if not blocks: raise Stop('No HTTP status line in curl header capture')
+    block=b''.join(blocks[-1])
+    lines=block.splitlines(keepends=True)
+    statusline=lines[0].rstrip(b'\r\n').decode('iso-8859-1')
+    m=re.match(r'^HTTP/\S+\s+(\d{3})(?:\s+(.*))?$',statusline)
+    if not m: raise Stop('Malformed HTTP status line')
+    pairs=[]
+    for line in lines[1:]:
+        if line in (b'\r\n',b'\n',b''): continue
+        if line[:1] in (b' ',b'\t') and pairs:
+            k,v=pairs[-1]; pairs[-1]=(k,v+' '+line.decode('iso-8859-1').strip())
+            continue
+        rawline=line.rstrip(b'\r\n')
+        if b':' not in rawline: raise Stop('Malformed response header line')
+        k,v=rawline.split(b':',1)
+        pairs.append((k.decode('iso-8859-1'),v.decode('iso-8859-1').strip(' \t')))
+    return int(m.group(1)),m.group(2) or '',pairs,block
+
+def split_curl_stdout(method: str, stdout: bytes):
+    """Parse curl's write-out stream; --head response headers are emitted to --output."""
+    m=re.search(rb'(\d{3})\t([0-9]+)\t([0-9.]+)\n$',stdout)
+    if not m: raise Stop('curl write-out metrics missing or malformed')
+    prefix=stdout[:m.start()]
+    if prefix: raise Stop('Unexpected bytes on curl stdout outside write-out metrics')
+    return b'',m.group(0)
+
+def decode_entity(wire: bytes, encoding: str):
+    if not wire: return b''
+    enc=encoding.strip().lower()
+    if enc in ('','identity'): return wire
+    if enc=='gzip': return gzip.decompress(wire)
+    if enc=='br':
+        code='const z=require("node:zlib");let b=[];process.stdin.on("data",x=>b.push(x));process.stdin.on("end",()=>process.stdout.write(z.brotliDecompressSync(Buffer.concat(b))));'
+        p=subprocess.run(['node','-e',code],input=wire,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        if p.returncode: raise Stop('Brotli decoder failed')
+        return p.stdout
+    raise Stop('Unsupported or stacked Content-Encoding: '+enc)
+
+def decoder_self_check():
+    sample=b'f2b offline gzip/brotli decoder self-check\x00'
+    if decode_entity(gzip.compress(sample),'gzip')!=sample: raise Stop('gzip decoder self-check failed')
+    code='const z=require("node:zlib");let b=[];process.stdin.on("data",x=>b.push(x));process.stdin.on("end",()=>process.stdout.write(z.brotliCompressSync(Buffer.concat(b))));'
+    p=subprocess.run(['node','-e',code],input=sample,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+    if p.returncode or decode_entity(p.stdout,'br')!=sample: raise Stop('Brotli decoder self-check failed')
+
+def chunks_from(index_path, field, path_key, count_key):
+    idx=read_json(index_path); rows=[]
+    for entry in idx[field]:
+        p=index_path.parent/entry[path_key]; raw=p.read_bytes()
+        if len(raw)>MAX_CHUNK or len(raw)!=entry['bytes'] or sha(raw)!=entry['sha256']:
+            raise Stop('Plan chunk byte count or SHA-256 mismatch: '+str(p))
+        obj=json.loads(raw); chunk=obj['requests'] if field=='requestChunks' else obj['cases']
+        if len(chunk)!=entry[count_key]: raise Stop('Plan chunk row count mismatch: '+str(p))
+        if chunk and (chunk[0].get('requestId')!=entry['firstRequestId'] or chunk[-1].get('requestId')!=entry['lastRequestId']):
+            raise Stop('Plan chunk endpoint IDs differ from index: '+str(p))
+        rows.extend(chunk)
+    return idx,rows
+
+def valid_etag(value): return bool(re.fullmatch(r'(?:W/)?"[\x21\x23-\x7e\x80-\xff]*"',value))
+def etag_source_id(req):
+    if req.get('requestId','').endswith(':baseline-no-condition'): return None
+    if req.get('etagSourceRequestId'): return req['etagSourceRequestId']
+    deps=req.get('dependsOn') or []
+    if isinstance(deps,str): deps=[deps]
+    return next((x for x in deps if ':GET' in x),None)
+def etag_head_id(req, source_id):
+    deps=req.get('dependsOn') or []
+    if isinstance(deps,str): deps=[deps]
+    explicit=next((x for x in deps if ':HEAD' in x),None)
+    if explicit: return explicit
+    return source_id.rsplit(':',1)[0]+':HEAD' if source_id and source_id.endswith(':GET') else None
+
+def expected_format(req):
+    """Derive a document representation from the plan/request, never from received MIME."""
+    expect=req.get('expected')
+    mime=expect.get('mime','') if isinstance(expect,dict) else ''
+    if mime.startswith('text/markdown'): return 'markdown'
+    if mime.startswith('text/html'): return 'html'
+    if mime: return None
+    rid=req.get('requestId','')
+    if ':markdown:' in rid or ':markdown-' in rid: return 'markdown'
+    if ':html:' in rid or ':html-' in rid: return 'html'
+    accept=(req.get('headers') or req.get('requestHeaders') or {}).get('Accept','')
+    if accept.strip().lower()=='text/markdown': return 'markdown'
+    if accept.strip().lower()=='text/html': return 'html'
+    return None
+
+def validate_execution_destination(idx, base_url):
+    """Require an explicit candidate URL bound to the frozen source and host allowlist."""
+    source=idx.get('source') or {}; preview=source.get('preview')
+    hosts=(idx.get('allowlist') or {}).get('hosts') or []
+    if not isinstance(base_url,str) or not base_url:
+        raise Stop('Execution requires an explicit candidate base URL from a frozen receipt')
+    if not preview or not hosts:
+        raise Stop('No accepted candidate preview and host allowlist are frozen in this plan')
+    parsed=urlsplit(base_url)
+    if parsed.scheme!='https' or not parsed.hostname or parsed.username or parsed.password or parsed.query or parsed.fragment or parsed.path not in ('','/'):
+        raise Stop('Candidate base URL must be a plain HTTPS origin')
+    if base_url.rstrip('/')!=preview.rstrip('/'):
+        raise Stop('Candidate base URL differs from the frozen source preview')
+    allowed=[]
+    for item in hosts:
+        candidate=urlsplit(item if '://' in item else 'https://'+item)
+        if candidate.hostname: allowed.append(candidate.hostname.lower())
+    if parsed.hostname.lower() not in allowed:
+        raise Stop('Candidate hostname is outside the frozen host allowlist')
+    return f'https://{parsed.netloc}'
+def parse_etag_list(value):
+    value=value.strip()
+    if value=='*': return '*'
+    parts=[]; pos=0
+    while pos<len(value):
+        while pos<len(value) and value[pos] in ' \t': pos+=1
+        match=re.match(r'(?:W/)?"[\x21\x23-\x7e\x80-\xff]*"',value[pos:])
+        if not match: return None
+        parts.append(match.group(0)); pos+=len(match.group(0))
+        while pos<len(value) and value[pos] in ' \t': pos+=1
+        if pos==len(value): break
+        if value[pos]!=',': return None
+        pos+=1
+        if pos==len(value): return None
+    if not parts: return None
+    return parts
+
+def validate_plan(idx, requests):
+    if len(requests)!=idx.get('requestCount') or len(requests)!=idx.get('totalMaximumRequests'):
+        raise Stop('Plan request count does not equal indexed total maximum')
+    ids=set(); byid={}; positions={}
+    for n,r in enumerate(requests):
+        rid=r.get('requestId'); method=r.get('method'); path=r.get('path'); headers=r.get('headers'); exp=r.get('expected')
+        if not isinstance(rid,str) or not rid or rid in ids: raise Stop('Missing/duplicate request ID at plan row '+str(n))
+        ids.add(rid); byid[rid]=r; positions[rid]=n
+        if method not in ('GET','HEAD'): raise Stop('Method outside GET/HEAD allowlist: '+rid)
+        if not isinstance(path,str) or not path.startswith('/') or path.startswith('//') or any(c in path for c in '\r\n\\?#'):
+            raise Stop('Unsafe/nonliteral path: '+rid)
+        low=path.lower()
+        if any(x in low for x in ('/api/','/admin','asistente-ia','/evaluator','/assistant','/contacto/enviar')):
+            raise Stop('Disallowed endpoint: '+rid)
+        if not isinstance(headers,dict) or not isinstance(exp,(dict,str)):
+            raise Stop('Invalid request headers or expectation shape: '+rid)
+        if isinstance(exp,str) and not exp.strip(): raise Stop('Empty conditional expectation: '+rid)
+        if any(k.lower() in FORBIDDEN for k in headers): raise Stop('Forbidden request header in plan: '+rid)
+        if not isinstance(exp,str):
+            if 'status' not in exp or not isinstance(exp['status'],int): raise Stop('Expected status missing: '+rid)
+        if r.get('group') in ('conditional-identity','compression-supplement-144'):
+            row=rid.rsplit(':',1)[-1]
+            if row not in ('baseline-no-condition',*CONDITIONAL_STATUSES): raise Stop('Unknown conditional row: '+rid)
+            if not isinstance(exp,str): raise Stop('Conditional expected value must be literal text: '+rid)
+            if row!='baseline-no-condition':
+                deps=r.get('dependsOn') or []
+                if isinstance(deps,str): deps=[deps]
+                if not isinstance(deps,list) or not deps: raise Stop('Conditional request lacks baseline dependencies: '+rid)
+                if not etag_source_id(r): raise Stop('Conditional request lacks an explicit GET baseline dependency: '+rid)
+        if r.get('group')=='compression-supplement-144':
+            if rid.endswith(':baseline-no-condition') and not r.get('expectedBodySha256'):
+                raise Stop('Compression baseline lacks expected decoded SHA: '+rid)
+            ae=headers.get('Accept-Encoding')
+            if ae not in ('gzip','br'): raise Stop('Unexpected compression context: '+rid)
+        for k,v in headers.items():
+            if not isinstance(k,str) or not isinstance(v,str): raise Stop('Non-string HTTP header field: '+rid)
+            for token in re.findall(r'\$\{[^}]+\}',v):
+                if token not in PLAN_TOKENS: raise Stop('Unknown unresolved plan token '+token+' at '+rid)
+    counts=Counter(r.get('group') for r in requests)
+    if dict(counts)!=idx.get('counts') or dict(counts)!=EXPECTED_GROUP_COUNTS:
+        raise Stop('Plan group totals differ from frozen budget: '+repr(dict(counts)))
+    if len(requests)>1284: raise Stop('Plan exceeds the frozen 1284-request maximum')
+    corpus=idx.get('corpus',{}); expected_identity=corpus.get('canonicalIdentityRequests')
+    if expected_identity!=counts['identity-identity'] or counts['conditional-identity']!=expected_identity*8:
+        raise Stop('Corpus identity/matrix totals are incoherent')
+    supp=corpus.get('supplement',{})
+    if counts['compression-supplement-144']!=supp.get('maxRequests') or supp.get('baselineRequestsIncluded')!=16 or supp.get('conditionalMaximum')!=128:
+        raise Stop('Compression supplement budget/declaration mismatch')
+    if len(supp.get('contexts',[]))!=4 or supp.get('rowsPerContextFormatMethod')!=9:
+        raise Stop('Compression supplement contexts are not the frozen four-context matrix')
+    # Verify all conditional source IDs resolve to baseline GET with same path/Accept/encoding, and every baseline is ordered first.
+    for position,r in enumerate(requests):
+        rid=r['requestId']; group=r['group']
+        deps=r.get('dependsOn') or []
+        if isinstance(deps,str): deps=[deps]
+        if not isinstance(deps,list): raise Stop('Dependency list is malformed: '+rid)
+        for dependency in deps:
+            if dependency not in positions: raise Stop('Dependency does not resolve in frozen plan: '+rid+' -> '+str(dependency))
+            if positions[dependency]>=position: raise Stop('Dependency is not captured before its dependent request: '+rid+' -> '+dependency)
+        if group=='conditional-identity':
+            source=etag_source_id(r); src=byid.get(source)
+            row=rid.rsplit(':',1)[-1]
+            accept=r['headers'].get('Accept')
+            expected_accept=('text/markdown' if accept=='text/html' else 'text/html') if row=='other-variant-tag' else accept
+            if not src or src['group']!='identity-identity' or src['method']!='GET' or src['path']!=r['path'] or src['headers'].get('Accept')!=expected_accept or src['headers'].get('Accept-Encoding')!='identity':
+                raise Stop('Conditional identity ETag source mismatch: '+rid)
+            head_id=source.rsplit(':',1)[0]+':HEAD'
+            if head_id not in byid: raise Stop('Conditional baseline HEAD missing: '+rid)
+            if positions[head_id]>=position: raise Stop('Conditional baseline HEAD is not ordered before dependent request: '+rid)
+        if group=='compression-supplement-144' and not rid.endswith(':baseline-no-condition'):
+            source=etag_source_id(r); src=byid.get(source)
+            row=rid.rsplit(':',1)[-1]; accept=r['headers'].get('Accept')
+            expected_accept=('text/markdown' if accept=='text/html' else 'text/html') if row=='other-variant-tag' else accept
+            if not src or src['group']!='compression-supplement-144' or not src['requestId'].endswith(':baseline-no-condition') or src['path']!=r['path'] or src['headers'].get('Accept')!=expected_accept or src['headers'].get('Accept-Encoding')!=r['headers'].get('Accept-Encoding'):
+                raise Stop('Supplement exact coding ETag source mismatch: '+rid)
+            head_id=etag_head_id(r,source)
+            if not head_id or head_id not in positions or positions[head_id]>=position: raise Stop('Supplement baseline HEAD is missing or not ordered before dependent request: '+rid)
+    return counts
+
+def resolve_header_values(req, prior):
+    headers=dict(req['headers']); source_id=etag_source_id(req)
+    if not source_id: return headers,None
+    source=prior.get(source_id)
+    if source is None: raise Stop('ETag source response was not captured: '+source_id)
+    source_values=header_values(source['headers'])
+    source_fmt=source.get('expectedFormat') or expected_format({'requestId':source_id,'expected':None,'headers':source.get('requestHeaders',{}),'requestHeaders':source.get('requestHeaders',{})})
+    if source_fmt not in ('html','markdown'): raise Stop('Cannot identify expected representation for ETag baseline: '+source_id)
+    get_id=source_id
+    head_id=etag_head_id(req,get_id)
+    head=prior.get(head_id) if head_id else None
+    if not head: raise Stop('Exact baseline HEAD was not captured before conditional: '+source_id)
+    get_tags=source_values.get('etag',[]); head_tags=header_values(head['headers']).get('etag',[])
+    if source_fmt=='markdown' and (len(get_tags)!=1 or len(head_tags)!=1): raise Stop('Markdown GET/HEAD baseline must both announce one native ETag: '+source_id)
+    needs_tag=any(isinstance(v,str) and '${' in v for v in headers.values())
+    if get_tags:
+        if len(get_tags)!=1 or len(head_tags)>1 or (head_tags and head_tags[-1]!=get_tags[-1]): raise Stop('GET/HEAD ETag value incoherent: '+source_id)
+        tag=get_tags[-1]
+        if not valid_etag(tag): raise Stop('Invalid native ETag syntax: '+source_id)
+        for k,v in headers.items():
+            if not isinstance(v,str) or '${' not in v: continue
+            v=re.sub(r'W/\$\{selected-native-tag\}',lambda _: tag if tag.startswith('W/') else 'W/'+tag,v)
+            headers[k]=re.sub(r'\$\{[^}]+\}',lambda _:tag,v)
+    elif head_tags:
+        raise Stop('HEAD baseline announces ETag absent from its GET representation: '+source_id)
+    elif needs_tag:
+        eligible_html=(source_fmt=='html' and req.get('tagMissingBehavior','').startswith('N/A only when sourcefmt is HTML'))
+        row=req['requestId'].rsplit(':',1)[-1]
+        if eligible_html and row!='wildcard' and row not in ('range-date-without-match',):
+            return None,'N/A: exact HTML GET and HEAD baselines both omit ETag'
+        raise Stop('Required native ETag absent from GET/HEAD baseline: '+source_id)
+    elif source_fmt=='markdown' and req['requestId'].endswith(':wildcard'):
+        raise Stop('Markdown wildcard has no native ETag in its baseline: '+source_id)
+    if 'If-None-Match' in headers:
+        val=headers['If-None-Match']
+        parsed=parse_etag_list(headers['If-None-Match'])
+        if parsed is None: raise Stop('Generated If-None-Match is not valid entity-tag grammar: '+req['requestId'])
+    return headers,None
+
+def policy_checks(req,status,values,canonical=False):
+    # Link and F1 security apply to all enumerated public routes. Negotiated document errors also
+    # retain Vary and private/no-store; static assets and delegated routes keep platform cache fields.

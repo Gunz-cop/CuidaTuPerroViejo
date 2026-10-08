@@ -1,0 +1,158 @@
+{
+  "bundle": {
+    "failures": [],
+    "files": 26,
+    "manifestMatches": true,
+    "relativeOrigin": "b07/private/bundle/server",
+    "treeSha256": "7807cd1a5e604aef29693ae366c0931bf132ffbc07fdf3c8451a329fca0dee0e"
+  },
+  "captures": {
+    "allFilesMatch": true,
+    "cases": [
+      {
+        "accept": "text/html",
+        "caseId": "missing-index-html-get",
+        "entityBytes": 37,
+        "entitySha256": "763ce9c206d57dbc240314521af33125e8850245d373ee0f6e7c5f5834cc6cc1",
+        "fixture": "missing-index",
+        "httpDownloadBytes": 37,
+        "method": "GET",
+        "rawHeaderBytes": 440,
+        "status": 503
+      },
+      {
+        "accept": "text/html",
+        "caseId": "missing-index-html-head",
+        "entityBytes": 0,
+        "entitySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fixture": "missing-index",
+        "httpDownloadBytes": 0,
+        "method": "HEAD",
+        "rawHeaderBytes": 420,
+        "status": 503
+      },
+      {
+        "accept": "text/markdown",
+        "caseId": "missing-index-markdown-get",
+        "entityBytes": 37,
+        "entitySha256": "763ce9c206d57dbc240314521af33125e8850245d373ee0f6e7c5f5834cc6cc1",
+        "fixture": "missing-index",
+        "httpDownloadBytes": 37,
+        "method": "GET",
+        "rawHeaderBytes": 440,
+        "status": 503
+      },
+      {
+        "accept": "text/markdown",
+        "caseId": "missing-index-markdown-head",
+        "entityBytes": 0,
+        "entitySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fixture": "missing-index",
+        "httpDownloadBytes": 0,
+        "method": "HEAD",
+        "rawHeaderBytes": 420,
+        "status": 503
+      },
+      {
+        "accept": "text/html",
+        "caseId": "invalid-index-html-get",
+        "entityBytes": 37,
+        "entitySha256": "763ce9c206d57dbc240314521af33125e8850245d373ee0f6e7c5f5834cc6cc1",
+        "fixture": "invalid-index",
+        "httpDownloadBytes": 37,
+        "method": "GET",
+        "rawHeaderBytes": 440,
+        "status": 503
+      },
+      {
+        "accept": "text/html",
+        "caseId": "invalid-index-html-head",
+        "entityBytes": 0,
+        "entitySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fixture": "invalid-index",
+        "httpDownloadBytes": 0,
+        "method": "HEAD",
+        "rawHeaderBytes": 420,
+        "status": 503
+      },
+      {
+        "accept": "text/markdown",
+        "caseId": "invalid-index-markdown-get",
+        "entityBytes": 37,
+        "entitySha256": "763ce9c206d57dbc240314521af33125e8850245d373ee0f6e7c5f5834cc6cc1",
+        "fixture": "invalid-index",
+        "httpDownloadBytes": 37,
+        "method": "GET",
+        "rawHeaderBytes": 440,
+        "status": 503
+      },
+      {
+        "accept": "text/markdown",
+        "caseId": "invalid-index-markdown-head",
+        "entityBytes": 0,
+        "entitySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fixture": "invalid-index",
+        "httpDownloadBytes": 0,
+        "method": "HEAD",
+        "rawHeaderBytes": 420,
+        "status": 503
+      }
+    ],
+    "failures": [],
+    "manifestFiles": 87,
+    "manifestTotalBytes": 764086,
+    "relativeOrigin": "b07/private/raw-eight-r2"
+  },
+  "configs": [
+    {
+      "assetBindingResolvedToRetainedInput": true,
+      "bytes": 2430,
+      "expectedSha256": "93edb3b3ed904217b42cd8a27de8d257f2d9a50767dfd5633ec2662d4db344a0",
+      "fixture": "missing-index",
+      "localBindingsOnly": true,
+      "mainExists": true,
+      "relativeOrigin": "b07/private/bundle/wrangler-missing-index-r2.json",
+      "sha256": "93edb3b3ed904217b42cd8a27de8d257f2d9a50767dfd5633ec2662d4db344a0"
+    },
+    {
+      "assetBindingResolvedToRetainedInput": true,
+      "bytes": 2430,
+      "expectedSha256": "17f72488c54797566eb18fd113aa6a7f31e1d7369dc0996dfd63b5e763a421a4",
+      "fixture": "invalid-index",
+      "localBindingsOnly": true,
+      "mainExists": true,
+      "relativeOrigin": "b07/private/bundle/wrangler-invalid-index-r2.json",
+      "sha256": "17f72488c54797566eb18fd113aa6a7f31e1d7369dc0996dfd63b5e763a421a4"
+    }
+  ],
+  "inputs": {
+    "invalid-index": {
+      "bytes": 16585551,
+      "failures": [],
+      "files": 316,
+      "indexPresent": true,
+      "manifestMatches": true,
+      "relativeOrigin": "inputs/invalid-index/client",
+      "treeSha256": "1517d355de00987ca0c8117c4c4089cb328840fbc9229843ee9ad8e37bbb7789"
+    },
+    "missing-index": {
+      "bytes": 16585503,
+      "failures": [],
+      "files": 315,
+      "indexPresent": false,
+      "manifestMatches": true,
+      "relativeOrigin": "inputs/missing-index/client",
+      "treeSha256": "a9e13f0f2e751890b926a4297265db361c4a1ee96c4ac818f07d4e4265321beb"
+    }
+  },
+  "originalReceipts": {
+    "capture": "796300c2498e43f1d23a4e84ea57172b7bddefcae5773469041f65d9301d2ef8",
+    "captureFileManifest": "cc4136506ef9f7927fbf8c3f64a1ca831857dea704a719debfd5bd6fae0dd2f2",
+    "configCorrection": "4f1974c74b7cd1dd7e5e0273e5bd66160cd2e5e17fd39fdb9420c3c9c948ec02",
+    "inputPreparation": "1a6eb386fad337525c7bb808c55c04e722c19dbba6c1404ad1c7601472844d8d"
+  },
+  "reconstruction": "none; hashes/bytes reread from retained R2 original files",
+  "schema": "bug65-r3-r2-retention-cotejo/1",
+  "sourceSet": "R2 private retention set; paths below are relative to that source set",
+  "status": "PASS_NO_RECONSTRUCTION"
+}

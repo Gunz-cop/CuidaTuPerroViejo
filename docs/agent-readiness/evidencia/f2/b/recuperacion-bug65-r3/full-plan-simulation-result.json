@@ -1,0 +1,76 @@
+{
+  "acceptErrorBodyCases": [
+    {
+      "expectedBodyBytes": 23,
+      "expectedBodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "observedBodyBytes": 23,
+      "observedBodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "requestId": "accept:accept-home-bad-q-over-one",
+      "status": 400
+    },
+    {
+      "expectedBodyBytes": 23,
+      "expectedBodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "observedBodyBytes": 23,
+      "observedBodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "requestId": "accept:accept-home-bad-q-precision",
+      "status": 400
+    },
+    {
+      "expectedBodyBytes": 23,
+      "expectedBodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "observedBodyBytes": 23,
+      "observedBodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "requestId": "accept:accept-home-duplicate-q",
+      "status": 400
+    },
+    {
+      "expectedBodyBytes": 30,
+      "expectedBodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "observedBodyBytes": 30,
+      "observedBodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "requestId": "accept:accept-home-json-only",
+      "status": 406
+    },
+    {
+      "expectedBodyBytes": 30,
+      "expectedBodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "observedBodyBytes": 30,
+      "observedBodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "requestId": "accept:accept-home-none-acceptable",
+      "status": 406
+    },
+    {
+      "expectedBodyBytes": 30,
+      "expectedBodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "observedBodyBytes": 30,
+      "observedBodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "requestId": "accept:accept-home-unsupported-media-param",
+      "status": 406
+    }
+  ],
+  "fixtureLabel": "TEST synthetic offline transport; no HTTP requests",
+  "naRequestIds": [
+    "conditional:home:html:GET:own-tag",
+    "conditional:home:html:GET:weak-own-tag",
+    "conditional:home:html:GET:list-own-plus-other",
+    "conditional:home:html:GET:range-date-with-own-match",
+    "conditional:home:html:HEAD:own-tag",
+    "conditional:home:html:HEAD:weak-own-tag",
+    "conditional:home:html:HEAD:list-own-plus-other",
+    "conditional:home:html:HEAD:range-date-with-own-match",
+    "conditional:home:markdown:GET:other-variant-tag",
+    "conditional:home:markdown:HEAD:other-variant-tag"
+  ],
+  "planIndexSha256": "b93a1ce4a442243086507a5ff81ae65238b8033c96f623cf16b51e2ed3ebfd08",
+  "requestCount": 1284,
+  "schema": "bug65-r3-offline-protocol-result/1",
+  "stateCounts": {
+    "N/A": 10,
+    "captured": 1274
+  },
+  "stopManifestPresent": false,
+  "transportInvocations": 1274,
+  "uniqueRequestIdCount": 1284,
+  "workerdOrCurlHttpRequests": 0
+}

@@ -1,0 +1,110 @@
+{
+  "accepted": false,
+  "bodyCounts": {
+    "GET": 4,
+    "HEAD": 4
+  },
+  "captureReceiptSha256": "796300c2498e43f1d23a4e84ea57172b7bddefcae5773469041f65d9301d2ef8",
+  "captureSeries": "reused exact R2 local-only series; no new R3 captures",
+  "cases": 8,
+  "configPathCorrectionReceiptSha256": "4f1974c74b7cd1dd7e5e0273e5bd66160cd2e5e17fd39fdb9420c3c9c948ec02",
+  "correctedConfigs": [
+    {
+      "assetsBinding": "ASSETS",
+      "assetsTarget": "the separately manifested retained fixture",
+      "configName": "wrangler-missing-index-r2.json",
+      "configSha256": "93edb3b3ed904217b42cd8a27de8d257f2d9a50767dfd5633ec2662d4db344a0",
+      "fixture": "missing-index"
+    },
+    {
+      "assetsBinding": "ASSETS",
+      "assetsTarget": "the separately manifested retained fixture",
+      "configName": "wrangler-invalid-index-r2.json",
+      "configSha256": "17f72488c54797566eb18fd113aa6a7f31e1d7369dc0996dfd63b5e763a421a4",
+      "fixture": "invalid-index"
+    }
+  ],
+  "inputFixtures": {
+    "invalid-index": {
+      "indexPresent": true,
+      "treeBytes": 16585551,
+      "treeFileCount": 316,
+      "treeSha256": "1517d355de00987ca0c8117c4c4089cb328840fbc9229843ee9ad8e37bbb7789"
+    },
+    "missing-index": {
+      "indexPresent": false,
+      "treeBytes": 16585503,
+      "treeFileCount": 315,
+      "treeSha256": "a9e13f0f2e751890b926a4297265db361c4a1ee96c4ac818f07d4e4265321beb"
+    }
+  },
+  "invalidIndexObject": {
+    "bytes": 48,
+    "path": "objects/5f18c94e8fdbf511fa6cbcdc42a29c98ff20f4a85acaeedaac9ea45e68132d89.raw",
+    "sha256": "5f18c94e8fdbf511fa6cbcdc42a29c98ff20f4a85acaeedaac9ea45e68132d89"
+  },
+  "postPackageBuildParity": "build-parity-57.json",
+  "postPackageBuildParityStatus": "PASS 57/57",
+  "preparationReceiptSha256": "1a6eb386fad337525c7bb808c55c04e722c19dbba6c1404ad1c7601472844d8d",
+  "privateCaptureFileManifestSha256": "cc4136506ef9f7927fbf8c3f64a1ca831857dea704a719debfd5bd6fae0dd2f2",
+  "publicHttpRequests": 0,
+  "schema": "bug65-r3-public-safe-receipt/1",
+  "source": {
+    "commit": "e3492afd661d6d96535717d8d5caa3bfc3d9498d",
+    "tree": "a00ab14cbf28c929c9762321b05786a5746079db",
+    "buildEntrySha256": "cd3b69af722abdb357a2c370b4cd00ac387ea941094793c6b56277c85b9e5e0b"
+  },
+  "status": "READY_FOR_INDEPENDENT_R3_AUDIT_NOT_ACCEPTED",
+  "statuses": [
+    503,
+    503,
+    503,
+    503,
+    503,
+    503,
+    503,
+    503
+  ],
+  "testResults": "full-plan-simulation-result.json",
+  "R2Audit": {
+    "verdict": "FAIL only R2-B01; R1-B01 through R1-B07 closed",
+    "reportSha256": "ae4cb1fbe597090a3db1a0ac3213b168ce9c9850315896fb45f8d54e713ab21f",
+    "comprobanteSha256": "58417d80c75cdf56ab8c6121bdd963a15977f7c9c84a00f574c4909028aef2a1"
+  },
+  "R3Correction": {
+    "blocker": "GET 400/406 literal body enforcement",
+    "planRequestCount": 1284,
+    "planIndexSha256": "b93a1ce4a442243086507a5ff81ae65238b8033c96f623cf16b51e2ed3ebfd08",
+    "runnerSourceSha256": "b4a90615ae580ec6166ac47b0c3260c2d126212fb13736130bc2c4c800d4b0ea",
+    "negativeProbeCount": 4,
+    "positiveRequestCount": 6,
+    "errorBodyTestResult": "error-body-test-result.json",
+    "errorBodyTestResultSha256": "2ccdbafcaa07b5fb4fd0cc73bd528cb7c245532a181fe17c42ec66c6ca205dc4",
+    "assembledRunnerSha256": "b4a90615ae580ec6166ac47b0c3260c2d126212fb13736130bc2c4c800d4b0ea",
+    "fullPlanSimulationSha256": "8866bc9b427d4eb44b00c2027a6b5483afaf53e722118fbf1385095469efbed8",
+    "testsSha256": {
+      "test_accept_error_bodies.py": "2b82b91142c8fca4e7fca1352cbe74299672ed96f6b639ceda319e02f7cf7efe",
+      "test_runner.py": "76dec8bc0712a3bef840b7e135afe18cf9b84d5ad2614c37c676c569b3986431"
+    }
+  },
+  "testCount": 12,
+  "buildParity": {
+    "file": "build-parity-57.json",
+    "sha256": "07d2d077f726fd97c219bec5bf19090475d974d9d65232657e89537a4cd6165d",
+    "status": "PASS 57/57 against R3 candidate build and predecessor"
+  },
+  "retainedR2Cotejo": {
+    "file": "post-build-r2-retention-cotejo.json",
+    "sha256": "7671c409cb7216d9e70251ac6161c02465352306314a40acd19bfaa6f80574ec",
+    "status": "PASS_NO_RECONSTRUCTION",
+    "inputFiles": [
+      315,
+      316
+    ],
+    "bundleFiles": 26,
+    "correctedConfigs": 2,
+    "captureManifestFiles": 87,
+    "localCases": 8
+  },
+  "testSuiteOutputSha256": "f81ab20a547d329d51f37a0f1d06e08bba62bb6b03dbdb200904e7a4c03ce800"
+}
