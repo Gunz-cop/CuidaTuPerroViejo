@@ -1,0 +1,240 @@
+{
+ "review": "bug67 R1/5",
+ "formalB": "0/5",
+ "newHTTP": 0,
+ "newWorkerd": 0,
+ "newBuilds": 0,
+ "source": {
+  "commit": "be380d3ba083dcd213cde4b1e177903be83f37c6",
+  "tree": "f7d560fccd4b32c5daa0214ee7e0bb4cecc83d7d",
+  "parent": "29559a461907f9ba9bbcc148bc6109311a1f484a",
+  "parentTree": "218d1bcad6ca044989c2998b8586d3e6406ea6c0"
+ },
+ "publicIndex": {
+  "sha256": "fa02cc51999e033ebbbc5f7355acf745f891e5a88d6c84813836578935bfc3e5",
+  "references": 67,
+  "withSelf": 68,
+  "allHashBytesUTF8Exact": true
+ },
+ "runnerSha256": "063db18233152aaae81bd529b9e6cd5106b39a0ed09e2b9182b7452226ed5e97",
+ "plan": {
+  "requests": 1284,
+  "chunks": 43,
+  "changedOnlyTwoExpectedMimeFields": [
+   "resource:resource-stylesheet-get",
+   "resource:resource-stylesheet-head"
+  ],
+  "counts": {
+   "identity-identity": 112,
+   "conditional-identity": 896,
+   "accept-negotiation": 25,
+   "alternation": 24,
+   "explicit-resource": 70,
+   "routing-delegation": 8,
+   "unknown-routes": 4,
+   "legacy-redirect": 1,
+   "compression-supplement-144": 144
+  },
+  "sha256": "d03bacdab075e854100f2433428ced0fd1434eeebf540540dcdfda5fce312ecb",
+  "inactiveDestinationRejected": true
+ },
+ "capturedCSSReplay": {
+  "realGETBytes": 138037,
+  "bodySha256": "0f6dc475a0c00022ccd332ead61fbeadb03233ba8649ac70fd19b2d640a95786",
+  "status": 200,
+  "mime": [
+   "text/css"
+  ],
+  "rawHeaderSha256": "9940a582a0e99572f05e4120df3c1971bd31fed09696103d0a1c0ddc2fb4e2ae",
+  "rawBlockSha256": "580fcde49aecd60e48a90aa145c036ba884faa5f2c5002f1370c6d6b9710daf0",
+  "oldHelperSTOPNewHelperPASS": true,
+  "HEAD": "synthetic only; no captured HEAD claim"
+ },
+ "historicalSTOP": {
+  "stopSha256": "44bfaffcc5ce4c8a9ec284bf3dcf57f9243a0c94d6923b06ed80620a7b07df78",
+  "sealSha256": "b7b996c3fa7971755b627b2f620d03a7ba43b728fc9750774f332a1258fa8432",
+  "passedHTTP": 845,
+  "failedCapturedHTTP": 1,
+  "totalHTTP": 846,
+  "NA": 280,
+  "unattemptedIds": 158,
+  "reachedIds": 1126,
+  "noRetry": true
+ },
+ "finalBuildGate": {
+  "sha256": "577fd1ccccb45e3dd6315c26eebb4d4a5d138a0dd72faf49d93cb8a15b7b1237",
+  "sourceExact": true,
+  "rootFinalExit": 0,
+  "artifactHashBytesMatches": 57,
+  "stylesheetMatches": true,
+  "privateLogHashVerified": true,
+  "historicalRejectionPreserved": true,
+  "authorClosureSha256": "1319970f7320dd6a29a82d245abdbfd8235226de75045f20396af5f174f178a9"
+ },
+ "normSha256": "842c225f79f3eda680e968dbcd673ee760f9d75b83299d241480dc4ae86068f0",
+ "independentDefaultExecutorPipeline": {
+  "planned": 1284,
+  "captured": 1274,
+  "NA": 10,
+  "naIds": [
+   "conditional:home:html:GET:own-tag",
+   "conditional:home:html:GET:weak-own-tag",
+   "conditional:home:html:GET:list-own-plus-other",
+   "conditional:home:html:GET:range-date-with-own-match",
+   "conditional:home:html:HEAD:own-tag",
+   "conditional:home:html:HEAD:weak-own-tag",
+   "conditional:home:html:HEAD:list-own-plus-other",
+   "conditional:home:html:HEAD:range-date-with-own-match",
+   "conditional:home:markdown:GET:other-variant-tag",
+   "conditional:home:markdown:HEAD:other-variant-tag"
+  ],
+  "executor": "default run_one; not replaced",
+  "transport": "mocked subprocess curl; node codecs real offline",
+  "newHTTP": 0,
+  "sourceRetargetVerified": true,
+  "weakNativeBrFixtures": 72,
+  "HEADCodingOmissionFixtures": 32,
+  "rawBase64Verified": true,
+  "STOP": false
+ },
+ "independentCSSDefaultExecutorProbes": [
+  {
+   "method": "GET",
+   "case": "no-charset",
+   "state": "PASS",
+   "rawRetained": true
+  },
+  {
+   "method": "GET",
+   "case": "quoted-utf8",
+   "state": "PASS",
+   "rawRetained": true
+  },
+  {
+   "method": "GET",
+   "case": "wrong-type",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "GET",
+   "case": "incompatible",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "GET",
+   "case": "duplicate",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "GET",
+   "case": "malformed",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "no-charset",
+   "state": "PASS",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "quoted-utf8",
+   "state": "PASS",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "wrong-type",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "incompatible",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "duplicate",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "malformed",
+   "state": "STOP",
+   "rawRetained": true
+  }
+ ],
+ "historicalSealFilesVerified": 6770,
+ "offlineSuite": {
+  "tests": 17,
+  "failures": 0,
+  "HTTP": 0
+ },
+ "verdict": "PASS bug67 R1/5; formal B0/5 remains pending",
+ "closedBlockers": [],
+ "auditorArtifacts": [
+  {
+   "path": "bug67-auditoria-r1/verify.py",
+   "bytes": 6425,
+   "sha256": "9c727eef3ff568fa6338d33a7299abafd50ec6dd5d04ca0321013cfccd41105d"
+  },
+  {
+   "path": "bug67-auditoria-r1/pipeline.py",
+   "bytes": 4643,
+   "sha256": "71342b9f83ec196c6c239195c6dfe65c2d98a4c88cf60fb93816a27bcb6ebc4f"
+  },
+  {
+   "path": "bug67-auditoria-r1/probes.py",
+   "bytes": 3308,
+   "sha256": "e0fee1c7da3e7efd72541c5a3873b45498950c979342d041078dd94955096e02"
+  },
+  {
+   "path": "bug67-auditoria-r1/verify.log",
+   "bytes": 2414,
+   "sha256": "a3f6e767f42169c53c06479e8dde035b037d4dc362d416e53d919ed0d4e24533"
+  },
+  {
+   "path": "bug67-auditoria-r1/pipeline.log",
+   "bytes": 860,
+   "sha256": "de8671e7e8caec1e9ad1d4380018461098fe5a2d9f2be76aeadf197bdcadb788"
+  },
+  {
+   "path": "bug67-auditoria-r1/probes.log",
+   "bytes": 1243,
+   "sha256": "cb9babc873527b08e716c9c465792cfe8cb12413a8d80db837afa7f70149a560"
+  },
+  {
+   "path": "bug67-auditoria-r1/offline-tests.log",
+   "bytes": 2978,
+   "sha256": "7e3ca8cbaeb12969877b63f5105eeef177def497c101c703da664fb421b4171e"
+  },
+  {
+   "path": "bug67-auditoria-r1/error-body-test-result.json",
+   "bytes": 3137,
+   "sha256": "2ccdbafcaa07b5fb4fd0cc73bd528cb7c245532a181fe17c42ec66c6ca205dc4"
+  },
+  {
+   "path": "bug67-auditoria-r1/full-plan-simulation-result.json",
+   "bytes": 3058,
+   "sha256": "d872e85d3dca4093d593a763629090faf045ab2c02d9cad2bc557506482113c9"
+  }
+ ],
+ "historicalBug65Audit": {
+  "auditoria-recuperacion-bug65-r3.md": "143d7d2a2acc441b6c9dc73b8baec2bb08642faf9b095ec12bcbc3d64dd1fe9c",
+  "auditoria-recuperacion-bug65-r3-comprobante.json": "fc2e166f88f81bcccebde878d348761956808de8a214339952dea547d8459713"
+ },
+ "finalGitClean": true,
+ "limits": [
+  "No new acceptance HTTP authorized or executed.",
+  "Retained CSS is real GET; HEAD controls are synthetic.",
+  "Root final build receipt follows and complements immutable historical author failure/rejection receipt.",
+  "PASS applies to bug67 helper only, not formal B acceptance or main."
+ ]
+}

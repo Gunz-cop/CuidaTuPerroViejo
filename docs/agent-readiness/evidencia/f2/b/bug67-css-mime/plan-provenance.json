@@ -1,0 +1,33 @@
+{
+  "schema": "bug67-plan-provenance/1",
+  "state": "PROPOSED_INACTIVE_NOT_FOR_EXECUTION",
+  "sourceR3PlanIndexSha256": "b93a1ce4a442243086507a5ff81ae65238b8033c96f623cf16b51e2ed3ebfd08",
+  "newPlanIndexSha256": "d03bacdab075e854100f2433428ced0fd1434eeebf540540dcdfda5fce312ecb",
+  "sourceCandidateCommit": "29559a461907f9ba9bbcc148bc6109311a1f484a",
+  "sourceTree": "218d1bcad6ca044989c2998b8586d3e6406ea6c0",
+  "requestCount": 1284,
+  "uniqueRequestIds": 1284,
+  "groups": {
+    "identity-identity": 112,
+    "conditional-identity": 896,
+    "accept-negotiation": 25,
+    "alternation": 24,
+    "explicit-resource": 70,
+    "routing-delegation": 8,
+    "unknown-routes": 4,
+    "legacy-redirect": 1,
+    "compression-supplement-144": 144
+  },
+  "chunks": 43,
+  "changedRequestIds": [
+    "resource:resource-stylesheet-get",
+    "resource:resource-stylesheet-head"
+  ],
+  "changedRequestFieldScope": "Only expected MIME changes from exact text/css; charset=utf-8 to mediaType text/css with optional utf-8 charset; status, body SHA, method, path, headers and dependencies are unchanged.",
+  "preview": null,
+  "candidateReceipt": null,
+  "ciCheckId": null,
+  "workersCheckId": null,
+  "allowlistedHosts": [],
+  "execute": false
+}
