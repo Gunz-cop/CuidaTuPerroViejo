@@ -1057,11 +1057,9 @@
             "in": "query",
             "required": true,
             "schema": {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 200
+              "type": "string"
             },
-            "description": "NFC/trim,1..200codepoints/800bytes,1..12tokens únicos<=64codepoints; búsqueda AND, score title8+description3+body1, empate ID ASCII; q obligatoria."
+            "description": "q obligatoria. Valor decodificado: string sin C0/DEL; query UTF-8 estricta, sin keys repetidas y raw total<=2048 bytes. No limitar longitud del valor decodificado a200 codepoints/800 bytes. Aplicar NFC y trim Unicode whitespace; sólo el valor normalizado debe tener1..200 codepoints/<=800 bytes y1..12 tokens únicos<=64 codepoints. JSON Schema no normaliza: estas restricciones se comprueban semánticamente después de NFC/trim, también para GET/HEAD. Búsqueda AND, score title8+description3+body1, empate ID ASCII."
           },
           {
             "name": "kind",
@@ -1509,11 +1507,9 @@
             "in": "query",
             "required": true,
             "schema": {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 200
+              "type": "string"
             },
-            "description": "NFC/trim,1..200codepoints/800bytes,1..12tokens únicos<=64codepoints; búsqueda AND, score title8+description3+body1, empate ID ASCII; q obligatoria."
+            "description": "q obligatoria. Valor decodificado: string sin C0/DEL; query UTF-8 estricta, sin keys repetidas y raw total<=2048 bytes. No limitar longitud del valor decodificado a200 codepoints/800 bytes. Aplicar NFC y trim Unicode whitespace; sólo el valor normalizado debe tener1..200 codepoints/<=800 bytes y1..12 tokens únicos<=64 codepoints. JSON Schema no normaliza: estas restricciones se comprueban semánticamente después de NFC/trim, también para GET/HEAD. Búsqueda AND, score title8+description3+body1, empate ID ASCII."
           },
           {
             "name": "kind",

@@ -11,4 +11,6 @@ Estos archivos son **documentos de diseño**, no producto implementado ni respue
 
 No se descargó el schema URI de skills (proxy403); el RFC primario0.2.0 archivado define todos los campos, límites, digest y HTTP, y aclara que ese URI es opaco/no necesita resolverse. El schema local fija exactamente ese subconjunto sin decir que se validó contra un JSON remoto no obtenido. En implementación Ajv2020 usa schemas locales y ARD archivado, sin red; validadores semánticos complementan sus restricciones.
 
+q de GET/HEAD se describe en dos etapas: schema OpenAPI sólo valida string decodificado, y las restricciones de longitud1..200 codepoints/800 bytes se aplican semánticamente al valor posterior a NFC/trim. No usar maxLength200 antes de normalizar. Los [casos documentales de padding/NFC](q-normalizacion-casos.json) fijan ejemplos positivos/negativos sin atribuirlos a una API ejecutada.
+
 En publicación la descripción OpenAPI elimina únicamente la frase que marca este archivo como documental, indicada en info.description. Ningún schema, parámetro ni capacidad cambia por esa transformación. La spec textual manda para reglas semánticas no expresables completamente en JSON Schema; discrepancia estructural entre anexos/texto→STOP, no decisión silenciosa del programador.

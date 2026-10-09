@@ -75,3 +75,32 @@ Ejemplos de diseño, no respuestas públicas observadas. El catálogo usa entrad
 | POST /api/agent/v1/search |405 METHOD_NOT_ALLOWED, Allow GET, HEAD, OPTIONS |
 
 Para lectura completa la expectativa es la entidad Markdown F2 original del mismo build, metadata íntegra y todos sus links: no se introduce aquí un cuerpo abreviado o hash ficticio como ejemplo de Read válido. Las fixtures de implementación deben adjuntar Read completo de origen real como exige C3-06.
+
+## q: padding y NFC antes del límite normalizado
+
+Los [casos documentales exactos](q-normalizacion-casos.json) incluyen strings completos y query serializada, longitudes antes/después de NFC/trim, bytes y resultado contractual. No son HTTP F3 observado ni prueba de implementación. Se aplican igualmente a GET y HEAD; HEAD no lleva cuerpo.
+
+| Caso | Query raw bytes | Codepoints decodificados | Codepoints normalizados | UTF-8 normalizado bytes | Status exigido |
+|---|---:|---:|---:|---:|---:|
+| padding-positivo | 209 | 207 | 7 | 7 | 200 |
+| padding-negativo | 409 | 407 | 207 | 207 | 400 |
+| nfc-positivo | 1384 | 397 | 200 | 397 | 200 |
+| nfc-negativo | 1391 | 399 | 201 | 399 | 400 |
+
+Padding positivo:100 espacios + `cushing` +100 espacios; el string decodificado supera200 pero la consulta normalizada es válida. Padding negativo:100 espacios +25 repeticiones de `cushing-` + `cushing` +100 espacios; el valor normalizado tiene207 codepoints y se rechaza.
+
+NFC positivo: tres grupos de50 secuencias `e`+U+0301 seguidos de `-`, más47 secuencias iguales;397 codepoints decodificados se convierten en200 normalizados. NFC negativo cambia el último grupo a48 secuencias:399 se convierten en201 y se rechaza. Ambos conservan tokens de≤64 codepoints y query raw≤2048 bytes; el negativo aísla la longitud normalizada.
+
+En negativos el cuerpo GET completo, con LF final, es:
+
+```json
+{
+  "schemaVersion": "agent-api/1",
+  "error": {
+    "code": "INVALID_REQUEST",
+    "message": "Invalid request."
+  }
+}
+```
+
+HEAD mantiene400 y headers, cuerpo vacío. El schema OpenAPI no debe rechazar por longitud del string decodificado los dos positivos. Los negativos se rechazan mediante las restricciones semánticas posteriores a NFC/trim.
