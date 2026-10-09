@@ -1,0 +1,80 @@
+{
+  "schema": "bug70-code-audit-public-projection/1",
+  "projectionOfPrivateProofSha256": "5e58c8c42fc6a1569e72d47db92c142f9fd16030bcdbafb80196a948cb0fc94d",
+  "verdict": "PASS",
+  "attempt": "2/5",
+  "source": {
+    "commit": "8f3ecaa3eba86130fb66ff46cfc46a2c4dc1a19a",
+    "tree": "7285ab0e375826e0dea8452eceaa5ed95fb2f69d",
+    "parent": "cdfe7f160a13e57768129daee2eb8ec702be28b7",
+    "clean": true,
+    "changedPaths": 9,
+    "ownershipOnly": true
+  },
+  "digests": {
+    "norm": "759e8e4dfa260d8f6b94002a383e6abb354eb7bb9dd80a29175b9a0ef19d568e",
+    "publicIndex": "45c3f54a431d38e2eda8b1cd58bac0dc25b04de264e7fb036ad36fc0a5057c40",
+    "helperAssembled": "3a373712f988fd1b65116ecc2285bc0200a6e0583b753a62f8b82860e8b78670",
+    "planIndex": "555348b6a876c7f846aba31dc9a306e1a96fbb4f87d2bc372249815c99ce2046",
+    "r2PrivateFreeze": "9293b6bb1b4c92a817c062af5b46895d8bb946f965502449d842d70ec52ea41b",
+    "r1Report": "fd0f3db3837fc2df18ce1306d4658124a91e337443fe8ce6f72aacf8a39d68f1",
+    "r1Proof": "21bcc729fcaf192c5c70d8243ca8099c17f8b99d19eec27789e8887d2eef2efd",
+    "suiteSource": "2202254561fd6fbfc5e21aac2aa19e8a0b70f616a1b9967fb7b90064376753eb",
+    "suiteStart": "38a5eaa525fe59cde61a59904ab00a2f6b257996b61451648b789cc5adf4e511",
+    "suiteReceipt": "55c7330e8c17c5c9435c770ee5e8ac851e10fbab0ea28f303f9df36c7b2948a6",
+    "suiteLog": "779ac69873e75b839ce44e28666f28d7222840d7fe5a086703d50eaa68c61494",
+    "fullPlanSimulation": "7477d78bdef9974aebb7519baf500a632f3483fb10766521a1cac5b05b5de69a"
+  },
+  "newChecks": {
+    "publicFiles": 76,
+    "payloadRefs": 75,
+    "allReferencesMatchBytesAndSha": true,
+    "utf8MaximumBytes": 24524,
+    "planUnchanged": true,
+    "B01": "eight switches stop, four same-E controls pass, independent state and ETag guards pass",
+    "B02": "A and A+I expectedExterior/insertion observations match concrete E"
+  },
+  "blockers": [],
+  "suite": {
+    "testsRun": 41,
+    "failures": 0,
+    "errors": 0,
+    "actualHttp": 0,
+    "logSha256": "779ac69873e75b839ce44e28666f28d7222840d7fe5a086703d50eaa68c61494"
+  },
+  "fullMockPlan": {
+    "acceptErrorBodyCaseCount": 6,
+    "fixtureLabel": "TEST synthetic offline transport; no HTTP requests",
+    "htmlExteriorCaseCount": 151,
+    "htmlExteriorObservedForms": {
+      "A": 151,
+      "A[:p]+I+A[p:]": 0
+    },
+    "nativeHtmlCaseCount": 10,
+    "planIndexSha256": "555348b6a876c7f846aba31dc9a306e1a96fbb4f87d2bc372249815c99ce2046",
+    "requestCount": 1284,
+    "schema": "bug70-offline-protocol-result/1",
+    "stateCounts": {
+      "N/A": 10,
+      "captured": 1274
+    },
+    "stopManifestPresent": false,
+    "transportInvocations": 1274,
+    "uniqueRequestIdCount": 1284,
+    "workerdOrCurlHttpRequests": 0
+  },
+  "limits": {
+    "newHttp": 0,
+    "newBuilds": 0,
+    "workerd": 0,
+    "productChanges": 0,
+    "publicationByAuditor": false,
+    "ownerAuthorized": false,
+    "EXEC": "blocked",
+    "productionAccepted": false,
+    "targetProduct": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "C70-06": "pending root admission/authorization; not a blocker to correction code PASS"
+  },
+  "projectionOnly": true,
+  "privateOperationalReferencesPublished": false
+}
