@@ -1,0 +1,27 @@
+{
+  "schema": "bug70-sdd-audit-public-projection/1",
+  "isProjection": true,
+  "sddSha256": "759e8e4dfa260d8f6b94002a383e6abb354eb7bb9dd80a29175b9a0ef19d568e",
+  "verdict": "PASS",
+  "review": 2,
+  "reviewLimit": 2,
+  "blockers": [],
+  "privateProofR1Sha256": "58d8d29d2981e3c220ff52a2f35ce462a4151c350d3521cc394efb8dda70ba17",
+  "privateProofR2Sha256": "a09ba51824df9b98229681ba83b9d1dfca933aab610af6a92b49101ea8cd91a5",
+  "productTargetCommit": "d2bd342050811d41ee212730cb11fe07783994bd",
+  "productTargetTree": "666f95273609ca67da8a508390c3acf9a141f8ca",
+  "bug70CodeAudits": 0,
+  "productionState": "STOP",
+  "newBatchAuthorized": false,
+  "newDeployAuthorized": false,
+  "originalFragmentPrivate": true,
+  "original58BuildArtifactsPrivate": true,
+  "projectionOmits": [
+    "tracking values",
+    "raw beacon fragment",
+    "full build config",
+    "raw network traces",
+    "cookies",
+    "operational011"
+  ]
+}
