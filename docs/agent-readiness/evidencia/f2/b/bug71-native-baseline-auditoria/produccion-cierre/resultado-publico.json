@@ -1,0 +1,127 @@
+{
+  "schema": "ctpv-f2-production-public-closure/1",
+  "protocolStatus": "PASS",
+  "auditStatus": "PASS P01-P03 by archived evidence",
+  "productCommit": "d2bd342050811d41ee212730cb11fe07783994bd",
+  "helperAcceptedRelease": "f91a95b7f49f3b5e8c80f667ee7d1b67aa0267d6",
+  "rootAdmissionSha256": "af8682ea5b3d9ab54b6bee2c822e37af94f1cb10302311c0e670883b7ac41d44",
+  "caseCount": 1284,
+  "httpValidated": 964,
+  "notApplicable": 320,
+  "failed": 0,
+  "neverAttempted": 0,
+  "retries": 0,
+  "matrixSealSha256": "404605176e833f3c662e241d23cbf6d6d8c0e8c627b7aac4bb2e48c827169c29",
+  "matrixFileCount": 7714,
+  "matrixTotalBytes": 57729474,
+  "groupCounts": {
+    "accept-negotiation": {
+      "captured": 25
+    },
+    "alternation": {
+      "captured": 24
+    },
+    "compression-supplement-144": {
+      "captured": 104,
+      "N/A": 40
+    },
+    "conditional-identity": {
+      "N/A": 280,
+      "captured": 616
+    },
+    "explicit-resource": {
+      "captured": 70
+    },
+    "identity-identity": {
+      "captured": 112
+    },
+    "legacy-redirect": {
+      "captured": 1
+    },
+    "routing-delegation": {
+      "captured": 8
+    },
+    "unknown-routes": {
+      "captured": 4
+    }
+  },
+  "p03ActualScans": 2,
+  "p03PrivateSealSha256": "ab49eb6f82c22f3f342bc7445607f8607eaca0819ae30393d767b776d6fc9aaa",
+  "content": {
+    "before": 71,
+    "after": 86,
+    "denominator": 7,
+    "pass": 6,
+    "levelReported": 5,
+    "partialProfile": true
+  },
+  "allUi": {
+    "before": 33,
+    "after": 40,
+    "denominator": 15,
+    "pass": 6,
+    "levelReported": 4,
+    "levelNameReported": "Agent-Integrated"
+  },
+  "bothComparable": true,
+  "unchangedSignals": "search=yes, ai-input=yes, ai-train=no",
+  "privateNotPublished": [
+    "full operational N/A result lists",
+    "raw matrix captures and traces",
+    "tracking insertion",
+    "full evaluator raw bodies"
+  ],
+  "historicalStopRunsPreserved": true,
+  "newBuilds": 0,
+  "newDeploys": 0,
+  "mainChanged": false,
+  "levelLimitation": "Levels are evaluator metadata; level 5 belongs only to the partial content profile. No general level-5 claim or artificial API/auth/commerce.",
+  "canonicalHtmlForms": {
+    "A[:p]+I+A[p:]": 147,
+    "A": 4
+  },
+  "productionSourceReceipt": {
+    "commit": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "tree": "666f95273609ca67da8a508390c3acf9a141f8ca",
+    "pr": 64,
+    "preview": "https://cuidatuperroviejo.com",
+    "ciCheckId": 113925933594,
+    "workersCheckId": 113957381725,
+    "candidateReceiptSha256": "54f6cc7ec6770d8ce8564d96ee58dba641ae526a92f9eb93538a0a50fc0366cd",
+    "deploymentKind": "production-existing-target",
+    "buildArtifactManifestSha256": "45f9f36b22f07ac945df6902036f17878d660224eaf3e94dc72996081ae58c76"
+  },
+  "startUtc": "2026-10-09T20:35:38.035865Z",
+  "endUtc": "2026-10-09T20:37:05.018201Z",
+  "nativeStrictVerified": [
+    {
+      "path": "/gracias",
+      "status": 200,
+      "bodyDecodedBytes": 28587,
+      "bodyDecodedSha256": "04cb60c83b95256580acaeb0e6256566809371ff4fdfd97ec5f55c28fc0e720a"
+    },
+    {
+      "path": "/politica-de-cookies",
+      "status": 200,
+      "bodyDecodedBytes": 40052,
+      "bodyDecodedSha256": "a3f41d7eb405451ca1eb904564b2aee9e6cd1bb4e934279b180383d58d41314c"
+    },
+    {
+      "path": "/politica-de-privacidad",
+      "status": 200,
+      "bodyDecodedBytes": 34195,
+      "bodyDecodedSha256": "1324dd85d9ef17e89f8382ee5ff602507f3d720611600072c888a34a20ed74cb"
+    }
+  ],
+  "auditReportSha256": "baad9ec0686a59fc5762bd32142cf1252f6098ac7aa3536214103bc5868a62fe",
+  "privateAuditProofSha256": "8afd051637fe8ebadd723681df8c3d27b6bd66193977a9c10bcbafcecfd19212",
+  "rootAccepted": true,
+  "codeAuditCountersUnchanged": {
+    "bug70": "PASS R2/5",
+    "bug71": "PASS R1/5"
+  },
+  "sddAuditCountersUnchanged": {
+    "bug70": "PASS R2/2",
+    "bug71": "PASS R1/2"
+  }
+}

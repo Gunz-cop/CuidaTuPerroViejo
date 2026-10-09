@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "agent-readiness-comparison/1",
+  "comparable": true,
+  "reasons": [],
+  "before": {
+    "requestSha256": "94daf42c1ee9ecfce1528d303e4b19d35e7544d8d38b6ac72ff56436708d2c21",
+    "responseSha256": "0d13c652a84b1e76c1e42fed2e3560a323325294c5fc5e0ce34da7992054de22",
+    "sourceCommit": "34517cfd8af3c28f4840f9d0abc253741049ee9e",
+    "score": 71
+  },
+  "after": {
+    "requestSha256": "94daf42c1ee9ecfce1528d303e4b19d35e7544d8d38b6ac72ff56436708d2c21",
+    "responseSha256": "f8e6a2ee6d89f4ac3f9febb25623b571859674202a369f50eda27e13f2fc347f",
+    "sourceCommit": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "score": 86
+  },
+  "scoreDelta": 15,
+  "checkChanges": [
+    {
+      "category": "contentAccessibility",
+      "id": "markdownNegotiation",
+      "beforeStatus": "fail",
+      "afterStatus": "pass"
+    }
+  ]
+}

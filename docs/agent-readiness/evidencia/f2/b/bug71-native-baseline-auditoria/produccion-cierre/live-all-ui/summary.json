@@ -1,0 +1,255 @@
+{
+  "schemaVersion": "agent-readiness-run/1",
+  "scoringRuleId": "pass-over-counted-round/1",
+  "mode": "live",
+  "profile": "all-ui",
+  "requestedUrl": "https://cuidatuperroviejo.com",
+  "targetUrl": "https://cuidatuperroviejo.com",
+  "enabledChecks": [
+    "robotsTxt",
+    "sitemap",
+    "linkHeaders",
+    "dnsAid",
+    "markdownNegotiation",
+    "robotsTxtAiRules",
+    "contentSignals",
+    "webBotAuth",
+    "apiCatalog",
+    "oauthDiscovery",
+    "oauthProtectedResource",
+    "authMd",
+    "mcpServerCard",
+    "agentSkills",
+    "webMcp",
+    "ard",
+    "x402",
+    "mpp",
+    "ucp",
+    "acp"
+  ],
+  "sourceCommit": "d2bd342050811d41ee212730cb11fe07783994bd",
+  "deploymentCommit": null,
+  "dirtySource": false,
+  "recordedAt": "2026-10-09T20:40:34.998Z",
+  "scannedAt": "2026-10-09T20:40:43.112Z",
+  "state": "complete",
+  "score": 40,
+  "level": 4,
+  "levelName": "Agent-Integrated",
+  "isCommerce": false,
+  "counts": {
+    "pass": 6,
+    "fail": 9,
+    "neutral": 7,
+    "scoredTotal": 15
+  },
+  "checks": [
+    {
+      "category": "discoverability",
+      "id": "robotsTxt",
+      "status": "pass",
+      "message": "robots.txt exists with valid format",
+      "counted": true
+    },
+    {
+      "category": "discoverability",
+      "id": "sitemap",
+      "status": "pass",
+      "message": "sitemap.xml exists with valid structure",
+      "counted": true
+    },
+    {
+      "category": "discoverability",
+      "id": "linkHeaders",
+      "status": "pass",
+      "message": "Found agent-useful Link relations: describedby",
+      "counted": true
+    },
+    {
+      "category": "discoverability",
+      "id": "dnsAid",
+      "status": "fail",
+      "message": "DNS for AI Discovery (DNS-AID) well-known entrypoint records not found",
+      "counted": true
+    },
+    {
+      "category": "contentAccessibility",
+      "id": "markdownNegotiation",
+      "status": "pass",
+      "message": "Site supports Markdown for Agents",
+      "counted": true
+    },
+    {
+      "category": "botAccessControl",
+      "id": "robotsTxtAiRules",
+      "status": "pass",
+      "message": "No AI-specific bot rules; wildcard rules apply to all crawlers including AI bots",
+      "counted": true
+    },
+    {
+      "category": "botAccessControl",
+      "id": "contentSignals",
+      "status": "pass",
+      "message": "Content Signals found in robots.txt",
+      "counted": true
+    },
+    {
+      "category": "botAccessControl",
+      "id": "webBotAuth",
+      "status": "neutral",
+      "message": "Web Bot Auth directory not found (informational only)",
+      "counted": false
+    },
+    {
+      "category": "discovery",
+      "id": "apiCatalog",
+      "status": "fail",
+      "message": "API Catalog not found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "oauthDiscovery",
+      "status": "fail",
+      "message": "No OAuth/OIDC discovery metadata found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "oauthProtectedResource",
+      "status": "fail",
+      "message": "No OAuth Protected Resource Metadata found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "authMd",
+      "status": "fail",
+      "message": "auth.md not found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "mcpServerCard",
+      "status": "fail",
+      "message": "MCP Server Card not found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "a2aAgentCard",
+      "status": "neutral",
+      "message": "A2A Agent Card not found (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "discovery",
+      "id": "agentSkills",
+      "status": "fail",
+      "message": "Agent Skills index not found",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "webMcp",
+      "status": "fail",
+      "message": "No WebMCP tools detected on page load",
+      "counted": true
+    },
+    {
+      "category": "discovery",
+      "id": "ard",
+      "status": "fail",
+      "message": "ARD capability manifest not found",
+      "counted": true
+    },
+    {
+      "category": "commerce",
+      "id": "x402",
+      "status": "neutral",
+      "message": "x402 payment protocol not detected (not a commerce site)",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "mpp",
+      "status": "neutral",
+      "message": "MPP payment discovery not detected (not a commerce site)",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "ucp",
+      "status": "neutral",
+      "message": "UCP profile not found (not a commerce site)",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "acp",
+      "status": "neutral",
+      "message": "ACP discovery document not found (not a commerce site)",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "ap2",
+      "status": "neutral",
+      "message": "AP2 not detected (no A2A Agent Card) (not a commerce site) (excluded by scan configuration)",
+      "counted": false
+    }
+  ],
+  "checkUniverseHash": "9037cb57950a0c49322aae6ca44c3cfd55c65d4826e88d8c4c2284a93566e99a",
+  "requestSha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+  "responseSha256": "2dc969e993678b09e4d88ec3886f03040ac5cb49c2734bd4d93780a00529768c",
+  "nextLevel": {
+    "target": 5,
+    "name": "Agent-Native",
+    "requirements": [
+      {
+        "check": "authMd",
+        "description": "Publish Auth.md metadata for agent registration",
+        "shortPrompt": "Serve /auth.md and advertise agent_auth in OAuth Authorization Server metadata so agents can register securely.",
+        "specUrls": [
+          "https://workos.com/auth-md",
+          "https://github.com/workos/auth.md"
+        ],
+        "prompt": "Serve /auth.md at the site root with agent registration instructions, publish /.well-known/oauth-protected-resource, and include an agent_auth block in /.well-known/oauth-authorization-server with register_uri, supported identity types, credential types, and claim/revocation URLs where applicable.",
+        "skillUrl": "https://isitagentready.com/.well-known/agent-skills/auth-md/SKILL.md"
+      },
+      {
+        "check": "mcpServerCard",
+        "description": "Publish an MCP Server Card for agent discovery",
+        "shortPrompt": "Serve an MCP Server Card (SEP-1649) at /.well-known/mcp/server-card.json with serverInfo, transport endpoint, and capabilities.",
+        "specUrls": [
+          "https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2127"
+        ],
+        "prompt": "Serve an MCP Server Card (SEP-1649) at /.well-known/mcp/server-card.json with serverInfo (name, version), transport endpoint, and capabilities. The schema is being standardized at https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2127",
+        "skillUrl": "https://isitagentready.com/.well-known/agent-skills/mcp-server-card/SKILL.md"
+      },
+      {
+        "check": "agentSkills",
+        "description": "Publish an agent skills discovery index",
+        "shortPrompt": "Publish a skills index at /.well-known/agent-skills/index.json listing skill names, types, descriptions, URLs, and digests.",
+        "specUrls": [
+          "https://github.com/cloudflare/agent-skills-discovery-rfc",
+          "https://agentskills.io/"
+        ],
+        "prompt": "Publish a skills discovery index at /.well-known/agent-skills/index.json (per the Agent Skills Discovery RFC v0.2.0). Include a $schema field, and a skills array where each entry has name, type (\"skill-md\" or \"archive\"), description, url, and a sha256 digest for integrity verification.",
+        "skillUrl": "https://isitagentready.com/.well-known/agent-skills/agent-skills/SKILL.md"
+      },
+      {
+        "check": "apiCatalog",
+        "description": "Publish an API catalog for automated API discovery (RFC 9727)",
+        "shortPrompt": "Create /.well-known/api-catalog returning application/linkset+json with a \"linkset\" array listing your APIs and their specs.",
+        "specUrls": [
+          "https://www.rfc-editor.org/rfc/rfc9727",
+          "https://www.rfc-editor.org/rfc/rfc9264"
+        ],
+        "prompt": "Create /.well-known/api-catalog returning application/linkset+json with a \"linkset\" array. Each entry should include an \"anchor\" URL for the API and link relations for service-desc (OpenAPI spec), service-doc (documentation), and status (health endpoint). See RFC 9727 Appendix A for examples.",
+        "skillUrl": "https://isitagentready.com/.well-known/agent-skills/api-catalog/SKILL.md"
+      }
+    ]
+  },
+  "errors": []
+}

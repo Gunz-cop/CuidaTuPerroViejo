@@ -1,0 +1,109 @@
+{
+  "schema": "bug71-production-closure-independent-audit/1",
+  "verdict": "PASS P01-P03 by archived evidence",
+  "kind": "evidence closure, no new code/normative attempt",
+  "productCommit": "d2bd342050811d41ee212730cb11fe07783994bd",
+  "productTree": "666f95273609ca67da8a508390c3acf9a141f8ca",
+  "helperRelease": "f91a95b7f49f3b5e8c80f667ee7d1b67aa0267d6",
+  "helperPayload": "db8b6e6afba885c05c9c57e8e6550ec15bee2e36",
+  "helperAssembledSha256": "3a373712f988fd1b65116ecc2285bc0200a6e0583b753a62f8b82860e8b78670",
+  "counts": {
+    "plannedIds": 1284,
+    "capturedHTTP": 964,
+    "NA": 320,
+    "pendingIds": 0,
+    "failedHTTP": 0,
+    "STOP": false,
+    "supplementHTTP": 104,
+    "supplementNA": 40,
+    "compressionBaselines200": 16,
+    "canonicalHtmlGET200": 151,
+    "canonicalForms": {
+      "A[:p]+I+A[p:]": 147,
+      "A": 4
+    },
+    "nativeStrictGET200": 3,
+    "evaluatorPostsReportedAndSealed": 2,
+    "retriesReportedAndSealed": 0
+  },
+  "integrity": {
+    "matrixSealedFiles": 7714,
+    "matrixSealedBytes": 57729474,
+    "allPathsAndSizesChecked": true,
+    "allSummaryResultAndRequestMetadataChecked": true,
+    "rawRepresentativeCasesChecked": 28,
+    "rawAndResultDigestFilesChecked": 226,
+    "all7714RawDigestsIndependentlyRehashed": false,
+    "allNABaselinePairsChecked": 320,
+    "rawGzipBrotliSelectedDecodedIndependently": true,
+    "historicalSTOPDigestsPreserved": true
+  },
+  "P03": {
+    "content": {
+      "score": 86,
+      "counts": {
+        "pass": 6,
+        "fail": 1,
+        "neutral": 15,
+        "scoredTotal": 7
+      },
+      "level": 5,
+      "levelName": "Agent-Native",
+      "beforeScore": 71,
+      "scoreDelta": 15,
+      "rawSha256": "f8e6a2ee6d89f4ac3f9febb25623b571859674202a369f50eda27e13f2fc347f",
+      "rawBytes": 31985,
+      "summarySha256": "6dfe020e5d090f8e89fd4bfea571421c170dc590165265356fa8b33de75baa70",
+      "comparisonSha256": "da9c5a856ab5a9edab73311f51dd203db669a1ec397a8b060cd8f6eb12a16af2",
+      "manifestSha256": "cad6f4f30f363547c2119ceee4e897b01983d0cac27ebb9a8ba383a3eee31e2a",
+      "universeSha256": "9037cb57950a0c49322aae6ca44c3cfd55c65d4826e88d8c4c2284a93566e99a",
+      "deploymentCommit": null
+    },
+    "all-ui": {
+      "score": 40,
+      "counts": {
+        "pass": 6,
+        "fail": 9,
+        "neutral": 7,
+        "scoredTotal": 15
+      },
+      "level": 4,
+      "levelName": "Agent-Integrated",
+      "beforeScore": 33,
+      "scoreDelta": 7,
+      "rawSha256": "2dc969e993678b09e4d88ec3886f03040ac5cb49c2734bd4d93780a00529768c",
+      "rawBytes": 36794,
+      "summarySha256": "033b17df9ddcd49945ed9e24ad892e011c33c0c8646d4f49cf3262feff340d55",
+      "comparisonSha256": "f1a20c6227a81d9da456e5e70b5adb0c707f669892f934887774ef4dcba27aa0",
+      "manifestSha256": "d1815687d16ca879cbc254794260495b7d7a8197a94ca5012d7389e221230dfa",
+      "universeSha256": "9037cb57950a0c49322aae6ca44c3cfd55c65d4826e88d8c4c2284a93566e99a",
+      "deploymentCommit": null
+    }
+  },
+  "comparisonIndependent": "Frozen compareSummaries validates F1/F2 summaries and matches both original comparison files exactly; no scan executed by auditor",
+  "digests": {
+    "matrixSeal": "404605176e833f3c662e241d23cbf6d6d8c0e8c627b7aac4bb2e48c827169c29",
+    "rootAdmission": "af8682ea5b3d9ab54b6bee2c822e37af94f1cb10302311c0e670883b7ac41d44",
+    "activePlan": "fd7c9b4807114f45ac28dadd657601b24c6de852f81008329af63dba3299a764",
+    "matrixSummary": "5b54bddde04cf5ed54620f8b815cc9c100e61ba443000213fcbea6105fb90fa2",
+    "matrixResult": "ffaf2359b4c10541bab4615ac0946218f7c906472e7ecac277ef4eea28f491b4",
+    "P03Seal": "ab49eb6f82c22f3f342bc7445607f8607eaca0819ae30393d767b776d6fc9aaa",
+    "independentComparisons": "36ca62136c89621918072bfff3bfdad4a966269a8ffa7a2450e527a590f380d9",
+    "verificationSource": "7840a2dc0ab8affeab0b624d4f200ae28c5b9f2ab3cb6d65238ed42396e6d58d"
+  },
+  "limits": {
+    "newHTTP": 0,
+    "newBuilds": 0,
+    "newSuites": 0,
+    "newWorkerd": 0,
+    "evaluatorRequestsByAuditor": 0,
+    "mutation": 0,
+    "networkObservation": "responses obtained by coordinator and preserved; auditor independently checks files/protocol metadata/subset originals, not fresh network",
+    "levels": "original evaluator metadata: content5 applies only partial7-control profile; general all-ui4, not level5 overall",
+    "rawHashScope": "full root seal retained; no claim of independent digest reread for every file",
+    "helperAndTargetIdentity": "separate; no deployment of documentary helper release implied"
+  },
+  "blockers": [],
+  "projection": "positive public evidence projection; private proof retained",
+  "privateProofSha256": "8afd051637fe8ebadd723681df8c3d27b6bd66193977a9c10bcbafcecfd19212"
+}

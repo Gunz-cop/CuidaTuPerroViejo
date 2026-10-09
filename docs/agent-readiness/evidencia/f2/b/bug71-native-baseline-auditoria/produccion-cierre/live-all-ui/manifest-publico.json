@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "agent-readiness-evidence/1",
+  "sourceCommit": "d2bd342050811d41ee212730cb11fe07783994bd",
+  "recordedAt": "2026-10-09T20:40:34.998Z",
+  "files": [
+    {
+      "path": "request.json",
+      "sha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+      "bytes": 307
+    },
+    {
+      "path": "response-metadata.json",
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062",
+      "bytes": 163
+    },
+    {
+      "path": "summary.json",
+      "sha256": "033b17df9ddcd49945ed9e24ad892e011c33c0c8646d4f49cf3262feff340d55",
+      "bytes": 8673
+    }
+  ],
+  "projection": "Positive public projection; raw response retained privately and referenced by digest, not published or split.",
+  "privateReferencedFiles": [
+    {
+      "path": "response.raw.json",
+      "sha256": "2dc969e993678b09e4d88ec3886f03040ac5cb49c2734bd4d93780a00529768c",
+      "bytes": 36794
+    }
+  ]
+}
