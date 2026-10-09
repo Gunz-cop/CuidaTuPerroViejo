@@ -1,0 +1,650 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 22,
+  "firstOrdinal": 169,
+  "lastOrdinal": 176,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--ansiedad-separacion-perros-senior:markdown:HEAD:own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "006.json",
+      "dependsOn": [
+        "identity:article--ansiedad-separacion-perros-senior:markdown:GET",
+        "identity:article--ansiedad-separacion-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:27.664860Z",
+      "timestampEndUtc": "2026-10-09T15:57:27.767134Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"8564a0770da7a18feb6dff207322f35f\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:27 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"8564a0770da7a18feb6dff207322f35f\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--ansiedad-separacion-perros-senior:markdown:HEAD:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "006.json",
+      "dependsOn": [
+        "identity:article--ansiedad-separacion-perros-senior:markdown:GET",
+        "identity:article--ansiedad-separacion-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:27.768862Z",
+      "timestampEndUtc": "2026-10-09T15:57:27.922354Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "W/\"8564a0770da7a18feb6dff207322f35f\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:27 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"8564a0770da7a18feb6dff207322f35f\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--ansiedad-separacion-perros-senior:markdown:HEAD:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "006.json",
+      "dependsOn": [
+        "identity:article--ansiedad-separacion-perros-senior:markdown:GET",
+        "identity:article--ansiedad-separacion-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:27.923895Z",
+      "timestampEndUtc": "2026-10-09T15:57:28.021554Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--ansiedad-separacion-perros-senior-markdown\", W/\"8564a0770da7a18feb6dff207322f35f\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:28 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"8564a0770da7a18feb6dff207322f35f\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--ansiedad-separacion-perros-senior:markdown:HEAD:different-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "006.json",
+      "dependsOn": [
+        "identity:article--ansiedad-separacion-perros-senior:markdown:GET",
+        "identity:article--ansiedad-separacion-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:28.023162Z",
+      "timestampEndUtc": "2026-10-09T15:57:28.171276Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--ansiedad-separacion-perros-senior-markdown\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:28 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"8564a0770da7a18feb6dff207322f35f\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--ansiedad-separacion-perros-senior:markdown:HEAD:wildcard",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "006.json",
+      "dependsOn": [
+        "identity:article--ansiedad-separacion-perros-senior:markdown:GET",
+        "identity:article--ansiedad-separacion-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:28.172789Z",
+      "timestampEndUtc": "2026-10-09T15:57:28.259774Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:28 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"8564a0770da7a18feb6dff207322f35f\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--ansiedad-separacion-perros-senior:markdown:HEAD:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "method": "HEAD",
+      "state": "N/A",
+      "planChunk": "006.json",
+      "dependsOn": [
+        "identity:article--ansiedad-separacion-perros-senior:html:GET",
+        "identity:article--ansiedad-separacion-perros-senior:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:28.261178Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--ansiedad-separacion-perros-senior:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:08.054132Z",
+          "timestampEndUtc": "2026-10-09T15:57:08.763561Z"
+        },
+        {
+          "requestId": "identity:article--ansiedad-separacion-perros-senior:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:08.765321Z",
+          "timestampEndUtc": "2026-10-09T15:57:09.175475Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--ansiedad-separacion-perros-senior:markdown:HEAD:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "006.json",
+      "dependsOn": [
+        "identity:article--ansiedad-separacion-perros-senior:markdown:GET",
+        "identity:article--ansiedad-separacion-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:28.261566Z",
+      "timestampEndUtc": "2026-10-09T15:57:28.386992Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:28 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"8564a0770da7a18feb6dff207322f35f\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--ansiedad-separacion-perros-senior:markdown:HEAD:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "006.json",
+      "dependsOn": [
+        "identity:article--ansiedad-separacion-perros-senior:markdown:GET",
+        "identity:article--ansiedad-separacion-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:28.388672Z",
+      "timestampEndUtc": "2026-10-09T15:57:28.484309Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"8564a0770da7a18feb6dff207322f35f\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:28 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"8564a0770da7a18feb6dff207322f35f\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

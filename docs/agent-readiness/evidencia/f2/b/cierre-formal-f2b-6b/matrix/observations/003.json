@@ -1,0 +1,601 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 3,
+  "firstOrdinal": 17,
+  "lastOrdinal": 24,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "identity:article--comida-casera-perros-mayores:html:GET",
+      "group": "identity-identity",
+      "path": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:10.855563Z",
+      "timestampEndUtc": "2026-10-09T15:57:10.972658Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:10 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 91483,
+      "bodyWireSha256": "87a5227520a72c0c5809d0ad20a0da83e5ebdf0672928930e7c161abacc7ffab",
+      "bodyDecodedBytes": 91483,
+      "bodyDecodedSha256": "87a5227520a72c0c5809d0ad20a0da83e5ebdf0672928930e7c161abacc7ffab",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 91483
+    },
+    {
+      "requestId": "identity:article--comida-casera-perros-mayores:html:HEAD",
+      "group": "identity-identity",
+      "path": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:10.974544Z",
+      "timestampEndUtc": "2026-10-09T15:57:11.098993Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:11 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "identity:article--comida-casera-perros-mayores:markdown:GET",
+      "group": "identity-identity",
+      "path": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:11.100365Z",
+      "timestampEndUtc": "2026-10-09T15:57:11.232097Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:11 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "23205"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"afd998eb1bbfb07d7dd2bfae7adbfd69\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 23205,
+      "bodyWireSha256": "f0f66b8c4c873e9b42b6af49a51dfe8a08dfbaaed34561ec7a596f5f9fe26554",
+      "bodyDecodedBytes": 23205,
+      "bodyDecodedSha256": "f0f66b8c4c873e9b42b6af49a51dfe8a08dfbaaed34561ec7a596f5f9fe26554",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 23205
+    },
+    {
+      "requestId": "identity:article--comida-casera-perros-mayores:markdown:HEAD",
+      "group": "identity-identity",
+      "path": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:11.233623Z",
+      "timestampEndUtc": "2026-10-09T15:57:11.371840Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:11 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"afd998eb1bbfb07d7dd2bfae7adbfd69\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "identity:article--como-dar-medicacion-perro:html:GET",
+      "group": "identity-identity",
+      "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:11.373389Z",
+      "timestampEndUtc": "2026-10-09T15:57:11.674523Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:11 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 106001,
+      "bodyWireSha256": "dc375c8bea612b4736e371b6f719bb0b83a1635f411eda448dd1d8e1cccb106c",
+      "bodyDecodedBytes": 106001,
+      "bodyDecodedSha256": "dc375c8bea612b4736e371b6f719bb0b83a1635f411eda448dd1d8e1cccb106c",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 106001
+    },
+    {
+      "requestId": "identity:article--como-dar-medicacion-perro:html:HEAD",
+      "group": "identity-identity",
+      "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:11.676100Z",
+      "timestampEndUtc": "2026-10-09T15:57:11.831495Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:11 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "identity:article--como-dar-medicacion-perro:markdown:GET",
+      "group": "identity-identity",
+      "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:11.833060Z",
+      "timestampEndUtc": "2026-10-09T15:57:11.944976Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:11 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "32341"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"b5c8a87e81add930dd09b5717cdcffc0\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 32341,
+      "bodyWireSha256": "411773d629aaec82ed46fda040947048c808181cfed00b26f9aea4bc677e0af2",
+      "bodyDecodedBytes": 32341,
+      "bodyDecodedSha256": "411773d629aaec82ed46fda040947048c808181cfed00b26f9aea4bc677e0af2",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 32341
+    },
+    {
+      "requestId": "identity:article--como-dar-medicacion-perro:markdown:HEAD",
+      "group": "identity-identity",
+      "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:11.946497Z",
+      "timestampEndUtc": "2026-10-09T15:57:12.094698Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:12 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"b5c8a87e81add930dd09b5717cdcffc0\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

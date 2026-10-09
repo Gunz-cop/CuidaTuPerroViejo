@@ -1,0 +1,42 @@
+{
+  "schema": "f2b-public-matrix-execution-receipt/1",
+  "state": "COMPLETE_SEALED_PASS",
+  "source": {
+    "commit": "6b0d3d5abd0c175d2acae56ab7892edaf18cc157",
+    "tree": "af7fa106cdd9eebe25846208bda2b9137e041fb2",
+    "pr": 64,
+    "officialPreview": "https://16e9cc9a-cuidatuperroviejo.g1721m.workers.dev",
+    "candidateReceiptSha256": "5c8a479a8e93da5723e68685d5ecaa4e56bda2923b74c5b11bb684a9136c4161"
+  },
+  "plan": {
+    "path": "plan/public-acceptance-plan-index.json",
+    "sha256": "5fb1c780eede038f874084de4f4adce68f47ab4c6d33dee8a43986da898371d9",
+    "plannedIds": 1284,
+    "chunkCount": 43,
+    "methods": [
+      "GET",
+      "HEAD"
+    ],
+    "redirectFollowing": false,
+    "retries": 0
+  },
+  "result": {
+    "plannedIds": 1284,
+    "completedIds": 1284,
+    "validatedHttp": 964,
+    "justifiedNA": 320,
+    "failedHttp": 0,
+    "neverAttempted": 0,
+    "resultSha256": "b0eb049c0ef7ad3301b1198abe871a4a1009ff720b51d64b3c1093154f038792",
+    "summarySha256": "dc611882c6ccd2d55ddb99ced40f4905135384cf11d6a27e5e7bd49718cb84f3",
+    "sealSha256": "8890923c49ee2e83bf7fd1ce47c5db18c401dc42c877c4faaa196aa6024990f0",
+    "sealedAt": "2026-10-09T15:59:27.600550+00:00"
+  },
+  "chronology": "The plan index is the frozen pre-execution plan. This receipt records its completed execution and does not rewrite that plan.",
+  "privateOriginals": {
+    "manifestSha256": "aa3ee89d5a38660a03289498539fa58707c9f5b445b6b0ce7d4d85545ab7f2ed",
+    "rawFiles": 7714,
+    "rawBytes": 57749939
+  },
+  "mainAuthorized": false
+}

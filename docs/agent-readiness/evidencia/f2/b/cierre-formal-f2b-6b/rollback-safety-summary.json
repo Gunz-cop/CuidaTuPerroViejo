@@ -1,0 +1,12 @@
+{
+  "schema": "f2b-public-rollback-summary/1",
+  "source": "docs/agent-readiness/fases/f2-lectura-markdown.md",
+  "sourceSha256": "b2b3767c10ac5411e59d4b6d6fae98bd9d69b7518c2ebe96399ed88389dc21ce",
+  "preMain": "Close/revert the documentation candidate in its own branch; do not alter production.",
+  "postMain": "If a separately authorized integration ever occurs, use a reviewed joint B-to-A revert that restores the F1 entrypoint/config and removes the F2 routing/projection/header/integration/check group coherently while preserving F1 evidence.",
+  "currentAuthorization": {
+    "mainMerge": false,
+    "productionDeploy": false
+  },
+  "status": "Rollback contract referenced; no main or deployment action was performed."
+}

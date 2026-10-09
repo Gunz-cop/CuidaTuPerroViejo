@@ -1,0 +1,481 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 75,
+  "firstOrdinal": 593,
+  "lastOrdinal": 600,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--vacunas-desparasitacion-perros-senior:html:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "022.json",
+      "dependsOn": [
+        "identity:article--vacunas-desparasitacion-perros-senior:html:GET",
+        "identity:article--vacunas-desparasitacion-perros-senior:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:59.773749Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--vacunas-desparasitacion-perros-senior:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:17.002482Z",
+          "timestampEndUtc": "2026-10-09T15:57:17.132371Z"
+        },
+        {
+          "requestId": "identity:article--vacunas-desparasitacion-perros-senior:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:17.133846Z",
+          "timestampEndUtc": "2026-10-09T15:57:17.255896Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--vacunas-desparasitacion-perros-senior:html:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "022.json",
+      "dependsOn": [
+        "identity:article--vacunas-desparasitacion-perros-senior:html:GET",
+        "identity:article--vacunas-desparasitacion-perros-senior:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:59.773803Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--vacunas-desparasitacion-perros-senior:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:17.002482Z",
+          "timestampEndUtc": "2026-10-09T15:57:17.132371Z"
+        },
+        {
+          "requestId": "identity:article--vacunas-desparasitacion-perros-senior:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:17.133846Z",
+          "timestampEndUtc": "2026-10-09T15:57:17.255896Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--vacunas-desparasitacion-perros-senior:html:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "022.json",
+      "dependsOn": [
+        "identity:article--vacunas-desparasitacion-perros-senior:html:GET",
+        "identity:article--vacunas-desparasitacion-perros-senior:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:59.773862Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--vacunas-desparasitacion-perros-senior:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:17.002482Z",
+          "timestampEndUtc": "2026-10-09T15:57:17.132371Z"
+        },
+        {
+          "requestId": "identity:article--vacunas-desparasitacion-perros-senior:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:17.133846Z",
+          "timestampEndUtc": "2026-10-09T15:57:17.255896Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--vacunas-desparasitacion-perros-senior:html:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "022.json",
+      "dependsOn": [
+        "identity:article--vacunas-desparasitacion-perros-senior:html:GET",
+        "identity:article--vacunas-desparasitacion-perros-senior:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:59.774079Z",
+      "timestampEndUtc": "2026-10-09T15:57:59.879935Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--vacunas-desparasitacion-perros-senior-html\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:59 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 81137,
+      "bodyWireSha256": "1499eff331ca4bc3ff62ba5a7ea38f29f33111b621f3d7fb4df0aab3d8869783",
+      "bodyDecodedBytes": 81137,
+      "bodyDecodedSha256": "1499eff331ca4bc3ff62ba5a7ea38f29f33111b621f3d7fb4df0aab3d8869783",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 81137
+    },
+    {
+      "requestId": "conditional:article--vacunas-desparasitacion-perros-senior:html:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "022.json",
+      "dependsOn": [
+        "identity:article--vacunas-desparasitacion-perros-senior:html:GET",
+        "identity:article--vacunas-desparasitacion-perros-senior:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:59.881599Z",
+      "timestampEndUtc": "2026-10-09T15:57:59.971184Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:59 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--vacunas-desparasitacion-perros-senior:html:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "022.json",
+      "dependsOn": [
+        "identity:article--vacunas-desparasitacion-perros-senior:markdown:GET",
+        "identity:article--vacunas-desparasitacion-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:59.973381Z",
+      "timestampEndUtc": "2026-10-09T15:58:00.087760Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"a13ed2f88c0b6bd46a8f4f1867c82bab\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:00 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 81137,
+      "bodyWireSha256": "1499eff331ca4bc3ff62ba5a7ea38f29f33111b621f3d7fb4df0aab3d8869783",
+      "bodyDecodedBytes": 81137,
+      "bodyDecodedSha256": "1499eff331ca4bc3ff62ba5a7ea38f29f33111b621f3d7fb4df0aab3d8869783",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 81137
+    },
+    {
+      "requestId": "conditional:article--vacunas-desparasitacion-perros-senior:html:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "022.json",
+      "dependsOn": [
+        "identity:article--vacunas-desparasitacion-perros-senior:html:GET",
+        "identity:article--vacunas-desparasitacion-perros-senior:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:00.089748Z",
+      "timestampEndUtc": "2026-10-09T15:58:00.195698Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:00 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 81137,
+      "bodyWireSha256": "1499eff331ca4bc3ff62ba5a7ea38f29f33111b621f3d7fb4df0aab3d8869783",
+      "bodyDecodedBytes": 81137,
+      "bodyDecodedSha256": "1499eff331ca4bc3ff62ba5a7ea38f29f33111b621f3d7fb4df0aab3d8869783",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 81137
+    },
+    {
+      "requestId": "conditional:article--vacunas-desparasitacion-perros-senior:html:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "022.json",
+      "dependsOn": [
+        "identity:article--vacunas-desparasitacion-perros-senior:html:GET",
+        "identity:article--vacunas-desparasitacion-perros-senior:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:00.197675Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--vacunas-desparasitacion-perros-senior:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:17.002482Z",
+          "timestampEndUtc": "2026-10-09T15:57:17.132371Z"
+        },
+        {
+          "requestId": "identity:article--vacunas-desparasitacion-perros-senior:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:17.133846Z",
+          "timestampEndUtc": "2026-10-09T15:57:17.255896Z"
+        }
+      ]
+    }
+  ]
+}

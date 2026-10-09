@@ -1,0 +1,603 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 143,
+  "firstOrdinal": 1137,
+  "lastOrdinal": 1144,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "unknown:unknown-canonical-head",
+      "group": "unknown-routes",
+      "path": "/__f2b-does-not-exist__",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "038.json",
+      "timestampStartUtc": "2026-10-09T15:58:44.107072Z",
+      "timestampEndUtc": "2026-10-09T15:58:44.347371Z",
+      "status": 404,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:44 GMT"
+        ],
+        [
+          "content-type",
+          "text/html"
+        ],
+        [
+          "cache-control",
+          "public, max-age=0, must-revalidate"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "unknown:unknown-explicit-md",
+      "group": "unknown-routes",
+      "path": "/agent-content/v1/documents/__f2b-does-not-exist__.md",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "038.json",
+      "timestampStartUtc": "2026-10-09T15:58:44.348746Z",
+      "timestampEndUtc": "2026-10-09T15:58:44.481049Z",
+      "status": 404,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:44 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "28876"
+        ],
+        [
+          "cache-control",
+          "public, max-age=0, must-revalidate"
+        ],
+        [
+          "etag",
+          "\"f91d3d53483d40ceccf398062eb7be03\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 28876,
+      "bodyWireSha256": "3108a9a0b21fdd92aa30acae8d494748a7c8c694d061b20edde344ea575288ad",
+      "bodyDecodedBytes": 28876,
+      "bodyDecodedSha256": "3108a9a0b21fdd92aa30acae8d494748a7c8c694d061b20edde344ea575288ad",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 28876
+    },
+    {
+      "requestId": "unknown:unknown-explicit-md-head",
+      "group": "unknown-routes",
+      "path": "/agent-content/v1/documents/__f2b-does-not-exist__.md",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "038.json",
+      "timestampStartUtc": "2026-10-09T15:58:44.482445Z",
+      "timestampEndUtc": "2026-10-09T15:58:44.572934Z",
+      "status": 404,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:44 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "public, max-age=0, must-revalidate"
+        ],
+        [
+          "etag",
+          "\"f91d3d53483d40ceccf398062eb7be03\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "legacy:legacy-redirect",
+      "group": "legacy-redirect",
+      "path": "/2025/10/salud-dental-perros-mayores.html",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "038.json",
+      "timestampStartUtc": "2026-10-09T15:58:44.574762Z",
+      "timestampEndUtc": "2026-10-09T15:58:44.648007Z",
+      "status": 301,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:44 GMT"
+        ],
+        [
+          "content-length",
+          "0"
+        ],
+        [
+          "location",
+          "/salud-perros-mayores/salud-dental-perros-mayores"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 6,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "supplement:home-gzip:html:GET:baseline-no-condition",
+      "group": "compression-supplement-144",
+      "path": "/",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "038.json",
+      "timestampStartUtc": "2026-10-09T15:58:44.649431Z",
+      "timestampEndUtc": "2026-10-09T15:58:44.754611Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "gzip"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:44 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "content-encoding",
+          "gzip"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 22731,
+      "bodyWireSha256": "6bd456b303dea8dcc469abf00b87cbec18c5830213c8c2e72bf0cd6a95e27376",
+      "bodyDecodedBytes": 119418,
+      "bodyDecodedSha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentEncoding": "gzip",
+      "httpDownloadBytes": 22731
+    },
+    {
+      "requestId": "supplement:home-gzip:html:HEAD:baseline-no-condition",
+      "group": "compression-supplement-144",
+      "path": "/",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "038.json",
+      "dependsOn": [
+        "supplement:home-gzip:html:GET:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:44.756776Z",
+      "timestampEndUtc": "2026-10-09T15:58:44.850548Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "gzip"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:44 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "content-encoding",
+          "gzip"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "gzip",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "supplement:home-gzip:markdown:GET:baseline-no-condition",
+      "group": "compression-supplement-144",
+      "path": "/",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "038.json",
+      "timestampStartUtc": "2026-10-09T15:58:44.852206Z",
+      "timestampEndUtc": "2026-10-09T15:58:44.976096Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "gzip"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:44 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "etag",
+          "W/\"c262365b8aeb7213ef529ce3e9d9fa15\""
+        ],
+        [
+          "content-encoding",
+          "gzip"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 4517,
+      "bodyWireSha256": "a178037c07e98d46bf610df8fcb37b2f5f05ba33ba7f8bf9dda63cdd2e1e45e7",
+      "bodyDecodedBytes": 12878,
+      "bodyDecodedSha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+      "contentEncoding": "gzip",
+      "httpDownloadBytes": 4517
+    },
+    {
+      "requestId": "supplement:home-gzip:markdown:HEAD:baseline-no-condition",
+      "group": "compression-supplement-144",
+      "path": "/",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "038.json",
+      "dependsOn": [
+        "supplement:home-gzip:markdown:GET:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:44.977526Z",
+      "timestampEndUtc": "2026-10-09T15:58:45.059462Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "gzip"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:45 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "etag",
+          "W/\"c262365b8aeb7213ef529ce3e9d9fa15\""
+        ],
+        [
+          "content-encoding",
+          "gzip"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "gzip",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

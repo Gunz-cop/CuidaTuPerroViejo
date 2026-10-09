@@ -1,0 +1,481 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 123,
+  "firstOrdinal": 977,
+  "lastOrdinal": 984,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:tool--movilidad:html:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/herramientas/selector-movilidad-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "034.json",
+      "dependsOn": [
+        "identity:tool--movilidad:html:GET",
+        "identity:tool--movilidad:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:28.064637Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:tool--movilidad:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:22.895476Z",
+          "timestampEndUtc": "2026-10-09T15:57:22.988283Z"
+        },
+        {
+          "requestId": "identity:tool--movilidad:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:22.992326Z",
+          "timestampEndUtc": "2026-10-09T15:57:23.088880Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:tool--movilidad:html:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/herramientas/selector-movilidad-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "034.json",
+      "dependsOn": [
+        "identity:tool--movilidad:html:GET",
+        "identity:tool--movilidad:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:28.064689Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:tool--movilidad:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:22.895476Z",
+          "timestampEndUtc": "2026-10-09T15:57:22.988283Z"
+        },
+        {
+          "requestId": "identity:tool--movilidad:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:22.992326Z",
+          "timestampEndUtc": "2026-10-09T15:57:23.088880Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:tool--movilidad:html:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/herramientas/selector-movilidad-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "034.json",
+      "dependsOn": [
+        "identity:tool--movilidad:html:GET",
+        "identity:tool--movilidad:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:28.064726Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:tool--movilidad:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:22.895476Z",
+          "timestampEndUtc": "2026-10-09T15:57:22.988283Z"
+        },
+        {
+          "requestId": "identity:tool--movilidad:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:22.992326Z",
+          "timestampEndUtc": "2026-10-09T15:57:23.088880Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:tool--movilidad:html:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/herramientas/selector-movilidad-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "034.json",
+      "dependsOn": [
+        "identity:tool--movilidad:html:GET",
+        "identity:tool--movilidad:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:28.064825Z",
+      "timestampEndUtc": "2026-10-09T15:58:28.168686Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-tool--movilidad-html\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:28 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 78942,
+      "bodyWireSha256": "59d38b98384eea0318dd25fc670d32e25060eb716627f60b364769f87d42531f",
+      "bodyDecodedBytes": 78942,
+      "bodyDecodedSha256": "59d38b98384eea0318dd25fc670d32e25060eb716627f60b364769f87d42531f",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 78942
+    },
+    {
+      "requestId": "conditional:tool--movilidad:html:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/herramientas/selector-movilidad-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "034.json",
+      "dependsOn": [
+        "identity:tool--movilidad:html:GET",
+        "identity:tool--movilidad:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:28.170341Z",
+      "timestampEndUtc": "2026-10-09T15:58:28.262701Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:28 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:tool--movilidad:html:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/herramientas/selector-movilidad-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "034.json",
+      "dependsOn": [
+        "identity:tool--movilidad:markdown:GET",
+        "identity:tool--movilidad:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:28.264694Z",
+      "timestampEndUtc": "2026-10-09T15:58:28.354373Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"595b4a4a5ffb31823bc8166e0f22bf50\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:28 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 78942,
+      "bodyWireSha256": "59d38b98384eea0318dd25fc670d32e25060eb716627f60b364769f87d42531f",
+      "bodyDecodedBytes": 78942,
+      "bodyDecodedSha256": "59d38b98384eea0318dd25fc670d32e25060eb716627f60b364769f87d42531f",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 78942
+    },
+    {
+      "requestId": "conditional:tool--movilidad:html:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/herramientas/selector-movilidad-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "034.json",
+      "dependsOn": [
+        "identity:tool--movilidad:html:GET",
+        "identity:tool--movilidad:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:28.356207Z",
+      "timestampEndUtc": "2026-10-09T15:58:28.443169Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:28 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 78942,
+      "bodyWireSha256": "59d38b98384eea0318dd25fc670d32e25060eb716627f60b364769f87d42531f",
+      "bodyDecodedBytes": 78942,
+      "bodyDecodedSha256": "59d38b98384eea0318dd25fc670d32e25060eb716627f60b364769f87d42531f",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 78942
+    },
+    {
+      "requestId": "conditional:tool--movilidad:html:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/herramientas/selector-movilidad-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "034.json",
+      "dependsOn": [
+        "identity:tool--movilidad:html:GET",
+        "identity:tool--movilidad:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:28.445001Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:tool--movilidad:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:22.895476Z",
+          "timestampEndUtc": "2026-10-09T15:57:22.988283Z"
+        },
+        {
+          "requestId": "identity:tool--movilidad:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:22.992326Z",
+          "timestampEndUtc": "2026-10-09T15:57:23.088880Z"
+        }
+      ]
+    }
+  ]
+}

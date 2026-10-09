@@ -1,0 +1,481 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 31,
+  "firstOrdinal": 241,
+  "lastOrdinal": 248,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--comida-casera-perros-mayores:html:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--comida-casera-perros-mayores:html:GET",
+        "identity:article--comida-casera-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:33.189434Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--comida-casera-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:10.855563Z",
+          "timestampEndUtc": "2026-10-09T15:57:10.972658Z"
+        },
+        {
+          "requestId": "identity:article--comida-casera-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:10.974544Z",
+          "timestampEndUtc": "2026-10-09T15:57:11.098993Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--comida-casera-perros-mayores:html:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--comida-casera-perros-mayores:html:GET",
+        "identity:article--comida-casera-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:33.189484Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--comida-casera-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:10.855563Z",
+          "timestampEndUtc": "2026-10-09T15:57:10.972658Z"
+        },
+        {
+          "requestId": "identity:article--comida-casera-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:10.974544Z",
+          "timestampEndUtc": "2026-10-09T15:57:11.098993Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--comida-casera-perros-mayores:html:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--comida-casera-perros-mayores:html:GET",
+        "identity:article--comida-casera-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:33.189522Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--comida-casera-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:10.855563Z",
+          "timestampEndUtc": "2026-10-09T15:57:10.972658Z"
+        },
+        {
+          "requestId": "identity:article--comida-casera-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:10.974544Z",
+          "timestampEndUtc": "2026-10-09T15:57:11.098993Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--comida-casera-perros-mayores:html:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--comida-casera-perros-mayores:html:GET",
+        "identity:article--comida-casera-perros-mayores:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:33.189619Z",
+      "timestampEndUtc": "2026-10-09T15:57:33.289487Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--comida-casera-perros-mayores-html\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:33 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 91483,
+      "bodyWireSha256": "87a5227520a72c0c5809d0ad20a0da83e5ebdf0672928930e7c161abacc7ffab",
+      "bodyDecodedBytes": 91483,
+      "bodyDecodedSha256": "87a5227520a72c0c5809d0ad20a0da83e5ebdf0672928930e7c161abacc7ffab",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 91483
+    },
+    {
+      "requestId": "conditional:article--comida-casera-perros-mayores:html:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--comida-casera-perros-mayores:html:GET",
+        "identity:article--comida-casera-perros-mayores:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:33.291111Z",
+      "timestampEndUtc": "2026-10-09T15:57:33.377762Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:33 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--comida-casera-perros-mayores:html:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--comida-casera-perros-mayores:markdown:GET",
+        "identity:article--comida-casera-perros-mayores:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:33.379202Z",
+      "timestampEndUtc": "2026-10-09T15:57:33.547499Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"afd998eb1bbfb07d7dd2bfae7adbfd69\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:33 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 91483,
+      "bodyWireSha256": "87a5227520a72c0c5809d0ad20a0da83e5ebdf0672928930e7c161abacc7ffab",
+      "bodyDecodedBytes": 91483,
+      "bodyDecodedSha256": "87a5227520a72c0c5809d0ad20a0da83e5ebdf0672928930e7c161abacc7ffab",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 91483
+    },
+    {
+      "requestId": "conditional:article--comida-casera-perros-mayores:html:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "009.json",
+      "dependsOn": [
+        "identity:article--comida-casera-perros-mayores:html:GET",
+        "identity:article--comida-casera-perros-mayores:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:33.549233Z",
+      "timestampEndUtc": "2026-10-09T15:57:33.652015Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:33 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 91483,
+      "bodyWireSha256": "87a5227520a72c0c5809d0ad20a0da83e5ebdf0672928930e7c161abacc7ffab",
+      "bodyDecodedBytes": 91483,
+      "bodyDecodedSha256": "87a5227520a72c0c5809d0ad20a0da83e5ebdf0672928930e7c161abacc7ffab",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 91483
+    },
+    {
+      "requestId": "conditional:article--comida-casera-perros-mayores:html:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "009.json",
+      "dependsOn": [
+        "identity:article--comida-casera-perros-mayores:html:GET",
+        "identity:article--comida-casera-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:33.653646Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--comida-casera-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:10.855563Z",
+          "timestampEndUtc": "2026-10-09T15:57:10.972658Z"
+        },
+        {
+          "requestId": "identity:article--comida-casera-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:10.974544Z",
+          "timestampEndUtc": "2026-10-09T15:57:11.098993Z"
+        }
+      ]
+    }
+  ]
+}

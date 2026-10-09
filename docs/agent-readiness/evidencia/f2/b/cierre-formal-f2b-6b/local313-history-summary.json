@@ -1,0 +1,24 @@
+{
+  "schema": "f2b-local313-history-summary/1",
+  "classification": "HISTORICAL_LOCAL_EVIDENCE_NOT_CANDIDATE_6B_HTTP",
+  "source": "private source set: local313-plus-history",
+  "localAcceptance": {
+    "sha256": "3da042b51ca3b6a5585e324dded9b7adfd61e53ceacf2e8cbeb86b940daba0b9",
+    "requests": 313,
+    "documents": 28
+  },
+  "localCompletionEvidence": {
+    "sha256": "c8e71770a8245b64cce602b9d90d7395cf02a50d90e30c3119d95264c840c26d",
+    "cases": 317
+  },
+  "plan": {
+    "sha256": "b46f333754b433222da41af0e5a1cbcd8c0b9bc23888b7732db9b58f34fea398",
+    "requestBudget": 1284
+  },
+  "privateRawPayloadFiles": 389,
+  "selectedPriorB07SummaryIndexSha256": [
+    "b924aa03c062e1910a119503f02627f45155ac3b3d1325646eed7cb38a483d7d",
+    "b7f4e00c3038c76050c5bccdc0cdd8c4c3222ef4cc62b736b55bc2d9a7b1254f"
+  ],
+  "limitation": "The prior four B07 rows were summaries only, without full request/response captures; they are not used as substitutes for the separate retained R2 8-capture series."
+}

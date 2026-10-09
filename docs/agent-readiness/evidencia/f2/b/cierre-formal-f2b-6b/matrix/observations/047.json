@@ -1,0 +1,481 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 47,
+  "firstOrdinal": 369,
+  "lastOrdinal": 376,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--incontinencia-urinaria-perros-mayores:html:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "013.json",
+      "dependsOn": [
+        "identity:article--incontinencia-urinaria-perros-mayores:html:GET",
+        "identity:article--incontinencia-urinaria-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:43.219767Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--incontinencia-urinaria-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:13.332840Z",
+          "timestampEndUtc": "2026-10-09T15:57:13.463904Z"
+        },
+        {
+          "requestId": "identity:article--incontinencia-urinaria-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:13.465386Z",
+          "timestampEndUtc": "2026-10-09T15:57:13.606517Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--incontinencia-urinaria-perros-mayores:html:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "013.json",
+      "dependsOn": [
+        "identity:article--incontinencia-urinaria-perros-mayores:html:GET",
+        "identity:article--incontinencia-urinaria-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:43.219822Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--incontinencia-urinaria-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:13.332840Z",
+          "timestampEndUtc": "2026-10-09T15:57:13.463904Z"
+        },
+        {
+          "requestId": "identity:article--incontinencia-urinaria-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:13.465386Z",
+          "timestampEndUtc": "2026-10-09T15:57:13.606517Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--incontinencia-urinaria-perros-mayores:html:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "013.json",
+      "dependsOn": [
+        "identity:article--incontinencia-urinaria-perros-mayores:html:GET",
+        "identity:article--incontinencia-urinaria-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:43.219860Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--incontinencia-urinaria-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:13.332840Z",
+          "timestampEndUtc": "2026-10-09T15:57:13.463904Z"
+        },
+        {
+          "requestId": "identity:article--incontinencia-urinaria-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:13.465386Z",
+          "timestampEndUtc": "2026-10-09T15:57:13.606517Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--incontinencia-urinaria-perros-mayores:html:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "013.json",
+      "dependsOn": [
+        "identity:article--incontinencia-urinaria-perros-mayores:html:GET",
+        "identity:article--incontinencia-urinaria-perros-mayores:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:43.219960Z",
+      "timestampEndUtc": "2026-10-09T15:57:43.349586Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--incontinencia-urinaria-perros-mayores-html\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:43 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 82604,
+      "bodyWireSha256": "97c1df6a3128afc604901de80ea91a7d651254cd735f7184d5b7772b3a4e6895",
+      "bodyDecodedBytes": 82604,
+      "bodyDecodedSha256": "97c1df6a3128afc604901de80ea91a7d651254cd735f7184d5b7772b3a4e6895",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 82604
+    },
+    {
+      "requestId": "conditional:article--incontinencia-urinaria-perros-mayores:html:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "013.json",
+      "dependsOn": [
+        "identity:article--incontinencia-urinaria-perros-mayores:html:GET",
+        "identity:article--incontinencia-urinaria-perros-mayores:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:43.351395Z",
+      "timestampEndUtc": "2026-10-09T15:57:43.474519Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:43 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--incontinencia-urinaria-perros-mayores:html:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "013.json",
+      "dependsOn": [
+        "identity:article--incontinencia-urinaria-perros-mayores:markdown:GET",
+        "identity:article--incontinencia-urinaria-perros-mayores:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:43.476104Z",
+      "timestampEndUtc": "2026-10-09T15:57:43.566382Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"147227e160d86e91178e36e02a17c7d7\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:43 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 82604,
+      "bodyWireSha256": "97c1df6a3128afc604901de80ea91a7d651254cd735f7184d5b7772b3a4e6895",
+      "bodyDecodedBytes": 82604,
+      "bodyDecodedSha256": "97c1df6a3128afc604901de80ea91a7d651254cd735f7184d5b7772b3a4e6895",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 82604
+    },
+    {
+      "requestId": "conditional:article--incontinencia-urinaria-perros-mayores:html:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "013.json",
+      "dependsOn": [
+        "identity:article--incontinencia-urinaria-perros-mayores:html:GET",
+        "identity:article--incontinencia-urinaria-perros-mayores:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:43.568677Z",
+      "timestampEndUtc": "2026-10-09T15:57:43.684168Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:43 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 82604,
+      "bodyWireSha256": "97c1df6a3128afc604901de80ea91a7d651254cd735f7184d5b7772b3a4e6895",
+      "bodyDecodedBytes": 82604,
+      "bodyDecodedSha256": "97c1df6a3128afc604901de80ea91a7d651254cd735f7184d5b7772b3a4e6895",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 82604
+    },
+    {
+      "requestId": "conditional:article--incontinencia-urinaria-perros-mayores:html:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "013.json",
+      "dependsOn": [
+        "identity:article--incontinencia-urinaria-perros-mayores:html:GET",
+        "identity:article--incontinencia-urinaria-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:43.685734Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--incontinencia-urinaria-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:13.332840Z",
+          "timestampEndUtc": "2026-10-09T15:57:13.463904Z"
+        },
+        {
+          "requestId": "identity:article--incontinencia-urinaria-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:13.465386Z",
+          "timestampEndUtc": "2026-10-09T15:57:13.606517Z"
+        }
+      ]
+    }
+  ]
+}

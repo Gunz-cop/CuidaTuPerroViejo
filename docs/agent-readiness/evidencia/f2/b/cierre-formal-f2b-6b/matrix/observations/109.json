@@ -1,0 +1,658 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 109,
+  "firstOrdinal": 865,
+  "lastOrdinal": 872,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:pillar--movilidad-dolor-perros-mayores:markdown:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "030.json",
+      "dependsOn": [
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:GET",
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:19.042455Z",
+      "timestampEndUtc": "2026-10-09T15:58:19.382289Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"7a79fdc03afda9be6d846866615f88a1\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:19 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"7a79fdc03afda9be6d846866615f88a1\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--movilidad-dolor-perros-mayores:markdown:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "031.json",
+      "dependsOn": [
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:GET",
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:19.384164Z",
+      "timestampEndUtc": "2026-10-09T15:58:19.472841Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "W/\"7a79fdc03afda9be6d846866615f88a1\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:19 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"7a79fdc03afda9be6d846866615f88a1\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--movilidad-dolor-perros-mayores:markdown:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "031.json",
+      "dependsOn": [
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:GET",
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:19.474938Z",
+      "timestampEndUtc": "2026-10-09T15:58:19.568413Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-pillar--movilidad-dolor-perros-mayores-markdown\", W/\"7a79fdc03afda9be6d846866615f88a1\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:19 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"7a79fdc03afda9be6d846866615f88a1\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--movilidad-dolor-perros-mayores:markdown:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "031.json",
+      "dependsOn": [
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:GET",
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:19.570433Z",
+      "timestampEndUtc": "2026-10-09T15:58:19.655336Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-pillar--movilidad-dolor-perros-mayores-markdown\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:19 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "7261"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"7a79fdc03afda9be6d846866615f88a1\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 7261,
+      "bodyWireSha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6",
+      "bodyDecodedBytes": 7261,
+      "bodyDecodedSha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 7261
+    },
+    {
+      "requestId": "conditional:pillar--movilidad-dolor-perros-mayores:markdown:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "031.json",
+      "dependsOn": [
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:GET",
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:19.657170Z",
+      "timestampEndUtc": "2026-10-09T15:58:19.760776Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:19 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"7a79fdc03afda9be6d846866615f88a1\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--movilidad-dolor-perros-mayores:markdown:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "031.json",
+      "dependsOn": [
+        "identity:pillar--movilidad-dolor-perros-mayores:html:GET",
+        "identity:pillar--movilidad-dolor-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:19.762145Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:pillar--movilidad-dolor-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:20.839551Z",
+          "timestampEndUtc": "2026-10-09T15:57:20.938950Z"
+        },
+        {
+          "requestId": "identity:pillar--movilidad-dolor-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:20.940544Z",
+          "timestampEndUtc": "2026-10-09T15:57:21.019182Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:pillar--movilidad-dolor-perros-mayores:markdown:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "031.json",
+      "dependsOn": [
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:GET",
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:19.762292Z",
+      "timestampEndUtc": "2026-10-09T15:58:19.850846Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:19 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "7261"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"7a79fdc03afda9be6d846866615f88a1\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 7261,
+      "bodyWireSha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6",
+      "bodyDecodedBytes": 7261,
+      "bodyDecodedSha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 7261
+    },
+    {
+      "requestId": "conditional:pillar--movilidad-dolor-perros-mayores:markdown:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "031.json",
+      "dependsOn": [
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:GET",
+        "identity:pillar--movilidad-dolor-perros-mayores:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:19.852334Z",
+      "timestampEndUtc": "2026-10-09T15:58:20.063815Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"7a79fdc03afda9be6d846866615f88a1\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:20 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"7a79fdc03afda9be6d846866615f88a1\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

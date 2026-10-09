@@ -1,0 +1,658 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 25,
+  "firstOrdinal": 193,
+  "lastOrdinal": 200,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "006.json",
+      "dependsOn": [
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET",
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:29.283439Z",
+      "timestampEndUtc": "2026-10-09T15:57:29.370292Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"b74e9a0475a706f05aa923716bef140d\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:29 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"b74e9a0475a706f05aa923716bef140d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "007.json",
+      "dependsOn": [
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET",
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:29.371742Z",
+      "timestampEndUtc": "2026-10-09T15:57:29.458386Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "W/\"b74e9a0475a706f05aa923716bef140d\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:29 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"b74e9a0475a706f05aa923716bef140d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "007.json",
+      "dependsOn": [
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET",
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:29.459983Z",
+      "timestampEndUtc": "2026-10-09T15:57:29.543881Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--cama-ortopedica-perros-mayores-displasia-artrosis-markdown\", W/\"b74e9a0475a706f05aa923716bef140d\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:29 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"b74e9a0475a706f05aa923716bef140d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "007.json",
+      "dependsOn": [
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET",
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:29.545289Z",
+      "timestampEndUtc": "2026-10-09T15:57:29.668910Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--cama-ortopedica-perros-mayores-displasia-artrosis-markdown\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:29 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "35047"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"b74e9a0475a706f05aa923716bef140d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 35047,
+      "bodyWireSha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4",
+      "bodyDecodedBytes": 35047,
+      "bodyDecodedSha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 35047
+    },
+    {
+      "requestId": "conditional:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "007.json",
+      "dependsOn": [
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET",
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:29.670780Z",
+      "timestampEndUtc": "2026-10-09T15:57:29.791226Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:29 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"b74e9a0475a706f05aa923716bef140d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "007.json",
+      "dependsOn": [
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:html:GET",
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:29.793152Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:09.396476Z",
+          "timestampEndUtc": "2026-10-09T15:57:09.494819Z"
+        },
+        {
+          "requestId": "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:09.496552Z",
+          "timestampEndUtc": "2026-10-09T15:57:09.823982Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "007.json",
+      "dependsOn": [
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET",
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:29.793376Z",
+      "timestampEndUtc": "2026-10-09T15:57:29.894968Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:29 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "35047"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"b74e9a0475a706f05aa923716bef140d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 35047,
+      "bodyWireSha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4",
+      "bodyDecodedBytes": 35047,
+      "bodyDecodedSha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 35047
+    },
+    {
+      "requestId": "conditional:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "007.json",
+      "dependsOn": [
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET",
+        "identity:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:29.896588Z",
+      "timestampEndUtc": "2026-10-09T15:57:29.988554Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"b74e9a0475a706f05aa923716bef140d\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:29 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"b74e9a0475a706f05aa923716bef140d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

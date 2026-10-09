@@ -1,0 +1,481 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 59,
+  "firstOrdinal": 465,
+  "lastOrdinal": 472,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--prevencion-caidas-perro-mayor:html:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--prevencion-caidas-perro-mayor:html:GET",
+        "identity:article--prevencion-caidas-perro-mayor:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:50.542516Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--prevencion-caidas-perro-mayor:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:14.953733Z",
+          "timestampEndUtc": "2026-10-09T15:57:15.092825Z"
+        },
+        {
+          "requestId": "identity:article--prevencion-caidas-perro-mayor:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:15.094595Z",
+          "timestampEndUtc": "2026-10-09T15:57:15.247278Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--prevencion-caidas-perro-mayor:html:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--prevencion-caidas-perro-mayor:html:GET",
+        "identity:article--prevencion-caidas-perro-mayor:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:50.542571Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--prevencion-caidas-perro-mayor:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:14.953733Z",
+          "timestampEndUtc": "2026-10-09T15:57:15.092825Z"
+        },
+        {
+          "requestId": "identity:article--prevencion-caidas-perro-mayor:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:15.094595Z",
+          "timestampEndUtc": "2026-10-09T15:57:15.247278Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--prevencion-caidas-perro-mayor:html:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--prevencion-caidas-perro-mayor:html:GET",
+        "identity:article--prevencion-caidas-perro-mayor:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:50.542609Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--prevencion-caidas-perro-mayor:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:14.953733Z",
+          "timestampEndUtc": "2026-10-09T15:57:15.092825Z"
+        },
+        {
+          "requestId": "identity:article--prevencion-caidas-perro-mayor:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:15.094595Z",
+          "timestampEndUtc": "2026-10-09T15:57:15.247278Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--prevencion-caidas-perro-mayor:html:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--prevencion-caidas-perro-mayor:html:GET",
+        "identity:article--prevencion-caidas-perro-mayor:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:50.542820Z",
+      "timestampEndUtc": "2026-10-09T15:57:50.649347Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--prevencion-caidas-perro-mayor-html\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:50 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 125774,
+      "bodyWireSha256": "84ebd03590f817272f08686f537c184eaef415ab9f937bcf0ba40401c9b69aa9",
+      "bodyDecodedBytes": 125774,
+      "bodyDecodedSha256": "84ebd03590f817272f08686f537c184eaef415ab9f937bcf0ba40401c9b69aa9",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 125774
+    },
+    {
+      "requestId": "conditional:article--prevencion-caidas-perro-mayor:html:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--prevencion-caidas-perro-mayor:html:GET",
+        "identity:article--prevencion-caidas-perro-mayor:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:50.651095Z",
+      "timestampEndUtc": "2026-10-09T15:57:50.741433Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:50 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--prevencion-caidas-perro-mayor:html:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--prevencion-caidas-perro-mayor:markdown:GET",
+        "identity:article--prevencion-caidas-perro-mayor:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:50.743117Z",
+      "timestampEndUtc": "2026-10-09T15:57:50.847152Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"acd45bb01ce21ee518e3f543b878b56a\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:50 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 125774,
+      "bodyWireSha256": "84ebd03590f817272f08686f537c184eaef415ab9f937bcf0ba40401c9b69aa9",
+      "bodyDecodedBytes": 125774,
+      "bodyDecodedSha256": "84ebd03590f817272f08686f537c184eaef415ab9f937bcf0ba40401c9b69aa9",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 125774
+    },
+    {
+      "requestId": "conditional:article--prevencion-caidas-perro-mayor:html:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--prevencion-caidas-perro-mayor:html:GET",
+        "identity:article--prevencion-caidas-perro-mayor:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:50.849213Z",
+      "timestampEndUtc": "2026-10-09T15:57:50.963569Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:50 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 125774,
+      "bodyWireSha256": "84ebd03590f817272f08686f537c184eaef415ab9f937bcf0ba40401c9b69aa9",
+      "bodyDecodedBytes": 125774,
+      "bodyDecodedSha256": "84ebd03590f817272f08686f537c184eaef415ab9f937bcf0ba40401c9b69aa9",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 125774
+    },
+    {
+      "requestId": "conditional:article--prevencion-caidas-perro-mayor:html:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--prevencion-caidas-perro-mayor:html:GET",
+        "identity:article--prevencion-caidas-perro-mayor:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:50.965117Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--prevencion-caidas-perro-mayor:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:14.953733Z",
+          "timestampEndUtc": "2026-10-09T15:57:15.092825Z"
+        },
+        {
+          "requestId": "identity:article--prevencion-caidas-perro-mayor:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:15.094595Z",
+          "timestampEndUtc": "2026-10-09T15:57:15.247278Z"
+        }
+      ]
+    }
+  ]
+}

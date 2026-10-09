@@ -1,0 +1,481 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 43,
+  "firstOrdinal": 337,
+  "lastOrdinal": 344,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--incontinencia-fecal-perros-senior:html:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "012.json",
+      "dependsOn": [
+        "identity:article--incontinencia-fecal-perros-senior:html:GET",
+        "identity:article--incontinencia-fecal-perros-senior:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:40.601603Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--incontinencia-fecal-perros-senior:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:12.746948Z",
+          "timestampEndUtc": "2026-10-09T15:57:12.935024Z"
+        },
+        {
+          "requestId": "identity:article--incontinencia-fecal-perros-senior:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:12.936744Z",
+          "timestampEndUtc": "2026-10-09T15:57:13.049160Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--incontinencia-fecal-perros-senior:html:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "012.json",
+      "dependsOn": [
+        "identity:article--incontinencia-fecal-perros-senior:html:GET",
+        "identity:article--incontinencia-fecal-perros-senior:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:40.601668Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--incontinencia-fecal-perros-senior:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:12.746948Z",
+          "timestampEndUtc": "2026-10-09T15:57:12.935024Z"
+        },
+        {
+          "requestId": "identity:article--incontinencia-fecal-perros-senior:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:12.936744Z",
+          "timestampEndUtc": "2026-10-09T15:57:13.049160Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--incontinencia-fecal-perros-senior:html:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "012.json",
+      "dependsOn": [
+        "identity:article--incontinencia-fecal-perros-senior:html:GET",
+        "identity:article--incontinencia-fecal-perros-senior:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:40.601706Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--incontinencia-fecal-perros-senior:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:12.746948Z",
+          "timestampEndUtc": "2026-10-09T15:57:12.935024Z"
+        },
+        {
+          "requestId": "identity:article--incontinencia-fecal-perros-senior:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:12.936744Z",
+          "timestampEndUtc": "2026-10-09T15:57:13.049160Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--incontinencia-fecal-perros-senior:html:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "012.json",
+      "dependsOn": [
+        "identity:article--incontinencia-fecal-perros-senior:html:GET",
+        "identity:article--incontinencia-fecal-perros-senior:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:40.601821Z",
+      "timestampEndUtc": "2026-10-09T15:57:40.704654Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--incontinencia-fecal-perros-senior-html\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:40 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 115784,
+      "bodyWireSha256": "c609f0f749d469fc41c2360a9dc3f73a623344548846dd9c8fa8be514cdcfaa9",
+      "bodyDecodedBytes": 115784,
+      "bodyDecodedSha256": "c609f0f749d469fc41c2360a9dc3f73a623344548846dd9c8fa8be514cdcfaa9",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 115784
+    },
+    {
+      "requestId": "conditional:article--incontinencia-fecal-perros-senior:html:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "012.json",
+      "dependsOn": [
+        "identity:article--incontinencia-fecal-perros-senior:html:GET",
+        "identity:article--incontinencia-fecal-perros-senior:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:40.706186Z",
+      "timestampEndUtc": "2026-10-09T15:57:40.804498Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:40 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--incontinencia-fecal-perros-senior:html:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "012.json",
+      "dependsOn": [
+        "identity:article--incontinencia-fecal-perros-senior:markdown:GET",
+        "identity:article--incontinencia-fecal-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:40.806500Z",
+      "timestampEndUtc": "2026-10-09T15:57:40.925854Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"e992fd6f03e79444f4d66c8f353030ed\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:40 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 115784,
+      "bodyWireSha256": "c609f0f749d469fc41c2360a9dc3f73a623344548846dd9c8fa8be514cdcfaa9",
+      "bodyDecodedBytes": 115784,
+      "bodyDecodedSha256": "c609f0f749d469fc41c2360a9dc3f73a623344548846dd9c8fa8be514cdcfaa9",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 115784
+    },
+    {
+      "requestId": "conditional:article--incontinencia-fecal-perros-senior:html:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "012.json",
+      "dependsOn": [
+        "identity:article--incontinencia-fecal-perros-senior:html:GET",
+        "identity:article--incontinencia-fecal-perros-senior:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:40.927546Z",
+      "timestampEndUtc": "2026-10-09T15:57:41.022494Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:40 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 115784,
+      "bodyWireSha256": "c609f0f749d469fc41c2360a9dc3f73a623344548846dd9c8fa8be514cdcfaa9",
+      "bodyDecodedBytes": 115784,
+      "bodyDecodedSha256": "c609f0f749d469fc41c2360a9dc3f73a623344548846dd9c8fa8be514cdcfaa9",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 115784
+    },
+    {
+      "requestId": "conditional:article--incontinencia-fecal-perros-senior:html:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "012.json",
+      "dependsOn": [
+        "identity:article--incontinencia-fecal-perros-senior:html:GET",
+        "identity:article--incontinencia-fecal-perros-senior:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:41.024008Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--incontinencia-fecal-perros-senior:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:12.746948Z",
+          "timestampEndUtc": "2026-10-09T15:57:12.935024Z"
+        },
+        {
+          "requestId": "identity:article--incontinencia-fecal-perros-senior:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:12.936744Z",
+          "timestampEndUtc": "2026-10-09T15:57:13.049160Z"
+        }
+      ]
+    }
+  ]
+}

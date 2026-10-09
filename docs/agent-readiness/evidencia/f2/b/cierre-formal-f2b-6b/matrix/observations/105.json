@@ -1,0 +1,658 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 105,
+  "firstOrdinal": 833,
+  "lastOrdinal": 840,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:pillar--higiene-hogar-perros-senior:markdown:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "029.json",
+      "dependsOn": [
+        "identity:pillar--higiene-hogar-perros-senior:markdown:GET",
+        "identity:pillar--higiene-hogar-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:16.690212Z",
+      "timestampEndUtc": "2026-10-09T15:58:16.788810Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"74dfedf5437073843d0ced73ab51f072\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:16 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"74dfedf5437073843d0ced73ab51f072\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--higiene-hogar-perros-senior:markdown:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "029.json",
+      "dependsOn": [
+        "identity:pillar--higiene-hogar-perros-senior:markdown:GET",
+        "identity:pillar--higiene-hogar-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:16.790528Z",
+      "timestampEndUtc": "2026-10-09T15:58:16.878565Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "W/\"74dfedf5437073843d0ced73ab51f072\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:16 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"74dfedf5437073843d0ced73ab51f072\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--higiene-hogar-perros-senior:markdown:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "029.json",
+      "dependsOn": [
+        "identity:pillar--higiene-hogar-perros-senior:markdown:GET",
+        "identity:pillar--higiene-hogar-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:16.880154Z",
+      "timestampEndUtc": "2026-10-09T15:58:16.972280Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-pillar--higiene-hogar-perros-senior-markdown\", W/\"74dfedf5437073843d0ced73ab51f072\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:16 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"74dfedf5437073843d0ced73ab51f072\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--higiene-hogar-perros-senior:markdown:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "029.json",
+      "dependsOn": [
+        "identity:pillar--higiene-hogar-perros-senior:markdown:GET",
+        "identity:pillar--higiene-hogar-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:16.973910Z",
+      "timestampEndUtc": "2026-10-09T15:58:17.076577Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-pillar--higiene-hogar-perros-senior-markdown\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:17 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "7794"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"74dfedf5437073843d0ced73ab51f072\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 7794,
+      "bodyWireSha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58",
+      "bodyDecodedBytes": 7794,
+      "bodyDecodedSha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 7794
+    },
+    {
+      "requestId": "conditional:pillar--higiene-hogar-perros-senior:markdown:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "029.json",
+      "dependsOn": [
+        "identity:pillar--higiene-hogar-perros-senior:markdown:GET",
+        "identity:pillar--higiene-hogar-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:17.078150Z",
+      "timestampEndUtc": "2026-10-09T15:58:17.171818Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:17 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"74dfedf5437073843d0ced73ab51f072\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--higiene-hogar-perros-senior:markdown:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "030.json",
+      "dependsOn": [
+        "identity:pillar--higiene-hogar-perros-senior:html:GET",
+        "identity:pillar--higiene-hogar-perros-senior:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:17.173218Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:pillar--higiene-hogar-perros-senior:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:20.388000Z",
+          "timestampEndUtc": "2026-10-09T15:57:20.488844Z"
+        },
+        {
+          "requestId": "identity:pillar--higiene-hogar-perros-senior:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:20.490827Z",
+          "timestampEndUtc": "2026-10-09T15:57:20.629482Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:pillar--higiene-hogar-perros-senior:markdown:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "030.json",
+      "dependsOn": [
+        "identity:pillar--higiene-hogar-perros-senior:markdown:GET",
+        "identity:pillar--higiene-hogar-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:17.173400Z",
+      "timestampEndUtc": "2026-10-09T15:58:17.275809Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:17 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "7794"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"74dfedf5437073843d0ced73ab51f072\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 7794,
+      "bodyWireSha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58",
+      "bodyDecodedBytes": 7794,
+      "bodyDecodedSha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 7794
+    },
+    {
+      "requestId": "conditional:pillar--higiene-hogar-perros-senior:markdown:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/higiene-hogar-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "030.json",
+      "dependsOn": [
+        "identity:pillar--higiene-hogar-perros-senior:markdown:GET",
+        "identity:pillar--higiene-hogar-perros-senior:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:17.277395Z",
+      "timestampEndUtc": "2026-10-09T15:58:17.367837Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"74dfedf5437073843d0ced73ab51f072\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:17 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"74dfedf5437073843d0ced73ab51f072\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

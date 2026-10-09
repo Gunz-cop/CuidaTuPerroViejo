@@ -1,0 +1,38 @@
+{
+  "schema": "f2b-public-evidence-index/1",
+  "status": "READY_FOR_INDEPENDENT_FORMAL_AUDIT_NOT_ACCEPTED",
+  "formalAudit": "B0/5",
+  "sourceCandidate": {
+    "commit": "6b0d3d5abd0c175d2acae56ab7892edaf18cc157",
+    "tree": "af7fa106cdd9eebe25846208bda2b9137e041fb2",
+    "pr": 64
+  },
+  "selfExcluded": true,
+  "maxFileBytes": 24576,
+  "payloadFileCount": 218,
+  "indexShardFileCount": 3,
+  "filesExceptRootIndex": 221,
+  "payloadBytes": 3488573,
+  "indexShards": [
+    {
+      "path": "public-subset-index-files/001.json",
+      "bytes": 13176,
+      "sha256": "85466504c8adb60514ba2c7556021286a0ff7a9b9c78ed6a8a0c711f84303643",
+      "fileCount": 80
+    },
+    {
+      "path": "public-subset-index-files/002.json",
+      "bytes": 13199,
+      "sha256": "33edc7e9f6b9753e1221616d6a50509901374e50f4683263106715f4ebdc8637",
+      "fileCount": 80
+    },
+    {
+      "path": "public-subset-index-files/003.json",
+      "bytes": 9848,
+      "sha256": "b17fa2cbf9834f6c78f568672908553796bd27b7f1c85d560771ec4be1e55d66",
+      "fileCount": 58
+    }
+  ],
+  "privateManifestSha256": "aa3ee89d5a38660a03289498539fa58707c9f5b445b6b0ce7d4d85545ab7f2ed",
+  "note": "The shard files list every public payload file by relative path, byte length, and SHA-256. Each shard is hashed here. This root index omits its own hash to avoid a circular reference."
+}

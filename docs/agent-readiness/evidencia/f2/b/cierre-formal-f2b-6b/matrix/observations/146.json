@@ -1,0 +1,493 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 146,
+  "firstOrdinal": 1161,
+  "lastOrdinal": 1168,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "supplement:home-gzip:html:GET:wildcard",
+      "group": "compression-supplement-144",
+      "path": "/",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "038.json",
+      "dependsOn": [
+        "supplement:home-gzip:html:GET:baseline-no-condition",
+        "supplement:home-gzip:html:HEAD:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:46.724893Z",
+      "timestampEndUtc": "2026-10-09T15:58:46.821660Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "gzip"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:46 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "supplement:home-gzip:html:GET:other-variant-tag",
+      "group": "compression-supplement-144",
+      "path": "/",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "038.json",
+      "dependsOn": [
+        "supplement:home-gzip:markdown:GET:baseline-no-condition",
+        "supplement:home-gzip:markdown:HEAD:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:46.823334Z",
+      "timestampEndUtc": "2026-10-09T15:58:46.914610Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "gzip"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "W/\"c262365b8aeb7213ef529ce3e9d9fa15\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:46 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "content-encoding",
+          "gzip"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 22731,
+      "bodyWireSha256": "6bd456b303dea8dcc469abf00b87cbec18c5830213c8c2e72bf0cd6a95e27376",
+      "bodyDecodedBytes": 119418,
+      "bodyDecodedSha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentEncoding": "gzip",
+      "httpDownloadBytes": 22731
+    },
+    {
+      "requestId": "supplement:home-gzip:html:GET:range-date-without-match",
+      "group": "compression-supplement-144",
+      "path": "/",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "038.json",
+      "dependsOn": [
+        "supplement:home-gzip:html:GET:baseline-no-condition",
+        "supplement:home-gzip:html:HEAD:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:46.917285Z",
+      "timestampEndUtc": "2026-10-09T15:58:47.006544Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "gzip"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-supplement-range-nonmatch\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:46 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "content-encoding",
+          "gzip"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 22731,
+      "bodyWireSha256": "6bd456b303dea8dcc469abf00b87cbec18c5830213c8c2e72bf0cd6a95e27376",
+      "bodyDecodedBytes": 119418,
+      "bodyDecodedSha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b",
+      "contentEncoding": "gzip",
+      "httpDownloadBytes": 22731
+    },
+    {
+      "requestId": "supplement:home-gzip:html:GET:range-date-with-own-match",
+      "group": "compression-supplement-144",
+      "path": "/",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "039.json",
+      "dependsOn": [
+        "supplement:home-gzip:html:GET:baseline-no-condition",
+        "supplement:home-gzip:html:HEAD:baseline-no-condition"
+      ],
+      "timestampUtc": "2026-10-09T15:58:47.008399Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "supplement:home-gzip:html:GET:baseline-no-condition",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": "gzip",
+          "timestampStartUtc": "2026-10-09T15:58:44.649431Z",
+          "timestampEndUtc": "2026-10-09T15:58:44.754611Z"
+        },
+        {
+          "requestId": "supplement:home-gzip:html:HEAD:baseline-no-condition",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": "gzip",
+          "timestampStartUtc": "2026-10-09T15:58:44.756776Z",
+          "timestampEndUtc": "2026-10-09T15:58:44.850548Z"
+        }
+      ]
+    },
+    {
+      "requestId": "supplement:home-gzip:html:HEAD:own-tag",
+      "group": "compression-supplement-144",
+      "path": "/",
+      "method": "HEAD",
+      "state": "N/A",
+      "planChunk": "039.json",
+      "dependsOn": [
+        "supplement:home-gzip:html:GET:baseline-no-condition",
+        "supplement:home-gzip:html:HEAD:baseline-no-condition"
+      ],
+      "timestampUtc": "2026-10-09T15:58:47.008455Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "supplement:home-gzip:html:GET:baseline-no-condition",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": "gzip",
+          "timestampStartUtc": "2026-10-09T15:58:44.649431Z",
+          "timestampEndUtc": "2026-10-09T15:58:44.754611Z"
+        },
+        {
+          "requestId": "supplement:home-gzip:html:HEAD:baseline-no-condition",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": "gzip",
+          "timestampStartUtc": "2026-10-09T15:58:44.756776Z",
+          "timestampEndUtc": "2026-10-09T15:58:44.850548Z"
+        }
+      ]
+    },
+    {
+      "requestId": "supplement:home-gzip:html:HEAD:weak-own-tag",
+      "group": "compression-supplement-144",
+      "path": "/",
+      "method": "HEAD",
+      "state": "N/A",
+      "planChunk": "039.json",
+      "dependsOn": [
+        "supplement:home-gzip:html:GET:baseline-no-condition",
+        "supplement:home-gzip:html:HEAD:baseline-no-condition"
+      ],
+      "timestampUtc": "2026-10-09T15:58:47.008494Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "supplement:home-gzip:html:GET:baseline-no-condition",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": "gzip",
+          "timestampStartUtc": "2026-10-09T15:58:44.649431Z",
+          "timestampEndUtc": "2026-10-09T15:58:44.754611Z"
+        },
+        {
+          "requestId": "supplement:home-gzip:html:HEAD:baseline-no-condition",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": "gzip",
+          "timestampStartUtc": "2026-10-09T15:58:44.756776Z",
+          "timestampEndUtc": "2026-10-09T15:58:44.850548Z"
+        }
+      ]
+    },
+    {
+      "requestId": "supplement:home-gzip:html:HEAD:list-own-plus-other",
+      "group": "compression-supplement-144",
+      "path": "/",
+      "method": "HEAD",
+      "state": "N/A",
+      "planChunk": "039.json",
+      "dependsOn": [
+        "supplement:home-gzip:html:GET:baseline-no-condition",
+        "supplement:home-gzip:html:HEAD:baseline-no-condition"
+      ],
+      "timestampUtc": "2026-10-09T15:58:47.008527Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "supplement:home-gzip:html:GET:baseline-no-condition",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": "gzip",
+          "timestampStartUtc": "2026-10-09T15:58:44.649431Z",
+          "timestampEndUtc": "2026-10-09T15:58:44.754611Z"
+        },
+        {
+          "requestId": "supplement:home-gzip:html:HEAD:baseline-no-condition",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": "gzip",
+          "timestampStartUtc": "2026-10-09T15:58:44.756776Z",
+          "timestampEndUtc": "2026-10-09T15:58:44.850548Z"
+        }
+      ]
+    },
+    {
+      "requestId": "supplement:home-gzip:html:HEAD:different-tag",
+      "group": "compression-supplement-144",
+      "path": "/",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "039.json",
+      "dependsOn": [
+        "supplement:home-gzip:html:GET:baseline-no-condition",
+        "supplement:home-gzip:html:HEAD:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:47.008660Z",
+      "timestampEndUtc": "2026-10-09T15:58:47.099018Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "gzip"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-supplement-nonmatch\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:47 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "content-encoding",
+          "gzip"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "gzip",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

@@ -1,0 +1,481 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 99,
+  "firstOrdinal": 785,
+  "lastOrdinal": 792,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:pillar--herramientas:html:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/herramientas",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "028.json",
+      "dependsOn": [
+        "identity:pillar--herramientas:html:GET",
+        "identity:pillar--herramientas:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:13.480338Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:pillar--herramientas:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:19.911906Z",
+          "timestampEndUtc": "2026-10-09T15:57:20.026293Z"
+        },
+        {
+          "requestId": "identity:pillar--herramientas:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:20.027593Z",
+          "timestampEndUtc": "2026-10-09T15:57:20.114981Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:pillar--herramientas:html:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/herramientas",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "028.json",
+      "dependsOn": [
+        "identity:pillar--herramientas:html:GET",
+        "identity:pillar--herramientas:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:13.480396Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:pillar--herramientas:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:19.911906Z",
+          "timestampEndUtc": "2026-10-09T15:57:20.026293Z"
+        },
+        {
+          "requestId": "identity:pillar--herramientas:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:20.027593Z",
+          "timestampEndUtc": "2026-10-09T15:57:20.114981Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:pillar--herramientas:html:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/herramientas",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "028.json",
+      "dependsOn": [
+        "identity:pillar--herramientas:html:GET",
+        "identity:pillar--herramientas:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:13.480439Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:pillar--herramientas:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:19.911906Z",
+          "timestampEndUtc": "2026-10-09T15:57:20.026293Z"
+        },
+        {
+          "requestId": "identity:pillar--herramientas:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:20.027593Z",
+          "timestampEndUtc": "2026-10-09T15:57:20.114981Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:pillar--herramientas:html:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/herramientas",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "028.json",
+      "dependsOn": [
+        "identity:pillar--herramientas:html:GET",
+        "identity:pillar--herramientas:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:13.480649Z",
+      "timestampEndUtc": "2026-10-09T15:58:13.583443Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-pillar--herramientas-html\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:13 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 38751,
+      "bodyWireSha256": "1ffebed8d1bf71a3874659bd788f11ec96b0f5aaf28b9af0ee7f2b3fbef9a0f8",
+      "bodyDecodedBytes": 38751,
+      "bodyDecodedSha256": "1ffebed8d1bf71a3874659bd788f11ec96b0f5aaf28b9af0ee7f2b3fbef9a0f8",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 38751
+    },
+    {
+      "requestId": "conditional:pillar--herramientas:html:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/herramientas",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "028.json",
+      "dependsOn": [
+        "identity:pillar--herramientas:html:GET",
+        "identity:pillar--herramientas:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:13.588033Z",
+      "timestampEndUtc": "2026-10-09T15:58:13.682847Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:13 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--herramientas:html:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/herramientas",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "028.json",
+      "dependsOn": [
+        "identity:pillar--herramientas:markdown:GET",
+        "identity:pillar--herramientas:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:13.685039Z",
+      "timestampEndUtc": "2026-10-09T15:58:13.786874Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"5aaf7e0f06f85d14bdf90971d9a36636\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:13 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 38751,
+      "bodyWireSha256": "1ffebed8d1bf71a3874659bd788f11ec96b0f5aaf28b9af0ee7f2b3fbef9a0f8",
+      "bodyDecodedBytes": 38751,
+      "bodyDecodedSha256": "1ffebed8d1bf71a3874659bd788f11ec96b0f5aaf28b9af0ee7f2b3fbef9a0f8",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 38751
+    },
+    {
+      "requestId": "conditional:pillar--herramientas:html:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/herramientas",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "028.json",
+      "dependsOn": [
+        "identity:pillar--herramientas:html:GET",
+        "identity:pillar--herramientas:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:13.788591Z",
+      "timestampEndUtc": "2026-10-09T15:58:13.882758Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:13 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 38751,
+      "bodyWireSha256": "1ffebed8d1bf71a3874659bd788f11ec96b0f5aaf28b9af0ee7f2b3fbef9a0f8",
+      "bodyDecodedBytes": 38751,
+      "bodyDecodedSha256": "1ffebed8d1bf71a3874659bd788f11ec96b0f5aaf28b9af0ee7f2b3fbef9a0f8",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 38751
+    },
+    {
+      "requestId": "conditional:pillar--herramientas:html:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/herramientas",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "028.json",
+      "dependsOn": [
+        "identity:pillar--herramientas:html:GET",
+        "identity:pillar--herramientas:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:13.884395Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:pillar--herramientas:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:19.911906Z",
+          "timestampEndUtc": "2026-10-09T15:57:20.026293Z"
+        },
+        {
+          "requestId": "identity:pillar--herramientas:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:20.027593Z",
+          "timestampEndUtc": "2026-10-09T15:57:20.114981Z"
+        }
+      ]
+    }
+  ]
+}

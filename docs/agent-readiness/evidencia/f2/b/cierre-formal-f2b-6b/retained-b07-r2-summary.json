@@ -1,0 +1,63 @@
+{
+  "schema": "f2b-retained-local-b07-summary/1",
+  "classification": "CURATED_SUMMARY_PRIVATE_RAW_RETAINED",
+  "retainedSourceSha256": {
+    "inputReceipt": "1a6eb386fad337525c7bb808c55c04e722c19dbba6c1404ad1c7601472844d8d",
+    "correctedConfigReceipt": "4f1974c74b7cd1dd7e5e0273e5bd66160cd2e5e17fd39fdb9420c3c9c948ec02",
+    "captureReceipt": "796300c2498e43f1d23a4e84ea57172b7bddefcae5773469041f65d9301d2ef8",
+    "rawManifest": "cc4136506ef9f7927fbf8c3f64a1ca831857dea704a719debfd5bd6fae0dd2f2",
+    "postBuildRetentionCotejo": "f69e3275e0318b79270ba4f9a15bfb4e73bd83c5ce8b27f40ef61f357db7c452"
+  },
+  "retentionCotejo": {
+    "status": "PASS_NO_RECONSTRUCTION",
+    "inputFiles": [
+      315,
+      316
+    ],
+    "bundleFiles": 26,
+    "captureRawFiles": 87,
+    "captureRows": 8
+  },
+  "matrix": {
+    "fixtures": [
+      "missing index",
+      "invalid index"
+    ],
+    "representations": [
+      "HTML",
+      "Markdown"
+    ],
+    "methods": [
+      "GET",
+      "HEAD"
+    ],
+    "requestCount": 8,
+    "statusCounts": {
+      "503": 8
+    },
+    "GET": {
+      "count": 4,
+      "bodyBytes": 37,
+      "bodySha256": "763ce9c206d57dbc240314521af33125e8850245d373ee0f6e7c5f5834cc6cc1"
+    },
+    "HEAD": {
+      "count": 4,
+      "entityBytes": 0,
+      "httpDownloadBytes": 0
+    }
+  },
+  "responseContractSummary": {
+    "contentType": "text/plain; charset=utf-8",
+    "cacheControl": "private, no-store",
+    "vary": "Accept",
+    "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+    "securityHeaders": {
+      "permissions-policy": "geolocation=(), microphone=(), camera=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff",
+      "strict-transport-security": "max-age=31536000; includeSubDomains"
+    },
+    "forbiddenHeaders": "none observed by retained capture validation"
+  },
+  "scope": "These are the eight actual local Workerd captures retained in R2, not the older four incomplete B07 summaries and not candidate 6b public HTTP."
+}

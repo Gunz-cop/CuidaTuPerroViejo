@@ -1,0 +1,658 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 29,
+  "firstOrdinal": 225,
+  "lastOrdinal": 232,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--chequeo-geriatrico-canino:markdown:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/chequeo-geriatrico-canino",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--chequeo-geriatrico-canino:markdown:GET",
+        "identity:article--chequeo-geriatrico-canino:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:31.427705Z",
+      "timestampEndUtc": "2026-10-09T15:57:31.514892Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"674a9841a2f5e20912d3496451b7f0d6\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:31 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"674a9841a2f5e20912d3496451b7f0d6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--chequeo-geriatrico-canino:markdown:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/chequeo-geriatrico-canino",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--chequeo-geriatrico-canino:markdown:GET",
+        "identity:article--chequeo-geriatrico-canino:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:31.517018Z",
+      "timestampEndUtc": "2026-10-09T15:57:31.626658Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "W/\"674a9841a2f5e20912d3496451b7f0d6\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:31 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"674a9841a2f5e20912d3496451b7f0d6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--chequeo-geriatrico-canino:markdown:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/chequeo-geriatrico-canino",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--chequeo-geriatrico-canino:markdown:GET",
+        "identity:article--chequeo-geriatrico-canino:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:31.628410Z",
+      "timestampEndUtc": "2026-10-09T15:57:31.717819Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--chequeo-geriatrico-canino-markdown\", W/\"674a9841a2f5e20912d3496451b7f0d6\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:31 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"674a9841a2f5e20912d3496451b7f0d6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--chequeo-geriatrico-canino:markdown:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/chequeo-geriatrico-canino",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--chequeo-geriatrico-canino:markdown:GET",
+        "identity:article--chequeo-geriatrico-canino:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:31.719571Z",
+      "timestampEndUtc": "2026-10-09T15:57:31.816723Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--chequeo-geriatrico-canino-markdown\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:31 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "10293"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"674a9841a2f5e20912d3496451b7f0d6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 10293,
+      "bodyWireSha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+      "bodyDecodedBytes": 10293,
+      "bodyDecodedSha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 10293
+    },
+    {
+      "requestId": "conditional:article--chequeo-geriatrico-canino:markdown:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/chequeo-geriatrico-canino",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--chequeo-geriatrico-canino:markdown:GET",
+        "identity:article--chequeo-geriatrico-canino:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:31.818328Z",
+      "timestampEndUtc": "2026-10-09T15:57:31.906370Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:31 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"674a9841a2f5e20912d3496451b7f0d6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--chequeo-geriatrico-canino:markdown:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/chequeo-geriatrico-canino",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--chequeo-geriatrico-canino:html:GET",
+        "identity:article--chequeo-geriatrico-canino:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:31.907865Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--chequeo-geriatrico-canino:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:10.227209Z",
+          "timestampEndUtc": "2026-10-09T15:57:10.398239Z"
+        },
+        {
+          "requestId": "identity:article--chequeo-geriatrico-canino:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:10.399910Z",
+          "timestampEndUtc": "2026-10-09T15:57:10.534857Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--chequeo-geriatrico-canino:markdown:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/chequeo-geriatrico-canino",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--chequeo-geriatrico-canino:markdown:GET",
+        "identity:article--chequeo-geriatrico-canino:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:31.907996Z",
+      "timestampEndUtc": "2026-10-09T15:57:32.221461Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:32 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "10293"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"674a9841a2f5e20912d3496451b7f0d6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 10293,
+      "bodyWireSha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+      "bodyDecodedBytes": 10293,
+      "bodyDecodedSha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 10293
+    },
+    {
+      "requestId": "conditional:article--chequeo-geriatrico-canino:markdown:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/chequeo-geriatrico-canino",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "008.json",
+      "dependsOn": [
+        "identity:article--chequeo-geriatrico-canino:markdown:GET",
+        "identity:article--chequeo-geriatrico-canino:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:32.223487Z",
+      "timestampEndUtc": "2026-10-09T15:57:32.500961Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"674a9841a2f5e20912d3496451b7f0d6\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:32 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"674a9841a2f5e20912d3496451b7f0d6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

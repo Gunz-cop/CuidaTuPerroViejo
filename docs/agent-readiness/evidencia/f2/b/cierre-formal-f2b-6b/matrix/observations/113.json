@@ -1,0 +1,658 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 113,
+  "firstOrdinal": 897,
+  "lastOrdinal": 904,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:pillar--salud-mental-emocional-perros:markdown:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-mental-emocional-perros:markdown:GET",
+        "identity:pillar--salud-mental-emocional-perros:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:21.552885Z",
+      "timestampEndUtc": "2026-10-09T15:58:21.658188Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"4cd19da91fdc82889e1a58377ab665fa\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:21 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"4cd19da91fdc82889e1a58377ab665fa\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--salud-mental-emocional-perros:markdown:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-mental-emocional-perros:markdown:GET",
+        "identity:pillar--salud-mental-emocional-perros:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:21.660221Z",
+      "timestampEndUtc": "2026-10-09T15:58:21.746927Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "W/\"4cd19da91fdc82889e1a58377ab665fa\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:21 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"4cd19da91fdc82889e1a58377ab665fa\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--salud-mental-emocional-perros:markdown:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-mental-emocional-perros:markdown:GET",
+        "identity:pillar--salud-mental-emocional-perros:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:21.749440Z",
+      "timestampEndUtc": "2026-10-09T15:58:21.915358Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-pillar--salud-mental-emocional-perros-markdown\", W/\"4cd19da91fdc82889e1a58377ab665fa\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:21 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"4cd19da91fdc82889e1a58377ab665fa\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--salud-mental-emocional-perros:markdown:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-mental-emocional-perros:markdown:GET",
+        "identity:pillar--salud-mental-emocional-perros:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:21.917177Z",
+      "timestampEndUtc": "2026-10-09T15:58:22.004468Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-pillar--salud-mental-emocional-perros-markdown\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:21 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "11135"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"4cd19da91fdc82889e1a58377ab665fa\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 11135,
+      "bodyWireSha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949",
+      "bodyDecodedBytes": 11135,
+      "bodyDecodedSha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 11135
+    },
+    {
+      "requestId": "conditional:pillar--salud-mental-emocional-perros:markdown:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-mental-emocional-perros:markdown:GET",
+        "identity:pillar--salud-mental-emocional-perros:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:22.006562Z",
+      "timestampEndUtc": "2026-10-09T15:58:22.087488Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:22 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"4cd19da91fdc82889e1a58377ab665fa\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--salud-mental-emocional-perros:markdown:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-mental-emocional-perros:html:GET",
+        "identity:pillar--salud-mental-emocional-perros:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:22.088863Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:pillar--salud-mental-emocional-perros:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:21.258147Z",
+          "timestampEndUtc": "2026-10-09T15:57:21.380902Z"
+        },
+        {
+          "requestId": "identity:pillar--salud-mental-emocional-perros:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:21.383200Z",
+          "timestampEndUtc": "2026-10-09T15:57:21.466966Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:pillar--salud-mental-emocional-perros:markdown:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-mental-emocional-perros:markdown:GET",
+        "identity:pillar--salud-mental-emocional-perros:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:22.088990Z",
+      "timestampEndUtc": "2026-10-09T15:58:22.176673Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:22 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "11135"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"4cd19da91fdc82889e1a58377ab665fa\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 11135,
+      "bodyWireSha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949",
+      "bodyDecodedBytes": 11135,
+      "bodyDecodedSha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 11135
+    },
+    {
+      "requestId": "conditional:pillar--salud-mental-emocional-perros:markdown:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-mental-emocional-perros:markdown:GET",
+        "identity:pillar--salud-mental-emocional-perros:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:22.178329Z",
+      "timestampEndUtc": "2026-10-09T15:58:22.264791Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"4cd19da91fdc82889e1a58377ab665fa\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:22 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"4cd19da91fdc82889e1a58377ab665fa\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}
