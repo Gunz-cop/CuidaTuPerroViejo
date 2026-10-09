@@ -1,0 +1,83 @@
+{
+  "schema": "bug70-new-production-stop-public-projection/1",
+  "state": "STOP_BUG71_NO_RETRY",
+  "issue": "https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/71",
+  "product": "d2bd342050811d41ee212730cb11fe07783994bd",
+  "helperRelease": "a1e0e922132293da5d308b2860c2a09d059e7975",
+  "requestId": "delegation:delegation-discovery-gracias-get",
+  "timestamps": {
+    "start": "2026-10-09T19:49:37.569574Z",
+    "end": "2026-10-09T19:49:37.769304Z"
+  },
+  "status": 200,
+  "curlExitCode": 0,
+  "expected": {
+    "status": 200,
+    "bodySha256": "19364633e69d1bd5c1853d2a33c64afde02bb912e36bcf01cc9d9cf41b68e0ef",
+    "mime": "text/html",
+    "mimePolicy": {
+      "mediaType": "text/html",
+      "charset": "optional-utf-8",
+      "unknownParameters": "reject",
+      "duplicateParameters": "reject"
+    }
+  },
+  "actualBody": {
+    "bytes": 28587,
+    "sha256": "04cb60c83b95256580acaeb0e6256566809371ff4fdfd97ec5f55c28fc0e720a"
+  },
+  "independentExistingD2bdNativeBuild": {
+    "bytes": 28587,
+    "sha256": "04cb60c83b95256580acaeb0e6256566809371ff4fdfd97ec5f55c28fc0e720a",
+    "notInTrustedCanonical58": true,
+    "noNewBuild": true
+  },
+  "offlineComparison": {
+    "actualEqualsCurrentNativeBuild": true,
+    "actualEqualsCurrentNativeBuildPlusFixedI": false,
+    "currentNativeBuildPlusFixedIBytes": 28954,
+    "currentNativeBuildPlusFixedISha256": "fc195f68e112477d25409f37ebd616a960f2146cf3670f2d7da910f964d3bca6",
+    "fixedIBytes": 367,
+    "fixedISha256": "2be9ce292ff29562f5d0f9a13c9adf1077e5e6c4d787e4568c5bd5f0eed7a09b"
+  },
+  "offlineNativeOldVsCurrent": {
+    "oldBytes": 28587,
+    "oldSha256": "19364633e69d1bd5c1853d2a33c64afde02bb912e36bcf01cc9d9cf41b68e0ef",
+    "oldMatchesExpected": true,
+    "onlyStylesheetFilenameReplacement": true
+  },
+  "counts": {
+    "completedIds": 1129,
+    "validatedHttp": 849,
+    "NA": 280,
+    "failedHttp": 1,
+    "httpStarted": 850,
+    "neverAttemptedIds": 154,
+    "plannedIds": 1284,
+    "p03Scans": 0
+  },
+  "groups": {
+    "identity-identity": 112,
+    "conditional-identity": 896,
+    "accept-negotiation": 25,
+    "alternation": 24,
+    "explicit-resource": 70,
+    "routing-delegation": 2
+  },
+  "htmlForms": {
+    "A[:p]+I+A[p:]": 131,
+    "A": 4
+  },
+  "privateDiagnosisSha256": "4ba258266bc0b98c5af50c466128910a2b423c54405532e052a277eb536da826",
+  "privateSealSha256": "d150eb6a688639a4f86d05426ca4603974e5c16540e77e3a702940fc22192319",
+  "privateSealFileCount": 6802,
+  "privateSealBytes": 48418407,
+  "inventorySha256": "05209d67e3facfa88efc2dd5f1a788dde1a978fe1776849e8304d6d8192e13e4",
+  "ownerAuthorizationReceiptSha256": "ee251e3d0bad96617e6aad77243a95d2711bf72599918c7932a22ac98f06ffef",
+  "rootAdmissionSha256": "ce813638b78bf5de090b8a5600b2832985c1d899b8957b89c0f3cc9f6f2cb50f",
+  "originalStopUnchanged": true,
+  "newBuilds": 0,
+  "mainChanged": false,
+  "projectionOnly": true,
+  "privateOperationalListsPublished": false
+}

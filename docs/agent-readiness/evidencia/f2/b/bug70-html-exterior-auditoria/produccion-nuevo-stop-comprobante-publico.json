@@ -1,0 +1,56 @@
+{
+  "schema": "bug70-new-stop-independent-closure/1",
+  "result": "STOP confirmed; closure coherent",
+  "reviewKind": "offline evidence closure; no code or normative review opened",
+  "historicalCodeVerdict": "bug70 PASS R2/5 unchanged",
+  "helperAssembledSha256": "3a373712f988fd1b65116ecc2285bc0200a6e0583b753a62f8b82860e8b78670",
+  "normSha256": "759e8e4dfa260d8f6b94002a383e6abb354eb7bb9dd80a29175b9a0ef19d568e",
+  "targetProduct": "d2bd342050811d41ee212730cb11fe07783994bd",
+  "helperRelease": "a1e0e922132293da5d308b2860c2a09d059e7975",
+  "counts": {
+    "plannedIds": 1284,
+    "completedIds": 1129,
+    "validatedHTTP": 849,
+    "NA": 280,
+    "failedHTTP": 1,
+    "totalHTTP": 850,
+    "neverAttemptedIds": 154,
+    "scansReportedByCoordinator": 0
+  },
+  "seal": {
+    "sha256": "d150eb6a688639a4f86d05426ca4603974e5c16540e77e3a702940fc22192319",
+    "files": 6802,
+    "bytes": 48418407,
+    "fileNamesAndSizesAllChecked": true,
+    "selectedRawAndSummaryHashesChecked": 10,
+    "allRawDigestsIndependentlyRehashed": false
+  },
+  "digests": {
+    "diagnosis": "4ba258266bc0b98c5af50c466128910a2b423c54405532e052a277eb536da826",
+    "inventory": "05209d67e3facfa88efc2dd5f1a788dde1a978fe1776849e8304d6d8192e13e4",
+    "summary": "6ee7be17c5c17b828b2e77aea3b47042f6ee0b8d202d3de790cbeee2ad6481ef",
+    "STOP": "7f81730ca760600ee9147f79b30f9700c63c358661be6b87c3ae871040145fb3",
+    "rootAdmission": "ce813638b78bf5de090b8a5600b2832985c1d899b8957b89c0f3cc9f6f2cb50f",
+    "ownerAuthorization": "ee251e3d0bad96617e6aad77243a95d2711bf72599918c7932a22ac98f06ffef",
+    "activePlan": "7efc604234bf15c52e2c07a466e61faf730f979a451b55e4136dcba4d5311aa7",
+    "deploymentReceipt": "54f6cc7ec6770d8ce8564d96ee58dba641ae526a92f9eb93538a0a50fc0366cd",
+    "firstHistoricalStopSeal": "ff5e435871dc0adbdc892ac8c1517b1af20d245e0f8dfc3b674cc94143fb75b0",
+    "R2Report": "5a33449ada297cabe2e69ecbf972e423cc0516f356cb3add5b771b1d981c52cc",
+    "R2Proof": "5e58c8c42fc6a1569e72d47db92c142f9fd16030bcdbafb80196a948cb0fc94d",
+    "verificationScript": "3b85539325d02d5c6f4f73d097684a0bbc467a2f40743d4564b04bbd0bd2b0c2"
+  },
+  "limits": {
+    "newHTTP": 0,
+    "newSuites": 0,
+    "newBuilds": 0,
+    "newWorkerd": 0,
+    "mutations": 0,
+    "otherTwoRoutes": "offline build comparison only; never attempted in this matrix",
+    "productionAccepted": false,
+    "historicalSTOPAndR2Integrity": "prior seal/report/proof digests checked; original raw revalidation reused",
+    "publicationGitObjects": "not present in auditor checkout; publication identities taken from coordinator receipt. Effective assembled helper hash independently checked."
+  },
+  "closureHonestyBlockers": [],
+  "projectionOfPrivateProofSha256": "8c58dafc052fd78142ae6e88810188ed6f1a40b3698aae7b9bfdbabd6e95c56c",
+  "projectionOnly": true
+}
