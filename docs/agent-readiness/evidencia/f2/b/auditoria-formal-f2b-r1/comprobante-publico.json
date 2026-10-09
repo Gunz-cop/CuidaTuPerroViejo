@@ -1,0 +1,132 @@
+{
+  "schema": "f2b-independent-formal-audit-public-proof/1",
+  "classification": "EXPLICIT_PUBLIC_PROJECTION_PRIVATE_ORIGINAL_RETAINED",
+  "attempt": "F2B R1/5",
+  "verdict": "PASS",
+  "blockingFindings": [],
+  "auditedPublicCommit": "8fd348ad8cd55b91ec35ccd7ed6b978f4f1f138a",
+  "auditedTree": "7c61b875c41f12939ba25e756d28266ab85c82ab",
+  "localEquivalent": "9f47a26d473fcf6b9a97a0a52ad3d56286cf38b8",
+  "matrixSourceCommit": "6b0d3d5abd0c175d2acae56ab7892edaf18cc157",
+  "criteria": {
+    "B01": "PASS",
+    "B02": "PASS",
+    "B03": "PASS",
+    "B04": "PASS",
+    "B05": "PASS",
+    "B06": "PASS",
+    "B07": "PASS",
+    "B08": "PASS",
+    "B09": "PASS",
+    "B10": "PASS"
+  },
+  "actions": {
+    "newHttp": 0,
+    "builds": 0,
+    "workerd": 0,
+    "productOrEvidenceMutations": 0,
+    "remoteMutations": 0,
+    "newTestRuns": 0,
+    "offlineVerificationPrograms": 3
+  },
+  "independentChecks": {
+    "integrity": {
+      "scope": "offline integrity and independent response semantics; no transport execution",
+      "counts": {
+        "hashedFiles": 8726,
+        "captured": 964,
+        "group:identity-identity:captured": 112,
+        "N/A": 320,
+        "group:conditional-identity:N/A": 280,
+        "group:conditional-identity:captured": 616,
+        "group:accept-negotiation:captured": 25,
+        "group:alternation:captured": 24,
+        "group:explicit-resource:captured": 70,
+        "group:routing-delegation:captured": 8,
+        "group:unknown-routes:captured": 4,
+        "group:legacy-redirect:captured": 1,
+        "group:compression-supplement-144:captured": 104,
+        "group:compression-supplement-144:N/A": 40
+      },
+      "publicFiles": 222,
+      "plannedIds": 1284,
+      "observationChunks": 161,
+      "defects": []
+    },
+    "decoding": {
+      "responses": 964,
+      "compressedGetEntities": 28,
+      "defects": []
+    },
+    "support": {
+      "compiledRouting": {
+        "sha256": "160a08ee3912163101a8ee2f083b9b1a9c55306aa21bb36d1fa92025d8ff2b03",
+        "documentCount": 28,
+        "workerFirstRules": 30,
+        "exact": true,
+        "entryExists": true
+      },
+      "artifactParity": {
+        "corpus": 57,
+        "cssBytes": 138037,
+        "cssSha256": "0f6dc475a0c00022ccd332ead61fbeadb03233ba8649ac70fd19b2d640a95786",
+        "allByteExact": true
+      },
+      "historicalLocal": {
+        "source": "d61dbe2e0888f8045a67d9be6a6f3baccceec80f",
+        "realResponses": 313,
+        "controlledConditionals": 64,
+        "excludedIncompleteB07Summaries": 4,
+        "geoAdminPostPresent": true
+      },
+      "retainedInputs": {
+        "missing-index": {
+          "files": 315,
+          "sha256": "a9e13f0f2e751890b926a4297265db361c4a1ee96c4ac818f07d4e4265321beb",
+          "indexPresent": false
+        },
+        "invalid-index": {
+          "files": 316,
+          "sha256": "1517d355de00987ca0c8117c4c4089cb328840fbc9229843ee9ad8e37bbb7789",
+          "indexPresent": true
+        }
+      },
+      "retainedB07": {
+        "realCaptures": 8,
+        "getBodies37": 4,
+        "headsEntity0": 4,
+        "bundleFiles": 26,
+        "configInputsBound": true,
+        "retainedRawManifestFiles": 87,
+        "noReconstruction": true
+      },
+      "alternations": {
+        "responses": 24,
+        "bothOrdersRepeatedTwice": true,
+        "bytesAndAdvertisedTagsStable": true
+      },
+      "currentHeadChecks": {
+        "head": "8fd348ad8cd55b91ec35ccd7ed6b978f4f1f138a",
+        "ci": 113917520119,
+        "workers": 113917815021,
+        "successfulSteps": 23,
+        "ownOfficialReceipt": true,
+        "documentPreviewHttp": 0
+      }
+    }
+  },
+  "reportBytes": 8028,
+  "reportSha256": "3bc17d25c71e6cefe58e99a720cf3945c05355ec2b9d2246edbbcd6568db60e5",
+  "originalPrivateProofBytes": 7814,
+  "originalPrivateProofSha256": "416a4c5bc9904b46dc8f90110ee167124a5303dfa0d52be629e4f0b7abad74f2",
+  "omissions": "Private workspace locators and operational artifact lists remain in the original proof outside GitHub. The report is copied byte-exact; this proof is a declared projection.",
+  "historicalAuditCounters": {
+    "bug65": "PASS R3/5",
+    "bug67": "PASS R1/5",
+    "bug68": "PASS R2/5",
+    "bug69": "PASS R1/5",
+    "formalF2B": "PASS R1/5"
+  },
+  "mainAuthorized": false,
+  "productionOrEvaluatorAcceptance": false
+}
