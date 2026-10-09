@@ -1,0 +1,288 @@
+{
+ "review": "bug68 R1/5",
+ "formalB": "0/5",
+ "auditorHTTP": 0,
+ "newBuilds": 0,
+ "newWorkerd": 0,
+ "source": {
+  "commit": "73111451795fe6eb50a24be8fc735db3367f0e92",
+  "tree": "2d416731023bfb36cfbe2449619ff93587fc8e7a",
+  "parent": "ae815733001d893792e515a8edf7cbb79a5b37ac",
+  "parentTree": "83125ec6a070dd61f839e82dc630ccd3e551297b"
+ },
+ "publicIndex": {
+  "sha256": "ef92c03c670e6f9b1e90f6eaa5d93a68717407a8440d333b940f8e83ca222549",
+  "references": 69,
+  "withSelf": 70,
+  "allExact": true
+ },
+ "runnerSha256": "a652040934017f6677b816e788bd614d129b5b97c5cb67d3202d465774902301",
+ "plan": {
+  "sha256": "63bf1ed7fb2c65118c616dbc619207acb7620ad295dc4edc66a432fca340a1df",
+  "count": 1284,
+  "chunks": 43,
+  "changedOnlyTenNativeMimeExpectations": [
+   "delegation:delegation-discovery-contacto-get",
+   "delegation:delegation-discovery-contacto-head",
+   "delegation:delegation-discovery-gracias-get",
+   "delegation:delegation-discovery-gracias-head",
+   "delegation:delegation-discovery-politica-de-cookies-get",
+   "delegation:delegation-discovery-politica-de-cookies-head",
+   "delegation:delegation-discovery-politica-de-privacidad-get",
+   "delegation:delegation-discovery-politica-de-privacidad-head",
+   "unknown:unknown-canonical",
+   "unknown:unknown-canonical-head"
+  ],
+  "counts": {
+   "identity-identity": 112,
+   "conditional-identity": 896,
+   "accept-negotiation": 25,
+   "alternation": 24,
+   "explicit-resource": 70,
+   "routing-delegation": 8,
+   "unknown-routes": 4,
+   "legacy-redirect": 1,
+   "compression-supplement-144": 144
+  },
+  "inactiveRejected": true,
+  "nativeExpectedFormatNone": true
+ },
+ "capturedContactoGET": {
+  "status": 200,
+  "bytes": 35067,
+  "sha256": "7e85246d6f21f0e405fbe8d8b89dd7472fb68d8a563e1c87ea147051bc821300",
+  "headersFileSha256": "c92e54f8a4a5e009f7dcb3c168eaad634a620226e47b39a75698116f71481cc7",
+  "mime": [
+   "text/html"
+  ],
+  "oldSTOPnewPASS": true,
+  "nativeNoMandatoryMarkdownTag": true,
+  "HEAD": "synthetic only",
+  "actualSTOPBug": 68,
+  "fixtureOriginalSourceIssueLabel": "67 STOP; retained privately, projected here as entity only"
+ },
+ "historicalSTOP68": {
+  "stopSha256": "8acbe573791318001c61e1165f7213cbc1e91d93264c60472bae09225e8b0662",
+  "sealSha256": "5aa9d90f9056a68cd201f7fa0b83cc7d38aefe8c9549016667b9a6ab020458a0",
+  "allSealedFilesMatch": 6786,
+  "passedHTTP": 847,
+  "failedHTTP": 1,
+  "HTTP": 848,
+  "NA": 280,
+  "unattemptedIDs": 156,
+  "unattemptedHEADContacto": true,
+  "historyUnmodified": true
+ },
+ "buildParity57": {
+  "sha256": "c25a36f6195ea7838029903e265b8c5b082cd3de7de2507f5a5515e84c0c7901",
+  "declaredStatus": "PASS",
+  "currentAndPredecessor57ByteExact": true,
+  "CSSByteExact": true,
+  "sourceLabel": "ae815733001d893792e515a8edf7cbb79a5b37ac",
+  "sourceIsParentDocsOnlyDelta": true,
+  "buildNotRepeated": true
+ },
+ "provenanceMismatch": {
+  "buildParityFileSha256": {
+   "declared": "02b30a7cbd93bb5b3e29aba26a21ebed7963e7d288afd9d36448a216bb905092",
+   "actual": "c25a36f6195ea7838029903e265b8c5b082cd3de7de2507f5a5515e84c0c7901"
+  },
+  "publicSubsetIndexSha256": {
+   "declared": "551f5efd3fa2294f97d37cb42b64ef6348c38e507d0664ce69f178cfe0c20a6a",
+   "actual": "ef92c03c670e6f9b1e90f6eaa5d93a68717407a8440d333b940f8e83ca222549"
+  }
+ },
+ "normSha256": "842c225f79f3eda680e968dbcd673ee760f9d75b83299d241480dc4ae86068f0",
+ "independentDefaultExecutorPipeline": {
+  "planned": 1284,
+  "captured": 1274,
+  "NA": 10,
+  "naIds": [
+   "conditional:home:html:GET:own-tag",
+   "conditional:home:html:GET:weak-own-tag",
+   "conditional:home:html:GET:list-own-plus-other",
+   "conditional:home:html:GET:range-date-with-own-match",
+   "conditional:home:html:HEAD:own-tag",
+   "conditional:home:html:HEAD:weak-own-tag",
+   "conditional:home:html:HEAD:list-own-plus-other",
+   "conditional:home:html:HEAD:range-date-with-own-match",
+   "conditional:home:markdown:GET:other-variant-tag",
+   "conditional:home:markdown:HEAD:other-variant-tag"
+  ],
+  "executor": "default run_one; not replaced",
+  "transport": "mocked subprocess curl; node codecs real offline",
+  "newHTTP": 0,
+  "sourceRetargetVerified": true,
+  "weakNativeBrFixtures": 72,
+  "HEADCodingOmissionFixtures": 32,
+  "rawBase64Verified": true,
+  "STOP": false
+ },
+ "independentNativeDefaultExecutorProbes": [
+  {
+   "method": "GET",
+   "case": "no-charset",
+   "state": "PASS",
+   "rawRetained": true
+  },
+  {
+   "method": "GET",
+   "case": "quoted-utf8",
+   "state": "PASS",
+   "rawRetained": true
+  },
+  {
+   "method": "GET",
+   "case": "wrong-type",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "GET",
+   "case": "incompatible",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "GET",
+   "case": "duplicate",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "GET",
+   "case": "malformed",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "GET",
+   "case": "multiple-fields",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "no-charset",
+   "state": "PASS",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "quoted-utf8",
+   "state": "PASS",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "wrong-type",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "incompatible",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "duplicate",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "malformed",
+   "state": "STOP",
+   "rawRetained": true
+  },
+  {
+   "method": "HEAD",
+   "case": "multiple-fields",
+   "state": "STOP",
+   "rawRetained": true
+  }
+ ],
+ "allTenNativeFormatStatusBodyHashChecks": [
+  "delegation:delegation-discovery-contacto-get",
+  "delegation:delegation-discovery-contacto-head",
+  "delegation:delegation-discovery-gracias-get",
+  "delegation:delegation-discovery-gracias-head",
+  "delegation:delegation-discovery-politica-de-cookies-get",
+  "delegation:delegation-discovery-politica-de-cookies-head",
+  "delegation:delegation-discovery-politica-de-privacidad-get",
+  "delegation:delegation-discovery-politica-de-privacidad-head",
+  "unknown:unknown-canonical",
+  "unknown:unknown-canonical-head"
+ ],
+ "independentNativeBodyChecks": [
+  {
+   "case": "invalid-UTF8",
+   "state": "STOP"
+  },
+  {
+   "case": "empty",
+   "state": "STOP"
+  }
+ ],
+ "offlineSuite": {
+  "tests": 24,
+  "failures": 0,
+  "HTTP": 0
+ },
+ "verdict": "FAIL bug68 R1/5; single provenance inconsistency; formal B0/5",
+ "closedBlockers": [
+  "B01: plan-provenance current artifact SHA references disagree with final files"
+ ],
+ "auditorArtifacts": [
+  {
+   "path": "bug68-auditoria-r1/verify.py",
+   "bytes": 6635,
+   "sha256": "02045f9fcb6b04fb18f9a56634feb6c58b67da6bc14fdc505c10938fc71d6569"
+  },
+  {
+   "path": "bug68-auditoria-r1/pipeline.py",
+   "bytes": 4644,
+   "sha256": "ea1a8779a84b3c95a992de5ba10f53ab85945f0255ba0abd0ab753ab17c1cafc"
+  },
+  {
+   "path": "bug68-auditoria-r1/probes.py",
+   "bytes": 4343,
+   "sha256": "59f0a757f4299afcf45a57984775448b9f53810612e6a5aa8e678de81e752ab0"
+  },
+  {
+   "path": "bug68-auditoria-r1/verify.log",
+   "bytes": 3327,
+   "sha256": "829e5049297e35b14406c7b98a4953e6bc6dccef3995d4cf2472fe9f7b8a2857"
+  },
+  {
+   "path": "bug68-auditoria-r1/pipeline.log",
+   "bytes": 860,
+   "sha256": "de8671e7e8caec1e9ad1d4380018461098fe5a2d9f2be76aeadf197bdcadb788"
+  },
+  {
+   "path": "bug68-auditoria-r1/probes.log",
+   "bytes": 1560,
+   "sha256": "649f19d9d62beb89e66f9c47a60f4436e452cc3f4a815d84d4c80715a01b745b"
+  },
+  {
+   "path": "bug68-auditoria-r1/offline-tests.log",
+   "bytes": 4298,
+   "sha256": "d10a546de1d390ae7ccaccdfa36bfe373b2a52dfb8f66264f99354b78abf8164"
+  }
+ ],
+ "historicalReportsImmutable": {
+  "auditoria-bug67-css-mime-r1.md": "dd4985d52f4285638a338fd86b901d78fff7be62827362989b2e8287adc1dd73",
+  "auditoria-bug67-css-mime-r1-comprobante.json": "febf503cb14c2fa03178870eb224c235801bef8cd3172760f4ac3dfa98a25829",
+  "auditoria-recuperacion-bug65-r3.md": "143d7d2a2acc441b6c9dc73b8baec2bb08642faf9b095ec12bcbc3d64dd1fe9c",
+  "auditoria-recuperacion-bug65-r3-comprobante.json": "fc2e166f88f81bcccebde878d348761956808de8a214339952dea547d8459713"
+ },
+ "sourceCleanAfterAudit": true,
+ "limits": [
+  "No new HTTP, build, Workerd, remote mutation or evaluator.",
+  "Actual fixture is GET contacto only; HEAD synthetic.",
+  "Historical matrix owned bug67 capture stopped on new bug68; original source labels preserved.",
+  "Formal B remains0/5; SDD successor PASS2/2 unchanged."
+ ]
+}

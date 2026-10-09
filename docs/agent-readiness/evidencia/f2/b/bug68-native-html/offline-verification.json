@@ -1,0 +1,54 @@
+{
+  "schema": "bug68-offline-verification/1",
+  "state": "PASS_OFFLINE_ONLY_PENDING_INDEPENDENT_AUDIT",
+  "runnerSuite": {
+    "testsRun": 24,
+    "passed": 24,
+    "failed": 0,
+    "cssRegressionTests": 5,
+    "nativeHtmlTests": 7,
+    "httpRequests": 0,
+    "resultFile": "test-results/test-suite-output.txt"
+  },
+  "fullPlanSimulation": {
+    "requestCount": 1284,
+    "uniqueRequestIds": 1284,
+    "syntheticTransportInvocations": 1274,
+    "stateCounts": {
+      "captured": 1274,
+      "N/A": 10
+    },
+    "workerdOrCurlHttpRequests": 0,
+    "stopManifestPresent": false,
+    "nativeHtmlRows": 10,
+    "resultFile": "test-results/full-plan-simulation-result.json"
+  },
+  "actualContactoGetReplay": {
+    "kind": "retained actual GET body, exact bytes projected in binary parts; local validator only",
+    "requestId": "delegation:delegation-discovery-contacto-get",
+    "status": 200,
+    "contentType": "text/html",
+    "bodyBytes": 35067,
+    "bodySha256": "7e85246d6f21f0e405fbe8d8b89dd7472fb68d8a563e1c87ea147051bc821300",
+    "strictUtf8": "PASS",
+    "metaCharsetUtf8": "PASS",
+    "head": "synthetic empty HEAD control only; no actual public HEAD captured in stopped matrix"
+  },
+  "nativeHtmlMimePolicy": {
+    "ids": 10,
+    "successRows200": 8,
+    "notFoundRows404": 2,
+    "charset": "absent or UTF-8 only",
+    "contentTypeFieldCount": 1,
+    "strictUtf8DecodeOnGet": true,
+    "documentExpectedFormat": "None for all ten IDs; Accept: text/markdown does not classify native HTML as Markdown",
+    "etagMarkdownRequirement": "not applied to these native HTML IDs"
+  },
+  "scopeValidation": {
+    "cssIdsUnchanged": 2,
+    "otherHtmlMarkdownMimeRules": "exact",
+    "newPlanPreview": null,
+    "hosts": [],
+    "execute": false
+  }
+}

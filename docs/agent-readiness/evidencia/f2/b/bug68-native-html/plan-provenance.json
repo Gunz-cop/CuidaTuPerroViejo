@@ -1,0 +1,51 @@
+{
+  "schema": "bug68-plan-provenance/1",
+  "state": "PROPOSED_INACTIVE_PENDING_INDEPENDENT_AUDIT",
+  "sourcePlanIndexSha256": "d03bacdab075e854100f2433428ced0fd1434eeebf540540dcdfda5fce312ecb",
+  "newPlanIndexSha256": "63bf1ed7fb2c65118c616dbc619207acb7620ad295dc4edc66a432fca340a1df",
+  "sourceCommit": "ae815733001d893792e515a8edf7cbb79a5b37ac",
+  "sourceTree": "83125ec6a070dd61f839e82dc630ccd3e551297b",
+  "requestCount": 1284,
+  "uniqueRequestIds": 1284,
+  "chunkCount": 43,
+  "groups": {
+    "identity-identity": 112,
+    "conditional-identity": 896,
+    "accept-negotiation": 25,
+    "alternation": 24,
+    "explicit-resource": 70,
+    "routing-delegation": 8,
+    "unknown-routes": 4,
+    "legacy-redirect": 1,
+    "compression-supplement-144": 144
+  },
+  "onlyChangedRequestIds": [
+    "delegation:delegation-discovery-contacto-get",
+    "delegation:delegation-discovery-contacto-head",
+    "delegation:delegation-discovery-gracias-get",
+    "delegation:delegation-discovery-gracias-head",
+    "delegation:delegation-discovery-politica-de-cookies-get",
+    "delegation:delegation-discovery-politica-de-cookies-head",
+    "delegation:delegation-discovery-politica-de-privacidad-get",
+    "delegation:delegation-discovery-politica-de-privacidad-head",
+    "unknown:unknown-canonical",
+    "unknown:unknown-canonical-head"
+  ],
+  "CSSPolicyIdsUnchanged": [
+    "resource:resource-stylesheet-get",
+    "resource:resource-stylesheet-head"
+  ],
+  "expectedHttpMethods": [
+    "GET",
+    "HEAD"
+  ],
+  "newPreview": null,
+  "candidateReceipt": null,
+  "ciCheckId": null,
+  "workersCheckId": null,
+  "allowlistedHosts": [],
+  "execute": false,
+  "buildParityFileSha256": "c25a36f6195ea7838029903e265b8c5b082cd3de7de2507f5a5515e84c0c7901",
+  "publicSubsetIndexPath": "public-subset-index.json",
+  "publicSubsetIndexHashAuthority": "The public subset index is the authoritative per-file hash list and excludes its own hash to avoid a circular reference; see the index file directly."
+}

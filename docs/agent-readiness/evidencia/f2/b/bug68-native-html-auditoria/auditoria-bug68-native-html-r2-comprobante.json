@@ -1,0 +1,72 @@
+{
+ "review": "bug68 R2/5",
+ "verdict": "PASS",
+ "closedBlockers": [],
+ "source": {
+  "commit": "0184e00b02fd2edd00979504d83eefa2841f9089",
+  "tree": "3da45c663545fbb1f844f88fc468a31ca57164e6",
+  "parent": "ae815733001d893792e515a8edf7cbb79a5b37ac",
+  "parentTree": "83125ec6a070dd61f839e82dc630ccd3e551297b"
+ },
+ "checkoutClean": true,
+ "scopeOnlyNewEvidenceFiles": 70,
+ "packageSameFilesAsR1": true,
+ "changedComparedR1": [
+  "plan-provenance.json",
+  "public-subset-index.json"
+ ],
+ "unchangedFiles": 68,
+ "publicIndex": {
+  "sha256": "3cd9ba8faa42643a2f42594610b56a9c337919aef63187fbd1f4c071d9ba552e",
+  "refs": 69,
+  "selfExcluded": true,
+  "allHashBytesUTF8Exact": true,
+  "maxFileBytes": 24425
+ },
+ "B01Closure": {
+  "provenanceSha256": "b466fb9674f231ea0628e2c2b85b591d01fa1ab4bc000e174e4c9458c511aa68",
+  "buildParityReferenceCorrect": true,
+  "buildParitySha256": "c25a36f6195ea7838029903e265b8c5b082cd3de7de2507f5a5515e84c0c7901",
+  "oneWayIndexPath": "public-subset-index.json",
+  "circularIndexHashAbsent": true,
+  "otherProvenanceFieldsUnchanged": true
+ },
+ "behaviorReusedFromR1": {
+  "sourceSuitePassed": 24,
+  "independentPipelinePlanned": 1284,
+  "syntheticTransports": 1274,
+  "NA": 10,
+  "helperSha256": "a652040934017f6677b816e788bd614d129b5b97c5cb67d3202d465774902301",
+  "planIndexSha256": "63bf1ed7fb2c65118c616dbc619207acb7620ad295dc4edc66a432fca340a1df",
+  "allFixturesTestsRunnerChunksPlanBuildReceiptSameBytes": true,
+  "rerun": false
+ },
+ "normSha256": "842c225f79f3eda680e968dbcd673ee760f9d75b83299d241480dc4ae86068f0",
+ "R1History": {
+  "auditoria-bug68-native-html-r1.md": "4c74484f3149688a2a248824461c8590b157642634cc4a6e2f5709b4c8912783",
+  "auditoria-bug68-native-html-r1-comprobante.json": "5129d808499efbb0fa3245bcfd350cb077089eadb4c2d46fb36e77835d4ca82f"
+ },
+ "formalB": "0/5",
+ "newHTTP": 0,
+ "newTests": 0,
+ "newBuilds": 0,
+ "newWorkerd": 0,
+ "remoteMutations": 0,
+ "limits": [
+  "Metadata-only repair; behavioral conclusions reuse sealed R1 unchanged source.",
+  "Public execution still requires current-HEAD checks/official preview receipt/frozen execution copy and owner authorization.",
+  "Not formal B acceptance or main permission."
+ ],
+ "auditorArtifacts": [
+  {
+   "path": "bug68-auditoria-r2/verify.py",
+   "bytes": 4631,
+   "sha256": "64eb5f99e6cee68c1ff4978552ee6bfb7eb5314c8919ecfe1d70438919d1ddec"
+  },
+  {
+   "path": "bug68-auditoria-r2/verify.log",
+   "bytes": 2183,
+   "sha256": "f230cbc3cb3e9c89da6ad78c57875195ad6fae3f69b03dcfff391c6cdc6e7b81"
+  }
+ ]
+}
