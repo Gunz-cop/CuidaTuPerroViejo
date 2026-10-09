@@ -1,0 +1,96 @@
+{
+  "schema": "bug71-native-baseline-sdd-independent-audit/1",
+  "verdict": "PASS",
+  "blockers": [],
+  "review": 1,
+  "reviewLimit": 2,
+  "correctionRequired": false,
+  "productTarget": {
+    "commit": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "tree": "666f95273609ca67da8a508390c3acf9a141f8ca"
+  },
+  "referenceChecks": {
+    "planSha256": "555348b6a876c7f846aba31dc9a306e1a96fbb4f87d2bc372249815c99ce2046",
+    "manifest58Sha256": "45f9f36b22f07ac945df6902036f17878d660224eaf3e94dc72996081ae58c76",
+    "assembledRunnerSha256": "3a373712f988fd1b65116ecc2285bc0200a6e0583b753a62f8b82860e8b78670",
+    "chunks": 43,
+    "uniqueIds": 1284,
+    "priorSDD70Sha256": "759e8e4dfa260d8f6b94002a383e6abb354eb7bb9dd80a29175b9a0ef19d568e"
+  },
+  "nativeAssets": [
+    {
+      "path": "/gracias",
+      "bytes": 28587,
+      "oldSha256": "19364633e69d1bd5c1853d2a33c64afde02bb912e36bcf01cc9d9cf41b68e0ef",
+      "currentSha256": "04cb60c83b95256580acaeb0e6256566809371ff4fdfd97ec5f55c28fc0e720a",
+      "onlyCssFilenameReplacement": true
+    },
+    {
+      "path": "/politica-de-cookies",
+      "bytes": 40052,
+      "oldSha256": "24596f9427cb7cc1d9f201abbf9e3c7e5044fc3271624bf566093633b840161c",
+      "currentSha256": "a3f41d7eb405451ca1eb904564b2aee9e6cd1bb4e934279b180383d58d41314c",
+      "onlyCssFilenameReplacement": true
+    },
+    {
+      "path": "/politica-de-privacidad",
+      "bytes": 34195,
+      "oldSha256": "d014238eea68c8bc107a9ead04e19c660553ca14aee3074d736f6eba905d22d7",
+      "currentSha256": "1324dd85d9ef17e89f8382ee5ff602507f3d720611600072c888a34a20ed74cb",
+      "onlyCssFilenameReplacement": true
+    }
+  ],
+  "normativeChecks": {
+    "nativeInsertionTolerance": false,
+    "onlyThreeStaticRowHashesChange": true,
+    "exhaustiveInventoryRequiredBeforeHTTP": true,
+    "runnerByteExactRequired": true,
+    "supplementSeparateFromManifest58": true,
+    "persistentOwnerAuthorizationRecordedAfterGates": true,
+    "historicalStopsPreserved": true,
+    "separateHelperAndProductSources": true
+  },
+  "actions": {
+    "http": 0,
+    "scans": 0,
+    "builds": 0,
+    "workerd": 0,
+    "testSuites": 0,
+    "sourceEdits": 0
+  },
+  "limits": {
+    "implementationAccepted": false,
+    "exhaustiveInventoryPerformedByThisAudit": false,
+    "all6802RawDigestsRehashed": false,
+    "currentRemoteMainOrChecksVerified": false,
+    "publicBaseEquivalence": "local base tree checked; remote identity supplied by coordinator"
+  },
+  "state": {
+    "production": "STOP",
+    "historicalSDD70": "PASS R2/2 preserved",
+    "historicalImplementation70": "PASS R2/5 preserved",
+    "implementation71Reviews": 0
+  },
+  "authorization": {
+    "ratificationEligible": true,
+    "offlineImplementationEligibleAfterRatification": true,
+    "planActivated": false,
+    "merge": false,
+    "deploy": false,
+    "retryHistoricalMatrix": false
+  },
+  "input": {
+    "commit": "c08608b6d92e77c3af2ac9c8539649e3c6c05160",
+    "tree": "fc26d4b52cfe25826c22aea3dc4d922a601ec514",
+    "parent": "72952fa371adb618b3da0f07ff4abae923c8f3b6",
+    "baseTree": "c861e250c26f7498273b66b9958e64f28b431fbd",
+    "documentPath": "docs/agent-readiness/fases/f2-produccion-baseline-nativo.md",
+    "bytes": 11188,
+    "sha256": "d2ec353d6ce54a82d9798f24f35bdc747aa34c21a0193c180eb1642b072bd2ee",
+    "clean": true,
+    "onlyDiffNewSDD": true
+  },
+  "projectionOfPrivateProofSha256": "091e11820ee7c9a662292ae579650469462b71cd2d2501ebdc9123c67842b666",
+  "projectionOnly": true,
+  "reportSha256": "ec74c8fca27ba81eac2c35849f2cacd16bd530f2508d9f0caea524e6a0fd173c"
+}
