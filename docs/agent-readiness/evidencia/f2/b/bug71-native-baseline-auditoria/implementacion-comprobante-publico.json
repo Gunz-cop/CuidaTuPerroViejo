@@ -1,0 +1,187 @@
+{
+  "schema": "bug71-independent-implementation-audit/1",
+  "verdict": "PASS",
+  "attempt": "1/5",
+  "source": {
+    "commit": "bb29585eb8470ba74b449ceb06e3e8cc856be25f",
+    "tree": "17452c3119b4595a5e8c77245330772d3e6d45e4",
+    "parent": "df6e74cedf072bc0f65736070384e16fcfafd896",
+    "clean": true,
+    "ownedFiles": 80
+  },
+  "targetProduct": "d2bd342050811d41ee212730cb11fe07783994bd",
+  "helperAssembledSha256": "3a373712f988fd1b65116ecc2285bc0200a6e0583b753a62f8b82860e8b78670",
+  "scope": {
+    "threeRowFieldsOnly": [
+      "delegation:delegation-discovery-gracias-get",
+      "delegation:delegation-discovery-politica-de-cookies-get",
+      "delegation:delegation-discovery-politica-de-privacidad-get"
+    ],
+    "changedChunk": "038",
+    "otherChunksByteExact": 42,
+    "requests": 1284,
+    "requestChunks": 43,
+    "helperEntrypointAndFragmentsByteExact": true,
+    "manifest58ByteExact": true,
+    "inherited38TestSourcesByteExact": true,
+    "sourceIdentitiesAndGatesPreserved": true,
+    "supplementMetadata": "new native manifest provenance pointer; no helper loader added"
+  },
+  "inventory": {
+    "schema": "bug71-independent-inventory-preparation/1",
+    "state": "READ_ONLY_COTEJO_COMPLETE; NO_IMPLEMENTATION_VERDICT",
+    "digests": {
+      "inventory": "c5574240d4ca4e400d66fc732a2006855c74614bb57e18104459b473f46180f0",
+      "summary": "5e575b85e678cd645ac452eba611551f2f011b9be8bec653b3c9cb0d735e7d21",
+      "referencePlan": "555348b6a876c7f846aba31dc9a306e1a96fbb4f87d2bc372249815c99ce2046",
+      "manifest58": "45f9f36b22f07ac945df6902036f17878d660224eaf3e94dc72996081ae58c76",
+      "runtime": "93788fc2646f83cbfc65a9dfb21d96f898c51272070f9e1603279946d4542d9f",
+      "verifierSource": "87b2be12cb6cb116b1b590f59f879e8b20d7d33b37ae2e1e3eaa10255dadebd6"
+    },
+    "counts": {
+      "requests": 1284,
+      "uniqueIds": 1284,
+      "chunks": 43,
+      "static": 235,
+      "withoutFixedHash": 1049,
+      "staticClasses": {
+        "PASS_STATIC_D2BD": 123,
+        "PASS_HEAD_EMPTY": 103,
+        "PASS_RUNTIME_LITERAL": 6,
+        "KNOWN_NATIVE_CSS_FILENAME_DELTA": 3
+      },
+      "withoutHashClasses": {
+        "CONDITIONAL_DERIVED": 1024,
+        "SELECTED_REPRESENTATION_NO_PLAN_HASH": 19,
+        "DYNAMIC_DELEGATED_BODY": 1,
+        "DYNAMIC_OR_PLATFORM_404_NO_HASH": 4,
+        "REDIRECT_NO_ENTITY_HASH": 1
+      },
+      "assetsIndependentChecked": 58,
+      "nativeKnownDeltas": 3
+    },
+    "checks": {
+      "requestFieldsAndAliasesMatchExactly": true,
+      "orderAndCoverageExact": true,
+      "staticAssetPathsDerivedFromCanonicalIndexOrExactResourceRoute": true,
+      "runtimeErrorBytesFromAuditedSource": true,
+      "supplementAndAlternationDigestsIncluded": true,
+      "unexpectedStaticMismatches": 0
+    },
+    "knownNativeDeltas": [
+      "delegation:delegation-discovery-gracias-get",
+      "delegation:delegation-discovery-politica-de-cookies-get",
+      "delegation:delegation-discovery-politica-de-privacidad-get"
+    ],
+    "limits": {
+      "implementationInProgressRead": false,
+      "tests": 0,
+      "newHTTP": 0,
+      "builds": 0,
+      "workerd": 0,
+      "normativeReview": false,
+      "formalCodeVerdict": false,
+      "reuseCondition": "Reuse only if input and reference-plan digests remain constant; successor three-field delta checked separately."
+    }
+  },
+  "independentFocalProbes": {
+    "schema": "bug71-independent-focal-probes/1",
+    "testsRun": 4,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "success": true,
+    "nativeRoutes": 3,
+    "exactBodyPositiveCases": 3,
+    "wrongBodiesStopCases": 12,
+    "MIMEPositiveCases": 6,
+    "MIMENegativeCases": 12,
+    "HEADPositiveCases": 3,
+    "HEADNegativeCases": 3,
+    "retainedReplayCases": 1,
+    "sourceSha256": "86bd330bed3c2c84c650e9c654b73f6c0e1feec03f8fbf11cc1295f0466e0a6b",
+    "logSha256": "7c82ba5bb55f59f93eeb132711a44fe306645bf103d3b6c90220990b1c5edfa8",
+    "actualHTTP": 0,
+    "builds": 0,
+    "workerd": 0,
+    "broadSuiteRepeated": false,
+    "fullMockRepeated": false
+  },
+  "authorMockReceipt": {
+    "acceptErrorBodyCaseCount": 6,
+    "fixtureLabel": "TEST synthetic offline transport; no HTTP requests",
+    "htmlExteriorCaseCount": 151,
+    "htmlExteriorObservedForms": {
+      "A": 151,
+      "A[:p]+I+A[p:]": 0
+    },
+    "nativeHtmlCaseCount": 10,
+    "planIndexSha256": "f6cb74d431d92ed562d13ed8fd6444177194ff4ff8073cdaaa430efc5b814a32",
+    "requestCount": 1284,
+    "schema": "bug70-offline-protocol-result/1",
+    "stateCounts": {
+      "N/A": 10,
+      "captured": 1274
+    },
+    "stopManifestPresent": false,
+    "transportInvocations": 1274,
+    "uniqueRequestIdCount": 1284,
+    "workerdOrCurlHttpRequests": 0
+  },
+  "authorUnittestRuns": {
+    "coverage": "38 unchanged inherited tests reused from independent bug70 R2 + final native source independently probed here",
+    "reportedFirstFull": "41/41 before strengthened native assertions",
+    "reportedIntermediate": "38 pass +3 synthetic fixture errors caused by missing Link/security; no product/helper failure claimed",
+    "reportedFinal": "focused1/1 then3/3",
+    "stdoutFilesAvailable": false,
+    "limitation": "No author unittest stdout file/hash independently verified. Counts are receipt/history reports, not a claim of a single final41/41 run."
+  },
+  "privateManifestAuthority": {
+    "finalSha256": "1867bb28df9722336a23432c49a09390bdb4d21c43a1bd9fa39c9056793e81cc",
+    "freezeSha256": "fe7ace5e5fc85d50675e9debc82b8004ec119520091eab1b8ba58c19818d25e1",
+    "intermediateDigests": "5236/28cc are historical preparation references, not current manifest hashes; blobs not retained, not independently recalculated",
+    "clarificationSha256": "4eea9855e3f960b829bded0f830c8526ff8545c6309d105ee21319ba3f9c4f43"
+  },
+  "digests": {
+    "norm": "d2ec353d6ce54a82d9798f24f35bdc747aa34c21a0193c180eb1642b072bd2ee",
+    "publicIndex": "7a21082c89310e64c2d47610b797b024e8cc1351922aabbe5f5a560e6aef2c0c",
+    "plan": "f6cb74d431d92ed562d13ed8fd6444177194ff4ff8073cdaaa430efc5b814a32",
+    "supplementPublicManifest": "5eb627df7ad623043ad9c1c31b76667f4adec19da48b797276af634840199438",
+    "canonicalManifest58": "45f9f36b22f07ac945df6902036f17878d660224eaf3e94dc72996081ae58c76",
+    "privateOfflineReceipt": "8bbce072812faae0df2751d4572c1e759ab1b94f6c5ed3d94d8fad19df083dce",
+    "publicCommitReceipt": "9b18ea40a598f563bdc0968ee993feb4b215d5c5c961490039bf2364dd504c52",
+    "fullMockReceipt": "c41f45bdb302ad451471b10d6872c3836e284ef54c05d9c7b74c05feb26717f6",
+    "independentFocalReceipt": "3c5258d323a9f6e2af91f354d682ac9c6369eefe3fb208216660a1e4522961b7",
+    "independentIntegritySource": "818d019e9f73a17ebbb370618004cc58d1bf9d28a35207c91de12890f069bbef"
+  },
+  "publicCuration": {
+    "indexedPayloads": 79,
+    "filesWithIndex": 80,
+    "allReferencesMatchShaAndSize": true,
+    "utf8MaxBytes": 24524,
+    "absolutePrivatePathsAndInlineBeaconAbsent": true
+  },
+  "gates": {
+    "C71-01": "PASS, SDD ratified",
+    "C71-02": "PASS, independent supplement3+canonical58 preserved",
+    "C71-03": "PASS exhaustive inventory, no additional mismatch",
+    "C71-04": "PASS, minimal plan delta, focal negatives, helper unchanged, mock receipt reviewed",
+    "C71-05": "PASS R1/5 on fixed local snapshot; equivalent publication next",
+    "C71-06": "pending root publication/admission/authorization; no correction blocker"
+  },
+  "limits": {
+    "newHTTP": 0,
+    "newBuilds": 0,
+    "workerd": 0,
+    "broadSuiteRepeated": false,
+    "fullMockRepeated": false,
+    "productOrEvidenceEdited": false,
+    "historicalSTOP": "unchanged failed matrix; replay is offline only",
+    "productionAcceptance": false,
+    "EXEC": "blocked",
+    "publicCodePublication": "not yet verified as equivalent; coordinator next gate"
+  },
+  "blockers": [],
+  "projectionOnly": true,
+  "projectionOfPrivateProofSha256": "1bfb7ebc03aac4f5efcb78a702cb05e5ee7f4fd3d891e61e1145a202dcd50b61"
+}
