@@ -1,0 +1,288 @@
+{
+ "review": "bug69 R1/5",
+ "formalB": "0/5",
+ "newHTTP": 0,
+ "newWorkerd": 0,
+ "newBuilds": 0,
+ "source": {
+  "commit": "f909aac57c1562ee3269a7fba2623182df1ac2d5",
+  "tree": "9ab10d1ae9c4b99f4a15ce705881f280f0953765",
+  "parent": "c8de1985e7b4485edba36b222f606c8cd1e32580",
+  "parentTree": "cc93e59338abd7adf4ad41fdb34fd3bf593cd03c"
+ },
+ "publicIndex": {
+  "sha256": "d3799255da37ff1c6ccb61e7ae63e2e659fca19f08b7994f69481dd63b2f7f6c",
+  "refs": 72,
+  "withSelf": 73,
+  "allHashSizeUTF8Exact": true
+ },
+ "helperSha256": "b7ecf335395d5b6d1bf845b5f566a76b2e2b45fc46e3eefb89844cd024e37139",
+ "plan": {
+  "sha256": "11e5c5b3a0847f411337804a454278cb35c03b6acfff66e225a0d3ee83c43469",
+  "rows": 1284,
+  "chunks": 43,
+  "rowsChunksBytesSameAsBug68": true,
+  "groupCounts": {
+   "identity-identity": 112,
+   "conditional-identity": 896,
+   "accept-negotiation": 25,
+   "alternation": 24,
+   "explicit-resource": 70,
+   "routing-delegation": 8,
+   "unknown-routes": 4,
+   "legacy-redirect": 1,
+   "compression-supplement-144": 144
+  },
+  "inactiveRejected": true
+ },
+ "actualCaptureReplay": {
+  "wireBytes": 4517,
+  "wireSha256": "a178037c07e98d46bf610df8fcb37b2f5f05ba33ba7f8bf9dda63cdd2e1e45e7",
+  "decodedBytes": 12878,
+  "decodedSha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+  "baselineGETHEADNative": "W/\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+  "response304Native": "\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+  "headersMatchedPrivateRaw": true,
+  "sameCandidateRouteFormatRequestedCoding": true,
+  "oldSTOPNewPASS": true,
+  "HEADand304ActualEntity0": true
+ },
+ "historicalSTOP69": {
+  "sealSha256": "4e35065beafa72486b748afc8fc2e8f1cf627d4de825fda6ce187e35f181597f",
+  "filesVerified": 7082,
+  "stopSha256": "2e37f7c15098872e808d7cb85976e1606d402a4b3108324b08cff4fded9ad4dc",
+  "passedHTTP": 884,
+  "failedHTTP": 1,
+  "HTTP": 885,
+  "NA": 288,
+  "unattemptedIDs": 111
+ },
+ "buildParity": {
+  "sha256": "5d7e904f2a4706d75b6ae5146ef4727539eabd6749ff4c73d1507398cf7636ea",
+  "all57CurrentPredecessorByteExact": true,
+  "CSSByteExact": true,
+  "productIsParentCodeDocsOnlyDelta": true,
+  "buildNotRepeated": true
+ },
+ "provenance": {
+  "sha256": "d23200b172f82e0b68d2cb5e30262ce347c2d2ac83728965db6e0538377ec522",
+  "actualHashesCorrect": true,
+  "indexOneWay": "public-subset-index.json"
+ },
+ "architectureDecisionSha256": "de6f1027ebf27ee287669f0a653592fc7ecffdfb99931bef7a56097ff54b66e1",
+ "normSha256": "842c225f79f3eda680e968dbcd673ee760f9d75b83299d241480dc4ae86068f0",
+ "independentDefaultExecutorPipeline": {
+  "planned": 1284,
+  "captured": 1274,
+  "NA": 10,
+  "naIds": [
+   "conditional:home:html:GET:own-tag",
+   "conditional:home:html:GET:weak-own-tag",
+   "conditional:home:html:GET:list-own-plus-other",
+   "conditional:home:html:GET:range-date-with-own-match",
+   "conditional:home:html:HEAD:own-tag",
+   "conditional:home:html:HEAD:weak-own-tag",
+   "conditional:home:html:HEAD:list-own-plus-other",
+   "conditional:home:html:HEAD:range-date-with-own-match",
+   "conditional:home:markdown:GET:other-variant-tag",
+   "conditional:home:markdown:HEAD:other-variant-tag"
+  ],
+  "executor": "default run_one; not replaced",
+  "transport": "mocked subprocess curl; node codecs real offline",
+  "newHTTP": 0,
+  "sourceRetargetVerified": true,
+  "weakNativeBrFixtures": 72,
+  "HEADCodingOmissionFixtures": 32,
+  "native304PrefixTransitions": 630,
+  "rawBase64Verified": true,
+  "STOP": false
+ },
+ "independentDefault304Probes": [
+  {
+   "group": "conditional-identity",
+   "case": "weak-to-strong",
+   "state": "PASS",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": true
+  },
+  {
+   "group": "conditional-identity",
+   "case": "strong-to-weak",
+   "state": "PASS",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": true
+  },
+  {
+   "group": "conditional-identity",
+   "case": "different",
+   "state": "STOP",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": null
+  },
+  {
+   "group": "conditional-identity",
+   "case": "changed-case",
+   "state": "STOP",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": null
+  },
+  {
+   "group": "conditional-identity",
+   "case": "malformed",
+   "state": "STOP",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": null
+  },
+  {
+   "group": "conditional-identity",
+   "case": "duplicate",
+   "state": "STOP",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": null
+  },
+  {
+   "group": "conditional-identity",
+   "case": "missing",
+   "state": "STOP",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": null
+  },
+  {
+   "group": "compression-supplement-144",
+   "case": "weak-to-strong",
+   "state": "PASS",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": true
+  },
+  {
+   "group": "compression-supplement-144",
+   "case": "strong-to-weak",
+   "state": "PASS",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": true
+  },
+  {
+   "group": "compression-supplement-144",
+   "case": "different",
+   "state": "STOP",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": null
+  },
+  {
+   "group": "compression-supplement-144",
+   "case": "changed-case",
+   "state": "STOP",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": null
+  },
+  {
+   "group": "compression-supplement-144",
+   "case": "malformed",
+   "state": "STOP",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": null
+  },
+  {
+   "group": "compression-supplement-144",
+   "case": "duplicate",
+   "state": "STOP",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": null
+  },
+  {
+   "group": "compression-supplement-144",
+   "case": "missing",
+   "state": "STOP",
+   "rawPreserved": true,
+   "nativeResponseHeaderUnchanged": null
+  }
+ ],
+ "sameContextPreflightNegatives": [
+  {
+   "case": "format",
+   "state": "STOP before transport"
+  },
+  {
+   "case": "route",
+   "state": "STOP before transport"
+  },
+  {
+   "case": "coding",
+   "state": "STOP before transport"
+  }
+ ],
+ "offlineSuite": {
+  "tests": 30,
+  "failures": 0,
+  "HTTP": 0
+ },
+ "verdict": "PASS bug69 R1/5; formalB0/5",
+ "closedBlockers": [],
+ "previousFixturesByteExact": {
+  "css-stylesheet": {
+   "files": 8,
+   "sameAsAcceptedBug68": true
+  },
+  "native-html-contacto": {
+   "files": 3,
+   "sameAsAcceptedBug68": true
+  }
+ },
+ "historicalReportsImmutable": {
+  "auditoria-bug68-native-html-r1.md": "4c74484f3149688a2a248824461c8590b157642634cc4a6e2f5709b4c8912783",
+  "auditoria-bug68-native-html-r1-comprobante.json": "5129d808499efbb0fa3245bcfd350cb077089eadb4c2d46fb36e77835d4ca82f",
+  "auditoria-bug68-native-html-r2.md": "70bf4682505bb2e91c99ebbcce7a31efcb2aee052890aae4cd040ff251821018",
+  "auditoria-bug68-native-html-r2-comprobante.json": "093a15c483e4555041462d3923460a8e99ad725bce81db972772d1a467050005",
+  "auditoria-bug67-css-mime-r1.md": "dd4985d52f4285638a338fd86b901d78fff7be62827362989b2e8287adc1dd73",
+  "auditoria-recuperacion-bug65-r3.md": "143d7d2a2acc441b6c9dc73b8baec2bb08642faf9b095ec12bcbc3d64dd1fe9c"
+ },
+ "auditorArtifacts": [
+  {
+   "path": "bug69-auditoria-r1/verify.py",
+   "bytes": 8007,
+   "sha256": "e42d0617e4375914934075539f07daf29126d62e315c7cc3cf6116c77420d009"
+  },
+  {
+   "path": "bug69-auditoria-r1/pipeline.py",
+   "bytes": 5007,
+   "sha256": "5231d77c3e897db0a4150db185b95265fa5149e5fb413fa614fe6e1336cd7790"
+  },
+  {
+   "path": "bug69-auditoria-r1/probes.py",
+   "bytes": 4056,
+   "sha256": "88d075a9898ee341b7462fa05159a03c4efd5f0562926a8c12820db688e96218"
+  },
+  {
+   "path": "bug69-auditoria-r1/verify.log",
+   "bytes": 2496,
+   "sha256": "7ddafc63fc442ebd7b41e6c9165a95133a7f36b87a9136f7ae65aff6af59fe48"
+  },
+  {
+   "path": "bug69-auditoria-r1/pipeline.log",
+   "bytes": 897,
+   "sha256": "99b2b2ea73d6b80f19e9295bdf7e29ad224db53abc7c7d46a248492059886280"
+  },
+  {
+   "path": "bug69-auditoria-r1/probes.log",
+   "bytes": 2469,
+   "sha256": "71d4f908e28fd6105fb43b229cd0dbf824c6b728da9f7fff3b5dfe1ad7677d00"
+  },
+  {
+   "path": "bug69-auditoria-r1/offline-tests.log",
+   "bytes": 5590,
+   "sha256": "7209b8352fe584efc9d63337a7892fce6ae4e6b2ebae2252d87105b5ba430bb8"
+  },
+  {
+   "path": "bug69-auditoria-r1/helper-diff.patch",
+   "bytes": 2247,
+   "sha256": "a9c2629b75d78d4a27a168e9575ffb16d118a6833bf1aa4fabe57c11f5239b4d"
+  }
+ ],
+ "finalCheckoutClean": true,
+ "limits": [
+  "No new HTTP, build, Workerd, remote mutation or evaluator.",
+  "Real captured GETgzip/HEAD200/GET304 replay is separate from synthetic transports.",
+  "PASS bug69 helper only; formalB0/5 and complete public matrix pending.",
+  "New public execution requires fresh candidate checks/official receipt/frozen execution copy and owner authorization."
+ ]
+}

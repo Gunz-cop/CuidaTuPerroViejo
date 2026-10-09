@@ -1,0 +1,206 @@
+{
+  "schema": "f2b-public-ci-step-receipt/1",
+  "sourceCommit": "6b0d3d5abd0c175d2acae56ab7892edaf18cc157",
+  "sourceTree": "af7fa106cdd9eebe25846208bda2b9137e041fb2",
+  "workflowRunId": 37954196684,
+  "jobId": 113900401915,
+  "jobStatus": "completed",
+  "jobConclusion": "success",
+  "sourceGateSha256": "7551e110ff5ce72239a120dbced35301f926c2e84f3c52787d322f6aae748990",
+  "stepCount": 23,
+  "steps": [
+    {
+      "ordinal": 1,
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:46:20Z",
+      "completedAt": "2026-10-09T15:46:22Z"
+    },
+    {
+      "ordinal": 2,
+      "name": "Checkout",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:46:22Z",
+      "completedAt": "2026-10-09T15:46:24Z"
+    },
+    {
+      "ordinal": 3,
+      "name": "Obtener rama base",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:46:24Z",
+      "completedAt": "2026-10-09T15:46:24Z"
+    },
+    {
+      "ordinal": 4,
+      "name": "Setup Node",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:46:24Z",
+      "completedAt": "2026-10-09T15:46:28Z"
+    },
+    {
+      "ordinal": 5,
+      "name": "Instalar dependencias",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:46:28Z",
+      "completedAt": "2026-10-09T15:46:42Z"
+    },
+    {
+      "ordinal": 6,
+      "name": "Generar tipos de Astro",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:46:42Z",
+      "completedAt": "2026-10-09T15:46:45Z"
+    },
+    {
+      "ordinal": 7,
+      "name": "Specs de migración coherentes",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:46:45Z",
+      "completedAt": "2026-10-09T15:46:45Z"
+    },
+    {
+      "ordinal": 8,
+      "name": "Tipos",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:46:45Z",
+      "completedAt": "2026-10-09T15:46:56Z"
+    },
+    {
+      "ordinal": 9,
+      "name": "Tests",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:46:56Z",
+      "completedAt": "2026-10-09T15:46:56Z"
+    },
+    {
+      "ordinal": 10,
+      "name": "Tests offline de agent-readiness",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:46:56Z",
+      "completedAt": "2026-10-09T15:46:58Z"
+    },
+    {
+      "ordinal": 11,
+      "name": "Tests de negociación del Worker",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:46:58Z",
+      "completedAt": "2026-10-09T15:46:58Z"
+    },
+    {
+      "ordinal": 12,
+      "name": "Build",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:46:58Z",
+      "completedAt": "2026-10-09T15:47:04Z"
+    },
+    {
+      "ordinal": 13,
+      "name": "Inventory offline del build",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:47:04Z",
+      "completedAt": "2026-10-09T15:47:05Z"
+    },
+    {
+      "ordinal": 14,
+      "name": "Verificar descubrimiento agent-readiness",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:47:05Z",
+      "completedAt": "2026-10-09T15:47:05Z"
+    },
+    {
+      "ordinal": 15,
+      "name": "Verificar proyección Markdown agent-readiness",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:47:05Z",
+      "completedAt": "2026-10-09T15:47:06Z"
+    },
+    {
+      "ordinal": 16,
+      "name": "Verificar routing compilado de F2B",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:47:06Z",
+      "completedAt": "2026-10-09T15:47:07Z"
+    },
+    {
+      "ordinal": 17,
+      "name": "Probar crecimiento concordante de proyección a 29 documentos",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:47:07Z",
+      "completedAt": "2026-10-09T15:47:13Z"
+    },
+    {
+      "ordinal": 18,
+      "name": "Verificar semántica independiente del corpus inventariado contra HTML/GFM",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:47:13Z",
+      "completedAt": "2026-10-09T15:47:14Z"
+    },
+    {
+      "ordinal": 19,
+      "name": "Tipos del Worker al día",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:47:14Z",
+      "completedAt": "2026-10-09T15:47:16Z"
+    },
+    {
+      "ordinal": 20,
+      "name": "Worker empaqueta",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:47:16Z",
+      "completedAt": "2026-10-09T15:47:17Z"
+    },
+    {
+      "ordinal": 21,
+      "name": "Post Setup Node",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:47:17Z",
+      "completedAt": "2026-10-09T15:47:17Z"
+    },
+    {
+      "ordinal": 22,
+      "name": "Post Checkout",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:47:17Z",
+      "completedAt": "2026-10-09T15:47:17Z"
+    },
+    {
+      "ordinal": 23,
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-09T15:47:17Z",
+      "completedAt": "2026-10-09T15:47:18Z"
+    }
+  ],
+  "selectedChecks": {
+    "productTests": "Tests",
+    "agentReadinessOfflineTests": "Tests offline de agent-readiness",
+    "workerNegotiationTests": "Tests de negociación del Worker",
+    "build": "Build",
+    "compiledRouting": "Verificar routing compilado de F2B",
+    "workerPackaging": "Worker empaqueta"
+  },
+  "privateWorkflowLogsOmitted": true
+}

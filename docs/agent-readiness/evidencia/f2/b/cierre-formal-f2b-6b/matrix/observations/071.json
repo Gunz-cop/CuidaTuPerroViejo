@@ -1,0 +1,481 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 71,
+  "firstOrdinal": 561,
+  "lastOrdinal": 568,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--ulceras-presion-perros:html:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/ulceras-presion-perros",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "020.json",
+      "dependsOn": [
+        "identity:article--ulceras-presion-perros:html:GET",
+        "identity:article--ulceras-presion-perros:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:57.310519Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--ulceras-presion-perros:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:16.392435Z",
+          "timestampEndUtc": "2026-10-09T15:57:16.512587Z"
+        },
+        {
+          "requestId": "identity:article--ulceras-presion-perros:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:16.514122Z",
+          "timestampEndUtc": "2026-10-09T15:57:16.804716Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--ulceras-presion-perros:html:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/ulceras-presion-perros",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "020.json",
+      "dependsOn": [
+        "identity:article--ulceras-presion-perros:html:GET",
+        "identity:article--ulceras-presion-perros:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:57.310570Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--ulceras-presion-perros:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:16.392435Z",
+          "timestampEndUtc": "2026-10-09T15:57:16.512587Z"
+        },
+        {
+          "requestId": "identity:article--ulceras-presion-perros:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:16.514122Z",
+          "timestampEndUtc": "2026-10-09T15:57:16.804716Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--ulceras-presion-perros:html:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/ulceras-presion-perros",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "020.json",
+      "dependsOn": [
+        "identity:article--ulceras-presion-perros:html:GET",
+        "identity:article--ulceras-presion-perros:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:57.310607Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--ulceras-presion-perros:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:16.392435Z",
+          "timestampEndUtc": "2026-10-09T15:57:16.512587Z"
+        },
+        {
+          "requestId": "identity:article--ulceras-presion-perros:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:16.514122Z",
+          "timestampEndUtc": "2026-10-09T15:57:16.804716Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--ulceras-presion-perros:html:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/ulceras-presion-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "021.json",
+      "dependsOn": [
+        "identity:article--ulceras-presion-perros:html:GET",
+        "identity:article--ulceras-presion-perros:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:57.310698Z",
+      "timestampEndUtc": "2026-10-09T15:57:57.408754Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--ulceras-presion-perros-html\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:57 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 66077,
+      "bodyWireSha256": "c7035c1125984672c0ddb367f4c218999a72da09eb78e7b36e7175c6e4fb7471",
+      "bodyDecodedBytes": 66077,
+      "bodyDecodedSha256": "c7035c1125984672c0ddb367f4c218999a72da09eb78e7b36e7175c6e4fb7471",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 66077
+    },
+    {
+      "requestId": "conditional:article--ulceras-presion-perros:html:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/ulceras-presion-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "021.json",
+      "dependsOn": [
+        "identity:article--ulceras-presion-perros:html:GET",
+        "identity:article--ulceras-presion-perros:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:57.410235Z",
+      "timestampEndUtc": "2026-10-09T15:57:57.491953Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:57 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--ulceras-presion-perros:html:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/ulceras-presion-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "021.json",
+      "dependsOn": [
+        "identity:article--ulceras-presion-perros:markdown:GET",
+        "identity:article--ulceras-presion-perros:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:57.493319Z",
+      "timestampEndUtc": "2026-10-09T15:57:57.584314Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"52f2c4c8d15ef5b069491b12a8ba61cb\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:57 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 66077,
+      "bodyWireSha256": "c7035c1125984672c0ddb367f4c218999a72da09eb78e7b36e7175c6e4fb7471",
+      "bodyDecodedBytes": 66077,
+      "bodyDecodedSha256": "c7035c1125984672c0ddb367f4c218999a72da09eb78e7b36e7175c6e4fb7471",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 66077
+    },
+    {
+      "requestId": "conditional:article--ulceras-presion-perros:html:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/ulceras-presion-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "021.json",
+      "dependsOn": [
+        "identity:article--ulceras-presion-perros:html:GET",
+        "identity:article--ulceras-presion-perros:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:57.585711Z",
+      "timestampEndUtc": "2026-10-09T15:57:57.680145Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:57 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 66077,
+      "bodyWireSha256": "c7035c1125984672c0ddb367f4c218999a72da09eb78e7b36e7175c6e4fb7471",
+      "bodyDecodedBytes": 66077,
+      "bodyDecodedSha256": "c7035c1125984672c0ddb367f4c218999a72da09eb78e7b36e7175c6e4fb7471",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 66077
+    },
+    {
+      "requestId": "conditional:article--ulceras-presion-perros:html:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/ulceras-presion-perros",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "021.json",
+      "dependsOn": [
+        "identity:article--ulceras-presion-perros:html:GET",
+        "identity:article--ulceras-presion-perros:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:57.681509Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--ulceras-presion-perros:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:16.392435Z",
+          "timestampEndUtc": "2026-10-09T15:57:16.512587Z"
+        },
+        {
+          "requestId": "identity:article--ulceras-presion-perros:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:16.514122Z",
+          "timestampEndUtc": "2026-10-09T15:57:16.804716Z"
+        }
+      ]
+    }
+  ]
+}

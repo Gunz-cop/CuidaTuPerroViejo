@@ -1,0 +1,601 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 7,
+  "firstOrdinal": 49,
+  "lastOrdinal": 56,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "identity:article--salud-dental-perros-mayores:html:GET",
+      "group": "identity-identity",
+      "path": "/salud-perros-mayores/salud-dental-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "002.json",
+      "timestampStartUtc": "2026-10-09T15:57:15.484130Z",
+      "timestampEndUtc": "2026-10-09T15:57:15.587319Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:15 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 76652,
+      "bodyWireSha256": "65ef648599c04262be76840fcea0bb1c8510c0b6f69c5cad9b13b0f44e516355",
+      "bodyDecodedBytes": 76652,
+      "bodyDecodedSha256": "65ef648599c04262be76840fcea0bb1c8510c0b6f69c5cad9b13b0f44e516355",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 76652
+    },
+    {
+      "requestId": "identity:article--salud-dental-perros-mayores:html:HEAD",
+      "group": "identity-identity",
+      "path": "/salud-perros-mayores/salud-dental-perros-mayores",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "002.json",
+      "timestampStartUtc": "2026-10-09T15:57:15.588972Z",
+      "timestampEndUtc": "2026-10-09T15:57:15.753687Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:15 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "identity:article--salud-dental-perros-mayores:markdown:GET",
+      "group": "identity-identity",
+      "path": "/salud-perros-mayores/salud-dental-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "002.json",
+      "timestampStartUtc": "2026-10-09T15:57:15.755364Z",
+      "timestampEndUtc": "2026-10-09T15:57:15.848237Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:15 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "12307"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"7aee9265d60a9629d7500eea0b010709\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 12307,
+      "bodyWireSha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6",
+      "bodyDecodedBytes": 12307,
+      "bodyDecodedSha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 12307
+    },
+    {
+      "requestId": "identity:article--salud-dental-perros-mayores:markdown:HEAD",
+      "group": "identity-identity",
+      "path": "/salud-perros-mayores/salud-dental-perros-mayores",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "002.json",
+      "timestampStartUtc": "2026-10-09T15:57:15.849923Z",
+      "timestampEndUtc": "2026-10-09T15:57:15.942536Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:15 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"7aee9265d60a9629d7500eea0b010709\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "identity:article--sindrome-cushing-perros-mayores:html:GET",
+      "group": "identity-identity",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "002.json",
+      "timestampStartUtc": "2026-10-09T15:57:15.944314Z",
+      "timestampEndUtc": "2026-10-09T15:57:16.104673Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:16 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 110770,
+      "bodyWireSha256": "7aaaef0e39577c2510e1d1028c182e996f2d213c607165e1ba32d15162885ec3",
+      "bodyDecodedBytes": 110770,
+      "bodyDecodedSha256": "7aaaef0e39577c2510e1d1028c182e996f2d213c607165e1ba32d15162885ec3",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 110770
+    },
+    {
+      "requestId": "identity:article--sindrome-cushing-perros-mayores:html:HEAD",
+      "group": "identity-identity",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "002.json",
+      "timestampStartUtc": "2026-10-09T15:57:16.106636Z",
+      "timestampEndUtc": "2026-10-09T15:57:16.194474Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:16 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "identity:article--sindrome-cushing-perros-mayores:markdown:GET",
+      "group": "identity-identity",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "002.json",
+      "timestampStartUtc": "2026-10-09T15:57:16.195958Z",
+      "timestampEndUtc": "2026-10-09T15:57:16.290718Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:16 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "32561"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"22e2b5dfd49f12456bef9bf8f71a8842\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 32561,
+      "bodyWireSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+      "bodyDecodedBytes": 32561,
+      "bodyDecodedSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 32561
+    },
+    {
+      "requestId": "identity:article--sindrome-cushing-perros-mayores:markdown:HEAD",
+      "group": "identity-identity",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "002.json",
+      "timestampStartUtc": "2026-10-09T15:57:16.292366Z",
+      "timestampEndUtc": "2026-10-09T15:57:16.390891Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:16 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"22e2b5dfd49f12456bef9bf8f71a8842\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

@@ -1,0 +1,481 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 115,
+  "firstOrdinal": 913,
+  "lastOrdinal": 920,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:pillar--salud-perros-mayores:html:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-perros-mayores:html:GET",
+        "identity:pillar--salud-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:22.997650Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:pillar--salud-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:21.893103Z",
+          "timestampEndUtc": "2026-10-09T15:57:22.181067Z"
+        },
+        {
+          "requestId": "identity:pillar--salud-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:22.182872Z",
+          "timestampEndUtc": "2026-10-09T15:57:22.274540Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:pillar--salud-perros-mayores:html:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-perros-mayores:html:GET",
+        "identity:pillar--salud-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:22.997700Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:pillar--salud-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:21.893103Z",
+          "timestampEndUtc": "2026-10-09T15:57:22.181067Z"
+        },
+        {
+          "requestId": "identity:pillar--salud-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:22.182872Z",
+          "timestampEndUtc": "2026-10-09T15:57:22.274540Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:pillar--salud-perros-mayores:html:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-perros-mayores:html:GET",
+        "identity:pillar--salud-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:22.997734Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:pillar--salud-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:21.893103Z",
+          "timestampEndUtc": "2026-10-09T15:57:22.181067Z"
+        },
+        {
+          "requestId": "identity:pillar--salud-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:22.182872Z",
+          "timestampEndUtc": "2026-10-09T15:57:22.274540Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:pillar--salud-perros-mayores:html:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-perros-mayores:html:GET",
+        "identity:pillar--salud-perros-mayores:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:22.997830Z",
+      "timestampEndUtc": "2026-10-09T15:58:23.121445Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-pillar--salud-perros-mayores-html\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:23 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 68035,
+      "bodyWireSha256": "af3b14d7722c0763b617fe8b10634a03c7762a9fb7898abc512e24a01f27b6e8",
+      "bodyDecodedBytes": 68035,
+      "bodyDecodedSha256": "af3b14d7722c0763b617fe8b10634a03c7762a9fb7898abc512e24a01f27b6e8",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 68035
+    },
+    {
+      "requestId": "conditional:pillar--salud-perros-mayores:html:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-perros-mayores:html:GET",
+        "identity:pillar--salud-perros-mayores:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:23.122912Z",
+      "timestampEndUtc": "2026-10-09T15:58:23.224788Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:23 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:pillar--salud-perros-mayores:html:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-perros-mayores:markdown:GET",
+        "identity:pillar--salud-perros-mayores:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:23.226583Z",
+      "timestampEndUtc": "2026-10-09T15:58:23.337413Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"66acddb8812b33d743499640b3650f85\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:23 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 68035,
+      "bodyWireSha256": "af3b14d7722c0763b617fe8b10634a03c7762a9fb7898abc512e24a01f27b6e8",
+      "bodyDecodedBytes": 68035,
+      "bodyDecodedSha256": "af3b14d7722c0763b617fe8b10634a03c7762a9fb7898abc512e24a01f27b6e8",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 68035
+    },
+    {
+      "requestId": "conditional:pillar--salud-perros-mayores:html:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-perros-mayores:html:GET",
+        "identity:pillar--salud-perros-mayores:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:23.338914Z",
+      "timestampEndUtc": "2026-10-09T15:58:23.614944Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:23 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 68035,
+      "bodyWireSha256": "af3b14d7722c0763b617fe8b10634a03c7762a9fb7898abc512e24a01f27b6e8",
+      "bodyDecodedBytes": 68035,
+      "bodyDecodedSha256": "af3b14d7722c0763b617fe8b10634a03c7762a9fb7898abc512e24a01f27b6e8",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 68035
+    },
+    {
+      "requestId": "conditional:pillar--salud-perros-mayores:html:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "032.json",
+      "dependsOn": [
+        "identity:pillar--salud-perros-mayores:html:GET",
+        "identity:pillar--salud-perros-mayores:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:23.616346Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:pillar--salud-perros-mayores:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:21.893103Z",
+          "timestampEndUtc": "2026-10-09T15:57:22.181067Z"
+        },
+        {
+          "requestId": "identity:pillar--salud-perros-mayores:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:22.182872Z",
+          "timestampEndUtc": "2026-10-09T15:57:22.274540Z"
+        }
+      ]
+    }
+  ]
+}

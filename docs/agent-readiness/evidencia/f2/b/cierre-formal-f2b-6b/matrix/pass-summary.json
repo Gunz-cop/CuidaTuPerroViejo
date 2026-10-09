@@ -1,0 +1,276 @@
+{
+  "schema": "f2b-public-matrix-pass-summary/1",
+  "state": "PASS_MATRIX_SEALED_PENDING_FORMAL_INDEPENDENT_AUDIT",
+  "source": {
+    "repository": "Gunz-cop/CuidaTuPerroViejo",
+    "pr": 64,
+    "commit": "6b0d3d5abd0c175d2acae56ab7892edaf18cc157",
+    "tree": "af7fa106cdd9eebe25846208bda2b9137e041fb2",
+    "officialPreview": "https://16e9cc9a-cuidatuperroviejo.g1721m.workers.dev",
+    "candidateReceiptSha256": "5c8a479a8e93da5723e68685d5ecaa4e56bda2923b74c5b11bb684a9136c4161"
+  },
+  "plan": {
+    "requestCount": 1284,
+    "uniqueRequestIds": 1284,
+    "chunkCount": 43,
+    "methods": [
+      "GET",
+      "HEAD"
+    ],
+    "executionRetries": 0,
+    "redirectFollowing": false
+  },
+  "result": {
+    "completedIds": 1284,
+    "validatedHttpResponses": 964,
+    "justifiedNA": 320,
+    "failedHttp": 0,
+    "neverAttempted": 0,
+    "statusCounts": {
+      "200": 569,
+      "304": 384,
+      "400": 3,
+      "406": 3,
+      "404": 4,
+      "301": 1
+    },
+    "groupCounts": {
+      "accept-negotiation": {
+        "captured": 25
+      },
+      "alternation": {
+        "captured": 24
+      },
+      "compression-supplement-144": {
+        "captured": 104,
+        "N/A": 40
+      },
+      "conditional-identity": {
+        "N/A": 280,
+        "captured": 616
+      },
+      "explicit-resource": {
+        "captured": 70
+      },
+      "identity-identity": {
+        "captured": 112
+      },
+      "legacy-redirect": {
+        "captured": 1
+      },
+      "routing-delegation": {
+        "captured": 8
+      },
+      "unknown-routes": {
+        "captured": 4
+      }
+    }
+  },
+  "supplementBaselineControls": {
+    "count": 16,
+    "expectation": "Actual unconditioned GET/HEAD baseline rows for home/Cushing × HTML/Markdown × gzip/br; inspect each row below.",
+    "rows": [
+      {
+        "requestId": "supplement:home-gzip:html:GET:baseline-no-condition",
+        "path": "/",
+        "method": "GET",
+        "expectedFormat": "html",
+        "status": 200,
+        "contentEncoding": "gzip",
+        "contentLengthPresent": false,
+        "etag": null,
+        "bodyDecodedBytes": 119418,
+        "bodyDecodedSha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b"
+      },
+      {
+        "requestId": "supplement:home-gzip:html:HEAD:baseline-no-condition",
+        "path": "/",
+        "method": "HEAD",
+        "expectedFormat": "html",
+        "status": 200,
+        "contentEncoding": "gzip",
+        "contentLengthPresent": false,
+        "etag": null,
+        "bodyDecodedBytes": 0,
+        "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "requestId": "supplement:home-gzip:markdown:GET:baseline-no-condition",
+        "path": "/",
+        "method": "GET",
+        "expectedFormat": "markdown",
+        "status": 200,
+        "contentEncoding": "gzip",
+        "contentLengthPresent": false,
+        "etag": "W/\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+        "bodyDecodedBytes": 12878,
+        "bodyDecodedSha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079"
+      },
+      {
+        "requestId": "supplement:home-gzip:markdown:HEAD:baseline-no-condition",
+        "path": "/",
+        "method": "HEAD",
+        "expectedFormat": "markdown",
+        "status": 200,
+        "contentEncoding": "gzip",
+        "contentLengthPresent": false,
+        "etag": "W/\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+        "bodyDecodedBytes": 0,
+        "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "requestId": "supplement:home-br:html:GET:baseline-no-condition",
+        "path": "/",
+        "method": "GET",
+        "expectedFormat": "html",
+        "status": 200,
+        "contentEncoding": "br",
+        "contentLengthPresent": false,
+        "etag": null,
+        "bodyDecodedBytes": 119418,
+        "bodyDecodedSha256": "4e33d05483812c0627846b34a841caacd0e9a54d8c22d4b6fab768860e320a8b"
+      },
+      {
+        "requestId": "supplement:home-br:html:HEAD:baseline-no-condition",
+        "path": "/",
+        "method": "HEAD",
+        "expectedFormat": "html",
+        "status": 200,
+        "contentEncoding": "br",
+        "contentLengthPresent": false,
+        "etag": null,
+        "bodyDecodedBytes": 0,
+        "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "requestId": "supplement:home-br:markdown:GET:baseline-no-condition",
+        "path": "/",
+        "method": "GET",
+        "expectedFormat": "markdown",
+        "status": 200,
+        "contentEncoding": "br",
+        "contentLengthPresent": false,
+        "etag": "W/\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+        "bodyDecodedBytes": 12878,
+        "bodyDecodedSha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079"
+      },
+      {
+        "requestId": "supplement:home-br:markdown:HEAD:baseline-no-condition",
+        "path": "/",
+        "method": "HEAD",
+        "expectedFormat": "markdown",
+        "status": 200,
+        "contentEncoding": "br",
+        "contentLengthPresent": false,
+        "etag": "W/\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+        "bodyDecodedBytes": 0,
+        "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "requestId": "supplement:cushing-gzip:html:GET:baseline-no-condition",
+        "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+        "method": "GET",
+        "expectedFormat": "html",
+        "status": 200,
+        "contentEncoding": "gzip",
+        "contentLengthPresent": false,
+        "etag": null,
+        "bodyDecodedBytes": 110770,
+        "bodyDecodedSha256": "7aaaef0e39577c2510e1d1028c182e996f2d213c607165e1ba32d15162885ec3"
+      },
+      {
+        "requestId": "supplement:cushing-gzip:html:HEAD:baseline-no-condition",
+        "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+        "method": "HEAD",
+        "expectedFormat": "html",
+        "status": 200,
+        "contentEncoding": "gzip",
+        "contentLengthPresent": false,
+        "etag": null,
+        "bodyDecodedBytes": 0,
+        "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "requestId": "supplement:cushing-gzip:markdown:GET:baseline-no-condition",
+        "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+        "method": "GET",
+        "expectedFormat": "markdown",
+        "status": 200,
+        "contentEncoding": "gzip",
+        "contentLengthPresent": false,
+        "etag": "W/\"22e2b5dfd49f12456bef9bf8f71a8842\"",
+        "bodyDecodedBytes": 32561,
+        "bodyDecodedSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3"
+      },
+      {
+        "requestId": "supplement:cushing-gzip:markdown:HEAD:baseline-no-condition",
+        "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+        "method": "HEAD",
+        "expectedFormat": "markdown",
+        "status": 200,
+        "contentEncoding": "gzip",
+        "contentLengthPresent": false,
+        "etag": "W/\"22e2b5dfd49f12456bef9bf8f71a8842\"",
+        "bodyDecodedBytes": 0,
+        "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "requestId": "supplement:cushing-br:html:GET:baseline-no-condition",
+        "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+        "method": "GET",
+        "expectedFormat": "html",
+        "status": 200,
+        "contentEncoding": "br",
+        "contentLengthPresent": false,
+        "etag": null,
+        "bodyDecodedBytes": 110770,
+        "bodyDecodedSha256": "7aaaef0e39577c2510e1d1028c182e996f2d213c607165e1ba32d15162885ec3"
+      },
+      {
+        "requestId": "supplement:cushing-br:html:HEAD:baseline-no-condition",
+        "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+        "method": "HEAD",
+        "expectedFormat": "html",
+        "status": 200,
+        "contentEncoding": "br",
+        "contentLengthPresent": false,
+        "etag": null,
+        "bodyDecodedBytes": 0,
+        "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "requestId": "supplement:cushing-br:markdown:GET:baseline-no-condition",
+        "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+        "method": "GET",
+        "expectedFormat": "markdown",
+        "status": 200,
+        "contentEncoding": "br",
+        "contentLengthPresent": false,
+        "etag": "W/\"22e2b5dfd49f12456bef9bf8f71a8842\"",
+        "bodyDecodedBytes": 32561,
+        "bodyDecodedSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3"
+      },
+      {
+        "requestId": "supplement:cushing-br:markdown:HEAD:baseline-no-condition",
+        "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+        "method": "HEAD",
+        "expectedFormat": "markdown",
+        "status": 200,
+        "contentEncoding": "br",
+        "contentLengthPresent": false,
+        "etag": "W/\"22e2b5dfd49f12456bef9bf8f71a8842\"",
+        "bodyDecodedBytes": 0,
+        "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  "privateRaw": {
+    "rawFileCount": 7714,
+    "rawBytes": 57749939,
+    "sealedRawManifestSha256": "8890923c49ee2e83bf7fd1ce47c5db18c401dc42c877c4faaa196aa6024990f0",
+    "resultSha256": "b0eb049c0ef7ad3301b1198abe871a4a1009ff720b51d64b3c1093154f038792",
+    "summarySha256": "dc611882c6ccd2d55ddb99ced40f4905135384cf11d6a27e5e7bd49718cb84f3",
+    "note": "Full raw headers, bodies, curl metrics and traces remain in the private audit source."
+  },
+  "curation": "All 1,284 IDs are represented. Captured rows publish allowlisted contract headers, timestamps and entity byte counts/digests; N/A rows publish reason and dependent GET/HEAD evidence. Raw URLs, raw headers, cookies, auth values, transport files and traces are omitted."
+}

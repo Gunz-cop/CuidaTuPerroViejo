@@ -1,0 +1,42 @@
+# Bug #68 — auditoría independiente R1/5
+
+**FAIL por un único bloqueante de trazabilidad del paquete: dos hashes de artefactos finales incorrectos en `plan-provenance.json`.** La corrección del helper y sus regresiones offline pasan. No se confirma hueco normativo ni falta de originales; la reparación es documental, dentro del contador #68. Primer intento de máximo cinco; no reinicia #65 PASS3/5 ni #67 PASS1/5. Formal B permanece0/5 y SDD sucesora PASS2/2 intacta.
+
+Fuente fija `73111451795fe6eb50a24be8fc735db3367f0e92`, árbol `2d416731023bfb36cfbe2449619ff93587fc8e7a`; padre `ae815733001d893792e515a8edf7cbb79a5b37ac`, árbol `83125ec6a070dd61f839e82dc630ccd3e551297b`. Git confirma identidad, checkout limpio y sólo70 archivos nuevos en `docs/agent-readiness/evidencia/f2/b/bug68-native-html` (paquete #68). Producto, configuración, stack, editorial y pruebas de producto no cambian.
+
+| Criterio | Resultado |
+| --- | --- |
+| Procedencia declarada de artefactos finales | **FAIL B01:** los hashes de paridad57 e índice público declarados no son los hashes de esos archivos finales. |
+| Diez expectativas HTML nativas | PASS: ocho200 y dos404, métodos/rutas/IDs exactos, un Content-Type HTML con charset ausente o UTF-8; parámetros/tipos/duplicados inválidos rechazados. |
+| Selección/entidad | PASS: `expected_format=None` en las diez filas aun con Accept Markdown; GET UTF-8 estricto, contacto no vacío, HEAD entidad0; hashes y status heredados intactos. |
+| Regresiones | PASS: CSS #67 conserva sus dos IDs; HTML/MD negociados, JSON, native validators, literales400/406, raw/HEAD/codecs y límites heredados mantienen checks. |
+| Plan1284/43 | PASS: IDs/orden/grupos/rutas/métodos/headers/hashes/dependencias intactos; sólo diez expectativas MIME cambian. Propuesta inactiva, sin preview/checks/hosts; intento de destino rechazado. |
+| Pruebas offline | PASS:24/24 reproducidas; catorce controles propios por executor default para GET/HEAD contacto; diez filas nativas cotejadas; pipeline independiente1284=1274 transportes sintéticos+10N/A sin STOP. |
+| Fixture/STOP/build | PASS de cotejo: GET contacto real byteexacto, HEAD únicamente sintético, sello original6786 archivos exactos;57 artefactos actuales/predecessor y CSS coinciden. |
+
+**B01, ubicación y contradicción.** `plan-provenance.json`, estado `PROPOSED_INACTIVE_PENDING_INDEPENDENT_AUDIT`, presenta `buildParityFileSha256` y `publicSubsetIndexSha256` como referencias del paquete nuevo. No están rotuladas históricas ni apuntan a archivos anteriores conservados con esos hashes. Las referencias contradicen los archivos de la entrega congelada:
+
+| Campo | SHA declarado | SHA real del archivo final |
+| --- | --- | --- |
+| `buildParityFileSha256` → `build-parity-57.json` | `02b30a7cbd93bb5b3e29aba26a21ebed7963e7d288afd9d36448a216bb905092` | `c25a36f6195ea7838029903e265b8c5b082cd3de7de2507f5a5515e84c0c7901` |
+| `publicSubsetIndexSha256` → `public-subset-index.json` | `551f5efd3fa2294f97d37cb42b64ef6348c38e507d0664ce69f178cfe0c20a6a` | `ef92c03c670e6f9b1e90f6eaa5d93a68717407a8440d333b940f8e83ca222549` |
+
+El índice final sí identifica correctamente los archivos que contiene y las57 filas de paridad coinciden por lectura. Eso acredita los datos comprobados, pero no vuelve verdaderas las referencias actuales contradictorias. La entrega no debe traspasarse como expediente cerrado con esas dos identidades falsas.
+
+**Corrección mínima:** actualizar la referencia de paridad a su archivo final; eliminar la autorreferencia al índice o sustituirla por un vínculo explícito de una sola dirección, usando el índice final como autoridad de hashes. Si se conserva un valor histórico, debe identificar inequívocamente su snapshot y no presentarlo como hash actual. Regenerar/sellar el índice después de la corrección y entregar nueva fuente fija; no introducir un ciclo donde índice y documento pretendan contener mutuamente sus hashes finales. No requiere cambiar helper, runtime, contrato, editoriales, pruebas de producto, matriz ni nuevos HTTP. Lista cerrada: **B01 solamente**.
+
+La fuente efectiva ensamblada SHA `a652040934017f6677b816e788bd614d129b5b97c5cb67d3202d465774902301` impone la regla sólo a los diez IDs de contacto/gracias/cookies/privacidad GET/HEAD200 y desconocido canónico GET/HEAD404. `validate_plan` rechaza una política fuera de IDs/métodos/rutas/status congelados. La comparación independiente frente a #67 conserva las1284 filas y sólo cambia las diez declaraciones MIME/política; algunas filas antes no declaraban MIME y ahora declaran explícitamente HTML nativo. Los hashes existentes de cuerpo y expectativas de status no cambian. `/contacto` sigue sin exigir SHA histórico del `startedAt` dinámico.
+
+B08 conserva la delegación y evita negociación accidental: Accept Markdown no convierte esas páginas GUI o404 en Markdown negociado ni exige ETag Markdown. El resto del corpus conserva reglas de representación y validadores. GET nativo exige bytes UTF-8 válidos; HEAD conserva entidad vacía. Se reprodujeron24 tests offline. Catorce controles propios atravesaron `execute_plan`/`run_one` reales, con transporte curl simulado: GET/HEAD sin charset o UTF-8 entre comillas pasan; tipo incorrecto, charset incompatible/duplicado, comillas inválidas o dos Content-Type causan STOP conservando raw y pendientes sin ejecutar el siguiente ID. También se comprobó cada una de las diez filas y el rechazo de contacto vacío o UTF-8 inválido.
+
+El pipeline independiente no sustituye el executor. Simula únicamente transporte curl, usa bytes de build conservado y codecs gzip/Brotli reales offline:1284 IDs,1274 transportes simulados,10N/A por ausencia de tag HTML home identity. Comprueba raw/base64, separación de output de headers HEAD frente a entidad0, retarget de copia,72 fixtures weak nativo br y32 omisiones válidas de Content-Encoding HEAD200. No es aceptación pública ni evidencia de rendimiento de plataforma. La propuesta1284/43 permanece inactiva; índice del plan SHA `63bf1ed7fb2c65118c616dbc619207acb7620ad295dc4edc66a432fca340a1df`.
+
+El GET `/contacto` retenido tiene35067 bytes SHA `7e85246d6f21f0e405fbe8d8b89dd7472fb68d8a563e1c87ea147051bc821300`, UTF-8 válido, status200 y `text/html`. Las dos partes publicadas son byteexactas al original y sus headers curados coinciden con el raw privado. Reproduce STOP con el helper #67 y pasa con el nuevo, sin exigir tag Markdown. No se atribuye a HEAD una captura real: es sólo control sintético.
+
+La **matriz de recuperación #67** sobre source `ae815733` se detuvo en el nuevo **bug #68**; esta es la identidad del STOP de contacto. El campo original `sourceIssue` de la fixture y los nombres de carpetas históricos se conservan; no se relabelan los originales ni se confunde este fallo con el STOP CSS de295. Sello original SHA `5aa9d90f9056a68cd201f7fa0b83cc7d38aefe8c9549016667b9a6ab020458a0`:6786 archivos se cotejaron por tamaño/hash. Summary tiene847 HTTP validados y280N/A; contacto GET añade un HTTP capturado fallido: **848 HTTP reales,1128 IDs alcanzados y156 no intentados**. Los157 pendientes incluyen el fallido. No se completa ni reintenta esa tanda.
+
+`build-parity-57.json` final, SHA `c25a36f6195ea7838029903e265b8c5b082cd3de7de2507f5a5515e84c0c7901`, declara57/57 y etiqueta fuente padre públicoae815. Los57 artefactos actuales y predecessor, además del CSS138037 bytes, coinciden por tamaño/hash. La fuente auditada sólo añade documentación/helper de evidencia; no cambia producto respecto del padre. El auditor no repitió el build ni afirma un build emitido por él. El índice final tiene69 referencias+sí mismo=70 archivos, UTF-8/tamaños/hashes exactos; esa integridad se distingue de B01.
+
+[Comprobante JSON](auditoria-bug68-native-html-r1-comprobante.json), **8.508 bytes**, SHA-256 `5129d808499efbb0fa3245bcfd350cb077089eadb4c2d46fb36e77835d4ca82f`. Conserva los hashes, discrepancias y siete scripts/logs propios en `bug68-auditoria-r1/`. Comandos: Git `rev-parse`, `diff --name-only`, `status --porcelain`; `python -m unittest discover -s <paquete>/tests -v`; `verify.py`, `pipeline.py`, `probes.py`, con `PYTHONDONTWRITEBYTECODE=1` y TMP externo. Norma SHA `842c225f79f3eda680e968dbcd673ee760f9d75b83299d241480dc4ae86068f0` e informes históricos #65/#67 intactos.
+
+Cero HTTP nuevos, Workerd, builds, curl real, IA, evaluador o mutaciones remotas del auditor. FAIL R1 vuelve al autor para reparar B01 dentro del contador #68; no habilita otra matriz pública ni auditoría formal B. No requiere tercera revisión SDD ni STOP por hueco esencial de datos/entorno.

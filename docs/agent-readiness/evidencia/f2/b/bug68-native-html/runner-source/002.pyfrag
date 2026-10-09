@@ -1,0 +1,225 @@
+    if canonical and values.get('cache-control',[''])[-1]!='private, no-store': raise Stop('Cache policy mismatch at '+req['requestId'])
+    if values.get('link',[''])[-1]!=LINK: raise Stop('Link mismatch at '+req['requestId'])
+    for name,value in SECURITY.items():
+        if values.get(name,[''])[-1]!=value: raise Stop('Security header mismatch at '+req['requestId']+': '+name)
+    if canonical:
+        if any(name in values for name in FORBIDDEN): raise Stop('Forbidden response header at '+req['requestId'])
+        for name in CDN_NO_STORE_HEADERS:
+            if name in values and (len(values[name])!=1 or values[name][0].strip().lower()!='no-store'):
+                raise Stop('CDN cache policy mismatch at '+req['requestId']+': '+name)
+    vary=[t.strip().lower() for value in values.get('vary',[]) for t in value.split(',')]
+    if canonical and vary.count('accept')!=1: raise Stop('Vary Accept missing or duplicated at '+req['requestId'])
+
+def validate_response(req,status,values,wire,decoded,prior):
+    rid=req['requestId']; method=req['method']; expect=req.get('expected') or {}
+    if isinstance(expect,str):
+        row=rid.rsplit(':',1)[-1]
+        if row=='baseline-no-condition':
+            if status!=200: raise Stop('Compression baseline status mismatch at '+rid)
+        else:
+            expected=CONDITIONAL_STATUSES.get(row)
+            if expected is None or status!=expected: raise Stop(f'Conditional status {status}, expected {expected}, at {rid}')
+    else:
+        if status!=expect['status']: raise Stop(f'Status {status}, expected {expect["status"]}, at {rid}')
+        mime_policy=expect.get('mimePolicy')
+        if rid in CSS_MIME_REQUESTS and mime_policy is None: raise Stop('Frozen CSS request lacks scoped MIME policy at '+rid)
+        if rid in NATIVE_HTML_MIME_REQUESTS and mime_policy is None: raise Stop('Frozen native HTML request lacks scoped MIME policy at '+rid)
+        if mime_policy is not None:
+            if rid in CSS_MIME_REQUESTS:
+                if CSS_MIME_REQUESTS.get(rid)!=(method,req.get('path')) or not css_content_type_matches(values.get('content-type',[]),mime_policy):
+                    raise Stop('CSS MIME policy mismatch at '+rid)
+            elif rid in NATIVE_HTML_MIME_REQUESTS:
+                target_method,target_path,target_status=NATIVE_HTML_MIME_REQUESTS[rid]
+                if (method,req.get('path'),status)!=(target_method,target_path,target_status) or not native_html_content_type_matches(values.get('content-type',[]),mime_policy):
+                    raise Stop('Native HTML MIME policy mismatch at '+rid)
+            else:
+                raise Stop('Scoped MIME policy used outside its frozen request IDs: '+rid)
+        elif expect.get('mime') and values.get('content-type',[''])[0]!=expect['mime']: raise Stop('MIME mismatch at '+rid)
+        if expect.get('location') and values.get('location',[''])[0]!=expect['location']: raise Stop('Redirect target mismatch at '+rid)
+        class_error=req.get('group')=='accept-negotiation' and method=='GET' and status in ERROR_BODIES
+        if expect.get('bodySha256') and sha(decoded)!=expect['bodySha256'] and not class_error: raise Stop('Decoded body hash mismatch at '+rid)
+    if rid in NATIVE_HTML_MIME_REQUESTS and method=='GET':
+        try: decoded.decode('utf-8','strict')
+        except UnicodeDecodeError as e: raise Stop('Native HTML GET body is not valid UTF-8 at '+rid) from e
+    if method=='HEAD' and wire: raise Stop('Real HEAD response unexpectedly contains entity bytes at '+rid)
+    if req.get('group')=='accept-negotiation' and method=='GET' and status in ERROR_BODIES:
+        required=ERROR_BODIES[status]
+        if decoded!=required:
+            raise Stop(f'Accept negotiation {status} literal body mismatch at {rid}: expected {len(required)} bytes SHA-256 {sha(required)}, observed {len(decoded)} bytes SHA-256 {sha(decoded)}')
+    fmt=expected_format(req)
+    if status==200 and fmt in ('html','markdown'):
+        required_mime='text/markdown; charset=utf-8' if fmt=='markdown' else 'text/html; charset=utf-8'
+        if values.get('content-type',[''])[0]!=required_mime: raise Stop('Selected representation MIME mismatch at '+rid)
+    if status==304 and fmt in ('html','markdown') and 'content-type' in values:
+        required_mime='text/markdown; charset=utf-8' if fmt=='markdown' else 'text/html; charset=utf-8'
+        if values['content-type'][0]!=required_mime: raise Stop('304 selected representation MIME mismatch at '+rid)
+    if status==304:
+        if wire: raise Stop('304 response has a body at '+rid)
+        if 'content-length' in values: raise Stop('304 incorrectly includes Content-Length at '+rid)
+    if 'content-length' in values and method=='GET' and status!=304:
+        try: declared=int(values['content-length'][-1])
+        except ValueError: raise Stop('Invalid Content-Length at '+rid)
+        if declared!=len(wire): raise Stop('Content-Length differs from encoded wire entity bytes at '+rid)
+    if 'content-encoding' in values and len(values['content-encoding'])!=1: raise Stop('Multiple Content-Encoding fields at '+rid)
+    if 'etag' in values and (len(values['etag'])!=1 or not valid_etag(values['etag'][-1])): raise Stop('Invalid or repeated native ETag at '+rid)
+    markdown=fmt=='markdown'
+    if markdown and status in (200,304) and 'etag' not in values: raise Stop('Markdown response lacks required native ETag at '+rid)
+    if req['group']=='compression-supplement-144' and rid.endswith(':baseline-no-condition'):
+        if method=='GET' and sha(decoded)!=req['expectedBodySha256']: raise Stop('Supplement decoded baseline differs from indexed build SHA at '+rid)
+        requested=req['headers']['Accept-Encoding']; coding=values.get('content-encoding',['identity'])[-1].lower()
+        if coding not in ('identity',requested): raise Stop('Response coding differs from requested supplement context at '+rid)
+    if req['group']=='identity-identity' and method=='GET' and status==200 and values.get('content-encoding',['identity'])[-1].lower() not in ('','identity'):
+        raise Stop('Identity baseline unexpectedly encoded at '+rid)
+    if req['group']=='conditional-identity' and method=='GET' and status==200:
+        parts=rid.split(':'); baseline=prior.get(f'identity:{parts[1]}:{parts[2]}:GET')
+        if not baseline or sha(decoded)!=baseline['bodyDecodedSha256']: raise Stop('Conditional 200 differs from identity baseline at '+rid)
+    if req['group']=='compression-supplement-144' and method=='GET' and not rid.endswith(':baseline-no-condition') and status==200:
+        parts=rid.split(':')
+        selected_format=expected_format(req)
+        baseline_id=f'supplement:{parts[1]}:{selected_format}:GET:baseline-no-condition' if len(parts)>=5 else None
+        source=prior.get(baseline_id) if baseline_id else None
+        if not source or sha(decoded)!=source['bodyDecodedSha256']: raise Stop('Conditional 200 differs from selected same-coding representation baseline at '+rid)
+    if req['group']=='conditional-identity' and status==304:
+        source=prior.get(etag_source_id(req)); native=header_values(source['headers']).get('etag',[]) if source else []
+        if markdown and not values.get('etag'): raise Stop('Markdown 304 lacks ETag at '+rid)
+        if native and values.get('etag',[''])[-1]!=native[-1]: raise Stop('304 ETag differs from selected representation at '+rid)
+    if req['group']=='compression-supplement-144' and status==304:
+        source=prior.get(etag_source_id(req))
+        native=header_values(source['headers']).get('etag',[]) if source else []
+        if markdown and not values.get('etag'): raise Stop('Markdown coding 304 lacks ETag at '+rid)
+        if native and values.get('etag',[''])[-1]!=native[-1]: raise Stop('304 ETag differs from same-coding selected representation at '+rid)
+    if req['group'] in ('identity-identity','conditional-identity','compression-supplement-144','alternation','accept-negotiation'):
+        policy_checks(req,status,values,canonical=True)
+    elif req['group'] in ('explicit-resource','routing-delegation','unknown-routes','legacy-redirect'):
+        policy_checks(req,status,values,canonical=False)
+    if rid=='delegation:delegation-discovery-contacto-get' and (status!=200 or not wire):
+        raise Stop('B08 delegated /contacto GET must retain its observed nonempty HTML body at '+rid)
+    if req['group']=='alternation' and status==200:
+        if fmt not in ('html','markdown'): raise Stop('Alternation row has no expected representation at '+rid)
+        coding=values.get('content-encoding',['identity'])[-1].strip().lower() or 'identity'
+        key='|'.join((req['path'],fmt,coding)); state=prior.setdefault('__alternationEtags__',{})
+        etags=values.get('etag',[]); signature=etags[0] if etags else None
+        for baseline in prior.values():
+            if not isinstance(baseline,dict) or baseline.get('group')!='identity-identity' or baseline.get('method')!='GET': continue
+            if baseline.get('path')!=req['path'] or baseline.get('expectedFormat')!=fmt: continue
+            base_coding=baseline.get('contentEncoding','identity').strip().lower() or 'identity'
+            if base_coding==coding:
+                baseline_tag=header_values(baseline['headers']).get('etag',[])
+                baseline_signature=baseline_tag[0] if baseline_tag else None
+                if signature!=baseline_signature:
+                    raise Stop('Alternation ETag differs from identity baseline for same route/representation/coding at '+rid)
+        if key in state and state[key]!=signature:
+            raise Stop('ETag changed within same alternation route/representation/coding at '+rid)
+        state[key]=signature
+
+def run_one(req,outdir,prior,timeout,destination,source):
+    if not destination: raise Stop('No frozen candidate destination supplied')
+    resolved,na=resolve_header_values(req,prior)
+    if na: return {'requestId':req['requestId'],'group':req['group'],'path':req['path'],'method':req['method'],'expectedFormat':expected_format(req),'state':'N/A','reason':na,'timestampUtc':utc_now()}
+    rid=req['requestId']; token=hashlib.sha256(rid.encode()).hexdigest()[:12]
+    case_dir=outdir/'raw'/f'{token}-{rid.replace(":","_")}'; case_dir.mkdir(parents=True,exist_ok=False)
+    hp=case_dir/'headers.raw'; sp=case_dir/'curl.stderr'; op=case_dir/'curl.output.raw'; mp=case_dir/'curl.metrics.raw'; tp=case_dir/'curl.trace.raw'
+    url=destination.rstrip('/')+req['path']; before=utc_now()
+    args=['curl','--disable','--silent','--show-error','--no-progress-meter','--max-redirs','0','--retry','0','--connect-timeout','20','--max-time',str(timeout),'--dump-header',str(hp),'--output',str(op),'--trace-ascii',str(tp),'--write-out','%{http_code}\t%{size_download}\t%{time_starttransfer}\n']
+    if req['method']=='HEAD': args+=['--head']
+    else: args+=['--request','GET']
+    for k,v in resolved.items(): args+=['--header',f'{k}: {v}']
+    args += [url]
+    # Persist request intent and time before invoking curl. Do not alter inherited proxy/CA/TLS.
+    request_record={'timestampStartUtc':before,'method':req['method'],'url':url,'headers':resolved,'source':source}
+    (case_dir/'request.json').write_text(json.dumps(request_record,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    with sp.open('wb') as err:
+        p=subprocess.run(args,stdout=subprocess.PIPE,stderr=err)
+    after=utc_now()
+    if not op.exists(): op.write_bytes(b'')
+    (case_dir/'curl.stdout.raw').write_bytes(p.stdout)
+    (case_dir/'curl.metrics.raw').write_bytes(p.stdout)
+    request_record.update({'timestampEndUtc':after,'curlExitCode':p.returncode})
+    (case_dir/'request.json').write_text(json.dumps(request_record,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    if p.returncode: raise Stop(f'curl transport failure {p.returncode} at {rid}; all partial files retained')
+    # With curl --head, --output receives the response headers; download bytes remain zero.
+    try: head_stdout,metrics=split_curl_stdout(req['method'],p.stdout)
+    except Stop as e: raise Stop(f'{e} at {rid}; partial files retained')
+    (case_dir/'stdout.metrics.raw').write_bytes(p.stdout)
+    (case_dir/'curl.metrics.raw').write_bytes(metrics)
+    request_record=read_json(case_dir/'request.json'); request_record['curlMetricsRawBase64']=base64.b64encode(metrics).decode('ascii'); write_json(case_dir/'request.json',request_record)
+    try: status,reason,pairs,block=parse_header_block(hp.read_bytes())
+    except Exception as e: raise Stop(f'Header parse error at {rid}: {type(e).__name__}: {e}; raw files retained')
+    output_bytes=op.read_bytes()
+    if req['method']=='HEAD':
+        try: _,_,_,output_block=parse_header_block(output_bytes)
+        except Exception as e: raise Stop(f'curl HEAD output did not preserve a response header block at {rid}: {e}; raw files retained')
+        if output_block!=block: raise Stop('curl HEAD output header block differs from dump-header final block at '+rid)
+        metric_size=int(metrics.split(b'\t')[1])
+        if metric_size!=0: raise Stop('HTTP download metric for HEAD is not zero at '+rid)
+        wire=b''
+    else:
+        wire=output_bytes
+        metric_size=int(metrics.split(b'\t')[1])
+        if metric_size!=len(wire): raise Stop('curl HTTP download metric differs from captured GET entity bytes at '+rid)
+    values=header_values(pairs); encoding=values.get('content-encoding',['identity'])[-1]
+    try: decoded=decode_entity(wire,encoding)
+    except Exception as e: raise Stop(f'Entity decoding failed at {rid}: {type(e).__name__}: {e}; raw files retained')
+    validate_response(req,status,values,wire,decoded,prior)
+    result={'requestId':rid,'group':req['group'],'path':req['path'],'state':'captured','timestampStartUtc':before,'timestampEndUtc':after,'method':req['method'],'url':url,
+      'requestHeaders':resolved,'status':status,'reason':reason,'headers':pairs,'rawHeaderBlockBase64':base64.b64encode(block).decode('ascii'),
+      'curlOutputHeadersBase64':base64.b64encode(output_bytes).decode('ascii') if req['method']=='HEAD' else None,
+      'curlMetricsBase64':base64.b64encode(metrics).decode('ascii'),'bodyWireBytes':len(wire),'bodyWireSha256':sha(wire),
+      'bodyDecodedBytes':len(decoded),'bodyDecodedSha256':sha(decoded),'contentEncoding':encoding,
+      'wireBodyFile':str(op.relative_to(outdir)) if req['method']=='GET' else None,'headerFile':str(hp.relative_to(outdir)),'requestFile':str((case_dir/'request.json').relative_to(outdir)),
+      'stderrFile':str(sp.relative_to(outdir)),'traceFile':str(tp.relative_to(outdir)),'stdoutCaptureFile':str((case_dir/'stdout.metrics.raw').relative_to(outdir)),
+      'curlHeadOutputFile':str(op.relative_to(outdir)) if req['method']=='HEAD' else None,'httpDownloadBytes':metric_size,
+      'expectedFormat':expected_format(req),'expectedMime':(req.get('expected') or {}).get('mime') if isinstance(req.get('expected'),dict) else None,
+      'expectedMimePolicy':(req.get('expected') or {}).get('mimePolicy') if isinstance(req.get('expected'),dict) else None}
+    if req['method']=='GET' and status==200 and 'etag' in values: result['etag']=values['etag'][-1]
+    if req['method']=='HEAD' and status==200:
+        get_id=rid.replace(':HEAD:',':GET:') if ':HEAD:' in rid else rid.replace(':HEAD',':GET')
+        get=prior.get(get_id)
+        if get:
+            gv=header_values(get['headers'])
+            for name in ('content-encoding','etag'):
+                if values.get(name) and (len(values[name])!=1 or values[name][-1]!=gv.get(name,[''])[-1]): raise Stop('GET/HEAD '+name+' incoherent at '+rid)
+            if 'content-length' in values and 'content-length' in gv and values['content-length'][-1]!=gv['content-length'][-1]: raise Stop('GET/HEAD Content-Length incoherent at '+rid)
+    if req['group']=='identity-identity' and status==200: prior[rid]=result
+    if req['group']=='compression-supplement-144' and rid.endswith(':baseline-no-condition') and status==200: prior[rid]=result
+    if req['group'] in ('conditional-identity','compression-supplement-144') and req['method']=='GET' and status in (200,304): prior[rid]=result
+    return result
+
+def write_stop_manifest(outdir, error, results, requests):
+    completed=len(results); remaining=requests[completed:]
+    stop={'type':type(error).__name__,'reason':str(error),'completedCases':completed,'totalPlanned':len(requests),
+          'remainingRequestIds':[r.get('requestId') for r in remaining]}
+    (outdir/'STOP.json').write_text(json.dumps(stop,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    return stop
+
+def execute_plan(requests,outdir,prior,timeout,destination=None,source=None,executor=run_one):
+    results=[]
+    for req in requests:
+        try: result=executor(req,outdir,prior,timeout,destination,source)
+        except Stop as e:
+            write_stop_manifest(outdir,e,results,requests); raise
+        except BaseException as e:
+            wrapped=Stop(f'Unexpected {type(e).__name__} at {req.get("requestId","unknown")}: {e}; partial evidence retained')
+            write_stop_manifest(outdir,wrapped,results,requests); raise wrapped from e
+        results.append(result)
+        with (outdir/'summary.jsonl').open('a',encoding='utf-8') as f: f.write(json.dumps(result,ensure_ascii=False,separators=(',',':'))+'\n')
+    return results
+
+def main():
+    ap=argparse.ArgumentParser(); ap.add_argument('--plan-index',required=True,type=pathlib.Path); ap.add_argument('--output',required=True,type=pathlib.Path); ap.add_argument('--timeout',type=int,default=60); ap.add_argument('--base-url',help='Candidate URL; must exactly match the source receipt and frozen host allowlist'); ap.add_argument('--execute',action='store_true',help='Explicitly perform only the frozen public GET/HEAD list')
+    args=ap.parse_args()
+    try:
+        idx,requests=chunks_from(args.plan_index,'requestChunks','path','requestCount'); counts=validate_plan(idx,requests); decoder_self_check()
+        print(json.dumps({'source':idx['source'],'plannedRequests':len(requests),'groups':dict(counts),'decoderSelfCheck':'gzip+br fixture PASS offline','planValidation':'PASS','execute':args.execute},ensure_ascii=False))
+        if not args.execute: return 0
+        destination=validate_execution_destination(idx,args.base_url)
+        args.output.mkdir(parents=True,exist_ok=False); prior={}
+        results=execute_plan(requests,args.output,prior,args.timeout,destination=destination,source=idx['source'])
+        (args.output/'result.json').write_text(json.dumps({'status':'complete','source':idx['source'],'caseCount':len(results),'results':results},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        return 0
+    except BaseException as e:
+        if args.execute and args.output.exists() and not (args.output/'STOP.json').exists():
+            write_stop_manifest(args.output,e,results if 'results' in locals() else [],requests if 'requests' in locals() else [])
+        print(f'STOP: {type(e).__name__}: {e}',file=sys.stderr)
+        return 2
+if __name__=='__main__': raise SystemExit(main())

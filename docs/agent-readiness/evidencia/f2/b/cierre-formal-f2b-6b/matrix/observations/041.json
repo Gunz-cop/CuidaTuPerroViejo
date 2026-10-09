@@ -1,0 +1,658 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 41,
+  "firstOrdinal": 321,
+  "lastOrdinal": 328,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--disfuncion-cognitiva-canina:markdown:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "011.json",
+      "dependsOn": [
+        "identity:article--disfuncion-cognitiva-canina:markdown:GET",
+        "identity:article--disfuncion-cognitiva-canina:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:39.188103Z",
+      "timestampEndUtc": "2026-10-09T15:57:39.287424Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"0438d7adcd6146cce7dd0b5455e2162d\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:39 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"0438d7adcd6146cce7dd0b5455e2162d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--disfuncion-cognitiva-canina:markdown:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "011.json",
+      "dependsOn": [
+        "identity:article--disfuncion-cognitiva-canina:markdown:GET",
+        "identity:article--disfuncion-cognitiva-canina:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:39.288830Z",
+      "timestampEndUtc": "2026-10-09T15:57:39.481144Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "W/\"0438d7adcd6146cce7dd0b5455e2162d\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:39 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"0438d7adcd6146cce7dd0b5455e2162d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--disfuncion-cognitiva-canina:markdown:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "011.json",
+      "dependsOn": [
+        "identity:article--disfuncion-cognitiva-canina:markdown:GET",
+        "identity:article--disfuncion-cognitiva-canina:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:39.482727Z",
+      "timestampEndUtc": "2026-10-09T15:57:39.567096Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--disfuncion-cognitiva-canina-markdown\", W/\"0438d7adcd6146cce7dd0b5455e2162d\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:39 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"0438d7adcd6146cce7dd0b5455e2162d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--disfuncion-cognitiva-canina:markdown:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "011.json",
+      "dependsOn": [
+        "identity:article--disfuncion-cognitiva-canina:markdown:GET",
+        "identity:article--disfuncion-cognitiva-canina:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:39.568619Z",
+      "timestampEndUtc": "2026-10-09T15:57:39.660790Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--disfuncion-cognitiva-canina-markdown\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:39 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "25780"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"0438d7adcd6146cce7dd0b5455e2162d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 25780,
+      "bodyWireSha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9",
+      "bodyDecodedBytes": 25780,
+      "bodyDecodedSha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 25780
+    },
+    {
+      "requestId": "conditional:article--disfuncion-cognitiva-canina:markdown:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "011.json",
+      "dependsOn": [
+        "identity:article--disfuncion-cognitiva-canina:markdown:GET",
+        "identity:article--disfuncion-cognitiva-canina:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:39.662438Z",
+      "timestampEndUtc": "2026-10-09T15:57:39.757086Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:39 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"0438d7adcd6146cce7dd0b5455e2162d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--disfuncion-cognitiva-canina:markdown:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "011.json",
+      "dependsOn": [
+        "identity:article--disfuncion-cognitiva-canina:html:GET",
+        "identity:article--disfuncion-cognitiva-canina:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:39.758454Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--disfuncion-cognitiva-canina:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:12.096035Z",
+          "timestampEndUtc": "2026-10-09T15:57:12.234885Z"
+        },
+        {
+          "requestId": "identity:article--disfuncion-cognitiva-canina:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:12.236601Z",
+          "timestampEndUtc": "2026-10-09T15:57:12.456153Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--disfuncion-cognitiva-canina:markdown:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "011.json",
+      "dependsOn": [
+        "identity:article--disfuncion-cognitiva-canina:markdown:GET",
+        "identity:article--disfuncion-cognitiva-canina:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:39.758605Z",
+      "timestampEndUtc": "2026-10-09T15:57:39.845413Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:39 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "25780"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"0438d7adcd6146cce7dd0b5455e2162d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 25780,
+      "bodyWireSha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9",
+      "bodyDecodedBytes": 25780,
+      "bodyDecodedSha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 25780
+    },
+    {
+      "requestId": "conditional:article--disfuncion-cognitiva-canina:markdown:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "011.json",
+      "dependsOn": [
+        "identity:article--disfuncion-cognitiva-canina:markdown:GET",
+        "identity:article--disfuncion-cognitiva-canina:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:39.847285Z",
+      "timestampEndUtc": "2026-10-09T15:57:39.944262Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"0438d7adcd6146cce7dd0b5455e2162d\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:39 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"0438d7adcd6146cce7dd0b5455e2162d\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

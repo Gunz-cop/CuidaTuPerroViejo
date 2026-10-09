@@ -1,0 +1,519 @@
+{
+ "source": {
+  "commit": "147aba2948fef773682d99ba264246eacadeb741",
+  "tree": "ec36e1fabd311325f5e4880b2177689efdbb5bd6",
+  "parent": "e3492afd661d6d96535717d8d5caa3bfc3d9498d",
+  "parentTree": "a00ab14cbf28c929c9762321b05786a5746079db"
+ },
+ "review": "recovery65 R3/5",
+ "formalB": "0/5",
+ "auditorNewHTTP": 0,
+ "public-utf8-freeze-index.json": {
+  "sha256": "d3ce08d2d0a0639d7e156b1e1bc873c212317f9808d7efa656a010ebc211b45f",
+  "count": 76,
+  "failures": []
+ },
+ "public-binary-object-index.json": {
+  "sha256": "49e10b2a49096d2c89a55052690418d5c4b1a8f39c590e8311ec4ca1d16f287a",
+  "count": 13,
+  "failures": []
+ },
+ "inputs": {
+  "missing-index": {
+   "count": 315,
+   "treeSha256": "a9e13f0f2e751890b926a4297265db361c4a1ee96c4ac818f07d4e4265321beb",
+   "indexPresent": false,
+   "manifestPublishedMatches": true
+  },
+  "invalid-index": {
+   "count": 316,
+   "treeSha256": "1517d355de00987ca0c8117c4c4089cb328840fbc9229843ee9ad8e37bbb7789",
+   "indexPresent": true,
+   "manifestPublishedMatches": true
+  }
+ },
+ "bundle": {
+  "count": 26,
+  "failures": []
+ },
+ "configs": [
+  {
+   "fixture": "missing-index",
+   "sha256": "93edb3b3ed904217b42cd8a27de8d257f2d9a50767dfd5633ec2662d4db344a0",
+   "resolvedInputCorrect": true,
+   "entryCorrect": true,
+   "onlyLocalBindings": true
+  },
+  {
+   "fixture": "invalid-index",
+   "sha256": "17f72488c54797566eb18fd113aa6a7f31e1d7369dc0996dfd63b5e763a421a4",
+   "resolvedInputCorrect": true,
+   "entryCorrect": true,
+   "onlyLocalBindings": true
+  }
+ ],
+ "privateCaptureManifest": {
+  "sha256": "cc4136506ef9f7927fbf8c3f64a1ca831857dea704a719debfd5bd6fae0dd2f2",
+  "count": 87,
+  "failures": []
+ },
+ "B07": [
+  {
+   "caseId": "missing-index-html-get",
+   "status": 503,
+   "GETbody37": true,
+   "HEADdownload0": null,
+   "rawPublicPrivateMatch": true,
+   "configInputBindingVerified": true
+  },
+  {
+   "caseId": "missing-index-html-head",
+   "status": 503,
+   "GETbody37": null,
+   "HEADdownload0": true,
+   "rawPublicPrivateMatch": true,
+   "configInputBindingVerified": true
+  },
+  {
+   "caseId": "missing-index-markdown-get",
+   "status": 503,
+   "GETbody37": true,
+   "HEADdownload0": null,
+   "rawPublicPrivateMatch": true,
+   "configInputBindingVerified": true
+  },
+  {
+   "caseId": "missing-index-markdown-head",
+   "status": 503,
+   "GETbody37": null,
+   "HEADdownload0": true,
+   "rawPublicPrivateMatch": true,
+   "configInputBindingVerified": true
+  },
+  {
+   "caseId": "invalid-index-html-get",
+   "status": 503,
+   "GETbody37": true,
+   "HEADdownload0": null,
+   "rawPublicPrivateMatch": true,
+   "configInputBindingVerified": true
+  },
+  {
+   "caseId": "invalid-index-html-head",
+   "status": 503,
+   "GETbody37": null,
+   "HEADdownload0": true,
+   "rawPublicPrivateMatch": true,
+   "configInputBindingVerified": true
+  },
+  {
+   "caseId": "invalid-index-markdown-get",
+   "status": 503,
+   "GETbody37": true,
+   "HEADdownload0": null,
+   "rawPublicPrivateMatch": true,
+   "configInputBindingVerified": true
+  },
+  {
+   "caseId": "invalid-index-markdown-head",
+   "status": 503,
+   "GETbody37": null,
+   "HEADdownload0": true,
+   "rawPublicPrivateMatch": true,
+   "configInputBindingVerified": true
+  }
+ ],
+ "postBuildReceiptSha256": "7671c409cb7216d9e70251ac6161c02465352306314a40acd19bfaa6f80574ec",
+ "privateBuildReceiptSha256": "4970d9192dbaabc49705d6820a9c55e26c94a8eb24c96b5df12c5ed06f7d9af5",
+ "runnerSourceHash": "b4a90615ae580ec6166ac47b0c3260c2d126212fb13736130bc2c4c800d4b0ea",
+ "normSha256": "842c225f79f3eda680e968dbcd673ee760f9d75b83299d241480dc4ae86068f0",
+ "independentDefaultExecutorPipeline": {
+  "planned": 1284,
+  "captured": 1274,
+  "NA": 10,
+  "naIds": [
+   "conditional:home:html:GET:own-tag",
+   "conditional:home:html:GET:weak-own-tag",
+   "conditional:home:html:GET:list-own-plus-other",
+   "conditional:home:html:GET:range-date-with-own-match",
+   "conditional:home:html:HEAD:own-tag",
+   "conditional:home:html:HEAD:weak-own-tag",
+   "conditional:home:html:HEAD:list-own-plus-other",
+   "conditional:home:html:HEAD:range-date-with-own-match",
+   "conditional:home:markdown:GET:other-variant-tag",
+   "conditional:home:markdown:HEAD:other-variant-tag"
+  ],
+  "executor": "default run_one; not replaced",
+  "transport": "mocked subprocess curl; node codecs real offline",
+  "newHTTP": 0,
+  "sourceRetargetVerified": true,
+  "weakNativeBrFixtures": 72,
+  "HEADCodingOmissionFixtures": 32,
+  "rawBase64Verified": true,
+  "STOP": false
+ },
+ "deltaEnumeration": {
+  "requests": 1284,
+  "sameOrderIdsGroupsPathsHeadersDependencies": true,
+  "changedExpectedBodyOnly": [
+   "accept:accept-home-bad-q-over-one",
+   "accept:accept-home-bad-q-precision",
+   "accept:accept-home-duplicate-q",
+   "accept:accept-home-json-only",
+   "accept:accept-home-none-acceptable",
+   "accept:accept-home-unsupported-media-param"
+  ],
+  "groupCounts": {
+   "identity-identity": 112,
+   "conditional-identity": 896,
+   "accept-negotiation": 25,
+   "alternation": 24,
+   "explicit-resource": 70,
+   "routing-delegation": 8,
+   "unknown-routes": 4,
+   "legacy-redirect": 1,
+   "compression-supplement-144": 144
+  },
+  "planSha256": "b93a1ce4a442243086507a5ff81ae65238b8033c96f623cf16b51e2ed3ebfd08"
+ },
+ "independentLiteralTests": [
+  {
+   "requestId": "accept:accept-home-bad-q-over-one",
+   "status": 400,
+   "fixture": "correct",
+   "state": "PASS",
+   "bodyBytes": 23,
+   "bodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-bad-q-over-one",
+   "status": 400,
+   "fixture": "empty",
+   "state": "STOP",
+   "bodyBytes": 0,
+   "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-bad-q-over-one",
+   "status": 400,
+   "fixture": "wrong",
+   "state": "STOP",
+   "bodyBytes": 17,
+   "bodySha256": "dfc8b7da6f9032bea9fdc5ea36a2b418efd73999f1799a50bce856d83baa3fc5",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-bad-q-precision",
+   "status": 400,
+   "fixture": "correct",
+   "state": "PASS",
+   "bodyBytes": 23,
+   "bodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-bad-q-precision",
+   "status": 400,
+   "fixture": "empty",
+   "state": "STOP",
+   "bodyBytes": 0,
+   "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-bad-q-precision",
+   "status": 400,
+   "fixture": "wrong",
+   "state": "STOP",
+   "bodyBytes": 17,
+   "bodySha256": "dfc8b7da6f9032bea9fdc5ea36a2b418efd73999f1799a50bce856d83baa3fc5",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-duplicate-q",
+   "status": 400,
+   "fixture": "correct",
+   "state": "PASS",
+   "bodyBytes": 23,
+   "bodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-duplicate-q",
+   "status": 400,
+   "fixture": "empty",
+   "state": "STOP",
+   "bodyBytes": 0,
+   "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-duplicate-q",
+   "status": 400,
+   "fixture": "wrong",
+   "state": "STOP",
+   "bodyBytes": 17,
+   "bodySha256": "dfc8b7da6f9032bea9fdc5ea36a2b418efd73999f1799a50bce856d83baa3fc5",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-json-only",
+   "status": 406,
+   "fixture": "correct",
+   "state": "PASS",
+   "bodyBytes": 30,
+   "bodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-json-only",
+   "status": 406,
+   "fixture": "empty",
+   "state": "STOP",
+   "bodyBytes": 0,
+   "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-json-only",
+   "status": 406,
+   "fixture": "wrong",
+   "state": "STOP",
+   "bodyBytes": 17,
+   "bodySha256": "dfc8b7da6f9032bea9fdc5ea36a2b418efd73999f1799a50bce856d83baa3fc5",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-none-acceptable",
+   "status": 406,
+   "fixture": "correct",
+   "state": "PASS",
+   "bodyBytes": 30,
+   "bodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-none-acceptable",
+   "status": 406,
+   "fixture": "empty",
+   "state": "STOP",
+   "bodyBytes": 0,
+   "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-none-acceptable",
+   "status": 406,
+   "fixture": "wrong",
+   "state": "STOP",
+   "bodyBytes": 17,
+   "bodySha256": "dfc8b7da6f9032bea9fdc5ea36a2b418efd73999f1799a50bce856d83baa3fc5",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-unsupported-media-param",
+   "status": 406,
+   "fixture": "correct",
+   "state": "PASS",
+   "bodyBytes": 30,
+   "bodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-unsupported-media-param",
+   "status": 406,
+   "fixture": "empty",
+   "state": "STOP",
+   "bodyBytes": 0,
+   "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "accept:accept-home-unsupported-media-param",
+   "status": 406,
+   "fixture": "wrong",
+   "state": "STOP",
+   "bodyBytes": 17,
+   "bodySha256": "dfc8b7da6f9032bea9fdc5ea36a2b418efd73999f1799a50bce856d83baa3fc5",
+   "optionalPlanBodyFieldsRemoved": true,
+   "rawRetained": true
+  },
+  {
+   "requestId": "TEST-HEAD-400",
+   "state": "PASS empty HEAD",
+   "bodyBytes": 0
+  },
+  {
+   "requestId": "TEST-HEAD-406",
+   "state": "PASS empty HEAD",
+   "bodyBytes": 0
+  }
+ ],
+ "R1R2History": {
+  "auditoria-recuperacion-bug65-r1.md": "8fbc3a9c3b7044a3db4cf47befe5b65264d349c72a7fc2a98406fa425c6d45c0",
+  "auditoria-recuperacion-bug65-r1-comprobante.json": "b48026cbfa51fab68fbec2d38737af852128aa72c2765f8445eceaff5c86a0d9",
+  "auditoria-recuperacion-bug65-r2.md": "ae4cb1fbe597090a3db1a0ac3213b168ce9c9850315896fb45f8d54e713ab21f",
+  "auditoria-recuperacion-bug65-r2-comprobante.json": "58417d80c75cdf56ab8c6121bdd963a15977f7c9c84a00f574c4909028aef2a1"
+ },
+ "omissions": {
+  "rows": 752,
+  "failures": [],
+  "prefixCounts": {
+   "fixture-inputs": 631,
+   "compiled-worker-bundle": 26,
+   "local-capture": 64,
+   "private-preparation": 5,
+   "preflight-curl-path-failure": 14,
+   "private-build-parity": 1,
+   "private-configs": 4,
+   "private-source-material": 7
+  }
+ },
+ "preflightIncident": {
+  "originalAttemptedSlot": 1,
+  "actualHttpRequestsEmitted": 0,
+  "curlProcessSpawned": false,
+  "filesVerified": 14,
+  "receiptSha256": "8da1b4e8a82b78f78c894d5f0abc81145f0bea91b6da922ea61a26b051edc6b6",
+  "shutdownProofSha256": "218451178886bafb50e437da57a2bfa3051c4c0bbb4e31c5ca7ba3b9e6a2eb20"
+ },
+ "receipts": {
+  "input-preparation-receipt.json": "1a6eb386fad337525c7bb808c55c04e722c19dbba6c1404ad1c7601472844d8d",
+  "config-path-correction-receipt.json": "4f1974c74b7cd1dd7e5e0273e5bd66160cd2e5e17fd39fdb9420c3c9c948ec02",
+  "raw-eight-r2/capture-receipt.json": "796300c2498e43f1d23a4e84ea57172b7bddefcae5773469041f65d9301d2ef8"
+ },
+ "buildDerivative57RowsExact": true,
+ "offlineSuite": {
+  "tests": 12,
+  "failures": 0,
+  "transportOnlyMocked": true,
+  "HTTP": 0
+ },
+ "sourceSuiteResultSha256": "8866bc9b427d4eb44b00c2027a6b5483afaf53e722118fbf1385095469efbed8",
+ "sourceSuiteErrorResultSha256": "2ccdbafcaa07b5fb4fd0cc73bd528cb7c245532a181fe17c42ec66c6ca205dc4",
+ "scope": {
+  "addedPaths": 90,
+  "onlyRecoveryDirectory": true,
+  "gitClean": true
+ },
+ "productChanged": false,
+ "postBuildRetentionReceiptSha256": "7671c409cb7216d9e70251ac6161c02465352306314a40acd19bfaa6f80574ec",
+ "buildParityPublicSha256": "07d2d077f726fd97c219bec5bf19090475d974d9d65232657e89537a4cd6165d",
+ "newBuilds": 0,
+ "newWorkerd": 0,
+ "publicHTTP": 0,
+ "verdict": "PASS recuperación65 R3/5; formalB0/5",
+ "closedBlockers": [],
+ "sourceIndependentlyVerified": true,
+ "authoritativeErrorBodies": {
+  "400": {
+   "literalEscaped": "Invalid Accept header.\\n",
+   "bytes": 23,
+   "sha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3"
+  },
+  "406": {
+   "literalEscaped": "No acceptable representation.\\n",
+   "bytes": 30,
+   "sha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c"
+  }
+ },
+ "buildArtifactsSummary": {
+  "count": 57,
+  "allCurrentPredecessorHashBytesEqual": true,
+  "publicManifestSha256": "07d2d077f726fd97c219bec5bf19090475d974d9d65232657e89537a4cd6165d"
+ },
+ "currentPrivateBuildReceiptSha256": "cbbcd23f293c756b7948f22fd64b5c78e48dec646188b0ef3a81c27e6cedad9e",
+ "sourceSuiteResult": {
+  "requestCount": 1284,
+  "uniqueRequestIdCount": 1284,
+  "stateCounts": {
+   "N/A": 10,
+   "captured": 1274
+  },
+  "transportInvocations": 1274,
+  "workerdOrCurlHttpRequests": 0,
+  "stopManifestPresent": false
+ },
+ "sealedAuditArtifacts": [
+  {
+   "path": "bug65-auditoria-r3/verify.py",
+   "bytes": 6880,
+   "sha256": "33c1e2f8e3ebaf921f12418cc2e79194bb452958af5824cf7ee444180698974c"
+  },
+  {
+   "path": "bug65-auditoria-r3/delta.py",
+   "bytes": 4840,
+   "sha256": "666c1783ed7624826a3cb92546028ece32f7044f9a8ded7ed2b9735ab86994b7"
+  },
+  {
+   "path": "bug65-auditoria-r3/pipeline.py",
+   "bytes": 4648,
+   "sha256": "829e37de7556539d0ec556d9231d634d9d42e0b3e608ed5ad85e761d944e77ea"
+  },
+  {
+   "path": "bug65-auditoria-r3/finish.py",
+   "bytes": 4518,
+   "sha256": "e1cd1f7cae6d2f0906452c6a1bc7a7a32f1816d0391c1e72742fbf00ae122b94"
+  },
+  {
+   "path": "bug65-auditoria-r3/offline-tests.log",
+   "bytes": 2191,
+   "sha256": "ebec9f65b68ca51e8c4de25b7fad0daf7918e249bb35b6e0d949fc1172394adc"
+  },
+  {
+   "path": "bug65-auditoria-r3/verify.log",
+   "bytes": 2130,
+   "sha256": "76a98ce5d829183e3fff01d44d79083781182e8aa35e40c4cd1239289a721e87"
+  },
+  {
+   "path": "bug65-auditoria-r3/delta.log",
+   "bytes": 837,
+   "sha256": "d25e3a2e1299f896266d10488cbfa8fff19d7ad45f8bd28c3d19bedb95358020"
+  },
+  {
+   "path": "bug65-auditoria-r3/pipeline.log",
+   "bytes": 860,
+   "sha256": "de8671e7e8caec1e9ad1d4380018461098fe5a2d9f2be76aeadf197bdcadb788"
+  },
+  {
+   "path": "bug65-auditoria-r3/finish.log",
+   "bytes": 623,
+   "sha256": "d7b184a9e7bcaca99775cd6d9954e06ecd9e3ea19327668c9c575831063e99aa"
+  },
+  {
+   "path": "bug65-auditoria-r3/full-plan-simulation-result.json",
+   "bytes": 3058,
+   "sha256": "8866bc9b427d4eb44b00c2027a6b5483afaf53e722118fbf1385095469efbed8"
+  },
+  {
+   "path": "bug65-auditoria-r3/error-body-test-result.json",
+   "bytes": 3137,
+   "sha256": "2ccdbafcaa07b5fb4fd0cc73bd528cb7c245532a181fe17c42ec66c6ca205dc4"
+  }
+ ],
+ "limits": [
+  "No public HTTP or new local HTTP, Workerd or builds.",
+  "Synthetic transport cannot establish public runtime acceptance.",
+  "Proposed public plan is inactive; current-HEAD CI/Workers/official receipt gate still required.",
+  "Formal B remains 0/5 and successor SDD PASS2/2 unchanged."
+ ]
+}

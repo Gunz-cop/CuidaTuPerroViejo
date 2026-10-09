@@ -1,0 +1,481 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 51,
+  "firstOrdinal": 401,
+  "lastOrdinal": 408,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "014.json",
+      "dependsOn": [
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET",
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:45.696473Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:13.852286Z",
+          "timestampEndUtc": "2026-10-09T15:57:14.029566Z"
+        },
+        {
+          "requestId": "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:14.031874Z",
+          "timestampEndUtc": "2026-10-09T15:57:14.200222Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "014.json",
+      "dependsOn": [
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET",
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:45.696531Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:13.852286Z",
+          "timestampEndUtc": "2026-10-09T15:57:14.029566Z"
+        },
+        {
+          "requestId": "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:14.031874Z",
+          "timestampEndUtc": "2026-10-09T15:57:14.200222Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "014.json",
+      "dependsOn": [
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET",
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:45.696568Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:13.852286Z",
+          "timestampEndUtc": "2026-10-09T15:57:14.029566Z"
+        },
+        {
+          "requestId": "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:14.031874Z",
+          "timestampEndUtc": "2026-10-09T15:57:14.200222Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "014.json",
+      "dependsOn": [
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET",
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:45.696673Z",
+      "timestampEndUtc": "2026-10-09T15:57:45.817536Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion-html\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:45 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 133441,
+      "bodyWireSha256": "11fc0b298c29dbd08746b61998728b4a45deb4f8a67e2fcbb1ba2cde90855c81",
+      "bodyDecodedBytes": 133441,
+      "bodyDecodedSha256": "11fc0b298c29dbd08746b61998728b4a45deb4f8a67e2fcbb1ba2cde90855c81",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 133441
+    },
+    {
+      "requestId": "conditional:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "014.json",
+      "dependsOn": [
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET",
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:45.819208Z",
+      "timestampEndUtc": "2026-10-09T15:57:45.909586Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:45 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "014.json",
+      "dependsOn": [
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:markdown:GET",
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:45.911214Z",
+      "timestampEndUtc": "2026-10-09T15:57:46.017392Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"5b023d512ec284246f64984ba8f3cd70\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:45 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 133441,
+      "bodyWireSha256": "11fc0b298c29dbd08746b61998728b4a45deb4f8a67e2fcbb1ba2cde90855c81",
+      "bodyDecodedBytes": 133441,
+      "bodyDecodedSha256": "11fc0b298c29dbd08746b61998728b4a45deb4f8a67e2fcbb1ba2cde90855c81",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 133441
+    },
+    {
+      "requestId": "conditional:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "015.json",
+      "dependsOn": [
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET",
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:46.019034Z",
+      "timestampEndUtc": "2026-10-09T15:57:46.147028Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:46 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 133441,
+      "bodyWireSha256": "11fc0b298c29dbd08746b61998728b4a45deb4f8a67e2fcbb1ba2cde90855c81",
+      "bodyDecodedBytes": 133441,
+      "bodyDecodedSha256": "11fc0b298c29dbd08746b61998728b4a45deb4f8a67e2fcbb1ba2cde90855c81",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 133441
+    },
+    {
+      "requestId": "conditional:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "015.json",
+      "dependsOn": [
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET",
+        "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:46.148728Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:13.852286Z",
+          "timestampEndUtc": "2026-10-09T15:57:14.029566Z"
+        },
+        {
+          "requestId": "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:14.031874Z",
+          "timestampEndUtc": "2026-10-09T15:57:14.200222Z"
+        }
+      ]
+    }
+  ]
+}

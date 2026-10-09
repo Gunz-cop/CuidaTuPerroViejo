@@ -1,0 +1,73 @@
+{
+  "schema": "bug69-offline-verification/1",
+  "state": "PASS_OFFLINE_ONLY_PENDING_INDEPENDENT_AUDIT",
+  "runnerSuite": {
+    "testsRun": 30,
+    "passed": 30,
+    "failed": 0,
+    "httpRequests": 0,
+    "resultFile": "test-results/test-suite-output.txt",
+    "focusResultFile": "test-results/full-plan-simulation-result.json"
+  },
+  "weakEtagCorrection": {
+    "scope": "selected response 304 versus same-context GET baseline in conditional identity and compression supplement groups",
+    "rule": "Both tags must be valid; compare exact case-sensitive opaque-tag after removing only one valid W/ prefix",
+    "positiveRunOneCases": 40,
+    "negativeRunOneCases": 5,
+    "getHeadAndAlternationStabilityRemainLiteral": true,
+    "actualCaptureReplay": "fixtures/actual-gzip-markdown-home/capture-projection.json"
+  },
+  "fullPlanSimulation": {
+    "requestCount": 1284,
+    "uniqueRequestIds": 1284,
+    "syntheticTransportInvocations": 1274,
+    "stateCounts": {
+      "captured": 1274,
+      "N/A": 10
+    },
+    "workerdOrCurlHttpRequests": 0,
+    "stopManifestPresent": false,
+    "codecs": ["identity", "gzip", "br"],
+    "resultFile": "test-results/full-plan-simulation-result.json"
+  },
+  "actualCaptureReplay": {
+    "kind": "retained actual gzip GET baseline wire body plus selected actual GET/HEAD/304 fields; local validator only",
+    "requestId": "supplement:home-gzip:markdown:GET:own-tag",
+    "baseline": {
+      "status": 200,
+      "wireBodyBytes": 4517,
+      "wireBodySha256": "a178037c07e98d46bf610df8fcb37b2f5f05ba33ba7f8bf9dda63cdd2e1e45e7",
+      "decodedBodyBytes": 12878,
+      "decodedBodySha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+      "etag": "W/\"c262365b8aeb7213ef529ce3e9d9fa15\""
+    },
+    "head": {
+      "status": 200,
+      "downloadBytes": 0,
+      "etag": "W/\"c262365b8aeb7213ef529ce3e9d9fa15\""
+    },
+    "conditional304": {
+      "requestIfNoneMatch": "W/\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "status": 304,
+      "etag": "\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "entityBytes": 0,
+      "downloadBytes": 0,
+      "validatorResult": "PASS"
+    }
+  },
+  "otherControls": {
+    "cssRegressionTests": 5,
+    "nativeHtmlRegressionTests": 7,
+    "acceptErrorBodyTests": 1,
+    "generalRunnerRegressionTests": 11,
+    "weakEtagTests": 6
+  },
+  "plan": {
+    "index": "plan/public-acceptance-plan-index.json",
+    "requestCount": 1284,
+    "chunkCount": 43,
+    "execute": false,
+    "allowlistedHosts": []
+  },
+  "fixtureLabel": "Captured replay uses retained real response data; all other new protocol cases are TEST synthetic offline transport"
+}

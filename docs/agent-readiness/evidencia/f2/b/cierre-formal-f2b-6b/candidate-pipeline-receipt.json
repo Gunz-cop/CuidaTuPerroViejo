@@ -1,0 +1,41 @@
+{
+  "schema": "f2b-public-candidate-pipeline-receipt/1",
+  "classification": "PUBLIC_SAFE_PROJECTION",
+  "repository": "Gunz-cop/CuidaTuPerroViejo",
+  "pullRequest": 64,
+  "commit": "6b0d3d5abd0c175d2acae56ab7892edaf18cc157",
+  "tree": "af7fa106cdd9eebe25846208bda2b9137e041fb2",
+  "sourceReceiptSha256": "5c8a479a8e93da5723e68685d5ecaa4e56bda2923b74c5b11bb684a9136c4161",
+  "sourceReceiptIsUnmodifiedPrivateRecord": true,
+  "checks": [
+    {
+      "id": 113900401915,
+      "name": "Criterios de aceptación",
+      "status": "completed",
+      "conclusion": "success",
+      "head": "6b0d3d5abd0c175d2acae56ab7892edaf18cc157"
+    },
+    {
+      "id": 113900977865,
+      "name": "Workers Builds: cuidatuperroviejo",
+      "status": "completed",
+      "conclusion": "success",
+      "head": "6b0d3d5abd0c175d2acae56ab7892edaf18cc157"
+    }
+  ],
+  "officialPreviewReceipt": {
+    "author": "cloudflare-workers-and-pages[bot]",
+    "updatedAt": "2026-10-09T15:48:03Z",
+    "latestCommit": "6b0d3d5a",
+    "commitPreview": "https://16e9cc9a-cuidatuperroviejo.g1721m.workers.dev"
+  },
+  "bug69IndependentAudit": {
+    "result": "PASS",
+    "review": 1,
+    "maximumReviews": 5,
+    "reportSha256": "dbb7dcee21048fe9e05563e93af029b8682221845c602c9abf1fed1eab3ee2ed",
+    "receiptSha256": "2980b0267fd61e39091c8c27a5db0735063005dd35739f76cbc6375f82dd40c1"
+  },
+  "buildArtifactCount": 57,
+  "mainAuthorized": false
+}

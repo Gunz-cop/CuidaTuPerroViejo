@@ -1,0 +1,481 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 35,
+  "firstOrdinal": 273,
+  "lastOrdinal": 280,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--como-dar-medicacion-perro:html:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "009.json",
+      "dependsOn": [
+        "identity:article--como-dar-medicacion-perro:html:GET",
+        "identity:article--como-dar-medicacion-perro:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:35.531183Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--como-dar-medicacion-perro:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:11.373389Z",
+          "timestampEndUtc": "2026-10-09T15:57:11.674523Z"
+        },
+        {
+          "requestId": "identity:article--como-dar-medicacion-perro:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:11.676100Z",
+          "timestampEndUtc": "2026-10-09T15:57:11.831495Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--como-dar-medicacion-perro:html:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "010.json",
+      "dependsOn": [
+        "identity:article--como-dar-medicacion-perro:html:GET",
+        "identity:article--como-dar-medicacion-perro:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:35.531237Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--como-dar-medicacion-perro:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:11.373389Z",
+          "timestampEndUtc": "2026-10-09T15:57:11.674523Z"
+        },
+        {
+          "requestId": "identity:article--como-dar-medicacion-perro:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:11.676100Z",
+          "timestampEndUtc": "2026-10-09T15:57:11.831495Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--como-dar-medicacion-perro:html:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "010.json",
+      "dependsOn": [
+        "identity:article--como-dar-medicacion-perro:html:GET",
+        "identity:article--como-dar-medicacion-perro:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:35.531317Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--como-dar-medicacion-perro:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:11.373389Z",
+          "timestampEndUtc": "2026-10-09T15:57:11.674523Z"
+        },
+        {
+          "requestId": "identity:article--como-dar-medicacion-perro:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:11.676100Z",
+          "timestampEndUtc": "2026-10-09T15:57:11.831495Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--como-dar-medicacion-perro:html:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "010.json",
+      "dependsOn": [
+        "identity:article--como-dar-medicacion-perro:html:GET",
+        "identity:article--como-dar-medicacion-perro:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:35.531422Z",
+      "timestampEndUtc": "2026-10-09T15:57:35.627584Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--como-dar-medicacion-perro-html\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:35 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 106001,
+      "bodyWireSha256": "dc375c8bea612b4736e371b6f719bb0b83a1635f411eda448dd1d8e1cccb106c",
+      "bodyDecodedBytes": 106001,
+      "bodyDecodedSha256": "dc375c8bea612b4736e371b6f719bb0b83a1635f411eda448dd1d8e1cccb106c",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 106001
+    },
+    {
+      "requestId": "conditional:article--como-dar-medicacion-perro:html:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "010.json",
+      "dependsOn": [
+        "identity:article--como-dar-medicacion-perro:html:GET",
+        "identity:article--como-dar-medicacion-perro:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:35.629512Z",
+      "timestampEndUtc": "2026-10-09T15:57:35.720736Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:35 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--como-dar-medicacion-perro:html:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "010.json",
+      "dependsOn": [
+        "identity:article--como-dar-medicacion-perro:markdown:GET",
+        "identity:article--como-dar-medicacion-perro:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:35.722500Z",
+      "timestampEndUtc": "2026-10-09T15:57:35.828687Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "\"b5c8a87e81add930dd09b5717cdcffc0\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:35 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 106001,
+      "bodyWireSha256": "dc375c8bea612b4736e371b6f719bb0b83a1635f411eda448dd1d8e1cccb106c",
+      "bodyDecodedBytes": 106001,
+      "bodyDecodedSha256": "dc375c8bea612b4736e371b6f719bb0b83a1635f411eda448dd1d8e1cccb106c",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 106001
+    },
+    {
+      "requestId": "conditional:article--como-dar-medicacion-perro:html:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "010.json",
+      "dependsOn": [
+        "identity:article--como-dar-medicacion-perro:html:GET",
+        "identity:article--como-dar-medicacion-perro:html:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:35.830648Z",
+      "timestampEndUtc": "2026-10-09T15:57:35.936331Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:35 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 106001,
+      "bodyWireSha256": "dc375c8bea612b4736e371b6f719bb0b83a1635f411eda448dd1d8e1cccb106c",
+      "bodyDecodedBytes": 106001,
+      "bodyDecodedSha256": "dc375c8bea612b4736e371b6f719bb0b83a1635f411eda448dd1d8e1cccb106c",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 106001
+    },
+    {
+      "requestId": "conditional:article--como-dar-medicacion-perro:html:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "010.json",
+      "dependsOn": [
+        "identity:article--como-dar-medicacion-perro:html:GET",
+        "identity:article--como-dar-medicacion-perro:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:35.937953Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--como-dar-medicacion-perro:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:11.373389Z",
+          "timestampEndUtc": "2026-10-09T15:57:11.674523Z"
+        },
+        {
+          "requestId": "identity:article--como-dar-medicacion-perro:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:11.676100Z",
+          "timestampEndUtc": "2026-10-09T15:57:11.831495Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "expectedLiteralSha256": {
+    "400": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+    "406": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c"
+  },
+  "fixtureLabel": "TEST synthetic offline transport; no HTTP",
+  "negativeCases": [
+    {
+      "observedBytes": 0,
+      "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "partialRawRetained": true,
+      "remainingRequestIds": [
+        "accept:accept-home-bad-q-over-one",
+        "TEST-after-400-0"
+      ],
+      "requestId": "accept:accept-home-bad-q-over-one",
+      "state": "STOP",
+      "status": 400
+    },
+    {
+      "observedBytes": 18,
+      "observedSha256": "9bffde1181b6d6ffde73d9c9846efcedefce550c3b511edbd2183330ccc06183",
+      "partialRawRetained": true,
+      "remainingRequestIds": [
+        "accept:accept-home-bad-q-over-one",
+        "TEST-after-400-18"
+      ],
+      "requestId": "accept:accept-home-bad-q-over-one",
+      "state": "STOP",
+      "status": 400
+    },
+    {
+      "observedBytes": 0,
+      "observedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "partialRawRetained": true,
+      "remainingRequestIds": [
+        "accept:accept-home-json-only",
+        "TEST-after-406-0"
+      ],
+      "requestId": "accept:accept-home-json-only",
+      "state": "STOP",
+      "status": 406
+    },
+    {
+      "observedBytes": 18,
+      "observedSha256": "9bffde1181b6d6ffde73d9c9846efcedefce550c3b511edbd2183330ccc06183",
+      "partialRawRetained": true,
+      "remainingRequestIds": [
+        "accept:accept-home-json-only",
+        "TEST-after-406-18"
+      ],
+      "requestId": "accept:accept-home-json-only",
+      "state": "STOP",
+      "status": 406
+    }
+  ],
+  "positiveCases": [
+    {
+      "bytes": 23,
+      "requestId": "accept:accept-home-bad-q-over-one",
+      "sha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "state": "PASS",
+      "status": 400
+    },
+    {
+      "bytes": 23,
+      "requestId": "accept:accept-home-bad-q-precision",
+      "sha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "state": "PASS",
+      "status": 400
+    },
+    {
+      "bytes": 23,
+      "requestId": "accept:accept-home-duplicate-q",
+      "sha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "state": "PASS",
+      "status": 400
+    },
+    {
+      "bytes": 30,
+      "requestId": "accept:accept-home-json-only",
+      "sha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "state": "PASS",
+      "status": 406
+    },
+    {
+      "bytes": 30,
+      "requestId": "accept:accept-home-none-acceptable",
+      "sha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "state": "PASS",
+      "status": 406
+    },
+    {
+      "bytes": 30,
+      "requestId": "accept:accept-home-unsupported-media-param",
+      "sha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "state": "PASS",
+      "status": 406
+    }
+  ],
+  "schema": "bug68-error-body-test-result/1"
+}

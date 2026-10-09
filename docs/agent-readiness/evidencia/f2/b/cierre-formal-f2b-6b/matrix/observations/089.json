@@ -1,0 +1,658 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 89,
+  "firstOrdinal": 705,
+  "lastOrdinal": 712,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:page--politica-editorial:markdown:GET:own-tag",
+      "group": "conditional-identity",
+      "path": "/politica-editorial",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "025.json",
+      "dependsOn": [
+        "identity:page--politica-editorial:markdown:GET",
+        "identity:page--politica-editorial:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:07.341663Z",
+      "timestampEndUtc": "2026-10-09T15:58:07.440173Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"add3f9f75e65e6e64efab1deb50232f8\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:07 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"add3f9f75e65e6e64efab1deb50232f8\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:page--politica-editorial:markdown:GET:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/politica-editorial",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "025.json",
+      "dependsOn": [
+        "identity:page--politica-editorial:markdown:GET",
+        "identity:page--politica-editorial:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:07.441847Z",
+      "timestampEndUtc": "2026-10-09T15:58:07.523127Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "W/\"add3f9f75e65e6e64efab1deb50232f8\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:07 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"add3f9f75e65e6e64efab1deb50232f8\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:page--politica-editorial:markdown:GET:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/politica-editorial",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "025.json",
+      "dependsOn": [
+        "identity:page--politica-editorial:markdown:GET",
+        "identity:page--politica-editorial:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:07.524846Z",
+      "timestampEndUtc": "2026-10-09T15:58:07.610280Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-page--politica-editorial-markdown\", W/\"add3f9f75e65e6e64efab1deb50232f8\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:07 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"add3f9f75e65e6e64efab1deb50232f8\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:page--politica-editorial:markdown:GET:different-tag",
+      "group": "conditional-identity",
+      "path": "/politica-editorial",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "025.json",
+      "dependsOn": [
+        "identity:page--politica-editorial:markdown:GET",
+        "identity:page--politica-editorial:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:07.611868Z",
+      "timestampEndUtc": "2026-10-09T15:58:07.721766Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-page--politica-editorial-markdown\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:07 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "2925"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"add3f9f75e65e6e64efab1deb50232f8\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 2925,
+      "bodyWireSha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "bodyDecodedBytes": 2925,
+      "bodyDecodedSha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 2925
+    },
+    {
+      "requestId": "conditional:page--politica-editorial:markdown:GET:wildcard",
+      "group": "conditional-identity",
+      "path": "/politica-editorial",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "025.json",
+      "dependsOn": [
+        "identity:page--politica-editorial:markdown:GET",
+        "identity:page--politica-editorial:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:07.723535Z",
+      "timestampEndUtc": "2026-10-09T15:58:07.841563Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:07 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"add3f9f75e65e6e64efab1deb50232f8\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:page--politica-editorial:markdown:GET:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/politica-editorial",
+      "method": "GET",
+      "state": "N/A",
+      "planChunk": "025.json",
+      "dependsOn": [
+        "identity:page--politica-editorial:html:GET",
+        "identity:page--politica-editorial:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:58:07.843025Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:page--politica-editorial:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:18.481167Z",
+          "timestampEndUtc": "2026-10-09T15:57:18.579569Z"
+        },
+        {
+          "requestId": "identity:page--politica-editorial:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:18.581002Z",
+          "timestampEndUtc": "2026-10-09T15:57:18.674770Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:page--politica-editorial:markdown:GET:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/politica-editorial",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "025.json",
+      "dependsOn": [
+        "identity:page--politica-editorial:markdown:GET",
+        "identity:page--politica-editorial:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:07.843146Z",
+      "timestampEndUtc": "2026-10-09T15:58:07.929700Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:07 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "2925"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"add3f9f75e65e6e64efab1deb50232f8\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 2925,
+      "bodyWireSha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "bodyDecodedBytes": 2925,
+      "bodyDecodedSha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 2925
+    },
+    {
+      "requestId": "conditional:page--politica-editorial:markdown:GET:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/politica-editorial",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "025.json",
+      "dependsOn": [
+        "identity:page--politica-editorial:markdown:GET",
+        "identity:page--politica-editorial:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:07.931849Z",
+      "timestampEndUtc": "2026-10-09T15:58:08.013122Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"add3f9f75e65e6e64efab1deb50232f8\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:07 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"add3f9f75e65e6e64efab1deb50232f8\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

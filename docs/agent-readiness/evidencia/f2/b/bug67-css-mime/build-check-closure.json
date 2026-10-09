@@ -1,0 +1,23 @@
+{
+  "schema": "bug67-final-build-closure/1",
+  "state": "WIP_NOT_ACCEPTED_CURRENT_PARITY_UNVERIFIED",
+  "finalAttempt": {
+    "command": "npm run build",
+    "cacheEnvironment": "TMPDIR, NODE_COMPILE_CACHE and XDG_CONFIG_HOME set to task-specific locations under /tmp",
+    "result": "FAILED before dist/client generation: uv_interface_addresses returned Unknown system error 1 while Cloudflare Vite plugin initialized the preview server",
+    "networkRetry": "REJECTED_BY_AUTO_REVIEW; no retry or workaround performed",
+    "httpRequests": 0
+  },
+  "lastSuccessfulBuild": {
+    "result": "57/57 candidate and predecessor artifacts matched; CSS output matched retained GET body",
+    "artifact": "build-parity-post-package-57.json",
+    "scope": "historical result before final test fixture path adjustment and refreshed test-suite output; does not establish parity for this snapshot"
+  },
+  "currentSnapshot": {
+    "testSuite": "17/17 PASS, offline",
+    "currentParity": "NOT_VERIFIED",
+    "publicMatrix": "NOT_RUN",
+    "audit": "NOT_STARTED",
+    "accepted": false
+  }
+}

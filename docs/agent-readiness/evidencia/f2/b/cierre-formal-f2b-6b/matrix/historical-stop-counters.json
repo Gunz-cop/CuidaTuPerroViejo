@@ -1,0 +1,54 @@
+{
+  "schema": "f2b-historical-matrix-stop-counters/1",
+  "classification": "HISTORICAL_SUMMARY_ONLY_NOT_REUSED_AS_CURRENT_CAPTURE_EVIDENCE",
+  "note": "Closed STOP matrices remain immutable. Counts are preserved separately and are not retries or evidence for candidate 6b.",
+  "matrices": [
+    {
+      "candidate": "295-era CSS policy matrix",
+      "plannedIds": 1284,
+      "httpRequests": 846,
+      "httpPassedBeforeStop": 845,
+      "httpFailed": 1,
+      "justifiedNA": 280,
+      "unattemptedIds": 158,
+      "state": "STOP"
+    },
+    {
+      "candidate": "ae815 CSS-fixed matrix",
+      "plannedIds": 1284,
+      "httpRequests": 848,
+      "httpPassed": 847,
+      "httpFailed": 1,
+      "justifiedNA": 280,
+      "unattemptedIds": 156,
+      "state": "STOP"
+    },
+    {
+      "candidate": "c8de native-HTML matrix",
+      "plannedIds": 1284,
+      "httpRequests": 885,
+      "httpPassed": 884,
+      "httpFailed": 1,
+      "justifiedNA": 288,
+      "unattemptedIds": 111,
+      "state": "STOP"
+    },
+    {
+      "candidate": "6b0d3d5a current matrix",
+      "plannedIds": 1284,
+      "httpRequests": 964,
+      "httpPassed": 964,
+      "httpFailed": 0,
+      "justifiedNA": 320,
+      "unattemptedIds": 0,
+      "state": "PASS_SEALED"
+    }
+  ],
+  "auditHistory": {
+    "bug65Recovery": "R3/5 PASS",
+    "bug67CssMime": "R1/5 PASS",
+    "bug68NativeHtml": "R2/5 PASS",
+    "bug69WeakEtag": "R1/5 PASS",
+    "formalB": "0/5; this package is awaiting the independent formal audit"
+  }
+}

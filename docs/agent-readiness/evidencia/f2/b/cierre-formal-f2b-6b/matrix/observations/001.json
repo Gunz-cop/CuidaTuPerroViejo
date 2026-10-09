@@ -1,0 +1,601 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 1,
+  "firstOrdinal": 1,
+  "lastOrdinal": 8,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "identity:article--agresividad-tardia-perros-mayores-dolor:html:GET",
+      "group": "identity-identity",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:05.958707Z",
+      "timestampEndUtc": "2026-10-09T15:57:06.798926Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:06 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 126650,
+      "bodyWireSha256": "166b9d4258f950a65b62d71e9b3b16edc5e77b7d231b5b2584dd68be7d9e68f6",
+      "bodyDecodedBytes": 126650,
+      "bodyDecodedSha256": "166b9d4258f950a65b62d71e9b3b16edc5e77b7d231b5b2584dd68be7d9e68f6",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 126650
+    },
+    {
+      "requestId": "identity:article--agresividad-tardia-perros-mayores-dolor:html:HEAD",
+      "group": "identity-identity",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:06.800705Z",
+      "timestampEndUtc": "2026-10-09T15:57:07.281698Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:07 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:GET",
+      "group": "identity-identity",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:07.283154Z",
+      "timestampEndUtc": "2026-10-09T15:57:07.695664Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:07 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "44223"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"3c82eef141e138dcf61755c8cbf846e7\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 44223,
+      "bodyWireSha256": "3feb00d4f978db51b3da7300557001f6ff54b8e3ef743c7ca86b38eebf0eb913",
+      "bodyDecodedBytes": 44223,
+      "bodyDecodedSha256": "3feb00d4f978db51b3da7300557001f6ff54b8e3ef743c7ca86b38eebf0eb913",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 44223
+    },
+    {
+      "requestId": "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD",
+      "group": "identity-identity",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:07.697666Z",
+      "timestampEndUtc": "2026-10-09T15:57:08.052426Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:08 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"3c82eef141e138dcf61755c8cbf846e7\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "identity:article--ansiedad-separacion-perros-senior:html:GET",
+      "group": "identity-identity",
+      "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:08.054132Z",
+      "timestampEndUtc": "2026-10-09T15:57:08.763561Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:08 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 121286,
+      "bodyWireSha256": "6d75a291061bc906cf59db6f284ae7f48f632387ab96650e8b0c44a29a2e038e",
+      "bodyDecodedBytes": 121286,
+      "bodyDecodedSha256": "6d75a291061bc906cf59db6f284ae7f48f632387ab96650e8b0c44a29a2e038e",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 121286
+    },
+    {
+      "requestId": "identity:article--ansiedad-separacion-perros-senior:html:HEAD",
+      "group": "identity-identity",
+      "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:08.765321Z",
+      "timestampEndUtc": "2026-10-09T15:57:09.175475Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:09 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "identity:article--ansiedad-separacion-perros-senior:markdown:GET",
+      "group": "identity-identity",
+      "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:09.177081Z",
+      "timestampEndUtc": "2026-10-09T15:57:09.281806Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:09 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "40785"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"8564a0770da7a18feb6dff207322f35f\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 40785,
+      "bodyWireSha256": "59145955fe0e09bdad14dcb702a2c12458efb3e10a2855e45f3d4cbec6ad8043",
+      "bodyDecodedBytes": 40785,
+      "bodyDecodedSha256": "59145955fe0e09bdad14dcb702a2c12458efb3e10a2855e45f3d4cbec6ad8043",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 40785
+    },
+    {
+      "requestId": "identity:article--ansiedad-separacion-perros-senior:markdown:HEAD",
+      "group": "identity-identity",
+      "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "001.json",
+      "timestampStartUtc": "2026-10-09T15:57:09.283608Z",
+      "timestampEndUtc": "2026-10-09T15:57:09.394882Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:09 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"8564a0770da7a18feb6dff207322f35f\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "bug67-offline-verification/1",
+  "state": "PASS_OFFLINE_TESTS_BUILD_BLOCKED_PENDING_INDEPENDENT_AUDIT",
+  "runnerSuite": {
+    "testsRun": 17,
+    "passed": 17,
+    "failed": 0,
+    "cssFocusedTests": 5,
+    "httpRequests": 0,
+    "resultFile": "test-results/test-suite-output.txt"
+  },
+  "fullPlanSimulation": {
+    "requestCount": 1284,
+    "uniqueRequestIds": 1284,
+    "syntheticTransportInvocations": 1274,
+    "states": {
+      "N/A": 10,
+      "captured": 1274
+    },
+    "workerdOrCurlHttpRequests": 0,
+    "stopManifestPresent": false,
+    "resultFile": "test-results/full-plan-simulation-result.json"
+  },
+  "capturedResponseReplay": {
+    "kind": "real retained GET capture, curated fixture, replayed locally without curl/network",
+    "requestId": "resource:resource-stylesheet-get",
+    "status": 200,
+    "contentType": "text/css",
+    "contentLength": "138037",
+    "bodyBytes": 138037,
+    "bodySha256": "0f6dc475a0c00022ccd332ead61fbeadb03233ba8649ac70fd19b2d640a95786",
+    "headerBlockSha256": "580fcde49aecd60e48a90aa145c036ba884faa5f2c5002f1370c6d6b9710daf0",
+    "checks": [
+      "real validate_response",
+      "real policy_checks for Link and four security headers"
+    ],
+    "headControl": "synthetic empty HEAD proof; not a captured HEAD response"
+  },
+  "semanticMimePolicy": {
+    "positive": [
+      "text/css",
+      "text/css; charset=utf-8",
+      "case-insensitive media type/charset",
+      "OWS and quoted UTF-8 charset"
+    ],
+    "negative": [
+      "wrong type",
+      "incompatible charset",
+      "duplicate charset",
+      "unknown parameter",
+      "malformed parameter/syntax",
+      "multiple Content-Type fields"
+    ]
+  },
+  "planValidation": {
+    "requestCount": 1284,
+    "groupsUnchanged": true,
+    "onlyChangedRequestIds": [
+      "resource:resource-stylesheet-get",
+      "resource:resource-stylesheet-head"
+    ],
+    "preview": null,
+    "allowlistedHosts": [],
+    "execute": false
+  },
+  "finalBuild": {
+    "state": "FAILED_CURRENT_PARITY_UNVERIFIED",
+    "closureFile": "build-check-closure.json",
+    "httpRequests": 0
+  }
+}

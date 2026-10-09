@@ -1,0 +1,650 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 58,
+  "firstOrdinal": 457,
+  "lastOrdinal": 464,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD:own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:GET",
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:49.826373Z",
+      "timestampEndUtc": "2026-10-09T15:57:49.906952Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f292e2d58ed0abebdeedd9ff7a642fa6\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:49 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"f292e2d58ed0abebdeedd9ff7a642fa6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:GET",
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:49.908699Z",
+      "timestampEndUtc": "2026-10-09T15:57:50.015780Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "W/\"f292e2d58ed0abebdeedd9ff7a642fa6\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:50 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"f292e2d58ed0abebdeedd9ff7a642fa6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:GET",
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:50.017379Z",
+      "timestampEndUtc": "2026-10-09T15:57:50.110169Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--mi-perro-viejo-defeca-mucho-poliquezia-markdown\", W/\"f292e2d58ed0abebdeedd9ff7a642fa6\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:50 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"f292e2d58ed0abebdeedd9ff7a642fa6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD:different-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:GET",
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:50.114727Z",
+      "timestampEndUtc": "2026-10-09T15:57:50.216427Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--mi-perro-viejo-defeca-mucho-poliquezia-markdown\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:50 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"f292e2d58ed0abebdeedd9ff7a642fa6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD:wildcard",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:GET",
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:50.217849Z",
+      "timestampEndUtc": "2026-10-09T15:57:50.321080Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:50 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"f292e2d58ed0abebdeedd9ff7a642fa6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+      "method": "HEAD",
+      "state": "N/A",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:html:GET",
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:50.322923Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:14.472875Z",
+          "timestampEndUtc": "2026-10-09T15:57:14.592001Z"
+        },
+        {
+          "requestId": "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:14.594514Z",
+          "timestampEndUtc": "2026-10-09T15:57:14.711675Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:GET",
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:50.323116Z",
+      "timestampEndUtc": "2026-10-09T15:57:50.444374Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:50 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"f292e2d58ed0abebdeedd9ff7a642fa6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "017.json",
+      "dependsOn": [
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:GET",
+        "identity:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:50.446133Z",
+      "timestampEndUtc": "2026-10-09T15:57:50.540098Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f292e2d58ed0abebdeedd9ff7a642fa6\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:50 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"f292e2d58ed0abebdeedd9ff7a642fa6\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

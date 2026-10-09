@@ -1,0 +1,39 @@
+{
+  "schema": "f2b-formal-source-provenance/1",
+  "classification": "PUBLIC_EVIDENCE_WITH_PRIVATE_RAW_SOURCE",
+  "candidate": {
+    "repository": "Gunz-cop/CuidaTuPerroViejo",
+    "commit": "6b0d3d5abd0c175d2acae56ab7892edaf18cc157",
+    "tree": "af7fa106cdd9eebe25846208bda2b9137e041fb2",
+    "localEquivalentCommit": "7bb30d5134a02a5f9232d0a958c1335a8bd6b257",
+    "localTreeDifference": 0
+  },
+  "implementationIdentity": {
+    "runtimeSourceSha256": "93788fc2646f83cbfc65a9dfb21d96f898c51272070f9e1603279946d4542d9f",
+    "productTestsSourceSha256": "a9c8e68afc66b71fc8ef3634a5bc99575b8d5ff39e0d0150893018c94f914a7a",
+    "sddSuccessorSha256": "842c225f79f3eda680e968dbcd673ee760f9d75b83299d241480dc4ae86068f0",
+    "bug69HelperSha256": "b7ecf335395d5b6d1bf845b5f566a76b2e2b45fc46e3eefb89844cd024e37139"
+  },
+  "publicSourceLinks": {
+    "bug69Package": "../bug69-etag-equivalence/",
+    "bug69OfflineVerificationSha256": "e84552e2d37a045e7bdd7ef83540fbbacb777793cdb326cdb641ca170e50f82f",
+    "bug69BuildParitySha256": "5d7e904f2a4706d75b6ae5146ef4727539eabd6749ff4c73d1507398cf7636ea",
+    "normativeSource": "../../../../fases/f2-lectura-markdown.md",
+    "normativeSourceSha256": "b2b3767c10ac5411e59d4b6d6fae98bd9d69b7518c2ebe96399ed88389dc21ce",
+    "testReport": "../bloqueo-b07-sucesora/cierre-bloqueo.md",
+    "testReportSha256": "4b3dae027527f3deab47254fcada9e54ba36220c227e47d90dfb747af9b86e1c",
+    "ciWorkflow": "repository path: .github/workflows/ci.yml",
+    "ciWorkflowSha256": "6394a7c7488cfd211d6eb85bbd088eae64e80405ea5135c4c5ba02c5aec94668"
+  },
+  "ciReceipt": {
+    "path": "ci-step-receipt.json",
+    "sourceSha256": "7551e110ff5ce72239a120dbced35301f926c2e84f3c52787d322f6aae748990",
+    "steps": 23,
+    "allSuccess": true
+  },
+  "limits": [
+    "The test report records 42/42 against the unchanged code source 05ecae3c1356e393f26a5831dec41b7e4b84db77; exact 6b CI Tests step also passed but did not publish a count.",
+    "The report and matrix capture belong to executed candidate 6b. The new documentation-only package commit is not an HTTP source candidate.",
+    "No main or deployment was authorized."
+  ]
+}

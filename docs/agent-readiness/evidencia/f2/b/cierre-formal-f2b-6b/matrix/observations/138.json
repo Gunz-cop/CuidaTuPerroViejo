@@ -1,0 +1,593 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 138,
+  "firstOrdinal": 1097,
+  "lastOrdinal": 1104,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "resource:resource-markdown-home-head",
+      "group": "explicit-resource",
+      "path": "/agent-content/v1/documents/home.md",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "037.json",
+      "timestampStartUtc": "2026-10-09T15:58:39.678670Z",
+      "timestampEndUtc": "2026-10-09T15:58:39.773382Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:39 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "public, max-age=0, must-revalidate"
+        ],
+        [
+          "etag",
+          "\"c262365b8aeb7213ef529ce3e9d9fa15\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "resource:resource-markdown-page--acerca-de-get",
+      "group": "explicit-resource",
+      "path": "/agent-content/v1/documents/page--acerca-de.md",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "037.json",
+      "timestampStartUtc": "2026-10-09T15:58:39.774881Z",
+      "timestampEndUtc": "2026-10-09T15:58:39.891607Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:39 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "2477"
+        ],
+        [
+          "cache-control",
+          "public, max-age=0, must-revalidate"
+        ],
+        [
+          "etag",
+          "\"64c40e75290822094ec2d2cdc967ef56\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 2477,
+      "bodyWireSha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3",
+      "bodyDecodedBytes": 2477,
+      "bodyDecodedSha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 2477
+    },
+    {
+      "requestId": "resource:resource-markdown-page--acerca-de-head",
+      "group": "explicit-resource",
+      "path": "/agent-content/v1/documents/page--acerca-de.md",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "037.json",
+      "timestampStartUtc": "2026-10-09T15:58:39.893049Z",
+      "timestampEndUtc": "2026-10-09T15:58:40.241220Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:40 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "public, max-age=0, must-revalidate"
+        ],
+        [
+          "etag",
+          "\"64c40e75290822094ec2d2cdc967ef56\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "resource:resource-markdown-page--politica-editorial-get",
+      "group": "explicit-resource",
+      "path": "/agent-content/v1/documents/page--politica-editorial.md",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "037.json",
+      "timestampStartUtc": "2026-10-09T15:58:40.242821Z",
+      "timestampEndUtc": "2026-10-09T15:58:40.336093Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:40 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "2925"
+        ],
+        [
+          "cache-control",
+          "public, max-age=0, must-revalidate"
+        ],
+        [
+          "etag",
+          "\"add3f9f75e65e6e64efab1deb50232f8\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 2925,
+      "bodyWireSha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "bodyDecodedBytes": 2925,
+      "bodyDecodedSha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 2925
+    },
+    {
+      "requestId": "resource:resource-markdown-page--politica-editorial-head",
+      "group": "explicit-resource",
+      "path": "/agent-content/v1/documents/page--politica-editorial.md",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "037.json",
+      "timestampStartUtc": "2026-10-09T15:58:40.337395Z",
+      "timestampEndUtc": "2026-10-09T15:58:40.436215Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:40 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "public, max-age=0, must-revalidate"
+        ],
+        [
+          "etag",
+          "\"add3f9f75e65e6e64efab1deb50232f8\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "resource:resource-markdown-pillar--alimentacion-perros-senior-get",
+      "group": "explicit-resource",
+      "path": "/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "037.json",
+      "timestampStartUtc": "2026-10-09T15:58:40.438381Z",
+      "timestampEndUtc": "2026-10-09T15:58:40.532692Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:40 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "12031"
+        ],
+        [
+          "cache-control",
+          "public, max-age=0, must-revalidate"
+        ],
+        [
+          "etag",
+          "\"24a0def646fef65129e834412fedc3eb\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 12031,
+      "bodyWireSha256": "fad888dbf741908da5bf6ab17a8288d4bef02af901c2585159c8286318345305",
+      "bodyDecodedBytes": 12031,
+      "bodyDecodedSha256": "fad888dbf741908da5bf6ab17a8288d4bef02af901c2585159c8286318345305",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 12031
+    },
+    {
+      "requestId": "resource:resource-markdown-pillar--alimentacion-perros-senior-head",
+      "group": "explicit-resource",
+      "path": "/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "037.json",
+      "timestampStartUtc": "2026-10-09T15:58:40.534198Z",
+      "timestampEndUtc": "2026-10-09T15:58:40.627717Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:40 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "public, max-age=0, must-revalidate"
+        ],
+        [
+          "etag",
+          "\"24a0def646fef65129e834412fedc3eb\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "resource:resource-markdown-pillar--cuidados-paliativos-perros-get",
+      "group": "explicit-resource",
+      "path": "/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "037.json",
+      "timestampStartUtc": "2026-10-09T15:58:40.629298Z",
+      "timestampEndUtc": "2026-10-09T15:58:40.722810Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:40 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "8084"
+        ],
+        [
+          "cache-control",
+          "public, max-age=0, must-revalidate"
+        ],
+        [
+          "etag",
+          "\"d7ab87d6cba7f9e1a92d1b9174c15f36\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 8084,
+      "bodyWireSha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939",
+      "bodyDecodedBytes": 8084,
+      "bodyDecodedSha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 8084
+    }
+  ]
+}

@@ -1,0 +1,601 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 14,
+  "firstOrdinal": 105,
+  "lastOrdinal": 112,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "identity:tool--calidad-vida:html:GET",
+      "group": "identity-identity",
+      "path": "/herramientas/calculadora-calidad-vida-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "003.json",
+      "timestampStartUtc": "2026-10-09T15:57:22.443090Z",
+      "timestampEndUtc": "2026-10-09T15:57:22.612304Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:22 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 74412,
+      "bodyWireSha256": "753ef76f45dbf8165d5af7b521b3f33bf82329a2dc184d5c65dbab326f222555",
+      "bodyDecodedBytes": 74412,
+      "bodyDecodedSha256": "753ef76f45dbf8165d5af7b521b3f33bf82329a2dc184d5c65dbab326f222555",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 74412
+    },
+    {
+      "requestId": "identity:tool--calidad-vida:html:HEAD",
+      "group": "identity-identity",
+      "path": "/herramientas/calculadora-calidad-vida-perros",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "003.json",
+      "timestampStartUtc": "2026-10-09T15:57:22.613859Z",
+      "timestampEndUtc": "2026-10-09T15:57:22.702816Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:22 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "identity:tool--calidad-vida:markdown:GET",
+      "group": "identity-identity",
+      "path": "/herramientas/calculadora-calidad-vida-perros",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "003.json",
+      "timestampStartUtc": "2026-10-09T15:57:22.704448Z",
+      "timestampEndUtc": "2026-10-09T15:57:22.791313Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:22 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "5049"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"0fd6a9da9e3895ba4a09859d4abf29f8\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 5049,
+      "bodyWireSha256": "00028fb42759631a88b4440580b467c6d39b03d9897e04805909230886705db5",
+      "bodyDecodedBytes": 5049,
+      "bodyDecodedSha256": "00028fb42759631a88b4440580b467c6d39b03d9897e04805909230886705db5",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 5049
+    },
+    {
+      "requestId": "identity:tool--calidad-vida:markdown:HEAD",
+      "group": "identity-identity",
+      "path": "/herramientas/calculadora-calidad-vida-perros",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "003.json",
+      "timestampStartUtc": "2026-10-09T15:57:22.793243Z",
+      "timestampEndUtc": "2026-10-09T15:57:22.893824Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:22 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"0fd6a9da9e3895ba4a09859d4abf29f8\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "identity:tool--movilidad:html:GET",
+      "group": "identity-identity",
+      "path": "/herramientas/selector-movilidad-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "003.json",
+      "timestampStartUtc": "2026-10-09T15:57:22.895476Z",
+      "timestampEndUtc": "2026-10-09T15:57:22.988283Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:22 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 78942,
+      "bodyWireSha256": "59d38b98384eea0318dd25fc670d32e25060eb716627f60b364769f87d42531f",
+      "bodyDecodedBytes": 78942,
+      "bodyDecodedSha256": "59d38b98384eea0318dd25fc670d32e25060eb716627f60b364769f87d42531f",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 78942
+    },
+    {
+      "requestId": "identity:tool--movilidad:html:HEAD",
+      "group": "identity-identity",
+      "path": "/herramientas/selector-movilidad-perros-mayores",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "003.json",
+      "timestampStartUtc": "2026-10-09T15:57:22.992326Z",
+      "timestampEndUtc": "2026-10-09T15:57:23.088880Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:23 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "identity:tool--movilidad:markdown:GET",
+      "group": "identity-identity",
+      "path": "/herramientas/selector-movilidad-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "003.json",
+      "timestampStartUtc": "2026-10-09T15:57:23.090520Z",
+      "timestampEndUtc": "2026-10-09T15:57:23.183211Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:23 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "content-length",
+          "5899"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"595b4a4a5ffb31823bc8166e0f22bf50\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 5899,
+      "bodyWireSha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37",
+      "bodyDecodedBytes": 5899,
+      "bodyDecodedSha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 5899
+    },
+    {
+      "requestId": "identity:tool--movilidad:markdown:HEAD",
+      "group": "identity-identity",
+      "path": "/herramientas/selector-movilidad-perros-mayores",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "003.json",
+      "timestampStartUtc": "2026-10-09T15:57:23.184545Z",
+      "timestampEndUtc": "2026-10-09T15:57:23.269420Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:23 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"595b4a4a5ffb31823bc8166e0f22bf50\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}

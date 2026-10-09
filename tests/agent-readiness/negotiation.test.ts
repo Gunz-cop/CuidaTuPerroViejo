@@ -36,6 +36,34 @@ function document(documentId = 'home', canonicalPath = '/'): AgentDocument {
   };
 }
 
+async function conditionalHarness(options: {
+  htmlEtag?: string | null;
+  markdownEtag?: string | null;
+  respond?: (request: Request, etag: string | null) => Response | undefined;
+} = {}) {
+  const index = await indexFor([document()]);
+  const seen: Request[] = [];
+  const htmlEtag = Object.hasOwn(options, 'htmlEtag') ? options.htmlEtag ?? null : '"html-v1"';
+  const markdownEtag = Object.hasOwn(options, 'markdownEtag') ? options.markdownEtag ?? null : '"md-v1"';
+  const assets = {
+    fetch: async (input: Request | string) => {
+      const request = input instanceof Request ? input : new Request(input);
+      seen.push(request);
+      if (new URL(request.url).pathname === '/agent-content/v1/index.json') return Response.json(index);
+      const markdown = new URL(request.url).pathname.endsWith('.md');
+      const etag = markdown ? markdownEtag : htmlEtag;
+      const overridden = options.respond?.(request, etag);
+      if (overridden) return overridden;
+      const body = markdown ? '# Título\n' : '<h1>Título</h1>';
+      const headers = new Headers({ Vary: 'Accept-Encoding', 'Content-Length': String(new TextEncoder().encode(body).byteLength) });
+      if (etag !== null) headers.set('ETag', etag);
+      return new Response(request.method === 'HEAD' ? null : body, { headers });
+    },
+  } as unknown as Fetcher;
+  const worker = createAgentContentWorker(async () => new Response('delegated'));
+  return { worker, env: { ASSETS: assets } as Env, context: {} as ExecutionContext, seen };
+}
+
 const acceptCases: Array<[string | undefined, 'html' | 'markdown' | 400 | 406]> = [
   [undefined, 'html'], ['', 'html'], ['  \t', 'html'], ['*/*', 'html'], ['text/*', 'html'],
   ['text/markdown', 'markdown'], ['TEXT/MARKDOWN;q=1', 'markdown'],
@@ -141,7 +169,7 @@ test('canonical negotiation uses fixed ASSETS requests, ignores query, adds poli
       if (new URL(request.url).pathname === '/agent-content/v1/index.json') return Response.json(index);
       const markdown = new URL(request.url).pathname.endsWith('.md');
       const etag = markdown ? '"md-v1"' : '"html-v1"';
-      if (request.headers.get('If-None-Match') === etag) return new Response(null, { status: 304, headers: { ETag: etag } });
+      if (request.headers.get('If-None-Match') === etag) return new Response(null, { status: 304, headers: { ETag: etag, 'Content-Length': '999', Vary: 'Accept-Encoding' } });
       return new Response(markdown ? '# Título\n' : '<h1>Título</h1>', { headers: { ETag: etag, Vary: 'Accept, Accept-Encoding' } });
     },
   } as unknown as Fetcher;
@@ -181,6 +209,11 @@ test('canonical negotiation uses fixed ASSETS requests, ignores query, adds poli
   assert.equal(conditional.status, 304);
   assert.equal(await conditional.text(), '');
   assert.equal(conditional.headers.get('ETag'), '"md-v1"');
+  assert.equal(conditional.headers.get('Content-Length'), null);
+  assert.equal(conditional.headers.get('Cache-Control'), 'private, no-store');
+  assert.equal(conditional.headers.get('Vary'), 'Accept-Encoding, Accept');
+  assert.equal(conditional.headers.get('Link'), '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"');
+  assert.equal(conditional.headers.get('X-Content-Type-Options'), 'nosniff');
   assert.equal(seen[3]?.headers.get('If-None-Match'), '"md-v1"');
 
   const weakList = await worker(new Request('https://preview.example/', { headers: {
@@ -203,6 +236,167 @@ test('canonical negotiation uses fixed ASSETS requests, ignores query, adds poli
   assert.equal(seen[6]?.headers.has('Range'), false);
   assert.equal(seen[6]?.headers.has('If-Range'), false);
   assert.equal(seen[6]?.headers.has('If-Modified-Since'), false);
+});
+
+test('selected HTML and Markdown use their own weak/list/wildcard validators for GET and HEAD', async () => {
+  const { worker, env, context, seen } = await conditionalHarness();
+  for (const selected of [
+    { accept: 'text/html', tag: '"html-v1"', cross: '"md-v1"', body: '<h1>Título</h1>', path: '/' },
+    { accept: 'text/markdown', tag: '"md-v1"', cross: '"html-v1"', body: '# Título\n', path: '/agent-content/v1/documents/home.md' },
+  ]) {
+    const cases: Array<[string | undefined, number]> = [
+      [undefined, 200], [selected.tag, 304], [`W/${selected.tag}`, 304], [`"other", W/${selected.tag}`, 304], ['*', 304],
+      ['"other"', 200], [selected.cross, 200],
+    ];
+    for (const method of ['GET', 'HEAD'] as const) {
+      for (const [ifNoneMatch, expectedStatus] of cases) {
+        const headers = new Headers({ Accept: selected.accept });
+        if (ifNoneMatch !== undefined) headers.set('If-None-Match', ifNoneMatch);
+        const response = await worker(new Request('https://preview.example/?q=ignored', { method, headers }), env, context);
+        assert.equal(response.status, expectedStatus, `${method} ${selected.accept} ${ifNoneMatch ?? '(absent)'}`);
+        assert.equal(await response.text(), method === 'HEAD' || expectedStatus === 304 ? '' : selected.body);
+        assert.equal(response.headers.get('ETag'), selected.tag);
+        assert.equal(response.headers.get('Cache-Control'), 'private, no-store');
+        assert.equal(response.headers.get('Vary'), 'Accept-Encoding, Accept');
+        assert.equal(response.headers.get('Link'), '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"');
+        assert.equal(response.headers.get('X-Content-Type-Options'), 'nosniff');
+        if (expectedStatus === 304) assert.equal(response.headers.get('Content-Length'), null);
+        else assert.equal(response.headers.get('Content-Length'), String(new TextEncoder().encode(selected.body).byteLength));
+        const internal = seen.at(-1)!;
+        assert.equal(new URL(internal.url).pathname, selected.path);
+        assert.equal(internal.method, method);
+        assert.equal(internal.headers.get('If-None-Match'), ifNoneMatch ?? null);
+        assert.equal(internal.headers.has('Range'), false);
+        assert.equal(internal.headers.has('If-Range'), false);
+        assert.equal(internal.headers.has('If-Modified-Since'), false);
+      }
+    }
+  }
+});
+
+test('HTML and Markdown forward only If-None-Match when range and date validators are present', async () => {
+  for (const selected of [
+    { accept: 'text/html', tag: '"html-v1"', body: '<h1>Título</h1>' },
+    { accept: 'text/markdown', tag: '"md-v1"', body: '# Título\n' },
+  ]) {
+    for (const method of ['GET', 'HEAD'] as const) {
+      for (const [ifNoneMatch, expectedStatus] of [['"other"', 200], [selected.tag, 304]] as const) {
+        const { worker, env, context, seen } = await conditionalHarness();
+        const response = await worker(new Request('https://preview.example/', { method, headers: {
+          Accept: selected.accept,
+          'If-None-Match': ifNoneMatch,
+          Range: 'bytes=1-4',
+          'If-Range': selected.tag,
+          'If-Modified-Since': 'Wed, 21 Oct 2015 07:28:00 GMT',
+        } }), env, context);
+        assert.equal(response.status, expectedStatus, `${method} ${selected.accept} ${ifNoneMatch}`);
+        assert.equal(await response.text(), method === 'GET' && expectedStatus === 200 ? selected.body : '');
+        assert.equal(response.headers.get('ETag'), selected.tag);
+        if (expectedStatus === 304) assert.equal(response.headers.get('Content-Length'), null);
+        const forwarded = seen.at(-1)!;
+        assert.equal(forwarded.headers.get('If-None-Match'), ifNoneMatch);
+        assert.equal(forwarded.headers.has('Range'), false);
+        assert.equal(forwarded.headers.has('If-Range'), false);
+        assert.equal(forwarded.headers.has('If-Modified-Since'), false);
+      }
+    }
+  }
+});
+
+test('public HTML without a native ETag still has wildcard existence semantics and never borrows Markdown ETag', async () => {
+  const { worker, env, context, seen } = await conditionalHarness({ htmlEtag: null });
+  for (const method of ['GET', 'HEAD'] as const) {
+    for (const [ifNoneMatch, expectedStatus] of [[undefined, 200], ['*', 304], ['"html-v1"', 200], ['"md-v1"', 200]] as const) {
+      const headers = new Headers({ Accept: 'text/html' });
+      if (ifNoneMatch !== undefined) headers.set('If-None-Match', ifNoneMatch);
+      const response = await worker(new Request('https://preview.example/', { method, headers }), env, context);
+      assert.equal(response.status, expectedStatus, `${method} ${ifNoneMatch ?? '(absent)'}`);
+      assert.equal(await response.text(), method === 'HEAD' || expectedStatus === 304 ? '' : '<h1>Título</h1>');
+      assert.equal(response.headers.get('ETag'), null);
+      if (expectedStatus === 304) assert.equal(response.headers.get('Content-Length'), null);
+      const internal = seen.at(-1)!;
+      assert.equal(internal.headers.get('If-None-Match'), ifNoneMatch ?? null);
+    }
+  }
+});
+
+test('If-None-Match grammar rejects a whole malformed field, permits bounded empty members and commas inside tags', async () => {
+  for (const accept of ['text/html', 'text/markdown']) {
+    const ownTag = accept === 'text/markdown' ? '"md-v1"' : '"html-v1"';
+    for (const malformed of ['', `W/${ownTag}, garbage`, `W/${ownTag.slice(0, -1)}`, `W/${ownTag} garbage`, `*, W/${ownTag}`, `${','.repeat(17)}${ownTag}`]) {
+      const { worker, env, context, seen } = await conditionalHarness();
+      const response = await worker(new Request('https://preview.example/', { headers: { Accept: accept, 'If-None-Match': malformed } }), env, context);
+      assert.equal(response.status, 200, `${accept} ${malformed}`);
+      assert.equal(await response.text(), accept === 'text/markdown' ? '# Título\n' : '<h1>Título</h1>');
+      assert.equal(seen.at(-1)?.headers.has('If-None-Match'), false);
+    }
+
+    const { worker, env, context, seen } = await conditionalHarness();
+    const paddedList = await worker(new Request('https://preview.example/', { headers: { Accept: accept, 'If-None-Match': `,, W/${ownTag},,` } }), env, context);
+    assert.equal(paddedList.status, 304);
+    assert.equal(await paddedList.text(), '');
+    assert.equal(seen.at(-1)?.headers.get('If-None-Match'), `,, W/${ownTag},,`);
+
+    const commaTag = '"part,one"';
+    const commaHarness = await conditionalHarness(accept === 'text/markdown'
+      ? { markdownEtag: commaTag }
+      : { htmlEtag: commaTag });
+    const commaMatch = await commaHarness.worker(new Request('https://preview.example/', { headers: { Accept: accept, 'If-None-Match': commaTag } }), commaHarness.env, commaHarness.context);
+    assert.equal(commaMatch.status, 304, accept);
+    assert.equal(commaMatch.headers.get('ETag'), commaTag);
+    assert.equal(commaHarness.seen.at(-1)?.headers.get('If-None-Match'), commaTag);
+  }
+});
+
+test('Markdown without a valid native ETag and an unsolicited or mismatching ASSETS 304 fail closed', async () => {
+  for (const method of ['GET', 'HEAD'] as const) {
+    const missing = await conditionalHarness({ markdownEtag: null });
+    const response = await missing.worker(new Request('https://preview.example/', { method, headers: { Accept: 'text/markdown', 'If-None-Match': '*' } }), missing.env, missing.context);
+    assert.equal(response.status, 503);
+    assert.equal(await response.text(), method === 'HEAD' ? '' : 'Document representation unavailable.\n');
+    assert.equal(response.headers.get('ETag'), null);
+  }
+
+  const markdown304WithoutEtag = await conditionalHarness({
+    markdownEtag: null,
+    respond: (request) => new URL(request.url).pathname.endsWith('.md')
+      ? new Response(null, { status: 304 })
+      : undefined,
+  });
+  const missing304 = await markdown304WithoutEtag.worker(new Request('https://preview.example/', { headers: { Accept: 'text/markdown', 'If-None-Match': '*' } }), markdown304WithoutEtag.env, markdown304WithoutEtag.context);
+  assert.equal(missing304.status, 503);
+
+  const htmlWildcard304 = await conditionalHarness({
+    htmlEtag: null,
+    respond: (request) => new URL(request.url).pathname === '/'
+      ? new Response(null, { status: 304, headers: { 'Content-Length': '999' } })
+      : undefined,
+  });
+  const nativeWildcard304 = await htmlWildcard304.worker(new Request('https://preview.example/', { headers: { Accept: 'text/html', 'If-None-Match': '*' } }), htmlWildcard304.env, htmlWildcard304.context);
+  assert.equal(nativeWildcard304.status, 304);
+  assert.equal(await nativeWildcard304.text(), '');
+  assert.equal(nativeWildcard304.headers.get('ETag'), null);
+  assert.equal(nativeWildcard304.headers.get('Content-Length'), null);
+
+  const absentAsset = await conditionalHarness({
+    respond: (request) => new URL(request.url).pathname === '/'
+      ? new Response('missing', { status: 404 })
+      : undefined,
+  });
+  const missingAssetWildcard = await absentAsset.worker(new Request('https://preview.example/', { headers: { Accept: 'text/html', 'If-None-Match': '*' } }), absentAsset.env, absentAsset.context);
+  assert.equal(missingAssetWildcard.status, 503);
+  assert.equal(await missingAssetWildcard.text(), 'Document representation unavailable.\n');
+
+  for (const ifNoneMatch of [undefined, '"not-selected"']) {
+    const unexpected = await conditionalHarness({ respond: () => new Response(null, { status: 304, headers: { ETag: '"html-v1"', 'Content-Length': '12' } }) });
+    const headers = new Headers({ Accept: 'text/html' });
+    if (ifNoneMatch !== undefined) headers.set('If-None-Match', ifNoneMatch);
+    const response = await unexpected.worker(new Request('https://preview.example/', { headers }), unexpected.env, unexpected.context);
+    assert.equal(response.status, 503);
+    assert.equal(await response.text(), 'Document representation unavailable.\n');
+    assert.equal(response.headers.get('Content-Length'), null);
+    assert.equal(response.headers.get('ETag'), null);
+  }
 });
 
 test('malformed Accept and unavailable assets produce literal safe errors; unknown paths delegate', async () => {

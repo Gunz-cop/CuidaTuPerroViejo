@@ -1,0 +1,107 @@
+{
+  "schema": "f2b-formal-criteria-map/1",
+  "auditState": "B0/5_READY_FOR_INDEPENDENT_R1_NOT_ACCEPTED",
+  "criteria": [
+    {
+      "id": "B01",
+      "status": "EVIDENCE_READY_FOR_AUDIT",
+      "evidence": [
+        "source-provenance.json",
+        "../bug69-etag-equivalence/build-parity-57.json"
+      ],
+      "basis": "Product runtime/tests and successor SDD source hashes are fixed; 57 artifact parity and the CSS entity check are documented. Exact 6b CI build/inventory steps pass.",
+      "limit": "Build parity report source is the accepted code-equivalent documentation candidate; exact 6b CI remains the candidate-specific build receipt."
+    },
+    {
+      "id": "B02",
+      "status": "EVIDENCE_READY_FOR_AUDIT",
+      "evidence": [
+        "ci-step-receipt.json",
+        "compiled-config-summary.json"
+      ],
+      "basis": "All 23 exact-6b CI steps pass, including type/test/build, compiled F2B routing, and Worker packaging.",
+      "limit": "No separate Wrangler/Workerd run was added; the current CI Worker packaging step is the exact candidate proof."
+    },
+    {
+      "id": "B03",
+      "status": "EVIDENCE_READY_FOR_AUDIT",
+      "evidence": [
+        "matrix/pass-summary.json",
+        "matrix/observations/",
+        "matrix/execution-receipt.json",
+        "plan/public-acceptance-plan-index.json"
+      ],
+      "basis": "Complete candidate matrix: 1,284 unique IDs; 964 HTTP responses validated; 320 dependency-justified N/A; zero failures or unattempted IDs."
+    },
+    {
+      "id": "B04",
+      "status": "EVIDENCE_READY_FOR_AUDIT",
+      "evidence": [
+        "matrix/observations/",
+        "plan/public-plan-requests/",
+        "../bug69-etag-equivalence/test-results/error-body-test-result.json"
+      ],
+      "basis": "All 25 Accept negotiation cases are represented; 3×400 and 3×406 responses carry body hashes and exact frozen error-body expectations. Offline executor negatives verify empty/wrong body STOP behavior."
+    },
+    {
+      "id": "B05",
+      "status": "EVIDENCE_READY_FOR_AUDIT",
+      "evidence": [
+        "plan/public-acceptance-plan-index.json",
+        "plan/public-plan-requests/",
+        "matrix/observations/",
+        "local313-history-summary.json"
+      ],
+      "basis": "The frozen plan covers all 28 document corpus entries, HTML/Markdown, and identity/conditional/compression contexts. Every actual and N/A row has a plan ID and dependency reference."
+    },
+    {
+      "id": "B06",
+      "status": "EVIDENCE_READY_FOR_AUDIT",
+      "evidence": [
+        "matrix/pass-summary.json",
+        "matrix/observations/"
+      ],
+      "basis": "All 24 alternating representation/coding IDs are present among the 964 validated HTTP responses."
+    },
+    {
+      "id": "B07",
+      "status": "EVIDENCE_READY_FOR_AUDIT",
+      "evidence": [
+        "retained-b07-r2-summary.json",
+        "private-audit-source-reference.json"
+      ],
+      "basis": "Eight retained local Workerd captures cover missing/invalid index × HTML/Markdown × GET/HEAD. The post-build 315/316 input check and 87 raw files are hash-bound in the private evidence manifest."
+    },
+    {
+      "id": "B08",
+      "status": "EVIDENCE_READY_FOR_AUDIT",
+      "evidence": [
+        "matrix/pass-summary.json",
+        "ci-step-receipt.json",
+        "private-audit-source-reference.json"
+      ],
+      "basis": "The public matrix records the planned delegation/unknown/redirect cases; exact candidate CI compiled-routing verification passed. Restricted geo/admin/POST local evidence remains private."
+    },
+    {
+      "id": "B09",
+      "status": "EVIDENCE_READY_FOR_AUDIT",
+      "evidence": [
+        "matrix/observations/",
+        "source-provenance.json",
+        "private-audit-source-reference.json"
+      ],
+      "basis": "Curated observations retain contract headers and Link source, response entity hashes, byte counts, status and timestamps. Full raw headers/body/curl metadata remain sealed privately for independent review."
+    },
+    {
+      "id": "B10",
+      "status": "EVIDENCE_READY_FOR_AUDIT",
+      "evidence": [
+        "candidate-pipeline-receipt.json",
+        "ci-step-receipt.json",
+        "compiled-config-summary.json",
+        "formal-closure.md"
+      ],
+      "basis": "Exact 6b source, passing CI/Workers checks, current official commit preview and rollback contract are recorded; main remains unauthorized."
+    }
+  ]
+}

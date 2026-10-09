@@ -1,0 +1,66 @@
+{
+  "fixtureType": "ACTUAL_CAPTURE_PROJECTION_NOT_SYNTHETIC_HTTP",
+  "sourceCaptureSet": "bug68 STOP c8de; original full captures remain private",
+  "context": {
+    "path": "/",
+    "selectedFormat": "markdown",
+    "accept": "text/markdown",
+    "acceptEncoding": "gzip"
+  },
+  "getBaseline": {
+    "method": "GET",
+    "timestampUtc": "2026-10-09T00:53:39.237608Z",
+    "status": 200,
+    "selectedHeaders": {
+      "content-type": "text/markdown; charset=utf-8",
+      "cache-control": "private, no-store",
+      "vary": "Accept",
+      "etag": "W/\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "content-encoding": "gzip",
+      "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+      "permissions-policy": "geolocation=(), microphone=(), camera=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff",
+      "strict-transport-security": "max-age=31536000; includeSubDomains"
+    },
+    "wireBodyFile": "get-wire.base64",
+    "wireBodyBytes": 4517,
+    "wireBodySha256": "a178037c07e98d46bf610df8fcb37b2f5f05ba33ba7f8bf9dda63cdd2e1e45e7",
+    "httpDownloadBytes": 4517,
+    "decodedEntityBytes": 12878,
+    "decodedEntitySha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+    "wireBodyCarrier": "base64 ASCII; decode once to recover the exact captured gzip wire entity"
+  },
+  "headBaseline": {
+    "method": "HEAD",
+    "timestampUtc": "2026-10-09T00:53:39.316098Z",
+    "status": 200,
+    "selectedHeaders": {
+      "content-type": "text/markdown; charset=utf-8",
+      "etag": "W/\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "content-encoding": "gzip"
+    },
+    "httpDownloadBytes": 0,
+    "entityBytes": 0
+  },
+  "conditionalResponse": {
+    "method": "GET",
+    "timestampUtc": "2026-10-09T00:53:41.395577Z",
+    "requestIfNoneMatch": "W/\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+    "status": 304,
+    "selectedHeaders": {
+      "content-type": "text/markdown; charset=utf-8",
+      "cache-control": "private, no-store",
+      "vary": "Accept",
+      "etag": "\"c262365b8aeb7213ef529ce3e9d9fa15\"",
+      "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\"",
+      "permissions-policy": "geolocation=(), microphone=(), camera=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff",
+      "strict-transport-security": "max-age=31536000; includeSubDomains"
+    },
+    "httpDownloadBytes": 0,
+    "entityBytes": 0
+  },
+  "privacy": "Selected final-response fields and exact GET wire body only. Full header/curl/trace/request files, URL, proxy/interim headers and operational indices are retained privately and are not copied here."
+}

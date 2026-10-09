@@ -1,0 +1,638 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 159,
+  "firstOrdinal": 1265,
+  "lastOrdinal": 1272,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "supplement:cushing-br:html:HEAD:wildcard",
+      "group": "compression-supplement-144",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "042.json",
+      "dependsOn": [
+        "supplement:cushing-br:html:GET:baseline-no-condition",
+        "supplement:cushing-br:html:HEAD:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:53.931918Z",
+      "timestampEndUtc": "2026-10-09T15:58:54.014985Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "br"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:54 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "supplement:cushing-br:html:HEAD:other-variant-tag",
+      "group": "compression-supplement-144",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "042.json",
+      "dependsOn": [
+        "supplement:cushing-br:markdown:GET:baseline-no-condition",
+        "supplement:cushing-br:markdown:HEAD:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:54.016365Z",
+      "timestampEndUtc": "2026-10-09T15:58:54.116412Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "br"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "If-None-Match",
+          "W/\"22e2b5dfd49f12456bef9bf8f71a8842\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:54 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "content-encoding",
+          "br"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "br",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "supplement:cushing-br:html:HEAD:range-date-without-match",
+      "group": "compression-supplement-144",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "042.json",
+      "dependsOn": [
+        "supplement:cushing-br:html:GET:baseline-no-condition",
+        "supplement:cushing-br:html:HEAD:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:54.117890Z",
+      "timestampEndUtc": "2026-10-09T15:58:54.194956Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "br"
+        ],
+        [
+          "Accept",
+          "text/html"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-supplement-range-nonmatch\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:54 GMT"
+        ],
+        [
+          "content-type",
+          "text/html; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "content-encoding",
+          "br"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "br",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "supplement:cushing-br:html:HEAD:range-date-with-own-match",
+      "group": "compression-supplement-144",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "method": "HEAD",
+      "state": "N/A",
+      "planChunk": "042.json",
+      "dependsOn": [
+        "supplement:cushing-br:html:GET:baseline-no-condition",
+        "supplement:cushing-br:html:HEAD:baseline-no-condition"
+      ],
+      "timestampUtc": "2026-10-09T15:58:54.196619Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "supplement:cushing-br:html:GET:baseline-no-condition",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": "br",
+          "timestampStartUtc": "2026-10-09T15:58:46.172910Z",
+          "timestampEndUtc": "2026-10-09T15:58:46.275276Z"
+        },
+        {
+          "requestId": "supplement:cushing-br:html:HEAD:baseline-no-condition",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": "br",
+          "timestampStartUtc": "2026-10-09T15:58:46.310321Z",
+          "timestampEndUtc": "2026-10-09T15:58:46.398055Z"
+        }
+      ]
+    },
+    {
+      "requestId": "supplement:cushing-br:markdown:GET:own-tag",
+      "group": "compression-supplement-144",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "042.json",
+      "dependsOn": [
+        "supplement:cushing-br:markdown:GET:baseline-no-condition",
+        "supplement:cushing-br:markdown:HEAD:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:54.196833Z",
+      "timestampEndUtc": "2026-10-09T15:58:54.295867Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "br"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "W/\"22e2b5dfd49f12456bef9bf8f71a8842\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:54 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"22e2b5dfd49f12456bef9bf8f71a8842\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "supplement:cushing-br:markdown:GET:weak-own-tag",
+      "group": "compression-supplement-144",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "042.json",
+      "dependsOn": [
+        "supplement:cushing-br:markdown:GET:baseline-no-condition",
+        "supplement:cushing-br:markdown:HEAD:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:54.297856Z",
+      "timestampEndUtc": "2026-10-09T15:58:54.384569Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "br"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "W/\"22e2b5dfd49f12456bef9bf8f71a8842\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:54 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"22e2b5dfd49f12456bef9bf8f71a8842\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "supplement:cushing-br:markdown:GET:list-own-plus-other",
+      "group": "compression-supplement-144",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "042.json",
+      "dependsOn": [
+        "supplement:cushing-br:markdown:GET:baseline-no-condition",
+        "supplement:cushing-br:markdown:HEAD:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:54.386335Z",
+      "timestampEndUtc": "2026-10-09T15:58:54.640347Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "br"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-supplement-nonmatch\", W/\"22e2b5dfd49f12456bef9bf8f71a8842\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:54 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"22e2b5dfd49f12456bef9bf8f71a8842\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "supplement:cushing-br:markdown:GET:different-tag",
+      "group": "compression-supplement-144",
+      "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "method": "GET",
+      "state": "captured",
+      "planChunk": "042.json",
+      "dependsOn": [
+        "supplement:cushing-br:markdown:GET:baseline-no-condition",
+        "supplement:cushing-br:markdown:HEAD:baseline-no-condition"
+      ],
+      "timestampStartUtc": "2026-10-09T15:58:54.641917Z",
+      "timestampEndUtc": "2026-10-09T15:58:54.736714Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "br"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-supplement-nonmatch\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:58:54 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ],
+        [
+          "etag",
+          "W/\"22e2b5dfd49f12456bef9bf8f71a8842\""
+        ],
+        [
+          "content-encoding",
+          "br"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 12272,
+      "bodyWireSha256": "574cb207e81db901a4e0828a3f598219021854f049cd57946646acd051d4896a",
+      "bodyDecodedBytes": 32561,
+      "bodyDecodedSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+      "contentEncoding": "br",
+      "httpDownloadBytes": 12272
+    }
+  ]
+}

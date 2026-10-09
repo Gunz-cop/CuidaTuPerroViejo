@@ -1,0 +1,168 @@
+{
+  "acceptErrorBodyCases": [
+    {
+      "expectedBodyBytes": 23,
+      "expectedBodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "observedBodyBytes": 23,
+      "observedBodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "requestId": "accept:accept-home-bad-q-over-one",
+      "status": 400
+    },
+    {
+      "expectedBodyBytes": 23,
+      "expectedBodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "observedBodyBytes": 23,
+      "observedBodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "requestId": "accept:accept-home-bad-q-precision",
+      "status": 400
+    },
+    {
+      "expectedBodyBytes": 23,
+      "expectedBodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "observedBodyBytes": 23,
+      "observedBodySha256": "a5e285f4ea4df7aa7c0a38457d808fb819113874ce120b5c4b092d1412a871d3",
+      "requestId": "accept:accept-home-duplicate-q",
+      "status": 400
+    },
+    {
+      "expectedBodyBytes": 30,
+      "expectedBodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "observedBodyBytes": 30,
+      "observedBodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "requestId": "accept:accept-home-json-only",
+      "status": 406
+    },
+    {
+      "expectedBodyBytes": 30,
+      "expectedBodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "observedBodyBytes": 30,
+      "observedBodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "requestId": "accept:accept-home-none-acceptable",
+      "status": 406
+    },
+    {
+      "expectedBodyBytes": 30,
+      "expectedBodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "observedBodyBytes": 30,
+      "observedBodySha256": "7414baeed275ad5e3d23b32ca6c4e3b2acdcafb9922eb77f074ffcfaff541c6c",
+      "requestId": "accept:accept-home-unsupported-media-param",
+      "status": 406
+    }
+  ],
+  "fixtureLabel": "TEST synthetic offline transport; no HTTP requests",
+  "naRequestIds": [
+    "conditional:home:html:GET:own-tag",
+    "conditional:home:html:GET:weak-own-tag",
+    "conditional:home:html:GET:list-own-plus-other",
+    "conditional:home:html:GET:range-date-with-own-match",
+    "conditional:home:html:HEAD:own-tag",
+    "conditional:home:html:HEAD:weak-own-tag",
+    "conditional:home:html:HEAD:list-own-plus-other",
+    "conditional:home:html:HEAD:range-date-with-own-match",
+    "conditional:home:markdown:GET:other-variant-tag",
+    "conditional:home:markdown:HEAD:other-variant-tag"
+  ],
+  "nativeHtmlCases": [
+    {
+      "bodyDecodedBytes": 35067,
+      "bodyDecodedSha256": "7dc0b11de39f51dcead5b52ff5ca30db6f9719596d0be728770a9a9c651facc9",
+      "contentType": "text/html",
+      "expectedFormat": null,
+      "fixtureLabel": "TEST synthetic",
+      "requestId": "delegation:delegation-discovery-contacto-get",
+      "status": 200
+    },
+    {
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": "text/html",
+      "expectedFormat": null,
+      "fixtureLabel": "TEST synthetic",
+      "requestId": "delegation:delegation-discovery-contacto-head",
+      "status": 200
+    },
+    {
+      "bodyDecodedBytes": 28587,
+      "bodyDecodedSha256": "19364633e69d1bd5c1853d2a33c64afde02bb912e36bcf01cc9d9cf41b68e0ef",
+      "contentType": "text/html",
+      "expectedFormat": null,
+      "fixtureLabel": "TEST synthetic",
+      "requestId": "delegation:delegation-discovery-gracias-get",
+      "status": 200
+    },
+    {
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": "text/html",
+      "expectedFormat": null,
+      "fixtureLabel": "TEST synthetic",
+      "requestId": "delegation:delegation-discovery-gracias-head",
+      "status": 200
+    },
+    {
+      "bodyDecodedBytes": 40052,
+      "bodyDecodedSha256": "24596f9427cb7cc1d9f201abbf9e3c7e5044fc3271624bf566093633b840161c",
+      "contentType": "text/html",
+      "expectedFormat": null,
+      "fixtureLabel": "TEST synthetic",
+      "requestId": "delegation:delegation-discovery-politica-de-cookies-get",
+      "status": 200
+    },
+    {
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": "text/html",
+      "expectedFormat": null,
+      "fixtureLabel": "TEST synthetic",
+      "requestId": "delegation:delegation-discovery-politica-de-cookies-head",
+      "status": 200
+    },
+    {
+      "bodyDecodedBytes": 34195,
+      "bodyDecodedSha256": "d014238eea68c8bc107a9ead04e19c660553ca14aee3074d736f6eba905d22d7",
+      "contentType": "text/html",
+      "expectedFormat": null,
+      "fixtureLabel": "TEST synthetic",
+      "requestId": "delegation:delegation-discovery-politica-de-privacidad-get",
+      "status": 200
+    },
+    {
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": "text/html",
+      "expectedFormat": null,
+      "fixtureLabel": "TEST synthetic",
+      "requestId": "delegation:delegation-discovery-politica-de-privacidad-head",
+      "status": 200
+    },
+    {
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": "text/html",
+      "expectedFormat": null,
+      "fixtureLabel": "TEST synthetic",
+      "requestId": "unknown:unknown-canonical",
+      "status": 404
+    },
+    {
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentType": "text/html",
+      "expectedFormat": null,
+      "fixtureLabel": "TEST synthetic",
+      "requestId": "unknown:unknown-canonical-head",
+      "status": 404
+    }
+  ],
+  "planIndexSha256": "63bf1ed7fb2c65118c616dbc619207acb7620ad295dc4edc66a432fca340a1df",
+  "requestCount": 1284,
+  "schema": "bug68-offline-protocol-result/1",
+  "stateCounts": {
+    "N/A": 10,
+    "captured": 1274
+  },
+  "stopManifestPresent": false,
+  "transportInvocations": 1274,
+  "uniqueRequestIdCount": 1284,
+  "workerdOrCurlHttpRequests": 0
+}

@@ -1,0 +1,650 @@
+{
+  "schema": "f2b-public-observation-chunk/1",
+  "chunk": 18,
+  "firstOrdinal": 137,
+  "lastOrdinal": 144,
+  "observationCount": 8,
+  "observations": [
+    {
+      "requestId": "conditional:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD:own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "004.json",
+      "dependsOn": [
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:GET",
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:24.959852Z",
+      "timestampEndUtc": "2026-10-09T15:57:25.043065Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"3c82eef141e138dcf61755c8cbf846e7\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:25 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"3c82eef141e138dcf61755c8cbf846e7\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD:weak-own-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "004.json",
+      "dependsOn": [
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:GET",
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:25.045068Z",
+      "timestampEndUtc": "2026-10-09T15:57:25.140913Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "W/\"3c82eef141e138dcf61755c8cbf846e7\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:25 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"3c82eef141e138dcf61755c8cbf846e7\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD:list-own-plus-other",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "004.json",
+      "dependsOn": [
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:GET",
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:25.142879Z",
+      "timestampEndUtc": "2026-10-09T15:57:25.219547Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--agresividad-tardia-perros-mayores-dolor-markdown\", W/\"3c82eef141e138dcf61755c8cbf846e7\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:25 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"3c82eef141e138dcf61755c8cbf846e7\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD:different-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "004.json",
+      "dependsOn": [
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:GET",
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:25.221058Z",
+      "timestampEndUtc": "2026-10-09T15:57:25.309782Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-article--agresividad-tardia-perros-mayores-dolor-markdown\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:25 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"3c82eef141e138dcf61755c8cbf846e7\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD:wildcard",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "004.json",
+      "dependsOn": [
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:GET",
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:25.311323Z",
+      "timestampEndUtc": "2026-10-09T15:57:25.393143Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "If-None-Match",
+          "*"
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:25 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"3c82eef141e138dcf61755c8cbf846e7\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD:other-variant-tag",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "method": "HEAD",
+      "state": "N/A",
+      "planChunk": "004.json",
+      "dependsOn": [
+        "identity:article--agresividad-tardia-perros-mayores-dolor:html:GET",
+        "identity:article--agresividad-tardia-perros-mayores-dolor:html:HEAD"
+      ],
+      "timestampUtc": "2026-10-09T15:57:25.394667Z",
+      "naReason": "N/A: exact HTML GET and HEAD baselines both omit ETag",
+      "naBasis": [
+        {
+          "requestId": "identity:article--agresividad-tardia-perros-mayores-dolor:html:GET",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:05.958707Z",
+          "timestampEndUtc": "2026-10-09T15:57:06.798926Z"
+        },
+        {
+          "requestId": "identity:article--agresividad-tardia-perros-mayores-dolor:html:HEAD",
+          "state": "captured",
+          "status": 200,
+          "etag": null,
+          "contentType": "text/html; charset=utf-8",
+          "contentEncoding": null,
+          "timestampStartUtc": "2026-10-09T15:57:06.800705Z",
+          "timestampEndUtc": "2026-10-09T15:57:07.281698Z"
+        }
+      ]
+    },
+    {
+      "requestId": "conditional:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD:range-date-without-match",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "005.json",
+      "dependsOn": [
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:GET",
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:25.394856Z",
+      "timestampEndUtc": "2026-10-09T15:57:25.480469Z",
+      "status": 200,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"f2b-nonmatch-range\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:25 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"3c82eef141e138dcf61755c8cbf846e7\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    },
+    {
+      "requestId": "conditional:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD:range-date-with-own-match",
+      "group": "conditional-identity",
+      "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "method": "HEAD",
+      "state": "captured",
+      "planChunk": "005.json",
+      "dependsOn": [
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:GET",
+        "identity:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD"
+      ],
+      "timestampStartUtc": "2026-10-09T15:57:25.482222Z",
+      "timestampEndUtc": "2026-10-09T15:57:25.623089Z",
+      "status": 304,
+      "reason": "",
+      "requestHeaders": [
+        [
+          "Accept-Encoding",
+          "identity"
+        ],
+        [
+          "Accept",
+          "text/markdown"
+        ],
+        [
+          "Range",
+          "bytes=0-0"
+        ],
+        [
+          "If-Range",
+          "\"f2b-range-nonmatch\""
+        ],
+        [
+          "If-Modified-Since",
+          "Wed, 31 Dec 2099 23:59:59 GMT"
+        ],
+        [
+          "If-None-Match",
+          "\"3c82eef141e138dcf61755c8cbf846e7\""
+        ]
+      ],
+      "responseHeaders": [
+        [
+          "date",
+          "Fri, 09 Oct 2026 15:57:25 GMT"
+        ],
+        [
+          "content-type",
+          "text/markdown; charset=utf-8"
+        ],
+        [
+          "cache-control",
+          "private, no-store"
+        ],
+        [
+          "etag",
+          "\"3c82eef141e138dcf61755c8cbf846e7\""
+        ],
+        [
+          "link",
+          "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+        ],
+        [
+          "strict-transport-security",
+          "max-age=31536000; includeSubDomains"
+        ],
+        [
+          "vary",
+          "Accept"
+        ],
+        [
+          "x-robots-tag",
+          "noindex"
+        ],
+        [
+          "permissions-policy",
+          "geolocation=(), microphone=(), camera=()"
+        ],
+        [
+          "referrer-policy",
+          "strict-origin-when-cross-origin"
+        ],
+        [
+          "x-content-type-options",
+          "nosniff"
+        ]
+      ],
+      "omittedResponseHeaderFieldCount": 7,
+      "bodyWireBytes": 0,
+      "bodyWireSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bodyDecodedBytes": 0,
+      "bodyDecodedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "contentEncoding": "identity",
+      "httpDownloadBytes": 0
+    }
+  ]
+}
