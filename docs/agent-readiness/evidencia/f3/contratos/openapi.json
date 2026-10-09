@@ -1,0 +1,3472 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "Cuida tu Perro Viejo — API pública de contenido",
+    "version": "1.0.0",
+    "description": "Catálogo, búsqueda léxica determinista y lectura íntegra del corpus editorial F2. Documento normativo de diseño; este archivo no prueba publicación. Contrato v1: f3-contratos.md. La implementación elimina sólo esta frase de estado documental al servirlo; mantiene operaciones y schemas."
+  },
+  "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
+  "servers": [
+    {
+      "url": "https://cuidatuperroviejo.com"
+    }
+  ],
+  "security": [],
+  "paths": {
+    "/api/agent/v1/catalog": {
+      "get": {
+        "operationId": "listAgentDocuments",
+        "summary": "Listar documentos editoriales",
+        "description": "Único formato. Accept y condicionales se ignoran; nunca206/304. Query UTF-8estricta<=2048bytes, sin keys repetidas/desconocidas/vacías ni controles; body no se procesa. Validación semántica según f3-contratos.md. Sin autorización.",
+        "parameters": [
+          {
+            "name": "kind",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "home",
+                "pillar",
+                "article",
+                "tool",
+                "editorial"
+              ]
+            },
+            "description": "Filtro exacto antes de paginar."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20,
+              "default": 20
+            },
+            "description": "Decimal ASCII sin signo ni leading zeros; presencia vacía inválida."
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 98,
+              "default": 0
+            },
+            "description": "Decimal ASCII0..98; offset>=total devuelve página vacía."
+          },
+          {
+            "name": "corpus",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "description": "Si distinto del corpus activo,409; cadena de discovery coherente sin versiones retenidas."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Catalog completo, siempre JSON; límite2MiB UTF-8 y no truncamiento.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Catalog"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "DOCUMENT_NOT_FOUND o ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "METHOD_NOT_ALLOWED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              },
+              "Allow": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "CORPUS_CHANGED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CONTENT_UNAVAILABLE",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "head": {
+        "operationId": "headAgentCatalog",
+        "summary": "Headers/status del GET correspondiente, sin cuerpo",
+        "parameters": [
+          {
+            "name": "kind",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "home",
+                "pillar",
+                "article",
+                "tool",
+                "editorial"
+              ]
+            },
+            "description": "Filtro exacto antes de paginar."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20,
+              "default": 20
+            },
+            "description": "Decimal ASCII sin signo ni leading zeros; presencia vacía inválida."
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 98,
+              "default": 0
+            },
+            "description": "Decimal ASCII0..98; offset>=total devuelve página vacía."
+          },
+          {
+            "name": "corpus",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "description": "Si distinto del corpus activo,409; cadena de discovery coherente sin versiones retenidas."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Catalog completo, siempre JSON; límite2MiB UTF-8 y no truncamiento.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "DOCUMENT_NOT_FOUND o ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "METHOD_NOT_ALLOWED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              },
+              "Allow": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "CORPUS_CHANGED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CONTENT_UNAVAILABLE",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "options": {
+        "operationId": "optionsAgentCatalog",
+        "summary": "CORS público;204 sin corpus/query/membership, path y sintaxis ID sí validados",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "Sin cuerpo ni carga de datos; métodos permitidos públicos.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "DOCUMENT_NOT_FOUND o ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/agent/v1/search": {
+      "get": {
+        "operationId": "searchAgentDocuments",
+        "summary": "Buscar en el texto editorial íntegro",
+        "description": "Único formato. Accept y condicionales se ignoran; nunca206/304. Query UTF-8estricta<=2048bytes, sin keys repetidas/desconocidas/vacías ni controles; body no se procesa. Validación semántica según f3-contratos.md. Sin autorización.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "q obligatoria. Valor decodificado: string sin C0/DEL; query UTF-8 estricta, sin keys repetidas y raw total<=2048 bytes. No limitar longitud del valor decodificado a200 codepoints/800 bytes. Aplicar NFC y trim Unicode whitespace; sólo el valor normalizado debe tener1..200 codepoints/<=800 bytes y1..12 tokens únicos<=64 codepoints. JSON Schema no normaliza: estas restricciones se comprueban semánticamente después de NFC/trim, también para GET/HEAD. Búsqueda AND, score title8+description3+body1, empate ID ASCII."
+          },
+          {
+            "name": "kind",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "home",
+                "pillar",
+                "article",
+                "tool",
+                "editorial"
+              ]
+            },
+            "description": "Filtro exacto antes de paginar."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20,
+              "default": 20
+            },
+            "description": "Decimal ASCII sin signo ni leading zeros; presencia vacía inválida."
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 98,
+              "default": 0
+            },
+            "description": "Decimal ASCII0..98; offset>=total devuelve página vacía."
+          },
+          {
+            "name": "corpus",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "description": "Si distinto del corpus activo,409; cadena de discovery coherente sin versiones retenidas."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search completo, siempre JSON; límite2MiB UTF-8 y no truncamiento.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Search"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "DOCUMENT_NOT_FOUND o ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "METHOD_NOT_ALLOWED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              },
+              "Allow": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "CORPUS_CHANGED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CONTENT_UNAVAILABLE",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "head": {
+        "operationId": "headAgentSearch",
+        "summary": "Headers/status del GET correspondiente, sin cuerpo",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "q obligatoria. Valor decodificado: string sin C0/DEL; query UTF-8 estricta, sin keys repetidas y raw total<=2048 bytes. No limitar longitud del valor decodificado a200 codepoints/800 bytes. Aplicar NFC y trim Unicode whitespace; sólo el valor normalizado debe tener1..200 codepoints/<=800 bytes y1..12 tokens únicos<=64 codepoints. JSON Schema no normaliza: estas restricciones se comprueban semánticamente después de NFC/trim, también para GET/HEAD. Búsqueda AND, score title8+description3+body1, empate ID ASCII."
+          },
+          {
+            "name": "kind",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "home",
+                "pillar",
+                "article",
+                "tool",
+                "editorial"
+              ]
+            },
+            "description": "Filtro exacto antes de paginar."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20,
+              "default": 20
+            },
+            "description": "Decimal ASCII sin signo ni leading zeros; presencia vacía inválida."
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 98,
+              "default": 0
+            },
+            "description": "Decimal ASCII0..98; offset>=total devuelve página vacía."
+          },
+          {
+            "name": "corpus",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "description": "Si distinto del corpus activo,409; cadena de discovery coherente sin versiones retenidas."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search completo, siempre JSON; límite2MiB UTF-8 y no truncamiento.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "DOCUMENT_NOT_FOUND o ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "METHOD_NOT_ALLOWED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              },
+              "Allow": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "CORPUS_CHANGED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CONTENT_UNAVAILABLE",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "options": {
+        "operationId": "optionsAgentSearch",
+        "summary": "CORS público;204 sin corpus/query/membership, path y sintaxis ID sí validados",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "Sin cuerpo ni carga de datos; métodos permitidos públicos.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "DOCUMENT_NOT_FOUND o ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/agent/v1/documents/{documentId}": {
+      "get": {
+        "operationId": "readAgentDocument",
+        "summary": "Leer Markdown completo y metadata",
+        "description": "Único formato. Accept y condicionales se ignoran; nunca206/304. Query UTF-8estricta<=2048bytes, sin keys repetidas/desconocidas/vacías ni controles; body no se procesa. Validación semántica según f3-contratos.md. Sin autorización.",
+        "parameters": [
+          {
+            "name": "documentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 160,
+              "pattern": "^(home|(?:pillar|article|page)--[a-z0-9]+(?:-[a-z0-9]+)*|tool--(?:calidad-vida|movilidad))$"
+            },
+            "description": "ID F2 exacto; no path/URL. ID inválido400, legal desconocido404; corpus409precede membership."
+          },
+          {
+            "name": "corpus",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "description": "Si distinto del corpus activo,409; cadena de discovery coherente sin versiones retenidas."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Read completo, siempre JSON; límite2MiB UTF-8 y no truncamiento.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Read"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "DOCUMENT_NOT_FOUND o ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "METHOD_NOT_ALLOWED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              },
+              "Allow": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "CORPUS_CHANGED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CONTENT_UNAVAILABLE",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "head": {
+        "operationId": "headAgentDocument",
+        "summary": "Headers/status del GET correspondiente, sin cuerpo",
+        "parameters": [
+          {
+            "name": "documentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 160,
+              "pattern": "^(home|(?:pillar|article|page)--[a-z0-9]+(?:-[a-z0-9]+)*|tool--(?:calidad-vida|movilidad))$"
+            },
+            "description": "ID F2 exacto; no path/URL. ID inválido400, legal desconocido404; corpus409precede membership."
+          },
+          {
+            "name": "corpus",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "description": "Si distinto del corpus activo,409; cadena de discovery coherente sin versiones retenidas."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Read completo, siempre JSON; límite2MiB UTF-8 y no truncamiento.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "DOCUMENT_NOT_FOUND o ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "METHOD_NOT_ALLOWED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              },
+              "Allow": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "CORPUS_CHANGED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CONTENT_UNAVAILABLE",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "options": {
+        "operationId": "optionsAgentDocument",
+        "summary": "CORS público;204 sin corpus/query/membership, path y sintaxis ID sí validados",
+        "parameters": [
+          {
+            "name": "documentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 160,
+              "pattern": "^(home|(?:pillar|article|page)--[a-z0-9]+(?:-[a-z0-9]+)*|tool--(?:calidad-vida|movilidad))$"
+            },
+            "description": "ID F2 exacto; no path/URL. ID inválido400, legal desconocido404; corpus409precede membership."
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Sin cuerpo ni carga de datos; métodos permitidos públicos.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "DOCUMENT_NOT_FOUND o ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Document": {
+        "type": "object",
+        "required": [
+          "documentId",
+          "kind",
+          "title",
+          "description",
+          "canonicalPath",
+          "canonicalUrl",
+          "markdownPath",
+          "language",
+          "datePublished",
+          "dateModified",
+          "htmlSha256",
+          "markdownSha256",
+          "markdownBytes"
+        ],
+        "properties": {
+          "documentId": {
+            "type": "string",
+            "maxLength": 160,
+            "pattern": "^(home|(?:pillar|article|page)--[a-z0-9]+(?:-[a-z0-9]+)*|tool--(?:calidad-vida|movilidad))$"
+          },
+          "kind": {
+            "enum": [
+              "home",
+              "pillar",
+              "article",
+              "tool",
+              "editorial"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "canonicalPath": {
+            "type": "string",
+            "maxLength": 100,
+            "pattern": "^(?:/|/[a-z0-9]+(?:-[a-z0-9]+)*(?:/[a-z0-9]+(?:-[a-z0-9]+)*)*)$"
+          },
+          "canonicalUrl": {
+            "type": "string",
+            "minLength": 1
+          },
+          "markdownPath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "language": {
+            "const": "es"
+          },
+          "datePublished": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$",
+            "description": "ISO8601 editorial válida de F2 o null; comprobar fecha real con validador F2."
+          },
+          "dateModified": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$",
+            "description": "ISO8601 editorial válida de F2 o null; comprobar fecha real con validador F2."
+          },
+          "htmlSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "markdownSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "markdownBytes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 524288
+          }
+        },
+        "additionalProperties": false
+      },
+      "Link": {
+        "type": "object",
+        "required": [
+          "label",
+          "url"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      },
+      "Result": {
+        "type": "object",
+        "required": [
+          "document",
+          "score"
+        ],
+        "properties": {
+          "document": {
+            "$ref": "#/components/schemas/Document"
+          },
+          "score": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 144
+          }
+        },
+        "additionalProperties": false
+      },
+      "Catalog": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "corpusSha256",
+          "total",
+          "limit",
+          "offset",
+          "nextOffset",
+          "documents"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": "agent-api/1"
+          },
+          "corpusSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "total": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 98
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 98
+          },
+          "nextOffset": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 98
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Document"
+            },
+            "maxItems": 20
+          }
+        },
+        "additionalProperties": false
+      },
+      "Search": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "corpusSha256",
+          "total",
+          "limit",
+          "offset",
+          "nextOffset",
+          "results"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": "agent-api/1"
+          },
+          "corpusSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "total": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 98
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 98
+          },
+          "nextOffset": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 98
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Result"
+            },
+            "maxItems": 20
+          }
+        },
+        "additionalProperties": false
+      },
+      "Read": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "corpusSha256",
+          "document",
+          "mediaType",
+          "markdown",
+          "links"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": "agent-api/1"
+          },
+          "corpusSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "document": {
+            "$ref": "#/components/schemas/Document"
+          },
+          "mediaType": {
+            "const": "text/markdown"
+          },
+          "markdown": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 524288
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "error"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": "agent-api/1"
+          },
+          "error": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": [
+                  "code",
+                  "message"
+                ],
+                "properties": {
+                  "code": {
+                    "const": "INVALID_REQUEST"
+                  },
+                  "message": {
+                    "const": "Invalid request."
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "required": [
+                  "code",
+                  "message"
+                ],
+                "properties": {
+                  "code": {
+                    "const": "ROUTE_NOT_FOUND"
+                  },
+                  "message": {
+                    "const": "Unknown API route."
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "required": [
+                  "code",
+                  "message"
+                ],
+                "properties": {
+                  "code": {
+                    "const": "DOCUMENT_NOT_FOUND"
+                  },
+                  "message": {
+                    "const": "Document not found."
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "required": [
+                  "code",
+                  "message"
+                ],
+                "properties": {
+                  "code": {
+                    "const": "METHOD_NOT_ALLOWED"
+                  },
+                  "message": {
+                    "const": "Method not allowed."
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "required": [
+                  "code",
+                  "message"
+                ],
+                "properties": {
+                  "code": {
+                    "const": "CORPUS_CHANGED"
+                  },
+                  "message": {
+                    "const": "Content corpus changed; repeat discovery."
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "required": [
+                  "code",
+                  "message"
+                ],
+                "properties": {
+                  "code": {
+                    "const": "CONTENT_UNAVAILABLE"
+                  },
+                  "message": {
+                    "const": "Content temporarily unavailable."
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

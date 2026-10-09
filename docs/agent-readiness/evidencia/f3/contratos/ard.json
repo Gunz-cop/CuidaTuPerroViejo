@@ -1,0 +1,32 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Cuida tu Perro Viejo",
+    "identifier": "cuidatuperroviejo.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:cuidatuperroviejo.com:api:contenido",
+      "displayName": "Consulta de guías para perros mayores",
+      "type": "application/vnd.oai.openapi+json",
+      "url": "https://cuidatuperroviejo.com/agent-api/v1/openapi.json",
+      "description": "API pública de catálogo, búsqueda léxica y lectura íntegra del corpus editorial publicado.",
+      "representativeQueries": [
+        "Busca guías sobre Cushing en perros mayores.",
+        "Lee una guía completa con sus fuentes y avisos.",
+        "Encuentra información sobre movilidad y dolor en perros senior."
+      ]
+    },
+    {
+      "identifier": "urn:air:cuidatuperroviejo.com:skill:buscar-leer-citar",
+      "displayName": "Buscar, leer y citar guías",
+      "type": "text/markdown",
+      "url": "https://cuidatuperroviejo.com/.well-known/agent-skills/buscar-leer-citar/SKILL.md",
+      "description": "Busca guías de Cuida tu Perro Viejo, lee el contenido completo y cita su URL canónica y sus fuentes originales.",
+      "representativeQueries": [
+        "Busca información sobre artrosis en perros mayores y cita la guía.",
+        "Lee una guía sobre cuidados de perros senior y conserva sus fuentes."
+      ]
+    }
+  ]
+}

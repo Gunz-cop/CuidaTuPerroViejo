@@ -2,14 +2,16 @@
 
 Plan aceptado por el propietario; F0 aceptada técnicamente con [PASS 3/5 y ratificación](evidencia/f0/cierre-arquitectonico.md). F1 se concreta en [su SDD](fases/f1-politica-y-descubrimiento.md); SDD aprobada por auditoría independiente PASS 2/2 e implementación aceptada con [PASS 1/5 y cierre arquitectónico](evidencia/f1/cierre-arquitectonico.md); [publicación P01–P03 PASS](evidencia/f1/promocion-2026-10-06/resultado.md), con autorización del propietario y medición real 71 contenido / 33 general, nivel 2. Las cifras futuras son estimaciones con la selección actual del evaluador congelada; se recalculan con evidencia después de cada promoción. El estado de ejecución de F0 vive en [su SDD](fases/f0-medicion-y-contratos.md), con [contratos](fases/f0-contratos.md), [prompts](fases/f0-prompts.md) y [registro de reanudación tras el bug #45](fases/f0-reanudacion-2026-10-05.md).
 
+Estado vigente 2026-10-09: [F2 completa aceptada/publicada](evidencia/f2/b/bug71-native-baseline-auditoria/produccion-cierre/resultado.md), sin bloqueantes;86 contenido/40 general, nivel 4 general; bugs70/71 cerrados. [SDD F3](fases/f3-api-y-descubrimiento.md) especificada, pendiente de auditoría independiente y ratificación técnica del coordinador antes de issues/programación. Las estimaciones históricas de nivel no sustituyen esa medición.
+
 ## Orden y dependencias
 
 | Fase | Resultado | Dependencias | Hito de puntuación previsto |
 |---|---|---|---|
 | F0 — Medición, inventario y decisiones de entrega | Evidencia repetible y contratos técnicos congelados | Plan | Línea base: 43 contenido / 20 general |
 | F1 — Política y descubrimiento básico | Content Signals, llms.txt y Link funcional | F0 | 71 contenido / 33 general; nivel 2 |
-| F2 — Lectura íntegra y negociación Markdown | F2A proyección → F2B routing/negociación; serie | F1 y decisiones F0 resueltas | 86 contenido / 40 general; nivel 3 |
-| F3 — API y skills de producto | Catálogo, búsqueda/lectura, OpenAPI, skills y ARD | F2 | 60 general; nivel 4 previsto |
+| F2 — Lectura íntegra y negociación Markdown | F2A proyección → F2B routing/negociación; serie | F1 y decisiones F0 resueltas | **Real publicado: 86 contenido / 40 general; nivel 4 general** |
+| F3 — API y skills de producto | Catálogo, búsqueda/lectura, OpenAPI, skills y ARD; SDD pendiente de auditoría/ratificación | F2 aceptada | 60 general estimado si pasan tres controles comparables; sin promesa de nivel |
 | F4A — Herramientas compartidas y WebMCP | Paridad UI/API y registro en navegador | F3 | 67 general |
 | F4B — MCP remoto | Servidor real, transporte y card | F4A | 73 general |
 | F5 — DNS y verificación pública | DNS-AID y auditoría del acceso en producción | F3; cierre después de F4B | **100 contenido / 80 general**, nivel 4 previsto |
@@ -63,13 +65,11 @@ Reversión: entrypoint/enrutamiento y generador como cambio coherente. No borrar
 
 ## F3 — Contratos públicos de contenido
 
-Entregar API versionada para catálogo/búsqueda/lectura, OpenAPI, API Catalog, skills públicas con digests y ARD. La spec fijará rutas, JSON schemas, IDs, errores, límites de payload/resultados, consistencia de versión y CORS. El manifiesto enumera lo ya implementado; F4 lo amplía después.
+La [SDD F3](fases/f3-api-y-descubrimiento.md), [contratos](fases/f3-contratos.md), [anexos concretos](evidencia/f3/contratos/README.md) y [traspaso](fases/f3-traspaso.md) fijan rutas, schemas, formatos, fuentes, límites, seguridad, versión y aceptación. Datos exclusivamente de proyección íntegra F2, con búsqueda léxica determinista, lectura por ID, guard corpus409, OpenAPI 3.1.1, API Catalog RFC 9727, una skill y ARD actual/compatibilidad; no auth/comercio/cálculos/MCP futuros.
 
-Ownership previsto: módulos `src/lib/agent-content/`, endpoints nuevos dentro de `src/pages/api/agent/`, `src/pages/.well-known/` o sus equivalentes estáticos congelados por la spec, `src/agent-skills/`, scripts generadores y pruebas de contrato. `public/_headers` y head se integran secuencialmente. No sobrescribir el catálogo del asistente V1.
+Orden exclusivo y sin solapamientos: F3A generación/contratos → F3B Worker API → F3C Link/llms y verificación pública de preview. Ownership y bases consecutivas se fijan por cierre exacto; ningún issue se abre sin PASS de SDD (máximo 2 revisiones mismo auditor Sol/high, sólo bloqueantes) y ratificación técnica del coordinador. Programadores Luna6/high, auditor de implementación Sol/high distinto, máximo 5 revisiones totales por issue mismo auditor, quinta FAIL→bug/STOP.
 
-Aceptación: una consulta devuelve una guía relevante del corpus, su URL resuelve y la lectura incluye texto completo; errores para IDs inexistentes/inputs inválidos; ninguna lectura arbitraria de URL; manifests y OpenAPI validan; cada digest coincide con bytes HTTP; cada skill tiene un recorrido reproducible; API Catalog, skills y ARD pasan el escáner.
-
-Reversión: retirar los endpoints y descriptors asociados juntos; llms/Link/ARD no pueden dejar referencias rotas.
+Aceptación funcional, preview y publicación separadas según C3-01–12/P3-01–03. No repetir las matrices F2 históricas ni atribuir preview a producción. Cada evidencia se vincula al build del SHA final real; documentos pueden alterar HTML/CSS mediante Tailwind. Promoción autorizada posterior a main; rollback conjunto C→B→A retira endpoints/descriptors/links asociados coherentemente, conservando F1/F2 y evidencia. La previsión de60general depende de tres controles nuevos con selección/denominador comparables; nivel 4 ya obtenido y no promesa de nivel 5 general.
 
 ## F4A — Herramientas y WebMCP
 
