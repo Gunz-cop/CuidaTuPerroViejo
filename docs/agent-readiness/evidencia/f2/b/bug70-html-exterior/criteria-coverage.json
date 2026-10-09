@@ -1,0 +1,41 @@
+{
+  "schema": "bug70-criteria-coverage/1",
+  "state": "AUTHOR_IMPLEMENTATION_EVIDENCE; INDEPENDENT_AUDIT_PENDING",
+  "target": {
+    "sourceCommit": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "sourceTree": "666f95273609ca67da8a508390c3acf9a141f8ca",
+    "helperSource": "copied bug69 helper in this ownership folder; distinct from target source"
+  },
+  "criteria": {
+    "C70-01": {
+      "state": "PASS_SDD_RATIFIED",
+      "evidence": "Fixed SDD SHA 759e8e4dfa260d8f6b94002a383e6abb354eb7bb9dd80a29175b9a0ef19d568e and its ratification in the parent evidence tree. Historical STOP remains unchanged."
+    },
+    "C70-02": {
+      "state": "PASS_ARTIFACTS_SEALED",
+      "evidence": "build-artifact-manifest.json indexes 58 exact artifacts from the reused d2bd build; target-build-summary.json records source/tree and counts. The matching private file manifest and recipe are retained separately for audit."
+    },
+    "C70-03": {
+      "state": "PASS_INSERTION_FINGERPRINT_AND_PLACEMENT",
+      "evidence": "The public summary fixes the private insertion at 367 bytes and SHA-256 2be9ce292ff29562f5d0f9a13c9adf1077e5e6c4d787e4568c5bd5f0eed7a09b. The private proof records the unique closing-body placement and source provenance."
+    },
+    "C70-04": {
+      "state": "PASS_OFFLINE_IMPLEMENTATION; PLAN_INACTIVE",
+      "evidence": "38 offline tests passed. The transport-mocked real run_one/validate_response simulation covers 1,284 unique IDs: 1,274 TEST synthetic responses and 10 justified N/A rows, with zero HTTP/Workerd requests. Plan retains 43 chunks and budgets, and execution is blocked. See test-results/offline-test-summary.json and plan-change-summary.json."
+    },
+    "C70-05": {
+      "state": "PENDING_INDEPENDENT_AUDIT",
+      "evidence": "No independent bug70 implementation audit has started or passed in this snapshot."
+    },
+    "C70-06": {
+      "state": "TARGET_AND_NEW_MATRIX_GATES_NOT_CLAIMED",
+      "evidence": "This package does not change or deploy main and does not authorize or execute a new public matrix. The proposed plan records ownerAuthorized=false and executionBlocked=true."
+    }
+  },
+  "evidenceKinds": {
+    "offlineTests": "TEST synthetic fixtures and mocked transport through the real helper functions; not HTTP captures",
+    "historicalStopReplay": "reprocessing of the previously retained production STOP response; no new request and no change to its original failed status",
+    "buildArtifacts": "bytes from the already completed independent d2bd build; no rebuild for this package",
+    "publicMatrix": "not executed"
+  }
+}

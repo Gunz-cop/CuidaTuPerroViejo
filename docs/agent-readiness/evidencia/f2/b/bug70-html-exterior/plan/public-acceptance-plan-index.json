@@ -1,0 +1,476 @@
+{
+  "schema": "f2b-public-acceptance-plan/1",
+  "status": "PROPOSED_BUG70_PLAN_NOT_AUTHORIZED_EXECUTION_BLOCKED",
+  "source": {
+    "commit": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "tree": "666f95273609ca67da8a508390c3acf9a141f8ca",
+    "pr": 64,
+    "preview": "https://cuidatuperroviejo.com",
+    "ciCheckId": 113925933594,
+    "workersCheckId": 113957381725,
+    "candidateReceiptSha256": "54f6cc7ec6770d8ce8564d96ee58dba641ae526a92f9eb93538a0a50fc0366cd",
+    "deploymentKind": "production-existing-target",
+    "buildArtifactManifestSha256": "45f9f36b22f07ac945df6902036f17878d660224eaf3e94dc72996081ae58c76"
+  },
+  "corpus": {
+    "indexSha256": "7c4f0130841f7c009d01cf37bb2c3acf5e1e59ebdc2cb7e14bb6b5a6d3a88273",
+    "documentCount": 28,
+    "canonicalIdentityRequests": 112,
+    "conditionalMatrix": {
+      "rowsPerRouteFormatMethod": 9,
+      "baselineRequestsReusedFromIdentity": 112,
+      "additionalConditionalMaximum": 896,
+      "rows": [
+        "baseline-no-condition",
+        "own-tag",
+        "weak-own-tag",
+        "list-own-plus-other",
+        "different-tag",
+        "wildcard",
+        "other-variant-tag",
+        "range-date-without-match",
+        "range-date-with-own-match"
+      ]
+    },
+    "supplement": {
+      "contexts": [
+        [
+          "home-gzip",
+          "/",
+          "gzip"
+        ],
+        [
+          "home-br",
+          "/",
+          "br"
+        ],
+        [
+          "cushing-gzip",
+          "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+          "gzip"
+        ],
+        [
+          "cushing-br",
+          "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+          "br"
+        ]
+      ],
+      "rowsPerContextFormatMethod": 9,
+      "maxRequests": 144,
+      "baselineRequestsIncluded": 16,
+      "conditionalMaximum": 128,
+      "conditionalRows": [
+        "own-tag",
+        "weak-own-tag",
+        "list-own-plus-other",
+        "different-tag",
+        "wildcard",
+        "other-variant-tag",
+        "range-date-without-match",
+        "range-date-with-own-match"
+      ],
+      "n/aRules": "Only tag-dependent HTML rows when that exact route/coding baseline GET+HEAD lacks ETag; Markdown tag mandatory. For HTML→Markdown cross-tag, N/A only when same-context HTML baseline has no tag. Markdown→HTML always runs."
+    }
+  },
+  "counts": {
+    "identity-identity": 112,
+    "conditional-identity": 896,
+    "accept-negotiation": 25,
+    "alternation": 24,
+    "explicit-resource": 70,
+    "routing-delegation": 8,
+    "unknown-routes": 4,
+    "legacy-redirect": 1,
+    "compression-supplement-144": 144
+  },
+  "totalMaximumRequests": 1284,
+  "allowlist": {
+    "methods": [
+      "GET",
+      "HEAD"
+    ],
+    "hosts": [
+      "cuidatuperroviejo.com"
+    ],
+    "paths": "Literal paths in requests list; no APIs/admin/assistant/evaluator/POST; no redirect following; no retries/reruns/new calibration.",
+    "redirects": "disabled",
+    "retries": 0
+  },
+  "client": {
+    "userAgent": "ctpv-f2b-public-acceptance/1.0",
+    "acceptEncoding": "identity unless case-specific gzip/br",
+    "tls": "retain configured proxy/CA path; do not override or suppress TLS verification; no proxy handler object passed to client; do not set bypass-proxy rules",
+    "redirects": "disabled",
+    "retries": 0,
+    "decoder": "Persist actual response wire bytes, decode Content-Encoding, retain real decoded bytes/hash. For canonical corpus HTML GET 200, compare E exactly with frozen build asset A or A plus the fixed private insertion; all other representations retain indexed-byte checks. HEAD is real HEAD; 304 is bodyless; Content-Length, when present, matches encoded wire bytes.",
+    "stop": "On first transport/status/hash/headers/matrix error, stop remaining cases and open bug; never retry or rerun to turn a failure green."
+  },
+  "requestChunks": [
+    {
+      "path": "public-plan-requests/001.json",
+      "requestCount": 38,
+      "firstRequestId": "identity:article--agresividad-tardia-perros-mayores-dolor:html:GET",
+      "lastRequestId": "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:HEAD",
+      "bytes": 20117,
+      "sha256": "ad0c5cde9a63aacf372ebb91b185d9d03cebe801585f0318cd0c879f087844c7"
+    },
+    {
+      "path": "public-plan-requests/002.json",
+      "requestCount": 41,
+      "firstRequestId": "identity:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:markdown:GET",
+      "lastRequestId": "identity:pillar--alimentacion-perros-senior:markdown:GET",
+      "bytes": 20418,
+      "sha256": "a568d48a6fd150397267aea2af47c430f64e99fca25a091f13aabaa5bd04660f"
+    },
+    {
+      "path": "public-plan-requests/003.json",
+      "requestCount": 38,
+      "firstRequestId": "identity:pillar--alimentacion-perros-senior:markdown:HEAD",
+      "lastRequestId": "conditional:article--agresividad-tardia-perros-mayores-dolor:html:GET:wildcard",
+      "bytes": 19658,
+      "sha256": "a21d1a1b696a02dba35e5ee8304fd8a96fe8394761d9d73cfafb23c1d8fe4dbc"
+    },
+    {
+      "path": "public-plan-requests/004.json",
+      "requestCount": 25,
+      "firstRequestId": "conditional:article--agresividad-tardia-perros-mayores-dolor:html:GET:other-variant-tag",
+      "lastRequestId": "conditional:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD:other-variant-tag",
+      "bytes": 19844,
+      "sha256": "fd5f0f216e46b79a498ef0493151025951fe3a4a78702f3767dc9352aa74052a"
+    },
+    {
+      "path": "public-plan-requests/005.json",
+      "requestCount": 26,
+      "firstRequestId": "conditional:article--agresividad-tardia-perros-mayores-dolor:markdown:HEAD:range-date-without-match",
+      "lastRequestId": "conditional:article--ansiedad-separacion-perros-senior:markdown:GET:range-date-with-own-match",
+      "bytes": 19879,
+      "sha256": "a0a00dbd3db53b23f47f25d27c311010ae27de14b064b49efffc6b9160d491cb"
+    },
+    {
+      "path": "public-plan-requests/006.json",
+      "requestCount": 25,
+      "firstRequestId": "conditional:article--ansiedad-separacion-perros-senior:markdown:HEAD:own-tag",
+      "lastRequestId": "conditional:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET:own-tag",
+      "bytes": 20362,
+      "sha256": "8397fc7f399ccad49fc571ca5844953f968ed087319a97e6ff8ccee52ab7ebff"
+    },
+    {
+      "path": "public-plan-requests/007.json",
+      "requestCount": 25,
+      "firstRequestId": "conditional:article--cama-ortopedica-perros-mayores-displasia-artrosis:markdown:GET:weak-own-tag",
+      "lastRequestId": "conditional:article--chequeo-geriatrico-canino:html:HEAD:weak-own-tag",
+      "bytes": 19801,
+      "sha256": "810d2485af88a132183bbb9bb63bee3b20eaf78676d61382c1b789377b826e55"
+    },
+    {
+      "path": "public-plan-requests/008.json",
+      "requestCount": 28,
+      "firstRequestId": "conditional:article--chequeo-geriatrico-canino:html:HEAD:list-own-plus-other",
+      "lastRequestId": "conditional:article--comida-casera-perros-mayores:html:GET:other-variant-tag",
+      "bytes": 19966,
+      "sha256": "a1df38c5fdd3bb81e0797690cfafeb0a0ddf6716551e6ed9235dfa612fd15d17"
+    },
+    {
+      "path": "public-plan-requests/009.json",
+      "requestCount": 27,
+      "firstRequestId": "conditional:article--comida-casera-perros-mayores:html:GET:range-date-without-match",
+      "lastRequestId": "conditional:article--como-dar-medicacion-perro:html:GET:own-tag",
+      "bytes": 19958,
+      "sha256": "32ccd895c4e49a2734056861b9ed5611d7a22b38d5d5c35ad352e642cb605485"
+    },
+    {
+      "path": "public-plan-requests/010.json",
+      "requestCount": 28,
+      "firstRequestId": "conditional:article--como-dar-medicacion-perro:html:GET:weak-own-tag",
+      "lastRequestId": "conditional:article--como-dar-medicacion-perro:markdown:HEAD:wildcard",
+      "bytes": 19959,
+      "sha256": "73330a4125747c12cd94edf3c7e15b322603deba5b4558c2f251158f4e662a3a"
+    },
+    {
+      "path": "public-plan-requests/011.json",
+      "requestCount": 27,
+      "firstRequestId": "conditional:article--como-dar-medicacion-perro:markdown:HEAD:other-variant-tag",
+      "lastRequestId": "conditional:article--disfuncion-cognitiva-canina:markdown:GET:range-date-with-own-match",
+      "bytes": 19804,
+      "sha256": "6bac565a9ffcf519a91af61a18a79244b2cc8b2e0c46dd6ea9f23c2e10092728"
+    },
+    {
+      "path": "public-plan-requests/012.json",
+      "requestCount": 27,
+      "firstRequestId": "conditional:article--disfuncion-cognitiva-canina:markdown:HEAD:own-tag",
+      "lastRequestId": "conditional:article--incontinencia-fecal-perros-senior:markdown:GET:list-own-plus-other",
+      "bytes": 20437,
+      "sha256": "1b0a46134ae1c0890b7fd89244df2215cffca57b198a0259f5239585926e6507"
+    },
+    {
+      "path": "public-plan-requests/013.json",
+      "requestCount": 26,
+      "firstRequestId": "conditional:article--incontinencia-fecal-perros-senior:markdown:GET:different-tag",
+      "lastRequestId": "conditional:article--incontinencia-urinaria-perros-mayores:html:HEAD:wildcard",
+      "bytes": 19660,
+      "sha256": "1e8b6f6bb4875ddda16af48468a802fbce8e1041b60b6a8043d25353f27d8169"
+    },
+    {
+      "path": "public-plan-requests/014.json",
+      "requestCount": 25,
+      "firstRequestId": "conditional:article--incontinencia-urinaria-perros-mayores:html:HEAD:other-variant-tag",
+      "lastRequestId": "conditional:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET:other-variant-tag",
+      "bytes": 20289,
+      "sha256": "f590078e32604b71f500c890b475e9bf47a97cfa547b48f63f89085ceaf785d1"
+    },
+    {
+      "path": "public-plan-requests/015.json",
+      "requestCount": 22,
+      "firstRequestId": "conditional:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:html:GET:range-date-without-match",
+      "lastRequestId": "conditional:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:markdown:HEAD:different-tag",
+      "bytes": 19860,
+      "sha256": "eb4a09211834c3aacbb7f624a2b01532e0fbb0734e474aafe1a108d2a047816b"
+    },
+    {
+      "path": "public-plan-requests/016.json",
+      "requestCount": 26,
+      "firstRequestId": "conditional:article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion:markdown:HEAD:wildcard",
+      "lastRequestId": "conditional:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:GET:other-variant-tag",
+      "bytes": 20414,
+      "sha256": "2f2227c208985f232a1422bca1072a8a846d571709e0859bf673287e162c8643"
+    },
+    {
+      "path": "public-plan-requests/017.json",
+      "requestCount": 27,
+      "firstRequestId": "conditional:article--mi-perro-viejo-defeca-mucho-poliquezia:markdown:GET:range-date-without-match",
+      "lastRequestId": "conditional:article--prevencion-caidas-perro-mayor:markdown:GET:own-tag",
+      "bytes": 20473,
+      "sha256": "887304071251605eeae867ef40350b31bcc47c52de8826c16b6e620c0577dca0"
+    },
+    {
+      "path": "public-plan-requests/018.json",
+      "requestCount": 28,
+      "firstRequestId": "conditional:article--prevencion-caidas-perro-mayor:markdown:GET:weak-own-tag",
+      "lastRequestId": "conditional:article--salud-dental-perros-mayores:html:HEAD:wildcard",
+      "bytes": 20369,
+      "sha256": "5f05d3316f12e4274ccf930b04752edb382a3a0c95698d89c7b75c83783e5088"
+    },
+    {
+      "path": "public-plan-requests/019.json",
+      "requestCount": 27,
+      "firstRequestId": "conditional:article--salud-dental-perros-mayores:html:HEAD:other-variant-tag",
+      "lastRequestId": "conditional:article--sindrome-cushing-perros-mayores:html:GET:range-date-with-own-match",
+      "bytes": 19854,
+      "sha256": "24bd2a6bc37b7468db576129a2b3f51b226b975a7561bffe0d2cbfcc910c7fea"
+    },
+    {
+      "path": "public-plan-requests/020.json",
+      "requestCount": 27,
+      "firstRequestId": "conditional:article--sindrome-cushing-perros-mayores:html:HEAD:own-tag",
+      "lastRequestId": "conditional:article--ulceras-presion-perros:html:GET:list-own-plus-other",
+      "bytes": 20138,
+      "sha256": "a26d06e8b8d0c1f264a811fcc0e66d2a7a2a96ad20e776afa686732599ba6b67"
+    },
+    {
+      "path": "public-plan-requests/021.json",
+      "requestCount": 29,
+      "firstRequestId": "conditional:article--ulceras-presion-perros:html:GET:different-tag",
+      "lastRequestId": "conditional:article--ulceras-presion-perros:markdown:HEAD:range-date-with-own-match",
+      "bytes": 20290,
+      "sha256": "120ff453df2a234b00e6d3bafb53c75150bf7fe33ebf7d0ef62993b920ddb494"
+    },
+    {
+      "path": "public-plan-requests/022.json",
+      "requestCount": 26,
+      "firstRequestId": "conditional:article--vacunas-desparasitacion-perros-senior:html:GET:own-tag",
+      "lastRequestId": "conditional:article--vacunas-desparasitacion-perros-senior:markdown:HEAD:weak-own-tag",
+      "bytes": 20087,
+      "sha256": "380e52e413e7b7a1d1ef1c699dc0c583f2699cd8c36a6e76cc107d2f82329052"
+    },
+    {
+      "path": "public-plan-requests/023.json",
+      "requestCount": 35,
+      "firstRequestId": "conditional:article--vacunas-desparasitacion-perros-senior:markdown:HEAD:list-own-plus-other",
+      "lastRequestId": "conditional:home:markdown:HEAD:wildcard",
+      "bytes": 20391,
+      "sha256": "07d90e62f97c02ce0b28d305f8a7d9383eb63f6e7d2ded41e7ed3786523ffdee"
+    },
+    {
+      "path": "public-plan-requests/024.json",
+      "requestCount": 34,
+      "firstRequestId": "conditional:home:markdown:HEAD:other-variant-tag",
+      "lastRequestId": "conditional:page--acerca-de:markdown:HEAD:range-date-without-match",
+      "bytes": 20320,
+      "sha256": "5e48150fd5bd17095cbe8c3fa1e18b11653ee5880ac79b4b37610fd97dee6fa1"
+    },
+    {
+      "path": "public-plan-requests/025.json",
+      "requestCount": 31,
+      "firstRequestId": "conditional:page--acerca-de:markdown:HEAD:range-date-with-own-match",
+      "lastRequestId": "conditional:page--politica-editorial:markdown:HEAD:other-variant-tag",
+      "bytes": 20030,
+      "sha256": "a73ea6b7509d53fd7c7e1cb6206df37b03399114bb9838946c72e67faf65ca76"
+    },
+    {
+      "path": "public-plan-requests/026.json",
+      "requestCount": 29,
+      "firstRequestId": "conditional:page--politica-editorial:markdown:HEAD:range-date-without-match",
+      "lastRequestId": "conditional:pillar--alimentacion-perros-senior:markdown:HEAD:list-own-plus-other",
+      "bytes": 20260,
+      "sha256": "138791d14b7a4387bbc008a599b4d9e64aa30a50c7bcc7b728c01a55048182f9"
+    },
+    {
+      "path": "public-plan-requests/027.json",
+      "requestCount": 29,
+      "firstRequestId": "conditional:pillar--alimentacion-perros-senior:markdown:HEAD:different-tag",
+      "lastRequestId": "conditional:pillar--cuidados-paliativos-perros:markdown:GET:range-date-with-own-match",
+      "bytes": 19886,
+      "sha256": "b0294e2d90173d1909747ad4e8de5f1b0fbe79f7143076cb141c4c16a721a7d9"
+    },
+    {
+      "path": "public-plan-requests/028.json",
+      "requestCount": 31,
+      "firstRequestId": "conditional:pillar--cuidados-paliativos-perros:markdown:HEAD:own-tag",
+      "lastRequestId": "conditional:pillar--herramientas:markdown:GET:range-date-without-match",
+      "bytes": 19743,
+      "sha256": "3667e5f35c231b520110e808f2b96d712b3e92564ef3550cc1ee4591ecf7a8da"
+    },
+    {
+      "path": "public-plan-requests/029.json",
+      "requestCount": 30,
+      "firstRequestId": "conditional:pillar--herramientas:markdown:GET:range-date-with-own-match",
+      "lastRequestId": "conditional:pillar--higiene-hogar-perros-senior:markdown:GET:wildcard",
+      "bytes": 20292,
+      "sha256": "a1dffef556355a71d3f936c4b199fcafc160b0d2d3e69240aac2b705aea7875a"
+    },
+    {
+      "path": "public-plan-requests/030.json",
+      "requestCount": 28,
+      "firstRequestId": "conditional:pillar--higiene-hogar-perros-senior:markdown:GET:other-variant-tag",
+      "lastRequestId": "conditional:pillar--movilidad-dolor-perros-mayores:markdown:GET:own-tag",
+      "bytes": 19922,
+      "sha256": "205a6fbefadc5fef8bb3b13316b8d28e85c04b3edfb96516c637c5142bf81ac7"
+    },
+    {
+      "path": "public-plan-requests/031.json",
+      "requestCount": 29,
+      "firstRequestId": "conditional:pillar--movilidad-dolor-perros-mayores:markdown:GET:weak-own-tag",
+      "lastRequestId": "conditional:pillar--salud-mental-emocional-perros:html:HEAD:other-variant-tag",
+      "bytes": 20478,
+      "sha256": "3a11bf12009679c58efe3aeba2f7368c67e659d8968e17bfcd96713d1361c984"
+    },
+    {
+      "path": "public-plan-requests/032.json",
+      "requestCount": 29,
+      "firstRequestId": "conditional:pillar--salud-mental-emocional-perros:html:HEAD:range-date-without-match",
+      "lastRequestId": "conditional:pillar--salud-perros-mayores:html:HEAD:list-own-plus-other",
+      "bytes": 20305,
+      "sha256": "ce9df8364232de2bade146ff4c650f473ae78ae3e3c9161853fd267dc9dcc103"
+    },
+    {
+      "path": "public-plan-requests/033.json",
+      "requestCount": 31,
+      "firstRequestId": "conditional:pillar--salud-perros-mayores:html:HEAD:different-tag",
+      "lastRequestId": "conditional:tool--calidad-vida:html:HEAD:weak-own-tag",
+      "bytes": 20333,
+      "sha256": "fb94cd9aebbc6379aabbfbe1b2cc3b3c387f960a56e4cbe954bb1d11ae5553a5"
+    },
+    {
+      "path": "public-plan-requests/034.json",
+      "requestCount": 31,
+      "firstRequestId": "conditional:tool--calidad-vida:html:HEAD:list-own-plus-other",
+      "lastRequestId": "conditional:tool--movilidad:html:HEAD:own-tag",
+      "bytes": 19999,
+      "sha256": "818cb4bcba671d60e4564c13832882332893c796d43a39cec4ea6b9b63632e36"
+    },
+    {
+      "path": "public-plan-requests/035.json",
+      "requestCount": 41,
+      "firstRequestId": "conditional:tool--movilidad:html:HEAD:weak-own-tag",
+      "lastRequestId": "accept:accept-home-q-prefers-html",
+      "bytes": 20977,
+      "sha256": "15e7bb211ad8984570cb8b1413ccd54c60d9158422431c3f8337a13154554cf0"
+    },
+    {
+      "path": "public-plan-requests/036.json",
+      "requestCount": 50,
+      "firstRequestId": "accept:accept-home-q-prefers-md",
+      "lastRequestId": "resource:resource-markdown-article--disfuncion-cognitiva-canina-get",
+      "bytes": 20256,
+      "sha256": "0cce064599bca7037afa34136e746c5dd8af25862c0c8babd5e3e59a0557df8b"
+    },
+    {
+      "path": "public-plan-requests/037.json",
+      "requestCount": 43,
+      "firstRequestId": "resource:resource-markdown-article--disfuncion-cognitiva-canina-head",
+      "lastRequestId": "resource:resource-markdown-tool--movilidad-head",
+      "bytes": 20219,
+      "sha256": "7b194b7755841cc40cbf6861686dade557c0123715bf287468f9bcd0fd142ae6"
+    },
+    {
+      "path": "public-plan-requests/038.json",
+      "requestCount": 44,
+      "firstRequestId": "resource:resource-robots-get",
+      "lastRequestId": "supplement:home-gzip:html:GET:range-date-without-match",
+      "bytes": 21534,
+      "sha256": "f47c729be711aa798390d02647e9d3de25ff72f5f84197f3b55685fbb5249be6"
+    },
+    {
+      "path": "public-plan-requests/039.json",
+      "requestCount": 32,
+      "firstRequestId": "supplement:home-gzip:html:GET:range-date-with-own-match",
+      "lastRequestId": "supplement:home-br:html:GET:range-date-without-match",
+      "bytes": 20228,
+      "sha256": "de14eff8688cee649598a135e7c39f47b7fabab18254e93c5c84b8ad399c33a6"
+    },
+    {
+      "path": "public-plan-requests/040.json",
+      "requestCount": 31,
+      "firstRequestId": "supplement:home-br:html:GET:range-date-with-own-match",
+      "lastRequestId": "supplement:cushing-gzip:html:GET:other-variant-tag",
+      "bytes": 19873,
+      "sha256": "e085e96d243398acf3f483280f1ce765803b85b7af8aaf76e106ac8d670158da"
+    },
+    {
+      "path": "public-plan-requests/041.json",
+      "requestCount": 28,
+      "firstRequestId": "supplement:cushing-gzip:html:GET:range-date-without-match",
+      "lastRequestId": "supplement:cushing-br:html:GET:weak-own-tag",
+      "bytes": 19744,
+      "sha256": "5c1f22781092e2fd5c01ac53599b8570ed29cbd7124feb9e72f16eb00c0ead1e"
+    },
+    {
+      "path": "public-plan-requests/042.json",
+      "requestCount": 29,
+      "firstRequestId": "supplement:cushing-br:html:GET:list-own-plus-other",
+      "lastRequestId": "supplement:cushing-br:markdown:HEAD:range-date-without-match",
+      "bytes": 19690,
+      "sha256": "62e3ddff55c52aec62bcbe940af49478ca59a8b12269dc0c6cb64ff6432f25fa"
+    },
+    {
+      "path": "public-plan-requests/043.json",
+      "requestCount": 1,
+      "firstRequestId": "supplement:cushing-br:markdown:HEAD:range-date-with-own-match",
+      "lastRequestId": "supplement:cushing-br:markdown:HEAD:range-date-with-own-match",
+      "bytes": 933,
+      "sha256": "c1488dc822a242c31f5abc64f7b31a4100339eb8cf01393fa34421c4a30867d6"
+    }
+  ],
+  "requestCount": 1284,
+  "chunkMaxBytes": 20480,
+  "candidateReceipt": null,
+  "executionGate": {
+    "ownerAuthorized": false,
+    "executionBlocked": true,
+    "authorizationReceiptSha256": null,
+    "reason": "Requires helper and plan independent audit, root admission, and fresh owner authorization for one new matrix."
+  },
+  "buildArtifactManifestPath": "../build-artifact-manifest.json",
+  "buildArtifactManifestSha256": "45f9f36b22f07ac945df6902036f17878d660224eaf3e94dc72996081ae58c76",
+  "canonicalHtmlAssetCount": 28,
+  "authorizedInsertion": {
+    "bytes": 367,
+    "sha256": "2be9ce292ff29562f5d0f9a13c9adf1077e5e6c4d787e4568c5bd5f0eed7a09b",
+    "placement": "before-unique-literal-</body>",
+    "acceptedForms": [
+      "A",
+      "A[:p]+I+A[p:]"
+    ],
+    "source": "fixed private fragment; fingerprint cannot be overridden by CLI"
+  }
+}

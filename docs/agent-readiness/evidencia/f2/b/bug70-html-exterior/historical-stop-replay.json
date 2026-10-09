@@ -1,0 +1,29 @@
+{
+  "schema": "bug70-historical-stop-replay/1",
+  "state": "LOCAL_REPLAY_MATCHES_AUTHORIZED_HTML_FORM; HISTORICAL_STOP_REMAINS_FAILED",
+  "sourceCapture": {
+    "requestId": "identity:article--agresividad-tardia-perros-mayores-dolor:html:GET",
+    "status": 200,
+    "decodedBytes": 127017,
+    "decodedSha256": "8585d05ecf77c601511ca5b124b958f8fa95fe6daef817548c747094d2e43f49",
+    "sourceLabel": "already-retained production STOP capture; no new request"
+  },
+  "independentBuildA": {
+    "bytes": 126650,
+    "sha256": "f8ce9ff898b84a0fbab7b965a112298b143202705dc2c8eb3c245323f6788dc8"
+  },
+  "authorizedInsertionI": {
+    "bytes": 367,
+    "sha256": "2be9ce292ff29562f5d0f9a13c9adf1077e5e6c4d787e4568c5bd5f0eed7a09b",
+    "position": "before the unique literal </body> in A"
+  },
+  "constructedExterior": {
+    "form": "A[:p]+I+A[p:]",
+    "bytes": 127017,
+    "sha256": "8585d05ecf77c601511ca5b124b958f8fa95fe6daef817548c747094d2e43f49",
+    "comparison": "byte-exact match to retained decoded body"
+  },
+  "transportInvocations": 0,
+  "newProductionRequests": 0,
+  "historicalStopChanged": false
+}

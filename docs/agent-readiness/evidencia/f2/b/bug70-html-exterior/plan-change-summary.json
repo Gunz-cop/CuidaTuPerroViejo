@@ -1,0 +1,45 @@
+{
+  "schema": "bug70-plan-change-summary/1",
+  "baseline": "accepted bug69-etag-equivalence frozen plan",
+  "baselineIndexSha256": "11e5c5b3a0847f411337804a454278cb35c03b6acfff66e225a0d3ee83c43469",
+  "currentIndexSha256": "555348b6a876c7f846aba31dc9a306e1a96fbb4f87d2bc372249815c99ce2046",
+  "requestCount": 1284,
+  "uniqueRequestIds": 1284,
+  "requestChunkCount": 43,
+  "groupCounts": {
+    "identity-identity": 112,
+    "conditional-identity": 896,
+    "accept-negotiation": 25,
+    "alternation": 24,
+    "explicit-resource": 70,
+    "routing-delegation": 8,
+    "unknown-routes": 4,
+    "legacy-redirect": 1,
+    "compression-supplement-144": 144
+  },
+  "changedChunkFiles": [
+    "public-plan-requests/001.json",
+    "public-plan-requests/002.json",
+    "public-plan-requests/003.json",
+    "public-plan-requests/036.json",
+    "public-plan-requests/038.json"
+  ],
+  "changedRequestFields": {
+    "paths": [
+      {
+        "requestId": "resource:resource-stylesheet-get",
+        "from": "/_astro/BaseLayout.gPuLvWrC.css",
+        "to": "/_astro/BaseLayout.DiuOmqqC.css"
+      },
+      {
+        "requestId": "resource:resource-stylesheet-head",
+        "from": "/_astro/BaseLayout.gPuLvWrC.css",
+        "to": "/_astro/BaseLayout.DiuOmqqC.css"
+      }
+    ],
+    "bodySha256Count": 42,
+    "expectedBodySha256Count": 4,
+    "markdownExpectedFieldChanges": 0
+  },
+  "changeReason": "Retarget CSS resource pair and HTML artifact hashes to the exact d2bd build; the content index hash follows its HTML metadata. Preserve all Markdown expectations, request IDs, ordering, dependencies and budgets."
+}

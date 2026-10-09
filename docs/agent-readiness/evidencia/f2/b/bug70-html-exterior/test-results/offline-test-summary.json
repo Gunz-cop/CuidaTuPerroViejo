@@ -1,0 +1,88 @@
+{
+  "schema": "bug70-offline-test-summary/1",
+  "state": "PASS_OFFLINE_AUTHOR_R2; INDEPENDENT_AUDIT_PENDING",
+  "suite": {
+    "command": "python -m unittest discover -s docs/agent-readiness/evidencia/f2/b/bug70-html-exterior/tests -v",
+    "tests": 38,
+    "passed": 38,
+    "failed": 0,
+    "errors": 0,
+    "httpRequests": 0,
+    "workerdInvocations": 0
+  },
+  "runner": {
+    "assembledSourceSha256": "3a373712f988fd1b65116ecc2285bc0200a6e0583b753a62f8b82860e8b78670",
+    "runnerEntrypointSha256": "c2b58f01b720f7be1567959f7e33b442973b3d929b8a3f9ca6d94bb6b4fb0364"
+  },
+  "planSimulation": {
+    "fixtureLabel": "TEST synthetic offline transport; no HTTP requests",
+    "planIndexSha256": "555348b6a876c7f846aba31dc9a306e1a96fbb4f87d2bc372249815c99ce2046",
+    "uniqueRequestIds": 1284,
+    "states": {
+      "N/A": 10,
+      "captured": 1274
+    },
+    "mockTransportInvocations": 1274,
+    "actualHttpRequests": 0,
+    "STOP": false,
+    "htmlExteriorCases": 151,
+    "htmlExteriorForms": {
+      "A": 151,
+      "A[:p]+I+A[p:]": 0
+    },
+    "nativeHtmlCases": 10,
+    "acceptErrorBodyCases": 6,
+    "resultSha256": "7477d78bdef9974aebb7519baf500a632f3483fb10766521a1cac5b05b5de69a"
+  },
+  "retainedStopReplay": {
+    "state": "LOCAL_REPLAY_PASS; HISTORICAL_PRODUCTION_STOP_UNCHANGED",
+    "requestId": "identity:article--agresividad-tardia-perros-mayores-dolor:html:GET",
+    "decodedBytes": 127017,
+    "decodedSha256": "8585d05ecf77c601511ca5b124b958f8fa95fe6daef817548c747094d2e43f49",
+    "form": "A[:p]+I+A[p:]",
+    "newHttpRequests": 0
+  },
+  "executionGate": {
+    "ownerAuthorized": false,
+    "executionBlocked": true,
+    "publicMatrixExecuted": false
+  },
+  "testSourceFiles": [
+    {
+      "path": "tests/test_accept_error_bodies.py",
+      "bytes": 4475,
+      "sha256": "f61775ca65d2c38f8a79cc63dbb8b50df2d0de3ccebd2a6490d41d759742a1e5"
+    },
+    {
+      "path": "tests/test_css_mime_policy.py",
+      "bytes": 5595,
+      "sha256": "bbf65ba63bae26836248d28c0fc8c3704c3edac40a35e8c9006c956bf84d477d"
+    },
+    {
+      "path": "tests/test_html_exterior_policy.py",
+      "bytes": 11341,
+      "sha256": "b50b0d1c430a624e2085de0fa20108d28b9bcae0ab2e09a57f1d41eae4d6ca4b"
+    },
+    {
+      "path": "tests/test_native_html_mime_policy.py",
+      "bytes": 7728,
+      "sha256": "8d1a5f9ec0c11e99606910b34dd67130997ca2f3150dace05d2c95eafbb06081"
+    },
+    {
+      "path": "tests/test_runner.py",
+      "bytes": 24524,
+      "sha256": "2f968e95305c2716eac9098cbe51589ac14eb187c02c9597f58aae4191236c51"
+    },
+    {
+      "path": "tests/test_weak_etag_equivalence.py",
+      "bytes": 12355,
+      "sha256": "764a21ec8ab3941a10482e3c662725cd6de6a55eda58b528f17f8240715952b5"
+    }
+  ],
+  "alternationEntityRegression": {
+    "subcases": 8,
+    "bothDirections": true,
+    "etagPresentAndAbsent": true,
+    "source": "TEST synthetic values; no HTTP captures"
+  }
+}
