@@ -1,0 +1,41 @@
+{
+  "criteria": {
+    "C71-01": {
+      "evidence": "Ratified SDD SHA d2ec353d6ce54a82d9798f24f35bdc747aa34c21a0193c180eb1642b072bd2ee; published closure and ratification are in the parent evidence tree.",
+      "state": "PASS_SDD_RATIFIED"
+    },
+    "C71-02": {
+      "evidence": "The three current native HTML files are copied from existing d2bd dist/client and match current plan GET hashes; historical files are retained privately, and only /gracias was a production attempt.",
+      "state": "PASS_STATIC_NATIVE_BASELINES"
+    },
+    "C71-03": {
+      "evidence": "Private inventory SHA c5574240d4ca4e400d66fc732a2006855c74614bb57e18104459b473f46180f0 compared all 1,284 expectations with 58 exact build artifacts and runtime error literals; no other static mismatches.",
+      "state": "PASS_EXHAUSTIVE_STATIC_INVENTORY"
+    },
+    "C71-04": {
+      "evidence": "43 chunks and 1,284 unique IDs; exactly three expected.bodySha256 fields and chunk038 descriptor changed. Runner/fragments remain byte-exact; plan blocks execution and is not authorized.",
+      "state": "PASS_INACTIVE_PLAN_AND_OFFLINE_TESTS"
+    },
+    "C71-05": {
+      "evidence": "No issue71 implementation audit has started or passed in this snapshot.",
+      "state": "PENDING_INDEPENDENT_AUDIT"
+    },
+    "C71-06": {
+      "evidence": "No fresh public matrix or production action was performed. Plan has ownerAuthorized=false, executionBlocked=true, authorizationReceiptSha256=null.",
+      "state": "NOT_AUTHORIZED_OR_EXECUTED"
+    }
+  },
+  "evidenceKinds": {
+    "offlineTests": "retained historical capture replay and TEST synthetic transport only; zero new HTTP",
+    "productionAttempt": "the existing /gracias STOP capture only; the other two routes were not requested",
+    "publicMatrix": "not executed",
+    "staticBuildAssets": "bytes from the already completed target build; no rebuild"
+  },
+  "schema": "bug71-criteria-coverage/1",
+  "state": "IMPLEMENTATION_EVIDENCE_READY_FOR_INDEPENDENT_AUDIT",
+  "target": {
+    "helper": "byte-exact accepted bug70 R2 source; distinct from target product",
+    "sourceCommit": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "sourceTree": "666f95273609ca67da8a508390c3acf9a141f8ca"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schema": "bug70-css-artifact-fixture/1",
+  "fixtureLabel": "Exact CSS bytes from existing target build; offline fixture, no HTTP",
+  "requestId": "resource:resource-stylesheet-get",
+  "sourceCommit": "d2bd342050811d41ee212730cb11fe07783994bd",
+  "path": "/_astro/BaseLayout.DiuOmqqC.css",
+  "status": 200,
+  "headers": {
+    "content-type": [
+      "text/css"
+    ],
+    "link": [
+      "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+    ],
+    "strict-transport-security": [
+      "max-age=31536000; includeSubDomains"
+    ],
+    "permissions-policy": [
+      "geolocation=(), microphone=(), camera=()"
+    ],
+    "referrer-policy": [
+      "strict-origin-when-cross-origin"
+    ],
+    "x-content-type-options": [
+      "nosniff"
+    ]
+  },
+  "bodyBytes": 138212,
+  "bodySha256": "9695668496f97178890833317569b4758f5ef6fb1f3e2caeb80e9a7c1aec3ff9",
+  "parts": [
+    {
+      "path": "body-01.bin",
+      "bytes": 20000,
+      "sha256": "e2686cea31631df842b3bf439098c858c0087f0d277ae87b1792d0a457076f8f"
+    },
+    {
+      "path": "body-02.bin",
+      "bytes": 20000,
+      "sha256": "d94bc89c600206ea764455cc5a2c0ffe21fb0d3f2f3cdf175f9205b1896b30e2"
+    },
+    {
+      "path": "body-03.bin",
+      "bytes": 20000,
+      "sha256": "70c2dda0e49418bbcaba27b87e37943b5eb1dd26dec33aab89e82ebb0d241659"
+    },
+    {
+      "path": "body-04.bin",
+      "bytes": 20000,
+      "sha256": "61266885be62d344c41f6c5abc713576e71ac217fbaa8f02d58496bcf40ae70b"
+    },
+    {
+      "path": "body-05.bin",
+      "bytes": 20000,
+      "sha256": "dff933e5b5d68727339f4b1a3172d04798c0b39edb607fdaaa9156d70baf99f4"
+    },
+    {
+      "path": "body-06.bin",
+      "bytes": 20000,
+      "sha256": "61975904a726afb178089d338b25f1e9cdd14d6d1279c13fd83749ca0991c8b8"
+    },
+    {
+      "path": "body-07.bin",
+      "bytes": 18212,
+      "sha256": "72d85c8134fa8e95139f08178b8774e27becc1f7637958e833c168a28a27e740"
+    }
+  ],
+  "headerSource": "TEST synthetic protocol headers for validator coverage; not observed HTTP"
+}

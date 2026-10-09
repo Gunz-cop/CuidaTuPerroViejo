@@ -1,0 +1,40 @@
+{
+  "schema": "bug70-implementation-review-fix-summary/1",
+  "state": "R2_READY_FOR_INDEPENDENT_AUDIT_NOT_ACCEPTED",
+  "priorReview": {
+    "result": "R1_FAIL; closed blockers B01 and B02 only",
+    "reportSha256": "fd0f3db3837fc2df18ce1306d4658124a91e337443fe8ce6f72aacf8a39d68f1"
+  },
+  "fixes": {
+    "B01": {
+      "source": "runner-source/002.pyfrag",
+      "behavior": "Alternation GET 200 rows compare the actual decoded entity SHA with the same path, selected representation, and coding identity GET baseline, then retain an independent same-context alternation entity state. The ETag baseline and alternation comparisons remain in place.",
+      "regression": "tests/test_html_exterior_policy.py::test_alternation_requires_same_real_entity_with_and_without_etag",
+      "cases": "Both A to A+I and A+I to A, for baseline-to-alternation and repeated alternation, with ETag absent and with a stable ETag."
+    },
+    "B02": {
+      "source": "runner-source/003.pyfrag",
+      "behavior": "expectedExteriorBytes and expectedExteriorSha256 now describe the concrete accepted form selected by the actual decoded entity. The observed E byte count/hash remain separate. Insertion observation fields report absence for A and the exact authorized insertion for A+I.",
+      "regression": "tests/test_html_exterior_policy.py::test_exact_A_and_exact_authorized_insertion_only",
+      "cases": "Exact A and exact A+I each assert concrete expected and observed values."
+    }
+  },
+  "unchanged": {
+    "targetProductSource": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "planIndexSha256": "555348b6a876c7f846aba31dc9a306e1a96fbb4f87d2bc372249815c99ce2046",
+    "requestIds": 1284,
+    "requestChunks": 43,
+    "buildArtifacts": 58,
+    "insertionBytes": 367,
+    "newHttpRequests": 0,
+    "newBuilds": 0
+  },
+  "offlineResults": {
+    "tests": 38,
+    "passed": 38,
+    "failed": 0,
+    "httpRequests": 0,
+    "workerdInvocations": 0,
+    "independentAudit": "pending"
+  }
+}

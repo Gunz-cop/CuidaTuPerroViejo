@@ -1,0 +1,119 @@
+BUILD_MANIFEST_SHA256='45f9f36b22f07ac945df6902036f17878d660224eaf3e94dc72996081ae58c76'
+BUILD_SOURCE_COMMIT='d2bd342050811d41ee212730cb11fe07783994bd'
+BUILD_SOURCE_TREE='666f95273609ca67da8a508390c3acf9a141f8ca'
+AUTHORIZED_INSERTION_BYTES=367
+AUTHORIZED_INSERTION_SHA256='2be9ce292ff29562f5d0f9a13c9adf1077e5e6c4d787e4568c5bd5f0eed7a09b'
+
+def validate_bug70_plan(idx):
+    source=idx.get('source') or {}
+    if source.get('commit')!=BUILD_SOURCE_COMMIT or source.get('tree')!=BUILD_SOURCE_TREE:
+        raise Stop('Bug70 plan source is not the frozen production target')
+    gate=idx.get('executionGate') or {}
+    inactive=(gate.get('ownerAuthorized') is False and gate.get('executionBlocked') is True and gate.get('authorizationReceiptSha256') is None)
+    authorized=(gate.get('ownerAuthorized') is True and gate.get('executionBlocked') is False and isinstance(gate.get('authorizationReceiptSha256'),str) and bool(re.fullmatch(r'[0-9a-f]{64}',gate['authorizationReceiptSha256'])))
+    if not (inactive or authorized): raise Stop('Bug70 execution gate is neither inactive nor bound to an authorization receipt')
+    if idx.get('buildArtifactManifestPath')!='../build-artifact-manifest.json' or idx.get('buildArtifactManifestSha256')!=BUILD_MANIFEST_SHA256:
+        raise Stop('Bug70 plan build artifact manifest binding mismatch')
+    if source.get('buildArtifactManifestSha256')!=BUILD_MANIFEST_SHA256:
+        raise Stop('Bug70 source build artifact manifest binding mismatch')
+    insertion=idx.get('authorizedInsertion') or {}
+    if insertion.get('bytes')!=AUTHORIZED_INSERTION_BYTES or insertion.get('sha256')!=AUTHORIZED_INSERTION_SHA256:
+        raise Stop('Bug70 plan insertion fingerprint mismatch')
+    if insertion.get('acceptedForms')!=['A','A[:p]+I+A[p:]'] or insertion.get('placement')!='before-unique-literal-</body>':
+        raise Stop('Bug70 plan exterior forms or placement changed')
+    if idx.get('canonicalHtmlAssetCount')!=28:
+        raise Stop('Bug70 plan canonical HTML asset count changed')
+
+def load_build_assets(index_path, assets_root, insertion_path):
+    index_path=pathlib.Path(index_path)
+    manifest_path=(index_path.parent/'../build-artifact-manifest.json').resolve()
+    manifest_bytes=manifest_path.read_bytes()
+    if sha(manifest_bytes)!=BUILD_MANIFEST_SHA256: raise Stop('Frozen build artifact manifest SHA mismatch')
+    manifest=json.loads(manifest_bytes)
+    if manifest.get('status')!='FROZEN_EXACT_D2BD_BUILD_INPUTS' or manifest.get('source',{}).get('commit')!=BUILD_SOURCE_COMMIT or manifest.get('source',{}).get('tree')!=BUILD_SOURCE_TREE:
+        raise Stop('Frozen build artifact manifest provenance mismatch')
+    if manifest.get('artifactCount')!=58 or len(manifest.get('artifacts',[]))!=58:
+        raise Stop('Frozen build artifact manifest must contain exactly 58 artifacts')
+    root=pathlib.Path(assets_root).resolve(strict=True)
+    if not root.is_dir(): raise Stop('Build artifact input root is not a directory')
+    artifact_bytes={}; artifact_index={}
+    for row in manifest['artifacts']:
+        rel=pathlib.PurePosixPath(row.get('path',''))
+        if rel.is_absolute() or '..' in rel.parts or not rel.parts: raise Stop('Unsafe path in frozen build manifest')
+        asset=(root/pathlib.Path(*rel.parts)).resolve(strict=True)
+        try: asset.relative_to(root)
+        except ValueError: raise Stop('Build artifact resolves outside frozen input root')
+        if not asset.is_file(): raise Stop('Build artifact is not a regular file: '+rel.as_posix())
+        data=asset.read_bytes()
+        if len(data)!=row.get('bytes') or sha(data)!=row.get('sha256'): raise Stop('Build artifact differs from frozen manifest: '+rel.as_posix())
+        if rel.as_posix() in artifact_index: raise Stop('Duplicate build artifact path in manifest')
+        artifact_bytes[rel.as_posix()]=data; artifact_index[rel.as_posix()]=row
+    html_rows=manifest.get('canonicalHtmlAssets')
+    if not isinstance(html_rows,list) or len(html_rows)!=28: raise Stop('Frozen canonical HTML asset mapping must contain 28 routes')
+    canonical={}
+    for row in html_rows:
+        route=row.get('canonicalPath'); path=row.get('assetPath')
+        if not isinstance(route,str) or not route.startswith('/') or route in canonical or path not in artifact_bytes:
+            raise Stop('Malformed or duplicate canonical HTML asset mapping')
+        data=artifact_bytes[path]
+        closing=b'</body>'
+        p=data.find(closing)
+        if p<0 or data.find(closing,p+len(closing))>=0: raise Stop('Canonical HTML asset lacks exactly one literal </body>: '+route)
+        if row.get('bytes')!=len(data) or row.get('sha256')!=sha(data): raise Stop('Canonical HTML mapping hash differs from artifact manifest: '+route)
+        canonical[route]={'assetPath':path,'bytes':data,'sha256':sha(data),'insertOffset':p}
+    insertion=pathlib.Path(insertion_path).read_bytes()
+    if len(insertion)!=AUTHORIZED_INSERTION_BYTES or sha(insertion)!=AUTHORIZED_INSERTION_SHA256:
+        raise Stop('Authorized production insertion bytes differ from the frozen fingerprint')
+    return {'manifestSha256':BUILD_MANIFEST_SHA256,'artifactCount':58,'artifacts':artifact_bytes,'canonicalHtml':canonical,
+            'insertion':insertion,'insertionBytes':len(insertion),'insertionSha256':sha(insertion)}
+
+def validate_html_exterior(req,status,decoded,prior):
+    if req.get('group') not in ('identity-identity','conditional-identity','compression-supplement-144','alternation','accept-negotiation'):
+        return None
+    if req.get('requestId','').split(':',1)[0] not in ('identity','conditional','supplement','alternation','accept'):
+        return None
+    if req.get('method')!='GET' or status!=200 or expected_format(req)!='html': return None
+    context=prior.get('__bug70BuildAssets__')
+    if not isinstance(context,dict): raise Stop('Canonical HTML response lacks independently loaded frozen build assets')
+    route=req.get('path'); asset=context.get('canonicalHtml',{}).get(route)
+    if not asset: raise Stop('HTML response path is not in the frozen canonical build asset map: '+str(route))
+    expected=req.get('expected') or {}
+    planned=expected.get('bodySha256') if isinstance(expected,dict) else req.get('expectedBodySha256')
+    if planned is not None and planned!=asset['sha256']: raise Stop('Plan HTML body SHA differs from the independent frozen A asset at '+req['requestId'])
+    base=asset['bytes']; offset=asset['insertOffset']; insertion=context['insertion']
+    transformed=base[:offset]+insertion+base[offset:]
+    actual_sha=sha(decoded)
+    if decoded==base: form='A'
+    elif decoded==transformed: form='A[:p]+I+A[p:]'
+    else: raise Stop('Canonical HTML response is neither exact A nor exact authorized insertion form at '+req['requestId'])
+    expected_exterior=base if form=='A' else transformed
+    return {'rule':'E equals independent A or A[:p]+I+A[p:]','observedForm':form,'canonicalPath':route,
+            'assetPath':asset['assetPath'],'assetBytes':len(base),'assetSha256':asset['sha256'],
+            'insertionBytes':context['insertionBytes'] if form!='A' else 0,
+            'insertionSha256':context['insertionSha256'] if form!='A' else None,
+            'insertionOffset':offset if form!='A' else None,
+            'expectedExteriorBytes':len(expected_exterior),'expectedExteriorSha256':sha(expected_exterior),
+            'observedEntityBytes':len(decoded),'observedEntitySha256':actual_sha,'fixtureFingerprintOverride':False}
+
+def main():
+    ap=argparse.ArgumentParser(); ap.add_argument('--plan-index',required=True,type=pathlib.Path); ap.add_argument('--output',required=True,type=pathlib.Path); ap.add_argument('--timeout',type=int,default=60); ap.add_argument('--base-url',help='Candidate URL; must exactly match the source receipt and frozen host allowlist'); ap.add_argument('--assets-root',type=pathlib.Path,help='Independent frozen build artifact input root'); ap.add_argument('--authorized-insertion',type=pathlib.Path,help='Private frozen insertion bytes'); ap.add_argument('--execute',action='store_true',help='Explicitly perform only the frozen public GET/HEAD list')
+    args=ap.parse_args(); results=[]; requests=[]
+    try:
+        idx,requests=chunks_from(args.plan_index,'requestChunks','path','requestCount'); counts=validate_plan(idx,requests); decoder_self_check()
+        print(json.dumps({'source':idx['source'],'plannedRequests':len(requests),'groups':dict(counts),'decoderSelfCheck':'gzip+br fixture PASS offline','planValidation':'PASS','executionGate':idx.get('executionGate'),'execute':args.execute},ensure_ascii=False))
+        if not args.execute: return 0
+        gate=idx.get('executionGate') or {}
+        if gate.get('ownerAuthorized') is not True or gate.get('executionBlocked') is not False or not gate.get('authorizationReceiptSha256'):
+            raise Stop('Execution blocked: plan has no fresh owner authorization receipt')
+        if not args.assets_root or not args.authorized_insertion: raise Stop('Execution requires independent frozen build inputs and authorized insertion bytes')
+        destination=validate_execution_destination(idx,args.base_url)
+        asset_context=load_build_assets(args.plan_index,args.assets_root,args.authorized_insertion)
+        args.output.mkdir(parents=True,exist_ok=False); prior={'__bug70BuildAssets__':asset_context}
+        results=execute_plan(requests,args.output,prior,args.timeout,destination=destination,source=idx['source'])
+        (args.output/'result.json').write_text(json.dumps({'status':'complete','source':idx['source'],'caseCount':len(results),'results':results},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+        return 0
+    except BaseException as e:
+        if args.execute and args.output.exists() and not (args.output/'STOP.json').exists():
+            write_stop_manifest(args.output,e,results,requests)
+        print(f'STOP: {type(e).__name__}: {e}',file=sys.stderr)
+        return 2

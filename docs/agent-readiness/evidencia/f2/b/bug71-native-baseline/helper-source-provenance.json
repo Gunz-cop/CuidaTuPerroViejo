@@ -1,0 +1,38 @@
+{
+  "proposedPlan": {
+    "authorizationReceiptSha256": null,
+    "chunks": 43,
+    "executionBlocked": true,
+    "indexSha256": "f6cb74d431d92ed562d13ed8fd6444177194ff4ff8073cdaaa430efc5b814a32",
+    "ownerAuthorized": false,
+    "uniqueRequestIds": 1284
+  },
+  "runner": {
+    "assembledSourceSha256": "3a373712f988fd1b65116ecc2285bc0200a6e0583b753a62f8b82860e8b78670",
+    "entrypointSha256": "c2b58f01b720f7be1567959f7e33b442973b3d929b8a3f9ca6d94bb6b4fb0364",
+    "fragments": [
+      {
+        "path": "runner-source/001.pyfrag",
+        "sha256": "9e5af6d81403daf1883c56ce266b8e835b637e42bc18f46277d22774e93459a2"
+      },
+      {
+        "path": "runner-source/002.pyfrag",
+        "sha256": "5150f7e0c255bb580ebab3504c570ce1d1f62ce2e6bbe9db380e1a2c43aa3d8c"
+      },
+      {
+        "path": "runner-source/003.pyfrag",
+        "sha256": "28d90822931288a90625430ae4ee243aacf1a7c72cb4c67bcc06e85c465c103f"
+      }
+    ],
+    "lineage": "accepted bug70 R2 helper",
+    "modifiedForBug71": false
+  },
+  "schema": "bug71-helper-source-provenance/1",
+  "scope": "Only three expected body SHA-256 fields for native delegated HTML GET rows and their chunk descriptor/plan delivery metadata change; no helper code changes.",
+  "state": "SOURCE_BYTE_EXACT; TARGET_AND_RUNNER_ARE_DISTINCT",
+  "targetProduct": {
+    "commit": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "sourceCodeModified": false,
+    "tree": "666f95273609ca67da8a508390c3acf9a141f8ca"
+  }
+}

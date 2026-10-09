@@ -1,0 +1,125 @@
+{
+  "executionGate": {
+    "authorizationReceiptSha256": null,
+    "executionBlocked": true,
+    "ownerAuthorized": false,
+    "publicMatrixExecuted": false
+  },
+  "fullPlanSimulation": {
+    "AcceptErrorLiteralRows": 6,
+    "STOP": false,
+    "actualHttpRequests": 0,
+    "capturedResponses": 1274,
+    "fixtureLabel": "TEST synthetic transport fixtures; not HTTP captures",
+    "htmlExteriorCases": 151,
+    "htmlExteriorObservedFormCounts": {
+      "A": 151,
+      "A[:p]+I+A[p:]": 0
+    },
+    "justifiedNA": 10,
+    "mockTransportInvocations": 1274,
+    "nativeHtmlRows": 10,
+    "receiptSha256": "c41f45bdb302ad451471b10d6872c3836e284ef54c05d9c7b74c05feb26717f6",
+    "uniqueRequestIds": 1284,
+    "workerdInvocations": 0
+  },
+  "historicalStopReplay": {
+    "entityBytes": 28587,
+    "entitySha256": "04cb60c83b95256580acaeb0e6256566809371ff4fdfd97ec5f55c28fc0e720a",
+    "httpStatus": 200,
+    "newHttpRequests": 0,
+    "route": "/gracias",
+    "state": "LOCAL_REPLAY_PASS; ORIGINAL_PRODUCTION_STOP_UNCHANGED"
+  },
+  "offlineSuite": {
+    "finalCoverage": "41 source tests covered: the unchanged 38 inherited tests passed in the first full suite; the three final native-baseline tests passed in a focused run after their assertions were strengthened.",
+    "finalFocusedRuns": [
+      {
+        "command": "python -m unittest <NativeHtmlBaseline.test_static_assets_reject_changed_byte_and_exterior_is_not_in_scope> -v",
+        "errors": 0,
+        "passed": 1,
+        "tests": 1
+      },
+      {
+        "command": "python -m unittest discover -s <owned tests dir> -p test_native_html_baseline.py -v",
+        "errors": 0,
+        "passed": 3,
+        "tests": 3
+      }
+    ],
+    "finalNativeCases": {
+      "newHttpRequests": 0,
+      "positiveExactCurrentBytes": 3,
+      "rejectAuthorizedInsertionOutsideCanonicalScope": 3,
+      "rejectExtraByte": 3,
+      "rejectHistoricalHashes": 3,
+      "rejectSingleByteChanges": 3,
+      "retainedGraciasStopReplay": 1,
+      "routes": 3
+    },
+    "firstFullRun": {
+      "command": "python -m unittest discover -s <owned tests dir> -v",
+      "errors": 0,
+      "failed": 0,
+      "httpRequests": 0,
+      "note": "This run preceded strengthening the new native rejection assertions.",
+      "passed": 41,
+      "tests": 41,
+      "workerdInvocations": 0
+    },
+    "httpRequests": 0,
+    "intermediateDiagnosticRun": {
+      "cause": "The strengthened synthetic native test response omitted Link and security fields required by the accepted helper; no product or helper failure. Test fixture was corrected.",
+      "errors": 3,
+      "failed": 0,
+      "passed": 38,
+      "tests": 41
+    },
+    "testSourceFiles": [
+      {
+        "bytes": 4475,
+        "path": "tests/test_accept_error_bodies.py",
+        "sha256": "f61775ca65d2c38f8a79cc63dbb8b50df2d0de3ccebd2a6490d41d759742a1e5"
+      },
+      {
+        "bytes": 5595,
+        "path": "tests/test_css_mime_policy.py",
+        "sha256": "bbf65ba63bae26836248d28c0fc8c3704c3edac40a35e8c9006c956bf84d477d"
+      },
+      {
+        "bytes": 11341,
+        "path": "tests/test_html_exterior_policy.py",
+        "sha256": "b50b0d1c430a624e2085de0fa20108d28b9bcae0ab2e09a57f1d41eae4d6ca4b"
+      },
+      {
+        "bytes": 6055,
+        "path": "tests/test_native_html_baseline.py",
+        "sha256": "984be122a5f8a742a85142c4a8df10e50c13e9dad56609bb4c1d73ba2f7d6eb9"
+      },
+      {
+        "bytes": 7728,
+        "path": "tests/test_native_html_mime_policy.py",
+        "sha256": "8d1a5f9ec0c11e99606910b34dd67130997ca2f3150dace05d2c95eafbb06081"
+      },
+      {
+        "bytes": 24524,
+        "path": "tests/test_runner.py",
+        "sha256": "2f968e95305c2716eac9098cbe51589ac14eb187c02c9597f58aae4191236c51"
+      },
+      {
+        "bytes": 12355,
+        "path": "tests/test_weak_etag_equivalence.py",
+        "sha256": "764a21ec8ab3941a10482e3c662725cd6de6a55eda58b528f17f8240715952b5"
+      }
+    ],
+    "workerdInvocations": 0
+  },
+  "schema": "bug71-offline-test-summary/1",
+  "source": {
+    "planIndexSha256": "f6cb74d431d92ed562d13ed8fd6444177194ff4ff8073cdaaa430efc5b814a32",
+    "runnerAssembledSha256": "3a373712f988fd1b65116ecc2285bc0200a6e0583b753a62f8b82860e8b78670",
+    "targetCommit": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "targetTree": "666f95273609ca67da8a508390c3acf9a141f8ca"
+  },
+  "state": "READY_FOR_INDEPENDENT_AUDIT_NOT_ACCEPTED"
+}

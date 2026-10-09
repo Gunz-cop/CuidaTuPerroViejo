@@ -1,0 +1,56 @@
+{
+  "schema": "bug71-native-html-baseline-manifest/1",
+  "state": "SUPPLEMENTAL_CURRENT_D2BD_STATIC_ASSETS; NO_HTTP_CLAIM_FOR_UNATTEMPTED_ROUTES",
+  "source": {
+    "commit": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "tree": "666f95273609ca67da8a508390c3acf9a141f8ca",
+    "canonicalManifestSha256": "45f9f36b22f07ac945df6902036f17878d660224eaf3e94dc72996081ae58c76",
+    "canonicalManifestAssetCount": 58,
+    "parentPlanIndexSha256": "555348b6a876c7f846aba31dc9a306e1a96fbb4f87d2bc372249815c99ce2046"
+  },
+  "assetCount": 3,
+  "delta": {
+    "oldStylesheet": "BaseLayout.gPuLvWrC.css",
+    "currentStylesheet": "BaseLayout.DiuOmqqC.css",
+    "fullFileEqualityAfterSingleLiteralReplacement": true
+  },
+  "assets": [
+    {
+      "requestId": "delegation:delegation-discovery-gracias-get",
+      "route": "/gracias",
+      "assetPath": "gracias.html",
+      "historicalPlanExpectedSha256": "19364633e69d1bd5c1853d2a33c64afde02bb912e36bcf01cc9d9cf41b68e0ef",
+      "historicalAssetBytes": 28587,
+      "currentD2bdAssetBytes": 28587,
+      "currentD2bdAssetSha256": "04cb60c83b95256580acaeb0e6256566809371ff4fdfd97ec5f55c28fc0e720a",
+      "historicalPlanHashMatchesPreviousAsset": true,
+      "exactCssFilenameReplacementProducesCurrentAsset": true,
+      "productionAttempted": true
+    },
+    {
+      "requestId": "delegation:delegation-discovery-politica-de-cookies-get",
+      "route": "/politica-de-cookies",
+      "assetPath": "politica-de-cookies.html",
+      "historicalPlanExpectedSha256": "24596f9427cb7cc1d9f201abbf9e3c7e5044fc3271624bf566093633b840161c",
+      "historicalAssetBytes": 40052,
+      "currentD2bdAssetBytes": 40052,
+      "currentD2bdAssetSha256": "a3f41d7eb405451ca1eb904564b2aee9e6cd1bb4e934279b180383d58d41314c",
+      "historicalPlanHashMatchesPreviousAsset": true,
+      "exactCssFilenameReplacementProducesCurrentAsset": true,
+      "productionAttempted": false
+    },
+    {
+      "requestId": "delegation:delegation-discovery-politica-de-privacidad-get",
+      "route": "/politica-de-privacidad",
+      "assetPath": "politica-de-privacidad.html",
+      "historicalPlanExpectedSha256": "d014238eea68c8bc107a9ead04e19c660553ca14aee3074d736f6eba905d22d7",
+      "historicalAssetBytes": 34195,
+      "currentD2bdAssetBytes": 34195,
+      "currentD2bdAssetSha256": "1324dd85d9ef17e89f8382ee5ff602507f3d720611600072c888a34a20ed74cb",
+      "historicalPlanHashMatchesPreviousAsset": true,
+      "exactCssFilenameReplacementProducesCurrentAsset": true,
+      "productionAttempted": false
+    }
+  ],
+  "provenance": "Current bytes were read from the already-completed exact d2bd dist/client. Historical bytes were read from the already-available accepted prior dist/client. The full bodies are retained privately; this public manifest gives paths, sizes, hashes, and offline comparison outcome only."
+}
