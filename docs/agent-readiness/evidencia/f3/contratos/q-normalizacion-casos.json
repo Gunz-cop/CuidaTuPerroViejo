@@ -1,0 +1,86 @@
+{
+  "kind": "normative-documentary-cases",
+  "description": "Ejemplos exactos de diseño para etapas decode/NFC/trim; no requests HTTP observadas ni prueba del runtime. rawQuery usa application/x-www-form-urlencoded. Longitudes calculadas documentalmente con Python Unicode NFC; para GET/HEAD se exige el mismo status y HEAD sin body.",
+  "cases": [
+    {
+      "caseId": "padding-positivo",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "rawQuery": "q=++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++cushing++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",
+      "decodedQ": "                                                                                                    cushing                                                                                                    ",
+      "normalizedQ": "cushing",
+      "rawQueryUtf8Bytes": 209,
+      "decodedCodepoints": 207,
+      "normalizedCodepoints": 7,
+      "normalizedUtf8Bytes": 7,
+      "expectedStatus": 200,
+      "expectedError": null,
+      "reason": "Padding válido:207 codepoints decodificados,7 tras trim; no aplicar maxLength200 al parámetro decodificado."
+    },
+    {
+      "caseId": "padding-negativo",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "rawQuery": "q=++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",
+      "decodedQ": "                                                                                                    cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing                                                                                                    ",
+      "normalizedQ": "cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing-cushing",
+      "rawQueryUtf8Bytes": 409,
+      "decodedCodepoints": 407,
+      "normalizedCodepoints": 207,
+      "normalizedUtf8Bytes": 207,
+      "expectedStatus": 400,
+      "expectedError": {
+        "schemaVersion": "agent-api/1",
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "Invalid request."
+        }
+      },
+      "reason": "Padding no legitima longitud normalizada207>200, aunque los tokens únicos sean válidos."
+    },
+    {
+      "caseId": "nfc-positivo",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "rawQuery": "q=e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81-e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81-e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81-e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81",
+      "decodedQ": "éééééééééééééééééééééééééééééééééééééééééééééééééé-éééééééééééééééééééééééééééééééééééééééééééééééééé-éééééééééééééééééééééééééééééééééééééééééééééééééé-ééééééééééééééééééééééééééééééééééééééééééééééé",
+      "normalizedQ": "éééééééééééééééééééééééééééééééééééééééééééééééééé-éééééééééééééééééééééééééééééééééééééééééééééééééé-éééééééééééééééééééééééééééééééééééééééééééééééééé-ééééééééééééééééééééééééééééééééééééééééééééééé",
+      "rawQueryUtf8Bytes": 1384,
+      "decodedCodepoints": 397,
+      "normalizedCodepoints": 200,
+      "normalizedUtf8Bytes": 397,
+      "expectedStatus": 200,
+      "expectedError": null,
+      "reason": "NFC reduce397 codepoints decodificados a200; tokens normalizados<=64, query raw y bytes normalizados dentro de límites."
+    },
+    {
+      "caseId": "nfc-negativo",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "rawQuery": "q=e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81-e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81-e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81-e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81e%CC%81",
+      "decodedQ": "éééééééééééééééééééééééééééééééééééééééééééééééééé-éééééééééééééééééééééééééééééééééééééééééééééééééé-éééééééééééééééééééééééééééééééééééééééééééééééééé-éééééééééééééééééééééééééééééééééééééééééééééééé",
+      "normalizedQ": "éééééééééééééééééééééééééééééééééééééééééééééééééé-éééééééééééééééééééééééééééééééééééééééééééééééééé-éééééééééééééééééééééééééééééééééééééééééééééééééé-éééééééééééééééééééééééééééééééééééééééééééééééé",
+      "rawQueryUtf8Bytes": 1391,
+      "decodedCodepoints": 399,
+      "normalizedCodepoints": 201,
+      "normalizedUtf8Bytes": 399,
+      "expectedStatus": 400,
+      "expectedError": {
+        "schemaVersion": "agent-api/1",
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "Invalid request."
+        }
+      },
+      "reason": "NFC reduce399 a201 codepoints; falla sólo el límite normalizado200, no por aplicar maxLength al string decodificado."
+    }
+  ]
+}

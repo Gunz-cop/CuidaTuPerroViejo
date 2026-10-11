@@ -1,5 +1,7 @@
 # Arquitectura objetivo
 
+Estado vigente 2026-10-09: F2 aceptada/auditada/publicada,86 contenido/40 general/nivel 4 general, bugs70/71 cerrados ([cierre](evidencia/f2/b/bug71-native-baseline-auditoria/produccion-cierre/resultado.md)). F3 está especificada en [SDD](fases/f3-api-y-descubrimiento.md), [contratos](fases/f3-contratos.md) y [decisiones D11–D20](evidencia/f3/decisiones.md), pendiente de auditoría externa/ratificación; sus capacidades todavía no se presentan como públicas.
+
 ## Recorrido que queremos habilitar
 
 Un agente descubre el sitio, consulta su catálogo, encuentra una guía, obtiene Markdown con la URL canónica y las fuentes, y puede utilizar una herramienta mediante un contrato validado. La lectura pública permanece disponible sin identidad de usuario. Las operaciones con coste o efectos requieren su propio tratamiento de acceso.
@@ -64,6 +66,8 @@ Cloudflare Markdown for Agents es una alternativa disponible en ciertos planes. 
 
 ## A04 — Descubrimiento honesto y generado
 
+Concreción propuesta F3: RFC 9727 Linkset+JSON en `/.well-known/api-catalog`, OpenAPI 3.1.1, skills discovery0.2.0 con digest real y una skill de producto. ARD fuente primaria actualv0.91 usa `/.well-known/ard.json`/relard; se conserva además `/.well-known/ai-catalog.json` como fuente compatible del evaluador archivado, mismas entradas. Se anuncian sólo API de lectura y skill; no registry/MCP/auth/cálculos. La divergencia y MIME explícitos se fijan en [contratos §5–6](fases/f3-contratos.md). Ningún descriptor de rama acredita despliegue.
+
 F1 publica `/llms.txt` con descripción, pilares, herramientas, política editorial y enlaces existentes; no requiere `/llms-full.txt` monolítico. Añade Link con relaciones registradas, por ejemplo `describedby` para recursos existentes. F3 añade `api-catalog` y `service-desc` cuando existan sus destinos.
 
 Skills públicas nuevas y específicas describen cómo buscar, leer y citar recursos del sitio y utilizar herramientas publicadas. No publicar `.agents/skills/` directamente: esas skills son de mantenimiento del repositorio, no interfaces de producto. El índice público usa el schema actual, URLs reales y digest SHA-256 de los bytes servidos.
@@ -73,6 +77,8 @@ API Catalog sigue RFC 9727 y apunta a una descripción OpenAPI de las capacidade
 La preferencia confirmada es `Content-Signal: search=yes, ai-input=yes, ai-train=no`. F1 define reglas de bots coherentes con búsqueda y lectura, y valida que ninguna regla de grupo específico anule la política deseada. No hace falta duplicar veinte grupos para mantener un pass que ya existe.
 
 ## A05 — Consulta pública determinista
+
+La [SDD F3](fases/f3-api-y-descubrimiento.md) cierra catálogo/búsqueda/lectura GET/HEAD con OPTIONS público en `/api/agent/v1/`, sólo IDs del índice F2; lectura devuelve Markdown íntegro+metadata+enlaces originales, búsqueda AND léxica sobre corpus completo, no extractos del asistente. Índice léxico en namespace F3 `/agent-api/v1/query-index.json` evita modificar el orphan detector F2. Hook después de proyección, API sin caché exterior ni fetch externo, corpus guard409, límites y errores exactos; implementación A→B→C tras PASS+ratificación. La ejecución de herramientas del párrafo siguiente sigue siendo F4.
 
 F3 crea contratos versionados de catálogo, búsqueda y lectura, alimentados por la proyección pública. Búsqueda devuelve IDs y URLs verificadas; lectura devuelve documento, metadata, fuentes enlazadas y representación. Validación de entrada, límites y errores estructurados. No aceptar una URL arbitraria para fetch: solo IDs/rutas del inventario.
 

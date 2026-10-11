@@ -1,0 +1,34 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://cuidatuperroviejo.com/.well-known/api-catalog",
+      "item": [
+        {
+          "href": "https://cuidatuperroviejo.com/api/agent/v1/catalog",
+          "type": "application/json",
+          "title": "Catálogo editorial"
+        },
+        {
+          "href": "https://cuidatuperroviejo.com/api/agent/v1/search?q=cushing",
+          "type": "application/json",
+          "title": "Búsqueda editorial de ejemplo; q=cushing"
+        },
+        {
+          "href": "https://cuidatuperroviejo.com/api/agent/v1/documents/home",
+          "type": "application/json",
+          "title": "Lectura de home; OpenAPI describe otros documentIds"
+        }
+      ]
+    },
+    {
+      "anchor": "https://cuidatuperroviejo.com/api/agent/v1/catalog",
+      "service-desc": [
+        {
+          "href": "https://cuidatuperroviejo.com/agent-api/v1/openapi.json",
+          "type": "application/vnd.oai.openapi+json",
+          "title": "API pública de contenido v1"
+        }
+      ]
+    }
+  ]
+}
