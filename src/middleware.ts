@@ -2,7 +2,13 @@ import { defineMiddleware } from 'astro:middleware';
 
 const STATIC_HTML_CACHE_CONTROL = 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800';
 const ASSET_PATH_PATTERN = /\.[a-z0-9]+$/i;
-const DISCOVERY_LINK = '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"';
+const DISCOVERY_LINKS = [
+  '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"',
+  '<https://cuidatuperroviejo.com/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
+  '<https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json"',
+  '<https://cuidatuperroviejo.com/.well-known/ard.json>; rel="ard"; type="application/json"',
+  '<https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json"',
+];
 
 // Mismas cabeceras que public/_headers. Ese fichero no se aplica a las
 // respuestas que genera el Worker (rutas dinámicas como /api/* y /admin/*),
@@ -16,10 +22,9 @@ const SECURITY_HEADERS: ReadonlyArray<readonly [string, string]> = [
 
 function withSecurityHeaders(response: Response): Response {
   const headers = new Headers(response.headers);
-  const existingLink = headers.get('Link');
-  if (!existingLink?.includes(DISCOVERY_LINK)) {
-    headers.set('Link', existingLink ? `${existingLink}, ${DISCOVERY_LINK}` : DISCOVERY_LINK);
-  }
+  const existingLink = headers.get('Link') ?? '';
+  const missingLinks = DISCOVERY_LINKS.filter((value) => !existingLink.includes(value));
+  headers.set('Link', [existingLink, ...missingLinks].filter(Boolean).join(', '));
   for (const [key, value] of SECURITY_HEADERS) {
     if (!headers.has(key)) headers.set(key, value);
   }

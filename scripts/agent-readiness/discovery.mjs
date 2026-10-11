@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, stat, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -9,7 +9,57 @@ const SITE = 'https://cuidatuperroviejo.com';
 const MAX_BYTES = 64 * 1024;
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const ROBOTS = 'User-agent: *\nAllow: /\nContent-Signal: search=yes, ai-input=yes, ai-train=no\n\nSitemap: https://cuidatuperroviejo.com/sitemap-index.xml\n';
-const LINK = 'Link: <https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"';
+export const DISCOVERY_LINKS = [
+  '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"',
+  '<https://cuidatuperroviejo.com/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
+  '<https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json"',
+  '<https://cuidatuperroviejo.com/.well-known/ard.json>; rel="ard"; type="application/json"',
+  '<https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json"',
+];
+const LINK = `Link: ${DISCOVERY_LINKS.join(', ')}`;
+export const F3_ASSET_TYPES = new Map([
+  ['/agent-api/v1/query-index.json', 'application/json; charset=utf-8'],
+  ['/agent-api/v1/openapi.json', 'application/vnd.oai.openapi+json;version=3.1'],
+  ['/.well-known/api-catalog', 'application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"'],
+  ['/.well-known/agent-skills/index.json', 'application/json; charset=utf-8'],
+  ['/.well-known/agent-skills/buscar-leer-citar/SKILL.md', 'text/markdown; charset=utf-8'],
+  ['/.well-known/ard.json', 'application/json; charset=utf-8'],
+  ['/.well-known/ai-catalog.json', 'application/json; charset=utf-8'],
+]);
+export const F3_LLMS_SECTION = '\n## Interfaces públicas de contenido\n\n'
+  + '- [API Catalog](https://cuidatuperroviejo.com/.well-known/api-catalog): catálogo de operaciones públicas de lectura.\n'
+  + '- [OpenAPI](https://cuidatuperroviejo.com/agent-api/v1/openapi.json): contrato de catálogo, búsqueda y lectura íntegra.\n'
+  + '- [Skills](https://cuidatuperroviejo.com/.well-known/agent-skills/index.json): instrucciones verificables para buscar, leer y citar.\n'
+  + '- [ARD](https://cuidatuperroviejo.com/.well-known/ard.json): capacidades públicas activas.\n';
+
+function completeLlms(prefix) {
+  const bytes = Buffer.concat([prefix, Buffer.from(F3_LLMS_SECTION, 'utf8')]);
+  if (bytes.length > MAX_BYTES) throw Object.assign(new Error('llms.txt completo supera el límite de 64 KiB.'), { exitCode: 3 });
+  return bytes;
+}
+
+async function verifyDiscoveryDestinations(assetRoot) {
+  for (const path of F3_ASSET_TYPES.keys()) {
+    const target = await stat(join(assetRoot, path));
+    if (!target.isFile() || target.size === 0) throw Object.assign(new Error(`Destino F3 ausente o vacío: ${path}`), { exitCode: 3 });
+  }
+}
+
+// Invocado por el hook F3 después de generar y validar los artifacts A.
+// serializeLlms sigue produciendo el prefijo F1; no se reescribe su contrato.
+export async function appendInterfaces(buildDir) {
+  const inventoryData = await inspectBuild(buildDir);
+  const assetRoot = resolve(process.cwd(), inventoryData.assetDirectory);
+  const prefix = serializeLlms(inventoryData);
+  const expected = completeLlms(prefix);
+  const target = join(assetRoot, 'llms.txt');
+  const actual = await readFile(target);
+  await verifyDiscoveryDestinations(assetRoot);
+  if (actual.equals(expected)) return expected;
+  if (!actual.equals(prefix)) throw Object.assign(new Error('Prefijo llms F1 alterado o sección F3 inválida.'), { exitCode: 3 });
+  await writeFile(target, expected);
+  return expected;
+}
 
 function ascii(a, b) {
   return a < b ? -1 : a > b ? 1 : 0;
@@ -123,9 +173,9 @@ function parseCheckArgs(args) {
   return resolve(process.cwd(), args[2]);
 }
 
-async function checkBuild(buildDir) {
+export async function checkDiscoveryBuild(buildDir) {
   const inventoryData = await inspectBuild(buildDir);
-  const expectedLlms = serializeLlms(inventoryData);
+  const expectedLlms = completeLlms(serializeLlms(inventoryData));
   const assetRoot = resolve(process.cwd(), inventoryData.assetDirectory);
   const [actualLlms, builtRobots, sourceRobots, sourceHeaders, builtHeaders] = await Promise.all([
     readFile(join(assetRoot, 'llms.txt')),
@@ -134,7 +184,8 @@ async function checkBuild(buildDir) {
     readFile(join(ROOT, 'public/_headers'), 'utf8'),
     readFile(join(assetRoot, '_headers'), 'utf8'),
   ]);
-  if (!actualLlms.equals(expectedLlms)) throw Object.assign(new Error('llms.txt del build no coincide byte por byte con el inventario.'), { exitCode: 3 });
+  if (!actualLlms.equals(expectedLlms)) throw Object.assign(new Error('llms.txt no conserva el prefijo F1 y la sección F3 byteexactos.'), { exitCode: 3 });
+  await verifyDiscoveryDestinations(assetRoot);
   if (!sourceRobots.equals(Buffer.from(ROBOTS, 'utf8')) || !builtRobots.equals(sourceRobots)) {
     throw Object.assign(new Error('robots.txt fuente o construido no coincide con la política aprobada.'), { exitCode: 3 });
   }
@@ -142,16 +193,20 @@ async function checkBuild(buildDir) {
   if (count(sourceHeaders, LINK) !== 1 || count(builtHeaders, LINK) !== 1 ||
       !sourceHeaders.includes('/robots.txt\n  Content-Type: text/plain; charset=utf-8') ||
       !sourceHeaders.includes('/llms.txt\n  Content-Type: text/plain; charset=utf-8')) {
-    throw Object.assign(new Error('Reglas fuente o construidas de Link/MIME no coinciden con el contrato F1.'), { exitCode: 3 });
+    throw Object.assign(new Error('Reglas fuente o construidas de Link/MIME no coinciden con el contrato F1/F3.'), { exitCode: 3 });
   }
   if (builtHeaders !== sourceHeaders) throw Object.assign(new Error('_headers construido difiere de las reglas fuente.'), { exitCode: 3 });
+  for (const [path, type] of F3_ASSET_TYPES) {
+    const rule = `${path}\n  Content-Type: ${type}\n  Cache-Control: no-store\n  Access-Control-Allow-Origin: *`;
+    if (count(sourceHeaders, rule) !== 1) throw Object.assign(new Error(`MIME/cache/CORS F3 inválidos para ${path}.`), { exitCode: 3 });
+  }
 }
 
 async function main(args) {
   try {
     const buildDir = parseCheckArgs(args);
-    await checkBuild(buildDir);
-    process.stdout.write('OK: llms.txt, robots.txt y Link/MIME F1 verificados sin modificar assets.\n');
+    await checkDiscoveryBuild(buildDir);
+    process.stdout.write('OK: prefijo llms F1, extensión F3, política y Link/MIME/CORS verificados sin modificar assets.\n');
     return 0;
   } catch (error) {
     process.stderr.write(`${error.message}\n`);

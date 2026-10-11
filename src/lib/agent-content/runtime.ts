@@ -13,7 +13,13 @@ const DOCUMENT_KEYS = [
   'markdownPath', 'language', 'datePublished', 'dateModified', 'htmlSha256',
   'markdownSha256', 'markdownBytes',
 ];
-const LINK_VALUE = '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"';
+const LINK_VALUES = [
+  '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"',
+  '<https://cuidatuperroviejo.com/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
+  '<https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json"',
+  '<https://cuidatuperroviejo.com/.well-known/ard.json>; rel="ard"; type="application/json"',
+  '<https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json"',
+];
 const SECURITY_HEADERS = [
   ['X-Content-Type-Options', 'nosniff'],
   ['Referrer-Policy', 'strict-origin-when-cross-origin'],
@@ -342,8 +348,9 @@ function applySharedHeaders(headers: Headers): void {
     if (headers.has(name)) headers.set(name, 'no-store');
   }
   addVaryAccept(headers);
-  const link = headers.get('Link');
-  if (!link?.includes(LINK_VALUE)) headers.set('Link', link ? `${link}, ${LINK_VALUE}` : LINK_VALUE);
+  const link = headers.get('Link') ?? '';
+  const missing = LINK_VALUES.filter((value) => !link.includes(value));
+  headers.set('Link', [link, ...missing].filter(Boolean).join(', '));
   for (const [name, value] of SECURITY_HEADERS) headers.set(name, value);
   headers.delete('Set-Cookie');
   headers.delete('X-Edge-Cache');
