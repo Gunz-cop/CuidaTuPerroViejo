@@ -1,10 +1,22 @@
-import test from 'node:test';
+import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { tmpdir } from 'node:os';
 import { appendInterfaces, checkDiscoveryBuild, discoveryIntegration } from '../../scripts/agent-readiness/discovery.mjs';
 import { createAgentContentWorker } from '../../src/lib/agent-content/runtime.ts';
+
+// Node executes test files in separate processes. Keep this suite's discovery
+// scratch directories out of the historical F1 cleanup test's shared /tmp view.
+const originalTmpdir = process.env.TMPDIR;
+const suiteScratch = await mkdtemp(join(tmpdir(), 'ctpv-f3-test-scratch-'));
+process.env.TMPDIR = suiteScratch;
+after(async () => {
+  if (originalTmpdir === undefined) delete process.env.TMPDIR;
+  else process.env.TMPDIR = originalTmpdir;
+  await rm(suiteScratch, { recursive: true, force: true });
+});
 
 // Literal contract oracle; neither the suffix nor headers are imported from the
 // implementation. Fake assets below test existence gating, not artifact schemas.
