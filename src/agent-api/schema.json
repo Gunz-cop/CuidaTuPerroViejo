@@ -1,0 +1,624 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ctp:agent-api:1",
+  "title": "Contratos F3 v1 — documento normativo",
+  "description": "Validación estructural. Invariantes de orden, igualdad corpus/IDs, URLs derivadas, tokenización, cross-fields, límites UTF-8 y datos reales se exigen además en f3-contratos.md.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/Catalog"
+    },
+    {
+      "$ref": "#/$defs/Search"
+    },
+    {
+      "$ref": "#/$defs/Read"
+    },
+    {
+      "$ref": "#/$defs/Error"
+    },
+    {
+      "$ref": "#/$defs/QueryIndex"
+    },
+    {
+      "$ref": "#/$defs/SkillsIndex"
+    },
+    {
+      "$ref": "#/$defs/ArdCompatibilityManifest"
+    }
+  ],
+  "$defs": {
+    "Document": {
+      "type": "object",
+      "required": [
+        "documentId",
+        "kind",
+        "title",
+        "description",
+        "canonicalPath",
+        "canonicalUrl",
+        "markdownPath",
+        "language",
+        "datePublished",
+        "dateModified",
+        "htmlSha256",
+        "markdownSha256",
+        "markdownBytes"
+      ],
+      "properties": {
+        "documentId": {
+          "type": "string",
+          "maxLength": 160,
+          "pattern": "^(home|(?:pillar|article|page)--[a-z0-9]+(?:-[a-z0-9]+)*|tool--(?:calidad-vida|movilidad))$"
+        },
+        "kind": {
+          "enum": [
+            "home",
+            "pillar",
+            "article",
+            "tool",
+            "editorial"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canonicalPath": {
+          "type": "string",
+          "maxLength": 100,
+          "pattern": "^(?:/|/[a-z0-9]+(?:-[a-z0-9]+)*(?:/[a-z0-9]+(?:-[a-z0-9]+)*)*)$"
+        },
+        "canonicalUrl": {
+          "type": "string",
+          "minLength": 1
+        },
+        "markdownPath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "language": {
+          "const": "es"
+        },
+        "datePublished": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$",
+          "description": "ISO8601 editorial válida de F2 o null; comprobar fecha real con validador F2."
+        },
+        "dateModified": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$",
+          "description": "ISO8601 editorial válida de F2 o null; comprobar fecha real con validador F2."
+        },
+        "htmlSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "markdownSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "markdownBytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 524288
+        }
+      },
+      "additionalProperties": false
+    },
+    "Link": {
+      "type": "object",
+      "required": [
+        "label",
+        "url"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "Result": {
+      "type": "object",
+      "required": [
+        "document",
+        "score"
+      ],
+      "properties": {
+        "document": {
+          "$ref": "#/$defs/Document"
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 144
+        }
+      },
+      "additionalProperties": false
+    },
+    "Catalog": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "corpusSha256",
+        "total",
+        "limit",
+        "offset",
+        "nextOffset",
+        "documents"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "agent-api/1"
+        },
+        "corpusSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 98
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "offset": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 98
+        },
+        "nextOffset": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 98
+        },
+        "documents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Document"
+          },
+          "maxItems": 20
+        }
+      },
+      "additionalProperties": false
+    },
+    "Search": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "corpusSha256",
+        "total",
+        "limit",
+        "offset",
+        "nextOffset",
+        "results"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "agent-api/1"
+        },
+        "corpusSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 98
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "offset": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 98
+        },
+        "nextOffset": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 98
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Result"
+          },
+          "maxItems": 20
+        }
+      },
+      "additionalProperties": false
+    },
+    "Read": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "corpusSha256",
+        "document",
+        "mediaType",
+        "markdown",
+        "links"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "agent-api/1"
+        },
+        "corpusSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "document": {
+          "$ref": "#/$defs/Document"
+        },
+        "mediaType": {
+          "const": "text/markdown"
+        },
+        "markdown": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 524288
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Link"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Error": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "error"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "agent-api/1"
+        },
+        "error": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "code",
+                "message"
+              ],
+              "properties": {
+                "code": {
+                  "const": "INVALID_REQUEST"
+                },
+                "message": {
+                  "const": "Invalid request."
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": [
+                "code",
+                "message"
+              ],
+              "properties": {
+                "code": {
+                  "const": "ROUTE_NOT_FOUND"
+                },
+                "message": {
+                  "const": "Unknown API route."
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": [
+                "code",
+                "message"
+              ],
+              "properties": {
+                "code": {
+                  "const": "DOCUMENT_NOT_FOUND"
+                },
+                "message": {
+                  "const": "Document not found."
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": [
+                "code",
+                "message"
+              ],
+              "properties": {
+                "code": {
+                  "const": "METHOD_NOT_ALLOWED"
+                },
+                "message": {
+                  "const": "Method not allowed."
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": [
+                "code",
+                "message"
+              ],
+              "properties": {
+                "code": {
+                  "const": "CORPUS_CHANGED"
+                },
+                "message": {
+                  "const": "Content corpus changed; repeat discovery."
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": [
+                "code",
+                "message"
+              ],
+              "properties": {
+                "code": {
+                  "const": "CONTENT_UNAVAILABLE"
+                },
+                "message": {
+                  "const": "Content temporarily unavailable."
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueryDocument": {
+      "type": "object",
+      "required": [
+        "documentId",
+        "markdownSha256",
+        "titleTokens",
+        "descriptionTokens",
+        "bodyTokens",
+        "links"
+      ],
+      "properties": {
+        "documentId": {
+          "type": "string",
+          "maxLength": 160,
+          "pattern": "^(home|(?:pillar|article|page)--[a-z0-9]+(?:-[a-z0-9]+)*|tool--(?:calidad-vida|movilidad))$"
+        },
+        "markdownSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "titleTokens": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[\\p{L}\\p{N}]+$"
+          },
+          "uniqueItems": true
+        },
+        "descriptionTokens": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[\\p{L}\\p{N}]+$"
+          },
+          "uniqueItems": true
+        },
+        "bodyTokens": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[\\p{L}\\p{N}]+$"
+          },
+          "uniqueItems": true
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Link"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueryIndex": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "corpusSha256",
+        "documents"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "agent-query/1"
+        },
+        "corpusSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "documents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/QueryDocument"
+          },
+          "minItems": 1,
+          "maxItems": 98
+        }
+      },
+      "additionalProperties": false
+    },
+    "Skill": {
+      "type": "object",
+      "required": [
+        "name",
+        "type",
+        "description",
+        "url",
+        "digest"
+      ],
+      "properties": {
+        "name": {
+          "const": "buscar-leer-citar"
+        },
+        "type": {
+          "const": "skill-md"
+        },
+        "description": {
+          "const": "Busca guías de Cuida tu Perro Viejo, lee el contenido completo y cita su URL canónica y sus fuentes originales."
+        },
+        "url": {
+          "const": "https://cuidatuperroviejo.com/.well-known/agent-skills/buscar-leer-citar/SKILL.md"
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SkillsIndex": {
+      "type": "object",
+      "required": [
+        "$schema",
+        "skills"
+      ],
+      "properties": {
+        "$schema": {
+          "const": "https://schemas.agentskills.io/discovery/0.2.0/schema.json"
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Skill"
+          },
+          "minItems": 1,
+          "maxItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "ArdCompatibilityManifest": {
+      "type": "object",
+      "required": [
+        "specVersion",
+        "host",
+        "entries"
+      ],
+      "properties": {
+        "specVersion": {
+          "const": "1.0"
+        },
+        "host": {
+          "type": "object",
+          "required": [
+            "displayName",
+            "identifier"
+          ],
+          "properties": {
+            "displayName": {
+              "const": "Cuida tu Perro Viejo"
+            },
+            "identifier": {
+              "const": "cuidatuperroviejo.com"
+            }
+          },
+          "additionalProperties": false
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "identifier",
+              "displayName",
+              "type",
+              "url",
+              "description",
+              "representativeQueries"
+            ],
+            "properties": {
+              "identifier": {
+                "enum": [
+                  "urn:air:cuidatuperroviejo.com:api:contenido",
+                  "urn:air:cuidatuperroviejo.com:skill:buscar-leer-citar"
+                ]
+              },
+              "displayName": {
+                "type": "string",
+                "minLength": 1
+              },
+              "type": {
+                "enum": [
+                  "application/vnd.oai.openapi+json",
+                  "text/markdown"
+                ]
+              },
+              "url": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "representativeQueries": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 2,
+                "maxItems": 5,
+                "uniqueItems": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
