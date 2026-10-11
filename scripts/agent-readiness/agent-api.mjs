@@ -18,7 +18,8 @@ const MAX_CORPUS_BYTES = 16 * 1024 * 1024;
 const MAX_QUERY_INDEX_BYTES = 8 * 1024 * 1024;
 const MAX_DESCRIPTOR_BYTES = 256 * 1024;
 const MAX_SKILL_BYTES = 32 * 1024;
-export const F3_LIMITS = Object.freeze({ f2Index: MAX_F2_INDEX_BYTES, document: MAX_DOCUMENT_BYTES, corpus: MAX_CORPUS_BYTES, queryIndex: MAX_QUERY_INDEX_BYTES, descriptor: MAX_DESCRIPTOR_BYTES, skill: MAX_SKILL_BYTES, documentCount: MAX_DOCUMENTS });
+const MAX_READ_RESPONSE_BYTES = 2 * 1024 * 1024;
+export const F3_LIMITS = Object.freeze({ f2Index: MAX_F2_INDEX_BYTES, document: MAX_DOCUMENT_BYTES, corpus: MAX_CORPUS_BYTES, queryIndex: MAX_QUERY_INDEX_BYTES, readResponse: MAX_READ_RESPONSE_BYTES, descriptor: MAX_DESCRIPTOR_BYTES, skill: MAX_SKILL_BYTES, documentCount: MAX_DOCUMENTS });
 const F2_ROOT_KEYS = ['schemaVersion', 'siteOrigin', 'language', 'corpusSha256', 'documents'];
 const F2_DOCUMENT_KEYS = ['documentId', 'kind', 'title', 'description', 'canonicalPath', 'canonicalUrl', 'markdownPath', 'language', 'datePublished', 'dateModified', 'htmlSha256', 'markdownSha256', 'markdownBytes'];
 const ID_PATTERN = /^(home|(?:pillar|article|page)--[a-z0-9]+(?:-[a-z0-9]+)*|tool--(?:calidad-vida|movilidad))$/u;
@@ -99,12 +100,9 @@ function validateF2Index(index, indexBytes) {
 
 function collectSearchText(node, chunks) {
   if (node.type === 'break') { chunks.push(' '); return; }
-  if (node.type === 'text' || node.type === 'inlineCode' || node.type === 'code') {
-    chunks.push(node.value);
-    if (node.type !== 'text') chunks.push(' ');
-    return;
-  }
-  if (node.type === 'image') { chunks.push(node.alt ?? '', ' '); return; }
+  if (node.type === 'text' || node.type === 'inlineCode') { chunks.push(node.value); return; }
+  if (node.type === 'code') { chunks.push(' ', node.value, ' '); return; }
+  if (node.type === 'image') { chunks.push(node.alt ?? ''); return; }
   if (node.type === 'html' || node.type === 'definition') return;
   const block = ['root', 'paragraph', 'heading', 'blockquote', 'list', 'listItem', 'table', 'tableRow', 'tableCell'].includes(node.type);
   if (block && chunks.length) chunks.push(' ');
@@ -123,7 +121,7 @@ function visibleLabel(node, chunks = []) {
 export function extractMarkdownLinks(tree, canonicalUrl, documentId) {
   const definitions = new Map();
   const visitDefinitions = (node) => {
-    if (node.type === 'definition') definitions.set(node.identifier, node.url);
+    if (node.type === 'definition' && !definitions.has(node.identifier)) definitions.set(node.identifier, node.url);
     for (const child of node.children ?? []) visitDefinitions(child);
   };
   visitDefinitions(tree);
@@ -162,7 +160,7 @@ function parseMarkdown(markdown, doc) {
   return {
     titleTokens: tokenize(doc.title),
     descriptionTokens: tokenize(doc.description),
-    bodyTokens: tokenize(chunks.join(' ')),
+    bodyTokens: tokenize(chunks.join('')),
     links: extractMarkdownLinks(tree, doc.canonicalUrl, doc.documentId),
   };
 }
@@ -200,7 +198,10 @@ async function readF2(buildDir) {
     catch (error) { fail(`F2_DOCUMENT_UNAVAILABLE id=${doc.documentId} code=${error.code ?? 'IO'}`, 1); }
     if (bytes.length !== doc.markdownBytes || bytes.length > MAX_DOCUMENT_BYTES || sha256(bytes) !== doc.markdownSha256) fail(`F2_DOCUMENT_INTEGRITY id=${doc.documentId}`);
     const markdown = fatalUtf8(bytes, `F2_DOCUMENT id=${doc.documentId}`);
-    documents.push({ documentId: doc.documentId, ...parseMarkdown(markdown, doc) });
+    const parsed = parseMarkdown(markdown, doc);
+    const readResponse = { schemaVersion: 'agent-api/1', corpusSha256: index.corpusSha256, document: doc, mediaType: 'text/markdown', markdown, links: parsed.links };
+    byteLimit('READ_RESPONSE', jsonBytes(readResponse).length, MAX_READ_RESPONSE_BYTES);
+    documents.push({ documentId: doc.documentId, ...parsed });
     sourceFiles.push({ path: doc.markdownPath.slice(1), bytes: bytes.length, sha256: sha256(bytes) });
   }
   return { assetRoot, buildRoot, index, documents, sourceFiles };
@@ -253,8 +254,32 @@ function validateSchemaSet(schema, openapi, capabilities) {
     return typeof value === 'string' ? value.replaceAll('#/components/schemas/', '#/$defs/') : value;
   };
   for (const name of componentNames) if (JSON.stringify(normalizeSchemaRefs(openapi.components.schemas[name])) !== JSON.stringify(schema.$defs[name])) fail(`OPENAPI_SCHEMA_DIVERGENCE name=${name}`);
-  const serialized = JSON.stringify(openapi);
-  for (const ref of serialized.matchAll(/\$ref":"([^"]+)"/gu)) if (!ref[1].startsWith('#/')) fail('OPENAPI_REMOTE_REF_FORBIDDEN');
+  const validatePointer = (reference) => {
+    if (typeof reference !== 'string' || !reference.startsWith('#/')) fail('OPENAPI_REF_REMOTE_FORBIDDEN');
+    let pointer;
+    try { pointer = decodeURIComponent(reference.slice(2)); }
+    catch { fail('OPENAPI_REF_INVALID'); }
+    const segments = pointer.split('/').map((segment) => {
+      if (/~(?![01])/u.test(segment)) fail('OPENAPI_REF_INVALID');
+      return segment.replace(/~1/gu, '/').replace(/~0/gu, '~');
+    });
+    let target = openapi;
+    for (const segment of segments) {
+      if (Array.isArray(target)) {
+        if (!/^(?:0|[1-9][0-9]*)$/u.test(segment)) fail(`OPENAPI_REF_UNRESOLVED ref=${reference}`);
+        target = target[Number(segment)];
+      } else if (target && typeof target === 'object' && Object.hasOwn(target, segment)) target = target[segment];
+      else fail(`OPENAPI_REF_UNRESOLVED ref=${reference}`);
+      if (target === undefined) fail(`OPENAPI_REF_UNRESOLVED ref=${reference}`);
+    }
+  };
+  const visitRefs = (value) => {
+    if (Array.isArray(value)) { for (const entry of value) visitRefs(entry); return; }
+    if (!value || typeof value !== 'object') return;
+    if (Object.hasOwn(value, '$ref')) validatePointer(value.$ref);
+    for (const entry of Object.values(value)) visitRefs(entry);
+  };
+  visitRefs(openapi);
   const ajv = addFormats(new Ajv2020({ allErrors: true, strict: true, validateFormats: true }));
   try { ajv.compile(schema); }
   catch (error) { fail(`SCHEMA_COMPILE_FAILED ${error.message}`); }

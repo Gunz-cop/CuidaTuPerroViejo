@@ -7,7 +7,7 @@ import test from 'node:test';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { gfm } from 'micromark-extension-gfm';
 import { gfmFromMarkdown } from 'mdast-util-gfm';
-import { buildArtifacts, checkArtifacts, extractMarkdownLinks, writeArtifacts } from '../../scripts/agent-readiness/agent-api.mjs';
+import { buildArtifacts, checkArtifacts, extractMarkdownLinks, F3_LIMITS, writeArtifacts } from '../../scripts/agent-readiness/agent-api.mjs';
 
 const fixture = 'tests/agent-readiness/fixtures/f3/build';
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -79,6 +79,43 @@ test('F2 integrity, missing documents, invalid references, and malformed source 
   await assert.rejects(buildArtifacts(build), /F2_DOCUMENT_UNAVAILABLE/u);
 });
 
+test('visible inline text stays continuous and duplicate GFM definitions resolve to the first target', async (t) => {
+  const { build, index, cleanup } = await fixtureWithMarkdown('# X\n\nart**rosis** y cu`sh`ing\n\n[Fuente][ref]\n\n[ref]: https://example.org/primera\n[ref]: https://example.org/segunda\n');
+  t.after(() => rm(cleanup, { recursive: true, force: true }));
+  const result = await buildArtifacts(build);
+  const document = result.source.queryIndex.documents[0];
+
+  assert.deepEqual(document.bodyTokens, ['artrosis', 'cushing', 'fuente', 'x', 'y']);
+  assert.deepEqual(document.links, [{ label: 'Fuente', url: 'https://example.org/primera' }]);
+  const oracle = parseOracle('# X\n\nart**rosis** y cu`sh`ing\n\n[Fuente][ref]\n\n[ref]: https://example.org/primera\n[ref]: https://example.org/segunda\n', index.documents[0]);
+  assert.deepEqual(document.bodyTokens, oracle.bodyTokens);
+  assert.deepEqual(document.links, oracle.links);
+});
+
+test('build rejects a Read representation above 2 MiB and accepts exactly the inclusive ceiling', async (t) => {
+  const markdown = `[${'"'.repeat(510000)}](https://example.org/fuente)\n`;
+  const titleAtLimit = 'x'.repeat(56147);
+  const { build, index, document, cleanup } = await fixtureWithMarkdown(markdown, titleAtLimit);
+  t.after(() => rm(cleanup, { recursive: true, force: true }));
+  const link = { label: '"'.repeat(510000), url: 'https://example.org/fuente' };
+  const read = { schemaVersion: 'agent-api/1', corpusSha256: index.corpusSha256, document, mediaType: 'text/markdown', markdown, links: [link] };
+  assert.equal(Buffer.byteLength(`${JSON.stringify(read, null, 2)}\n`), F3_LIMITS.readResponse);
+  await buildArtifacts(build);
+
+  const oversized = await temp();
+  t.after(() => rm(oversized, { recursive: true, force: true }));
+  const tooLarge = join(oversized, 'build');
+  await cp(build, tooLarge, { recursive: true });
+  const indexPath = join(tooLarge, 'client/agent-content/v1/index.json');
+  const oversizedIndex = JSON.parse(await readFile(indexPath, 'utf8'));
+  oversizedIndex.documents[0].title += 'x';
+  oversizedIndex.corpusSha256 = hash(Buffer.from(JSON.stringify(oversizedIndex.documents.map((doc) => [doc.documentId, doc.canonicalPath, doc.markdownSha256]))));
+  await writeFile(indexPath, `${JSON.stringify(oversizedIndex, null, 2)}\n`);
+  const overRead = { ...read, document: oversizedIndex.documents[0] };
+  assert.equal(Buffer.byteLength(`${JSON.stringify(overRead, null, 2)}\n`), F3_LIMITS.readResponse + 1);
+  await assert.rejects(buildArtifacts(tooLarge), /READ_RESPONSE_LIMIT/u);
+});
+
 test('writer fails on a reserved-path collision without replacing the existing asset', async (t) => {
   const directory = await temp();
   t.after(() => rm(directory, { recursive: true, force: true }));
@@ -129,15 +166,15 @@ function parseOracle(markdown, metadata) {
   const definitions = new Map();
   const links = [];
   const pairs = new Set();
-  const text = (node, chunks) => {
-    if (node.type === 'text' || node.type === 'inlineCode' || node.type === 'code') chunks.push(node.value);
-    else if (node.type === 'image') chunks.push(node.alt ?? '', ' ');
-    else if (node.type === 'break') chunks.push(' ');
-    else if (node.type !== 'html' && node.type !== 'definition') {
-      if (['root', 'paragraph', 'heading', 'blockquote', 'list', 'listItem', 'table', 'tableRow', 'tableCell'].includes(node.type)) chunks.push(' ');
-      for (const child of node.children ?? []) text(child, chunks);
-      if (['root', 'paragraph', 'heading', 'blockquote', 'list', 'listItem', 'table', 'tableRow', 'tableCell'].includes(node.type)) chunks.push(' ');
-    }
+  const blocks = new Set(['root', 'paragraph', 'heading', 'blockquote', 'list', 'listItem', 'table', 'tableRow', 'tableCell']);
+  const text = (node) => {
+    if (node.type === 'text' || node.type === 'inlineCode') return node.value;
+    if (node.type === 'code') return ` ${node.value} `;
+    if (node.type === 'image') return node.alt ?? '';
+    if (node.type === 'break') return ' ';
+    if (node.type === 'html' || node.type === 'definition') return '';
+    const contents = (node.children ?? []).map(text).join('');
+    return blocks.has(node.type) ? ` ${contents} ` : contents;
   };
   const label = (node) => {
     if (node.type === 'text' || node.type === 'inlineCode' || node.type === 'code') return node.value;
@@ -146,7 +183,7 @@ function parseOracle(markdown, metadata) {
     return (node.children ?? []).map(label).join('');
   };
   const visitDefinitions = (node) => {
-    if (node.type === 'definition') definitions.set(node.identifier, node.url);
+    if (node.type === 'definition' && !definitions.has(node.identifier)) definitions.set(node.identifier, node.url);
     for (const child of node.children ?? []) visitDefinitions(child);
   };
   const visitLinks = (node) => {
@@ -160,7 +197,7 @@ function parseOracle(markdown, metadata) {
     for (const child of node.children ?? []) visitLinks(child);
   };
   const tokens = (value) => [...new Set(value.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? [])].sort((a, b) => a < b ? -1 : a > b ? 1 : 0);
-  text(tree, body);
+  body.push(text(tree));
   visitDefinitions(tree);
   visitLinks(tree);
   return {
@@ -169,4 +206,22 @@ function parseOracle(markdown, metadata) {
     bodyTokens: tokens(body.join(' ')),
     links,
   };
+}
+
+async function fixtureWithMarkdown(markdown, title) {
+  const directory = await temp();
+  const build = join(directory, 'build');
+  await cp(fixture, build, { recursive: true });
+  const indexPath = join(build, 'client/agent-content/v1/index.json');
+  const markdownPath = join(build, 'client/agent-content/v1/documents/article--f3-fixture.md');
+  const index = JSON.parse(await readFile(indexPath, 'utf8'));
+  const bytes = Buffer.from(markdown);
+  const document = index.documents[0];
+  if (title !== undefined) document.title = title;
+  document.markdownBytes = bytes.length;
+  document.markdownSha256 = hash(bytes);
+  index.corpusSha256 = hash(Buffer.from(JSON.stringify(index.documents.map((doc) => [doc.documentId, doc.canonicalPath, doc.markdownSha256]))));
+  await writeFile(indexPath, `${JSON.stringify(index, null, 2)}\n`);
+  await writeFile(markdownPath, bytes);
+  return { build, index, document, cleanup: directory };
 }

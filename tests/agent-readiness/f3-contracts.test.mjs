@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { readFile } from 'node:fs/promises';
+import { cp, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
 import Ajv2020 from 'ajv/dist/2020.js';
@@ -93,4 +94,25 @@ test('every byte ceiling is inclusive and rejects exactly one byte over', () => 
     assert.doesNotThrow(() => assertByteLimit(name.toUpperCase(), limit, limit), `${name}: the inclusive limit passes`);
     assert.throws(() => assertByteLimit(name.toUpperCase(), limit + 1, limit), new RegExp(`${name.toUpperCase()}_LIMIT`, 'u'), `${name}: limit + 1 fails`);
   }
+});
+
+test('OpenAPI resolver accepts local pointers but fails on missing and remote references', async (t) => {
+  const temporary = await mkdtemp(join(tmpdir(), 'ctpv-f3-openapi-ref-'));
+  t.after(() => rm(temporary, { recursive: true, force: true }));
+  const root = join(temporary, 'product');
+  await mkdir(join(root, 'src/agent-api'), { recursive: true });
+  await mkdir(join(root, 'src/agent-skills/buscar-leer-citar'), { recursive: true });
+  for (const file of ['schema.json', 'capabilities.json', 'openapi.template.json']) await cp(join(ROOT, 'src/agent-api', file), join(root, 'src/agent-api', file));
+  await cp(join(ROOT, 'src/agent-skills/buscar-leer-citar/SKILL.md'), join(root, 'src/agent-skills/buscar-leer-citar/SKILL.md'));
+  const templatePath = join(root, 'src/agent-api/openapi.template.json');
+  const template = JSON.parse(await readFile(templatePath, 'utf8'));
+  const responseSchema = template.paths['/api/agent/v1/catalog'].get.responses['200'].content['application/json'].schema;
+
+  responseSchema.$ref = '#/components/schemas/Missing';
+  await writeFile(templatePath, `${JSON.stringify(template, null, 2)}\n`);
+  await assert.rejects(buildArtifacts(FIXTURE, root), /OPENAPI_REF_UNRESOLVED/u);
+
+  responseSchema.$ref = 'https://example.org/openapi.json#/components/schemas/Catalog';
+  await writeFile(templatePath, `${JSON.stringify(template, null, 2)}\n`);
+  await assert.rejects(buildArtifacts(FIXTURE, root), /OPENAPI_REF_REMOTE_FORBIDDEN/u);
 });

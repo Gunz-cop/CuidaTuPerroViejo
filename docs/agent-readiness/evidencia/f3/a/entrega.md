@@ -47,3 +47,14 @@ Comandos y resultado local en Node `v24.19.0`:
 Las pruebas de generación usan un fixture GFM de 51389 bytes con contenido después del carácter 4000. Un oráculo AST independiente compara token arrays y enlaces completos. Fixtures cubren integridad/corpus, documento ausente, enlace inválido, colisión sin sobrescritura, artefacto huérfano, igualdad de ARD, schemas y cada techo de bytes en el límite y límite+1. El check se comprobó sin mutación.
 
 La red/proxy de entorno fue necesaria para npm/build y se usó sólo con las variables de entorno del runtime provistas; no se leyeron secretos ni se cambió proxy/CA. Los logs completos quedan fuera del repositorio. No hubo deploy ni requests HTTP públicos. Rollback de A: revertir el commit de código en la rama conservando F1/F2 y esta evidencia.
+
+## Addendum R1: correcciones del candidato revisado
+
+El informe independiente [R1/5](../auditoria/f3a-r1.md) señaló cuatro fallos reparables. Este addendum acompaña el siguiente candidato F3A; no modifica ni reescribe el informe del auditor ni el contrato ratificado.
+
+- El texto del AST inline ahora se concatena sin separar nodos de énfasis, enlaces y code spans; los separadores siguen aplicándose entre bloques. El fixture tiene expectativa explícita `artrosis` y `cushing` para `art**rosis**` y ``cu`sh`ing``.
+- Las referencias GFM duplicadas conservan la primera definición, con prueba que exige el destino `/primera`.
+- El generador calcula el tamaño UTF-8 de la respuesta Read contractual completa (`JSON.stringify(value,null,2)+'\n'`) para cada Markdown antes de emitir artifacts; el techo es inclusivo de 2097152 bytes. Un fixture independiente mide exactamente el límite y prueba límite+1.
+- OpenAPI recorre y resuelve todos los `$ref` locales como JSON Pointer, y falla ante referencias remotas, malformadas o sin destino. Pruebas negativas cambian el schema 200 desde un root temporal y no alteran los contratos de producto.
+
+En este candidato: tests F3 `node --test tests/agent-readiness/f3-*.test.mjs` 10/10; `npm test` 42/42; tests offline de agent-readiness 55/55; Astro sync/check 0 errores/0 advertencias; auditoría de migración 7/7. El manifiesto y log del par final de builds pertenecen al HEAD congelado que incorpora este addendum y sus correcciones; se conservan fuera de Git en `/workspace/f3a-r2-evidence/` con el SHA/tree de ese HEAD. Los manifests anteriores de 480a y df1a documentados arriba siguen siendo evidencia histórica de esos snapshots, no prueba del nuevo candidato.
