@@ -92,6 +92,9 @@ jobs:
       - name: Tests de negociación del Worker
         run: node --import tsx --test tests/agent-readiness/negotiation.test.ts
 
+      - name: Tests F3B de API pública
+        run: node --import tsx --test tests/agent-readiness/f3-runtime.test.ts
+
       - name: Build
         run: npx --no-install astro build
 
