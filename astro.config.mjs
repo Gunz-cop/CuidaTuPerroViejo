@@ -5,6 +5,7 @@ import { satteri } from '@astrojs/markdown-satteri';
 import sitemap from '@astrojs/sitemap';
 import { discoveryIntegration } from './scripts/agent-readiness/discovery.mjs';
 import { projectionIntegration } from './scripts/agent-readiness/projection.mjs';
+import { agentApiIntegration } from './scripts/agent-readiness/agent-api.mjs';
 import {
   externalLinks,
   secureExternalLinksIntegration,
@@ -70,6 +71,7 @@ export default defineConfig({
     }),
     discoveryIntegration(),
     projectionIntegration(),
+    agentApiIntegration(),
   ],
   markdown: {
     processor: satteri({ hastPlugins: [externalLinks] })

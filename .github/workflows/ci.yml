@@ -86,6 +86,9 @@ jobs:
       - name: Tests offline de agent-readiness
         run: node --test tests/agent-readiness/*.test.mjs
 
+      - name: Tests F3A de generación y contratos
+        run: node --test tests/agent-readiness/f3-*.test.mjs
+
       - name: Tests de negociación del Worker
         run: node --import tsx --test tests/agent-readiness/negotiation.test.ts
 
@@ -100,6 +103,9 @@ jobs:
 
       - name: Verificar proyección Markdown agent-readiness
         run: node scripts/agent-readiness/projection.mjs check --build-dir dist
+
+      - name: Verificar artefactos generados F3A
+        run: node scripts/agent-readiness/agent-api.mjs check --build-dir dist
 
       - name: Verificar routing compilado de F2B
         run: node scripts/agent-readiness/projection.mjs check-routing --build-dir dist
