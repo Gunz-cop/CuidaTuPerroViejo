@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "agent-readiness-comparison/1",
+  "comparable": true,
+  "reasons": [],
+  "before": {
+    "requestSha256": "94daf42c1ee9ecfce1528d303e4b19d35e7544d8d38b6ac72ff56436708d2c21",
+    "responseSha256": "f8e6a2ee6d89f4ac3f9febb25623b571859674202a369f50eda27e13f2fc347f",
+    "sourceCommit": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "score": 86
+  },
+  "after": {
+    "requestSha256": "94daf42c1ee9ecfce1528d303e4b19d35e7544d8d38b6ac72ff56436708d2c21",
+    "responseSha256": "2100ba0fa9ae746fc4f10e6c4c714d79c41e49c6a63ceee8be599b4b8cf72372",
+    "sourceCommit": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+    "score": 86
+  },
+  "scoreDelta": 0,
+  "checkChanges": []
+}

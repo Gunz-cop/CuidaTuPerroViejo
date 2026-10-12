@@ -1,6 +1,8 @@
 # SDD F3 — API pública de contenido y descubrimiento
 
-Estado: **especificada, pendiente de auditoría independiente y ratificación técnica**. Fecha: 2026-10-09. Autor: coordinador arquitectónico, GPT-6.1 Sol/high. Este paquete es documental; no acredita endpoints publicados, no autoriza issues de implementación ni programación todavía.
+Actualización de estado 2026-10-12: **SDD PASS R2/2 y ratificada; F3 implementada, publicada y aceptada**, [cierre y evidencia](../evidencia/f3/publicacion/cierre/resultado.md). A R2/5, B R1/5, C R1/5; P3-01–03/C3-12 PASS. Esta nota no cambia contratos ni el snapshot normativo 6dbaf2c97d81dd6433dd7d1f75e0a8d8943bea92; las bases y textos prospectivos siguientes conservan su contexto original.
+
+Estado histórico de autoría: **especificada, pendiente de auditoría independiente y ratificación técnica**. Fecha: 2026-10-09. Autor: coordinador arquitectónico, GPT-6.1 Sol/high. Este paquete es documental; no acredita endpoints publicados, no autoriza issues de implementación ni programación todavía.
 
 Normativa de ejecución: este documento, [contratos F3](f3-contratos.md), [traspaso y partición](f3-traspaso.md) y [schemas/OpenAPI documentales](../evidencia/f3/contratos/README.md). [Decisiones y fuentes](../evidencia/f3/decisiones.md) justifican las elecciones. Si una regla de este paquete contradice otro documento F3, STOP de SDD; el ejecutor no elige entre ambos.
 

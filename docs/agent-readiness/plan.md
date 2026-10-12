@@ -2,7 +2,7 @@
 
 Plan aceptado por el propietario; F0 aceptada técnicamente con [PASS 3/5 y ratificación](evidencia/f0/cierre-arquitectonico.md). F1 se concreta en [su SDD](fases/f1-politica-y-descubrimiento.md); SDD aprobada por auditoría independiente PASS 2/2 e implementación aceptada con [PASS 1/5 y cierre arquitectónico](evidencia/f1/cierre-arquitectonico.md); [publicación P01–P03 PASS](evidencia/f1/promocion-2026-10-06/resultado.md), con autorización del propietario y medición real 71 contenido / 33 general, nivel 2. Las cifras futuras son estimaciones con la selección actual del evaluador congelada; se recalculan con evidencia después de cada promoción. El estado de ejecución de F0 vive en [su SDD](fases/f0-medicion-y-contratos.md), con [contratos](fases/f0-contratos.md), [prompts](fases/f0-prompts.md) y [registro de reanudación tras el bug #45](fases/f0-reanudacion-2026-10-05.md).
 
-Estado vigente 2026-10-09: [F2 completa aceptada/publicada](evidencia/f2/b/bug71-native-baseline-auditoria/produccion-cierre/resultado.md), sin bloqueantes;86 contenido/40 general, nivel 4 general; bugs70/71 cerrados. [SDD F3](fases/f3-api-y-descubrimiento.md) especificada, pendiente de auditoría independiente y ratificación técnica del coordinador antes de issues/programación. Las estimaciones históricas de nivel no sustituyen esa medición.
+Estado vigente 2026-10-12: [F3 completa, auditada, aceptada y publicada](evidencia/f3/publicacion/cierre/resultado.md), sin bloqueantes. Resultado real comparable: **86 contenido / 60 general, nivel 4 general**; +20 general respecto de F2, tres controles nuevos PASS y ninguna regresión. SDD PASS R2/2, A R2/5, B R1/5 y C R1/5; publicación P3-01–03/C3-12 PASS y ratificación separada. El [STOP #80](evidencia/f3/publicacion/stop80/resultado.md) conserva su valor histórico y queda resuelto por nueva evidencia de plataforma y gates completos. Producto main `aad2a6624c24d7425c5ad5329b82c77a8a86b619`; este cierre documental no es otra versión desplegada.
 
 ## Orden y dependencias
 
@@ -11,7 +11,7 @@ Estado vigente 2026-10-09: [F2 completa aceptada/publicada](evidencia/f2/b/bug71
 | F0 — Medición, inventario y decisiones de entrega | Evidencia repetible y contratos técnicos congelados | Plan | Línea base: 43 contenido / 20 general |
 | F1 — Política y descubrimiento básico | Content Signals, llms.txt y Link funcional | F0 | 71 contenido / 33 general; nivel 2 |
 | F2 — Lectura íntegra y negociación Markdown | F2A proyección → F2B routing/negociación; serie | F1 y decisiones F0 resueltas | **Real publicado: 86 contenido / 40 general; nivel 4 general** |
-| F3 — API y skills de producto | Catálogo, búsqueda/lectura, OpenAPI, skills y ARD; SDD pendiente de auditoría/ratificación | F2 aceptada | 60 general estimado si pasan tres controles comparables; sin promesa de nivel |
+| F3 — API y skills de producto | Catálogo, búsqueda/lectura, OpenAPI, skills y ARD publicados y auditados | F2 aceptada | **Real publicado: 86 contenido / 60 general; nivel 4 general** |
 | F4A — Herramientas compartidas y WebMCP | Paridad UI/API y registro en navegador | F3 | 67 general |
 | F4B — MCP remoto | Servidor real, transporte y card | F4A | 73 general |
 | F5 — DNS y verificación pública | DNS-AID y auditoría del acceso en producción | F3; cierre después de F4B | **100 contenido / 80 general**, nivel 4 previsto |
@@ -69,7 +69,7 @@ La [SDD F3](fases/f3-api-y-descubrimiento.md), [contratos](fases/f3-contratos.md
 
 Orden exclusivo y sin solapamientos: F3A generación/contratos → F3B Worker API → F3C Link/llms y verificación pública de preview. Ownership y bases consecutivas se fijan por cierre exacto; ningún issue se abre sin PASS de SDD (máximo 2 revisiones mismo auditor Sol/high, sólo bloqueantes) y ratificación técnica del coordinador. Programadores Luna6/high, auditor de implementación Sol/high distinto, máximo 5 revisiones totales por issue mismo auditor, quinta FAIL→bug/STOP.
 
-Aceptación funcional, preview y publicación separadas según C3-01–12/P3-01–03. No repetir las matrices F2 históricas ni atribuir preview a producción. Cada evidencia se vincula al build del SHA final real; documentos pueden alterar HTML/CSS mediante Tailwind. Promoción autorizada posterior a main; rollback conjunto C→B→A retira endpoints/descriptors/links asociados coherentemente, conservando F1/F2 y evidencia. La previsión de60general depende de tres controles nuevos con selección/denominador comparables; nivel 4 ya obtenido y no promesa de nivel 5 general.
+Aceptación funcional, preview y publicación separadas según C3-01–12/P3-01–03. No repetir las matrices F2 históricas ni atribuir preview a producción. Cada evidencia se vincula al build del SHA final real; documentos pueden alterar HTML/CSS mediante Tailwind. Promoción autorizada posterior a main; rollback conjunto C→B→A retira endpoints/descriptors/links asociados coherentemente, conservando F1/F2 y evidencia. La medición publicada confirma 60 general con tres controles nuevos, selección y denominador comparables; nivel 4 general. Las fases posteriores siguen siendo planificación.
 
 ## F4A — Herramientas y WebMCP
 

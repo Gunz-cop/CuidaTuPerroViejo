@@ -1,0 +1,41 @@
+{
+  "scope": "independent P3 evidence audit; no new HTTP/scans/builds",
+  "model": "GPT-6.1 Sol",
+  "effort": "high",
+  "codeAuditCounter": "C PASS R1/5 unchanged",
+  "result": "PASS P3-01/02/03 and C3-12",
+  "commit": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+  "tree": "add06deb2647988846525fcfbeb5bb6b754b7006",
+  "files": [
+    {
+      "path": "auditoria-p3.md",
+      "bytes": 11654,
+      "sha256": "9cfcdb3b6ac9cf9f4c9f92b5d63d518f99f799c720a3933493867d309a6ecaf0"
+    },
+    {
+      "path": "capture-replay.json",
+      "bytes": 298,
+      "sha256": "15ceee692bb631b7333a2e4d3c2476f19c15b22cd89a54b8e760858434726324"
+    },
+    {
+      "path": "replay.py",
+      "bytes": 5613,
+      "sha256": "7b8eea1eab4af7f78ab805367baa2fda1547b4d2a4b071c1a43c256f7d5a4fd0"
+    },
+    {
+      "path": "source-digests.json",
+      "bytes": 1219,
+      "sha256": "ec47018c1183ed8f31c2cc54e4c4e83ee197a439c3263e935c746e4efb3075ed"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 2773,
+      "sha256": "ec62b789d9ee55d48baffc5168c41cf5d5a39484ad640ca97bcd023596c26220"
+    },
+    {
+      "path": "verify-evidence.py",
+      "bytes": 8189,
+      "sha256": "dbf4ff6b41ecf0361b5c812df7f1be8963450935151e96c35712d7c9434f8627"
+    }
+  ]
+}

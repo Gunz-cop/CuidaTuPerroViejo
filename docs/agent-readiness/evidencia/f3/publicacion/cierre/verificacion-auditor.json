@@ -1,0 +1,96 @@
+{
+  "result": "PASS",
+  "commit": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+  "tree": "add06deb2647988846525fcfbeb5bb6b754b7006",
+  "scope": "P3 evidence offline only",
+  "codeAuditCounter": "C PASS R1/5 unchanged",
+  "checks": [
+    {
+      "name": "new139-originals",
+      "result": "PASS",
+      "files": 139,
+      "indexSha256": "e5a307b1180d4a91789ba7ff39a2b870d8bf8475c9602d475e6c46186976aae8"
+    },
+    {
+      "name": "historical-STOP23-intact",
+      "result": "PASS",
+      "files": 23,
+      "indexSha256": "ab417ad727e2dcfd65eecb9bb0c50ed3343d6a6f037c56f8315b6741ddfc1bda"
+    },
+    {
+      "name": "fresh350-build-files-frozen",
+      "result": "PASS",
+      "files": 350
+    },
+    {
+      "name": "receipt-metadata-source-separation",
+      "result": "PASS",
+      "limitation": "CF UI transcribed by root; originals unavailable, SHA contextual; GitHub pending preserved"
+    },
+    {
+      "name": "adapter-assertions-and-CLI-F2-frozen",
+      "result": "PASS"
+    },
+    {
+      "name": "independent-raw-scan-score-and-comparison",
+      "result": "PASS",
+      "profiles": [
+        {
+          "profile": "content",
+          "result": "PASS",
+          "beforeScore": 86,
+          "afterScore": 86,
+          "level": 5,
+          "counts": {
+            "pass": 6,
+            "fail": 1,
+            "neutral": 15,
+            "scoredTotal": 7
+          },
+          "changes": [],
+          "requestSha256": "94daf42c1ee9ecfce1528d303e4b19d35e7544d8d38b6ac72ff56436708d2c21",
+          "responseSha256": "2100ba0fa9ae746fc4f10e6c4c714d79c41e49c6a63ceee8be599b4b8cf72372"
+        },
+        {
+          "profile": "all-ui",
+          "result": "PASS",
+          "beforeScore": 40,
+          "afterScore": 60,
+          "level": 4,
+          "counts": {
+            "pass": 9,
+            "fail": 6,
+            "neutral": 7,
+            "scoredTotal": 15
+          },
+          "changes": [
+            {
+              "category": "discovery",
+              "id": "agentSkills",
+              "beforeStatus": "fail",
+              "afterStatus": "pass"
+            },
+            {
+              "category": "discovery",
+              "id": "apiCatalog",
+              "beforeStatus": "fail",
+              "afterStatus": "pass"
+            },
+            {
+              "category": "discovery",
+              "id": "ard",
+              "beforeStatus": "fail",
+              "afterStatus": "pass"
+            }
+          ],
+          "requestSha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+          "responseSha256": "75973266dc330db036cdfc065eaf833f3a28213f61f79e78e3dfe2cdf4dab67b"
+        }
+      ]
+    },
+    {
+      "name": "public-projection-literal-copies-and-allowlist",
+      "result": "PASS"
+    }
+  ]
+}

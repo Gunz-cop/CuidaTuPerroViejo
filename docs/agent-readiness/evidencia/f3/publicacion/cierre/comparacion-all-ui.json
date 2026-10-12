@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "agent-readiness-comparison/1",
+  "comparable": true,
+  "reasons": [],
+  "before": {
+    "requestSha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+    "responseSha256": "2dc969e993678b09e4d88ec3886f03040ac5cb49c2734bd4d93780a00529768c",
+    "sourceCommit": "d2bd342050811d41ee212730cb11fe07783994bd",
+    "score": 40
+  },
+  "after": {
+    "requestSha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+    "responseSha256": "75973266dc330db036cdfc065eaf833f3a28213f61f79e78e3dfe2cdf4dab67b",
+    "sourceCommit": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+    "score": 60
+  },
+  "scoreDelta": 20,
+  "checkChanges": [
+    {
+      "category": "discovery",
+      "id": "agentSkills",
+      "beforeStatus": "fail",
+      "afterStatus": "pass"
+    },
+    {
+      "category": "discovery",
+      "id": "apiCatalog",
+      "beforeStatus": "fail",
+      "afterStatus": "pass"
+    },
+    {
+      "category": "discovery",
+      "id": "ard",
+      "beforeStatus": "fail",
+      "afterStatus": "pass"
+    }
+  ]
+}
