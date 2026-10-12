@@ -17,6 +17,12 @@
       "$ref": "#/$defs/Error"
     },
     {
+      "$ref": "#/$defs/QualityOfLifeResult"
+    },
+    {
+      "$ref": "#/$defs/MobilityResult"
+    },
+    {
       "$ref": "#/$defs/QueryIndex"
     },
     {
@@ -401,6 +407,439 @@
               "additionalProperties": false
             }
           ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "ToolInfo": {
+      "type": "object",
+      "required": [
+        "toolId",
+        "documentId",
+        "name",
+        "canonicalUrl",
+        "softwareVersion",
+        "lastReviewed"
+      ],
+      "properties": {
+        "toolId": {
+          "enum": [
+            "calidad-vida",
+            "movilidad"
+          ]
+        },
+        "documentId": {
+          "enum": [
+            "tool--calidad-vida",
+            "tool--movilidad"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canonicalUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "softwareVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lastReviewed": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "QualityOfLifeResult": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "tool",
+        "input",
+        "score",
+        "maxScore",
+        "band",
+        "thresholds",
+        "breakdown",
+        "interpretation",
+        "message",
+        "recommendation",
+        "guide",
+        "notices"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "agent-api/1"
+        },
+        "tool": {
+          "$ref": "#/$defs/ToolInfo"
+        },
+        "input": {
+          "type": "object",
+          "required": [
+            "hurt",
+            "hunger",
+            "hydration",
+            "hygiene",
+            "happiness",
+            "mobility",
+            "moreGoodDays"
+          ],
+          "properties": {
+            "hurt": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "hunger": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "hydration": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "hygiene": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "happiness": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "mobility": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "moreGoodDays": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            }
+          },
+          "additionalProperties": false
+        },
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 70
+        },
+        "maxScore": {
+          "const": 70
+        },
+        "band": {
+          "enum": [
+            "good",
+            "acceptable",
+            "compromised"
+          ]
+        },
+        "thresholds": {
+          "type": "object",
+          "required": [
+            "good",
+            "acceptable"
+          ],
+          "properties": {
+            "good": {
+              "const": 50
+            },
+            "acceptable": {
+              "const": 35
+            }
+          },
+          "additionalProperties": false
+        },
+        "breakdown": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "required": [
+              "criterion",
+              "label",
+              "value",
+              "max"
+            ],
+            "properties": {
+              "criterion": {
+                "enum": [
+                  "hurt",
+                  "hunger",
+                  "hydration",
+                  "hygiene",
+                  "happiness",
+                  "mobility",
+                  "moreGoodDays"
+                ]
+              },
+              "label": {
+                "enum": [
+                  "Dolor",
+                  "Apetito",
+                  "Hidratación",
+                  "Higiene",
+                  "Felicidad",
+                  "Movilidad",
+                  "Balance"
+                ]
+              },
+              "value": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "max": {
+                "const": 10
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "interpretation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recommendation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "guide": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "label",
+                "url"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "notices": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "MobilityResult": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "tool",
+        "input",
+        "resultKey",
+        "icon",
+        "badge",
+        "title",
+        "description",
+        "plan",
+        "palliativeAlert",
+        "guide",
+        "notices"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "agent-api/1"
+        },
+        "tool": {
+          "$ref": "#/$defs/ToolInfo"
+        },
+        "input": {
+          "type": "object",
+          "required": [
+            "level",
+            "handling"
+          ],
+          "properties": {
+            "level": {
+              "enum": [
+                "light",
+                "moderate",
+                "severe"
+              ]
+            },
+            "handling": {
+              "enum": [
+                "calm",
+                "stressed"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "resultKey": {
+          "enum": [
+            "LA",
+            "LB",
+            "MA",
+            "MB",
+            "SA",
+            "SB"
+          ]
+        },
+        "icon": {
+          "type": "string",
+          "minLength": 1
+        },
+        "badge": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "plan": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "why"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "why": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "palliativeAlert": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "title",
+                "items"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "items": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "text",
+                      "link"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "link": {
+                        "oneOf": [
+                          {
+                            "type": "object",
+                            "required": [
+                              "label",
+                              "url"
+                            ],
+                            "properties": {
+                              "label": {
+                                "type": "string",
+                                "minLength": 1
+                              },
+                              "url": {
+                                "type": "string",
+                                "format": "uri"
+                              }
+                            },
+                            "additionalProperties": false
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "guide": {
+          "type": "object",
+          "required": [
+            "label",
+            "url"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "additionalProperties": false
+        },
+        "notices": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       },
       "additionalProperties": false

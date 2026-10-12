@@ -1,4 +1,7 @@
 import { loadAgentIndex, type AgentDocument, type AgentEnv, type AgentIndex, type AstroHandler } from '../agent-content/runtime';
+import { QUALITY_KEYS, evaluateQualityOfLife } from '../agent-tools/calidad-vida.ts';
+import { MOBILITY_KEYS, recommendMobilityAids } from '../agent-tools/movilidad.ts';
+import { ToolInputError, parseDecimal } from '../agent-tools/contract.ts';
 
 const PREFIX = '/api/agent/v1';
 const ID = /^(home|(?:pillar|article|page)--[a-z0-9]+(?:-[a-z0-9]+)*|tool--(?:calidad-vida|movilidad))$/u;
@@ -57,12 +60,16 @@ function error(code: keyof typeof ERRORS, method: string): Response {
 const normalized = (value: string): string => value.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase();
 const tokens = (value: string): string[] => [...new Set(normalized(value).match(/[\p{L}\p{N}]+/gu) ?? [])].sort();
 
-type Route = { name: 'catalog' | 'search' } | { name: 'document'; id: string };
+type ToolId = 'calidad-vida' | 'movilidad';
+type Route = { name: 'catalog' | 'search' } | { name: 'document'; id: string } | { name: 'tool'; tool: ToolId };
+type ContentRoute = Exclude<Route, { name: 'tool' }>;
 type Query = { kind?: string; corpus?: string; limit: number; offset: number; tokens: string[] };
 
-function parseQuery(raw: string, route: Route): Query {
+const TOOL_KEYS: Record<ToolId, readonly string[]> = { 'calidad-vida': QUALITY_KEYS, movilidad: MOBILITY_KEYS };
+
+// Reglas comunes de query (contratos F3 §2, reutilizadas por F4A §2).
+function decodeQuery(raw: string, allowed: readonly string[]): Map<string, string> {
   if (encoder.encode(raw).byteLength > 2048) throw new Error('QUERY_SIZE');
-  const allowed = route.name === 'document' ? ['corpus'] : ['kind', 'limit', 'offset', 'corpus', ...(route.name === 'search' ? ['q'] : [])];
   const values = new Map<string, string>();
   // Like form-urlencoded, empty separators do not define a parameter. An actual
   // empty key ("=value") is rejected, as are malformed percent/UTF-8 sequences.
@@ -74,6 +81,21 @@ function parseQuery(raw: string, route: Route): Query {
     if (!allowed.includes(key) || values.has(key) || CONTROL.test(value)) throw new Error('QUERY_PARAMETER');
     values.set(key, value);
   }
+  return values;
+}
+
+// Cálculo puro: todas las keys son obligatorias; sin corpus, ASSETS ni red.
+function evaluateTool(raw: string, tool: ToolId): unknown {
+  const keys = TOOL_KEYS[tool];
+  const values = decodeQuery(raw, keys);
+  if (values.size !== keys.length) throw new ToolInputError();
+  if (tool === 'calidad-vida') return evaluateQualityOfLife(Object.fromEntries(keys.map((key) => [key, parseDecimal(values.get(key)!)])));
+  return recommendMobilityAids(Object.fromEntries(keys.map((key) => [key, values.get(key)!])));
+}
+
+function parseQuery(raw: string, route: ContentRoute): Query {
+  const allowed = route.name === 'document' ? ['corpus'] : ['kind', 'limit', 'offset', 'corpus', ...(route.name === 'search' ? ['q'] : [])];
+  const values = decodeQuery(raw, allowed);
   const integer = (key: string, fallback: number, min: number, max: number): number => {
     if (!values.has(key)) return fallback;
     const value = values.get(key)!;
@@ -209,6 +231,8 @@ export function createAgentApiWorker<Env extends AgentEnv>(next: AstroHandler<En
     let route: Route;
     if (path === `${PREFIX}/catalog`) route = { name: 'catalog' };
     else if (path === `${PREFIX}/search`) route = { name: 'search' };
+    else if (path === `${PREFIX}/tools/calidad-vida`) route = { name: 'tool', tool: 'calidad-vida' };
+    else if (path === `${PREFIX}/tools/movilidad`) route = { name: 'tool', tool: 'movilidad' };
     else if (path.startsWith(`${PREFIX}/documents/`) && !path.slice(`${PREFIX}/documents/`.length).includes('/')) {
       const id = path.slice(`${PREFIX}/documents/`.length);
       if (id.length > 160 || !ID.test(id)) return error('INVALID_REQUEST', method);
@@ -216,6 +240,12 @@ export function createAgentApiWorker<Env extends AgentEnv>(next: AstroHandler<En
     } else return error('ROUTE_NOT_FOUND', method);
     if (method === 'OPTIONS') return new Response(null, { status: 204, headers: headers(204) });
     if (method !== 'GET' && method !== 'HEAD') return error('METHOD_NOT_ALLOWED', method);
+    if (route.name === 'tool') {
+      let result: unknown;
+      try { result = evaluateTool(url.search.slice(1), route.tool); }
+      catch (failure) { return failure instanceof ToolInputError || failure instanceof URIError || (failure instanceof Error && failure.message.startsWith('QUERY_')) ? error('INVALID_REQUEST', method) : error('CONTENT_UNAVAILABLE', method); }
+      return json(result, method);
+    }
     let query: Query;
     try { query = parseQuery(url.search.slice(1), route); }
     catch { return error('INVALID_REQUEST', method); }

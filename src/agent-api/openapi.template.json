@@ -1,9 +1,9 @@
 {
   "openapi": "3.1.1",
   "info": {
-    "title": "Cuida tu Perro Viejo — API pública de contenido",
-    "version": "1.0.0",
-    "description": "Catálogo, búsqueda léxica determinista y lectura íntegra del corpus editorial F2. Documento normativo de diseño; este archivo no prueba publicación. Contrato v1: f3-contratos.md. La implementación elimina sólo esta frase de estado documental al servirlo; mantiene operaciones y schemas."
+    "title": "API pública de Cuida tu Perro Viejo",
+    "version": "1.1.0",
+    "description": "Catálogo, búsqueda léxica y lectura íntegra del corpus editorial publicado de Cuida tu Perro Viejo, y cálculo de sus dos herramientas educativas (escala HHHHHMM y selector de ayudas de movilidad), con los mismos resultados que la interfaz del sitio. Los cálculos son orientativos y no constituyen diagnóstico veterinario. Documento normativo de diseño; este archivo no prueba publicación."
   },
   "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
   "servers": [
@@ -3085,6 +3085,1706 @@
         },
         "security": []
       }
+    },
+    "/api/agent/v1/tools/calidad-vida": {
+      "get": {
+        "operationId": "evaluateQualityOfLife",
+        "summary": "Calcular la escala HHHHHMM de calidad de vida",
+        "description": "Suma los siete criterios (0..10, máximo 70). Franja good si >=50, acceptable si >=35, compromised en otro caso: el mismo cálculo y los mismos textos que la calculadora del sitio. Las siete keys son obligatorias; no admite otras ni repetidas. Query UTF-8 estricta <=2048 bytes; body no se procesa; Accept y condicionales se ignoran. Resultado orientativo, no diagnóstico. Sin autorización.",
+        "parameters": [
+          {
+            "name": "hurt",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Dolor (Hurt): 0 = mucho dolor, 10 = sin dolor: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          },
+          {
+            "name": "hunger",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Apetito (Hunger): 0 = no come nada, 10 = come con ganas: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          },
+          {
+            "name": "hydration",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Hidratación (Hydration): 0 = deshidratado, 10 = bien hidratado: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          },
+          {
+            "name": "hygiene",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Higiene (Hygiene): 0 = sucio/llagas, 10 = limpio: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          },
+          {
+            "name": "happiness",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Felicidad (Happiness): 0 = deprimido, 10 = feliz: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          },
+          {
+            "name": "mobility",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Movilidad (Mobility): 0 = inmóvil, 10 = camina solo: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          },
+          {
+            "name": "moreGoodDays",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Más días buenos (More Good Days): 0 = lucha constante, 10 = plenitud: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "QualityOfLifeResult completo; misma salida que la interfaz del sitio.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QualityOfLifeResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "METHOD_NOT_ALLOWED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              },
+              "Allow": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CONTENT_UNAVAILABLE ante un fallo interno inesperado; nunca un resultado parcial.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "head": {
+        "operationId": "headQualityOfLife",
+        "summary": "Headers/status del GET correspondiente, sin cuerpo",
+        "parameters": [
+          {
+            "name": "hurt",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Dolor (Hurt): 0 = mucho dolor, 10 = sin dolor: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          },
+          {
+            "name": "hunger",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Apetito (Hunger): 0 = no come nada, 10 = come con ganas: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          },
+          {
+            "name": "hydration",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Hidratación (Hydration): 0 = deshidratado, 10 = bien hidratado: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          },
+          {
+            "name": "hygiene",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Higiene (Hygiene): 0 = sucio/llagas, 10 = limpio: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          },
+          {
+            "name": "happiness",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Felicidad (Happiness): 0 = deprimido, 10 = feliz: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          },
+          {
+            "name": "mobility",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Movilidad (Mobility): 0 = inmóvil, 10 = camina solo: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          },
+          {
+            "name": "moreGoodDays",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:[0-9]|10)$"
+            },
+            "description": "Más días buenos (More Good Days): 0 = lucha constante, 10 = plenitud: entero 0..10 en decimal ASCII sin signo ni ceros a la izquierda (obligatorio)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search completo, siempre JSON; límite2MiB UTF-8 y no truncamiento.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "METHOD_NOT_ALLOWED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              },
+              "Allow": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CONTENT_UNAVAILABLE",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "options": {
+        "operationId": "optionsQualityOfLife",
+        "summary": "CORS público; 204 sin validar query",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "Sin cuerpo ni carga de datos; métodos permitidos públicos.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/agent/v1/tools/movilidad": {
+      "get": {
+        "operationId": "recommendMobilityAids",
+        "summary": "Recomendar ayudas de movilidad",
+        "description": "Selecciona el resultado de la tabla del selector del sitio según level y handling (mismos textos y plan; sin enlaces de afiliado). palliativeAlert sólo en severe. Ambas keys son obligatorias; no admite otras ni repetidas. Query UTF-8 estricta <=2048 bytes; body no se procesa. Orientativo; consulte al veterinario. Sin autorización.",
+        "parameters": [
+          {
+            "name": "level",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "light",
+                "moderate",
+                "severe"
+              ]
+            },
+            "description": "Nivel de movilidad: light (camina pero resbala o tiene miedo al suelo), moderate (se fatiga rápido, debilidad trasera o le cuestan las escaleras), severe (ya no puede levantarse solo o perdió el uso de las patas traseras)."
+          },
+          {
+            "name": "handling",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "calm",
+                "stressed"
+              ]
+            },
+            "description": "Tolerancia a la manipulación: calm (se deja manipular con calma) o stressed (se estresa o reacciona mal cuando le tocan)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "MobilityResult completo; misma salida que la interfaz del sitio.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MobilityResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "METHOD_NOT_ALLOWED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              },
+              "Allow": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CONTENT_UNAVAILABLE ante un fallo interno inesperado; nunca un resultado parcial.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "head": {
+        "operationId": "headMobilityAids",
+        "summary": "Headers/status del GET correspondiente, sin cuerpo",
+        "parameters": [
+          {
+            "name": "level",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "light",
+                "moderate",
+                "severe"
+              ]
+            },
+            "description": "Nivel de movilidad: light (camina pero resbala o tiene miedo al suelo), moderate (se fatiga rápido, debilidad trasera o le cuestan las escaleras), severe (ya no puede levantarse solo o perdió el uso de las patas traseras)."
+          },
+          {
+            "name": "handling",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "calm",
+                "stressed"
+              ]
+            },
+            "description": "Tolerancia a la manipulación: calm (se deja manipular con calma) o stressed (se estresa o reacciona mal cuando le tocan)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search completo, siempre JSON; límite2MiB UTF-8 y no truncamiento.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "METHOD_NOT_ALLOWED",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              },
+              "Allow": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "CONTENT_UNAVAILABLE",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "options": {
+        "operationId": "optionsMobilityAids",
+        "summary": "CORS público; 204 sin validar query",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "Sin cuerpo ni carga de datos; métodos permitidos públicos.",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "ROUTE_NOT_FOUND",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "private, no-store"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "const": "*"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "const": "GET, HEAD, OPTIONS"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "const": "Accept"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "schema": {
+                  "const": "Link"
+                }
+              },
+              "Link": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Conjunto discovery exacto del contrato F3 §6; conservar otros valores ajenos."
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "const": "nosniff"
+                }
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "const": "strict-origin-when-cross-origin"
+                }
+              },
+              "Permissions-Policy": {
+                "schema": {
+                  "const": "geolocation=(), microphone=(), camera=()"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "const": "max-age=31536000; includeSubDomains"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
     }
   },
   "components": {
@@ -3463,6 +5163,439 @@
                 "additionalProperties": false
               }
             ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "ToolInfo": {
+        "type": "object",
+        "required": [
+          "toolId",
+          "documentId",
+          "name",
+          "canonicalUrl",
+          "softwareVersion",
+          "lastReviewed"
+        ],
+        "properties": {
+          "toolId": {
+            "enum": [
+              "calidad-vida",
+              "movilidad"
+            ]
+          },
+          "documentId": {
+            "enum": [
+              "tool--calidad-vida",
+              "tool--movilidad"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "canonicalUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "softwareVersion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lastReviewed": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
+        },
+        "additionalProperties": false
+      },
+      "QualityOfLifeResult": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "tool",
+          "input",
+          "score",
+          "maxScore",
+          "band",
+          "thresholds",
+          "breakdown",
+          "interpretation",
+          "message",
+          "recommendation",
+          "guide",
+          "notices"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": "agent-api/1"
+          },
+          "tool": {
+            "$ref": "#/components/schemas/ToolInfo"
+          },
+          "input": {
+            "type": "object",
+            "required": [
+              "hurt",
+              "hunger",
+              "hydration",
+              "hygiene",
+              "happiness",
+              "mobility",
+              "moreGoodDays"
+            ],
+            "properties": {
+              "hurt": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "hunger": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "hydration": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "hygiene": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "happiness": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "mobility": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "moreGoodDays": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              }
+            },
+            "additionalProperties": false
+          },
+          "score": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 70
+          },
+          "maxScore": {
+            "const": 70
+          },
+          "band": {
+            "enum": [
+              "good",
+              "acceptable",
+              "compromised"
+            ]
+          },
+          "thresholds": {
+            "type": "object",
+            "required": [
+              "good",
+              "acceptable"
+            ],
+            "properties": {
+              "good": {
+                "const": 50
+              },
+              "acceptable": {
+                "const": 35
+              }
+            },
+            "additionalProperties": false
+          },
+          "breakdown": {
+            "type": "array",
+            "minItems": 7,
+            "maxItems": 7,
+            "items": {
+              "type": "object",
+              "required": [
+                "criterion",
+                "label",
+                "value",
+                "max"
+              ],
+              "properties": {
+                "criterion": {
+                  "enum": [
+                    "hurt",
+                    "hunger",
+                    "hydration",
+                    "hygiene",
+                    "happiness",
+                    "mobility",
+                    "moreGoodDays"
+                  ]
+                },
+                "label": {
+                  "enum": [
+                    "Dolor",
+                    "Apetito",
+                    "Hidratación",
+                    "Higiene",
+                    "Felicidad",
+                    "Movilidad",
+                    "Balance"
+                  ]
+                },
+                "value": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                "max": {
+                  "const": 10
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "interpretation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "recommendation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "guide": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": [
+                  "label",
+                  "url"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "notices": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "MobilityResult": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "tool",
+          "input",
+          "resultKey",
+          "icon",
+          "badge",
+          "title",
+          "description",
+          "plan",
+          "palliativeAlert",
+          "guide",
+          "notices"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": "agent-api/1"
+          },
+          "tool": {
+            "$ref": "#/components/schemas/ToolInfo"
+          },
+          "input": {
+            "type": "object",
+            "required": [
+              "level",
+              "handling"
+            ],
+            "properties": {
+              "level": {
+                "enum": [
+                  "light",
+                  "moderate",
+                  "severe"
+                ]
+              },
+              "handling": {
+                "enum": [
+                  "calm",
+                  "stressed"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "resultKey": {
+            "enum": [
+              "LA",
+              "LB",
+              "MA",
+              "MB",
+              "SA",
+              "SB"
+            ]
+          },
+          "icon": {
+            "type": "string",
+            "minLength": 1
+          },
+          "badge": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "plan": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "why"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "why": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "palliativeAlert": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": [
+                  "title",
+                  "items"
+                ],
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "items": {
+                    "type": "array",
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "text",
+                        "link"
+                      ],
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "link": {
+                          "oneOf": [
+                            {
+                              "type": "object",
+                              "required": [
+                                "label",
+                                "url"
+                              ],
+                              "properties": {
+                                "label": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "url": {
+                                  "type": "string",
+                                  "format": "uri"
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "guide": {
+            "type": "object",
+            "required": [
+              "label",
+              "url"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "additionalProperties": false
+          },
+          "notices": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
           }
         },
         "additionalProperties": false

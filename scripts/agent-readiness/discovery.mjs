@@ -28,7 +28,7 @@ export const F3_ASSET_TYPES = new Map([
 ]);
 export const F3_LLMS_SECTION = '\n## Interfaces públicas de contenido\n\n'
   + '- [API Catalog](https://cuidatuperroviejo.com/.well-known/api-catalog): catálogo de operaciones públicas de lectura.\n'
-  + '- [OpenAPI](https://cuidatuperroviejo.com/agent-api/v1/openapi.json): contrato de catálogo, búsqueda y lectura íntegra.\n'
+  + '- [OpenAPI](https://cuidatuperroviejo.com/agent-api/v1/openapi.json): contrato de catálogo, búsqueda, lectura íntegra y cálculos de las dos herramientas.\n'
   + '- [Skills](https://cuidatuperroviejo.com/.well-known/agent-skills/index.json): instrucciones verificables para buscar, leer y citar.\n'
   + '- [ARD](https://cuidatuperroviejo.com/.well-known/ard.json): capacidades públicas activas.\n';
 
