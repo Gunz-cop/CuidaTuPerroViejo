@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "agent-api/1",
+  "tool": {
+    "toolId": "calidad-vida",
+    "documentId": "tool--calidad-vida",
+    "name": "Calculadora de Calidad de Vida Canina HHHHHMM",
+    "canonicalUrl": "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros",
+    "softwareVersion": "2.0",
+    "lastReviewed": "2026-07-21"
+  },
+  "input": {
+    "hurt": 5,
+    "hunger": 5,
+    "hydration": 5,
+    "hygiene": 5,
+    "happiness": 5,
+    "mobility": 5,
+    "moreGoodDays": 5
+  },
+  "score": 35,
+  "maxScore": 70,
+  "band": "acceptable",
+  "thresholds": {
+    "good": 50,
+    "acceptable": 35
+  },
+  "breakdown": [
+    {
+      "criterion": "hurt",
+      "label": "Dolor",
+      "value": 5,
+      "max": 10
+    },
+    {
+      "criterion": "hunger",
+      "label": "Apetito",
+      "value": 5,
+      "max": 10
+    },
+    {
+      "criterion": "hydration",
+      "label": "Hidratación",
+      "value": 5,
+      "max": 10
+    },
+    {
+      "criterion": "hygiene",
+      "label": "Higiene",
+      "value": 5,
+      "max": 10
+    },
+    {
+      "criterion": "happiness",
+      "label": "Felicidad",
+      "value": 5,
+      "max": 10
+    },
+    {
+      "criterion": "mobility",
+      "label": "Movilidad",
+      "value": 5,
+      "max": 10
+    },
+    {
+      "criterion": "moreGoodDays",
+      "label": "Balance",
+      "value": 5,
+      "max": 10
+    }
+  ],
+  "interpretation": "⚠️ Calidad de Vida ACEPTABLE.",
+  "message": "Estás en un punto donde observar y acompañar es clave.",
+  "recommendation": "💡 Atención: Hay áreas que merecen seguimiento. Consulta a tu veterinario pronto para ajustar el plan de cuidados.",
+  "guide": {
+    "label": "📖 Cómo mejorar la calidad de vida de tu perro",
+    "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros"
+  },
+  "notices": [
+    "💛 Esta herramienta es una guía. Tu amor y criterio siempre son lo más importante.",
+    "Esta herramienta no toma decisiones por ti. Solo te ayuda a ver con más claridad lo que ya estás sintiendo."
+  ]
+}

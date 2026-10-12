@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "agent-api/1",
+  "tool": {
+    "toolId": "movilidad",
+    "documentId": "tool--movilidad",
+    "name": "Selector de Ayudas de Movilidad para Perros Mayores",
+    "canonicalUrl": "https://cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores",
+    "softwareVersion": "1.0",
+    "lastReviewed": "2026-05-14"
+  },
+  "input": {
+    "level": "severe",
+    "handling": "stressed"
+  },
+  "resultKey": "SB",
+  "icon": "❤️",
+  "badge": "Nivel Severo – Cuidado paliativo",
+  "title": "Silla de ruedas + cama ortopédica + entorno adaptado",
+  "description": "Como se estresa con el contacto, lo prioritario es darle el máximo de autonomía posible con ayudas de entorno. Revisa la alerta paliativa arriba.",
+  "plan": [
+    {
+      "name": "Silla de ruedas canina trasera (a medida)",
+      "why": "Le permite moverse sin depender de tu ayuda. Reduce su ansiedad."
+    },
+    {
+      "name": "Cama de memory foam ortopédico",
+      "why": "Previene úlceras. Elige una con cubierta de felpa suave: menos fricción."
+    },
+    {
+      "name": "Pañales caninos desechables + empapadores",
+      "why": "Para la higiene. Cámbialos cada vez que estén mojados para evitar dermatitis."
+    }
+  ],
+  "palliativeAlert": {
+    "title": "⚠️ Cuidado paliativo importante",
+    "items": [
+      {
+        "text": "⚠️ Para la higiene: considera pañales caninos y empapadores absorbentes bajo su zona de descanso. Cámbialos con frecuencia para evitar dermatitis.",
+        "link": null
+      },
+      {
+        "text": "⚠️ Cambia su posición cada 4 horas si no puede moverse solo, para prevenir úlceras de decúbito.",
+        "link": {
+          "label": "Cómo hacerlo sin causarle dolor →",
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros"
+        }
+      },
+      {
+        "text": "⚠️ Evalúa si hay dolor controlado con nuestra",
+        "link": {
+          "label": "Calculadora HHHHHMM →",
+          "url": "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros"
+        }
+      }
+    ]
+  },
+  "guide": {
+    "label": "📖 Leer la guía completa de movilidad y dolor →",
+    "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores"
+  },
+  "notices": [
+    "Esta recomendación es una guía de apoyo. Ante dudas, consulta siempre a tu veterinario."
+  ]
+}

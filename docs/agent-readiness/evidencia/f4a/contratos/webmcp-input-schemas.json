@@ -1,0 +1,147 @@
+{
+  "search_guides": {
+    "type": "object",
+    "properties": {
+      "q": {
+        "type": "string",
+        "description": "Palabras a buscar; tras NFC y trim, 1..200 caracteres y 1..12 palabras completas."
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "home",
+          "pillar",
+          "article",
+          "tool",
+          "editorial"
+        ],
+        "description": "Filtra por tipo de documento."
+      },
+      "limit": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 20,
+        "description": "Resultados por página (por defecto 20)."
+      },
+      "offset": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 98,
+        "description": "Desplazamiento (por defecto 0)."
+      },
+      "corpus": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "corpusSha256 devuelto por una llamada anterior."
+      }
+    },
+    "required": [
+      "q"
+    ],
+    "additionalProperties": false
+  },
+  "read_guide": {
+    "type": "object",
+    "properties": {
+      "documentId": {
+        "type": "string",
+        "pattern": "^(home|(?:pillar|article|page)--[a-z0-9]+(?:-[a-z0-9]+)*|tool--(?:calidad-vida|movilidad))$",
+        "maxLength": 160,
+        "description": "documentId devuelto por search_guides o el catálogo."
+      },
+      "corpus": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "corpusSha256 devuelto por una llamada anterior."
+      }
+    },
+    "required": [
+      "documentId"
+    ],
+    "additionalProperties": false
+  },
+  "evaluate_quality_of_life": {
+    "type": "object",
+    "properties": {
+      "hurt": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Dolor: 0 = mucho dolor, 10 = sin dolor."
+      },
+      "hunger": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Apetito: 0 = no come nada, 10 = come con ganas."
+      },
+      "hydration": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Hidratación: 0 = deshidratado, 10 = bien hidratado."
+      },
+      "hygiene": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Higiene: 0 = sucio/llagas, 10 = limpio."
+      },
+      "happiness": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Felicidad: 0 = deprimido, 10 = feliz."
+      },
+      "mobility": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Movilidad: 0 = inmóvil, 10 = camina solo."
+      },
+      "moreGoodDays": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Balance de días buenos: 0 = lucha constante, 10 = plenitud."
+      }
+    },
+    "required": [
+      "hurt",
+      "hunger",
+      "hydration",
+      "hygiene",
+      "happiness",
+      "mobility",
+      "moreGoodDays"
+    ],
+    "additionalProperties": false
+  },
+  "recommend_mobility_aids": {
+    "type": "object",
+    "properties": {
+      "level": {
+        "type": "string",
+        "enum": [
+          "light",
+          "moderate",
+          "severe"
+        ],
+        "description": "light: camina pero resbala o tiene miedo al suelo; moderate: se fatiga rápido, debilidad trasera o le cuestan las escaleras; severe: ya no puede levantarse solo o perdió el uso de las patas traseras."
+      },
+      "handling": {
+        "type": "string",
+        "enum": [
+          "calm",
+          "stressed"
+        ],
+        "description": "calm: se deja manipular con calma; stressed: se estresa o reacciona mal cuando le tocan."
+      }
+    },
+    "required": [
+      "level",
+      "handling"
+    ],
+    "additionalProperties": false
+  }
+}
