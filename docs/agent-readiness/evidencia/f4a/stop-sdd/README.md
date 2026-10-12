@@ -7,7 +7,7 @@ Fecha 2026-10-12. Regla del encargo y de la SDD §8: máximo dos revisiones del 
 | Snapshot auditado R2 | `7eceeca162d97d8ab5ae11ce7726c05d123a9ef2`, tree `6f3002b980eff6ae50aef990a6f1ddb66bbec8ae` |
 | Informes | [R1 FAIL](../auditoria/sdd-r1.md) (B1–B3), [R2 FAIL](../auditoria/sdd-r2.md) (B1–B3 resueltos, B4 nuevo) |
 | Auditor | `session_011k5uFc2VrmGa3CVCgb2eSm`, `claude-opus-5-5`/high servido, homologado de Sol/high |
-| Procedencia de R2 | El envío de la auditora quedó pendiente de aprobación de permiso en su sesión; el texto se archiva copiado del argumento literal de esa llamada en su transcripción (evento `3f75ab7d-4408-4136-b11e-97ba73a15933`). No se archiva su SHA-256 original porque no llegó a emitirse en la transcripción |
+| Procedencia de R2 | El envío de la auditora quedó pendiente de aprobación de permiso en su sesión; el texto se archiva copiado del argumento literal de esa llamada en su transcripción (evento `3f75ab7d-4408-4136-b11e-97ba73a15933`). Después, la auditora informó del SHA-256 de su original (8680 bytes, `bd0ba3c4c8f9cff60e27251d8b41d0f6a11c330ff70f4ff4971e7be2f52f474b`). La copia archivada coincide byte a byte |
 | Producto | Sin cambios: ningún archivo fuera de `docs/agent-readiness/**` modificado desde la base `eff4ce1`; `main` sigue en `aad2a66` |
 
 ## B4 y reproducción independiente del autor
