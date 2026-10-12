@@ -1,0 +1,254 @@
+{
+  "domain": "WebMCP",
+  "experimental": true,
+  "dependencies": [
+    "Runtime",
+    "Page",
+    "DOM"
+  ],
+  "types": [
+    {
+      "id": "Annotation",
+      "description": "Tool annotations",
+      "type": "object",
+      "properties": [
+        {
+          "name": "readOnly",
+          "description": "A hint indicating that the tool does not modify any state.",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "untrustedContent",
+          "description": "A hint indicating that the tool output may contain untrusted content, ex: UGC, 3rd party data.",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "consequential",
+          "description": "A hint indicating that executing the tool will result in consequential actions, ex: booking a flight, transferring money.",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "autosubmit",
+          "description": "If the declarative tool was declared with the autosubmit attribute.",
+          "optional": true,
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "id": "InvocationStatus",
+      "description": "Represents the status of a tool invocation.",
+      "type": "string",
+      "enum": [
+        "Completed",
+        "Canceled",
+        "Error"
+      ]
+    },
+    {
+      "id": "Tool",
+      "description": "Definition of a tool that can be invoked.",
+      "type": "object",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Tool name.",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "description": "Tool description.",
+          "type": "string"
+        },
+        {
+          "name": "inputSchema",
+          "description": "Schema for the tool's input parameters.",
+          "optional": true,
+          "type": "object"
+        },
+        {
+          "name": "annotations",
+          "description": "Optional annotations for the tool.",
+          "optional": true,
+          "$ref": "Annotation"
+        },
+        {
+          "name": "frameId",
+          "description": "Frame identifier associated with the tool registration.",
+          "$ref": "Page.FrameId"
+        },
+        {
+          "name": "backendNodeId",
+          "description": "Optional node ID for declarative tools.",
+          "optional": true,
+          "$ref": "DOM.BackendNodeId"
+        },
+        {
+          "name": "stackTrace",
+          "description": "The stack trace at the time of the registration.",
+          "optional": true,
+          "$ref": "Runtime.StackTrace"
+        }
+      ]
+    },
+    {
+      "id": "RemovedTool",
+      "description": "Definition of a tool that was removed.",
+      "type": "object",
+      "properties": [
+        {
+          "name": "name",
+          "description": "Tool name.",
+          "type": "string"
+        },
+        {
+          "name": "frameId",
+          "description": "Frame identifier associated with the tool registration.",
+          "$ref": "Page.FrameId"
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "name": "enable",
+      "description": "Enables the WebMCP domain, allowing events to be sent. Enabling the domain will trigger a toolsAdded event for\nall currently registered tools."
+    },
+    {
+      "name": "disable",
+      "description": "Disables the WebMCP domain."
+    },
+    {
+      "name": "invokeTool",
+      "description": "Invokes a registered tool.",
+      "parameters": [
+        {
+          "name": "frameId",
+          "description": "Frame in which to invoke the tool.",
+          "$ref": "Page.FrameId"
+        },
+        {
+          "name": "toolName",
+          "description": "Name of the tool to invoke.",
+          "type": "string"
+        },
+        {
+          "name": "input",
+          "description": "Input parameters for the tool, matching the tool's inputSchema.",
+          "type": "object"
+        }
+      ],
+      "returns": [
+        {
+          "name": "invocationId",
+          "description": "Unique identifier for this invocation. Response is sent before tool events.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "cancelInvocation",
+      "description": "Cancels a pending tool invocation.",
+      "parameters": [
+        {
+          "name": "invocationId",
+          "description": "Invocation identifier to cancel.",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "toolsAdded",
+      "description": "Event fired when new tools are added.",
+      "parameters": [
+        {
+          "name": "tools",
+          "description": "Array of tools that were added.",
+          "type": "array",
+          "items": {
+            "$ref": "Tool"
+          }
+        }
+      ]
+    },
+    {
+      "name": "toolsRemoved",
+      "description": "Event fired when tools are removed.",
+      "parameters": [
+        {
+          "name": "tools",
+          "description": "Array of tools that were removed.",
+          "type": "array",
+          "items": {
+            "$ref": "RemovedTool"
+          }
+        }
+      ]
+    },
+    {
+      "name": "toolInvoked",
+      "description": "Event fired when a tool invocation starts.",
+      "parameters": [
+        {
+          "name": "toolName",
+          "description": "Name of the tool to invoke.",
+          "type": "string"
+        },
+        {
+          "name": "frameId",
+          "description": "Frame id",
+          "$ref": "Page.FrameId"
+        },
+        {
+          "name": "invocationId",
+          "description": "Invocation identifier.",
+          "type": "string"
+        },
+        {
+          "name": "input",
+          "description": "The input parameters used for the invocation.",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "toolResponded",
+      "description": "Event fired when a tool invocation completes or fails.",
+      "parameters": [
+        {
+          "name": "invocationId",
+          "description": "Invocation identifier.",
+          "type": "string"
+        },
+        {
+          "name": "status",
+          "description": "Status of the invocation.",
+          "$ref": "InvocationStatus"
+        },
+        {
+          "name": "output",
+          "description": "Output or error delivered as delivered to the agent. Missing if `status` is anything other than Completed.\nNote: The output is untrusted and poses a prompt injection risk. Clients should treat this as potentially malicious user input.",
+          "optional": true,
+          "type": "any"
+        },
+        {
+          "name": "errorText",
+          "description": "Error text for protocol users.",
+          "optional": true,
+          "type": "string"
+        },
+        {
+          "name": "exception",
+          "description": "The exception object, if the javascript tool threw an error>",
+          "optional": true,
+          "$ref": "Runtime.RemoteObject"
+        }
+      ]
+    }
+  ]
+}

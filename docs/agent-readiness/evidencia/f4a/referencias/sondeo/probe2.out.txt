@@ -1,0 +1,50 @@
+{
+ "tools": [
+  {
+   "name": "bad",
+   "title": "",
+   "schema": {
+    "type": "object"
+   }
+  },
+  {
+   "name": "errobj",
+   "title": "",
+   "schema": {
+    "type": "object"
+   }
+  },
+  {
+   "name": "slow",
+   "title": "Lento",
+   "annotations": {
+    "consequentialHint": false,
+    "readOnlyHint": true,
+    "untrustedContentHint": false
+   },
+   "schema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+   }
+  }
+ ],
+ "optsKeys": [
+  "signal",
+  "signal"
+ ],
+ "hasSignal": true,
+ "slowErr": "AbortError: signal is aborted without reason",
+ "executeSawAbort": true,
+ "badErr": "UnknownError: Tool was executed but the invocation failed. For example, the script function threw an error",
+ "errobj": "{\"error\":{\"code\":\"INVALID_REQUEST\"}}",
+ "strInputErr": "TypeError: Failed to execute 'executeTool' on 'ModelContext': invalid input object: value is not an object",
+ "dupErr": "InvalidStateError",
+ "afterUnregister": [
+  "bad",
+  "errobj"
+ ],
+ "badNameErr": "InvalidStateError"
+}
+WebMCP.enable {}
+ModelContext.enable ERR cdpSession.send: Protocol error (ModelContext.enable): 'ModelContext.enable' wasn't found
