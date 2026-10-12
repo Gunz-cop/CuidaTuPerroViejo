@@ -102,4 +102,12 @@ Evidencia autor en `evidencia/f4a/{1,2,publicacion}/`; informes de auditor en `e
 
 Auditor de SDD: sesión independiente distinta del autor, máximo dos revisiones totales del mismo auditor, sólo bloqueantes; segunda FAIL → STOP. Auditor de implementación por issue: independiente del autor/corrector, mismo auditor por issue, ≤5 revisiones totales; quinta FAIL → bug asociado a la SDD y STOP sin sexta. Hueco esencial de contrato, datos, base o entorno → `[SDD bug] F4A: <bloqueo>` y STOP del trabajo dependiente; no se debilitan comprobaciones.
 
-Modelos: el encargo pide GPT-6.1 Sol/high para autoría y auditorías y Luna 6/low para tareas mecánicas. En esta plataforma `gpt-6.1-sol` **no está disponible** (la sesión de prueba hizo fallback automático a otro modelo y se archivó sin trabajo). La sesión autora no es Sol. El modelo efectivo de cada auditor se decide con el propietario y se registra en cada informe; ninguna sustitución es silenciosa.
+Modelos: el encargo pide GPT-6.1 Sol/high para autoría y auditorías y Luna 6/low para tareas mecánicas. En esta plataforma `gpt-6.1-sol` **no está disponible** (la sesión de prueba hizo fallback automático por `model_not_found` y se archivó sin trabajo) y no hay MCP, conector, credencial ni CLI de OpenAI. El propietario autorizó el 2026-10-12 homologar a modelos disponibles:
+
+| Rol pedido | Homologación vigente F4A |
+|---|---|
+| Autor/coordinador Sol/high | `claude-opus-5-5`, esfuerzo high (esta sesión) |
+| Auditores independientes Sol/high (SDD y cada issue) | `claude-opus-5-5`, esfuerzo high, cada uno en sesión propia distinta del autor; modelo servido verificado en la sesión antes de encargar |
+| Tareas mecánicas Luna 6/low | `claude-haiku-5-5`, esfuerzo low, sólo si aportan valor |
+
+Cada informe registra el modelo configurado y servido. Un fallback de modelo en una sesión auditora invalida esa revisión como homologada y se informa; no se sustituye en silencio.
