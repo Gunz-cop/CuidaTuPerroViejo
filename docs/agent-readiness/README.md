@@ -16,7 +16,7 @@ Esta sesión es responsable de arquitectura, planificación, especificaciones y 
 5. [Evidencia](evidencia/README.md): respuestas originales, solicitudes y referencias.
 6. [SDD F1](fases/f1-politica-y-descubrimiento.md): publicada y verificada.
 7. [SDD F2](fases/f2-lectura-markdown.md) y [contratos F2](fases/f2-contratos.md): proyección y negociación en entregas consecutivas; estado y auditorías en su encabezado.
-8. [SDD F4A](fases/f4a-herramientas-webmcp.md) y [contratos F4A](fases/f4a-contratos.md): especificada, pendiente de auditoría y ratificación.
+8. [SDD F4A](fases/f4a-herramientas-webmcp.md) y [contratos F4A](fases/f4a-contratos.md): STOP tras auditoría R2 FAIL ([registro](evidencia/f4a/stop-sdd/README.md)).
 9. [SDD F3](fases/f3-api-y-descubrimiento.md), [contratos](fases/f3-contratos.md) y [traspaso](fases/f3-traspaso.md): aceptada e implementada; [publicación F3 auditada](evidencia/f3/publicacion/cierre/resultado.md).
 10. [SDD F0](fases/f0-medicion-y-contratos.md), [contratos F0](fases/f0-contratos.md) y [prompts de sesiones](fases/f0-prompts.md): primer encargo ejecutable.
 
@@ -46,4 +46,4 @@ Resultado comparable: **86/100 contenido, 60/100 general, nivel 4 general**. +20
 
 SDD PASS R2/2; A R2/5, B R1/5 y C R1/5; P3-01–03/C3-12 PASS y aceptación final. Auditorías independientes GPT-6.1 Sol/high; B/C fueron implementadas por root por excepción explícita del usuario, sin atribuirlas a Luna. El [STOP #80](evidencia/f3/publicacion/stop80/resultado.md) se conserva y su carencia operativa queda resuelta por evidencia Cloudflare, gates y auditoría; no se afirma reparado el callback GitHub pendiente.
 
-F4–F6 conservan alcance de planificación y no se inician con este cierre. Actualización posterior: F4A especificada en su [SDD](fases/f4a-herramientas-webmcp.md), pendiente de auditoría; F4B–F6 siguen planificadas. La política sigue `search=yes, ai-input=yes, ai-train=no`. Autorizaciones de pushes F3 vigentes no sustituyen contratos, identidad de build o gates para futuras promociones.
+F4–F6 conservan alcance de planificación y no se inician con este cierre. Actualización posterior: F4A especificada en su [SDD](fases/f4a-herramientas-webmcp.md) y detenida (STOP) tras auditoría R2 FAIL, pendiente de decisión del propietario; F4B–F6 siguen planificadas. La política sigue `search=yes, ai-input=yes, ai-train=no`. Autorizaciones de pushes F3 vigentes no sustituyen contratos, identidad de build o gates para futuras promociones.

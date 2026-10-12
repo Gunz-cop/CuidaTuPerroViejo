@@ -4,7 +4,7 @@ Plan aceptado por el propietario; F0 aceptada técnicamente con [PASS 3/5 y rati
 
 Estado vigente 2026-10-12: [F3 completa, auditada, aceptada y publicada](evidencia/f3/publicacion/cierre/resultado.md), sin bloqueantes. Resultado real comparable: **86 contenido / 60 general, nivel 4 general**; +20 general respecto de F2, tres controles nuevos PASS y ninguna regresión. SDD PASS R2/2, A R2/5, B R1/5 y C R1/5; publicación P3-01–03/C3-12 PASS y ratificación separada. El [STOP #80](evidencia/f3/publicacion/stop80/resultado.md) conserva su valor histórico y queda resuelto por nueva evidencia de plataforma y gates completos. Producto main `aad2a6624c24d7425c5ad5329b82c77a8a86b619`; este cierre documental no es otra versión desplegada.
 
-Estado F4A 2026-10-12: [SDD](fases/f4a-herramientas-webmcp.md), [contratos](fases/f4a-contratos.md) y [decisiones D21–D31](evidencia/f4a/decisiones.md) especificados sobre `eff4ce13a1f4b996f3d9b523799012bc668da318`, pendientes de auditoría independiente y ratificación; no hay capacidades F4A publicadas.
+Estado F4A 2026-10-12: [SDD](fases/f4a-herramientas-webmcp.md), [contratos](fases/f4a-contratos.md) y [decisiones D21–D31](evidencia/f4a/decisiones.md) especificados sobre `eff4ce13a1f4b996f3d9b523799012bc668da318`; **STOP tras SDD R2 FAIL** ([registro](evidencia/f4a/stop-sdd/README.md)), pendiente de decisión del propietario; no hay capacidades F4A implementadas ni publicadas.
 
 ## Orden y dependencias
 
@@ -14,7 +14,7 @@ Estado F4A 2026-10-12: [SDD](fases/f4a-herramientas-webmcp.md), [contratos](fase
 | F1 — Política y descubrimiento básico | Content Signals, llms.txt y Link funcional | F0 | 71 contenido / 33 general; nivel 2 |
 | F2 — Lectura íntegra y negociación Markdown | F2A proyección → F2B routing/negociación; serie | F1 y decisiones F0 resueltas | **Real publicado: 86 contenido / 40 general; nivel 4 general** |
 | F3 — API y skills de producto | Catálogo, búsqueda/lectura, OpenAPI, skills y ARD publicados y auditados | F2 aceptada | **Real publicado: 86 contenido / 60 general; nivel 4 general** |
-| F4A — Herramientas compartidas y WebMCP | Paridad UI/API/WebMCP, API de cálculo y registro en navegador; SDD especificada | F3 | 67 general previsto; no es criterio de aceptación |
+| F4A — Herramientas compartidas y WebMCP | Paridad UI/API/WebMCP, API de cálculo y registro en navegador; SDD en STOP tras R2 FAIL | F3 | 67 general previsto; no es criterio de aceptación |
 | F4B — MCP remoto | Servidor real, transporte y card | F4A | 73 general |
 | F5 — DNS y verificación pública | DNS-AID y auditoría del acceso en producción | F3; cierre después de F4B | **100 contenido / 80 general**, nivel 4 previsto |
 | F6 — Diseño de identidad y acceso | Decisión sobre OAuth/Auth.md/A2A y máximo nivel | F5 y `nextLevel` actualizado | Objetivo explorar **100 general / nivel 5** |

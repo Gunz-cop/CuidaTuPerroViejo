@@ -1,6 +1,6 @@
 # SDD F4A — Herramientas compartidas, API de cálculo y WebMCP
 
-Estado: **especificada, pendiente de auditoría independiente y ratificación**. Fecha: 2026-10-12. Normativa: este documento, [contratos F4A](f4a-contratos.md), [anexo de skill](../evidencia/f4a/contratos/buscar-leer-citar.SKILL.md), [decisiones D21–D31](../evidencia/f4a/decisiones.md) y [fuentes/sondeo](../evidencia/f4a/referencias/README.md). Lo no modificado de F3 ([SDD](f3-api-y-descubrimiento.md), [contratos](f3-contratos.md)) sigue vigente. Si dos reglas F4A se contradicen: STOP de SDD; el ejecutor no elige.
+Estado: **STOP tras SDD R2 FAIL** (2026-10-12): [registro](../evidencia/f4a/stop-sdd/README.md), [R1](../evidencia/f4a/auditoria/sdd-r1.md), [R2](../evidencia/f4a/auditoria/sdd-r2.md). No ratificada; no autoriza issues ni programación. Texto siguiente sin cambios respecto del snapshot R2 `7eceeca`. Estado histórico: especificada, pendiente de auditoría independiente y ratificación. Fecha: 2026-10-12. Normativa: este documento, [contratos F4A](f4a-contratos.md), [anexo de skill](../evidencia/f4a/contratos/buscar-leer-citar.SKILL.md), [decisiones D21–D31](../evidencia/f4a/decisiones.md) y [fuentes/sondeo](../evidencia/f4a/referencias/README.md). Lo no modificado de F3 ([SDD](f3-api-y-descubrimiento.md), [contratos](f3-contratos.md)) sigue vigente. Si dos reglas F4A se contradicen: STOP de SDD; el ejecutor no elige.
 
 ## 1. Problema y resultado observable
 
