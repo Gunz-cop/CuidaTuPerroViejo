@@ -489,22 +489,15 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
   }
 </style>
 
-<script is:inline>
+<script>
+// @ts-nocheck -- script de UI legado, sin tipos; la lógica tipada vive en src/lib/agent-tools/.
+import { BANDS, CRITERIA, MAX_SCORE, evaluateQualityOfLife } from '../../lib/agent-tools/calidad-vida.ts';
+
 (function () {
   'use strict';
 
-  /* ── Los 7 criterios de la escala HHHHHMM ── */
-  var CRITERIA = [
-    { emoji: '❤️', name: 'Hurt (Dolor)',              label: 'Dolor',       question: '¿Control adecuado del dolor y la respiración?',            lo: 'Mucho dolor',       hi: 'Sin dolor' },
-    { emoji: '🍖', name: 'Hunger (Apetito)',           label: 'Apetito',     question: '¿Come por su cuenta o necesita ayuda?',                     lo: 'No come nada',      hi: 'Come con ganas' },
-    { emoji: '💧', name: 'Hydration (Hidratación)',    label: 'Hidratación', question: '¿Bebe suficiente agua?',                                    lo: 'Deshidratado',      hi: 'Bien hidratado' },
-    { emoji: '✨', name: 'Hygiene (Higiene)',          label: 'Higiene',     question: '¿Se mantiene limpio?',                                      lo: 'Sucio/Llagas',      hi: 'Limpio' },
-    { emoji: '🐕', name: 'Happiness (Felicidad)',      label: 'Felicidad',   question: '¿Muestra alegría?',                                         lo: 'Deprimido',         hi: 'Feliz' },
-    { emoji: '🐾', name: 'Mobility (Movilidad)',       label: 'Movilidad',   question: '¿Puede moverse solo?',                                      lo: 'Inmóvil',           hi: 'Camina solo' },
-    { emoji: '☀️', name: 'More Good Days (Balance)',   label: 'Balance',     question: '¿Hay más días buenos que malos?',                           lo: 'Lucha constante',   hi: 'Plenitud' }
-  ];
-
-  var MAX = CRITERIA.length * 10; /* 70 */
+  /* ── Los 7 criterios y la fórmula viven en src/lib/agent-tools/calidad-vida.ts ── */
+  /* (compartidos con la API y WebMCP; mismos textos y umbrales). */
 
   /* ── Estado ── */
   var answers = new Array(CRITERIA.length).fill(null);
@@ -648,12 +641,14 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
 
   /* ── Mostrar resultado ── */
   function showResult() {
-    var total = 0;
-    for (var i = 0; i < answers.length; i++) { total += (answers[i] || 0); }
+    var input = {};
+    CRITERIA.forEach(function (c, i) { input[c.key] = answers[i] || 0; });
+    var result = evaluateQualityOfLife(input);
+    var total = result.score;
     lastScore = total;
 
     D.score.textContent = total;
-    D.resultFill.style.width = Math.round((total / MAX) * 100) + '%';
+    D.resultFill.style.width = Math.round((total / MAX_SCORE) * 100) + '%';
     D.resultProg.setAttribute('aria-valuenow', total);
 
     /* Desglose por criterio */
@@ -683,29 +678,31 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
     D.resultBox.className = 'p-6 md:p-8 rounded-2xl border text-center transition-all duration-300 shadow-sm my-2 sm:my-4';
     D.resultFill.className = 'h-full rounded-full transition-all duration-500';
 
-    if (total >= 50) {
-      D.resultBox.classList.add('bg-green-500/10', 'border-green-500/20', 'text-green-900', 'dark:text-green-100');
-      D.resultFill.classList.add('bg-green-600');
-      D.interp.innerHTML = '<strong>✅ Calidad de Vida BUENA.</strong>';
-      D.humanMsg.textContent = 'Tu perro aún disfruta momentos importantes contigo.';
-      D.recBox.innerHTML = '💡 <strong>Sigue así:</strong> Mantén los cuidados actuales y visita al veterinario en los controles rutinarios. Tu perro está respondiendo bien.';
-      D.ctaPilar.style.display = 'none';
-    } else if (total >= 35) {
-      D.resultBox.classList.add('bg-amber-500/10', 'border-amber-500/20', 'text-amber-900', 'dark:text-amber-100');
-      D.resultFill.classList.add('bg-amber-500');
-      D.interp.innerHTML = '<strong>⚠️ Calidad de Vida ACEPTABLE.</strong>';
-      D.humanMsg.textContent = 'Estás en un punto donde observar y acompañar es clave.';
-      D.recBox.innerHTML = '💡 <strong>Atención:</strong> Hay áreas que merecen seguimiento. Consulta a tu veterinario pronto para ajustar el plan de cuidados.';
-      D.ctaPilar.querySelector('a').textContent = '📖 Cómo mejorar la calidad de vida de tu perro';
+    /* Tema visual por franja; los textos salen del resultado compartido. */
+    var THEME = {
+      good:        { box: ['bg-green-500/10', 'border-green-500/20', 'text-green-900', 'dark:text-green-100'], fill: 'bg-green-600' },
+      acceptable:  { box: ['bg-amber-500/10', 'border-amber-500/20', 'text-amber-900', 'dark:text-amber-100'], fill: 'bg-amber-500' },
+      compromised: { box: ['bg-red-500/10', 'border-red-500/20', 'text-red-900', 'dark:text-red-100'], fill: 'bg-red-600' }
+    };
+    var theme = THEME[result.band];
+    theme.box.forEach(function (cls) { D.resultBox.classList.add(cls); });
+    D.resultFill.classList.add(theme.fill);
+
+    var strong = document.createElement('strong');
+    strong.textContent = result.interpretation;
+    D.interp.replaceChildren(strong);
+    D.humanMsg.textContent = result.message;
+
+    var rec = BANDS[result.band].recommendation;
+    var recStrong = document.createElement('strong');
+    recStrong.textContent = rec.strong;
+    D.recBox.replaceChildren(document.createTextNode(rec.lead), recStrong, document.createTextNode(rec.rest));
+
+    if (result.guide) {
+      D.ctaPilar.querySelector('a').textContent = result.guide.label;
       D.ctaPilar.style.display = 'block';
     } else {
-      D.resultBox.classList.add('bg-red-500/10', 'border-red-500/20', 'text-red-900', 'dark:text-red-100');
-      D.resultFill.classList.add('bg-red-600');
-      D.interp.innerHTML = '<strong>🛑 Calidad de Vida COMPROMETIDA.</strong>';
-      D.humanMsg.textContent = 'Es un momento difícil. Buscar claridad ahora también es una forma de cuidar de él.';
-      D.recBox.innerHTML = '💡 <strong>Importante:</strong> El puntaje indica sufrimiento significativo. Consulta a tu veterinario lo antes posible para evaluar opciones paliativas.';
-      D.ctaPilar.querySelector('a').textContent = '📖 Entender los cuidados paliativos y las opciones disponibles';
-      D.ctaPilar.style.display = 'block';
+      D.ctaPilar.style.display = 'none';
     }
 
     go(D.question, D.result);

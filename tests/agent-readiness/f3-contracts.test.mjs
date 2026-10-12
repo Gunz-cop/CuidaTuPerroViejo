@@ -33,14 +33,18 @@ test('OpenAPI, Linkset, skills discovery, artifact digest, and both ARD manifest
     'listAgentDocuments', 'headAgentCatalog', 'optionsAgentCatalog',
     'searchAgentDocuments', 'headAgentSearch', 'optionsAgentSearch',
     'readAgentDocument', 'headAgentDocument', 'optionsAgentDocument',
+    'evaluateQualityOfLife', 'headQualityOfLife', 'optionsQualityOfLife',
+    'recommendMobilityAids', 'headMobilityAids', 'optionsMobilityAids',
   ]);
-  assert.equal(openapi.info.version, '1.0.0');
+  assert.equal(openapi.info.version, '1.1.0');
   assert.equal(openapi.openapi, '3.1.1');
   assert.ok(!JSON.stringify(openapi).match(/\$ref":"https?:/u));
   assert.deepEqual(linkset.linkset[0].item.map((item) => item.href), [
     'https://cuidatuperroviejo.com/api/agent/v1/catalog',
     'https://cuidatuperroviejo.com/api/agent/v1/search?q=cushing',
     'https://cuidatuperroviejo.com/api/agent/v1/documents/home',
+    'https://cuidatuperroviejo.com/api/agent/v1/tools/calidad-vida?hurt=5&hunger=5&hydration=5&hygiene=5&happiness=5&mobility=5&moreGoodDays=5',
+    'https://cuidatuperroviejo.com/api/agent/v1/tools/movilidad?level=moderate&handling=calm',
   ]);
   assert.equal(linkset.linkset[1]['service-desc'][0].href, 'https://cuidatuperroviejo.com/agent-api/v1/openapi.json');
   assert.equal(skillsIndex.$schema, 'https://schemas.agentskills.io/discovery/0.2.0/schema.json');

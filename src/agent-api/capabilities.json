@@ -25,6 +25,22 @@
       "examplePath": "/api/agent/v1/documents/home",
       "title": "Lectura de home; OpenAPI describe otros documentIds",
       "type": "application/json"
+    },
+    {
+      "operationId": "evaluateQualityOfLife",
+      "path": "/api/agent/v1/tools/calidad-vida",
+      "methods": ["GET", "HEAD", "OPTIONS"],
+      "examplePath": "/api/agent/v1/tools/calidad-vida?hurt=5&hunger=5&hydration=5&hygiene=5&happiness=5&mobility=5&moreGoodDays=5",
+      "title": "Calculadora HHHHHMM de ejemplo; los siete criterios en 5",
+      "type": "application/json"
+    },
+    {
+      "operationId": "recommendMobilityAids",
+      "path": "/api/agent/v1/tools/movilidad",
+      "methods": ["GET", "HEAD", "OPTIONS"],
+      "examplePath": "/api/agent/v1/tools/movilidad?level=moderate&handling=calm",
+      "title": "Selector de movilidad de ejemplo; nivel moderado y manejo tranquilo",
+      "type": "application/json"
     }
   ],
   "skills": [
@@ -44,11 +60,13 @@
     "identifier": "urn:air:cuidatuperroviejo.com:api:contenido",
     "displayName": "Consulta de guías para perros mayores",
     "type": "application/vnd.oai.openapi+json",
-    "description": "API pública de catálogo, búsqueda léxica y lectura íntegra del corpus editorial publicado.",
+    "description": "API pública de catálogo, búsqueda léxica y lectura íntegra del corpus editorial publicado, y cálculo de sus dos herramientas educativas.",
     "representativeQueries": [
       "Busca guías sobre Cushing en perros mayores.",
       "Lee una guía completa con sus fuentes y avisos.",
-      "Encuentra información sobre movilidad y dolor en perros senior."
+      "Encuentra información sobre movilidad y dolor en perros senior.",
+      "Calcula la escala HHHHHMM de calidad de vida de un perro mayor.",
+      "Recomienda ayudas de movilidad para un perro mayor con debilidad trasera."
     ]
   }
 }

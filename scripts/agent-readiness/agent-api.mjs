@@ -221,23 +221,29 @@ function addFormats(ajv) {
 function validateSchemaSet(schema, openapi, capabilities) {
   if (schema.$schema !== 'https://json-schema.org/draft/2020-12/schema' || schema.$id !== 'urn:ctp:agent-api:1') fail('SCHEMA_IDENTITY_INVALID');
   if (capabilities.schemaVersion !== 'agent-capabilities/1' || capabilities.siteOrigin !== SITE || capabilities.openapiPath !== '/agent-api/v1/openapi.json' || capabilities.apiCatalogPath !== '/.well-known/api-catalog') fail('CAPABILITIES_IDENTITY_INVALID');
-  const operationIds = ['listAgentDocuments', 'searchAgentDocuments', 'readAgentDocument'];
-  if (!Array.isArray(capabilities.operations) || capabilities.operations.length !== 3 || JSON.stringify(capabilities.operations.map((entry) => entry.operationId)) !== JSON.stringify(operationIds)) fail('CAPABILITIES_OPERATIONS_INVALID');
-  const apiPaths = ['/api/agent/v1/catalog', '/api/agent/v1/search', '/api/agent/v1/documents/{documentId}'];
-  for (let i = 0; i < 3; i += 1) {
+  // F3 (catálogo, búsqueda, lectura) + F4A (dos cálculos); contratos F4A §3.
+  const operationIds = ['listAgentDocuments', 'searchAgentDocuments', 'readAgentDocument', 'evaluateQualityOfLife', 'recommendMobilityAids'];
+  if (!Array.isArray(capabilities.operations) || capabilities.operations.length !== operationIds.length || JSON.stringify(capabilities.operations.map((entry) => entry.operationId)) !== JSON.stringify(operationIds)) fail('CAPABILITIES_OPERATIONS_INVALID');
+  const apiPaths = ['/api/agent/v1/catalog', '/api/agent/v1/search', '/api/agent/v1/documents/{documentId}', '/api/agent/v1/tools/calidad-vida', '/api/agent/v1/tools/movilidad'];
+  const examplePaths = [undefined, undefined, '/api/agent/v1/documents/home',
+    '/api/agent/v1/tools/calidad-vida?hurt=5&hunger=5&hydration=5&hygiene=5&happiness=5&mobility=5&moreGoodDays=5',
+    '/api/agent/v1/tools/movilidad?level=moderate&handling=calm'];
+  for (let i = 0; i < operationIds.length; i += 1) {
     const operation = capabilities.operations[i];
-    if (operation.path !== apiPaths[i] || JSON.stringify(operation.methods) !== JSON.stringify(['GET', 'HEAD', 'OPTIONS'])) fail(`CAPABILITIES_OPERATION_INVALID id=${operation.operationId}`);
+    if (operation.path !== apiPaths[i] || JSON.stringify(operation.methods) !== JSON.stringify(['GET', 'HEAD', 'OPTIONS']) || operation.examplePath !== examplePaths[i]) fail(`CAPABILITIES_OPERATION_INVALID id=${operation.operationId}`);
   }
   if (!Array.isArray(capabilities.skills) || capabilities.skills.length !== 1) fail('CAPABILITIES_SKILLS_INVALID');
   const skill = capabilities.skills[0];
   if (skill.name !== 'buscar-leer-citar' || skill.description !== 'Busca guías de Cuida tu Perro Viejo, lee el contenido completo y cita su URL canónica y sus fuentes originales.' || skill.path !== '/.well-known/agent-skills/buscar-leer-citar/SKILL.md' || skill.urn !== 'urn:air:cuidatuperroviejo.com:skill:buscar-leer-citar') fail('CAPABILITIES_SKILL_INVALID');
   const expectedPaths = apiPaths;
-  if (openapi.openapi !== '3.1.1' || openapi.info?.version !== '1.0.0' || JSON.stringify(openapi.servers) !== JSON.stringify([{ url: SITE }]) || JSON.stringify(Object.keys(openapi.paths)) !== JSON.stringify(expectedPaths)) fail('OPENAPI_IDENTITY_OR_PATHS_INVALID');
+  if (openapi.openapi !== '3.1.1' || openapi.info?.version !== '1.1.0' || JSON.stringify(openapi.servers) !== JSON.stringify([{ url: SITE }]) || JSON.stringify(Object.keys(openapi.paths)) !== JSON.stringify(expectedPaths)) fail('OPENAPI_IDENTITY_OR_PATHS_INVALID');
   const methods = ['get', 'head', 'options'];
   const expectedIds = [
     ['listAgentDocuments', 'headAgentCatalog', 'optionsAgentCatalog'],
     ['searchAgentDocuments', 'headAgentSearch', 'optionsAgentSearch'],
     ['readAgentDocument', 'headAgentDocument', 'optionsAgentDocument'],
+    ['evaluateQualityOfLife', 'headQualityOfLife', 'optionsQualityOfLife'],
+    ['recommendMobilityAids', 'headMobilityAids', 'optionsMobilityAids'],
   ];
   for (let i = 0; i < expectedPaths.length; i += 1) {
     const path = openapi.paths[expectedPaths[i]];
@@ -247,7 +253,7 @@ function validateSchemaSet(schema, openapi, capabilities) {
       if (!operation || operation.operationId !== expectedIds[i][j] || JSON.stringify(operation.security) !== '[]') fail(`OPENAPI_OPERATION_INVALID path=${expectedPaths[i]} method=${methods[j]}`);
     }
   }
-  const componentNames = ['Document', 'Link', 'Result', 'Catalog', 'Search', 'Read', 'Error'];
+  const componentNames = ['Document', 'Link', 'Result', 'Catalog', 'Search', 'Read', 'Error', 'ToolInfo', 'QualityOfLifeResult', 'MobilityResult'];
   if (JSON.stringify(Object.keys(openapi.components?.schemas ?? {})) !== JSON.stringify(componentNames)) fail('OPENAPI_COMPONENT_SET_INVALID');
   const normalizeSchemaRefs = (value) => {
     if (Array.isArray(value)) return value.map(normalizeSchemaRefs);
@@ -288,12 +294,13 @@ function validateSchemaSet(schema, openapi, capabilities) {
 }
 
 function deriveLinkset(capabilities) {
-  const [catalog, search, read] = capabilities.operations;
+  const [catalog, search, read, ...tools] = capabilities.operations;
   return { linkset: [
     { anchor: `${SITE}${capabilities.apiCatalogPath}`, item: [
       { href: `${SITE}${catalog.path}`, type: catalog.type, title: catalog.title },
       { href: `${SITE}${search.path}?q=cushing`, type: search.type, title: search.title },
       { href: `${SITE}${read.examplePath}`, type: read.type, title: read.title },
+      ...tools.map((tool) => ({ href: `${SITE}${tool.examplePath}`, type: tool.type, title: tool.title })),
     ] },
     { anchor: `${SITE}${catalog.path}`, 'service-desc': [
       { href: `${SITE}${capabilities.openapiPath}`, type: 'application/vnd.oai.openapi+json', title: 'API pública de contenido v1' },
@@ -476,6 +483,79 @@ export async function checkArtifacts(buildDir, root = ROOT) {
   return result;
 }
 
+// C4A-02: el dato compartido de las herramientas coincide con el HTML estático
+// construido (alerta paliativa, avisos, guías y JSON-LD). La alerta se extrae con
+// alertItemText de contratos F4A §1.2.
+const squashSpaces = (value) => value.replace(/\s+/gu, ' ').trim();
+const nodeText = (node) => node.nodeName === '#text' ? node.value : (node.childNodes ?? []).map(nodeText).join('');
+const attr = (node, name) => node.attrs?.find((entry) => entry.name === name)?.value;
+const elementChildren = (node) => (node.childNodes ?? []).filter((child) => child.tagName);
+function findAll(node, predicate, found = []) {
+  if (node.tagName && predicate(node)) found.push(node);
+  for (const child of node.childNodes ?? []) findAll(child, predicate, found);
+  if (node.content) findAll(node.content, predicate, found);
+  return found;
+}
+function exactlyOne(nodes, label) {
+  if (nodes.length !== 1) fail(`TOOLS_HTML_SELECTOR_INVALID selector=${label} count=${nodes.length}`);
+  return nodes[0];
+}
+export function alertItemText(li) {
+  const span = elementChildren(li).find((child) => child.tagName === 'span');
+  if (!span) fail('TOOLS_ALERT_ICON_MISSING');
+  const rest = (li.childNodes ?? []).filter((child) => child !== span && child.tagName !== 'a').map(nodeText).join('');
+  return `${squashSpaces(nodeText(span))} ${squashSpaces(rest)}`;
+}
+export function extractPalliativeAlert(document) {
+  const alert = exactlyOne(findAll(document, (node) => attr(node, 'id') === 'm5alert' && attr(node, 'role') === 'alert'), '#m5alert[role=alert]');
+  const [titleNode, list] = elementChildren(alert);
+  if (titleNode?.tagName !== 'div' || list?.tagName !== 'ul') fail('TOOLS_ALERT_STRUCTURE_INVALID');
+  return {
+    title: squashSpaces(nodeText(titleNode)),
+    items: elementChildren(list).filter((child) => child.tagName === 'li').map((li) => {
+      const anchor = elementChildren(li).find((child) => child.tagName === 'a');
+      return { text: alertItemText(li), link: anchor ? { label: squashSpaces(nodeText(anchor)), url: new URL(attr(anchor, 'href'), SITE).href } : null };
+    }),
+  };
+}
+function extractToolInfo(document, toolId, documentId) {
+  const graph = findAll(document, (node) => node.tagName === 'script' && attr(node, 'type') === 'application/ld+json')
+    .flatMap((node) => { try { return JSON.parse(nodeText(node))['@graph'] ?? []; } catch { fail(`TOOLS_JSONLD_INVALID tool=${toolId}`); } });
+  const app = exactlyOne(graph.filter((entry) => entry['@type'] === 'SoftwareApplication'), `SoftwareApplication tool=${toolId}`);
+  const page = exactlyOne(graph.filter((entry) => entry['@type'] === 'WebPage' && entry['@id'] === entry.url), `WebPage tool=${toolId}`);
+  return { toolId, documentId, name: app.name, canonicalUrl: page.url, softwareVersion: app.softwareVersion, lastReviewed: page.lastReviewed };
+}
+const sameJson = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+export async function checkToolsBuild(buildDir, root = ROOT) {
+  const { parse } = await import('parse5');
+  const toolsUrl = pathToFileURL(join(root, 'src/lib/agent-tools/')).href;
+  const [quality, mobility] = await Promise.all([import(`${toolsUrl}calidad-vida.ts`), import(`${toolsUrl}movilidad.ts`)]);
+  const { assetRoot } = await resolveBuildRoots(buildDir);
+  const page = async (slug) => {
+    try { return parse(await readFile(join(assetRoot, 'herramientas', `${slug}.html`), 'utf8')); }
+    catch (error) { fail(`TOOLS_HTML_UNAVAILABLE page=${slug} code=${error.code ?? 'IO'}`, 1); }
+  };
+  const qualityPage = await page('calculadora-calidad-vida-perros');
+  const mobilityPage = await page('selector-movilidad-perros-mayores');
+  if (!sameJson(extractToolInfo(qualityPage, 'calidad-vida', 'tool--calidad-vida'), quality.QUALITY_TOOL)) fail('TOOLS_INFO_MISMATCH tool=calidad-vida');
+  if (!sameJson(extractToolInfo(mobilityPage, 'movilidad', 'tool--movilidad'), mobility.MOBILITY_TOOL)) fail('TOOLS_INFO_MISMATCH tool=movilidad');
+  const qualityNotices = [
+    squashSpaces(nodeText(exactlyOne(findAll(qualityPage, (node) => node.tagName === 'p' && attr(node, 'class')?.split(' ').includes('font-light') && attr(node.parentNode, 'id') === 'qol-result-box'), '#qol-result-box > p.font-light'))),
+    squashSpaces(nodeText(exactlyOne(findAll(qualityPage, (node) => attr(node, 'class')?.split(' ').includes('qol-anti-guilt')), '.qol-anti-guilt'))),
+  ];
+  if (!sameJson(qualityNotices, quality.QUALITY_NOTICES)) fail('TOOLS_NOTICES_MISMATCH tool=calidad-vida');
+  const qualityCta = exactlyOne(findAll(qualityPage, (node) => node.tagName === 'a' && attr(node.parentNode, 'id') === 'qol-cta-pilar'), '#qol-cta-pilar > a');
+  if (attr(qualityCta, 'href') !== quality.GUIDE_PATH) fail('TOOLS_GUIDE_MISMATCH tool=calidad-vida');
+  if (!sameJson(extractPalliativeAlert(mobilityPage), mobility.PALLIATIVE_ALERT)) fail('TOOLS_ALERT_MISMATCH tool=movilidad');
+  const result = exactlyOne(findAll(mobilityPage, (node) => attr(node, 'id') === 'm5s3'), '#m5s3');
+  const paragraphs = elementChildren(result).filter((child) => child.tagName === 'p');
+  if (!sameJson([squashSpaces(nodeText(paragraphs.at(-1)))], mobility.MOBILITY_NOTICES)) fail('TOOLS_NOTICES_MISMATCH tool=movilidad');
+  const guides = findAll(result, (node) => node.tagName === 'a' && attr(node, 'href') === '/movilidad-dolor-perros-mayores')
+    .map((node) => ({ label: squashSpaces(nodeText(node)), url: new URL(attr(node, 'href'), SITE).href }));
+  if (!sameJson(guides, [mobility.MOBILITY_GUIDE])) fail('TOOLS_GUIDE_MISMATCH tool=movilidad');
+}
+
 function parseCheckArgs(args) {
   if (args.length !== 3 || args[0] !== 'check' || args[1] !== '--build-dir' || !args[2] || args[2].startsWith('-')) fail('Uso: node scripts/agent-readiness/agent-api.mjs check --build-dir <directorio>');
   return resolve(process.cwd(), args[2]);
@@ -486,7 +566,8 @@ export async function runCheck(args) {
     const buildDir = parseCheckArgs(args);
     const result = await checkArtifacts(buildDir);
     await checkDiscoveryBuild(buildDir);
-    process.stdout.write(`OK: query-index y contratos F3 verificados sin modificar assets (${result.assets.queryIndex.length} bytes de índice).\n`);
+    await checkToolsBuild(buildDir);
+    process.stdout.write(`OK: query-index, contratos F3/F4A y datos de herramientas verificados sin modificar assets (${result.assets.queryIndex.length} bytes de índice).\n`);
     return 0;
   } catch (error) {
     process.stderr.write(`${error.message}\n`);
