@@ -1,0 +1,29 @@
+{
+  "projection": {
+    "originalPath": "/workspace/f3-publicacion-evidence/production-check-observation-1791788013.json",
+    "bytes": 7018,
+    "sha256": "c4a744808fb0ce614613341bbe9c9d13752f96ae505d8c2b5bfe7d5eb5f778ac",
+    "omissions": "Raw completo GitHub/headers/output/dashboard/IDs de cuenta y build permanece privado; se conserva status real, check y versi\u00f3n ausente."
+  },
+  "observedAt": "2026-10-12T06:53:34.582246+00:00",
+  "responseDate": "Mon, 12 Oct 2026 06:53:34 GMT",
+  "check": {
+    "id": 114637987659,
+    "name": "Workers Builds: cuidatuperroviejo",
+    "head_sha": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+    "started_at": "2026-10-12T02:26:25Z",
+    "completed_at": null,
+    "status": "in_progress",
+    "conclusion": null
+  },
+  "buildIdPresentInOriginal": true,
+  "versionIdPresentInOriginal": false,
+  "suite": {
+    "id": 103426668387,
+    "head_branch": "agent-ready/f3-c",
+    "head_sha": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+    "status": "in_progress",
+    "conclusion": null
+  },
+  "assessment": "STOP: no acredita despliegue final. Suite hist\u00f3rica reutilizada no se presenta como rama main."
+}

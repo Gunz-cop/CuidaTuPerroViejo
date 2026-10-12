@@ -1,0 +1,122 @@
+{
+  "root": "/workspace/f3-publicacion-evidence",
+  "result": "STOP P3 admission; no production HTTP/scans",
+  "commit": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+  "files": [
+    {
+      "path": "admission/checks.json",
+      "bytes": 16687,
+      "sha256": "395fe94deba32fa20df8d30e79badce2f1685bbc03ca7aa8eaad12a436443d31"
+    },
+    {
+      "path": "admission/deployments.json",
+      "bytes": 163,
+      "sha256": "7f11d69e5caf4110c80f5d6c35aeaabfe5dffa733b86e9e95b187395d38ff775"
+    },
+    {
+      "path": "admission/main.json",
+      "bytes": 4795,
+      "sha256": "375b9ac2c43122befd0c2de520d7491707a3ef9db8bb26e10fa16528e139f1bd"
+    },
+    {
+      "path": "admission/rules.json",
+      "bytes": 160,
+      "sha256": "b559b7faa2b6875428e148b708c61879822c06ab0fa81a66426ec75f06c51333"
+    },
+    {
+      "path": "authorization.json",
+      "bytes": 980,
+      "sha256": "5bbadbfd8cb778d4f4ad3fd949912b0ee881494ebdc7367376c0f879a9cb4dd0"
+    },
+    {
+      "path": "build-checks.json",
+      "bytes": 447,
+      "sha256": "60eed6f993b37a095203ee06fe62d92dcf75e8885ad4b8f449ab8e4562ac50d0"
+    },
+    {
+      "path": "build-manifest.json",
+      "bytes": 74581,
+      "sha256": "f6f35c895ee1a8d8b4c9bf8a51920f62aaa29ac987b95fde60b3450b3be4d931"
+    },
+    {
+      "path": "build.log",
+      "bytes": 4580,
+      "sha256": "3defca5976acb86603b0ae93b5f2d5d267fe5a85744ef4a92bc9b6c5aeb62c73"
+    },
+    {
+      "path": "checks-post-promotion-022645.json",
+      "bytes": 14710,
+      "sha256": "4eeea6db6b4a61f29d3121576ff78b38167af00b5f610181425df63c0358b2a7"
+    },
+    {
+      "path": "cli-frozen.json",
+      "bytes": 542,
+      "sha256": "0875e7ba76acf94a4a611478c04ac7faa22d4b722f54d84c03dfa65ca8c44008"
+    },
+    {
+      "path": "decision-operativa.md",
+      "bytes": 22555,
+      "sha256": "ce27a037a9209a0424a8d997e3097eb36119a1361970a4e0fe4cde9eac9c9c0b"
+    },
+    {
+      "path": "npm-ci.log",
+      "bytes": 235,
+      "sha256": "7ee3a3abb068f09b2b8773c040c3bbd7974b02500842b0322e6873d6ed829d10"
+    },
+    {
+      "path": "pr79-promotion-receipt.json",
+      "bytes": 457,
+      "sha256": "cfcc7d6dfbf5dee46c31106eab2829ffb8e8f21f2a56786ac7567401dba62fd6"
+    },
+    {
+      "path": "production-check-065152.json",
+      "bytes": 4849,
+      "sha256": "ec25eae76a8769e329d2f8ee9fe009e98032afe38083d8e2ef9e87b10914d307"
+    },
+    {
+      "path": "production-check-current.json",
+      "bytes": 4849,
+      "sha256": "ec25eae76a8769e329d2f8ee9fe009e98032afe38083d8e2ef9e87b10914d307"
+    },
+    {
+      "path": "production-check-latest.json",
+      "bytes": 4849,
+      "sha256": "ec25eae76a8769e329d2f8ee9fe009e98032afe38083d8e2ef9e87b10914d307"
+    },
+    {
+      "path": "production-check-observation-1791788013.json",
+      "bytes": 7018,
+      "sha256": "c4a744808fb0ce614613341bbe9c9d13752f96ae505d8c2b5bfe7d5eb5f778ac"
+    },
+    {
+      "path": "production-check-suite.json",
+      "bytes": 9571,
+      "sha256": "545dbe0ec61ae93499e86fbc1e0cd91696efef0027dfc0fd6c82ad15393ceb1a"
+    },
+    {
+      "path": "promotion.json",
+      "bytes": 840,
+      "sha256": "b7ef761b818507bb5bf667667832b72c56f7f5b46a06943eb33dc3f264b8a490"
+    },
+    {
+      "path": "repository-events.json",
+      "bytes": 114134,
+      "sha256": "25eb174e509350755a10b1eedb489cd9dc3735e006b287f318ce98b39bff2c7a"
+    },
+    {
+      "path": "stop-publicacion.json",
+      "bytes": 1693,
+      "sha256": "1327d94e5392299155600840b6bda191744f3df87cd4a966ee606ee96893ef85"
+    },
+    {
+      "path": "verificador-produccion.diff",
+      "bytes": 3441,
+      "sha256": "fc2c87e237774084b19663bb88857689e0fb9a0995b744d4f2a83f2829d97e6f"
+    },
+    {
+      "path": "verificar-produccion.mjs",
+      "bytes": 14556,
+      "sha256": "ca9445e54aa9216698b5fa33632547fbc4f69dec73bbc8c9f4aefd9e52106464"
+    }
+  ]
+}

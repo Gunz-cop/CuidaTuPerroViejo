@@ -1,0 +1,11 @@
+# Decisión operativa y STOP — proyección pública
+
+Fuente original: `/workspace/f3-publicacion-evidence/decision-operativa.md`, 22555 bytes, SHA256 `ce27a037a9209a0424a8d997e3097eb36119a1361970a4e0fe4cde9eac9c9c0b`. Autor: `/root/f3_arquitectura`, GPT-6.1 Sol/high. Esta síntesis de root no es copia literal; conserva resultado/condiciones y omite detalle de dashboard/build y datos operativos privados. El índice de originales y auditoría independiente permiten verificar la fuente.
+
+Se admitió la adaptación mecánica externa del verificador C para exigir origen canónico de producción, autorización, identidad/resultado de receipt y mode production; no cambian assertions, rutas, bytes, schemas, headers, recorridos o STOP. Fuente C inmutable; checkout limpio/build nuevo del candidato. CLI y perfiles F2 permanecen congelados.
+
+El requisito es un vínculo verificable entre SHA/build/versión/dominio, no un valor supuesto de una suite GitHub reutilizada. La primera instrucción operativa exigía suite.head_branch=main; la lectura real muestra agent-ready/f3-c y el anexo conserva/corrige esa interpretación: el campo histórico no se falsea ni es la única fuente admisible de atribución. Push y PR79 merged, junto con check nuevo posterior, acreditan la promoción GitHub, pero no reemplazan el resultado final/versión de Workers.
+
+STOP P3 ratificado: check114637987659 sigue in_progress, sin conclusion/completedAt/VersionID en lectura fresca06:53:34Z, más de cuatro horas después de promoción. Bug80 asociado a SDD/#77/PR79. No hay otras fuentes archivadas que acrediten despliegue activo. No inferir que producción sirve F2 o F3; no se comprobó mediante gate funcional. C1/5 continúa aceptada. Cero HTTP producción y cero scans.
+
+La autorización posterior del usuario cubre pushes necesarios dentro de F3; no elimina contratos, admisión, auditorías ni STOP. No se pide permiso ya concedido. No se crea commit vacío, retry de build, fallback, resultado supuesto o rollback automático. Desbloqueo: diagnóstico/finalización real del Workers Build y recibo independiente admitido; si surge nuevo SHA, congelar/validar nueva identidad y gates afectados. Después se ejecutarán por primera vez P3-01/02, y sólo tras PASS una POST content y una all-ui con comparación F2.
