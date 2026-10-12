@@ -4,7 +4,7 @@
     "properties": {
       "q": {
         "type": "string",
-        "description": "Palabras a buscar; tras NFC y trim, 1..200 caracteres y 1..12 palabras completas."
+        "description": "Palabras completas a buscar. Tras normalizar (NFC y trim): 1..200 codepoints, maximo 800 bytes UTF-8 y 1..12 palabras de hasta 64 codepoints."
       },
       "kind": {
         "type": "string",
@@ -21,7 +21,7 @@
         "type": "integer",
         "minimum": 1,
         "maximum": 20,
-        "description": "Resultados por página (por defecto 20)."
+        "description": "Resultados por pagina (por defecto 20)."
       },
       "offset": {
         "type": "integer",
@@ -47,7 +47,7 @@
         "type": "string",
         "pattern": "^(home|(?:pillar|article|page)--[a-z0-9]+(?:-[a-z0-9]+)*|tool--(?:calidad-vida|movilidad))$",
         "maxLength": 160,
-        "description": "documentId devuelto por search_guides o el catálogo."
+        "description": "documentId devuelto por search_guides o el catalogo."
       },
       "corpus": {
         "type": "string",
@@ -79,7 +79,7 @@
         "type": "integer",
         "minimum": 0,
         "maximum": 10,
-        "description": "Hidratación: 0 = deshidratado, 10 = bien hidratado."
+        "description": "Hidratacion: 0 = deshidratado, 10 = bien hidratado."
       },
       "hygiene": {
         "type": "integer",
@@ -97,13 +97,13 @@
         "type": "integer",
         "minimum": 0,
         "maximum": 10,
-        "description": "Movilidad: 0 = inmóvil, 10 = camina solo."
+        "description": "Movilidad: 0 = inmovil, 10 = camina solo."
       },
       "moreGoodDays": {
         "type": "integer",
         "minimum": 0,
         "maximum": 10,
-        "description": "Balance de días buenos: 0 = lucha constante, 10 = plenitud."
+        "description": "Balance de dias buenos: 0 = lucha constante, 10 = plenitud."
       }
     },
     "required": [
@@ -127,7 +127,7 @@
           "moderate",
           "severe"
         ],
-        "description": "light: camina pero resbala o tiene miedo al suelo; moderate: se fatiga rápido, debilidad trasera o le cuestan las escaleras; severe: ya no puede levantarse solo o perdió el uso de las patas traseras."
+        "description": "light: camina pero resbala o tiene miedo al suelo; moderate: se fatiga rapido, debilidad trasera o le cuestan las escaleras; severe: ya no puede levantarse solo o perdio el uso de las patas traseras."
       },
       "handling": {
         "type": "string",

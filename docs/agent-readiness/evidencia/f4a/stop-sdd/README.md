@@ -14,6 +14,10 @@ Fecha 2026-10-12. Regla del encargo y de la SDD §8: máximo dos revisiones del 
 
 Chrome for Testing 155.0.8059.39 + `WebMCPTesting` omite `inputSchema` en `WebMCP.toolsAdded` cuando alguna cadena del schema sólo usa caracteres no ASCII del rango Latin-1 (p. ej. «Hidratación»); con ASCII o con un carácter fuera de Latin-1 en la misma cadena (emoji) sí lo envía; `getTools()` en la página siempre devuelve el schema completo. [Script](probe-b4.mjs) y [salida](probe-b4.out.txt). Los cuatro schemas del anexo F4A tienen descripciones en español con acentos, de modo que C4A-08/P4A-02 tal como están escritos no pueden pasar. Además es un riesgo de interoperabilidad: no se sabe si el canal del navegador hacia su agente comparte esa serialización.
 
-## Decisión pendiente del propietario
+## Resolución
+
+2026-10-12: el propietario eligió la opción recomendada (a) y autorizó continuar. Se abre un [ciclo 2 de SDD](../ciclo2/README.md) con presupuesto propio de dos revisiones del mismo auditor; este STOP y sus informes se conservan sin cambios.
+
+## Decisión pendiente del propietario (histórico)
 
 El auditor propone dos salidas documentales, ambas pequeñas: (a) cadenas de `inputSchema` sin caracteres Latin-1 no ASCII (ASCII o sin `description`) y registrar la restricción de Chrome 155; (b) verificar `inputSchema` vía `getTools()` y registrar la omisión CDP como riesgo. La opción (a) también mitiga el riesgo de interoperabilidad. Reanudar requiere decisión expresa del propietario sobre cómo continuar (nuevo ciclo de SDD con nuevo presupuesto de revisión o excepción explícita); este STOP no la presupone.
