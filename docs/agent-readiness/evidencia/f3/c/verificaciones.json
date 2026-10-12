@@ -1,0 +1,218 @@
+[
+  {
+    "name": "sync",
+    "argv": [
+      "npx",
+      "--no-install",
+      "astro",
+      "sync"
+    ],
+    "exitCode": 0,
+    "seconds": 3.4
+  },
+  {
+    "name": "check",
+    "argv": [
+      "npx",
+      "--no-install",
+      "astro",
+      "check"
+    ],
+    "exitCode": 0,
+    "seconds": 14.51
+  },
+  {
+    "name": "specs",
+    "argv": [
+      "node",
+      "scripts/audit-specs-migracion.mjs"
+    ],
+    "exitCode": 0,
+    "seconds": 0.06
+  },
+  {
+    "name": "project-tests",
+    "argv": [
+      "npm",
+      "test"
+    ],
+    "exitCode": 0,
+    "seconds": 1.38
+  },
+  {
+    "name": "offline-tests",
+    "argv": [
+      "bash",
+      "-c",
+      "node --test tests/agent-readiness/*.test.mjs"
+    ],
+    "exitCode": 0,
+    "seconds": 6.72
+  },
+  {
+    "name": "negotiation",
+    "argv": [
+      "node",
+      "--import",
+      "tsx",
+      "--test",
+      "tests/agent-readiness/negotiation.test.ts"
+    ],
+    "exitCode": 0,
+    "seconds": 0.41
+  },
+  {
+    "name": "runtime",
+    "argv": [
+      "node",
+      "--import",
+      "tsx",
+      "tests/agent-readiness/f3-runtime.test.ts"
+    ],
+    "exitCode": 0,
+    "seconds": 0.65
+  },
+  {
+    "name": "discovery-detailed",
+    "argv": [
+      "node",
+      "tests/agent-readiness/f3-discovery.test.mjs"
+    ],
+    "exitCode": 0,
+    "seconds": 1.23
+  },
+  {
+    "name": "build",
+    "argv": [
+      "npx",
+      "--no-install",
+      "astro",
+      "build"
+    ],
+    "exitCode": 0,
+    "seconds": 10.73
+  },
+  {
+    "name": "inventory",
+    "argv": [
+      "node",
+      "scripts/agent-readiness/index.mjs",
+      "inventory",
+      "--build-dir",
+      "dist",
+      "--out-dir",
+      "/workspace/f3c-evidence/inventory"
+    ],
+    "exitCode": 0,
+    "seconds": 0.48
+  },
+  {
+    "name": "discovery",
+    "argv": [
+      "node",
+      "scripts/agent-readiness/discovery.mjs",
+      "check",
+      "--build-dir",
+      "dist"
+    ],
+    "exitCode": 0,
+    "seconds": 0.5
+  },
+  {
+    "name": "projection",
+    "argv": [
+      "node",
+      "scripts/agent-readiness/projection.mjs",
+      "check",
+      "--build-dir",
+      "dist"
+    ],
+    "exitCode": 0,
+    "seconds": 0.79
+  },
+  {
+    "name": "agent-api",
+    "argv": [
+      "node",
+      "scripts/agent-readiness/agent-api.mjs",
+      "check",
+      "--build-dir",
+      "dist"
+    ],
+    "exitCode": 0,
+    "seconds": 1.65
+  },
+  {
+    "name": "routing",
+    "argv": [
+      "node",
+      "scripts/agent-readiness/projection.mjs",
+      "check-routing",
+      "--build-dir",
+      "dist"
+    ],
+    "exitCode": 0,
+    "seconds": 1.21
+  },
+  {
+    "name": "growth",
+    "argv": [
+      "node",
+      "--test",
+      "tests/agent-readiness/projection-growth.mjs"
+    ],
+    "exitCode": 0,
+    "seconds": 7.93
+  },
+  {
+    "name": "semantic",
+    "argv": [
+      "node",
+      "tests/agent-readiness/projection-semantic.mjs",
+      "dist"
+    ],
+    "exitCode": 0,
+    "seconds": 1.98
+  },
+  {
+    "name": "worker-types",
+    "argv": [
+      "npx",
+      "--no-install",
+      "wrangler",
+      "types",
+      "--env-file",
+      "wrangler-types.env",
+      "--strict-vars=false"
+    ],
+    "exitCode": 0,
+    "seconds": 7.15
+  },
+  {
+    "name": "worker-types-diff",
+    "argv": [
+      "git",
+      "diff",
+      "--exit-code",
+      "--",
+      "worker-configuration.d.ts"
+    ],
+    "exitCode": 0,
+    "seconds": 0.01
+  },
+  {
+    "name": "dry-run",
+    "argv": [
+      "npx",
+      "--no-install",
+      "wrangler",
+      "deploy",
+      "--config",
+      "dist/server/wrangler.json",
+      "--dry-run",
+      "--outdir=/tmp/f3c-dry-run"
+    ],
+    "exitCode": 0,
+    "seconds": 6.93
+  }
+]
