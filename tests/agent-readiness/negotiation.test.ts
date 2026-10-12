@@ -10,6 +10,13 @@ import {
 } from '../../src/lib/agent-content/runtime';
 
 const HEX = 'a'.repeat(64);
+const DISCOVERY_LINK = [
+  '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"',
+  '<https://cuidatuperroviejo.com/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
+  '<https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json"',
+  '<https://cuidatuperroviejo.com/.well-known/ard.json>; rel="ard"; type="application/json"',
+  '<https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json"',
+].join(', ');
 
 async function indexFor(documents: AgentDocument[]): Promise<AgentIndex> {
   const rows = documents.map((doc) => [doc.documentId, doc.canonicalPath, doc.markdownSha256]);
@@ -186,7 +193,7 @@ test('canonical negotiation uses fixed ASSETS requests, ignores query, adds poli
   assert.equal(md.headers.get('Content-Type'), 'text/markdown; charset=utf-8');
   assert.equal(md.headers.get('Cache-Control'), 'private, no-store');
   assert.equal(md.headers.get('Vary'), 'Accept-Encoding, Accept');
-  assert.equal(md.headers.get('Link'), '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"');
+  assert.equal(md.headers.get('Link'), DISCOVERY_LINK);
   assert.equal(md.headers.get('X-Content-Type-Options'), 'nosniff');
   assert.equal(md.headers.get('Referrer-Policy'), 'strict-origin-when-cross-origin');
   assert.equal(md.headers.get('Permissions-Policy'), 'geolocation=(), microphone=(), camera=()');
@@ -212,7 +219,7 @@ test('canonical negotiation uses fixed ASSETS requests, ignores query, adds poli
   assert.equal(conditional.headers.get('Content-Length'), null);
   assert.equal(conditional.headers.get('Cache-Control'), 'private, no-store');
   assert.equal(conditional.headers.get('Vary'), 'Accept-Encoding, Accept');
-  assert.equal(conditional.headers.get('Link'), '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"');
+  assert.equal(conditional.headers.get('Link'), DISCOVERY_LINK);
   assert.equal(conditional.headers.get('X-Content-Type-Options'), 'nosniff');
   assert.equal(seen[3]?.headers.get('If-None-Match'), '"md-v1"');
 
@@ -258,7 +265,7 @@ test('selected HTML and Markdown use their own weak/list/wildcard validators for
         assert.equal(response.headers.get('ETag'), selected.tag);
         assert.equal(response.headers.get('Cache-Control'), 'private, no-store');
         assert.equal(response.headers.get('Vary'), 'Accept-Encoding, Accept');
-        assert.equal(response.headers.get('Link'), '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"');
+        assert.equal(response.headers.get('Link'), DISCOVERY_LINK);
         assert.equal(response.headers.get('X-Content-Type-Options'), 'nosniff');
         if (expectedStatus === 304) assert.equal(response.headers.get('Content-Length'), null);
         else assert.equal(response.headers.get('Content-Length'), String(new TextEncoder().encode(selected.body).byteLength));

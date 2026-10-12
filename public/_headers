@@ -16,8 +16,43 @@
 /agent-content/v1/documents/*.md
   Content-Type: text/markdown; charset=utf-8
 
+/agent-api/v1/query-index.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: no-store
+  Access-Control-Allow-Origin: *
+
+/agent-api/v1/openapi.json
+  Content-Type: application/vnd.oai.openapi+json;version=3.1
+  Cache-Control: no-store
+  Access-Control-Allow-Origin: *
+
+/.well-known/api-catalog
+  Content-Type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
+  Cache-Control: no-store
+  Access-Control-Allow-Origin: *
+
+/.well-known/agent-skills/index.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: no-store
+  Access-Control-Allow-Origin: *
+
+/.well-known/agent-skills/buscar-leer-citar/SKILL.md
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: no-store
+  Access-Control-Allow-Origin: *
+
+/.well-known/ard.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: no-store
+  Access-Control-Allow-Origin: *
+
+/.well-known/ai-catalog.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: no-store
+  Access-Control-Allow-Origin: *
+
 /*
-  Link: <https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"
+  Link: <https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel="ard"; type="application/json", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json"
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()

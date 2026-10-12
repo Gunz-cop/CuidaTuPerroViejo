@@ -1,0 +1,51 @@
+--- a/docs/agent-readiness/evidencia/f3/c/verificar-superficies.mjs
++++ b/verificar-produccion.mjs
+@@ -1,4 +1,4 @@
+-// Gate finito F3C, local o preview fija con recibo. Sin retries ni redirects seguidos.
++// Gate finito F3C en producción con recibo externo. Sin retries ni redirects seguidos.
+ import assert from 'node:assert/strict';
+ import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
+ import { resolve, join } from 'node:path';
+@@ -7,21 +7,23 @@
+ import Ajv2020 from 'ajv/dist/2020.js';
+ 
+ const [origin, output, receiptPath] = process.argv.slice(2);
+-assert.ok(origin && output, 'Uso: node verificar-superficies.mjs ORIGIN OUT [RECEIPT]');
++assert.ok(origin && output && receiptPath, 'Uso: node verificar-produccion.mjs ORIGIN OUT RECEIPT');
+ const url = new URL(origin); assert.equal(url.origin, origin);
+-const local = ['127.0.0.1', 'localhost'].includes(url.hostname);
++assert.equal(origin, 'https://cuidatuperroviejo.com', 'solo producción canónica; local y preview prohibidos');
+ const out = resolve(output); await mkdir(out, { recursive: true });
+ const commit = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+ const tree = execFileSync('git', ['rev-parse', 'HEAD^{tree}'], { encoding: 'utf8' }).trim();
+ assert.equal(execFileSync('git', ['status', '--porcelain'], { encoding: 'utf8' }), '', 'entrega congelada');
+-let receipt = null;
+-if (!local) {
+-  assert.equal(url.protocol, 'https:'); assert.match(url.hostname, /^[a-f0-9]+-cuidatuperroviejo\.g1721m\.workers\.dev$/u);
+-  assert.ok(receiptPath, 'preview requiere recibo independiente');
+-  receipt = JSON.parse(await readFile(receiptPath));
+-  assert.equal(receipt.commit, commit); assert.equal(receipt.tree, tree);
+-  assert.equal(receipt.ci.conclusion, 'success'); assert.equal(receipt.preview.commitPreviewUrl, origin);
+-}
++const receipt = JSON.parse(await readFile(receiptPath));
++assert.equal(receipt.commit, commit); assert.equal(receipt.tree, tree);
++assert.equal(receipt.ci.conclusion, 'success');
++assert.equal(receipt.authorization.commit, commit);
++assert.equal(receipt.authorization.scope, 'production-and-P3');
++assert.equal(receipt.production.origin, origin);
++assert.equal(receipt.production.commit, commit);
++assert.equal(receipt.production.branch, 'main');
++assert.equal(receipt.production.conclusion, 'success');
++assert.ok(Number.isInteger(receipt.production.workersCheckId));
+ const root = resolve('dist/client');
+ const sha = (value) => createHash('sha256').update(value).digest('hex');
+ const readAsset = (path) => readFile(join(root, path));
+@@ -48,7 +50,7 @@
+ ]);
+ const mime = (value) => value?.split(';').map((part) => part.trim()).join(';');
+ const records = [], documents = [], journeys = [], conditionals = [];
+-const state = { commit, tree, origin, mode: local ? 'workerd-local' : 'commit-preview', receipt, corpusSha256: index.corpusSha256, records, documents, journeys, conditionals, result: 'RUNNING' };
++const state = { commit, tree, origin, mode: 'production', receipt, corpusSha256: index.corpusSha256, records, documents, journeys, conditionals, result: 'RUNNING' };
+ async function save() { await writeFile(join(out, 'manifest-private.json'), JSON.stringify(state, null, 2) + '\n'); }
+ async function request(path, { method = 'GET', status = 200, headers = {}, shared = true, api = false, asset = false, schemaName } = {}) {
+   assert.ok(path.startsWith('/') && !path.startsWith('//'));

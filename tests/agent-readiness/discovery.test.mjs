@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promis
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { pathToFileURL } from 'node:url';
-import { discoveryIntegration, runDiscoveryCheck, serializeLlms } from '../../scripts/agent-readiness/discovery.mjs';
+import { discoveryIntegration, runDiscoveryCheck, serializeLlms, F3_ASSET_TYPES, F3_LLMS_SECTION } from '../../scripts/agent-readiness/discovery.mjs';
 import { inventory } from '../../scripts/agent-readiness/inventory.mjs';
 
 const ORIGIN = 'https://cuidatuperroviejo.com';
@@ -44,7 +44,13 @@ async function makeValidBuild(t) {
   const inventoryOut = join(root, 'inventory');
   assert.equal(await inventory(build, inventoryOut), 0);
   const inventoryData = JSON.parse(await readFile(join(inventoryOut, 'inventory.json'), 'utf8'));
-  await writeFile(join(assets, 'llms.txt'), serializeLlms(inventoryData));
+  // This fixture exercises discovery's F1+F3 transport/llms check. Artifact
+  // schemas and real bytes remain covered separately by the F3 generation suite.
+  for (const path of F3_ASSET_TYPES.keys()) {
+    await mkdir(join(assets, path, '..'), { recursive: true });
+    await writeFile(join(assets, path), 'fixture de destino generado\n');
+  }
+  await writeFile(join(assets, 'llms.txt'), Buffer.concat([serializeLlms(inventoryData), Buffer.from(F3_LLMS_SECTION)]));
   return { root, build, assets, inventoryData };
 }
 

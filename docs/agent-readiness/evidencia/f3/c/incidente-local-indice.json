@@ -1,0 +1,32 @@
+{
+  "result": "FAIL/STOP",
+  "cause": "Previous own local server survived session close; new workerd failed inspector bind. Gate reached old instance after dist rebuild. No public HTTP performed.",
+  "commit": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+  "files": [
+    {
+      "path": "workerd/manifest-private.json",
+      "bytes": 1779,
+      "sha256": "08bcb37d7a7d7c08e0ae7b954316225eacfbfe61e1ffe2a4f203a01fb3c201ae"
+    },
+    {
+      "path": "workerd/001.body",
+      "bytes": 37,
+      "sha256": "763ce9c206d57dbc240314521af33125e8850245d373ee0f6e7c5f5834cc6cc1"
+    },
+    {
+      "path": "workerd-server.log",
+      "bytes": 12242,
+      "sha256": "8865dcf4c60c4e99dfcbc1000b53adddc36e9514353e8d10e470faf52ee7bd9a"
+    },
+    {
+      "path": "attempt-1/workerd-server.log",
+      "bytes": 21438,
+      "sha256": "990b7f21c08461a8f322b5272b1f339fe4328b1e952291cda52c4283630e77b4"
+    },
+    {
+      "path": "local-conflict/processes.json",
+      "bytes": 1835,
+      "sha256": "6bf9e721cb1a1732e21b9eb33a9b17adf768a279e74adf86a83743a29284dadb"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Corrección de aislamiento del test C antes de auditoría
+
+Snapshot inicial `1c7c25c9b643544523f9c0c023f91f13fc8c586f`, tree `dc0f89e61e37fd4fbb9dac0e1e744009676426e7`: los19 gates locales y workerd117 peticiones/28 documentos/dos recorridos pasaron; CI [38174586480](https://github.com/Gunz-cop/CuidaTuPerroViejo/actions/runs/38174586480), job114574136418, falló en la suite offline. No se emitieron requests públicos ni se inició auditoría (contador C0/5).
+
+La prueba F1 «hook real falla sin sitemap, no escribe llms y limpia su scratch» compara los directorios `ctpv-f1-discovery-*` de tmp antes y después. El nuevo archivo C ejecutaba el mismo helper en un proceso paralelo. La captura de F1 incluía un directorio temporal ajeno que C eliminó correctamente antes de la segunda lectura: esperado `[ctpv-f1-discovery-Wx22L4]`, observado `[]`. Los otros59 tests pasaron. Es interferencia introducida por la nueva suite, no un cambio de contrato o un error HTTP que deba ocultarse con retry.
+
+La corrección aísla TMPDIR dentro del proceso de tests C en una carpeta exclusiva y la restaura/elimina al terminar. No modifica ni relaja la prueba F1 de limpieza, no serializa toda CI ni cambia comportamiento de producto. La suite offline vuelve a comprobarse con ejecución paralela. Este archivo entra en el nuevo snapshot antes de construirlo: los hashes del build/preview anterior no se reutilizan. Se conserva el intento inicial bajo `/workspace/f3c-evidence/attempt-1` y el log CI original con digest. No se reejecuta la CI fallida; el nuevo commit obtiene su propio run.

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "f3-publication-execution/1",
+  "recordedAt": "2026-10-12T12:50:51.369706+00:00",
+  "commit": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+  "tree": "add06deb2647988846525fcfbeb5bb6b754b7006",
+  "source": "Registro del coordinador de ejecuciones observadas; no sustituye capturas originales",
+  "http": {
+    "command": "NODE_USE_ENV_PROXY=1 node /workspace/f3-publicacion-evidence/verificar-produccion.mjs https://cuidatuperroviejo.com /workspace/f3-publicacion-desbloqueo/produccion /workspace/f3-publicacion-desbloqueo/receipt-produccion.json",
+    "exitCode": 0,
+    "result": "PASS",
+    "requests": 117,
+    "documents": 28,
+    "journeys": 2,
+    "attempts": 1
+  },
+  "scans": [
+    {
+      "profile": "content",
+      "command": "NODE_USE_ENV_PROXY=1 node scripts/agent-readiness/index.mjs scan --url https://cuidatuperroviejo.com --profile content --out-dir /workspace/f3-publicacion-desbloqueo/live-content",
+      "exitCode": 0,
+      "postAttempts": 1,
+      "state": "complete",
+      "score": 86,
+      "level": 5,
+      "counts": {
+        "pass": 6,
+        "fail": 1,
+        "neutral": 15,
+        "scoredTotal": 7
+      },
+      "deploymentCommit": null
+    },
+    {
+      "profile": "all-ui",
+      "command": "NODE_USE_ENV_PROXY=1 node scripts/agent-readiness/index.mjs scan --url https://cuidatuperroviejo.com --profile all-ui --out-dir /workspace/f3-publicacion-desbloqueo/live-all-ui",
+      "exitCode": 0,
+      "postAttempts": 1,
+      "state": "complete",
+      "score": 60,
+      "level": 4,
+      "counts": {
+        "pass": 9,
+        "fail": 6,
+        "neutral": 7,
+        "scoredTotal": 15
+      },
+      "deploymentCommit": null
+    }
+  ],
+  "comparisons": [
+    {
+      "profile": "content",
+      "exitCode": 0,
+      "comparable": true,
+      "delta": 0,
+      "changes": []
+    },
+    {
+      "profile": "all-ui",
+      "exitCode": 0,
+      "comparable": true,
+      "delta": 20,
+      "changes": [
+        {
+          "category": "discovery",
+          "id": "agentSkills",
+          "beforeStatus": "fail",
+          "afterStatus": "pass"
+        },
+        {
+          "category": "discovery",
+          "id": "apiCatalog",
+          "beforeStatus": "fail",
+          "afterStatus": "pass"
+        },
+        {
+          "category": "discovery",
+          "id": "ard",
+          "beforeStatus": "fail",
+          "afterStatus": "pass"
+        }
+      ]
+    }
+  ],
+  "policy": "search=yes, ai-input=yes, ai-train=no"
+}

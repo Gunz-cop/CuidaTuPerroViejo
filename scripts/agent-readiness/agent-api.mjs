@@ -4,6 +4,7 @@ import { mkdir, readFile, readdir, rename, rm, stat, writeFile } from 'node:fs/p
 import { dirname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
+import { appendInterfaces, checkDiscoveryBuild } from './discovery.mjs';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { gfm } from 'micromark-extension-gfm';
 import { gfmFromMarkdown } from 'mdast-util-gfm';
@@ -484,6 +485,7 @@ export async function runCheck(args) {
   try {
     const buildDir = parseCheckArgs(args);
     const result = await checkArtifacts(buildDir);
+    await checkDiscoveryBuild(buildDir);
     process.stdout.write(`OK: query-index y contratos F3 verificados sin modificar assets (${result.assets.queryIndex.length} bytes de índice).\n`);
     return 0;
   } catch (error) {
@@ -503,6 +505,7 @@ export function agentApiIntegration() {
         const buildDir = fileURLToPath(config.build.client);
         const result = await writeArtifacts(buildDir);
         if (resolve(result.assetRoot) !== resolve(fileURLToPath(config.build.client))) fail('F3A assets de build no coinciden con config.build.client.', 1);
+        await appendInterfaces(result.assetRoot);
         logger.info(`Artifacts F3A generados: ${result.source.documents.length} documentos, ${result.assets.queryIndex.length} bytes de query-index.`);
       },
     },

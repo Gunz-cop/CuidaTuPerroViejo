@@ -1,0 +1,17 @@
+[
+  {
+    "command": "npm ci --include=dev --cache /tmp/f3-publicacion-npm",
+    "exitCode": 0,
+    "log": "npm-ci.log"
+  },
+  {
+    "command": "npx --no-install astro build",
+    "exitCode": 0,
+    "log": "build.log"
+  },
+  {
+    "command": "node scripts/agent-readiness/agent-api.mjs check --build-dir dist",
+    "exitCode": 0,
+    "stdout": "OK: query-index y contratos F3 verificados sin modificar assets (585422 bytes de \u00edndice)."
+  }
+]

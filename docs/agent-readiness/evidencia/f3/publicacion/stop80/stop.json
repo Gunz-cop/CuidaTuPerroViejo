@@ -1,0 +1,41 @@
+{
+  "result": "STOP",
+  "gate": "P3 admission before first production HTTP",
+  "reason": "No completed/success production Workers receipt or VersionID after authorized fast-forward. Check remains in_progress in fresh GitHub observation.",
+  "candidateCommit": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+  "candidateTree": "add06deb2647988846525fcfbeb5bb6b754b7006",
+  "mainBefore": "d2bd342050811d41ee212730cb11fe07783994bd",
+  "mainAfter": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+  "pushEndedAt": "2026-10-12T02:26:22.032214+00:00",
+  "workersCheck": {
+    "id": 114637987659,
+    "startedAt": "2026-10-12T02:26:25Z",
+    "status": "in_progress",
+    "conclusion": null,
+    "completedAt": null,
+    "versionId": null
+  },
+  "freshObservation": {
+    "path": "production-check-observation-1791788013.json",
+    "observedAt": "2026-10-12T06:53:34.582246+00:00",
+    "responseDate": "Mon, 12 Oct 2026 06:53:34 GMT",
+    "bytes": 7018,
+    "sha256": "c4a744808fb0ce614613341bbe9c9d13752f96ae505d8c2b5bfe7d5eb5f778ac"
+  },
+  "suite": {
+    "id": 103426668387,
+    "headBranchObserved": "agent-ready/f3-c",
+    "limitation": "Suite reused for same SHA; cannot record this field as main or use it alone for production attribution."
+  },
+  "productionHttpRequests": 0,
+  "evaluatorPostRequests": 0,
+  "P3-01": "not executed; prerequisite blocked",
+  "P3-02": "not executed; prerequisite blocked",
+  "P3-03": "not executed; prerequisite blocked",
+  "codeAuditCounter": "C PASS R1/5 unchanged",
+  "buildRetried": false,
+  "extraMainPush": false,
+  "rollbackExecuted": false,
+  "recordedAt": "2026-10-12T06:56:04.812738+00:00",
+  "bug": "https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/80"
+}

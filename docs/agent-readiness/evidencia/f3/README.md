@@ -1,6 +1,8 @@
 # Evidencia y documentos F3
 
-Estado2026-10-09: autoría documental en rama `agent-ready/f3-sdd`, base67dacfec405935567f71b403cd80a56f5aebe952/tree d024a161e85b32c1cc783e1db9886c7ffa1e6d76. Pendiente de auditoría independiente y ratificación técnica. Este paquete no prueba producto F3 implementado, preview/deploy, PASS propio ni score nuevo.
+Estado vigente 2026-10-12: **F3 publicada y aceptada**, [resultado](publicacion/cierre/resultado.md), [auditoría PASS](publicacion/cierre/auditoria-p3.md) y [ratificación](publicacion/cierre/cierre-arquitectonico.md). 86 contenido / 60 general, nivel 4 general; sin regresiones. Producto main aad2a6624c24d7425c5ad5329b82c77a8a86b619 y cierre documental son identidades separadas. Los párrafos siguientes conservan el contexto de autoría inicial.
+
+Estado histórico de autoría 2026-10-09: autoría documental en rama `agent-ready/f3-sdd`, base67dacfec405935567f71b403cd80a56f5aebe952/tree d024a161e85b32c1cc783e1db9886c7ffa1e6d76. Pendiente de auditoría independiente y ratificación técnica. Este paquete no prueba producto F3 implementado, preview/deploy, PASS propio ni score nuevo.
 
 - [Decisiones](decisiones.md) y [fuentes primarias/manifest](referencias/README.md).
 - [Schemas/OpenAPI y artifacts normativos](contratos/README.md).

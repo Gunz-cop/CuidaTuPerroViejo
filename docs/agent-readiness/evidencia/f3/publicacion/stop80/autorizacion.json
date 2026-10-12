@@ -1,0 +1,15 @@
+{
+  "userInstruction": "Autorizo",
+  "scope": "production-and-P3",
+  "commit": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+  "tree": "add06deb2647988846525fcfbeb5bb6b754b7006",
+  "baseMain": "d2bd342050811d41ee212730cb11fe07783994bd",
+  "proposal": "https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/79",
+  "method": "fast-forward exact SHA without force",
+  "recordedAt": "2026-10-12T02:24:55.497281+00:00",
+  "subsequentUserInstruction": "Sigue hasta finalizar. Tienes mi autorización para cualquier push a main.",
+  "subsequentScope": "Pushes necesarios dentro del objetivo F3; no altera gates, contratos, STOP ni obligación de recibos de cada SHA.",
+  "initialAuthorizationIncludedRollback": false,
+  "subsequentAuthorizationIncludesNecessaryMainPushesWithinF3": true,
+  "effect": "La autorización posterior prevalece para pushes necesarios de F3; no elimina preparación, auditoría, identidad de versión, gates ni STOP. Ningún rollback se ha preparado o ejecutado."
+}
