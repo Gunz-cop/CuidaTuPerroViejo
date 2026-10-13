@@ -1,5 +1,5 @@
 {
-  "status": "Contrato documental para R2; no ejecución MCP",
+  "status": "Contrato documental para excepción R3; no ejecución MCP",
   "cases": [
     {
       "case": "version-fecha-no-soportada",
@@ -72,6 +72,47 @@
           "message": "Invalid request."
         }
       }
+    },
+    {
+      "case": "clientInfo-omitido-valido",
+      "headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json, text/event-stream",
+        "MCP-Protocol-Version": "2026-07-28",
+        "Mcp-Method": "server/discover"
+      },
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "server/discover",
+        "params": {
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+            "io.modelcontextprotocol/clientCapabilities": {}
+          }
+        }
+      },
+      "expectedStatus": 200,
+      "expectedResultSubset": {
+        "resultType": "complete",
+        "supportedVersions": [
+          "2026-07-28"
+        ],
+        "capabilities": {
+          "tools": {}
+        },
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "cuidatuperroviejo.com/guias-herramientas",
+            "version": "1.0.0"
+          }
+        }
+      },
+      "assertions": [
+        "No JSON-RPC error",
+        "Ausencia de clientInfo no rechaza ni modifica capabilities",
+        "El SDK puede añadir campos de resultado conformes a su schema; este subset no inventa valores de otros campos"
+      ]
     }
   ]
 }
