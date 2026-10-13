@@ -236,7 +236,7 @@ function validateSchemaSet(schema, openapi, capabilities) {
   const skill = capabilities.skills[0];
   if (skill.name !== 'buscar-leer-citar' || skill.description !== 'Busca guías de Cuida tu Perro Viejo, lee el contenido completo y cita su URL canónica y sus fuentes originales.' || skill.path !== '/.well-known/agent-skills/buscar-leer-citar/SKILL.md' || skill.urn !== 'urn:air:cuidatuperroviejo.com:skill:buscar-leer-citar') fail('CAPABILITIES_SKILL_INVALID');
   const expectedPaths = apiPaths;
-  if (openapi.openapi !== '3.1.1' || openapi.info?.version !== '1.1.0' || JSON.stringify(openapi.servers) !== JSON.stringify([{ url: SITE }]) || JSON.stringify(Object.keys(openapi.paths)) !== JSON.stringify(expectedPaths)) fail('OPENAPI_IDENTITY_OR_PATHS_INVALID');
+  if (openapi.openapi !== '3.1.1' || openapi.info?.version !== '1.2.0' || JSON.stringify(openapi.servers) !== JSON.stringify([{ url: SITE }]) || JSON.stringify(Object.keys(openapi.paths)) !== JSON.stringify(expectedPaths)) fail('OPENAPI_IDENTITY_OR_PATHS_INVALID');
   const methods = ['get', 'head', 'options'];
   const expectedIds = [
     ['listAgentDocuments', 'headAgentCatalog', 'optionsAgentCatalog'],

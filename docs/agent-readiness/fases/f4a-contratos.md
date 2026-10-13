@@ -1,5 +1,7 @@
 # Contratos normativos F4A v1
 
+> **Modificado por el [seguimiento F4A](f4a-seguimiento.md) (D33, 2026-10-13):** las franjas de calidad de vida pasan a mínimos exclusivos (`score > 50` good, `score > 35` acceptable), con vectores de frontera nuevos, OpenAPI `1.2.0` y el ejemplo normativo de todo 5 regenerado (`compromised`). Las reglas `>=` de §1.1 (franja) y de los ejemplos de §2 de este documento quedan sustituidas por las de esa SDD.
+
 Complemento obligatorio de la [SDD F4A](f4a-herramientas-webmcp.md). Todos los nombres, campos, textos y órdenes de este archivo son exactos. Constantes heredadas de [contratos F3](f3-contratos.md): `SITE=https://cuidatuperroviejo.com`, UTF-8 sin BOM, LF final, JSON emitido `JSON.stringify(value,null,2)+'\n'`, orden de campos igual al de la tabla correspondiente. Lo que este archivo no modifica de F3 sigue vigente sin cambios.
 
 ## 1. Fuente de verdad de las dos herramientas

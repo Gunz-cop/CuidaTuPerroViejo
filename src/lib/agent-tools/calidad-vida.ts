@@ -1,6 +1,6 @@
-// Escala HHHHHMM (contratos F4A §1.1). Datos y fórmula copiados sin cambios del
-// script de la página en la base eff4ce1: suma de siete criterios 0–10, máximo
-// 70, franjas >=50 buena y >=35 aceptable.
+// Escala HHHHHMM (contratos F4A §1.1). Datos y suma copiados sin cambios del
+// script de la página en la base eff4ce1: siete criterios 0–10, máximo 70.
+// Franjas con mínimos exclusivos (SDD seguimiento D33): >50 buena, >35 aceptable.
 import { SCHEMA_VERSION, SITE, requireExactKeys, requireInteger, type Guide, type ToolInfo } from './contract.ts';
 
 export const QUALITY_KEYS = ['hurt', 'hunger', 'hydration', 'hygiene', 'happiness', 'mobility', 'moreGoodDays'] as const;
@@ -66,8 +66,8 @@ export const QUALITY_TOOL: ToolInfo = {
 };
 
 export function qualityBand(score: number): QualityBand {
-  if (score >= THRESHOLDS.good) return 'good';
-  if (score >= THRESHOLDS.acceptable) return 'acceptable';
+  if (score > THRESHOLDS.good) return 'good';
+  if (score > THRESHOLDS.acceptable) return 'acceptable';
   return 'compromised';
 }
 

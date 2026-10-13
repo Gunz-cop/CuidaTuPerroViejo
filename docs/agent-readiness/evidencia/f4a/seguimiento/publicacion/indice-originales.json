@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "f4a-indice-originales/1",
+  "location": "privado: contenedor de la sesión coordinadora (scratchpad/prod3), no publicado",
+  "note": "Incluye response.raw.json de los scans; sólo se publica la copia curada. Contenedor efímero: el índice SHA-256 es la referencia durable.",
+  "files": [
+    {
+      "path": "c4a16-produccion.json",
+      "bytes": 6824,
+      "sha256": "e96638d4b716600c971bb9daf884d4ac311bc81696dc75cf4b147795111f19dd"
+    },
+    {
+      "path": "c4a17c-prod-chrome155.json",
+      "bytes": 1249,
+      "sha256": "7191e3dd88fe2251ada088a05e0c4fcac359e73ecd7b1914b02e1e019245dd5d"
+    },
+    {
+      "path": "c4a17c-prod-chromium141.json",
+      "bytes": 1237,
+      "sha256": "88ac4659ef92a47619efbed8e67085b308136b27d32ce5da06d2302e869f733b"
+    },
+    {
+      "path": "comparacion-all-ui.json",
+      "bytes": 689,
+      "sha256": "3a1adb622fccc9960c3f6a3f94ba58a9ec8137a1f48e9439402fa904552b5488"
+    },
+    {
+      "path": "comparacion-content.json",
+      "bytes": 689,
+      "sha256": "fa69e775fc9d981acc821c8a1b432350c23dc85ac2533cf308a9f14a83e85127"
+    },
+    {
+      "path": "convergencia.json",
+      "bytes": 467,
+      "sha256": "5f5b00f733a5a2ff20ca12570a34cd66dbab3236865ce94c1ef30032666a90f1"
+    },
+    {
+      "path": "http-matrix-produccion.json",
+      "bytes": 9921,
+      "sha256": "a30c883facef0161128c027b07cc506a71b0fcd482c06a0838e054467c066caf"
+    },
+    {
+      "path": "live-all-ui/manifest.json",
+      "bytes": 777,
+      "sha256": "5bfd643b2984b1d98d25373484e5caa3d721f77ec8fdb82cab20ae3b19b29d67"
+    },
+    {
+      "path": "live-all-ui/request.json",
+      "bytes": 307,
+      "sha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a"
+    },
+    {
+      "path": "live-all-ui/response-metadata.json",
+      "bytes": 163,
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062"
+    },
+    {
+      "path": "live-all-ui/response.raw.json",
+      "bytes": 49945,
+      "sha256": "21f26261178d45fbc98b8b673289d710bdc75e900b307c437aed12e87d740d10"
+    },
+    {
+      "path": "live-all-ui/summary.json",
+      "bytes": 7186,
+      "sha256": "9d75babca72c3a9a0614b2b96196f1637d103e4ee03a6666f8a39ff550578e8a"
+    },
+    {
+      "path": "live-content/manifest.json",
+      "bytes": 777,
+      "sha256": "4a1b2fb5bdd98ddb834502edb452856a71424f1f690cca4fabdada8dd4ace436"
+    },
+    {
+      "path": "live-content/request.json",
+      "bytes": 160,
+      "sha256": "94daf42c1ee9ecfce1528d303e4b19d35e7544d8d38b6ac72ff56436708d2c21"
+    },
+    {
+      "path": "live-content/response-metadata.json",
+      "bytes": 163,
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062"
+    },
+    {
+      "path": "live-content/response.raw.json",
+      "bytes": 43671,
+      "sha256": "6abb882dbcefae67d5b9f763b9c73b087d173b442fa50e28880e357dc30e39d1"
+    },
+    {
+      "path": "live-content/summary.json",
+      "bytes": 5623,
+      "sha256": "0d7de873263089fe723fc1a8c5ccccb6082348aa07c13af9f49ed21f71d3689b"
+    },
+    {
+      "path": "produccion-identidad.json",
+      "bytes": 9981,
+      "sha256": "9bc129e2e52a531ada2b71a0522d3b2bdd2f8c2209bfccfb157f4b74e61491b8"
+    },
+    {
+      "path": "run1-c4a16-produccion.json",
+      "bytes": 6826,
+      "sha256": "c1cc6537d331eb1e7587dcb84aa6897618b5339cba10efe0c572d34a5827e5b3"
+    },
+    {
+      "path": "run1-http-matrix-produccion.json",
+      "bytes": 9921,
+      "sha256": "a30c883facef0161128c027b07cc506a71b0fcd482c06a0838e054467c066caf"
+    },
+    {
+      "path": "run1-produccion-identidad.json",
+      "bytes": 9995,
+      "sha256": "99bd0ca08c1178218f6163195485d1b969bb3d26091cc520cbaa2733a7d2ba8a"
+    },
+    {
+      "path": "ui-parity-prod-chrome155-sin-api.json",
+      "bytes": 8505,
+      "sha256": "37aaca26540c0dbc1323ab840779b4415534fba3e61621d1f058e65cad1cb969"
+    },
+    {
+      "path": "ui-parity-prod-chromium141.json",
+      "bytes": 8505,
+      "sha256": "efb1e4ada1f30506df452c16cfa3acceac6602608219d7c1071be9c10b5cabf9"
+    },
+    {
+      "path": "webmcp-prod-chrome155-sin-api.json",
+      "bytes": 11419,
+      "sha256": "6c35c42ddad9f92202880e85c5ebb37ed67d0b7467899a218bc9682f1210325d"
+    },
+    {
+      "path": "webmcp-prod-chrome155-webmcp.json",
+      "bytes": 27989,
+      "sha256": "58f9098b693d2a7118929fbf35697a084333db2e43e373cea309f07187afdc56"
+    },
+    {
+      "path": "webmcp-prod-chromium141.json",
+      "bytes": 11419,
+      "sha256": "fa00242112ad9006ade30291f3a124094ad20ebd23f9dcc82a0cef1958057431"
+    }
+  ]
+}

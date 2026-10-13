@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "f4a-seguimiento-js-base/1",
+  "criterion": "C4A-17(c)",
+  "browser": "Chrome/141.0.7390.37",
+  "reference": {
+    "file": "/tmp/claude-0/-home-user-CuidaTuPerroViejo/39287a3f-e751-51a4-9cfa-4620bcf2575b/scratchpad/seg/ev/ref-aad2a66-chromium141.json",
+    "commit": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+    "baseUrl": "http://127.0.0.1:8823"
+  },
+  "candidate": {
+    "file": "/tmp/claude-0/-home-user-CuidaTuPerroViejo/39287a3f-e751-51a4-9cfa-4620bcf2575b/scratchpad/prod3/webmcp-prod-chromium141.json",
+    "commit": "cb8e10f1ead55ef0dafc666672cd3003252afc59",
+    "baseUrl": "https://cuidatuperroviejo.com"
+  },
+  "sameBrowser": true,
+  "pass": true,
+  "pages": [
+    {
+      "page": "/",
+      "reference": [
+        "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+      ],
+      "candidate": [
+        "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+      ],
+      "ok": true
+    },
+    {
+      "page": "/politica-editorial",
+      "reference": [
+        "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+      ],
+      "candidate": [
+        "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+      ],
+      "ok": true
+    }
+  ]
+}

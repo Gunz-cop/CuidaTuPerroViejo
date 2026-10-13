@@ -4,11 +4,14 @@
 //             tools en varias superficies, llamadas reales con WebMCP.invokeTool
 //             comparadas con la API, cancelación, errores y ausencia de efectos.
 // unsupported (navegador sin la API): carga sin excepciones, sin peticiones a la
-//             API y sin modelContext.
+//             API y sin modelContext; C4A-17: sólo pide el JS del cierre de
+//             imports estáticos de los <script src> fuera de la plantilla WebMCP.
+// En ambos modos registra los /_astro/*.js pedidos con el SHA-256 de su contenido.
 // Terceros (anuncios) se bloquean: sólo se permite el origen bajo prueba.
 //
 // Uso: node scripts/agent-readiness/webmcp-browser.mjs --chrome <bin> --base-url <url> --out <json>
 //        [--mode supported|unsupported] [--commit <sha>] [--schemas <json>]
+import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import { isDeepStrictEqual, parseArgs } from 'node:util';
 import { launchChrome, openPage } from './cdp.mjs';
@@ -25,6 +28,38 @@ const DESCRIPTIONS = {
 const INVALID = { schemaVersion: 'agent-api/1', error: { code: 'INVALID_REQUEST', message: 'Invalid request.' } };
 const KEYS = ['hurt', 'hunger', 'hydration', 'hygiene', 'happiness', 'mobility', 'moreGoodDays'];
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const TEMPLATE = /<template id="agent-tools-webmcp">([\s\S]*?)<\/template>/gu;
+const MODULE_SRC = /<script type="module" src="(\/_astro\/[^"]+\.js)"/gu;
+const STATIC_IMPORT = /(?:\bfrom\s*|\bimport\s*)["'](\.{1,2}\/[^"']+\.js)["']/gu;
+
+// C4A-17: cierre transitivo de imports estáticos (los import() dinámicos no cuentan),
+// calculado sobre el build servido.
+async function staticClosure(base, entries, cache) {
+  const seen = new Set();
+  const queue = [...entries];
+  while (queue.length) {
+    const path = queue.shift();
+    if (seen.has(path)) continue;
+    seen.add(path);
+    if (!cache.has(path)) cache.set(path, await (await fetch(base + path)).text());
+    for (const [, spec] of cache.get(path).matchAll(STATIC_IMPORT)) queue.push(new URL(spec, `https://x${path}`).pathname);
+  }
+  return seen;
+}
+
+async function scriptGraph(base, path, cache) {
+  const html = await (await fetch(base + path)).text();
+  const inside = [...html.matchAll(TEMPLATE)].flatMap(([, body]) => [...body.matchAll(MODULE_SRC)].map((m) => m[1]));
+  const outside = [...html.replace(TEMPLATE, '').matchAll(MODULE_SRC)].map((m) => m[1]);
+  const outsideClosure = await staticClosure(base, outside, cache);
+  const templateClosure = await staticClosure(base, inside, cache);
+  return { inside, outsideClosure, exclusive: [...templateClosure].filter((p) => !outsideClosure.has(p)).sort() };
+}
+
+async function jsRequested(base, requests) {
+  const paths = [...new Set(requests.map((r) => r.url).filter((u) => u.startsWith(`${base}/_astro/`) && u.endsWith('.js')).map((u) => u.slice(base.length)))].sort();
+  return Promise.all(paths.map(async (path) => ({ path, sha256: createHash('sha256').update(Buffer.from(await (await fetch(base + path)).arrayBuffer())).digest('hex') })));
+}
 
 function nextEvent(page, method, predicate = () => true, timeoutMs = 15000) {
   return new Promise((resolve, reject) => {
@@ -64,6 +99,8 @@ async function main() {
   const browser = await launchChrome(values.chrome, supported ? ['--enable-features=WebMCPTesting'] : []);
   const checks = [];
   const check = (id, name, ok, detail) => checks.push({ id, name, ok: Boolean(ok), ...(detail === undefined ? {} : { detail }) });
+  const scripts = {};
+  const chunkCache = new Map();
   let product = null;
   try {
     ({ product } = await browser.send('Browser.getVersion'));
@@ -81,6 +118,17 @@ async function main() {
       check(supported ? 'C4A-08' : 'C4A-11', `${path}: sin peticiones a /api/agent/v1 al cargar`, onLoadApi.length === 0, onLoadApi);
       check(supported ? 'C4A-08' : 'C4A-11', `${path}: sin excepciones de página`, state.exceptions.length === 0, state.exceptions);
       check('C4A-12', `${path}: sin atributos declarativos WebMCP`, await page.evaluate("document.querySelectorAll('[toolname],[tooldescription],[toolparamdescription],[toolautosubmit]').length") === 0);
+      const requested = await jsRequested(base, state.requests);
+      const graph = await scriptGraph(base, path, chunkCache);
+      const requestedPaths = requested.map((r) => r.path);
+      scripts[path] = { requested, expectedWithoutApi: [...graph.outsideClosure].sort(), template: graph.inside, templateOnly: graph.exclusive };
+      check(supported ? 'C4A-18' : 'C4A-17', `${path}: el adaptador WebMCP está en una plantilla inerte`, graph.inside.length === 1, graph.inside);
+      if (supported) check('C4A-18', `${path}: con API se carga el chunk de la plantilla`, graph.inside.every((p) => requestedPaths.includes(p)), requestedPaths);
+      else {
+        check('C4A-17', `${path}: JS pedido = cierre de imports estáticos de los <script src> fuera de la plantilla`, isDeepStrictEqual(requestedPaths, [...graph.outsideClosure].sort()), { requested: requestedPaths, expected: [...graph.outsideClosure].sort() });
+        const leaked = requestedPaths.filter((p) => graph.inside.includes(p) || graph.exclusive.includes(p));
+        check('C4A-17', `${path}: sin petición al chunk de la plantilla ni a módulos sólo suyos`, leaked.length === 0, { leaked, templateOnly: graph.exclusive });
+      }
       if (!supported) {
         const api = await page.evaluate("typeof document.modelContext + '/' + typeof navigator.modelContext");
         check('C4A-11', `${path}: navegador sin API WebMCP`, api === 'undefined/undefined', api);
@@ -104,7 +152,7 @@ async function main() {
     }
   } finally { await browser.close(); }
   const pass = checks.length > 0 && checks.every((c) => c.ok);
-  await writeFile(values.out, `${JSON.stringify({ schemaVersion: 'f4a-webmcp-browser/1', commit: values.commit ?? null, baseUrl: base, mode: values.mode, browser: product, flags: supported ? ['--enable-features=WebMCPTesting'] : [], pass, passed: checks.filter((c) => c.ok).length, total: checks.length, checks }, null, 2)}\n`);
+  await writeFile(values.out, `${JSON.stringify({ schemaVersion: 'f4a-webmcp-browser/1', commit: values.commit ?? null, baseUrl: base, mode: values.mode, browser: product, flags: supported ? ['--enable-features=WebMCPTesting'] : [], pass, passed: checks.filter((c) => c.ok).length, total: checks.length, checks, scripts }, null, 2)}\n`);
   process.stdout.write(`${pass ? 'PASS' : 'FAIL'}: ${checks.filter((c) => c.ok).length}/${checks.length} comprobaciones en ${product} (${values.mode}).\n`);
   return pass ? 0 : 2;
 }
@@ -138,8 +186,8 @@ async function invocations(page, state, base, frameId) {
   const apiRead = await api(`/api/agent/v1/documents/${id}?corpus=${apiSearch.corpusSha256}`);
   check('C4A-09', `read_guide ${id} con corpus = API (Markdown íntegro)`, read.status === 'Completed' && isDeepStrictEqual(read.output, apiRead), { status: read.status, markdownSha256: apiRead.document?.markdownSha256 });
 
-  // C4A-09: cálculos = API para extremos/umbrales y las seis combinaciones.
-  for (const v of [[0, 0, 0, 0, 0, 0, 0], [10, 10, 10, 10, 10, 10, 10], [4, 5, 5, 5, 5, 5, 5], [5, 5, 5, 5, 5, 5, 5], [10, 10, 10, 10, 9, 0, 0], [10, 10, 10, 10, 10, 0, 0], [7, 2, 9, 0, 6, 3, 8]]) {
+  // C4A-09/C4A-15: cálculos = API para extremos, fronteras 34/35/36/49/50/51 y las seis combinaciones.
+  for (const v of [[0, 0, 0, 0, 0, 0, 0], [10, 10, 10, 10, 10, 10, 10], [4, 5, 5, 5, 5, 5, 5], [5, 5, 5, 5, 5, 5, 5], [6, 5, 5, 5, 5, 5, 5], [10, 10, 10, 10, 9, 0, 0], [10, 10, 10, 10, 10, 0, 0], [10, 10, 10, 10, 10, 1, 0], [7, 2, 9, 0, 6, 3, 8]]) {
     const result = await invoke('evaluate_quality_of_life', Object.fromEntries(KEYS.map((k, i) => [k, v[i]])));
     const expected = await api(`/api/agent/v1/tools/calidad-vida?${KEYS.map((k, i) => `${k}=${v[i]}`).join('&')}`);
     check('C4A-09', `evaluate_quality_of_life [${v.join(',')}] = API`, result.status === 'Completed' && isDeepStrictEqual(result.output, expected), { score: result.output?.score, band: result.output?.band });

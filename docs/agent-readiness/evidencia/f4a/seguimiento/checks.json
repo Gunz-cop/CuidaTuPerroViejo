@@ -1,0 +1,186 @@
+[
+  {
+    "name": "sync",
+    "command": "npx --no-install astro sync",
+    "exitCode": 0,
+    "seconds": 5.85,
+    "tail": [
+      "02:43:15 [content] Synced content",
+      "02:43:15 [types] Generated 1.95s",
+      "\u001b[33m▲ \u001b[43;33m[\u001b[43;30mWARNING\u001b[43;33m]\u001b[0m \u001b[1mProxy environment variables detected. We'll use your proxy for fetch requests.\u001b[0m"
+    ]
+  },
+  {
+    "name": "specs",
+    "command": "node scripts/audit-specs-migracion.mjs",
+    "exitCode": 0,
+    "seconds": 0.09,
+    "tail": [
+      "✓ 7 specs; comprobaciones de árbol sobre las que modifica esta rama"
+    ]
+  },
+  {
+    "name": "check",
+    "command": "npx --no-install astro check",
+    "exitCode": 0,
+    "seconds": 22.74,
+    "tail": [
+      "- 55 hints",
+      "",
+      "\u001b[33m▲ \u001b[43;33m[\u001b[43;30mWARNING\u001b[43;33m]\u001b[0m \u001b[1mProxy environment variables detected. We'll use your proxy for fetch requests.\u001b[0m"
+    ]
+  },
+  {
+    "name": "npm-test",
+    "command": "npm test",
+    "exitCode": 0,
+    "seconds": 50.32,
+    "tail": [
+      "# skipped 0",
+      "# todo 0",
+      "# duration_ms 49800.976832"
+    ]
+  },
+  {
+    "name": "offline-mjs",
+    "command": "node --test tests/agent-readiness/*.test.mjs",
+    "exitCode": 0,
+    "seconds": 5.59,
+    "tail": [
+      "# skipped 0",
+      "# todo 0",
+      "# duration_ms 5513.978258"
+    ]
+  },
+  {
+    "name": "f3-mjs",
+    "command": "node --test tests/agent-readiness/f3-*.test.mjs",
+    "exitCode": 0,
+    "seconds": 2.51,
+    "tail": [
+      "# skipped 0",
+      "# todo 0",
+      "# duration_ms 2425.721869"
+    ]
+  },
+  {
+    "name": "negotiation",
+    "command": "node --import tsx --test tests/agent-readiness/negotiation.test.ts",
+    "exitCode": 0,
+    "seconds": 0.72,
+    "tail": [
+      "# skipped 0",
+      "# todo 0",
+      "# duration_ms 622.3947"
+    ]
+  },
+  {
+    "name": "f3-runtime",
+    "command": "node --import tsx --test tests/agent-readiness/f3-runtime.test.ts",
+    "exitCode": 0,
+    "seconds": 1.27,
+    "tail": [
+      "# skipped 0",
+      "# todo 0",
+      "# duration_ms 1192.934595"
+    ]
+  },
+  {
+    "name": "build",
+    "command": "rm -rf dist && npx --no-install astro build",
+    "exitCode": 0,
+    "seconds": 15.98,
+    "tail": [
+      "",
+      "",
+      "\u001b[33m▲ \u001b[43;33m[\u001b[43;30mWARNING\u001b[43;33m]\u001b[0m \u001b[1mAI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.\u001b[0m"
+    ]
+  },
+  {
+    "name": "inventory",
+    "command": "node scripts/agent-readiness/index.mjs inventory --build-dir dist --out-dir \"$RUNNER_TEMP/inv\"",
+    "exitCode": 0,
+    "seconds": 0.81,
+    "tail": [
+      ""
+    ]
+  },
+  {
+    "name": "discovery",
+    "command": "node scripts/agent-readiness/discovery.mjs check --build-dir dist",
+    "exitCode": 0,
+    "seconds": 0.76,
+    "tail": [
+      "OK: prefijo llms F1, extensión F3, política y Link/MIME/CORS verificados sin modificar assets."
+    ]
+  },
+  {
+    "name": "projection",
+    "command": "node scripts/agent-readiness/projection.mjs check --build-dir dist",
+    "exitCode": 0,
+    "seconds": 1.23,
+    "tail": [
+      "OK: índice y Markdown F2 reproducidos byte por byte; conjunto exacto sin modificar assets."
+    ]
+  },
+  {
+    "name": "agent-api",
+    "command": "node scripts/agent-readiness/agent-api.mjs check --build-dir dist",
+    "exitCode": 0,
+    "seconds": 2.32,
+    "tail": [
+      "OK: query-index, contratos F3/F4A y datos de herramientas verificados sin modificar assets (585402 bytes de índice)."
+    ]
+  },
+  {
+    "name": "routing",
+    "command": "node scripts/agent-readiness/projection.mjs check-routing --build-dir dist",
+    "exitCode": 0,
+    "seconds": 1.92,
+    "tail": [
+      "OK: routing compilado exacto, entrypoint y bundle F2B verificados."
+    ]
+  },
+  {
+    "name": "growth",
+    "command": "node --test tests/agent-readiness/projection-growth.mjs",
+    "exitCode": 0,
+    "seconds": 13.09,
+    "tail": [
+      "# skipped 0",
+      "# todo 0",
+      "# duration_ms 13018.80235"
+    ]
+  },
+  {
+    "name": "semantic",
+    "command": "node tests/agent-readiness/projection-semantic.mjs dist",
+    "exitCode": 0,
+    "seconds": 3.4,
+    "tail": [
+      "PASS: independent Markdown/GFM semantic guard matched all 28 source documents and detected loss, duplication, reordering and link removal."
+    ]
+  },
+  {
+    "name": "worker-types",
+    "command": "npx --no-install wrangler types --env-file wrangler-types.env --strict-vars=false && git diff --exit-code -- worker-configuration.d.ts",
+    "exitCode": 0,
+    "seconds": 2.72,
+    "tail": [
+      "📣 Remember to rerun 'wrangler types' after you change your wrangler.jsonc file.",
+      "",
+      "\u001b[33m▲ \u001b[43;33m[\u001b[43;30mWARNING\u001b[43;33m]\u001b[0m \u001b[1mProxy environment variables detected. We'll use your proxy for fetch requests.\u001b[0m"
+    ]
+  },
+  {
+    "name": "dry-run",
+    "command": "npx --no-install wrangler deploy --config dist/server/wrangler.json --dry-run --outdir=\"$RUNNER_TEMP/dry\"",
+    "exitCode": 0,
+    "seconds": 2.78,
+    "tail": [
+      "",
+      "--dry-run: exiting now.",
+      "\u001b[33m▲ \u001b[43;33m[\u001b[43;30mWARNING\u001b[43;33m]\u001b[0m \u001b[1mProxy environment variables detected. We'll use your proxy for fetch requests.\u001b[0m"
+    ]
+  }
+]

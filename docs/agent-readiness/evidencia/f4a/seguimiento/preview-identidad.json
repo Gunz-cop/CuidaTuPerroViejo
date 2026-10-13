@@ -1,0 +1,243 @@
+{
+  "schemaVersion": "f4a-produccion/1",
+  "base": "https://70ec48bf-cuidatuperroviejo.g1721m.workers.dev",
+  "commit": "cb8e10f1ead55ef0dafc666672cd3003252afc59",
+  "recordedAt": "2026-10-13T02:49:45.169Z",
+  "pass": true,
+  "identity": {
+    "total": 22,
+    "ok": 22,
+    "files": [
+      {
+        "path": "agent-api/v1/openapi.json",
+        "url": "/agent-api/v1/openapi.json",
+        "status": 200,
+        "bytes": 173030,
+        "sha256": "099b719a4baa10379121626c8de7049f8b53766d09820390c1ada4e9ea9c6784",
+        "expectedSha256": "099b719a4baa10379121626c8de7049f8b53766d09820390c1ada4e9ea9c6784",
+        "ok": true
+      },
+      {
+        "path": "agent-api/v1/query-index.json",
+        "url": "/agent-api/v1/query-index.json",
+        "status": 200,
+        "bytes": 585402,
+        "sha256": "c3ef87c127aeb3f5330ae5ed7ea1fd935c142f9f8c0af54b66512fbfbf33943e",
+        "expectedSha256": "c3ef87c127aeb3f5330ae5ed7ea1fd935c142f9f8c0af54b66512fbfbf33943e",
+        "ok": true
+      },
+      {
+        "path": ".well-known/api-catalog",
+        "url": "/.well-known/api-catalog",
+        "status": 200,
+        "bytes": 1586,
+        "sha256": "2626485633fab0410025e60282f7058c79b7e92b67e74334a3eceda986759f35",
+        "expectedSha256": "2626485633fab0410025e60282f7058c79b7e92b67e74334a3eceda986759f35",
+        "ok": true
+      },
+      {
+        "path": ".well-known/ard.json",
+        "url": "/.well-known/ard.json",
+        "status": 200,
+        "bytes": 1583,
+        "sha256": "023ee2cb7a6e9459a16e55ab725e9b50f63438ff947af91f02f287f4a434cc55",
+        "expectedSha256": "023ee2cb7a6e9459a16e55ab725e9b50f63438ff947af91f02f287f4a434cc55",
+        "ok": true
+      },
+      {
+        "path": ".well-known/ai-catalog.json",
+        "url": "/.well-known/ai-catalog.json",
+        "status": 200,
+        "bytes": 1583,
+        "sha256": "023ee2cb7a6e9459a16e55ab725e9b50f63438ff947af91f02f287f4a434cc55",
+        "expectedSha256": "023ee2cb7a6e9459a16e55ab725e9b50f63438ff947af91f02f287f4a434cc55",
+        "ok": true
+      },
+      {
+        "path": ".well-known/agent-skills/index.json",
+        "url": "/.well-known/agent-skills/index.json",
+        "status": 200,
+        "bytes": 496,
+        "sha256": "3f1187d23c8a055ad6fd99703612e7c2bd317d60abad7b3bf4f012a81f97f2ac",
+        "expectedSha256": "3f1187d23c8a055ad6fd99703612e7c2bd317d60abad7b3bf4f012a81f97f2ac",
+        "ok": true
+      },
+      {
+        "path": ".well-known/agent-skills/buscar-leer-citar/SKILL.md",
+        "url": "/.well-known/agent-skills/buscar-leer-citar/SKILL.md",
+        "status": 200,
+        "bytes": 4141,
+        "sha256": "b5314a8bdda3ef81ee852d6c8b7861b3ea703fec48c70510cd03335711512331",
+        "expectedSha256": "b5314a8bdda3ef81ee852d6c8b7861b3ea703fec48c70510cd03335711512331",
+        "ok": true
+      },
+      {
+        "path": "llms.txt",
+        "url": "/llms.txt",
+        "status": 200,
+        "bytes": 4057,
+        "sha256": "a339e0cee1712840ebb6d725808eaeee33b26791cf101806d79a3ab4c647d0c4",
+        "expectedSha256": "a339e0cee1712840ebb6d725808eaeee33b26791cf101806d79a3ab4c647d0c4",
+        "ok": true
+      },
+      {
+        "path": "agent-content/v1/index.json",
+        "url": "/agent-content/v1/index.json",
+        "status": 200,
+        "bytes": 26284,
+        "sha256": "fcd6f94690d5a1c4814573bb7ab578615a064ed4080f581be2b1b1eaffbda111",
+        "expectedSha256": "fcd6f94690d5a1c4814573bb7ab578615a064ed4080f581be2b1b1eaffbda111",
+        "ok": true
+      },
+      {
+        "path": "agent-content/v1/documents/tool--calidad-vida.md",
+        "url": "/agent-content/v1/documents/tool--calidad-vida.md",
+        "status": 200,
+        "bytes": 5049,
+        "sha256": "0d79c5f7608a41f3955df62773fb9f5f4d0727f33702e97718358506ad5f0f9d",
+        "expectedSha256": "0d79c5f7608a41f3955df62773fb9f5f4d0727f33702e97718358506ad5f0f9d",
+        "ok": true
+      },
+      {
+        "path": "agent-content/v1/documents/tool--movilidad.md",
+        "url": "/agent-content/v1/documents/tool--movilidad.md",
+        "status": 200,
+        "bytes": 5899,
+        "sha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37",
+        "expectedSha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37",
+        "ok": true
+      },
+      {
+        "path": "herramientas/calculadora-calidad-vida-perros.html",
+        "url": "/herramientas/calculadora-calidad-vida-perros",
+        "status": 200,
+        "bytes": 60969,
+        "sha256": "5ed65d77e29a1013eb4194a2cff9f822c1e36c0fbd11329832164a79597fbd82",
+        "expectedSha256": "5ed65d77e29a1013eb4194a2cff9f822c1e36c0fbd11329832164a79597fbd82",
+        "ok": true
+      },
+      {
+        "path": "herramientas/selector-movilidad-perros-mayores.html",
+        "url": "/herramientas/selector-movilidad-perros-mayores",
+        "status": 200,
+        "bytes": 62312,
+        "sha256": "33257806578aeaf63a78c39add3abcf3f1b587e3c750f45021e0f674a29b7d10",
+        "expectedSha256": "33257806578aeaf63a78c39add3abcf3f1b587e3c750f45021e0f674a29b7d10",
+        "ok": true
+      },
+      {
+        "path": "index.html",
+        "url": "/",
+        "status": 200,
+        "bytes": 120037,
+        "sha256": "16c86a4d5edadd09f40a0f30a88b02d3868d1d52aa5501c70aa69ab2dea6b277",
+        "expectedSha256": "16c86a4d5edadd09f40a0f30a88b02d3868d1d52aa5501c70aa69ab2dea6b277",
+        "ok": true
+      },
+      {
+        "path": "_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.CZ3jEwtI.js",
+        "url": "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.CZ3jEwtI.js",
+        "status": 200,
+        "bytes": 6340,
+        "sha256": "3bc1cdf958d0c7fe84bb1a42e81ea6759188fde9228aad3295feef9251a44592",
+        "expectedSha256": "3bc1cdf958d0c7fe84bb1a42e81ea6759188fde9228aad3295feef9251a44592",
+        "ok": true
+      },
+      {
+        "path": "_astro/BaseLayout.VWxkXcFk.css",
+        "url": "/_astro/BaseLayout.VWxkXcFk.css",
+        "status": 200,
+        "bytes": 138524,
+        "sha256": "b23a2c33b943bfef6538f9800d75582eaa3c57f420664932eddbf03822d6ed11",
+        "expectedSha256": "b23a2c33b943bfef6538f9800d75582eaa3c57f420664932eddbf03822d6ed11",
+        "ok": true
+      },
+      {
+        "path": "_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "url": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "status": 200,
+        "bytes": 5732,
+        "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a",
+        "expectedSha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a",
+        "ok": true
+      },
+      {
+        "path": "_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+        "url": "/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+        "status": 200,
+        "bytes": 8059,
+        "sha256": "f766f22002d928c37aeb58a65e2222d7203623e13f8558d3079db1151d378357",
+        "expectedSha256": "f766f22002d928c37aeb58a65e2222d7203623e13f8558d3079db1151d378357",
+        "ok": true
+      },
+      {
+        "path": "_astro/calidad-vida.CkucuN4v.js",
+        "url": "/_astro/calidad-vida.CkucuN4v.js",
+        "status": 200,
+        "bytes": 3495,
+        "sha256": "6f3e16f3ed447234d5e7e3a7226f512283ab6a8b9e9727736e65f1876c5b0d38",
+        "expectedSha256": "6f3e16f3ed447234d5e7e3a7226f512283ab6a8b9e9727736e65f1876c5b0d38",
+        "ok": true
+      },
+      {
+        "path": "_astro/contract.Cu9QodcA.js",
+        "url": "/_astro/contract.Cu9QodcA.js",
+        "status": 200,
+        "bytes": 665,
+        "sha256": "512414df1c0c948fa3d24e3923aa17bfc45b1043459d0a1c083db6e1bb0f0e76",
+        "expectedSha256": "512414df1c0c948fa3d24e3923aa17bfc45b1043459d0a1c083db6e1bb0f0e76",
+        "ok": true
+      },
+      {
+        "path": "_astro/movilidad.B1WnJKyW.js",
+        "url": "/_astro/movilidad.B1WnJKyW.js",
+        "status": 200,
+        "bytes": 6235,
+        "sha256": "b0c7e640bdf4e223d602b4b9c04d24bc43dc63caa8923acaf92eddd7cd4b4e53",
+        "expectedSha256": "b0c7e640bdf4e223d602b4b9c04d24bc43dc63caa8923acaf92eddd7cd4b4e53",
+        "ok": true
+      },
+      {
+        "path": "_astro/selector-movilidad-perros-mayores.astro_astro_type_script_index_0_lang.DitUWyj1.js",
+        "url": "/_astro/selector-movilidad-perros-mayores.astro_astro_type_script_index_0_lang.DitUWyj1.js",
+        "status": 200,
+        "bytes": 8055,
+        "sha256": "d31a6bca32dbf847bbbbd6ae954d75e7be3be9bf57e3683645c9974f0c349361",
+        "expectedSha256": "d31a6bca32dbf847bbbbd6ae954d75e7be3be9bf57e3683645c9974f0c349361",
+        "ok": true
+      }
+    ]
+  },
+  "examples": [
+    {
+      "file": "ejemplo-calidad-vida-200.json",
+      "path": "/api/agent/v1/tools/calidad-vida?hurt=5&hunger=5&hydration=5&hygiene=5&happiness=5&mobility=5&moreGoodDays=5",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "cacheControl": "private, no-store",
+      "sha256": "ca81c5613812405491280a52c0050028794e2fca67542c2d75fe848ece9f8c01",
+      "expectedSha256": "ca81c5613812405491280a52c0050028794e2fca67542c2d75fe848ece9f8c01",
+      "ok": true
+    },
+    {
+      "file": "ejemplo-movilidad-200.json",
+      "path": "/api/agent/v1/tools/movilidad?level=severe&handling=stressed",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "cacheControl": "private, no-store",
+      "sha256": "1218a371c46ba732eda19e8d741d59d7084c5ad7bd6982d0ba570ffc830b8e14",
+      "expectedSha256": "1218a371c46ba732eda19e8d741d59d7084c5ad7bd6982d0ba570ffc830b8e14",
+      "ok": true
+    }
+  ],
+  "policy": {
+    "status": 200,
+    "sha256": "1804644940a3594aa6b1b52db1b5905a995c7364fbc7174b0909b9fa8e1511f5",
+    "expectedSha256": "1804644940a3594aa6b1b52db1b5905a995c7364fbc7174b0909b9fa8e1511f5",
+    "signals": [
+      "Content-Signal: search=yes, ai-input=yes, ai-train=no"
+    ],
+    "ok": true,
+    "byteIdentical": true
+  }
+}

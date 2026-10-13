@@ -16,7 +16,7 @@ Esta sesión es responsable de arquitectura, planificación, especificaciones y 
 5. [Evidencia](evidencia/README.md): respuestas originales, solicitudes y referencias.
 6. [SDD F1](fases/f1-politica-y-descubrimiento.md): publicada y verificada.
 7. [SDD F2](fases/f2-lectura-markdown.md) y [contratos F2](fases/f2-contratos.md): proyección y negociación en entregas consecutivas; estado y auditorías en su encabezado.
-8. [SDD F4A](fases/f4a-herramientas-webmcp.md) y [contratos F4A](fases/f4a-contratos.md): implementación aceptada (F4A-1 y F4A-2 PASS 1/5); publicada en producción en `35e2c158` ([resultado](evidencia/f4a/publicacion/resultado.md), 86 contenido / 67 general); auditoría de publicación PASS (R2/2); [cierre](evidencia/f4a/publicacion/cierre.md).
+8. [SDD F4A](fases/f4a-herramientas-webmcp.md) y [contratos F4A](fases/f4a-contratos.md): implementación aceptada (F4A-1 y F4A-2 PASS 1/5); publicada en producción en `35e2c158` ([resultado](evidencia/f4a/publicacion/resultado.md), 86 contenido / 67 general); auditoría de publicación PASS (R2/2); [cierre](evidencia/f4a/publicacion/cierre.md). Seguimiento F4A-3 ([SDD](fases/f4a-seguimiento.md): umbrales `>35`/`>50`, carga condicional de WebMCP y estado de la migración) publicado en `cb8e10f` el 2026-10-13 y cerrado ([resultado](evidencia/f4a/seguimiento/publicacion/resultado.md), auditoría de publicación R2 PASS).
 9. [SDD F3](fases/f3-api-y-descubrimiento.md), [contratos](fases/f3-contratos.md) y [traspaso](fases/f3-traspaso.md): aceptada e implementada; [publicación F3 auditada](evidencia/f3/publicacion/cierre/resultado.md).
 10. [SDD F0](fases/f0-medicion-y-contratos.md), [contratos F0](fases/f0-contratos.md) y [prompts de sesiones](fases/f0-prompts.md): primer encargo ejecutable.
 
@@ -40,7 +40,7 @@ Confirmada en esta conversación: `search=yes`, `ai-input=yes`, `ai-train=no`. L
 
 ## Estado actual y continuación
 
-F3 completa está **publicada, auditada y aceptada**, sin bloqueantes: [resultado de producción](evidencia/f3/publicacion/cierre/resultado.md), [auditoría independiente](evidencia/f3/publicacion/cierre/auditoria-p3.md) y [ratificación](evidencia/f3/publicacion/cierre/cierre-arquitectonico.md). Producto main al cierre de F3: `aad2a6624c24d7425c5ad5329b82c77a8a86b619` (desde 2026-10-12, `main` es `35e2c158`, ver F4A abajo); archivo documental separado en `agent-ready/f3-c`.
+F3 completa está **publicada, auditada y aceptada**, sin bloqueantes: [resultado de producción](evidencia/f3/publicacion/cierre/resultado.md), [auditoría independiente](evidencia/f3/publicacion/cierre/auditoria-p3.md) y [ratificación](evidencia/f3/publicacion/cierre/cierre-arquitectonico.md). Producto main al cierre de F3: `aad2a6624c24d7425c5ad5329b82c77a8a86b619` (F4A llevó `main` a `35e2c158` el 2026-10-12 y el seguimiento F4A-3 a `cb8e10f` el 2026-10-13; ver abajo); archivo documental separado en `agent-ready/f3-c`.
 
 Resultado comparable: **86/100 contenido, 60/100 general, nivel 4 general**. +20 general respecto de F2, con API Catalog, Agent Skills y ARD pasando y sin regresiones. El nivel 5 del perfil parcial de contenido no es el nivel general. Producción pasó 117 peticiones, las 28 lecturas completas y dos recorridos de búsqueda y cita.
 

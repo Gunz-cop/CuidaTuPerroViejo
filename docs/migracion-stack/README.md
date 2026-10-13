@@ -3,8 +3,11 @@
 **Spec de producto.** Manda sobre las specs de fase; si una fase la contradice,
 gana este documento y hay que corregir la fase.
 
-**Estado:** fase 0 cerrada ([PR #9](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/9)).
-Fases 1 a 4 pendientes.
+**Estado:** migración **completada**. Astro 7 está en producción desde la promoción del
+[PR #38](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/38) (2026-09-03). Lo que pasó en cada
+fase y la deuda que se cerró después están en el [postmortem](postmortem-astro-4-a-7.md) y en las
+evidencias de fase ([F2](fase-2-evidencia.md), [F3](fase-3-evidencia.md), [F4](fase-4-evidencia.md)).
+Este documento queda como registro histórico del plan.
 
 ---
 
