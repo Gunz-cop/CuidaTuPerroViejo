@@ -1,6 +1,6 @@
 # F4A — Seguimiento: umbrales HHHHHMM, carga condicional de WebMCP y estado de la migración
 
-Estado: **borrador para auditoría SDD, corrección tras [R1](../evidencia/f4a/auditoria/seguimiento-sdd-r1.md)** (2026-10-13). Base: `agent-ready/f4a-2` en `9c96847625f4952aca699905b05fc6cd92e84248`. Su código es idéntico a `main` = `35e2c1583f197cb0f5e7a878a5227f39897740b7`, publicado y cerrado ([cierre F4A](../evidencia/f4a/publicacion/cierre.md)). Rama de trabajo: `agent-ready/f4a-seguimiento`.
+Estado: **ratificada y congelada** (2026-10-13) tras [R1 FAIL](../evidencia/f4a/auditoria/seguimiento-sdd-r1.md) y [R2/2 PASS](../evidencia/f4a/auditoria/seguimiento-sdd-r2.md); ver la [ratificación](../evidencia/f4a/seguimiento/ratificacion-sdd.md). Base: `agent-ready/f4a-2` en `9c96847625f4952aca699905b05fc6cd92e84248`. Su código es idéntico a `main` = `35e2c1583f197cb0f5e7a878a5227f39897740b7`, publicado y cerrado ([cierre F4A](../evidencia/f4a/publicacion/cierre.md)). Rama de trabajo: `agent-ready/f4a-seguimiento`.
 
 Este documento **modifica** la [SDD F4A](f4a-herramientas-webmcp.md) y los [contratos F4A](f4a-contratos.md) sólo en lo que dice aquí. Todo lo demás sigue vigente. Si una regla de este documento choca con una de F4A, gana este documento; si dos reglas de este documento chocan entre sí, STOP de SDD.
 
