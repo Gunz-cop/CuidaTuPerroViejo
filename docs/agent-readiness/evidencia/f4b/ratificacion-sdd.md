@@ -1,0 +1,11 @@
+# F4B — Ratificación y congelado de SDD
+
+Fecha2026-10-13. Coordinación/autora acepta y ratifica la SDD F4B después del **PASS documental independiente R3 adicional autorizado**. Auditor /root/f4b_auditor, gpt-6.1-sol/high configurados explícitamente, distinto del autor/corrector. Informe [R3](auditoria/sdd-r3.md) copiado literalmente:8460bytes, SHA256 `304cd128431572191dd2071ed5575e4b370d361289dec44e06fb6265f9c9fce9` comprobado.
+
+Snapshot normativo auditado `d5b57df26d6242572a29901f8dfb94468b95da6a`, tree `25689e34f67afe9d18a1d3507f9ea7e3e820aa97`. Base técnica F4A-3 `cb8e10f1ead55ef0dafc666672cd3003252afc59`, tree `2727f993981f3cbbd144b802b08f13d072d11773`. [SDD](../../fases/f4b-mcp-remoto.md), fuentes y fixtures de ese snapshot fijan el contrato; los cambios de este archivo son exclusivamente informe/ratificación y estado de la cabecera, sin cambios normativos.
+
+R1/2 FAIL B1–B4 y R2/2 FAIL B5 nuevo, [STOP](stop-sdd.md) y [bug89](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/89) se conservan. La [excepción explícita del propietario](excepcion-sdd-r3.md) permitió corregir sólo B5 y una única revisión adicional del mismo auditor, sin reiniciar contador. R3PASS resuelve B5; no se declara un ciclo2/2 limpio ni se reclasifican los FAIL. Cualquier hueco esencial posterior exige bug/STOP; auditorías de implementación son su proceso separado con máximo5por issue.
+
+Se congela y admite el encargo de implementación existente, que el propietario autorizó en paralelo sobre código F4A técnicamente aceptado. El issue debe recibir el **SHA/tree completo del commit que archiva esta ratificación**, links permanentes y ownership/criterios exactos antes de lanzamiento; esa identidad se obtiene del commit real, no se inventa dentro del documento. Rama propia y PRdraft contra rama F4B, nunca promoción automática a main.
+
+No hay PASS funcional, instalación, build, cliente MCP/workerd o preview en esta ratificación. Cierre final F4A/evidencia, cotejo del diff de integración, receipt/build final, auditoría de implementación y autorización aplicable F4B siguen gates independientes. Esta ratificación no autoriza promoción, escritura administrativa, autenticación ni cambios de metodología/contratos F4A.
