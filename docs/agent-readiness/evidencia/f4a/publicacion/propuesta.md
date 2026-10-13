@@ -1,6 +1,6 @@
 # F4A — Propuesta de promoción a producción
 
-Fecha 2026-10-12. Estado: **propuesta preparada y revisable; pendiente de autorización del propietario**. Nada de esta propuesta se ha ejecutado contra `main` ni contra producción.
+Fecha 2026-10-12. Estado: **autorizada y ejecutada** (ver [resultado](resultado.md)). Texto original de la propuesta conservado abajo sin cambios: «propuesta preparada y revisable; pendiente de autorización del propietario. Nada de esta propuesta se ha ejecutado contra `main` ni contra producción.»
 
 ## Candidato congelado
 

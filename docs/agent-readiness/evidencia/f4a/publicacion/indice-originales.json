@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "f4a-indice-originales/1",
+  "location": "privado: contenedor de la sesión coordinadora (scratchpad/prod), no publicado",
+  "note": "response.raw.json de los scans y salidas completas; sólo se publica la copia curada. El contenedor es efímero: el índice SHA-256 es la referencia durable.",
+  "files": [
+    {
+      "path": "comparacion-all-ui.json",
+      "bytes": 815,
+      "sha256": "d25f1f1448cc1a1acc1d7e2e7140f59b52f9cfb922f4cfaaebe3f39cccb2e57a"
+    },
+    {
+      "path": "comparacion-content.json",
+      "bytes": 689,
+      "sha256": "15fcda11f5e832970c1293974d02f8667cdbd7920c56fcc9f1c190f486b77381"
+    },
+    {
+      "path": "live-all-ui/manifest.json",
+      "bytes": 777,
+      "sha256": "45fab6696429fee7d20bbfa504467e2a0422f30cae636b074a4b3cc992df453d"
+    },
+    {
+      "path": "live-all-ui/request.json",
+      "bytes": 307,
+      "sha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a"
+    },
+    {
+      "path": "live-all-ui/response-metadata.json",
+      "bytes": 163,
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062"
+    },
+    {
+      "path": "live-all-ui/response.raw.json",
+      "bytes": 50108,
+      "sha256": "4de988024a74ddc05c10b03f75d13bf4ecc64425ad20cfb0aa07b48a9ee49ba5"
+    },
+    {
+      "path": "live-all-ui/summary.json",
+      "bytes": 7186,
+      "sha256": "3dadfd5c2b05de1460dc2aaeb4ee4add4cef0c8b6edcdd583dffd4874de92d02"
+    },
+    {
+      "path": "live-content/manifest.json",
+      "bytes": 777,
+      "sha256": "d79ec0e28ed62c50104ac8d1c8d732338780506c362e324134ffe395a14b1dae"
+    },
+    {
+      "path": "live-content/request.json",
+      "bytes": 160,
+      "sha256": "94daf42c1ee9ecfce1528d303e4b19d35e7544d8d38b6ac72ff56436708d2c21"
+    },
+    {
+      "path": "live-content/response-metadata.json",
+      "bytes": 163,
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062"
+    },
+    {
+      "path": "live-content/response.raw.json",
+      "bytes": 43671,
+      "sha256": "21081946178a45d27361f5861f574e60b344e1a5af07423ecca3da845f0fff59"
+    },
+    {
+      "path": "live-content/summary.json",
+      "bytes": 5623,
+      "sha256": "c325acbe73f217c0a4ea09d07b390d51c1792c7f12ea158cd715d8d5c29cfbed"
+    },
+    {
+      "path": "p4a01-http-matrix.json",
+      "bytes": 10698,
+      "sha256": "2c5b00b0d3042ef335ed8a0b0ea2b442f725700baaa867f7c4cabbaf5ce70cea"
+    },
+    {
+      "path": "p4a01-identidad.json",
+      "bytes": 9969,
+      "sha256": "f4b8ec00e68dabf958b8d46eda7d0a5c6a21696a198956897511ec3e6c6afb2e"
+    },
+    {
+      "path": "ui-parity-prod-chrome155-sin-api.json",
+      "bytes": 8031,
+      "sha256": "d471ea5d79444d6ed5f9d7e0418ac438364f98715001753144564c9662133c3b"
+    },
+    {
+      "path": "ui-parity-prod-chromium141.json",
+      "bytes": 8031,
+      "sha256": "88fe7b58207b362a18e455eb80ccd95ce4ca06f56e46e7df28dc18dd26eae63d"
+    },
+    {
+      "path": "webmcp-prod-chrome155-sin-api.json",
+      "bytes": 2722,
+      "sha256": "0efc56e049eda4042277f2cddac028603c8e1ace1a37087f815a4e467f9fa4f2"
+    },
+    {
+      "path": "webmcp-prod-chrome155-webmcp.json",
+      "bytes": 18497,
+      "sha256": "5a89124735cf6494e6686e1b67800a0e586ac0f2c4df22fdb8f1b017e73408e5"
+    },
+    {
+      "path": "webmcp-prod-chromium141.json",
+      "bytes": 2722,
+      "sha256": "67f18c559890ced4911a962cc65110640773d12f2a763a4260172ec54a07462d"
+    }
+  ]
+}

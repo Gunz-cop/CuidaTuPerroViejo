@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "agent-readiness-comparison/1",
+  "comparable": true,
+  "reasons": [],
+  "before": {
+    "requestSha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+    "responseSha256": "75973266dc330db036cdfc065eaf833f3a28213f61f79e78e3dfe2cdf4dab67b",
+    "sourceCommit": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+    "score": 60
+  },
+  "after": {
+    "requestSha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+    "responseSha256": "4de988024a74ddc05c10b03f75d13bf4ecc64425ad20cfb0aa07b48a9ee49ba5",
+    "sourceCommit": "2d8dfdc5701aa44068f7afadd4f26b80a78051cc",
+    "score": 67
+  },
+  "scoreDelta": 7,
+  "checkChanges": [
+    {
+      "category": "discovery",
+      "id": "webMcp",
+      "beforeStatus": "fail",
+      "afterStatus": "pass"
+    }
+  ]
+}
