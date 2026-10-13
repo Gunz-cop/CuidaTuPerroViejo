@@ -16,7 +16,7 @@ Fecha 2026-10-13. **F4A está publicada, auditada y cerrada.**
 
 Autor y coordinador: sesión `claude-opus-5-5`/high. Auditor independiente fijo para F4A-1, F4A-2 y la publicación: otra sesión, también `claude-opus-5-5`/high. Ambos están homologados de GPT-6.1 Sol/high, que no estaba disponible. Por decisión del propietario no se usó Astra.
 
-Archivo de los informes de auditoría: R1 (12585 bytes, `baf9f992…`) es byteidéntico al original, confirmado con `cmp` por el auditor. R2 (4989 bytes, `580c864d…`) se reconstruyó desde su mensaje, con el mismo procedimiento.
+Archivo de los informes de auditoría: R1 (12585 bytes, `baf9f992…`) es byteidéntico al original, confirmado con `cmp` por el auditor. R2 (4989 bytes, `580c864d…`) coincide en SHA-256 y tamaño con el original que declaró el auditor.
 
 ## Qué queda publicado
 
