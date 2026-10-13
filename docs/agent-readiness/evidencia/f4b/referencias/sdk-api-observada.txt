@@ -1,0 +1,166 @@
+package/dist/index.mjs
+function fromJsonSchema(schema, validator) {
+	return fromJsonSchema$1(schema, validator ?? (_defaultValidator ??= new DefaultJsonSchemaValidator()));
+}
+
+//#endregion
+export { BAGGAGE_META_KEY, CLIENT_CAPABILITIES_META_KEY, CLIENT_INFO_META_KEY, DEFAULT_MAX_REQUEST_BODY_SIZE, DEFAULT_NEGOTIATED_PROTOCOL_VERSION, DEFAULT_REQUEST_TIMEOUT_MSEC, INTERNAL_ERROR, INVALID_PARAMS, INVALID_REQUEST, InMemoryServerEventBus, InMemoryTransport, JSONRPC_VERSION, LATEST_PROTOCOL_VERSION, LOG_LEVEL_META_KEY, METHOD_NOT_FOUND, McpServer, MissingRequiredClientCapabilityError, OAuthError, OAuthErrorCode, PARSE_ERROR, PROTOCOL_VERSION_META_KEY, PerRequestHTTPServerTransport, Protocol, ProtocolError, ProtocolErrorCode, RELATED_TASK_META_KEY, ReadBuffer, ResourceNotFoundError, ResourceTemplate, SERVER_INFO_META_KEY, STDIO_DEFAULT_MAX_BUFFER_SIZE, SUBSCRIPTION_ID_META_KEY, SUPPORTED_PROTOCOL_VERSIONS, SdkError, SdkErrorCode, SdkHttpError, Server, TRACEPARENT_META_KEY, TRACESTATE_META_KEY, UnsupportedProtocolVersionError, UriTemplate, UrlElicitationRequiredError, WebStandardStreamableHTTPServerTransport, acceptedContent, assertCompleteRequestPrompt, assertCompleteRequestResourceTemplate, bearerAuthChallengeResponse, buildOAuthProtectedResourceMetadata, checkResourceAllowed, classifyInboundRequest, completable, createFetchWithInit, createMcpHandler, createRequestStateCodec, deserializeMessage, fromJsonSchema, getDisplayName, getOAuthProtectedResourceMetadataUrl, hostHeaderValidationResponse, inputRequired, inputResponse, isCallToolResult, isCompletable, isInitializeRequest, isInitializedNotification, isInputRequiredResult, isJSONRPCErrorResponse, isJSONRPCNotification, isJSONRPCRequest, isJSONRPCResponse, isJSONRPCResultResponse, isJsonContentType, isLegacyRequest, isSpecType, isTaskAugmentedRequestParams, legacyStatelessFallback, localhostAllowedHostnames, localhostAllowedOrigins, mergeCapabi
+
+package/dist/src-Cqbh3MYc.mjs
+function fromJsonSchema(schema, validator) {
+	const check = validator.getValidator(schema);
+	return { "~standard": {
+		version: 1,
+		vendor: "mcp",
+		jsonSchema: {
+			input: () => schema,
+			output: () => schema
+		},
+		validate: (data) => {
+			const result = check(data);
+			return result.valid ? { value: result.data } : { issues: [{ message: result.errorMessage }] };
+		}
+	} };
+}
+
+//#endregion
+export { isTaskAugmentedRequestParams as $, promptArgumentsFromStandardSchema as A, LATEST_PROTOCOL_VERSION as At, scanXMcpHeaderDeclarations as B, TRACESTATE_META_KEY as Bt, REQUEST_STATE_ONLY_LEG_PACING_MS as C, CLIENT_CAPABILITIES_META_KEY as Ct, acceptedContent as D, INVALID_PARAMS as Dt, sleep as E, INTERNAL_ERROR as Et, carriesValidModernEnvelopeClaim as F, RELATED_TASK_META_KEY as Ft, isInitializeRequest as G, resourceUrlFromServerUrl as Gt, assertCompleteRequestPrompt as H, requiredClientCapabilitiesForInputRequest as Ht, classifyInboundRequest as I, SERVER_INFO_META_KEY as It, isJSONRPCErrorResponse as J, SdkHttpError as Jt, isInitializedNotification as K, SdkError as Kt, httpStatusForErrorCode as L, SUBSCRIPTION_ID_META_KEY as Lt, validateStandardSchema as M, METHOD_NOT_FOUND as Mt, parseSchema as N, PARSE_ERROR as Nt, inputRequired as O, INVALID_REQUEST as Ot, LADDER_ERROR_HTTP_STATUS as P, PROTOCOL_VERSION_META_KEY as Pt, isJSONRPCResultResponse as Q, modernOnlyStrictRejection as R, SUPPORTED_PROTOCOL_VERSIONS as Rt, specTypeSchemas as S, BAGGAGE_META_KEY as St, linkedRoundAbort as T, DEFAULT_NEGOTIATED_PROTOCOL_VERSION as Tt, assertCompleteRequestResourceTemplate as U, requiredClientCapabilitiesForRequest as Ut, validateMcpParamHeaders as V, missingClientCapabilities as Vt, isCallToolResult as W, checkResourceAllowed as Wt, isJSONRPCRequest as X, OAuthErrorCode as Xt, isJSONRPCNotification as Y, OAuthError as Yt, isJSONRPCResponse as Z, mergeCapabilities as _, normal
+
+package/dist/createMcpHandler-D4NN8WsG.d.mts
+type ServerOptions = ProtocolOptions & {
+  /**
+   * Capabilities to advertise as being supported by this server.
+   *
+   * Note: per the MCP spec, a server that declares a capability MUST respond to that
+   * capability's requests (e.g. `tools/list` for `tools`) — potentially with an empty
+   * result — rather than with a "Method not found" error. {@linkcode server/mcp.McpServer | McpServer}
+   * handles this automatically for capabilities declared here; when using the low-level
+   * {@linkcode Server} directly, you are responsible for registering a request handler for
+   * every capability you declare.
+   */
+  capabilities?: ServerCapabilities;
+  /**
+   * Optional instructions describing how to use the server and its features.
+   */
+  instructions?: string;
+  /**
+   * JSON Schema validator for elicitation response validation.
+   *
+   * The validator is used to validate user input returned from elicitation
+   * requests against the requested schema.
+   *
+   * @default Runtime-selected validator (AJV-backed on Node.js, `@cfworker/json-schema`-backed on browser/workerd runtimes)
+   */
+  jsonSchemaValidator?: jsonSchemaValidator;
+  /**
+   * Cache hints for the cacheable results of the 2026-07-28 protocol
+   * revision (`ttlMs` / `cacheScope`), keyed by operation. The cacheable
+   * operations are `tools/list`, `prompts/list`, `resources/list`,
+   * `resources/templates/list`, `resources/read` and `server/discover`. The
+   * hint is used when the result for that operation does not provide its own
+   * cache fields — most useful for the list results and `server/discover`,
+   * which the SDK builds itself. A hint registered with an individual
+   * resource (`registerResource(..., { cacheHint })`) takes precedence for
+   * that resource's `resources/read` results, field by field: a field the
+   * per-resource hint leaves unset still falls back to the per-operation
+   * hint 
+
+package/dist/createMcpHandler-D4NN8WsG.d.mts
+supportedProtocolVersions?: string[];
+  /**
+   * Whether to restrict emitted requests to only those that the remote side has indicated that they can handle, through their advertised capabilities.
+   *
+   * Note that this DOES NOT affect checking of _local_ side capabilities, as it is considered a logic error to mis-specify those.
+   *
+   * Currently this defaults to `false`, for backwards compatibility with SDK versions that did not advertise capabilities correctly. In future, this will default to `true`.
+   */
+  enforceStrictCapabilities?: boolean;
+  /**
+   * An array of notification method names that should be automatically debounced.
+   * Any notifications with a method in this list will be coalesced if they
+   * occur in the same tick of the event loop.
+   * e.g., `['notifications/tools/list_changed']`
+   */
+  debouncedNotificationMethods?: string[];
+};
+/**
+ * The default request timeout, in milliseconds.
+ */
+declare const DEFAULT_REQUEST_TIMEOUT_MSEC = 60000;
+/**
+ * Options that can be given per request.
+ */
+type RequestOptions = {
+  /**
+   * If set, requests progress notifications from the remote end (if supported). When progress notifications are received, this callback will be invoked.
+   */
+  onprogress?: ProgressCallback;
+  /**
+   * Can be used to cancel an in-flight request. This will cause an `AbortError` to be raised from {@linkcode Protocol.request | request()}.
+   */
+  signal?: AbortSignal;
+  /**
+   * A timeout (in milliseconds) for this request. If exceeded, an {@linkcode SdkError} with code {@linkcode SdkErrorCode.RequestTimeout} will be raised from {@linkcode Protocol.request | request()}.
+   *
+   * If not specified, {@linkcode DEFAULT_REQUEST_TIMEOUT_MSEC} will be used as the timeout.
+   */
+  timeout?: number;
+  /**
+   * If `true`, receiving a progress notification will reset the request timeout.
+   * This is useful for long-running operations that 
+
+package/dist/index.d.mts
+function fromJsonSchema<T = unknown>(schema: JsonSchemaType, validator?: jsonSchemaValidator): StandardSchemaWithJSON<T, T>;
+//#endregion
+export { Annotations, type AnyToolHandler, AudioContent, AuthInfo, type AuthMetadataOptions, type AuthorizationServerMetadata, BAGGAGE_META_KEY, type BaseContext, BaseMetadata, type BaseToolCallback, type BearerAuthOptions, BlobResourceContents, BooleanSchema, CLIENT_CAPABILITIES_META_KEY, CLIENT_INFO_META_KEY, type CacheHint, type CacheScope, CallToolRequest, CallToolRequestParams, CallToolResult, CancelTaskRequest, CancelTaskResult, CancelledNotification, CancelledNotificationParams, ClientCapabilities, type ClientContext, ClientNotification, ClientRequest, ClientResult, CompatibilityCallToolResult, type CompletableSchema, type CompleteCallback, CompleteRequest, CompleteRequestParams, CompleteRequestPrompt, CompleteRequestResourceTemplate, type CompleteResourceTemplateCallback, CompleteResult, ContentBlock, type CreateMcpHandlerOptions, CreateMessageRequest, CreateMessageRequestParams, CreateMessageRequestParamsBase, CreateMessageRequestParamsWithTools, CreateMessageResult, CreateMessageResultWithTools, CreateTaskResult, Cursor, DEFAULT_MAX_REQUEST_BODY_SIZE, DEFAULT_NEGOTIATED_PROTOCOL_VERSION, DEFAULT_REQUEST_TIMEOUT_MSEC, DiscoverRequest, DiscoverResult, type ElicitInputParams, ElicitRequest, ElicitRequestFormParams, ElicitRequestParams, ElicitRequestURLParams, ElicitResult, ElicitationCompleteNotification, ElicitationCompleteNotificationParams, EmbeddedResource, EmptyResult, EnumSchema, type EventId, type EventStore, type FetchLike, GetPromptRequest, GetPromptRequestParams, GetPromptResult, GetTaskPayloadRequest, GetTaskPayloadResult, GetTaskRequest, GetTaskResult, type HandleRequestOptions, HandlerResultTypeMap, type HostHeaderValidationResult, INTERNAL_ERROR, INVALID_PARAMS, INVALID_REQUEST, Icon, Icons, type IdJagTokenExcha
+
+package/dist/index.d.mts
+supportedProtocolVersions?: string[];
+}
+/**
+ * Options for handling a request
+ */
+interface HandleRequestOptions {
+  /**
+   * Pre-parsed request body. If provided, the transport will use this instead of reading and parsing the request body.
+   * Useful when using body-parser middleware that has already parsed the body.
+   */
+  parsedBody?: unknown;
+  /**
+   * Authentication info from middleware. If provided, will be passed to message handlers.
+   */
+  authInfo?: AuthInfo;
+}
+/**
+ * Server transport for Web Standards Streamable HTTP: this implements the MCP Streamable HTTP transport specification
+ * using Web Standard APIs (`Request`, `Response`, `ReadableStream`).
+ *
+ * This transport works on any runtime that supports Web Standards: Node.js 18+, Cloudflare Workers, Deno, Bun, etc.
+ *
+ * In stateful mode:
+ * - Session ID is generated and included in response headers
+ * - Session ID is always included in initialization responses
+ * - Requests with invalid session IDs are rejected with `404 Not Found`
+ * - Non-initialization requests without a session ID are rejected with `400 Bad Request`
+ * - State is maintained in-memory (connections, message history)
+ *
+ * In stateless mode:
+ * - No Session ID is included in any responses
+ * - No session validation is performed
+ *
+ * @example Stateful setup
+ * ```ts source="./streamableHttp.examples.ts#WebStandardStreamableHTTPServerTransport_stateful"
+ * const server = new McpServer({ name: 'my-server', version: '1.0.0' });
+ *
+ * const transport = new WebStandardStreamableHTTPServerTransport({
+ *     sessionIdGenerator: () => crypto.randomUUID()
+ * });
+ *
+ * await server.connect(transport);
+ * ```
+ *
+ * @example Stateless setup
+ * ```ts source="./streamableHttp.examples.ts#WebStandardStreamableHTTPServerTransport_stateless"
+ * const transport = new WebStandardStreamableHTTPServerTransport({
+ *     sessionIdGenerator: undefined
+ * })
