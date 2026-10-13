@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "f4a-recibo-produccion/1",
+  "authorization": {
+    "source": "Mensaje del usuario en la sesión coordinadora: «Pushea a main», en respuesta a la solicitud de autorización de los pasos 1–4 de propuesta.md",
+    "receivedBefore": "2026-10-12T22:51:18Z"
+  },
+  "promotion": {
+    "mainBefore": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+    "mainAfter": "35e2c1583f197cb0f5e7a878a5227f39897740b7",
+    "tree": "936781880833a8df156cff6b2298427e6d2e5543",
+    "method": "fast-forward sin force (git push <sha>:refs/heads/main; salida «aad2a66..35e2c15»)",
+    "pushedAt": "2026-10-12T22:51:18Z",
+    "ancestorCheck": "aad2a66 es ancestro de 35e2c15 (git merge-base --is-ancestor) verificado justo antes del push"
+  },
+  "ciOnCandidate": {
+    "criteriosDeAceptacion": { "checkRunId": 115026562988, "conclusion": "success" },
+    "workersBuildsPreview": { "checkRunId": 115026754184, "conclusion": "success", "buildId": "efac5e8f-e6af-43dc-b16f-abed805bfa36" }
+  },
+  "productionBuild": {
+    "workersCheckRunId": 115042365837,
+    "buildId": "86bbb0d9-998d-480b-92d9-63f3bc864e26",
+    "startedAt": "2026-10-12T22:51:24Z",
+    "githubStatusObserved": "in_progress, sin conclusion (observado tras los gates). Es el mismo comportamiento que el build de main de F3 (check 114637987659): el check de GitHub del build de producción no se cierra. No se usa como prueba de éxito.",
+    "liveObservedAt": "2026-10-12T22:52:32Z",
+    "liveCriterion": "https://cuidatuperroviejo.com/agent-api/v1/openapi.json con SHA-256 fb5fea8e…026af6 del build-manifest de 35e2c15 (sondeo cada 20 s)"
+  },
+  "identity": {
+    "evidence": "produccion-identidad.json",
+    "result": "22/22 archivos del build-manifest de 35e2c15 servidos byte a byte en https://cuidatuperroviejo.com (incluidos los 8 assets _astro, CSS y JS, con hash de contenido)",
+    "note": "La identidad por contenido sustituye al estado del check de GitHub como prueba de que producción sirve el candidato"
+  }
+}

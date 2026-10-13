@@ -1,0 +1,692 @@
+{
+  "schemaVersion": "f4a-webmcp-browser/1",
+  "commit": "35e2c1583f197cb0f5e7a878a5227f39897740b7",
+  "baseUrl": "https://5a780b04-cuidatuperroviejo.g1721m.workers.dev",
+  "mode": "supported",
+  "browser": "Chrome/155.0.8059.39",
+  "flags": [
+    "--enable-features=WebMCPTesting"
+  ],
+  "pass": true,
+  "passed": 81,
+  "total": 81,
+  "checks": [
+    {
+      "id": "C4A-08",
+      "name": "/: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: WebMCP.toolsAdded entrega exactamente las cuatro tools",
+      "ok": true,
+      "detail": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: search_guides vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: read_guide vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: evaluate_quality_of_life vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: recommend_mobility_aids vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: search_guides vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: read_guide vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: evaluate_quality_of_life vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: recommend_mobility_aids vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-09",
+      "name": "search_guides {q:\"cushing\"} = API",
+      "ok": true,
+      "detail": {
+        "status": "Completed",
+        "total": 3,
+        "first": "article--sindrome-cushing-perros-mayores"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "read_guide article--sindrome-cushing-perros-mayores con corpus = API (Markdown íntegro)",
+      "ok": true,
+      "detail": {
+        "status": "Completed",
+        "markdownSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [0,0,0,0,0,0,0] = API",
+      "ok": true,
+      "detail": {
+        "score": 0,
+        "band": "compromised"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [10,10,10,10,10,10,10] = API",
+      "ok": true,
+      "detail": {
+        "score": 70,
+        "band": "good"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [4,5,5,5,5,5,5] = API",
+      "ok": true,
+      "detail": {
+        "score": 34,
+        "band": "compromised"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [5,5,5,5,5,5,5] = API",
+      "ok": true,
+      "detail": {
+        "score": 35,
+        "band": "acceptable"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [10,10,10,10,9,0,0] = API",
+      "ok": true,
+      "detail": {
+        "score": 49,
+        "band": "acceptable"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [10,10,10,10,10,0,0] = API",
+      "ok": true,
+      "detail": {
+        "score": 50,
+        "band": "good"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [7,2,9,0,6,3,8] = API",
+      "ok": true,
+      "detail": {
+        "score": 35,
+        "band": "acceptable"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids light/calm = API",
+      "ok": true,
+      "detail": {
+        "resultKey": "LA"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids light/stressed = API",
+      "ok": true,
+      "detail": {
+        "resultKey": "LB"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids moderate/calm = API",
+      "ok": true,
+      "detail": {
+        "resultKey": "MA"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids moderate/stressed = API",
+      "ok": true,
+      "detail": {
+        "resultKey": "MB"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids severe/calm = API",
+      "ok": true,
+      "detail": {
+        "resultKey": "SA"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids severe/stressed = API",
+      "ok": true,
+      "detail": {
+        "resultKey": "SB"
+      }
+    },
+    {
+      "id": "C4A-12",
+      "name": "durante las llamadas: sólo GET same-origin a /api/agent/v1/",
+      "ok": true,
+      "detail": [
+        "GET /api/agent/v1/search?q=cushing",
+        "GET /api/agent/v1/documents/article--sindrome-cushing-perros-mayores?corpus=912082d0a00775bbe30d03270bc55c3cef466dd68dff92b1921a122e197c3b0a"
+      ]
+    },
+    {
+      "id": "C4A-12",
+      "name": "durante las llamadas: búsqueda y lectura hacen un fetch cada una; cálculos ninguno",
+      "ok": true,
+      "detail": 2
+    },
+    {
+      "id": "C4A-12",
+      "name": "sin escrituras de cookies/localStorage/sessionStorage atribuibles a execute",
+      "ok": true
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life {\"hurt\":11} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life {\"hurt\":1.5,\"hunger\":5,\"hydration\":5,\"hygiene\":5,\"happiness\":5,\"mobility\":5,\"moreGoodDays\":5} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids {\"level\":\"Severe\",\"handling\":\"calm\"} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "search_guides {\"q\":\"x\",\"limit\":0} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "search_guides {\"q\":\"x\",\"extra\":1} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "read_guide {\"documentId\":\"../../admin/contact-messages\"} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "read_guide {\"documentId\":\"https://example.org/x\"} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "read_guide {\"documentId\":\"home\",\"corpus\":\"nope\"} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "read_guide inexistente → DOCUMENT_NOT_FOUND de la API",
+      "ok": true
+    },
+    {
+      "id": "C4A-09",
+      "name": "read_guide con corpus discordante → CORPUS_CHANGED de la API",
+      "ok": true
+    },
+    {
+      "id": "C4A-10",
+      "name": "cancelInvocation durante read_guide → Canceled",
+      "ok": true,
+      "detail": {
+        "status": "Canceled",
+        "held": 1
+      }
+    },
+    {
+      "id": "C4A-10",
+      "name": "la cancelación aborta el fetch en curso (Network.loadingFailed canceled)",
+      "ok": true,
+      "detail": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "id": "C4A-10",
+      "name": "transporte fallido → Error y un solo intento (sin reintentos)",
+      "ok": true,
+      "detail": {
+        "status": "Error",
+        "attempts": 1,
+        "errorText": ""
+      }
+    },
+    {
+      "id": "C4A-10",
+      "name": "executeTool con señal ya abortada → AbortError",
+      "ok": true,
+      "detail": "AbortError"
+    },
+    {
+      "id": "info",
+      "name": "representación de output en WebMCP.toolResponded por tool",
+      "ok": true,
+      "detail": {
+        "search_guides": [
+          "string",
+          "object"
+        ],
+        "read_guide": [
+          "object"
+        ],
+        "evaluate_quality_of_life": [
+          "object"
+        ],
+        "recommend_mobility_aids": [
+          "object"
+        ]
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: WebMCP.toolsAdded entrega exactamente las cuatro tools",
+      "ok": true,
+      "detail": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: search_guides vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: read_guide vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: evaluate_quality_of_life vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: recommend_mobility_aids vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: search_guides vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: read_guide vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: evaluate_quality_of_life vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: recommend_mobility_aids vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: WebMCP.toolsAdded entrega exactamente las cuatro tools",
+      "ok": true,
+      "detail": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: search_guides vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: read_guide vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: evaluate_quality_of_life vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: recommend_mobility_aids vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: search_guides vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: read_guide vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: evaluate_quality_of_life vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: recommend_mobility_aids vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/politica-editorial: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: WebMCP.toolsAdded entrega exactamente las cuatro tools",
+      "ok": true,
+      "detail": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: search_guides vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: read_guide vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: evaluate_quality_of_life vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: recommend_mobility_aids vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: search_guides vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: read_guide vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: evaluate_quality_of_life vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: recommend_mobility_aids vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    }
+  ]
+}

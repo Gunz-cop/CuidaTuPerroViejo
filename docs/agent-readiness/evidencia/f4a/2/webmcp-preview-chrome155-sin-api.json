@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "f4a-webmcp-browser/1",
+  "commit": "35e2c1583f197cb0f5e7a878a5227f39897740b7",
+  "baseUrl": "https://5a780b04-cuidatuperroviejo.g1721m.workers.dev",
+  "mode": "unsupported",
+  "browser": "Chrome/155.0.8059.39",
+  "flags": [],
+  "pass": true,
+  "passed": 16,
+  "total": 16,
+  "checks": [
+    {
+      "id": "C4A-11",
+      "name": "/: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-11",
+      "name": "/: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-11",
+      "name": "/: navegador sin API WebMCP",
+      "ok": true,
+      "detail": "undefined/undefined"
+    },
+    {
+      "id": "C4A-11",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-11",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-11",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: navegador sin API WebMCP",
+      "ok": true,
+      "detail": "undefined/undefined"
+    },
+    {
+      "id": "C4A-11",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-11",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-11",
+      "name": "/herramientas/calculadora-calidad-vida-perros: navegador sin API WebMCP",
+      "ok": true,
+      "detail": "undefined/undefined"
+    },
+    {
+      "id": "C4A-11",
+      "name": "/politica-editorial: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-11",
+      "name": "/politica-editorial: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/politica-editorial: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-11",
+      "name": "/politica-editorial: navegador sin API WebMCP",
+      "ok": true,
+      "detail": "undefined/undefined"
+    }
+  ]
+}
