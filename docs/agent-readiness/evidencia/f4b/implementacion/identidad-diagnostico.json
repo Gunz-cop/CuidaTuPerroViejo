@@ -1,0 +1,20 @@
+{
+  "status": "STOP de identidad conservado hasta dictamen auditor",
+  "scope": "F4B C12",
+  "observed": "FAIL",
+  "byteExactPassed": 80,
+  "totalObserved": 81,
+  "failedPath": "/contacto",
+  "source": "src/pages/contacto.astro:134 Date.now()",
+  "unchangedByF4B": true,
+  "delta": [
+    {
+      "operation": "replace",
+      "local": "2198",
+      "preview": "3074",
+      "localContext": "\" aria-hidden=\"true\"><input type=\"hidden\" name=\"startedAt\" value=\"1791909512198\" data-started-at><!-- Redirecci\u00f3n tras enviar --><input type=\"hidden\" name",
+      "previewContext": "\" aria-hidden=\"true\"><input type=\"hidden\" name=\"startedAt\" value=\"1791909513074\" data-started-at><!-- Redirecci\u00f3n tras enviar --><input type=\"hidden\" name"
+    }
+  ],
+  "proposal": "Los 80 assets deterministas pasan byteexactamente; contacto no pertenece al corpus28 ni al delta MCP. Conservar su FAIL y declarar por separado no comparabilidad de startedAt. Auditor independiente determina si esto satisface C12; no quitar comprobaciones ni simular hash del build remoto."
+}

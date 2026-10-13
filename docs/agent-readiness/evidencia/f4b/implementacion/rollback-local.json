@@ -1,0 +1,51 @@
+{
+  "rollbackCommit": "a1fa4ef755e650b1536890f4ba60045f83f77a00",
+  "tree": "0076ca9ed256123f56e2296ed8e5177257015b06",
+  "status": "PASS",
+  "records": [
+    {
+      "path": "/api/mcp",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "/api/mcp/server-card",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "/.well-known/ard.json",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "quality",
+      "status": 200,
+      "score": 35,
+      "band": "compromised",
+      "pass": true
+    },
+    {
+      "path": "search",
+      "status": 200,
+      "total": 3,
+      "pass": true
+    },
+    {
+      "path": "read",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "mobility",
+      "status": 200,
+      "resultKey": "SB",
+      "pass": true
+    }
+  ]
+}
