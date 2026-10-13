@@ -51,7 +51,24 @@ try {
       const invalid = await client.callTool({ name: 'evaluate_quality_of_life', arguments: { ...quality, hurt: 11 } });
       assert.equal(invalid.isError, true); assert.equal(JSON.parse(invalid.content[0].text).error.code, 'INVALID_REQUEST');
       if (modern) {
-        const catalog = await api('/api/agent/v1/catalog');
+        const index = await api('/agent-content/v1/index.json');
+        assert.equal(index.documents.length, 28, 'corpus fijo F4A de 28 documentos');
+        const catalog = { corpusSha256: index.corpusSha256, documents: [] };
+        let offset = 0; const pages = [];
+        while (true) {
+          const page = await api(`/api/agent/v1/catalog?${new URLSearchParams({ limit: '20', offset: String(offset), corpus: index.corpusSha256 })}`);
+          assert.equal(page.corpusSha256, index.corpusSha256); assert.equal(page.total, index.documents.length);
+          assert.equal(page.offset, offset); assert.equal(page.limit, 20);
+          assert.equal(page.documents.length, Math.min(20, page.total - offset));
+          catalog.documents.push(...page.documents); pages.push({ offset, documents: page.documents.length, nextOffset: page.nextOffset });
+          assert.ok(catalog.documents.length <= index.documents.length);
+          const next = offset + page.documents.length;
+          assert.equal(page.nextOffset, next < page.total ? next : null);
+          if (page.nextOffset === null) break;
+          assert.ok(page.nextOffset > offset); offset = page.nextOffset;
+        }
+        assert.equal(new Set(catalog.documents.map((d) => d.documentId)).size, index.documents.length);
+        assert.deepEqual(catalog.documents, index.documents, 'universo/metadata exactos de ese corpus, sin duplicados ni omisiones');
         for (const document of catalog.documents) {
           const full = domain(await client.callTool({ name: 'read_guide', arguments: { documentId: document.documentId, corpus: catalog.corpusSha256 } }), true);
           assert.deepEqual(full, await api(`/api/agent/v1/documents/${document.documentId}?corpus=${catalog.corpusSha256}`));
@@ -75,7 +92,7 @@ try {
         assert.deepEqual(JSON.parse(empty.content[0].text), await emptyApi.json());
         const changed = await client.callTool({ name: 'read_guide', arguments: { documentId: id, corpus: '0'.repeat(64) } });
         assert.equal(changed.isError, true); assert.equal(JSON.parse(changed.content[0].text).error.code, 'CORPUS_CHANGED');
-        results.push({ criterion: 'C05/C06', documents: catalog.documents.length, corpusSha256: catalog.corpusSha256, qualityBoundaries: 8, mobilityCombinations: 6, searchCases: 5, corpusChanged: 'PASS', status: 'PASS' });
+        results.push({ criterion: 'C05/C06', documents: catalog.documents.length, pages, documentIds: catalog.documents.map((d) => d.documentId), corpusSha256: catalog.corpusSha256, qualityBoundaries: 8, mobilityCombinations: 6, searchCases: 5, corpusChanged: 'PASS', status: 'PASS' });
       }
       results.push({ era: modern ? '2026-07-28' : '2025-11-25', tools: list.tools.map((tool) => tool.name), searchTotal: search.total, documentId: id, markdownSha256: read.document.markdownSha256, qualityScore: qualityResult.score, qualityBand: qualityResult.band, status: 'PASS' });
     } finally { await client.close(); }
@@ -97,8 +114,12 @@ try {
   assert.equal((await send('{')).status, 400);
   const cancelled = await send({ jsonrpc: '2.0', method: 'notifications/cancelled', params: { requestId: 900, reason: 'synthetic' } }, { 'Content-Type': 'application/json', Accept: h.Accept, 'MCP-Protocol-Version': '2025-11-25' });
   assert.equal(cancelled.status, 202); assert.equal(await cancelled.text(), '');
+  const modernPing = await send({ ...discover, method: 'ping' }, { ...h, 'Mcp-Method': 'ping' }); assert.equal(modernPing.status, 404);
+  assert.deepEqual(await modernPing.json(), { jsonrpc: '2.0', id: 900, error: { code: -32601, message: 'Method not found.' } });
+  const legacyPing = await send({ jsonrpc: '2.0', id: 901, method: 'ping', params: {} }, { 'Content-Type': 'application/json', Accept: h.Accept, 'MCP-Protocol-Version': '2025-11-25' });
+  assert.equal(legacyPing.status, 200); assert.match(await legacyPing.text(), /"result":\{\}/u);
   const preflight = await capture(new URL('/api/mcp', root), { method: 'OPTIONS', headers: { Origin: root.origin, 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'mcp-protocol-version,mcp-method,mcp-name,content-type' } }); assert.equal(preflight.status, 204);
-  results.push({ criterion: 'C07/C08', methods: 4, origin: 'PASS', cors: 'PASS', sessions: 'stateless', legacyCancelled: 202, oversized: 413, malformed: 'PASS', status: 'PASS' });
+  results.push({ criterion: 'C07/C08', methods: 4, modernPing: 404, legacyPing: 200, origin: 'PASS', cors: 'PASS', sessions: 'stateless', legacyCancelled: 202, oversized: 413, malformed: 'PASS', status: 'PASS' });
   await writeFile(resolve(output, 'result.json'), JSON.stringify({ base, at: new Date().toISOString(), status: 'PASS', results, limitations: ['Este harness no acredita por sí solo UI/WebMCP, presupuesto, cancelación, todosIDs o receipt de build.'] }, null, 2) + '\n');
   process.stdout.write(`PASS: SDK HTTP real, ambas eras, cuatro tools, paridad API, hash Markdown, inválidos y card/ARD (${observations.length} exchanges).\n`);
 } catch (error) {

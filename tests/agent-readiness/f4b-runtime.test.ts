@@ -149,3 +149,33 @@ test('90 tools/call y deadline wall10s conservan sus límites', async () => {
   assert.equal(response.status, 500); await response.text(); assert.equal(cancelled, true);
   assert.ok(performance.now() - start >= 9900); assert.ok(performance.now() - start < 11500);
 });
+
+test('R1 I-B2: dos salidas sin consumo se cancelan al deadline y cap2 se recupera', async () => {
+  const f = fixture();
+  const send = () => f.fetcher('http://localhost/api/mcp', { method: 'POST', headers: modernHeaders, body: JSON.stringify(discover) });
+  const first = await send(); const second = await send();
+  assert.equal(first.status, 200); assert.equal(second.status, 200);
+  const blocked = await send(); assert.equal(blocked.status, 429); await blocked.text();
+  await new Promise((resolve) => setTimeout(resolve, 10300));
+  const recovered = await send(); assert.equal(recovered.status, 200); await recovered.text();
+  await assert.rejects(first.text(), /CONTENT_UNAVAILABLE/); await assert.rejects(second.text(), /CONTENT_UNAVAILABLE/);
+});
+
+test('C08: depth16/meta8192 inclusivos, +1 rechazado; ping ambas eras conforme adenda', async () => {
+  const send = async (body: any, method = 'server/discover', legacy = false) => {
+    const f = fixture(); const response = await f.fetcher('http://localhost/api/mcp', { method: 'POST', headers: legacy
+      ? { 'Content-Type': 'application/json', Accept: modernHeaders.Accept, 'MCP-Protocol-Version': '2025-11-25' }
+      : { ...modernHeaders, 'Mcp-Method': method }, body: JSON.stringify(body) });
+    return { status: response.status, text: await response.text() };
+  };
+  const nested = (arrays: number) => { let value: any = 'x'; for (let i = 0; i < arrays; i++) value = [value]; return { ...discover, params: { _meta: { ...discover.params._meta, probe: value } } }; };
+  assert.equal((await send(nested(13))).status, 200); assert.equal((await send(nested(14))).status, 400);
+  const meta: any = { ...discover.params._meta, padding: '' };
+  meta.padding = 'x'.repeat(8192 - Buffer.byteLength(JSON.stringify(meta)));
+  assert.equal(Buffer.byteLength(JSON.stringify(meta)), 8192);
+  assert.equal((await send({ ...discover, params: { _meta: meta } })).status, 200);
+  meta.padding += 'x'; assert.equal((await send({ ...discover, params: { _meta: meta } })).status, 400);
+  const modern = await send({ ...discover, method: 'ping' }, 'ping'); assert.equal(modern.status, 404);
+  assert.deepEqual(JSON.parse(modern.text), { jsonrpc: '2.0', id: 1, error: { code: -32601, message: 'Method not found.' } });
+  const legacy = await send({ jsonrpc: '2.0', id: 2, method: 'ping', params: {} }, 'ping', true); assert.equal(legacy.status, 200); assert.match(legacy.text, /"result":\{\}/);
+});

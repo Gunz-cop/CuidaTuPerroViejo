@@ -8,6 +8,7 @@ import { INPUT_SCHEMAS, TOOLS } from '../../scripts/agent-tools';
 import capabilities from '../../agent-api/capabilities.json';
 import domainSchema from '../../agent-api/schema.json';
 import type { AgentEnv, AstroHandler } from '../agent-content/runtime';
+import { boundedResponse, readLimited } from './output';
 
 const MCP = capabilities.mcp;
 export const MAX_BODY = 32768;
@@ -208,7 +209,10 @@ export function createAgentMcpWorker<Env extends AgentEnv>(next: AstroHandler<En
     if (card && ['GET', 'HEAD'].includes(request.method)) {
       const response = await env.ASSETS.fetch(new Request(`${SITE}${MCP.cardPath}`, { method: request.method }));
       const h = new Headers(response.headers); h.set('Content-Type', 'application/mcp-server-card+json');
-      return decorate(new Response(response.body, { status: response.status, headers: h }));
+      try {
+        const bytes = await readLimited(response.body, 256 * 1024);
+        return decorate(new Response(request.method === 'HEAD' || response.status === 304 ? null : bytes, { status: response.status, headers: h }));
+      } catch { return decorate(Response.json(unavailable, { status: 503 })); }
     }
     if (card || request.method !== 'POST') {
       const response = Response.json({ error: 'Method not allowed.' }, { status: 405 }); response.headers.set('Allow', card ? 'GET, HEAD, OPTIONS' : 'POST, OPTIONS'); return decorate(response);
@@ -251,7 +255,7 @@ export function createAgentMcpWorker<Env extends AgentEnv>(next: AstroHandler<En
         if (typeof params.protocolVersion !== 'string' || !/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/u.test(params.protocolVersion)) return finish(rpcError(400, -32602, 'Invalid params.', id));
       } else if (request.headers.get('MCP-Protocol-Version') !== '2025-11-25') return finish(rpcError(400, -32600, 'Invalid request.', id));
       if (request.headers.has('MCP-Session-Id')) return finish(rpcError(400, -32600, 'Invalid request.', id));
-      const methods = modern ? ['server/discover', 'tools/list', 'tools/call', 'ping'] : ['initialize', 'tools/list', 'tools/call', 'ping', 'notifications/initialized', 'notifications/cancelled'];
+      const methods = modern ? ['server/discover', 'tools/list', 'tools/call'] : ['initialize', 'tools/list', 'tools/call', 'ping', 'notifications/initialized', 'notifications/cancelled'];
       if (!methods.includes(body.method as string)) return finish(rpcError(modern ? 404 : 200, -32601, 'Method not found.', id));
       if (body.method === 'tools/list' && Object.hasOwn(params, 'cursor')) return finish(rpcError(modern ? 400 : 200, -32602, 'Invalid params.', id));
       if (body.method === 'tools/call') {
@@ -265,38 +269,8 @@ export function createAgentMcpWorker<Env extends AgentEnv>(next: AstroHandler<En
       // El SDK clona el Request legacy si debe releerlo; pasar el cuerpo ya
       // limitado/validado conserva la identidad del contexto por intercambio.
       const response = await handler.fetch(normalized, { parsedBody: body });
-      if (!response.body) return finish(response);
-      const reader = response.body.getReader();
-      const sse = response.headers.get('Content-Type')?.startsWith('text/event-stream') ?? false;
       const outputCap = body.method === 'tools/list' ? 256 * 1024 : MAX_RESULT;
-      let emitted = false;
-      const stream = new ReadableStream<Uint8Array>({
-        async pull(streamController) {
-          try {
-            if (emitted) { lease.closed = true; lease.release(); streamController.close(); return; }
-            // Estas herramientas no emiten progress ni mensajes intermedios.
-            // Preparar el intercambio terminal completo impide truncar un éxito.
-            const chunks: Uint8Array[] = []; let count = 0;
-            while (true) {
-              controller.signal.throwIfAborted();
-              const { done, value } = await reader.read();
-              controller.signal.throwIfAborted();
-              if (done) break;
-              count += value.byteLength;
-              if (count > outputCap) throw new RangeError('OUTPUT_LIMIT');
-              chunks.push(value);
-            }
-            const bytes = new Uint8Array(count); let offset = 0;
-            for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
-            const wire = sanitizeWire(bytes, sse);
-            if (wire.byteLength > outputCap) throw new RangeError('OUTPUT_LIMIT');
-            streamController.enqueue(wire); emitted = true;
-          } catch { controller.abort(); await reader.cancel().catch(() => {}); lease.closed = true; lease.release(); streamController.error(new Error('CONTENT_UNAVAILABLE')); }
-        },
-        async cancel() { controller.abort(); await reader.cancel().catch(() => {}); lease.closed = true; lease.release(); },
-      });
-      const h = new Headers(response.headers); if (h.get('Content-Type')?.startsWith('text/event-stream')) h.set('X-Accel-Buffering', 'no');
-      return decorate(new Response(stream, { status: response.status, headers: h }));
+      return decorate(boundedResponse(response, lease, outputCap, sanitizeWire));
     } catch (error) { return finish(rpcError(error instanceof RangeError ? 413 : 500, error instanceof RangeError ? -32600 : -32603, error instanceof RangeError ? 'Invalid request.' : 'Internal error.')); }
   };
 }
