@@ -1,0 +1,271 @@
+{
+  "schemaVersion": "f4a-webmcp-browser/1",
+  "commit": "aad2a6624c24d7425c5ad5329b82c77a8a86b619",
+  "baseUrl": "http://127.0.0.1:8821",
+  "mode": "unsupported",
+  "browser": "Chrome/155.0.8059.39",
+  "flags": [],
+  "pass": false,
+  "passed": 24,
+  "total": 28,
+  "checks": [
+    {
+      "id": "C4A-11",
+      "name": "/: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-11",
+      "name": "/: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-17",
+      "name": "/: el adaptador WebMCP está en una plantilla inerte",
+      "ok": false,
+      "detail": []
+    },
+    {
+      "id": "C4A-17",
+      "name": "/: JS pedido = cierre de imports estáticos de los <script src> fuera de la plantilla",
+      "ok": true,
+      "detail": {
+        "requested": [
+          "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+        ],
+        "expected": [
+          "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+        ]
+      }
+    },
+    {
+      "id": "C4A-17",
+      "name": "/: sin petición al chunk de la plantilla ni a módulos sólo suyos",
+      "ok": true,
+      "detail": {
+        "leaked": [],
+        "templateOnly": []
+      }
+    },
+    {
+      "id": "C4A-11",
+      "name": "/: navegador sin API WebMCP",
+      "ok": true,
+      "detail": "undefined/undefined"
+    },
+    {
+      "id": "C4A-11",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-11",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-17",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: el adaptador WebMCP está en una plantilla inerte",
+      "ok": false,
+      "detail": []
+    },
+    {
+      "id": "C4A-17",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: JS pedido = cierre de imports estáticos de los <script src> fuera de la plantilla",
+      "ok": true,
+      "detail": {
+        "requested": [
+          "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+        ],
+        "expected": [
+          "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+        ]
+      }
+    },
+    {
+      "id": "C4A-17",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin petición al chunk de la plantilla ni a módulos sólo suyos",
+      "ok": true,
+      "detail": {
+        "leaked": [],
+        "templateOnly": []
+      }
+    },
+    {
+      "id": "C4A-11",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: navegador sin API WebMCP",
+      "ok": true,
+      "detail": "undefined/undefined"
+    },
+    {
+      "id": "C4A-11",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-11",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-17",
+      "name": "/herramientas/calculadora-calidad-vida-perros: el adaptador WebMCP está en una plantilla inerte",
+      "ok": false,
+      "detail": []
+    },
+    {
+      "id": "C4A-17",
+      "name": "/herramientas/calculadora-calidad-vida-perros: JS pedido = cierre de imports estáticos de los <script src> fuera de la plantilla",
+      "ok": true,
+      "detail": {
+        "requested": [
+          "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+        ],
+        "expected": [
+          "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+        ]
+      }
+    },
+    {
+      "id": "C4A-17",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin petición al chunk de la plantilla ni a módulos sólo suyos",
+      "ok": true,
+      "detail": {
+        "leaked": [],
+        "templateOnly": []
+      }
+    },
+    {
+      "id": "C4A-11",
+      "name": "/herramientas/calculadora-calidad-vida-perros: navegador sin API WebMCP",
+      "ok": true,
+      "detail": "undefined/undefined"
+    },
+    {
+      "id": "C4A-11",
+      "name": "/politica-editorial: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-11",
+      "name": "/politica-editorial: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/politica-editorial: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-17",
+      "name": "/politica-editorial: el adaptador WebMCP está en una plantilla inerte",
+      "ok": false,
+      "detail": []
+    },
+    {
+      "id": "C4A-17",
+      "name": "/politica-editorial: JS pedido = cierre de imports estáticos de los <script src> fuera de la plantilla",
+      "ok": true,
+      "detail": {
+        "requested": [
+          "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+        ],
+        "expected": [
+          "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+        ]
+      }
+    },
+    {
+      "id": "C4A-17",
+      "name": "/politica-editorial: sin petición al chunk de la plantilla ni a módulos sólo suyos",
+      "ok": true,
+      "detail": {
+        "leaked": [],
+        "templateOnly": []
+      }
+    },
+    {
+      "id": "C4A-11",
+      "name": "/politica-editorial: navegador sin API WebMCP",
+      "ok": true,
+      "detail": "undefined/undefined"
+    }
+  ],
+  "scripts": {
+    "/": {
+      "requested": [
+        {
+          "path": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+          "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+        }
+      ],
+      "expectedWithoutApi": [
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+      ],
+      "template": [],
+      "templateOnly": []
+    },
+    "/salud-perros-mayores/sindrome-cushing-perros-mayores": {
+      "requested": [
+        {
+          "path": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+          "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+        }
+      ],
+      "expectedWithoutApi": [
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+      ],
+      "template": [],
+      "templateOnly": []
+    },
+    "/herramientas/calculadora-calidad-vida-perros": {
+      "requested": [
+        {
+          "path": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+          "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+        }
+      ],
+      "expectedWithoutApi": [
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+      ],
+      "template": [],
+      "templateOnly": []
+    },
+    "/politica-editorial": {
+      "requested": [
+        {
+          "path": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+          "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+        }
+      ],
+      "expectedWithoutApi": [
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+      ],
+      "template": [],
+      "templateOnly": []
+    }
+  }
+}
