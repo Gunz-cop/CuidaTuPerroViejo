@@ -36,7 +36,7 @@ test('OpenAPI, Linkset, skills discovery, artifact digest, and both ARD manifest
     'evaluateQualityOfLife', 'headQualityOfLife', 'optionsQualityOfLife',
     'recommendMobilityAids', 'headMobilityAids', 'optionsMobilityAids',
   ]);
-  assert.equal(openapi.info.version, '1.1.0');
+  assert.equal(openapi.info.version, '1.2.0');
   assert.equal(openapi.openapi, '3.1.1');
   assert.ok(!JSON.stringify(openapi).match(/\$ref":"https?:/u));
   assert.deepEqual(linkset.linkset[0].item.map((item) => item.href), [

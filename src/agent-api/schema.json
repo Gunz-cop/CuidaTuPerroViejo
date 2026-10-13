@@ -536,6 +536,7 @@
           "const": 70
         },
         "band": {
+          "description": "Franja decidida con mínimos exclusivos sobre thresholds: good si score > 50, acceptable si score > 35, compromised en otro caso. Usa este campo en lugar de recalcular la franja.",
           "enum": [
             "good",
             "acceptable",
@@ -543,6 +544,7 @@
           ]
         },
         "thresholds": {
+          "description": "Mínimos exclusivos de cada franja: la franja exige score > umbral (good > 50, acceptable > 35).",
           "type": "object",
           "required": [
             "good",

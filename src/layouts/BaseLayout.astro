@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import CanineAiAssistant from '../components/CanineAiAssistant.astro';
+import AgentToolsScript from '../components/AgentToolsScript.astro';
 
 interface Props {
   title: string;
@@ -500,7 +501,15 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
     </footer>
 
     {shouldShowAiAssistant && <CanineAiAssistant />}
-    <script>import '../scripts/agent-tools.ts';</script>
+    <template id="agent-tools-webmcp"><AgentToolsScript /></template>
+    <script is:inline>
+      (() => {
+        // El adaptador WebMCP sólo se carga si el navegador expone la API nativa; sin ella no hay peticiones nuevas.
+        const hasApi = (owner) => typeof owner?.modelContext?.registerTool === 'function';
+        const template = document.getElementById('agent-tools-webmcp');
+        if (template && (hasApi(document) || hasApi(navigator))) document.head.append(document.importNode(template.content, true));
+      })();
+    </script>
     <script is:inline>
       (() => {
         const toggle = document.querySelector('.mobile-menu-toggle');

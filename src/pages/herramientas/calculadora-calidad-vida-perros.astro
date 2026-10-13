@@ -81,7 +81,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
             "name": "¿Cuál es un puntaje aceptable en la escala HHHHHMM?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Un puntaje superior a 35 sobre 70 se considera aceptable. Por encima de 50 indica buena calidad de vida. Por debajo de 35 indica que la calidad de vida está comprometida y se recomienda consultar al veterinario."
+              "text": "Un puntaje superior a 35 sobre 70 se considera aceptable. Por encima de 50 indica buena calidad de vida. Con 35 o menos, la calidad de vida está comprometida y se recomienda consultar al veterinario."
             }
           }
         ]
@@ -166,9 +166,9 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
           Responde según cómo ha estado tu perro en los <strong>últimos 3 días</strong>. Sé sincero/a en cada respuesta: al final verás su puntaje y qué hacer con él.
         </p>
         <div class="flex flex-wrap items-center justify-center gap-2 mb-8 mt-4">
-          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-green-500/10 text-green-700 dark:text-green-300"><span aria-hidden="true">✅</span> ≥ 50 Buena</span>
-          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300"><span aria-hidden="true">⚠️</span> 35–49 Aceptable</span>
-          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-red-500/10 text-red-700 dark:text-red-300"><span aria-hidden="true">🛑</span> &lt; 35 Comprometida</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-green-500/10 text-green-700 dark:text-green-300"><span aria-hidden="true">✅</span> &gt; 50 Buena</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300"><span aria-hidden="true">⚠️</span> 36–50 Aceptable</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-red-500/10 text-red-700 dark:text-red-300"><span aria-hidden="true">🛑</span> ≤ 35 Comprometida</span>
         </div>
         <button class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-brand-primary text-white hover:bg-brand-primary-hover active:bg-brand-primary-hover active:scale-[0.98] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-150 cursor-pointer" id="qol-start" type="button">
           Empezar ahora →
@@ -361,7 +361,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
             </span>
           </summary>
           <div class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted">
-            Un puntaje acumulado superior a 35 sobre 70 se considera aceptable y sugiere que se puede continuar apoyando la calidad de vida con cuidados paliativos o geriátricos ajustados. Un puntaje inferior a 35 indica que la calidad de vida está gravemente comprometida y es imperativo hablar con el veterinario sobre opciones para evitar el sufrimiento.
+            Un puntaje acumulado superior a 35 sobre 70 se considera aceptable y sugiere que se puede continuar apoyando la calidad de vida con cuidados paliativos o geriátricos ajustados. Un puntaje de 35 o menos indica que la calidad de vida está gravemente comprometida y es imperativo hablar con el veterinario sobre opciones para evitar el sufrimiento.
           </div>
         </details>
 
@@ -385,7 +385,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
             </span>
           </summary>
           <div class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted">
-            Un puntaje bajo (menor a 35) no significa que debas tomar una decisión apresurada tú solo. Su función principal es alertarte para que organices una visita prioritaria con tu veterinario de confianza. El profesional puede ajustar analgésicos, recomendar soporte de movilidad o ayudarte a tomar una decisión compasiva libre de culpa.
+            Un puntaje bajo (35 o menos) no significa que debas tomar una decisión apresurada tú solo. Su función principal es alertarte para que organices una visita prioritaria con tu veterinario de confianza. El profesional puede ajustar analgésicos, recomendar soporte de movilidad o ayudarte a tomar una decisión compasiva libre de culpa.
           </div>
         </details>
       </div>

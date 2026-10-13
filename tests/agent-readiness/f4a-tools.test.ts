@@ -1,8 +1,10 @@
 // F4A-1 — paridad de la lógica compartida con la UI legada (C4A-02, C4A-03).
 // Oráculo independiente: los scripts de la base eff4ce1 copiados byte a byte en
-// fixtures/f4a/legacy (identidad comprobada por id de blob git) y una fórmula
-// declarada aquí («suma; >=50 good; >=35 acceptable»). No se usa la
-// implementación para construir las expectativas.
+// fixtures/f4a/legacy (identidad comprobada por id de blob git) para textos,
+// criterios y suma, y la regla de franja declarada aquí. La franja es la del
+// seguimiento D33 («>50 good; >35 acceptable»), que difiere de la legada
+// («>=50; >=35») sólo en las sumas 35 y 50. No se usa la implementación para
+// construir las expectativas.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
@@ -59,7 +61,8 @@ function legacyBandTexts() {
 
 const KEYS = ['hurt', 'hunger', 'hydration', 'hygiene', 'happiness', 'mobility', 'moreGoodDays'];
 const BAND_NAMES = ['good', 'acceptable', 'compromised'] as const;
-const oracleBand = (score: number) => (score >= 50 ? 'good' : score >= 35 ? 'acceptable' : 'compromised');
+const legacyBand = (score: number) => (score >= 50 ? 'good' : score >= 35 ? 'acceptable' : 'compromised');
+const oracleBand = (score: number) => (score > 50 ? 'good' : score > 35 ? 'acceptable' : 'compromised');
 
 function oracleQuality(values: number[]) {
   const texts = legacyBandTexts();
@@ -126,9 +129,10 @@ test('C4A-02: la API/WebMCP no reciben URLs de afiliado', () => {
   assert.doesNotMatch(readFileSync(new URL('../../src/lib/agent-tools/movilidad.ts', import.meta.url), 'utf8'), /aliexpress/u);
 });
 
-test('C4A-03: dominio completo 11^7 de calidad de vida (score y franja)', () => {
+test('C4A-03/C4A-15: dominio completo 11^7 de calidad de vida (score y franja D33)', () => {
   const values = [0, 0, 0, 0, 0, 0, 0];
   let count = 0;
+  const differFromLegacy = new Set<number>();
   const input: Record<string, number> = {};
   for (let n = 0; n < 11 ** 7; n += 1) {
     let rest = n;
@@ -136,18 +140,30 @@ test('C4A-03: dominio completo 11^7 de calidad de vida (score y franja)', () => 
     for (let i = 0; i < 7; i += 1) { values[i] = rest % 11; rest = Math.floor(rest / 11); input[KEYS[i]!] = values[i]!; sum += values[i]!; }
     const result = evaluateQualityOfLife(input);
     if (result.score !== sum || result.band !== oracleBand(sum)) assert.fail(`n=${n} score=${result.score} band=${result.band}`);
+    if (result.band !== legacyBand(sum)) differFromLegacy.add(sum);
     count += 1;
   }
   assert.equal(count, 19487171);
+  assert.deepEqual([...differFromLegacy].sort((a, b) => a - b), [35, 50]);
+});
+
+test('C4A-15: vectores de frontera D33', () => {
+  const sums = [34, 35, 36, 49, 50, 51, 0, 70];
+  const expected = ['compromised', 'compromised', 'acceptable', 'acceptable', 'acceptable', 'good', 'compromised', 'good'];
+  const legacy = ['compromised', 'acceptable', 'acceptable', 'acceptable', 'good', 'good', 'compromised', 'good'];
+  const vector = (sum: number) => Object.fromEntries(KEYS.map((key, i) => [key, Math.min(10, Math.max(0, sum - 10 * i))]));
+  assert.deepEqual(sums.map((sum) => evaluateQualityOfLife(vector(sum)).score), sums);
+  assert.deepEqual(sums.map((sum) => evaluateQualityOfLife(vector(sum)).band), expected);
+  assert.deepEqual(sums.map(legacyBand), legacy);
 });
 
 test('C4A-03: cuerpos completos en umbrales, extremos y ejemplos normativos', () => {
   const vectors: number[][] = [
     [0, 0, 0, 0, 0, 0, 0], [10, 10, 10, 10, 10, 10, 10],
-    [4, 5, 5, 5, 5, 5, 5], [5, 5, 5, 5, 5, 5, 5], [10, 10, 10, 10, 9, 0, 0], [10, 10, 10, 10, 10, 0, 0],
-    [0, 0, 0, 0, 0, 0, 10], [10, 0, 10, 0, 10, 0, 10],
+    [4, 5, 5, 5, 5, 5, 5], [5, 5, 5, 5, 5, 5, 5], [6, 5, 5, 5, 5, 5, 5], [10, 10, 10, 10, 9, 0, 0], [10, 10, 10, 10, 10, 0, 0],
+    [10, 10, 10, 10, 10, 1, 0], [0, 0, 0, 0, 0, 0, 10], [10, 0, 10, 0, 10, 0, 10],
   ];
-  assert.deepEqual(vectors.map((v) => v.reduce((a, b) => a + b, 0)), [0, 70, 34, 35, 49, 50, 10, 40]);
+  assert.deepEqual(vectors.map((v) => v.reduce((a, b) => a + b, 0)), [0, 70, 34, 35, 36, 49, 50, 51, 10, 40]);
   for (const v of vectors) {
     const input = Object.fromEntries(KEYS.map((key, i) => [key, v[i]]));
     assert.equal(serialize(evaluateQualityOfLife(input)), serialize(oracleQuality(v)), JSON.stringify(v));

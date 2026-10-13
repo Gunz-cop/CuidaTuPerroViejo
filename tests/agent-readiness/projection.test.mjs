@@ -78,7 +78,7 @@ test('los goldens cubren los perfiles editoriales, FAQ, tablas, citas e imágene
   assert.match(about, /# Sobre/u);
   assert.match(editorial, /## Publicidad y enlaces/u);
   assert.match(qol, /últimos 3 días/u);
-  assert.match(qol, /≥ 50 Buena 35–49 Aceptable/u);
+  assert.match(qol, /\\> 50 Buena 36–50 Aceptable ≤ 35 Comprometida/u);
   assert.doesNotMatch(qol, /qol-result-score|qol-human-msg|qol-recommendation/u);
   assert.match(mobility, /Aviso condicional de la interfaz para nivel severo:/u);
   assert.match(mobility, /Esta recomendación es una guía de apoyo/u);

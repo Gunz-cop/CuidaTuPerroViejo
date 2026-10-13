@@ -1,4 +1,4 @@
-// F4A-1 — contratos y descriptores (C4A-06): OpenAPI 1.1.0, schema, registro
+// F4A-1 — contratos y descriptores (C4A-06): OpenAPI 1.2.0, schema, registro
 // cerrado, Linkset, ARD, skill y llms anuncian sólo lo implementado.
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
@@ -21,10 +21,10 @@ const formatAjv = (ajv) => {
   return ajv;
 };
 
-test('OpenAPI 1.1.0: cinco paths, quince operationIds, diez componentes y parámetros de cálculo exactos', async () => {
+test('OpenAPI 1.2.0: cinco paths, quince operationIds, diez componentes y parámetros de cálculo exactos', async () => {
   const result = await buildArtifacts(FIXTURE);
   const openapi = JSON.parse(result.assets.openapi.toString('utf8'));
-  assert.equal(openapi.info.version, '1.1.0');
+  assert.equal(openapi.info.version, '1.2.0');
   assert.equal(openapi.info.title, 'API pública de Cuida tu Perro Viejo');
   assert.equal(openapi.info.description, 'Catálogo, búsqueda léxica y lectura íntegra del corpus editorial publicado de Cuida tu Perro Viejo, y cálculo de sus dos herramientas educativas (escala HHHHHMM y selector de ayudas de movilidad), con los mismos resultados que la interfaz del sitio. Los cálculos son orientativos y no constituyen diagnóstico veterinario.');
   assert.deepEqual(Object.keys(openapi.paths), ['/api/agent/v1/catalog', '/api/agent/v1/search', '/api/agent/v1/documents/{documentId}', '/api/agent/v1/tools/calidad-vida', '/api/agent/v1/tools/movilidad']);

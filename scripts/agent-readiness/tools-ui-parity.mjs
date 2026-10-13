@@ -16,11 +16,11 @@ const MOBILITY_PAGE = '/herramientas/selector-movilidad-perros-mayores';
 const SITE = 'https://cuidatuperroviejo.com';
 const squash = (value) => value.replace(/\s+/gu, ' ').trim();
 
-// Vectores fijos: extremos, umbrales 34/35/49/50, combinaciones mixtas y 20 con semilla fija.
+// Vectores fijos: extremos, fronteras 34/35/36/49/50/51 (D33), combinaciones mixtas y 20 con semilla fija.
 function qualityVectors() {
   const fixed = [
-    [0, 0, 0, 0, 0, 0, 0], [10, 10, 10, 10, 10, 10, 10], [4, 5, 5, 5, 5, 5, 5], [5, 5, 5, 5, 5, 5, 5],
-    [10, 10, 10, 10, 9, 0, 0], [10, 10, 10, 10, 10, 0, 0], [0, 0, 0, 0, 0, 0, 10], [10, 0, 10, 0, 10, 0, 10],
+    [0, 0, 0, 0, 0, 0, 0], [10, 10, 10, 10, 10, 10, 10], [4, 5, 5, 5, 5, 5, 5], [5, 5, 5, 5, 5, 5, 5], [6, 5, 5, 5, 5, 5, 5],
+    [10, 10, 10, 10, 9, 0, 0], [10, 10, 10, 10, 10, 0, 0], [10, 10, 10, 10, 10, 1, 0], [0, 0, 0, 0, 0, 0, 10], [10, 0, 10, 0, 10, 0, 10],
   ];
   let seed = 4242;
   const random = () => { seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
