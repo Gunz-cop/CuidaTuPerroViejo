@@ -1,0 +1,75 @@
+{
+  "head": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+  "at": "2026-10-13T20:27:03.994Z",
+  "status": "PASS",
+  "before": {
+    "usedSize": 13581432,
+    "totalSize": 24424448,
+    "embedderHeapUsedSize": 386904,
+    "backingStorageSize": 801134
+  },
+  "after": {
+    "usedSize": 18415160,
+    "totalSize": 31764480,
+    "embedderHeapUsedSize": 386904,
+    "backingStorageSize": 1163650
+  },
+  "peakObservedUsedHeapBytes": 18415160,
+  "times": [
+    {
+      "name": "search_guides",
+      "wallMs": 48.45067800000004,
+      "isError": false,
+      "heap": {
+        "usedSize": 15618980,
+        "totalSize": 31502336,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 831630
+      },
+      "structuredSha256": "bd30065af7df7a0a304a2b49fb16bea9ca935660303b2c4e08fe273940ee8e8a"
+    },
+    {
+      "name": "read_guide",
+      "wallMs": 17.577804000000015,
+      "isError": false,
+      "heap": {
+        "usedSize": 17167824,
+        "totalSize": 31502336,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 1109406
+      },
+      "structuredSha256": "413da08a7d8412232de02b9109b3fceef5e89d1ebe9d1c54adcd8b21076ba81b"
+    },
+    {
+      "name": "evaluate_quality_of_life",
+      "wallMs": 16.81496500000003,
+      "isError": false,
+      "heap": {
+        "usedSize": 17896616,
+        "totalSize": 31764480,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 1135258
+      },
+      "structuredSha256": "602a5bcc8a77c9a8921318094c800933386f1f847714e488dd1c36361652a60d"
+    },
+    {
+      "name": "recommend_mobility_aids",
+      "wallMs": 13.488039999999955,
+      "isError": false,
+      "heap": {
+        "usedSize": 18415160,
+        "totalSize": 31764480,
+        "embedderHeapUsedSize": 386904,
+        "backingStorageSize": 1163650
+      },
+      "structuredSha256": "2a913954f70e190c5da181557c502ca6c0a9f7bb688bd698617e773c769f0b09"
+    }
+  ],
+  "sampledActiveUs": 168899,
+  "sampledIdleOrProgramUs": 60716,
+  "limitations": [
+    "V8 CPU muestreada local; primer search con cach\u00e9 editorial fr\u00eda en instancia nueva, read posterior caliente. Incluye framework e inspector; no CPU facturable Cloudflare ni CPU por request de producci\u00f3n.",
+    "HeapV8 observado entre llamadas no es pico total del isolate ni memoriaRSS. Latencia wall no equivale a CPU.",
+    "No afirma viabilidadFree ni cuota global. Profiling fallido8787 hist\u00f3rico se conserva y no se usa como PASS."
+  ]
+}

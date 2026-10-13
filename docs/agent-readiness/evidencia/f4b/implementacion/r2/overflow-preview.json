@@ -1,0 +1,31 @@
+{
+  "head": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+  "at": "2026-10-13T20:23:12.743Z",
+  "scope": "Upload stream sin Content-Length declarado por cliente; no inferir que intermediarios no puedan asignarlo.",
+  "status": "PASS",
+  "httpStatus": 413,
+  "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}",
+  "headers": {
+    "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+    "access-control-allow-methods": "POST, OPTIONS",
+    "access-control-expose-headers": "Link, MCP-Protocol-Version",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "private, no-store",
+    "cdn-cache-control": "no-store",
+    "cf-ray": "a4a10f8ad8711060-ORD",
+    "cloudflare-cdn-cache-control": "no-store",
+    "content-length": "80",
+    "content-type": "application/json",
+    "date": "Tue, 13 Oct 2026 20:23:12 GMT",
+    "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "permissions-policy": "geolocation=(), microphone=(), camera=()",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=z49UiJr7cIqJxF8TeuH3MfNvcVGWuEUXxuvlRrUTEdDXA03ypBeAiK6ogQe5Jvg6tLpnjzyR9FliWapzwK9aQo%2B89lyNXXiRDmttqJmQUzq8Uo5jfhFHjzB5c9gzHtqLbFNL3mdMLp6%2B4wTImDO2tnIg7578GDglSuIgWKChNJ0%3D\"}]}",
+    "server": "envoy",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "x-content-type-options": "nosniff",
+    "x-envoy-upstream-service-time": "974",
+    "x-robots-tag": "noindex"
+  }
+}

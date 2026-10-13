@@ -1,0 +1,1421 @@
+{
+  "head": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+  "tree": "960be17582b35a2f5287d90a369ab10883c55821",
+  "receipt": {
+    "head": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+    "build": "97c7ec40-3e66-49c6-92af-5ad978197d80",
+    "version": "81e32ad7-e16a-4b12-aba9-81589f0651e3",
+    "preview": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev",
+    "ciUrl": "https://github.com/Gunz-cop/CuidaTuPerroViejo/actions/runs/38461648383/job/115518050070",
+    "workerUrl": "https://dash.cloudflare.com/972ab3666747a93c084965dd4585d4cc/workers/services/view/cuidatuperroviejo/production/builds/97c7ec40-3e66-49c6-92af-5ad978197d80"
+  },
+  "at": "2026-10-13T20:26:45.749Z",
+  "status": "PASS",
+  "deterministicByteExact": 80,
+  "contactRestricted": "PASS",
+  "label": "80 byteexactos + contacto con equivalencia restringida",
+  "records": [
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/.well-known/agent-skills/buscar-leer-citar/SKILL.md",
+      "localPath": "/.well-known/agent-skills/buscar-leer-citar/SKILL.md",
+      "status": 200,
+      "expected": {
+        "path": "/.well-known/agent-skills/buscar-leer-citar/SKILL.md",
+        "bytes": 4141,
+        "sha256": "b5314a8bdda3ef81ee852d6c8b7861b3ea703fec48c70510cd03335711512331",
+        "urlPath": "/.well-known/agent-skills/buscar-leer-citar/SKILL.md"
+      },
+      "actual": {
+        "bytes": 4141,
+        "sha256": "b5314a8bdda3ef81ee852d6c8b7861b3ea703fec48c70510cd03335711512331"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/.well-known/agent-skills/index.json",
+      "localPath": "/.well-known/agent-skills/index.json",
+      "status": 200,
+      "expected": {
+        "path": "/.well-known/agent-skills/index.json",
+        "bytes": 496,
+        "sha256": "3f1187d23c8a055ad6fd99703612e7c2bd317d60abad7b3bf4f012a81f97f2ac",
+        "urlPath": "/.well-known/agent-skills/index.json"
+      },
+      "actual": {
+        "bytes": 496,
+        "sha256": "3f1187d23c8a055ad6fd99703612e7c2bd317d60abad7b3bf4f012a81f97f2ac"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/.well-known/ai-catalog.json",
+      "localPath": "/.well-known/ai-catalog.json",
+      "status": 200,
+      "expected": {
+        "path": "/.well-known/ai-catalog.json",
+        "bytes": 2200,
+        "sha256": "774b5410754f8da360d562433984be33fb3645129941928516db1a5ba7cb1c0b",
+        "urlPath": "/.well-known/ai-catalog.json"
+      },
+      "actual": {
+        "bytes": 2200,
+        "sha256": "774b5410754f8da360d562433984be33fb3645129941928516db1a5ba7cb1c0b"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/.well-known/api-catalog",
+      "localPath": "/.well-known/api-catalog",
+      "status": 200,
+      "expected": {
+        "path": "/.well-known/api-catalog",
+        "bytes": 1586,
+        "sha256": "2626485633fab0410025e60282f7058c79b7e92b67e74334a3eceda986759f35",
+        "urlPath": "/.well-known/api-catalog"
+      },
+      "actual": {
+        "bytes": 1586,
+        "sha256": "2626485633fab0410025e60282f7058c79b7e92b67e74334a3eceda986759f35"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/.well-known/ard.json",
+      "localPath": "/.well-known/ard.json",
+      "status": 200,
+      "expected": {
+        "path": "/.well-known/ard.json",
+        "bytes": 2200,
+        "sha256": "774b5410754f8da360d562433984be33fb3645129941928516db1a5ba7cb1c0b",
+        "urlPath": "/.well-known/ard.json"
+      },
+      "actual": {
+        "bytes": 2200,
+        "sha256": "774b5410754f8da360d562433984be33fb3645129941928516db1a5ba7cb1c0b"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/404",
+      "localPath": "/404.html",
+      "status": 200,
+      "expected": {
+        "path": "/404.html",
+        "bytes": 29495,
+        "sha256": "1c6742b5ab785e0451fbb71ced0b7af4c5c28a2bc2e48625376fc681e54021ca",
+        "urlPath": "/404"
+      },
+      "actual": {
+        "bytes": 29495,
+        "sha256": "1c6742b5ab785e0451fbb71ced0b7af4c5c28a2bc2e48625376fc681e54021ca"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.CZ3jEwtI.js",
+      "localPath": "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.CZ3jEwtI.js",
+      "status": 200,
+      "expected": {
+        "path": "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.CZ3jEwtI.js",
+        "bytes": 6340,
+        "sha256": "3bc1cdf958d0c7fe84bb1a42e81ea6759188fde9228aad3295feef9251a44592",
+        "urlPath": "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.CZ3jEwtI.js"
+      },
+      "actual": {
+        "bytes": 6340,
+        "sha256": "3bc1cdf958d0c7fe84bb1a42e81ea6759188fde9228aad3295feef9251a44592"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/_astro/BaseLayout.VWxkXcFk.css",
+      "localPath": "/_astro/BaseLayout.VWxkXcFk.css",
+      "status": 200,
+      "expected": {
+        "path": "/_astro/BaseLayout.VWxkXcFk.css",
+        "bytes": 138524,
+        "sha256": "b23a2c33b943bfef6538f9800d75582eaa3c57f420664932eddbf03822d6ed11",
+        "urlPath": "/_astro/BaseLayout.VWxkXcFk.css"
+      },
+      "actual": {
+        "bytes": 138524,
+        "sha256": "b23a2c33b943bfef6538f9800d75582eaa3c57f420664932eddbf03822d6ed11"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+      "localPath": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+      "status": 200,
+      "expected": {
+        "path": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "bytes": 5732,
+        "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a",
+        "urlPath": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+      },
+      "actual": {
+        "bytes": 5732,
+        "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+      "localPath": "/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+      "status": 200,
+      "expected": {
+        "path": "/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+        "bytes": 8059,
+        "sha256": "f766f22002d928c37aeb58a65e2222d7203623e13f8558d3079db1151d378357",
+        "urlPath": "/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js"
+      },
+      "actual": {
+        "bytes": 8059,
+        "sha256": "f766f22002d928c37aeb58a65e2222d7203623e13f8558d3079db1151d378357"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/_astro/calidad-vida.CkucuN4v.js",
+      "localPath": "/_astro/calidad-vida.CkucuN4v.js",
+      "status": 200,
+      "expected": {
+        "path": "/_astro/calidad-vida.CkucuN4v.js",
+        "bytes": 3495,
+        "sha256": "6f3e16f3ed447234d5e7e3a7226f512283ab6a8b9e9727736e65f1876c5b0d38",
+        "urlPath": "/_astro/calidad-vida.CkucuN4v.js"
+      },
+      "actual": {
+        "bytes": 3495,
+        "sha256": "6f3e16f3ed447234d5e7e3a7226f512283ab6a8b9e9727736e65f1876c5b0d38"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/_astro/contract.Cu9QodcA.js",
+      "localPath": "/_astro/contract.Cu9QodcA.js",
+      "status": 200,
+      "expected": {
+        "path": "/_astro/contract.Cu9QodcA.js",
+        "bytes": 665,
+        "sha256": "512414df1c0c948fa3d24e3923aa17bfc45b1043459d0a1c083db6e1bb0f0e76",
+        "urlPath": "/_astro/contract.Cu9QodcA.js"
+      },
+      "actual": {
+        "bytes": 665,
+        "sha256": "512414df1c0c948fa3d24e3923aa17bfc45b1043459d0a1c083db6e1bb0f0e76"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/_astro/movilidad.B1WnJKyW.js",
+      "localPath": "/_astro/movilidad.B1WnJKyW.js",
+      "status": 200,
+      "expected": {
+        "path": "/_astro/movilidad.B1WnJKyW.js",
+        "bytes": 6235,
+        "sha256": "b0c7e640bdf4e223d602b4b9c04d24bc43dc63caa8923acaf92eddd7cd4b4e53",
+        "urlPath": "/_astro/movilidad.B1WnJKyW.js"
+      },
+      "actual": {
+        "bytes": 6235,
+        "sha256": "b0c7e640bdf4e223d602b4b9c04d24bc43dc63caa8923acaf92eddd7cd4b4e53"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/_astro/selector-movilidad-perros-mayores.astro_astro_type_script_index_0_lang.DitUWyj1.js",
+      "localPath": "/_astro/selector-movilidad-perros-mayores.astro_astro_type_script_index_0_lang.DitUWyj1.js",
+      "status": 200,
+      "expected": {
+        "path": "/_astro/selector-movilidad-perros-mayores.astro_astro_type_script_index_0_lang.DitUWyj1.js",
+        "bytes": 8055,
+        "sha256": "d31a6bca32dbf847bbbbd6ae954d75e7be3be9bf57e3683645c9974f0c349361",
+        "urlPath": "/_astro/selector-movilidad-perros-mayores.astro_astro_type_script_index_0_lang.DitUWyj1.js"
+      },
+      "actual": {
+        "bytes": 8055,
+        "sha256": "d31a6bca32dbf847bbbbd6ae954d75e7be3be9bf57e3683645c9974f0c349361"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/acerca-de",
+      "localPath": "/acerca-de.html",
+      "status": 200,
+      "expected": {
+        "path": "/acerca-de.html",
+        "bytes": 35982,
+        "sha256": "e6c4962a4e9bcb31b36bc53d994a8fb5585d2d75d7d798b8bb6b2fff3cf470f2",
+        "urlPath": "/acerca-de"
+      },
+      "actual": {
+        "bytes": 35982,
+        "sha256": "e6c4962a4e9bcb31b36bc53d994a8fb5585d2d75d7d798b8bb6b2fff3cf470f2"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-api/v1/openapi.json",
+      "localPath": "/agent-api/v1/openapi.json",
+      "status": 200,
+      "expected": {
+        "path": "/agent-api/v1/openapi.json",
+        "bytes": 173030,
+        "sha256": "099b719a4baa10379121626c8de7049f8b53766d09820390c1ada4e9ea9c6784",
+        "urlPath": "/agent-api/v1/openapi.json"
+      },
+      "actual": {
+        "bytes": 173030,
+        "sha256": "099b719a4baa10379121626c8de7049f8b53766d09820390c1ada4e9ea9c6784"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-api/v1/query-index.json",
+      "localPath": "/agent-api/v1/query-index.json",
+      "status": 200,
+      "expected": {
+        "path": "/agent-api/v1/query-index.json",
+        "bytes": 585402,
+        "sha256": "c3ef87c127aeb3f5330ae5ed7ea1fd935c142f9f8c0af54b66512fbfbf33943e",
+        "urlPath": "/agent-api/v1/query-index.json"
+      },
+      "actual": {
+        "bytes": 585402,
+        "sha256": "c3ef87c127aeb3f5330ae5ed7ea1fd935c142f9f8c0af54b66512fbfbf33943e"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md",
+      "localPath": "/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md",
+        "bytes": 44223,
+        "sha256": "3feb00d4f978db51b3da7300557001f6ff54b8e3ef743c7ca86b38eebf0eb913",
+        "urlPath": "/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md"
+      },
+      "actual": {
+        "bytes": 44223,
+        "sha256": "3feb00d4f978db51b3da7300557001f6ff54b8e3ef743c7ca86b38eebf0eb913"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md",
+      "localPath": "/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md",
+        "bytes": 40785,
+        "sha256": "59145955fe0e09bdad14dcb702a2c12458efb3e10a2855e45f3d4cbec6ad8043",
+        "urlPath": "/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md"
+      },
+      "actual": {
+        "bytes": 40785,
+        "sha256": "59145955fe0e09bdad14dcb702a2c12458efb3e10a2855e45f3d4cbec6ad8043"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md",
+      "localPath": "/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md",
+        "bytes": 35047,
+        "sha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4",
+        "urlPath": "/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md"
+      },
+      "actual": {
+        "bytes": 35047,
+        "sha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--chequeo-geriatrico-canino.md",
+      "localPath": "/agent-content/v1/documents/article--chequeo-geriatrico-canino.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--chequeo-geriatrico-canino.md",
+        "bytes": 10293,
+        "sha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+        "urlPath": "/agent-content/v1/documents/article--chequeo-geriatrico-canino.md"
+      },
+      "actual": {
+        "bytes": 10293,
+        "sha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--comida-casera-perros-mayores.md",
+      "localPath": "/agent-content/v1/documents/article--comida-casera-perros-mayores.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--comida-casera-perros-mayores.md",
+        "bytes": 23205,
+        "sha256": "f0f66b8c4c873e9b42b6af49a51dfe8a08dfbaaed34561ec7a596f5f9fe26554",
+        "urlPath": "/agent-content/v1/documents/article--comida-casera-perros-mayores.md"
+      },
+      "actual": {
+        "bytes": 23205,
+        "sha256": "f0f66b8c4c873e9b42b6af49a51dfe8a08dfbaaed34561ec7a596f5f9fe26554"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+      "localPath": "/agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+        "bytes": 32341,
+        "sha256": "411773d629aaec82ed46fda040947048c808181cfed00b26f9aea4bc677e0af2",
+        "urlPath": "/agent-content/v1/documents/article--como-dar-medicacion-perro.md"
+      },
+      "actual": {
+        "bytes": 32341,
+        "sha256": "411773d629aaec82ed46fda040947048c808181cfed00b26f9aea4bc677e0af2"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md",
+      "localPath": "/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md",
+        "bytes": 25780,
+        "sha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9",
+        "urlPath": "/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md"
+      },
+      "actual": {
+        "bytes": 25780,
+        "sha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md",
+      "localPath": "/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md",
+        "bytes": 39877,
+        "sha256": "702173abb49c8f674ba1bc9622046fd305552ca68ebbbe56e9c249f206d16df7",
+        "urlPath": "/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md"
+      },
+      "actual": {
+        "bytes": 39877,
+        "sha256": "702173abb49c8f674ba1bc9622046fd305552ca68ebbbe56e9c249f206d16df7"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md",
+      "localPath": "/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md",
+        "bytes": 16806,
+        "sha256": "4d636b98123ff6841e83382868ba570cd49b301263009474f72212e6ff390628",
+        "urlPath": "/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md"
+      },
+      "actual": {
+        "bytes": 16806,
+        "sha256": "4d636b98123ff6841e83382868ba570cd49b301263009474f72212e6ff390628"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md",
+      "localPath": "/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md",
+        "bytes": 41947,
+        "sha256": "fa11e470e647bd9ca346e5b84e9977f079af5574e01ce096eeb9486987eac34c",
+        "urlPath": "/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md"
+      },
+      "actual": {
+        "bytes": 41947,
+        "sha256": "fa11e470e647bd9ca346e5b84e9977f079af5574e01ce096eeb9486987eac34c"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md",
+      "localPath": "/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md",
+        "bytes": 40845,
+        "sha256": "b53a7bcb8accaad5025f6a0e7b318f059edcffb31c0943d61c70cbd4d2babe2e",
+        "urlPath": "/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md"
+      },
+      "actual": {
+        "bytes": 40845,
+        "sha256": "b53a7bcb8accaad5025f6a0e7b318f059edcffb31c0943d61c70cbd4d2babe2e"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md",
+      "localPath": "/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md",
+        "bytes": 47785,
+        "sha256": "59c57d26a8d8d2704bac2535d51715aaf22b63c00ca02f0966eb96725efde838",
+        "urlPath": "/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md"
+      },
+      "actual": {
+        "bytes": 47785,
+        "sha256": "59c57d26a8d8d2704bac2535d51715aaf22b63c00ca02f0966eb96725efde838"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--salud-dental-perros-mayores.md",
+      "localPath": "/agent-content/v1/documents/article--salud-dental-perros-mayores.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--salud-dental-perros-mayores.md",
+        "bytes": 12307,
+        "sha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6",
+        "urlPath": "/agent-content/v1/documents/article--salud-dental-perros-mayores.md"
+      },
+      "actual": {
+        "bytes": 12307,
+        "sha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+      "localPath": "/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+        "bytes": 32561,
+        "sha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+        "urlPath": "/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md"
+      },
+      "actual": {
+        "bytes": 32561,
+        "sha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--ulceras-presion-perros.md",
+      "localPath": "/agent-content/v1/documents/article--ulceras-presion-perros.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--ulceras-presion-perros.md",
+        "bytes": 8303,
+        "sha256": "00a669b47df1fa5c1644ea9d3ddf78e183d95903595d736343742cc4e0f360cc",
+        "urlPath": "/agent-content/v1/documents/article--ulceras-presion-perros.md"
+      },
+      "actual": {
+        "bytes": 8303,
+        "sha256": "00a669b47df1fa5c1644ea9d3ddf78e183d95903595d736343742cc4e0f360cc"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md",
+      "localPath": "/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md",
+        "bytes": 14780,
+        "sha256": "da8155374059c711c9323722f4882562238252973b277ca450eb6e475aef7aa9",
+        "urlPath": "/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md"
+      },
+      "actual": {
+        "bytes": 14780,
+        "sha256": "da8155374059c711c9323722f4882562238252973b277ca450eb6e475aef7aa9"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/home.md",
+      "localPath": "/agent-content/v1/documents/home.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/home.md",
+        "bytes": 12878,
+        "sha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+        "urlPath": "/agent-content/v1/documents/home.md"
+      },
+      "actual": {
+        "bytes": 12878,
+        "sha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/page--acerca-de.md",
+      "localPath": "/agent-content/v1/documents/page--acerca-de.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/page--acerca-de.md",
+        "bytes": 2477,
+        "sha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3",
+        "urlPath": "/agent-content/v1/documents/page--acerca-de.md"
+      },
+      "actual": {
+        "bytes": 2477,
+        "sha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/page--politica-editorial.md",
+      "localPath": "/agent-content/v1/documents/page--politica-editorial.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/page--politica-editorial.md",
+        "bytes": 2925,
+        "sha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+        "urlPath": "/agent-content/v1/documents/page--politica-editorial.md"
+      },
+      "actual": {
+        "bytes": 2925,
+        "sha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+      "localPath": "/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+        "bytes": 12031,
+        "sha256": "fad888dbf741908da5bf6ab17a8288d4bef02af901c2585159c8286318345305",
+        "urlPath": "/agent-content/v1/documents/pillar--alimentacion-perros-senior.md"
+      },
+      "actual": {
+        "bytes": 12031,
+        "sha256": "fad888dbf741908da5bf6ab17a8288d4bef02af901c2585159c8286318345305"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+      "localPath": "/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+        "bytes": 8084,
+        "sha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939",
+        "urlPath": "/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md"
+      },
+      "actual": {
+        "bytes": 8084,
+        "sha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--herramientas.md",
+      "localPath": "/agent-content/v1/documents/pillar--herramientas.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--herramientas.md",
+        "bytes": 3756,
+        "sha256": "ffd6bf31f715af0b5fc778922ed329bb58ac09d40dc877572b1f181082afe222",
+        "urlPath": "/agent-content/v1/documents/pillar--herramientas.md"
+      },
+      "actual": {
+        "bytes": 3756,
+        "sha256": "ffd6bf31f715af0b5fc778922ed329bb58ac09d40dc877572b1f181082afe222"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md",
+      "localPath": "/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md",
+        "bytes": 7794,
+        "sha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58",
+        "urlPath": "/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md"
+      },
+      "actual": {
+        "bytes": 7794,
+        "sha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md",
+      "localPath": "/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md",
+        "bytes": 7261,
+        "sha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6",
+        "urlPath": "/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md"
+      },
+      "actual": {
+        "bytes": 7261,
+        "sha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md",
+      "localPath": "/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md",
+        "bytes": 11135,
+        "sha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949",
+        "urlPath": "/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md"
+      },
+      "actual": {
+        "bytes": 11135,
+        "sha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--salud-perros-mayores.md",
+      "localPath": "/agent-content/v1/documents/pillar--salud-perros-mayores.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--salud-perros-mayores.md",
+        "bytes": 12040,
+        "sha256": "04d25b0c2406b47b9156182dd044b7bae2e9fa32135f464f6b9504c4fa20b042",
+        "urlPath": "/agent-content/v1/documents/pillar--salud-perros-mayores.md"
+      },
+      "actual": {
+        "bytes": 12040,
+        "sha256": "04d25b0c2406b47b9156182dd044b7bae2e9fa32135f464f6b9504c4fa20b042"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/tool--calidad-vida.md",
+      "localPath": "/agent-content/v1/documents/tool--calidad-vida.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/tool--calidad-vida.md",
+        "bytes": 5049,
+        "sha256": "0d79c5f7608a41f3955df62773fb9f5f4d0727f33702e97718358506ad5f0f9d",
+        "urlPath": "/agent-content/v1/documents/tool--calidad-vida.md"
+      },
+      "actual": {
+        "bytes": 5049,
+        "sha256": "0d79c5f7608a41f3955df62773fb9f5f4d0727f33702e97718358506ad5f0f9d"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/tool--movilidad.md",
+      "localPath": "/agent-content/v1/documents/tool--movilidad.md",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/documents/tool--movilidad.md",
+        "bytes": 5899,
+        "sha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37",
+        "urlPath": "/agent-content/v1/documents/tool--movilidad.md"
+      },
+      "actual": {
+        "bytes": 5899,
+        "sha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/index.json",
+      "localPath": "/agent-content/v1/index.json",
+      "status": 200,
+      "expected": {
+        "path": "/agent-content/v1/index.json",
+        "bytes": 26284,
+        "sha256": "fcd6f94690d5a1c4814573bb7ab578615a064ed4080f581be2b1b1eaffbda111",
+        "urlPath": "/agent-content/v1/index.json"
+      },
+      "actual": {
+        "bytes": 26284,
+        "sha256": "fcd6f94690d5a1c4814573bb7ab578615a064ed4080f581be2b1b1eaffbda111"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/alimentacion-perros-senior",
+      "localPath": "/alimentacion-perros-senior.html",
+      "status": 200,
+      "expected": {
+        "path": "/alimentacion-perros-senior.html",
+        "bytes": 64095,
+        "sha256": "715565424500dc6a1cd7419585d16e99dd84dbc9e65f6c7887d2eb2a2455c454",
+        "urlPath": "/alimentacion-perros-senior"
+      },
+      "actual": {
+        "bytes": 64095,
+        "sha256": "715565424500dc6a1cd7419585d16e99dd84dbc9e65f6c7887d2eb2a2455c454"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "localPath": "/alimentacion-perros-senior/comida-casera-perros-mayores.html",
+      "status": 200,
+      "expected": {
+        "path": "/alimentacion-perros-senior/comida-casera-perros-mayores.html",
+        "bytes": 92102,
+        "sha256": "c33d5c2c3b665f2f8ec468decdd9ed4d4b0a493afc5e997e11ad7a55c81a75c2",
+        "urlPath": "/alimentacion-perros-senior/comida-casera-perros-mayores"
+      },
+      "actual": {
+        "bytes": 92102,
+        "sha256": "c33d5c2c3b665f2f8ec468decdd9ed4d4b0a493afc5e997e11ad7a55c81a75c2"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/api/mcp/server-card",
+      "localPath": "/api/mcp/server-card",
+      "status": 200,
+      "expected": {
+        "path": "/api/mcp/server-card",
+        "bytes": 559,
+        "sha256": "aeea988a8e92d68085716e88755dae917215708953bbd0002a80ebd576ae1f84",
+        "urlPath": "/api/mcp/server-card"
+      },
+      "actual": {
+        "bytes": 559,
+        "sha256": "aeea988a8e92d68085716e88755dae917215708953bbd0002a80ebd576ae1f84"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/asistente-ia",
+      "localPath": "/asistente-ia.html",
+      "status": 200,
+      "expected": {
+        "path": "/asistente-ia.html",
+        "bytes": 31843,
+        "sha256": "db30d15c583a074cf350d80dbb6a7579a9d8ef2c447d24e58e5701c15899ea63",
+        "urlPath": "/asistente-ia"
+      },
+      "actual": {
+        "bytes": 31843,
+        "sha256": "db30d15c583a074cf350d80dbb6a7579a9d8ef2c447d24e58e5701c15899ea63"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/contacto",
+      "localPath": "/contacto.html",
+      "status": 200,
+      "expected": {
+        "path": "/contacto.html",
+        "bytes": 35686,
+        "sha256": "14dcd80b2b8c01f5859aebf2c4a7be47e065680c318b4b3bb5b4eef705c4d658",
+        "urlPath": "/contacto"
+      },
+      "actual": {
+        "bytes": 35686,
+        "sha256": "fb7141727b73c163b8c9d54a3e1c6ed40fa5486ebaed2d94b1b1d06ad01fcd73"
+      },
+      "byteExact": false,
+      "contact": {
+        "local": {
+          "bytes": 35686,
+          "sha256": "14dcd80b2b8c01f5859aebf2c4a7be47e065680c318b4b3bb5b4eef705c4d658"
+        },
+        "remote": {
+          "bytes": 35686,
+          "sha256": "fb7141727b73c163b8c9d54a3e1c6ed40fa5486ebaed2d94b1b1d06ad01fcd73"
+        },
+        "sourceHash": "d8b0712f96d2e5556e527e3d024561a8b15e0ab5344bdb2d59a038a98f0ee672",
+        "mode": "equivalencia restringida startedAt",
+        "status": "PASS",
+        "beforeEqual": true,
+        "afterEqual": true,
+        "localPosition": {
+          "start": 18256,
+          "end": 18269,
+          "value": "1791922644906"
+        },
+        "remotePosition": {
+          "start": 18256,
+          "end": 18269,
+          "value": "1791922670989"
+        }
+      },
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/cuidados-paliativos-perros",
+      "localPath": "/cuidados-paliativos-perros.html",
+      "status": 200,
+      "expected": {
+        "path": "/cuidados-paliativos-perros.html",
+        "bytes": 59164,
+        "sha256": "5056a1d5e86528abb3318f27acaef763e4de6530627762c160fb100bae156b7e",
+        "urlPath": "/cuidados-paliativos-perros"
+      },
+      "actual": {
+        "bytes": 59164,
+        "sha256": "5056a1d5e86528abb3318f27acaef763e4de6530627762c160fb100bae156b7e"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "localPath": "/cuidados-paliativos-perros/como-dar-medicacion-perro.html",
+      "status": 200,
+      "expected": {
+        "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro.html",
+        "bytes": 106620,
+        "sha256": "ed0dcd55df4b6b1f21ece06e05bd633bbeb7ce7f0106a3f954e42bccd89a09d0",
+        "urlPath": "/cuidados-paliativos-perros/como-dar-medicacion-perro"
+      },
+      "actual": {
+        "bytes": 106620,
+        "sha256": "ed0dcd55df4b6b1f21ece06e05bd633bbeb7ce7f0106a3f954e42bccd89a09d0"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/cuidados-paliativos-perros/ulceras-presion-perros",
+      "localPath": "/cuidados-paliativos-perros/ulceras-presion-perros.html",
+      "status": 200,
+      "expected": {
+        "path": "/cuidados-paliativos-perros/ulceras-presion-perros.html",
+        "bytes": 66696,
+        "sha256": "76d6bdcd07cfd39433256df323320122b8af034eea5559d5dcd7c28c63ff5aca",
+        "urlPath": "/cuidados-paliativos-perros/ulceras-presion-perros"
+      },
+      "actual": {
+        "bytes": 66696,
+        "sha256": "76d6bdcd07cfd39433256df323320122b8af034eea5559d5dcd7c28c63ff5aca"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/gracias",
+      "localPath": "/gracias.html",
+      "status": 200,
+      "expected": {
+        "path": "/gracias.html",
+        "bytes": 29206,
+        "sha256": "fec4ce5b4971516dc5baab1b19435e414661a3e8e9567e277270ad46fc96b1bc",
+        "urlPath": "/gracias"
+      },
+      "actual": {
+        "bytes": 29206,
+        "sha256": "fec4ce5b4971516dc5baab1b19435e414661a3e8e9567e277270ad46fc96b1bc"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/herramientas",
+      "localPath": "/herramientas.html",
+      "status": 200,
+      "expected": {
+        "path": "/herramientas.html",
+        "bytes": 39370,
+        "sha256": "63415983cb5946231fb07a32d3c63c8f2adef3ca7d0243ee2c6e4b5aa15538b2",
+        "urlPath": "/herramientas"
+      },
+      "actual": {
+        "bytes": 39370,
+        "sha256": "63415983cb5946231fb07a32d3c63c8f2adef3ca7d0243ee2c6e4b5aa15538b2"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/herramientas/calculadora-calidad-vida-perros",
+      "localPath": "/herramientas/calculadora-calidad-vida-perros.html",
+      "status": 200,
+      "expected": {
+        "path": "/herramientas/calculadora-calidad-vida-perros.html",
+        "bytes": 60969,
+        "sha256": "5ed65d77e29a1013eb4194a2cff9f822c1e36c0fbd11329832164a79597fbd82",
+        "urlPath": "/herramientas/calculadora-calidad-vida-perros"
+      },
+      "actual": {
+        "bytes": 60969,
+        "sha256": "5ed65d77e29a1013eb4194a2cff9f822c1e36c0fbd11329832164a79597fbd82"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/herramientas/selector-movilidad-perros-mayores",
+      "localPath": "/herramientas/selector-movilidad-perros-mayores.html",
+      "status": 200,
+      "expected": {
+        "path": "/herramientas/selector-movilidad-perros-mayores.html",
+        "bytes": 62312,
+        "sha256": "33257806578aeaf63a78c39add3abcf3f1b587e3c750f45021e0f674a29b7d10",
+        "urlPath": "/herramientas/selector-movilidad-perros-mayores"
+      },
+      "actual": {
+        "bytes": 62312,
+        "sha256": "33257806578aeaf63a78c39add3abcf3f1b587e3c750f45021e0f674a29b7d10"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/higiene-hogar-perros-senior",
+      "localPath": "/higiene-hogar-perros-senior.html",
+      "status": 200,
+      "expected": {
+        "path": "/higiene-hogar-perros-senior.html",
+        "bytes": 59051,
+        "sha256": "5bf0126a03efb325df96a4503d072878e7d93880d0e2cfb7045e9559b9418ca6",
+        "urlPath": "/higiene-hogar-perros-senior"
+      },
+      "actual": {
+        "bytes": 59051,
+        "sha256": "5bf0126a03efb325df96a4503d072878e7d93880d0e2cfb7045e9559b9418ca6"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+      "localPath": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html",
+      "status": 200,
+      "expected": {
+        "path": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html",
+        "bytes": 116403,
+        "sha256": "ab23f0d4fc377f27e8f887ef7c94f339b3c325a05da1d7dca31228533ae1d721",
+        "urlPath": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior"
+      },
+      "actual": {
+        "bytes": 116403,
+        "sha256": "ab23f0d4fc377f27e8f887ef7c94f339b3c325a05da1d7dca31228533ae1d721"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+      "localPath": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores.html",
+      "status": 200,
+      "expected": {
+        "path": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores.html",
+        "bytes": 83223,
+        "sha256": "864335f7d1dd22adf0cd763f2ee3202ab34f0285df934af432852f70d7f18b68",
+        "urlPath": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores"
+      },
+      "actual": {
+        "bytes": 83223,
+        "sha256": "864335f7d1dd22adf0cd763f2ee3202ab34f0285df934af432852f70d7f18b68"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/",
+      "localPath": "/index.html",
+      "status": 200,
+      "expected": {
+        "path": "/index.html",
+        "bytes": 120037,
+        "sha256": "16c86a4d5edadd09f40a0f30a88b02d3868d1d52aa5501c70aa69ab2dea6b277",
+        "urlPath": "/"
+      },
+      "actual": {
+        "bytes": 120037,
+        "sha256": "16c86a4d5edadd09f40a0f30a88b02d3868d1d52aa5501c70aa69ab2dea6b277"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/llms.txt",
+      "localPath": "/llms.txt",
+      "status": 200,
+      "expected": {
+        "path": "/llms.txt",
+        "bytes": 4206,
+        "sha256": "f69fafedd5c4a96d71ddc60717c4069cc1424395fbd7a21e75b5ba3d5389ab08",
+        "urlPath": "/llms.txt"
+      },
+      "actual": {
+        "bytes": 4206,
+        "sha256": "f69fafedd5c4a96d71ddc60717c4069cc1424395fbd7a21e75b5ba3d5389ab08"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/movilidad-dolor-perros-mayores",
+      "localPath": "/movilidad-dolor-perros-mayores.html",
+      "status": 200,
+      "expected": {
+        "path": "/movilidad-dolor-perros-mayores.html",
+        "bytes": 58447,
+        "sha256": "16816ee944408aece7d1009a8695917f81600ff95b6a462d07a1304b9ffa96a8",
+        "urlPath": "/movilidad-dolor-perros-mayores"
+      },
+      "actual": {
+        "bytes": 58447,
+        "sha256": "16816ee944408aece7d1009a8695917f81600ff95b6a462d07a1304b9ffa96a8"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+      "localPath": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis.html",
+      "status": 200,
+      "expected": {
+        "path": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis.html",
+        "bytes": 112806,
+        "sha256": "8a2d373b9e693ca2e7b7aee858f9e852b4f6c68a4d0770c9f5c979d5dc3f8bc9",
+        "urlPath": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis"
+      },
+      "actual": {
+        "bytes": 112806,
+        "sha256": "8a2d373b9e693ca2e7b7aee858f9e852b4f6c68a4d0770c9f5c979d5dc3f8bc9"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+      "localPath": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor.html",
+      "status": 200,
+      "expected": {
+        "path": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor.html",
+        "bytes": 126393,
+        "sha256": "afd3bdeaa9c63a171a19456f07557e08880a25981b9b9b6003a5f6a2bf16ad90",
+        "urlPath": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor"
+      },
+      "actual": {
+        "bytes": 126393,
+        "sha256": "afd3bdeaa9c63a171a19456f07557e08880a25981b9b9b6003a5f6a2bf16ad90"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/politica-de-cookies",
+      "localPath": "/politica-de-cookies.html",
+      "status": 200,
+      "expected": {
+        "path": "/politica-de-cookies.html",
+        "bytes": 40671,
+        "sha256": "0c14767ed6027930e4d5cce94b95ad8d6557cb6d78c0175c20ec7b4f25ddd1fe",
+        "urlPath": "/politica-de-cookies"
+      },
+      "actual": {
+        "bytes": 40671,
+        "sha256": "0c14767ed6027930e4d5cce94b95ad8d6557cb6d78c0175c20ec7b4f25ddd1fe"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/politica-de-privacidad",
+      "localPath": "/politica-de-privacidad.html",
+      "status": 200,
+      "expected": {
+        "path": "/politica-de-privacidad.html",
+        "bytes": 34814,
+        "sha256": "873ccf385cd2f3a3bf972cd36d4cb619e79e2fbd5b53e7627661f7c10ab665be",
+        "urlPath": "/politica-de-privacidad"
+      },
+      "actual": {
+        "bytes": 34814,
+        "sha256": "873ccf385cd2f3a3bf972cd36d4cb619e79e2fbd5b53e7627661f7c10ab665be"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/politica-editorial",
+      "localPath": "/politica-editorial.html",
+      "status": 200,
+      "expected": {
+        "path": "/politica-editorial.html",
+        "bytes": 34152,
+        "sha256": "1d34d1c81d06b94763274c295d18e0dbb0d39962acd0a6d704eb2364f81c461b",
+        "urlPath": "/politica-editorial"
+      },
+      "actual": {
+        "bytes": 34152,
+        "sha256": "1d34d1c81d06b94763274c295d18e0dbb0d39962acd0a6d704eb2364f81c461b"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/robots.txt",
+      "localPath": "/robots.txt",
+      "status": 200,
+      "expected": {
+        "path": "/robots.txt",
+        "bytes": 135,
+        "sha256": "1804644940a3594aa6b1b52db1b5905a995c7364fbc7174b0909b9fa8e1511f5",
+        "urlPath": "/robots.txt"
+      },
+      "actual": {
+        "bytes": 135,
+        "sha256": "1804644940a3594aa6b1b52db1b5905a995c7364fbc7174b0909b9fa8e1511f5"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/salud-mental-emocional-perros",
+      "localPath": "/salud-mental-emocional-perros.html",
+      "status": 200,
+      "expected": {
+        "path": "/salud-mental-emocional-perros.html",
+        "bytes": 64783,
+        "sha256": "07769ab82293220e611748b854f9da2ac20f161135d4b95062d7ca2f40d63c21",
+        "urlPath": "/salud-mental-emocional-perros"
+      },
+      "actual": {
+        "bytes": 64783,
+        "sha256": "07769ab82293220e611748b854f9da2ac20f161135d4b95062d7ca2f40d63c21"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "localPath": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor.html",
+      "status": 200,
+      "expected": {
+        "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor.html",
+        "bytes": 127269,
+        "sha256": "b3ece00a06a3c9e739adbc4ee511cea2ed8e83e2874ed0d2e781b956a26e08e4",
+        "urlPath": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor"
+      },
+      "actual": {
+        "bytes": 127269,
+        "sha256": "b3ece00a06a3c9e739adbc4ee511cea2ed8e83e2874ed0d2e781b956a26e08e4"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "localPath": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior.html",
+      "status": 200,
+      "expected": {
+        "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior.html",
+        "bytes": 121905,
+        "sha256": "73639633c0389dcbf6b8b6595e9ed7af940be6fd253e07971fb97e2ff6a16ae0",
+        "urlPath": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior"
+      },
+      "actual": {
+        "bytes": 121905,
+        "sha256": "73639633c0389dcbf6b8b6595e9ed7af940be6fd253e07971fb97e2ff6a16ae0"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+      "localPath": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina.html",
+      "status": 200,
+      "expected": {
+        "path": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina.html",
+        "bytes": 115342,
+        "sha256": "771b1d388f9c4e75c2f5d545bdec4c76495d8fd0d5de6b593daa4182cd2383b7",
+        "urlPath": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina"
+      },
+      "actual": {
+        "bytes": 115342,
+        "sha256": "771b1d388f9c4e75c2f5d545bdec4c76495d8fd0d5de6b593daa4182cd2383b7"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores",
+      "localPath": "/salud-perros-mayores.html",
+      "status": 200,
+      "expected": {
+        "path": "/salud-perros-mayores.html",
+        "bytes": 68654,
+        "sha256": "a7e5958a2d11a291f9cbc52d3ab935b8fc21d1132e15ef223b2c6ee2b56957f1",
+        "urlPath": "/salud-perros-mayores"
+      },
+      "actual": {
+        "bytes": 68654,
+        "sha256": "a7e5958a2d11a291f9cbc52d3ab935b8fc21d1132e15ef223b2c6ee2b56957f1"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/chequeo-geriatrico-canino",
+      "localPath": "/salud-perros-mayores/chequeo-geriatrico-canino.html",
+      "status": 200,
+      "expected": {
+        "path": "/salud-perros-mayores/chequeo-geriatrico-canino.html",
+        "bytes": 74160,
+        "sha256": "3368b8b03d1893abc394928f184483e209eebf3b064a78ef50c1c519f8ad91ba",
+        "urlPath": "/salud-perros-mayores/chequeo-geriatrico-canino"
+      },
+      "actual": {
+        "bytes": 74160,
+        "sha256": "3368b8b03d1893abc394928f184483e209eebf3b064a78ef50c1c519f8ad91ba"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion",
+      "localPath": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.html",
+      "status": 200,
+      "expected": {
+        "path": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.html",
+        "bytes": 134060,
+        "sha256": "a7677f37f1d347d55c7c9496f849a5da453379fe98de2a2aa7f0508fed4677cd",
+        "urlPath": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion"
+      },
+      "actual": {
+        "bytes": 134060,
+        "sha256": "a7677f37f1d347d55c7c9496f849a5da453379fe98de2a2aa7f0508fed4677cd"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+      "localPath": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html",
+      "status": 200,
+      "expected": {
+        "path": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html",
+        "bytes": 124109,
+        "sha256": "4f89f491b5d064bc373fbeb0dbf0dd00680877e9111fc72b90c6acd4f96b2845",
+        "urlPath": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia"
+      },
+      "actual": {
+        "bytes": 124109,
+        "sha256": "4f89f491b5d064bc373fbeb0dbf0dd00680877e9111fc72b90c6acd4f96b2845"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/salud-dental-perros-mayores",
+      "localPath": "/salud-perros-mayores/salud-dental-perros-mayores.html",
+      "status": 200,
+      "expected": {
+        "path": "/salud-perros-mayores/salud-dental-perros-mayores.html",
+        "bytes": 77271,
+        "sha256": "9368fe78d2853ea0dc20493ce68f7968e5ee49bfca039fa21715f791805b4319",
+        "urlPath": "/salud-perros-mayores/salud-dental-perros-mayores"
+      },
+      "actual": {
+        "bytes": 77271,
+        "sha256": "9368fe78d2853ea0dc20493ce68f7968e5ee49bfca039fa21715f791805b4319"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "localPath": "/salud-perros-mayores/sindrome-cushing-perros-mayores.html",
+      "status": 200,
+      "expected": {
+        "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores.html",
+        "bytes": 111389,
+        "sha256": "30643c1037517dbfeefecf3bb2559db252f88f69cbd4ce5c95deea2217bd9d73",
+        "urlPath": "/salud-perros-mayores/sindrome-cushing-perros-mayores"
+      },
+      "actual": {
+        "bytes": 111389,
+        "sha256": "30643c1037517dbfeefecf3bb2559db252f88f69cbd4ce5c95deea2217bd9d73"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://81e32ad7-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+      "localPath": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior.html",
+      "status": 200,
+      "expected": {
+        "path": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior.html",
+        "bytes": 81756,
+        "sha256": "18be91dea2a1d6cafe2554ad34c8bfe31a5b25cb12f42e7382f585eede2f6b45",
+        "urlPath": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior"
+      },
+      "actual": {
+        "bytes": 81756,
+        "sha256": "18be91dea2a1d6cafe2554ad34c8bfe31a5b25cb12f42e7382f585eede2f6b45"
+      },
+      "byteExact": true,
+      "pass": true
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # F4B — implementación en curso, issue #90
 
+> Estado actual: [entrega R2/5](r2/README.md). Este documento conserva la evidencia histórica R1; sus gates pendientes corresponden a aquel snapshot. La adenda 1 está ratificada, pero C08 local del nuevo producto sigue en FAIL. No hay aceptación ni integración.
+
 2026-10-13. Base técnica `cb8e10f1ead55ef0dafc666672cd3003252afc59`; base de desarrollo/ratificación `8669d9d6dd4b03685500d67a9332786ad474ff6b`, tree `0076ca9ed256123f56e2296ed8e5177257015b06`. Rama propia `agent-ready/f4b-implementacion`. Se conserva SDD R1 FAIL, R2 FAIL, STOP y excepción autorizada R3 PASS; no reiniciar contadores. Auditoría de implementación: **1/5**, R1/5 FAIL finalizada sobre producto fijo e6897f38fa3c80913d66ab7b044929b003a0abb5/treeff2466e4132077a7348b9e7e324fcad5f97a67ee; STOP esencial bug98.
 
 ## Producto desarrollado

@@ -1,0 +1,14 @@
+[
+  {
+    "streamed": false,
+    "status": 413,
+    "text": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}",
+    "pass": true
+  },
+  {
+    "streamed": true,
+    "status": 500,
+    "text": "Error: Network connection lost.\n    at async Object.fetch (file:///workspace/ctpv-f4b-desarrollo/node_modules/miniflare/dist/src/workers/core/entry.worker.js:5201:22)",
+    "pass": false
+  }
+]

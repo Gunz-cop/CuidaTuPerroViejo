@@ -1,0 +1,48 @@
+{
+  "head": "f96c4ccfa77e827bb79b09ee4375c570d2d2ee1e",
+  "base": "https://cd417c8b-cuidatuperroviejo.g1721m.workers.dev",
+  "at": "2026-10-13T20:11:17.590Z",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "registro4tools",
+      "browserOrder": [
+        "evaluate_quality_of_life",
+        "read_guide",
+        "recommend_mobility_aids",
+        "search_guides"
+      ],
+      "orderContract": "WebMCP getTools no exige orden; MCP tools/list sí se verifica en SDK harness",
+      "pass": true
+    },
+    {
+      "name": "UIqol35/API",
+      "visible": {
+        "score": "35",
+        "interpretation": "🛑 Calidad de Vida COMPROMETIDA."
+      },
+      "apiScore": 35,
+      "apiBand": "compromised",
+      "pass": true
+    },
+    {
+      "name": "evaluate_quality_of_lifeWebMCP/API",
+      "status": "Completed",
+      "pass": true
+    },
+    {
+      "name": "recommend_mobility_aidsWebMCP/API",
+      "status": "Completed",
+      "pass": true
+    },
+    {
+      "name": "UImobilitySB/API",
+      "visible": {
+        "title": "Silla de ruedas + cama ortopédica + entorno adaptado",
+        "description": "Como se estresa con el contacto, lo prioritario es darle el máximo de autonomía posible con ayudas de entorno. Revisa la alerta paliativa arriba."
+      },
+      "resultKey": "SB",
+      "pass": true
+    }
+  ]
+}
