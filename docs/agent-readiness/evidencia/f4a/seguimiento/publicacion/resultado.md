@@ -1,6 +1,6 @@
 # F4A-3 — Resultado de la publicación
 
-Fecha 2026-10-13. Estado: **publicado en producción; gates P4A3-01 a P4A3-03 en PASS según el autor**, tras una primera ejecución de P4A3-01 en FAIL por un despliegue que aún no había convergido (ver abajo). **Pendiente de la auditoría independiente de la publicación.**
+Fecha 2026-10-13. Estado: **publicado en producción; gates P4A3-01 a P4A3-03 en PASS según el autor**, tras una primera ejecución de P4A3-01 en FAIL por un despliegue que aún no había convergido (ver abajo). Auditoría independiente de la publicación: [R1](../../auditoria/f4a-3-publicacion-r1.md) FAIL sólo por B1 (documental, resuelto en `01ec8f8`) y [R2](../../auditoria/f4a-3-publicacion-r2.md) **PASS**; la segunda ejecución de P4A3-01 se dictaminó como no bloqueante. **F4A-3 cerrada.**
 
 ## Qué se publicó
 
