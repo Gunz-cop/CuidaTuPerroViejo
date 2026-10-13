@@ -179,3 +179,17 @@ test('C08: depth16/meta8192 inclusivos, +1 rechazado; ping ambas eras conforme a
   assert.deepEqual(JSON.parse(modern.text), { jsonrpc: '2.0', id: 1, error: { code: -32601, message: 'Method not found.' } });
   const legacy = await send({ jsonrpc: '2.0', id: 2, method: 'ping', params: {} }, 'ping', true); assert.equal(legacy.status, 200); assert.match(legacy.text, /"result":\{\}/);
 });
+
+test('C08: cancelPromise rechazada no oculta body overflow ya comprobado', async () => {
+  const f = fixture();
+  const body = new ReadableStream<Uint8Array>({ start(c) { c.enqueue(new Uint8Array(MAX_BODY + 1)); }, cancel() { return Promise.reject(new Error('synthetic-cancel-rejection')); } });
+  const response = await f.fetcher('http://localhost/api/mcp', { method: 'POST', headers: modernHeaders, body, duplex: 'half' } as RequestInit);
+  assert.equal(response.status, 413); assert.equal((await response.json() as any).error.code, -32600);
+});
+
+test('Content-Length excesivo se rechaza; declarado reducido no elude contador streaming', async () => {
+  for (const [length, body] of [[MAX_BODY + 1, '{}'], [1, 'x'.repeat(MAX_BODY + 1)]] as const) {
+    const f = fixture(); const r = await f.fetcher('http://localhost/api/mcp', { method: 'POST', headers: { ...modernHeaders, 'Content-Length': String(length) }, body });
+    assert.equal(r.status, 413); await r.text();
+  }
+});

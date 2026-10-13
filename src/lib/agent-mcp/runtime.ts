@@ -112,7 +112,7 @@ async function readBody(request: Request, signal: AbortSignal): Promise<Uint8Arr
       signal.throwIfAborted();
       if (done) break;
       size += value.byteLength;
-      if (size > MAX_BODY) { await reader.cancel(); throw new RangeError('BODY_LIMIT'); }
+      if (size > MAX_BODY) { await reader.cancel().catch(() => {}); throw new RangeError('BODY_LIMIT'); }
       chunks.push(value);
     }
     const bytes = new Uint8Array(size); let offset = 0;
@@ -221,6 +221,11 @@ export function createAgentMcpWorker<Env extends AgentEnv>(next: AstroHandler<En
     if (retry || active >= 2) { const response = Response.json({ error: 'Too many requests.' }, { status: 429 }); response.headers.set('Retry-After', String(retry || 1)); return decorate(response); }
     if ((request.headers.get('Content-Type') ?? '').split(';')[0]?.trim().toLowerCase() !== 'application/json' || !['', 'identity'].includes(request.headers.get('Content-Encoding') ?? '')) return decorate(Response.json({ error: 'Unsupported media type.' }, { status: 415 }));
     if (!acceptable(request.headers.get('Accept'))) return decorate(Response.json({ error: 'Not acceptable.' }, { status: 406 }));
+    // Un tamaño declarado excesivo permite rechazar sin abrir/cancelar el
+    // upload. El contador streaming sigue siendo obligatorio: ni ausencia ni
+    // Content-Length reducido permiten eludir MAX_BODY.
+    const declaredLength = request.headers.get('Content-Length');
+    if (declaredLength !== null && /^[0-9]+$/u.test(declaredLength) && Number(declaredLength) > MAX_BODY) return decorate(rpcError(413, -32600, 'Invalid request.'));
     active++; const controller = new AbortController(); let released = false;
     const lease: Lease<Env> = { env, context, controller, jobs: 0, closed: false, release: () => {
       if (lease.closed && lease.jobs === 0 && !released) { released = true; active--; clearTimeout(timer); request.signal.removeEventListener('abort', abort); }
