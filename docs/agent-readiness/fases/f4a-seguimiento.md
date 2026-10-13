@@ -1,6 +1,6 @@
 # F4A — Seguimiento: umbrales HHHHHMM, carga condicional de WebMCP y estado de la migración
 
-Estado: **borrador para auditoría SDD** (2026-10-13). Base: `agent-ready/f4a-2` en `9c96847625f4952aca699905b05fc6cd92e84248`. Su código es idéntico a `main` = `35e2c1583f197cb0f5e7a878a5227f39897740b7`, publicado y cerrado ([cierre F4A](../evidencia/f4a/publicacion/cierre.md)). Rama de trabajo: `agent-ready/f4a-seguimiento`.
+Estado: **borrador para auditoría SDD, corrección tras [R1](../evidencia/f4a/auditoria/seguimiento-sdd-r1.md)** (2026-10-13). Base: `agent-ready/f4a-2` en `9c96847625f4952aca699905b05fc6cd92e84248`. Su código es idéntico a `main` = `35e2c1583f197cb0f5e7a878a5227f39897740b7`, publicado y cerrado ([cierre F4A](../evidencia/f4a/publicacion/cierre.md)). Rama de trabajo: `agent-ready/f4a-seguimiento`.
 
 Este documento **modifica** la [SDD F4A](f4a-herramientas-webmcp.md) y los [contratos F4A](f4a-contratos.md) sólo en lo que dice aquí. Todo lo demás sigue vigente. Si una regla de este documento choca con una de F4A, gana este documento; si dos reglas de este documento chocan entre sí, STOP de SDD.
 
@@ -10,14 +10,14 @@ El cierre de F4A dejó tres decisiones al propietario. El 2026-10-13 eligió las
 
 | ID | Decisión | Opción elegida |
 |---|---|---|
-| D33 | Puntuación exacta de 35 (y de 50) en la calculadora de calidad de vida | **Alinear con Villalobos**: «aceptable» exige más de 35 y «buena» más de 50 |
+| D33 | Puntuación exacta de 35 (y de 50) en la calculadora de calidad de vida | **Alinear con Villalobos**: «aceptable» exige más de 35, que es el umbral de la escala original. «Buena» exige más de 50, que es el texto del propio sitio (la escala original no define ese umbral) |
 | D34 | JS de WebMCP en todas las páginas | **Carga condicional**: los navegadores sin WebMCP no descargan nada nuevo |
 | D35 | `docs/migracion-stack/README.md` desactualizado | **Actualizarlo** (sólo documentación) |
 
 ## 2. D33 — Umbrales de la escala HHHHHMM
 
 **Problema.**
-- La página de la calculadora, la escala original de la Dra. Alice Villalobos (que la página cita) y la FAQ dicen «superior a 35 … aceptable» y «por encima de 50 … buena».
+- La escala original de la Dra. Alice Villalobos, que la página cita, fija como aceptable una suma superior a 35. La FAQ de la página dice «superior a 35 … aceptable» y añade un umbral propio del sitio: «por encima de 50 … buena».
 - El script legado y la extracción de F4A-1 usan `>= 35` y `>= 50`.
 - Una puntuación de exactamente 35 o 50 recibe en la UI una franja que contradice el texto de la propia página.
 
@@ -45,25 +45,35 @@ Se mantienen todo 0 → 0 `compromised` y todo 10 → 70 `good`.
 **Contrato de la API** (`GET /api/agent/v1/tools/calidad-vida`):
 
 - **Forma sin cambios.** `QualityOfLifeResult` conserva campos, orden y `schemaVersion: "agent-api/1"`. `thresholds` sigue siendo `{ "good": 50, "acceptable": 35 }` (los `const` del schema no cambian).
-- **Semántica nueva.** Cada umbral es un **mínimo exclusivo**: la franja exige `score > umbral`. Se documenta en la `description` de `thresholds` en `schema.json`/OpenAPI y en la `description` de la operación. Esa descripción decía «good si >=50, acceptable si >=35» y pasa a «good si >50, acceptable si >35».
+- **Semántica nueva.** Cada umbral es un **mínimo exclusivo**: la franja exige `score > umbral`. Se documenta en tres `description`:
+  - la de `thresholds` en `schema.json`/OpenAPI;
+  - la de `band`, que dice que la franja se decide con `>` sobre esos umbrales y que los consumidores deben usar `band` en lugar de recalcularla;
+  - la de la operación, que decía «good si >=50, acceptable si >=35» y pasa a «good si >50, acceptable si >35».
 - **Versión.** `info.version` de OpenAPI pasa de `1.1.0` a `1.2.0`. No se cambia `schemaVersion` porque la forma es idéntica.
 - **Justificación.** La API lleva menos de un día publicada y sólo cambia la franja en dos sumas exactas, para alinearla con el texto que la acompaña. No hay consumidores conocidos.
 - **Ejemplo normativo.** El de todo 5 (suma 35) pasa a `band: "compromised"`, con los textos de esa franja. [`ejemplo-calidad-vida-200.json`](../evidencia/f4a/contratos/ejemplo-calidad-vida-200.json) se regenera desde la lógica nueva; el anterior queda en el historial git (`9c96847`). Sigue siendo **byte a byte** el cuerpo 200 de la API para esa consulta.
 - **Sin cambios:** los demás campos y errores, las rutas, `movilidad` y su ejemplo.
 
-**Textos de la página** (los visibles y el JSON-LD de la FAQ, sin otros cambios de redacción):
+**Textos de la página.** Son exactamente estos cuatro (frase completa resultante); no hay otros cambios de redacción:
 
-1. JSON-LD FAQ: «Por debajo de 35 indica que la calidad de vida está comprometida…» → «Con 35 o menos, la calidad de vida está comprometida…». Se mantienen «superior a 35 … aceptable» y «Por encima de 50 indica buena…».
-2. FAQ visible: «Un puntaje inferior a 35 indica que la calidad de vida está gravemente comprometida…» → «Un puntaje de 35 o menos indica que la calidad de vida está gravemente comprometida…».
-3. FAQ visible: «Un puntaje bajo (menor a 35)…» → «Un puntaje bajo (35 o menos)…».
+1. **JSON-LD de la FAQ**, segunda pregunta. Sólo cambia la tercera frase: «Por debajo de 35 indica que la calidad de vida está comprometida y se recomienda consultar al veterinario.» → «Con 35 o menos, la calidad de vida está comprometida y se recomienda consultar al veterinario.». Las dos primeras se mantienen: «Un puntaje superior a 35 sobre 70 se considera aceptable. Por encima de 50 indica buena calidad de vida.»
+2. **FAQ visible**, segunda frase de la respuesta sobre interpretación: «Un puntaje inferior a 35 indica que la calidad de vida está gravemente comprometida y es imperativo hablar con el veterinario sobre opciones para evitar el sufrimiento.» → «Un puntaje de 35 o menos indica que la calidad de vida está gravemente comprometida y es imperativo hablar con el veterinario sobre opciones para evitar el sufrimiento.»
+3. **FAQ visible**, primera frase de la respuesta sobre puntaje bajo: «Un puntaje bajo (menor a 35) no significa que debas tomar una decisión apresurada tú solo.» → «Un puntaje bajo (35 o menos) no significa que debas tomar una decisión apresurada tú solo.»
+4. **Chips de la pantalla de inicio** (`#qol-intro`). Sólo cambia el texto tras el emoji, que sigue en su `<span aria-hidden="true">`; clases, emojis y orden no cambian:
+   - `≥ 50 Buena` → `> 50 Buena` (en el fuente Astro, `&gt; 50 Buena`);
+   - `35–49 Aceptable` → `36–50 Aceptable` (las sumas son enteras);
+   - `< 35 Comprometida` (en el fuente, `&lt; 35 Comprometida`) → `≤ 35 Comprometida`.
 
-Con esto, 35 y 50 dejan de ser ambiguos en el texto y coinciden con la regla.
+Con esto, 35 y 50 dejan de ser ambiguos en el texto y coinciden con la regla en toda la página.
 
 **Consecuencias derivadas, que se aceptan y verifican:**
 
-- **Proyección F2 de la herramienta.** La proyección de `tool--calidad-vida` incluye la FAQ, así que cambian su Markdown y su `markdownSha256`, el `corpusSha256`, el `query-index` y los hashes que se derivan de ellos.
-- **Proyección F2 de las demás páginas.** Nada más cambia: los otros 27 documentos y su Markdown quedan byte a byte iguales.
-- **Expectativas de F2/F3.** Si una prueba fija esos hashes, se actualiza al valor regenerado por la propia herramienta de proyección, nunca a mano.
+- **Proyección F2 de la herramienta.** La proyección de `tool--calidad-vida` incluye la FAQ y los chips de `#qol-intro`, así que cambian su Markdown y su `markdownSha256`, el `corpusSha256`, el `query-index` y los hashes que se derivan de ellos.
+- **Proyección F2 de las demás páginas.** El Markdown y el `markdownSha256` de los otros 27 documentos quedan byte a byte iguales.
+- **`htmlSha256` de las 28 páginas.** Cambian por D34, igual que ya pasó en F4A-2 con la línea del layout. No es un cambio de contenido.
+- **Expectativas de F2/F3.**
+  - Si una prueba fija hashes derivados del corpus, se actualiza al valor regenerado por la propia herramienta de proyección, nunca a mano.
+  - Se actualizan de forma declarada el fixture `tests/agent-readiness/fixtures/f2/tool--calidad-vida.md` (regenerado) y la aserción de `tests/agent-readiness/projection.test.mjs`, que hoy fija `/≥ 50 Buena 35–49 Aceptable/`. Pasa a comprobar los tres chips nuevos tal como los serializa la proyección.
 
 **Oráculo de pruebas.**
 - El oráculo legado de F4A-1 (los blobs git `3ea5ef22` y `196c0661`) sigue siendo la fuente de **textos, criterios y suma**.
@@ -86,10 +96,10 @@ Con esto, 35 y 50 dejan de ser ambiguos en el texto y coinciden con la regla.
 3. **Sin API, ninguna petición.** El `<script type="module" src>` dentro de un `<template>` es inerte: el navegador no lo descarga ni lo ejecuta. Astro no genera `modulepreload` para él. Un navegador sin API no hace ninguna petición nueva por WebMCP.
 4. **`src/scripts/agent-tools.ts` no cambia.** Sigue haciendo su propia detección (`findModelContext`) y su registro. La comprobación inline es sólo una puerta de carga: no sustituye a la del adaptador ni registra nada.
 5. **Sin cambios en tools ni registro.** Siguen iguales las cuatro tools, sus nombres, títulos, descripciones, `inputSchema`, `readOnlyHint`, la señal compartida, la cancelación, los errores y los límites.
-6. **Fuera del alcance de D34.** Las páginas de las dos herramientas cargan los módulos compartidos de su propia calculadora, `calidad-vida`/`movilidad` + `contract`. Viene de la extracción de lógica de F4A-1 (sin lógica duplicada), no de WebMCP, y no cambia.
+6. **Fuera del alcance de D34.** Las páginas de las dos herramientas cargan los módulos compartidos de su propia calculadora, `calidad-vida`/`movilidad` + `contract`, como imports estáticos del script de la página. Viene de la extracción de lógica de F4A-1 (sin lógica duplicada), no de WebMCP, y no cambia.
 
 **Viabilidad comprobada antes de redactar.** Prototipo local (sin commit), build de Astro y workerd:
-- Chromium 141 y Chrome 155 sin flag sólo piden en la home el JS que ya existía antes de F4A.
+- Chromium 141 y Chrome 155 sin flag sólo piden en la home el chunk preexistente de `CanineAiAssistant`. En la calculadora piden además el script de la página y sus imports estáticos `calidad-vida` y `contract`. En ninguno de los dos casos piden el chunk del adaptador.
 - Chrome 155 con `WebMCPTesting` carga el adaptador y registra las cuatro tools.
 - El chunk del adaptador mantiene el mismo contenido que en `35e2c15`.
 
@@ -109,11 +119,14 @@ Cambio: la línea de estado pasa a decir que la migración está **completada**,
 - **Auditor de implementación:** el de F4A-1/F4A-2 y de la publicación, independiente.
 - **Ficheros permitidos:**
   - `src/lib/agent-tools/calidad-vida.ts` (sólo `qualityBand` y el comentario de cabecera);
-  - `src/pages/herramientas/calculadora-calidad-vida-perros.astro` (sólo los 3 textos de §2);
+  - `src/pages/herramientas/calculadora-calidad-vida-perros.astro` (sólo los 4 textos de §2: tres frases de la FAQ y los tres chips);
   - `src/agent-api/schema.json` y `src/agent-api/openapi.template.json` (descripciones y `info.version`);
   - `src/components/AgentToolsScript.astro` (nuevo) y `src/layouts/BaseLayout.astro` (sólo la sustitución de §3);
   - tests y fixtures afectados;
-  - `scripts/agent-readiness/webmcp-browser.mjs` (comprobación nueva de C4A-17);
+  - `scripts/agent-readiness/webmcp-browser.mjs` (comprobaciones de C4A-17, registro de los JS pedidos con su SHA-256 de contenido y vectores de frontera de C4A-15);
+  - `scripts/agent-readiness/tools-ui-parity.mjs` (vectores de frontera de C4A-15);
+  - `scripts/agent-readiness/agent-api.mjs` (sólo la versión esperada de OpenAPI, de `1.1.0` a `1.2.0`);
+  - un script nuevo de comparación para C4A-17(c), en `docs/agent-readiness/evidencia/f4a/seguimiento/`;
   - el ejemplo normativo;
   - `docs/migracion-stack/README.md`;
   - la documentación y la evidencia bajo `docs/agent-readiness/`.
@@ -123,10 +136,10 @@ Cambio: la línea de estado pasa a decir que la migración está **completada**,
 | ID | Criterio |
 |---|---|
 | C4A-15 | Franjas D33 en la función compartida. Los vectores de frontera de §2 dan exactamente la tabla. Recorriendo los 11^7 vectores, la franja difiere del oráculo legado sólo cuando la suma es 35 o 50. La API devuelve byte a byte el ejemplo regenerado. UI, API y WebMCP coinciden en los vectores de frontera (34, 35, 36, 49, 50, 51, todo 0, todo 10) en Chrome 155 sin API, Chromium 141 y, por WebMCP, en Chrome 155 con flag |
-| C4A-16 | Textos de §2 en el HTML construido, visibles y en el JSON-LD. La proyección F2 sólo cambia en `tool--calidad-vida` y en los hashes derivados; los otros 27 Markdown son byte a byte iguales a `9c96847`. Las descripciones OpenAPI y del schema dicen «>». `info.version` es `1.2.0`. Los descriptores siguen anunciando sólo lo implementado |
-| C4A-17 | **Sin WebMCP no hay peticiones nuevas.** En Chrome 155 sin flag y en Chromium 141, en las 4 páginas del harness, no se pide el chunk de `AgentToolsScript`. Además, el conjunto de `/_astro/*.js` pedido es igual al conjunto de `<script src>` del HTML que están fuera del `<template>`, así que no hay peticiones a módulos no referenciados. En la home y la página editorial ese conjunto coincide con el JS que ya cargaban antes de F4A |
+| C4A-16 | Los cuatro textos de §2 están en el HTML construido: las tres frases de la FAQ (visibles y en el JSON-LD) y los tres chips. Ningún texto anterior de esos cuatro sigue en la página ni en la proyección. El Markdown F2 sólo cambia en `tool--calidad-vida`; el Markdown y el `markdownSha256` de los otros 27 documentos son byte a byte iguales a `9c96847`. El Markdown de la herramienta contiene la FAQ y los chips nuevos. Las descripciones de `thresholds`, `band` y la operación (OpenAPI y schema) dicen «>». `info.version` es `1.2.0`. Los descriptores siguen anunciando sólo lo implementado |
+| C4A-17 | **Sin WebMCP no hay peticiones nuevas.** En Chrome 155 sin flag y en Chromium 141, en las 4 páginas del harness (home, guía de Cushing, calculadora y política editorial):<br>(a) el conjunto de `/_astro/*.js` pedido es **igual** al cierre transitivo de imports estáticos de los `<script type="module" src>` del HTML que están fuera del `<template id="agent-tools-webmcp">`. Ese cierre se calcula del build servido: el HTML de la página más los especificadores `import … from` estáticos de cada chunk;<br>(b) no se pide el chunk de `AgentToolsScript` ni ningún módulo de su cierre que no esté en el cierre de (a). Hoy son `contract`, `calidad-vida` y `movilidad` en la home, la guía y la política editorial, y `movilidad` en la calculadora;<br>(c) en la home y la política editorial, el conjunto de JS pedido, comparado por SHA-256 del contenido, es igual al que piden los mismos navegadores con el build de `aad2a66` (F3 publicado, anterior a F4A), construido en un worktree y servido en workerd con el mismo harness. Lo compara el script de §5 |
 | C4A-18 | **Con WebMCP, comportamiento F4A intacto.** Se repiten C4A-08 a C4A-12 con el harness F4A (81/81 o más, si C4A-17 añade comprobaciones) |
-| C4A-19 | Regresión: los 18 pasos del CI, `astro check` sin errores, CSS idéntico a la base, F1/F2/F3 sin cambios fuera de lo declarado en C4A-16, `movilidad` sin cambios (incluido su ejemplo byte a byte) |
+| C4A-19 | Regresión: todos los pasos del job «Criterios de aceptación» de `.github/workflows/ci.yml` en verde, `astro check` sin errores, CSS idéntico a la base, F1/F2/F3 sin cambios fuera de lo declarado en C4A-16, `movilidad` sin cambios (incluido su ejemplo byte a byte) |
 | C4A-20 | `docs/migracion-stack/README.md` con el estado de §4, enlaces válidos y nada más cambiado |
 
 ## 7. Verificación y gates
@@ -143,7 +156,7 @@ Cambio: la línea de estado pasa a decir que la migración está **completada**,
   - Se espera que la puntuación no cambie. No es criterio de aceptación; sí lo es que `webMcp` siga en pass.
 - **Rollback:**
   - D34: volver a la línea `<script>` de F4A.
-  - D33: restaurar `>=` y los tres textos.
+  - D33: restaurar `>=`, los cuatro textos de la página, las descripciones y la versión de OpenAPI, y el ejemplo normativo anterior.
   - D35: documental.
   - Los tres son independientes, y ningún estado intermedio deja dos algoritmos.
 
