@@ -1,8 +1,8 @@
 # F4B — MCP remoto: SDD para auditoría
 
-**Estado: especificada; pendiente de auditoría independiente, ratificación y congelado. No programar antes de PASS y ratificación.** Fecha 2026-10-13. Autor Sol/high; auditor solicitado GPT-6.1 Sol/high independiente. Máximo2revisiones SDD, mismo auditor; segunda FAIL→STOP. Esta SDD sustituye las propuestas de preparación para el nuevo encargo, conservándolas como antecedentes; no cambia contratos ni evidencia F4A.
+**Estado: STOP — auditoría SDD R2/2 FAIL. Sin ratificación/congelado; no programar.** Fecha 2026-10-13. Autor Sol/high; auditor solicitado GPT-6.1 Sol/high independiente. Máximo2revisiones SDD, mismo auditor; segunda FAIL→STOP. Esta SDD sustituye las propuestas de preparación para el nuevo encargo, conservándolas como antecedentes; no cambia contratos ni evidencia F4A.
 
-**Ciclo vigente:** [R1/2 FAIL](../evidencia/f4b/auditoria/sdd-r1.md), bloqueantes B1–B4 registrados en [#89](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/89). Único ciclo documental aplicado según [corrección](../evidencia/f4b/correccion-sdd-r1.md); pendiente R2/2 con el mismo auditor. No programación iniciada. Las [fixtures de negociación](../evidencia/f4b/contratos/version-negotiation.json) son contrato documental, no evidencia de ejecución.
+**Ciclo vigente:** [R1/2 FAIL](../evidencia/f4b/auditoria/sdd-r1.md), bloqueantes B1–B4 registrados en [#89](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/89). Único ciclo documental aplicado según [corrección](../evidencia/f4b/correccion-sdd-r1.md); [R2/2 FAIL](../evidencia/f4b/auditoria/sdd-r2.md) por B5 nuevo: clientInfo opcional exigido por el delta. Contador agotado, sin tercera revisión ni nuevas correcciones de contrato. [STOP y entrega](../evidencia/f4b/stop-sdd.md). No programación iniciada. Las [fixtures de negociación](../evidencia/f4b/contratos/version-negotiation.json) son contrato documental, no evidencia de ejecución.
 
 ## 1. Admisión y excepción de desarrollo paralelo
 
