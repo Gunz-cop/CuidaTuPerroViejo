@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "f4a-recibo-produccion/1",
+  "authorization": {
+    "source": "Mensaje del propietario en la sesión coordinadora: «Push a main y dalo por cerrado si se puede», en respuesta a evidencia/f4a/seguimiento/propuesta.md",
+    "receivedBefore": "2026-10-13T13:40:25Z"
+  },
+  "promotion": {
+    "mainBefore": "35e2c1583f197cb0f5e7a878a5227f39897740b7",
+    "mainAfter": "cb8e10f1ead55ef0dafc666672cd3003252afc59",
+    "tree": "2727f993981f3cbbd144b802b08f13d072d11773",
+    "method": "fast-forward sin force (git push <sha>:refs/heads/main; salida «35e2c15..cb8e10f»)",
+    "pushedAt": "2026-10-13T13:40:25Z",
+    "ancestorCheck": "35e2c15 es ancestro de cb8e10f, comprobado justo antes del push; el PR #88 quedó merged por ese push"
+  },
+  "productionBuild": {
+    "workersCheckRunId": 115329002239,
+    "buildId": "39c2fd8b-8aa9-4e1c-a0e3-05a146406281",
+    "conclusion": "success",
+    "completedAt": "2026-10-13T13:41:07Z",
+    "firstNewResponseAt": "2026-10-13T13:41:17Z",
+    "convergence": "convergencia.json: 22/22 en 3 sondeos seguidos (13:42:24Z, 13:43:28Z y 13:44:31Z)"
+  },
+  "identity": {
+    "evidence": "produccion-identidad.json (segunda ejecución, tras la convergencia)",
+    "result": "22/22 archivos del build-manifest de cb8e10f servidos byte a byte en https://cuidatuperroviejo.com"
+  }
+}

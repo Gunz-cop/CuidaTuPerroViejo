@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "f4a-seguimiento-c4a16/1",
+  "criterion": "C4A-16",
+  "candidate": "/tmp/claude-0/-home-user-CuidaTuPerroViejo/39287a3f-e751-51a4-9cfa-4620bcf2575b/scratchpad/prod3/dist",
+  "base": "/tmp/claude-0/-home-user-CuidaTuPerroViejo/39287a3f-e751-51a4-9cfa-4620bcf2575b/scratchpad/seg/wt-9c96847/dist",
+  "pass": true,
+  "passed": 49,
+  "total": 49,
+  "checks": [
+    {
+      "name": "HTML contiene «Con 35 o menos, la calidad de vida está comprometida y se recomienda consultar al veterinario.» exactamente una vez",
+      "ok": true
+    },
+    {
+      "name": "HTML contiene «Un puntaje de 35 o menos indica que la calidad de vida está gravemente comprometida y es imperativo hablar con el veterinario sobre opciones para evitar el sufrimiento.» exactamente una vez",
+      "ok": true
+    },
+    {
+      "name": "HTML contiene «Un puntaje bajo (35 o menos) no significa que debas tomar una decisión apresurada tú solo.» exactamente una vez",
+      "ok": true
+    },
+    {
+      "name": "HTML contiene «</span> &gt; 50 Buena</span>» exactamente una vez",
+      "ok": true
+    },
+    {
+      "name": "HTML contiene «</span> 36–50 Aceptable</span>» exactamente una vez",
+      "ok": true
+    },
+    {
+      "name": "HTML contiene «</span> ≤ 35 Comprometida</span>» exactamente una vez",
+      "ok": true
+    },
+    {
+      "name": "HTML ya no contiene «Por debajo de 35» (la base sí)",
+      "ok": true
+    },
+    {
+      "name": "HTML ya no contiene «inferior a 35» (la base sí)",
+      "ok": true
+    },
+    {
+      "name": "HTML ya no contiene «(menor a 35)» (la base sí)",
+      "ok": true
+    },
+    {
+      "name": "HTML ya no contiene «≥ 50 Buena» (la base sí)",
+      "ok": true
+    },
+    {
+      "name": "HTML ya no contiene «35–49 Aceptable» (la base sí)",
+      "ok": true
+    },
+    {
+      "name": "HTML ya no contiene «&lt; 35 Comprometida» (la base sí)",
+      "ok": true
+    },
+    {
+      "name": "JSON-LD FAQPage con la frase nueva",
+      "ok": true
+    },
+    {
+      "name": "28 documentos en ambos índices, mismos IDs",
+      "ok": true
+    },
+    {
+      "name": "article--agresividad-tardia-perros-mayores-dolor: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--ansiedad-separacion-perros-senior: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--cama-ortopedica-perros-mayores-displasia-artrosis: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--chequeo-geriatrico-canino: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--comida-casera-perros-mayores: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--como-dar-medicacion-perro: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--disfuncion-cognitiva-canina: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--incontinencia-fecal-perros-senior: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--incontinencia-urinaria-perros-mayores: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--mi-perro-viejo-defeca-mucho-poliquezia: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--prevencion-caidas-perro-mayor: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--salud-dental-perros-mayores: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--sindrome-cushing-perros-mayores: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--ulceras-presion-perros: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "article--vacunas-desparasitacion-perros-senior: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "home: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "page--acerca-de: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "page--politica-editorial: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "pillar--alimentacion-perros-senior: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "pillar--cuidados-paliativos-perros: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "pillar--herramientas: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "pillar--higiene-hogar-perros-senior: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "pillar--movilidad-dolor-perros-mayores: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "pillar--salud-mental-emocional-perros: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "pillar--salud-perros-mayores: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "tool--movilidad: Markdown y markdownSha256 byte-idénticos a la base",
+      "ok": true
+    },
+    {
+      "name": "el único Markdown que cambia es tool--calidad-vida",
+      "ok": true,
+      "detail": [
+        "tool--calidad-vida"
+      ]
+    },
+    {
+      "name": "Markdown de la herramienta con FAQ y chips nuevos",
+      "ok": true
+    },
+    {
+      "name": "corpusSha256 cambia respecto a la base",
+      "ok": true,
+      "detail": {
+        "base": "912082d0a00775bbe30d03270bc55c3cef466dd68dff92b1921a122e197c3b0a",
+        "candidate": "b28a9e846ceb5513a9a34e01b8a19db90f15328a8b7df1fd182b8d7e287f184d"
+      }
+    },
+    {
+      "name": "OpenAPI info.version 1.2.0",
+      "ok": true
+    },
+    {
+      "name": "descripción de band con «>» y «usar band»",
+      "ok": true
+    },
+    {
+      "name": "descripción de thresholds con mínimos exclusivos",
+      "ok": true
+    },
+    {
+      "name": "descripción de la operación con «>50» y «>35», sin «>=»",
+      "ok": true
+    },
+    {
+      "name": "thresholds conserva los const {50,35}",
+      "ok": true
+    }
+  ]
+}
