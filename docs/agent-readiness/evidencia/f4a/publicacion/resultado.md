@@ -1,6 +1,6 @@
 # F4A — Resultado de la publicación
 
-Fecha 2026-10-12. Estado: **publicado en producción; gates P4A-01 a P4A-03 en PASS según el autor; pendiente de auditoría independiente de la publicación.**
+Fecha 2026-10-12. Estado: **publicado en producción. Los gates P4A-01 a P4A-03 dan PASS y lo confirmó la auditoría independiente: [R1](../auditoria/f4a-publicacion-r1.md) dio FAIL sólo por B1 (documental, resuelto en `c72440b`) y [R2/2](../auditoria/f4a-publicacion-r2.md) dio PASS. Ver [cierre](cierre.md).**
 
 ## Qué se publicó
 
