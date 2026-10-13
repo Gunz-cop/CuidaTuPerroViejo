@@ -25,4 +25,4 @@ Fecha 2026-10-13. **Implementación aceptada; publicación pendiente de autoriza
 
 ## Pendiente
 
-La promoción a producción requiere autorización explícita del propietario. Ver la [propuesta](propuesta.md).
+La promoción a producción requiere autorización explícita del propietario. Ver la [propuesta](propuesta.md). *Actualización:* autorizada y ejecutada el 2026-10-13; ver el [resultado](publicacion/resultado.md).

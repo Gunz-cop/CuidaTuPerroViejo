@@ -40,7 +40,7 @@ Confirmada en esta conversación: `search=yes`, `ai-input=yes`, `ai-train=no`. L
 
 ## Estado actual y continuación
 
-F3 completa está **publicada, auditada y aceptada**, sin bloqueantes: [resultado de producción](evidencia/f3/publicacion/cierre/resultado.md), [auditoría independiente](evidencia/f3/publicacion/cierre/auditoria-p3.md) y [ratificación](evidencia/f3/publicacion/cierre/cierre-arquitectonico.md). Producto main al cierre de F3: `aad2a6624c24d7425c5ad5329b82c77a8a86b619` (desde 2026-10-12, `main` es `35e2c158`, ver F4A abajo); archivo documental separado en `agent-ready/f3-c`.
+F3 completa está **publicada, auditada y aceptada**, sin bloqueantes: [resultado de producción](evidencia/f3/publicacion/cierre/resultado.md), [auditoría independiente](evidencia/f3/publicacion/cierre/auditoria-p3.md) y [ratificación](evidencia/f3/publicacion/cierre/cierre-arquitectonico.md). Producto main al cierre de F3: `aad2a6624c24d7425c5ad5329b82c77a8a86b619` (F4A llevó `main` a `35e2c158` el 2026-10-12 y el seguimiento F4A-3 a `cb8e10f` el 2026-10-13; ver abajo); archivo documental separado en `agent-ready/f3-c`.
 
 Resultado comparable: **86/100 contenido, 60/100 general, nivel 4 general**. +20 general respecto de F2, con API Catalog, Agent Skills y ARD pasando y sin regresiones. El nivel 5 del perfil parcial de contenido no es el nivel general. Producción pasó 117 peticiones, las 28 lecturas completas y dos recorridos de búsqueda y cita.
 
