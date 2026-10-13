@@ -24,15 +24,17 @@ const SUFFIX = '\n## Interfaces públicas de contenido\n\n'
   + '- [API Catalog](https://cuidatuperroviejo.com/.well-known/api-catalog): catálogo de operaciones públicas de lectura.\n'
   + '- [OpenAPI](https://cuidatuperroviejo.com/agent-api/v1/openapi.json): contrato de catálogo, búsqueda, lectura íntegra y cálculos de las dos herramientas.\n'
   + '- [Skills](https://cuidatuperroviejo.com/.well-known/agent-skills/index.json): instrucciones verificables para buscar, leer y citar.\n'
-  + '- [ARD](https://cuidatuperroviejo.com/.well-known/ard.json): capacidades públicas activas.\n';
+  + '- [ARD](https://cuidatuperroviejo.com/.well-known/ard.json): capacidades públicas activas.\n'
+  + '- [MCP remoto](https://cuidatuperroviejo.com/api/mcp/server-card): transporte público para buscar, leer y ejecutar las dos herramientas educativas.\n';
 const LINKS = [
   '<https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain"',
   '<https://cuidatuperroviejo.com/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
   '<https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json"',
   '<https://cuidatuperroviejo.com/.well-known/ard.json>; rel="ard"; type="application/json"',
   '<https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json"',
+  '<https://cuidatuperroviejo.com/api/mcp/server-card>; rel="service-desc"; type="application/mcp-server-card+json"',
 ];
-const DESTINATIONS = ['agent-api/v1/query-index.json', 'agent-api/v1/openapi.json', '.well-known/api-catalog', '.well-known/agent-skills/index.json', '.well-known/agent-skills/buscar-leer-citar/SKILL.md', '.well-known/ard.json', '.well-known/ai-catalog.json'];
+const DESTINATIONS = ['api/mcp/server-card', 'agent-api/v1/query-index.json', 'agent-api/v1/openapi.json', '.well-known/api-catalog', '.well-known/agent-skills/index.json', '.well-known/agent-skills/buscar-leer-citar/SKILL.md', '.well-known/ard.json', '.well-known/ai-catalog.json'];
 
 async function fixture(t) {
   const root = await mkdtemp(join(process.cwd(), 'tests/agent-readiness/.f3-discovery-'));
@@ -115,9 +117,10 @@ test('discovery check rejects changed headers and policy without rewriting eithe
 
 test('F2 Link composition preserves foreign links and does not append duplicate F1/F3 values', async () => {
   const foreign = '<https://example.org/policy>; rel="license"';
+  const contentLinks = LINKS.slice(0, 5); // MCP se añade sólo en el wrapper exterior F4B.
   // Accepted static F2 fixture: exercise the actual shared header composer,
   // without changing negotiation or using API B as the expected-value oracle.
-  for (const initial of [foreign, `${foreign}, ${LINKS[0]}`, `${foreign}, ${LINKS.join(', ')}`]) {
+  for (const initial of [foreign, `${foreign}, ${contentLinks[0]}`, `${foreign}, ${contentLinks.join(', ')}`]) {
     const base = 'tests/agent-readiness/fixtures/f3/build/client';
     const index = JSON.parse(await readFile(join(base, 'agent-content/v1/index.json')));
     const doc = index.documents[0];
@@ -127,6 +130,6 @@ test('F2 Link composition preserves foreign links and does not append duplicate 
     const worker = createAgentContentWorker(async () => new Response('delegated'));
     const response = await worker(new Request(`https://cuidatuperroviejo.com${doc.canonicalPath}`, { headers: { Accept: 'text/markdown' } }), { ASSETS: assets }, {});
     assert.equal(response.status, 200);
-    assert.equal(response.headers.get('Link'), `${foreign}, ${LINKS.join(', ')}`);
+    assert.equal(response.headers.get('Link'), `${foreign}, ${contentLinks.join(', ')}`);
   }
 });

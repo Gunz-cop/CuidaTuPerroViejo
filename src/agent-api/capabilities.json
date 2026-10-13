@@ -7,21 +7,33 @@
     {
       "operationId": "listAgentDocuments",
       "path": "/api/agent/v1/catalog",
-      "methods": ["GET", "HEAD", "OPTIONS"],
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
       "title": "Catálogo editorial",
       "type": "application/json"
     },
     {
       "operationId": "searchAgentDocuments",
       "path": "/api/agent/v1/search",
-      "methods": ["GET", "HEAD", "OPTIONS"],
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
       "title": "Búsqueda editorial de ejemplo; q=cushing",
       "type": "application/json"
     },
     {
       "operationId": "readAgentDocument",
       "path": "/api/agent/v1/documents/{documentId}",
-      "methods": ["GET", "HEAD", "OPTIONS"],
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
       "examplePath": "/api/agent/v1/documents/home",
       "title": "Lectura de home; OpenAPI describe otros documentIds",
       "type": "application/json"
@@ -29,7 +41,11 @@
     {
       "operationId": "evaluateQualityOfLife",
       "path": "/api/agent/v1/tools/calidad-vida",
-      "methods": ["GET", "HEAD", "OPTIONS"],
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
       "examplePath": "/api/agent/v1/tools/calidad-vida?hurt=5&hunger=5&hydration=5&hygiene=5&happiness=5&mobility=5&moreGoodDays=5",
       "title": "Calculadora HHHHHMM de ejemplo; los siete criterios en 5",
       "type": "application/json"
@@ -37,7 +53,11 @@
     {
       "operationId": "recommendMobilityAids",
       "path": "/api/agent/v1/tools/movilidad",
-      "methods": ["GET", "HEAD", "OPTIONS"],
+      "methods": [
+        "GET",
+        "HEAD",
+        "OPTIONS"
+      ],
       "examplePath": "/api/agent/v1/tools/movilidad?level=moderate&handling=calm",
       "title": "Selector de movilidad de ejemplo; nivel moderado y manejo tranquilo",
       "type": "application/json"
@@ -68,5 +88,35 @@
       "Calcula la escala HHHHHMM de calidad de vida de un perro mayor.",
       "Recomienda ayudas de movilidad para un perro mayor con debilidad trasera."
     ]
+  },
+  "mcp": {
+    "endpoint": "/api/mcp",
+    "cardPath": "/api/mcp/server-card",
+    "name": "cuidatuperroviejo.com/guias-herramientas",
+    "version": "1.0.0",
+    "title": "Cuida tu Perro Viejo",
+    "description": "Servidor MCP público de guías y herramientas educativas para perros mayores.",
+    "protocolVersions": [
+      "2026-07-28",
+      "2025-11-25"
+    ],
+    "tools": [
+      "search_guides",
+      "read_guide",
+      "evaluate_quality_of_life",
+      "recommend_mobility_aids"
+    ],
+    "ardEntry": {
+      "identifier": "urn:air:cuidatuperroviejo.com:mcp:guias-herramientas",
+      "displayName": "Guías y herramientas para perros mayores",
+      "type": "application/mcp-server-card+json",
+      "description": "Servidor MCP público de guías y herramientas educativas para perros mayores.",
+      "representativeQueries": [
+        "Busca guías y lee su contenido completo con fuentes.",
+        "Evalúa la escala HHHHHMM de calidad de vida de un perro mayor.",
+        "Recomienda ayudas de movilidad para un perro mayor."
+      ],
+      "url": "https://cuidatuperroviejo.com/api/mcp/server-card"
+    }
   }
 }

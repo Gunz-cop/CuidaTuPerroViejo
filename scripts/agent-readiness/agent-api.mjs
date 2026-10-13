@@ -316,9 +316,34 @@ function deriveArd(capabilities) {
     host: { displayName: 'Cuida tu Perro Viejo', identifier: 'cuidatuperroviejo.com' },
     entries: [
       { ...api, url: `${SITE}${capabilities.openapiPath}` },
+      { ...capabilities.mcp.ardEntry, url: `${SITE}${capabilities.mcp.cardPath}` },
       { identifier: skill.urn, displayName: skill.displayName, type: 'text/markdown', url: `${SITE}${skill.path}`, description: skill.description, representativeQueries: skill.representativeQueries },
     ].sort((a, b) => ascii(a.identifier, b.identifier)),
   };
+}
+
+export async function deriveMcpCard(capabilities) {
+  const mcp = capabilities.mcp;
+  if (!mcp || mcp.endpoint !== '/api/mcp' || mcp.cardPath !== '/api/mcp/server-card'
+    || mcp.name !== 'cuidatuperroviejo.com/guias-herramientas' || mcp.version !== '1.0.0'
+    || mcp.title !== 'Cuida tu Perro Viejo' || mcp.description !== 'Servidor MCP público de guías y herramientas educativas para perros mayores.'
+    || JSON.stringify(mcp.protocolVersions) !== JSON.stringify(['2026-07-28', '2025-11-25'])
+    || JSON.stringify(mcp.tools) !== JSON.stringify(['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids'])
+    || mcp.ardEntry?.identifier !== 'urn:air:cuidatuperroviejo.com:mcp:guias-herramientas'
+    || mcp.ardEntry?.type !== 'application/mcp-server-card+json' || mcp.ardEntry?.url !== `${SITE}${mcp.cardPath}`) fail('MCP_REGISTRY_INVALID');
+  const card = {
+    $schema: 'https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json',
+    name: mcp.name, version: mcp.version, title: mcp.title, description: mcp.description, websiteUrl: SITE,
+    remotes: [{ type: 'streamable-http', url: `${SITE}${mcp.endpoint}`, supportedProtocolVersions: mcp.protocolVersions }],
+  };
+  const primary = await readJson(join(ROOT, 'docs/agent-readiness/evidencia/f4b/referencias/card-schema.txt'));
+  // URI de la extensión, no la invariante F3 de URL canónica byteexacta:
+  // websiteUrl=SITE es URI válida aunque URL.href añada '/' al dominio.
+  const cardValidator = new Ajv2020({ strict: true, allErrors: true });
+  cardValidator.addFormat('uri', { type: 'string', validate: (value) => { try { new URL(value); return true; } catch { return false; } } });
+  const check = cardValidator.compile({ $schema: primary.$schema, $defs: primary.$defs, $ref: '#/$defs/ServerCard' });
+  if (!check(card)) fail('MCP_CARD_SCHEMA_INVALID');
+  return jsonBytes(card);
 }
 
 function outputPathMap(assets) {
@@ -330,6 +355,7 @@ function outputPathMap(assets) {
     ['.well-known/agent-skills/buscar-leer-citar/SKILL.md', assets.skill],
     ['.well-known/ard.json', assets.ard],
     ['.well-known/ai-catalog.json', assets.ard],
+    ['api/mcp/server-card', assets.mcpCard],
   ]);
 }
 
@@ -364,12 +390,13 @@ export async function buildArtifacts(buildDir, root = ROOT) {
   byteLimit('QUERY_INDEX', queryBytes.length, MAX_QUERY_INDEX_BYTES);
   const linksetBytes = jsonBytes(deriveLinkset(capabilities));
   const ardBytes = jsonBytes(deriveArd(capabilities));
+  const mcpCardBytes = await deriveMcpCard(capabilities);
   const skillsIndexBytes = jsonBytes({
     $schema: 'https://schemas.agentskills.io/discovery/0.2.0/schema.json',
     skills: [{ name: capabilities.skills[0].name, type: 'skill-md', description: capabilities.skills[0].description, url: `${SITE}${capabilities.skills[0].path}`, digest: `sha256:${sha256(skillBytes)}` }],
   });
   const openapiBytes = jsonBytes(openapi);
-  for (const [name, bytes] of [['OPENAPI', openapiBytes], ['LINKSET', linksetBytes], ['ARD', ardBytes], ['SKILLS_INDEX', skillsIndexBytes]]) byteLimit(name, bytes.length, MAX_DESCRIPTOR_BYTES);
+  for (const [name, bytes] of [['OPENAPI', openapiBytes], ['LINKSET', linksetBytes], ['ARD', ardBytes], ['SKILLS_INDEX', skillsIndexBytes], ['MCP_CARD', mcpCardBytes]]) byteLimit(name, bytes.length, MAX_DESCRIPTOR_BYTES);
   const validator = addFormats(new Ajv2020({ allErrors: true, strict: true, validateFormats: true }));
   const makeValidator = (name) => {
     const target = { $schema: schema.$schema, $ref: `#/$defs/${name}`, $defs: schema.$defs };
@@ -384,7 +411,7 @@ export async function buildArtifacts(buildDir, root = ROOT) {
   if (!skillValidator(JSON.parse(skillsIndexBytes.toString('utf8')))) fail(`SKILLS_INDEX_SCHEMA_INVALID ${validator.errorsText(skillValidator.errors)}`);
   const ardValidator = makeValidator('ArdCompatibilityManifest');
   for (const label of ['ARD', 'AI_CATALOG_COMPAT']) if (!ardValidator(JSON.parse(ardBytes.toString('utf8')))) fail(`${label}_SCHEMA_INVALID ${validator.errorsText(ardValidator.errors)}`);
-  const assets = { queryIndex: queryBytes, openapi: openapiBytes, linkset: linksetBytes, skillsIndex: skillsIndexBytes, skill: skillBytes, ard: ardBytes };
+  const assets = { queryIndex: queryBytes, openapi: openapiBytes, linkset: linksetBytes, skillsIndex: skillsIndexBytes, skill: skillBytes, ard: ardBytes, mcpCard: mcpCardBytes };
   const outputFiles = [...outputPathMap(assets)].map(([path, bytes]) => ({ path, bytes: bytes.length, sha256: sha256(bytes) }));
   const manifestBytes = jsonBytes({
     schemaVersion: 'agent-api-build-evidence/1',
@@ -467,9 +494,10 @@ export async function checkArtifacts(buildDir, root = ROOT) {
   const actualPaths = await Promise.all([
     listFiles(join(result.assetRoot, 'agent-api/v1'), result.assetRoot),
     listFiles(join(result.assetRoot, '.well-known'), result.assetRoot),
+    listFiles(join(result.assetRoot, 'api/mcp'), result.assetRoot),
   ]);
-  const allActual = [...actualPaths[0], ...actualPaths[1]];
-  const actualReserved = allActual.filter((path) => path.startsWith('agent-api/v1/') || path === '.well-known/api-catalog' || path.startsWith('.well-known/agent-skills/') || path === '.well-known/ard.json' || path === '.well-known/ai-catalog.json').sort(ascii);
+  const allActual = actualPaths.flat();
+  const actualReserved = allActual.filter((path) => path.startsWith('agent-api/v1/') || path === '.well-known/api-catalog' || path.startsWith('.well-known/agent-skills/') || path === '.well-known/ard.json' || path === '.well-known/ai-catalog.json' || path.startsWith('api/mcp/')).sort(ascii);
   const expectedPaths = [...expected.keys()].sort(ascii);
   if (JSON.stringify(actualReserved) !== JSON.stringify(expectedPaths)) fail('OUTPUT_SET_MISMATCH');
   for (const [path, bytes] of expected) {
