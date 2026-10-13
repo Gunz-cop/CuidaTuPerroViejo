@@ -1,0 +1,77 @@
+{
+  "status": "Contrato documental para R2; no ejecución MCP",
+  "cases": [
+    {
+      "case": "version-fecha-no-soportada",
+      "headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json, text/event-stream",
+        "MCP-Protocol-Version": "1900-01-01",
+        "Mcp-Method": "server/discover"
+      },
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "server/discover",
+        "params": {
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "1900-01-01",
+            "io.modelcontextprotocol/clientInfo": {
+              "name": "f4b-fixture",
+              "version": "1.0.0"
+            },
+            "io.modelcontextprotocol/clientCapabilities": {}
+          }
+        }
+      },
+      "expectedStatus": 400,
+      "expectedResponse": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "error": {
+          "code": -32022,
+          "message": "Unsupported protocol version.",
+          "data": {
+            "supported": [
+              "2026-07-28"
+            ],
+            "requested": "1900-01-01"
+          }
+        }
+      }
+    },
+    {
+      "case": "version-malformed-sin-reflexion",
+      "headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json, text/event-stream",
+        "MCP-Protocol-Version": "no-version",
+        "Mcp-Method": "server/discover"
+      },
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "server/discover",
+        "params": {
+          "_meta": {
+            "io.modelcontextprotocol/protocolVersion": "no-version",
+            "io.modelcontextprotocol/clientInfo": {
+              "name": "f4b-fixture",
+              "version": "1.0.0"
+            },
+            "io.modelcontextprotocol/clientCapabilities": {}
+          }
+        }
+      },
+      "expectedStatus": 400,
+      "expectedResponse": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "error": {
+          "code": -32600,
+          "message": "Invalid request."
+        }
+      }
+    }
+  ]
+}
