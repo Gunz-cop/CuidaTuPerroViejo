@@ -1,0 +1,25 @@
+--- entry-original
++++ entry-diagnostic
+@@ -15044,8 +15044,10 @@
+ 			signal.throwIfAborted();
+ 			if (done) break;
+ 			size += value.byteLength;
++            console.log(JSON.stringify({diag:"read",id:request.headers.get("X-Diag-Id"),size,chunk:value.byteLength}));
+ 			if (size > 32768) {
+-				await reader.cancel().catch(() => {});
++                console.log(JSON.stringify({diag:"cancel-start",id:request.headers.get("X-Diag-Id"),size}));
++				await reader.cancel().then(()=>console.log(JSON.stringify({diag:"cancel-settled",id:request.headers.get("X-Diag-Id")}))).catch(error=>console.log(JSON.stringify({diag:"cancel-rejected",id:request.headers.get("X-Diag-Id"),error:String(error)})));
+ 				throw new RangeError("BODY_LIMIT");
+ 			}
+ 			chunks.push(value);
+@@ -15351,4 +15353,9 @@
+ //#region \0virtual:cloudflare/worker-entry
+ var worker_entry_default = { fetch: createAgentMcpWorker(createAgentApiWorker(createAgentContentWorker(handle))) };
+ //#endregion
+-export { worker_entry_default as default };
++const diagWorker = {async fetch(request,env,ctx){
++ console.log(JSON.stringify({diag:"ingress",id:request.headers.get("X-Diag-Id"),headers:Object.fromEntries(request.headers)}));
++ try {const response=await worker_entry_default.fetch(request,env,ctx);console.log(JSON.stringify({diag:"decision",id:request.headers.get("X-Diag-Id"),status:response.status}));return response;}
++ catch(error){console.log(JSON.stringify({diag:"exception",id:request.headers.get("X-Diag-Id"),error:String(error)}));throw error;}
++}};
++export {diagWorker as default};

@@ -1,0 +1,2966 @@
+{
+  "planCommit": "bf4b940",
+  "admission": "admision-arranque-local.md",
+  "product": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+  "at": "2026-10-14T02:35:44.454Z",
+  "budget": 32,
+  "attempts": 32,
+  "runs": [
+    {
+      "label": "1-minimum-fetch",
+      "port": 8911,
+      "config": "/workspace/f4b-originales-privados/bug100-diagnostico/minimum-config.json",
+      "pid": 13577,
+      "ready": true,
+      "requests": [
+        {
+          "id": "1-minimum-fetch-ping-before",
+          "name": "ping-before",
+          "expected": 200,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "1-minimum-fetch-ping-before"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "content-encoding": "gzip",
+              "content-type": "application/json",
+              "transfer-encoding": "chunked"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{}}"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "1-minimum-fetch-ping-before",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8911",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "user-agent": "node",
+                "x-diag-id": "1-minimum-fetch-ping-before"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-ping-before",
+              "size": 52,
+              "chunk": 52
+            },
+            {
+              "diag": "decision",
+              "id": "1-minimum-fetch-ping-before",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "1-minimum-fetch-media",
+          "name": "media",
+          "expected": 415,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "text/plain",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "1-minimum-fetch-media"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 415,
+            "headers": {
+              "content-encoding": "gzip",
+              "content-type": "application/json",
+              "transfer-encoding": "chunked"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "1-minimum-fetch-media",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "text/plain",
+                "host": "127.0.0.1:8911",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "user-agent": "node",
+                "x-diag-id": "1-minimum-fetch-media"
+              }
+            },
+            {
+              "diag": "decision",
+              "id": "1-minimum-fetch-media",
+              "status": 415
+            }
+          ],
+          "observedWorkerDecisions": [
+            415
+          ]
+        },
+        {
+          "id": "1-minimum-fetch-accept",
+          "name": "accept",
+          "expected": 406,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "1-minimum-fetch-accept"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 406,
+            "headers": {
+              "content-encoding": "gzip",
+              "content-type": "application/json",
+              "transfer-encoding": "chunked"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "1-minimum-fetch-accept",
+              "headers": {
+                "accept": "application/json",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8911",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "user-agent": "node",
+                "x-diag-id": "1-minimum-fetch-accept"
+              }
+            },
+            {
+              "diag": "decision",
+              "id": "1-minimum-fetch-accept",
+              "status": 406
+            }
+          ],
+          "observedWorkerDecisions": [
+            406
+          ]
+        },
+        {
+          "id": "1-minimum-fetch-stream-limit",
+          "name": "stream-limit",
+          "expected": 200,
+          "streamed": true,
+          "bodyBytes": 32768,
+          "bodySha256": "4050a4918badb71f014914d121fa3b7ca6293eae371f94fb315173bd80e5e415",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "1-minimum-fetch-stream-limit"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "content-encoding": "gzip",
+              "content-type": "application/json",
+              "transfer-encoding": "chunked"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{}}"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "1-minimum-fetch-stream-limit",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8911",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "transfer-encoding": "chunked",
+                "user-agent": "node",
+                "x-diag-id": "1-minimum-fetch-stream-limit"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 3631,
+              "chunk": 3631
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 3746,
+              "chunk": 115
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 3770,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 7842,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 7866,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 11938,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 11962,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 16034,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 16058,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 20130,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 20154,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 24226,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 24250,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 28322,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 28346,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 32418,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 32443,
+              "chunk": 25
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-limit",
+              "size": 32768,
+              "chunk": 325
+            },
+            {
+              "diag": "decision",
+              "id": "1-minimum-fetch-stream-limit",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "1-minimum-fetch-ping-after-limit",
+          "name": "ping-after-limit",
+          "expected": 200,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "1-minimum-fetch-ping-after-limit"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "content-encoding": "gzip",
+              "content-type": "application/json",
+              "transfer-encoding": "chunked"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{}}"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "1-minimum-fetch-ping-after-limit",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8911",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "user-agent": "node",
+                "x-diag-id": "1-minimum-fetch-ping-after-limit"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-ping-after-limit",
+              "size": 52,
+              "chunk": 52
+            },
+            {
+              "diag": "decision",
+              "id": "1-minimum-fetch-ping-after-limit",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "1-minimum-fetch-stream-overflow",
+          "name": "stream-overflow",
+          "expected": 413,
+          "streamed": true,
+          "bodyBytes": 32769,
+          "bodySha256": "cd72c76486c91c4032a0b357522fe03413380d37ad7d8661bd98feb5209f1bf6",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "1-minimum-fetch-stream-overflow"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 413,
+            "headers": {
+              "content-encoding": "gzip",
+              "content-type": "application/json",
+              "transfer-encoding": "chunked"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "1-minimum-fetch-stream-overflow",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8911",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "transfer-encoding": "chunked",
+                "user-agent": "node",
+                "x-diag-id": "1-minimum-fetch-stream-overflow"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 4096,
+              "chunk": 4096
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 7716,
+              "chunk": 3620
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 7839,
+              "chunk": 123
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 7863,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 11935,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 11959,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 16031,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 16055,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 20127,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 20151,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 24223,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 24247,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 28319,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 28343,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 32415,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 32440,
+              "chunk": 25
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 32769,
+              "chunk": 329
+            },
+            {
+              "diag": "cancel-start",
+              "id": "1-minimum-fetch-stream-overflow",
+              "size": 32769
+            },
+            {
+              "diag": "cancel-settled",
+              "id": "1-minimum-fetch-stream-overflow"
+            },
+            {
+              "diag": "exception",
+              "id": "1-minimum-fetch-stream-overflow",
+              "error": "RangeError: BODY_LIMIT"
+            },
+            {
+              "diag": "decision",
+              "id": "1-minimum-fetch-stream-overflow",
+              "status": 413
+            }
+          ],
+          "observedWorkerDecisions": [
+            413
+          ]
+        },
+        {
+          "id": "1-minimum-fetch-ping-after-overflow",
+          "name": "ping-after-overflow",
+          "expected": 200,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "1-minimum-fetch-ping-after-overflow"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "content-encoding": "gzip",
+              "content-type": "application/json",
+              "transfer-encoding": "chunked"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{}}"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "1-minimum-fetch-ping-after-overflow",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8911",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "user-agent": "node",
+                "x-diag-id": "1-minimum-fetch-ping-after-overflow"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-ping-after-overflow",
+              "size": 52,
+              "chunk": 52
+            },
+            {
+              "diag": "decision",
+              "id": "1-minimum-fetch-ping-after-overflow",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "1-minimum-fetch-batch",
+          "name": "batch",
+          "expected": 400,
+          "streamed": false,
+          "bodyBytes": 54,
+          "bodySha256": "8e7a59b7dc4eb08d5047531176264403698b1372cd37d87c70071e19701f3d73",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "1-minimum-fetch-batch"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 400,
+            "headers": {
+              "content-encoding": "gzip",
+              "content-type": "application/json",
+              "transfer-encoding": "chunked"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "1-minimum-fetch-batch",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "54",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8911",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "user-agent": "node",
+                "x-diag-id": "1-minimum-fetch-batch"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "1-minimum-fetch-batch",
+              "size": 54,
+              "chunk": 54
+            },
+            {
+              "diag": "decision",
+              "id": "1-minimum-fetch-batch",
+              "status": 400
+            }
+          ],
+          "observedWorkerDecisions": [
+            400
+          ]
+        }
+      ],
+      "beforeCleanup": {
+        "exitCode": null,
+        "signalCode": null,
+        "exit": null
+      },
+      "afterCleanup": {
+        "exitCode": null,
+        "signalCode": null,
+        "exit": null
+      }
+    },
+    {
+      "label": "2-app-fetch",
+      "port": 8912,
+      "config": "/workspace/f4b-originales-privados/bug100-diagnostico/app/config.json",
+      "pid": 13633,
+      "ready": false,
+      "requests": [],
+      "beforeCleanup": {
+        "exitCode": 1,
+        "signalCode": null,
+        "exit": {
+          "code": 1,
+          "signal": null
+        }
+      },
+      "afterCleanup": {
+        "exitCode": 1,
+        "signalCode": null,
+        "exit": {
+          "code": 1,
+          "signal": null
+        }
+      }
+    },
+    {
+      "label": "2-app-fetch",
+      "port": 8912,
+      "config": "/workspace/f4b-originales-privados/bug100-diagnostico/app/config.json",
+      "pid": 13860,
+      "ready": true,
+      "requests": [
+        {
+          "id": "2-app-fetch-ping-before",
+          "name": "ping-before",
+          "expected": 200,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "2-app-fetch-ping-before"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cache-control": "private, no-store",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "content-type": "text/event-stream",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "transfer-encoding": "chunked",
+              "x-accel-buffering": "no",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "event: message\ndata: {\"result\":{},\"jsonrpc\":\"2.0\",\"id\":1}\n\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "2-app-fetch-ping-before",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8912",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "user-agent": "node",
+                "x-diag-id": "2-app-fetch-ping-before"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-ping-before",
+              "size": 52,
+              "chunk": 52
+            },
+            {
+              "diag": "decision",
+              "id": "2-app-fetch-ping-before",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "2-app-fetch-media",
+          "name": "media",
+          "expected": 415,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "text/plain",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "2-app-fetch-media"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 415,
+            "headers": {
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cache-control": "private, no-store",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "content-encoding": "gzip",
+              "content-type": "application/json",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "{\"error\":\"Unsupported media type.\"}"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "2-app-fetch-media",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "text/plain",
+                "host": "127.0.0.1:8912",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "user-agent": "node",
+                "x-diag-id": "2-app-fetch-media"
+              }
+            },
+            {
+              "diag": "decision",
+              "id": "2-app-fetch-media",
+              "status": 415
+            }
+          ],
+          "observedWorkerDecisions": [
+            415
+          ]
+        },
+        {
+          "id": "2-app-fetch-accept",
+          "name": "accept",
+          "expected": 406,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "2-app-fetch-accept"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 406,
+            "headers": {
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cache-control": "private, no-store",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "content-encoding": "gzip",
+              "content-type": "application/json",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "{\"error\":\"Not acceptable.\"}"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "2-app-fetch-accept",
+              "headers": {
+                "accept": "application/json",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8912",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "user-agent": "node",
+                "x-diag-id": "2-app-fetch-accept"
+              }
+            },
+            {
+              "diag": "decision",
+              "id": "2-app-fetch-accept",
+              "status": 406
+            }
+          ],
+          "observedWorkerDecisions": [
+            406
+          ]
+        },
+        {
+          "id": "2-app-fetch-stream-limit",
+          "name": "stream-limit",
+          "expected": 200,
+          "streamed": true,
+          "bodyBytes": 32768,
+          "bodySha256": "4050a4918badb71f014914d121fa3b7ca6293eae371f94fb315173bd80e5e415",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "2-app-fetch-stream-limit"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 500,
+            "headers": {
+              "content-length": "166",
+              "content-type": "text/plain;charset=UTF-8"
+            },
+            "body": "Error: Network connection lost.\n    at async Object.fetch (file:///workspace/ctpv-f4b-desarrollo/node_modules/miniflare/dist/src/workers/core/entry.worker.js:5201:22)"
+          },
+          "matches": false,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [],
+          "observedWorkerDecisions": []
+        },
+        {
+          "id": "2-app-fetch-ping-after-limit",
+          "name": "ping-after-limit",
+          "expected": 200,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "2-app-fetch-ping-after-limit"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cache-control": "private, no-store",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "content-type": "text/event-stream",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "transfer-encoding": "chunked",
+              "x-accel-buffering": "no",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "event: message\ndata: {\"result\":{},\"jsonrpc\":\"2.0\",\"id\":1}\n\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "2-app-fetch-ping-after-limit",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8912",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "user-agent": "node",
+                "x-diag-id": "2-app-fetch-ping-after-limit"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-ping-after-limit",
+              "size": 52,
+              "chunk": 52
+            },
+            {
+              "diag": "decision",
+              "id": "2-app-fetch-ping-after-limit",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "2-app-fetch-stream-overflow",
+          "name": "stream-overflow",
+          "expected": 413,
+          "streamed": true,
+          "bodyBytes": 32769,
+          "bodySha256": "cd72c76486c91c4032a0b357522fe03413380d37ad7d8661bd98feb5209f1bf6",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "2-app-fetch-stream-overflow"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 413,
+            "headers": {
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cache-control": "private, no-store",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "content-encoding": "gzip",
+              "content-type": "application/json",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "transfer-encoding": "chunked",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "2-app-fetch-stream-overflow",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "accept-language": "*",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8912",
+                "mcp-protocol-version": "2025-11-25",
+                "sec-fetch-mode": "cors",
+                "transfer-encoding": "chunked",
+                "user-agent": "node",
+                "x-diag-id": "2-app-fetch-stream-overflow"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 3631,
+              "chunk": 3631
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 4096,
+              "chunk": 465
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 4121,
+              "chunk": 25
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 7843,
+              "chunk": 3722
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 7867,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 11939,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 11963,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 16035,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 16059,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 20131,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 20155,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 24227,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 24251,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 28323,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 28347,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 32419,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 32444,
+              "chunk": 25
+            },
+            {
+              "diag": "read",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 32769,
+              "chunk": 325
+            },
+            {
+              "diag": "cancel-start",
+              "id": "2-app-fetch-stream-overflow",
+              "size": 32769
+            },
+            {
+              "diag": "cancel-settled",
+              "id": "2-app-fetch-stream-overflow"
+            },
+            {
+              "diag": "decision",
+              "id": "2-app-fetch-stream-overflow",
+              "status": 413
+            }
+          ],
+          "observedWorkerDecisions": [
+            413
+          ]
+        },
+        {
+          "id": "2-app-fetch-ping-after-overflow",
+          "name": "ping-after-overflow",
+          "expected": 200,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "2-app-fetch-ping-after-overflow"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "error": {
+            "name": "TypeError",
+            "message": "fetch failed",
+            "cause": "Error: connect ECONNREFUSED 127.0.0.1:8912"
+          },
+          "matches": false,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [],
+          "observedWorkerDecisions": []
+        },
+        {
+          "id": "2-app-fetch-batch",
+          "name": "batch",
+          "expected": 400,
+          "streamed": false,
+          "bodyBytes": 54,
+          "bodySha256": "8e7a59b7dc4eb08d5047531176264403698b1372cd37d87c70071e19701f3d73",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "2-app-fetch-batch"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "error": {
+            "name": "TypeError",
+            "message": "fetch failed",
+            "cause": "Error: connect ECONNREFUSED 127.0.0.1:8912"
+          },
+          "matches": false,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [],
+          "observedWorkerDecisions": []
+        }
+      ],
+      "beforeCleanup": {
+        "exitCode": null,
+        "signalCode": null,
+        "exit": null
+      },
+      "afterCleanup": {
+        "exitCode": null,
+        "signalCode": null,
+        "exit": null
+      }
+    },
+    {
+      "label": "3-minimum-http",
+      "port": 8913,
+      "config": "/workspace/f4b-originales-privados/bug100-diagnostico/minimum-config.json",
+      "pid": 13907,
+      "ready": true,
+      "requests": [
+        {
+          "id": "3-minimum-http-ping-before",
+          "name": "ping-before",
+          "expected": 200,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "3-minimum-http-ping-before"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "content-length": "36",
+              "content-type": "application/json"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{}}",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 3-minimum-http-ping-before\r\nContent-Length: 52\r\nHost: 127.0.0.1:8913\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "3-minimum-http-ping-before",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8913",
+                "mcp-protocol-version": "2025-11-25",
+                "x-diag-id": "3-minimum-http-ping-before"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-ping-before",
+              "size": 52,
+              "chunk": 52
+            },
+            {
+              "diag": "decision",
+              "id": "3-minimum-http-ping-before",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "3-minimum-http-media",
+          "name": "media",
+          "expected": 415,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "text/plain",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "3-minimum-http-media"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 415,
+            "headers": {
+              "content-length": "80",
+              "content-type": "application/json"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: text/plain\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 3-minimum-http-media\r\nContent-Length: 52\r\nHost: 127.0.0.1:8913\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "3-minimum-http-media",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "text/plain",
+                "host": "127.0.0.1:8913",
+                "mcp-protocol-version": "2025-11-25",
+                "x-diag-id": "3-minimum-http-media"
+              }
+            },
+            {
+              "diag": "decision",
+              "id": "3-minimum-http-media",
+              "status": 415
+            }
+          ],
+          "observedWorkerDecisions": [
+            415
+          ]
+        },
+        {
+          "id": "3-minimum-http-accept",
+          "name": "accept",
+          "expected": 406,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "3-minimum-http-accept"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 406,
+            "headers": {
+              "content-length": "80",
+              "content-type": "application/json"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 3-minimum-http-accept\r\nContent-Length: 52\r\nHost: 127.0.0.1:8913\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "3-minimum-http-accept",
+              "headers": {
+                "accept": "application/json",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8913",
+                "mcp-protocol-version": "2025-11-25",
+                "x-diag-id": "3-minimum-http-accept"
+              }
+            },
+            {
+              "diag": "decision",
+              "id": "3-minimum-http-accept",
+              "status": 406
+            }
+          ],
+          "observedWorkerDecisions": [
+            406
+          ]
+        },
+        {
+          "id": "3-minimum-http-stream-limit",
+          "name": "stream-limit",
+          "expected": 200,
+          "streamed": true,
+          "bodyBytes": 32768,
+          "bodySha256": "4050a4918badb71f014914d121fa3b7ca6293eae371f94fb315173bd80e5e415",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "3-minimum-http-stream-limit"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "content-length": "36",
+              "content-type": "application/json"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{}}",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 3-minimum-http-stream-limit\r\nTransfer-Encoding: chunked\r\nHost: 127.0.0.1:8913\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "3-minimum-http-stream-limit",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8913",
+                "mcp-protocol-version": "2025-11-25",
+                "transfer-encoding": "chunked",
+                "x-diag-id": "3-minimum-http-stream-limit"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 27,
+              "chunk": 27
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 3839,
+              "chunk": 3812
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 3863,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 7935,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 7959,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 12031,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 12055,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 16127,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 16151,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 20223,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 20247,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 24319,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 24343,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 28415,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 28439,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 32511,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 32536,
+              "chunk": 25
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-limit",
+              "size": 32768,
+              "chunk": 232
+            },
+            {
+              "diag": "decision",
+              "id": "3-minimum-http-stream-limit",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "3-minimum-http-ping-after-limit",
+          "name": "ping-after-limit",
+          "expected": 200,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "3-minimum-http-ping-after-limit"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "content-length": "36",
+              "content-type": "application/json"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{}}",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 3-minimum-http-ping-after-limit\r\nContent-Length: 52\r\nHost: 127.0.0.1:8913\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "3-minimum-http-ping-after-limit",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8913",
+                "mcp-protocol-version": "2025-11-25",
+                "x-diag-id": "3-minimum-http-ping-after-limit"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-ping-after-limit",
+              "size": 52,
+              "chunk": 52
+            },
+            {
+              "diag": "decision",
+              "id": "3-minimum-http-ping-after-limit",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "3-minimum-http-stream-overflow",
+          "name": "stream-overflow",
+          "expected": 413,
+          "streamed": true,
+          "bodyBytes": 32769,
+          "bodySha256": "cd72c76486c91c4032a0b357522fe03413380d37ad7d8661bd98feb5209f1bf6",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "3-minimum-http-stream-overflow"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 413,
+            "headers": {
+              "content-length": "80",
+              "content-type": "application/json"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 3-minimum-http-stream-overflow\r\nTransfer-Encoding: chunked\r\nHost: 127.0.0.1:8913\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "3-minimum-http-stream-overflow",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8913",
+                "mcp-protocol-version": "2025-11-25",
+                "transfer-encoding": "chunked",
+                "x-diag-id": "3-minimum-http-stream-overflow"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 3720,
+              "chunk": 3720
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 4096,
+              "chunk": 376
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 4121,
+              "chunk": 25
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 7932,
+              "chunk": 3811
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 7956,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 12028,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 12052,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 16124,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 16148,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 20220,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 20244,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 24316,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 24340,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 28412,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 28436,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 32508,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 32533,
+              "chunk": 25
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 32769,
+              "chunk": 236
+            },
+            {
+              "diag": "cancel-start",
+              "id": "3-minimum-http-stream-overflow",
+              "size": 32769
+            },
+            {
+              "diag": "cancel-settled",
+              "id": "3-minimum-http-stream-overflow"
+            },
+            {
+              "diag": "exception",
+              "id": "3-minimum-http-stream-overflow",
+              "error": "RangeError: BODY_LIMIT"
+            },
+            {
+              "diag": "decision",
+              "id": "3-minimum-http-stream-overflow",
+              "status": 413
+            }
+          ],
+          "observedWorkerDecisions": [
+            413
+          ]
+        },
+        {
+          "id": "3-minimum-http-ping-after-overflow",
+          "name": "ping-after-overflow",
+          "expected": 200,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "3-minimum-http-ping-after-overflow"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "content-length": "36",
+              "content-type": "application/json"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{}}",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 3-minimum-http-ping-after-overflow\r\nContent-Length: 52\r\nHost: 127.0.0.1:8913\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "3-minimum-http-ping-after-overflow",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8913",
+                "mcp-protocol-version": "2025-11-25",
+                "x-diag-id": "3-minimum-http-ping-after-overflow"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-ping-after-overflow",
+              "size": 52,
+              "chunk": 52
+            },
+            {
+              "diag": "decision",
+              "id": "3-minimum-http-ping-after-overflow",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "3-minimum-http-batch",
+          "name": "batch",
+          "expected": 400,
+          "streamed": false,
+          "bodyBytes": 54,
+          "bodySha256": "8e7a59b7dc4eb08d5047531176264403698b1372cd37d87c70071e19701f3d73",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "3-minimum-http-batch"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 400,
+            "headers": {
+              "content-length": "80",
+              "content-type": "application/json"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 3-minimum-http-batch\r\nContent-Length: 54\r\nHost: 127.0.0.1:8913\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "3-minimum-http-batch",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "54",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8913",
+                "mcp-protocol-version": "2025-11-25",
+                "x-diag-id": "3-minimum-http-batch"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "3-minimum-http-batch",
+              "size": 54,
+              "chunk": 54
+            },
+            {
+              "diag": "decision",
+              "id": "3-minimum-http-batch",
+              "status": 400
+            }
+          ],
+          "observedWorkerDecisions": [
+            400
+          ]
+        }
+      ],
+      "beforeCleanup": {
+        "exitCode": null,
+        "signalCode": null,
+        "exit": null
+      },
+      "afterCleanup": {
+        "exitCode": null,
+        "signalCode": null,
+        "exit": null
+      }
+    },
+    {
+      "label": "4-app-http",
+      "port": 8914,
+      "config": "/workspace/f4b-originales-privados/bug100-diagnostico/app/config.json",
+      "pid": 13947,
+      "ready": true,
+      "requests": [
+        {
+          "id": "4-app-http-ping-before",
+          "name": "ping-before",
+          "expected": 200,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "4-app-http-ping-before"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "transfer-encoding": "chunked",
+              "content-type": "text/event-stream",
+              "cache-control": "private, no-store",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "x-accel-buffering": "no",
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "event: message\ndata: {\"result\":{},\"jsonrpc\":\"2.0\",\"id\":1}\n\n",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 4-app-http-ping-before\r\nContent-Length: 52\r\nHost: 127.0.0.1:8914\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "4-app-http-ping-before",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8914",
+                "mcp-protocol-version": "2025-11-25",
+                "x-diag-id": "4-app-http-ping-before"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-ping-before",
+              "size": 52,
+              "chunk": 52
+            },
+            {
+              "diag": "decision",
+              "id": "4-app-http-ping-before",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "4-app-http-media",
+          "name": "media",
+          "expected": 415,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "text/plain",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "4-app-http-media"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 415,
+            "headers": {
+              "content-length": "35",
+              "content-type": "application/json",
+              "cache-control": "private, no-store",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "{\"error\":\"Unsupported media type.\"}",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: text/plain\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 4-app-http-media\r\nContent-Length: 52\r\nHost: 127.0.0.1:8914\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "4-app-http-media",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "text/plain",
+                "host": "127.0.0.1:8914",
+                "mcp-protocol-version": "2025-11-25",
+                "x-diag-id": "4-app-http-media"
+              }
+            },
+            {
+              "diag": "decision",
+              "id": "4-app-http-media",
+              "status": 415
+            }
+          ],
+          "observedWorkerDecisions": [
+            415
+          ]
+        },
+        {
+          "id": "4-app-http-accept",
+          "name": "accept",
+          "expected": 406,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "4-app-http-accept"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 406,
+            "headers": {
+              "content-length": "27",
+              "content-type": "application/json",
+              "cache-control": "private, no-store",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "{\"error\":\"Not acceptable.\"}",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 4-app-http-accept\r\nContent-Length: 52\r\nHost: 127.0.0.1:8914\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "4-app-http-accept",
+              "headers": {
+                "accept": "application/json",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8914",
+                "mcp-protocol-version": "2025-11-25",
+                "x-diag-id": "4-app-http-accept"
+              }
+            },
+            {
+              "diag": "decision",
+              "id": "4-app-http-accept",
+              "status": 406
+            }
+          ],
+          "observedWorkerDecisions": [
+            406
+          ]
+        },
+        {
+          "id": "4-app-http-stream-limit",
+          "name": "stream-limit",
+          "expected": 200,
+          "streamed": true,
+          "bodyBytes": 32768,
+          "bodySha256": "4050a4918badb71f014914d121fa3b7ca6293eae371f94fb315173bd80e5e415",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "4-app-http-stream-limit"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "transfer-encoding": "chunked",
+              "content-type": "text/event-stream",
+              "cache-control": "private, no-store",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "x-accel-buffering": "no",
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "event: message\ndata: {\"result\":{},\"jsonrpc\":\"2.0\",\"id\":1}\n\n",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 4-app-http-stream-limit\r\nTransfer-Encoding: chunked\r\nHost: 127.0.0.1:8914\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "4-app-http-stream-limit",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8914",
+                "mcp-protocol-version": "2025-11-25",
+                "transfer-encoding": "chunked",
+                "x-diag-id": "4-app-http-stream-limit"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 27,
+              "chunk": 27
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 3843,
+              "chunk": 3816
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 3867,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 7939,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 7963,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 12035,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 12059,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 16131,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 16155,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 20227,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 20251,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 24323,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 24347,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 28419,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 28443,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 32515,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 32541,
+              "chunk": 26
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-limit",
+              "size": 32768,
+              "chunk": 227
+            },
+            {
+              "diag": "decision",
+              "id": "4-app-http-stream-limit",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "4-app-http-ping-after-limit",
+          "name": "ping-after-limit",
+          "expected": 200,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "4-app-http-ping-after-limit"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "transfer-encoding": "chunked",
+              "content-type": "text/event-stream",
+              "cache-control": "private, no-store",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "x-accel-buffering": "no",
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "event: message\ndata: {\"result\":{},\"jsonrpc\":\"2.0\",\"id\":1}\n\n",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 4-app-http-ping-after-limit\r\nContent-Length: 52\r\nHost: 127.0.0.1:8914\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "4-app-http-ping-after-limit",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8914",
+                "mcp-protocol-version": "2025-11-25",
+                "x-diag-id": "4-app-http-ping-after-limit"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-ping-after-limit",
+              "size": 52,
+              "chunk": 52
+            },
+            {
+              "diag": "decision",
+              "id": "4-app-http-ping-after-limit",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "4-app-http-stream-overflow",
+          "name": "stream-overflow",
+          "expected": 413,
+          "streamed": true,
+          "bodyBytes": 32769,
+          "bodySha256": "cd72c76486c91c4032a0b357522fe03413380d37ad7d8661bd98feb5209f1bf6",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "4-app-http-stream-overflow"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 413,
+            "headers": {
+              "content-length": "80",
+              "content-type": "application/json",
+              "cache-control": "private, no-store",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 4-app-http-stream-overflow\r\nTransfer-Encoding: chunked\r\nHost: 127.0.0.1:8914\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "4-app-http-stream-overflow",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8914",
+                "mcp-protocol-version": "2025-11-25",
+                "transfer-encoding": "chunked",
+                "x-diag-id": "4-app-http-stream-overflow"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 26,
+              "chunk": 26
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 4096,
+              "chunk": 4070
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 4121,
+              "chunk": 25
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 7936,
+              "chunk": 3815
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 7960,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 12032,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 12056,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 16128,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 16152,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 20224,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 20248,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 24320,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 24344,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 28416,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 28440,
+              "chunk": 24
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 32512,
+              "chunk": 4072
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 32537,
+              "chunk": 25
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-stream-overflow",
+              "size": 32769,
+              "chunk": 232
+            },
+            {
+              "diag": "cancel-start",
+              "id": "4-app-http-stream-overflow",
+              "size": 32769
+            },
+            {
+              "diag": "cancel-settled",
+              "id": "4-app-http-stream-overflow"
+            },
+            {
+              "diag": "decision",
+              "id": "4-app-http-stream-overflow",
+              "status": 413
+            }
+          ],
+          "observedWorkerDecisions": [
+            413
+          ]
+        },
+        {
+          "id": "4-app-http-ping-after-overflow",
+          "name": "ping-after-overflow",
+          "expected": 200,
+          "streamed": false,
+          "bodyBytes": 52,
+          "bodySha256": "c9dcda05c20bdd30d34aab9a60048d760090a4ddfdf9b48e80a576b5960683db",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "4-app-http-ping-after-overflow"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 200,
+            "headers": {
+              "transfer-encoding": "chunked",
+              "content-type": "text/event-stream",
+              "cache-control": "private, no-store",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "x-accel-buffering": "no",
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "event: message\ndata: {\"result\":{},\"jsonrpc\":\"2.0\",\"id\":1}\n\n",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 4-app-http-ping-after-overflow\r\nContent-Length: 52\r\nHost: 127.0.0.1:8914\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "4-app-http-ping-after-overflow",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "52",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8914",
+                "mcp-protocol-version": "2025-11-25",
+                "x-diag-id": "4-app-http-ping-after-overflow"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-ping-after-overflow",
+              "size": 52,
+              "chunk": 52
+            },
+            {
+              "diag": "decision",
+              "id": "4-app-http-ping-after-overflow",
+              "status": 200
+            }
+          ],
+          "observedWorkerDecisions": [
+            200
+          ]
+        },
+        {
+          "id": "4-app-http-batch",
+          "name": "batch",
+          "expected": 400,
+          "streamed": false,
+          "bodyBytes": 54,
+          "bodySha256": "8e7a59b7dc4eb08d5047531176264403698b1372cd37d87c70071e19701f3d73",
+          "intendedHeaders": {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+            "MCP-Protocol-Version": "2025-11-25",
+            "X-Diag-Id": "4-app-http-batch"
+          },
+          "processBefore": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "received": {
+            "status": 400,
+            "headers": {
+              "content-length": "80",
+              "content-type": "application/json",
+              "cache-control": "private, no-store",
+              "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+              "strict-transport-security": "max-age=31536000; includeSubDomains",
+              "access-control-allow-headers": "Accept, Content-Type, MCP-Protocol-Version, Mcp-Method, Mcp-Name",
+              "access-control-allow-methods": "POST, OPTIONS",
+              "access-control-expose-headers": "Link, MCP-Protocol-Version",
+              "cdn-cache-control": "no-store",
+              "cloudflare-cdn-cache-control": "no-store",
+              "permissions-policy": "geolocation=(), microphone=(), camera=()",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "x-content-type-options": "nosniff"
+            },
+            "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32600,\"message\":\"Invalid request.\"}}",
+            "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\nContent-Type: application/json\r\nAccept: application/json, text/event-stream\r\nMCP-Protocol-Version: 2025-11-25\r\nX-Diag-Id: 4-app-http-batch\r\nContent-Length: 54\r\nHost: 127.0.0.1:8914\r\nConnection: keep-alive\r\n\r\n"
+          },
+          "matches": true,
+          "processAfter": {
+            "exitCode": null,
+            "signalCode": null,
+            "exit": null
+          },
+          "workerEvents": [
+            {
+              "diag": "ingress",
+              "id": "4-app-http-batch",
+              "headers": {
+                "accept": "application/json, text/event-stream",
+                "accept-encoding": "br, gzip",
+                "cf-connecting-ip": "127.0.0.1",
+                "content-length": "54",
+                "content-type": "application/json",
+                "host": "127.0.0.1:8914",
+                "mcp-protocol-version": "2025-11-25",
+                "x-diag-id": "4-app-http-batch"
+              }
+            },
+            {
+              "diag": "read",
+              "id": "4-app-http-batch",
+              "size": 54,
+              "chunk": 54
+            },
+            {
+              "diag": "decision",
+              "id": "4-app-http-batch",
+              "status": 400
+            }
+          ],
+          "observedWorkerDecisions": [
+            400
+          ]
+        }
+      ],
+      "beforeCleanup": {
+        "exitCode": null,
+        "signalCode": null,
+        "exit": null
+      },
+      "afterCleanup": {
+        "exitCode": null,
+        "signalCode": null,
+        "exit": null
+      }
+    }
+  ],
+  "disposition": "DIAGNOSTIC_UNRESOLVED_STOP; not a C08 PASS; R3 not requested",
+  "limitations": [
+    "4 planned HTTP test runs, plus one failed startup with zero requests corrected by explicit --local admission",
+    "Each HTTP client exercised once per target; no repeats or inferred causality",
+    "No Worker ingress log for application/fetch 32768; absence of captured log is not proof of which internal actor failed",
+    "Parent Wrangler process had no exit observed at connection refusal; no assertion of whole process crash",
+    "Initial failed-start harness stdout overwritten accidentally; native CLI original and initial result retained separately",
+    "No SDK complete C08 matrix/deadline/rate recovery new acceptance; historical R2 FAIL unchanged"
+  ]
+}

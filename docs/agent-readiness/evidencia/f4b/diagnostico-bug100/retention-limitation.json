@@ -1,0 +1,12 @@
+{
+  "scope": "new diagnostic preparation only; historical R1/R2 originals unaffected",
+  "overwritten": "2-app-fetch.log from initial startup without --local",
+  "reason": "corrected runner reused the same label",
+  "preserved": [
+    "result.json.initial",
+    "run.log.initial",
+    "run-initial.mjs",
+    "native-wrangler-2026-10-14_02-34-17_604.log"
+  ],
+  "note": "Native CLI log is a separate original, not a byte-identical recovery of the overwritten harness stdout. No test request reached that failed startup."
+}
