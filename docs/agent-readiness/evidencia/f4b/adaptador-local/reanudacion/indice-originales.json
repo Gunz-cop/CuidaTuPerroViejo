@@ -1,0 +1,68 @@
+{
+  "root": "/workspace/f4b-originales-privados/adaptador-local-reanudacion",
+  "records": [
+    {
+      "file": "client/http-originals.json",
+      "bytes": 6590357,
+      "sha256": "5f6bc27f160f2bf45eb4f978bc9897eb7b07862fd6766a32cbe0ab0d12692fcf"
+    },
+    {
+      "file": "client/result.json",
+      "bytes": 3133,
+      "sha256": "89a6a7fced2b6fcaa44a4dc6ba20a076e245945f940aee1a45251fd75b5b6513"
+    },
+    {
+      "file": "execution.json",
+      "bytes": 921,
+      "sha256": "2315ea6a00a3d07f141dc3e5849aad4633de58664e026e6fd673a750a87b1974"
+    },
+    {
+      "file": "f4b-local-http.test.mjs",
+      "bytes": 5830,
+      "sha256": "9e61382791de62e7f579c8ebd36bb9889ddce4dcf51447330ff40fa941fadfac"
+    },
+    {
+      "file": "focal-node24.log",
+      "bytes": 604,
+      "sha256": "9a1c36a168cf49ca32080eeeab99a0db4e4c45ebeef73cfd87052fbd0b746d03"
+    },
+    {
+      "file": "matrix.log",
+      "bytes": 479,
+      "sha256": "308f6ca0ee72108540d17d02e983c9c4dd1528ccfd19b2b6bb51c1b289202e65"
+    },
+    {
+      "file": "mcp-client.mjs",
+      "bytes": 21978,
+      "sha256": "a0b1e6c32d7ac538e6af807e1a525e63b4cf31149893f663b95b9bf4bbad7951"
+    },
+    {
+      "file": "mcp-local-http.mjs",
+      "bytes": 5493,
+      "sha256": "8b6f2be1ce1891095b97b11f1651a63ad2f2e9c646ca22605712d39e08048f01"
+    },
+    {
+      "file": "native-wrangler-2026-10-14_03-13-20_149.log",
+      "bytes": 17262,
+      "sha256": "66391d5990e4f4378d9b45baf1c903c7d33b9b54f111afeec32cd730c4f58930"
+    },
+    {
+      "file": "run.mjs",
+      "bytes": 3328,
+      "sha256": "99b810d7800858e69cf24fd6d27d588626b8e1241f447d30ce5a91dc31a6b232"
+    },
+    {
+      "file": "runtime-output.log",
+      "bytes": 1440,
+      "sha256": "8ca6addc414a215559fbef3d39c5157629476d6d04bed57fbc78a74db4f2c001"
+    },
+    {
+      "file": "workerd.log",
+      "bytes": 19993,
+      "sha256": "5443c1b701157d18dab3e2ce908a67e51e819c3b1aafd5ce018ad9156dadf6f8"
+    }
+  ],
+  "excluded": "mutable local state directories remain private on disk",
+  "status": "FAIL_STOP",
+  "matrixAttempts": 1
+}

@@ -1,0 +1,23 @@
+✔ C08: wire8MiB/list256KiB inclusivos y +1 falla antes de emitir bytes (56.329275ms)
+✔ C08: card256KiB inclusiva y +1 CONTENT_UNAVAILABLE, lectura se corta (7.721285ms)
+✔ SDK real: initialize legacy y moderno; listado y cálculos exactos sin I/O (259.939269ms)
+✔ clientInfo opcional y negociación completa sin reflexión arbitraria (3.312652ms)
+✔ Origin, métodos, sesiones y body se rechazan antes de tools (1.601945ms)
+✔ dos slow bodies cuentan durante lectura; tercero429 sin abrir reader y malformed libera (2.821271ms)
+✔ límites inclusivos, UTF8/depth/meta, headers y mensajes genéricos (7.184596ms)
+✔ cuota real acotada por isolate y clientInfo no renueva identidad (194.442005ms)
+✔ cancelación de body libera slots y ninguna operación lee assets (2.503788ms)
+✔ cancelar SSE conserva slot hasta que I/O F3 residual termine (5.873244ms)
+✔ 90 tools/call y deadline wall10s conservan sus límites (10229.709405ms)
+✔ R1 I-B2: dos salidas sin consumo se cancelan al deadline y cap2 se recupera (10308.372318ms)
+✔ C08: depth16/meta8192 inclusivos, +1 rechazado; ping ambas eras conforme adenda (8.57037ms)
+✔ C08: cancelPromise rechazada no oculta body overflow ya comprobado (0.474546ms)
+✔ Content-Length excesivo se rechaza; declarado reducido no elude contador streaming (0.589758ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 21701.894328

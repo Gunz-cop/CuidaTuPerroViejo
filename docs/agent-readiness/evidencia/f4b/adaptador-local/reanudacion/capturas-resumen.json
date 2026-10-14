@@ -1,0 +1,82 @@
+{
+  "harnessCommit": "4c1ae6cbce57e1891b73d7bfd0a3f81c4e08680b",
+  "productCommit": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+  "status": "FAIL_STOP",
+  "exchanges": 135,
+  "completeCaptures": 126,
+  "partialCaptures": 9,
+  "lastRequests": [
+    {
+      "method": "PUT",
+      "url": "http://127.0.0.1:8921/api/mcp",
+      "requestBytesSent": 0,
+      "requestSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sentWireHeaders": "PUT /api/mcp HTTP/1.1\r\nHost: 127.0.0.1:8921\r\nConnection: keep-alive\r\nContent-Length: 0\r\n\r\n",
+      "status": 405,
+      "complete": false,
+      "terminal": "error",
+      "transportError": "AbortError: Adapter closed"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8921/api/mcp",
+      "requestBytesSent": 177,
+      "requestSha256": "5fd21d0962fe9fc0bc0415c0c5d0834ad8f96e3624db7c0540b84927dd124c88",
+      "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\naccept: application/json, text/event-stream\r\ncontent-type: application/json\r\nmcp-method: server/discover\r\nmcp-protocol-version: 2026-07-28\r\norigin: null\r\nHost: 127.0.0.1:8921\r\nConnection: keep-alive\r\nTransfer-Encoding: chunked\r\n\r\n",
+      "status": 403,
+      "complete": false,
+      "terminal": "error",
+      "transportError": "AbortError: Adapter closed"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8921/api/mcp",
+      "requestBytesSent": 177,
+      "requestSha256": "5fd21d0962fe9fc0bc0415c0c5d0834ad8f96e3624db7c0540b84927dd124c88",
+      "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\naccept: application/json, text/event-stream\r\ncontent-type: application/json\r\nmcp-method: server/discover\r\nmcp-protocol-version: 2026-07-28\r\norigin: http://127.0.0.1:8921\r\nHost: 127.0.0.1:8921\r\nConnection: keep-alive\r\nTransfer-Encoding: chunked\r\n\r\n",
+      "status": 200,
+      "complete": false,
+      "terminal": "error",
+      "transportError": "AbortError: Adapter closed"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8921/api/mcp",
+      "requestBytesSent": 177,
+      "requestSha256": "5fd21d0962fe9fc0bc0415c0c5d0834ad8f96e3624db7c0540b84927dd124c88",
+      "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\naccept: application/json, text/event-stream\r\ncontent-type: application/json\r\nmcp-method: server/discover\r\nmcp-protocol-version: 2026-07-28\r\nmcp-session-id: forbidden\r\nHost: 127.0.0.1:8921\r\nConnection: keep-alive\r\nTransfer-Encoding: chunked\r\n\r\n",
+      "status": 400,
+      "complete": false,
+      "terminal": "error",
+      "transportError": "AbortError: Adapter closed"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8921/api/mcp",
+      "requestBytesSent": 177,
+      "requestSha256": "5fd21d0962fe9fc0bc0415c0c5d0834ad8f96e3624db7c0540b84927dd124c88",
+      "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\naccept: application/json, text/event-stream\r\ncontent-type: text/plain\r\nmcp-method: server/discover\r\nmcp-protocol-version: 2026-07-28\r\nHost: 127.0.0.1:8921\r\nConnection: keep-alive\r\nTransfer-Encoding: chunked\r\n\r\n",
+      "status": 415,
+      "complete": false,
+      "terminal": "error",
+      "transportError": "AbortError: Adapter closed"
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8921/api/mcp",
+      "requestBytesSent": 177,
+      "requestSha256": "5fd21d0962fe9fc0bc0415c0c5d0834ad8f96e3624db7c0540b84927dd124c88",
+      "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\naccept: application/json\r\ncontent-type: application/json\r\nmcp-method: server/discover\r\nmcp-protocol-version: 2026-07-28\r\nHost: 127.0.0.1:8921\r\nConnection: keep-alive\r\nTransfer-Encoding: chunked\r\n\r\n",
+      "status": 500,
+      "complete": false,
+      "terminal": "error",
+      "transportError": "AbortError: Adapter closed"
+    }
+  ],
+  "limitations": [
+    "The adapter returns headers before consuming bodies, unlike the previous Node fetch capture which consumed response.clone().text(). Status-only negative checks leave bodies unconsumed; marked partial, not fabricated.",
+    "Observed500 is real HTTP status, not an adapter-translated network error. Body of that response was not consumed/captured before assertion and close.",
+    "The adapter terminal-state fix passes focal tests; failure of full composition does not prove a new causal classification of bug100.",
+    "No retry or second matrix. Streaming32768/32769, continuity and C09 additions not reached."
+  ]
+}
