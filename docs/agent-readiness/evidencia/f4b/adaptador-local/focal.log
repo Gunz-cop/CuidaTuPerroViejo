@@ -1,0 +1,44 @@
+✔ local adapter preserves method/URL/headers and binary streamed bytes; evidence taps equal wire, JSON/SSE unchanged (35.734017ms)
+✔ real 413/JSON, HEAD and redirect responses preserved; no retry or redirect following (8.709193ms)
+✔ AbortSignal before send and during upload cancels source, releases request and preserves reason (3.81655ms)
+✖ abort after headers, response.cancel and adapter.close terminate open SSE/resources; network errors propagate without retries (4.546276ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 140.527
+
+✖ failing tests:
+
+test at tests/agent-readiness/f4b-local-http.test.mjs:55:1
+✖ abort after headers, response.cancel and adapter.close terminate open SSE/resources; network errors propagate without retries (4.546276ms)
+  AssertionError [ERR_ASSERTION]: The validation function is expected to return "true". Received false
+  
+  Caught error:
+  
+  Error: HTTP response aborted.
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///workspace/ctpv-f4b-desarrollo/tests/agent-readiness/f4b-local-http.test.mjs:59:100
+      at async fixture (file:///workspace/ctpv-f4b-desarrollo/tests/agent-readiness/f4b-local-http.test.mjs:10:9)
+      at async TestContext.<anonymous> (file:///workspace/ctpv-f4b-desarrollo/tests/agent-readiness/f4b-local-http.test.mjs:57:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: HTTP response aborted.
+        at IncomingMessage.<anonymous> (file:///workspace/ctpv-f4b-desarrollo/scripts/agent-readiness/mcp-local-http.mjs:46:43)
+        at IncomingMessage.emit (node:events:509:28)
+        at IncomingMessage._destroy (node:_http_incoming:244:10)
+        at _destroy (node:internal/streams/destroy:122:10)
+        at IncomingMessage.destroy (node:internal/streams/destroy:84:5)
+        at fail (file:///workspace/ctpv-f4b-desarrollo/scripts/agent-readiness/mcp-local-http.mjs:31:38)
+        at abort (file:///workspace/ctpv-f4b-desarrollo/scripts/agent-readiness/mcp-local-http.mjs:36:57)
+        at AbortSignal.signalAbort (file:///workspace/ctpv-f4b-desarrollo/scripts/agent-readiness/mcp-local-http.mjs:37:33)
+        at [nodejs.internal.kHybridDispatch] (node:internal/event_target:856:20)
+        at AbortSignal.dispatchEvent (node:internal/event_target:789:26),
+    operator: 'rejects',
+    diff: 'simple'
+  }
