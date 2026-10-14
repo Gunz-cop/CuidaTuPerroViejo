@@ -25,3 +25,7 @@ Deadline-503.txt y deadline-headers.json conservan cuerpo/headers íntegros de e
 La captura sirve para comparar incidentes futuros por UTC/SHA/BuildID/VersionID/status/bodyhash/headers/Cf-Ray cuando exista; no crear alertas, modificarproducto ni diagnosticarproducción ahora. Ver guía histórica consumo-control/guia-incidente.md.
 
 A2admitida no equivale aPASS deejecución. **R3/5 no solicitada ni consumida. R1/5 yR2/5 siguenFAIL.** Bug100 no se cierra: C08pendiente pasó enpreview, pero entrega siguebloqueada pordeadlineC09. No main/integración/publicación/scans/score. Rollbackd6f4bdd sigue referencia pendiente de revisión de cobertura final.
+
+## Seguimiento y gate de identidad pendiente
+
+Bug de este resultado: [#102](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/102). El mismo auditor confirmó, en consulta de alcance sin consumir R3, que C12 puede reutilizarse **sólo para la imagen original81e32ad7/product192**, con harness nuevo identificado aparte. Para el nuevo preview40fed98d/C12 exige cotejo nuevo; la prohibición vigente de contacto impide completarlo. Requiere decisión expresa que autorice únicamente esa lectura paraidentidad o modifique expresamente el requisito. No se abre ese tráfico ni se presume aceptación. Tampoco un mergefuturo hereda C12 por igualdad de fuentes. Este gate afecta integración/publicación, no borra los controles yaobservados.
