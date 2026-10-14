@@ -5,14 +5,39 @@ import { createHash } from 'node:crypto';
 import { mkdir, writeFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { resolve } from 'node:path';
+import { createLocalHttpFetch } from './mcp-local-http.mjs';
 
 const base = process.argv[2]; const output = process.argv[3];
 if (!base || !output) throw new Error('Usage: mcp-client.mjs <base-url> <private-output-dir>');
 const root = new URL(base); if (!['http:', 'https:'].includes(root.protocol)) throw new Error('Invalid base');
-const observations = []; const results = [];
+const localHttp = process.argv[4] === '--local-http';
+if (process.argv[4] && !localHttp) throw new Error('Unknown transport flag');
+if (localHttp && (root.protocol !== 'http:' || !['localhost', '127.0.0.1', '[::1]'].includes(root.hostname))) throw new Error('Local HTTP requires loopback');
+const observations = []; const results = []; let sentRequests = 0;
+const captures = new Map();
+const adapter = localHttp ? createLocalHttpFetch({ observe(event) {
+  if (event.event === 'request') {
+    const record = { at: new Date().toISOString(), method: event.method, url: event.url, requestHeaders: event.headers, protocolVersion: event.headers['mcp-protocol-version'] ?? null, requestBody: '', requestBytesSent: 0, body: '', bytes: 0, complete: false, transport: 'node:http' };
+    observations.push(record); captures.set(event.exchange, { record, request: [], response: [] });
+  }
+  const c = captures.get(event.exchange); if (!c) return;
+  if (event.event === 'request-chunk') { c.record.requestBytesSent += event.bytes.length; if (c.record.requestBytesSent <= 65536) c.request.push(event.bytes); else c.record.requestCaptureTruncated = true; }
+  if (event.event === 'response-chunk') { c.record.bytes += event.bytes.length; if (c.record.bytes <= 8 * 1024 * 1024) c.response.push(event.bytes); else c.record.responseCaptureTruncated = true; }
+  if (event.event === 'headers') { c.record.status = event.status; c.record.responseRawHeaders = event.headers; c.record.responseHeaders = Object.fromEntries(new Headers(Array.from({ length: event.headers.length / 2 }, (_, i) => [event.headers[i * 2], event.headers[i * 2 + 1]]))); c.record.sentWireHeaders = event.sentWireHeaders; }
+  if (['end', 'cancel', 'error'].includes(event.event)) {
+    const request = Buffer.concat(c.request), response = Buffer.concat(c.response);
+    Object.assign(c.record, { requestBody: request.toString('utf8'), requestBodyBase64: request.toString('base64'), requestSha256: hash(request), body: response.toString('utf8'), bodyBase64: response.toString('base64'), sha256: hash(response), complete: event.event === 'end', terminal: event.event, ...(event.error ? { transportError: event.error } : {}), ...(event.reason ? { cancelReason: event.reason } : {}) });
+  }
+} }) : null;
 await mkdir(resolve(output), { recursive: true });
 const hash = (value) => createHash('sha256').update(value).digest('hex');
 async function capture(input, init) {
+  if (localHttp) {
+    if (++sentRequests > 320) throw new Error('LOCAL_MATRIX_REQUEST_BUDGET');
+    const response = await adapter.fetch(input, init);
+    if (response.status >= 300 && response.status < 400) { await response.body?.cancel('redirect-not-followed'); throw new Error('Redirect not followed'); }
+    return response;
+  }
   const request = new Request(input, init); const requestBody = request.method === 'POST' ? await request.clone().text() : '';
   const response = await fetch(request); const copy = response.clone();
   const body = await copy.text();
@@ -30,7 +55,7 @@ async function api(path) { const r = await capture(new URL(path, root)); assert.
 try {
   for (const modern of [false, true]) {
     const client = new Client({ name: 'ctpv-f4b-evidence', version: '1.0.0' }, modern ? { versionNegotiation: { mode: { pin: '2026-07-28' } } } : {});
-    const transport = new StreamableHTTPClientTransport(new URL('/api/mcp', root), { fetch: capture });
+    const transport = new StreamableHTTPClientTransport(new URL('/api/mcp', root), { fetch: capture, ...(localHttp ? { redirectPolicy: 'follow', requestInit: { redirect: 'manual' }, reconnectionOptions: { maxRetries: 0, initialReconnectionDelay: 1000, maxReconnectionDelay: 1000, reconnectionDelayGrowFactor: 1 } } : {}) });
     try {
       await client.connect(transport); const list = await client.listTools();
       assert.deepEqual(list.tools.map((tool) => tool.name), ['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids']);
@@ -119,10 +144,64 @@ try {
   const legacyPing = await send({ jsonrpc: '2.0', id: 901, method: 'ping', params: {} }, { 'Content-Type': 'application/json', Accept: h.Accept, 'MCP-Protocol-Version': '2025-11-25' });
   assert.equal(legacyPing.status, 200); assert.match(await legacyPing.text(), /"result":\{\}/u);
   const preflight = await capture(new URL('/api/mcp', root), { method: 'OPTIONS', headers: { Origin: root.origin, 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'mcp-protocol-version,mcp-method,mcp-name,content-type' } }); assert.equal(preflight.status, 204);
+  if (localHttp) await localDefenses(h, discover);
   results.push({ criterion: 'C07/C08', methods: 4, modernPing: 404, legacyPing: 200, origin: 'PASS', cors: 'PASS', sessions: 'stateless', legacyCancelled: 202, oversized: 413, malformed: 'PASS', status: 'PASS' });
-  await writeFile(resolve(output, 'result.json'), JSON.stringify({ base, at: new Date().toISOString(), status: 'PASS', results, limitations: ['Este harness no acredita por sí solo UI/WebMCP, presupuesto, cancelación, todosIDs o receipt de build.'] }, null, 2) + '\n');
+  await writeFile(resolve(output, 'result.json'), JSON.stringify({ base, transport: localHttp ? 'node:http' : 'Node fetch', product: localHttp ? '192dcdd52d2790652ef2dbcb6d23a0f5006ade43' : undefined, harnessCommit: localHttp ? process.env.F4B_HARNESS_COMMIT : undefined, at: new Date().toISOString(), status: 'PASS', results, limitations: ['Este harness no acredita por sí solo UI/WebMCP, presupuesto, cancelación, todosIDs o receipt de build.'] }, null, 2) + '\n');
   process.stdout.write(`PASS: SDK HTTP real, ambas eras, cuatro tools, paridad API, hash Markdown, inválidos y card/ARD (${observations.length} exchanges).\n`);
 } catch (error) {
-  await writeFile(resolve(output, 'result.json'), JSON.stringify({ base, at: new Date().toISOString(), status: 'FAIL', results, error: String(error) }, null, 2) + '\n');
+  await writeFile(resolve(output, 'result.json'), JSON.stringify({ base, transport: localHttp ? 'node:http' : 'Node fetch', product: localHttp ? '192dcdd52d2790652ef2dbcb6d23a0f5006ade43' : undefined, harnessCommit: localHttp ? process.env.F4B_HARNESS_COMMIT : undefined, at: new Date().toISOString(), status: 'FAIL', results, error: String(error) }, null, 2) + '\n');
   throw error;
-} finally { await writeFile(resolve(output, 'http-originals.json'), JSON.stringify(observations, null, 2) + '\n'); }
+} finally { adapter?.close(); await new Promise(resolve => setImmediate(resolve)); await writeFile(resolve(output, 'http-originals.json'), JSON.stringify(observations, null, 2) + '\n'); }
+
+async function localDefenses(h, discover) {
+  const endpoint = new URL('/api/mcp', root);
+  const send = (body, extra = {}) => capture(endpoint, { method: 'POST', headers: h, body: typeof body === 'string' || body instanceof ReadableStream ? body : JSON.stringify(body), ...extra });
+  const read = async response => { const text = await response.text(); return { status: response.status, text }; };
+  const stream = text => new ReadableStream({ start(c) { c.enqueue(Buffer.from(text)); c.close(); } });
+  const text = JSON.stringify(discover); const atLimit = text + ' '.repeat(32768 - Buffer.byteLength(text));
+  assert.equal(Buffer.byteLength(atLimit), 32768); const streamingBegin = observations.length;
+  assert.equal((await read(await send(stream(atLimit), { duplex: 'half' }))).status, 200);
+  assert.equal((await read(await send(stream('x'.repeat(32769)), { duplex: 'half' }))).status, 413);
+  for (const [record, length] of observations.slice(streamingBegin).map((record, i) => [record, 32768 + i])) {
+    assert.equal(record.requestBytesSent, length); assert.match(record.sentWireHeaders, /Transfer-Encoding: chunked/i); assert.doesNotMatch(record.sentWireHeaders, /Content-Length:/i); assert.equal(record.complete, true);
+  }
+  assert.equal((await read(await send(discover))).status, 200);
+  assert.equal((await read(await send([discover]))).status, 400);
+  const nested = n => { let probe = 'x'; while (n--) probe = [probe]; return { ...discover, params: { _meta: { ...discover.params._meta, probe } } }; };
+  assert.equal((await read(await send(nested(13)))).status, 200); assert.equal((await read(await send(nested(14)))).status, 400);
+  const meta = { ...discover.params._meta, padding: '' }; meta.padding = 'x'.repeat(8192 - Buffer.byteLength(JSON.stringify(meta)));
+  assert.equal((await read(await send({ ...discover, params: { _meta: meta } }))).status, 200); meta.padding += 'x';
+  assert.equal((await read(await send({ ...discover, params: { _meta: meta } }))).status, 400);
+  results.push({ criterion: 'C08-local', streamingInclusive: 32768, streamingExcess: 32769, overflow: 413, after: 200, batch: 400, depth: '16/+1 PASS', metadata: '8192/+1 PASS', status: 'PASS' });
+  const nap = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const aborts = [new AbortController(), new AbortController()]; const cancelled = [false, false];
+  const slow = i => new ReadableStream({ start(c) { c.enqueue(Buffer.from('{')); }, cancel() { cancelled[i] = true; } });
+  const pending = aborts.map((controller, i) => send(slow(i), { duplex: 'half', signal: controller.signal }).then(() => ({ unexpected: true }), error => ({ error: String(error) })));
+  await nap(500); assert.equal((await read(await send(discover))).status, 429);
+  aborts.forEach(controller => controller.abort(new Error('matrix-cancel')));
+  const aborted = await Promise.all(pending); assert.ok(aborted.every(r => r.error)); assert.deepEqual(cancelled, [true, true]);
+  await nap(300); assert.equal((await read(await send(discover))).status, 200);
+  let sourceStopped = false; const timed = new ReadableStream({ start(c) { c.enqueue(Buffer.from('{')); }, cancel() { sourceStopped = true; } });
+  const start = performance.now(); assert.equal((await read(await send(timed, { duplex: 'half' }))).status, 500);
+  const elapsed = performance.now() - start; assert.ok(elapsed >= 9900 && elapsed < 13000); assert.equal(sourceStopped, true);
+  assert.equal((await read(await send(discover))).status, 200); assert.equal(adapter.active(), 0);
+  results.push({ criterion: 'C09-local', slowBodies: 2, third: 429, aborts: 2, restored: 200, deadlineMs: elapsed, uploadCancelled: sourceStopped, adapterActiveAfter: adapter.active(), status: 'PASS' });
+  // Same isolate/IP; no restart or identity variation to reset the bucket.
+  const waitWindow = async label => { for (const ms of [20000, 20000, 20000, 1200]) { process.stdout.write(`RATE_WINDOW ${label}: waiting ${ms}ms without requests\n`); await nap(ms); } };
+  await waitWindow('before'); const begin = observations.length;
+  const client = new Client({ name: 'ctpv-f4b-rate-evidence', version: '1.0.0' }, { versionNegotiation: { mode: { pin: '2026-07-28' } } });
+  const transport = new StreamableHTTPClientTransport(endpoint, { fetch: capture, redirectPolicy: 'follow', requestInit: { redirect: 'manual' }, reconnectionOptions: { maxRetries: 0, initialReconnectionDelay: 1000, maxReconnectionDelay: 1000, reconnectionDelayGrowFactor: 1 } });
+  try {
+    await client.connect(transport);
+    for (let n = 0; n < 90; n++) assert.equal((await client.callTool({ name: 'recommend_mobility_aids', arguments: { level: 'light', handling: 'calm' } })).isError, false);
+    await assert.rejects(client.callTool({ name: 'recommend_mobility_aids', arguments: { level: 'light', handling: 'calm' } }), e => e.status === 429);
+  } finally { await client.close(); }
+  const counted = () => observations.slice(begin).filter(r => r.method === 'POST' && new URL(r.url).pathname === '/api/mcp').length;
+  assert.ok(counted() <= 120);
+  while (counted() < 120) assert.equal((await read(await send(discover))).status, 200);
+  assert.equal((await read(await send(discover))).status, 429); assert.equal(counted(), 121);
+  assert.equal(adapter.active(), 0);
+  await waitWindow('recovery'); assert.equal((await read(await send(discover))).status, 200);
+  assert.equal(adapter.active(), 0);
+  results.push({ criterion: 'C09-rate-local', callsAccepted: 90, call91: 429, postsAccepted: 120, post121: 429, sameIsolate: true, sameIP: true, recovered: 200, adapterActiveAfter: adapter.active(), requestBudget: 320, actualRequests: sentRequests, status: 'PASS' });
+}
