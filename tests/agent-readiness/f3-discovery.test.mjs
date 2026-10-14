@@ -34,7 +34,7 @@ const LINKS = [
   '<https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json"',
   '<https://cuidatuperroviejo.com/api/mcp/server-card>; rel="service-desc"; type="application/mcp-server-card+json"',
 ];
-const DESTINATIONS = ['api/mcp/server-card', 'agent-api/v1/query-index.json', 'agent-api/v1/openapi.json', '.well-known/api-catalog', '.well-known/agent-skills/index.json', '.well-known/agent-skills/buscar-leer-citar/SKILL.md', '.well-known/ard.json', '.well-known/ai-catalog.json'];
+const DESTINATIONS = ['api/mcp/server-card', 'agent-api/v1/query-index.json', 'agent-api/v1/openapi.json', '.well-known/api-catalog', '.well-known/agent-skills/index.json', '.well-known/agent-skills/buscar-leer-citar/SKILL.md', '.well-known/ard.json', '.well-known/ai-catalog.json', '.well-known/mcp/server-card.json'];
 
 async function fixture(t) {
   const root = await mkdtemp(join(process.cwd(), 'tests/agent-readiness/.f3-discovery-'));
