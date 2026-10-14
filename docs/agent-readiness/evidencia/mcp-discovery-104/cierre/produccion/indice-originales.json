@@ -1,0 +1,236 @@
+{
+  "schemaVersion": "mcp-discovery104-production-originals/1",
+  "recordedAt": "2026-10-14T17:31:55.937222+00:00",
+  "head": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+  "tree": "6a2c50cc3e28c30389668bd70070b8cb545c36bd",
+  "build": "8d1bf392-1efb-4a80-b045-2c66d21a45d5",
+  "version": "4fad00fc-f88e-4abc-878c-f7d50742f069",
+  "status": "D08 complete; smoke20/24 PASS; content86/all-ui73, evaluator level5",
+  "scope": "new index solely production; fixed R2 index and originals unchanged",
+  "files": [
+    {
+      "file": "authorization-and-prepromotion.json",
+      "originalPath": "/workspace/discovery104-originals/production/authorization-and-prepromotion.json",
+      "bytes": 1192,
+      "sha256": "6963cf39f12c74dd9c5124832054008cda93e3974620633fb1febcbfbf29c0a3",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "check-runs-success.raw.json",
+      "originalPath": "/workspace/discovery104-originals/production/check-runs-success.raw.json",
+      "bytes": 6918,
+      "sha256": "6d97ca2efb6365fe856917b771e378637770f36436b1726a3bd693f2228c0261",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "comparison-all-ui.json",
+      "originalPath": "/workspace/discovery104-originals/production/comparison-all-ui.json",
+      "bytes": 822,
+      "sha256": "c68c832e5f624a96e898573d57de42d9769774e6eb7f91553195478897da8d74",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "comparison-content.json",
+      "originalPath": "/workspace/discovery104-originals/production/comparison-content.json",
+      "bytes": 689,
+      "sha256": "fc909855d4a60080b34884ddfe6dd1c346469908a654c87bed8481cb87774efc",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "integrity-verification.json",
+      "originalPath": "/workspace/discovery104-originals/production/integrity-verification.json",
+      "bytes": 712,
+      "sha256": "938a182f00b910575287922cbff1f85fb06c0a65d4d9a6dddab6a7bf2294fcc5",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "live-all-ui/manifest.json",
+      "originalPath": "/workspace/discovery104-originals/production/live-all-ui/manifest.json",
+      "bytes": 777,
+      "sha256": "97ab20993e70edef325264b782dd788f9bfde9dd643d97c70f50da2c4b24b43f",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "live-all-ui/request.json",
+      "originalPath": "/workspace/discovery104-originals/production/live-all-ui/request.json",
+      "bytes": 307,
+      "sha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "live-all-ui/response-metadata.json",
+      "originalPath": "/workspace/discovery104-originals/production/live-all-ui/response-metadata.json",
+      "bytes": 163,
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "live-all-ui/response.raw.json",
+      "originalPath": "/workspace/discovery104-originals/production/live-all-ui/response.raw.json",
+      "bytes": 52227,
+      "sha256": "71df3aa6a068aaa51f8cb15291f1846c0b12ee4da724dbb7e640fb638ac25bae",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "live-all-ui/summary.json",
+      "originalPath": "/workspace/discovery104-originals/production/live-all-ui/summary.json",
+      "bytes": 5591,
+      "sha256": "e6f449184592115f1f115725a920068aa385775022c0c2f50ee3c87736ae38c1",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "live-content/manifest.json",
+      "originalPath": "/workspace/discovery104-originals/production/live-content/manifest.json",
+      "bytes": 777,
+      "sha256": "b8a5570217a04797a33b951aa963435c252b0a804e6a41ba2181e9e94f8a2c4c",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "live-content/request.json",
+      "originalPath": "/workspace/discovery104-originals/production/live-content/request.json",
+      "bytes": 160,
+      "sha256": "94daf42c1ee9ecfce1528d303e4b19d35e7544d8d38b6ac72ff56436708d2c21",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "live-content/response-metadata.json",
+      "originalPath": "/workspace/discovery104-originals/production/live-content/response-metadata.json",
+      "bytes": 163,
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "live-content/response.raw.json",
+      "originalPath": "/workspace/discovery104-originals/production/live-content/response.raw.json",
+      "bytes": 47054,
+      "sha256": "c310f43254b6aa54288a1fe530e6529599bbc00816dd5a0d3abc48246c55cbd5",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "live-content/summary.json",
+      "originalPath": "/workspace/discovery104-originals/production/live-content/summary.json",
+      "bytes": 5656,
+      "sha256": "4d20dfb059d8c550f393488d8c8a650f19a9c30ef5534b138a2e543557d7c81e",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "pr106-merged.raw.json",
+      "originalPath": "/workspace/discovery104-originals/production/pr106-merged.raw.json",
+      "bytes": 19214,
+      "sha256": "f19a8c45476e0363aafab79b992e875282179eb8d03d8fec1e6f57f38c4229dc",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "promotion.log",
+      "originalPath": "/workspace/discovery104-originals/production/promotion.log",
+      "bytes": 123,
+      "sha256": "04ead36a82daebd7a91256c75ea16c6e3625a668d419c51de458b2c1d35c6dea",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "receipt-production.json",
+      "originalPath": "/workspace/discovery104-originals/receipt-7e389-production.json",
+      "bytes": 9282,
+      "sha256": "ec99488c7278834693f60383c1b6b0787f5fbde88c2e236666d8191216f8b6ba",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "scan-all-ui-execution.json",
+      "originalPath": "/workspace/discovery104-originals/production/scan-all-ui-execution.json",
+      "bytes": 440,
+      "sha256": "92d4cb86e1bfee52bbc05331563d582f2ecd3df9450d4e02a03bb4d0fd9436bf",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "scan-all-ui.log",
+      "originalPath": "/workspace/discovery104-originals/production/scan-all-ui.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "scan-content-execution.json",
+      "originalPath": "/workspace/discovery104-originals/production/scan-content-execution.json",
+      "bytes": 477,
+      "sha256": "3cd46c28540497b16c19a924636e0794be97032d3481ae24afe8a3f661540a73",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "scan-content.log",
+      "originalPath": "/workspace/discovery104-originals/production/scan-content.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "smoke/expected.json",
+      "originalPath": "/workspace/discovery104-originals/production-smoke-7e389/expected.json",
+      "bytes": 3230,
+      "sha256": "c0037426dfd3ef12581610431177738edcab6e58b078cf4166b7f11355afce68",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "smoke/http-originals.json",
+      "originalPath": "/workspace/discovery104-originals/production-smoke-7e389/http-originals.json",
+      "bytes": 383929,
+      "sha256": "66bb9cfd4b2af828619fe17e54a497f9ff72090aea69df1691d7d6fedb4d3adb",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "smoke/receipt.json",
+      "originalPath": "/workspace/discovery104-originals/production-smoke-7e389/receipt.json",
+      "bytes": 9282,
+      "sha256": "ec99488c7278834693f60383c1b6b0787f5fbde88c2e236666d8191216f8b6ba",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "smoke/result.json",
+      "originalPath": "/workspace/discovery104-originals/production-smoke-7e389/result.json",
+      "bytes": 12555,
+      "sha256": "9f7b71644477402f5513dd03ce9204452458c5fe79eb40c9a06c8d8d2e8349eb",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "smoke-execution.json",
+      "originalPath": "/workspace/discovery104-originals/production/smoke-execution.json",
+      "bytes": 549,
+      "sha256": "71e22f9e09f50974750ec19ab9768268e52aa72d821c2fb5eba42e36430e9158",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    },
+    {
+      "file": "smoke-run.log",
+      "originalPath": "/workspace/discovery104-originals/production/smoke-run.log",
+      "bytes": 34,
+      "sha256": "d9435a166860227bc69ad4f23499baab0bfbfb13147157863ef10ae5ec68c806",
+      "copiedByteExact": true,
+      "scope": "complete public HTTP or scanner original/provenance; no cookies/credentials; individual production identity retained"
+    }
+  ]
+}

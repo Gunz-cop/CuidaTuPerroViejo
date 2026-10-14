@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-14T17:20:39.307759+00:00",
+  "smokeExit": 0,
+  "rollbackTriggered": false,
+  "smokeCommand": [
+    "node",
+    "--use-env-proxy",
+    "scripts/agent-readiness/mcp-discovery-104.mjs",
+    "run",
+    "--expected",
+    "/workspace/discovery104-originals/expected-7e389.json",
+    "--base-url",
+    "https://cuidatuperroviejo.com",
+    "--receipt",
+    "/workspace/discovery104-originals/receipt-7e389-production.json",
+    "--mode",
+    "production",
+    "--out",
+    "/workspace/discovery104-originals/production-smoke-7e389"
+  ]
+}

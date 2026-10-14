@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-14T17:18:42.592457+00:00",
+  "ownerInstruction": "Autorizo",
+  "scope": "Exact fast-forward main from b2ab108 to audited7e389; specific FF revert0f3 if production smoke fails and main has not drifted; verify production and one scan per frozen content/all-ui profile",
+  "proposalCommit": "8f27b51722ccba4ac05eeac3c9251d100558c3db",
+  "head": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+  "tree": "6a2c50cc3e28c30389668bd70070b8cb545c36bd",
+  "baseMain": "b2ab1082c02799dab4306a7c167a6114c0163a90",
+  "rollback": "0f3c03ef72a5f53d268d354bc7b3210d01e0674a",
+  "rollbackParent": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+  "audit": "R2/5 PASS",
+  "auditSha256": "043a2da30222f6bfa5f2bb463a7138fdbb9defd0f78e62e21177a18b6e43b758",
+  "refs": {
+    "refs/heads/agent-ready/mcp-discovery-104": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+    "refs/heads/agent-ready/mcp-discovery-104-rollback": "0f3c03ef72a5f53d268d354bc7b3210d01e0674a",
+    "refs/heads/main": "b2ab1082c02799dab4306a7c167a6114c0163a90"
+  },
+  "strategy": "fast-forward exact audited SHA without force",
+  "productionSmokeBudget": 24,
+  "scans": "one content and one all-ui only after production smoke PASS"
+}

@@ -1,93 +1,274 @@
 {
-  "recordedAt": "2026-10-14T17:05:02.230534+00:00",
+  "recordedAt": "2026-10-14T17:31:55.940691+00:00",
   "productHead": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
   "productTree": "6a2c50cc3e28c30389668bd70070b8cb545c36bd",
-  "status": "R2/5 PASS prepromotion; D08 pending; no new execution",
-  "counter": "R1PASS/R2PASS same independent auditor, no reset",
+  "status": "published and D08 verified; no new execution for documentation",
+  "historicalPrepromotionArchive": "8f27b51722ccba4ac05eeac3c9251d100558c3db",
+  "counter": "R1PASS/R2PASS same independent auditor, no reset or new audit",
   "files": [
     {
       "file": "README.md",
-      "bytes": 4058,
-      "sha256": "8d8446efa77d4db3583f018091974dc617f15ebf24c1dc206829fcae68d9d7d8",
-      "scope": "curated result/receipt/build disposition or closure proposal; raw private originals remain at their declared paths"
+      "bytes": 5840,
+      "sha256": "8b5127ae6b3363dd09b5bbb0a46f2b607372eff53333189d1420017f53de6ae4",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/authorization-and-prepromotion.json",
+      "bytes": 1192,
+      "sha256": "6963cf39f12c74dd9c5124832054008cda93e3974620633fb1febcbfbf29c0a3",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/check-runs-success.raw.json",
+      "bytes": 6918,
+      "sha256": "6d97ca2efb6365fe856917b771e378637770f36436b1726a3bd693f2228c0261",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/comparison-all-ui.json",
+      "bytes": 822,
+      "sha256": "c68c832e5f624a96e898573d57de42d9769774e6eb7f91553195478897da8d74",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/comparison-content.json",
+      "bytes": 689,
+      "sha256": "fc909855d4a60080b34884ddfe6dd1c346469908a654c87bed8481cb87774efc",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/indice-originales.json",
+      "bytes": 12259,
+      "sha256": "064f0d99aedce645d0c034dea9f6408090f7c37adbf206c616cf0f2f53180a0f",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/integrity-verification.json",
+      "bytes": 712,
+      "sha256": "938a182f00b910575287922cbff1f85fb06c0a65d4d9a6dddab6a7bf2294fcc5",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/live-all-ui/manifest.json",
+      "bytes": 777,
+      "sha256": "97ab20993e70edef325264b782dd788f9bfde9dd643d97c70f50da2c4b24b43f",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/live-all-ui/request.json",
+      "bytes": 307,
+      "sha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/live-all-ui/response-metadata.json",
+      "bytes": 163,
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/live-all-ui/response.raw.json",
+      "bytes": 52227,
+      "sha256": "71df3aa6a068aaa51f8cb15291f1846c0b12ee4da724dbb7e640fb638ac25bae",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/live-all-ui/summary.json",
+      "bytes": 5591,
+      "sha256": "e6f449184592115f1f115725a920068aa385775022c0c2f50ee3c87736ae38c1",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/live-content/manifest.json",
+      "bytes": 777,
+      "sha256": "b8a5570217a04797a33b951aa963435c252b0a804e6a41ba2181e9e94f8a2c4c",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/live-content/request.json",
+      "bytes": 160,
+      "sha256": "94daf42c1ee9ecfce1528d303e4b19d35e7544d8d38b6ac72ff56436708d2c21",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/live-content/response-metadata.json",
+      "bytes": 163,
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/live-content/response.raw.json",
+      "bytes": 47054,
+      "sha256": "c310f43254b6aa54288a1fe530e6529599bbc00816dd5a0d3abc48246c55cbd5",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/live-content/summary.json",
+      "bytes": 5656,
+      "sha256": "4d20dfb059d8c550f393488d8c8a650f19a9c30ef5534b138a2e543557d7c81e",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/pr106-merged.raw.json",
+      "bytes": 19214,
+      "sha256": "f19a8c45476e0363aafab79b992e875282179eb8d03d8fec1e6f57f38c4229dc",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/promotion.log",
+      "bytes": 123,
+      "sha256": "04ead36a82daebd7a91256c75ea16c6e3625a668d419c51de458b2c1d35c6dea",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/receipt-production.json",
+      "bytes": 9282,
+      "sha256": "ec99488c7278834693f60383c1b6b0787f5fbde88c2e236666d8191216f8b6ba",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/resultado.md",
+      "bytes": 6532,
+      "sha256": "284d9c6c382b7de5b4b472ba565f1b66ab07deca227e3ef43a5f8f7b44d9687d",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/scan-all-ui-execution.json",
+      "bytes": 440,
+      "sha256": "92d4cb86e1bfee52bbc05331563d582f2ecd3df9450d4e02a03bb4d0fd9436bf",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/scan-all-ui.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/scan-content-execution.json",
+      "bytes": 477,
+      "sha256": "3cd46c28540497b16c19a924636e0794be97032d3481ae24afe8a3f661540a73",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/scan-content.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/smoke/expected.json",
+      "bytes": 3230,
+      "sha256": "c0037426dfd3ef12581610431177738edcab6e58b078cf4166b7f11355afce68",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/smoke/http-originals.json",
+      "bytes": 383929,
+      "sha256": "66bb9cfd4b2af828619fe17e54a497f9ff72090aea69df1691d7d6fedb4d3adb",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/smoke/receipt.json",
+      "bytes": 9282,
+      "sha256": "ec99488c7278834693f60383c1b6b0787f5fbde88c2e236666d8191216f8b6ba",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/smoke/result.json",
+      "bytes": 12555,
+      "sha256": "9f7b71644477402f5513dd03ce9204452458c5fe79eb40c9a06c8d8d2e8349eb",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/smoke-execution.json",
+      "bytes": 549,
+      "sha256": "71e22f9e09f50974750ec19ab9768268e52aa72d821c2fb5eba42e36430e9158",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
+    },
+    {
+      "file": "produccion/smoke-run.log",
+      "bytes": 34,
+      "sha256": "d9435a166860227bc69ad4f23499baab0bfbfb13147157863ef10ae5ec68c806",
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "propuesta-promocion.md",
       "bytes": 3956,
       "sha256": "a6d02e30ea5fbabfb6114723a747afd1e65d4ca1df43613b9552fe1fcd51ac57",
-      "scope": "curated result/receipt/build disposition or closure proposal; raw private originals remain at their declared paths"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "r2/auditoria-implementacion-r2.md",
       "bytes": 13081,
       "sha256": "043a2da30222f6bfa5f2bb463a7138fdbb9defd0f78e62e21177a18b6e43b758",
-      "scope": "literal independent audit/delivery/original index"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "r2/disposicion-bundle-servidor.json",
       "bytes": 974,
       "sha256": "e7bde002c93937fca5e9f52cb9c3193acf67866fb4cfa6d7a31ee81a5491c85a",
-      "scope": "curated result/receipt/build disposition or closure proposal; raw private originals remain at their declared paths"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "r2/entrega.md",
       "bytes": 10364,
       "sha256": "16edfcb46a37977f96d0216996aa1cbe299695f140a315d59e6ba763c54dbc9e",
-      "scope": "literal independent audit/delivery/original index"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "r2/expectativas-build.json",
       "bytes": 3230,
       "sha256": "c0037426dfd3ef12581610431177738edcab6e58b078cf4166b7f11355afce68",
-      "scope": "curated result/receipt/build disposition or closure proposal; raw private originals remain at their declared paths"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "r2/identidad-ci.json",
       "bytes": 551,
       "sha256": "a8fecf5c8e8bb50a7d0e0c17bbdad05457508074f3fb263eb958c46e7d0e44fb",
-      "scope": "curated result/receipt/build disposition or closure proposal; raw private originals remain at their declared paths"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "r2/indice-originales.json",
       "bytes": 43794,
       "sha256": "a7adffe75816e4e4e37c3216b39afb5531e60640318f1b6c909eba75aa6db3aa",
-      "scope": "literal independent audit/delivery/original index"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "r2/limpieza-local.json",
       "bytes": 414,
       "sha256": "0a71dbcd5019e95c36d3f8b0b93f04534d35a158d1943cd9ece3f8059f95bd6a",
-      "scope": "curated result/receipt/build disposition or closure proposal; raw private originals remain at their declared paths"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "r2/receipt-preview.json",
       "bytes": 10967,
       "sha256": "2e9dd701e36f89da48227521a9053057b81bc2071adc505298dcb0f0bb32311f",
-      "scope": "curated result/receipt/build disposition or closure proposal; raw private originals remain at their declared paths"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "r2/regresion-publica.json",
       "bytes": 2069,
       "sha256": "a23720f9d8c891894f3649c2742154ac1aa640597e214a0f47ab905af8e0ee8a",
-      "scope": "curated result/receipt/build disposition or closure proposal; raw private originals remain at their declared paths"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "r2/smoke-local.json",
       "bytes": 2873,
       "sha256": "2c49197699fb46db356610bd1293f512b04f27fda7abc48547c8e47bc16b0d6c",
-      "scope": "curated result/receipt/build disposition or closure proposal; raw private originals remain at their declared paths"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "r2/smoke-preview.json",
       "bytes": 14353,
       "sha256": "bac0b768c144e76ec44e0656b851d9ca19638721b192b347dcea50ef785268ab",
-      "scope": "curated result/receipt/build disposition or closure proposal; raw private originals remain at their declared paths"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     },
     {
       "file": "r2/smoke-rollback-local.json",
       "bytes": 426,
       "sha256": "b1576c9e6b38cd254b75244b9dd956c7d2e7c43aadf53818e741e34713b140b1",
-      "scope": "curated result/receipt/build disposition or closure proposal; raw private originals remain at their declared paths"
+      "scope": "literal R2 audit/delivery/index, public production original/provenance or factual documentary closure as identified by path"
     }
   ]
 }

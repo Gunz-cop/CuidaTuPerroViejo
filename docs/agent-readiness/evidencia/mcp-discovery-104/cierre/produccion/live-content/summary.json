@@ -1,0 +1,194 @@
+{
+  "schemaVersion": "agent-readiness-run/1",
+  "scoringRuleId": "pass-over-counted-round/1",
+  "mode": "live",
+  "profile": "content",
+  "requestedUrl": "https://cuidatuperroviejo.com",
+  "targetUrl": "https://cuidatuperroviejo.com",
+  "enabledChecks": [
+    "robotsTxt",
+    "sitemap",
+    "linkHeaders",
+    "dnsAid",
+    "markdownNegotiation",
+    "robotsTxtAiRules",
+    "contentSignals"
+  ],
+  "sourceCommit": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+  "deploymentCommit": null,
+  "dirtySource": false,
+  "recordedAt": "2026-10-14T17:21:48.085Z",
+  "scannedAt": "2026-10-14T17:21:52.212Z",
+  "state": "complete",
+  "score": 86,
+  "level": 5,
+  "levelName": "Agent-Native",
+  "isCommerce": false,
+  "counts": {
+    "pass": 6,
+    "fail": 1,
+    "neutral": 15,
+    "scoredTotal": 7
+  },
+  "checks": [
+    {
+      "category": "discoverability",
+      "id": "robotsTxt",
+      "status": "pass",
+      "message": "robots.txt exists with valid format",
+      "counted": true
+    },
+    {
+      "category": "discoverability",
+      "id": "sitemap",
+      "status": "pass",
+      "message": "sitemap.xml exists with valid structure",
+      "counted": true
+    },
+    {
+      "category": "discoverability",
+      "id": "linkHeaders",
+      "status": "pass",
+      "message": "Found agent-useful Link relations: describedby, api-catalog, service-desc",
+      "counted": true
+    },
+    {
+      "category": "discoverability",
+      "id": "dnsAid",
+      "status": "fail",
+      "message": "DNS for AI Discovery (DNS-AID) well-known entrypoint records not found",
+      "counted": true
+    },
+    {
+      "category": "contentAccessibility",
+      "id": "markdownNegotiation",
+      "status": "pass",
+      "message": "Site supports Markdown for Agents",
+      "counted": true
+    },
+    {
+      "category": "botAccessControl",
+      "id": "robotsTxtAiRules",
+      "status": "pass",
+      "message": "No AI-specific bot rules; wildcard rules apply to all crawlers including AI bots",
+      "counted": true
+    },
+    {
+      "category": "botAccessControl",
+      "id": "contentSignals",
+      "status": "pass",
+      "message": "Content Signals found in robots.txt",
+      "counted": true
+    },
+    {
+      "category": "botAccessControl",
+      "id": "webBotAuth",
+      "status": "neutral",
+      "message": "Web Bot Auth directory not found (informational only) (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "discovery",
+      "id": "apiCatalog",
+      "status": "neutral",
+      "message": "API Catalog found with 6 APIs listed (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "discovery",
+      "id": "oauthDiscovery",
+      "status": "neutral",
+      "message": "No OAuth/OIDC discovery metadata found (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "discovery",
+      "id": "oauthProtectedResource",
+      "status": "neutral",
+      "message": "No OAuth Protected Resource Metadata found (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "discovery",
+      "id": "authMd",
+      "status": "neutral",
+      "message": "auth.md not found (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "discovery",
+      "id": "mcpServerCard",
+      "status": "neutral",
+      "message": "MCP Server Card found at /.well-known/mcp/server-card.json (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "discovery",
+      "id": "a2aAgentCard",
+      "status": "neutral",
+      "message": "A2A Agent Card not found (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "discovery",
+      "id": "agentSkills",
+      "status": "neutral",
+      "message": "Agent Skills index exists with valid JSON (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "discovery",
+      "id": "webMcp",
+      "status": "neutral",
+      "message": "Excluded by scan configuration",
+      "counted": false
+    },
+    {
+      "category": "discovery",
+      "id": "ard",
+      "status": "neutral",
+      "message": "Excluded by scan configuration",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "x402",
+      "status": "neutral",
+      "message": "x402 payment protocol not detected (not a commerce site) (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "mpp",
+      "status": "neutral",
+      "message": "MPP payment discovery not detected (not a commerce site) (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "ucp",
+      "status": "neutral",
+      "message": "UCP profile not found (not a commerce site) (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "acp",
+      "status": "neutral",
+      "message": "ACP discovery document not found (not a commerce site) (excluded by scan configuration)",
+      "counted": false
+    },
+    {
+      "category": "commerce",
+      "id": "ap2",
+      "status": "neutral",
+      "message": "AP2 not detected (no A2A Agent Card) (not a commerce site) (excluded by scan configuration)",
+      "counted": false
+    }
+  ],
+  "checkUniverseHash": "9037cb57950a0c49322aae6ca44c3cfd55c65d4826e88d8c4c2284a93566e99a",
+  "requestSha256": "94daf42c1ee9ecfce1528d303e4b19d35e7544d8d38b6ac72ff56436708d2c21",
+  "responseSha256": "c310f43254b6aa54288a1fe530e6529599bbc00816dd5a0d3abc48246c55cbd5",
+  "nextLevel": null,
+  "errors": []
+}

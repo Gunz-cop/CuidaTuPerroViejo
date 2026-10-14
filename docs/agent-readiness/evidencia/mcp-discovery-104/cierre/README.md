@@ -1,4 +1,14 @@
-# Correctivo MCP discovery — implementación aceptada, promoción pendiente
+# Correctivo MCP discovery — publicado y verificado
+
+**D08 completado el 2026-10-14. All-ui general:73/100 y nivel5 Agent-Native; Content Site:86/100 y nivel5 parcial.** La CLI congelada calcula el score desde11/15 y6/7 controles contabilizados respectivamente; el nivel5 proviene literalmente del evaluador. [Resultado final](produccion/resultado.md), [comparación general](produccion/comparison-all-ui.json), [respuesta original general](produccion/live-all-ui/response.raw.json).
+
+El propietario autorizó literalmente «Autorizo» la propuesta concreta. Main recibió exactamente7e389a83c87cd5f14537f4b07f0cd783ca572251/tree6a2c50cc3e28c30389668bd70070b8cb545c36bd mediante FF desdeb2ab108 sin force. El receipt propio de producción es build8d1bf392-1efb-4a80-b045-2c66d21a45d5/version4fad00fc-f88e-4abc-878c-f7d50742f069; [receipt](produccion/receipt-production.json). Smoke producción realPASS20/24,19EOF+1AbortErrorintencional tras frame completo; rollback no ejecutado. Una medición por perfil, sin retries/regresiones/selección cambiada: contentdelta0, all-uidelta+6; único cambio general mcpServerCard fail→pass.
+
+Los [originales de producción](produccion/indice-originales.json) se archivan byteexactos, completos y sin cookies/credenciales. ÍndiceR2,STOP105/FAIL históricos,normaF4B/C09/deadline/WAF y contrato permanecen intactos. No schema nuevo validado, auditoría nueva ni pruebas/HTTP/scans de cierre. Producto/main/PR siguen exactamente7e389; esta rama documental no se promueve. El push puede activar build automático y no se le atribuye el receipt7e389.
+
+## Archivo previo R2: estado anterior a la autorización
+
+Los párrafos siguientes conservan el estado preparado y revisado en8f27b51. Su D08 pendiente quedó resuelto por el resultado final enlazado arriba; la propuesta y el informe R2 mantienen su alcance histórico.
 
 **R2/5 PASS independiente, sin bloqueantes previos a promoción**, sobre candidato `7e389a83c87cd5f14537f4b07f0cd783ca572251`, tree `6a2c50cc3e28c30389668bd70070b8cb545c36bd`. [Informe literal](r2/auditoria-implementacion-r2.md), 13081 bytes, SHA-256 `043a2da30222f6bfa5f2bb463a7138fdbb9defd0f78e62e21177a18b6e43b758`. Autor y auditor GPT-6.1 Sol/high separados; mismo auditor, contador **R1/5 contrato PASS → R2/5 implementación PASS**, sin reset.
 

@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-14T17:23:02.207969+00:00",
+  "profile": "all-ui",
+  "attempt": 1,
+  "exit": 0,
+  "command": [
+    "node",
+    "--use-env-proxy",
+    "scripts/agent-readiness/index.mjs",
+    "scan",
+    "--url",
+    "https://cuidatuperroviejo.com",
+    "--profile",
+    "all-ui",
+    "--out-dir",
+    "/workspace/discovery104-originals/production/live-all-ui"
+  ],
+  "head": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+  "retry": false
+}
