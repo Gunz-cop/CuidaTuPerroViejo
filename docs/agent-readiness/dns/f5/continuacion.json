@@ -1,0 +1,27 @@
+{
+  "state": "planned-not-automatically-scheduled",
+  "anchor": "2026-10-14T20:41:53.489342+00:00",
+  "checks": [
+    {
+      "at": "2026-10-15T20:41:53.489Z",
+      "purpose": "24h: DNSSEC+Registrar state and authenticated DoH DS/SVCB on both resolvers",
+      "maxControlPlaneRequests": 2,
+      "maxDnsQueries": 4
+    },
+    {
+      "at": "2026-10-16T20:41:53.489Z",
+      "purpose": "48h: same bounded control; if chain absent, record incidence and STOP acceptance while preserving signing",
+      "maxControlPlaneRequests": 2,
+      "maxDnsQueries": 4
+    }
+  ],
+  "noPolling": true,
+  "noNewScanUntilPublicGates": true,
+  "noMutationRetry": true,
+  "runnerDependencies": [
+    107,
+    110
+  ],
+  "sameAuditor": "/root/auditor_f5",
+  "phaseComplete": false
+}
