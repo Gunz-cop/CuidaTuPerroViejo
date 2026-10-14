@@ -1,0 +1,214 @@
+{
+  "sourceCommit": "d45f2374bf1220f8f25b0aaa16b51a5d2e6e7373",
+  "sourcePath": "docs/agent-readiness/evidencia/mcp-discovery-104/cierre/produccion/live-all-ui/response.raw.json",
+  "sourceResponseSha256": "71df3aa6a068aaa51f8cb15291f1846c0b12ee4da724dbb7e640fb638ac25bae",
+  "scannedAt": "2026-10-14T17:23:02.101Z",
+  "scope": "Extracción literal del control histórico; no nueva medición ni resolución actual",
+  "dnsAid": {
+    "status": "fail",
+    "message": "DNS for AI Discovery (DNS-AID) well-known entrypoint records not found",
+    "messageRef": {
+      "code": "check.dnsAid.notFound"
+    },
+    "details": {
+      "domainsChecked": [
+        "cuidatuperroviejo.com"
+      ],
+      "queriesAttempted": [
+        "SVCB _index._agents.cuidatuperroviejo.com",
+        "HTTPS _index._agents.cuidatuperroviejo.com",
+        "SVCB _a2a._agents.cuidatuperroviejo.com",
+        "HTTPS _a2a._agents.cuidatuperroviejo.com",
+        "SVCB _mcp._agents.cuidatuperroviejo.com",
+        "HTTPS _mcp._agents.cuidatuperroviejo.com",
+        "TXT _index._agents.cuidatuperroviejo.com"
+      ],
+      "dnssecValidated": false,
+      "serviceRecordCount": 0,
+      "aliasRecordCount": 0,
+      "txtIndexEntryCount": 0,
+      "txtIndexEntries": [],
+      "records": []
+    },
+    "evidence": [
+      {
+        "action": "fetch",
+        "label": "DoH SVCB _index._agents.cuidatuperroviejo.com",
+        "request": {
+          "url": "https://cloudflare-dns.com/dns-query?name=_index._agents.cuidatuperroviejo.com&type=SVCB&do=1",
+          "method": "GET",
+          "headers": {
+            "Accept": "application/dns-json"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-type": "application/dns-json"
+          },
+          "bodyPreview": "{\"Status\":3,\"TC\":false,\"RD\":true,\"RA\":true,\"AD\":false,\"CD\":false,\"Question\":[{\"name\":\"_index._agents.cuidatuperroviejo.com\",\"type\":64}],\"Authority\":[{\"name\":\"cuidatuperroviejo.com\",\"type\":6,\"TTL\":1800,\"data\":\"eric.ns.cloudflare.com. dns.cloudflare.com. 2416598283 10000 2400 604800 1800\"}]}"
+        },
+        "finding": {
+          "outcome": "neutral",
+          "summary": "No SVCB answers (NXDOMAIN)"
+        }
+      },
+      {
+        "action": "fetch",
+        "label": "DoH HTTPS _index._agents.cuidatuperroviejo.com",
+        "request": {
+          "url": "https://cloudflare-dns.com/dns-query?name=_index._agents.cuidatuperroviejo.com&type=HTTPS&do=1",
+          "method": "GET",
+          "headers": {
+            "Accept": "application/dns-json"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-type": "application/dns-json"
+          },
+          "bodyPreview": "{\"Status\":3,\"TC\":false,\"RD\":true,\"RA\":true,\"AD\":false,\"CD\":false,\"Question\":[{\"name\":\"_index._agents.cuidatuperroviejo.com\",\"type\":65}],\"Authority\":[{\"name\":\"cuidatuperroviejo.com\",\"type\":6,\"TTL\":1800,\"data\":\"eric.ns.cloudflare.com. dns.cloudflare.com. 2416598283 10000 2400 604800 1800\"}]}"
+        },
+        "finding": {
+          "outcome": "neutral",
+          "summary": "No HTTPS answers (NXDOMAIN)"
+        }
+      },
+      {
+        "action": "fetch",
+        "label": "DoH SVCB _a2a._agents.cuidatuperroviejo.com",
+        "request": {
+          "url": "https://cloudflare-dns.com/dns-query?name=_a2a._agents.cuidatuperroviejo.com&type=SVCB&do=1",
+          "method": "GET",
+          "headers": {
+            "Accept": "application/dns-json"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-type": "application/dns-json"
+          },
+          "bodyPreview": "{\"Status\":3,\"TC\":false,\"RD\":true,\"RA\":true,\"AD\":false,\"CD\":false,\"Question\":[{\"name\":\"_a2a._agents.cuidatuperroviejo.com\",\"type\":64}],\"Authority\":[{\"name\":\"cuidatuperroviejo.com\",\"type\":6,\"TTL\":1800,\"data\":\"eric.ns.cloudflare.com. dns.cloudflare.com. 2416598283 10000 2400 604800 1800\"}]}"
+        },
+        "finding": {
+          "outcome": "neutral",
+          "summary": "No SVCB answers (NXDOMAIN)"
+        }
+      },
+      {
+        "action": "fetch",
+        "label": "DoH HTTPS _a2a._agents.cuidatuperroviejo.com",
+        "request": {
+          "url": "https://cloudflare-dns.com/dns-query?name=_a2a._agents.cuidatuperroviejo.com&type=HTTPS&do=1",
+          "method": "GET",
+          "headers": {
+            "Accept": "application/dns-json"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-type": "application/dns-json"
+          },
+          "bodyPreview": "{\"Status\":3,\"TC\":false,\"RD\":true,\"RA\":true,\"AD\":false,\"CD\":false,\"Question\":[{\"name\":\"_a2a._agents.cuidatuperroviejo.com\",\"type\":65}],\"Authority\":[{\"name\":\"cuidatuperroviejo.com\",\"type\":6,\"TTL\":1800,\"data\":\"eric.ns.cloudflare.com. dns.cloudflare.com. 2416598283 10000 2400 604800 1800\"}]}"
+        },
+        "finding": {
+          "outcome": "neutral",
+          "summary": "No HTTPS answers (NXDOMAIN)"
+        }
+      },
+      {
+        "action": "fetch",
+        "label": "DoH SVCB _mcp._agents.cuidatuperroviejo.com",
+        "request": {
+          "url": "https://cloudflare-dns.com/dns-query?name=_mcp._agents.cuidatuperroviejo.com&type=SVCB&do=1",
+          "method": "GET",
+          "headers": {
+            "Accept": "application/dns-json"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-type": "application/dns-json"
+          },
+          "bodyPreview": "{\"Status\":3,\"TC\":false,\"RD\":true,\"RA\":true,\"AD\":false,\"CD\":false,\"Question\":[{\"name\":\"_mcp._agents.cuidatuperroviejo.com\",\"type\":64}],\"Authority\":[{\"name\":\"cuidatuperroviejo.com\",\"type\":6,\"TTL\":1800,\"data\":\"eric.ns.cloudflare.com. dns.cloudflare.com. 2416598283 10000 2400 604800 1800\"}]}"
+        },
+        "finding": {
+          "outcome": "neutral",
+          "summary": "No SVCB answers (NXDOMAIN)"
+        }
+      },
+      {
+        "action": "fetch",
+        "label": "DoH HTTPS _mcp._agents.cuidatuperroviejo.com",
+        "request": {
+          "url": "https://cloudflare-dns.com/dns-query?name=_mcp._agents.cuidatuperroviejo.com&type=HTTPS&do=1",
+          "method": "GET",
+          "headers": {
+            "Accept": "application/dns-json"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-type": "application/dns-json"
+          },
+          "bodyPreview": "{\"Status\":3,\"TC\":false,\"RD\":true,\"RA\":true,\"AD\":false,\"CD\":false,\"Question\":[{\"name\":\"_mcp._agents.cuidatuperroviejo.com\",\"type\":65}],\"Authority\":[{\"name\":\"cuidatuperroviejo.com\",\"type\":6,\"TTL\":1800,\"data\":\"eric.ns.cloudflare.com. dns.cloudflare.com. 2416598283 10000 2400 604800 1800\"}]}"
+        },
+        "finding": {
+          "outcome": "neutral",
+          "summary": "No HTTPS answers (NXDOMAIN)"
+        }
+      },
+      {
+        "action": "fetch",
+        "label": "DoH TXT _index._agents.cuidatuperroviejo.com",
+        "request": {
+          "url": "https://cloudflare-dns.com/dns-query?name=_index._agents.cuidatuperroviejo.com&type=TXT&do=1",
+          "method": "GET",
+          "headers": {
+            "Accept": "application/dns-json"
+          }
+        },
+        "response": {
+          "status": 200,
+          "statusText": "OK",
+          "headers": {
+            "content-type": "application/dns-json"
+          },
+          "bodyPreview": "{\"Status\":3,\"TC\":false,\"RD\":true,\"RA\":true,\"AD\":false,\"CD\":false,\"Question\":[{\"name\":\"_index._agents.cuidatuperroviejo.com\",\"type\":16}],\"Authority\":[{\"name\":\"cuidatuperroviejo.com\",\"type\":6,\"TTL\":1800,\"data\":\"eric.ns.cloudflare.com. dns.cloudflare.com. 2416598283 10000 2400 604800 1800\"}]}"
+        },
+        "finding": {
+          "outcome": "neutral",
+          "summary": "No TXT answers (NXDOMAIN)"
+        }
+      },
+      {
+        "action": "parse",
+        "label": "Parse DNS for AI Discovery (DNS-AID) SVCB/HTTPS records",
+        "finding": {
+          "outcome": "neutral",
+          "summary": "No DNS for AI Discovery (DNS-AID) SVCB or HTTPS records found at well-known entrypoints"
+        }
+      },
+      {
+        "action": "conclude",
+        "label": "Conclusion",
+        "finding": {
+          "outcome": "negative",
+          "summary": "DNS for AI Discovery (DNS-AID) well-known entrypoint records not found"
+        }
+      }
+    ],
+    "durationMs": 35
+  }
+}
