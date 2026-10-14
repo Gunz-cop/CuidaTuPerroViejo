@@ -1,6 +1,6 @@
 # F5 — SDD: puntero DNS-AID al catálogo publicado
 
-**Entrega para auditoría SDD R1/2. No ratificada ni aplicada.** Fecha: 2026-10-14. Issue de ejecución: [#109](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/109). [Patch completo](patch.json). El borrador anterior permanece histórico.
+**Entrega corregida para auditoría SDD R2/2, última revisión. No ratificada ni aplicada. R1/2 FAIL se conserva en auditoria-sdd-r1.md.** Fecha: 2026-10-14. Issue de ejecución: [#109](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/109). [Patch completo](patch.json). El borrador anterior permanece histórico.
 
 ## Alcance y ownership
 
@@ -8,7 +8,11 @@ Base de producto y main verificada: `7e389a83c87cd5f14537f4b07f0cd783ca572251`, 
 
 Ownership: `docs/agent-readiness/dns/f5/` y, después de los gates, el nuevo registro y la activación DNSSEC descritos aquí. Añade un SVCB y activa DNSSEC en esta misma zona, con publicación automática de DS por Cloudflare Registrar. No modifica producto, CLI, SDK, indexación, nameservers, proxy, WAF, plan, facturación ni datos de contacto del registrador. No inicia F6, autenticación o comercio.
 
-Autor y coordinador: Sol/high. Auditor independiente fijo: `/root/auditor_f5`, creado explícitamente con `gpt-6.1-sol/high`. SDD: máximo dos revisiones; primera FAIL permite un ciclo correctivo y segunda FAIL exige STOP. Implementación: máximo cinco por issue; quinta FAIL exige bug y STOP. Consultas de investigación no cuentan como dictámenes. Estado actual: SDD 0/2, implementación 0/5.
+Autor y coordinador: Sol/high. Auditor independiente fijo: `/root/auditor_f5`, creado explícitamente con `gpt-6.1-sol/high`. SDD: máximo dos revisiones; primera FAIL permite un ciclo correctivo y segunda FAIL exige STOP. Implementación: máximo cinco por issue; quinta FAIL exige bug y STOP. Consultas de investigación no cuentan como dictámenes. Historial: SDD R1/2 FAIL; ésta es R2/2, última revisión. Implementación 0/5.
+
+## Precedencia de artefactos
+
+Sólo `sdd.md` y `patch.json` de este snapshot son normativos para la ejecución. `sdd-borrador.md`, `patch-propuesto.json`, `estado.md` y `acceso-cloudflare.md` conservan propuestas u observaciones históricas; no son payloads alternativos ni precondiciones vigentes. En particular, la antigua condición preserveDnssecStatus=disabled no restringe la activación autorizada. Se preservan sus originales y los snapshots anteriores, sin reescribirlos. Ante cualquier divergencia entre SDD y patch vigentes, STOP; no elegir el artefacto más permisivo.
 
 ## Fuentes y contrato anunciado
 
@@ -39,7 +43,7 @@ Inventario API de las 20:10 UTC: zona activa/full en plan Free Website, ID `a31e
 _index._agents.cuidatuperroviejo.com. 300 IN SVCB 1 cuidatuperroviejo.com. mandatory=alpn,port alpn="h2" port=443
 ```
 
-El payload completo está en `patch-propuesto.json`. No se modifica el AAAA del apex administrado por Workers ni ninguno de los otros registros.
+El único payload normativo completo es `patch.json`, para SVCB y DNSSEC. No se modifica el AAAA del apex administrado por Workers ni ninguno de los otros registros.
 
 A las 20:19 UTC, Browser Rendering con JavaScript deshabilitado obtuvo 200 para `/.well-known/ai-catalog.json` y `/api/mcp/server-card`, con URL final idéntica y JSON pertinente. El catálogo tiene tres entradas y la card apunta a `/api/mcp`. Es evidencia para ese cliente remoto, no una prueba SDK, negociación h2, ausencia universal de challenges o recorrido completo.
 
@@ -85,7 +89,7 @@ Presupuesto futuro:
 |---|---|
 | V00 | Autorización DNSSEC registrada, SDD PASS, ratificación y snapshot congelado |
 | V01 | Previo vacío; POST/GET SVCB exactos; PATCH DNSSEC y GET con claves/DS públicos completos y estado clasificado; pending no es PASS de cadena |
-| V02 | Eric/lola y resolvers Cloudflare/Google: respuestas originales, TTL y timestamps. DS padre coincide con el generado, DNSKEY/RRSIG verificables, SVCB con AD=true en ambos resolvers validadores; pending, DS ausente o AD=false no son PASS |
+| V02 | Eric/lola y padre aportan datos observados; la autenticación se acredita sólo por el contrato DoH/TLS de la sección siguiente en Cloudflare y Google. DS y DNSKEY coinciden con el recibo, y ambos resolvers validadores devuelven SVCB exacto, RRSIG y AD=true. Un AD por UDP o transporte no autenticado, pending o DS ausente no son PASS |
 | V03 | TLS y ALPN h2 válidos, catálogo y card útiles sin challenge HTML/JS para el cliente HTTP |
 | V04 | DNS → ARD → OpenAPI/skill → search q=cushing → ID del resultado → lectura íntegra cotejada en bytes/hash → cita URL canónica y fuentes contenidas en el documento |
 | V05 | Client/StreamableHTTPClientTransport reales SDK 2.3.1: inicialización/listado en ambas eras, cuatro calls modernas, paridad API/cálculos, lectura/hash y Origin negativo pertinente |
@@ -94,6 +98,24 @@ Presupuesto futuro:
 | V08 | CLI congelada, DNS-AID PASS observado, ausencia de regresiones y cadena DNSSEC pública demostrada |
 
 Fallo funcional, propagación y error de herramienta se registran por separado. Hueco esencial, respuesta inesperada, presupuesto agotado o quinta FAIL implican bug y STOP dependiente. No debilitar oráculos. Conservar EOF y AbortError posteriores a frames completos exactamente como los observe el harness, sin convertirlos en fallos de producto o éxitos distintos.
+
+### V02: transporte y oráculo de autenticación obligatorios
+
+Se utiliza exclusivamente DNS-over-HTTPS para acreditar AD de los dos resolvers públicos:
+
+- Cloudflare: `https://cloudflare-dns.com/dns-query`, GET, Accept `application/dns-json`.
+- Google: `https://dns.google/resolve`, GET, Accept `application/json`.
+- Para cada consulta: `name` exacto, `type` SVCB/DS/DNSKEY según la matriz, `do=1`, `cd=0`. No overrides de resolver, modo checking-disabled ni fallback que sustituya una respuesta negativa por una positiva. Los controles programados de propagación siguen siendo los únicos permitidos.
+
+El cliente debe verificar la cadena TLS contra su almacén de confianza vigente y el hostname del endpoint. No se permiten `-k`, `rejectUnauthorized=false`, certificados aceptados manualmente o redirects a otro endpoint. Si existe proxy HTTP, preservar el transporte autorizado y validación TLS; si no puede acreditarse, error de herramienta y STOP de V02. Un navegador/render sólo aporta observación salvo que entregue cuerpo íntegro, resultado DNS, metadata y configuración de TLS verificables según este contrato; un render truncado nunca es PASS. El AD de una consulta UDP/TCP sin autenticar no acredita autenticidad, aunque la dirección corresponda a un resolver conocido.
+
+Cada respuesta que acredite PASS debe tener HTTP 200, MIME JSON pertinente, body completo conservado con bytes/hash, URL final exacta y timestamp UTC. El JSON DNS debe contener Status=0, TC=false, CD=false, AD=true, Question concordante (nombre normalizado y tipo numérico). No Answer, SERVFAIL, truncación o resultado no interpretable no acreditan PASS.
+
+Para SVCB, ambos resolvers deben entregar el mismo RRset semántico: prioridad 1, target cuidatuperroviejo.com., mandatory alpn/port, alpn h2 y puerto 443, sin parámetros o servicios adicionales. TTL debe ser positivo y no mayor que 300 en caché; diferencias por decremento no cambian la identidad. Con DO=1 se conserva también RRSIG que cubra SVCB para esa zona. Los tipos 64 en presentación habitual o RFC 3597 se decodifican según RFC, sin cambiar los bytes originales ni rechazar una codificación válida por conveniencia del parser.
+
+Para DS, el Answer de ambos resolvers sobre cuidatuperroviejo.com debe coincidir en key_tag, algoritmo 13, digest_type 2 y digest con el DS generado y con la delegación observada en .com. Para DNSKEY, el RRset de ambos resolvers debe incluir el KSK (flags 257, protocolo 3, algoritmo 13 y public_key) correspondiente a ese DS. Las firmas del SVCB pueden usar ZSK distinto del KSK: no exigir que su key_tag sea el del DS.
+
+Se elige explícitamente confianza en los resolvers validadores alcanzados por DoH con TLS verificada, coherente con la referencia fijada; no se afirma validación criptográfica local si no se realiza. Las consultas a autoridades sirven para inventario, comparación y TTL, no para confiar en AD sin transporte autenticado. No relajar este método por la falta actual del runner: V02 permanece pendiente hasta que pueda ejecutarse y conservar esa evidencia.
 
 El proxy no impide preparar este cambio. Sigue pendiente un runner funcional para SDK/CLI y DNS autoritativo con originales. Browser Rendering resolvió las lecturas indicadas; no se presenta como sustituto de esos gates.
 
