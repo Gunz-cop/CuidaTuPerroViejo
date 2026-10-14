@@ -1,0 +1,93 @@
+{
+  "base": "http://127.0.0.1:8923",
+  "transport": "node:http",
+  "product": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+  "harnessCommit": "842577ae15067d35d830cbc90d431371f3230e63",
+  "at": "2026-10-14T04:15:19.442Z",
+  "status": "FAIL",
+  "results": [
+    {
+      "era": "2025-11-25",
+      "tools": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids"
+      ],
+      "searchTotal": 3,
+      "documentId": "article--sindrome-cushing-perros-mayores",
+      "markdownSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+      "qualityScore": 35,
+      "qualityBand": "compromised",
+      "status": "PASS"
+    },
+    {
+      "criterion": "C05/C06",
+      "documents": 28,
+      "pages": [
+        {
+          "offset": 0,
+          "documents": 20,
+          "nextOffset": 20
+        },
+        {
+          "offset": 20,
+          "documents": 8,
+          "nextOffset": null
+        }
+      ],
+      "documentIds": [
+        "article--agresividad-tardia-perros-mayores-dolor",
+        "article--ansiedad-separacion-perros-senior",
+        "article--cama-ortopedica-perros-mayores-displasia-artrosis",
+        "article--chequeo-geriatrico-canino",
+        "article--comida-casera-perros-mayores",
+        "article--como-dar-medicacion-perro",
+        "article--disfuncion-cognitiva-canina",
+        "article--incontinencia-fecal-perros-senior",
+        "article--incontinencia-urinaria-perros-mayores",
+        "article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion",
+        "article--mi-perro-viejo-defeca-mucho-poliquezia",
+        "article--prevencion-caidas-perro-mayor",
+        "article--salud-dental-perros-mayores",
+        "article--sindrome-cushing-perros-mayores",
+        "article--ulceras-presion-perros",
+        "article--vacunas-desparasitacion-perros-senior",
+        "home",
+        "page--acerca-de",
+        "page--politica-editorial",
+        "pillar--alimentacion-perros-senior",
+        "pillar--cuidados-paliativos-perros",
+        "pillar--herramientas",
+        "pillar--higiene-hogar-perros-senior",
+        "pillar--movilidad-dolor-perros-mayores",
+        "pillar--salud-mental-emocional-perros",
+        "pillar--salud-perros-mayores",
+        "tool--calidad-vida",
+        "tool--movilidad"
+      ],
+      "corpusSha256": "b28a9e846ceb5513a9a34e01b8a19db90f15328a8b7df1fd182b8d7e287f184d",
+      "qualityBoundaries": 8,
+      "mobilityCombinations": 6,
+      "searchCases": 5,
+      "corpusChanged": "PASS",
+      "status": "PASS"
+    },
+    {
+      "era": "2026-07-28",
+      "tools": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids"
+      ],
+      "searchTotal": 3,
+      "documentId": "article--sindrome-cushing-perros-mayores",
+      "markdownSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+      "qualityScore": 35,
+      "qualityBand": "compromised",
+      "status": "PASS"
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ null\n- 'http://127.0.0.1:8923'\n"
+}

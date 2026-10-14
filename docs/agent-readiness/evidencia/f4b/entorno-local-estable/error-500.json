@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-14T04:15:19.436Z",
+  "method": "POST",
+  "url": "http://127.0.0.1:8923/api/mcp",
+  "requestHeaders": {
+    "accept": "application/json, text/event-stream",
+    "content-type": "application/json",
+    "mcp-method": "server/discover",
+    "mcp-protocol-version": "2026-07-28",
+    "origin": "http://127.0.0.1:8923"
+  },
+  "requestBytesSent": 177,
+  "requestSha256": "5fd21d0962fe9fc0bc0415c0c5d0834ad8f96e3624db7c0540b84927dd124c88",
+  "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\naccept: application/json, text/event-stream\r\ncontent-type: application/json\r\nmcp-method: server/discover\r\nmcp-protocol-version: 2026-07-28\r\norigin: http://127.0.0.1:8923\r\nHost: 127.0.0.1:8923\r\nConnection: keep-alive\r\nTransfer-Encoding: chunked\r\n\r\n",
+  "status": 500,
+  "responseHeaders": {
+    "content-length": "202",
+    "content-type": "text/plain;charset=UTF-8"
+  },
+  "body": "Error: Network connection lost.\n    at async Object.fetch (file:///workspace/f4b-originales-privados/entorno-local-estable/toolchain/node_modules/miniflare/dist/src/workers/core/entry.worker.js:4765:22)",
+  "bodyBase64": "RXJyb3I6IE5ldHdvcmsgY29ubmVjdGlvbiBsb3N0LgogICAgYXQgYXN5bmMgT2JqZWN0LmZldGNoIChmaWxlOi8vL3dvcmtzcGFjZS9mNGItb3JpZ2luYWxlcy1wcml2YWRvcy9lbnRvcm5vLWxvY2FsLWVzdGFibGUvdG9vbGNoYWluL25vZGVfbW9kdWxlcy9taW5pZmxhcmUvZGlzdC9zcmMvd29ya2Vycy9jb3JlL2VudHJ5Lndvcmtlci5qczo0NzY1OjIyKQ==",
+  "bytes": 202,
+  "sha256": "a274a5664add682623b3ee8637c5ba83073f4c5bcfae7ac7cde3e90c38d870ae",
+  "complete": true,
+  "terminal": "end",
+  "toolchain": {
+    "wrangler": "4.116.0",
+    "miniflare": "4.20260730.0",
+    "workerd": "1.20260730.1"
+  },
+  "nativeWorkerd": "workerd 2026-07-30",
+  "product": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+  "harnessSource": "235f666594eee569b12573be1bca4dfa6261e9c0",
+  "notProduction": true
+}

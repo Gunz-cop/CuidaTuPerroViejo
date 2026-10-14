@@ -1,0 +1,92 @@
+{
+  "root": "/workspace/f4b-originales-privados/entorno-local-estable",
+  "records": [
+    {
+      "file": "client/http-originals.json",
+      "bytes": 6577497,
+      "sha256": "3d1e0f3662e5d3b6a8f5ce82d0efc50c0b3aaf00339cb4b1330f22c5ee0b57e7"
+    },
+    {
+      "file": "client/result.json",
+      "bytes": 3176,
+      "sha256": "255adc166223252620579ba26711659ef51f5922bf271d3e33423fb09112f684"
+    },
+    {
+      "file": "execution.json",
+      "bytes": 81435,
+      "sha256": "28bdd071a5a90b6811b0f6ce38ea91bd7a9566b810f397e36042de1db3dae369"
+    },
+    {
+      "file": "install.log",
+      "bytes": 234,
+      "sha256": "855e3dd08571946fcee8719a8a1addf56b6943d0813f64bcc12da012e11f43fb"
+    },
+    {
+      "file": "issue15203.json",
+      "bytes": 29855,
+      "sha256": "1c7cb8f022330e400e3ac6f89d5ead87767875110bced64709f79343c6f1417c"
+    },
+    {
+      "file": "issue15451.json",
+      "bytes": 15651,
+      "sha256": "70434453752b83af68b71fcabc70b9999836c65f2b7bfe560bed22232679c0c9"
+    },
+    {
+      "file": "matrix.log",
+      "bytes": 541,
+      "sha256": "0868ba03cc85d6974a384684eef138679c4bb715f1d7f22e708f9e3e1db8ceaa"
+    },
+    {
+      "file": "native-wrangler-2026-10-14_04-15-16_293.log",
+      "bytes": 16557,
+      "sha256": "5fce2e3f50e9d281e4fa3f1e6add7313ee446fa39d1b243e49e0d7f5be2838aa"
+    },
+    {
+      "file": "preflight.json",
+      "bytes": 76906,
+      "sha256": "b10896e51bec73df54fcf7acc5f0fdc49f6ac35d5c3c740321377d29cea2885e"
+    },
+    {
+      "file": "run.mjs",
+      "bytes": 3851,
+      "sha256": "62e16165404ee0943726255b07361489442cc847ab6e3679982bdac65fae3dcd"
+    },
+    {
+      "file": "toolchain/package-lock.json",
+      "bytes": 47648,
+      "sha256": "7b739891c5b07c6bdd6854de7590b64425facdbe7c0be7bab192a568bd842a65"
+    },
+    {
+      "file": "toolchain/package.json",
+      "bytes": 107,
+      "sha256": "899d998d3693c89b07f5aaa8d3eca24b9e9eeccc2a2512c4afdea675822728e9"
+    },
+    {
+      "file": "workerd-version.log",
+      "bytes": 19,
+      "sha256": "ba8dac8821412ed5c92ca3d3b2e349421d762b85ed0dca4a06521ff71aba6234"
+    },
+    {
+      "file": "workerd.log",
+      "bytes": 20128,
+      "sha256": "6669775c7485dc6cf8dac3033fe3333ecef125cc81c77e31a0d402f148d1c5eb"
+    },
+    {
+      "file": "workerd.stderr.log",
+      "bytes": 710,
+      "sha256": "532817a24c7bb12272c46f5eba356ddc860f96e4d9f9cb250846adbff24cef51"
+    },
+    {
+      "file": "workerd.stdout.log",
+      "bytes": 19418,
+      "sha256": "0e77a00dbede47ad5832139321f544ee25d8240e5e5d0e0f73630f81b74964a9"
+    },
+    {
+      "file": "wrangler-version.log",
+      "bytes": 144,
+      "sha256": "212fb5b02e61227053f31ba6985ef51ebe2f129729e0b6c9f1e44265044c0a7d"
+    }
+  ],
+  "excluded": "mutable state/cache and installed packages; nativeBinarySha256/package integrities and exact lockfile in preflight/toolchain lock",
+  "productUnchanged": true
+}

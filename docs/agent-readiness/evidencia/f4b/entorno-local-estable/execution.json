@@ -1,0 +1,1846 @@
+{
+  "at": "2026-10-14T04:15:15.703Z",
+  "harnessCommit": "842577ae15067d35d830cbc90d431371f3230e63",
+  "harnessTree": "3002c316ae534a786634baa055522d6988e6b4ab",
+  "productCommit": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+  "productTree": "960be17582b35a2f5287d90a369ab10883c55821",
+  "buildEntrySha256": "725177fd10c55cccf9c08986e97c606cd52be484411ac423e8107eceaaf39f95",
+  "node": "v24.19.0",
+  "wrangler": "4.116.0",
+  "miniflare": "4.20260730.0",
+  "workerd": "1.20260730.1",
+  "SDK": "2.3.1",
+  "port": 8923,
+  "attempt": 1,
+  "preflight": {
+    "product": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+    "harnessSource": "235f666594eee569b12573be1bca4dfa6261e9c0",
+    "deliveryHead": "842577ae15067d35d830cbc90d431371f3230e63",
+    "versions": {
+      "wrangler": "4.116.0",
+      "miniflare": "4.20260730.0",
+      "workerd": "1.20260730.1"
+    },
+    "node": "v24.19.0",
+    "SDK": {
+      "client": "2.3.1",
+      "server": "2.3.1"
+    },
+    "nativeWorkerdVersion": "workerd 2026-07-30",
+    "configSha256": "503ef7c056f7248682dedee36f22daccfa36ec324cfeaea94d1f50aa3a396a77",
+    "sourceConfigSha256": "12043be65223d3cd5bd566c0293c2c2a4c8708e37a564bd997c2877e1cb5dae9",
+    "productPackageSha256": "4b21bcb00b5102d196db925d26af77c967210a49a75dba62643d618fa678ad83",
+    "productLockSha256": "081bea4f490941741d7d3b7056d66b7f420bcbd3bcb701e19703fbd87a5a2a68",
+    "toolchainLockSha256": "7b739891c5b07c6bdd6854de7590b64425facdbe7c0be7bab192a568bd842a65",
+    "nativeBinarySha256": "3477e2b2539852d379d30f7055649e85e3ef66ba54b71b5aaf7e61ebbb99a21b",
+    "entrySha256": "725177fd10c55cccf9c08986e97c606cd52be484411ac423e8107eceaaf39f95",
+    "buildFiles": [
+      {
+        "file": "agent-api-build-manifest.json",
+        "bytes": 7304,
+        "sha256": "953792d558090a30c13319cc00faf24b90dc42b0cd4a3131d57691a9a5f496dd"
+      },
+      {
+        "file": "client/.assetsignore",
+        "bytes": 48,
+        "sha256": "0de3ec88fa1c8962780dfbf32a90bbdef9d5ba7999b3f6ca63539e2477e31d8a"
+      },
+      {
+        "file": "client/.well-known/agent-skills/buscar-leer-citar/SKILL.md",
+        "bytes": 4141,
+        "sha256": "b5314a8bdda3ef81ee852d6c8b7861b3ea703fec48c70510cd03335711512331"
+      },
+      {
+        "file": "client/.well-known/agent-skills/index.json",
+        "bytes": 496,
+        "sha256": "3f1187d23c8a055ad6fd99703612e7c2bd317d60abad7b3bf4f012a81f97f2ac"
+      },
+      {
+        "file": "client/.well-known/ai-catalog.json",
+        "bytes": 2200,
+        "sha256": "774b5410754f8da360d562433984be33fb3645129941928516db1a5ba7cb1c0b"
+      },
+      {
+        "file": "client/.well-known/api-catalog",
+        "bytes": 1586,
+        "sha256": "2626485633fab0410025e60282f7058c79b7e92b67e74334a3eceda986759f35"
+      },
+      {
+        "file": "client/.well-known/ard.json",
+        "bytes": 2200,
+        "sha256": "774b5410754f8da360d562433984be33fb3645129941928516db1a5ba7cb1c0b"
+      },
+      {
+        "file": "client/404.html",
+        "bytes": 29495,
+        "sha256": "1c6742b5ab785e0451fbb71ced0b7af4c5c28a2bc2e48625376fc681e54021ca"
+      },
+      {
+        "file": "client/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.CZ3jEwtI.js",
+        "bytes": 6340,
+        "sha256": "3bc1cdf958d0c7fe84bb1a42e81ea6759188fde9228aad3295feef9251a44592"
+      },
+      {
+        "file": "client/_astro/BaseLayout.VWxkXcFk.css",
+        "bytes": 138524,
+        "sha256": "b23a2c33b943bfef6538f9800d75582eaa3c57f420664932eddbf03822d6ed11"
+      },
+      {
+        "file": "client/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "bytes": 5732,
+        "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+      },
+      {
+        "file": "client/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+        "bytes": 8059,
+        "sha256": "f766f22002d928c37aeb58a65e2222d7203623e13f8558d3079db1151d378357"
+      },
+      {
+        "file": "client/_astro/calidad-vida.CkucuN4v.js",
+        "bytes": 3495,
+        "sha256": "6f3e16f3ed447234d5e7e3a7226f512283ab6a8b9e9727736e65f1876c5b0d38"
+      },
+      {
+        "file": "client/_astro/contract.Cu9QodcA.js",
+        "bytes": 665,
+        "sha256": "512414df1c0c948fa3d24e3923aa17bfc45b1043459d0a1c083db6e1bb0f0e76"
+      },
+      {
+        "file": "client/_astro/movilidad.B1WnJKyW.js",
+        "bytes": 6235,
+        "sha256": "b0c7e640bdf4e223d602b4b9c04d24bc43dc63caa8923acaf92eddd7cd4b4e53"
+      },
+      {
+        "file": "client/_astro/selector-movilidad-perros-mayores.astro_astro_type_script_index_0_lang.DitUWyj1.js",
+        "bytes": 8055,
+        "sha256": "d31a6bca32dbf847bbbbd6ae954d75e7be3be9bf57e3683645c9974f0c349361"
+      },
+      {
+        "file": "client/_headers",
+        "bytes": 2415,
+        "sha256": "831fef464700df66e2a4f7087f0548f19001c275fb5bdabbf0072e15cbc4f108"
+      },
+      {
+        "file": "client/_redirects",
+        "bytes": 1875,
+        "sha256": "a81ce2407221dea2f657769caebf596b109a8bbb3d916eb0ba8030661bdabaac"
+      },
+      {
+        "file": "client/acerca-de.html",
+        "bytes": 35982,
+        "sha256": "e6c4962a4e9bcb31b36bc53d994a8fb5585d2d75d7d798b8bb6b2fff3cf470f2"
+      },
+      {
+        "file": "client/agent-api/v1/openapi.json",
+        "bytes": 173030,
+        "sha256": "099b719a4baa10379121626c8de7049f8b53766d09820390c1ada4e9ea9c6784"
+      },
+      {
+        "file": "client/agent-api/v1/query-index.json",
+        "bytes": 585402,
+        "sha256": "c3ef87c127aeb3f5330ae5ed7ea1fd935c142f9f8c0af54b66512fbfbf33943e"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md",
+        "bytes": 44223,
+        "sha256": "3feb00d4f978db51b3da7300557001f6ff54b8e3ef743c7ca86b38eebf0eb913"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md",
+        "bytes": 40785,
+        "sha256": "59145955fe0e09bdad14dcb702a2c12458efb3e10a2855e45f3d4cbec6ad8043"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md",
+        "bytes": 35047,
+        "sha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--chequeo-geriatrico-canino.md",
+        "bytes": 10293,
+        "sha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--comida-casera-perros-mayores.md",
+        "bytes": 23205,
+        "sha256": "f0f66b8c4c873e9b42b6af49a51dfe8a08dfbaaed34561ec7a596f5f9fe26554"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+        "bytes": 32341,
+        "sha256": "411773d629aaec82ed46fda040947048c808181cfed00b26f9aea4bc677e0af2"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md",
+        "bytes": 25780,
+        "sha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md",
+        "bytes": 39877,
+        "sha256": "702173abb49c8f674ba1bc9622046fd305552ca68ebbbe56e9c249f206d16df7"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md",
+        "bytes": 16806,
+        "sha256": "4d636b98123ff6841e83382868ba570cd49b301263009474f72212e6ff390628"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md",
+        "bytes": 41947,
+        "sha256": "fa11e470e647bd9ca346e5b84e9977f079af5574e01ce096eeb9486987eac34c"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md",
+        "bytes": 40845,
+        "sha256": "b53a7bcb8accaad5025f6a0e7b318f059edcffb31c0943d61c70cbd4d2babe2e"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md",
+        "bytes": 47785,
+        "sha256": "59c57d26a8d8d2704bac2535d51715aaf22b63c00ca02f0966eb96725efde838"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--salud-dental-perros-mayores.md",
+        "bytes": 12307,
+        "sha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+        "bytes": 32561,
+        "sha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--ulceras-presion-perros.md",
+        "bytes": 8303,
+        "sha256": "00a669b47df1fa5c1644ea9d3ddf78e183d95903595d736343742cc4e0f360cc"
+      },
+      {
+        "file": "client/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md",
+        "bytes": 14780,
+        "sha256": "da8155374059c711c9323722f4882562238252973b277ca450eb6e475aef7aa9"
+      },
+      {
+        "file": "client/agent-content/v1/documents/home.md",
+        "bytes": 12878,
+        "sha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079"
+      },
+      {
+        "file": "client/agent-content/v1/documents/page--acerca-de.md",
+        "bytes": 2477,
+        "sha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3"
+      },
+      {
+        "file": "client/agent-content/v1/documents/page--politica-editorial.md",
+        "bytes": 2925,
+        "sha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f"
+      },
+      {
+        "file": "client/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+        "bytes": 12031,
+        "sha256": "fad888dbf741908da5bf6ab17a8288d4bef02af901c2585159c8286318345305"
+      },
+      {
+        "file": "client/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+        "bytes": 8084,
+        "sha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939"
+      },
+      {
+        "file": "client/agent-content/v1/documents/pillar--herramientas.md",
+        "bytes": 3756,
+        "sha256": "ffd6bf31f715af0b5fc778922ed329bb58ac09d40dc877572b1f181082afe222"
+      },
+      {
+        "file": "client/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md",
+        "bytes": 7794,
+        "sha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58"
+      },
+      {
+        "file": "client/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md",
+        "bytes": 7261,
+        "sha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6"
+      },
+      {
+        "file": "client/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md",
+        "bytes": 11135,
+        "sha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949"
+      },
+      {
+        "file": "client/agent-content/v1/documents/pillar--salud-perros-mayores.md",
+        "bytes": 12040,
+        "sha256": "04d25b0c2406b47b9156182dd044b7bae2e9fa32135f464f6b9504c4fa20b042"
+      },
+      {
+        "file": "client/agent-content/v1/documents/tool--calidad-vida.md",
+        "bytes": 5049,
+        "sha256": "0d79c5f7608a41f3955df62773fb9f5f4d0727f33702e97718358506ad5f0f9d"
+      },
+      {
+        "file": "client/agent-content/v1/documents/tool--movilidad.md",
+        "bytes": 5899,
+        "sha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37"
+      },
+      {
+        "file": "client/agent-content/v1/index.json",
+        "bytes": 26284,
+        "sha256": "fcd6f94690d5a1c4814573bb7ab578615a064ed4080f581be2b1b1eaffbda111"
+      },
+      {
+        "file": "client/alimentacion-perros-senior/comida-casera-perros-mayores.html",
+        "bytes": 92102,
+        "sha256": "c33d5c2c3b665f2f8ec468decdd9ed4d4b0a493afc5e997e11ad7a55c81a75c2"
+      },
+      {
+        "file": "client/alimentacion-perros-senior.html",
+        "bytes": 64095,
+        "sha256": "715565424500dc6a1cd7419585d16e99dd84dbc9e65f6c7887d2eb2a2455c454"
+      },
+      {
+        "file": "client/api/assistant-catalog.json",
+        "bytes": 76467,
+        "sha256": "682386bbe38c36ac799b978d870a79da764af11b4f4902735be2e7a2c82b204c"
+      },
+      {
+        "file": "client/api/mcp/server-card",
+        "bytes": 559,
+        "sha256": "aeea988a8e92d68085716e88755dae917215708953bbd0002a80ebd576ae1f84"
+      },
+      {
+        "file": "client/apple-touch-icon.png",
+        "bytes": 29816,
+        "sha256": "ac2959cbee21d857fe7cc6de4537b875a53bd697ae1a8006f9ac3523694241d9"
+      },
+      {
+        "file": "client/asistente-ia.html",
+        "bytes": 31843,
+        "sha256": "db30d15c583a074cf350d80dbb6a7579a9d8ef2c447d24e58e5701c15899ea63"
+      },
+      {
+        "file": "client/bYGTqKejFfRi68RErzFLGqIqZFTeBIAyeDtj57Znqg.txt",
+        "bytes": 42,
+        "sha256": "86be1fab9f10d3ba7ed56602f580f765a3b62c26a43af4752ee05df90776f016"
+      },
+      {
+        "file": "client/contacto.html",
+        "bytes": 35686,
+        "sha256": "14dcd80b2b8c01f5859aebf2c4a7be47e065680c318b4b3bb5b4eef705c4d658"
+      },
+      {
+        "file": "client/cuidados-paliativos-perros/como-dar-medicacion-perro.html",
+        "bytes": 106620,
+        "sha256": "ed0dcd55df4b6b1f21ece06e05bd633bbeb7ce7f0106a3f954e42bccd89a09d0"
+      },
+      {
+        "file": "client/cuidados-paliativos-perros/ulceras-presion-perros.html",
+        "bytes": 66696,
+        "sha256": "76d6bdcd07cfd39433256df323320122b8af034eea5559d5dcd7c28c63ff5aca"
+      },
+      {
+        "file": "client/cuidados-paliativos-perros.html",
+        "bytes": 59164,
+        "sha256": "5056a1d5e86528abb3318f27acaef763e4de6530627762c160fb100bae156b7e"
+      },
+      {
+        "file": "client/favicon.png",
+        "bytes": 4523,
+        "sha256": "01ff23499aabb115211ee55c604bcba3d865a04010d36a2d4676ff341ae6ad04"
+      },
+      {
+        "file": "client/favicon.svg",
+        "bytes": 565,
+        "sha256": "d2ebc1b9bb2bac3197ec3406c91ae3cd57c573e2976a51780465ece31eb392c8"
+      },
+      {
+        "file": "client/gracias.html",
+        "bytes": 29206,
+        "sha256": "fec4ce5b4971516dc5baab1b19435e414661a3e8e9567e277270ad46fc96b1bc"
+      },
+      {
+        "file": "client/herramientas/calculadora-calidad-vida-perros.html",
+        "bytes": 60969,
+        "sha256": "5ed65d77e29a1013eb4194a2cff9f822c1e36c0fbd11329832164a79597fbd82"
+      },
+      {
+        "file": "client/herramientas/selector-movilidad-perros-mayores.html",
+        "bytes": 62312,
+        "sha256": "33257806578aeaf63a78c39add3abcf3f1b587e3c750f45021e0f674a29b7d10"
+      },
+      {
+        "file": "client/herramientas.html",
+        "bytes": 39370,
+        "sha256": "63415983cb5946231fb07a32d3c63c8f2adef3ca7d0243ee2c6e4b5aa15538b2"
+      },
+      {
+        "file": "client/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html",
+        "bytes": 116403,
+        "sha256": "ab23f0d4fc377f27e8f887ef7c94f339b3c325a05da1d7dca31228533ae1d721"
+      },
+      {
+        "file": "client/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores.html",
+        "bytes": 83223,
+        "sha256": "864335f7d1dd22adf0cd763f2ee3202ab34f0285df934af432852f70d7f18b68"
+      },
+      {
+        "file": "client/higiene-hogar-perros-senior.html",
+        "bytes": 59051,
+        "sha256": "5bf0126a03efb325df96a4503d072878e7d93880d0e2cfb7045e9559b9418ca6"
+      },
+      {
+        "file": "client/images/blog/agresividad-tardia-perros-mayores-dolor/infografia-que-hacer-perro-mayor-grune.webp",
+        "bytes": 152970,
+        "sha256": "421b654918fcb963cefb9ff6e8ceb1084a1c607f740164f825674e4cfde8bc1e"
+      },
+      {
+        "file": "client/images/blog/agresividad-tardia-perros-mayores-dolor/manipulacion-segura-perro-mayor-arnes.webp",
+        "bytes": 184470,
+        "sha256": "9861a4ea1170da3daf480f689c54d18c7699cda91c60278d4f17e164ae63e613"
+      },
+      {
+        "file": "client/images/blog/agresividad-tardia-perros-mayores-dolor/perro-mayor-senal-aviso-manipulacion.webp",
+        "bytes": 154670,
+        "sha256": "cdf11ac939dde53942414e2bbf3714664db9e702866cc2a8bd4afdf3b6817a03"
+      },
+      {
+        "file": "client/images/blog/agresividad-tardia-perros-mayores-dolor/perro-mayor-zona-descanso-respetada.webp",
+        "bytes": 78736,
+        "sha256": "6403ec42582be3b2766fae7f7dc147695a5b869a02d4f90f9899a1ad26a61ab1"
+      },
+      {
+        "file": "client/images/blog/agresividad-tardia-perros-mayores-dolor/perro-senior-dolor-cadera-incorporarse.webp",
+        "bytes": 152512,
+        "sha256": "ac80bff88487156a9f8201cce06964c99bc1fc8a38f7a9cc6636215696f9efa6"
+      },
+      {
+        "file": "client/images/blog/ansiedad-separacion-perros-senior/perro-senior-espera-puerta.webp",
+        "bytes": 109636,
+        "sha256": "612f8f4babd6745f4de2963bec2eaf61444bea8f7029ccbd9348ecf1689153cf"
+      },
+      {
+        "file": "client/images/blog/ansiedad-separacion-perros-senior/perro-senior-tranquilo-ausencia-tutora.webp",
+        "bytes": 95528,
+        "sha256": "0ee7d911effb8579c0a627c44711bb93f45c6a73e5e74f2cb2b0740386ffc04f"
+      },
+      {
+        "file": "client/images/blog/ansiedad-separacion-perros-senior/sordera-perro-mayor-senal-manual.webp",
+        "bytes": 90758,
+        "sha256": "7e86963d0edf29f00f8df639ed4174fdba3683fd7ad89145e901982fdaf60081"
+      },
+      {
+        "file": "client/images/blog/cama-ortopedica/dos-perras-cama-ortopedica-compartida-400.webp",
+        "bytes": 23728,
+        "sha256": "d3758f55e4bcaf12bf30dca17a324260573d6057b79ebbcae75be145d5fab351"
+      },
+      {
+        "file": "client/images/blog/cama-ortopedica/dos-perras-cama-ortopedica-compartida-800.webp",
+        "bytes": 57472,
+        "sha256": "e75cb8bc9bf345d4aac17636d3af28895e595f76212c66d628a6ed4b0c107cc6"
+      },
+      {
+        "file": "client/images/blog/cama-ortopedica/dos-perras-cama-ortopedica-compartida.webp",
+        "bytes": 96294,
+        "sha256": "106850dd37030ea8c32752f2fd9f2c481cf72ce24a210ceccc1c05d1373467ed"
+      },
+      {
+        "file": "client/images/blog/cama-ortopedica/gradita-acceso-cama-perro-displasia-400.webp",
+        "bytes": 22954,
+        "sha256": "28dc0ea4baa96c0010056300aceb108135e2615d03a3d41aa8f898d209ccd3ce"
+      },
+      {
+        "file": "client/images/blog/cama-ortopedica/gradita-acceso-cama-perro-displasia-800.webp",
+        "bytes": 67306,
+        "sha256": "b792667f7a7aaf05b43517a4ba7640592534df5a277ad45e124c64510232952d"
+      },
+      {
+        "file": "client/images/blog/cama-ortopedica/gradita-acceso-cama-perro-displasia.webp",
+        "bytes": 122862,
+        "sha256": "a59e1a889f0544f0abdf96d1ea51824fe33d1da68fc8b4523c12132a343ff8f5"
+      },
+      {
+        "file": "client/images/blog/cama-ortopedica/test-colapso-cama-ortopedica-perro-mayor-400.webp",
+        "bytes": 18986,
+        "sha256": "ca34e87e632e71877af37901237c0161c0436c7436a7421219c19e901504bc28"
+      },
+      {
+        "file": "client/images/blog/cama-ortopedica/test-colapso-cama-ortopedica-perro-mayor-800.webp",
+        "bytes": 46470,
+        "sha256": "9e332807899ad5802d93048369e9668712ee81c051d8a77b3da0759d9df205ee"
+      },
+      {
+        "file": "client/images/blog/cama-ortopedica/test-colapso-cama-ortopedica-perro-mayor.webp",
+        "bytes": 76158,
+        "sha256": "6aeef8a48e4f8588298c4e3b397482428176dbfdb6ee034904c6903dc471aeee"
+      },
+      {
+        "file": "client/images/blog/chequeo-geriatrico-canino/infografia-checklist-perros-mayores-400.webp",
+        "bytes": 10098,
+        "sha256": "472ea42d720fbdd7ab0a700d53cd800213fed76f715ad9dfc1652ad09c9174fe"
+      },
+      {
+        "file": "client/images/blog/chequeo-geriatrico-canino/infografia-checklist-perros-mayores.webp",
+        "bytes": 26194,
+        "sha256": "c12e6c63bdd7247efca8e6bb323742448e7f95efe681b018e00e5f8f76eb7c16"
+      },
+      {
+        "file": "client/images/blog/chequeo-geriatrico-canino/perro-mayor-consulta-veterinaria-400.webp",
+        "bytes": 15950,
+        "sha256": "7194eb41c5cf883f40ad3ec2eec3324abbb59febe8f8808d4e602732d36c412e"
+      },
+      {
+        "file": "client/images/blog/chequeo-geriatrico-canino/perro-mayor-consulta-veterinaria.webp",
+        "bytes": 88190,
+        "sha256": "9dede0cebb6620c6ea862f8ddd0de092aea45a259c99f103eb8e29ca883539ba"
+      },
+      {
+        "file": "client/images/blog/chequeo-geriatrico-canino/tutora-acariciando-perro-anciano-400.webp",
+        "bytes": 8112,
+        "sha256": "14486206fad2da40946d8f95bd76b40d618fc98e15f4d5f0d457efee5c5e6f5e"
+      },
+      {
+        "file": "client/images/blog/chequeo-geriatrico-canino/tutora-acariciando-perro-anciano.webp",
+        "bytes": 25060,
+        "sha256": "43fdc738b7becf7febc35bc4a73edc2b45051c05f176aed58f0c62b04aebabb4"
+      },
+      {
+        "file": "client/images/blog/chequeo-geriatrico-canino/veterinario-corte-unas-perro-mayor-400.webp",
+        "bytes": 10958,
+        "sha256": "1977e8884bfa72722f3d081a85ba9b2a34226b2183c0aa59df67dc06388c0bb2"
+      },
+      {
+        "file": "client/images/blog/chequeo-geriatrico-canino/veterinario-corte-unas-perro-mayor.webp",
+        "bytes": 33036,
+        "sha256": "3c639a3a71ab0e58bfe44511b0d7ab17c4d72d8bba07bbd7191ebc42f0e49ef8"
+      },
+      {
+        "file": "client/images/blog/comida-casera-perros-mayores/alimentos-prohibidos-perros-mayores-400.webp",
+        "bytes": 26036,
+        "sha256": "38b353cfeac692fa81383f83e1f7190991a1011bcfda8501189df15023114ced"
+      },
+      {
+        "file": "client/images/blog/comida-casera-perros-mayores/alimentos-prohibidos-perros-mayores.webp",
+        "bytes": 73414,
+        "sha256": "66b628bd5489e4cfb76eff7c0d539068a5847a3f1428eb218cad963b61b2c054"
+      },
+      {
+        "file": "client/images/blog/comida-casera-perros-mayores/comparacion-dieta-licuado-perros-mayores-400.webp",
+        "bytes": 22636,
+        "sha256": "87d4d72dcde57af05fa1102a3dd4bf64cf664daa13e5d8db6ad9a9d05d61d793"
+      },
+      {
+        "file": "client/images/blog/comida-casera-perros-mayores/comparacion-dieta-licuado-perros-mayores.webp",
+        "bytes": 66238,
+        "sha256": "70237a9f53ae1d1a0b0635205355b0247f5d3571db9609bcad7c9e8e575329c5"
+      },
+      {
+        "file": "client/images/blog/comida-casera-perros-mayores/licuado-carne-vegetales-pate-perros-400.webp",
+        "bytes": 15948,
+        "sha256": "d0895a0a43991f4eb5ce2129ab5129cbe46eac1959fa52be36b27f19c75c7d2c"
+      },
+      {
+        "file": "client/images/blog/comida-casera-perros-mayores/licuado-carne-vegetales-pate-perros.webp",
+        "bytes": 42756,
+        "sha256": "c6d4136a02d34fe0ed2b86dcd89db082c932ce6da1d9fb14c493cb360e346f31"
+      },
+      {
+        "file": "client/images/blog/comida-casera-perros-mayores/preparacion-comida-casera-perros-mayores-400.webp",
+        "bytes": 20740,
+        "sha256": "e2017f2654cecc649dcef168264baf01d7965098ead449a897ee810e4f698c2b"
+      },
+      {
+        "file": "client/images/blog/comida-casera-perros-mayores/preparacion-comida-casera-perros-mayores.webp",
+        "bytes": 61614,
+        "sha256": "54117210e0c839f458ba6cf5a8e8968b9d2a177c65f0cb91a5c8a030d3622790"
+      },
+      {
+        "file": "client/images/blog/comida-casera-perros-mayores/tutor-alimentando-perro-anciano-400.webp",
+        "bytes": 15036,
+        "sha256": "d5f760f9bb3d2d87d216e6be71be12a4582c92910472694f076ab9ed470c0e76"
+      },
+      {
+        "file": "client/images/blog/comida-casera-perros-mayores/tutor-alimentando-perro-anciano.webp",
+        "bytes": 44236,
+        "sha256": "8485dc9577bdbe482572d14d7e49ea85ab1ee8d881d25ef851bb23afb31d41f2"
+      },
+      {
+        "file": "client/images/blog/como-dar-medicacion-perro/beagle-rechaza-pastilla-perro-senior-400.webp",
+        "bytes": 11424,
+        "sha256": "0b9b8760ab8f9caab3305263ea85a1ef32dbd4bd2e91bf09c84015561a6a5379"
+      },
+      {
+        "file": "client/images/blog/como-dar-medicacion-perro/beagle-rechaza-pastilla-perro-senior.webp",
+        "bytes": 37932,
+        "sha256": "01eb678d9928af22b2ac3c22cd3fad7e337571bc05e972e883898432d32a057a"
+      },
+      {
+        "file": "client/images/blog/como-dar-medicacion-perro/perro-senior-examen-dental-gingivitis-400.webp",
+        "bytes": 10642,
+        "sha256": "6692fe3d5aaf8f05a59febe9a8471a5039a69474b1b308bff096d4ec26117ea2"
+      },
+      {
+        "file": "client/images/blog/como-dar-medicacion-perro/perro-senior-examen-dental-gingivitis.webp",
+        "bytes": 30610,
+        "sha256": "72c4f77ca1acb6c20d9b314a3f1f36cfa1fcc45f934df3e881d102f6e521927a"
+      },
+      {
+        "file": "client/images/blog/como-dar-medicacion-perro/tecnica-manual-dar-pastilla-perro-400.webp",
+        "bytes": 8574,
+        "sha256": "3deb196594e484df4096872c9651d4db3e0d53eb4cf2530e8cf171f29d037668"
+      },
+      {
+        "file": "client/images/blog/como-dar-medicacion-perro/tecnica-manual-dar-pastilla-perro.webp",
+        "bytes": 25910,
+        "sha256": "e875904db37862b2a594a4ddcb6f4527e613dd8a648041f7ca8b93f076f06352"
+      },
+      {
+        "file": "client/images/blog/como-dar-medicacion-perro/triturar-pastillas-perro-mortero-400.webp",
+        "bytes": 8074,
+        "sha256": "5f08c4af7d416fab5dd831deb42780a878a3e857e474c07f5c21fa0dc7df9d5b"
+      },
+      {
+        "file": "client/images/blog/como-dar-medicacion-perro/triturar-pastillas-perro-mortero.webp",
+        "bytes": 23792,
+        "sha256": "458be6a883144080c8ac94826f9dd4e4f0d0dbd533db6dbc70ce9439a567d825"
+      },
+      {
+        "file": "client/images/blog/disfuncion-cognitiva-canina/espacio-seguro-perro-senior-cama-luz-400.webp",
+        "bytes": 19694,
+        "sha256": "210405d0fecd8cc52110009f161769043b2caa7f0a62b2b62c38265d9301ec20"
+      },
+      {
+        "file": "client/images/blog/disfuncion-cognitiva-canina/espacio-seguro-perro-senior-cama-luz.webp",
+        "bytes": 58588,
+        "sha256": "f2d69fe00a7efa8b7e9eae3627dada1b858e978627ab95009496778fb5e80345"
+      },
+      {
+        "file": "client/images/blog/disfuncion-cognitiva-canina/perro-senior-caminando-nocturno-ansiedad.webp",
+        "bytes": 25280,
+        "sha256": "e28a7c87eed9f916dca3df98ae768284a798425ed36600420a7c3be09c24d627"
+      },
+      {
+        "file": "client/images/blog/disfuncion-cognitiva-canina/perro-senior-consulta-disfuncion-cognitiva-400.webp",
+        "bytes": 23504,
+        "sha256": "4692e5544a7861e7bd527a497a0f08e03b7becb96008c4f831dc34df3fcabc86"
+      },
+      {
+        "file": "client/images/blog/disfuncion-cognitiva-canina/perro-senior-consulta-disfuncion-cognitiva-800.webp",
+        "bytes": 55340,
+        "sha256": "ff210194edaac73d9c2782ec8249101946e70cea4da0822172043181e50595da"
+      },
+      {
+        "file": "client/images/blog/disfuncion-cognitiva-canina/perro-senior-consulta-disfuncion-cognitiva.webp",
+        "bytes": 88756,
+        "sha256": "663a8db21dd805b8d9233580f4249ff60206a765a149767ab4a83c47b43ec3bf"
+      },
+      {
+        "file": "client/images/blog/disfuncion-cognitiva-canina/perro-senior-demencia-senil-desorientado-400.webp",
+        "bytes": 7352,
+        "sha256": "4b7fd3ec0d0fd89de9cb84747527e2a5c21d10c7a0f98f28b72a052b74d3cfde"
+      },
+      {
+        "file": "client/images/blog/disfuncion-cognitiva-canina/perro-senior-demencia-senil-desorientado.webp",
+        "bytes": 20546,
+        "sha256": "a9077e56b14ced8279f9c1345d4cafdd4e7c65f4376a845093967caae464733a"
+      },
+      {
+        "file": "client/images/blog/incontinencia-fecal-perros-senior/cocker-senior-cama-empapador.webp",
+        "bytes": 73868,
+        "sha256": "f5cc01091d134f4c52318ea45bd8cdc78e6933116cdfa1bd8f9a67f2a4f54701"
+      },
+      {
+        "file": "client/images/blog/incontinencia-fecal-perros-senior/infografia-reservorio-esfinter-incontinencia-fecal.webp",
+        "bytes": 79774,
+        "sha256": "05b3f9266fbef53ced25f46f6d85a9aed280ebf1b4d8a067a1fe76200a0fe339"
+      },
+      {
+        "file": "client/images/blog/incontinencia-fecal-perros-senior/rutina-salida-programada-perro-senior.webp",
+        "bytes": 103078,
+        "sha256": "5d1e70dc90ea721e45ea249969771c146f80b240b7bebba4a40c98f641f55182"
+      },
+      {
+        "file": "client/images/blog/incontinencia-fecal-perros-senior/sistema-tres-capas-cama-perro-incontinente.webp",
+        "bytes": 54120,
+        "sha256": "56587c2c66a83a40f8ad1e3072d80f6855091223ffd7f8485562a84000786287"
+      },
+      {
+        "file": "client/images/blog/incontinencia-urinaria-perros-mayores/higiene-perro-senior-400.webp",
+        "bytes": 19210,
+        "sha256": "3a5802812a388e30f5acb390868f612bfac3a9808f7b775c4309b4b78dcfcbf9"
+      },
+      {
+        "file": "client/images/blog/incontinencia-urinaria-perros-mayores/higiene-perro-senior-800.webp",
+        "bytes": 48130,
+        "sha256": "f87b38af58da1aff9f5c7dc35d112b678617e41ce0ed20e6be1ed3ead1200fcd"
+      },
+      {
+        "file": "client/images/blog/incontinencia-urinaria-perros-mayores/higiene-perro-senior.webp",
+        "bytes": 84854,
+        "sha256": "017f99cc6dce4c16144ac7b8ca082e94b8e8701e61cbc431431e3e31fd40088e"
+      },
+      {
+        "file": "client/images/blog/incontinencia-urinaria-perros-mayores/perro-senior-incontinencia-400.webp",
+        "bytes": 19112,
+        "sha256": "5e703ece54b3d2d0c5f61ecf3099d690cd32c5f1e118b727d5aa691a99f20963"
+      },
+      {
+        "file": "client/images/blog/incontinencia-urinaria-perros-mayores/perro-senior-incontinencia-800.webp",
+        "bytes": 44048,
+        "sha256": "c5a80be4e616b3d32fde8e64ee85c94d95a88058cce5c616ca0fe34614804f8c"
+      },
+      {
+        "file": "client/images/blog/incontinencia-urinaria-perros-mayores/perro-senior-incontinencia.webp",
+        "bytes": 73626,
+        "sha256": "bb681d4fb0b37bc76ba2a8fdd7156db0b5e81fecfdd0680f5549d2bc67005664"
+      },
+      {
+        "file": "client/images/blog/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion/perro-gordon-setter-delgado.webp",
+        "bytes": 759560,
+        "sha256": "2280a1126b075423af446aeab9e0a335e329ca92d5429ca68c987ce46bd3ede4"
+      },
+      {
+        "file": "client/images/blog/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion/perro-senior-delgado-400.webp",
+        "bytes": 18396,
+        "sha256": "aa360b9a8af8ded918c41f1edd6a7108f53a2b02f6377972620391f89633b5fe"
+      },
+      {
+        "file": "client/images/blog/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion/perro-senior-delgado.webp",
+        "bytes": 108782,
+        "sha256": "59f6afe9ef4c465c5e90f648b739268274490c5ae2e8727b6947c39082290681"
+      },
+      {
+        "file": "client/images/blog/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion/perro-setter-gordon-mayor-feliz.webp",
+        "bytes": 792504,
+        "sha256": "eac23ae25f49c4b444d25b1c25b359275aa062ff4a87934f91fe5410f04215d6"
+      },
+      {
+        "file": "client/images/blog/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion/preparacion-enzimas-pancreaticas-comida-perro.webp",
+        "bytes": 817223,
+        "sha256": "2c6d0796a0d3248d2fd03d08643451cf4071b94feb3fd1113ff987a169294593"
+      },
+      {
+        "file": "client/images/blog/mi-perro-viejo-defeca-mucho-poliquezia/chequeo-veterinario-perro-senior-digestivo.webp",
+        "bytes": 133136,
+        "sha256": "ef831e160d876b4aa12b4f6485c4cb77d5e8313ff91145049300fca35bd78cfb"
+      },
+      {
+        "file": "client/images/blog/mi-perro-viejo-defeca-mucho-poliquezia/mi-perro-viejo-defeca-mucho-frecuencia-fecal-400.webp",
+        "bytes": 24586,
+        "sha256": "f0e1357073b4b4dad6406113e3c880aaf96481a6477336327e84a4f68a8b3b7e"
+      },
+      {
+        "file": "client/images/blog/mi-perro-viejo-defeca-mucho-poliquezia/mi-perro-viejo-defeca-mucho-frecuencia-fecal.webp",
+        "bytes": 149500,
+        "sha256": "47970a2b77a70ad325355ef3f2c03ebe78e728c6f075e7dd8f8ed849f381d315"
+      },
+      {
+        "file": "client/images/blog/mi-perro-viejo-defeca-mucho-poliquezia/perros-senior-comiendo-separados-saciado.webp",
+        "bytes": 159604,
+        "sha256": "81168d8ab32b5adadaa2a3a1db535c55ac74f5345f2a7c7132f09e3ee49614e4"
+      },
+      {
+        "file": "client/images/blog/prevencion-caidas/cama-ortopedica-perro-senior-descanso-digno-400.webp",
+        "bytes": 18536,
+        "sha256": "df9a59ba18061e099bae75bad6a27cd208bec29c6ea84321b8b91c213cfab573"
+      },
+      {
+        "file": "client/images/blog/prevencion-caidas/cama-ortopedica-perro-senior-descanso-digno-800.webp",
+        "bytes": 48678,
+        "sha256": "5325368a7d6b7bf385cc4ff042602f79f8879ce596ad1f968d3f635fe5ffd095"
+      },
+      {
+        "file": "client/images/blog/prevencion-caidas/cama-ortopedica-perro-senior-descanso-digno.webp",
+        "bytes": 86456,
+        "sha256": "1948e1668846e7212bbe2f047a01ba447f5d571a955d5a6905919e6a0d696318"
+      },
+      {
+        "file": "client/images/blog/prevencion-caidas/pasillo-runner-antideslizante-perro-mayor-caminando-400.webp",
+        "bytes": 15904,
+        "sha256": "9399cabaf357c7e701b2ddef910ba97490093193096c7e73f7f2c47b9b0a5093"
+      },
+      {
+        "file": "client/images/blog/prevencion-caidas/pasillo-runner-antideslizante-perro-mayor-caminando-800.webp",
+        "bytes": 46968,
+        "sha256": "a90541a27e61cc0e2c43bc816e6c75f3c77a3a1b6daf00fb044ff9c2f4682aad"
+      },
+      {
+        "file": "client/images/blog/prevencion-caidas/pasillo-runner-antideslizante-perro-mayor-caminando.webp",
+        "bytes": 86168,
+        "sha256": "295f7968a4ec639a90bf24a04bc3fd0b9b981461a6ccd846157267dfd85d6433"
+      },
+      {
+        "file": "client/images/blog/prevencion-caidas/pelo-interdigital-almohadilla-perro-senior-traccion-400.webp",
+        "bytes": 18824,
+        "sha256": "705974d1353deb2e9160976dcad0c68b49b1b4b22b4397f152f6c5d4254e71ac"
+      },
+      {
+        "file": "client/images/blog/prevencion-caidas/pelo-interdigital-almohadilla-perro-senior-traccion-800.webp",
+        "bytes": 46020,
+        "sha256": "117ada68c0f16155f900cc3cd4e6d6992e67e7a2d5a8eb8ee9a85b67b97881fe"
+      },
+      {
+        "file": "client/images/blog/prevencion-caidas/pelo-interdigital-almohadilla-perro-senior-traccion.webp",
+        "bytes": 77406,
+        "sha256": "e4363ff20228247e00319b82aa222653d1152a1be179ff7b256778b5be4f5d25"
+      },
+      {
+        "file": "client/images/blog/salud-dental-perros-mayores/comparacion-antes-despues-limpieza-dental-400.webp",
+        "bytes": 17440,
+        "sha256": "4f4337fc309eaae43bb37ef7b64b7b72820f7d9f9993bf89657f4e796c545e36"
+      },
+      {
+        "file": "client/images/blog/salud-dental-perros-mayores/comparacion-antes-despues-limpieza-dental.webp",
+        "bytes": 49146,
+        "sha256": "20f1229e12b20e3bb4784c7447ad22bd1bd31bc1ddd8978590ae5a9a2a46788e"
+      },
+      {
+        "file": "client/images/blog/salud-dental-perros-mayores/comparacion-dientes-sanos-periodontitis-400.webp",
+        "bytes": 10170,
+        "sha256": "67eb509a14467b8169ca7a579ff4fa951d90e80ed2755a259fc3bab6e81dd44f"
+      },
+      {
+        "file": "client/images/blog/salud-dental-perros-mayores/comparacion-dientes-sanos-periodontitis.webp",
+        "bytes": 23836,
+        "sha256": "f5e8c0181820c4145f443b92d8c7a0040bc794550a388bdbb0494952129a4432"
+      },
+      {
+        "file": "client/images/blog/salud-dental-perros-mayores/perro-senior-sarro-molares-encias-400.webp",
+        "bytes": 14086,
+        "sha256": "6e47ad74da66d18044f1066268265088ec91944be29697cfbcb9e40888f24437"
+      },
+      {
+        "file": "client/images/blog/salud-dental-perros-mayores/perro-senior-sarro-molares-encias.webp",
+        "bytes": 85632,
+        "sha256": "49653ce9b76ee49dc3c59e09db38854ff42691bf30bc62f428dfdc62cd33874e"
+      },
+      {
+        "file": "client/images/blog/salud-dental-perros-mayores/veterinario-cepillando-dientes-perro-mayor-400.webp",
+        "bytes": 12380,
+        "sha256": "679811a5530893c6aab1c5d3c57d5687de47d575e90466d25e56b62e3584fe18"
+      },
+      {
+        "file": "client/images/blog/salud-dental-perros-mayores/veterinario-cepillando-dientes-perro-mayor.webp",
+        "bytes": 27746,
+        "sha256": "a750b88566d0fdc8cb65c62bc52fbc89378214ff00a7ea7946af0504a5df99be"
+      },
+      {
+        "file": "client/images/blog/sindrome-cushing-perros-mayores/cuidado-perro-cushing-en-casa-400.webp",
+        "bytes": 13706,
+        "sha256": "281f10a6f6843e5e4642db9f492bc72f3bb97f54fa01b89af8f394a4caf67982"
+      },
+      {
+        "file": "client/images/blog/sindrome-cushing-perros-mayores/cuidado-perro-cushing-en-casa.webp",
+        "bytes": 71216,
+        "sha256": "06df5e2a32090653f3bb32e476c02ddf0ce1deaf9b277fd0493b57b8c8d8ec73"
+      },
+      {
+        "file": "client/images/blog/sindrome-cushing-perros-mayores/hero-perro-cushing-senior-400.webp",
+        "bytes": 17922,
+        "sha256": "ebf8ed375342bbaad25cd4d3712213fabd8d11f206a535507599b187421d64e8"
+      },
+      {
+        "file": "client/images/blog/sindrome-cushing-perros-mayores/hero-perro-cushing-senior.webp",
+        "bytes": 100952,
+        "sha256": "4bbdb92157933fc1a05f1bcdfcafc2b49a9b50f14db3a8b588f97c2c22879baf"
+      },
+      {
+        "file": "client/images/blog/sindrome-cushing-perros-mayores/recuperacion-perro-cushing-trilostano-400.webp",
+        "bytes": 23360,
+        "sha256": "1867bbecc3481d78e6cf0fd084567a75ef05ae9fc307f7433f103e17d4953b19"
+      },
+      {
+        "file": "client/images/blog/sindrome-cushing-perros-mayores/recuperacion-perro-cushing-trilostano.webp",
+        "bytes": 109390,
+        "sha256": "1a2ba60606ba00a1de312daab87e82a98acb431cb29e5c89d48cf634b93ef36b"
+      },
+      {
+        "file": "client/images/blog/sindrome-cushing-perros-mayores/sindrome-cushing-perros-mayores-diagnostico-400.webp",
+        "bytes": 13036,
+        "sha256": "abb5529938df6257fe01b48e9862374435ae3483e73ca098ce2bcd6e2127974e"
+      },
+      {
+        "file": "client/images/blog/sindrome-cushing-perros-mayores/sindrome-cushing-perros-mayores-diagnostico.webp",
+        "bytes": 67176,
+        "sha256": "09786c741dc108c1d134634da2ed3c5df889a58e93f3db3c5121f2bb26f176f8"
+      },
+      {
+        "file": "client/images/blog/ulceras-presion-perros/perro-senior-cama-ortopedica-400.webp",
+        "bytes": 16076,
+        "sha256": "079dd4706c36e888458199045a1dded36ce7b41b2d41b51b6e31e7d440d99665"
+      },
+      {
+        "file": "client/images/blog/ulceras-presion-perros/perro-senior-cama-ortopedica.webp",
+        "bytes": 49518,
+        "sha256": "83a19bae5d69d3726df311dda5f5e169d6269c150f991b4ef545b5838f8c5d41"
+      },
+      {
+        "file": "client/images/blog/ulceras-presion-perros/puntos-presion-perro-diagrama-400.webp",
+        "bytes": 9440,
+        "sha256": "5ab2d74611eb4dec6c11137860cb13e3ff7583baffa312cc01d5a5295dea7aed"
+      },
+      {
+        "file": "client/images/blog/ulceras-presion-perros/puntos-presion-perro-diagrama.webp",
+        "bytes": 23444,
+        "sha256": "c2868ec9cfd8f43fcf4086fb63508844794f2015907b7ed23425963cf1855f39"
+      },
+      {
+        "file": "client/images/blog/vacunas-desparasitacion-perros-senior/calendario-prevencion-perros-senior-2025.webp",
+        "bytes": 50528,
+        "sha256": "58a6e096d4cbc0abb1c87abf278fdb24a629ad8619d62a93f97c77d1b3da30ee"
+      },
+      {
+        "file": "client/images/blog/vacunas-desparasitacion-perros-senior/cuidados-postvacuna-perro-senior-400.webp",
+        "bytes": 16416,
+        "sha256": "919d2eabaf22cb96b279ea23a2d5e0f88c452c01bce710309f3c106aaca85cec"
+      },
+      {
+        "file": "client/images/blog/vacunas-desparasitacion-perros-senior/cuidados-postvacuna-perro-senior.webp",
+        "bytes": 43096,
+        "sha256": "f29f76e98121752f36382320086f76df61de306fde4a850b044e8ff8d4d3d975"
+      },
+      {
+        "file": "client/images/blog/vacunas-desparasitacion-perros-senior/desparasitacion-interna-externa-perros-senior-400.webp",
+        "bytes": 17248,
+        "sha256": "85eee4acf7ff771cbb4a08ffda5c2a9c30fcfc60d94ef6beb5ec3291469495e1"
+      },
+      {
+        "file": "client/images/blog/vacunas-desparasitacion-perros-senior/desparasitacion-interna-externa-perros-senior.webp",
+        "bytes": 41046,
+        "sha256": "b3deba68298b2a2aa21f7dadcc4f0842a4902d3387ddad8228f74a0fd5f4099d"
+      },
+      {
+        "file": "client/images/blog/vacunas-desparasitacion-perros-senior/vacunacion-perro-senior-veterinario-400.webp",
+        "bytes": 17310,
+        "sha256": "73c0757677aeceb95f01eaad182e2dace889cf694c6e080b794c1e5e20c3ca99"
+      },
+      {
+        "file": "client/images/blog/vacunas-desparasitacion-perros-senior/vacunacion-perro-senior-veterinario.webp",
+        "bytes": 99904,
+        "sha256": "7f9e79cb718236e435b28608683bdfa366c92b1f3d0085910e8c1899c483648b"
+      },
+      {
+        "file": "client/images/blog/vacunas-desparasitacion-perros-senior/vacunas-esenciales-vs-no-core-perros-400.webp",
+        "bytes": 7198,
+        "sha256": "173f2419bb7d7b6e3a1d31fd33141c8d4fa650a4061efe437a9dd27f406ea455"
+      },
+      {
+        "file": "client/images/blog/vacunas-desparasitacion-perros-senior/vacunas-esenciales-vs-no-core-perros.webp",
+        "bytes": 16924,
+        "sha256": "74a3cdcc560efe8c5ce85b75f5e144b6d761d665f68d89503ba60f9b51062e90"
+      },
+      {
+        "file": "client/images/home/avatar-vet-1.webp",
+        "bytes": 2038,
+        "sha256": "b1b20d06da56087ea1d29d212518b2e9e7c84ccb8a7de2de7ab235d83f77e89f"
+      },
+      {
+        "file": "client/images/home/avatar-vet-2.webp",
+        "bytes": 2160,
+        "sha256": "6b560f82dfe5e11e4060bd81c235dda2a429a31abf7e036e24b0dd9e1ba9d6f6"
+      },
+      {
+        "file": "client/images/home/calculadora-calidad-vida-hero-400.webp",
+        "bytes": 20800,
+        "sha256": "e29a17850d45c28d8cbf0fe549d5d062c8cca4b593a7dd3690c3ea49cb158701"
+      },
+      {
+        "file": "client/images/home/calculadora-calidad-vida-hero.webp",
+        "bytes": 64048,
+        "sha256": "074b4d22fc8ba68b43dd893a419c0c2e4ec8ef295ba0eceae14642fd19f455fc"
+      },
+      {
+        "file": "client/images/home/calculadora-hhhhhmm-perro-400.webp",
+        "bytes": 10710,
+        "sha256": "0fd7c3590c83e3659e7cf1f16a30ffbb857a2278815d5f01442064f486a14ec4"
+      },
+      {
+        "file": "client/images/home/calculadora-hhhhhmm-perro.webp",
+        "bytes": 29026,
+        "sha256": "747f5fbbf682097faa4847da19b0c70818f882014183f27f4ad233cc2d8d2f04"
+      },
+      {
+        "file": "client/images/home/perro-senior-cognicion-juego-olfato-400.webp",
+        "bytes": 14456,
+        "sha256": "06aa1712db9ba7ede96d29d92873eefdd276451ee26c762bb19c5f68b448d8d6"
+      },
+      {
+        "file": "client/images/home/perro-senior-cognicion-juego-olfato.webp",
+        "bytes": 41700,
+        "sha256": "8c4b564d5986cfa4e0c91d31c10d7e86847bc7b0a0d1dfc23eb0363de575143a"
+      },
+      {
+        "file": "client/images/home/perro-senior-hero-cama-ortopedica-400.webp",
+        "bytes": 9974,
+        "sha256": "04fbaa927622ae5aeed5cbac474d591e269e904b0d2afd1befeb87c43a774b86"
+      },
+      {
+        "file": "client/images/home/perro-senior-hero-cama-ortopedica-800.webp",
+        "bytes": 32294,
+        "sha256": "87290dab957d54650de025eff883ce7b58d54a0373de9e8b0bbe8568ecaca8ff"
+      },
+      {
+        "file": "client/images/home/perro-senior-hero-cama-ortopedica.webp",
+        "bytes": 78312,
+        "sha256": "29bf9d448c9c48833120d16a39c9333c4cbabea7edac83ea104a97e9de60ae47"
+      },
+      {
+        "file": "client/images/home/perro-senior-movilidad-rampa-400.webp",
+        "bytes": 9084,
+        "sha256": "91274b2453409c305d2c2e2ef82ea70cbe07c2cb88eaa18885f8ba7e793962ca"
+      },
+      {
+        "file": "client/images/home/perro-senior-movilidad-rampa.webp",
+        "bytes": 32628,
+        "sha256": "3eb38496186f409508272b1efecacee13e7cc48f2eb0e17738a0d564986ea720"
+      },
+      {
+        "file": "client/images/home/perro-senior-revision-veterinaria-400.webp",
+        "bytes": 11618,
+        "sha256": "8dcb3d84c2dcc6d3d631c2e3b1e9a7389a680a7c81846a16230ece6a00e82b6f"
+      },
+      {
+        "file": "client/images/home/perro-senior-revision-veterinaria.webp",
+        "bytes": 32266,
+        "sha256": "dcba7292b252a05067891039ef471a413aecae84051c7ada0580aad9ebd2a85a"
+      },
+      {
+        "file": "client/images/home/selector-movilidad-perro-400.webp",
+        "bytes": 10812,
+        "sha256": "7611bb4a59834084dd412cccc226af6a303eb9fab5214bd6b9c16424123c7e4f"
+      },
+      {
+        "file": "client/images/home/selector-movilidad-perro.webp",
+        "bytes": 28834,
+        "sha256": "35c57196c8e8f9f5a8d8d665150293fd8f8ef2e0b7e94f7353b85113bb085636"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/alimentacion-perro-mestizo-senior-400.webp",
+        "bytes": 9622,
+        "sha256": "6655f2e7dabfb8f798afe103ea4dbfd15b7c6f3d4103bd59f70eadde0b405a93"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/alimentacion-perro-mestizo-senior.webp",
+        "bytes": 25236,
+        "sha256": "e6ffe468df9621b52fe8156334b38d56e09845f336eb3f3bab0be49e36281db5"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/alimentacion-perro-senior-beagle-400.webp",
+        "bytes": 14202,
+        "sha256": "8ad9bbab1f37db6c4d176075215fb9cc1d796d26ba3f116489099cbc295a6a81"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/alimentacion-perro-senior-beagle-800.webp",
+        "bytes": 44320,
+        "sha256": "0813bf6cb6d08e28356017a059c950c10618e64bc4ace9c98005bb90d549532c"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/alimentacion-perro-senior-beagle-inline-400.webp",
+        "bytes": 7464,
+        "sha256": "4ea197e9ef2c33739ef5dfe112787fe47fadf7632dd758f1f4b342c51894a373"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/alimentacion-perro-senior-beagle-inline.webp",
+        "bytes": 20654,
+        "sha256": "fd1cccc8b785c692674e0a10fc9bb435fb1e938bf7648643acb35b335923968a"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/alimentacion-perro-senior-beagle.webp",
+        "bytes": 76106,
+        "sha256": "0bc5317c0d4ae163b9273baed79a82d568d718a8af85126414d37c4f6f9af454"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/comida-casera-equilibrada-perro-senior-400.webp",
+        "bytes": 15752,
+        "sha256": "b543d9868ef913a3dd6742cabfaf5d66d1c714dd4ca875b7c15be8fa16243548"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/comida-casera-equilibrada-perro-senior.webp",
+        "bytes": 84710,
+        "sha256": "2f5c31c96184e746f0a00f78d28c67ff470b7c5c0b4e69cbfdc2104599c59860"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/condicion-corporal-perro-senior-porcion-400.webp",
+        "bytes": 12730,
+        "sha256": "35f2d7811fbee7b0ef459bd9b141728853d35aec6b7928288aff3a9298cae3e6"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/condicion-corporal-perro-senior-porcion.webp",
+        "bytes": 68526,
+        "sha256": "efe28dac670814765d8b35109b7e8a6a3554fe533c8ddee012a555eb67224d83"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/dieta-pastor-aleman-senior-400.webp",
+        "bytes": 7326,
+        "sha256": "7c52e79824d4b7252298029c412b11010fe44b24a1fef755c680ef96dc4da82a"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/dieta-pastor-aleman-senior.webp",
+        "bytes": 25850,
+        "sha256": "89e2e74c0403cc83c830b1bbc8f86bb3d4591b2fd15d0fe3239c3772d0505008"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/hidratacion-comedero-perro-senior-400.webp",
+        "bytes": 16304,
+        "sha256": "3fdb05d1d60dd5fd5d5ebbbf7c0507abb3f0c5d9ceb486d2c062171ab58057f1"
+      },
+      {
+        "file": "client/images/pilares/alimentacion-perros-senior/hidratacion-comedero-perro-senior.webp",
+        "bytes": 99766,
+        "sha256": "f649350f5d603419820cebd0b95cf88856da6e7e7e5e2045ec6f31ead4fd8f83"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/acompanar-perro-senior-familia-400.webp",
+        "bytes": 19242,
+        "sha256": "45d2f6c2051be30b8ac89b20defecf2f5673c2ec6d28923dc0b0f9f138088be8"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/acompanar-perro-senior-familia.webp",
+        "bytes": 116890,
+        "sha256": "3b44fc8341744ae60e37e4eb2017db92f6467a5c673bda7c7a12d1aee4003101"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/beagle-anciano-cuidados-paliativos-acompanamiento-400.webp",
+        "bytes": 13548,
+        "sha256": "3977c1923432de12d27ba91c78bcb69037a60684bcb2654f3381bf526470d629"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/beagle-anciano-cuidados-paliativos-acompanamiento.webp",
+        "bytes": 43944,
+        "sha256": "00ba7d25676a1e0b615dc13f7698951df7652e962d9f5bde878aa79af5ed2795"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/beagle-limon-escala-hhhhhhmm-400.webp",
+        "bytes": 8030,
+        "sha256": "d8af150d44d54230d5422df11b0ff4ac5bd5a431123aa401d7854c40a2437009"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/beagle-limon-escala-hhhhhhmm.webp",
+        "bytes": 20310,
+        "sha256": "9944f8f476e7e88b48886524f2c6d6acb4ca617c7963a46b38b73216de6c269e"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/calidad-vida-perro-senior-registro-400.webp",
+        "bytes": 20564,
+        "sha256": "974e77a874f4215de10f67ae007e690a507c7c841ff706c5ddd4baa8cf66b815"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/calidad-vida-perro-senior-registro.webp",
+        "bytes": 110962,
+        "sha256": "40d5ba74081837dc3877f813323f82abe40eb245e23192f295c7829ad8c59efd"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/cuidados-en-casa-labrador-senior-400.webp",
+        "bytes": 10496,
+        "sha256": "570c3767b0df4eddaf1b90d0149bbe43b065584153cf573e1cc3e0843fd081b2"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/cuidados-en-casa-labrador-senior.webp",
+        "bytes": 34120,
+        "sha256": "7548491af657a3de5586ad6a0b8094dde8b1204e42c345ee53fad363ce4db9d3"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/cuidados-paliativos-casa-agua-400.webp",
+        "bytes": 16456,
+        "sha256": "e6e20cdd325ea13c3eee6e34dc2f66f70ff25a1ffb8d3c818652ef7eaca46dfa"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/cuidados-paliativos-casa-agua.webp",
+        "bytes": 89354,
+        "sha256": "f54ddb9dc55e9c902ea5ff9a3ba60ba44e120a2674a6b2b7a331f84be59d356a"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/cuidados-paliativos-hero-confort-400.webp",
+        "bytes": 19640,
+        "sha256": "8672ca3836aa11abeb3e47bcbb95147411cf0556ca08c8e1d8055ff098eae0b9"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/cuidados-paliativos-hero-confort.webp",
+        "bytes": 120240,
+        "sha256": "4ff03c06204dbc1eede62a5f964032db841ce1505e5d5320df8f50353586abec"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/eutanasia-perro-acompanamiento-compasivo-400.webp",
+        "bytes": 13354,
+        "sha256": "3ec0894520c17e859d020ef84ba0904b49a8db129182c59617f75af965e55ccb"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/eutanasia-perro-acompanamiento-compasivo.webp",
+        "bytes": 38514,
+        "sha256": "79e7e4870b42c324a0397f03e41d6cfe55c44d7ba23660ee6fcb5b42b3b1350d"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/tutor-perro-beagle-senior-cuidados-paliativos-400.webp",
+        "bytes": 17250,
+        "sha256": "0390961e539f2f85e37e6b823b232918301429ee589e3c0cc9c992b01d7efec0"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/tutor-perro-beagle-senior-cuidados-paliativos.webp",
+        "bytes": 48246,
+        "sha256": "55e2f5c995cf44ecd0a4396422975fe8d63689d92dbe69f676a792f5e208ac59"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/visita-veterinaria-golden-retriever-400.webp",
+        "bytes": 9852,
+        "sha256": "b26442d4f0e593c7d302b6493bcce7ae0c798be332e9e0f74ccce4973d6a43b1"
+      },
+      {
+        "file": "client/images/pilares/cuidados-paliativos-perros/visita-veterinaria-golden-retriever.webp",
+        "bytes": 29140,
+        "sha256": "eacb551520000a197271b389916a3f82de56378732de2b460e5486313bee9f35"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/balsamo-nariz-patas-resecas-pug-senior-1200.webp",
+        "bytes": 52318,
+        "sha256": "fb839f893f91c525534cadebc980faaeaa1df9e2e2c83995528cf4d27eade126"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/balsamo-nariz-patas-resecas-pug-senior-400.webp",
+        "bytes": 9138,
+        "sha256": "c9400e7cc805f2477eb83a33e92f21d27fb1281d6b19a0e8e5b42492936d2d62"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/balsamo-nariz-patas-resecas-pug-senior-800.webp",
+        "bytes": 28052,
+        "sha256": "17dbd95a3f07455b5c07dcbf4b83b9feecdb5ce32d3d8b93380b64eb7501fb54"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/balsamo-nariz-patas-resecas-pug-senior.webp",
+        "bytes": 118292,
+        "sha256": "5297b8a9e398d62a1d8bc8cbc74f28a2bd5f5b22fdb1a17b6104d21d4da1defa"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/bano-suave-schnauzer-senior-champu-400.webp",
+        "bytes": 16046,
+        "sha256": "f17e5d177a92b8640e3f9224b2ef384a9a9b8d34d3c528768d82089637efca51"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/bano-suave-schnauzer-senior-champu-800.webp",
+        "bytes": 38074,
+        "sha256": "abd80a53b64c5a76d1a536f44a85e23490fa71e3ba6ee58f2998499d95a6897a"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/bano-suave-schnauzer-senior-champu.webp",
+        "bytes": 61112,
+        "sha256": "1eb8f83630904511ed212056347d34eccd1a7dc2affa49393d4e4558565d64c5"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/casa-segura-perro-senior-400.webp",
+        "bytes": 18176,
+        "sha256": "b69ecac7032fc456274846bed76eeef01a3fc228ac040772a7bb0d555e3a5396"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/casa-segura-perro-senior.webp",
+        "bytes": 107458,
+        "sha256": "4bdf57866d0d8f679a5914167267be356e624dd7fc0ace08bd2ad781112598d0"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/cepillado-perro-mestizo-senior-jardin-1200.webp",
+        "bytes": 83156,
+        "sha256": "8967d21a2241f2147dcef75e94e205ff68a0e73fffca8e661c07a3f851fc32c1"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/cepillado-perro-mestizo-senior-jardin-400.webp",
+        "bytes": 14884,
+        "sha256": "565310d9748d6cad025b2c3fcd4742cbc0f21710273a2dd010892357345a19c4"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/cepillado-perro-mestizo-senior-jardin-800.webp",
+        "bytes": 46476,
+        "sha256": "07a06dbee17bbfc19c3c4af273706a94f45c4d6d78b7c60a9a57828a6ebf4cca"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/cepillado-perro-mestizo-senior-jardin.webp",
+        "bytes": 157220,
+        "sha256": "e1c4b0ca41a9018d9027bdfa9886e7dc3b9b4a7aa6624cf92898e711dbbd288d"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/hero-labrador-senior-cama-ortopedica-hogar-1200.webp",
+        "bytes": 72376,
+        "sha256": "edf30dc02f0ae4bab8114088c6bc169864aa96c1481b719fa4709f0a63b45de7"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/hero-labrador-senior-cama-ortopedica-hogar-400.webp",
+        "bytes": 9902,
+        "sha256": "f5a74778507658132f6bd3f41e39395f9830fe70962f0bb2e7b3900230da1e1d"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/hero-labrador-senior-cama-ortopedica-hogar-800.webp",
+        "bytes": 35172,
+        "sha256": "abe8ea08f082e43f4181026ee15c4c0c725656f5ab87427217284f745291daa7"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/hero-labrador-senior-cama-ortopedica-hogar.webp",
+        "bytes": 158290,
+        "sha256": "eb074cbf153050d8907771141ec63a90f7213e4295a1cbac904323a579d3ed0b"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/higiene-hogar-hero-perro-senior-400.webp",
+        "bytes": 18110,
+        "sha256": "0694c7adac182db09a748e9cab2e6895ee66f377f943f13b2c0829b266c4f5b7"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/higiene-hogar-hero-perro-senior.webp",
+        "bytes": 100172,
+        "sha256": "62b3be4b449047614c618cf1cca3f3aa7d58731a8baa22c248aa5649c93b1997"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/hogar-adaptado-rampas-alfombras-pastor-aleman-400.webp",
+        "bytes": 9930,
+        "sha256": "c6d88269b76677221ac8c6e1a5cf50a6618329b9366157e9dea3f95185e5d214"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/hogar-adaptado-rampas-alfombras-pastor-aleman.webp",
+        "bytes": 29656,
+        "sha256": "9c42f799b86988fb84e9efc41896229d0682a6242bee1525a2779233c19241f2"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/piel-seca-perro-senior-400.webp",
+        "bytes": 17182,
+        "sha256": "aef1334aabaef03bc77cfb4e5b7ef660f8acdb2cf706574c28ca363104fb36f1"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/piel-seca-perro-senior.webp",
+        "bytes": 102132,
+        "sha256": "d6c1a5571527ac9b0359dfc060c29af19dfe86ac80857b1cfda7d6ab0befd77e"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/primeros-auxilios-herida-perro-senior-1200.webp",
+        "bytes": 34146,
+        "sha256": "6c0f151c0a435825c9115dcd27344ea1572f24845c4f6e41898b40b13fe49c95"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/primeros-auxilios-herida-perro-senior-400.webp",
+        "bytes": 7840,
+        "sha256": "eab80aa8445068c5c0765fc815c5a67779cb3152a68dffd6869ad40bc93579fb"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/primeros-auxilios-herida-perro-senior-800.webp",
+        "bytes": 19778,
+        "sha256": "019376816685c91f74bcc3b6833c26255f753857f64179268b478148bf2f479f"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/primeros-auxilios-herida-perro-senior.webp",
+        "bytes": 81344,
+        "sha256": "9ac5780d526ab49b5711a1d05949c520f84a1b24e0998c0e1c68689cbd423cc5"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/revision-piel-beagle-bulto-cutaneo-1200.webp",
+        "bytes": 51848,
+        "sha256": "ac501ca39ec3178a74c2850a9c29c929f1e0ca68a8b444b2f00cf670dbcb6ff0"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/revision-piel-beagle-bulto-cutaneo-400.webp",
+        "bytes": 9414,
+        "sha256": "34927c33be56772d7ef95218304f64275126a75fc514993d9265309ec5fc2024"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/revision-piel-beagle-bulto-cutaneo-800.webp",
+        "bytes": 29018,
+        "sha256": "eafc5f82c9424e5c1f2cb2ba5f7368dc26c71eb71f3f02924da3e4910e741fe3"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/revision-piel-beagle-bulto-cutaneo.webp",
+        "bytes": 111792,
+        "sha256": "5f3bd05ede6e2415f775f0e8dfd063c52ab1a7d0c20e4ee7abc6f5cbdd2ea043"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/rutina-higiene-perro-senior-400.webp",
+        "bytes": 20850,
+        "sha256": "0fddd2be732e1768393a7d93f939d64df038f94f45e5eca9d1b9bf04c03b6ca0"
+      },
+      {
+        "file": "client/images/pilares/higiene-hogar-perros-senior/rutina-higiene-perro-senior.webp",
+        "bytes": 125360,
+        "sha256": "2096451117227a542e20d7fd76a11ba97f9182ef3f5e55a2632cf33bd7856bf2"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/casa-adaptada-movilidad-perro-senior-400.webp",
+        "bytes": 18518,
+        "sha256": "6eb5affceb5f4b49d59196c9b6004001d9274040bd1e2386a58ed3ed06cdf8ca"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/casa-adaptada-movilidad-perro-senior.webp",
+        "bytes": 120564,
+        "sha256": "d31076248d7adc38fcce5916ac0e8cb341b9c2552950ae490b74b184dea2ac9f"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/labrador-senior-fisioterapia-acuatica-400.webp",
+        "bytes": 9742,
+        "sha256": "d8057d0617200a33adbe93d9fbe91e95036b7fb10bbcbb077210de6454593668"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/labrador-senior-fisioterapia-acuatica.webp",
+        "bytes": 27352,
+        "sha256": "28e57b326ecd6d5633efeae6d9adab9f86005903ee9ac7daa7f60d4c74f6c012"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/movilidad-hero-perro-senior-camino-400.webp",
+        "bytes": 20058,
+        "sha256": "3b5b6d38c31591ea7847ea9a00939ebcc50b158602439530978c8ba3fc08649d"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/movilidad-hero-perro-senior-camino.webp",
+        "bytes": 119964,
+        "sha256": "48ff68bf8be8a7405d730a030ec88363b2758b7d3967677a641dc6de236bfed3"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/paseo-suave-perro-senior-400.webp",
+        "bytes": 23428,
+        "sha256": "932c3b9c89276ed47abbb885b93186d5207a33f127168bdbabc35cb3703e5ca9"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/paseo-suave-perro-senior.webp",
+        "bytes": 139166,
+        "sha256": "6a02701ffcaa262783357acd9daa7b11ef44d9ed941d69c10ecfc80dfeac7e72"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/perro-mayor-perdida-vision-hogar-adaptado-400.webp",
+        "bytes": 8284,
+        "sha256": "c651fdb4dab6faa5f61683a62e592851ca48359c5065a08ff26ab87f5fe62a97"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/perro-mayor-perdida-vision-hogar-adaptado.webp",
+        "bytes": 26288,
+        "sha256": "5204b41100a19fb82b2a99b57ca229ea421c8bbca7ec0764604f974b850e0dac"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/perro-senior-cama-ortopedica-descanso-400.webp",
+        "bytes": 9984,
+        "sha256": "d81d93966bde0e552178fc7074fc8a5643066cd6091882c9a9d1f33fc755880b"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/perro-senior-cama-ortopedica-descanso.webp",
+        "bytes": 38554,
+        "sha256": "cd98c0265a07d2d5f6096ba1151633a037fe3b63bf74b4a5a4e8fa4c2002f751"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/senales-dolor-movilidad-perro-senior-400.webp",
+        "bytes": 16300,
+        "sha256": "79bbd93706ba1c89b8a89ac96ba20bbbc3c43b28cca55517c1eb5a4c44317595"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/senales-dolor-movilidad-perro-senior.webp",
+        "bytes": 94512,
+        "sha256": "8b4c9cedd894e98fdc72f37360b24531d297945e891c795fd75c858061527161"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/tutor-guia-ejercicios-perros-mayores-400.webp",
+        "bytes": 9962,
+        "sha256": "ab0f7bc811366a61acf01c090305465cc364ce585e6b39c0333e37c7c07fbecb"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/tutor-guia-ejercicios-perros-mayores.webp",
+        "bytes": 29582,
+        "sha256": "cee7777f5734feba2a5822d6d7c23c1312b00ffa99add423c27c4bf54dfa9b29"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/veterinario-revisa-cadera-perro-senior-400.webp",
+        "bytes": 10416,
+        "sha256": "0f705bd596e8a447542dc7f4dd9ffb4d6e2257856587c1a409065f6fa1d21126"
+      },
+      {
+        "file": "client/images/pilares/movilidad-dolor-perros-mayores/veterinario-revisa-cadera-perro-senior.webp",
+        "bytes": 34076,
+        "sha256": "5d709857c58187280bdeed94a05bbbc38a0aa5a3124e4ba459e28b674806d613"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/cuidados-emocionales-perros-senior-400.webp",
+        "bytes": 9098,
+        "sha256": "b06c2efe7029f0c2fa3927c380538ed660cf8c777474f7582eea41dda872ade9"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/cuidados-emocionales-perros-senior.webp",
+        "bytes": 31008,
+        "sha256": "02b88052a4ca95bdeed233435c14a2b14a4f537b6634212de8b908d21f2819f6"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/enriquecimiento-olfativo-perro-senior-400.webp",
+        "bytes": 17136,
+        "sha256": "86142066de05ad83cdbc9353724a4b7bc1482a0ca14e6f525379492c6345d1d3"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/enriquecimiento-olfativo-perro-senior.webp",
+        "bytes": 91332,
+        "sha256": "05a076b3e73a475d23f71630eee915fa9f7334aee0247a15826d0a4564412d15"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/juegos-mentales-perros-mayores-400.webp",
+        "bytes": 14366,
+        "sha256": "eb12f7bf2b770fcd9543e932833137dcdd7525e1ef09a76e01072b9efa0edd8f"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/juegos-mentales-perros-mayores.webp",
+        "bytes": 48546,
+        "sha256": "ac305f40ef0979b7a26d55936c7dcaba34ecca33eb4ae296e581f4cc89242ca3"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/perro-senior-cuidador-atardecer-400.webp",
+        "bytes": 6536,
+        "sha256": "37dd5fde82edc3f3d885b656e9f2bf469f5280fbacf84d6008e597ef4ad01c3f"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/perro-senior-cuidador-atardecer.webp",
+        "bytes": 21104,
+        "sha256": "3a9d8c3f22278b0ce1edf27a5b36e440279372ce7d05d0d52580dbf9bf99f182"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/rutina-calma-perro-senior-400.webp",
+        "bytes": 17158,
+        "sha256": "4eab90a5e0e1aa898a098394de59a5d060f1b88c9702d0718c188d53bfecd1de"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/rutina-calma-perro-senior.webp",
+        "bytes": 104710,
+        "sha256": "53e9043d15af9ee8d00a247c45328e9ea1e978433a828462173a82e0120c67df"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/salud-mental-emocional-hero-compania-400.webp",
+        "bytes": 16902,
+        "sha256": "1db7d931998bc02e10674a04442fb5d5a45f2b764792d13d5b558d378c1c8e42"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/salud-mental-emocional-hero-compania.webp",
+        "bytes": 108566,
+        "sha256": "b086ed2056e6bc8bf804dc138750e3a4c77ffc496f4cbaf9fc031f5deb107b8a"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/salud-mental-perros-mayores-feature-400.webp",
+        "bytes": 8358,
+        "sha256": "cdefc3fbf8cbf89dd3f281151b0912caa1855daa32c052b62a9ed095bf1ac09b"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/salud-mental-perros-mayores-feature.webp",
+        "bytes": 26848,
+        "sha256": "99b74b443e18eae053015f960ae461fa60896928ed023cd8c8e977fd9f5346d5"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/senales-cognitivas-emocionales-perro-400.webp",
+        "bytes": 8902,
+        "sha256": "4ba644550439347f89e904214165957dee1263512ada0f0344c00469c09c590d"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/senales-cognitivas-emocionales-perro.webp",
+        "bytes": 23728,
+        "sha256": "0985c19241aa7ba92bfe980b0853c081ddabfbb00545b44f35d2bbd4592b4cb1"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/senales-cognitivas-perro-senior-400.webp",
+        "bytes": 10964,
+        "sha256": "cc078d981ced2ef0bddcc5a2efcb2af03d8a831eabf61473a797803b80fa1936"
+      },
+      {
+        "file": "client/images/pilares/salud-mental-emocional-perros/senales-cognitivas-perro-senior.webp",
+        "bytes": 70690,
+        "sha256": "88a4133737387a4d05b85132cd99c734cf3c894bd142891abe30a71ed53ab2ea"
+      },
+      {
+        "file": "client/images/pilares/salud-perros-mayores/alimentacion-comedero-elevado-hidratacion-400.webp",
+        "bytes": 14016,
+        "sha256": "1ff7bf25d78ccb09ebe5dc92b4feae8755571abff9470919af90d31116b6e3bd"
+      },
+      {
+        "file": "client/images/pilares/salud-perros-mayores/alimentacion-comedero-elevado-hidratacion.webp",
+        "bytes": 91098,
+        "sha256": "9ae0226270970bf880a75f3414a89ba07834a906767572e80c2f62c275e72cc6"
+      },
+      {
+        "file": "client/images/pilares/salud-perros-mayores/arnes-soporte-perro-mayor-escaleras-400.webp",
+        "bytes": 18090,
+        "sha256": "044b5dc417b30d6434405d0cfba105b65cb01204c316f329df688961ee54798c"
+      },
+      {
+        "file": "client/images/pilares/salud-perros-mayores/arnes-soporte-perro-mayor-escaleras.webp",
+        "bytes": 106424,
+        "sha256": "70061b336d42a9d1375baae6d56f1031c7cd81b355b55274f481755eb09cdced"
+      },
+      {
+        "file": "client/images/pilares/salud-perros-mayores/chequeo-veterinario-perro-mayor-analitica-400.webp",
+        "bytes": 13448,
+        "sha256": "55052b289870cc780ec4854ac2434f87639c2dd62daeeca52e1e7deb8b7ca48a"
+      },
+      {
+        "file": "client/images/pilares/salud-perros-mayores/chequeo-veterinario-perro-mayor-analitica.webp",
+        "bytes": 78126,
+        "sha256": "646bb4e850ec94948c6a2c4a47aad802ed2ecbe1ccd0d2764a599905b64afec5"
+      },
+      {
+        "file": "client/images/pilares/salud-perros-mayores/salud-perros-mayores-hero-rampa-salon-400.webp",
+        "bytes": 15882,
+        "sha256": "e65ee4760c5f0f13972f85206f09017294668653b142aeb1ee9de44e0ac31a23"
+      },
+      {
+        "file": "client/images/pilares/salud-perros-mayores/salud-perros-mayores-hero-rampa-salon.webp",
+        "bytes": 88310,
+        "sha256": "3348f2bf4d60c0ec3d1604f77a742f8b29ea8176d2221861fa72f49a100ae988"
+      },
+      {
+        "file": "client/images/pilares/salud-perros-mayores/sintomas-rojos-perros-mayores-urgencia-400.webp",
+        "bytes": 12344,
+        "sha256": "02f11cd7a868b12ac708f5c45aea70e9f5dbddcc6b9ec70f8fbf50e5b634abaa"
+      },
+      {
+        "file": "client/images/pilares/salud-perros-mayores/sintomas-rojos-perros-mayores-urgencia.webp",
+        "bytes": 78212,
+        "sha256": "4a2aaaa125ae11865d54a30bd1d84b093710e31190e3ce5daf7c6618490acc34"
+      },
+      {
+        "file": "client/index.html",
+        "bytes": 120037,
+        "sha256": "16c86a4d5edadd09f40a0f30a88b02d3868d1d52aa5501c70aa69ab2dea6b277"
+      },
+      {
+        "file": "client/llms.txt",
+        "bytes": 4206,
+        "sha256": "f69fafedd5c4a96d71ddc60717c4069cc1424395fbd7a21e75b5ba3d5389ab08"
+      },
+      {
+        "file": "client/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis.html",
+        "bytes": 112806,
+        "sha256": "8a2d373b9e693ca2e7b7aee858f9e852b4f6c68a4d0770c9f5c979d5dc3f8bc9"
+      },
+      {
+        "file": "client/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor.html",
+        "bytes": 126393,
+        "sha256": "afd3bdeaa9c63a171a19456f07557e08880a25981b9b9b6003a5f6a2bf16ad90"
+      },
+      {
+        "file": "client/movilidad-dolor-perros-mayores.html",
+        "bytes": 58447,
+        "sha256": "16816ee944408aece7d1009a8695917f81600ff95b6a462d07a1304b9ffa96a8"
+      },
+      {
+        "file": "client/politica-de-cookies.html",
+        "bytes": 40671,
+        "sha256": "0c14767ed6027930e4d5cce94b95ad8d6557cb6d78c0175c20ec7b4f25ddd1fe"
+      },
+      {
+        "file": "client/politica-de-privacidad.html",
+        "bytes": 34814,
+        "sha256": "873ccf385cd2f3a3bf972cd36d4cb619e79e2fbd5b53e7627661f7c10ab665be"
+      },
+      {
+        "file": "client/politica-editorial.html",
+        "bytes": 34152,
+        "sha256": "1d34d1c81d06b94763274c295d18e0dbb0d39962acd0a6d704eb2364f81c461b"
+      },
+      {
+        "file": "client/robots.txt",
+        "bytes": 135,
+        "sha256": "1804644940a3594aa6b1b52db1b5905a995c7364fbc7174b0909b9fa8e1511f5"
+      },
+      {
+        "file": "client/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor.html",
+        "bytes": 127269,
+        "sha256": "b3ece00a06a3c9e739adbc4ee511cea2ed8e83e2874ed0d2e781b956a26e08e4"
+      },
+      {
+        "file": "client/salud-mental-emocional-perros/ansiedad-separacion-perros-senior.html",
+        "bytes": 121905,
+        "sha256": "73639633c0389dcbf6b8b6595e9ed7af940be6fd253e07971fb97e2ff6a16ae0"
+      },
+      {
+        "file": "client/salud-mental-emocional-perros/disfuncion-cognitiva-canina.html",
+        "bytes": 115342,
+        "sha256": "771b1d388f9c4e75c2f5d545bdec4c76495d8fd0d5de6b593daa4182cd2383b7"
+      },
+      {
+        "file": "client/salud-mental-emocional-perros.html",
+        "bytes": 64783,
+        "sha256": "07769ab82293220e611748b854f9da2ac20f161135d4b95062d7ca2f40d63c21"
+      },
+      {
+        "file": "client/salud-perros-mayores/chequeo-geriatrico-canino.html",
+        "bytes": 74160,
+        "sha256": "3368b8b03d1893abc394928f184483e209eebf3b064a78ef50c1c519f8ad91ba"
+      },
+      {
+        "file": "client/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.html",
+        "bytes": 134060,
+        "sha256": "a7677f37f1d347d55c7c9496f849a5da453379fe98de2a2aa7f0508fed4677cd"
+      },
+      {
+        "file": "client/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html",
+        "bytes": 124109,
+        "sha256": "4f89f491b5d064bc373fbeb0dbf0dd00680877e9111fc72b90c6acd4f96b2845"
+      },
+      {
+        "file": "client/salud-perros-mayores/salud-dental-perros-mayores.html",
+        "bytes": 77271,
+        "sha256": "9368fe78d2853ea0dc20493ce68f7968e5ee49bfca039fa21715f791805b4319"
+      },
+      {
+        "file": "client/salud-perros-mayores/sindrome-cushing-perros-mayores.html",
+        "bytes": 111389,
+        "sha256": "30643c1037517dbfeefecf3bb2559db252f88f69cbd4ce5c95deea2217bd9d73"
+      },
+      {
+        "file": "client/salud-perros-mayores/vacunas-desparasitacion-perros-senior.html",
+        "bytes": 81756,
+        "sha256": "18be91dea2a1d6cafe2554ad34c8bfe31a5b25cb12f42e7382f585eede2f6b45"
+      },
+      {
+        "file": "client/salud-perros-mayores.html",
+        "bytes": 68654,
+        "sha256": "a7e5958a2d11a291f9cbc52d3ab935b8fc21d1132e15ef223b2c6ee2b56957f1"
+      },
+      {
+        "file": "client/sitemap-0.xml",
+        "bytes": 5088,
+        "sha256": "464cf6931c57cc68382f8cf97f88d0b76315a39c174d2353c980a2cb733577fc"
+      },
+      {
+        "file": "client/sitemap-index.xml",
+        "bytes": 192,
+        "sha256": "d4b6c78ab2a00a5b0c91af723386f830e262b2c04b1e7a2d96b54ff41b23402c"
+      },
+      {
+        "file": "server/chunks/_astro_assets_DESDMwXt.mjs",
+        "bytes": 21817,
+        "sha256": "f2e4eeb09917e1fbe68e795d4b9daed7bed734e32d50eb5f9eea9b412f9285b3"
+      },
+      {
+        "file": "server/chunks/_id__BgEqgRTg.mjs",
+        "bytes": 2206,
+        "sha256": "d174debfb752d1366f42b80208fda2737bcb993ebac8cc3832eedd4ea012449a"
+      },
+      {
+        "file": "server/chunks/_virtual_astro_server-island-manifest_q0HM18kM.mjs",
+        "bytes": 275,
+        "sha256": "a596d3effa0156fa3ea7fe930baaf7a01c50c737002b15e63ca5ed8211d8e80c"
+      },
+      {
+        "file": "server/chunks/_virtual_astro_session-driver_TyipGO2P.mjs",
+        "bytes": 2944,
+        "sha256": "1d519eb46f6d3dfe837b55d6021e12f44ba8bbaa0f003f9e4a457d47c35bcc36"
+      },
+      {
+        "file": "server/chunks/ask_CXUtHJ9V.mjs",
+        "bytes": 16187,
+        "sha256": "94df03eb78c67627d71cf664455f5c8c4cec4d0ab5cf537801f75fb15aee64c9"
+      },
+      {
+        "file": "server/chunks/assets_BvyCMUFM.mjs",
+        "bytes": 14828,
+        "sha256": "8fb5c387497de4030f320582d963c8241de2619a608d2993d91d5911847f4187"
+      },
+      {
+        "file": "server/chunks/compiler_DXi4oIgk.mjs",
+        "bytes": 1215,
+        "sha256": "35287b68456523ea54f3b8d686e172f5d0b34d1cc86cb7beac85348e805710a0"
+      },
+      {
+        "file": "server/chunks/contact-messages_iMMYEa9z.mjs",
+        "bytes": 5786,
+        "sha256": "9ed92d939969c7641783cc0a00959c9a39889232d1594b21c50ceec7084eae0b"
+      },
+      {
+        "file": "server/chunks/contact_CZp7MTkQ.mjs",
+        "bytes": 243,
+        "sha256": "99bf6f78ecfd053580ae9a772b9e62a5205415ae35282064b3c221b7c82e5b05"
+      },
+      {
+        "file": "server/chunks/contact_D7pTFIbM.mjs",
+        "bytes": 8058,
+        "sha256": "2b34f35583447c0fd6edc404c6f4ffb242fadbc8cde57ce026f923cfa0bdd165"
+      },
+      {
+        "file": "server/chunks/contacto_DeIxkhgb.mjs",
+        "bytes": 451,
+        "sha256": "f5b0f6da3301f0b7e20224c5d1138dd0884438f9e4a7e39d8f8a3db98eeb4dd4"
+      },
+      {
+        "file": "server/chunks/email_C8A9mQLs.mjs",
+        "bytes": 1251,
+        "sha256": "8aa3109392818dbc5526bd7d30bbc225dbe17b78e49f23ef8e617c2c5891d169"
+      },
+      {
+        "file": "server/chunks/entrypoints_nlJWUH8-.mjs",
+        "bytes": 257322,
+        "sha256": "560d24d75a580b7424a6e75f64acb19580e05341d7679313e262bcbb5f7d980d"
+      },
+      {
+        "file": "server/chunks/feedback_CBRxbbOc.mjs",
+        "bytes": 3274,
+        "sha256": "83f8b6200492c7c1e0bc4780358a60e763992a5e6faed10b4bd7bdd2bf9b5bf4"
+      },
+      {
+        "file": "server/chunks/geo_pdsrN3jB.mjs",
+        "bytes": 1130,
+        "sha256": "f1327ed617e2658ddd1303ba04ad7cf3e0f1f8c20273c80349b57d06ec2f5873"
+      },
+      {
+        "file": "server/chunks/image-passthrough-endpoint_Jwu_mKjK.mjs",
+        "bytes": 2295,
+        "sha256": "412c2d7f19e7bb1da86dd2a1716a2ada3f8c7978d296587c50a9a4437ddac1a5"
+      },
+      {
+        "file": "server/chunks/noop-entrypoint_BYLrzUxc.mjs",
+        "bytes": 157,
+        "sha256": "25ddd55a0e9b4ad19b42312beb1eec1349989da20b8f7298abbe36488a9b73cb"
+      },
+      {
+        "file": "server/chunks/noop_CV-sm3Ll.mjs",
+        "bytes": 671,
+        "sha256": "140207b7a3edc72b05a0f9f2299775bcb6b853543144cbea04c991e2fc191b5b"
+      },
+      {
+        "file": "server/chunks/rolldown-runtime_D7vh-g_o.mjs",
+        "bytes": 418,
+        "sha256": "3dfc8f5573008981d79137f5c860e1c16e8572b01845b879bfc711d438942d67"
+      },
+      {
+        "file": "server/chunks/security_CODFIENT.mjs",
+        "bytes": 1793,
+        "sha256": "e5a377f3a38617f4f138af18308a54bba3c17618a8a0ec5d64cdd836f1a55a62"
+      },
+      {
+        "file": "server/chunks/sequence_qQIr-Jbe.mjs",
+        "bytes": 325186,
+        "sha256": "8dd888880c3e06a7d55d877473d3f1f6f3f3c947dbec004a879698a095e91c77"
+      },
+      {
+        "file": "server/chunks/service_orLU5vNa.mjs",
+        "bytes": 42689,
+        "sha256": "85b0df2fe50cb3f4a3853d83cd767dd814ac6f88046e6843aae383e78277c6e2"
+      },
+      {
+        "file": "server/chunks/static-image-collection_BtuGzZC9.mjs",
+        "bytes": 2360,
+        "sha256": "aff0f3776829ed3f4d0103ca284e1457c25aa38ffb18ebe1ac66f3f1c56f5950"
+      },
+      {
+        "file": "server/entry.mjs",
+        "bytes": 648488,
+        "sha256": "725177fd10c55cccf9c08986e97c606cd52be484411ac423e8107eceaaf39f95"
+      },
+      {
+        "file": "server/virtual_astro_middleware.mjs",
+        "bytes": 3368,
+        "sha256": "b0afc3110bc295af532cfeac529af89b7749be24a26245b18b30c1428c7adc5c"
+      },
+      {
+        "file": "server/wrangler.json",
+        "bytes": 4214,
+        "sha256": "503ef7c056f7248682dedee36f22daccfa36ec324cfeaea94d1f50aa3a396a77"
+      }
+    ],
+    "buildManifestSha256": "6ac7bb394056d2562270e47f651b3cdc629c4fd4e9d8d2363d978b06757a2a88"
+  },
+  "workerPid": 18733,
+  "ready": true,
+  "matrixExit": {
+    "code": 1,
+    "signal": null
+  },
+  "status": "FAIL",
+  "workerBeforeCleanup": {
+    "exit": null,
+    "exitCode": null,
+    "signalCode": null
+  },
+  "workerAfterCleanup": {
+    "exit": {
+      "code": null,
+      "signal": "SIGKILL"
+    },
+    "exitCode": null,
+    "signalCode": "SIGKILL"
+  }
+}
