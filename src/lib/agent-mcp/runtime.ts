@@ -140,7 +140,7 @@ export function createAgentMcpWorker<Env extends AgentEnv>(next: AstroHandler<En
   const handler = createMcpHandler(({ requestInfo }) => {
     const lease = requestInfo && leases.get(requestInfo);
     if (!lease) throw new Error('CONTEXT_UNAVAILABLE');
-    const server = new McpServer(identity, { supportedProtocolVersions: MCP.protocolVersions, jsonSchemaValidator: validator, capabilities: MCP.capabilities });
+    const server = new McpServer(identity, { supportedProtocolVersions: MCP.protocolVersions, jsonSchemaValidator: validator, capabilities: { tools: { listChanged: false } } });
     TOOLS.forEach((tool, index) => server.registerTool(tool.name, {
       title: tool.title, description: tool.description,
       inputSchema: fromJsonSchema(INPUT_SCHEMAS[tool.name], validator), outputSchema: fromJsonSchema(outputs[index]!, validator),
@@ -176,7 +176,7 @@ export function createAgentMcpWorker<Env extends AgentEnv>(next: AstroHandler<En
         return { content: [{ type: 'text' as const, text: `${JSON.stringify(error instanceof ToolInputError ? invalid : unavailable, null, 2)}\n` }], isError: true };
       } finally { lease.jobs--; lease.release(); }
     }));
-    server.server.registerCapabilities(MCP.capabilities);
+    server.server.registerCapabilities({ tools: { listChanged: false } });
     return server;
   }, { legacy: 'stateless', responseMode: 'sse', maxRequestBodySize: MAX_BODY });
 

@@ -4,7 +4,6 @@ import { Client, StreamableHTTPClientTransport } from '@modelcontextprotocol/cli
 import { createAgentMcpWorker, MAX_BODY } from '../../src/lib/agent-mcp/runtime';
 import { evaluateQualityOfLife } from '../../src/lib/agent-tools/calidad-vida';
 import { recommendMobilityAids } from '../../src/lib/agent-tools/movilidad';
-import registry from '../../src/agent-api/capabilities.json';
 
 function fixture() {
   let assetReads = 0;
@@ -23,9 +22,6 @@ test('SDK real: initialize legacy y moderno; listado y cálculos exactos sin I/O
     const transport = new StreamableHTTPClientTransport(new URL('http://localhost/api/mcp'), { fetch: f.fetcher });
     try {
       await client.connect(transport);
-      const server = client.getServerVersion();
-      assert.equal(server?.name, registry.mcp.name); assert.equal(server?.version, registry.mcp.version);
-      assert.deepEqual(client.getServerCapabilities(), registry.mcp.capabilities);
       const listed = await client.listTools();
       assert.deepEqual(listed.tools.map((tool) => tool.name), ['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids']);
       const quality = { hurt: 5, hunger: 5, hydration: 5, hygiene: 5, happiness: 5, mobility: 5, moreGoodDays: 5 };

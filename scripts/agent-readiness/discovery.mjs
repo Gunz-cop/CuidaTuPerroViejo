@@ -27,7 +27,6 @@ export const F3_ASSET_TYPES = new Map([
   ['/.well-known/ard.json', 'application/json; charset=utf-8'],
   ['/.well-known/ai-catalog.json', 'application/json; charset=utf-8'],
   ['/api/mcp/server-card', 'application/mcp-server-card+json'],
-  ['/.well-known/mcp/server-card.json', 'application/json; charset=utf-8'],
 ]);
 export const F3_LLMS_SECTION = '\n## Interfaces públicas de contenido\n\n'
   + '- [API Catalog](https://cuidatuperroviejo.com/.well-known/api-catalog): catálogo de operaciones públicas de lectura.\n'
