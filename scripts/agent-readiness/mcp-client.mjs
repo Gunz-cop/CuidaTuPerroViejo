@@ -6,6 +6,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { resolve } from 'node:path';
 import { createLocalHttpFetch } from './mcp-local-http.mjs';
+import { consumeControlResponse } from './mcp-control-response.mjs';
 
 const base = process.argv[2]; const output = process.argv[3];
 if (!base || !output) throw new Error('Usage: mcp-client.mjs <base-url> <private-output-dir>');
@@ -14,11 +15,12 @@ const localHttp = process.argv[4] === '--local-http';
 if (process.argv[4] && !localHttp) throw new Error('Unknown transport flag');
 if (localHttp && (root.protocol !== 'http:' || !['localhost', '127.0.0.1', '[::1]'].includes(root.hostname))) throw new Error('Local HTTP requires loopback');
 const observations = []; const results = []; let sentRequests = 0;
-const captures = new Map();
+const captures = new Map(); const responseTerminals = new WeakMap();
 const adapter = localHttp ? createLocalHttpFetch({ observe(event) {
   if (event.event === 'request') {
     const record = { at: new Date().toISOString(), method: event.method, url: event.url, requestHeaders: event.headers, protocolVersion: event.headers['mcp-protocol-version'] ?? null, requestBody: '', requestBytesSent: 0, body: '', bytes: 0, complete: false, transport: 'node:http' };
-    observations.push(record); captures.set(event.exchange, { record, request: [], response: [] });
+    let settle; const terminal = new Promise(resolve => { settle = resolve; });
+    observations.push(record); captures.set(event.exchange, { record, request: [], response: [], terminal, settle });
   }
   const c = captures.get(event.exchange); if (!c) return;
   if (event.event === 'request-chunk') { c.record.requestBytesSent += event.bytes.length; if (c.record.requestBytesSent <= 65536) c.request.push(event.bytes); else c.record.requestCaptureTruncated = true; }
@@ -27,6 +29,7 @@ const adapter = localHttp ? createLocalHttpFetch({ observe(event) {
   if (['end', 'cancel', 'error'].includes(event.event)) {
     const request = Buffer.concat(c.request), response = Buffer.concat(c.response);
     Object.assign(c.record, { requestBody: request.toString('utf8'), requestBodyBase64: request.toString('base64'), requestSha256: hash(request), body: response.toString('utf8'), bodyBase64: response.toString('base64'), sha256: hash(response), complete: event.event === 'end', terminal: event.event, ...(event.error ? { transportError: event.error } : {}), ...(event.reason ? { cancelReason: event.reason } : {}) });
+    c.settle(event.event);
   }
 } }) : null;
 await mkdir(resolve(output), { recursive: true });
@@ -34,7 +37,11 @@ const hash = (value) => createHash('sha256').update(value).digest('hex');
 async function capture(input, init) {
   if (localHttp) {
     if (++sentRequests > 320) throw new Error('LOCAL_MATRIX_REQUEST_BUDGET');
+    const position = observations.length;
     const response = await adapter.fetch(input, init);
+    const record = observations[position];
+    const captured = [...captures.values()].find(c => c.record === record);
+    responseTerminals.set(response, () => captured.terminal);
     if (response.status >= 300 && response.status < 400) { await response.body?.cancel('redirect-not-followed'); throw new Error('Redirect not followed'); }
     return response;
   }
@@ -51,7 +58,8 @@ function domain(result, modern) {
   assert.deepEqual(JSON.parse(result.content[0].text), value);
   return value;
 }
-async function api(path) { const r = await capture(new URL(path, root)); assert.equal(r.status, 200); return r.json(); }
+async function control(input, init) { const response = await capture(input, init); return consumeControlResponse(response, { terminal: responseTerminals.get(response) }); }
+async function api(path) { const r = await control(new URL(path, root)); assert.equal(r.status, 200); return r.json(); }
 try {
   for (const modern of [false, true]) {
     const client = new Client({ name: 'ctpv-f4b-evidence', version: '1.0.0' }, modern ? { versionNegotiation: { mode: { pin: '2026-07-28' } } } : {});
@@ -113,7 +121,7 @@ try {
           assert.deepEqual(domain(await client.callTool({ name: 'search_guides', arguments: { q } }), true), await api(`/api/agent/v1/search?${new URLSearchParams({ q })}`));
         }
         const empty = await client.callTool({ name: 'search_guides', arguments: { q: '' } });
-        assert.equal(empty.isError, true); const emptyApi = await capture(new URL('/api/agent/v1/search?q=', root)); assert.equal(emptyApi.status, 400);
+        assert.equal(empty.isError, true); const emptyApi = await control(new URL('/api/agent/v1/search?q=', root)); assert.equal(emptyApi.status, 400);
         assert.deepEqual(JSON.parse(empty.content[0].text), await emptyApi.json());
         const changed = await client.callTool({ name: 'read_guide', arguments: { documentId: id, corpus: '0'.repeat(64) } });
         assert.equal(changed.isError, true); assert.equal(JSON.parse(changed.content[0].text).error.code, 'CORPUS_CHANGED');
@@ -122,13 +130,13 @@ try {
       results.push({ era: modern ? '2026-07-28' : '2025-11-25', tools: list.tools.map((tool) => tool.name), searchTotal: search.total, documentId: id, markdownSha256: read.document.markdownSha256, qualityScore: qualityResult.score, qualityBand: qualityResult.band, status: 'PASS' });
     } finally { await client.close(); }
   }
-  const cardResponse = await capture(new URL('/api/mcp/server-card', root)); assert.equal(cardResponse.status, 200); assert.equal(cardResponse.headers.get('Content-Type'), 'application/mcp-server-card+json');
+  const cardResponse = await control(new URL('/api/mcp/server-card', root)); assert.equal(cardResponse.status, 200); assert.equal(cardResponse.headers.get('Content-Type'), 'application/mcp-server-card+json');
   const card = await cardResponse.json(); assert.equal(card.name, 'cuidatuperroviejo.com/guias-herramientas'); assert.deepEqual(card.remotes[0].supportedProtocolVersions, ['2026-07-28', '2025-11-25']);
   const ard = await api('/.well-known/ard.json'); const entry = ard.entries.find((entry) => entry.type === 'application/mcp-server-card+json'); assert.equal(entry.url, 'https://cuidatuperroviejo.com/api/mcp/server-card');
   const h = { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream', 'MCP-Protocol-Version': '2026-07-28', 'Mcp-Method': 'server/discover' };
   const discover = { jsonrpc: '2.0', id: 900, method: 'server/discover', params: { _meta: { 'io.modelcontextprotocol/protocolVersion': '2026-07-28', 'io.modelcontextprotocol/clientCapabilities': {} } } };
-  for (const method of ['GET', 'HEAD', 'DELETE', 'PUT']) { const r = await capture(new URL('/api/mcp', root), { method }); assert.equal(r.status, 405); assert.equal(r.headers.get('Allow'), 'POST, OPTIONS'); if (method === 'HEAD') assert.equal(await r.text(), ''); }
-  const send = (body, headers = h) => capture(new URL('/api/mcp', root), { method: 'POST', headers, body: typeof body === 'string' ? body : JSON.stringify(body) });
+  for (const method of ['GET', 'HEAD', 'DELETE', 'PUT']) { const r = await control(new URL('/api/mcp', root), { method }); assert.equal(r.status, 405); assert.equal(r.headers.get('Allow'), 'POST, OPTIONS'); if (method === 'HEAD') assert.equal(await r.text(), ''); }
+  const send = (body, headers = h) => control(new URL('/api/mcp', root), { method: 'POST', headers, body: typeof body === 'string' ? body : JSON.stringify(body) });
   assert.equal((await send(discover, { ...h, Origin: 'null' })).status, 403);
   assert.equal((await send(discover, { ...h, Origin: root.origin })).headers.get('Access-Control-Allow-Origin'), root.origin);
   assert.equal((await send(discover, { ...h, 'MCP-Session-Id': 'forbidden' })).status, 400);
@@ -143,7 +151,7 @@ try {
   assert.deepEqual(await modernPing.json(), { jsonrpc: '2.0', id: 900, error: { code: -32601, message: 'Method not found.' } });
   const legacyPing = await send({ jsonrpc: '2.0', id: 901, method: 'ping', params: {} }, { 'Content-Type': 'application/json', Accept: h.Accept, 'MCP-Protocol-Version': '2025-11-25' });
   assert.equal(legacyPing.status, 200); assert.match(await legacyPing.text(), /"result":\{\}/u);
-  const preflight = await capture(new URL('/api/mcp', root), { method: 'OPTIONS', headers: { Origin: root.origin, 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'mcp-protocol-version,mcp-method,mcp-name,content-type' } }); assert.equal(preflight.status, 204);
+  const preflight = await control(new URL('/api/mcp', root), { method: 'OPTIONS', headers: { Origin: root.origin, 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'mcp-protocol-version,mcp-method,mcp-name,content-type' } }); assert.equal(preflight.status, 204);
   if (localHttp) await localDefenses(h, discover);
   results.push({ criterion: 'C07/C08', methods: 4, modernPing: 404, legacyPing: 200, origin: 'PASS', cors: 'PASS', sessions: 'stateless', legacyCancelled: 202, oversized: 413, malformed: 'PASS', status: 'PASS' });
   await writeFile(resolve(output, 'result.json'), JSON.stringify({ base, transport: localHttp ? 'node:http' : 'Node fetch', product: localHttp ? '192dcdd52d2790652ef2dbcb6d23a0f5006ade43' : undefined, harnessCommit: localHttp ? process.env.F4B_HARNESS_COMMIT : undefined, at: new Date().toISOString(), status: 'PASS', results, limitations: ['Este harness no acredita por sí solo UI/WebMCP, presupuesto, cancelación, todosIDs o receipt de build.'] }, null, 2) + '\n');
@@ -155,7 +163,7 @@ try {
 
 async function localDefenses(h, discover) {
   const endpoint = new URL('/api/mcp', root);
-  const send = (body, extra = {}) => capture(endpoint, { method: 'POST', headers: h, body: typeof body === 'string' || body instanceof ReadableStream ? body : JSON.stringify(body), ...extra });
+  const send = (body, extra = {}) => control(endpoint, { method: 'POST', headers: h, body: typeof body === 'string' || body instanceof ReadableStream ? body : JSON.stringify(body), ...extra });
   const read = async response => { const text = await response.text(); return { status: response.status, text }; };
   const stream = text => new ReadableStream({ start(c) { c.enqueue(Buffer.from(text)); c.close(); } });
   const text = JSON.stringify(discover); const atLimit = text + ' '.repeat(32768 - Buffer.byteLength(text));
