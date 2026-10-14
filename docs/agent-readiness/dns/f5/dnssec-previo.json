@@ -1,0 +1,77 @@
+{
+  "recordedAt": "2026-10-14T20:27:42.278Z",
+  "registrar": {
+    "current_registrar": "Cloudflare",
+    "cloudflare_registration": true,
+    "last_known_status": "registrationActive",
+    "name_servers": [
+      "eric.ns.cloudflare.com",
+      "lola.ns.cloudflare.com"
+    ],
+    "ds_records": [],
+    "source": "Private Registrar GET tool result; contact data excluded"
+  },
+  "publicDsObservation": {
+    "url": "https://dns.google/resolve?name=cuidatuperroviejo.com&type=DS&do=1",
+    "httpStatus": 200,
+    "dnsResponse": {
+      "Status": 0,
+      "TC": false,
+      "RD": true,
+      "RA": true,
+      "AD": false,
+      "CD": false,
+      "Question": [
+        {
+          "name": "cuidatuperroviejo.com.",
+          "type": 43
+        }
+      ],
+      "Authority": [
+        {
+          "name": "CK0POJMG874LJREF7EFN8430QVIT8BSM.com.",
+          "type": 50,
+          "TTL": 900,
+          "data": "1 1 0 - CK0Q35HRS4H76G6CHNB9414CJN6S5UPL NS SOA RRSIG DNSKEY NSEC3PARAM"
+        },
+        {
+          "name": "CK0POJMG874LJREF7EFN8430QVIT8BSM.com.",
+          "type": 46,
+          "TTL": 900,
+          "data": "nsec3 13 2 900 1792542373 1791933373 41446 com. WGu9eCYN4llrPDQrAGMwuJAr6dW0g2lyD6XJ3y97RBM3MStpEvNq3sXWizdX1obtpIQFpXhCAgOOZwjMGnIkSA=="
+        },
+        {
+          "name": "com.",
+          "type": 6,
+          "TTL": 900,
+          "data": "a.gtld-servers.net. nstld.verisign-grs.com. 1792009639 1800 900 604800 900"
+        },
+        {
+          "name": "com.",
+          "type": 46,
+          "TTL": 900,
+          "data": "soa 13 1 900 1792614439 1792005439 41446 com. fxpK2mOjhoWRhWwchkiy9QnklbxGEKr6A/OHJaXCrNK3Wq4S/JPjZtAzyF2aPqyTkgemva23As/oz+SqeX+Mpw=="
+        },
+        {
+          "name": "8LV2VJFQU3ETQB0II3QPS1JQ29RPRTUJ.com.",
+          "type": 50,
+          "TTL": 900,
+          "data": "1 1 0 - 8LV33R9KJGMBJ3RKL6AEN1O7QV7ASRQN NS DS RRSIG"
+        },
+        {
+          "name": "8LV2VJFQU3ETQB0II3QPS1JQ29RPRTUJ.com.",
+          "type": 46,
+          "TTL": 900,
+          "data": "nsec3 13 2 900 1792305885 1791696885 41446 com. pVeeS0SRkTHyTI/6KWp5RPlwbJxDfG/0Nici6loAaVIadMFqMTquajcSnHE4vz7wu525vygsOjQmn2u/aWKVjQ=="
+        }
+      ],
+      "Comment": "Response from 192.42.93.30."
+    },
+    "transport": "Browser Rendering DOM text and response metadata, not wire packet capture"
+  },
+  "cloudflareDohObservation": {
+    "httpStatus": 400,
+    "bodyTruncatedByConnector": true,
+    "classification": "Tool/HTTP failure; no valid DNS result, no product attribution"
+  }
+}
