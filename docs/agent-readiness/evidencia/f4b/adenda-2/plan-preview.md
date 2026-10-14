@@ -1,0 +1,11 @@
+# Plan finito del gate pendiente en Commit Preview
+
+Producto 192dcdd52d2790652ef2dbcb6d23a0f5006ade43, sin cambios; cliente SDK 2.3.1, Node 24.19.0 / Undici 7.29.0, transporte nativo Node fetch. Sólo host inmutable de Commit Preview admitido, UA ctpv-independent-f4b/1.0; guardia de origen/rutas/métodos antes de transmitir. No llamadas a contacto/admin/AI, ni URLs de producción. No retries ni redirects seguidos.
+
+Orden: C07 negativos y preflight; C08 streaming 32768/32769 y continuidad ping/batch, depth16/17 y metadata8192/8193; C09 dos uploads abiertos, tercero, abort/cancel y recuperación; deadline y petición inmediatamente posterior; ventana nueva sin solicitudes en tramos20s/20s/20s/1.2s; cliente MCP real moderno para91 llamadas, completar exactamente121POST incluyendo el handshake y todos los POST desde esa ventana; ventana nueva igual y recuperación. Cada status, cuerpo realmente consumido, tiempos, Cf-Ray y colo inferido quedan como originales privados. Los registros de upload son bytes observados por fetch, no una afirmación de bytes recibidos por Worker.
+
+Presupuesto global máximo320 solicitudes para este encargo, incluidos intentos. Ejecución nominal inferior160 solicitudes. Ninguna repetición para buscar429. C09 no determinable requiere decisión posterior del propietario. Ante bloqueo corregible del harness: máximo3 intentos/2horas desde su detección, conservar cada intento y descontar solicitudes; producto/SDK/configuración/contratos/riesgo escritura/500 inesperado implican STOP directo. Deadline500 sólo según suplemento exacto. Fallos de plataforma también STOP para revisión del propietario.
+
+La evidencia local histórica y la matriz positiva de28documentos no se repiten: este cliente sólo completa controles pendientes. Los fixtures focales prueban el capturador y su ciclo de vida; no constituyen evidencia de integración MCP. La matriz remota usa Client y StreamableHTTPClientTransport reales.
+
+C12: la evidencia aceptada del build de producto192dcdd (VersionID81e32ad7-e16a-4b12-aba9-81589f0651e3) sigue identificada con ese build. No se atribuye al nuevo preview ni se vuelve a consultar contacto, prohibido por este encargo. El nuevo receipt y la equivalencia de fuente se documentan separadamente; cualquier gate de identidad pendiente debe resolverse por auditoría, sin inventar evidencia de HTTP.

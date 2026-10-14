@@ -15,14 +15,14 @@ export function createPreviewEvidence(base, { budget = 320, userAgent = 'ctpv-in
     const original = new Request(input, init); const url = new URL(original.url);
     if (url.origin !== root.origin || !allowed(url.pathname) || url.username || url.password || url.hash || /%2f|%5c|\.\./iu.test(url.pathname)) throw new Error('Request outside read-only preview allowlist.');
     if (!['GET', 'HEAD', 'POST', 'OPTIONS', 'DELETE', 'PUT'].includes(original.method) ||
-      (original.method === 'POST' && url.pathname !== '/api/mcp') || original.headers.has('Authorization') || original.headers.has('Cookie')) throw new Error('Unsafe request rejected before transmission.');
+      (url.pathname !== '/api/mcp' && !['GET', 'HEAD', 'OPTIONS'].includes(original.method)) || original.headers.has('Authorization') || original.headers.has('Cookie')) throw new Error('Unsafe request rejected before transmission.');
     if (++count > budget) throw new Error('REQUEST_BUDGET_EXCEEDED');
     const controller = new AbortController(); const signal = AbortSignal.any([original.signal, controller.signal]); active.add(controller);
     const headers = new Headers(original.headers); headers.set('User-Agent', userAgent);
     const record = { sequence: count, at: new Date().toISOString(), method: original.method, url: original.url,
       requestHeaders: Object.fromEntries(headers), requestBytesObservedByFetch: 0, requestBodyComplete: !original.body,
       responseBytesObserved: 0, responseComplete: false, requestBodyBase64: '', bodyBase64: '', transport: 'Node fetch' };
-    records.push(record); const requestChunks = [], responseChunks = []; let responseReader, ended = false;
+    records.push(record); const requestChunks = [], responseChunks = []; let responseReader, outputController, ended = false;
     const finish = (terminal, error) => {
       if (ended) return; ended = true; active.delete(controller);
       const request = Buffer.concat(requestChunks), response = Buffer.concat(responseChunks);
@@ -51,6 +51,7 @@ export function createPreviewEvidence(base, { budget = 320, userAgent = 'ctpv-in
       if (!response.body) { finish('end'); return response; }
       responseReader = response.body.getReader();
       const captured = new ReadableStream({
+        start(c) { outputController = c; },
         async pull(c) {
           try {
             const { done, value } = await responseReader.read();
@@ -65,9 +66,9 @@ export function createPreviewEvidence(base, { budget = 320, userAgent = 'ctpv-in
             c.enqueue(value);
           } catch (error) { finish('error', error); c.error(error); }
         },
-        async cancel(reason) { controller.abort(reason); await responseReader.cancel(reason).catch(() => {}); finish('cancel', new Error(String(reason))); },
+        async cancel(reason) { finish('cancel', new Error(String(reason))); await responseReader.cancel(reason).catch(() => {}); },
       });
-      signal.addEventListener('abort', () => { void responseReader.cancel(signal.reason).catch(() => {}); finish('error', signal.reason); }, { once: true });
+      signal.addEventListener('abort', () => { if (ended) return; finish('error', signal.reason); outputController.error(signal.reason); void responseReader.cancel(signal.reason).catch(() => {}); }, { once: true });
       const result = new Response(captured, { status: response.status, statusText: response.statusText, headers: response.headers });
       Object.defineProperty(result, 'url', { value: response.url }); return result;
     } catch (error) { finish('error', error); throw error; }
