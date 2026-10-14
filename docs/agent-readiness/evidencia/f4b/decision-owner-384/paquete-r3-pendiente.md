@@ -1,0 +1,12 @@
+# Paquete R3/5 — índice preparatorio, no revisión iniciada
+
+1. Base técnica F4A cb8e10f y cierre documental a42a185, contratos/schemas reutilizados y diff de integración pendiente contra identidad final aceptada.
+2. SDD ratificada y su historial intacto; adenda1 PASS/ratificada y adenda2 admitida, precisiones exactas y decisiones posteriores del propietario.
+3. R1/5 y R2/5 implementación: FAIL históricos literales, cuatro bloqueantes R1 y sus correcciones/evidencia R2 preservados; contador próximo R3/5, mismo auditor /root/f4b_auditor Sol/high. No reset.
+4. Evidencia local: positivos ambas eras, cuatro tools, corpus20+8/28 lecturas y hashes, paridad F3/F4A, correcciones de cancelación/deadline, mediciones CPU/heap exitosas, originales de todos los fallos locales/harness/toolchains. Gate local cerrado como limitación admitida, nunca PASS retrospectivo.
+5. Preview384f520/927916b4: receipt SHA/build/version reales, CI, reconstrucción, C12 «80 byteexactos + contacto con equivalencia restringida», 81 pares originales; cuotas con SDK real y Cf-Ray, noDet aceptado con limitación por el propietario. C07/C08 y cap de previewe21374c/40fed98d conservan identidad propia; auditor debe evaluar suficiencia de esos alcances, sin transferir recibos ni cuerpos a otro SHA por igualdad de fuente.
+6. Deadline externo: **pendiente**, paquete admitido SHA2562ab84cd3…0673a, Windows11/Node24.19.0/SDK2.3.1, único intento≤6 requests por el propietario contra927916b4. Recepción/índice/resultados originales todavía inexistentes; no solicitarlos al auditor como prueba anticipada. Clasificación del503 Envoy previo es decisión del propietario, no FAIL de producto ni repetición permitida en ese entorno.
+7. Mitigación WAF de plataforma: issue103 separado, propuesta sin implementación ni protección efectiva prometida; no bloquea F4B por decisión expresa.
+8. Rollback: referencia d6f4bdd y actualización5988ef3 cubren fuente26deltas a F4A, con comandos preparados y alcances declarados. Revisar/actualizar contra SHA que efectivamente se integre. C13 y ensayo aplicable según normas, sin atribuir ensayo histórico a un tree nuevo.
+
+Antes de remitir: fijar commit/tree de entrega real, adjuntar índice de originales curados y privados accesibles, verificar gates afectados y no reescribir FAILs. No solicitar R3 hasta archivar el resultado externo. R3 sólo bloqueantes, mismo auditor; conservar máximo5 revisiones por issue y STOPquintaFAIL. Sin merge/main/producción hasta dictamen R3 y gates/autorizaciones vigentes; sin scans/score/F5/F6.
