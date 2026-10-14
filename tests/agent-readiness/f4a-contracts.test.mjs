@@ -73,7 +73,7 @@ test('API Catalog, ARD, skill y llms anuncian exactamente las operaciones implem
   ]);
   assert.equal(linkset.linkset.length, 2);
   const ard = JSON.parse(result.assets.ard.toString('utf8'));
-  assert.equal(ard.entries.length, 3);
+  assert.equal(ard.entries.length, 2);
   assert.equal(ard.entries[0].description, 'API pública de catálogo, búsqueda léxica y lectura íntegra del corpus editorial publicado, y cálculo de sus dos herramientas educativas.');
   assert.deepEqual(ard.entries[0].representativeQueries.slice(3), ['Calcula la escala HHHHHMM de calidad de vida de un perro mayor.', 'Recomienda ayudas de movilidad para un perro mayor con debilidad trasera.']);
   const skill = await readFile(join(ROOT, 'src/agent-skills/buscar-leer-citar/SKILL.md'));
@@ -82,11 +82,7 @@ test('API Catalog, ARD, skill y llms anuncian exactamente las operaciones implem
   const skills = JSON.parse(result.assets.skillsIndex.toString('utf8'));
   assert.equal(skills.skills[0].digest, `sha256:${hash(skill)}`);
   assert.ok(F3_LLMS_SECTION.includes('- [OpenAPI](https://cuidatuperroviejo.com/agent-api/v1/openapi.json): contrato de catálogo, búsqueda, lectura íntegra y cálculos de las dos herramientas.\n'));
-  assert.doesNotMatch(F3_LLMS_SECTION, /webmcp/iu);
-  assert.equal(F3_LLMS_SECTION.match(/\[MCP remoto\]/gu)?.length, 1);
-  assert.ok(F3_LLMS_SECTION.endsWith('- [MCP remoto](https://cuidatuperroviejo.com/api/mcp/server-card): transporte público para buscar, leer y ejecutar las dos herramientas educativas.\n'));
-  assert.equal(ard.entries[1].type, 'application/mcp-server-card+json');
-  assert.equal(ard.entries[1].url, `${SITE}/api/mcp/server-card`);
+  assert.doesNotMatch(F3_LLMS_SECTION, /webmcp|mcp/iu);
 });
 
 test('el registro cerrado rechaza operaciones no implementadas y ejemplos alterados', async (t) => {

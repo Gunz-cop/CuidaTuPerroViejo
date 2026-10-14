@@ -15,7 +15,6 @@ export const DISCOVERY_LINKS = [
   '<https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json"',
   '<https://cuidatuperroviejo.com/.well-known/ard.json>; rel="ard"; type="application/json"',
   '<https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json"',
-  '<https://cuidatuperroviejo.com/api/mcp/server-card>; rel="service-desc"; type="application/mcp-server-card+json"',
 ];
 const LINK = `Link: ${DISCOVERY_LINKS.join(', ')}`;
 export const F3_ASSET_TYPES = new Map([
@@ -26,14 +25,12 @@ export const F3_ASSET_TYPES = new Map([
   ['/.well-known/agent-skills/buscar-leer-citar/SKILL.md', 'text/markdown; charset=utf-8'],
   ['/.well-known/ard.json', 'application/json; charset=utf-8'],
   ['/.well-known/ai-catalog.json', 'application/json; charset=utf-8'],
-  ['/api/mcp/server-card', 'application/mcp-server-card+json'],
 ]);
 export const F3_LLMS_SECTION = '\n## Interfaces públicas de contenido\n\n'
   + '- [API Catalog](https://cuidatuperroviejo.com/.well-known/api-catalog): catálogo de operaciones públicas de lectura.\n'
   + '- [OpenAPI](https://cuidatuperroviejo.com/agent-api/v1/openapi.json): contrato de catálogo, búsqueda, lectura íntegra y cálculos de las dos herramientas.\n'
   + '- [Skills](https://cuidatuperroviejo.com/.well-known/agent-skills/index.json): instrucciones verificables para buscar, leer y citar.\n'
-  + '- [ARD](https://cuidatuperroviejo.com/.well-known/ard.json): capacidades públicas activas.\n'
-  + '- [MCP remoto](https://cuidatuperroviejo.com/api/mcp/server-card): transporte público para buscar, leer y ejecutar las dos herramientas educativas.\n';
+  + '- [ARD](https://cuidatuperroviejo.com/.well-known/ard.json): capacidades públicas activas.\n';
 
 function completeLlms(prefix) {
   const bytes = Buffer.concat([prefix, Buffer.from(F3_LLMS_SECTION, 'utf8')]);

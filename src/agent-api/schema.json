@@ -1021,8 +1021,7 @@
               "identifier": {
                 "enum": [
                   "urn:air:cuidatuperroviejo.com:api:contenido",
-                  "urn:air:cuidatuperroviejo.com:skill:buscar-leer-citar",
-                  "urn:air:cuidatuperroviejo.com:mcp:guias-herramientas"
+                  "urn:air:cuidatuperroviejo.com:skill:buscar-leer-citar"
                 ]
               },
               "displayName": {
@@ -1032,8 +1031,7 @@
               "type": {
                 "enum": [
                   "application/vnd.oai.openapi+json",
-                  "text/markdown",
-                  "application/mcp-server-card+json"
+                  "text/markdown"
                 ]
               },
               "url": {
@@ -1057,8 +1055,8 @@
             },
             "additionalProperties": false
           },
-          "minItems": 3,
-          "maxItems": 3
+          "minItems": 2,
+          "maxItems": 2
         }
       },
       "additionalProperties": false

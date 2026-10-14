@@ -58,12 +58,11 @@ test('OpenAPI, Linkset, skills discovery, artifact digest, and both ARD manifest
   });
   assert.deepEqual(ard.entries.map(({ identifier }) => identifier), [
     'urn:air:cuidatuperroviejo.com:api:contenido',
-    'urn:air:cuidatuperroviejo.com:mcp:guias-herramientas',
     'urn:air:cuidatuperroviejo.com:skill:buscar-leer-citar',
   ]);
-  assert.deepEqual(ard.entries[2].representativeQueries, capabilities.skills[0].representativeQueries);
+  assert.deepEqual(ard.entries[1].representativeQueries, capabilities.skills[0].representativeQueries);
   assert.deepEqual(ard.entries[0].representativeQueries, capabilities.ardApiEntry.representativeQueries);
-  assert.deepEqual(Object.keys(result.assets), ['queryIndex', 'openapi', 'linkset', 'skillsIndex', 'skill', 'ard', 'mcpCard']);
+  assert.deepEqual(Object.keys(result.assets), ['queryIndex', 'openapi', 'linkset', 'skillsIndex', 'skill', 'ard']);
   assert.ok(!Object.keys(result.assets).some((key) => key.toLowerCase().includes('llms')));
 });
 
