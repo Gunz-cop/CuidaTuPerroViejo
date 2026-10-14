@@ -14,7 +14,7 @@ export function createLocalHttpFetch({ observe = () => {} } = {}) {
     request.signal.throwIfAborted();
     const exchange = ++sequence;
     return new Promise((resolve, reject) => {
-      let incoming, controller, settled = false, finished = false, uploadStopped = false;
+      let incoming, controller, settled = false, finished = false, terminal = false, uploadStopped = false;
       const upload = request.body?.getReader();
       const outgoing = http.request(url, { method: request.method, headers: Object.fromEntries(request.headers), agent });
       const stopUpload = (reason) => {
@@ -26,8 +26,9 @@ export function createLocalHttpFetch({ observe = () => {} } = {}) {
         request.signal.removeEventListener('abort', signalAbort); exchanges.delete(abort);
         stopUpload(); emit(exchange, event, fields);
       };
+      // Terminal before destroying sockets: destroy() re-enters via 'aborted'/'error' and must not replace the first reason.
       const fail = (error) => {
-        if (finished) return;
+        if (terminal) return; terminal = true;
         stopUpload(error); incoming?.destroy(error); outgoing.destroy(error);
         if (!settled) { settled = true; reject(error); }
         else { try { controller?.error(error); } catch {} }
@@ -51,12 +52,13 @@ export function createLocalHttpFetch({ observe = () => {} } = {}) {
           async pull(c) {
             try {
               const { done, value } = await iterator.next();
-              if (finished) return;
-              if (done) { c.close(); cleanup('end'); return; }
+              if (terminal) return;
+              if (done) { terminal = true; c.close(); cleanup('end'); return; }
               emit(exchange, 'response-chunk', { bytes: Buffer.from(value) }); c.enqueue(new Uint8Array(value));
             } catch (error) { fail(error); }
           },
           cancel(reason) {
+            if (terminal) return; terminal = true;
             stopUpload(reason); incoming.destroy(); outgoing.destroy(); cleanup('cancel', { reason: String(reason) });
           },
         }, { highWaterMark: 0 });
@@ -64,7 +66,7 @@ export function createLocalHttpFetch({ observe = () => {} } = {}) {
           const result = new Response(stream, { status: response.statusCode, statusText: response.statusMessage, headers: h });
           Object.defineProperty(result, 'url', { value: request.url });
           settled = true; resolve(result);
-          if (noBody) { response.resume(); response.once('end', () => cleanup('end')); }
+          if (noBody) { response.resume(); response.once('end', () => { if (!terminal) { terminal = true; cleanup('end'); } }); }
         } catch (error) { fail(error); }
       });
       if (request.signal.aborted) { abort(); return; }
