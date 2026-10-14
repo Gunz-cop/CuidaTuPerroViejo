@@ -1,0 +1,25 @@
+{
+  "head": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+  "tree": "6a2c50cc3e28c30389668bd70070b8cb545c36bd",
+  "scope": "full raw manifests retain byte hashes; this disposition explains compiled server differences and does not claim raw server byte equality",
+  "entryExactAfter3AuthorizedChangesAndDeclaredPathReferences": true,
+  "entrypointOtherCodeEqual": true,
+  "manifestDifferences": [
+    {
+      "field": "key",
+      "scope": "generated Astro build encryption metadata; value omitted",
+      "baseSha256": "dedbd8e7a0bda9d69e69ca9a156e395a66918b272cdf37f5f347449cbf6d7286",
+      "candidateSha256": "84518a3b7f3ca4e46db07675eb190615aa51f1222645eb0113f3c9885ee91715"
+    },
+    {
+      "field": "assets",
+      "sameSet": true,
+      "baseCount": 266,
+      "candidateCount": 266,
+      "orderChanged": true
+    }
+  ],
+  "allOtherChunksEquivalentAfterDeclaredPathReferences": true,
+  "privateFullSourceDiff": "server-semantic-diff-7e389.txt",
+  "status": "PASS"
+}

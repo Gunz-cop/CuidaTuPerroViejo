@@ -1,0 +1,830 @@
+{
+  "schemaVersion": "mcp-discovery104-r2-evidence-index/1",
+  "recordedAt": "2026-10-14T14:46:27.200991+00:00",
+  "head": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+  "tree": "6a2c50cc3e28c30389668bd70070b8cb545c36bd",
+  "baseHead": "b2ab1082c02799dab4306a7c167a6114c0163a90",
+  "baseTree": "59dd444439b4f78018eba4a010b25840c4bdd87b",
+  "rollbackHead": "0f3c03ef72a5f53d268d354bc7b3210d01e0674a",
+  "rollbackTree": "2553b9fbe96711e7cc72138174f3a13051476066",
+  "counter": "R1/5 contract PASS; pending R2/5 same independent auditor, maximum5 no reset",
+  "root": "/workspace/discovery104-originals",
+  "accessible": true,
+  "files": [
+    {
+      "path": "/workspace/discovery104-originals/base-build-2.log",
+      "relativePath": "base-build-2.log",
+      "bytes": 4214,
+      "sha256": "8fea2bb0d28f51c09a119d4e9678640535c934544bbb89df5ef96adfd6df18fd",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/base-build-manifest.json",
+      "relativePath": "base-build-manifest.json",
+      "bytes": 76286,
+      "sha256": "6203f17ac2315d8089bcb35e28d7a16a4d61f25e4bd2af90d2618650eec73277",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/base-build.log",
+      "relativePath": "base-build.log",
+      "bytes": 889,
+      "sha256": "68f813056d6cf2c8dd274d16ac0bebfb89ac3106fb30614e72e63f18bb5f2102",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/before/base-check-runs.raw.json",
+      "relativePath": "before/base-check-runs.raw.json",
+      "bytes": 6918,
+      "sha256": "dc4321fd23424cac725d3f35937ecfdb081a8915c24c5b62b5a7b9bf5e42c4cd",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/before/card-vs-base-build.json",
+      "relativePath": "before/card-vs-base-build.json",
+      "bytes": 439,
+      "sha256": "7eddbafd3b0bb6e1d925a5c6b6e7d458d52ad584b76f6ab2d5d4e0a29a96515b",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/before/existing-card.body",
+      "relativePath": "before/existing-card.body",
+      "bytes": 559,
+      "sha256": "aeea988a8e92d68085716e88755dae917215708953bbd0002a80ebd576ae1f84",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/before/existing-card.headers",
+      "relativePath": "before/existing-card.headers",
+      "bytes": 1841,
+      "sha256": "eb8f6e0d79bde8426ca74700fbafae4785862acf3a225b1f32e78a61a1a58ca0",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/before/receipt.json",
+      "relativePath": "before/receipt.json",
+      "bytes": 1498,
+      "sha256": "8f06181af51160aeed136531a9f9fcd6fe017ea8fb8f8e2acdc196191a653a2d",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/before/well-known-card.body",
+      "relativePath": "before/well-known-card.body",
+      "bytes": 29495,
+      "sha256": "1c6742b5ab785e0451fbb71ced0b7af4c5c28a2bc2e48625376fc681e54021ca",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/before/well-known-card.headers",
+      "relativePath": "before/well-known-card.headers",
+      "bytes": 1493,
+      "sha256": "a410e0080129046e6e7add9b6fead2eda4a3dc7418fc0474529af59642f2fd5d",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/candidate-build.log",
+      "relativePath": "candidate-build.log",
+      "bytes": 4376,
+      "sha256": "7044836b9c3a4b9c026533d59b854b3348a2d146293e92f42a116f13722994e0",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/candidate-specs.log",
+      "relativePath": "candidate-specs.log",
+      "bytes": 71,
+      "sha256": "3522dc0c14d3c4670574a6361d0f060bbe81cbcf2d429b0904bf8ac4efe6f33b",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/candidate-tests-offline.log",
+      "relativePath": "candidate-tests-offline.log",
+      "bytes": 12507,
+      "sha256": "7a52cbc6f9573d8e91f031a0eb8946dd62998811b93aa28a3d14ac8a41574cc3",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/candidate-tests-ts.log",
+      "relativePath": "candidate-tests-ts.log",
+      "bytes": 7732,
+      "sha256": "757acc70ad0fd241b1bf0f7d9a4df665a7e782f75d5912b1691a20913894389d",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/check-runs-7e389-pending.raw.json",
+      "relativePath": "check-runs-7e389-pending.raw.json",
+      "bytes": 8066,
+      "sha256": "aa2e25b0e0b06a3c6f3bea34929ef26a4ce21bbb0de39ce00a58494aea0d259f",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/check-runs-7e389-success.raw.json",
+      "relativePath": "check-runs-7e389-success.raw.json",
+      "bytes": 8087,
+      "sha256": "c83ec6c3b756f98953638440c2057494e291f16af13da2579cf9ffb0f14bb3d8",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/ci-tree-identity-7e389.json",
+      "relativePath": "ci-tree-identity-7e389.json",
+      "bytes": 551,
+      "sha256": "a8fecf5c8e8bb50a7d0e0c17bbdad05457508074f3fb263eb958c46e7d0e44fb",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/expected-7e389.json",
+      "relativePath": "expected-7e389.json",
+      "bytes": 3230,
+      "sha256": "c0037426dfd3ef12581610431177738edcab6e58b078cf4166b7f11355afce68",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/local-server-cleanup.json",
+      "relativePath": "local-server-cleanup.json",
+      "bytes": 414,
+      "sha256": "0a71dbcd5019e95c36d3f8b0b93f04534d35a158d1943cd9ece3f8059f95bd6a",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/local-smoke-7e389/expected.json",
+      "relativePath": "local-smoke-7e389/expected.json",
+      "bytes": 3230,
+      "sha256": "c0037426dfd3ef12581610431177738edcab6e58b078cf4166b7f11355afce68",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/local-smoke-7e389/http-originals.json",
+      "relativePath": "local-smoke-7e389/http-originals.json",
+      "bytes": 372047,
+      "sha256": "9cf95509db453309a04733b45faea88f68e172335cfd38ba1c035d10d1dbca4f",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/local-smoke-7e389/result.json",
+      "relativePath": "local-smoke-7e389/result.json",
+      "bytes": 2873,
+      "sha256": "2c49197699fb46db356610bd1293f512b04f27fda7abc48547c8e47bc16b0d6c",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/local-smoke-7e389.log",
+      "relativePath": "local-smoke-7e389.log",
+      "bytes": 29,
+      "sha256": "0ff9262c527ae66dac118c6aa3d3f67ee67b1b7596501294499b2d2c3e064cfa",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/manifest-diff-7e389.json",
+      "relativePath": "manifest-diff-7e389.json",
+      "bytes": 145300,
+      "sha256": "71b94ca0689d65ad0934db0da1c6e4f740481c9298fd07438e95d2779a75e31d",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/preview-smoke-7e389/expected.json",
+      "relativePath": "preview-smoke-7e389/expected.json",
+      "bytes": 3230,
+      "sha256": "c0037426dfd3ef12581610431177738edcab6e58b078cf4166b7f11355afce68",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/preview-smoke-7e389/http-originals.json",
+      "relativePath": "preview-smoke-7e389/http-originals.json",
+      "bytes": 386230,
+      "sha256": "75ac4b2b145b78fcbe82b8350a79e29f4960e01c1431cda3f1690f6a364c4bf1",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/preview-smoke-7e389/receipt.json",
+      "relativePath": "preview-smoke-7e389/receipt.json",
+      "bytes": 10967,
+      "sha256": "2e9dd701e36f89da48227521a9053057b81bc2071adc505298dcb0f0bb32311f",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/preview-smoke-7e389/result.json",
+      "relativePath": "preview-smoke-7e389/result.json",
+      "bytes": 14353,
+      "sha256": "bac0b768c144e76ec44e0656b851d9ca19638721b192b347dcea50ef785268ab",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/preview-smoke-7e389.log",
+      "relativePath": "preview-smoke-7e389.log",
+      "bytes": 31,
+      "sha256": "58800ff93d8f0e784ebfae03240216a03495a9ededc40225a8825cbc7d22537e",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/prior-f4a/indice-originales.json",
+      "relativePath": "prior-f4a/indice-originales.json",
+      "bytes": 4541,
+      "sha256": "f2c9d20e6a1491de24406921adb179035662fb301d868460131e173b7362be7c",
+      "scope": "historical public curation; raw historical HTTP not present"
+    },
+    {
+      "path": "/workspace/discovery104-originals/prior-f4a/live-all-ui/manifest.json",
+      "relativePath": "prior-f4a/live-all-ui/manifest.json",
+      "bytes": 777,
+      "sha256": "5bfd643b2984b1d98d25373484e5caa3d721f77ec8fdb82cab20ae3b19b29d67",
+      "scope": "historical public curation; raw historical HTTP not present"
+    },
+    {
+      "path": "/workspace/discovery104-originals/prior-f4a/live-all-ui/request.json",
+      "relativePath": "prior-f4a/live-all-ui/request.json",
+      "bytes": 307,
+      "sha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+      "scope": "historical public curation; raw historical HTTP not present"
+    },
+    {
+      "path": "/workspace/discovery104-originals/prior-f4a/live-all-ui/response-metadata.json",
+      "relativePath": "prior-f4a/live-all-ui/response-metadata.json",
+      "bytes": 163,
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062",
+      "scope": "historical public curation; raw historical HTTP not present"
+    },
+    {
+      "path": "/workspace/discovery104-originals/prior-f4a/live-all-ui/summary.json",
+      "relativePath": "prior-f4a/live-all-ui/summary.json",
+      "bytes": 7186,
+      "sha256": "9d75babca72c3a9a0614b2b96196f1637d103e4ee03a6666f8a39ff550578e8a",
+      "scope": "historical public curation; raw historical HTTP not present"
+    },
+    {
+      "path": "/workspace/discovery104-originals/prior-f4a/live-content/manifest.json",
+      "relativePath": "prior-f4a/live-content/manifest.json",
+      "bytes": 777,
+      "sha256": "4a1b2fb5bdd98ddb834502edb452856a71424f1f690cca4fabdada8dd4ace436",
+      "scope": "historical public curation; raw historical HTTP not present"
+    },
+    {
+      "path": "/workspace/discovery104-originals/prior-f4a/live-content/request.json",
+      "relativePath": "prior-f4a/live-content/request.json",
+      "bytes": 160,
+      "sha256": "94daf42c1ee9ecfce1528d303e4b19d35e7544d8d38b6ac72ff56436708d2c21",
+      "scope": "historical public curation; raw historical HTTP not present"
+    },
+    {
+      "path": "/workspace/discovery104-originals/prior-f4a/live-content/response-metadata.json",
+      "relativePath": "prior-f4a/live-content/response-metadata.json",
+      "bytes": 163,
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062",
+      "scope": "historical public curation; raw historical HTTP not present"
+    },
+    {
+      "path": "/workspace/discovery104-originals/prior-f4a/live-content/summary.json",
+      "relativePath": "prior-f4a/live-content/summary.json",
+      "bytes": 5623,
+      "sha256": "0d7de873263089fe723fc1a8c5ccccb6082348aa07c13af9f49ed21f71d3689b",
+      "scope": "historical public curation; raw historical HTTP not present"
+    },
+    {
+      "path": "/workspace/discovery104-originals/prior-f4a/provenance.json",
+      "relativePath": "prior-f4a/provenance.json",
+      "bytes": 1859,
+      "sha256": "973bdb11d5bd3a0d895c5e717f78c229e50b3318a36aa19d924f566cc978686c",
+      "scope": "historical public curation; raw historical HTTP not present"
+    },
+    {
+      "path": "/workspace/discovery104-originals/prior-f4a/resultado.md",
+      "relativePath": "prior-f4a/resultado.md",
+      "bytes": 4849,
+      "sha256": "7f6106667d8e8a26572673c0d5edd92a87e2a0afb911e087918c32149212b667",
+      "scope": "historical public curation; raw historical HTTP not present"
+    },
+    {
+      "path": "/workspace/discovery104-originals/public-regression-7e389.json",
+      "relativePath": "public-regression-7e389.json",
+      "bytes": 2069,
+      "sha256": "a23720f9d8c891894f3649c2742154ac1aa640597e214a0f47ab905af8e0ee8a",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/receipt-7e389-preview.json",
+      "relativePath": "receipt-7e389-preview.json",
+      "bytes": 10967,
+      "sha256": "2e9dd701e36f89da48227521a9053057b81bc2071adc505298dcb0f0bb32311f",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-build-checks-tool-completion.json",
+      "relativePath": "resumed-build-checks-tool-completion.json",
+      "bytes": 1466,
+      "sha256": "42e289b482eb00ca3d070ca1b268d02f059080de0b3fce90e69a9b3a9fb32197",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-build-checks.log",
+      "relativePath": "resumed-build-checks.log",
+      "bytes": 139,
+      "sha256": "bcb35225205e05515f8f398bf7ae5cd93c07e05fb8558b89fb7ba77499dc3a5c",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-build.log",
+      "relativePath": "resumed-build.log",
+      "bytes": 4225,
+      "sha256": "451ab1a646eddae4b300d7111568fe382b148ca2856d3856d60783d49f616b23",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-inventory/inventory.json",
+      "relativePath": "resumed-inventory/inventory.json",
+      "bytes": 26589,
+      "sha256": "f49b54234884623c0a277ffb3a9d8f76a76ed2e84211881b266a8fafbc37d316",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-inventory/manifest.json",
+      "relativePath": "resumed-inventory/manifest.json",
+      "bytes": 325,
+      "sha256": "ac64f1c6cfd4a3962c27321beaaf7105e56806a8e7be1c6b0a1f1160d0c83123",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-offline.log",
+      "relativePath": "resumed-offline.log",
+      "bytes": 8456,
+      "sha256": "a1884f4084a79e20aa884168c2d54148d70b1b3870b8ad049353eac775484b7d",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-push.log",
+      "relativePath": "resumed-push.log",
+      "bytes": 137,
+      "sha256": "ef0b22802d8ce5a671e6963370b69e5f9aa7c3787a74168ade0f3b3d8aa1065b",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-types.log",
+      "relativePath": "resumed-types.log",
+      "bytes": 56998,
+      "sha256": "329769035abb989c4088fa78a0526c18f2b92f5acef35e9f6ae4210b61e7b836",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/README.md",
+      "relativePath": "resumed-worker-package/README.md",
+      "bytes": 118,
+      "sha256": "e0a2aab76b1f63adb5845f024378052deed9cd41fb21ad866b69eb5d325df52f",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/_astro_assets_kxmEPNOn.mjs",
+      "relativePath": "resumed-worker-package/chunks/_astro_assets_kxmEPNOn.mjs",
+      "bytes": 21937,
+      "sha256": "f406b798f31aac7da089fda01c796b3e511d731407f11fbb7c2d14745c70386d",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/_id__BgEqgRTg.mjs",
+      "relativePath": "resumed-worker-package/chunks/_id__BgEqgRTg.mjs",
+      "bytes": 2206,
+      "sha256": "d174debfb752d1366f42b80208fda2737bcb993ebac8cc3832eedd4ea012449a",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/_virtual_astro_server-island-manifest_q0HM18kM.mjs",
+      "relativePath": "resumed-worker-package/chunks/_virtual_astro_server-island-manifest_q0HM18kM.mjs",
+      "bytes": 275,
+      "sha256": "a596d3effa0156fa3ea7fe930baaf7a01c50c737002b15e63ca5ed8211d8e80c",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/_virtual_astro_session-driver_Cs7e1a5B.mjs",
+      "relativePath": "resumed-worker-package/chunks/_virtual_astro_session-driver_Cs7e1a5B.mjs",
+      "bytes": 3007,
+      "sha256": "20f250de628301520450cd617d463d066a77024f426645e0642bd422db917d19",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/ask_CXUtHJ9V.mjs",
+      "relativePath": "resumed-worker-package/chunks/ask_CXUtHJ9V.mjs",
+      "bytes": 16187,
+      "sha256": "94df03eb78c67627d71cf664455f5c8c4cec4d0ab5cf537801f75fb15aee64c9",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/assets_Bkh5ilNw.mjs",
+      "relativePath": "resumed-worker-package/chunks/assets_Bkh5ilNw.mjs",
+      "bytes": 14954,
+      "sha256": "89c0fbe3788d4c857e1bc6e6414130472c71755deec5b80209bc0be68c49fec3",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/compiler_BvYpzrLW.mjs",
+      "relativePath": "resumed-worker-package/chunks/compiler_BvYpzrLW.mjs",
+      "bytes": 1236,
+      "sha256": "f0ed2d6df4f7516fa606dce8c3582eafab5e209e41fb8697b38c6475359d6451",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/contact-messages_vsILU6Kg.mjs",
+      "relativePath": "resumed-worker-package/chunks/contact-messages_vsILU6Kg.mjs",
+      "bytes": 5796,
+      "sha256": "c361fc2aaf64c546ad9c788c1f6e9050fcc77be848675ad41fce340b49b778b2",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/contact_CZp7MTkQ.mjs",
+      "relativePath": "resumed-worker-package/chunks/contact_CZp7MTkQ.mjs",
+      "bytes": 243,
+      "sha256": "99bf6f78ecfd053580ae9a772b9e62a5205415ae35282064b3c221b7c82e5b05",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/contact_D7pTFIbM.mjs",
+      "relativePath": "resumed-worker-package/chunks/contact_D7pTFIbM.mjs",
+      "bytes": 8058,
+      "sha256": "2b34f35583447c0fd6edc404c6f4ffb242fadbc8cde57ce026f923cfa0bdd165",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/contacto_DeIxkhgb.mjs",
+      "relativePath": "resumed-worker-package/chunks/contacto_DeIxkhgb.mjs",
+      "bytes": 451,
+      "sha256": "f5b0f6da3301f0b7e20224c5d1138dd0884438f9e4a7e39d8f8a3db98eeb4dd4",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/email_C8A9mQLs.mjs",
+      "relativePath": "resumed-worker-package/chunks/email_C8A9mQLs.mjs",
+      "bytes": 1251,
+      "sha256": "8aa3109392818dbc5526bd7d30bbc225dbe17b78e49f23ef8e617c2c5891d169",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/entrypoints_BHV3MStW.mjs",
+      "relativePath": "resumed-worker-package/chunks/entrypoints_BHV3MStW.mjs",
+      "bytes": 259354,
+      "sha256": "e295814979d5ac57a0358ee779168a8ccf8dcc861698639ad1450bfd7cdf84ce",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/feedback_CBRxbbOc.mjs",
+      "relativePath": "resumed-worker-package/chunks/feedback_CBRxbbOc.mjs",
+      "bytes": 3274,
+      "sha256": "83f8b6200492c7c1e0bc4780358a60e763992a5e6faed10b4bd7bdd2bf9b5bf4",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/geo_pdsrN3jB.mjs",
+      "relativePath": "resumed-worker-package/chunks/geo_pdsrN3jB.mjs",
+      "bytes": 1130,
+      "sha256": "f1327ed617e2658ddd1303ba04ad7cf3e0f1f8c20273c80349b57d06ec2f5873",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/image-passthrough-endpoint_CXCSwkdO.mjs",
+      "relativePath": "resumed-worker-package/chunks/image-passthrough-endpoint_CXCSwkdO.mjs",
+      "bytes": 2337,
+      "sha256": "bfcec2116cd7b5737f4980565e011ba500776e9f4fc23fb795b4a395be060fc2",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/noop-entrypoint_BYLrzUxc.mjs",
+      "relativePath": "resumed-worker-package/chunks/noop-entrypoint_BYLrzUxc.mjs",
+      "bytes": 157,
+      "sha256": "25ddd55a0e9b4ad19b42312beb1eec1349989da20b8f7298abbe36488a9b73cb",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/noop_DGuoxGrT.mjs",
+      "relativePath": "resumed-worker-package/chunks/noop_DGuoxGrT.mjs",
+      "bytes": 692,
+      "sha256": "53d91716d236cd975d2ad365c538c6217d5a59acb51eb75fbbb1f47a04594df6",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/rolldown-runtime_D7vh-g_o.mjs",
+      "relativePath": "resumed-worker-package/chunks/rolldown-runtime_D7vh-g_o.mjs",
+      "bytes": 418,
+      "sha256": "3dfc8f5573008981d79137f5c860e1c16e8572b01845b879bfc711d438942d67",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/security_CODFIENT.mjs",
+      "relativePath": "resumed-worker-package/chunks/security_CODFIENT.mjs",
+      "bytes": 1793,
+      "sha256": "e5a377f3a38617f4f138af18308a54bba3c17618a8a0ec5d64cdd836f1a55a62",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/sequence_mxyf4VsR.mjs",
+      "relativePath": "resumed-worker-package/chunks/sequence_mxyf4VsR.mjs",
+      "bytes": 327265,
+      "sha256": "a2a8ed19a4ac8429a9ac144d1218a90514ddfa9378d62953e0bc0fd385fbbc5c",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/service_0xWrUt8A.mjs",
+      "relativePath": "resumed-worker-package/chunks/service_0xWrUt8A.mjs",
+      "bytes": 43361,
+      "sha256": "8f02c749c9120338bc2d38a599ca32378d993109acdf0ef26857e30bbd1679eb",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/chunks/static-image-collection_D7Ll-6_i.mjs",
+      "relativePath": "resumed-worker-package/chunks/static-image-collection_D7Ll-6_i.mjs",
+      "bytes": 2381,
+      "sha256": "4ec98040701493ded4a0a74baca38c361c1aaeea746462f85c7a019a0e859d14",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/entry.mjs",
+      "relativePath": "resumed-worker-package/entry.mjs",
+      "bytes": 648784,
+      "sha256": "5c6cc3f078430a6557cf898b8c5749fdbad7361ca4927d5f0d16e56305dce3c7",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package/virtual_astro_middleware.mjs",
+      "relativePath": "resumed-worker-package/virtual_astro_middleware.mjs",
+      "bytes": 3368,
+      "sha256": "32a210429b4a735a1ef4118db0195748ed03faf754feceaac0410f3026ac0106",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package-tool-completion.json",
+      "relativePath": "resumed-worker-package-tool-completion.json",
+      "bytes": 126,
+      "sha256": "9072bbbbc958978ac23e5c51e79caadbde45fc0db9aae28da5f7163fc128f853",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-package.log",
+      "relativePath": "resumed-worker-package.log",
+      "bytes": 10069,
+      "sha256": "bfda6f622745ed9df950efdcb6d6276da7bfc6ae4c88287d10deac506bb2ded1",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-types-tool-completion.json",
+      "relativePath": "resumed-worker-types-tool-completion.json",
+      "bytes": 1146,
+      "sha256": "e478c24dc470dd3ea7e9242331b65c3d0ed80366f9ba82c4ccfeac96996a7e64",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-worker-types.log",
+      "relativePath": "resumed-worker-types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/resumed-wrangler-local.log",
+      "relativePath": "resumed-wrangler-local.log",
+      "bytes": 12838,
+      "sha256": "66907fb3031b4e784a88e4690d30b06084f0f6d3f38ed62f652f5ee44295c255",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/rollback-build.log",
+      "relativePath": "rollback-build.log",
+      "bytes": 4433,
+      "sha256": "dca39e25677044005b01f9b844c2c6c6f4470b0fd29de05aa6284c852c94cc06",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/rollback-commit.txt",
+      "relativePath": "rollback-commit.txt",
+      "bytes": 1020,
+      "sha256": "102b1f3dd612e18538b718329cd15281a84b59f340f06ab00aaad3a6aa091459",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/rollback-push.log",
+      "relativePath": "rollback-push.log",
+      "bytes": 394,
+      "sha256": "b4e85a78fe75afa104217e5ea01341e7053beb263a43331dea7a70cf9568fdba",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/rollback-smoke/http-originals.json",
+      "relativePath": "rollback-smoke/http-originals.json",
+      "bytes": 161224,
+      "sha256": "3d2cd9bacfba388b60721445d70e140daa4e04d433f1924e9147f7f12811cd56",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/rollback-smoke/result.json",
+      "relativePath": "rollback-smoke/result.json",
+      "bytes": 426,
+      "sha256": "b1576c9e6b38cd254b75244b9dd956c7d2e7c43aadf53818e741e34713b140b1",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/rollback-smoke.log",
+      "relativePath": "rollback-smoke.log",
+      "bytes": 426,
+      "sha256": "b1576c9e6b38cd254b75244b9dd956c7d2e7c43aadf53818e741e34713b140b1",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/rollback-smoke.mjs",
+      "relativePath": "rollback-smoke.mjs",
+      "bytes": 4811,
+      "sha256": "3971a195f99658509c0e070dc118c85be83478cdadf16fa88ad0ece346a982fd",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/rollback-wrangler-local.log",
+      "relativePath": "rollback-wrangler-local.log",
+      "bytes": 12252,
+      "sha256": "3475700e2b42eeb2232c3b7c6e7d5fcba0d84b4854757438414ab1713d43e7fe",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/rollback.patch.txt",
+      "relativePath": "rollback.patch.txt",
+      "bytes": 35020,
+      "sha256": "cd194605804feebb51d66c5302166717a9d4ca612e287184d356fd3d8113e042",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/server-disposition-7e389.json",
+      "relativePath": "server-disposition-7e389.json",
+      "bytes": 974,
+      "sha256": "e7bde002c93937fca5e9f52cb9c3193acf67866fb4cfa6d7a31ee81a5491c85a",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/server-ref-analysis-7e389.json",
+      "relativePath": "server-ref-analysis-7e389.json",
+      "bytes": 3281,
+      "sha256": "5846d28b018564ea37e1c339d050eef2f3a8ad405ecb51ca616d36b7ddfe0fa9",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/server-ref-diff-7e389.txt",
+      "relativePath": "server-ref-diff-7e389.txt",
+      "bytes": 223359,
+      "sha256": "5a9fd5e4915f5126abca6f67bfa2a2b80ccffbe55e8315d3206ccaf4e4afc90e",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/server-semantic-analysis-7e389.json",
+      "relativePath": "server-semantic-analysis-7e389.json",
+      "bytes": 3665,
+      "sha256": "69e7c0087d89ada7c483f864f2a249a7b67a1cfd281fe72c8a3e9954ebaa38ed",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/server-semantic-diff-7e389.txt",
+      "relativePath": "server-semantic-diff-7e389.txt",
+      "bytes": 125284,
+      "sha256": "ac56026efbf8e9d55ea46b4d1637f0c2190198befdee6962ee8960b69670d5ec",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/stop-fixture.json",
+      "relativePath": "stop-fixture.json",
+      "bytes": 1306,
+      "sha256": "ebb0e9d8ec16e85a05a54a152608946535fb8a220fb5b4109d4f672e52a979d9",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/discovery104-originals/stop105-push.log",
+      "relativePath": "stop105-push.log",
+      "bytes": 453,
+      "sha256": "7dfcb1e7cd550c4669cefd757fa2c262504f54e290e40948cf82911e06121b17",
+      "scope": "recorded original/log/compiled bundle/disposition; individual identity and scope retained"
+    },
+    {
+      "path": "/workspace/mcp-discovery104-implementation-r2-entrega.md",
+      "bytes": 10364,
+      "sha256": "16edfcb46a37977f96d0216996aa1cbe299695f140a315d59e6ba763c54dbc9e",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/admision105.md",
+      "bytes": 1436,
+      "sha256": "8c2cb12840e89878c9094f3d9f736617b07e8ee16632f9963fb7865aebf1c940",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/auditoria/contrato-r1.md",
+      "bytes": 8134,
+      "sha256": "ec9efe39b9cc95c12c28c3e00b7276ddfc4914108191f73389b95e49a9237723",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/entrega.md",
+      "bytes": 4618,
+      "sha256": "c2f89c7c078c7a871eba13530e4b0529811e999714c10f637530e9fd9efb5b63",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/ratificacion.md",
+      "bytes": 935,
+      "sha256": "31e2b18cb16caab28f904fa79a24a60d0c6c18be6da8d7de1ccd3a521b5a727e",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/referencias/manifest.json",
+      "bytes": 2698,
+      "sha256": "a3665119b9049378109d8e0cbdc1d1e309aa90c708c2a56a33f5a55442daea76",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/referencias/skill.body.md",
+      "bytes": 844,
+      "sha256": "9a1af2376a9741bc29f97ff40120a7f115c1618188d40f2c9674b729485bd0d8",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/referencias/skill.headers.txt",
+      "bytes": 368,
+      "sha256": "a33c38d7b3bef3519ee9929e767598e7b79646bbd778dc13e5f5e1903bf5f32b",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/referencias/ui.body.js",
+      "bytes": 58226,
+      "sha256": "268e2d8536ba2869df93ef468d5313e437c905187efd623a4bf88b3f4786a97e",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/referencias/ui.headers.txt",
+      "bytes": 372,
+      "sha256": "bc262eb3016bdf00a9e221f9439cbde2b328eea7cd4e14457e1f42deb6a82673",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/stop105/base-build-2.log",
+      "bytes": 4214,
+      "sha256": "8fea2bb0d28f51c09a119d4e9678640535c934544bbb89df5ef96adfd6df18fd",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/stop105/base-build-manifest.json",
+      "bytes": 76286,
+      "sha256": "6203f17ac2315d8089bcb35e28d7a16a4d61f25e4bd2af90d2618650eec73277",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/stop105/base-build.log",
+      "bytes": 889,
+      "sha256": "68f813056d6cf2c8dd274d16ac0bebfb89ac3106fb30614e72e63f18bb5f2102",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/stop105/candidate-build.log",
+      "bytes": 4376,
+      "sha256": "7044836b9c3a4b9c026533d59b854b3348a2d146293e92f42a116f13722994e0",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/stop105/candidate-specs.log",
+      "bytes": 71,
+      "sha256": "3522dc0c14d3c4670574a6361d0f060bbe81cbcf2d429b0904bf8ac4efe6f33b",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/stop105/candidate-tests-offline.log",
+      "bytes": 12507,
+      "sha256": "7a52cbc6f9573d8e91f031a0eb8946dd62998811b93aa28a3d14ac8a41574cc3",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/stop105/candidate-tests-ts.log",
+      "bytes": 7732,
+      "sha256": "757acc70ad0fd241b1bf0f7d9a4df665a7e782f75d5912b1691a20913894389d",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/stop105/estado.md",
+      "bytes": 6870,
+      "sha256": "d9ed055e466e2dbff11d9be4adc493fe440b17b3feeddf899a28ccff69206bd6",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/stop105/indice-originales.json",
+      "bytes": 9868,
+      "sha256": "5a6e4d5204ad42251b9f72e8d72af7fdd877030f0a261c8642ac730fecafcc12",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/evidencia/mcp-discovery-104/stop105/parche-propuesto.patch.txt",
+      "bytes": 804,
+      "sha256": "48ff9b18cf9fca870a1d45c79b0e157a74f2ba3cfa91c4fe16b4faab370db57c",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    },
+    {
+      "path": "/workspace/ctpv-discovery104-author/docs/agent-readiness/fases/mcp-discovery-104.md",
+      "bytes": 13485,
+      "sha256": "1505e42813739979ce343183f08e4d3cc6644deef333d28e15defb6d4520c8c5",
+      "scope": "delivery or candidate documentation; immutable contract and history preserved"
+    }
+  ],
+  "missing": [
+    "production receipt/smoke correctivo104",
+    "postpublication evaluator scans"
+  ],
+  "limits": [
+    "No schema claim for compatibility descriptor",
+    "Preview19EOF+1intentionalAbortAfterCompleteMessage, not20EOF",
+    "Historical TS88/specs own55dc4e, finaltree CI separatelysuccessful",
+    "C09 noDet accepted, NO PASS; external deadline pending/nonblocking/no debt/NO PASS"
+  ]
+}

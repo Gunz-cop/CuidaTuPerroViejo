@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-14T14:43:22.846Z",
+  "scope": "TCP-only cleanup probes, no HTTP requests; Wrangler processes stopped after successful captured assays; workerd descendants are terminated zombies waiting init reap",
+  "probes": [
+    {
+      "port": 8788,
+      "listening": false,
+      "error": "ECONNREFUSED"
+    },
+    {
+      "port": 8789,
+      "listening": false,
+      "error": "ECONNREFUSED"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "mcp-discovery-104-expected/1",
+  "head": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+  "tree": "6a2c50cc3e28c30389668bd70070b8cb545c36bd",
+  "node": "v24.19.0",
+  "sdk": "2.3.1",
+  "cards": [
+    {
+      "path": "/api/mcp/server-card",
+      "bytes": 559,
+      "sha256": "aeea988a8e92d68085716e88755dae917215708953bbd0002a80ebd576ae1f84",
+      "value": {
+        "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+        "name": "cuidatuperroviejo.com/guias-herramientas",
+        "version": "1.0.0",
+        "title": "Cuida tu Perro Viejo",
+        "description": "Servidor MCP público de guías y herramientas educativas para perros mayores.",
+        "websiteUrl": "https://cuidatuperroviejo.com",
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://cuidatuperroviejo.com/api/mcp",
+            "supportedProtocolVersions": [
+              "2026-07-28",
+              "2025-11-25"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "/.well-known/mcp/server-card.json",
+      "bytes": 233,
+      "sha256": "efd754491893bb08e2e76456d2f18acb9899694e4c8c4fe0445ee93be284a092",
+      "value": {
+        "serverInfo": {
+          "name": "cuidatuperroviejo.com/guias-herramientas",
+          "version": "1.0.0"
+        },
+        "endpoint": "https://cuidatuperroviejo.com/api/mcp",
+        "capabilities": {
+          "tools": {
+            "listChanged": false
+          }
+        }
+      }
+    }
+  ],
+  "identity": {
+    "name": "cuidatuperroviejo.com/guias-herramientas",
+    "version": "1.0.0",
+    "title": "Cuida tu Perro Viejo",
+    "description": "Servidor MCP público de guías y herramientas educativas para perros mayores."
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    }
+  },
+  "tools": [
+    "search_guides",
+    "read_guide",
+    "evaluate_quality_of_life",
+    "recommend_mobility_aids"
+  ],
+  "corpusSha256": "b28a9e846ceb5513a9a34e01b8a19db90f15328a8b7df1fd182b8d7e287f184d",
+  "document": {
+    "documentId": "article--sindrome-cushing-perros-mayores",
+    "kind": "article",
+    "title": "Síndrome de Cushing en perros mayores: causas, síntomas y tratamiento",
+    "description": "Guía clínica sobre el síndrome de Cushing en perros mayores. Detecta síntomas, pruebas diagnósticas, tratamiento con trilostano y manejo de calidad de vida.",
+    "canonicalPath": "/salud-perros-mayores/sindrome-cushing-perros-mayores",
+    "canonicalUrl": "https://cuidatuperroviejo.com/salud-perros-mayores/sindrome-cushing-perros-mayores",
+    "markdownPath": "/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+    "language": "es",
+    "datePublished": "2026-07-21T00:00:00.000Z",
+    "dateModified": "2026-07-21T00:00:00.000Z",
+    "htmlSha256": "30643c1037517dbfeefecf3bb2559db252f88f69cbd4ce5c95deea2217bd9d73",
+    "markdownSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+    "markdownBytes": 32561
+  },
+  "nativeBaseSha256": "aeea988a8e92d68085716e88755dae917215708953bbd0002a80ebd576ae1f84",
+  "buildDir": "/workspace/ctpv-discovery104-author/dist",
+  "baseBuildDir": "/workspace/CuidaTuPerroViejo/dist"
+}

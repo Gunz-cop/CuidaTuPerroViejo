@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "mcp-discovery-104-smoke/1",
+  "head": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+  "tree": "6a2c50cc3e28c30389668bd70070b8cb545c36bd",
+  "receipt": null,
+  "mode": "local",
+  "baseUrl": "http://127.0.0.1:8788",
+  "at": "2026-10-14T14:33:25.058Z",
+  "node": "v24.19.0",
+  "sdk": "2.3.1",
+  "budget": 24,
+  "requests": 20,
+  "status": "PASS",
+  "results": [
+    {
+      "card": "/api/mcp/server-card",
+      "method": "GET",
+      "status": "PASS",
+      "bytes": 559,
+      "sha256": "aeea988a8e92d68085716e88755dae917215708953bbd0002a80ebd576ae1f84"
+    },
+    {
+      "card": "/api/mcp/server-card",
+      "method": "HEAD",
+      "status": "PASS",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "card": "/.well-known/mcp/server-card.json",
+      "method": "GET",
+      "status": "PASS",
+      "bytes": 233,
+      "sha256": "efd754491893bb08e2e76456d2f18acb9899694e4c8c4fe0445ee93be284a092"
+    },
+    {
+      "card": "/.well-known/mcp/server-card.json",
+      "method": "HEAD",
+      "status": "PASS",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "era": "2025-11-25",
+      "identity": {
+        "name": "cuidatuperroviejo.com/guias-herramientas",
+        "title": "Cuida tu Perro Viejo",
+        "version": "1.0.0",
+        "description": "Servidor MCP público de guías y herramientas educativas para perros mayores."
+      },
+      "capabilities": {
+        "tools": {
+          "listChanged": false
+        }
+      },
+      "tools": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids"
+      ],
+      "status": "PASS"
+    },
+    {
+      "tool": "search_guides",
+      "status": "PASS",
+      "apiParity": true
+    },
+    {
+      "tool": "read_guide",
+      "status": "PASS",
+      "apiParity": true,
+      "markdownSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3"
+    },
+    {
+      "tool": "evaluate_quality_of_life",
+      "status": "PASS",
+      "apiParity": true
+    },
+    {
+      "tool": "recommend_mobility_aids",
+      "status": "PASS",
+      "apiParity": true
+    },
+    {
+      "era": "2026-07-28",
+      "identity": {
+        "name": "cuidatuperroviejo.com/guias-herramientas",
+        "title": "Cuida tu Perro Viejo",
+        "version": "1.0.0",
+        "description": "Servidor MCP público de guías y herramientas educativas para perros mayores."
+      },
+      "capabilities": {
+        "tools": {
+          "listChanged": false
+        }
+      },
+      "tools": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids"
+      ],
+      "status": "PASS"
+    },
+    {
+      "robots": "PASS",
+      "originNull": 403
+    }
+  ]
+}

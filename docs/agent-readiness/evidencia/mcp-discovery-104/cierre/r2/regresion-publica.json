@@ -1,0 +1,68 @@
+{
+  "head": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+  "tree": "6a2c50cc3e28c30389668bd70070b8cb545c36bd",
+  "status": "PASS",
+  "sourceHash": "d8b0712f96d2e5556e527e3d024561a8b15e0ab5344bdb2d59a038a98f0ee672",
+  "contact": {
+    "local": {
+      "bytes": 35686,
+      "sha256": "b7651180b53c6106381017b0e50a25d4668cdc88450b4bcf6124155313902412"
+    },
+    "remote": {
+      "bytes": 35686,
+      "sha256": "007c6d7dc44e063d2a3f61dfbe7ad367c219bd61f4cb77621a5a98b2a5710af8"
+    },
+    "sourceHash": "d8b0712f96d2e5556e527e3d024561a8b15e0ab5344bdb2d59a038a98f0ee672",
+    "mode": "equivalencia restringida startedAt",
+    "status": "PASS",
+    "beforeEqual": true,
+    "afterEqual": true,
+    "localPosition": {
+      "start": 18256,
+      "end": 18269,
+      "value": "1791984716130"
+    },
+    "remotePosition": {
+      "start": 18256,
+      "end": 18269,
+      "value": "1791988311394"
+    }
+  },
+  "headerDeltaExact": true,
+  "manifestDeltaExact": true,
+  "newEntry": {
+    "path": ".well-known/mcp/server-card.json",
+    "bytes": 233,
+    "sha256": "efd754491893bb08e2e76456d2f18acb9899694e4c8c4fe0445ee93be284a092"
+  },
+  "publicAdded": [
+    "client/.well-known/mcp/server-card.json"
+  ],
+  "publicRemoved": [],
+  "clientChanges": [
+    {
+      "path": "client/_headers",
+      "base": {
+        "bytes": 2415,
+        "sha256": "831fef464700df66e2a4f7087f0548f19001c275fb5bdabbf0072e15cbc4f108"
+      },
+      "candidate": {
+        "bytes": 2557,
+        "sha256": "3ccea801ed03fc2fc5060c8b3fbd6bfd7139c31e5ed6aebcd62e2f394c84a8e1"
+      }
+    },
+    {
+      "path": "client/contacto.html",
+      "base": {
+        "bytes": 35686,
+        "sha256": "b7651180b53c6106381017b0e50a25d4668cdc88450b4bcf6124155313902412"
+      },
+      "candidate": {
+        "bytes": 35686,
+        "sha256": "007c6d7dc44e063d2a3f61dfbe7ad367c219bd61f4cb77621a5a98b2a5710af8"
+      }
+    }
+  ],
+  "publicByteExactExisting": 328,
+  "scope": "all client artifacts compared; server bundle/hash/path differences declared separately, no normalization used for public byte equality"
+}
