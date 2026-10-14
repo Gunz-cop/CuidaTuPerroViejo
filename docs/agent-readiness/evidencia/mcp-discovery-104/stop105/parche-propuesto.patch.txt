@@ -1,0 +1,7 @@
+Propuesta para bug105; NO aplicada. Requiere admisión explícita del propietario.
+
+--- a/tests/agent-readiness/f3-discovery.test.mjs
++++ b/tests/agent-readiness/f3-discovery.test.mjs
+@@ -41 +41 @@
+-const DESTINATIONS = ['api/mcp/server-card', 'agent-api/v1/query-index.json', 'agent-api/v1/openapi.json', '.well-known/api-catalog', '.well-known/agent-skills/index.json', '.well-known/agent-skills/buscar-leer-citar/SKILL.md', '.well-known/ard.json', '.well-known/ai-catalog.json'];
++const DESTINATIONS = ['api/mcp/server-card', 'agent-api/v1/query-index.json', 'agent-api/v1/openapi.json', '.well-known/api-catalog', '.well-known/agent-skills/index.json', '.well-known/agent-skills/buscar-leer-citar/SKILL.md', '.well-known/ard.json', '.well-known/ai-catalog.json', '.well-known/mcp/server-card.json'];

@@ -1,0 +1,71 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+13:36:54 [@astrojs/cloudflare] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+13:36:54 [vite] Re-optimizing dependencies because vite config has changed
+13:36:54 [vite] Re-optimizing dependencies because vite config has changed
+13:36:57 [content] Syncing content
+13:36:57 [content] Synced content
+13:36:57 [types] Generated 2.76s
+13:36:57 [build] output: "static"
+13:36:57 [build] mode: "server"
+13:36:57 [build] directory: /workspace/ctpv-discovery104-author/dist/
+13:36:57 [build] adapter: @astrojs/cloudflare
+13:36:57 [build] Collecting build info...
+13:36:57 [build] ✓ Completed in 3.01s.
+13:36:57 [build] Building server entrypoints...
+13:37:01 [vite] ✓ built in 3.71s
+13:37:01 [vite] ✓ built in 742ms
+13:37:02 [vite] ✓ built in 293ms
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mAI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.[0m
+
+
+
+ prerendering static routes 
+✨ Parsed 23 valid redirect rules.
+✨ Parsed 16 valid header rules.
+13:37:04   ├─ /404.html (+99ms) 
+13:37:04   ├─ /acerca-de.html (+23ms) 
+13:37:04   ├─ /api/assistant-catalog.json (+55ms) 
+13:37:04   ├─ /asistente-ia.html (+19ms) 
+13:37:04   ├─ /contacto.html (+17ms) 
+13:37:04   ├─ /gracias.html (+55ms) 
+13:37:04   ├─ /herramientas/calculadora-calidad-vida-perros.html (+21ms) 
+13:37:04   ├─ /herramientas/selector-movilidad-perros-mayores.html (+28ms) 
+13:37:04   ├─ /politica-de-cookies.html (+54ms) 
+13:37:04   ├─ /politica-de-privacidad.html (+21ms) 
+13:37:04   ├─ /politica-editorial.html (+21ms) 
+13:37:04   ├─ /salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor.html (+66ms) 
+13:37:04   ├─ /salud-mental-emocional-perros/ansiedad-separacion-perros-senior.html (+19ms) 
+13:37:04   ├─ /movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis.html (+16ms) 
+13:37:04   ├─ /salud-perros-mayores/chequeo-geriatrico-canino.html (+36ms) 
+13:37:04   ├─ /alimentacion-perros-senior/comida-casera-perros-mayores.html (+24ms) 
+13:37:04   ├─ /cuidados-paliativos-perros/como-dar-medicacion-perro.html (+16ms) 
+13:37:04   ├─ /salud-mental-emocional-perros/disfuncion-cognitiva-canina.html (+24ms) 
+13:37:05   ├─ /higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html (+67ms) 
+13:37:05   ├─ /higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores.html (+77ms) 
+13:37:05   ├─ /salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.html (+51ms) 
+13:37:05   ├─ /salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html (+102ms) 
+13:37:05   ├─ /movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor.html (+42ms) 
+13:37:05   ├─ /salud-perros-mayores/salud-dental-perros-mayores.html (+18ms) 
+13:37:05   ├─ /salud-perros-mayores/sindrome-cushing-perros-mayores.html (+35ms) 
+13:37:05   ├─ /cuidados-paliativos-perros/ulceras-presion-perros.html (+151ms) 
+13:37:05   ├─ /salud-perros-mayores/vacunas-desparasitacion-perros-senior.html (+28ms) 
+13:37:05   ├─ /alimentacion-perros-senior.html (+82ms) 
+13:37:05   ├─ /cuidados-paliativos-perros.html (+37ms) 
+13:37:05   ├─ /herramientas.html (+55ms) 
+13:37:05   ├─ /higiene-hogar-perros-senior.html (+13ms) 
+13:37:05   ├─ /movilidad-dolor-perros-mayores.html (+14ms) 
+13:37:05   ├─ /salud-mental-emocional-perros.html (+18ms) 
+13:37:05   ├─ /salud-perros-mayores.html (+44ms) 
+13:37:05   ├─ /index.html (+110ms) 
+13:37:05 ✓ Completed in 3.83s.
+
+13:37:05 [build] Rearranging server assets...
+13:37:06 [build] ✓ Completed in 8.84s.
+13:37:06 [@astrojs/sitemap] `sitemap-index.xml` created at `dist/client`
+13:37:06 [agent-readiness-discovery] llms.txt generado después de sitemap (3516 bytes).
+13:37:07 [agent-readiness-markdown-projection] Proyección agent-content/v1 generada: 28 documentos, 26284 bytes de índice.
+13:37:10 [agent-readiness-api-generation] Artifacts F3A generados: 28 documentos, 585402 bytes de query-index.
+13:37:10 [build] Server built in 15.97s
+13:37:10 [build] Complete!

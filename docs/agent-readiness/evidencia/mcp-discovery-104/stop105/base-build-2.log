@@ -1,0 +1,69 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+13:31:50 [@astrojs/cloudflare] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+13:31:52 [content] Syncing content
+13:31:52 [content] Synced content
+13:31:52 [types] Generated 1.40s
+13:31:52 [build] output: "static"
+13:31:52 [build] mode: "server"
+13:31:52 [build] directory: /workspace/CuidaTuPerroViejo/dist/
+13:31:52 [build] adapter: @astrojs/cloudflare
+13:31:52 [build] Collecting build info...
+13:31:52 [build] ✓ Completed in 1.43s.
+13:31:52 [build] Building server entrypoints...
+13:31:54 [vite] ✓ built in 2.01s
+13:31:54 [vite] ✓ built in 310ms
+13:31:54 [vite] ✓ built in 171ms
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mAI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.[0m
+
+
+
+ prerendering static routes 
+✨ Parsed 23 valid redirect rules.
+✨ Parsed 15 valid header rules.
+13:31:56   ├─ /404.html (+22ms) 
+13:31:56   ├─ /acerca-de.html (+14ms) 
+13:31:56   ├─ /api/assistant-catalog.json (+21ms) 
+13:31:56   ├─ /asistente-ia.html (+12ms) 
+13:31:56   ├─ /contacto.html (+11ms) 
+13:31:56   ├─ /gracias.html (+11ms) 
+13:31:56   ├─ /herramientas/calculadora-calidad-vida-perros.html (+13ms) 
+13:31:56   ├─ /herramientas/selector-movilidad-perros-mayores.html (+18ms) 
+13:31:56   ├─ /politica-de-cookies.html (+19ms) 
+13:31:56   ├─ /politica-de-privacidad.html (+12ms) 
+13:31:56   ├─ /politica-editorial.html (+11ms) 
+13:31:56   ├─ /salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor.html (+24ms) 
+13:31:56   ├─ /salud-mental-emocional-perros/ansiedad-separacion-perros-senior.html (+15ms) 
+13:31:56   ├─ /movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis.html (+13ms) 
+13:31:56   ├─ /salud-perros-mayores/chequeo-geriatrico-canino.html (+12ms) 
+13:31:56   ├─ /alimentacion-perros-senior/comida-casera-perros-mayores.html (+14ms) 
+13:31:56   ├─ /cuidados-paliativos-perros/como-dar-medicacion-perro.html (+13ms) 
+13:31:56   ├─ /salud-mental-emocional-perros/disfuncion-cognitiva-canina.html (+14ms) 
+13:31:56   ├─ /higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html (+12ms) 
+13:31:56   ├─ /higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores.html (+12ms) 
+13:31:56   ├─ /salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.html (+15ms) 
+13:31:56   ├─ /salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html (+14ms) 
+13:31:56   ├─ /movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor.html (+14ms) 
+13:31:56   ├─ /salud-perros-mayores/salud-dental-perros-mayores.html (+15ms) 
+13:31:56   ├─ /salud-perros-mayores/sindrome-cushing-perros-mayores.html (+12ms) 
+13:31:56   ├─ /cuidados-paliativos-perros/ulceras-presion-perros.html (+11ms) 
+13:31:56   ├─ /salud-perros-mayores/vacunas-desparasitacion-perros-senior.html (+11ms) 
+13:31:56   ├─ /alimentacion-perros-senior.html (+13ms) 
+13:31:56   ├─ /cuidados-paliativos-perros.html (+10ms) 
+13:31:56   ├─ /herramientas.html (+9ms) 
+13:31:56   ├─ /higiene-hogar-perros-senior.html (+10ms) 
+13:31:56   ├─ /movilidad-dolor-perros-mayores.html (+11ms) 
+13:31:56   ├─ /salud-mental-emocional-perros.html (+11ms) 
+13:31:56   ├─ /salud-perros-mayores.html (+10ms) 
+13:31:56   ├─ /index.html (+13ms) 
+13:31:56 ✓ Completed in 1.79s.
+
+13:31:56 [build] Rearranging server assets...
+13:31:56 [build] ✓ Completed in 4.40s.
+13:31:56 [@astrojs/sitemap] `sitemap-index.xml` created at `dist/client`
+13:31:56 [agent-readiness-discovery] llms.txt generado después de sitemap (3516 bytes).
+13:31:57 [agent-readiness-markdown-projection] Proyección agent-content/v1 generada: 28 documentos, 26284 bytes de índice.
+13:31:58 [agent-readiness-api-generation] Artifacts F3A generados: 28 documentos, 585402 bytes de query-index.
+13:31:58 [build] Server built in 7.62s
+13:31:58 [build] Complete!
