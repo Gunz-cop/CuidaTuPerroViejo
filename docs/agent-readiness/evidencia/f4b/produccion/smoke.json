@@ -1,0 +1,201 @@
+{
+  "started": "2026-10-14T11:51:51.604Z",
+  "ended": "2026-10-14T11:51:54.863Z",
+  "servedSha": "b2ab1082c02799dab4306a7c167a6114c0163a90",
+  "status": "PASS",
+  "node": "v24.19.0",
+  "sdk": "2.3.1",
+  "transport": "Node fetch",
+  "requests": 14,
+  "budget": 20,
+  "results": [
+    {
+      "era": "2025-11-25",
+      "tools": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids"
+      ],
+      "status": "PASS"
+    },
+    {
+      "era": "2026-07-28",
+      "tools": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids"
+      ],
+      "status": "PASS"
+    },
+    {
+      "toolsCalled": 4,
+      "documentId": "article--sindrome-cushing-perros-mayores",
+      "markdownSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+      "quality": {
+        "schemaVersion": "agent-api/1",
+        "tool": {
+          "toolId": "calidad-vida",
+          "documentId": "tool--calidad-vida",
+          "name": "Calculadora de Calidad de Vida Canina HHHHHMM",
+          "canonicalUrl": "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros",
+          "softwareVersion": "2.0",
+          "lastReviewed": "2026-07-21"
+        },
+        "input": {
+          "hurt": 5,
+          "hunger": 5,
+          "hydration": 5,
+          "hygiene": 5,
+          "happiness": 5,
+          "mobility": 5,
+          "moreGoodDays": 5
+        },
+        "score": 35,
+        "maxScore": 70,
+        "band": "compromised",
+        "thresholds": {
+          "good": 50,
+          "acceptable": 35
+        },
+        "breakdown": [
+          {
+            "criterion": "hurt",
+            "label": "Dolor",
+            "value": 5,
+            "max": 10
+          },
+          {
+            "criterion": "hunger",
+            "label": "Apetito",
+            "value": 5,
+            "max": 10
+          },
+          {
+            "criterion": "hydration",
+            "label": "Hidrataci\u00f3n",
+            "value": 5,
+            "max": 10
+          },
+          {
+            "criterion": "hygiene",
+            "label": "Higiene",
+            "value": 5,
+            "max": 10
+          },
+          {
+            "criterion": "happiness",
+            "label": "Felicidad",
+            "value": 5,
+            "max": 10
+          },
+          {
+            "criterion": "mobility",
+            "label": "Movilidad",
+            "value": 5,
+            "max": 10
+          },
+          {
+            "criterion": "moreGoodDays",
+            "label": "Balance",
+            "value": 5,
+            "max": 10
+          }
+        ],
+        "interpretation": "\ud83d\uded1 Calidad de Vida COMPROMETIDA.",
+        "message": "Es un momento dif\u00edcil. Buscar claridad ahora tambi\u00e9n es una forma de cuidar de \u00e9l.",
+        "recommendation": "\ud83d\udca1 Importante: El puntaje indica sufrimiento significativo. Consulta a tu veterinario lo antes posible para evaluar opciones paliativas.",
+        "guide": {
+          "label": "\ud83d\udcd6 Entender los cuidados paliativos y las opciones disponibles",
+          "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros"
+        },
+        "notices": [
+          "\ud83d\udc9b Esta herramienta es una gu\u00eda. Tu amor y criterio siempre son lo m\u00e1s importante.",
+          "Esta herramienta no toma decisiones por ti. Solo te ayuda a ver con m\u00e1s claridad lo que ya est\u00e1s sintiendo."
+        ]
+      },
+      "mobility": {
+        "schemaVersion": "agent-api/1",
+        "tool": {
+          "toolId": "movilidad",
+          "documentId": "tool--movilidad",
+          "name": "Selector de Ayudas de Movilidad para Perros Mayores",
+          "canonicalUrl": "https://cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores",
+          "softwareVersion": "1.0",
+          "lastReviewed": "2026-05-14"
+        },
+        "input": {
+          "level": "severe",
+          "handling": "stressed"
+        },
+        "resultKey": "SB",
+        "icon": "\u2764\ufe0f",
+        "badge": "Nivel Severo \u2013 Cuidado paliativo",
+        "title": "Silla de ruedas + cama ortop\u00e9dica + entorno adaptado",
+        "description": "Como se estresa con el contacto, lo prioritario es darle el m\u00e1ximo de autonom\u00eda posible con ayudas de entorno. Revisa la alerta paliativa arriba.",
+        "plan": [
+          {
+            "name": "Silla de ruedas canina trasera (a medida)",
+            "why": "Le permite moverse sin depender de tu ayuda. Reduce su ansiedad."
+          },
+          {
+            "name": "Cama de memory foam ortop\u00e9dico",
+            "why": "Previene \u00falceras. Elige una con cubierta de felpa suave: menos fricci\u00f3n."
+          },
+          {
+            "name": "Pa\u00f1ales caninos desechables + empapadores",
+            "why": "Para la higiene. C\u00e1mbialos cada vez que est\u00e9n mojados para evitar dermatitis."
+          }
+        ],
+        "palliativeAlert": {
+          "title": "\u26a0\ufe0f Cuidado paliativo importante",
+          "items": [
+            {
+              "text": "\u26a0\ufe0f Para la higiene: considera pa\u00f1ales caninos y empapadores absorbentes bajo su zona de descanso. C\u00e1mbialos con frecuencia para evitar dermatitis.",
+              "link": null
+            },
+            {
+              "text": "\u26a0\ufe0f Cambia su posici\u00f3n cada 4 horas si no puede moverse solo, para prevenir \u00falceras de dec\u00fabito.",
+              "link": {
+                "label": "C\u00f3mo hacerlo sin causarle dolor \u2192",
+                "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros"
+              }
+            },
+            {
+              "text": "\u26a0\ufe0f Eval\u00faa si hay dolor controlado con nuestra",
+              "link": {
+                "label": "Calculadora HHHHHMM \u2192",
+                "url": "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros"
+              }
+            }
+          ]
+        },
+        "guide": {
+          "label": "\ud83d\udcd6 Leer la gu\u00eda completa de movilidad y dolor \u2192",
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores"
+        },
+        "notices": [
+          "Esta recomendaci\u00f3n es una gu\u00eda de apoyo. Ante dudas, consulta siempre a tu veterinario."
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "path": "/api/mcp/server-card",
+      "status": "PASS"
+    },
+    {
+      "path": "/.well-known/ard.json",
+      "status": "PASS"
+    },
+    {
+      "policy": "search=yes, ai-input=yes, ai-train=no",
+      "status": "PASS"
+    },
+    {
+      "originNull": 403,
+      "status": "PASS"
+    }
+  ]
+}

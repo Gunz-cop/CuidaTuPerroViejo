@@ -1,0 +1,2479 @@
+{
+  "head": "b2ab1082c02799dab4306a7c167a6114c0163a90",
+  "receipt": {
+    "head": "b2ab1082c02799dab4306a7c167a6114c0163a90",
+    "build": "0294af69-8878-451c-846b-04c6ddd3bc3c",
+    "version": "5a43d748-8268-4770-868d-e8d7109cfa5b",
+    "preview": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev",
+    "ciUrl": "https://github.com/Gunz-cop/CuidaTuPerroViejo/actions/runs/38524058978/job/115720143119",
+    "workerUrl": "https://dash.cloudflare.com/972ab3666747a93c084965dd4585d4cc/workers/services/view/cuidatuperroviejo/production/builds/0294af69-8878-451c-846b-04c6ddd3bc3c"
+  },
+  "at": "2026-10-14T06:47:56.126Z",
+  "status": "PASS",
+  "label": "80 byteexactos + contacto con equivalencia restringida",
+  "deterministicByteExact": 80,
+  "contactRestricted": "PASS",
+  "requests": 81,
+  "records": [
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.CZ3jEwtI.js",
+      "localPath": "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.CZ3jEwtI.js",
+      "at": "2026-10-14T06:47:49.154Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.CZ3jEwtI.js",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "cf-ray": "a4a4a284ef8a616b-ORD",
+        "content-type": "text/javascript",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/c80b6fa3c38f00290ba5ddd3ab8147a2cbd0e2d871e692f442b68a3c8ff94584.local",
+        "remote": "bodies/c80b6fa3c38f00290ba5ddd3ab8147a2cbd0e2d871e692f442b68a3c8ff94584.remote"
+      },
+      "expected": {
+        "path": "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.CZ3jEwtI.js",
+        "bytes": 6340,
+        "sha256": "3bc1cdf958d0c7fe84bb1a42e81ea6759188fde9228aad3295feef9251a44592",
+        "urlPath": "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.CZ3jEwtI.js"
+      },
+      "actual": {
+        "bytes": 6340,
+        "sha256": "3bc1cdf958d0c7fe84bb1a42e81ea6759188fde9228aad3295feef9251a44592"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/BaseLayout.VWxkXcFk.css",
+      "localPath": "/_astro/BaseLayout.VWxkXcFk.css",
+      "at": "2026-10-14T06:47:49.535Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/BaseLayout.VWxkXcFk.css",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "cf-ray": "a4a4a286b949616b-ORD",
+        "content-type": "text/css",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/287ed70a15b9179da123d445143ea35e3d5398e3dfcd7483fc265fa5fc5352ce.local",
+        "remote": "bodies/287ed70a15b9179da123d445143ea35e3d5398e3dfcd7483fc265fa5fc5352ce.remote"
+      },
+      "expected": {
+        "path": "/_astro/BaseLayout.VWxkXcFk.css",
+        "bytes": 138524,
+        "sha256": "b23a2c33b943bfef6538f9800d75582eaa3c57f420664932eddbf03822d6ed11",
+        "urlPath": "/_astro/BaseLayout.VWxkXcFk.css"
+      },
+      "actual": {
+        "bytes": 138524,
+        "sha256": "b23a2c33b943bfef6538f9800d75582eaa3c57f420664932eddbf03822d6ed11"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+      "localPath": "/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+      "at": "2026-10-14T06:47:49.727Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "cf-ray": "a4a4a2883b9aeafd-ORD",
+        "content-type": "text/javascript",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/022b87f7f75aacceae9e814c7d27de311fdc3620ea851cbc54db40135d5624ac.local",
+        "remote": "bodies/022b87f7f75aacceae9e814c7d27de311fdc3620ea851cbc54db40135d5624ac.remote"
+      },
+      "expected": {
+        "path": "/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+        "bytes": 8059,
+        "sha256": "f766f22002d928c37aeb58a65e2222d7203623e13f8558d3079db1151d378357",
+        "urlPath": "/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js"
+      },
+      "actual": {
+        "bytes": 8059,
+        "sha256": "f766f22002d928c37aeb58a65e2222d7203623e13f8558d3079db1151d378357"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/calidad-vida.CkucuN4v.js",
+      "localPath": "/_astro/calidad-vida.CkucuN4v.js",
+      "at": "2026-10-14T06:47:49.852Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/calidad-vida.CkucuN4v.js",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "cf-ray": "a4a4a288eb12616b-ORD",
+        "content-type": "text/javascript",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/2deb6e741ccf29a0569948d17780f2dabfef30c6fd5a2e9213baa6662cd31f1b.local",
+        "remote": "bodies/2deb6e741ccf29a0569948d17780f2dabfef30c6fd5a2e9213baa6662cd31f1b.remote"
+      },
+      "expected": {
+        "path": "/_astro/calidad-vida.CkucuN4v.js",
+        "bytes": 3495,
+        "sha256": "6f3e16f3ed447234d5e7e3a7226f512283ab6a8b9e9727736e65f1876c5b0d38",
+        "urlPath": "/_astro/calidad-vida.CkucuN4v.js"
+      },
+      "actual": {
+        "bytes": 3495,
+        "sha256": "6f3e16f3ed447234d5e7e3a7226f512283ab6a8b9e9727736e65f1876c5b0d38"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+      "localPath": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+      "at": "2026-10-14T06:47:50.044Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "cf-ray": "a4a4a289ebde616b-ORD",
+        "content-type": "text/javascript",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/46d4ce6c4117c771bb0aa721b3f8a9860dd580a419e210e05f5ee80944b5e2c2.local",
+        "remote": "bodies/46d4ce6c4117c771bb0aa721b3f8a9860dd580a419e210e05f5ee80944b5e2c2.remote"
+      },
+      "expected": {
+        "path": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "bytes": 5732,
+        "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a",
+        "urlPath": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+      },
+      "actual": {
+        "bytes": 5732,
+        "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/contract.Cu9QodcA.js",
+      "localPath": "/_astro/contract.Cu9QodcA.js",
+      "at": "2026-10-14T06:47:50.230Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/contract.Cu9QodcA.js",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "cf-ray": "a4a4a28b4a76eafd-ORD",
+        "content-type": "text/javascript",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/104c7e46dd7915e3d3c8062489c56f68ef4c99110add68f8ec62935028f387aa.local",
+        "remote": "bodies/104c7e46dd7915e3d3c8062489c56f68ef4c99110add68f8ec62935028f387aa.remote"
+      },
+      "expected": {
+        "path": "/_astro/contract.Cu9QodcA.js",
+        "bytes": 665,
+        "sha256": "512414df1c0c948fa3d24e3923aa17bfc45b1043459d0a1c083db6e1bb0f0e76",
+        "urlPath": "/_astro/contract.Cu9QodcA.js"
+      },
+      "actual": {
+        "bytes": 665,
+        "sha256": "512414df1c0c948fa3d24e3923aa17bfc45b1043459d0a1c083db6e1bb0f0e76"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/movilidad.B1WnJKyW.js",
+      "localPath": "/_astro/movilidad.B1WnJKyW.js",
+      "at": "2026-10-14T06:47:50.335Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/movilidad.B1WnJKyW.js",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "cf-ray": "a4a4a28bcb8deafd-ORD",
+        "content-type": "text/javascript",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/8ca091807d446ef27b755107dd6dc924d326e7f1b84c7e6ef93ce657fa89a036.local",
+        "remote": "bodies/8ca091807d446ef27b755107dd6dc924d326e7f1b84c7e6ef93ce657fa89a036.remote"
+      },
+      "expected": {
+        "path": "/_astro/movilidad.B1WnJKyW.js",
+        "bytes": 6235,
+        "sha256": "b0c7e640bdf4e223d602b4b9c04d24bc43dc63caa8923acaf92eddd7cd4b4e53",
+        "urlPath": "/_astro/movilidad.B1WnJKyW.js"
+      },
+      "actual": {
+        "bytes": 6235,
+        "sha256": "b0c7e640bdf4e223d602b4b9c04d24bc43dc63caa8923acaf92eddd7cd4b4e53"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/selector-movilidad-perros-mayores.astro_astro_type_script_index_0_lang.DitUWyj1.js",
+      "localPath": "/_astro/selector-movilidad-perros-mayores.astro_astro_type_script_index_0_lang.DitUWyj1.js",
+      "at": "2026-10-14T06:47:50.417Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/_astro/selector-movilidad-perros-mayores.astro_astro_type_script_index_0_lang.DitUWyj1.js",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable",
+        "cf-ray": "a4a4a28c3dad616b-ORD",
+        "content-type": "text/javascript",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/a920c171b40426b8b35ebdc3ee384a5ccb5b99650d8982dcb2f5c91fb90cda48.local",
+        "remote": "bodies/a920c171b40426b8b35ebdc3ee384a5ccb5b99650d8982dcb2f5c91fb90cda48.remote"
+      },
+      "expected": {
+        "path": "/_astro/selector-movilidad-perros-mayores.astro_astro_type_script_index_0_lang.DitUWyj1.js",
+        "bytes": 8055,
+        "sha256": "d31a6bca32dbf847bbbbd6ae954d75e7be3be9bf57e3683645c9974f0c349361",
+        "urlPath": "/_astro/selector-movilidad-perros-mayores.astro_astro_type_script_index_0_lang.DitUWyj1.js"
+      },
+      "actual": {
+        "bytes": 8055,
+        "sha256": "d31a6bca32dbf847bbbbd6ae954d75e7be3be9bf57e3683645c9974f0c349361"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/.well-known/agent-skills/buscar-leer-citar/SKILL.md",
+      "localPath": "/.well-known/agent-skills/buscar-leer-citar/SKILL.md",
+      "at": "2026-10-14T06:47:50.504Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/.well-known/agent-skills/buscar-leer-citar/SKILL.md",
+      "headers": {
+        "cache-control": "no-store",
+        "cf-ray": "a4a4a28cee3b616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/a95a68fea4598225722f12fd1e9b2795c64f5c8f1135cc00d5a6b3792bb883e2.local",
+        "remote": "bodies/a95a68fea4598225722f12fd1e9b2795c64f5c8f1135cc00d5a6b3792bb883e2.remote"
+      },
+      "expected": {
+        "path": "/.well-known/agent-skills/buscar-leer-citar/SKILL.md",
+        "bytes": 4141,
+        "sha256": "b5314a8bdda3ef81ee852d6c8b7861b3ea703fec48c70510cd03335711512331",
+        "urlPath": "/.well-known/agent-skills/buscar-leer-citar/SKILL.md"
+      },
+      "actual": {
+        "bytes": 4141,
+        "sha256": "b5314a8bdda3ef81ee852d6c8b7861b3ea703fec48c70510cd03335711512331"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/.well-known/agent-skills/index.json",
+      "localPath": "/.well-known/agent-skills/index.json",
+      "at": "2026-10-14T06:47:50.599Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/.well-known/agent-skills/index.json",
+      "headers": {
+        "cache-control": "no-store",
+        "cf-ray": "a4a4a28d5f27eafd-ORD",
+        "content-type": "application/json; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/312ae6429b3288a46c506f88e66589af1c6db79522ad9d93184a10e3a3a1242a.local",
+        "remote": "bodies/312ae6429b3288a46c506f88e66589af1c6db79522ad9d93184a10e3a3a1242a.remote"
+      },
+      "expected": {
+        "path": "/.well-known/agent-skills/index.json",
+        "bytes": 496,
+        "sha256": "3f1187d23c8a055ad6fd99703612e7c2bd317d60abad7b3bf4f012a81f97f2ac",
+        "urlPath": "/.well-known/agent-skills/index.json"
+      },
+      "actual": {
+        "bytes": 496,
+        "sha256": "3f1187d23c8a055ad6fd99703612e7c2bd317d60abad7b3bf4f012a81f97f2ac"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/.well-known/ai-catalog.json",
+      "localPath": "/.well-known/ai-catalog.json",
+      "at": "2026-10-14T06:47:50.684Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/.well-known/ai-catalog.json",
+      "headers": {
+        "cache-control": "no-store",
+        "cf-ray": "a4a4a28dd814eafd-ORD",
+        "content-type": "application/json; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/19669f663cd4a4bd0be8e3cfd073a535ed5e6f8e00998a820667ce477e2d086a.local",
+        "remote": "bodies/19669f663cd4a4bd0be8e3cfd073a535ed5e6f8e00998a820667ce477e2d086a.remote"
+      },
+      "expected": {
+        "path": "/.well-known/ai-catalog.json",
+        "bytes": 2200,
+        "sha256": "774b5410754f8da360d562433984be33fb3645129941928516db1a5ba7cb1c0b",
+        "urlPath": "/.well-known/ai-catalog.json"
+      },
+      "actual": {
+        "bytes": 2200,
+        "sha256": "774b5410754f8da360d562433984be33fb3645129941928516db1a5ba7cb1c0b"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/.well-known/api-catalog",
+      "localPath": "/.well-known/api-catalog",
+      "at": "2026-10-14T06:47:50.762Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/.well-known/api-catalog",
+      "headers": {
+        "cache-control": "no-store",
+        "cf-ray": "a4a4a28e594aeafd-ORD",
+        "content-type": "application/linkset+json; profile=\"https://www.rfc-editor.org/info/rfc9727\"",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/2d6e64de9b88a8c2a2ba154b8e340ef6d0778fae5b3e208482b3910fef0f0e09.local",
+        "remote": "bodies/2d6e64de9b88a8c2a2ba154b8e340ef6d0778fae5b3e208482b3910fef0f0e09.remote"
+      },
+      "expected": {
+        "path": "/.well-known/api-catalog",
+        "bytes": 1586,
+        "sha256": "2626485633fab0410025e60282f7058c79b7e92b67e74334a3eceda986759f35",
+        "urlPath": "/.well-known/api-catalog"
+      },
+      "actual": {
+        "bytes": 1586,
+        "sha256": "2626485633fab0410025e60282f7058c79b7e92b67e74334a3eceda986759f35"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/.well-known/ard.json",
+      "localPath": "/.well-known/ard.json",
+      "at": "2026-10-14T06:47:50.801Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/.well-known/ard.json",
+      "headers": {
+        "cache-control": "no-store",
+        "cf-ray": "a4a4a28e99eceafd-ORD",
+        "content-type": "application/json; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/4a388eaba45338f2bab5c7805323a8cb8b56ae7ffac0c5e6ae3fd1355f3cd10b.local",
+        "remote": "bodies/4a388eaba45338f2bab5c7805323a8cb8b56ae7ffac0c5e6ae3fd1355f3cd10b.remote"
+      },
+      "expected": {
+        "path": "/.well-known/ard.json",
+        "bytes": 2200,
+        "sha256": "774b5410754f8da360d562433984be33fb3645129941928516db1a5ba7cb1c0b",
+        "urlPath": "/.well-known/ard.json"
+      },
+      "actual": {
+        "bytes": 2200,
+        "sha256": "774b5410754f8da360d562433984be33fb3645129941928516db1a5ba7cb1c0b"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/404",
+      "localPath": "/404.html",
+      "at": "2026-10-14T06:47:50.839Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/404",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a28edfd7616b-ORD",
+        "content-type": "text/html",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/316556f0cdc8d53b2f22e704409502c65d64ccafbbcd4c186e761c58e8c170be.local",
+        "remote": "bodies/316556f0cdc8d53b2f22e704409502c65d64ccafbbcd4c186e761c58e8c170be.remote"
+      },
+      "expected": {
+        "path": "/404.html",
+        "bytes": 29495,
+        "sha256": "1c6742b5ab785e0451fbb71ced0b7af4c5c28a2bc2e48625376fc681e54021ca",
+        "urlPath": "/404"
+      },
+      "actual": {
+        "bytes": 29495,
+        "sha256": "1c6742b5ab785e0451fbb71ced0b7af4c5c28a2bc2e48625376fc681e54021ca"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/acerca-de",
+      "localPath": "/acerca-de.html",
+      "at": "2026-10-14T06:47:50.878Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/acerca-de",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a28f1ae3eafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/5d6ab5cab30603810824adbbc96c45100e6dea5353d6998ce75f0a0252fd5e75.local",
+        "remote": "bodies/5d6ab5cab30603810824adbbc96c45100e6dea5353d6998ce75f0a0252fd5e75.remote"
+      },
+      "expected": {
+        "path": "/acerca-de.html",
+        "bytes": 35982,
+        "sha256": "e6c4962a4e9bcb31b36bc53d994a8fb5585d2d75d7d798b8bb6b2fff3cf470f2",
+        "urlPath": "/acerca-de"
+      },
+      "actual": {
+        "bytes": 35982,
+        "sha256": "e6c4962a4e9bcb31b36bc53d994a8fb5585d2d75d7d798b8bb6b2fff3cf470f2"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-api/v1/openapi.json",
+      "localPath": "/agent-api/v1/openapi.json",
+      "at": "2026-10-14T06:47:51.136Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-api/v1/openapi.json",
+      "headers": {
+        "cache-control": "no-store",
+        "cf-ray": "a4a4a290d978616b-ORD",
+        "content-type": "application/vnd.oai.openapi+json;version=3.1",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/3d45b0d81c0e6ac3980c58569f94171b25d9000a4e4cef5da3a16c68b37dc1a0.local",
+        "remote": "bodies/3d45b0d81c0e6ac3980c58569f94171b25d9000a4e4cef5da3a16c68b37dc1a0.remote"
+      },
+      "expected": {
+        "path": "/agent-api/v1/openapi.json",
+        "bytes": 173030,
+        "sha256": "099b719a4baa10379121626c8de7049f8b53766d09820390c1ada4e9ea9c6784",
+        "urlPath": "/agent-api/v1/openapi.json"
+      },
+      "actual": {
+        "bytes": 173030,
+        "sha256": "099b719a4baa10379121626c8de7049f8b53766d09820390c1ada4e9ea9c6784"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-api/v1/query-index.json",
+      "localPath": "/agent-api/v1/query-index.json",
+      "at": "2026-10-14T06:47:51.256Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-api/v1/query-index.json",
+      "headers": {
+        "cache-control": "no-store",
+        "cf-ray": "a4a4a2916fddeafd-ORD",
+        "content-type": "application/json; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/34aa0d239adfecc6f2bf7a57ae8fa3987040b66b705da64d5a45e0581e8ba89e.local",
+        "remote": "bodies/34aa0d239adfecc6f2bf7a57ae8fa3987040b66b705da64d5a45e0581e8ba89e.remote"
+      },
+      "expected": {
+        "path": "/agent-api/v1/query-index.json",
+        "bytes": 585402,
+        "sha256": "c3ef87c127aeb3f5330ae5ed7ea1fd935c142f9f8c0af54b66512fbfbf33943e",
+        "urlPath": "/agent-api/v1/query-index.json"
+      },
+      "actual": {
+        "bytes": 585402,
+        "sha256": "c3ef87c127aeb3f5330ae5ed7ea1fd935c142f9f8c0af54b66512fbfbf33943e"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md",
+      "localPath": "/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md",
+      "at": "2026-10-14T06:47:51.348Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29208f1eafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/1b7a9b5577abb704b7f60e59efb690ca959cd1d9bd4d4efa165c5e1f42bc370b.local",
+        "remote": "bodies/1b7a9b5577abb704b7f60e59efb690ca959cd1d9bd4d4efa165c5e1f42bc370b.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md",
+        "bytes": 44223,
+        "sha256": "3feb00d4f978db51b3da7300557001f6ff54b8e3ef743c7ca86b38eebf0eb913",
+        "urlPath": "/agent-content/v1/documents/article--agresividad-tardia-perros-mayores-dolor.md"
+      },
+      "actual": {
+        "bytes": 44223,
+        "sha256": "3feb00d4f978db51b3da7300557001f6ff54b8e3ef743c7ca86b38eebf0eb913"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md",
+      "localPath": "/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md",
+      "at": "2026-10-14T06:47:51.418Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2927abd616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/c8fc3c952238c58d94666c1fd0835d7654dc5d509d093aef1a3d7a9b37c1c0e9.local",
+        "remote": "bodies/c8fc3c952238c58d94666c1fd0835d7654dc5d509d093aef1a3d7a9b37c1c0e9.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md",
+        "bytes": 40785,
+        "sha256": "59145955fe0e09bdad14dcb702a2c12458efb3e10a2855e45f3d4cbec6ad8043",
+        "urlPath": "/agent-content/v1/documents/article--ansiedad-separacion-perros-senior.md"
+      },
+      "actual": {
+        "bytes": 40785,
+        "sha256": "59145955fe0e09bdad14dcb702a2c12458efb3e10a2855e45f3d4cbec6ad8043"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md",
+      "localPath": "/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md",
+      "at": "2026-10-14T06:47:51.478Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a292db0b616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/6232cb34b9ca78b3ebdcaff28b83843f86c262f27f99416941aae2470606b922.local",
+        "remote": "bodies/6232cb34b9ca78b3ebdcaff28b83843f86c262f27f99416941aae2470606b922.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md",
+        "bytes": 35047,
+        "sha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4",
+        "urlPath": "/agent-content/v1/documents/article--cama-ortopedica-perros-mayores-displasia-artrosis.md"
+      },
+      "actual": {
+        "bytes": 35047,
+        "sha256": "7b2df8d0216bef016d1ba1e25755a5b4259a0e12bfa30cca4b5f447f42e92ee4"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--chequeo-geriatrico-canino.md",
+      "localPath": "/agent-content/v1/documents/article--chequeo-geriatrico-canino.md",
+      "at": "2026-10-14T06:47:51.579Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--chequeo-geriatrico-canino.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2937c9eeafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/22e28ab72bb1904aeaa5f78fff51ff607cf2ba6a8bff0f75d28d53b85e5475e5.local",
+        "remote": "bodies/22e28ab72bb1904aeaa5f78fff51ff607cf2ba6a8bff0f75d28d53b85e5475e5.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--chequeo-geriatrico-canino.md",
+        "bytes": 10293,
+        "sha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c",
+        "urlPath": "/agent-content/v1/documents/article--chequeo-geriatrico-canino.md"
+      },
+      "actual": {
+        "bytes": 10293,
+        "sha256": "b42a3c8b5d946b249aba460d9f41da04a1bed50f0a83126ee347a4cd818eea4c"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--comida-casera-perros-mayores.md",
+      "localPath": "/agent-content/v1/documents/article--comida-casera-perros-mayores.md",
+      "at": "2026-10-14T06:47:51.618Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--comida-casera-perros-mayores.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a293abc5616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/ed0cb1297c8394dc36a82a8555ccdf10bb7e90a958216db9a87c158c7619da3f.local",
+        "remote": "bodies/ed0cb1297c8394dc36a82a8555ccdf10bb7e90a958216db9a87c158c7619da3f.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--comida-casera-perros-mayores.md",
+        "bytes": 23205,
+        "sha256": "f0f66b8c4c873e9b42b6af49a51dfe8a08dfbaaed34561ec7a596f5f9fe26554",
+        "urlPath": "/agent-content/v1/documents/article--comida-casera-perros-mayores.md"
+      },
+      "actual": {
+        "bytes": 23205,
+        "sha256": "f0f66b8c4c873e9b42b6af49a51dfe8a08dfbaaed34561ec7a596f5f9fe26554"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+      "localPath": "/agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+      "at": "2026-10-14T06:47:51.663Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a293fdb9eafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/27c9b8a612b59d46e33b2b64dc5c24a077ea9429de583927224cf6440486f60a.local",
+        "remote": "bodies/27c9b8a612b59d46e33b2b64dc5c24a077ea9429de583927224cf6440486f60a.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--como-dar-medicacion-perro.md",
+        "bytes": 32341,
+        "sha256": "411773d629aaec82ed46fda040947048c808181cfed00b26f9aea4bc677e0af2",
+        "urlPath": "/agent-content/v1/documents/article--como-dar-medicacion-perro.md"
+      },
+      "actual": {
+        "bytes": 32341,
+        "sha256": "411773d629aaec82ed46fda040947048c808181cfed00b26f9aea4bc677e0af2"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md",
+      "localPath": "/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md",
+      "at": "2026-10-14T06:47:51.736Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2946c47616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/5279334480d129e9139cb16c505a4fe241db1900fcafd153e0b8a00000757381.local",
+        "remote": "bodies/5279334480d129e9139cb16c505a4fe241db1900fcafd153e0b8a00000757381.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md",
+        "bytes": 25780,
+        "sha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9",
+        "urlPath": "/agent-content/v1/documents/article--disfuncion-cognitiva-canina.md"
+      },
+      "actual": {
+        "bytes": 25780,
+        "sha256": "09df9186375d892953ce0a1250064879dab66bb9768664976a15b5520e1b1ad9"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md",
+      "localPath": "/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md",
+      "at": "2026-10-14T06:47:51.891Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2956d02616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/9ac6e2ecf60e5cd0597fb257266e701be550e898a24d7d22b4721cb011a83b29.local",
+        "remote": "bodies/9ac6e2ecf60e5cd0597fb257266e701be550e898a24d7d22b4721cb011a83b29.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md",
+        "bytes": 39877,
+        "sha256": "702173abb49c8f674ba1bc9622046fd305552ca68ebbbe56e9c249f206d16df7",
+        "urlPath": "/agent-content/v1/documents/article--incontinencia-fecal-perros-senior.md"
+      },
+      "actual": {
+        "bytes": 39877,
+        "sha256": "702173abb49c8f674ba1bc9622046fd305552ca68ebbbe56e9c249f206d16df7"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md",
+      "localPath": "/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md",
+      "at": "2026-10-14T06:47:52.000Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2963a2deafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/832b0138d48883ccf69e69e05ef9fc2124cb3623f344fe9edd56aeb1bf5c129a.local",
+        "remote": "bodies/832b0138d48883ccf69e69e05ef9fc2124cb3623f344fe9edd56aeb1bf5c129a.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md",
+        "bytes": 16806,
+        "sha256": "4d636b98123ff6841e83382868ba570cd49b301263009474f72212e6ff390628",
+        "urlPath": "/agent-content/v1/documents/article--incontinencia-urinaria-perros-mayores.md"
+      },
+      "actual": {
+        "bytes": 16806,
+        "sha256": "4d636b98123ff6841e83382868ba570cd49b301263009474f72212e6ff390628"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md",
+      "localPath": "/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md",
+      "at": "2026-10-14T06:47:52.092Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a296ab25eafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/bbfd66cc50dfb9d43b8b8db9f4d4dbdc74f9065b62263427525ad5905feea2c0.local",
+        "remote": "bodies/bbfd66cc50dfb9d43b8b8db9f4d4dbdc74f9065b62263427525ad5905feea2c0.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md",
+        "bytes": 41947,
+        "sha256": "fa11e470e647bd9ca346e5b84e9977f079af5574e01ce096eeb9486987eac34c",
+        "urlPath": "/agent-content/v1/documents/article--insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.md"
+      },
+      "actual": {
+        "bytes": 41947,
+        "sha256": "fa11e470e647bd9ca346e5b84e9977f079af5574e01ce096eeb9486987eac34c"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md",
+      "localPath": "/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md",
+      "at": "2026-10-14T06:47:52.137Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a296fe46616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/4a5a4cc6ce2e42efde68619512984a28ef3c03c45af9effaa39592a8e95ea178.local",
+        "remote": "bodies/4a5a4cc6ce2e42efde68619512984a28ef3c03c45af9effaa39592a8e95ea178.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md",
+        "bytes": 40845,
+        "sha256": "b53a7bcb8accaad5025f6a0e7b318f059edcffb31c0943d61c70cbd4d2babe2e",
+        "urlPath": "/agent-content/v1/documents/article--mi-perro-viejo-defeca-mucho-poliquezia.md"
+      },
+      "actual": {
+        "bytes": 40845,
+        "sha256": "b53a7bcb8accaad5025f6a0e7b318f059edcffb31c0943d61c70cbd4d2babe2e"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md",
+      "localPath": "/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md",
+      "at": "2026-10-14T06:47:52.304Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2980de3eafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/f6635d3c0225b7a928779536cf7b9505e8dd874e5fa0e13c41fab23d30a484e7.local",
+        "remote": "bodies/f6635d3c0225b7a928779536cf7b9505e8dd874e5fa0e13c41fab23d30a484e7.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md",
+        "bytes": 47785,
+        "sha256": "59c57d26a8d8d2704bac2535d51715aaf22b63c00ca02f0966eb96725efde838",
+        "urlPath": "/agent-content/v1/documents/article--prevencion-caidas-perro-mayor.md"
+      },
+      "actual": {
+        "bytes": 47785,
+        "sha256": "59c57d26a8d8d2704bac2535d51715aaf22b63c00ca02f0966eb96725efde838"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--salud-dental-perros-mayores.md",
+      "localPath": "/agent-content/v1/documents/article--salud-dental-perros-mayores.md",
+      "at": "2026-10-14T06:47:52.369Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--salud-dental-perros-mayores.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2986eabeafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/15525764f9d4f84f5fcb4296969e8ea5b0dcc1cf1638f8cbf7449cad6ab07789.local",
+        "remote": "bodies/15525764f9d4f84f5fcb4296969e8ea5b0dcc1cf1638f8cbf7449cad6ab07789.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--salud-dental-perros-mayores.md",
+        "bytes": 12307,
+        "sha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6",
+        "urlPath": "/agent-content/v1/documents/article--salud-dental-perros-mayores.md"
+      },
+      "actual": {
+        "bytes": 12307,
+        "sha256": "9bab2e566a15bff3feea53a37fe4d59f236e41bde4f540e77b8a5c493c3337f6"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+      "localPath": "/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+      "at": "2026-10-14T06:47:52.416Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a298bf67eafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/1fbf9949bb2d33e67be59e0a69be97d3aba7305de7bf466fd36e46fe87f15935.local",
+        "remote": "bodies/1fbf9949bb2d33e67be59e0a69be97d3aba7305de7bf466fd36e46fe87f15935.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md",
+        "bytes": 32561,
+        "sha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+        "urlPath": "/agent-content/v1/documents/article--sindrome-cushing-perros-mayores.md"
+      },
+      "actual": {
+        "bytes": 32561,
+        "sha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--ulceras-presion-perros.md",
+      "localPath": "/agent-content/v1/documents/article--ulceras-presion-perros.md",
+      "at": "2026-10-14T06:47:52.463Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--ulceras-presion-perros.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a298ffe1616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/e97d5c67d03f2d92a91573fd03747eec17f48f48dbc0f8c98ab7ab71cb098b13.local",
+        "remote": "bodies/e97d5c67d03f2d92a91573fd03747eec17f48f48dbc0f8c98ab7ab71cb098b13.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--ulceras-presion-perros.md",
+        "bytes": 8303,
+        "sha256": "00a669b47df1fa5c1644ea9d3ddf78e183d95903595d736343742cc4e0f360cc",
+        "urlPath": "/agent-content/v1/documents/article--ulceras-presion-perros.md"
+      },
+      "actual": {
+        "bytes": 8303,
+        "sha256": "00a669b47df1fa5c1644ea9d3ddf78e183d95903595d736343742cc4e0f360cc"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md",
+      "localPath": "/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md",
+      "at": "2026-10-14T06:47:52.511Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2994817616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/da2f7977bff143719f5ad20b0691e35f02f267c59eab2d4673587c077dba700b.local",
+        "remote": "bodies/da2f7977bff143719f5ad20b0691e35f02f267c59eab2d4673587c077dba700b.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md",
+        "bytes": 14780,
+        "sha256": "da8155374059c711c9323722f4882562238252973b277ca450eb6e475aef7aa9",
+        "urlPath": "/agent-content/v1/documents/article--vacunas-desparasitacion-perros-senior.md"
+      },
+      "actual": {
+        "bytes": 14780,
+        "sha256": "da8155374059c711c9323722f4882562238252973b277ca450eb6e475aef7aa9"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/home.md",
+      "localPath": "/agent-content/v1/documents/home.md",
+      "at": "2026-10-14T06:47:52.628Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/home.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a299f8bd616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/c0db95a57d3799f822a970f5cb429e908328ebd086f2796bae145c1f1fde761f.local",
+        "remote": "bodies/c0db95a57d3799f822a970f5cb429e908328ebd086f2796bae145c1f1fde761f.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/home.md",
+        "bytes": 12878,
+        "sha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079",
+        "urlPath": "/agent-content/v1/documents/home.md"
+      },
+      "actual": {
+        "bytes": 12878,
+        "sha256": "859f77287af9e57173b1ca1c9d84db55efee18ee95e608763550aaf21eb0a079"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/page--acerca-de.md",
+      "localPath": "/agent-content/v1/documents/page--acerca-de.md",
+      "at": "2026-10-14T06:47:52.731Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/page--acerca-de.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29aa954616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/4fbbe9bac4b8a8eea1a6f2cff722e2bb621f3cc7b502cdf8332dd70d5b9c6f74.local",
+        "remote": "bodies/4fbbe9bac4b8a8eea1a6f2cff722e2bb621f3cc7b502cdf8332dd70d5b9c6f74.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/page--acerca-de.md",
+        "bytes": 2477,
+        "sha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3",
+        "urlPath": "/agent-content/v1/documents/page--acerca-de.md"
+      },
+      "actual": {
+        "bytes": 2477,
+        "sha256": "4e045299798d298bb6487cbca0d845f241f52ee80fc1a2d68e66e6c914b61bc3"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/page--politica-editorial.md",
+      "localPath": "/agent-content/v1/documents/page--politica-editorial.md",
+      "at": "2026-10-14T06:47:52.832Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/page--politica-editorial.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29b5d33eafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/9fb4edf6f0b758cb1a2a980189aeb0d4b1b4148bc24c1c63bfd34d871deae19e.local",
+        "remote": "bodies/9fb4edf6f0b758cb1a2a980189aeb0d4b1b4148bc24c1c63bfd34d871deae19e.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/page--politica-editorial.md",
+        "bytes": 2925,
+        "sha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f",
+        "urlPath": "/agent-content/v1/documents/page--politica-editorial.md"
+      },
+      "actual": {
+        "bytes": 2925,
+        "sha256": "3d8ddeef5a16cc3886e1ed03d8f384c643c522079ca4f32364d8a3a94315754f"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+      "localPath": "/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+      "at": "2026-10-14T06:47:52.901Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29bba44616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/59185963c4c314334cadb595faddbf93dd00b2b893415d600ec588aa61925593.local",
+        "remote": "bodies/59185963c4c314334cadb595faddbf93dd00b2b893415d600ec588aa61925593.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--alimentacion-perros-senior.md",
+        "bytes": 12031,
+        "sha256": "fad888dbf741908da5bf6ab17a8288d4bef02af901c2585159c8286318345305",
+        "urlPath": "/agent-content/v1/documents/pillar--alimentacion-perros-senior.md"
+      },
+      "actual": {
+        "bytes": 12031,
+        "sha256": "fad888dbf741908da5bf6ab17a8288d4bef02af901c2585159c8286318345305"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+      "localPath": "/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+      "at": "2026-10-14T06:47:52.961Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29c2a9f616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/c7bbf93d54efdba104f269edbed270a1b10c07aa6ee78082d1e262024695f792.local",
+        "remote": "bodies/c7bbf93d54efdba104f269edbed270a1b10c07aa6ee78082d1e262024695f792.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md",
+        "bytes": 8084,
+        "sha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939",
+        "urlPath": "/agent-content/v1/documents/pillar--cuidados-paliativos-perros.md"
+      },
+      "actual": {
+        "bytes": 8084,
+        "sha256": "91b5de01e316021eecd336039a6b7b22333507b14aa60b8f94de49b9a4265939"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--herramientas.md",
+      "localPath": "/agent-content/v1/documents/pillar--herramientas.md",
+      "at": "2026-10-14T06:47:53.018Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--herramientas.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29c6ae7616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/a7ec99c7c7b00ca022329112786a7fcbc5d516e12dc592fd7ab3f02d29be277b.local",
+        "remote": "bodies/a7ec99c7c7b00ca022329112786a7fcbc5d516e12dc592fd7ab3f02d29be277b.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--herramientas.md",
+        "bytes": 3756,
+        "sha256": "ffd6bf31f715af0b5fc778922ed329bb58ac09d40dc877572b1f181082afe222",
+        "urlPath": "/agent-content/v1/documents/pillar--herramientas.md"
+      },
+      "actual": {
+        "bytes": 3756,
+        "sha256": "ffd6bf31f715af0b5fc778922ed329bb58ac09d40dc877572b1f181082afe222"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md",
+      "localPath": "/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md",
+      "at": "2026-10-14T06:47:53.072Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29cc816eafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/7258576d14d880c2288ab6be3c9bcce9724a8cf70da3b6d84bed29fce0c32426.local",
+        "remote": "bodies/7258576d14d880c2288ab6be3c9bcce9724a8cf70da3b6d84bed29fce0c32426.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md",
+        "bytes": 7794,
+        "sha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58",
+        "urlPath": "/agent-content/v1/documents/pillar--higiene-hogar-perros-senior.md"
+      },
+      "actual": {
+        "bytes": 7794,
+        "sha256": "8f420fa4c391b64fa00e9ec282a5c66aa26ee285be69b5710dce8288bcd6ab58"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md",
+      "localPath": "/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md",
+      "at": "2026-10-14T06:47:53.112Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29d08adeafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/afb12b8c868a0bae203d4a025fa970217d8be33d5e02316844f4a83c0a93b472.local",
+        "remote": "bodies/afb12b8c868a0bae203d4a025fa970217d8be33d5e02316844f4a83c0a93b472.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md",
+        "bytes": 7261,
+        "sha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6",
+        "urlPath": "/agent-content/v1/documents/pillar--movilidad-dolor-perros-mayores.md"
+      },
+      "actual": {
+        "bytes": 7261,
+        "sha256": "499f54f4a240173fd1d306685e609028320c4b7b4b36f3170892ba8f81718aa6"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md",
+      "localPath": "/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md",
+      "at": "2026-10-14T06:47:53.224Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29dda53eafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/4097c9ac5172629ae605ca23dfa71ff0d393adc7cca29de2c608caee20907d42.local",
+        "remote": "bodies/4097c9ac5172629ae605ca23dfa71ff0d393adc7cca29de2c608caee20907d42.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md",
+        "bytes": 11135,
+        "sha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949",
+        "urlPath": "/agent-content/v1/documents/pillar--salud-mental-emocional-perros.md"
+      },
+      "actual": {
+        "bytes": 11135,
+        "sha256": "eb9b231f30b9429f7f67a2d98012b7d9da50912d408ec2a9ea7bf836813ba949"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--salud-perros-mayores.md",
+      "localPath": "/agent-content/v1/documents/pillar--salud-perros-mayores.md",
+      "at": "2026-10-14T06:47:53.309Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/pillar--salud-perros-mayores.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29e4b51eafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/40b02f3ef58417c8f041be574dc9f558608b52a9125f0b155119fd61b52af3fc.local",
+        "remote": "bodies/40b02f3ef58417c8f041be574dc9f558608b52a9125f0b155119fd61b52af3fc.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/pillar--salud-perros-mayores.md",
+        "bytes": 12040,
+        "sha256": "04d25b0c2406b47b9156182dd044b7bae2e9fa32135f464f6b9504c4fa20b042",
+        "urlPath": "/agent-content/v1/documents/pillar--salud-perros-mayores.md"
+      },
+      "actual": {
+        "bytes": 12040,
+        "sha256": "04d25b0c2406b47b9156182dd044b7bae2e9fa32135f464f6b9504c4fa20b042"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/tool--calidad-vida.md",
+      "localPath": "/agent-content/v1/documents/tool--calidad-vida.md",
+      "at": "2026-10-14T06:47:53.347Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/tool--calidad-vida.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29e7c9e616b-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/e79a0e5d5e1c2bf75eb379a64dcfeb932f6cb4ef7f4dfaf13e6a85ef9e3253bb.local",
+        "remote": "bodies/e79a0e5d5e1c2bf75eb379a64dcfeb932f6cb4ef7f4dfaf13e6a85ef9e3253bb.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/tool--calidad-vida.md",
+        "bytes": 5049,
+        "sha256": "0d79c5f7608a41f3955df62773fb9f5f4d0727f33702e97718358506ad5f0f9d",
+        "urlPath": "/agent-content/v1/documents/tool--calidad-vida.md"
+      },
+      "actual": {
+        "bytes": 5049,
+        "sha256": "0d79c5f7608a41f3955df62773fb9f5f4d0727f33702e97718358506ad5f0f9d"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/tool--movilidad.md",
+      "localPath": "/agent-content/v1/documents/tool--movilidad.md",
+      "at": "2026-10-14T06:47:53.397Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/documents/tool--movilidad.md",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29edc6ceafd-ORD",
+        "content-type": "text/markdown; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/8ebd603e71158fac7b2b9fb18955e75bfb7a049737cb3a11c1942c7a944784b8.local",
+        "remote": "bodies/8ebd603e71158fac7b2b9fb18955e75bfb7a049737cb3a11c1942c7a944784b8.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/documents/tool--movilidad.md",
+        "bytes": 5899,
+        "sha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37",
+        "urlPath": "/agent-content/v1/documents/tool--movilidad.md"
+      },
+      "actual": {
+        "bytes": 5899,
+        "sha256": "bbde905eaabe6e64b5120ff0177ac19214a186f2faf66007a7f72a67b190bd37"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/index.json",
+      "localPath": "/agent-content/v1/index.json",
+      "at": "2026-10-14T06:47:53.443Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/agent-content/v1/index.json",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a29f1d1e616b-ORD",
+        "content-type": "application/json; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/cca404aa104d40ffde8e3712921f467b903680ecdde37b85e3f32f69bed6c70e.local",
+        "remote": "bodies/cca404aa104d40ffde8e3712921f467b903680ecdde37b85e3f32f69bed6c70e.remote"
+      },
+      "expected": {
+        "path": "/agent-content/v1/index.json",
+        "bytes": 26284,
+        "sha256": "fcd6f94690d5a1c4814573bb7ab578615a064ed4080f581be2b1b1eaffbda111",
+        "urlPath": "/agent-content/v1/index.json"
+      },
+      "actual": {
+        "bytes": 26284,
+        "sha256": "fcd6f94690d5a1c4814573bb7ab578615a064ed4080f581be2b1b1eaffbda111"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/alimentacion-perros-senior",
+      "localPath": "/alimentacion-perros-senior.html",
+      "at": "2026-10-14T06:47:53.497Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/alimentacion-perros-senior",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a29f6d65616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/946f867b23a5daea0bbaa251bf163f9c96f39e2bb162e7a487a7da6e2b51613c.local",
+        "remote": "bodies/946f867b23a5daea0bbaa251bf163f9c96f39e2bb162e7a487a7da6e2b51613c.remote"
+      },
+      "expected": {
+        "path": "/alimentacion-perros-senior.html",
+        "bytes": 64095,
+        "sha256": "715565424500dc6a1cd7419585d16e99dd84dbc9e65f6c7887d2eb2a2455c454",
+        "urlPath": "/alimentacion-perros-senior"
+      },
+      "actual": {
+        "bytes": 64095,
+        "sha256": "715565424500dc6a1cd7419585d16e99dd84dbc9e65f6c7887d2eb2a2455c454"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "localPath": "/alimentacion-perros-senior/comida-casera-perros-mayores.html",
+      "at": "2026-10-14T06:47:53.720Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/alimentacion-perros-senior/comida-casera-perros-mayores",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a0de91616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/7c2826d4f78ca04800de2b81f0d8b452dc63da375fbce2bf43c21a0cfae96813.local",
+        "remote": "bodies/7c2826d4f78ca04800de2b81f0d8b452dc63da375fbce2bf43c21a0cfae96813.remote"
+      },
+      "expected": {
+        "path": "/alimentacion-perros-senior/comida-casera-perros-mayores.html",
+        "bytes": 92102,
+        "sha256": "c33d5c2c3b665f2f8ec468decdd9ed4d4b0a493afc5e997e11ad7a55c81a75c2",
+        "urlPath": "/alimentacion-perros-senior/comida-casera-perros-mayores"
+      },
+      "actual": {
+        "bytes": 92102,
+        "sha256": "c33d5c2c3b665f2f8ec468decdd9ed4d4b0a493afc5e997e11ad7a55c81a75c2"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/api/mcp/server-card",
+      "localPath": "/api/mcp/server-card",
+      "at": "2026-10-14T06:47:53.763Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/api/mcp/server-card",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a118dfeafd-ORD",
+        "content-type": "application/mcp-server-card+json",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/344ed47ec229dd305f7fe08992993b4cd277a44a9bf0d76056e4ef6bb3366804.local",
+        "remote": "bodies/344ed47ec229dd305f7fe08992993b4cd277a44a9bf0d76056e4ef6bb3366804.remote"
+      },
+      "expected": {
+        "path": "/api/mcp/server-card",
+        "bytes": 559,
+        "sha256": "aeea988a8e92d68085716e88755dae917215708953bbd0002a80ebd576ae1f84",
+        "urlPath": "/api/mcp/server-card"
+      },
+      "actual": {
+        "bytes": 559,
+        "sha256": "aeea988a8e92d68085716e88755dae917215708953bbd0002a80ebd576ae1f84"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/asistente-ia",
+      "localPath": "/asistente-ia.html",
+      "at": "2026-10-14T06:47:53.804Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/asistente-ia",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2a15efc616b-ORD",
+        "content-type": "text/html",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/5f58a954367c8c92c72bdadddd2e8a8c2d45118e0653e09e7cacccfa7a12067a.local",
+        "remote": "bodies/5f58a954367c8c92c72bdadddd2e8a8c2d45118e0653e09e7cacccfa7a12067a.remote"
+      },
+      "expected": {
+        "path": "/asistente-ia.html",
+        "bytes": 31843,
+        "sha256": "db30d15c583a074cf350d80dbb6a7579a9d8ef2c447d24e58e5701c15899ea63",
+        "urlPath": "/asistente-ia"
+      },
+      "actual": {
+        "bytes": 31843,
+        "sha256": "db30d15c583a074cf350d80dbb6a7579a9d8ef2c447d24e58e5701c15899ea63"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/contacto",
+      "localPath": "/contacto.html",
+      "at": "2026-10-14T06:47:53.843Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/contacto",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2a199d3eafd-ORD",
+        "content-type": "text/html",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/f1a77a9c97a19c22be6ed0ba947a29cb40e9a364640abbc509729ce374aba2a2.local",
+        "remote": "bodies/f1a77a9c97a19c22be6ed0ba947a29cb40e9a364640abbc509729ce374aba2a2.remote"
+      },
+      "expected": {
+        "path": "/contacto.html",
+        "bytes": 35686,
+        "sha256": "bd04e98c3429d6fbac39d09ad5d25ffcc5c7b40f0621ca9bd6fdaec639e4582b",
+        "urlPath": "/contacto"
+      },
+      "actual": {
+        "bytes": 35686,
+        "sha256": "c8856a45b56ef922ac4118e84b22fc1bf9f57ab608df44d2f6b73d705eadd445"
+      },
+      "byteExact": false,
+      "contact": {
+        "local": {
+          "bytes": 35686,
+          "sha256": "bd04e98c3429d6fbac39d09ad5d25ffcc5c7b40f0621ca9bd6fdaec639e4582b"
+        },
+        "remote": {
+          "bytes": 35686,
+          "sha256": "c8856a45b56ef922ac4118e84b22fc1bf9f57ab608df44d2f6b73d705eadd445"
+        },
+        "sourceHash": "d8b0712f96d2e5556e527e3d024561a8b15e0ab5344bdb2d59a038a98f0ee672",
+        "mode": "equivalencia restringida startedAt",
+        "status": "PASS",
+        "beforeEqual": true,
+        "afterEqual": true,
+        "localPosition": {
+          "start": 18256,
+          "end": 18269,
+          "value": "1791960310092"
+        },
+        "remotePosition": {
+          "start": 18256,
+          "end": 18269,
+          "value": "1791960356295"
+        }
+      },
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/cuidados-paliativos-perros",
+      "localPath": "/cuidados-paliativos-perros.html",
+      "at": "2026-10-14T06:47:54.013Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/cuidados-paliativos-perros",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a2a836616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/325f59a17cba82d403b31ccae71be738351a52ee7a624818d805ece204ec1ba4.local",
+        "remote": "bodies/325f59a17cba82d403b31ccae71be738351a52ee7a624818d805ece204ec1ba4.remote"
+      },
+      "expected": {
+        "path": "/cuidados-paliativos-perros.html",
+        "bytes": 59164,
+        "sha256": "5056a1d5e86528abb3318f27acaef763e4de6530627762c160fb100bae156b7e",
+        "urlPath": "/cuidados-paliativos-perros"
+      },
+      "actual": {
+        "bytes": 59164,
+        "sha256": "5056a1d5e86528abb3318f27acaef763e4de6530627762c160fb100bae156b7e"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "localPath": "/cuidados-paliativos-perros/como-dar-medicacion-perro.html",
+      "at": "2026-10-14T06:47:54.148Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/cuidados-paliativos-perros/como-dar-medicacion-perro",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a37d85eafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/872881ced10e475935cdbbddc19900d6996c79772fa4c1979508d3783e8957d9.local",
+        "remote": "bodies/872881ced10e475935cdbbddc19900d6996c79772fa4c1979508d3783e8957d9.remote"
+      },
+      "expected": {
+        "path": "/cuidados-paliativos-perros/como-dar-medicacion-perro.html",
+        "bytes": 106620,
+        "sha256": "ed0dcd55df4b6b1f21ece06e05bd633bbeb7ce7f0106a3f954e42bccd89a09d0",
+        "urlPath": "/cuidados-paliativos-perros/como-dar-medicacion-perro"
+      },
+      "actual": {
+        "bytes": 106620,
+        "sha256": "ed0dcd55df4b6b1f21ece06e05bd633bbeb7ce7f0106a3f954e42bccd89a09d0"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/cuidados-paliativos-perros/ulceras-presion-perros",
+      "localPath": "/cuidados-paliativos-perros/ulceras-presion-perros.html",
+      "at": "2026-10-14T06:47:54.212Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/cuidados-paliativos-perros/ulceras-presion-perros",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a3e948616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/6b8c2bc4d6816f7ae6346886726267e0691fff314636b1b8c92e8f615464ceb4.local",
+        "remote": "bodies/6b8c2bc4d6816f7ae6346886726267e0691fff314636b1b8c92e8f615464ceb4.remote"
+      },
+      "expected": {
+        "path": "/cuidados-paliativos-perros/ulceras-presion-perros.html",
+        "bytes": 66696,
+        "sha256": "76d6bdcd07cfd39433256df323320122b8af034eea5559d5dcd7c28c63ff5aca",
+        "urlPath": "/cuidados-paliativos-perros/ulceras-presion-perros"
+      },
+      "actual": {
+        "bytes": 66696,
+        "sha256": "76d6bdcd07cfd39433256df323320122b8af034eea5559d5dcd7c28c63ff5aca"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/gracias",
+      "localPath": "/gracias.html",
+      "at": "2026-10-14T06:47:54.303Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/gracias",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2a47f8eeafd-ORD",
+        "content-type": "text/html",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/d1ddd08c3d3083ba0a370cf04019adef8e91a531988b5b831b64905709436d90.local",
+        "remote": "bodies/d1ddd08c3d3083ba0a370cf04019adef8e91a531988b5b831b64905709436d90.remote"
+      },
+      "expected": {
+        "path": "/gracias.html",
+        "bytes": 29206,
+        "sha256": "fec4ce5b4971516dc5baab1b19435e414661a3e8e9567e277270ad46fc96b1bc",
+        "urlPath": "/gracias"
+      },
+      "actual": {
+        "bytes": 29206,
+        "sha256": "fec4ce5b4971516dc5baab1b19435e414661a3e8e9567e277270ad46fc96b1bc"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/herramientas",
+      "localPath": "/herramientas.html",
+      "at": "2026-10-14T06:47:54.346Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/herramientas",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a4b83feafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/41f6b2b3ececd76c7c5c71cf8f749562b7f98bb14bfdb2f6b209973d564fd167.local",
+        "remote": "bodies/41f6b2b3ececd76c7c5c71cf8f749562b7f98bb14bfdb2f6b209973d564fd167.remote"
+      },
+      "expected": {
+        "path": "/herramientas.html",
+        "bytes": 39370,
+        "sha256": "63415983cb5946231fb07a32d3c63c8f2adef3ca7d0243ee2c6e4b5aa15538b2",
+        "urlPath": "/herramientas"
+      },
+      "actual": {
+        "bytes": 39370,
+        "sha256": "63415983cb5946231fb07a32d3c63c8f2adef3ca7d0243ee2c6e4b5aa15538b2"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/herramientas/calculadora-calidad-vida-perros",
+      "localPath": "/herramientas/calculadora-calidad-vida-perros.html",
+      "at": "2026-10-14T06:47:54.568Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/herramientas/calculadora-calidad-vida-perros",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a62b2ceafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/f4f74a418cf29d710f410a9116d2e22dd41b83950e07a5cdfa3126f9bc8e9f21.local",
+        "remote": "bodies/f4f74a418cf29d710f410a9116d2e22dd41b83950e07a5cdfa3126f9bc8e9f21.remote"
+      },
+      "expected": {
+        "path": "/herramientas/calculadora-calidad-vida-perros.html",
+        "bytes": 60969,
+        "sha256": "5ed65d77e29a1013eb4194a2cff9f822c1e36c0fbd11329832164a79597fbd82",
+        "urlPath": "/herramientas/calculadora-calidad-vida-perros"
+      },
+      "actual": {
+        "bytes": 60969,
+        "sha256": "5ed65d77e29a1013eb4194a2cff9f822c1e36c0fbd11329832164a79597fbd82"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/herramientas/selector-movilidad-perros-mayores",
+      "localPath": "/herramientas/selector-movilidad-perros-mayores.html",
+      "at": "2026-10-14T06:47:54.616Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/herramientas/selector-movilidad-perros-mayores",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a66bb0eafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/4a61dbe982230b5724ce6d0d2701e3d18c68932efe52900125e249c9e11f15e7.local",
+        "remote": "bodies/4a61dbe982230b5724ce6d0d2701e3d18c68932efe52900125e249c9e11f15e7.remote"
+      },
+      "expected": {
+        "path": "/herramientas/selector-movilidad-perros-mayores.html",
+        "bytes": 62312,
+        "sha256": "33257806578aeaf63a78c39add3abcf3f1b587e3c750f45021e0f674a29b7d10",
+        "urlPath": "/herramientas/selector-movilidad-perros-mayores"
+      },
+      "actual": {
+        "bytes": 62312,
+        "sha256": "33257806578aeaf63a78c39add3abcf3f1b587e3c750f45021e0f674a29b7d10"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/higiene-hogar-perros-senior",
+      "localPath": "/higiene-hogar-perros-senior.html",
+      "at": "2026-10-14T06:47:54.660Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/higiene-hogar-perros-senior",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a6bb50616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/9f62f91b314f1b3f66138815450c98d0ae10562be0e9f13d17ce887ba0a1fa3f.local",
+        "remote": "bodies/9f62f91b314f1b3f66138815450c98d0ae10562be0e9f13d17ce887ba0a1fa3f.remote"
+      },
+      "expected": {
+        "path": "/higiene-hogar-perros-senior.html",
+        "bytes": 59051,
+        "sha256": "5bf0126a03efb325df96a4503d072878e7d93880d0e2cfb7045e9559b9418ca6",
+        "urlPath": "/higiene-hogar-perros-senior"
+      },
+      "actual": {
+        "bytes": 59051,
+        "sha256": "5bf0126a03efb325df96a4503d072878e7d93880d0e2cfb7045e9559b9418ca6"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+      "localPath": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html",
+      "at": "2026-10-14T06:47:54.717Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a71d25eafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/72832bb0fb4299f08084f5a535f05c792273e3ce62861fc9e827b8dbfcfec116.local",
+        "remote": "bodies/72832bb0fb4299f08084f5a535f05c792273e3ce62861fc9e827b8dbfcfec116.remote"
+      },
+      "expected": {
+        "path": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html",
+        "bytes": 116403,
+        "sha256": "ab23f0d4fc377f27e8f887ef7c94f339b3c325a05da1d7dca31228533ae1d721",
+        "urlPath": "/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior"
+      },
+      "actual": {
+        "bytes": 116403,
+        "sha256": "ab23f0d4fc377f27e8f887ef7c94f339b3c325a05da1d7dca31228533ae1d721"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+      "localPath": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores.html",
+      "at": "2026-10-14T06:47:54.772Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a76db4eafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/ef81bfefc2dc4a4959bb31126ef5a79f1122294a3e1aadfe02c52c6b3959ea87.local",
+        "remote": "bodies/ef81bfefc2dc4a4959bb31126ef5a79f1122294a3e1aadfe02c52c6b3959ea87.remote"
+      },
+      "expected": {
+        "path": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores.html",
+        "bytes": 83223,
+        "sha256": "864335f7d1dd22adf0cd763f2ee3202ab34f0285df934af432852f70d7f18b68",
+        "urlPath": "/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores"
+      },
+      "actual": {
+        "bytes": 83223,
+        "sha256": "864335f7d1dd22adf0cd763f2ee3202ab34f0285df934af432852f70d7f18b68"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/",
+      "localPath": "/index.html",
+      "at": "2026-10-14T06:47:54.934Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a86c9a616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/8a5edab282632443219e051e4ade2d1d5bbc671c781051bf1437897cbdfea0f1.local",
+        "remote": "bodies/8a5edab282632443219e051e4ade2d1d5bbc671c781051bf1437897cbdfea0f1.remote"
+      },
+      "expected": {
+        "path": "/index.html",
+        "bytes": 120037,
+        "sha256": "16c86a4d5edadd09f40a0f30a88b02d3868d1d52aa5501c70aa69ab2dea6b277",
+        "urlPath": "/"
+      },
+      "actual": {
+        "bytes": 120037,
+        "sha256": "16c86a4d5edadd09f40a0f30a88b02d3868d1d52aa5501c70aa69ab2dea6b277"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/llms.txt",
+      "localPath": "/llms.txt",
+      "at": "2026-10-14T06:47:54.992Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/llms.txt",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2a8c831eafd-ORD",
+        "content-type": "text/plain; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/eb1119ab46acbbe2ac257ea98091c12f07d8e27df4b37206292850dc5d301fda.local",
+        "remote": "bodies/eb1119ab46acbbe2ac257ea98091c12f07d8e27df4b37206292850dc5d301fda.remote"
+      },
+      "expected": {
+        "path": "/llms.txt",
+        "bytes": 4206,
+        "sha256": "f69fafedd5c4a96d71ddc60717c4069cc1424395fbd7a21e75b5ba3d5389ab08",
+        "urlPath": "/llms.txt"
+      },
+      "actual": {
+        "bytes": 4206,
+        "sha256": "f69fafedd5c4a96d71ddc60717c4069cc1424395fbd7a21e75b5ba3d5389ab08"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/movilidad-dolor-perros-mayores",
+      "localPath": "/movilidad-dolor-perros-mayores.html",
+      "at": "2026-10-14T06:47:55.036Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/movilidad-dolor-perros-mayores",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a908a5eafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/020c05feeb1e097cc97cb51edb20664386dd6a78c549806c6a0168e1dd435a20.local",
+        "remote": "bodies/020c05feeb1e097cc97cb51edb20664386dd6a78c549806c6a0168e1dd435a20.remote"
+      },
+      "expected": {
+        "path": "/movilidad-dolor-perros-mayores.html",
+        "bytes": 58447,
+        "sha256": "16816ee944408aece7d1009a8695917f81600ff95b6a462d07a1304b9ffa96a8",
+        "urlPath": "/movilidad-dolor-perros-mayores"
+      },
+      "actual": {
+        "bytes": 58447,
+        "sha256": "16816ee944408aece7d1009a8695917f81600ff95b6a462d07a1304b9ffa96a8"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+      "localPath": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis.html",
+      "at": "2026-10-14T06:47:55.083Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a95d4e616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/34342b7dded20820f51cac51c7029657d5eb5b0dae6fadaddfefc43628ca09d2.local",
+        "remote": "bodies/34342b7dded20820f51cac51c7029657d5eb5b0dae6fadaddfefc43628ca09d2.remote"
+      },
+      "expected": {
+        "path": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis.html",
+        "bytes": 112806,
+        "sha256": "8a2d373b9e693ca2e7b7aee858f9e852b4f6c68a4d0770c9f5c979d5dc3f8bc9",
+        "urlPath": "/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis"
+      },
+      "actual": {
+        "bytes": 112806,
+        "sha256": "8a2d373b9e693ca2e7b7aee858f9e852b4f6c68a4d0770c9f5c979d5dc3f8bc9"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+      "localPath": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor.html",
+      "at": "2026-10-14T06:47:55.137Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2a9a9e6eafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/74d950d5dca29f6ff1cac396c7153df63ac04e70b71399782e6a769ddcc1134f.local",
+        "remote": "bodies/74d950d5dca29f6ff1cac396c7153df63ac04e70b71399782e6a769ddcc1134f.remote"
+      },
+      "expected": {
+        "path": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor.html",
+        "bytes": 126393,
+        "sha256": "afd3bdeaa9c63a171a19456f07557e08880a25981b9b9b6003a5f6a2bf16ad90",
+        "urlPath": "/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor"
+      },
+      "actual": {
+        "bytes": 126393,
+        "sha256": "afd3bdeaa9c63a171a19456f07557e08880a25981b9b9b6003a5f6a2bf16ad90"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/politica-de-cookies",
+      "localPath": "/politica-de-cookies.html",
+      "at": "2026-10-14T06:47:55.184Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/politica-de-cookies",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2a9fdc5616b-ORD",
+        "content-type": "text/html",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/baac6da7b59587127215b41021d880d236c90285aee2ecaa1eb1277f46841636.local",
+        "remote": "bodies/baac6da7b59587127215b41021d880d236c90285aee2ecaa1eb1277f46841636.remote"
+      },
+      "expected": {
+        "path": "/politica-de-cookies.html",
+        "bytes": 40671,
+        "sha256": "0c14767ed6027930e4d5cce94b95ad8d6557cb6d78c0175c20ec7b4f25ddd1fe",
+        "urlPath": "/politica-de-cookies"
+      },
+      "actual": {
+        "bytes": 40671,
+        "sha256": "0c14767ed6027930e4d5cce94b95ad8d6557cb6d78c0175c20ec7b4f25ddd1fe"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/politica-de-privacidad",
+      "localPath": "/politica-de-privacidad.html",
+      "at": "2026-10-14T06:47:55.331Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/politica-de-privacidad",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2aaee81616b-ORD",
+        "content-type": "text/html",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/87183fe95179cdf11295ac9d1e27fcf7f9ddc82ee48ac981e1d07ad1a7343577.local",
+        "remote": "bodies/87183fe95179cdf11295ac9d1e27fcf7f9ddc82ee48ac981e1d07ad1a7343577.remote"
+      },
+      "expected": {
+        "path": "/politica-de-privacidad.html",
+        "bytes": 34814,
+        "sha256": "873ccf385cd2f3a3bf972cd36d4cb619e79e2fbd5b53e7627661f7c10ab665be",
+        "urlPath": "/politica-de-privacidad"
+      },
+      "actual": {
+        "bytes": 34814,
+        "sha256": "873ccf385cd2f3a3bf972cd36d4cb619e79e2fbd5b53e7627661f7c10ab665be"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/politica-editorial",
+      "localPath": "/politica-editorial.html",
+      "at": "2026-10-14T06:47:55.387Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/politica-editorial",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2ab3ece616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/266dd4459fddc0039c0a5f3cce0bde36513843c8b948f9a552de995e6277e3f6.local",
+        "remote": "bodies/266dd4459fddc0039c0a5f3cce0bde36513843c8b948f9a552de995e6277e3f6.remote"
+      },
+      "expected": {
+        "path": "/politica-editorial.html",
+        "bytes": 34152,
+        "sha256": "1d34d1c81d06b94763274c295d18e0dbb0d39962acd0a6d704eb2364f81c461b",
+        "urlPath": "/politica-editorial"
+      },
+      "actual": {
+        "bytes": 34152,
+        "sha256": "1d34d1c81d06b94763274c295d18e0dbb0d39962acd0a6d704eb2364f81c461b"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/robots.txt",
+      "localPath": "/robots.txt",
+      "at": "2026-10-14T06:47:55.438Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/robots.txt",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "cf-ray": "a4a4a2ab9f1c616b-ORD",
+        "content-type": "text/plain; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/adada1317532a28bebf63fe6edbea3e43dc67d802d07c58395de71b3336a79a3.local",
+        "remote": "bodies/adada1317532a28bebf63fe6edbea3e43dc67d802d07c58395de71b3336a79a3.remote"
+      },
+      "expected": {
+        "path": "/robots.txt",
+        "bytes": 135,
+        "sha256": "1804644940a3594aa6b1b52db1b5905a995c7364fbc7174b0909b9fa8e1511f5",
+        "urlPath": "/robots.txt"
+      },
+      "actual": {
+        "bytes": 135,
+        "sha256": "1804644940a3594aa6b1b52db1b5905a995c7364fbc7174b0909b9fa8e1511f5"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-mental-emocional-perros",
+      "localPath": "/salud-mental-emocional-perros.html",
+      "at": "2026-10-14T06:47:55.491Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-mental-emocional-perros",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2abeea4eafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/5d92c2ad6af1ec885529eb344e7341785d3afb275ef1c2b0752699326c303a7b.local",
+        "remote": "bodies/5d92c2ad6af1ec885529eb344e7341785d3afb275ef1c2b0752699326c303a7b.remote"
+      },
+      "expected": {
+        "path": "/salud-mental-emocional-perros.html",
+        "bytes": 64783,
+        "sha256": "07769ab82293220e611748b854f9da2ac20f161135d4b95062d7ca2f40d63c21",
+        "urlPath": "/salud-mental-emocional-perros"
+      },
+      "actual": {
+        "bytes": 64783,
+        "sha256": "07769ab82293220e611748b854f9da2ac20f161135d4b95062d7ca2f40d63c21"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "localPath": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor.html",
+      "at": "2026-10-14T06:47:55.536Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2ac2f95616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/4b073d409475595875b27f61cd4c953d0d09b265dea5e1edff6f3cdcfa962eee.local",
+        "remote": "bodies/4b073d409475595875b27f61cd4c953d0d09b265dea5e1edff6f3cdcfa962eee.remote"
+      },
+      "expected": {
+        "path": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor.html",
+        "bytes": 127269,
+        "sha256": "b3ece00a06a3c9e739adbc4ee511cea2ed8e83e2874ed0d2e781b956a26e08e4",
+        "urlPath": "/salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor"
+      },
+      "actual": {
+        "bytes": 127269,
+        "sha256": "b3ece00a06a3c9e739adbc4ee511cea2ed8e83e2874ed0d2e781b956a26e08e4"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "localPath": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior.html",
+      "at": "2026-10-14T06:47:55.603Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-mental-emocional-perros/ansiedad-separacion-perros-senior",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2ac9859eafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/51bb411b2c62097f76cb02829f664bebe60554581061220eae3601f0574eb419.local",
+        "remote": "bodies/51bb411b2c62097f76cb02829f664bebe60554581061220eae3601f0574eb419.remote"
+      },
+      "expected": {
+        "path": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior.html",
+        "bytes": 121905,
+        "sha256": "73639633c0389dcbf6b8b6595e9ed7af940be6fd253e07971fb97e2ff6a16ae0",
+        "urlPath": "/salud-mental-emocional-perros/ansiedad-separacion-perros-senior"
+      },
+      "actual": {
+        "bytes": 121905,
+        "sha256": "73639633c0389dcbf6b8b6595e9ed7af940be6fd253e07971fb97e2ff6a16ae0"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+      "localPath": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina.html",
+      "at": "2026-10-14T06:47:55.652Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-mental-emocional-perros/disfuncion-cognitiva-canina",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2ace827616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/d2474537252a53189792b4832781de11ed142374989e06f3f358759548aa0b2f.local",
+        "remote": "bodies/d2474537252a53189792b4832781de11ed142374989e06f3f358759548aa0b2f.remote"
+      },
+      "expected": {
+        "path": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina.html",
+        "bytes": 115342,
+        "sha256": "771b1d388f9c4e75c2f5d545bdec4c76495d8fd0d5de6b593daa4182cd2383b7",
+        "urlPath": "/salud-mental-emocional-perros/disfuncion-cognitiva-canina"
+      },
+      "actual": {
+        "bytes": 115342,
+        "sha256": "771b1d388f9c4e75c2f5d545bdec4c76495d8fd0d5de6b593daa4182cd2383b7"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores",
+      "localPath": "/salud-perros-mayores.html",
+      "at": "2026-10-14T06:47:55.699Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2ad385a616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/5ae2e1f731551016bac3ab06cc143decb270cc998d8296f08f5f2929d5bd13d1.local",
+        "remote": "bodies/5ae2e1f731551016bac3ab06cc143decb270cc998d8296f08f5f2929d5bd13d1.remote"
+      },
+      "expected": {
+        "path": "/salud-perros-mayores.html",
+        "bytes": 68654,
+        "sha256": "a7e5958a2d11a291f9cbc52d3ab935b8fc21d1132e15ef223b2c6ee2b56957f1",
+        "urlPath": "/salud-perros-mayores"
+      },
+      "actual": {
+        "bytes": 68654,
+        "sha256": "a7e5958a2d11a291f9cbc52d3ab935b8fc21d1132e15ef223b2c6ee2b56957f1"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/chequeo-geriatrico-canino",
+      "localPath": "/salud-perros-mayores/chequeo-geriatrico-canino.html",
+      "at": "2026-10-14T06:47:55.757Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/chequeo-geriatrico-canino",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2ad88ad616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/89743fde6f0499ef185c5de00125a4b33563c7d8c5799780dac573c7c1d50eca.local",
+        "remote": "bodies/89743fde6f0499ef185c5de00125a4b33563c7d8c5799780dac573c7c1d50eca.remote"
+      },
+      "expected": {
+        "path": "/salud-perros-mayores/chequeo-geriatrico-canino.html",
+        "bytes": 74160,
+        "sha256": "3368b8b03d1893abc394928f184483e209eebf3b064a78ef50c1c519f8ad91ba",
+        "urlPath": "/salud-perros-mayores/chequeo-geriatrico-canino"
+      },
+      "actual": {
+        "bytes": 74160,
+        "sha256": "3368b8b03d1893abc394928f184483e209eebf3b064a78ef50c1c519f8ad91ba"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion",
+      "localPath": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.html",
+      "at": "2026-10-14T06:47:55.821Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2adf8f7616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/1723a1cb7c1791f732954eb78e70cb7578b5a1ae5cc12194299a9a8ac3325060.local",
+        "remote": "bodies/1723a1cb7c1791f732954eb78e70cb7578b5a1ae5cc12194299a9a8ac3325060.remote"
+      },
+      "expected": {
+        "path": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.html",
+        "bytes": 134060,
+        "sha256": "a7677f37f1d347d55c7c9496f849a5da453379fe98de2a2aa7f0508fed4677cd",
+        "urlPath": "/salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion"
+      },
+      "actual": {
+        "bytes": 134060,
+        "sha256": "a7677f37f1d347d55c7c9496f849a5da453379fe98de2a2aa7f0508fed4677cd"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+      "localPath": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html",
+      "at": "2026-10-14T06:47:55.885Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2ae593f616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/d5a85eed7c40949bdbd469865f06f4739402d9b156b4d9ecb5ed6e7c50783689.local",
+        "remote": "bodies/d5a85eed7c40949bdbd469865f06f4739402d9b156b4d9ecb5ed6e7c50783689.remote"
+      },
+      "expected": {
+        "path": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html",
+        "bytes": 124109,
+        "sha256": "4f89f491b5d064bc373fbeb0dbf0dd00680877e9111fc72b90c6acd4f96b2845",
+        "urlPath": "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia"
+      },
+      "actual": {
+        "bytes": 124109,
+        "sha256": "4f89f491b5d064bc373fbeb0dbf0dd00680877e9111fc72b90c6acd4f96b2845"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/salud-dental-perros-mayores",
+      "localPath": "/salud-perros-mayores/salud-dental-perros-mayores.html",
+      "at": "2026-10-14T06:47:55.950Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/salud-dental-perros-mayores",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2aeccf0eafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/c4c29e150d25f52d18f75461441d9103ba34ec05ed5e71503612a30285f016fc.local",
+        "remote": "bodies/c4c29e150d25f52d18f75461441d9103ba34ec05ed5e71503612a30285f016fc.remote"
+      },
+      "expected": {
+        "path": "/salud-perros-mayores/salud-dental-perros-mayores.html",
+        "bytes": 77271,
+        "sha256": "9368fe78d2853ea0dc20493ce68f7968e5ee49bfca039fa21715f791805b4319",
+        "urlPath": "/salud-perros-mayores/salud-dental-perros-mayores"
+      },
+      "actual": {
+        "bytes": 77271,
+        "sha256": "9368fe78d2853ea0dc20493ce68f7968e5ee49bfca039fa21715f791805b4319"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "localPath": "/salud-perros-mayores/sindrome-cushing-perros-mayores.html",
+      "at": "2026-10-14T06:47:56.011Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/sindrome-cushing-perros-mayores",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2af29c2616b-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/7436f7395aae398e6885c796f971fbf5d6529c2be542b614ca9690e21d38dbdd.local",
+        "remote": "bodies/7436f7395aae398e6885c796f971fbf5d6529c2be542b614ca9690e21d38dbdd.remote"
+      },
+      "expected": {
+        "path": "/salud-perros-mayores/sindrome-cushing-perros-mayores.html",
+        "bytes": 111389,
+        "sha256": "30643c1037517dbfeefecf3bb2559db252f88f69cbd4ce5c95deea2217bd9d73",
+        "urlPath": "/salud-perros-mayores/sindrome-cushing-perros-mayores"
+      },
+      "actual": {
+        "bytes": 111389,
+        "sha256": "30643c1037517dbfeefecf3bb2559db252f88f69cbd4ce5c95deea2217bd9d73"
+      },
+      "byteExact": true,
+      "pass": true
+    },
+    {
+      "url": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+      "localPath": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior.html",
+      "at": "2026-10-14T06:47:56.071Z",
+      "status": 200,
+      "finalUrl": "https://5a43d748-cuidatuperroviejo.g1721m.workers.dev/salud-perros-mayores/vacunas-desparasitacion-perros-senior",
+      "headers": {
+        "cache-control": "private, no-store",
+        "cf-ray": "a4a4a2af8e8deafd-ORD",
+        "content-type": "text/html; charset=utf-8",
+        "link": "<https://cuidatuperroviejo.com/llms.txt>; rel=\"describedby\"; type=\"text/plain\", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel=\"service-desc\"; type=\"application/vnd.oai.openapi+json\", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel=\"ard\"; type=\"application/json\", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel=\"ai-catalog\"; type=\"application/json\", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel=\"service-desc\"; type=\"application/mcp-server-card+json\"",
+        "x-robots-tag": "noindex"
+      },
+      "bodyFiles": {
+        "local": "bodies/3c9b22ba1736a085a06c1180f839ddf1f1a3c7ccfbb40920c30999077de179ca.local",
+        "remote": "bodies/3c9b22ba1736a085a06c1180f839ddf1f1a3c7ccfbb40920c30999077de179ca.remote"
+      },
+      "expected": {
+        "path": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior.html",
+        "bytes": 81756,
+        "sha256": "18be91dea2a1d6cafe2554ad34c8bfe31a5b25cb12f42e7382f585eede2f6b45",
+        "urlPath": "/salud-perros-mayores/vacunas-desparasitacion-perros-senior"
+      },
+      "actual": {
+        "bytes": 81756,
+        "sha256": "18be91dea2a1d6cafe2554ad34c8bfe31a5b25cb12f42e7382f585eede2f6b45"
+      },
+      "byteExact": true,
+      "pass": true
+    }
+  ],
+  "projectionOf": {
+    "bytes": 239775,
+    "sha256": "76d3218e54df2820c0d43f40d388b123d8bc125018d708c550d02f4caf8dd889",
+    "note": "headers restricted for public curation; all original bodies/hashes retained privately"
+  }
+}

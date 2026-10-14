@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-14T06:46:53.947Z",
+  "commit": "14e3bed40fcfab672ff4d81ba524f16ffc64e522",
+  "tree": "3c9f1eca54a579ee6b63333cc1cfb74306e02895",
+  "node": "v24.19.0",
+  "wrangler": "4.128.0",
+  "buildEntrySha256": "9a247cb83d470e3b1da22bb0e247318ec88c907941b3256fd1a2bd4b9fbc2d05",
+  "configSha256": "4e46f02750874ffafb307290e524bef5a93c53c0ec62f9b503dc1210f025f137",
+  "port": 8935,
+  "scope": "local rollback C13; 8 GET only; no streaming/deadline/local-matrix variants",
+  "beforeCleanup": {
+    "exitCode": null,
+    "signalCode": null
+  },
+  "status": "PASS",
+  "requests": 8,
+  "records": [
+    {
+      "path": "/api/mcp",
+      "status": 404,
+      "bytes": 29495,
+      "sha256": "1c6742b5ab785e0451fbb71ced0b7af4c5c28a2bc2e48625376fc681e54021ca"
+    },
+    {
+      "path": "/api/mcp/server-card",
+      "status": 404,
+      "bytes": 29495,
+      "sha256": "1c6742b5ab785e0451fbb71ced0b7af4c5c28a2bc2e48625376fc681e54021ca"
+    },
+    {
+      "path": "/.well-known/ard.json",
+      "status": 200,
+      "bytes": 1583,
+      "sha256": "023ee2cb7a6e9459a16e55ab725e9b50f63438ff947af91f02f287f4a434cc55"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "bytes": 4057,
+      "sha256": "a339e0cee1712840ebb6d725808eaeee33b26791cf101806d79a3ab4c647d0c4"
+    },
+    {
+      "path": "/api/agent/v1/catalog",
+      "status": 200,
+      "bytes": 19290,
+      "sha256": "8ef90f126c794c9feb884ebb99e736ab8320e1648f1630e886fe362d09381757"
+    },
+    {
+      "path": "/api/agent/v1/search?q=cushing",
+      "status": 200,
+      "bytes": 3372,
+      "sha256": "7f20cc34e33e3c3fcea1d35c9666573c070c5cca97713bec2bdb8a504b6a8cd3"
+    },
+    {
+      "path": "/api/agent/v1/tools/calidad-vida?hurt=5&hunger=5&hydration=5&hygiene=5&happiness=5&mobility=5&moreGoodDays=5",
+      "status": 200,
+      "bytes": 2089,
+      "sha256": "ca81c5613812405491280a52c0050028794e2fca67542c2d75fe848ece9f8c01"
+    },
+    {
+      "path": "/api/agent/v1/tools/movilidad?level=severe&handling=stressed",
+      "status": 200,
+      "bytes": 2397,
+      "sha256": "1218a371c46ba732eda19e8d741d59d7084c5ad7bd6982d0ba570ffc830b8e14"
+    }
+  ],
+  "projectionOf": {
+    "bytes": 111386,
+    "sha256": "fae4128baef267385dc93aff8d5a45d8a213b47417c26291eaa6e70ed4f7bed1",
+    "note": "HTTP bodies/logs private; no original changed"
+  }
+}

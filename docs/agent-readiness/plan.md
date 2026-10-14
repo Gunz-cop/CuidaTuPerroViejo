@@ -87,9 +87,11 @@ Reversión: desregistrar WebMCP y quitar nuevos endpoints, preservando las calcu
 
 ## F4B — MCP remoto
 
+Estado F4B 2026-10-14: **publicada y verificada en producción**, [cierre y evidencia](evidencia/f4b/implementacion/r3/README.md). Producto `b2ab1082c02799dab4306a7c167a6114c0163a90`; base técnica final F4A `cb8e10f`, documentación aceptada `a42a185`. Auditoría independiente: R1/5 FAIL, R2/5 FAIL, **R3/5 PASS**, con historial intacto. Preview final: 80 byteexactos + contacto con equivalencia restringida; producción: cliente MCP real, smoke **14/20 peticiones PASS**. C09 conserva limitación aceptada: cuotas/cap no determinables, no PASS; prueba externa de deadline pendiente, no bloqueante y no deuda según adenda3. Política `search=yes, ai-input=yes, ai-train=no` verificada. Sin scans ni score F4B; 73 general sigue como previsión histórica. WAF [#103](https://github.com/Gunz-cop/CuidaTuPerroViejo/issues/103) propuesta aparte, sin implementar; F5/F6 fuera.
+
 Entregar MCP Streamable HTTP con búsqueda, lectura y cálculos puros; server card generada; actualización del registro y ARD. La spec fijará capacidades, schemas de tools, transporte, versión del SDK, errores, protección de abuso y presupuestos.
 
-Ownership previsto: `src/lib/agent-mcp/`, endpoint `/mcp` según contrato final, card estática, registro de capacidades y configuración/routing exclusivamente necesarios. Integración secuencial de archivos compartidos.
+Ownership previsto: `src/lib/agent-mcp/`, endpoint final `/api/mcp`, card `/api/mcp/server-card` conforme SDD ratificada/adendas, card estática, registro de capacidades y configuración/routing exclusivamente necesarios. Integración secuencial de archivos compartidos.
 
 Aceptación: cliente compatible inicializa, lista y ejecuta herramientas; las respuestas coinciden con API/UI; IDs inválidos no llegan a lecturas arbitrarias; límites de body/request/resultado definidos y comprobados; card apunta al transporte correcto; control MCP pasa. Sin generación de pago implícita ni escritura administrativa.
 
