@@ -15,6 +15,10 @@ cause: name Error, message Network connection lost.
 
 El cuerpo500 de aquella respuesta NO fue capturado; no reconstruirlo. Logs y metadata demuestran fallo en capa proxy local y salida del proceso, sin identificar desencadenante. Chunked/keep-alive/respuestas sinconsumo son hipótesis, no causa confirmada. No trasladar automáticamente ese diagnóstico a producción: CloudflareWorkersproducción no utiliza el proxy Miniflare de wranglerdev.
 
+## Captura nueva tras corregir el consumo
+
+La reanudación235f666 volvió a fallar, ahora conOriginválido. Se conservó completo el cuerpo500:166bytes, SHA256 `a8a92a23c5acab4db617ce50f558cf849703da0a2eb7c33f9f1ba536f0bc676a`, terminalend. [Captura y metadata](error-500.json) y [cierre](README.md). El cuerpo identifica Networkconnectionlost en Miniflarecoreentry.worker.js:5201; el lognativo confirmaProxyWorker. Captura completa no identifica el desencadenante ni resuelve el fallo. No sustituye ni reconstruye el cuerpo ausente de la ejecuciónanterior.
+
 ## Cuando un incidente real esté autorizado
 
 Preservar originales privados por incidente, sin sobrescribirlos: fechaUTC, origenlocal/preview/producción, URL base/config/versiones exactas, SHA/tree/receipt/build/Workersversion reales, método/path, versiónMCP/headers aplicables, status/headers/cuerpo originales dentro de límites, cantidad/hashbytes y terminalend/error/cancel. Si hay truncamiento, cancellation o fallo de lectura, marcar evidencia parcial con el error real; nunca fabricar cuerpo ni clasificarlo como completo. Registrar Cf-Ray/requestID proporcionado por plataforma si existe, sin inventarlo; sirve para correlacionar con Workers observability/logs de la misma versión y hora.

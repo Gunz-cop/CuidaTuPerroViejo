@@ -1,0 +1,21 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ null
+- 'http://127.0.0.1:8922'
+
+    at file:///workspace/ctpv-f4b-desarrollo/scripts/agent-readiness/mcp-client.mjs:141:10
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: 'http://127.0.0.1:8922',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

@@ -1,0 +1,16 @@
+✔ control reads once, preserves bytes/status/headers and waits terminal before assert (7.309487ms)
+✔ existing8MiB consumption limit inclusive and +1 cancels even if capture could truncate (12.3319ms)
+✔ terminal error/cancel preserved without waiting only end (0.620063ms)
+✔ real HTTP500 body and next response captured completely using one reader and passive taps (20.500294ms)
+✔ local adapter preserves method/URL/headers and binary streamed bytes; evidence taps equal wire, JSON/SSE unchanged (30.924587ms)
+✔ real 413/JSON, HEAD and redirect responses preserved; no retry or redirect following (8.733895ms)
+✔ AbortSignal before send and during upload cancels source, releases request and preserves reason (4.019932ms)
+✔ abort after headers, response.cancel and adapter.close terminate open SSE/resources; network errors propagate without retries (11.914218ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 279.167477

@@ -1,0 +1,83 @@
+{
+  "root": "/workspace/f4b-originales-privados/consumo-control",
+  "records": [
+    {
+      "file": "client/http-originals.json",
+      "bytes": 6577413,
+      "sha256": "fa9a7cce267bd8e36e8fac1392d20935fc15458652090456b4a3a43603590fd9"
+    },
+    {
+      "file": "client/result.json",
+      "bytes": 3176,
+      "sha256": "ad56f135f5d605e9f061f527f618b8e83243d7b2c12e5cfe515c4bad3db74b56"
+    },
+    {
+      "file": "error-500.body",
+      "bytes": 166,
+      "sha256": "a8a92a23c5acab4db617ce50f558cf849703da0a2eb7c33f9f1ba536f0bc676a"
+    },
+    {
+      "file": "execution.json",
+      "bytes": 845,
+      "sha256": "7530a2a9529b3c0e1dfd3875fc61f32e7fde5bf3507b2c00f0a9a6330f4e78f8"
+    },
+    {
+      "file": "f4b-control-response.test.mjs",
+      "bytes": 3791,
+      "sha256": "a54ff4eda6e8b79378eba49c724a46b7dc4808e37099ed36c4b45251eb918eab"
+    },
+    {
+      "file": "focal.log",
+      "bytes": 993,
+      "sha256": "00245cf2b5a155758ea4262e22f2d51ec65a30562a6c6b76f47a3366848abcf0"
+    },
+    {
+      "file": "matrix.log",
+      "bytes": 541,
+      "sha256": "c2706d0d8255208cf6b6759a4a87d1befde595d76d5ab37cecc79402fce401e7"
+    },
+    {
+      "file": "mcp-client.mjs",
+      "bytes": 22609,
+      "sha256": "12057653df3d2fd9ba514d20562e2e81eb205acdd2a18598613e1830837ffc2a"
+    },
+    {
+      "file": "mcp-control-response.mjs",
+      "bytes": 1154,
+      "sha256": "23829add1261e52110b29a55aaf92437c271670fd5befea5a85c938968a17513"
+    },
+    {
+      "file": "mcp-local-http.mjs",
+      "bytes": 5493,
+      "sha256": "8b6f2be1ce1891095b97b11f1651a63ad2f2e9c646ca22605712d39e08048f01"
+    },
+    {
+      "file": "native-wrangler-2026-10-14_03-36-27_087.log",
+      "bytes": 17263,
+      "sha256": "2d6d45d095799423f28c4db3267eabb92f896060dc66ea61f5003374f9e435a9"
+    },
+    {
+      "file": "run.mjs",
+      "bytes": 3649,
+      "sha256": "e65f907d8cf55d24ae7af04c9b615f14be599923b13531aa9ff4742d3a48c7d7"
+    },
+    {
+      "file": "workerd.log",
+      "bytes": 19834,
+      "sha256": "f4b0ebe553f63082d3bca5f42791442470f564d55130c820023445855306b61d"
+    },
+    {
+      "file": "workerd.stderr.log",
+      "bytes": 540,
+      "sha256": "bdea0acbff22d6956c5455f52b32f8d20131cfe65d804e6e7e8810716165f0a6"
+    },
+    {
+      "file": "workerd.stdout.log",
+      "bytes": 19294,
+      "sha256": "9671f4f20d778275f032d9e4c3c07345b479da826b16181123c3b47bb3400394"
+    }
+  ],
+  "excluded": "mutable local state directories remain private",
+  "productCommit": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+  "harnessCommit": "235f666594eee569b12573be1bca4dfa6261e9c0"
+}

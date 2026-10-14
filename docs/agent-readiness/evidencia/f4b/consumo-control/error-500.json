@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-14T03:36:29.513Z",
+  "method": "POST",
+  "url": "http://127.0.0.1:8922/api/mcp",
+  "protocolVersion": "2026-07-28",
+  "requestHeaders": {
+    "accept": "application/json, text/event-stream",
+    "content-type": "application/json",
+    "mcp-method": "server/discover",
+    "mcp-protocol-version": "2026-07-28",
+    "origin": "http://127.0.0.1:8922"
+  },
+  "requestBytesSent": 177,
+  "requestSha256": "5fd21d0962fe9fc0bc0415c0c5d0834ad8f96e3624db7c0540b84927dd124c88",
+  "sentWireHeaders": "POST /api/mcp HTTP/1.1\r\naccept: application/json, text/event-stream\r\ncontent-type: application/json\r\nmcp-method: server/discover\r\nmcp-protocol-version: 2026-07-28\r\norigin: http://127.0.0.1:8922\r\nHost: 127.0.0.1:8922\r\nConnection: keep-alive\r\nTransfer-Encoding: chunked\r\n\r\n",
+  "status": 500,
+  "responseHeaders": {
+    "content-length": "166",
+    "content-type": "text/plain;charset=UTF-8"
+  },
+  "body": "Error: Network connection lost.\n    at async Object.fetch (file:///workspace/ctpv-f4b-desarrollo/node_modules/miniflare/dist/src/workers/core/entry.worker.js:5201:22)",
+  "bodyBase64": "RXJyb3I6IE5ldHdvcmsgY29ubmVjdGlvbiBsb3N0LgogICAgYXQgYXN5bmMgT2JqZWN0LmZldGNoIChmaWxlOi8vL3dvcmtzcGFjZS9jdHB2LWY0Yi1kZXNhcnJvbGxvL25vZGVfbW9kdWxlcy9taW5pZmxhcmUvZGlzdC9zcmMvd29ya2Vycy9jb3JlL2VudHJ5Lndvcmtlci5qczo1MjAxOjIyKQ==",
+  "bytes": 166,
+  "sha256": "a8a92a23c5acab4db617ce50f558cf849703da0a2eb7c33f9f1ba536f0bc676a",
+  "complete": true,
+  "terminal": "end",
+  "harnessCommit": "235f666594eee569b12573be1bca4dfa6261e9c0",
+  "harnessTree": "7cd268b2d0749fe47206a7616fa342bad7dd2851",
+  "productCommit": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+  "interpretation": "Actual500body captured before assert; error at Miniflare core service.fetch, root cause not established. Not a production incident."
+}
