@@ -63,7 +63,7 @@ test('OpenAPI, Linkset, skills discovery, artifact digest, and both ARD manifest
   ]);
   assert.deepEqual(ard.entries[2].representativeQueries, capabilities.skills[0].representativeQueries);
   assert.deepEqual(ard.entries[0].representativeQueries, capabilities.ardApiEntry.representativeQueries);
-  assert.deepEqual(Object.keys(result.assets), ['queryIndex', 'openapi', 'linkset', 'skillsIndex', 'skill', 'ard', 'mcpCard']);
+  assert.deepEqual(Object.keys(result.assets), ['queryIndex', 'openapi', 'linkset', 'skillsIndex', 'skill', 'ard', 'mcpCard', 'mcpDiscovery']);
   assert.ok(!Object.keys(result.assets).some((key) => key.toLowerCase().includes('llms')));
 });
 

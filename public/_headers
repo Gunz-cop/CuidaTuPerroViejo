@@ -56,6 +56,11 @@
   Cache-Control: no-store
   Access-Control-Allow-Origin: *
 
+/.well-known/mcp/server-card.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: no-store
+  Access-Control-Allow-Origin: *
+
 /*
   Link: <https://cuidatuperroviejo.com/llms.txt>; rel="describedby"; type="text/plain", <https://cuidatuperroviejo.com/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <https://cuidatuperroviejo.com/agent-api/v1/openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", <https://cuidatuperroviejo.com/.well-known/ard.json>; rel="ard"; type="application/json", <https://cuidatuperroviejo.com/.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json", <https://cuidatuperroviejo.com/api/mcp/server-card>; rel="service-desc"; type="application/mcp-server-card+json"
   X-Content-Type-Options: nosniff

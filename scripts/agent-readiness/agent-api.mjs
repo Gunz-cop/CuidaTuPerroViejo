@@ -322,7 +322,7 @@ function deriveArd(capabilities) {
   };
 }
 
-export async function deriveMcpCard(capabilities) {
+function validateMcpRegistry(capabilities) {
   const mcp = capabilities.mcp;
   if (!mcp || mcp.endpoint !== '/api/mcp' || mcp.cardPath !== '/api/mcp/server-card'
     || mcp.name !== 'cuidatuperroviejo.com/guias-herramientas' || mcp.version !== '1.0.0'
@@ -330,7 +330,19 @@ export async function deriveMcpCard(capabilities) {
     || JSON.stringify(mcp.protocolVersions) !== JSON.stringify(['2026-07-28', '2025-11-25'])
     || JSON.stringify(mcp.tools) !== JSON.stringify(['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids'])
     || mcp.ardEntry?.identifier !== 'urn:air:cuidatuperroviejo.com:mcp:guias-herramientas'
-    || mcp.ardEntry?.type !== 'application/mcp-server-card+json' || mcp.ardEntry?.url !== `${SITE}${mcp.cardPath}`) fail('MCP_REGISTRY_INVALID');
+    || mcp.ardEntry?.type !== 'application/mcp-server-card+json' || mcp.ardEntry?.url !== `${SITE}${mcp.cardPath}`
+    || JSON.stringify(mcp.capabilities) !== JSON.stringify({ tools: { listChanged: false } })) fail('MCP_REGISTRY_INVALID');
+  return mcp;
+}
+
+// Descriptor de compatibilidad del evaluador: no tiene un JSON Schema primario.
+export function deriveMcpDiscovery(capabilities) {
+  const mcp = validateMcpRegistry(capabilities);
+  return jsonBytes({ serverInfo: { name: mcp.name, version: mcp.version }, endpoint: `${SITE}${mcp.endpoint}`, capabilities: mcp.capabilities });
+}
+
+export async function deriveMcpCard(capabilities) {
+  const mcp = validateMcpRegistry(capabilities);
   const card = {
     $schema: 'https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json',
     name: mcp.name, version: mcp.version, title: mcp.title, description: mcp.description, websiteUrl: SITE,
@@ -356,6 +368,7 @@ function outputPathMap(assets) {
     ['.well-known/ard.json', assets.ard],
     ['.well-known/ai-catalog.json', assets.ard],
     ['api/mcp/server-card', assets.mcpCard],
+    ['.well-known/mcp/server-card.json', assets.mcpDiscovery],
   ]);
 }
 
@@ -391,12 +404,13 @@ export async function buildArtifacts(buildDir, root = ROOT) {
   const linksetBytes = jsonBytes(deriveLinkset(capabilities));
   const ardBytes = jsonBytes(deriveArd(capabilities));
   const mcpCardBytes = await deriveMcpCard(capabilities);
+  const mcpDiscoveryBytes = deriveMcpDiscovery(capabilities);
   const skillsIndexBytes = jsonBytes({
     $schema: 'https://schemas.agentskills.io/discovery/0.2.0/schema.json',
     skills: [{ name: capabilities.skills[0].name, type: 'skill-md', description: capabilities.skills[0].description, url: `${SITE}${capabilities.skills[0].path}`, digest: `sha256:${sha256(skillBytes)}` }],
   });
   const openapiBytes = jsonBytes(openapi);
-  for (const [name, bytes] of [['OPENAPI', openapiBytes], ['LINKSET', linksetBytes], ['ARD', ardBytes], ['SKILLS_INDEX', skillsIndexBytes], ['MCP_CARD', mcpCardBytes]]) byteLimit(name, bytes.length, MAX_DESCRIPTOR_BYTES);
+  for (const [name, bytes] of [['OPENAPI', openapiBytes], ['LINKSET', linksetBytes], ['ARD', ardBytes], ['SKILLS_INDEX', skillsIndexBytes], ['MCP_CARD', mcpCardBytes], ['MCP_DISCOVERY', mcpDiscoveryBytes]]) byteLimit(name, bytes.length, MAX_DESCRIPTOR_BYTES);
   const validator = addFormats(new Ajv2020({ allErrors: true, strict: true, validateFormats: true }));
   const makeValidator = (name) => {
     const target = { $schema: schema.$schema, $ref: `#/$defs/${name}`, $defs: schema.$defs };
@@ -411,7 +425,7 @@ export async function buildArtifacts(buildDir, root = ROOT) {
   if (!skillValidator(JSON.parse(skillsIndexBytes.toString('utf8')))) fail(`SKILLS_INDEX_SCHEMA_INVALID ${validator.errorsText(skillValidator.errors)}`);
   const ardValidator = makeValidator('ArdCompatibilityManifest');
   for (const label of ['ARD', 'AI_CATALOG_COMPAT']) if (!ardValidator(JSON.parse(ardBytes.toString('utf8')))) fail(`${label}_SCHEMA_INVALID ${validator.errorsText(ardValidator.errors)}`);
-  const assets = { queryIndex: queryBytes, openapi: openapiBytes, linkset: linksetBytes, skillsIndex: skillsIndexBytes, skill: skillBytes, ard: ardBytes, mcpCard: mcpCardBytes };
+  const assets = { queryIndex: queryBytes, openapi: openapiBytes, linkset: linksetBytes, skillsIndex: skillsIndexBytes, skill: skillBytes, ard: ardBytes, mcpCard: mcpCardBytes, mcpDiscovery: mcpDiscoveryBytes };
   const outputFiles = [...outputPathMap(assets)].map(([path, bytes]) => ({ path, bytes: bytes.length, sha256: sha256(bytes) }));
   const manifestBytes = jsonBytes({
     schemaVersion: 'agent-api-build-evidence/1',
@@ -497,7 +511,7 @@ export async function checkArtifacts(buildDir, root = ROOT) {
     listFiles(join(result.assetRoot, 'api/mcp'), result.assetRoot),
   ]);
   const allActual = actualPaths.flat();
-  const actualReserved = allActual.filter((path) => path.startsWith('agent-api/v1/') || path === '.well-known/api-catalog' || path.startsWith('.well-known/agent-skills/') || path === '.well-known/ard.json' || path === '.well-known/ai-catalog.json' || path.startsWith('api/mcp/')).sort(ascii);
+  const actualReserved = allActual.filter((path) => path.startsWith('agent-api/v1/') || path === '.well-known/api-catalog' || path.startsWith('.well-known/agent-skills/') || path.startsWith('.well-known/mcp/') || path === '.well-known/ard.json' || path === '.well-known/ai-catalog.json' || path.startsWith('api/mcp/')).sort(ascii);
   const expectedPaths = [...expected.keys()].sort(ascii);
   if (JSON.stringify(actualReserved) !== JSON.stringify(expectedPaths)) fail('OUTPUT_SET_MISMATCH');
   for (const [path, bytes] of expected) {
