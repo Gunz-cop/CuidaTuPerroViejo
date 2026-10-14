@@ -1,0 +1,132 @@
+{
+  "started": "2026-10-14T05:27:36.109Z",
+  "ended": "2026-10-14T05:27:55.040Z",
+  "base": "https://40fed98d-cuidatuperroviejo.g1721m.workers.dev",
+  "product": "192dcdd52d2790652ef2dbcb6d23a0f5006ade43",
+  "harnessCommit": "e21374cd8650ec8482aa23fdb97320bd83cfbed9",
+  "node": "v24.19.0",
+  "undici": "7.29.0",
+  "sdk": "2.3.1",
+  "transport": "Node fetch",
+  "requests": 20,
+  "budget": 320,
+  "status": "STOP",
+  "results": [
+    {
+      "label": "C07 Accept",
+      "status": "PASS",
+      "http": 406,
+      "sequence": 1
+    },
+    {
+      "label": "C08 batch",
+      "status": "PASS",
+      "http": 400,
+      "sequence": 2
+    },
+    {
+      "label": "C08 malformed",
+      "status": "PASS",
+      "http": 400,
+      "sequence": 3
+    },
+    {
+      "label": "legacy cancelled",
+      "status": "PASS",
+      "http": 202,
+      "sequence": 4
+    },
+    {
+      "label": "modern ping",
+      "status": "PASS",
+      "http": 404,
+      "sequence": 5
+    },
+    {
+      "label": "legacy ping",
+      "status": "PASS",
+      "http": 200,
+      "sequence": 6
+    },
+    {
+      "label": "preflight",
+      "status": "PASS",
+      "http": 204
+    },
+    {
+      "label": "stream32768",
+      "status": "PASS",
+      "http": 200,
+      "sequence": 8
+    },
+    {
+      "label": "stream32769",
+      "status": "PASS",
+      "http": 413,
+      "sequence": 9
+    },
+    {
+      "label": "immediate ping after413",
+      "status": "PASS",
+      "http": 200,
+      "sequence": 10
+    },
+    {
+      "label": "immediate batch after ping",
+      "status": "PASS",
+      "http": 400,
+      "sequence": 11
+    },
+    {
+      "label": "depth16",
+      "status": "PASS",
+      "http": 200,
+      "sequence": 12
+    },
+    {
+      "label": "depth17",
+      "status": "PASS",
+      "http": 400,
+      "sequence": 13
+    },
+    {
+      "label": "meta8192",
+      "status": "PASS",
+      "http": 200,
+      "sequence": 14
+    },
+    {
+      "label": "meta8193",
+      "status": "PASS",
+      "http": 400,
+      "sequence": 15
+    },
+    {
+      "label": "cap recovery",
+      "status": "PASS",
+      "http": 200,
+      "sequence": 19
+    },
+    {
+      "label": "C09 cap2/3",
+      "status": "no determinable en plataforma",
+      "third": 200,
+      "aborted": [
+        {
+          "error": "Error: matrix-cancel"
+        },
+        {
+          "error": "Error: matrix-cancel"
+        }
+      ],
+      "sourceCancelled": [
+        true,
+        true
+      ]
+    }
+  ],
+  "failure": {
+    "message": "Error: STOP deadline status/time 503/15033.70219ms",
+    "stack": "Error: STOP deadline status/time 503/15033.70219ms\n    at file:///workspace/ctpv-f4b-desarrollo/scripts/agent-readiness/mcp-preview-pending.mjs:67:69\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+  }
+}
