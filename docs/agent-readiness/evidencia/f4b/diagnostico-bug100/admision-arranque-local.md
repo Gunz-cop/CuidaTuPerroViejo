@@ -1,0 +1,9 @@
+# Admisión acotada del comando diagnóstico local
+
+2026-10-14, después del primer arranque mínimo (8 solicitudes) y antes de cualquier solicitud a la aplicación. El primer intento de arrancar la copia de aplicación terminó con código1, sin ready ni solicitudes: la omisión del flag `--local` permitió que Wrangler intentara establecer proxy remoto del binding AI; faltaba token. No hubo publicación ni petición de la matriz a la aplicación. El error de preparación pertenece al autor, no acredita bug100.
+
+El propietario autorizó diagnóstico **local**. Se admite exclusivamente corregir el comando de los tres lanzamientos pendientes mediante `wrangler dev --local --config ...`: help del binario fijo4.128.0 define `--local` como «Run locally with remote bindings disabled». No cambia configuración/versiones del producto ni incorpora una solución a bug100; el binding AI no forma parte de estas capacidades. No se añaden credenciales ni se usa remoto.
+
+Presupuesto original inalterado:8 ejecutadas +24 pendientes, máximo32 solicitudes, cero retries de peticiones/casos ejecutados. Se conserva el arranque fallido sin resultado HTTP. Hay un arranque de preparación adicional sin solicitudes; no se oculta como una de las cuatro ejecuciones de prueba. Se reanuda una sola vez desde aplicación/fetch y después mínimo/http y aplicación/http, con fuentes, headers, payloads y comprobaciones idénticos. No se repite mínimo/fetch ni se agregan variantes. Si este arranque corregido falla, STOP del diagnóstico, sin nuevos intentos.
+
+La corrección del comando cumple el alcance local ya autorizado; no constituye admisión de cambios de entorno/dependencias del producto ni excepción C08. R2/5 FAIL y STOP de publicación permanecen. Originales run.mjs/run.log/result.json iniciales conservados por separado, incluido el intento de proxy remoto fallido.
