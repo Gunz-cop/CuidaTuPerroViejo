@@ -19,6 +19,12 @@ Cuando el usuario pida revisar, mejorar, reorganizar o documentar el enlazado in
 
 La implementación vive principalmente en [`src/data/internal-links.ts`](src/data/internal-links.ts) y [`src/components/SiloNavigation.astro`](src/components/SiloNavigation.astro). Las reglas y el mapa operativo están documentados en [`docs/seo/enlazado-interno.md`](docs/seo/enlazado-interno.md). Antes de modificar enlaces, revisa esos tres recursos y valida con `npm run build`.
 
+## Herramientas interactivas
+
+Cuando el usuario pida crear, rediseñar o mejorar una herramienta o app del pilar `/herramientas` (calculadora de edad, calidad de vida HHHHHMM, selector de movilidad o una nueva), usa [`.agents/skills/crear-herramienta-interactiva/SKILL.md`](.agents/skills/crear-herramienta-interactiva/SKILL.md): evidencia revisada por pares verificada una a una, tono cálido, lógica compartida en `src/lib/`, diseño responsive con animaciones CSS, tarjeta para compartir, página con método y fuentes, e inventario de agentes. La referencia viva es la calculadora de edad (`src/lib/dog-age.ts`, `src/components/tools/DogAgeTool.astro`).
+
+Para revisar una herramienta ya hecha, usa [`.agents/skills/auditar-herramienta-interactiva/SKILL.md`](.agents/skills/auditar-herramienta-interactiva/SKILL.md). Igual que con los artículos: quien crea no audita y quien audita no corrige.
+
 ## Redacción de contenido de blog
 
 Antes de generar un briefing o redactar un artículo de blog para `cuidatuperroviejo.com`, consulta primero las skills en `.agents/skills/`:
