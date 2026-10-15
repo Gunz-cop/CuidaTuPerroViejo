@@ -41,53 +41,57 @@ const uid = `bano-${variant}`;
   <figure class="lesson" aria-labelledby={`${uid}-title`}>
     <header><p class="kicker">{scene.kicker}</p><h3 id={`${uid}-title`}>{scene.title}</h3></header>
     <div class="canvas">
-      <svg viewBox="0 0 760 360" role="img" aria-labelledby={`${uid}-svg-title ${uid}-desc`}>
+      <div class="scene-label" aria-hidden="true">
+        <span class="live-dot"></span><span>{variant === 'pausa' ? 'Observar · detener · dar espacio' : variant === 'espacio' ? 'Preparar antes de empezar' : 'Una zona cada vez'}</span>
+        <span class="senior-tag">Dogo senior</span>
+      </div>
+      <svg viewBox="0 0 760 420" role="img" aria-labelledby={`${uid}-svg-title ${uid}-desc`}>
         <title id={`${uid}-svg-title`}>{scene.title}</title>
-        <desc id={`${uid}-desc`}>Esquema de un dogo argentino blanco con orejas naturales y una mancha gris sobre el ojo izquierdo. {scene.steps.map(s => s.join(': ')).join('. ')}</desc>
+        <desc id={`${uid}-desc`}>Ilustración realista del mismo dogo argentino de edad avanzada: orejas naturales, expresión envejecida y menor tono muscular. {scene.steps.map(s => s.join(': ')).join('. ')}</desc>
         <defs>
-          <pattern id={`${uid}-mat`} width="12" height="12" patternUnits="userSpaceOnUse"><path d="M0 6h12M6 0v12" stroke="#fff" stroke-opacity=".25" /></pattern>
-          <linearGradient id={`${uid}-room`} x2="0" y2="1"><stop stop-color="#e7f0ec"/><stop offset="1" stop-color="#faf7ee"/></linearGradient>
+          <pattern id={`${uid}-mat`} width="14" height="14" patternUnits="userSpaceOnUse"><path d="M0 7h14M7 0v14" stroke="#fff" stroke-opacity=".28" stroke-width="1.5"/></pattern>
+          <linearGradient id={`${uid}-room`} x2="0" y2="1"><stop stop-color="#e7eee6"/><stop offset="1" stop-color="#f9f6ed"/></linearGradient>
+          <linearGradient id={`${uid}-cloth`} x2="1" y2="1"><stop stop-color="#faf1da"/><stop offset="1" stop-color="#cfb989"/></linearGradient>
         </defs>
-        <rect width="760" height="360" rx="16" fill={`url(#${uid}-room)`}/>
-        <path d="M36 279H724" stroke="#9bb0a7" stroke-width="3"/>
-        <path d="M80 34V279M680 34V279" stroke="#c5d3cc" stroke-width="2"/>
-        <rect x="100" y="45" width="104" height="92" rx="10" fill="#fff9e4" stroke="#cad9ce"/>
-        <path d="M152 45V137M100 91H204" stroke="#d6dfd5" stroke-width="3"/>
-        <g class="mat"><ellipse cx="390" cy="281" rx="201" ry="22" fill="#16766b"/><ellipse cx="390" cy="281" rx="201" ry="22" fill={`url(#${uid}-mat)`}/></g>
-        {variant === 'espacio' && <>
-          <g class="entry"><path d="M50 303H182" stroke="#b38342" stroke-width="17" stroke-linecap="round"/><path d="m154 293 15 10-15 10" stroke="#fff" stroke-width="3" fill="none"/></g>
-          <g class="supplies"><rect x="596" y="145" width="112" height="12" rx="5" fill="#a9754e"/><rect x="612" y="100" width="27" height="45" rx="5" fill="#287b70"/><path d="M619 100v-8h14" stroke="#254f48" stroke-width="5" fill="none"/><rect x="651" y="112" width="41" height="30" rx="4" fill="#e4ba67"/></g>
-          <g class="exit"><rect x="535" y="301" width="167" height="26" rx="13" fill="#e5ba70"/><path d="M550 314H684" stroke="#fff6dd" stroke-width="3"/></g>
-        </>}
-        <g class="dog">
-          <ellipse cx="382" cy="174" rx="135" ry="62" fill="#fffdf6" stroke="#3f5d55" stroke-width="3"/>
-          <path d="M280 156q-33 13-53-12q8 42 37 41" fill="#fffdf6" stroke="#3f5d55" stroke-width="3"/>
-          <path d="M285 204l-8 64q8 12 30 3l15-58M425 211l13 59q11 10 30 0l-3-68" fill="#fffdf6" stroke="#3f5d55" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M331 220l-2 46q9 9 26 0l10-42M473 201l12 63q11 11 25 0l-4-81" fill="#e6e9e3" stroke="#3f5d55" stroke-width="3"/>
-          <g class="head">
-            <path d="M450 144q-1-46 36-58q28-7 47 12l28 29q21 8 10 25l-22 9q-11 32-42 24l-34-16" fill="#fffdf6" stroke="#3f5d55" stroke-width="3"/>
-            <path d="M480 96q-29-7-27 20l17 28q16-8 18-30" fill="#e0ddd1" stroke="#3f5d55" stroke-width="3"/>
-            <ellipse cx="523" cy="113" rx="12" ry="9" fill="#8e918b"/>
-            <circle cx="528" cy="121" r="4" fill="#3b352b"/>
-            <ellipse cx="566" cy="137" rx="10" ry="7" fill="#233c37"/>
-            <path d="M548 153q9 4 15-2" stroke="#3f5d55" stroke-width="2" fill="none"/>
-          </g>
+        <rect width="760" height="420" rx="18" fill={`url(#${uid}-room)`}/>
+        <path d="M30 345H730" stroke="#c4d0c0" stroke-width="2"/>
+        <g class="room-lines" stroke="#cfdbcd" stroke-width="1.5" fill="none"><path d="M45 345V30M715 345V30"/><path d="M45 305H715" stroke-dasharray="2 8"/></g>
+        <g class="mat">
+          <rect x="136" y="321" width="493" height="37" rx="18" fill="#276d5c"/>
+          <rect x="136" y="321" width="493" height="37" rx="18" fill={`url(#${uid}-mat)`}/>
         </g>
+        <ellipse cx="382" cy="333" rx="209" ry="15" fill="#2e503c" opacity=".1"/>
+        <image class="senior-dog" href="/images/blog/banar-perro-viejo-movilidad-reducida/dogo-argentino-senior-perfil.webp" x="125" y="45" width="510" height="300" preserveAspectRatio="xMidYMid meet"/>
         {variant === 'pausa' && <>
-          <g class="water"><path d="M416 54l-47 94M429 58l-45 95M442 63l-43 95" stroke="#559fb2" stroke-width="4" stroke-dasharray="6 9"/><path d="M407 49l38 19" stroke="#3f5d55" stroke-width="13" stroke-linecap="round"/></g>
-          <g class="hand"><path d="M668 72l-88 43-125 28q-20 12-8 21q8 6 19-2l117-14 75-28" fill="#d9ac87" stroke="#8e6552" stroke-width="3"/></g>
-          <g class="space-ring"><ellipse cx="397" cy="206" rx="214" ry="112" fill="none" stroke="#338d7e" stroke-width="3" stroke-dasharray="9 9"/></g>
-          <g class="pause-mark"><rect x="344" y="53" width="14" height="37" rx="4" fill="#ad633c"/><rect x="366" y="53" width="14" height="37" rx="4" fill="#ad633c"/></g>
-          <g class="exit-arrow"><path d="M215 309H82m22-17-22 17 22 17" fill="none" stroke="#227b6b" stroke-width="5" stroke-linejoin="round"/></g>
+          <g class="observe-ring"><circle cx="544" cy="150" r="61" fill="none" stroke="#bd8e4b" stroke-width="2" stroke-dasharray="5 6"/><circle cx="594" cy="107" r="16" fill="#fff8e9" stroke="#bd8e4b" stroke-width="2"/><path d="M594 99v10m0 6v1" stroke="#99692e" stroke-width="3" stroke-linecap="round"/></g>
+          <g class="water">
+            <path d="M342 38q-12-15-23-4l-17 22" fill="none" stroke="#527369" stroke-width="8" stroke-linecap="round"/>
+            <path d="m288 56 29 16" stroke="#527369" stroke-width="11" stroke-linecap="round"/>
+            <g class="drops" stroke="#649fa3" stroke-width="3" stroke-linecap="round"><path d="M289 77l-8 18m22-10-7 18m-7 0-8 18m-10-16-6 15m34-9-5 15"/></g>
+          </g>
+          <g class="touch-icon" fill="none" stroke="#8b6a4f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="636" y="124" width="75" height="75" rx="20" fill="#fff9ee" stroke="#d9c9ac"/>
+            <path d="M656 171v-22q0-7 6-7t6 7v12-27q0-7 6-7t6 7v27-20q0-7 6-7t6 7v30q0 15-15 15h-8q-11 0-15-12l-7-12q-3-6 2-8t8 5" transform="translate(0 2) scale(.99)"/>
+          </g>
+          <g class="pause-mark"><circle cx="336" cy="77" r="30" fill="#faf2e2" stroke="#b78b4e" stroke-width="2"/><path d="M328 64v26M345 64v26" stroke="#9e6b30" stroke-width="6" stroke-linecap="round"/></g>
+          <g class="space-ring"><rect x="93" y="59" width="575" height="310" rx="120" fill="none" stroke="#50856a" stroke-width="2.5" stroke-dasharray="8 8"/></g>
+          <g class="exit-arrow"><path d="M555 388H690m-17-13 17 13-17 13" fill="none" stroke="#28654f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+        </>}
+        {variant === 'espacio' && <>
+          <g class="entry" stroke="#876844" stroke-width="3" fill="none"><rect x="37" y="146" width="66" height="111" rx="9" fill="#fdf9ef" stroke="#d7cbb6"/><path d="M52 244v-81h36v81M79 204h1"/><path d="M43 383H127m-13-10 13 10-13 10" stroke="#739477" stroke-linecap="round"/></g>
+          <g class="supplies"><rect x="645" y="194" width="80" height="7" rx="3" fill="#9c8061"/><rect x="651" y="146" width="27" height="48" rx="7" fill="#477865"/><path d="M658 146v-11h27" stroke="#385e4e" stroke-width="5" fill="none"/><rect x="686" y="164" width="29" height="30" rx="6" fill="#e2ceaa"/><path d="M690 174h20m-20 10h20" stroke="#bca17c" stroke-width="2"/></g>
+          <g class="exit"><rect x="526" y="375" width="181" height="26" rx="13" fill="#cbb887"/><path d="M542 388h147" stroke="#f5e8c9" stroke-width="3"/><path d="M545 377v22m9-22v22m135-22v22m-9-22v22" stroke="#9b895e" stroke-width="2"/></g>
         </>}
         {variant === 'zonas' && <>
-          <g class="zone zone-0"><circle cx="454" cy="252" r="29"/><path class="cloth" d="M435 241h31v21h-31z"/></g>
-          <g class="zone zone-1"><circle cx="278" cy="191" r="29"/><path class="cloth" d="M265 181h26v21h-26z"/></g>
-          <g class="zone zone-2"><circle cx="441" cy="199" r="29"/><path class="cloth" d="M427 189h27v21h-27z"/></g>
-          <g class="zone zone-3"><ellipse cx="375" cy="173" rx="85" ry="42"/><path class="cloth" d="M345 152h53v35h-53z"/></g>
+          <g class="zone-focus">
+            <circle class="zone-halo" r="37" fill="#f3d58a" fill-opacity=".2" stroke="#b88b3a" stroke-width="2" stroke-dasharray="5 5"/>
+            <circle r="5" fill="#b38332" stroke="#fff" stroke-width="2"/>
+            <g class="cloth"><path d="M12-24h43l6 32-44 6z" fill={`url(#${uid}-cloth)`} stroke="#a58d63" stroke-width="1.5"/><path d="m20-17 31-1m-30 7 31-2m-30 8 32-3M24-23l4 32" fill="none" stroke="#fffaf0" stroke-width="2"/></g>
+          </g>
+          <g class="dry-sparkles" stroke="#c09b4c" stroke-width="2" stroke-linecap="round"><path d="M395 105v18m-9-9h18M440 86v14m-7-7h14M361 144v12m-6-6h12"/></g>
         </>}
-        <g class="step-pips" aria-hidden="true">{scene.steps.map((_, i) => <circle data-pip={i} cx={341+i*26} cy="337" r="5" fill="#a9bfb4"/>)}</g>
       </svg>
+      <div class="scene-progress" aria-hidden="true">{scene.steps.map(([label],i) => <span data-pip={i}><i></i><span>{label}</span></span>)}</div>
     </div>
     <ol class="step-list">{scene.steps.map(([title, text], i) => <li data-panel={i}><span class="ordinal">0{i+1}</span><div><strong>{title}</strong><p>{text}</p></div></li>)}</ol>
     <div class="controls" hidden>
@@ -168,49 +172,60 @@ const uid = `bano-${variant}`;
 </script>
 
 <style>
-  [data-bano-sequence] { display:block; margin:2.5rem 0; color:#254f48; }
-  .lesson { margin:0; background:#f8faf5; border:1px solid #bbd0c1; border-radius:1.5rem; overflow:hidden; box-shadow:0 14px 40px #1c50370b; }
-  header { padding:1.5rem 1.5rem .7rem; }
-  .kicker { color:#426a5d; font:700 .72rem/1.5 system-ui,sans-serif; text-transform:uppercase; letter-spacing:.12em; margin:0 0 .5rem; }
-  header h3 { margin:0; font:700 clamp(1.15rem,3vw,1.7rem)/1.25 system-ui,sans-serif; letter-spacing:-.025em; }
-  .canvas { padding:.6rem 1rem; }
-  svg { display:block; width:100%; height:auto; }
-  .step-list { padding:0 1.5rem; margin:.5rem 0; list-style:none; }
-  .step-list li { display:flex; align-items:flex-start; gap:1rem; padding:.8rem 0; }
-  .step-list li[hidden] { display:none; }
-  .ordinal { flex:0 0 2.5rem; height:2.5rem; display:grid; place-items:center; border-radius:50%; background:#dfecdf; font:700 .9rem system-ui,sans-serif; }
-  .step-list strong { font-size:1.07rem; }
-  .step-list p { margin:.3rem 0 0; font-size:.95rem; line-height:1.65; }
+  [data-bano-sequence] { display:block; margin:2.5rem 0; color:#294b3d; }
+  .lesson { margin:0; background:#fcfcf7; border:1px solid #c5d1bd; border-radius:1.4rem; overflow:hidden; box-shadow:0 12px 38px #193d2710; color:#294b3d; }
+  .lesson header { padding:1.5rem 1.5rem .9rem; }
+  .lesson .kicker { color:#536d51!important; font:700 .7rem/1.5 system-ui,sans-serif; text-transform:uppercase; letter-spacing:.1em; margin:0 0 .6rem; }
+  .lesson header h3 { margin:0; color:#294b3d!important; font:700 clamp(1.15rem,3vw,1.65rem)/1.3 system-ui,sans-serif; letter-spacing:-.025em; }
+  .canvas { margin:0 1rem; border-radius:1rem; overflow:hidden; background:#e7eee6; }
+  .scene-label { display:flex; align-items:center; gap:.45rem; padding:.8rem 1rem .3rem; color:#466449; font:600 .66rem/1.5 system-ui,sans-serif; }
+  .live-dot { width:6px; height:6px; border-radius:50%; background:#6c8b60; flex-shrink:0; }
+  .senior-tag { margin-left:auto; border:1px solid #aebfa2; border-radius:1rem; padding:.15rem .5rem; white-space:nowrap; font-size:.6rem; }
+  .canvas svg { display:block; width:100%; height:auto; }
+  .scene-progress { display:flex; gap:.5rem; padding:.1rem 1rem 1rem; }
+  .scene-progress>span { flex:1; display:flex; flex-direction:column; gap:.35rem; min-width:0; color:#52694b; font:500 .6rem/1.4 system-ui,sans-serif; }
+  .scene-progress i { height:3px; border-radius:4px; background:#c0cfb9; }
+  [data-step='0'] [data-pip='0'] i,[data-step='1'] [data-pip='1'] i,[data-step='2'] [data-pip='2'] i,[data-step='3'] [data-pip='3'] i { background:#355e41; }
+  .lesson .step-list { padding:0 1.5rem; margin:.6rem 0; list-style:none; }
+  .lesson .step-list li { display:flex; align-items:flex-start; gap:1rem; padding:.8rem 0; margin:0; }
+  .lesson .step-list li[hidden] { display:none; }
+  .ordinal { flex:0 0 2.5rem; height:2.5rem; display:grid; place-items:center; border-radius:.8rem; background:#e4ecdb; color:#355a3d; font:700 .9rem system-ui,sans-serif; }
+  .lesson .step-list strong { color:#294b3d!important; font-size:1.07rem; }
+  .lesson .step-list p { color:#3f5844; margin:.3rem 0 0; font-size:.95rem; line-height:1.65; }
   .controls { padding:.6rem 1.5rem 1.2rem; }
   .controls[hidden] { display:none; }
   .transport { display:flex; gap:.5rem; }
-  button { min-height:44px; min-width:44px; padding:.6rem .9rem; border-radius:.7rem; border:1px solid #aec5b6; background:#fff; color:#254f48; font:600 .85rem/1.3 system-ui,sans-serif; cursor:pointer; }
-  [data-action=play] { background:#254f48; color:#fff; flex:1; }
-  button:focus-visible { outline:3px solid #bb7b32; outline-offset:3px; }
+  button { min-height:44px; min-width:44px; padding:.65rem .9rem; border-radius:.7rem; border:1px solid #aec1a6; background:#fff; color:#294b3d; font:600 .85rem/1.3 system-ui,sans-serif; cursor:pointer; }
+  [data-action=play] { background:#355b40; color:#fff; flex:1; }
+  button:focus-visible { outline:3px solid #a57227; outline-offset:3px; }
   button:disabled { opacity:.45; cursor:default; }
-  .position { margin:.8rem 0 .2rem; font-size:.8rem; font-weight:700; }
-  .motion-help { margin:0; font-size:.78rem; color:#52685e; }
-  figcaption { padding:1rem 1.5rem; border-top:1px solid #d4dfd4; font-size:.8rem; line-height:1.6; }
-  .hand,.head,.water,.entry,.mat,.supplies,.exit,.space-ring,.pause-mark,.exit-arrow,.zone { transition:opacity .7s ease,transform .9s ease; transform-box:fill-box; transform-origin:center; }
-  [data-variant=pausa][data-step='0'] .head { transform:rotate(-7deg); }
+  .lesson .position { color:#3f5844; margin:.8rem 0 .2rem; font-size:.8rem; font-weight:700; }
+  .lesson .motion-help { margin:0; font-size:.78rem; color:#52634c; }
+  .lesson figcaption { color:#52634c; padding:1rem 1.5rem; border-top:1px solid #d8e0ce; font-size:.8rem; line-height:1.6; }
+  .touch-icon,.water,.entry,.mat,.supplies,.exit,.space-ring,.pause-mark,.exit-arrow,.observe-ring,.dry-sparkles { transition:opacity .6s ease,transform .9s ease; transform-box:fill-box; transform-origin:center; }
   .space-ring,.pause-mark,.exit-arrow { opacity:0; }
   [data-variant=pausa]:is([data-step='1'],[data-step='2'],[data-step='3']) .water { opacity:0; transform:translateY(-15px); }
   [data-variant=pausa]:is([data-step='1'],[data-step='2'],[data-step='3']) .pause-mark { opacity:1; }
-  [data-variant=pausa]:is([data-step='2'],[data-step='3']) .hand { opacity:0; transform:translate(70px,-35px); }
+  [data-variant=pausa]:is([data-step='2'],[data-step='3']) .touch-icon { opacity:0; transform:translateX(60px); }
   [data-variant=pausa]:is([data-step='2'],[data-step='3']) .space-ring { opacity:1; }
+  [data-variant=pausa]:is([data-step='1'],[data-step='2'],[data-step='3']) .observe-ring { opacity:0; }
   [data-variant=pausa][data-step='3'] .exit-arrow { opacity:1; }
-  [data-variant=espacio] .mat,[data-variant=espacio] .supplies,[data-variant=espacio] .exit { opacity:.08; transform:translateY(14px); }
+  [data-variant=espacio] .mat,[data-variant=espacio] .supplies,[data-variant=espacio] .exit { opacity:.05; transform:translateY(15px); }
   [data-variant=espacio]:is([data-step='1'],[data-step='2'],[data-step='3']) .mat { opacity:1; transform:none; }
   [data-variant=espacio]:is([data-step='2'],[data-step='3']) .supplies { opacity:1; transform:none; }
   [data-variant=espacio][data-step='3'] .exit { opacity:1; transform:none; }
-  .zone { opacity:.08; }
-  .zone circle,.zone ellipse { fill:#f4ca6a66; stroke:#a36a20; stroke-width:2; stroke-dasharray:5 4; }
-  .cloth { fill:#79b9af; stroke:#28594f; stroke-width:2; }
-  [data-step='0'] .zone-0,[data-step='1'] .zone-1,[data-step='2'] .zone-2,[data-step='3'] .zone-3 { opacity:1; }
-  [data-playing=true][data-step='0'] .zone-0 .cloth,[data-playing=true][data-step='1'] .zone-1 .cloth,[data-playing=true][data-step='2'] .zone-2 .cloth,[data-playing=true][data-step='3'] .zone-3 .cloth { animation:wipe 2s ease-in-out 2; }
-  [data-step='0'] [data-pip='0'],[data-step='1'] [data-pip='1'],[data-step='2'] [data-pip='2'],[data-step='3'] [data-pip='3'] { fill:#254f48; }
-  @keyframes wipe { 0%,100% { transform:translateX(-5px); } 50% { transform:translateX(7px); } }
+  .zone-focus { transform:translate(510px,310px); transition:transform 1s cubic-bezier(.2,.7,.3,1); }
+  [data-step='1'] .zone-focus { transform:translate(260px,195px); }
+  [data-step='2'] .zone-focus { transform:translate(490px,206px); }
+  [data-step='3'] .zone-focus { transform:translate(384px,171px); }
+  .dry-sparkles { opacity:0; }
+  [data-step='3'] .dry-sparkles { opacity:1; }
+  [data-playing=true] .drops { animation:water-fall 1s linear 4; }
+  [data-playing=true] .zone-focus .cloth { animation:cloth-blot 1.5s ease-in-out 3; }
+  [data-playing=false] .zone-focus .cloth { animation-play-state:paused; }
+  @keyframes water-fall { from { transform:translateY(-3px); opacity:.4; } to { transform:translateY(7px); opacity:1; } }
+  @keyframes cloth-blot { 0%,100% { transform:translate(3px,-2px); } 50% { transform:translate(-5px,2px); } }
   @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
-  @media(max-width:480px) { header { padding:1.1rem 1rem .5rem; } .canvas { padding:.25rem; } .controls,.step-list { padding-inline:1rem; } figcaption { padding:1rem; } }
-  @media print { .controls { display:none; } .step-list li[hidden] { display:flex!important; } .lesson { break-inside:avoid; box-shadow:none; } }
+  @media(max-width:480px) { .lesson header { padding:1.2rem 1rem .8rem; } .canvas { margin:0 .6rem; } .scene-label { padding:.6rem .6rem .1rem; font-size:.6rem; } .scene-progress { padding:.2rem .7rem .7rem; gap:.35rem; } .scene-progress>span { font-size:.58rem; } .controls,.lesson .step-list { padding-inline:1rem; } .lesson figcaption { padding:1rem; } }
+  @media print { .controls { display:none; } .lesson .step-list li[hidden] { display:flex!important; } .lesson { break-inside:avoid; box-shadow:none; } }
 </style>
