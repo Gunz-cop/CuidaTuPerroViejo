@@ -9,6 +9,29 @@ const stages = [
   { id: 'senior', label: 'Senior' },
   { id: 'longevous', label: 'Longevo' },
 ];
+const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
+          <ellipse class="dat__bed" cx="100" cy="166" rx="88" ry="14" />
+          <g class="dat__head">
+            <path class="dat__ear dat__ear--l" d="M52 52 C 26 56, 22 104, 40 122 C 52 108, 60 84, 66 64 Z" />
+            <path class="dat__ear dat__ear--r" d="M148 52 C 174 56, 178 104, 160 122 C 148 108, 140 84, 134 64 Z" />
+            <ellipse class="dat__face" cx="100" cy="88" rx="56" ry="58" />
+            <ellipse class="dat__blaze" cx="100" cy="70" rx="12" ry="30" />
+            <ellipse class="dat__muzzle" cx="100" cy="118" rx="34" ry="26" />
+            <ellipse class="dat__gray dat__gray--muzzle" cx="100" cy="120" rx="34" ry="24" />
+            <ellipse class="dat__gray dat__gray--brow" cx="78" cy="68" rx="9" ry="5" />
+            <ellipse class="dat__gray dat__gray--brow" cx="122" cy="68" rx="9" ry="5" />
+            <g class="dat__eyes">
+              <ellipse cx="78" cy="84" rx="7" ry="8" />
+              <ellipse cx="122" cy="84" rx="7" ry="8" />
+              <circle class="dat__shine" cx="80" cy="81" r="2.2" />
+              <circle class="dat__shine" cx="124" cy="81" r="2.2" />
+            </g>
+            <path class="dat__lid" d="M70 80 Q78 74 86 80 M114 80 Q122 74 130 80" />
+            <ellipse class="dat__nose" cx="100" cy="106" rx="11" ry="8" />
+            <path class="dat__mouth" d="M100 114 v6 M88 122 q12 8 24 0" />
+            <path class="dat__tongue" d="M94 124 q6 14 12 0 Z" />
+          </g>
+        </svg>`;
 ---
 
 <section id="calculadora" class="dat" aria-labelledby="dat-title" data-stage="senior">
@@ -17,6 +40,15 @@ const stages = [
     <form class="dat__card dat__form" id="dat-form" onsubmit="return false">
       <p class="dat__kicker">Calculadora gratuita</p>
       <h2 id="dat-title" class="dat__title">Calcula su edad</h2>
+
+      <!-- Vista previa en móvil: el perrito y el resultado siguen visibles mientras se ajusta -->
+      <div class="dat__peek" aria-hidden="true">
+        <div class="dat__peek-art"><Fragment set:html={dogSvg} /></div>
+        <div class="dat__peek-text">
+          <p class="dat__peek-num"><span class="dat__num"></span> <span>años humanos</span></p>
+          <p class="dat__peek-stage" id="dat-peek-stage">Senior</p>
+        </div>
+      </div>
 
 
       <fieldset class="dat__field">
@@ -53,34 +85,12 @@ const stages = [
     <!-- Resultado -->
     <div class="dat__card dat__result" id="dat-result" role="status" aria-live="polite" aria-atomic="true">
       <div class="dat__stage-art" aria-hidden="true">
-        <svg class="dat__dog" viewBox="0 0 200 180">
-          <ellipse class="dat__bed" cx="100" cy="166" rx="88" ry="14" />
-          <g class="dat__head">
-            <path class="dat__ear dat__ear--l" d="M52 52 C 26 56, 22 104, 40 122 C 52 108, 60 84, 66 64 Z" />
-            <path class="dat__ear dat__ear--r" d="M148 52 C 174 56, 178 104, 160 122 C 148 108, 140 84, 134 64 Z" />
-            <ellipse class="dat__face" cx="100" cy="88" rx="56" ry="58" />
-            <ellipse class="dat__blaze" cx="100" cy="70" rx="12" ry="30" />
-            <ellipse class="dat__muzzle" cx="100" cy="118" rx="34" ry="26" />
-            <ellipse class="dat__gray dat__gray--muzzle" cx="100" cy="120" rx="34" ry="24" />
-            <ellipse class="dat__gray dat__gray--brow" cx="78" cy="68" rx="9" ry="5" />
-            <ellipse class="dat__gray dat__gray--brow" cx="122" cy="68" rx="9" ry="5" />
-            <g class="dat__eyes">
-              <ellipse cx="78" cy="84" rx="7" ry="8" />
-              <ellipse cx="122" cy="84" rx="7" ry="8" />
-              <circle class="dat__shine" cx="80" cy="81" r="2.2" />
-              <circle class="dat__shine" cx="124" cy="81" r="2.2" />
-            </g>
-            <path class="dat__lid" d="M70 80 Q78 74 86 80 M114 80 Q122 74 130 80" />
-            <ellipse class="dat__nose" cx="100" cy="106" rx="11" ry="8" />
-            <path class="dat__mouth" d="M100 114 v6 M88 122 q12 8 24 0" />
-            <path class="dat__tongue" d="M94 124 q6 14 12 0 Z" />
-          </g>
-        </svg>
+        <Fragment set:html={dogSvg} />
         <span class="dat__zzz">z<span>z</span><span>z</span></span>
       </div>
 
       <p class="dat__result-label"><span id="dat-name-out">Tu perro</span> tiene el equivalente a</p>
-      <p class="dat__big"><span class="dat__num" id="dat-num" style="--num: 54"></span> <span class="dat__unit">años humanos</span></p>
+      <p class="dat__big"><span class="dat__num" id="dat-num"></span> <span class="dat__unit">años humanos</span></p>
       <p class="sr-only" id="dat-sr"></p>
 
       <div class="dat__life" aria-hidden="true">
@@ -109,14 +119,9 @@ const stages = [
     </div>
   </div>
 
-  <!-- Barra fija en móvil mientras se ajusta el formulario -->
-  <a href="#dat-result" class="dat__sticky" id="dat-sticky" aria-hidden="true" tabindex="-1">
-    <span><strong id="dat-sticky-num">54</strong> años humanos · <span id="dat-sticky-stage">Senior</span></span>
-    <span aria-hidden="true">↓</span>
-  </a>
 </section>
 
-<style>
+<style is:global>
   @property --num { syntax: '<integer>'; inherits: true; initial-value: 0; }
   @property --pos { syntax: '<percentage>'; inherits: true; initial-value: 0%; }
   @property --gray { syntax: '<number>'; inherits: true; initial-value: 0; }
@@ -134,6 +139,26 @@ const stages = [
   .dat[data-stage='mature'] { --stage-color: #b08a4a; }
   .dat[data-stage='senior'], .dat[data-stage='longevous'] { --stage-color: var(--color-brand-accent); }
 
+  .dat {
+    border-block: 1px solid var(--color-brand-border);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--color-brand-primary) 7%, var(--color-brand-bg)), var(--color-brand-bg));
+  }
+  .dat__peek {
+    position: sticky; top: 4.75rem; z-index: 5;
+    display: flex; align-items: center; gap: .9rem;
+    margin: 0 -.25rem 1.1rem; padding: .6rem .9rem; border-radius: 1.1rem;
+    border: 1px solid var(--color-brand-border);
+    background: color-mix(in srgb, var(--color-brand-card) 92%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 24px -18px rgb(0 0 0 / .5);
+  }
+  .dat__peek-art { flex: 0 0 4.75rem; }
+  .dat__peek .dat__num { font-size: 2.6rem; }
+  .dat__peek-num { margin: 0; line-height: 1; color: var(--color-brand-text); }
+  .dat__peek-num span:last-child { font-size: .8rem; font-weight: 700; }
+  .dat__peek-stage { margin: .3rem 0 0; font-size: .78rem; font-weight: 800; color: var(--stage-color); }
+  .dat__peek .dat__bed { display: none; }
+  @media (min-width: 56rem) { .dat__peek { display: none; } }
   .dat__grid { display: grid; gap: 1rem; width: min(100% - 2rem, 68rem); margin-inline: auto; }
   @media (min-width: 56rem) {
     .dat__grid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 1.5rem; align-items: start; }
@@ -259,23 +284,13 @@ const stages = [
   }
   .dat__btn:hover { transform: translateY(-2px); }
   .dat__btn svg { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-  .dat__btn--primary { border: 0; background: var(--color-brand-primary); color: #fff; }
+  .dat__btn--primary { border: 0; background: var(--color-brand-primary); color: var(--color-brand-bg); }
   .dat__btn--quiet { border: 1px solid var(--color-brand-border); background: var(--color-brand-bg); color: var(--color-brand-text); }
   .dat__note { margin: .9rem 0 0; font-size: .7rem; color: var(--color-brand-muted); }
 
   /* Entrada del resultado cada vez que cambia */
   .dat__result.is-bump .dat__big, .dat__result.is-bump .dat__facts { animation: dat-pop .5s cubic-bezier(.22,1,.36,1); }
 
-  /* Barra fija móvil */
-  .dat__sticky {
-    position: fixed; inset: auto 5.25rem calc(.9rem + env(safe-area-inset-bottom)) .75rem; z-index: 40;
-    display: flex; justify-content: space-between; gap: .75rem; align-items: center;
-    border-radius: 99px; padding: .8rem 1.1rem; background: var(--color-brand-primary); color: #fff; font-size: .85rem; text-decoration: none;
-    box-shadow: 0 12px 30px rgb(0 0 0 / .25);
-    translate: 0 150%; transition: translate .35s cubic-bezier(.22,1,.36,1);
-  }
-  .dat__sticky.is-on { translate: 0 0; }
-  @media (min-width: 56rem) { .dat__sticky { display: none; } }
 
   @keyframes dat-breathe { 50% { translate: 0 -2px; } }
   @keyframes dat-blink { 0%, 92%, 100% { scale: 1 1; } 95% { scale: 1 .1; } }
@@ -298,7 +313,6 @@ const stages = [
   const months = $<HTMLSelectElement>('dat-months');
   const monthsWrap = $<HTMLElement>('dat-months-wrap');
   const result = $<HTMLElement>('dat-result');
-  const sticky = $<HTMLElement>('dat-sticky');
 
   const advice: Record<string, string> = {
     puppy: 'Etapa de crecimiento rápido: socialización, vacunas y una base de hábitos que le servirán toda la vida.',
@@ -335,7 +349,7 @@ const stages = [
       root.dataset.stage = state.stage;
       root.style.setProperty('--pos', `${state.lifePosition * 100}%`);
       root.style.setProperty('--gray', String(Math.max(0, Math.min(1, (state.dogYears - state.seniorFrom + 2) / (state.profile.lifeExpectancy - state.seniorFrom + 2)))));
-      $<HTMLElement>('dat-num')?.style.setProperty('--num', String(state.humanYears));
+      root.style.setProperty('--num', String(state.humanYears));
       set('dat-age-text', ageText);
       set('dat-name-out', dogName || 'Tu perro');
       set('dat-stage', stageLabel);
@@ -344,8 +358,7 @@ const stages = [
       set('dat-senior', state.yearsToSenior > 0 ? `${Math.ceil(state.yearsToSenior)} ${Math.ceil(state.yearsToSenior) === 1 ? 'año' : 'años'}` : `los ${String(state.seniorFrom).replace('.', ',')} años`);
       set('dat-advice', advice[state.stage]);
       set('dat-sr', `${dogName || 'Tu perro'} tiene el equivalente a ${state.humanYears} años humanos. Etapa: ${stageLabel}.`);
-      set('dat-sticky-num', String(state.humanYears));
-      set('dat-sticky-stage', stageLabel);
+      set('dat-peek-stage', stageLabel);
       const guide = $<HTMLAnchorElement>('dat-guide');
       if (guide) { guide.href = guides[state.stage][0]; guide.textContent = guides[state.stage][1]; }
       if (bump && result) { result.classList.remove('is-bump'); void result.offsetWidth; result.classList.add('is-bump'); }
@@ -355,14 +368,6 @@ const stages = [
 
   form?.addEventListener('input', () => render());
   render(false);
-
-  // Barra fija en móvil: solo cuando el resultado queda por debajo de la pantalla.
-  if (result && sticky) {
-    let touched = false;
-    const update = () => sticky.classList.toggle('is-on', touched && result.getBoundingClientRect().top > window.innerHeight - 60);
-    form?.addEventListener('input', () => { touched = true; update(); });
-    window.addEventListener('scroll', update, { passive: true });
-  }
 
   // Tarjeta para compartir (canvas → PNG).
   async function buildCard(): Promise<Blob | null> {
