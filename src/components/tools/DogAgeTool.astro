@@ -4,10 +4,10 @@ import { SIZE_PROFILES } from '../../lib/dog-age';
 const sizes = Object.entries(SIZE_PROFILES) as [string, (typeof SIZE_PROFILES)[keyof typeof SIZE_PROFILES]][];
 const stages = [
   { id: 'puppy', label: 'Cachorro' },
-  { id: 'adult', label: 'Adulto' },
+  { id: 'young', label: 'Joven' },
   { id: 'mature', label: 'Maduro' },
   { id: 'senior', label: 'Senior' },
-  { id: 'geriatric', label: 'Avanzado' },
+  { id: 'longevous', label: 'Longevo' },
 ];
 ---
 
@@ -92,8 +92,8 @@ const stages = [
 
       <div class="dat__facts">
         <div class="dat__fact"><span>Etapa</span><strong id="dat-stage">Senior</strong></div>
-        <div class="dat__fact"><span>Vida esperada vivida</span><strong id="dat-pct">62 %</strong></div>
-        <div class="dat__fact"><span id="dat-senior-label">Etapa senior</span><strong id="dat-senior">desde los 7</strong></div>
+        <div class="dat__fact"><span>Según su ADN<sup><a href="#metodo" class="dat__ref">*</a></sup></span><strong id="dat-epi">64 años</strong></div>
+        <div class="dat__fact"><span id="dat-senior-label">Etapa senior</span><strong id="dat-senior">desde los 9,5</strong></div>
       </div>
 
       <p class="dat__advice" id="dat-advice"></p>
@@ -105,7 +105,7 @@ const stages = [
         </button>
         <a class="dat__btn dat__btn--quiet" id="dat-guide" href="/salud-perros-mayores">Ver cuidados para su etapa →</a>
       </div>
-      <p class="dat__note">Equivalencia orientativa por tamaño. No sustituye una valoración veterinaria.</p>
+      <p class="dat__note">Estimación basada en estudios veterinarios (<a href="#metodo">ver método y fuentes</a>). No sustituye una valoración veterinaria.</p>
     </div>
   </div>
 
@@ -130,9 +130,9 @@ const stages = [
     transition: --pos .8s cubic-bezier(.22,1,.36,1), --gray .8s ease;
   }
   .dat[data-stage='puppy'] { --stage-color: #7a9a5b; }
-  .dat[data-stage='adult'] { --stage-color: var(--color-brand-primary); }
+  .dat[data-stage='young'] { --stage-color: var(--color-brand-primary); }
   .dat[data-stage='mature'] { --stage-color: #b08a4a; }
-  .dat[data-stage='senior'], .dat[data-stage='geriatric'] { --stage-color: var(--color-brand-accent); }
+  .dat[data-stage='senior'], .dat[data-stage='longevous'] { --stage-color: var(--color-brand-accent); }
 
   .dat__grid { display: grid; gap: 1rem; width: min(100% - 2rem, 68rem); margin-inline: auto; }
   @media (min-width: 56rem) {
@@ -196,7 +196,7 @@ const stages = [
   .dat__dog { display: block; width: 100%; height: auto; overflow: visible; }
   .dat__head { transform-origin: 100px 150px; animation: dat-breathe 3.2s ease-in-out infinite; transition: transform .6s; }
   .dat[data-stage='puppy'] .dat__head { transform: scale(.86) translateY(10px); animation-duration: 1.4s; }
-  .dat[data-stage='geriatric'] .dat__head { transform: rotate(-6deg) translateY(10px); animation-duration: 4.5s; }
+  .dat[data-stage='longevous'] .dat__head { transform: rotate(-6deg) translateY(10px); animation-duration: 4.5s; }
   .dat__face, .dat__ear { fill: #c8915c; }
   .dat__ear { fill: #8e5d37; transition: transform .6s; }
   .dat__ear--l { transform-origin: 60px 56px; transform: rotate(calc(var(--gray) * 10deg)); }
@@ -207,18 +207,18 @@ const stages = [
   .dat__eyes { fill: #2b1d14; }
   .dat__shine { fill: #fff; }
   .dat__lid { fill: none; stroke: #6b4a2e; stroke-width: 3; stroke-linecap: round; opacity: 0; transition: opacity .4s; }
-  .dat[data-stage='geriatric'] .dat__lid { opacity: 1; }
-  .dat[data-stage='geriatric'] .dat__eyes { transform: scaleY(.55); transform-origin: 100px 84px; }
+  .dat[data-stage='longevous'] .dat__lid { opacity: 1; }
+  .dat[data-stage='longevous'] .dat__eyes { transform: scaleY(.55); transform-origin: 100px 84px; }
   .dat__eyes { transition: transform .4s; animation: dat-blink 5s infinite; transform-origin: 100px 84px; }
   .dat__nose { fill: #2b1d14; }
   .dat__mouth { fill: none; stroke: #2b1d14; stroke-width: 2.5; stroke-linecap: round; }
   .dat__tongue { fill: #e98a8a; transform-origin: 100px 124px; transition: transform .4s; }
-  .dat[data-stage='mature'] .dat__tongue, .dat[data-stage='senior'] .dat__tongue, .dat[data-stage='geriatric'] .dat__tongue { transform: scaleY(0); }
+  .dat[data-stage='mature'] .dat__tongue, .dat[data-stage='senior'] .dat__tongue, .dat[data-stage='longevous'] .dat__tongue { transform: scaleY(0); }
   .dat__bed { fill: color-mix(in srgb, var(--stage-color) 30%, transparent); transform-origin: 100px 166px; transform: scaleX(.3); opacity: 0; transition: transform .6s, opacity .6s; }
-  .dat[data-stage='senior'] .dat__bed, .dat[data-stage='geriatric'] .dat__bed { transform: scaleX(1); opacity: 1; }
+  .dat[data-stage='senior'] .dat__bed, .dat[data-stage='longevous'] .dat__bed { transform: scaleX(1); opacity: 1; }
   .dat__zzz { position: absolute; top: .25rem; right: 0; font-family: var(--font-display); font-weight: 800; color: var(--color-brand-muted); opacity: 0; }
   .dat__zzz span { display: inline-block; font-size: .8em; }
-  .dat[data-stage='geriatric'] .dat__zzz { opacity: 1; animation: dat-zzz 2.6s ease-in-out infinite; }
+  .dat[data-stage='longevous'] .dat__zzz { opacity: 1; animation: dat-zzz 2.6s ease-in-out infinite; }
 
   .dat__result-label { margin: 0; font-size: .9rem; color: var(--color-brand-muted); }
   .dat__big { margin: .1rem 0 .9rem; color: var(--color-brand-text); }
@@ -241,12 +241,13 @@ const stages = [
   }
   .dat__stages { display: grid; grid-template-columns: repeat(5, 1fr); margin: .5rem 0 0; padding: 0; list-style: none; font-size: .64rem; color: var(--color-brand-muted); }
   .dat__stages li { transition: color .3s, font-weight .3s; }
-  .dat[data-stage='puppy'] [data-s='puppy'], .dat[data-stage='adult'] [data-s='adult'], .dat[data-stage='mature'] [data-s='mature'],
-  .dat[data-stage='senior'] [data-s='senior'], .dat[data-stage='geriatric'] [data-s='geriatric'] { color: var(--stage-color); font-weight: 800; }
+  .dat[data-stage='puppy'] [data-s='puppy'], .dat[data-stage='young'] [data-s='young'], .dat[data-stage='mature'] [data-s='mature'],
+  .dat[data-stage='senior'] [data-s='senior'], .dat[data-stage='longevous'] [data-s='longevous'] { color: var(--stage-color); font-weight: 800; }
 
   .dat__facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-bottom: .9rem; }
   .dat__fact { border-radius: 1rem; padding: .65rem .4rem; background: var(--color-brand-bg); }
   .dat__fact span { display: block; font-size: .65rem; color: var(--color-brand-muted); line-height: 1.2; }
+  .dat__ref { color: var(--color-brand-primary); text-decoration: none; }
   .dat__fact strong { display: block; margin-top: .2rem; font-size: .92rem; color: var(--color-brand-text); }
   .dat__advice { margin: 0 0 1rem; font-size: .88rem; line-height: 1.55; color: var(--color-brand-text); }
 
@@ -301,17 +302,17 @@ const stages = [
 
   const advice: Record<string, string> = {
     puppy: 'Etapa de crecimiento rápido: socialización, vacunas y una base de hábitos que le servirán toda la vida.',
-    adult: 'Plena forma. Es el mejor momento para cuidar su peso y su boca: es la mejor inversión para su vejez.',
-    mature: 'Se acerca la etapa senior. Una revisión completa ahora te da valores de referencia para comparar después.',
-    senior: 'Ya es senior. Las revisiones cada seis meses y los pequeños ajustes en casa marcan la diferencia.',
-    geriatric: 'Senior avanzado: el confort manda. Vigila el dolor, el apetito y la movilidad, y mide su calidad de vida.',
+    young: 'Plena forma. Es el mejor momento para cuidar su peso y su boca: es la mejor inversión para su vejez.',
+    mature: 'Adulto maduro. Una revisión completa ahora te da valores de referencia para comparar cuando llegue a senior.',
+    senior: 'Ya es senior. Revisiones más frecuentes y pequeños ajustes en casa ayudan a que disfrute esta etapa con salud.',
+    longevous: '¡Un perro longevo! Ya superó la edad media de su tamaño, y eso habla muy bien de sus cuidados. Ahora el foco está en su confort y en disfrutar cada día juntos.',
   };
   const guides: Record<string, [string, string]> = {
     puppy: ['/salud-perros-mayores', 'Ver cómo prepararlo para el futuro →'],
-    adult: ['/alimentacion-perros-senior', 'Ver alimentación y peso →'],
+    young: ['/alimentacion-perros-senior', 'Ver alimentación y peso →'],
     mature: ['/salud-perros-mayores', 'Ver plan preventivo senior →'],
     senior: ['/movilidad-dolor-perros-mayores', 'Ver cuidados de movilidad →'],
-    geriatric: ['/herramientas/calculadora-calidad-vida-perros', 'Medir su calidad de vida →'],
+    longevous: ['/herramientas/calculadora-calidad-vida-perros', 'Revisar su bienestar →'],
   };
 
   let state = dogAge('medium', 8);
@@ -328,20 +329,19 @@ const stages = [
 
     const ageText = y === 0 ? `${m} ${m === 1 ? 'mes' : 'meses'}` : `${y} ${y === 1 ? 'año' : 'años'}${m ? ` y ${m} m` : ''}`;
     const stageLabel = STAGE_LABELS[state.stage];
-    const pct = Math.min(Math.round(state.lifeFraction * 100), 100);
     const set = (id: string, text: string) => { const el = $<HTMLElement>(id); if (el) el.textContent = text; };
 
     const apply = () => {
       root.dataset.stage = state.stage;
-      root.style.setProperty('--pos', `${Math.min(state.lifeFraction, 1) * 100}%`);
-      root.style.setProperty('--gray', String(Math.max(0, Math.min(1, (state.dogYears - state.profile.seniorFrom + 2) / (state.profile.lifeExpectancy - state.profile.seniorFrom + 2)))));
+      root.style.setProperty('--pos', `${state.lifePosition * 100}%`);
+      root.style.setProperty('--gray', String(Math.max(0, Math.min(1, (state.dogYears - state.seniorFrom + 2) / (state.profile.lifeExpectancy - state.seniorFrom + 2)))));
       $<HTMLElement>('dat-num')?.style.setProperty('--num', String(state.humanYears));
       set('dat-age-text', ageText);
       set('dat-name-out', dogName || 'Tu perro');
       set('dat-stage', stageLabel);
-      set('dat-pct', `${pct} %`);
+      set('dat-epi', state.epigeneticYears === null ? '—' : `${state.epigeneticYears} años`);
       set('dat-senior-label', state.yearsToSenior > 0 ? 'Será senior en' : 'Senior desde');
-      set('dat-senior', state.yearsToSenior > 0 ? `${Math.ceil(state.yearsToSenior)} ${Math.ceil(state.yearsToSenior) === 1 ? 'año' : 'años'}` : `los ${state.profile.seniorFrom} años`);
+      set('dat-senior', state.yearsToSenior > 0 ? `${Math.ceil(state.yearsToSenior)} ${Math.ceil(state.yearsToSenior) === 1 ? 'año' : 'años'}` : `los ${String(state.seniorFrom).replace('.', ',')} años`);
       set('dat-advice', advice[state.stage]);
       set('dat-sr', `${dogName || 'Tu perro'} tiene el equivalente a ${state.humanYears} años humanos. Etapa: ${stageLabel}.`);
       set('dat-sticky-num', String(state.humanYears));
