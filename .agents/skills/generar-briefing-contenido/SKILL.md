@@ -81,6 +81,18 @@ Esta habilidad sigue la estructura avanzada de división de responsabilidades:
     > **Límite Brief vs. Redacción:** Este skill entrega un briefing de planificación, no prosa casi final. Para cada bloque (introducción, H2/H3, AlertBox, FAQ) escribe **instrucciones y puntos clave para el redactor** (qué debe explicar, qué fuente usar, qué dato de la historia real conectar), no el texto terminado. Excepción: los `items` de `FAQ` y el `title`/tipo de cada `AlertBox` sí pueden anticiparse como borrador corto, porque son datos estructurados que el redactor ajustará, no párrafos de desarrollo.
 7.  **Genera el Contrato de Entrega (Sección 9 del template):** Completa la tabla de trazabilidad de fuentes (fuente → H2 asignado → casilla de verificación) y el checklist de "no negociables" (volumen mínimo real, componentes estructurales, arco narrativo). Este contrato existe porque briefs anteriores fueron ignorados parcialmente en redacción (fuentes asignadas que nunca se citaron, AlertBox y enlaces planificados que no llegaron al artículo, conteos de palabras muy por debajo del target). El contrato no evita eso por sí solo, pero deja un criterio de auditoría explícito y verificable contra el `.mdx` final — tanto para revisión humana como para la skill [redactar-articulo-blog](file:///c:/Users/grcx1/OneDrive/Documentos/Proyectos/CuidaTuPerroViejo/.agents/skills/redactar-articulo-blog/SKILL.md), que toma este brief y valida el artículo final contra él.
 
+### Planificación visual cuando el usuario la solicita
+
+Si el encargo incluye producción de imágenes, infografías o animaciones, la Sección 8 debe enlazar el flujo de [crear-animaciones-articulo-blog](../crear-animaciones-articulo-blog/SKILL.md) y definir:
+
+- La ficha de un sujeto visual senior continuo, diferenciado del paciente real cuando sea ilustrativo. Conservar la raza del caso cuando se haya acordado; si no se conoce, seguir la elección visual del usuario. No convertir la raza del ejemplo en valor universal.
+- Una primera imagen de referencia que se inspeccionará antes de derivar el resto. Pedir edad visible mediante rasgos naturales, anatomía correcta y apoyos adecuados, sin imponer enfermedades para aparentar vejez.
+- Para cada recurso: sección de inserción, pregunta que responde, composición/acción y texto alternativo. Respetar la cantidad solicitada; no añadir tres animaciones a todo artículo de forma automática.
+- Cuando resulte adecuado, recorte realista transparente del mismo perro y secuencia de cambios en herramientas o zonas. No planificar una silueta rudimentaria como sustituto de un sujeto convincente.
+- Criterios de entrega: imágenes reales, capturas en móvil y modo oscuro, contraste, controles y accesibilidad; compatibilidad con el build y rutas que eviten mostrar imágenes antiguas desde caché.
+
+Esto planifica la producción visual; no inventa un caso clínico ni modifica por sí solo el contrato científico del artículo.
+
 ### Fase 5: Guardado Local del Briefing
 1.  **Ruta de guardado:** Una vez el briefing pase la Validación Final (checklist), guárdalo como archivo en `/briefings/briefing-{{SLUG_DEL_POST}}.md` en la raíz del proyecto (carpeta versionada en Git: el brief se commitea junto al resto del trabajo).
 2.  **Confirmación:** No guardes el archivo en silencio. Muestra el briefing completo en el chat como respuesta y, a continuación, **pregunta al usuario si quiere que lo guardes** en esa ruta antes de escribir el archivo. Si el usuario confirma, escribe el archivo y avisa la ruta final; si no responde o declina, no lo guardes.
