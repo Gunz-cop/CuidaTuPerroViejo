@@ -129,11 +129,6 @@ function selectProfile(document, page, h1) {
   switch (page.documentId) {
     case 'home':
       return [exactOne(nodes(document, (node) => node.tagName === 'main' && attrs(node).id === 'main-content'), page, 'main#main-content')];
-    case 'pillar--herramientas': {
-      const hero = h1.parentNode;
-      const root = exactOne(nodes(document, (node) => node.tagName === 'main' && hasClass(node, 'mx-auto', 'w-full', 'max-w-4xl')), page, 'main.mx-auto.w-full.max-w-4xl');
-      return [h1, ...directParagraphs(hero), root];
-    }
     case 'page--acerca-de': {
       const article = exactOne(byId(document, 'about-us', 'article'), page, 'article#about-us');
       return [h1, ...directParagraphs(h1.parentNode), article];

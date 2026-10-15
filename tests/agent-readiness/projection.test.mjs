@@ -66,7 +66,7 @@ test('los goldens cubren los perfiles editoriales, FAQ, tablas, citas e imágene
 
   assert.match(home, /## Referencias veterinarias consultadas/u);
   assert.match(health, /Información educativa para conversar mejor con tu veterinario/u);
-  assert.match(tools, /## Nuestro ecosistema de herramientas interactivas/u);
+  assert.match(tools, /## Las cuatro herramientas y para qué sirve cada una/u);
   assert.match(cushing, /## Preguntas frecuentes[\s\S]*\*\*¿Cuál es la esperanza de vida/u);
   assert.match(cushing, /https:\/\/pubmed\.ncbi\.nlm\.nih\.gov\/24118359\//u);
   assert.match(food, /^> /mu);

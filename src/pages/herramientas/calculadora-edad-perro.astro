@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomeAgeCalculator from '../../components/HomeAgeCalculator.astro';
+import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
+import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
+
+const title = 'Calculadora de edad de perro en años humanos según su tamaño';
+const description = 'Calcula la edad de tu perro en años humanos según su tamaño y descubre si ya está en etapa senior y qué cuidados conviene anticipar.';
+const url = 'https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro';
+
+const faqs = [
+  {
+    q: '¿Es verdad que un año de perro equivale a siete años humanos?',
+    a: 'No. Es una simplificación popular. Los perros maduran muy rápido en los dos primeros años y después envejecen a un ritmo que depende sobre todo de su tamaño: los perros grandes y gigantes envejecen antes que los pequeños.',
+  },
+  {
+    q: '¿A qué edad se considera senior a un perro?',
+    a: 'Como referencia orientativa, los perros pequeños suelen entrar en etapa senior hacia los 8 a 10 años, los medianos hacia los 7 a 9 y los grandes y gigantes desde los 5 a 7. Lo importante no es la cifra exacta, sino empezar a vigilar cambios y hacer revisiones más frecuentes.',
+  },
+  {
+    q: '¿Esta calculadora sirve para cualquier raza?',
+    a: 'Sirve como orientación general por tamaño. La raza, la genética, el peso corporal y las enfermedades previas influyen en cómo envejece cada perro, así que tu veterinario puede afinar la etapa real de tu perro.',
+  },
+  {
+    q: '¿Qué hago si el resultado indica que mi perro ya es senior?',
+    a: 'Aprovecha para pedir una revisión geriátrica, vigilar peso, movilidad, apetito y comportamiento, y adaptar poco a poco la casa y los paseos. Ser senior no es una enfermedad: es una etapa que se acompaña mejor con prevención.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${url}#webpage`,
+      url,
+      name: title,
+      description,
+      isPartOf: { '@id': 'https://cuidatuperroviejo.com/#website' },
+      about: { '@id': 'https://cuidatuperroviejo.com/herramientas#webpage' },
+      breadcrumb: { '@id': `${url}#breadcrumb` },
+      mainEntity: { '@id': `${url}#calculadora` },
+      inLanguage: 'es',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://cuidatuperroviejo.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Herramientas', item: 'https://cuidatuperroviejo.com/herramientas' },
+        { '@type': 'ListItem', position: 3, name: 'Calculadora de edad', item: url },
+      ],
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${url}#calculadora`,
+      name: 'Calculadora de edad de perro en años humanos',
+      operatingSystem: 'Web',
+      applicationCategory: 'HealthApplication',
+      offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
+      description: 'Herramienta gratuita que estima la edad equivalente humana de un perro según su tamaño y orienta sobre su etapa vital.',
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+
+const stages = [
+  { size: 'Pequeño', weight: 'Menos de 10 kg', senior: '8–10 años' },
+  { size: 'Mediano', weight: '10–25 kg', senior: '7–9 años' },
+  { size: 'Grande', weight: '25–40 kg', senior: '6–8 años' },
+  { size: 'Gigante', weight: 'Más de 40 kg', senior: '5–7 años' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <main id="main-content">
+    <header class="mx-auto max-w-4xl px-5 pb-10 pt-8 sm:px-6 sm:pt-12">
+      <nav class="mb-5 flex flex-wrap items-center gap-1.5 text-xs text-brand-muted" aria-label="breadcrumb">
+        <a href="/" class="hover:text-brand-primary">Inicio</a>
+        <span aria-hidden="true">/</span>
+        <a href="/herramientas" class="hover:text-brand-primary">Herramientas</a>
+        <span aria-hidden="true">/</span>
+        <span class="font-medium text-brand-text">Calculadora de edad</span>
+      </nav>
+      <h1 class="text-3xl font-extrabold leading-tight tracking-[-0.035em] text-brand-text sm:text-5xl">
+        ¿Cuántos años humanos tiene tu perro?
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-7 text-brand-muted sm:text-lg">
+        Elige su tamaño y su edad para obtener una equivalencia orientativa y saber si ya ha entrado en la etapa senior. El resultado aparece al instante y no guardamos ningún dato.
+      </p>
+    </header>
+
+    <HomeAgeCalculator />
+
+    <article class="content-body prose dark:prose-invert mx-auto max-w-3xl px-5 py-14 sm:px-6">
+      <h2 id="mito">Por qué la regla de "multiplicar por siete" no funciona</h2>
+      <p>
+        La idea de que cada año de perro vale siete humanos es fácil de recordar, pero no describe bien cómo envejecen. Un perro de un año ya es capaz de reproducirse y ha alcanzado casi su tamaño adulto, algo que en personas ocurre hacia la adolescencia. Por eso los dos primeros años "cuentan" mucho más.
+      </p>
+      <p>
+        A partir de ahí, el ritmo depende sobre todo del tamaño. Los perros pequeños viven, de media, más años y envejecen más despacio; los grandes y gigantes llegan antes a la etapa senior. Esta calculadora aplica esa diferencia por tamaño para darte una referencia más realista.
+      </p>
+
+      <h2 id="etapa-senior">¿Cuándo empieza la etapa senior según el tamaño?</h2>
+      <p>Estas edades son una guía general, no un límite estricto:</p>
+      <div class="not-prose my-6 overflow-x-auto rounded-2xl border border-brand-border">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-brand-card/60 text-brand-text">
+            <tr><th class="px-4 py-3">Tamaño</th><th class="px-4 py-3">Peso adulto</th><th class="px-4 py-3">Inicio aproximado de la etapa senior</th></tr>
+          </thead>
+          <tbody>
+            {stages.map((s) => (
+              <tr class="border-t border-brand-border text-brand-muted">
+                <td class="px-4 py-3 font-semibold text-brand-text">{s.size}</td><td class="px-4 py-3">{s.weight}</td><td class="px-4 py-3">{s.senior}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Más importante que la cifra es lo que observas: si duerme más, se levanta con rigidez, cambia su apetito o parece desorientado, merece una revisión aunque la calculadora diga que aún es "maduro".
+      </p>
+
+      <h2 id="que-hacer">Qué hacer cuando tu perro entra en la etapa senior</h2>
+      <ul>
+        <li><strong>Revisiones más frecuentes.</strong> Muchos veterinarios recomiendan pasar a controles cada seis meses. Te lo explicamos en la <a href="/salud-perros-mayores">guía de salud del perro mayor</a>.</li>
+        <li><strong>Ajustar la alimentación.</strong> Peso y masa muscular mandan más que la etiqueta "senior" del pienso: revisa la <a href="/alimentacion-perros-senior">guía de alimentación senior</a>.</li>
+        <li><strong>Vigilar la movilidad.</strong> Si ya notas resbalones o rigidez, el <a href="/herramientas/selector-movilidad-perros-mayores">selector de ayudas de movilidad</a> te orienta sobre rampas, arneses o calcetines antideslizantes.</li>
+        <li><strong>Medir su bienestar con el tiempo.</strong> En perros muy mayores, la <a href="/herramientas/calculadora-calidad-vida-perros">calculadora de calidad de vida HHHHHMM</a> ayuda a registrar cómo evoluciona.</li>
+      </ul>
+
+      <h2 id="preguntas">Preguntas frecuentes</h2>
+      {faqs.map((f) => (
+        <>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </>
+      ))}
+
+      <p class="not-prose mt-10 rounded-2xl border border-brand-border bg-brand-card/40 p-5 text-sm leading-6 text-brand-muted">
+        ¿Quieres ver todas nuestras apps? Vuelve al <a class="font-semibold text-brand-primary" href="/herramientas">centro de herramientas para perros senior</a> o pregunta tus dudas al <a class="font-semibold text-brand-primary" href="/asistente-ia">asistente IA</a>.
+      </p>
+    </article>
+
+    <div class="mx-auto max-w-3xl px-5 pb-12 sm:px-6"><AdBanner300x250 /></div>
+  </main>
+  <AdSlotLoader />
+</BaseLayout>

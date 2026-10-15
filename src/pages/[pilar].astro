@@ -30,7 +30,8 @@ const isMentalPilar = pilar.id === 'salud-mental-emocional-perros';
 const isPalliativePilar = pilar.id === 'cuidados-paliativos-perros';
 const isMobilityPilar = pilar.id === 'movilidad-dolor-perros-mayores';
 const isHygienePilar = pilar.id === 'higiene-hogar-perros-senior';
-const isModernPilar = isHealthPilar || isNutritionPilar || isMentalPilar || isPalliativePilar || isMobilityPilar || isHygienePilar;
+const isToolsPilar = pilar.id === 'herramientas';
+const isModernPilar = isToolsPilar || isHealthPilar || isNutritionPilar || isMentalPilar || isPalliativePilar || isMobilityPilar || isHygienePilar;
 
 const heroImage = pilar.data.heroImage;
 const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
@@ -136,6 +137,22 @@ const hygieneToc = [
   { id: 'preguntas', label: 'Preguntas frecuentes' },
 ];
 
+const toolsToc = [
+  { id: 'herramientas', label: 'Las herramientas' },
+  { id: 'cual-usar', label: 'Cuál usar primero' },
+  { id: 'medir', label: 'Por qué medir' },
+  { id: 'veterinario', label: 'Con tu veterinario' },
+  { id: 'limites', label: 'Qué no hacen' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const toolCards = [
+  { href: '/herramientas/calculadora-calidad-vida-perros', tag: 'Bienestar y dolor', title: 'Calculadora de calidad de vida HHHHHMM', text: 'Puntúa dolor, hambre, hidratación, higiene, felicidad, movilidad y días buenos con la escala de la Dra. Villalobos.', image: '/images/home/calculadora-hhhhhmm-perro.webp', alt: 'Perro senior descansando junto a su cuidadora mientras evalúan su bienestar' },
+  { href: '/herramientas/selector-movilidad-perros-mayores', tag: 'Movilidad', title: 'Selector de ayudas de movilidad', text: 'Responde unas preguntas y descubre si le conviene un arnés, una rampa, calcetines antideslizantes o una silla de ruedas.', image: '/images/home/selector-movilidad-perro.webp', alt: 'Perro mayor usando una ayuda de movilidad' },
+  { href: '/herramientas/calculadora-edad-perro', tag: 'Edad y etapa', title: 'Calculadora de edad en años humanos', text: 'Convierte su edad según su tamaño y averigua si ya está en la etapa senior.', image: '/images/home/perro-senior-revision-veterinaria.webp', alt: 'Perro senior en una revisión veterinaria' },
+  { href: '/asistente-ia', tag: 'Orientación', title: 'Asistente IA para perros mayores', text: 'Cuéntale qué le pasa a tu perro y recibe una orientación inicial con las guías del sitio más relevantes.', image: '/images/home/perro-senior-cognicion-juego-olfato.webp', alt: 'Perro senior olfateando un juguete de estimulación' },
+];
+
 const modernConfigs: Record<string, {
   toc: { id: string; label: string }[];
   eyebrow: string;
@@ -146,6 +163,20 @@ const modernConfigs: Record<string, {
   relatedTitle: string;
   relatedDescription: string;
 }> = {
+  'herramientas': {
+    toc: toolsToc,
+    eyebrow: 'Centro de herramientas · gratis y sin registro',
+    primaryAction: { href: '#herramientas', label: 'Ver las herramientas' },
+    secondaryAction: { href: '#cual-usar', label: '¿Cuál uso primero?' },
+    heroCaption: 'Medir con calma ayuda a decidir mejor junto a tu veterinario.',
+    signalCards: [
+      { label: 'Bienestar', title: '¿Tiene dolor o está sufriendo?', text: 'Puntúa su calidad de vida con la escala HHHHHMM.', href: '/herramientas/calculadora-calidad-vida-perros', danger: true },
+      { label: 'Movilidad', title: '¿Qué ayuda necesita?', text: 'Arnés, rampa, calcetines o silla según cómo se mueve.', href: '/herramientas/selector-movilidad-perros-mayores', danger: false },
+      { label: 'Edad', title: '¿Ya es senior?', text: 'Calcula su edad humana según su tamaño.', href: '/herramientas/calculadora-edad-perro', danger: false },
+    ],
+    relatedTitle: 'Todas las herramientas',
+    relatedDescription: 'Cuatro apps gratuitas, sin registro, pensadas para el día a día con un perro mayor.',
+  },
   'salud-perros-mayores': {
     toc: healthToc,
     eyebrow: 'Guía central · salud senior',
@@ -338,7 +369,23 @@ const hideHeroCSS = heroImage
             <p>{modernRelatedDescription}</p>
           </div>
 
-          {posts.length > 0 ? (
+          {isToolsPilar ? (
+            <div class="health-post-grid">
+              {toolCards.map((tool) => (
+                <a href={tool.href} class="health-post-card">
+                  <div class="health-post-card__image">
+                    <img src={tool.image} alt={tool.alt} srcset={buildSrcset(tool.image)} sizes="(min-width: 768px) 33vw, 100vw" width="800" height="450" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="health-post-card__body">
+                    <span class="health-post-card__tag">{tool.tag}</span>
+                    <h3>{tool.title}</h3>
+                    <p>{tool.text}</p>
+                    <span class="health-post-card__link">Abrir herramienta <span aria-hidden="true">↗</span></span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          ) : posts.length > 0 ? (
             <div class="health-post-grid">
               {posts.map((post) => (
                 <a href={`/${pilar.id}/${post.id}`} class="health-post-card">
