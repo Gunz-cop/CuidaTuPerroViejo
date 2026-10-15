@@ -23,7 +23,6 @@ const DOCUMENT_ONLY_ROUTES = new Map([
 ]);
 const DISCOVERY_ONLY_ROUTES = new Map([
   ['/asistente-ia', 'Interactive assistant page; no widgets or prompts are projected.'],
-  ['/herramientas/calculadora-edad-perro', 'Interactive age calculator; discoverable, not yet projected as a tool document.'],
   ['/contacto', 'Contact page; no form or submitted data is projected.'],
   ['/politica-de-cookies', 'Utility/legal page is discoverable but not an editorial document.'],
   ['/politica-de-privacidad', 'Utility/legal page is discoverable but not an editorial document.'],
@@ -31,6 +30,9 @@ const DISCOVERY_ONLY_ROUTES = new Map([
 const EDITORIAL_ROUTES = new Map([
   ['/acerca-de', 'acerca-de'],
   ['/politica-editorial', 'politica-editorial'],
+  // Calculadora de edad: su guía, método y fuentes se proyectan como documento editorial.
+  // Exponerla como herramienta del MCP (tool--edad) es un cambio de contrato aparte.
+  ['/herramientas/calculadora-edad-perro', 'calculadora-edad-perro'],
 ]);
 const TOOL_ROUTES = new Map([
   ['/herramientas/calculadora-calidad-vida-perros', ['tool--calidad-vida', 'calidad-vida']],

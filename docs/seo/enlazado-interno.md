@@ -26,7 +26,7 @@ Inicio /
     └── /cuidados-paliativos-perros/{articulo}
 ```
 
-Las herramientas son destinos transversales: `/herramientas`, `/herramientas/calculadora-calidad-vida-perros`, `/herramientas/selector-movilidad-perros-mayores` y `/asistente-ia`.
+Las herramientas son destinos transversales: `/herramientas`, `/herramientas/calculadora-calidad-vida-perros`, `/herramientas/selector-movilidad-perros-mayores`, `/herramientas/calculadora-edad-perro` y `/asistente-ia`. La calculadora de edad se enlaza desde `chequeo-geriatrico-canino` y `vacunas-desparasitacion-perros-senior`.
 
 ## Reglas implementadas
 

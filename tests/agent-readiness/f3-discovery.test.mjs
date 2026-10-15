@@ -42,7 +42,7 @@ async function fixture(t) {
   const assets = join(root, 'dist/client');
   const pillars = ['alimentacion-perros-senior', 'cuidados-paliativos-perros', 'herramientas', 'higiene-hogar-perros-senior', 'movilidad-dolor-perros-mayores', 'salud-mental-emocional-perros', 'salud-perros-mayores'];
   const articles = Array.from({ length: 16 }, (_, i) => `/${pillars[i % pillars.length]}/articulo-${i + 1}`);
-  const paths = ['/', ...pillars.map((p) => '/' + p), ...articles, '/herramientas/calculadora-calidad-vida-perros', '/herramientas/selector-movilidad-perros-mayores', '/acerca-de', '/politica-editorial'];
+  const paths = ['/', ...pillars.map((p) => '/' + p), ...articles, '/herramientas/calculadora-calidad-vida-perros', '/herramientas/selector-movilidad-perros-mayores', '/acerca-de', '/politica-editorial', '/herramientas/calculadora-edad-perro'];
   await mkdir(join(assets, 'api'), { recursive: true });
   await writeFile(join(assets, 'api/assistant-catalog.json'), JSON.stringify(articles.map((href, i) => ({ href, slug: `articulo-${i + 1}` }))));
   await writeFile(join(assets, 'sitemap.xml'), `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map((p) => `<url><loc>https://cuidatuperroviejo.com${p}</loc></url>`).join('')}</urlset>`);

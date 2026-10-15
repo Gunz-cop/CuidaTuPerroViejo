@@ -140,6 +140,11 @@ function selectProfile(document, page, h1) {
     case 'tool--calidad-vida':
     case 'tool--movilidad':
       return [exactOne(mainMax(), page, 'main.max-w-3xl')];
+    case 'page--calculadora-edad-perro': {
+      exactOne(nodes(document, (node) => node.tagName === 'header' && hasClass(node, 'age-hero')), page, 'header.age-hero');
+      const guide = exactOne(nodes(document, (node) => node.tagName === 'article' && hasClass(node, 'age-guide')), page, 'article.age-guide');
+      return [h1, ...directParagraphs(h1.parentNode), guide];
+    }
     default: break;
   }
   if (page.kind === 'article') {
