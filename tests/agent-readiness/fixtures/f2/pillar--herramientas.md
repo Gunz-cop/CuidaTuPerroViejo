@@ -84,7 +84,7 @@ Sí. Todas son gratuitas, no requieren registro y no guardamos los datos que int
 
 ### ¿Qué puntuación de la escala HHHHHMM es preocupante?
 
-En la escala original, una puntuación total por encima de 35 sobre 70 se considera compatible con una calidad de vida aceptable. Aun así, una puntuación muy baja en dolor o en hidratación merece atención aunque el total sea alto. La calculadora te explica cada resultado.
+La calculadora suma hasta 70 puntos y usa tres tramos: con 35 o menos la calidad de vida está comprometida y conviene consultar al veterinario; entre 36 y 50 es aceptable, y por encima de 50 indica buena calidad de vida. Aun así, una puntuación muy baja en dolor o en hidratación merece atención aunque el total sea alto. La calculadora te explica cada resultado.
 
 ### ¿Cada cuánto debo repetir la evaluación de calidad de vida?
 
