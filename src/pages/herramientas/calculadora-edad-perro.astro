@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DogAgeTool from '../../components/tools/DogAgeTool.astro';
+import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
+import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
+import { SIZE_PROFILES, seniorAge, dogAge, type DogSize } from '../../lib/dog-age';
+
+const title = 'Calculadora de edad de perro en años humanos según su tamaño';
+const description = 'Calcula la edad de tu perro en años humanos según su tamaño y descubre si ya está en etapa senior y qué cuidados conviene anticipar.';
+const url = 'https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro';
+
+const faqs = [
+  {
+    q: '¿Es verdad que un año de perro equivale a siete años humanos?',
+    a: 'No. Es una simplificación popular. Los perros maduran muy rápido en los dos primeros años y después envejecen a un ritmo que depende sobre todo de su tamaño: los perros grandes y gigantes envejecen antes que los pequeños.',
+  },
+  {
+    q: '¿A qué edad se considera senior a un perro?',
+    a: 'Las guías de la Asociación Americana de Hospitales Veterinarios (AAHA, 2019) definen la etapa senior como el último 25 % de la esperanza de vida, que depende del tamaño. Con datos de esperanza de vida de 2023, eso sitúa el inicio hacia los 10 años en perros pequeños, los 9,5 en medianos, los 8,5 en grandes y los 7 en gigantes. Más que la cifra exacta, importa empezar a vigilar cambios.',
+  },
+  {
+    q: '¿Esta calculadora sirve para cualquier raza?',
+    a: 'Sirve como orientación general por tamaño. La raza, la genética, el peso corporal y las enfermedades previas influyen en cómo envejece cada perro, así que tu veterinario puede afinar la etapa real de tu perro.',
+  },
+  {
+    q: '¿Por qué mi perro aparece como «senior longevo»?',
+    a: 'Porque ya ha superado la esperanza de vida media de los perros de su tamaño. Es una buena noticia: muchos perros viven bastantes años más que la media, y llegar ahí suele reflejar buenos cuidados. La media no es una fecha límite; es solo el punto donde se reparte una población muy diversa.',
+  },
+  {
+    q: '¿Qué hago si el resultado indica que mi perro ya es senior?',
+    a: 'Aprovecha para pedir una revisión geriátrica, vigilar peso, movilidad, apetito y comportamiento, y adaptar poco a poco la casa y los paseos. Ser senior no es una enfermedad: es una etapa que se acompaña mejor con prevención.',
+  },
+];
+
+const fmt = (n: number) => String(n).replace('.', ',');
+const stages = (Object.keys(SIZE_PROFILES) as DogSize[]).map((id) => ({
+  size: SIZE_PROFILES[id].label,
+  weight: SIZE_PROFILES[id].weight,
+  life: fmt(SIZE_PROFILES[id].lifeExpectancy),
+  senior: fmt(seniorAge(id)),
+  at10: dogAge(id, 10).humanYears,
+}));
+
+const sources = [
+  { id: 'aaha', text: 'Creevy KE, Grady J, Little SE, et al. 2019 AAHA Canine Life Stage Guidelines. J Am Anim Hosp Assoc. 2019;55(6):267-290.', href: 'https://doi.org/10.5326/JAAHA-MS-6999', use: 'Definición de las etapas de vida y del inicio de la etapa senior (último 25 % de la esperanza de vida).' },
+  { id: 'montoya', text: 'Montoya M, Morrison JA, Arrignon F, et al. Life expectancy tables for dogs and cats derived from clinical data. Front Vet Sci. 2023;10:1082102.', href: 'https://doi.org/10.3389/fvets.2023.1082102', use: 'Esperanza de vida al nacer por tamaño, con datos clínicos de más de 1.000 hospitales Banfield en EE. UU.' },
+  { id: 'mcmillan', text: 'McMillan KM, Bielby J, Williams CL, et al. Longevity of companion dog breeds: those at risk from early death. Sci Rep. 2024;14:531.', href: 'https://doi.org/10.1038/s41598-023-50458-w', use: 'Confirma en 584.734 perros del Reino Unido que el tamaño y la forma del hocico influyen en la longevidad (mediana: 12,5 años).' },
+  { id: 'kraus', text: 'Kraus C, Pavard S, Promislow DEL. The size–life span trade-off decomposed: why large dogs die young. Am Nat. 2013;181(4):492-505.', href: 'https://doi.org/10.1086/669665', use: 'Explica por qué los perros grandes envejecen a un ritmo más rápido: la base del ajuste por tamaño.' },
+  { id: 'wang', text: 'Wang T, Ma J, Hogan AN, et al. Quantitative translation of dog-to-human aging by conserved remodeling of the DNA methylome. Cell Syst. 2020;11(2):176-185.e6.', href: 'https://doi.org/10.1016/j.cels.2020.06.006', use: 'Fórmula epigenética (16 × ln(edad) + 31) que mostramos como comparación en «Según su ADN».' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${url}#webpage`,
+      url,
+      name: title,
+      description,
+      isPartOf: { '@id': 'https://cuidatuperroviejo.com/#website' },
+      about: { '@id': 'https://cuidatuperroviejo.com/herramientas#webpage' },
+      breadcrumb: { '@id': `${url}#breadcrumb` },
+      mainEntity: { '@id': `${url}#calculadora` },
+      citation: sources.map((src) => ({ '@type': 'ScholarlyArticle', name: src.text, url: src.href })),
+      inLanguage: 'es',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://cuidatuperroviejo.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Herramientas', item: 'https://cuidatuperroviejo.com/herramientas' },
+        { '@type': 'ListItem', position: 3, name: 'Calculadora de edad', item: url },
+      ],
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${url}#calculadora`,
+      name: 'Calculadora de edad de perro en años humanos',
+      operatingSystem: 'Web',
+      applicationCategory: 'HealthApplication',
+      offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
+      description: 'Herramienta gratuita que estima la edad equivalente humana de un perro según su tamaño y orienta sobre su etapa vital.',
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+
+
+---
+
+<BaseLayout title={title} description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <main id="main-content">
+    <header class="age-hero">
+      <picture class="age-hero__media">
+        <source media="(min-width: 64rem)" srcset="/images/herramientas/calculadora-edad-perro-hero-400.webp 400w, /images/herramientas/calculadora-edad-perro-hero.webp 1200w" sizes="100vw" />
+        <img src="/images/herramientas/calculadora-edad-perro-hero-movil.webp" alt="El mismo perro mestizo en cuatro etapas de su vida: cachorro, adulto, maduro y senior descansando en su cama" width="900" height="412" loading="eager" fetchpriority="high" decoding="async" />
+      </picture>
+      <div class="age-hero__copy">
+        <nav class="mb-4 flex flex-wrap items-center gap-1.5 text-xs text-brand-muted" aria-label="breadcrumb">
+          <a href="/" class="hover:text-brand-primary">Inicio</a>
+          <span aria-hidden="true">/</span>
+          <a href="/herramientas" class="hover:text-brand-primary">Herramientas</a>
+          <span aria-hidden="true">/</span>
+          <span class="font-medium text-brand-text">Calculadora de edad</span>
+        </nav>
+        <h1>¿Cuántos años humanos tiene tu perro?</h1>
+        <p>Elige su tamaño y su edad: verás su equivalencia, en qué etapa está y cuánto le falta para ser senior. Sin registro.</p>
+      </div>
+    </header>
+
+    <DogAgeTool />
+
+    <article class="content-body prose dark:prose-invert mx-auto max-w-3xl px-5 py-14 sm:px-6">
+      <h2 id="mito">Por qué la regla de "multiplicar por siete" no funciona</h2>
+      <p>
+        La idea de que cada año de perro vale siete humanos es fácil de recordar, pero no describe bien cómo envejecen. Un perro de un año ya es capaz de reproducirse y casi ha alcanzado su tamaño adulto, algo que en personas ocurre hacia la adolescencia. Por eso los dos primeros años "cuentan" mucho más.
+      </p>
+      <p>
+        A partir de ahí, el ritmo depende sobre todo del tamaño. Los perros grandes no solo viven menos: <a href="https://doi.org/10.1086/669665" rel="noopener" target="_blank">envejecen más deprisa</a>. Un estudio con más de medio millón de perros del Reino Unido confirmó en 2024 que <a href="https://doi.org/10.1038/s41598-023-50458-w" rel="noopener" target="_blank">el tamaño y la forma del hocico influyen en cuánto viven</a>.
+      </p>
+
+      <h2 id="etapa-senior">¿Cuándo empieza la etapa senior según el tamaño?</h2>
+      <p>Las guías veterinarias de la AAHA definen la etapa senior como <strong>el último 25 % de la esperanza de vida</strong>. Con la esperanza de vida por tamaño medida en millones de perros, queda así:</p>
+      <div class="not-prose my-6 overflow-x-auto rounded-2xl border border-brand-border">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-brand-card/60 text-brand-text">
+            <tr><th class="px-4 py-3">Tamaño</th><th class="px-4 py-3">Peso adulto</th><th class="px-4 py-3">Esperanza de vida media</th><th class="px-4 py-3">Etapa senior desde</th><th class="px-4 py-3">10 años equivalen a</th></tr>
+          </thead>
+          <tbody>
+            {stages.map((s) => (
+              <tr class="border-t border-brand-border text-brand-muted">
+                <td class="px-4 py-3 font-semibold text-brand-text">{s.size}</td><td class="px-4 py-3">{s.weight}</td><td class="px-4 py-3">{s.life} años</td><td class="px-4 py-3">~{s.senior} años</td><td class="px-4 py-3">{s.at10} años humanos</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        La esperanza de vida es una <strong>media</strong>, no una fecha límite: muchos perros la superan con creces. Más importante que la cifra es lo que observas. Si duerme más, se levanta con rigidez, cambia su apetito o parece desorientado, merece una revisión aunque la calculadora diga que aún es "maduro".
+      </p>
+
+      <h2 id="que-hacer">Qué hacer cuando tu perro entra en la etapa senior</h2>
+      <ul>
+        <li><strong>Revisiones más frecuentes.</strong> Muchos veterinarios recomiendan pasar a controles cada seis meses. Te lo explicamos en la <a href="/salud-perros-mayores">guía de salud del perro mayor</a>.</li>
+        <li><strong>Ajustar la alimentación.</strong> Peso y masa muscular mandan más que la etiqueta "senior" del pienso: revisa la <a href="/alimentacion-perros-senior">guía de alimentación senior</a>.</li>
+        <li><strong>Vigilar la movilidad.</strong> Si ya notas resbalones o rigidez, el <a href="/herramientas/selector-movilidad-perros-mayores">selector de ayudas de movilidad</a> te orienta sobre rampas, arneses o calcetines antideslizantes.</li>
+        <li><strong>Medir su bienestar con el tiempo.</strong> En perros muy mayores, la <a href="/herramientas/calculadora-calidad-vida-perros">calculadora de calidad de vida HHHHHMM</a> ayuda a registrar cómo evoluciona.</li>
+      </ul>
+
+      <h2 id="metodo">Cómo calculamos la edad: método y fuentes</h2>
+      <p>No inventamos las cifras. La calculadora combina tres piezas, cada una respaldada por estudios publicados en revistas veterinarias y científicas con revisión por pares:</p>
+      <ol>
+        <li><strong>Etapas de vida (AAHA, 2019).</strong> Cachorro hasta los 6–9 meses, adulto joven hasta los 3–4 años, adulto maduro después, y senior a partir del último 25 % de la esperanza de vida.</li>
+        <li><strong>Esperanza de vida por tamaño (Montoya et al., 2023).</strong> 13,5 años en perros de menos de 11 kg, 12,7 en medianos, 11,5 en grandes y 9,5 en gigantes. Los mestizos viven de media 12,7 años: elige el tamaño según su peso.</li>
+        <li><strong>Equivalencia en años humanos.</strong> El primer año equivale a unos 15 años humanos y el segundo a 24, por la maduración rápida. Desde ahí, cada tamaño avanza a su propio ritmo, ajustado para que su esperanza de vida media equivalga a una vida humana larga (80 años). Así, un perro pequeño suma unos 5 años humanos por año y uno gigante unos 7,5.</li>
+      </ol>
+      <p>
+        Como comparación, en la casilla <strong>«Según su ADN»</strong> mostramos el resultado de la fórmula epigenética de la Universidad de California en San Diego (Wang et al., 2020), basada en cambios químicos del ADN con la edad: <em>16 × ln(edad) + 31</em>. Es interesante, pero se calibró solo con labradores, por eso no la usamos como resultado principal.
+      </p>
+      <p>
+        Ningún método es exacto para un perro concreto: la raza, la genética, el peso y la salud cambian la película. Por eso hablamos de <em>equivalencia orientativa</em>.
+      </p>
+
+      <h3 id="fuentes">Fuentes</h3>
+      <ol class="text-sm">
+        {sources.map((src) => (
+          <li id={`fuente-${src.id}`}>
+            <a href={src.href} rel="noopener" target="_blank">{src.text}</a><br />
+            <span class="text-brand-muted">{src.use}</span>
+          </li>
+        ))}
+      </ol>
+
+      <h2 id="preguntas">Preguntas frecuentes</h2>
+      {faqs.map((f) => (
+        <>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </>
+      ))}
+
+      <p class="not-prose mt-10 rounded-2xl border border-brand-border bg-brand-card/40 p-5 text-sm leading-6 text-brand-muted">
+        ¿Quieres ver todas nuestras apps? Vuelve al <a class="font-semibold text-brand-primary" href="/herramientas">centro de herramientas para perros senior</a> o pregunta tus dudas al <a class="font-semibold text-brand-primary" href="/asistente-ia">asistente IA</a>.
+      </p>
+    </article>
+
+    <div class="mx-auto max-w-3xl px-5 pb-12 sm:px-6"><AdBanner300x250 /></div>
+  </main>
+  <AdSlotLoader />
+</BaseLayout>
+
+<style>
+  .age-hero { position: relative; overflow: hidden; background: #f7efe1; }
+  :global(.dark) .age-hero { background: var(--color-brand-card); }
+  .age-hero__media img { display: block; width: 100%; height: auto; }
+  .age-hero__copy { width: min(100% - 2rem, 68rem); margin: 0 auto; position: relative; padding-block: 1rem .5rem; }
+  .age-hero h1 { margin: 0; font-family: var(--font-display); font-size: clamp(1.9rem, 6.5vw, 3.6rem); font-weight: 800; line-height: 1.04; letter-spacing: -.04em; color: var(--color-brand-text); }
+  .age-hero__copy > p { margin: .75rem 0 0; max-width: 32rem; font-size: clamp(.95rem, 1.6vw, 1.1rem); line-height: 1.6; color: var(--color-brand-muted); }
+  .age-hero__copy nav { display: none; }
+  @media (min-width: 64rem) {
+    .age-hero { min-height: clamp(22rem, 42vw, 34rem); display: flex; align-items: center; }
+    .age-hero__media { position: absolute; inset: 0 0 0 auto; width: 72%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%); mask-image: linear-gradient(90deg, transparent, #000 22%); }
+    .age-hero__media img { height: 100%; object-fit: cover; object-position: 78% center; }
+    .age-hero__copy { margin-top: 0; padding-block: 3rem; }
+    .age-hero__copy > * { max-width: 26rem; }
+    .age-hero__copy nav { display: flex; }
+    .age-hero h1, .age-hero__copy > p { color: #2f3b2c; }
+  }
+</style>

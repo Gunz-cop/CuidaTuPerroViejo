@@ -23,6 +23,7 @@ const DOCUMENT_ONLY_ROUTES = new Map([
 ]);
 const DISCOVERY_ONLY_ROUTES = new Map([
   ['/asistente-ia', 'Interactive assistant page; no widgets or prompts are projected.'],
+  ['/herramientas/calculadora-edad-perro', 'Interactive age calculator; discoverable, not yet projected as a tool document.'],
   ['/contacto', 'Contact page; no form or submitted data is projected.'],
   ['/politica-de-cookies', 'Utility/legal page is discoverable but not an editorial document.'],
   ['/politica-de-privacidad', 'Utility/legal page is discoverable but not an editorial document.'],

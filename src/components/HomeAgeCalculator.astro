@@ -51,25 +51,25 @@
             <label class="cursor-pointer">
               <input class="peer sr-only" name="size" type="radio" value="small" />
               <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
-                <span class="text-sm font-bold text-brand-text">Pequeño</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">Menos de 10 kg</span>
+                <span class="text-sm font-bold text-brand-text">Pequeño</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">Menos de 11 kg</span>
               </span>
             </label>
             <label class="cursor-pointer">
               <input checked class="peer sr-only" name="size" type="radio" value="medium" />
               <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
-                <span class="text-sm font-bold text-brand-text">Mediano</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">10–25 kg</span>
+                <span class="text-sm font-bold text-brand-text">Mediano</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">11–25 kg</span>
               </span>
             </label>
             <label class="cursor-pointer">
               <input class="peer sr-only" name="size" type="radio" value="large" />
               <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
-                <span class="text-sm font-bold text-brand-text">Grande</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">25–40 kg</span>
+                <span class="text-sm font-bold text-brand-text">Grande</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">26–44 kg</span>
               </span>
             </label>
             <label class="cursor-pointer">
               <input class="peer sr-only" name="size" type="radio" value="giant" />
               <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
-                <span class="text-sm font-bold text-brand-text">Gigante</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">Más de 40 kg</span>
+                <span class="text-sm font-bold text-brand-text">Gigante</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">45 kg o más</span>
               </span>
             </label>
           </div>
@@ -100,6 +100,9 @@
           </div>
         </div>
 
+        <a href="/herramientas/calculadora-edad-perro" class="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-brand-primary/30 bg-brand-primary/5 px-4 text-sm font-bold text-brand-primary transition hover:border-brand-primary hover:bg-brand-primary/10">
+          Ver su etapa completa y compartir su tarjeta <span aria-hidden="true">→</span>
+        </a>
         <p class="mt-4 text-xs leading-5 text-brand-muted">
           Esta equivalencia es aproximada y no sustituye una valoración veterinaria individual.
         </p>
@@ -109,6 +112,7 @@
 </section>
 
 <script>
+  import { dogAge, type DogSize } from '../lib/dog-age';
   const calculator = document.getElementById('age-calculator');
   const ageSelect = document.getElementById('dog-age');
   const humanAgeDisplay = document.getElementById('human-age-result');
@@ -123,24 +127,18 @@
     const age = Number.parseInt(ageSelect.value, 10);
     if (Number.isNaN(age)) return;
 
-    let humanAge = 0;
-    if (size === 'small') humanAge = age === 1 ? 15 : age === 2 ? 24 : 24 + (age - 2) * 4;
-    if (size === 'medium') humanAge = age === 1 ? 15 : age === 2 ? 24 : 24 + (age - 2) * 5;
-    if (size === 'large') humanAge = age === 1 ? 15 : age === 2 ? 24 : 24 + (age - 2) * 6;
-    if (size === 'giant') humanAge = age === 1 ? 12 : age === 2 ? 22 : 22 + (age - 2) * 8;
+    const result = dogAge(size as DogSize, age);
+    humanAgeDisplay.textContent = `${result.humanYears} años`;
 
-    humanAgeDisplay.textContent = `${humanAge} años`;
-
-    if (humanAge < 55) {
-      recTitle.textContent = 'Madurez: prepara su etapa senior';
-      recText.textContent = 'Mantén un peso saludable y aprovecha su próxima revisión para definir un plan preventivo.';
-    } else if (humanAge <= 75) {
-      recTitle.textContent = 'Etapa senior: observa los cambios';
-      recText.textContent = 'Valora revisiones semestrales, paseos adaptados y ajustes de alimentación con tu veterinario.';
-    } else {
-      recTitle.textContent = 'Senior avanzado: prioriza el confort';
-      recText.textContent = 'Adapta el hogar, conserva rutinas estables y vigila de cerca el dolor, el apetito y la movilidad.';
-    }
+    const messages = {
+      young: ['Adulto joven: plena forma', 'Cuida su peso y su boca: es la mejor inversión para su vejez.'],
+      mature: ['Adulto maduro: prepara su etapa senior', 'Mantén un peso saludable y aprovecha su próxima revisión para definir un plan preventivo.'],
+      senior: ['Etapa senior: observa los cambios', 'Valora revisiones más frecuentes, paseos adaptados y ajustes de alimentación con tu veterinario.'],
+      longevous: ['Senior longevo: ¡ya superó la media de su tamaño!', 'Adapta el hogar, conserva rutinas estables y prioriza su confort.'],
+    } as const;
+    const [title, text] = messages[result.stage === 'puppy' ? 'young' : result.stage];
+    recTitle.textContent = title;
+    recText.textContent = text;
   }
 
   calculator?.querySelectorAll('input[name="size"]').forEach((radio) => radio.addEventListener('change', calculateAge));
