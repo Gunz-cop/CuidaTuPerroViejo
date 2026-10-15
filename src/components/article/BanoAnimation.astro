@@ -38,7 +38,7 @@ const uid = `bano-${variant}`;
 ---
 
 <div data-bano-sequence data-variant={variant} data-step="0" data-playing="false">
-  <figure class="lesson" aria-labelledby={`${uid}-title`}>
+  <section class="lesson" aria-labelledby={`${uid}-title`}>
     <header><p class="kicker">{scene.kicker}</p><h3 id={`${uid}-title`}>{scene.title}</h3></header>
     <div class="canvas">
       <div class="scene-label" aria-hidden="true">
@@ -99,8 +99,8 @@ const uid = `bano-${variant}`;
       <p class="position" aria-live="polite" aria-atomic="true"></p>
       <p class="motion-help">También puedes recorrerla paso a paso, sin reproducción.</p>
     </div>
-    <figcaption>{scene.note} Ilustración representativa; el dogo no es un paciente del estudio.</figcaption>
-  </figure>
+    <p class="lesson-note">{scene.note} Ilustración representativa; el dogo no es un paciente del estudio.</p>
+  </section>
 </div>
 
 <script>
@@ -201,7 +201,7 @@ const uid = `bano-${variant}`;
   button:disabled { opacity:.45; cursor:default; }
   .lesson .position { color:#3f5844; margin:.8rem 0 .2rem; font-size:.8rem; font-weight:700; }
   .lesson .motion-help { margin:0; font-size:.78rem; color:#52634c; }
-  .lesson figcaption { color:#52634c; padding:1rem 1.5rem; border-top:1px solid #d8e0ce; font-size:.8rem; line-height:1.6; }
+  .lesson .lesson-note { margin:0;  color:#52634c; padding:1rem 1.5rem; border-top:1px solid #d8e0ce; font-size:.8rem; line-height:1.6; }
   .touch-icon,.water,.entry,.mat,.supplies,.exit,.space-ring,.pause-mark,.exit-arrow,.observe-ring,.dry-sparkles { transition:opacity .6s ease,transform .9s ease; transform-box:fill-box; transform-origin:center; }
   .space-ring,.pause-mark,.exit-arrow { opacity:0; }
   [data-variant=pausa]:is([data-step='1'],[data-step='2'],[data-step='3']) .water { opacity:0; transform:translateY(-15px); }
@@ -226,6 +226,6 @@ const uid = `bano-${variant}`;
   @keyframes water-fall { from { transform:translateY(-3px); opacity:.4; } to { transform:translateY(7px); opacity:1; } }
   @keyframes cloth-blot { 0%,100% { transform:translate(3px,-2px); } 50% { transform:translate(-5px,2px); } }
   @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
-  @media(max-width:480px) { .lesson header { padding:1.2rem 1rem .8rem; } .canvas { margin:0 .6rem; } .scene-label { padding:.6rem .6rem .1rem; font-size:.6rem; } .scene-progress { padding:.2rem .7rem .7rem; gap:.35rem; } .scene-progress>span { font-size:.58rem; } .controls,.lesson .step-list { padding-inline:1rem; } .lesson figcaption { padding:1rem; } }
+  @media(max-width:480px) { .lesson header { padding:1.2rem 1rem .8rem; } .canvas { margin:0 .6rem; } .scene-label { padding:.6rem .6rem .1rem; font-size:.6rem; } .scene-progress { padding:.2rem .7rem .7rem; gap:.35rem; } .scene-progress>span { font-size:.58rem; } .controls,.lesson .step-list { padding-inline:1rem; } .lesson .lesson-note { margin:0;  padding:1rem; } }
   @media print { .controls { display:none; } .lesson .step-list li[hidden] { display:flex!important; } .lesson { break-inside:avoid; box-shadow:none; } }
 </style>

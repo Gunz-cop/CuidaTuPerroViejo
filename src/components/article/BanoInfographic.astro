@@ -13,7 +13,7 @@ const cards = decision ? [
   { n:'04', title:'Salir y secar', text:'Un lugar próximo, seco y sin obstáculos para terminar sin prisas.', tag:'Descanso' },
 ];
 ---
-<figure class:list={['bano-map', { route: !decision }]}>
+<section class:list={['bano-map', { route: !decision }]}>
   <div class="map-header"><span>GUÍA VISUAL · {decision ? 'DECIDIR' : 'PREPARAR'}</span><strong>{decision ? 'No toda suciedad necesita un baño completo' : 'La ruta importa tanto como la ducha'}</strong></div>
   {!decision && <svg class="route-drawing" viewBox="0 0 720 125" role="img" aria-label="Ruta continua y despejada entre entrada, esterilla, materiales y zona de secado">
     <path d="M72 75H645" fill="none" stroke="#d4e1d3" stroke-width="30" stroke-linecap="round"/>
@@ -28,8 +28,8 @@ const cards = decision ? [
     </g>
   </svg>}
   <ol>{cards.map((card) => <li class={'color' in card ? card.color : 'green'}><div class="card-top"><span class="count">{card.n}</span><span class="tag">{card.tag}</span></div><strong>{card.title}</strong><p>{card.text}</p>{decision && <span class="bottom-line" aria-hidden="true"></span>}</li>)}</ol>
-  <figcaption>{decision ? 'Elige según la necesidad y la tolerancia de tu perro. Este esquema no diagnostica ni fija un calendario de baños.' : 'Comprueba todo antes de traer al perro. Si el acceso o el apoyo no son seguros, elige otra modalidad de aseo.'}</figcaption>
-</figure>
+  <p class="bano-caption">{decision ? 'Elige según la necesidad y la tolerancia de tu perro. Este esquema no diagnostica ni fija un calendario de baños.' : 'Comprueba todo antes de traer al perro. Si el acceso o el apoyo no son seguros, elige otra modalidad de aseo.'}</p>
+</section>
 <style>
   .bano-map { margin:2.5rem 0; padding:1.5rem; border:1px solid #c6d6c6; background:#fffdf5; color:#254f48; border-radius:1.5rem; }
   .map-header { display:grid; gap:.65rem; margin-bottom:1.4rem; }
@@ -46,7 +46,7 @@ const cards = decision ? [
   li p { margin:.7rem 0; font-size:.86rem; line-height:1.6; }
   .bottom-line { display:block; position:absolute; bottom:0; left:0; right:0; height:4px; background:#6e9980; }
   .blue .bottom-line { background:#6a98a6; } .amber .bottom-line { background:#b68a47; }
-  figcaption { margin-top:1rem; font-size:.8rem; line-height:1.6; color:#526b5c; }
+  .bano-caption { margin-top:1rem; font-size:.8rem; line-height:1.6; color:#526b5c; }
   .route-drawing { display:block; width:100%; height:auto; margin:0 0 1rem; }
   .route ol { grid-template-columns:repeat(4,minmax(0,1fr)); }
   @media(max-width:680px) { ol,.route ol { grid-template-columns:1fr 1fr; } .bano-map { padding:1rem; } }

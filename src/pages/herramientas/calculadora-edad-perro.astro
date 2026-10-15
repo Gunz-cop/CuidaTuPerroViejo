@@ -122,7 +122,12 @@ const schema = {
 
     <DogAgeTool />
 
-    <article class="content-body prose dark:prose-invert mx-auto max-w-3xl px-5 py-14 sm:px-6">
+    <div class="age-guide-intro">
+      <p class="age-guide-intro__kicker">Guía completa</p>
+      <p class="age-guide-intro__title">Entiende la edad de tu perro</p>
+    </div>
+
+    <article class="age-guide content-body prose dark:prose-invert mx-auto max-w-3xl px-5 pb-14 sm:px-6">
       <h2 id="mito">Por qué la regla de "multiplicar por siete" no funciona</h2>
       <p>
         La idea de que cada año de perro vale siete humanos es fácil de recordar, pero no describe bien cómo envejecen. Un perro de un año ya es capaz de reproducirse y casi ha alcanzado su tamaño adulto, algo que en personas ocurre hacia la adolescencia. Por eso los dos primeros años "cuentan" mucho más.
@@ -202,6 +207,11 @@ const schema = {
 </BaseLayout>
 
 <style>
+  .age-guide-intro { width: min(100% - 2.5rem, 48rem); margin: 3.5rem auto 0; text-align: center; }
+  .age-guide-intro__kicker { margin: 0; color: var(--color-brand-primary); font-size: .72rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+  .age-guide-intro__title { margin: .35rem 0 0; font-family: var(--font-display); font-size: clamp(1.5rem, 5vw, 2.1rem); font-weight: 800; color: var(--color-brand-text); }
+  .age-guide :global(h2) { margin-top: 3.25rem; padding-top: 2.25rem; border-top: 1px dashed var(--color-brand-border); }
+  .age-guide :global(h2:first-child) { margin-top: 1.5rem; padding-top: 0; border-top: 0; }
   .age-hero { position: relative; overflow: hidden; background: #f7efe1; }
   :global(.dark) .age-hero { background: var(--color-brand-card); }
   .age-hero__media img { display: block; width: 100%; height: auto; }
