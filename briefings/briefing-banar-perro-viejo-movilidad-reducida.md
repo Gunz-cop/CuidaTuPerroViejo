@@ -32,7 +32,7 @@ seoTitle: "Cómo bañar a un perro viejo con movilidad reducida"
 metaDescription: "Cómo adaptar el baño de un perro mayor con movilidad reducida, reconocer cuándo parar y elegir alternativas de aseo con ayuda veterinaria."
 pilar: "higiene-hogar-perros-senior"
 keywordPrincipal: "cómo bañar a un perro viejo"
-heroImage: "/images/blog/banar-perro-viejo-movilidad-reducida/bano-dogo-argentino-senior-antideslizante.webp"
+heroImage: "/images/blog/banar-perro-viejo-movilidad-reducida/bano-dogo-argentino-senior-antideslizante-v2.webp"
 heroImageAlt: "Dogo argentino senior blanco, de orejas naturales y pequeña mancha gris sobre el ojo izquierdo, ilustrado de pie sobre una alfombra antideslizante dentro de una ducha a ras de suelo, siendo enjuagado con agua templada"
 status: "Publicado"
 datePublished: "2026-10-15"
@@ -248,24 +248,24 @@ datePublished: "2026-10-15"
 ## 8. GUÍA VISUAL — 3 PROMPTS DE IMAGEN
 
 > [!IMPORTANT]
-> **Sujeto fijo en los 3 prompts:** `dogo argentino senior blanco, orejas naturales, nariz negra, ojos marrones, pequeña mancha gris sobre el ojo izquierdo`. Debe nombrarse explícitamente en **cada uno** de los tres prompts, como sujeto ilustrativo, sin atribuirlo a los pacientes de la serie.
+> **Sujeto fijo en los 3 prompts:** `dogo argentino claramente anciano (13–14 años ilustrativos), pelaje blanco marfil fino, orejas naturales, nariz negra, ojos marrones con leve veladura, frente arrugada, belfos caídos y menor tono muscular, pequeña mancha gris sobre el ojo izquierdo`. Debe nombrarse explícitamente en **cada uno** de los tres prompts, como sujeto ilustrativo, sin atribuirlo a los pacientes de la serie.
 
 > [!WARNING]
 > **Restricción de contenido visual:** ninguna imagen debe mostrar al perro forcejeando, resbalando, con signos de angustia evidente ni sujetado con fuerza. Se representa la **técnica correcta**, en la que el perro está estable y tranquilo.
 
 ### Imagen 1 — Resolutiva (hero)
-*   **Nombre de archivo SEO:** `bano-dogo-argentino-senior-antideslizante.webp`
-*   **Prompt visual:** Plano medio lateral, cámara a la altura del perro | Cuarto de baño doméstico real con ducha a ras de suelo y una esterilla antideslizante de goma bien visible bajo las patas | Un **dogo argentino senior blanco, orejas naturales, nariz negra, ojos marrones, pequeña mancha gris sobre el ojo izquierdo**, de pie y **estable**, siendo enjuagado con un chorro suave pegado al cuerpo por las manos de una mujer de unos 55 años, con una mano apoyada en su costado | Luz natural entrando por una ventana pequeña del baño, cálida y difusa | Profundidad de campo estrecha, foco en las patas sobre la esterilla | Textura de la goma antideslizante y del pelaje mojado | Estilo fotoperiodístico instructivo, perro tranquilo, cero apariencia de banco de imágenes.
+*   **Nombre de archivo SEO:** `bano-dogo-argentino-senior-antideslizante-v2.webp`
+*   **Prompt visual:** Plano medio lateral, cámara a la altura del perro | Cuarto de baño doméstico real con ducha a ras de suelo y una esterilla antideslizante de goma bien visible bajo las patas | Un **dogo argentino claramente anciano (13–14 años ilustrativos), pelaje blanco marfil fino, orejas naturales, nariz negra, ojos marrones con leve veladura, frente arrugada, belfos caídos y menor tono muscular, pequeña mancha gris sobre el ojo izquierdo**, de pie y **estable**, siendo enjuagado con un chorro suave pegado al cuerpo por las manos de una mujer de unos 55 años, con una mano apoyada en su costado | Luz natural entrando por una ventana pequeña del baño, cálida y difusa | Profundidad de campo estrecha, foco en las patas sobre la esterilla | Textura de la goma antideslizante y del pelaje mojado | Estilo fotoperiodístico instructivo, perro tranquilo, cero apariencia de banco de imágenes.
 *   **Caption:** La esterilla antideslizante es la medida más importante del baño: un perro artrósico que resbala una vez puede tener dificultades de apoyo; no se afirma una duración de miedo.
 
 ### Imagen 2 — Educativa
-*   **Nombre de archivo SEO:** `aseo-por-zonas-perro-mayor-tumbado.webp`
-*   **Prompt visual:** Plano medio, cámara a ras de suelo | Salón doméstico, perro tumbado sobre una toalla extendida encima de su cama | El mismo **dogo argentino senior blanco, orejas naturales, nariz negra, ojos marrones, pequeña mancha gris sobre el ojo izquierdo**, tumbado y relajado mientras unas manos limpian con una toalla húmeda la zona de la pata delantera, **sin levantarlo ni moverlo de sitio** | Luz natural cálida de tarde | Profundidad de campo estrecha, foco en la toalla y la pata | Textura de la toalla y del pelaje | Estilo fotoperiodístico instructivo, gesto suave, perro visiblemente cómodo.
+*   **Nombre de archivo SEO:** `aseo-por-zonas-perro-mayor-tumbado-v2.webp`
+*   **Prompt visual:** Plano medio, cámara a ras de suelo | Salón doméstico, perro tumbado sobre una toalla extendida encima de su cama | El mismo **dogo argentino claramente anciano (13–14 años ilustrativos), pelaje blanco marfil fino, orejas naturales, nariz negra, ojos marrones con leve veladura, frente arrugada, belfos caídos y menor tono muscular, pequeña mancha gris sobre el ojo izquierdo**, tumbado y relajado mientras unas manos limpian con una toalla húmeda la zona de la pata delantera, **sin levantarlo ni moverlo de sitio** | Luz natural cálida de tarde | Profundidad de campo estrecha, foco en la toalla y la pata | Textura de la toalla y del pelaje | Estilo fotoperiodístico instructivo, gesto suave, perro visiblemente cómodo.
 *   **Caption:** Cuando el perro ya no aguanta de pie, el aseo por zonas con él tumbado sustituye buena parte del baño completo.
 
 ### Imagen 3 — Emocional
-*   **Nombre de archivo SEO:** `secado-toalla-perro-senior-tranquilo.webp`
-*   **Prompt visual:** Plano medio corto, cámara a la altura del perro | Cuarto de baño doméstico, perro recién salido de la ducha sobre una alfombra gruesa | El mismo **dogo argentino senior blanco, orejas naturales, nariz negra, ojos marrones, pequeña mancha gris sobre el ojo izquierdo**, envuelto en una toalla grande de microfibra, con los ojos entrecerrados y el cuerpo relajado, mientras unas manos secan a toques la zona del cuello | Luz natural cálida y difusa | Profundidad de campo estrecha, foco en la cara del perro | Textura de la microfibra y del pelaje mojado | Estilo fotoperiodístico íntimo, calma evidente, sin pose ni miradas a cámara.
+*   **Nombre de archivo SEO:** `secado-toalla-perro-senior-tranquilo-v2.webp`
+*   **Prompt visual:** Plano medio corto, cámara a la altura del perro | Cuarto de baño doméstico, perro recién salido de la ducha sobre una alfombra gruesa | El mismo **dogo argentino claramente anciano (13–14 años ilustrativos), pelaje blanco marfil fino, orejas naturales, nariz negra, ojos marrones con leve veladura, frente arrugada, belfos caídos y menor tono muscular, pequeña mancha gris sobre el ojo izquierdo**, envuelto en una toalla grande de microfibra, con los ojos entrecerrados y el cuerpo relajado, mientras unas manos secan a toques la zona del cuello | Luz natural cálida y difusa | Profundidad de campo estrecha, foco en la cara del perro | Textura de la microfibra y del pelaje mojado | Estilo fotoperiodístico íntimo, calma evidente, sin pose ni miradas a cámara.
 *   **Caption:** El objetivo no es un baño perfecto: es que el perro salga limpio, seco y sin haber pasado miedo.
 
 ---
@@ -347,3 +347,8 @@ Entre **6.000 y 6.500 palabras** de texto visible (target 6.300); cada bloque ma
 - Warning (H2-4): sin medicación extra ni champús humanos/medicados improvisados; si se interrumpe con champú, no forzar ni dejar residuos sin un plan: retirar solo si es seguro y solicitar orientación veterinaria si no es posible.
 
 **Cambio autorizado por el usuario:** corrección y nueva revisión en esta sesión, máximo tres iteraciones, seguidas de redacción. Esta revisión será una autoverificación documentada; no se presentará como auditoría externa independiente.
+
+
+## 12. REVISIÓN VISUAL SOLICITADA — 2026-10-15
+
+El usuario rechazó la apariencia joven de las imágenes y la anatomía simplificada del perro de las animaciones. Sustituir las tres escenas por versiones `-v2`, derivadas de una misma referencia visiblemente anciana. Las animaciones reutilizan un recorte realista con transparencia de ese mismo dogo (`dogo-argentino-senior-perfil.webp`); se elimina la silueta vectorial anterior. Mantener controles y contenido educativo. Los títulos y textos destacados de las tarjetas deben conservar contraste sobre su fondo claro también cuando el sitio está en modo oscuro.

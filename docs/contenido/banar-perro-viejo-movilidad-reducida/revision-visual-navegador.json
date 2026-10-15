@@ -1,0 +1,56 @@
+{
+  "errors": [],
+  "themes": [
+    {
+      "theme": "light",
+      "overflow": 0,
+      "headingContrastMinimum": 8.18
+    },
+    {
+      "theme": "dark",
+      "overflow": 0,
+      "headingContrastMinimum": 8.18
+    }
+  ],
+  "controls": [
+    {
+      "variant": "pausa",
+      "keyboard": true,
+      "playPause": true
+    },
+    {
+      "variant": "espacio",
+      "keyboard": true,
+      "playPause": true
+    },
+    {
+      "variant": "zonas",
+      "keyboard": true,
+      "playPause": true
+    }
+  ],
+  "assets": [
+    {
+      "theme": "light",
+      "profile": {
+        "width": 1200,
+        "height": 675
+      },
+      "articleImages": 3
+    },
+    {
+      "theme": "dark",
+      "profile": {
+        "width": 1200,
+        "height": 675
+      },
+      "articleImages": 3
+    }
+  ],
+  "reducedMotion": true,
+  "nojs": {
+    "steps": 12,
+    "controls": 0
+  },
+  "timedAdvance": true
+}
