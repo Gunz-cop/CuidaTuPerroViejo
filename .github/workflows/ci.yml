@@ -113,7 +113,7 @@ jobs:
       - name: Verificar routing compilado de F2B
         run: node scripts/agent-readiness/projection.mjs check-routing --build-dir dist
 
-      - name: Probar crecimiento concordante de proyección a 29 documentos
+      - name: Probar crecimiento concordante de proyección (build real + 1 documento)
         run: node --test tests/agent-readiness/projection-growth.mjs
 
       - name: Verificar semántica independiente del corpus inventariado contra HTML/GFM

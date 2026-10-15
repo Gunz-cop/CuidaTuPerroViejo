@@ -8,7 +8,21 @@ import { runProjectionCheck, writeProjection } from '../../scripts/agent-readine
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 
-test('sitemap + catálogo + HTML concordantes amplían el build a 29 y pasan projection check', async (t) => {
+// Documentos del build real + 1 sintético: así la prueba no se rompe cada vez que se publica un artículo.
+async function expectedDocuments() {
+  const temp = await mkdtemp(join(projectRoot, 'tests/agent-readiness/.projection-base-'));
+  try {
+    await cp(join(projectRoot, 'dist/client'), join(temp, 'client'), { recursive: true });
+    assert.equal(await inventory(temp, join(temp, 'inventory')), 0, 'inventario del build real es válido');
+    const data = JSON.parse(await readFile(join(temp, 'inventory/inventory.json'), 'utf8'));
+    return data.pages.filter((page) => page.disposition === 'document').length + 1;
+  } finally {
+    await rm(temp, { recursive: true, force: true });
+  }
+}
+const EXPECTED = await expectedDocuments();
+
+test('sitemap + catálogo + HTML concordantes amplían el build en un documento y pasan projection check', async (t) => {
   const temp = await mkdtemp(join(projectRoot, 'tests/agent-readiness/.projection-growth-'));
   t.after(() => rm(temp, { recursive: true, force: true }));
   await cp(join(projectRoot, 'dist/client'), join(temp, 'client'), { recursive: true });
@@ -48,14 +62,14 @@ test('sitemap + catálogo + HTML concordantes amplían el build a 29 y pasan pro
   const inventoryDir = join(temp, 'inventory');
   assert.equal(await inventory(temp, inventoryDir), 0, 'inventario derivado del build sintético es válido');
   const inventoryData = JSON.parse(await readFile(join(inventoryDir, 'inventory.json'), 'utf8'));
-  assert.equal(inventoryData.pages.filter((page) => page.disposition === 'document').length, 29);
+  assert.equal(inventoryData.pages.filter((page) => page.disposition === 'document').length, EXPECTED);
   assert.ok(inventoryData.pages.some((page) => page.documentId === `article--${slug}` && page.canonicalPath === canonicalPath));
 
   await rm(join(temp, 'client/agent-content'), { recursive: true });
   const projection = await writeProjection(temp);
-  assert.equal(projection.index.documents.length, 29);
+  assert.equal(projection.index.documents.length, EXPECTED);
   assert.ok(projection.index.documents.some((entry) => entry.documentId === `article--${slug}`));
-  assert.equal(await runProjectionCheck(['check', '--build-dir', temp]), 0, 'check offline acepta los artefactos completos de 29 documentos');
+  assert.equal(await runProjectionCheck(['check', '--build-dir', temp]), 0, `check offline acepta los artefactos completos de ${EXPECTED} documentos`);
 
   const projectedRoot = join(temp, 'client/agent-content');
   const firstDocument = projection.index.documents[0];
@@ -75,7 +89,7 @@ test('sitemap + catálogo + HTML concordantes amplían el build a 29 y pasan pro
   await rm(projectedRoot, { recursive: true });
   const additions = [];
   const sourceHtml = await readFile(sourceHtmlPath, 'utf8');
-  for (let index = 1; index <= 70; index += 1) {
+  for (let index = 1; index <= 99 - EXPECTED; index += 1) {
     const extraSlug = `f2-limit-${String(index).padStart(2, '0')}`;
     const extraPath = `/salud-perros-mayores/${extraSlug}`;
     const extraTitle = `Ficha sintética de límite ${index}`;
@@ -131,7 +145,7 @@ test('canonicalPath de 100 caracteres se acepta; 101 y el probe 115 fallan sin p
     const inventoryPath = join(caseDir, 'inventory');
     assert.equal(await inventory(caseDir, inventoryPath), 0, `la fuente, HTML, catálogo y sitemap de ${length} siguen concordantes`);
     const data = JSON.parse(await readFile(join(inventoryPath, 'inventory.json'), 'utf8'));
-    assert.equal(data.pages.filter((page) => page.disposition === 'document').length, 29);
+    assert.equal(data.pages.filter((page) => page.disposition === 'document').length, EXPECTED);
     return caseDir;
   }
 
