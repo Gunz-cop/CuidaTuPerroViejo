@@ -1,0 +1,45 @@
+{
+  "breed": "San Bernardo",
+  "illustration_context": "Perro mayor representativo; el caso publicado conserva su edad real de un año.",
+  "images": [
+    {
+      "file": "public/images/blog/callosidades-higromas-codos-perros-senior/infografia-callo-higroma.webp",
+      "bytes": 144006,
+      "sha256": "65ad402527f698e2a1151e02fb141cbb577a4386f395bd5e2fa69d422e7ae5de",
+      "origin": "Generada con image_gen el 2026-10-15",
+      "clinical_case_photo": false
+    },
+    {
+      "file": "public/images/blog/callosidades-higromas-codos-perros-senior/san-bernardo-senior-acceso-cama.webp",
+      "bytes": 161690,
+      "sha256": "c29b808e41f00206317a8f6640ea5bb69a2edc58d1e657042d4295ed0f7ddb5f",
+      "origin": "Generada con image_gen el 2026-10-15",
+      "clinical_case_photo": false
+    },
+    {
+      "file": "public/images/blog/callosidades-higromas-codos-perros-senior/san-bernardo-senior-cama-acolchada.webp",
+      "bytes": 163346,
+      "sha256": "b3fa3b963950277839b38fceb92fff8b05d4aded223318f11db44846489e5bcc",
+      "origin": "Generada con image_gen el 2026-10-15",
+      "clinical_case_photo": false
+    },
+    {
+      "file": "public/images/blog/callosidades-higromas-codos-perros-senior/san-bernardo-senior-observar-apoyos.webp",
+      "bytes": 167878,
+      "sha256": "1992620c4cbec2b008f55e071731572bc9e8e6901e4c98b551d37592c68ab913",
+      "origin": "Generada con image_gen el 2026-10-15",
+      "clinical_case_photo": false
+    }
+  ],
+  "animations": {
+    "component": "src/components/article/HigromaAnimation.astro",
+    "variants": [
+      "presion",
+      "acolchado",
+      "seguimiento"
+    ],
+    "start": "Por acción del usuario",
+    "reduced_motion": "Animaciones desactivadas; esquema estático",
+    "without_js": "Esquema y explicación estáticos; controles ocultos"
+  }
+}

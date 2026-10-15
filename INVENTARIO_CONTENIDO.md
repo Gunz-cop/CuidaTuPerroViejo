@@ -128,7 +128,7 @@ Siguiendo el patrón "artículo clínico → herramienta interactiva que aplica 
 
 ---
 
-## 📝 Inventario de Artículos Publicados (16 Artículos Activos)
+## 📝 Inventario de Artículos (17 implementados; nuevo artículo pendiente de despliegue)
 
 A continuación se listan los artículos de blog ya implementados en el código de Astro, clasificados por su pilar correspondiente con su ruta física y sus URLs reales de redireccionamiento SEO.
 
@@ -188,6 +188,12 @@ A continuación se listan los artículos de blog ya implementados en el código 
   - **Archivo físico:** `src/content/blog/incontinencia-urinaria-perros-mayores.mdx`
   - **URL real:** `/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores`
   - **URL de origen (Blogger):** `https://cuidatuperroviejo.com/2026/06/incontinencia-urinaria-perros-mayores.html`
+
+- **Callosidades e higromas en codos de perros senior: prevención y tratamiento**
+  - **Archivo físico:** `src/content/blog/callosidades-higromas-codos-perros-senior.mdx`
+  - **Ruta implementada:** `/higiene-hogar-perros-senior/callosidades-higromas-codos-perros-senior`
+  - **Estado:** redactado y validado localmente el 2026-10-15; no desplegado.
+  - **Recursos:** tres ilustraciones San Bernardo, una infografía y tres animaciones SVG/CSS.
 
 ### Pilar 7: Cuidados Paliativos y Eutanasia
 - **Cómo dar medicación a un perro que no quiere: trucos y técnicas**
@@ -271,7 +277,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [x] *Agresividad de aparición tardía en perros mayores: cuándo es dolor y cuándo es deterioro cognitivo* (Publicado — 2026-08-15) **[Nuevo - Tema añadido 2026-08-14, no previsto en el catálogo original]**
 
 ### Pilar 6: Higiene y Hogar para Perros Senior (11 artículos totales propuestos)
-*Estado: 2 publicados, 9 en briefing (tanda de briefings del 2026-08-14)*
+*Estado del código: 3 implementados (nuevo artículo de callosidades e higromas sin despliegue), 8 en briefing.*
 - [x] *Incontinencia urinaria en perros mayores: causas y soluciones* (Publicado)
 - [x] *Incontinencia fecal en perros senior: manejo de higiene, alimentación y consejos de limpieza* (Publicado)
 - [~] *Cómo bañar y asear a un perro viejo con problemas de movilidad sin causarle dolor* (En Briefing — ver `briefings/briefing-banar-perro-viejo-movilidad-reducida.md`)
@@ -281,7 +287,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [~] *Productos de higiene indispensables: empapadores, pañales y limpiadores enzimáticos* (En Briefing — ver `briefings/briefing-empapadores-panales-limpiadores-enzimaticos-perros.md`)
 - [~] *Corte de uñas y cuidado de almohadillas en perros que ya no desgastan por caminar* (En Briefing — ver `briefings/briefing-corte-unas-almohadillas-perros-mayores.md`)
 - [~] *Eliminación de olores a orina y accidentes de perros ancianos en el hogar* (En Briefing — ver `briefings/briefing-eliminar-olor-orina-perro-casa.md`)
-- [~] *Prevención y tratamiento de callosidades (higromas) en codos y articulaciones de perros senior* (En Briefing — ver `briefings/briefing-callosidades-higromas-codos-perros-senior.md`)
+- [x] *Callosidades e higromas en codos de perros senior: prevención y tratamiento* (Redactado y validado localmente — 2026-10-15; publicación remota pendiente. Brief: `briefings/briefing-callosidades-higromas-codos-perros-senior.md`)
 - [~] *Dermatitis por humedad en perros mayores incontinentes: cómo prevenir la quemadura por orina* (En Briefing — ver `briefings/briefing-dermatitis-humedad-quemadura-orina-perros.md`) **[Nuevo - Tema añadido 2026-08-14, no previsto en el catálogo original]**
 
 ### Pilar 7: Cuidados Paliativos y Eutanasia (10 artículos totales propuestos)

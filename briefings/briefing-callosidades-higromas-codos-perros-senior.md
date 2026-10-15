@@ -1,332 +1,250 @@
-# 📋 BRIEF DE CONTENIDOS TÉCNICO: Callosidades e higromas en codos de perros senior
-**Sitio:** cuidatuperroviejo.com | **Pilar:** Higiene y Hogar para Perros Senior | **Tipo:** Artículo spoke (Astro/MDX)
+# BRIEF TÉCNICO — versión San Bernardo — Callosidades e higromas en codos de perros senior
+Sitio: cuidatuperroviejo.com · Pilar: Higiene y Hogar · Revisión: 2026-10-15.
+Base: Gunz-cop/CuidaTuPerroViejo, commit 7e389a83c87cd5f14537f4b07f0cd783ca572251.
+Estado: redactado y validado localmente el 2026-10-15 en `src/content/blog/callosidades-higromas-codos-perros-senior.mdx`. Recursos completos y compilación verificada; pendiente de publicación remota.
 
----
+**Decisión editorial vigente (2026-10-15):** por indicación expresa del usuario, todos los prompts e imágenes muestran San Bernardo. El caso publicado conserva su edad real (un año), raza, tratamiento y resultados. Las ilustraciones representan un San Bernardo mayor como contexto del artículo senior; no son fotografías del paciente ni transfieren el resultado del caso a un perro inventado.
 
-## 1. DATOS, METADATOS Y FRONTMATTER MDX
+## 1. Datos, metadatos y frontmatter MDX
 
 | Campo | Valor |
 |---|---|
-| **Título H1** | Prevención y tratamiento de callosidades e higromas en codos y articulaciones de perros senior |
-| **Título SEO (seoTitle)** | Callos e higromas en codos de perros senior |
-| **Keyword Principal** | higroma en codo de perro |
-| **Keywords Secundarias** | callos en los codos del perro · bulto blando en el codo del perro · callosidades perro mayor · higroma canino tratamiento · protector de codo para perros |
-| **Slug** | `callosidades-higromas-codos-perros-senior` |
-| **Meta descripción (Máx. 160 car.)** | Higromas y callosidades en codos de perros mayores: por qué aparecen, cómo prevenirlos y cuándo hay que operar. Con evidencia veterinaria. |
-| **Ruta Relativa** | `/higiene-hogar-perros-senior/callosidades-higromas-codos-perros-senior` |
-| **Pilar** | Higiene y Hogar para Perros Senior |
-| **Ruta Pilar** | `/higiene-hogar-perros-senior` |
-| **Intención Principal** | Informacional — la tutora ha encontrado un bulto blando en el codo y quiere saber qué es. |
-| **Intención Secundaria** | Resolutiva y preventiva — quiere evitar que empeore y que aparezcan en el otro codo. |
-| **Objetivo Global** | 6.000 – 6.500 palabras (Skyscraper Content) |
-| **Fecha brief** | 2026-08-14 |
+| H1 | Callosidades e higromas en codos de perros senior: prevención y tratamiento |
+| seoTitle | Callos e higromas en codos de perros senior |
+| Keyword principal | higroma en codo de perro |
+| Secundarias | callos en los codos del perro; bulto en el codo del perro; callosidades perro mayor; higroma canino tratamiento; protector de codo para perros |
+| Slug | `callosidades-higromas-codos-perros-senior` |
+| metaDescription | Higromas y callosidades en codos de perros mayores: cómo distinguirlos, aliviar la presión y reconocer cuándo necesitan atención veterinaria. |
+| Ruta | `/higiene-hogar-perros-senior/callosidades-higromas-codos-perros-senior` |
+| Pilar | Higiene y Hogar para Perros Senior |
+| Ruta pilar | `/higiene-hogar-perros-senior` |
+| Intención | Entender un bulto o un callo de apoyo, preparar consulta y reducir traumatismos domésticos |
+| Enfoque de raza | Cuidados aplicables a un San Bernardo mayor; sin afirmar predisposición específica ni resultados exclusivos de esa raza |
+| Volumen | 6.000–6.500 palabras reales; target 6.300 |
+| Fecha revisión brief | 2026-10-15 |
 
-### Bloque de Frontmatter MDX
+Frontmatter previsto para cuando exista el artículo: status y fecha deben reflejar su estado real; no arrastrar la fecha de agosto del brief original como publicación.
 
 ```yaml
 ---
-title: "Prevención y tratamiento de callosidades e higromas en codos y articulaciones de perros senior"
+title: "Callosidades e higromas en codos de perros senior: prevención y tratamiento"
 seoTitle: "Callos e higromas en codos de perros senior"
-metaDescription: "Higromas y callosidades en codos de perros mayores: por qué aparecen, cómo prevenirlos y cuándo hay que operar. Con evidencia veterinaria."
+metaDescription: "Higromas y callosidades en codos de perros mayores: cómo distinguirlos, aliviar la presión y reconocer cuándo necesitan atención veterinaria."
 pilar: "higiene-hogar-perros-senior"
 keywordPrincipal: "higroma en codo de perro"
-heroImage: "/images/blog/callosidades-higromas-codos-perros-senior/gran-danes-senior-cama-espuma.webp"
-heroImageAlt: "Gran danés senior de pelaje atigrado y hocico cano tumbado sobre una cama gruesa de espuma en un salón, con los codos apoyados sobre la superficie blanda"
-status: "Publicado"
-datePublished: "2026-08-14"
+heroImage: "/images/blog/callosidades-higromas-codos-perros-senior/san-bernardo-senior-cama-acolchada.webp"
+heroImageAlt: "Ilustración de un San Bernardo senior blanco y castaño en una cama acolchada; no es una fotografía clínica del caso publicado"
+status: "Borrador"
+datePublished: "2026-10-15"
 ---
 ```
 
----
+Validación mecánica al cierre; enum y claves contra `src/content.config.ts`, ruta vigente en este commit. Cambiar fecha y status solo al publicar realmente.
 
-## 2. EXPERIENCIA REAL — MATERIAL E-E-A-T (VIÑETA CLÍNICA COMPUESTA)
+**Canibalización:** se revisa el mismo brief ya inventariado, no un segundo tema. Mantener el foco en distinguir callo/higroma y descargar los codos; remitir la higiene general al brief de piel y pelo, los bultos de otra localización al de dermatología y el tratamiento de heridas abiertas al artículo de úlceras. No presentar callosidades e higromas como sinónimos aunque el catálogo use “callosidades (higromas)”. No se modifica el inventario remoto en esta revisión.
 
-> [!CAUTION]
-> **Naturaleza de este material.** No hay historia personal del autor. Existe literatura clínica sobre higromas, pero **no un case report individual accesible y verificado** que sirva de hilo narrativo. Por eso la Sección 2 es una **viñeta clínica compuesta**, construida a partir de los cuadros descritos en las fuentes de la Sección 3 — no un perro real e identificable.
->
-> **Obligaciones del redactor:** presentarla explícitamente como *"un cuadro típico, compuesto a partir de los casos descritos en la literatura veterinaria"*; nunca en primera persona ni con nombre propio; **no inventar cifras**. Si el autor aporta luego una vivencia real, esta sección se sustituye entera.
+## 2. Experiencia real — caso publicado, procedencia y límites
 
-**Viñeta clínica compuesta (perfil de referencia):**
-*   Gran danés, 9 años, macho. Raza gigante, artrósico, que pasa cada vez más horas tumbado.
-*   Desde que le cuesta levantarse, se desploma sobre el suelo de baldosa en vez de ir a su cama, y siempre apoya sobre el mismo costado.
-*   En unas seis semanas aparece un bulto blando, fluctuante e indoloro sobre el codo del lado de apoyo. En el otro codo, la piel se ha vuelto gris, gruesa y sin pelo.
-*   La tutora lo interpreta como un tumor y llega asustada a consulta.
+**Hilo narrativo principal:** Pavletic y Brum (2015), *Successful closed suction drain management of a canine elbow hygroma*, Journal of Small Animal Practice, 56:476–479. DOI 10.1111/jsap.12315; PMID 25640711. Resumen editorial completo leído en https://onlinelibrary.wiley.com/doi/10.1111/jsap.12315 .
 
-**Instrucciones de uso para el redactor:**
-Hilo narrativo en **3 momentos**:
-1.  **Introducción** — El gancho: el susto del bulto blando en el codo y la sospecha inmediata de tumor.
-2.  **Desarrollo (H2-2)** — La distinción entre callo e higroma, y el mecanismo común que hay detrás de los dos: presión repetida sobre hueso.
-3.  **Cierre (H2-5)** — El desenlace realista de un cuadro manejado con cambio de superficie y protección, frente al que llega tarde.
+Datos autorizados del resumen: San Bernardo macho castrado de un año, atendido en Angell Animal Medical Center, con higromas bilaterales presentes durante varias semanas. El izquierdo, de mayor tamaño, recibió drenaje cerrado de succión durante tres semanas y cama blanda. Tras retirar el drenaje no se observó recidiva del izquierdo durante dieciocho meses de controles; el derecho, no operado, aumentó algo de tamaño.
 
----
+No hay nombre, relato emocional del tutor, artrosis, contexto doméstico detallado ni historia del autor documentados. No añadirlos. No inferir que ambos codos se curaron. El caso muestra decisiones diferentes por lesión; no demuestra eficacia universal ni establece una pauta para un San Bernardo senior. No insertar instrucciones técnicas para instalar un drenaje.
 
-## 3. FUENTES CIENTÍFICAS DE AUTORIDAD (SOURCE-FIRST)
+**Arco planificado, exactamente tres momentos:**
+1. Introducción: presentar el problema bilateral y la necesidad de distinguir lesiones antes de escoger manejo, atribuyendo el caso a sus autores. No inventar miedo al cáncer.
+2. H2-2: explicar que dos codos del mismo perro pueden seguir cursos distintos; conectar la cama blanda usada en el caso con el mecanismo de traumatismo, sin atribuirle su causa inicial.
+3. H2-5, separado antes de Conclusión/FAQ: cerrar con los desenlaces documentados de cada codo y los límites de extrapolación a un perro mayor.
 
-1.  **Fuente 1 (Manual de referencia):** Merck Veterinary Manual — *Hygroma in Dogs* — `https://www.merckvetmanual.com/integumentary-system/hygroma-in-dogs/hygroma-in-dogs`
-    *   *Dato clave:* El higroma es una **cavidad llena de líquido** que se forma por **traumatismos repetidos sobre prominencias óseas**. Se describe clásicamente en perros **jóvenes adultos de razas grandes y gigantes**. La prevención y el tratamiento de los higromas pequeños y no dolorosos pasan por **eliminar el traumatismo romo**, mediante cama adecuada, almohadillado regional o dispositivos de coaptación (férulas, vendajes). El **sobrepeso** aumenta mucho el riesgo de traumatismo del tejido sobre las prominencias óseas.
-2.  **Fuente 2 (Dispositivos de coaptación):** Clinician's Brief — *Devices for Treating Elbow Hygromas in Canine Patients* — `https://www.cliniciansbrief.com/article/coaptation-devices-elbow-hygromas`
-    *   *Dato clave:* Manejo médico de los higromas pequeños mediante técnicas de vendaje especializado o aspiración aséptica con aguja, siempre seguidas de corrección del alojamiento. **No existe un tratamiento ideal** que resuelva el higroma de codo.
-3.  **Fuente 3 (Abordaje terapéutico novedoso):** *Novel approach for the treatment of canine elbow hygroma with extracorporeal shockwaves* — PubMed 37567180 — `https://pubmed.ncbi.nlm.nih.gov/37567180/`
-    *   *Dato clave:* Tratamiento del higroma de codo canino mediante **ondas de choque extracorpóreas** como alternativa a la cirugía.
-    *   > [!WARNING]
-      > **Verificación parcial.** El título y el PMID se confirmaron mediante búsqueda real, pero **PubMed bloqueó el acceso al texto completo** y no se pudieron verificar número de casos, protocolo ni tasas de éxito. El redactor **no debe atribuirle cifras, porcentajes de resolución ni protocolos concretos**: cítese únicamente como línea terapéutica emergente. `[Detalles cuantitativos sin verificar — confirmar antes de publicar]`
-4.  **Fuente 4 (Callosidades por presión):** McKeever Dermatology Clinics — *Callus formation* — `https://www.mckeevervetderm.com/uploads/1/3/1/0/131020546/callus_formation.pdf`
-    *   *Dato clave:* Manejo de la callosidad: modificar los hábitos de descanso hacia superficies blandas de espuma y colocar almohadillado —comercial o casero— sobre los puntos de apoyo afectados.
-5.  **Fuente 5 (Piodermia del callo):** Tait (2022), *Skin Deep: Treatment of pyoderma*, Today's Veterinary Nurse — `https://todaysveterinarynurse.com/wp-content/uploads/sites/3/2022/01/Tait_Pyoderma_TVNWinter2022.pdf`
-    *   *Dato clave:* El tratamiento se guía por la profundidad de la infección; la **clorhexidina** es el antiséptico tópico de referencia por su amplio espectro y efecto residual. Las infecciones profundas requieren antibiótico sistémico durante periodos prolongados.
-6.  **Fuente 6 (Piodermia — guía WSAVA):** *Clinical Aspects, Diagnosis and Therapy of Canine Pyoderma*, WSAVA 2003 Congress (VIN) — `https://www.vin.com/apputil/content/defaultadv1.aspx?id=3850116&pid=8768`
-    *   *Dato clave:* Aspectos clínicos y diagnóstico de la piodermia canina; base para reconocer cuándo un callo agrietado se ha infectado.
+**Formato vigente:** caso San Bernardo atribuido como hilo clínico e imágenes ilustrativas de San Bernardo. No hay cambio de raza entre caso y recursos. La edad del paciente publicado se conserva y se distingue del contexto senior de las ilustraciones.
 
----
+## 3. Fuentes científicas — verificadas el 2026-10-15
 
-## 4. REQUISITOS TÉCNICOS DE ASTRO Y MDX
+Seis fuentes fuertes independientes: tres estudios indexados (F1–F3), una guía ISCAID (F4) y dos guías AAHA de distinto alcance (F5–F6). No se equiparan los estudios pequeños con evidencia de alta certeza. Dos referencias clínicas secundarias adicionales (F7–F8) se declaran como tales; no rellenan el mínimo. Todas tienen uso en sección 6. No se cuenta dos veces la guía ISCAID por su copia PDF.
 
-*   **Importaciones obligatorias:**
-    ```mdx
-    import AlertBox from '../../components/AlertBox.astro';
-    import FAQ from '../../components/FAQ.astro';
-    ```
-*   Cuerpo sin `#` inicial. Párrafos de máximo 3 líneas en móvil. `H3` cada 150-200 palabras.
-*   **Imágenes Anti-CLS:** `<img src="/images/blog/callosidades-higromas-codos-perros-senior/{{NOMBRE}}.webp" alt="{{ALT}}" width="1200" height="675" loading="lazy" decoding="async" />`
-*   **TOC, JSON-LD y breadcrumbs:** automáticos.
+1. **F1 — Pavletic y Brum, 2015; caso clínico indexado.** *Successful closed suction drain management of a canine elbow hygroma*. PMID 25640711, DOI 10.1111/jsap.12315. https://onlinelibrary.wiley.com/doi/10.1111/jsap.12315 . Resumen completo leído; cuerpo completo no consultado. Base exclusiva de los hechos del caso en sección 2 y su cierre. Un caso no prueba superioridad terapéutica ni resultados por raza.
+2. **F2 — Verhoeven, Huels y Harms, 2023; serie clínica indexada.** *Novel approach for the treatment of canine elbow hygroma with extracorporeal shockwaves*. PMID 37567180, DOI 10.1055/a-2110-0088. https://pubmed.ncbi.nlm.nih.gov/37567180/ . Resumen íntegro leído. Serie muy pequeña sin comparación controlada; desarrolla las ondas de choque como opción que un especialista puede valorar. El resumen describe rehabilitación prolongada y complicaciones de cirugía en su contexto. No convertir resultados en porcentaje esperado, protocolo doméstico ni recomendación de primera línea. No usar razas o edades no visibles en el resumen.
+3. **F3 — Angelou et al., 2020; estudio retrospectivo indexado.** *Complete surgical excision versus Penrose drainage for the treatment of elbow hygroma in 19 dogs (1997 to 2014)*. PMID 32043576, DOI 10.1111/jsap.13117. https://pubmed.ncbi.nlm.nih.gov/32043576/ . Resumen íntegro leído; cuerpo completo no consultado. Veintiún higromas en diecinueve perros; hubo recidivas tras Penrose y rescate mediante exéresis. Permite discutir límites y alternativas quirúrgicas, sin afirmar superioridad universal por tratarse de una serie retrospectiva.
+4. **F4 — Loeffler et al./ISCAID, 2025; guía de consenso y revisión sistemática.** *Antimicrobial use guidelines for canine pyoderma by the International Society for Companion Animal Infectious Diseases (ISCAID)*. PMID 40338805, DOI 10.1111/vde.13342. https://onlinelibrary.wiley.com/doi/full/10.1111/vde.13342 . Texto completo abierto, incluidas tablas de piodermia de puntos de presión y tratamiento. Distinguir callo no infectado de piodermia; citología antes de antimicrobianos, tratamiento según profundidad y pruebas cuando procedan. La guía sí respalda clorhexidina en piodermia; no afirmar que cualquier callo necesita antiséptico ni que la terapia superficial basta para infección profunda. No proporcionar pautas autónomas.
+5. **F5 — AAHA, 2022; guía clínica de manejo del dolor, sección no farmacológica.** https://www.aaha.org/resources/2022-aaha-pain-management-guidelines-for-dogs-and-cats/nonpharmacologic-modalities-for-pain-management/ . Página específica abierta. Usar su apartado de modificación del entorno y optimización de peso para apoyar acceso seguro y manejo global del dolor crónico. No atribuirle ensayos específicos de higroma ni una cifra de riesgo por sobrepeso.
+6. **F6 — AAHA, 2023; guía clínica del paciente senior, sección Pain Management.** https://www.aaha.org/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats/pain-management/ . Texto específico abierto. Registrar movimientos mediante vídeos, reconocer dolor sin atribuirlo sin más a la edad, adaptar suelos, accesos y camas y evaluar movilidad en conjunto. Uso en el plan de observación y reevaluación, diferente del mecanismo del higroma.
+7. **F7 — Merck Veterinary Manual, Moriello/Winkler; manual clínico secundario, revisión 2025.** *Hygroma in Dogs*. https://www.merckvetmanual.com/integumentary-system/hygroma-in-dogs/hygroma-in-dogs . Página completa abierta. Definición, mecanismo, mayores con artrosis, diferenciales, manejo conservador y alternativas invasivas. La aspiración aséptica es un procedimiento veterinario contemplado, no una tarea doméstica. Cultivo y sensibilidad antes de antimicrobianos para higroma; biopsia si lesión atípica o sin respuesta. No atribuir aquí aumento “mucho” del riesgo por sobrepeso.
+8. **F8 — Montoya y Tobias, Universidad de Tennessee, Clinician’s Brief, 2021; revisión clínica secundaria revisada por pares.** *Coaptation Devices for Elbow Hygromas*. https://www.cliniciansbrief.com/article/coaptation-devices-elbow-hygromas . Página completa abierta. Desarrollar descarga de presión y riesgos de ajuste: mala coaptación puede lesionar tejidos. En ulceración o reconstrucción la almohadilla circular puede comprometer perfusión; no reproducir tutorial casero ni recomendar vendajes universales.
 
----
+Retiradas: McKeever, Tait y ponencia VIN 2003. No mantienen atribuciones por inercia. Tait no sustentaba la afirmación de clorhexidina del original; F4 la sustituye de forma explícita y actual. Registro de acceso y límites en `evidencia-r1.md`.
 
-## 5. ENLAZADO INTERNO OBLIGATORIO (INTERLINKING)
+## 4. Requisitos técnicos de Astro/MDX
 
-| Tipo | Texto ancla | URL | Estado en Inventario |
-|---|---|---|---|
-| **Pilar** | Higiene y Hogar para Perros Senior | `/higiene-hogar-perros-senior` | ✅ Publicado |
-| **Spoke 1** | Incontinencia urinaria en perros mayores: causas y soluciones | `/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores` | ✅ Publicado |
-| **Spoke 2** | — | — | ⚠️ **Pendiente — aún no hay 2 artículos publicados en este pilar** |
-| **Calculadora** | Calculadora de Calidad de Vida Canina | `/herramientas/calculadora-calidad-vida-perros` | ✅ Publicado |
+- Importar al inicio del cuerpo `AlertBox` desde `../../components/AlertBox.astro` y `FAQ` desde `../../components/FAQ.astro`.
+- Sin H1 inicial: lo aporta el layout. H2/H3 semánticos, párrafos breves y comprobar en móvil el límite de tres líneas. Añadir H3 cada 150–200 palabras como máximo; los núcleos de sección 6 se pueden subdividir sin crear contenido clínico nuevo.
+- Reservar tres imágenes 1200 × 675 y convertir a WebP. Hero gestionado por layout; imágenes interiores con `width="1200" height="675" loading="lazy" decoding="async"`.
+- No duplicar TOC, JSON-LD ni breadcrumbs automáticos.
+- `FAQ items` admite question/answer; usar siete items al final. Los cuerpos de AlertBox quedan como instrucciones; el redactor escribe su prosa después.
 
-> [!WARNING]
-> **Contingencia aplicada (Fase 3.3).** Pilar 6 con un solo artículo publicado.
->
-> **Enlaces externos al pilar imprescindibles en este tema:** *Cama ortopédica para perros mayores con displasia o artrosis* (`/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis`) en H2-3, porque la superficie de descanso **es** el tratamiento; *Úlceras por presión en perros con movilidad reducida* (`/cuidados-paliativos-perros/ulceras-presion-perros`) en H2-4, por el continuo clínico; *Prevención de caídas en casa* (`/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor`) en H2-3.
+## 5. Enlazado interno obligatorio
 
----
+Rutas comprobadas contra inventario y archivos del commit base; son siete destinos distintos.
 
-## 6. ESTRUCTURA DETALLADA Y PRESUPUESTO DE PALABRAS
+| Tipo / ubicación | Ancla prevista | Ruta publicada |
+|---|---|---|
+| Pilar / introducción | Higiene y hogar para perros senior | `/higiene-hogar-perros-senior` |
+| Spoke 1 / H2-3 | Higiene si también hay incontinencia urinaria | `/higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores` |
+| Spoke 2 / H2-3 | Manejo de la incontinencia fecal | `/higiene-hogar-perros-senior/incontinencia-fecal-perros-senior` |
+| Puente / H2-3 | Elegir una cama para un perro con artrosis | `/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis` |
+| Puente / H2-3 | Prevenir caídas en casa | `/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor` |
+| Puente / H2-4 | Úlceras por presión y movilidad reducida | `/cuidados-paliativos-perros/ulceras-presion-perros` |
+| Herramienta / H2-5 | Registrar la calidad de vida de tu perro | `/herramientas/calculadora-calidad-vida-perros` |
 
-> **Target total: 6.300 palabras.** Desviación máxima por sección: ±15 %.
+El inventario ya marca los dos spokes como publicados; retirar contingencia anterior. Enlazar incontinencia solo al hablar de cama sucia/húmeda y condiciones coexistentes; no insinuar que los higromas causan pérdidas. La calculadora sirve para organizar observaciones y conversación veterinaria; no diagnostica higroma ni determina tratamiento.
 
-### INTRODUCCIÓN — Target: ~800 palabras
+## 6. Estructura detallada y presupuesto
 
-*   **Párrafo 1 — Gancho (viñeta compuesta):** El bulto blando que aparece en el codo de un perro grande y el pensamiento inmediato: "es un tumor". Declarar que es un cuadro compuesto.
-*   **Párrafo 2 — El alivio y la advertencia:** Casi siempre no es un tumor. Pero tampoco es inofensivo: es la señal de que el perro lleva semanas apoyando sobre una superficie que no debería.
-*   **Párrafo 3 — La promesa:** Distinguir callo de higroma, entender el mecanismo, prevenir el segundo codo y saber cuándo hace falta cirugía.
-*   **Componente AlertBox:**
-    ```mdx
-    <AlertBox type="info" title="Nota de Acompañamiento">
-      Un higroma no aparece por descuido tuyo: aparece porque tu perro ya no llega a su cama, o porque le cuesta tanto levantarse que se deja caer donde está. El bulto es información sobre su movilidad, y esa es la parte que de verdad hay que atender.
-    </AlertBox>
-    ```
+Target total 6.300. Intervalo global obligatorio 6.000–6.500; tolerancia por sección ±15 %, subordinada al intervalo global. Contar prosa visible del artículo, incluidos FAQ y cajas; excluir frontmatter, imports, URLs, código, alt y bibliografía. No rellenar volumen con repeticiones o nuevas afirmaciones sin respaldo.
 
----
+### Introducción — 600 palabras
+- Gancho: primer momento del caso publicado F1, sin diálogos ni emociones inventadas.
+- Plantear incertidumbre de un bulto nuevo y necesidad de valoración; no prometer que “casi siempre no es tumor”.
+- Delimitar callo frente a cavidad con líquido y explicar qué resolverá la guía.
+- Mencionar San Bernardo como destinatario ilustrativo de cuidados, distinguiéndolo del San Bernardo del caso publicado según la indicación vigente del usuario; conservar la diferencia de edad entre paciente e ilustraciones.
+- Enlace pilar de sección 5.
+- AlertBox `info`, título “Acompañar sin culpas”: instruir validar la preocupación, evitar culpar al tutor y proponer observación y consulta; no atribuir todos los higromas a incapacidad de llegar a la cama.
+- Usar pequeños H3 de transición si la extensión lo requiere.
 
-### [H2-1 — Qué es un higroma y qué es un callo] — Target: ~1.100 palabras
-*   *Sustentado en:* Fuente 1 (Merck) y Fuente 4 (McKeever).
-*   *Objetivo:* Separar dos entidades que se confunden constantemente.
+### H2-1 — Callo, higroma y otros bultos: qué debe valorar el veterinario — 1.100 palabras
+*Sustentado en:* F7 Merck Veterinary Manual y F4 Loeffler et al./ISCAID.
+- H3 “Piel engrosada frente a una cavidad con líquido”: separar callosidad, higroma y posible coexistencia. Utilizar cambios hiperqueratósicos/pigmentados descritos en tabla F4; no diagnosticar por color o foto.
+- H3 “Qué aporta la exploración”: distinguir una descripción orientativa de confirmación clínica; explicar diferenciales sin estimar frecuencias.
+- H3 “Por qué aparece también en mayores”: inicio típico adolescente y presencia en mayores con artrosis según F7; no dividir el mecanismo por edad.
+- H3 “Pruebas cuando la lesión es atípica”: explicar brevemente función de imagen/biopsia, sin prescribir a todos los perros la misma batería.
+- H3 “Cuando se sospecha infección”: signos de tabla F4, citología y necesidad de muestras; no equiparar grieta con infección confirmada.
+- AlertBox `danger`, título “Señales para buscar atención veterinaria”: instruir atención rápida ante supuración, ulceración, dolor o deterioro del uso de la extremidad; atención urgente si dolor intenso o mal estado general. Todo bulto nuevo merece evaluación; no etiquetar todos como emergencia ni esperar a que se abran.
 
-*   `### El higroma: una bolsa de líquido`
-    *   Citar el Merck Veterinary Manual por nombre: cavidad llena de líquido formada por **traumatismos repetidos sobre prominencias óseas**. Al tacto: blando, fluctuante, indoloro al principio, móvil.
-*   `### El callo: piel que se defiende engrosándose`
-    *   Respuesta de la piel a la presión crónica: engrosamiento, hiperpigmentación (gris o negro), pérdida de pelo, aspecto rugoso. Citar la Fuente 4 por nombre.
-*   `### El matiz de la edad que hay que declarar`
-    *   **Punto de honestidad obligatorio.** El higroma se describe clásicamente en **perros jóvenes adultos de razas grandes y gigantes**. En perros senior aparece por una vía distinta: no por el vigor con que se dejan caer, sino por las **horas de inmovilidad** sobre superficies duras. El artículo debe explicar esa diferencia en vez de dar a entender que la fuente habla de geriátricos.
-*   `### Dónde aparecen`
-    *   Codos sobre todo, pero también corvejones, esternón y caderas.
-*   **Componente AlertBox:**
-    ```mdx
-    <AlertBox type="danger" title="Señales de Alarma">
-      Consulta sin esperar si el bulto: duele al tocarlo, está caliente o enrojecido, supura o huele mal, ha crecido rápido en días, está duro en vez de blando, o el perro cojea de esa pata. Un higroma infectado o ulcerado deja de ser un problema de acolchado y pasa a necesitar tratamiento veterinario. Y un bulto duro y adherido en el codo puede no ser un higroma en absoluto.
-    </AlertBox>
-    ```
+### H2-2 — Presión repetida y dos codos que pueden evolucionar distinto — 900 palabras
+*Sustentado en:* F7 Merck Veterinary Manual, F1 Pavletic y Brum y F6 AAHA Senior Care 2023.
+- H3 “El punto de apoyo”: explicar traumatismo sobre prominencia ósea, sin mecanismo del periostio no documentado.
+- H3 “Dónde descansa de verdad”: identificar superficies y acceso; no deducir negligencia ni patrón siempre unilateral.
+- H3 “Observar cómo se tumba y se levanta”: usar vídeos para consulta, sin forzar posturas ni provocar dolor.
+- H3 “El detalle del caso bilateral”: segundo momento F1; usar la cama blanda documentada y diferencias entre codos, sin atribuir artrosis al joven.
+- H3 “Ficha doméstica breve”: anotar fecha de observación, cambios, piel íntegra o lesionada, movimiento y superficie; comparar ambos lados sin apretar ni vaciar el bulto.
 
----
+### H2-3 — Preparar el descanso de un San Bernardo mayor — 1.000 palabras
+*Sustentado en:* F8 Montoya y Tobias, F5 AAHA Pain Management 2022 y F6 AAHA Senior Care 2023.
+- H3 “Descargar el punto de presión”: describir propósito del acolchado, sin afirmar que cualquier cama cura o elimina el callo.
+- H3 “Ubicación, acceso y apoyo”: aplicar entorno AAHA al perro grande; ofrecer zona confortable donde el perro la use y tracción en recorridos.
+- H3 “Cómo revisar el ajuste de un protector”: apoyo profesional, comodidad, circulación y movilidad; no copiar los pasos de fabricación de F8.
+- H3 “Por qué revisar peso y dolor”: plan individual veterinario según AAHA; separar beneficio global de una supuesta reducción cuantificada del higroma.
+- H3 “Ropa de cama e incontinencia coexistente”: enlazar los dos spokes como ampliación de higiene, sin inventar vínculo causal.
+- H3 “Seguimiento”: registrar aceptación de cama/protector y comunicar nuevas rozaduras o empeoramiento; no fijar horas universales ni prometer prevención completa.
+- Enlaces cama ortopédica y prevención de caídas.
 
-### [H2-2 — El mecanismo común: presión repetida sobre hueso] — Target: ~1.000 palabras
-*   *Sustentado en:* Fuente 1 (Merck) y Fuente 4.
-*   *Objetivo:* **Segundo momento del arco narrativo.** Explicar por qué el problema no está en la piel, sino en el suelo.
+### H2-4 — Tratamiento según lesión: de la descarga a la intervención — 1.300 palabras
+*Sustentado en:* F7 Merck Veterinary Manual, F8 Montoya y Tobias, F4 Loeffler et al./ISCAID, F3 Angelou et al. y F2 Verhoeven et al.
+- H3 “Cuándo puede bastar un manejo conservador”: decisión veterinaria según estado del higroma; corregir apoyo también si se elige una técnica invasiva.
+- H3 “Aspiración: procedimiento clínico”: atribuir exclusivamente su consideración a F7; explicar que no enseña a pinchar ni garantiza resolución. No atribuirla a F8.
+- H3 “Si hay piodermia”: aplicar F4 según profundidad y pruebas; mencionar clorhexidina como posibilidad profesional, sin recetas, diluciones domésticas ni uso indiscriminado en callo sano.
+- H3 “Drenaje y cirugía”: presentar F3 como retrospectivo, con recidivas y rescate; no anunciar una técnica como cura universal ni trasladar cifras a un San Bernardo mayor.
+- H3 “Evidencia de ondas de choque”: F2, serie pequeña; identificar incertidumbre y especialización. No hacer una comparativa de eficacia inexistente.
+- H3 “El protector después de una herida”: cautela F8 en ulceración/reconstrucción; no recomendar donut universal.
+- H3 “Qué preguntar en revisión”: cambios clínicos que llevan a reevaluar diagnóstico y tratamiento; integrar enlace de úlceras como ampliación, sin reciclar protocolos.
+- AlertBox `warning`, título “No pinches ni ajustes vendajes por tu cuenta”: instruir prohibir manipulación doméstica invasiva y antimicrobianos sin valoración; explicar riesgo de presión mal distribuida con F8 y de infección tras corticoides intrahigroma con F7. No incluir un cuerpo ya redactado.
 
-*   `### Por qué el codo y no otro sitio`
-    *   Anatomía: en el codo la piel cubre el hueso casi sin almohadillado intermedio. Cualquier superficie dura transmite la presión directamente al periostio.
-*   `### El círculo del perro senior`
-    *   Retomar la viñeta: artrosis → cuesta levantarse → se desploma donde está → suelo duro → presión repetida → callo o higroma → más dolor al apoyar → menos ganas de moverse.
-*   `### El peso como factor multiplicador`
-    *   Citar el Merck Veterinary Manual: en razas grandes y gigantes es importante **evitar el sobrepeso**, porque el peso extra aumenta mucho el riesgo de traumatismo del tejido sobre las prominencias óseas.
-*   `### Por qué casi siempre es asimétrico`
-    *   El perro apoya siempre del mismo lado. Detectar de qué lado se tumba es información clínica útil.
-*   **Checklist:** "Auditoría de superficies de tu casa" — ¿dónde se tumba realmente, no dónde tiene la cama?; ¿cuántas de esas superficies son duras?; ¿llega a su cama sin esfuerzo?; ¿se deja caer o se tumba controlando el descenso?; ¿siempre del mismo costado?
+### H2-5 — Qué ocurrió en el caso y qué observar en tu perro — 600 palabras
+*Sustentado en:* F1 Pavletic y Brum y F6 AAHA Senior Care 2023.
+- H3 “Cerrar los dos desenlaces”: tercer momento narrativo. Reportar únicamente evolución izquierda/derecha y plazo de seguimiento F1; no “ambos se curaron”.
+- H3 “Lo que ese caso permite aprender”: identificar selección de tratamiento y límites de un perro joven de otra raza; sin inventar actualización posterior a la publicación.
+- H3 “Confort y próxima consulta”: priorizar descanso, movilidad y observaciones comparables según F6; integrar calculadora con límite explícito de utilidad.
+- Esta sección es propia y va antes de la conclusión. No presentar las imágenes ilustrativas de San Bernardo senior como fotografías del caso real de un año.
 
----
+### Conclusión y FAQ — 800 palabras
+- Instruir cierre breve con acciones: valorar bulto, reducir traumatismos y seguir plan profesional. No añadir cuarto momento del caso.
+- FAQ final con siete items. Borradores cortos permitidos; ampliar sin salirse de fuentes:
+  1. ¿Callo e higroma son lo mismo? No. El callo es piel engrosada; el higroma contiene líquido. Pueden coexistir. [F7/F4]
+  2. ¿Un bulto blando en el codo confirma un higroma? No. La exploración permite diferenciarlo de otras lesiones. [F7]
+  3. ¿Puede ocurrir en un San Bernardo mayor? La raza no sustituye la evaluación. Las fuentes describen higromas en perros grandes y en mayores con artrosis; no ofrecen una tasa específica para San Bernardo senior. [F7]
+  4. ¿Puedo vaciarlo en casa? No. La aspiración, si se indica, requiere valoración y técnica veterinaria. [F7]
+  5. ¿Necesita antibiótico cualquier callo? No. La infección se evalúa clínicamente y con pruebas; el tratamiento depende de profundidad y resultados. [F4]
+  6. ¿Todos necesitan cirugía? No. Hay manejo conservador y técnicas invasivas según la lesión; un caso exitoso no garantiza el mismo resultado. [F7/F3]
+  7. ¿Las ondas de choque tienen una eficacia garantizada? No. La pequeña serie publicada no establece una tasa de éxito aplicable a todos los pacientes. [F2]
 
-### [H2-3 — Prevención: el tratamiento y la prevención son lo mismo] — Target: ~1.000 palabras
-*   *Sustentado en:* Fuente 1 (Merck) y Fuente 4 (McKeever).
-*   *Objetivo:* La sección con más impacto real para la lectora.
+## 7. Potencial de afiliación / conversión
 
-*   `### La superficie de descanso es el tratamiento`
-    *   Citar ambas fuentes por nombre: modificar los hábitos de descanso hacia **superficies blandas de espuma** y aplicar almohadillado regional sobre las prominencias.
-    *   Grosor y densidad importan más que la marca: la espuma debe no llegar a hundirse hasta el suelo bajo el peso del perro. *Enlace:* cama ortopédica.
-*   `### Camas en todos los sitios donde se tumba de verdad`
-    *   Punto práctico decisivo: no basta con una cama buena si el perro se desploma en el pasillo. Hay que cubrir sus sitios reales.
-*   `### Protecciones sobre el codo`
-    *   Fuente 4: almohadillados comerciales o caseros sobre los puntos de apoyo. Advertir de que deben revisarse a diario para que no rocen ni compriman.
-*   `### Facilitar que llegue a la cama`
-    *   Alfombras antideslizantes, recorridos cortos, control del dolor articular. *Enlace:* prevención de caídas.
-*   `### Peso`
-    *   Retomar el factor peso del Merck y remitir a alimentación.
+Reservar, como máximo, una mención contextual a cama o protector en H2-3. Priorizar ajuste individual y objetivo de descarga; no recomendar marcas, precio, grosor, densidad o eficacia sin comprobación. Si hay relación de afiliación, declararla cuando exista. No insertar productos en señales de alarma, infección o cierre del caso.
 
----
+## 8. Guía visual — tres prompts con San Bernardo
 
-### [H2-4 — Cuando ya está: manejo médico, infección y cirugía] — Target: ~1.000 palabras
-*   *Sustentado en:* Fuente 2 (Clinician's Brief), Fuente 3 (ondas de choque), Fuente 5 (Tait) y Fuente 6 (WSAVA).
-*   *Objetivo:* Expectativas realistas sobre el tratamiento.
+**Sujeto ilustrativo fijo:** San Bernardo senior grande de pelo semilargo, blanco con grandes parches castaños, máscara negra simétrica, orejas caídas y trufa negra. Estos rasgos son una decisión de diseño, no datos de un paciente. Mantener el mismo sujeto en las tres escenas. Imágenes generadas ilustrativas, nunca evidencia diagnóstica ni fotos del caso San Bernardo. No mostrar lesiones generadas ni estados “antes/después”. Aplicar la indicación del usuario: las escenas del San Bernardo senior ilustran cuidados y no representan al paciente publicado de un año.
 
-*   `### Higroma pequeño y no doloroso`
-    *   Citar el Merck: si se diagnostica pronto y sigue siendo pequeño, puede manejarse **médicamente** con vendaje especializado o aspiración aséptica con aguja, **siempre seguida de corrección del alojamiento**. Sin ese cambio, se rellena.
-*   `### La verdad incómoda: no hay tratamiento ideal`
-    *   **Punto de honestidad obligatorio.** Citar la Fuente 2 por nombre: no existe un tratamiento ideal para resolver los higromas de codo. Y el Merck advierte de que el tratamiento quirúrgico conlleva **rehabilitación larga y alta tasa de complicaciones**.
-*   `### Cuándo se plantea cirugía`
-    *   Higromas grandes que limitan al perro, infectados, dolorosos o ulcerados: drenaje o extirpación total.
-*   `### Ondas de choque extracorpóreas`
-    *   Citar la Fuente 3 **solo como línea emergente**, por título, sin cifras ni protocolos (ver advertencia de verificación en la Sección 3).
-*   `### Piodermia del callo`
-    *   Citar a Tait (2022) y la guía de la WSAVA por nombre: tratamiento tópico con **clorhexidina** como base, y antibiótico sistémico en infecciones profundas, con duración guiada por la respuesta clínica. Signos: exudado, mal olor, enrojecimiento, hinchazón, lamido obsesivo. *Enlace:* úlceras por presión.
-*   **Componente AlertBox:**
-    ```mdx
-    <AlertBox type="warning" title="Seguridad de Manejo">
-      No drenes ni pinches un higroma en casa bajo ningún concepto: una punción no estéril convierte una bolsa de líquido estéril en un absceso, y esa es la complicación más frecuente y más evitable. Tampoco improvises vendajes apretados sobre el codo: un vendaje mal puesto corta la circulación y puede provocar necrosis. Las cremas humanas con corticoides adelgazan una piel ya sometida a presión.
-    </AlertBox>
-    ```
+### Imagen 1 — descanso, hero
+- Archivo de generación: `san-bernardo-senior-cama-acolchada.jpg`; destino WebP de sección 1.
+- Prompt: Fotografía ilustrativa cinematográfica 16:9, plano medio a altura del codo en un salón doméstico sencillo. El mismo San Bernardo senior grande de pelo semilargo, blanco con grandes parches castaños, máscara negra simétrica, orejas caídas y trufa negra descansa de costado sobre una cama ancha acolchada; patas relajadas, piel íntegra, sin bultos ni heridas simuladas. Una manta arrugada y libros usados aportan contexto cotidiano. Luz natural lateral de ventana, profundidad de campo moderada que mantiene cama y apoyos reconocibles, textura realista del pelo y tejido. Sin texto, logos, pose publicitaria, instrumental ni estética de banco de imágenes.
+- Alt: el de sección 1.
+- Caption previsto: “Ilustración de un San Bernardo; no es una fotografía clínica del caso publicado. El apoyo confortable forma parte del plan de cuidados.”
 
----
+### Imagen 2 — acceso y movilidad
+- Archivo: `san-bernardo-senior-acceso-cama.jpg` → mismo nombre .webp.
+- Prompt: Fotografía ilustrativa fotoperiodística 16:9, plano general bajo de un pasillo real que conecta salón y zona de descanso. El mismo San Bernardo senior grande de pelo semilargo, blanco con grandes parches castaños, máscara negra simétrica, orejas caídas y trufa negra camina tranquilo sobre un corredor antideslizante hacia su cama, sin cojera teatral ni manejo físico por humanos. Luz natural difusa de mañana, profundidad de campo amplia para mostrar recorrido y acceso, objetos cotidianos discretos y texturas sin retoque publicitario. No mostrar lesiones, etiquetas, logos o demostraciones de tratamiento.
+- Alt: “Ilustración del mismo San Bernardo senior blanco y castaño caminando por un corredor antideslizante hacia su cama”.
+- Caption previsto: “Ilustración de un San Bernardo; no es una fotografía clínica del caso publicado. Observar el acceso al descanso ayuda a valorar el entorno.”
 
-### [H2-5 — Dos desenlaces posibles] — Target: ~700 palabras
-> [!IMPORTANT]
-> **Sección de inclusión obligatoria.** Tercer y último momento del arco narrativo.
+### Imagen 3 — observación sin manipulación
+- Archivo: `san-bernardo-senior-observar-apoyos.jpg` → mismo nombre .webp.
+- Prompt: Fotografía ilustrativa cinematográfica 16:9, plano medio lateral de una persona sentada a distancia junto a la cama de un salón vivido. El mismo San Bernardo senior grande de pelo semilargo, blanco con grandes parches castaños, máscara negra simétrica, orejas caídas y trufa negra reposa tranquilo con sus apoyos visibles y piel íntegra. La persona observa sin presionar la piel ni levantar la extremidad; libreta cerrada sobre mesa lateral. Luz natural cálida de tarde, profundidad de campo corta pero codos y cara enfocados, pelo y tela de aspecto realista. Sin lesiones generadas, vendajes, agujas, cremas, diagramas, logos o pose de anuncio.
+- Alt: “Ilustración del mismo San Bernardo senior descansando mientras su cuidadora observa sus apoyos sin manipularlos”.
+- Caption previsto: “Ilustración de un San Bernardo; no es una fotografía clínica del caso publicado. Registrar cambios ayuda a preparar la consulta.”
 
-*   *Objetivo:* Cerrar la viñeta con dos trayectorias contrastadas y honestas.
+## 9. Contrato de entrega — no negociables
 
-*   **Trayectoria A (manejo temprano):** cuando el higroma es pequeño e indoloro y se corrige la superficie de descanso, lo esperable es estabilización y mejora progresiva. El callo del otro codo no desaparece, pero deja de progresar y no se agrieta.
-*   **Trayectoria B (llegada tardía):** higroma grande, infectado o ulcerado. Aquí entra la cirugía, con rehabilitación larga y alta tasa de complicaciones según el Merck Veterinary Manual. Decirlo sin adornos.
-*   El mensaje: la diferencia entre A y B casi nunca es suerte, es el **tiempo** y la **superficie**.
-*   Reencuadre importante: el bulto es un síntoma de un problema de movilidad. Tratar solo el codo y no la artrosis de fondo es tratar la mitad.
-*   *Enlace de conversión:* `/herramientas/calculadora-calidad-vida-perros`.
-*   Empoderamiento: la auditoría de superficies del H2-2 se hace esta tarde y no cuesta nada.
+1. Artículo real de 6.000–6.500 palabras, target 6.300. Tolerancia local ±15 % sin ampliar intervalo global. El redactor debe reportar conteo de prosa visible y distribución por bloques.
+2. Ocho fuentes citadas por nombre y enlazadas junto a la afirmación correspondiente; no basta bibliografía final.
 
----
+| Fuente | Secciones con uso real | Comprobar en MDX |
+|---|---|---|
+| F1 Pavletic y Brum | Introducción, H2-2, H2-5 | ☐ |
+| F2 Verhoeven et al. | H2-4, FAQ | ☐ |
+| F3 Angelou et al. | H2-4, FAQ | ☐ |
+| F4 Loeffler et al./ISCAID | H2-1, H2-4, FAQ | ☐ |
+| F5 AAHA Pain Management 2022 | H2-3 | ☐ |
+| F6 AAHA Senior Care 2023 | H2-2, H2-3, H2-5 | ☐ |
+| F7 Merck Veterinary Manual | H2-1, H2-2, H2-4, FAQ | ☐ |
+| F8 Montoya y Tobias | H2-3, H2-4 | ☐ |
 
-### CONCLUSIÓN Y PREGUNTAS FRECUENTES — Target: ~700 palabras
-*   *Cierre:* Un higroma no se cura con crema. Se cura cambiando lo que hay debajo del codo.
-*   **Componente FAQ:**
-    ```mdx
-    <FAQ items={[
-      { question: '¿El bulto blando en el codo de mi perro es un tumor?', answer: 'Lo más probable es que sea un higroma: una cavidad llena de líquido que se forma por traumatismos repetidos sobre una prominencia ósea, según describe el <strong>Merck Veterinary Manual</strong>. Aun así, todo bulto nuevo debe verlo el veterinario, porque un bulto duro y adherido no encaja con un higroma.' },
-      { question: '¿Puedo vaciarlo yo en casa?', answer: 'Nunca. Una punción no estéril convierte una bolsa de líquido estéril en un absceso, y esa es la complicación más frecuente. La aspiración aséptica con aguja la hace el veterinario y, sin corregir después la superficie de descanso, el higroma se vuelve a rellenar.' },
-      { question: '¿Se cura solo si le compro una cama buena?', answer: 'La superficie de descanso es la base del tratamiento, pero solo funciona si cubre los sitios donde el perro se tumba de verdad, no solo donde está la cama. Muchos perros artrósicos se desploman en el pasillo antes de llegar a ella.' },
-      { question: '¿Hay que operarlo?', answer: 'Solo en higromas grandes que limitan al perro, infectados, dolorosos o ulcerados. Conviene saber que el tratamiento quirúrgico implica una rehabilitación larga y una alta tasa de complicaciones, y que no existe un tratamiento ideal para el higroma de codo.' },
-      { question: '¿Por qué le ha salido solo en un codo?', answer: 'Porque los perros suelen apoyarse siempre del mismo costado. Fíjate en de qué lado se tumba: esa información orienta tanto la prevención como la sospecha de dolor en la otra pata.' },
-      { question: '¿Influye el peso?', answer: 'Mucho. El <strong>Merck Veterinary Manual</strong> señala que en razas grandes y gigantes evitar el sobrepeso es importante, porque el peso extra aumenta notablemente el riesgo de traumatismo del tejido sobre las prominencias óseas.' },
-      { question: '¿Cómo sé si el callo se ha infectado?', answer: 'Los signos son exudado, mal olor, enrojecimiento alrededor, hinchazón y lamido obsesivo. En ese caso ya no basta con acolchar: el tratamiento se basa en antisépticos tópicos como la clorhexidina y, en infecciones profundas, antibiótico sistémico prolongado.' }
-    ]} />
-    ```
+3. Exactamente tres AlertBox narrativos: info en introducción, danger en H2-1, warning en H2-4; añadir el cuarto AlertBox info de fuentes indicado en la sección 11. Un FAQ final con siete items. Imports correctos, sin H1/TOC/JSON-LD duplicados.
+4. Siete destinos internos de sección 5 presentes en contexto; no contar repeticiones como destinos nuevos.
+5. Tres momentos del caso real: Intro/H2-2/H2-5. Raza, edad y desenlace reales preservados; ausencia de historia personal explícita.
+6. Respetar la raza San Bernardo en el caso y en todos los recursos por indicación del usuario. El caso conserva su edad real de un año; las ilustraciones de un San Bernardo senior no representan documentalmente al paciente ni fabrican una evolución suya. Hero alt y los tres captions deben aclarar que no son fotografías clínicas del caso publicado.
+7. No dosis, recetas, tutorial de aspiración/vendaje, promesas de cura, frecuencias no demostradas ni comparativas extrapoladas.
+8. No publicación ni actualización del inventario remoto como consecuencia automática de aprobar este brief.
 
----
+## 10. Comprobaciones de preparación
 
-## 7. POTENCIAL DE AFILIADOS / CONVERSIÓN
+- [x] Se revisa un tema ya inventariado; frontera SEO definida.
+- [x] Enum y claves del schema vigente revisados; rutas y dos spokes comprobados.
+- [x] Ocho documentos identificados, seis fuertes por naturaleza documental; límites de resúmenes declarados.
+- [x] Todas las fuentes tienen H2 asignado y dato desarrollado.
+- [x] Tres AlertBox planificados como instrucciones y siete FAQ.
+- [x] Presupuesto suma 6.300 y contrato global unificado en 6.000–6.500.
+- [x] Viñeta inventada eliminada y reemplazada por caso publicado trazable.
+- [x] Indicación expresa del usuario aplicada: todos los recursos muestran San Bernardo; paciente real de un año e ilustraciones senior claramente diferenciados.
+- [x] Base clínica revisada en auditoría independiente; fuentes y hechos del caso preservados en esta adaptación.
+- [x] Revisión técnica de la adaptación San Bernardo y de los recursos nuevos completada; registro de navegador 10/10 comprobaciones aprobadas.
+- [x] Contrato de redacción adaptado a la indicación del usuario: San Bernardo en caso y recursos, sin alterar los datos del paciente.
+- [x] Artículo y recursos terminados y auditados conforme al contrato y la ampliación autorizada; auditoría independiente y compilación completas.
 
-> [!NOTE]
-> Enlaces de afiliado **ocultos mediante flag**. Planificar sin activar.
+Este checklist documenta trabajo del corrector, no sustituye el veredicto independiente.
 
-*   H2-3: cama ortopédica de espuma de alta densidad, colchonetas adicionales para pasillo y zonas de paso, protectores acolchados de codo, alfombras antideslizantes.
-*   H2-4: clorhexidina de uso veterinario (siempre con la coletilla de prescripción), collar isabelino blando para evitar el lamido.
-*   **Encaje comercial alto y genuino**, porque el producto **es** el tratamiento en este caso concreto. Aun así, el H2-4 debe mantener íntegra la afirmación de que no existe tratamiento ideal.
-*   **Conversión principal (no comercial):** Calculadora de Calidad de Vida en H2-5.
 
----
+## 11. Ampliación autorizada — infografía y tres animaciones
 
-## 8. GUÍA VISUAL — 3 PROMPTS DE IMAGEN
+El usuario pidió redactar el artículo y generar los recursos el 15 de octubre de 2026. La solicitud autoriza guardar los archivos de trabajo y las imágenes; no implica publicar el sitio.
 
-> [!IMPORTANT]
-> **Sujeto fijo en los 3 prompts:** `gran danés senior, pelaje atigrado leonado y oscuro, hocico y máscara canos, ~9 años, muy grande, delgado, con las prominencias óseas de codos y caderas marcadas`. Debe nombrarse explícitamente en **cada uno** de los tres prompts, según la viñeta compuesta de la Sección 2.
+- **Infografía estática** al final de H2-1: «Callo e higroma: entender sin autodiagnosticar». Tres tarjetas: callo (piel engrosada), higroma (cavidad con líquido), consulta (bulto nuevo, dolor, supuración o lesión de piel). Fuentes F7 y F4. Sin heridas fotográficas ni diagnóstico por imagen. PNG original y WebP 1600×1000, alt descriptivo y resumen textual adyacente.
+- **Animación 1 — presión**, en H2-2: esquema no anatómico de apoyos sobre superficie rígida; flechas muestran concentración de carga. No afirma inevitabilidad de lesión. F7.
+- **Animación 2 — acolchado**, en H2-3: comparación animada de soporte rígido y acolchado con carga distribuida, sin unidades ni promesas de curación. F5/F8.
+- **Animación 3 — seguimiento**, en H2-4: observar, anotar, consultar, reevaluar. No es algoritmo diagnóstico ni muestra aspiración/drenaje casero. F4/F6/F7.
+- Implementación de animaciones en componente Astro aislado, con SVG/CSS, activación por usuario, pausa, texto alternativo equivalente y respeto a `prefers-reduced-motion`. Sin reproducir automáticamente ni flashear; versión estática si JS está desactivado.
+- Recursos y pies forman parte de las secciones asignadas; no crean H2 nuevos ni aumentan el contrato global de 6.000–6.500 palabras.
+- Fuente de cierre es un cuarto AlertBox `info` obligatorio por skill de redacción, adicional a los tres narrativos del contrato.
 
-> [!CAUTION]
-> **Restricción de contenido visual:** ninguna imagen debe mostrar un higroma ulcerado, supuración, sangre ni una herida abierta. Se puede insinuar un codo con la piel algo engrosada y sin pelo (callo simple), pero la patología infectada **no se ilustra**.
+## Cierre de integración — 2026-10-15
 
-### Imagen 1 — Resolutiva (hero)
-*   **Nombre de archivo SEO:** `gran-danes-senior-cama-espuma.jpg`
-*   **Prompt visual:** Plano general medio lateral, cámara a ras de suelo | Salón doméstico real con una cama gruesa de espuma de alta densidad ocupando el rincón | Un **gran danés senior, pelaje atigrado leonado y oscuro, hocico y máscara canos, ~9 años, muy grande, delgado, con las prominencias óseas de codos y caderas marcadas**, tumbado sobre la cama con los codos claramente apoyados sobre la superficie blanda, que se hunde solo parcialmente bajo su peso | Luz natural cálida de tarde entrando lateral | Profundidad de campo estrecha, foco en el codo apoyado sobre la espuma | Textura de la espuma comprimida y del pelaje corto atigrado | **Piel del codo íntegra** | Estilo fotoperiodístico doméstico, cero apariencia de banco de imágenes.
-*   **Caption:** La espuma debe amortiguar sin llegar a hundirse hasta el suelo bajo el peso del perro: si toca fondo, no protege el codo.
-
-### Imagen 2 — Educativa
-*   **Nombre de archivo SEO:** `callo-codo-perro-senior-piel-engrosada.jpg`
-*   **Prompt visual:** Plano detalle muy cercano del codo | Interior doméstico con luz natural difusa de ventana | Detalle del codo del mismo **gran danés senior, pelaje atigrado leonado y oscuro, hocico y máscara canos, ~9 años, delgado con prominencias óseas marcadas**, mostrando una zona de piel **engrosada, grisácea y sin pelo** sobre la prominencia del codo, íntegra y **sin grietas, sin exudado y sin enrojecimiento** | Iluminación natural neutra y difusa, sin sombras duras | Profundidad de campo muy estrecha, foco en la textura de la piel engrosada | Contraste de textura entre el pelaje corto y la piel callosa | Estilo fotoperiodístico clínico contenido, documental, nada desagradable.
-*   **Caption:** Un callo simple es piel engrosada, gris y sin pelo. Mientras no tenga grietas ni olor, el tratamiento es acolchar, no medicar.
-
-### Imagen 3 — Educativa / práctica
-*   **Nombre de archivo SEO:** `auditoria-superficies-descanso-perro-grande.jpg`
-*   **Prompt visual:** Plano general desde una esquina de la habitación, cámara a media altura | Salón y pasillo contiguos, con una cama de espuma en el rincón y una colchoneta adicional colocada en mitad del pasillo, sobre baldosa | El mismo **gran danés senior, pelaje atigrado leonado y oscuro, hocico y máscara canos, ~9 años, muy grande y delgado**, tumbado precisamente sobre la colchoneta del pasillo, no sobre la cama del rincón | Luz natural de mediodía entrando por dos puntos | Profundidad de campo media, ambas superficies visibles y el perro nítido | Textura de la baldosa frente a la colchoneta | Estilo fotoperiodístico documental, escena visiblemente real y algo desordenada.
-*   **Caption:** Muchos perros artrósicos se desploman donde están en vez de llegar a su cama: hay que acolchar los sitios reales, no los previstos.
-
----
-
-## 9. CONTRATO DE ENTREGA — NO NEGOCIABLES
-
-**1. Volumen mínimo real (no estimado):**
-Entre **5.355 y 7.245 palabras** (target 6.300, tolerancia ±15 %), contadas sobre el `.mdx` real.
-
-**2. Fuentes que deben aparecer citadas por nombre en el cuerpo:**
-
-| # | Fuente | H2 asignado | ¿Citada en el artículo final? |
-|---|---|---|---|
-| 1 | Merck Veterinary Manual — *Hygroma in Dogs* | H2-1 · H2-2 · H2-3 · H2-4 · FAQ | ☐ |
-| 2 | Clinician's Brief — *Devices for Treating Elbow Hygromas* | H2-4 | ☐ |
-| 3 | *Extracorporeal shockwaves for canine elbow hygroma* (PMID 37567180) | H2-4 | ☐ |
-| 4 | McKeever Dermatology Clinics — *Callus formation* | H2-1 · H2-3 | ☐ |
-| 5 | Tait (2022), Today's Veterinary Nurse — pyoderma | H2-4 · FAQ | ☐ |
-| 6 | WSAVA — *Clinical Aspects, Diagnosis and Therapy of Canine Pyoderma* | H2-4 | ☐ |
-
-**3. Componentes estructurales obligatorios:**
-- [ ] 3 `AlertBox`: `info` (Intro), `danger` (H2-1), `warning` (H2-4).
-- [ ] 1 `FAQ` con las **7** preguntas definidas.
-- [ ] Enlace a la calculadora presente (H2-5).
-- [ ] Enlaces internos de la Sección 5: pilar + spoke publicado.
-
-**4. Arco narrativo de la viñeta compuesta:**
-- [ ] Apertura en la Introducción.
-- [ ] Desarrollo en H2-2.
-- [ ] **Cierre en H2-5**, con las dos trayectorias.
-- [ ] Declarada explícitamente como cuadro compuesto, **nunca en primera persona**.
-
-**5. No negociables específicos de este artículo:**
-- [ ] El artículo **debe** declarar que **no existe un tratamiento ideal** para el higroma de codo, y que la cirugía conlleva rehabilitación larga y alta tasa de complicaciones.
-- [ ] El artículo **debe** explicar el matiz de edad: el higroma se describe clásicamente en perros **jóvenes** de razas grandes; en seniors la vía es la inmovilidad prolongada.
-- [ ] La Fuente 3 se cita **solo como línea emergente**, sin cifras ni protocolos: no se pudo verificar su texto completo.
-- [ ] Ninguna imagen muestra higroma ulcerado, supuración ni sangre.
-
----
-
-## 10. CHECKLIST DE VALIDACIÓN FINAL DEL REDACTOR
-
-**A validar en este briefing:**
-- [x] No canibaliza. Solapamientos controlados y declarados: con `ulceras-presion-perros` (publicado — allí la lesión ya es una úlcera abierta por decúbito; aquí es callo e higroma no ulcerados) y con `cuidado-piel-pelo-perro-senior` (esta tanda — allí los callos son una sección de un artículo general de piel; aquí son el objeto completo). Ambos deben enlazarse mutuamente.
-- [x] Frontmatter completo; `pilar` es enum válido de `config.ts`.
-- [x] `seoTitle` = 43 caracteres (≤55). `metaDescription` = 138 caracteres (≤160).
-- [x] 6 fuentes con URL profunda verificable; la limitación de verificación de la Fuente 3 está declarada en vez de disimulada.
-- [x] Enlazado con contingencia declarada.
-- [x] Suma de targets: 800+1.100+1.000+1.000+1.000+700+700 = **6.300**. ✅ Dentro del rango.
-- [x] Tabla de trazabilidad completa.
-
-**A validar en el `.mdx` final:**
-- [ ] Importaciones de AlertBox y FAQ.
-- [ ] Sin H1 `#` inicial.
-- [ ] Arco narrativo en sus 3 momentos.
-- [ ] Párrafos de máximo 3 líneas; H3 cada 150-200 palabras.
-- [ ] Gran danés senior nombrado en los 3 prompts.
-- [ ] Recuento real dentro del rango.
-- [ ] Las 6 fuentes citadas por nombre.
-- [ ] 3 `AlertBox` + `FAQ` de 7 + enlace a calculadora.
-- [ ] Los 4 no negociables de la Sección 9 se cumplen.
+Artículo e imágenes guardados; tres animaciones integradas y comprobadas con reproducción manual, pausa, movimiento reducido y sin JavaScript. Compilación completa y comprobación de tipos sin errores. Auditoría clínica/editorial independiente en `docs/contenido/higromas/auditoria-articulo-r1.md`. No se realizó commit, push ni despliegue.
