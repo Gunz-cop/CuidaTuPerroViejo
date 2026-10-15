@@ -1,0 +1,304 @@
+{
+  "checkedAt": "2026-10-15T01:24:26.773Z",
+  "assertions": [
+    {
+      "name": "Tres variantes únicas; sin reproducción automática",
+      "passed": true,
+      "details": [
+        {
+          "variant": "presion",
+          "playing": "false",
+          "pressed": "false",
+          "controlsHidden": false
+        },
+        {
+          "variant": "acolchado",
+          "playing": "false",
+          "pressed": "false",
+          "controlsHidden": false
+        },
+        {
+          "variant": "seguimiento",
+          "playing": "false",
+          "pressed": "false",
+          "controlsHidden": false
+        }
+      ]
+    },
+    {
+      "name": "Hero, dos fotos y una infografía cargan",
+      "passed": true,
+      "details": [
+        {
+          "src": "/images/blog/callosidades-higromas-codos-perros-senior/san-bernardo-senior-cama-acolchada.webp",
+          "alt": "Ilustración de un San Bernardo senior blanco y castaño en una cama acolchada; no es una fotografía clínica del caso publicado",
+          "complete": true,
+          "width": 800,
+          "height": 450
+        },
+        {
+          "src": "/images/blog/callosidades-higromas-codos-perros-senior/infografia-callo-higroma.webp",
+          "alt": "Infografía: callo como piel engrosada, higroma como cavidad con líquido y cambios que requieren consulta veterinaria",
+          "complete": true,
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "src": "/images/blog/callosidades-higromas-codos-perros-senior/san-bernardo-senior-acceso-cama.webp",
+          "alt": "Ilustración del mismo San Bernardo senior blanco y castaño caminando por un corredor antideslizante hacia su cama",
+          "complete": true,
+          "width": 1200,
+          "height": 675
+        },
+        {
+          "src": "/images/blog/callosidades-higromas-codos-perros-senior/san-bernardo-senior-observar-apoyos.webp",
+          "alt": "Ilustración del mismo San Bernardo senior descansando mientras su cuidadora observa sus apoyos sin manipularlos",
+          "complete": true,
+          "width": 1200,
+          "height": 675
+        }
+      ]
+    },
+    {
+      "name": "Un único H1",
+      "passed": true,
+      "details": 1
+    },
+    {
+      "name": "Las tres animaciones reproducen y pausan",
+      "passed": true,
+      "details": [
+        {
+          "variant": "presion",
+          "running": true,
+          "paused": true
+        },
+        {
+          "variant": "acolchado",
+          "running": true,
+          "paused": true
+        },
+        {
+          "variant": "seguimiento",
+          "running": true,
+          "paused": true
+        }
+      ]
+    },
+    {
+      "name": "Contenido renderizado entre 6000 y 6500 palabras",
+      "passed": true,
+      "details": {
+        "articleAndComponents": 6473,
+        "excludes": [
+          "frontmatter",
+          "imports",
+          "alt",
+          "bibliography",
+          "hidden SVG titles/descriptions"
+        ],
+        "includes": [
+          "H2/H3",
+          "FAQ answers opened",
+          "animation explanations",
+          "SVG visible labels",
+          "animation controls"
+        ],
+        "svgLabels": 52
+      }
+    },
+    {
+      "name": "Movimiento reducido detiene y desactiva las tres animaciones",
+      "passed": true,
+      "details": [
+        {
+          "variant": "presion",
+          "playing": "false",
+          "disabled": true,
+          "animationName": "none"
+        },
+        {
+          "variant": "acolchado",
+          "playing": "false",
+          "disabled": true,
+          "animationName": "none"
+        },
+        {
+          "variant": "seguimiento",
+          "playing": "false",
+          "disabled": true,
+          "animationName": "none"
+        }
+      ]
+    },
+    {
+      "name": "Sin desbordamiento horizontal a 375px",
+      "passed": true,
+      "details": {
+        "width": 375,
+        "scrollWidth": 375,
+        "widgets": [
+          {
+            "width": 343,
+            "controlsWidth": 341
+          },
+          {
+            "width": 343,
+            "controlsWidth": 341
+          },
+          {
+            "width": 343,
+            "controlsWidth": 341
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sin desbordamiento horizontal a 1280px",
+      "passed": true,
+      "details": {
+        "width": 1280,
+        "scrollWidth": 1265,
+        "widgets": [
+          {
+            "width": 686,
+            "controlsWidth": 684
+          },
+          {
+            "width": 686,
+            "controlsWidth": 684
+          },
+          {
+            "width": 686,
+            "controlsWidth": 684
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sin excepciones JavaScript de página",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "Sin JS: tres esquemas y explicaciones, controles ocultos",
+      "passed": true,
+      "details": {
+        "count": 3,
+        "allStatic": true
+      }
+    }
+  ],
+  "initial": {
+    "widgets": [
+      {
+        "variant": "presion",
+        "playing": "false",
+        "pressed": "false",
+        "controlsHidden": false
+      },
+      {
+        "variant": "acolchado",
+        "playing": "false",
+        "pressed": "false",
+        "controlsHidden": false
+      },
+      {
+        "variant": "seguimiento",
+        "playing": "false",
+        "pressed": "false",
+        "controlsHidden": false
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/blog/callosidades-higromas-codos-perros-senior/san-bernardo-senior-cama-acolchada.webp",
+        "alt": "Ilustración de un San Bernardo senior blanco y castaño en una cama acolchada; no es una fotografía clínica del caso publicado",
+        "complete": true,
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/images/blog/callosidades-higromas-codos-perros-senior/infografia-callo-higroma.webp",
+        "alt": "Infografía: callo como piel engrosada, higroma como cavidad con líquido y cambios que requieren consulta veterinaria",
+        "complete": true,
+        "width": 1600,
+        "height": 1000
+      },
+      {
+        "src": "/images/blog/callosidades-higromas-codos-perros-senior/san-bernardo-senior-acceso-cama.webp",
+        "alt": "Ilustración del mismo San Bernardo senior blanco y castaño caminando por un corredor antideslizante hacia su cama",
+        "complete": true,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "src": "/images/blog/callosidades-higromas-codos-perros-senior/san-bernardo-senior-observar-apoyos.webp",
+        "alt": "Ilustración del mismo San Bernardo senior descansando mientras su cuidadora observa sus apoyos sin manipularlos",
+        "complete": true,
+        "width": 1200,
+        "height": 675
+      }
+    ],
+    "h1": 1
+  },
+  "playback": [
+    {
+      "variant": "presion",
+      "running": true,
+      "paused": true
+    },
+    {
+      "variant": "acolchado",
+      "running": true,
+      "paused": true
+    },
+    {
+      "variant": "seguimiento",
+      "running": true,
+      "paused": true
+    }
+  ],
+  "wordCount": {
+    "articleAndComponents": 6473,
+    "excludes": [
+      "frontmatter",
+      "imports",
+      "alt",
+      "bibliography",
+      "hidden SVG titles/descriptions"
+    ],
+    "includes": [
+      "H2/H3",
+      "FAQ answers opened",
+      "animation explanations",
+      "SVG visible labels",
+      "animation controls"
+    ],
+    "svgLabels": 52
+  },
+  "reduced": [
+    {
+      "variant": "presion",
+      "playing": "false",
+      "disabled": true,
+      "animationName": "none"
+    },
+    {
+      "variant": "acolchado",
+      "playing": "false",
+      "disabled": true,
+      "animationName": "none"
+    },
+    {
+      "variant": "seguimiento",
+      "playing": "false",
+      "disabled": true,
+      "animationName": "none"
+    }
+  ],
+  "noJs": {
+    "count": 3,
+    "allStatic": true
+  }
+}

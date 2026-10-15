@@ -1,0 +1,190 @@
+---
+interface Props {
+  variant: 'presion' | 'acolchado' | 'seguimiento';
+}
+
+const { variant } = Astro.props;
+const scenes = {
+  presion: {
+    number: '01',
+    title: 'Un punto pequeño recibe el apoyo',
+    description: 'Sobre una superficie rígida, el apoyo se concentra en una zona pequeña. El traumatismo repetido sobre una prominencia ósea puede favorecer un higroma. El esquema no predice qué le ocurrirá a cada perro.',
+    source: 'Merck Veterinary Manual · Hygroma in Dogs',
+    url: 'https://www.merckvetmanual.com/integumentary-system/hygroma-in-dogs/hygroma-in-dogs',
+  },
+  acolchado: {
+    number: '02',
+    title: 'El acolchado cambia el apoyo',
+    description: 'Una superficie acolchada ayuda a repartir el apoyo. Debe ser estable, accesible y adecuada al perro. Este dibujo explica el objetivo del soporte: no garantiza que un higroma desaparezca.',
+    source: 'Montoya y Tobias · Coaptation Devices for Elbow Hygromas',
+    url: 'https://www.cliniciansbrief.com/article/coaptation-devices-elbow-hygromas',
+  },
+  seguimiento: {
+    number: '03',
+    title: 'Observar, registrar y volver a valorar',
+    description: 'Observa sin apretar el bulto, anota los cambios y compártelos con el veterinario. Reevalúa el plan con su ayuda. Si hay dolor intenso o mal estado general, busca atención urgente: no esperes a completar el registro.',
+    source: 'AAHA · Senior Care Guidelines: Pain Management',
+    url: 'https://www.aaha.org/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats/pain-management/',
+  },
+};
+const scene = scenes[variant];
+const id = `higroma-${variant}`;
+---
+
+<div data-higroma-animation data-variant={variant} data-playing="false">
+  <figure class="explanation" aria-labelledby={`${id}-title`}>
+    <div class="heading"><span class="number" aria-hidden="true">{scene.number}</span><strong id={`${id}-title`}>{scene.title}</strong></div>
+    <div class="drawing">
+      <svg id={`${id}-diagram`} viewBox="0 0 640 280" role="img" aria-labelledby={`${id}-svg-title ${id}-svg-desc`}>
+        <title id={`${id}-svg-title`}>{scene.title}</title>
+        <desc id={`${id}-svg-desc`}>{scene.description}</desc>
+        {variant === 'presion' && (
+          <>
+            <text x="320" y="30" text-anchor="middle">Apoyo repetido sobre suelo rígido</text>
+            <path class="support" d="M205 76 Q205 58 225 58 H415 Q435 58 435 76 V125 Q435 160 380 178 L343 200 Q320 214 297 200 L260 178 Q205 160 205 125Z" />
+            <g class="arrows bounce" aria-hidden="true">
+              <path d="M300 95V152 M300 152l-9-12 M300 152l9-12 M340 95V152 M340 152l-9-12 M340 152l9-12" />
+            </g>
+            <ellipse class="contact pulse" cx="320" cy="211" rx="27" ry="8" />
+            <path class="floor" d="M100 221H540" />
+            <text x="320" y="255" text-anchor="middle">Carga concentrada en un área pequeña</text>
+          </>
+        )}
+        {variant === 'acolchado' && (
+          <>
+            <text x="166" y="30" text-anchor="middle">Superficie rígida</text>
+            <text x="477" y="30" text-anchor="middle">Superficie acolchada</text>
+            <path class="support" d="M99 85Q99 65 119 65H211Q231 65 231 85V145Q231 170 166 195Q99 170 99 145Z" />
+            <path class="support" d="M410 85Q410 65 430 65H522Q542 65 542 85V145Q542 170 477 195Q410 170 410 145Z" />
+            <path class="floor" d="M56 207H277 M365 229H589" />
+            <path class="cushion" d="M365 193Q365 182 380 182H414Q477 211 540 182H574Q589 182 589 193V229H365Z" />
+            <g class="arrows bounce" aria-hidden="true"><path d="M166 106V166 M166 166l-9-12 M166 166l9-12" /></g>
+            <g class="arrows spread" aria-hidden="true"><path d="M477 106V157 M477 157l-9-12 M477 157l9-12 M451 156l-24 20 M427 176l3-14 M427 176l14-1 M503 156l24 20 M527 176l-3-14 M527 176l-14-1" /></g>
+            <text x="166" y="259" text-anchor="middle">Menor área de apoyo</text>
+            <text x="477" y="259" text-anchor="middle">Apoyo más repartido</text>
+          </>
+        )}
+        {variant === 'seguimiento' && (
+          <>
+            <text x="320" y="30" text-anchor="middle">Un registro acompaña la consulta</text>
+            <path class="connector" d="M90 119H550" />
+            {[['Observar', 'Sin presionar'], ['Anotar', 'Cambios y fecha'], ['Consultar', 'Compartir datos'], ['Reevaluar', 'Con el veterinario']].map(([title, detail], i) => (
+              <g class={`stage stage-${i}`}>
+                <circle class="step-ring" cx={80 + i * 160} cy="119" r="33" />
+                <text class="step-number" x={80 + i * 160} y="126" text-anchor="middle">{i + 1}</text>
+                <text class="step-title" x={80 + i * 160} y="185" text-anchor="middle">{title}</text>
+                <text class="step-detail" x={80 + i * 160} y="211" text-anchor="middle">{detail}</text>
+              </g>
+            ))}
+            <text x="320" y="259" text-anchor="middle">Las señales de alarma no deben esperar</text>
+          </>
+        )}
+      </svg>
+      <span class="schema-note">Esquema educativo · sin escala anatómica</span>
+    </div>
+    <div class="controls" hidden>
+      <button type="button" aria-pressed="false" aria-controls={`${id}-diagram`}>Reproducir animación</button>
+      <span class="motion-note" role="status" aria-live="polite"></span>
+    </div>
+    <figcaption>
+      <p>{scene.description}</p>
+      <a href={scene.url}>Fuente: {scene.source}</a>
+    </figcaption>
+  </figure>
+</div>
+
+<script>
+  const cleanups = new Map<HTMLElement, () => void>();
+  function initializeHigromaAnimations() {
+    for (const root of document.querySelectorAll<HTMLElement>('[data-higroma-animation]')) {
+      if (cleanups.has(root)) continue;
+      const controls = root.querySelector<HTMLElement>('.controls');
+      const button = root.querySelector<HTMLButtonElement>('button');
+      const note = root.querySelector<HTMLElement>('.motion-note');
+      if (!controls || !button || !note) continue;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const stop = () => {
+        root.dataset.playing = 'false';
+        button.setAttribute('aria-pressed', 'false');
+        button.textContent = 'Reproducir animación';
+      };
+      const preference = () => {
+        stop();
+        button.disabled = reducedMotion.matches;
+        note.textContent = reducedMotion.matches ? 'Movimiento reducido: se muestra el esquema estático.' : 'La animación comienza cuando tú la activas.';
+      };
+      const toggle = () => {
+        if (reducedMotion.matches) return;
+        const playing = root.dataset.playing !== 'true';
+        root.dataset.playing = String(playing);
+        button.setAttribute('aria-pressed', String(playing));
+        button.textContent = playing ? 'Pausar animación' : 'Reproducir animación';
+      };
+      const visibility = () => { if (document.hidden) stop(); };
+      controls.hidden = false;
+      preference();
+      button.addEventListener('click', toggle);
+      reducedMotion.addEventListener('change', preference);
+      document.addEventListener('visibilitychange', visibility);
+      cleanups.set(root, () => {
+        stop();
+        button.removeEventListener('click', toggle);
+        reducedMotion.removeEventListener('change', preference);
+        document.removeEventListener('visibilitychange', visibility);
+      });
+    }
+  }
+  document.addEventListener('astro:before-swap', () => {
+    cleanups.forEach(cleanup => cleanup());
+    cleanups.clear();
+  });
+  document.addEventListener('astro:page-load', initializeHigromaAnimations);
+  initializeHigromaAnimations();
+</script>
+
+<style>
+  [data-higroma-animation] { display: block; margin-block: 2rem; color: #173f3c; }
+  .explanation { margin: 0; overflow: hidden; border: 1px solid #acc9ba; border-radius: 1.25rem; background: #f6faf7; color: #173f3c; }
+  .heading { display: flex; align-items: center; gap: .8rem; padding: 1.25rem 1.25rem .4rem; font-size: 1.05rem; line-height: 1.4; }
+  .number { display: grid; place-items: center; flex: 0 0 2.3rem; height: 2.3rem; border-radius: 50%; background: #d7e8dc; font: 700 .85rem/1 system-ui, sans-serif; }
+  .drawing { padding: .25rem .5rem .75rem; }
+  svg { display: block; width: 100%; height: auto; overflow: visible; }
+  svg text { fill: #173f3c; font: 500 18px/1.2 system-ui, sans-serif; }
+  .support { fill: #f6debd; stroke: #a36d44; stroke-width: 3; }
+  .arrows { fill: none; stroke: #174e49; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+  .floor { stroke: #697d72; stroke-width: 6; stroke-linecap: round; }
+  .contact { fill: #be7150; }
+  .cushion { fill: #a6cfb7; stroke: #397351; stroke-width: 3; }
+  .connector { stroke: #abc5b5; stroke-width: 3; stroke-dasharray: 6 6; }
+  .step-ring { fill: #e4efe7; stroke: #5b8570; stroke-width: 3; }
+  svg .step-number { font-weight: 700; font-size: 23px; }
+  svg .step-title { font-weight: 700; }
+  svg .step-detail { font-size: 14px; }
+  .schema-note { display: block; text-align: center; font-size: .75rem; color: #4b6256; }
+  .controls { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; padding: 0 1.25rem 1rem; }
+  .controls[hidden] { display: none; }
+  button { border: 1px solid #174e49; border-radius: 2rem; padding: .65rem 1rem; background: #174e49; color: #fff; font: 600 .85rem/1.4 system-ui, sans-serif; cursor: pointer; min-height: 44px; }
+  button:focus-visible { outline: 3px solid #bc6b37; outline-offset: 4px; }
+  button:disabled { background: #e3ece5; color: #40584c; border-color: #91ac9b; cursor: default; }
+  .motion-note { flex: 1 1 12rem; font-size: .8rem; line-height: 1.5; }
+  figcaption { border-top: 1px solid #d1e0d6; padding: 1rem 1.25rem; font-size: .9rem; line-height: 1.65; }
+  figcaption p { margin: 0 0 .6rem; }
+  figcaption a { color: #174e49; text-decoration: underline; text-underline-offset: 3px; font-size: .8rem; }
+  .bounce { animation: support-load 3s ease-in-out infinite; animation-play-state: paused; }
+  .pulse { animation: contact-pulse 3s ease-in-out infinite; animation-play-state: paused; transform-origin: 320px 211px; }
+  .spread { animation: support-spread 3s ease-in-out infinite; animation-play-state: paused; }
+  .step-ring { animation: step-highlight 8s linear infinite; animation-play-state: paused; }
+  .stage-1 .step-ring { animation-delay: -6s; }
+  .stage-2 .step-ring { animation-delay: -4s; }
+  .stage-3 .step-ring { animation-delay: -2s; }
+  [data-higroma-animation][data-playing='true'] .bounce,
+  [data-higroma-animation][data-playing='true'] .pulse,
+  [data-higroma-animation][data-playing='true'] .spread,
+  [data-higroma-animation][data-playing='true'] .step-ring { animation-play-state: running; }
+  @keyframes support-load { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+  @keyframes contact-pulse { 0%, 100% { opacity: .55; transform: scaleX(.8); } 50% { opacity: 1; transform: scaleX(1.2); } }
+  @keyframes support-spread { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
+  @keyframes step-highlight { 0%, 23% { fill: #a2d0b1; stroke: #174e49; stroke-width: 5; } 25%, 100% { fill: #e4efe7; stroke: #5b8570; stroke-width: 3; } }
+  @media (prefers-reduced-motion: reduce) { .bounce, .pulse, .spread, .step-ring { animation: none !important; } }
+  @media (max-width: 420px) { .heading { font-size: .95rem; } .drawing { padding-inline: 0; } }
+</style>
