@@ -62,6 +62,9 @@ Captura con Playwright a 390, 820 y 1366 px, en claro y oscuro:
 `aria-live` en el resultado, texto para lectores de pantalla, etiquetas en
 todos los campos, foco visible y contraste suficiente.
 
+Además: ningún texto de la herramienta dentro de `<figure>` (la proyección
+para agentes lo descarta).
+
 ### F. SEO y página
 
 H1 útil, ≥ 3 H2 editoriales, sección `#metodo` con fuentes enlazadas, FAQ.

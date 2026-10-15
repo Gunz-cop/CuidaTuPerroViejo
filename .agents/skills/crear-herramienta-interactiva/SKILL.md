@@ -88,6 +88,11 @@ eventos y la tarjeta. Nada de React ni librerías de animación.
   hueco; en móvil y tablet (< 64rem) un recorte de la imagen con el texto
   debajo, nunca encima.
 
+**Proyección para agentes:** nunca envuelvas texto (títulos, pasos, resultados)
+en `<figure>`: la proyección Markdown solo conserva la imagen y el
+`<figcaption>` de un figure y el resto desaparece para los agentes de IA (y
+falla `projection-semantic`). Usa `<section>` para bloques con texto.
+
 **Accesibilidad:** `role="status"` + `aria-live="polite"` en el resultado,
 texto `sr-only` con el resultado completo, `fieldset/legend`, foco visible.
 
