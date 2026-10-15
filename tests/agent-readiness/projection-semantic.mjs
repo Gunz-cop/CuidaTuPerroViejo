@@ -57,10 +57,6 @@ function selectedRoots(document, page) {
     const body = exactOne(visit(article, (node) => node.tagName === 'div' && hasClass(node, 'content-body', 'prose')), page, 'article .content-body.prose');
     return [header, body];
   }
-  if (page.documentId === 'pillar--herramientas') {
-    const heroParagraphs = kids(h1.parentNode).filter((node) => node.tagName === 'p');
-    return [h1, ...heroParagraphs, exactOne(visit(document, (node) => node.tagName === 'main' && hasClass(node, 'mx-auto', 'w-full', 'max-w-4xl')), page, 'tools main')];
-  }
   if (page.documentId === 'page--acerca-de') return [h1.parentNode, exactOne(nodeById(document, 'about-us', 'article'), page, 'article#about-us')];
   if (page.documentId === 'page--politica-editorial') return [h1.parentNode, exactOne(visit(document, (node) => node.tagName === 'main' && hasClass(node, 'max-w-3xl')), page, 'main.max-w-3xl')];
   if (page.kind === 'tool') return [exactOne(visit(document, (node) => node.tagName === 'main' && hasClass(node, 'max-w-3xl')), page, 'main.max-w-3xl')];
