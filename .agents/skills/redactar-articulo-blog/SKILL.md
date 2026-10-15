@@ -15,6 +15,7 @@ Esta habilidad es la continuación natural de **`generar-briefing-contenido`**: 
 *   [reglas_astro_mdx.md](file:///c:/Users/grcx1/OneDrive/Documentos/Proyectos/CuidaTuPerroViejo/.agents/skills/redactar-articulo-blog/references/reglas_astro_mdx.md): qué automatiza el layout (y por tanto qué NO debe escribirse a mano), extraído directamente del código fuente de los componentes.
 *   [plantilla_articulo.mdx](file:///c:/Users/grcx1/OneDrive/Documentos/Proyectos/CuidaTuPerroViejo/.agents/skills/redactar-articulo-blog/resources/plantilla_articulo.mdx): esqueleto de artículo limpio para copiar y rellenar.
 *   [analisis_corpus.md](file:///c:/Users/grcx1/OneDrive/Documentos/Proyectos/CuidaTuPerroViejo/.agents/skills/redactar-articulo-blog/examples/analisis_corpus.md): barrido completo de los 11 artículos publicados con una tabla comparativa y el veredicto definitivo por elemento (qué adoptar, qué evitar y por qué, con evidencia del corpus completo, no de una muestra).
+*   [crear-animaciones-articulo-blog](../crear-animaciones-articulo-blog/SKILL.md) — genera imágenes coherentes de perros senior, recortes realistas, infografías y secuencias didácticas cuando el usuario o el brief las requieren. Incluye validación visual en móvil y modo oscuro.
 *   Skill hermana: [generar-briefing-contenido](file:///c:/Users/grcx1/OneDrive/Documentos/Proyectos/CuidaTuPerroViejo/.agents/skills/generar-briefing-contenido/SKILL.md) — produce el input de esta skill.
 *   [config.ts](file:///c:/Users/grcx1/OneDrive/Documentos/Proyectos/CuidaTuPerroViejo/src/content/config.ts): schema **estricto** (`.strict()`) del frontmatter. Cualquier campo no listado ahí rompe el build.
 *   [INVENTARIO_CONTENIDO.md](file:///c:/Users/grcx1/OneDrive/Documentos/Proyectos/CuidaTuPerroViejo/INVENTARIO_CONTENIDO.md): estado real de artículos publicados, para revalidar interlinking.
@@ -64,7 +65,19 @@ Esta habilidad es la continuación natural de **`generar-briefing-contenido`**: 
     ![Alt descriptivo SEO](/images/blog/{{slug}}/{{archivo}}.webp)
     *Pie de foto que aporta contexto o dato adicional.*
     ```
-    Los nombres de archivo, alt y captions salen de la Sección 8 del brief (prompts de imagen). **La skill no genera ni descarga los binarios** — avisa al usuario que debe colocar esos `.webp` en `public/images/blog/{{slug}}/` antes de publicar.
+    Los nombres de archivo, alt y captions salen de la Sección 8 del brief. **Si el usuario pide generar o mejorar las imágenes, infografías o animaciones, aplica [crear-animaciones-articulo-blog](../crear-animaciones-articulo-blog/SKILL.md) y entrega los recursos integrados**, sin dejar los binarios a cargo del usuario cuando la herramienta está disponible. Si solo se encargó texto, pueden quedar imágenes planificadas pendientes, identificadas con precisión antes de publicar. Un placeholder no cuenta como recurso terminado.
+
+### Recursos visuales y continuidad del sujeto
+
+Cuando el encargo incluya recursos visuales, sigue este flujo antes de darlos por terminados:
+
+1. Fija un perro de referencia coherente con el brief y la elección del usuario. Debe **parecer senior**: la palabra en el prompt no sustituye la revisión de edad, anatomía, expresión y apoyos. No uses enfermedad como requisito de vejez ni presentes la ilustración como fotografía clínica.
+2. Deriva de esa referencia la hero y las escenas de cuerpo, conservando orejas, marcas, proporciones y edad. Si el caso no determina raza, usa la elección ilustrativa acordada; no impongas el dogo del ejemplo a otros artículos.
+3. Para animaciones que necesiten al perro, considera un recorte realista con transparencia y SVG/CSS para acciones y zonas explicativas. Evita sustituirlo por una silueta anatómicamente pobre. El recorte no es un vídeo: los cambios deben comunicar lo que realmente se anima.
+4. Asigna cada infografía/animación a un párrafo y una pregunta concreta. Respeta las cantidades del encargo y ofrece controles, consulta sin movimiento y alternativa sin JavaScript.
+5. Verifica imágenes cargadas, móvil, modo oscuro, contraste, movimiento reducido y compatibilidad con el proyector Markdown. Entrega una captura real, no solo una descripción del diseño. Para reemplazos publicados, revisa la caché y utiliza rutas nuevas cuando corresponda.
+
+La referencia aprobada por el usuario y sus archivos están en [patron-bano-senior.md](../crear-animaciones-articulo-blog/references/patron-bano-senior.md).
 
 ### Fase 3: Redacción por Bloques
 
@@ -110,7 +123,7 @@ Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra 
 *   Confirma que existe el cuadro de cierre `<AlertBox type="info" title="Fuentes científicas y de autoridad">` con las fuentes de la Sección 3, cada una como enlace real con texto ancla descriptivo (el título del documento, no "leer más" ni la URL en crudo) — salvo las marcadas `[URL no verificada]`, que van citadas sin enlace.
 *   Si alguna fuente estaba marcada `[URL no verificada]`, confirma que quedó citada por nombre sin enlace (ni placeholder literal ni URL inventada) y que está anotada para el resumen de entrega.
 *   Confirma que los 3 tipos narrativos de `AlertBox` están presentes (`info` en intro, `danger`, `warning`), uno de cada, sin repetir tipo entre ellos — el cuadro de fuentes (también `info`, ver arriba) es un cuarto `AlertBox` aparte, obligatorio por separado, no cuenta como repetición.
-*   Confirma que las imágenes de cuerpo planificadas en la Sección 8 del brief (aparte de la hero) están insertadas en el `.mdx` como placeholder `![alt](/images/blog/{{slug}}/{{archivo}}.webp)` con su alt y caption — el archivo `.webp` real todavía no existe en `public/` (eso se resuelve en Fase 5), pero el placeholder en el cuerpo sí es obligatorio ya en esta fase; no lo dejes pendiente ni lo omitas por no tener el binario.
+*   Confirma que las imágenes de la Sección 8 están referenciadas con alt y caption, sin duplicar la hero en el cuerpo. Si el encargo incluye producción visual, comprueba también que existen los binarios y que el navegador los decodifica; un placeholder no cumple esa entrega. Si se encargó solo texto, conserva las referencias planificadas y declara los archivos pendientes antes de publicar.
 *   Confirma que el `FAQ` tiene el número de preguntas pactado.
 *   Confirma que los enlaces internos obligatorios (pilar, spokes, calculadora si aplica) están presentes como enlaces reales, no como texto plano — salvo los spokes que el brief marcó explícitamente como `Pendiente`, que no deben existir como enlace (si aparecen, es que se inventó uno).
 *   Confirma el arco narrativo de 3 momentos de la historia real: apertura, desarrollo, cierre (cada uno como sección propia real, no una mención de paso).
@@ -149,7 +162,7 @@ Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra 
     ```
 5.  **Colisión de nombres:** si ya existe `src/content/blog/{{slug}}.mdx`, no lo sobrescribas en silencio — pregunta si reemplazar, versionar el slug, o cancelar.
 6.  **Recordatorios post-guardado:**
-    *   Las imágenes referenciadas deben añadirse en `public/images/blog/{{slug}}/` antes de que carguen en producción — **cuenta la `heroImage` del frontmatter junto con las de cuerpo**, no solo estas últimas (confirmado en producción: el aviso decía "faltan 2" contando solo cuerpo, cuando el total real —hero incluida— era 3).
+    *   Comprueba las imágenes en `public/images/blog/{{slug}}/`; si solo se encargó texto o faltó una herramienta, lista los archivos que aún deben añadirse antes de publicar — **cuenta la `heroImage` del frontmatter junto con las de cuerpo**, no solo estas últimas (confirmado en producción: el aviso decía "faltan 2" contando solo cuerpo, cuando el total real —hero incluida— era 3).
     *   Si quedaron fuentes citadas sin URL (marcadas `[URL no verificada]` en el brief), lístalas explícitamente para que el usuario las confirme o agregue el enlace antes de publicar.
     *   No hagas commit ni push a menos que el usuario lo pida explícitamente.
 7.  **Marca el estado del brief y del inventario** (una vez el artículo esté guardado y aprobado):
@@ -170,7 +183,7 @@ Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra 
 *   [ ] ¿El frontmatter usa exclusivamente campos del schema estricto, sin campos inventados?
 *   [ ] ¿El cuerpo no incluye H1, hero image duplicada, TOC manual, JSON-LD manual, ni bloque de artículos relacionados?
 *   [ ] ¿AlertBox y FAQ están importados y se usan con las props correctas (`type`, `title`, `items`)?
-*   [ ] ¿Todas las imágenes de cuerpo de la Sección 8 del brief (no solo la hero) están insertadas como placeholder `![alt](path)` con alt y caption, aunque el `.webp` real todavía no exista?
+*   [ ] ¿Hero e imágenes de cuerpo tienen referencias válidas, alt/captions y, si se encargó producción visual, binarios reales verificados en navegador?
 *   [ ] ¿Los enlaces internos obligatorios del brief están presentes como enlaces reales dentro de los párrafos, y ningún spoke marcado `Pendiente` fue reemplazado por un enlace inventado?
 *   [ ] ¿La historia real aparece en sus 3 momentos (apertura, desarrollo, cierre) como secciones propias?
 *   [ ] ¿Las fuentes que el brief documentó (aunque sean menos de 6, si el brief ya justificó por qué) están citadas por nombre en los H2 a los que fueron asignadas?
@@ -185,3 +198,14 @@ Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra 
 *   [ ] ¿Se avisó sobre las imágenes pendientes de colocar en `public/images/blog/{{slug}}/`, **contando la hero además de las de cuerpo**?
 *   [ ] ¿Se avisó sobre las fuentes citadas sin URL (`[URL no verificada]`), si las hubo?
 *   [ ] ¿Se marcó el estado en el brief (redactado + fecha + ruta del `.mdx`) y se actualizó `INVENTARIO_CONTENIDO.md` (título, casilla, y si aplica, "reescrito {{fecha}}")?
+
+
+### Comprobación visual cuando forma parte del encargo
+
+* [ ] Mismo perro en todas las escenas, edad senior visible y anatomía revisada.
+* [ ] Infografías y animaciones explican acciones del texto y respetan el número acordado.
+* [ ] Si se usa recorte realista, tiene transparencia limpia y marcadores adaptados al sujeto.
+* [ ] Títulos y destacados legibles sobre sus fondos tanto en modo claro como oscuro.
+* [ ] Capturas móvil/escritorio, controles con teclado, pausa, movimiento reducido y alternativa sin JavaScript verificados.
+* [ ] Recursos y versiones responsive cargados; rutas nuevas cuando la caché pueda conservar una imagen anterior.
+* [ ] Build completo, incluida la proyección Markdown, sin error por etiquetas no admitidas.

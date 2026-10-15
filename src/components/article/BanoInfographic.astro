@@ -1,0 +1,55 @@
+---
+interface Props { variant: 'decision' | 'ruta'; }
+const { variant } = Astro.props;
+const decision = variant === 'decision';
+const cards = decision ? [
+  { n:'01', title:'Suciedad localizada', text:'Valora limpiar solo la zona externa sucia, con material adecuado y sin forzar la postura.', tag:'Aseo por zonas', color:'green' },
+  { n:'02', title:'Baño indicado y tolerable', text:'Prepara acceso, tracción y secado. Si tiene un tratamiento cutáneo, respeta su pauta individual.', tag:'Preparar y observar', color:'blue' },
+  { n:'03', title:'Dolor, debilidad o angustia', text:'Pospón el baño completo y pide orientación. Colapso o dificultad respiratoria requieren atención urgente.', tag:'Parar y consultar', color:'amber' },
+] : [
+  { n:'01', title:'Entrar', text:'Recorrido seco y despejado. Sin saltos ni escalones que no pueda superar con seguridad.', tag:'Acceso' },
+  { n:'02', title:'Apoyar', text:'Superficie estable con tracción y espacio para una postura cómoda.', tag:'Ducha' },
+  { n:'03', title:'Alcanzar', text:'Paños, producto indicado y toallas preparados antes de abrir el agua.', tag:'Material' },
+  { n:'04', title:'Salir y secar', text:'Un lugar próximo, seco y sin obstáculos para terminar sin prisas.', tag:'Descanso' },
+];
+---
+<section class:list={['bano-map', { route: !decision }]}>
+  <div class="map-header"><span>GUÍA VISUAL · {decision ? 'DECIDIR' : 'PREPARAR'}</span><strong>{decision ? 'No toda suciedad necesita un baño completo' : 'La ruta importa tanto como la ducha'}</strong></div>
+  {!decision && <svg class="route-drawing" viewBox="0 0 720 125" role="img" aria-label="Ruta continua y despejada entre entrada, esterilla, materiales y zona de secado">
+    <path d="M72 75H645" fill="none" stroke="#d4e1d3" stroke-width="30" stroke-linecap="round"/>
+    <path d="M72 75H645" fill="none" stroke="#548579" stroke-width="3" stroke-dasharray="5 9"/>
+    <path d="m619 63 20 12-20 12" fill="none" stroke="#254f48" stroke-width="4"/>
+    <g stroke="#254f48" stroke-width="3" fill="#fffdf5">
+      <path d="M55 72V24h40v48M67 72V36h16v36"/>
+      <rect x="219" y="45" width="91" height="32" rx="10" fill="#77afa3"/>
+      <path d="M226 55h76m-76 10h76" stroke="#dff0df"/>
+      <rect x="418" y="32" width="23" height="43" rx="5" fill="#b4cfbb"/><path d="M423 32v-9h22"/>
+      <path d="M589 44q23-16 50 0v32h-50z" fill="#ebc785"/>
+    </g>
+  </svg>}
+  <ol>{cards.map((card) => <li class={'color' in card ? card.color : 'green'}><div class="card-top"><span class="count">{card.n}</span><span class="tag">{card.tag}</span></div><strong>{card.title}</strong><p>{card.text}</p>{decision && <span class="bottom-line" aria-hidden="true"></span>}</li>)}</ol>
+  <p class="bano-caption">{decision ? 'Elige según la necesidad y la tolerancia de tu perro. Este esquema no diagnostica ni fija un calendario de baños.' : 'Comprueba todo antes de traer al perro. Si el acceso o el apoyo no son seguros, elige otra modalidad de aseo.'}</p>
+</section>
+<style>
+  .bano-map { margin:2.5rem 0; padding:1.5rem; border:1px solid #c6d6c6; background:#fffdf5; color:#254f48; border-radius:1.5rem; }
+  .map-header { display:grid; gap:.65rem; margin-bottom:1.4rem; }
+  .map-header>span { font:700 .7rem/1.4 system-ui,sans-serif; letter-spacing:.14em; color:#557567; }
+  .bano-map .map-header>strong { color:#254f48!important; max-width:28rem; font:700 clamp(1.2rem,3vw,1.8rem)/1.2 system-ui,sans-serif; letter-spacing:-.03em; }
+  ol { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; padding:0; margin:0; list-style:none; }
+  li { position:relative; border:1px solid #d3e0d2; background:#f1f6ed; padding:1rem; border-radius:.8rem; overflow:hidden; }
+  .blue { background:#edf3f5; border-color:#c4d9df; }
+  .amber { background:#fcf1dc; border-color:#e2cfa4; }
+  .card-top { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; margin-bottom:1rem; }
+  .count { display:grid; place-items:center; width:2rem; height:2rem; border:1px solid currentColor; border-radius:50%; font:700 .8rem system-ui,sans-serif; }
+  .tag { font:600 .65rem/1.4 system-ui,sans-serif; }
+  .bano-map li>strong { color:#254f48!important; display:block; font-size:1rem; line-height:1.3; }
+  li p { margin:.7rem 0; font-size:.86rem; line-height:1.6; }
+  .bottom-line { display:block; position:absolute; bottom:0; left:0; right:0; height:4px; background:#6e9980; }
+  .blue .bottom-line { background:#6a98a6; } .amber .bottom-line { background:#b68a47; }
+  .bano-caption { margin-top:1rem; font-size:.8rem; line-height:1.6; color:#526b5c; }
+  .route-drawing { display:block; width:100%; height:auto; margin:0 0 1rem; }
+  .route ol { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  @media(max-width:680px) { ol,.route ol { grid-template-columns:1fr 1fr; } .bano-map { padding:1rem; } }
+  @media(max-width:440px) { ol,.route ol { grid-template-columns:1fr; } .card-top { margin-bottom:.6rem; } li p { margin-bottom:.2rem; } }
+  @media print { .bano-map { break-inside:avoid; } }
+</style>

@@ -277,10 +277,10 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [x] *Agresividad de aparición tardía en perros mayores: cuándo es dolor y cuándo es deterioro cognitivo* (Publicado — 2026-08-15) **[Nuevo - Tema añadido 2026-08-14, no previsto en el catálogo original]**
 
 ### Pilar 6: Higiene y Hogar para Perros Senior (11 artículos totales propuestos)
-*Estado del código: 3 implementados (nuevo artículo de callosidades e higromas sin despliegue), 8 en briefing.*
+*Estado del código: 4 implementados (incluye baño y movilidad reducida), 7 en briefing. El estado de despliegue se comprueba en el CI.*
 - [x] *Incontinencia urinaria en perros mayores: causas y soluciones* (Publicado)
 - [x] *Incontinencia fecal en perros senior: manejo de higiene, alimentación y consejos de limpieza* (Publicado)
-- [~] *Cómo bañar y asear a un perro viejo con problemas de movilidad sin causarle dolor* (En Briefing — ver `briefings/briefing-banar-perro-viejo-movilidad-reducida.md`)
+- [x] *Cómo bañar y asear a un perro viejo con movilidad reducida* (Redactado y validado localmente — 2026-10-15; publicación remota pendiente. Brief: `briefings/briefing-banar-perro-viejo-movilidad-reducida.md`)
 - [~] *Verrugas, bultos y quistes cutáneos en la vejez: guía visual de dermatología geriátrica* (En Briefing — ver `briefings/briefing-verrugas-bultos-quistes-perros-mayores.md`)
 - [~] *Cuidado de la piel y el pelo del perro senior: sequedad, descamación y callos de apoyo* (En Briefing — ver `briefings/briefing-cuidado-piel-pelo-perro-senior.md`)
 - [~] *Limpieza segura de ojos y oídos en perros ancianos con secreciones frecuentes* (En Briefing — ver `briefings/briefing-limpieza-ojos-oidos-perros-ancianos.md`)
