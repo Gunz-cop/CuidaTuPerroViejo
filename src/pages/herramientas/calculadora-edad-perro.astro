@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import HomeAgeCalculator from '../../components/HomeAgeCalculator.astro';
+import DogAgeTool from '../../components/tools/DogAgeTool.astro';
 import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
 import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
 
@@ -84,23 +84,25 @@ const stages = [
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
 
   <main id="main-content">
-    <header class="mx-auto max-w-4xl px-5 pb-10 pt-8 sm:px-6 sm:pt-12">
-      <nav class="mb-5 flex flex-wrap items-center gap-1.5 text-xs text-brand-muted" aria-label="breadcrumb">
-        <a href="/" class="hover:text-brand-primary">Inicio</a>
-        <span aria-hidden="true">/</span>
-        <a href="/herramientas" class="hover:text-brand-primary">Herramientas</a>
-        <span aria-hidden="true">/</span>
-        <span class="font-medium text-brand-text">Calculadora de edad</span>
-      </nav>
-      <h1 class="text-3xl font-extrabold leading-tight tracking-[-0.035em] text-brand-text sm:text-5xl">
-        ¿Cuántos años humanos tiene tu perro?
-      </h1>
-      <p class="mt-5 max-w-2xl text-base leading-7 text-brand-muted sm:text-lg">
-        Elige su tamaño y su edad para obtener una equivalencia orientativa y saber si ya ha entrado en la etapa senior. El resultado aparece al instante y no guardamos ningún dato.
-      </p>
+    <header class="age-hero">
+      <picture class="age-hero__media">
+        <source media="(min-width: 64rem)" srcset="/images/herramientas/calculadora-edad-perro-hero-400.webp 400w, /images/herramientas/calculadora-edad-perro-hero.webp 1200w" sizes="100vw" />
+        <img src="/images/herramientas/calculadora-edad-perro-hero-movil.webp" alt="El mismo perro mestizo en cuatro etapas de su vida: cachorro, adulto, maduro y senior descansando en su cama" width="900" height="412" loading="eager" fetchpriority="high" decoding="async" />
+      </picture>
+      <div class="age-hero__copy">
+        <nav class="mb-4 flex flex-wrap items-center gap-1.5 text-xs text-brand-muted" aria-label="breadcrumb">
+          <a href="/" class="hover:text-brand-primary">Inicio</a>
+          <span aria-hidden="true">/</span>
+          <a href="/herramientas" class="hover:text-brand-primary">Herramientas</a>
+          <span aria-hidden="true">/</span>
+          <span class="font-medium text-brand-text">Calculadora de edad</span>
+        </nav>
+        <h1>¿Cuántos años humanos tiene tu perro?</h1>
+        <p>Elige su tamaño y su edad: verás su equivalencia, en qué etapa está y cuánto le falta para ser senior. Sin registro.</p>
+      </div>
     </header>
 
-    <HomeAgeCalculator />
+    <DogAgeTool />
 
     <article class="content-body prose dark:prose-invert mx-auto max-w-3xl px-5 py-14 sm:px-6">
       <h2 id="mito">Por qué la regla de "multiplicar por siete" no funciona</h2>
@@ -156,3 +158,22 @@ const stages = [
   </main>
   <AdSlotLoader />
 </BaseLayout>
+
+<style>
+  .age-hero { position: relative; overflow: hidden; background: #f7efe1; }
+  :global(.dark) .age-hero { background: var(--color-brand-card); }
+  .age-hero__media img { display: block; width: 100%; height: auto; }
+  .age-hero__copy { width: min(100% - 2rem, 68rem); margin: 0 auto; position: relative; padding-block: 1rem .5rem; }
+  .age-hero h1 { margin: 0; font-family: var(--font-display); font-size: clamp(1.9rem, 6.5vw, 3.6rem); font-weight: 800; line-height: 1.04; letter-spacing: -.04em; color: var(--color-brand-text); }
+  .age-hero__copy > p { margin: .75rem 0 0; max-width: 32rem; font-size: clamp(.95rem, 1.6vw, 1.1rem); line-height: 1.6; color: var(--color-brand-muted); }
+  .age-hero__copy nav { display: none; }
+  @media (min-width: 64rem) {
+    .age-hero { min-height: clamp(22rem, 42vw, 34rem); display: flex; align-items: center; }
+    .age-hero__media { position: absolute; inset: 0 0 0 auto; width: 72%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%); mask-image: linear-gradient(90deg, transparent, #000 22%); }
+    .age-hero__media img { height: 100%; object-fit: cover; object-position: 78% center; }
+    .age-hero__copy { margin-top: 0; padding-block: 3rem; }
+    .age-hero__copy > * { max-width: 26rem; }
+    .age-hero__copy nav { display: flex; }
+    .age-hero h1, .age-hero__copy > p { color: #2f3b2c; }
+  }
+</style>

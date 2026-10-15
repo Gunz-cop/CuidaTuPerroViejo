@@ -1,0 +1,421 @@
+---
+import { SIZE_PROFILES } from '../../lib/dog-age';
+
+const sizes = Object.entries(SIZE_PROFILES) as [string, (typeof SIZE_PROFILES)[keyof typeof SIZE_PROFILES]][];
+const stages = [
+  { id: 'puppy', label: 'Cachorro' },
+  { id: 'adult', label: 'Adulto' },
+  { id: 'mature', label: 'Maduro' },
+  { id: 'senior', label: 'Senior' },
+  { id: 'geriatric', label: 'Avanzado' },
+];
+---
+
+<section id="calculadora" class="dat" aria-labelledby="dat-title" data-stage="senior">
+  <div class="dat__grid">
+    <!-- Formulario -->
+    <form class="dat__card dat__form" id="dat-form" onsubmit="return false">
+      <p class="dat__kicker">Calculadora gratuita</p>
+      <h2 id="dat-title" class="dat__title">Calcula su edad</h2>
+
+
+      <fieldset class="dat__field">
+        <legend class="dat__label">Tamaño de adulto</legend>
+        <div class="dat__sizes">
+          {sizes.map(([id, p]) => (
+            <label class="dat__chip">
+              <input type="radio" name="size" value={id} checked={id === 'medium'} />
+              <span><strong>{p.label}</strong><small>{p.weight}</small></span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <div class="dat__field">
+        <div class="dat__label-row">
+          <label class="dat__label" for="dat-years">Edad</label>
+          <output id="dat-age-text" class="dat__age-text" for="dat-years dat-months">8 años</output>
+        </div>
+        <input id="dat-years" class="dat__range" type="range" min="0" max="20" step="1" value="8" aria-describedby="dat-age-text" />
+        <div class="dat__months" id="dat-months-wrap">
+          <label for="dat-months" class="dat__label dat__label--small">y meses</label>
+          <select id="dat-months" class="dat__select">
+            {Array.from({ length: 12 }, (_, i) => <option value={i}>{i} {i === 1 ? 'mes' : 'meses'}</option>)}
+          </select>
+        </div>
+      </div>
+      <label class="dat__field dat__field--last">
+        <span class="dat__label">Su nombre <span class="dat__optional">(opcional)</span></span>
+        <input id="dat-name" class="dat__input" type="text" maxlength="20" autocomplete="off" placeholder="Luna" />
+      </label>
+    </form>
+
+    <!-- Resultado -->
+    <div class="dat__card dat__result" id="dat-result" role="status" aria-live="polite" aria-atomic="true">
+      <div class="dat__stage-art" aria-hidden="true">
+        <svg class="dat__dog" viewBox="0 0 200 180">
+          <ellipse class="dat__bed" cx="100" cy="166" rx="88" ry="14" />
+          <g class="dat__head">
+            <path class="dat__ear dat__ear--l" d="M52 52 C 26 56, 22 104, 40 122 C 52 108, 60 84, 66 64 Z" />
+            <path class="dat__ear dat__ear--r" d="M148 52 C 174 56, 178 104, 160 122 C 148 108, 140 84, 134 64 Z" />
+            <ellipse class="dat__face" cx="100" cy="88" rx="56" ry="58" />
+            <ellipse class="dat__blaze" cx="100" cy="70" rx="12" ry="30" />
+            <ellipse class="dat__muzzle" cx="100" cy="118" rx="34" ry="26" />
+            <ellipse class="dat__gray dat__gray--muzzle" cx="100" cy="120" rx="34" ry="24" />
+            <ellipse class="dat__gray dat__gray--brow" cx="78" cy="68" rx="9" ry="5" />
+            <ellipse class="dat__gray dat__gray--brow" cx="122" cy="68" rx="9" ry="5" />
+            <g class="dat__eyes">
+              <ellipse cx="78" cy="84" rx="7" ry="8" />
+              <ellipse cx="122" cy="84" rx="7" ry="8" />
+              <circle class="dat__shine" cx="80" cy="81" r="2.2" />
+              <circle class="dat__shine" cx="124" cy="81" r="2.2" />
+            </g>
+            <path class="dat__lid" d="M70 80 Q78 74 86 80 M114 80 Q122 74 130 80" />
+            <ellipse class="dat__nose" cx="100" cy="106" rx="11" ry="8" />
+            <path class="dat__mouth" d="M100 114 v6 M88 122 q12 8 24 0" />
+            <path class="dat__tongue" d="M94 124 q6 14 12 0 Z" />
+          </g>
+        </svg>
+        <span class="dat__zzz">z<span>z</span><span>z</span></span>
+      </div>
+
+      <p class="dat__result-label"><span id="dat-name-out">Tu perro</span> tiene el equivalente a</p>
+      <p class="dat__big"><span class="dat__num" id="dat-num" style="--num: 54"></span> <span class="dat__unit">años humanos</span></p>
+      <p class="sr-only" id="dat-sr"></p>
+
+      <div class="dat__life" aria-hidden="true">
+        <div class="dat__track"><span class="dat__fill"></span><span class="dat__marker"></span></div>
+        <ol class="dat__stages">
+          {stages.map((s) => <li data-s={s.id}>{s.label}</li>)}
+        </ol>
+      </div>
+
+      <div class="dat__facts">
+        <div class="dat__fact"><span>Etapa</span><strong id="dat-stage">Senior</strong></div>
+        <div class="dat__fact"><span>Vida esperada vivida</span><strong id="dat-pct">62 %</strong></div>
+        <div class="dat__fact"><span id="dat-senior-label">Etapa senior</span><strong id="dat-senior">desde los 7</strong></div>
+      </div>
+
+      <p class="dat__advice" id="dat-advice"></p>
+
+      <div class="dat__actions">
+        <button type="button" class="dat__btn dat__btn--primary" id="dat-share">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13" /></svg>
+          Compartir su tarjeta
+        </button>
+        <a class="dat__btn dat__btn--quiet" id="dat-guide" href="/salud-perros-mayores">Ver cuidados para su etapa →</a>
+      </div>
+      <p class="dat__note">Equivalencia orientativa por tamaño. No sustituye una valoración veterinaria.</p>
+    </div>
+  </div>
+
+  <!-- Barra fija en móvil mientras se ajusta el formulario -->
+  <a href="#dat-result" class="dat__sticky" id="dat-sticky" aria-hidden="true" tabindex="-1">
+    <span><strong id="dat-sticky-num">54</strong> años humanos · <span id="dat-sticky-stage">Senior</span></span>
+    <span aria-hidden="true">↓</span>
+  </a>
+</section>
+
+<style>
+  @property --num { syntax: '<integer>'; inherits: true; initial-value: 0; }
+  @property --pos { syntax: '<percentage>'; inherits: true; initial-value: 0%; }
+  @property --gray { syntax: '<number>'; inherits: true; initial-value: 0; }
+
+  .dat {
+    --pos: 60%;
+    --gray: .6;
+    --ear: 0deg;
+    --stage-color: var(--color-brand-accent);
+    padding-block: 1rem 2rem;
+    transition: --pos .8s cubic-bezier(.22,1,.36,1), --gray .8s ease;
+  }
+  .dat[data-stage='puppy'] { --stage-color: #7a9a5b; }
+  .dat[data-stage='adult'] { --stage-color: var(--color-brand-primary); }
+  .dat[data-stage='mature'] { --stage-color: #b08a4a; }
+  .dat[data-stage='senior'], .dat[data-stage='geriatric'] { --stage-color: var(--color-brand-accent); }
+
+  .dat__grid { display: grid; gap: 1rem; width: min(100% - 2rem, 68rem); margin-inline: auto; }
+  @media (min-width: 56rem) {
+    .dat__grid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 1.5rem; align-items: start; }
+  }
+
+  .dat__card {
+    border: 1px solid var(--color-brand-border);
+    border-radius: 1.5rem;
+    background: var(--color-brand-card);
+    padding: clamp(1.1rem, 3vw, 1.75rem);
+    box-shadow: 0 24px 60px -40px rgb(27 28 25 / .5);
+  }
+  .dat__kicker { color: var(--color-brand-primary); font-size: .7rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+  .dat__title { margin: .2rem 0 1rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--color-brand-text); }
+  .dat__field--last { margin-bottom: 0 !important; }
+  .dat__field { margin: 0 0 1.1rem; border: 0; padding: 0; min-width: 0; }
+  .dat__label { display: block; margin-bottom: .5rem; font-size: .85rem; font-weight: 700; color: var(--color-brand-text); }
+  .dat__label--small { margin: 0; font-weight: 600; color: var(--color-brand-muted); }
+  .dat__optional { font-weight: 500; color: var(--color-brand-muted); }
+  .dat__label-row { display: flex; align-items: baseline; justify-content: space-between; }
+  .dat__age-text { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; color: var(--color-brand-primary); }
+
+  .dat__input, .dat__select {
+    width: 100%; min-height: 3rem; border: 1px solid var(--color-brand-border); border-radius: .9rem;
+    background: var(--color-brand-bg); padding: 0 .9rem; font-size: 1rem; color: var(--color-brand-text);
+  }
+  .dat__input:focus-visible, .dat__select:focus-visible { outline: 3px solid color-mix(in srgb, var(--color-brand-primary) 35%, transparent); border-color: var(--color-brand-primary); }
+
+  .dat__sizes { display: grid; grid-template-columns: repeat(2, 1fr); gap: .5rem; }
+  @media (min-width: 30rem) { .dat__sizes { grid-template-columns: repeat(4, 1fr); } }
+  @media (min-width: 56rem) { .dat__sizes { grid-template-columns: repeat(2, 1fr); } }
+  .dat__chip { cursor: pointer; }
+  .dat__chip input { position: absolute; opacity: 0; pointer-events: none; }
+  .dat__chip span {
+    display: flex; flex-direction: column; justify-content: center; min-height: 3.5rem; border: 1.5px solid var(--color-brand-border);
+    border-radius: 1rem; padding: .5rem; text-align: center; background: var(--color-brand-bg);
+    transition: border-color .2s, background-color .2s, transform .2s;
+  }
+  .dat__chip strong { font-size: .88rem; color: var(--color-brand-text); }
+  .dat__chip small { font-size: .7rem; color: var(--color-brand-muted); }
+  .dat__chip:hover span { border-color: color-mix(in srgb, var(--color-brand-primary) 50%, transparent); }
+  .dat__chip input:checked + span { border-color: var(--color-brand-primary); background: color-mix(in srgb, var(--color-brand-primary) 10%, var(--color-brand-bg)); transform: scale(1.02); }
+  .dat__chip input:focus-visible + span { outline: 3px solid color-mix(in srgb, var(--color-brand-primary) 35%, transparent); }
+
+  .dat__range { width: 100%; height: 2.75rem; accent-color: var(--color-brand-primary); cursor: pointer; }
+  .dat__months { display: none; align-items: center; gap: .75rem; margin-top: .25rem; }
+  .dat__months.is-on { display: flex; }
+  .dat__months .dat__select { width: auto; min-height: 2.5rem; }
+
+  /* Resultado */
+  .dat__result { position: relative; overflow: hidden; text-align: center; }
+  .dat__result::before {
+    content: ''; position: absolute; inset: 0 0 auto; height: 14rem; z-index: 0;
+    background: radial-gradient(closest-side, color-mix(in srgb, var(--stage-color) 20%, transparent), transparent);
+    transition: background .6s;
+  }
+  .dat__result > * { position: relative; z-index: 1; }
+
+  .dat__stage-art { position: relative; width: min(11rem, 48vw); margin: 0 auto .25rem; }
+  .dat__dog { display: block; width: 100%; height: auto; overflow: visible; }
+  .dat__head { transform-origin: 100px 150px; animation: dat-breathe 3.2s ease-in-out infinite; transition: transform .6s; }
+  .dat[data-stage='puppy'] .dat__head { transform: scale(.86) translateY(10px); animation-duration: 1.4s; }
+  .dat[data-stage='geriatric'] .dat__head { transform: rotate(-6deg) translateY(10px); animation-duration: 4.5s; }
+  .dat__face, .dat__ear { fill: #c8915c; }
+  .dat__ear { fill: #8e5d37; transition: transform .6s; }
+  .dat__ear--l { transform-origin: 60px 56px; transform: rotate(calc(var(--gray) * 10deg)); }
+  .dat__ear--r { transform-origin: 140px 56px; transform: rotate(calc(var(--gray) * -10deg)); }
+  .dat__blaze, .dat__muzzle { fill: #f3e2c9; }
+  .dat__gray { fill: #f7f4ef; opacity: var(--gray); }
+  .dat__gray--muzzle { opacity: calc(var(--gray) * .85); }
+  .dat__eyes { fill: #2b1d14; }
+  .dat__shine { fill: #fff; }
+  .dat__lid { fill: none; stroke: #6b4a2e; stroke-width: 3; stroke-linecap: round; opacity: 0; transition: opacity .4s; }
+  .dat[data-stage='geriatric'] .dat__lid { opacity: 1; }
+  .dat[data-stage='geriatric'] .dat__eyes { transform: scaleY(.55); transform-origin: 100px 84px; }
+  .dat__eyes { transition: transform .4s; animation: dat-blink 5s infinite; transform-origin: 100px 84px; }
+  .dat__nose { fill: #2b1d14; }
+  .dat__mouth { fill: none; stroke: #2b1d14; stroke-width: 2.5; stroke-linecap: round; }
+  .dat__tongue { fill: #e98a8a; transform-origin: 100px 124px; transition: transform .4s; }
+  .dat[data-stage='mature'] .dat__tongue, .dat[data-stage='senior'] .dat__tongue, .dat[data-stage='geriatric'] .dat__tongue { transform: scaleY(0); }
+  .dat__bed { fill: color-mix(in srgb, var(--stage-color) 30%, transparent); transform-origin: 100px 166px; transform: scaleX(.3); opacity: 0; transition: transform .6s, opacity .6s; }
+  .dat[data-stage='senior'] .dat__bed, .dat[data-stage='geriatric'] .dat__bed { transform: scaleX(1); opacity: 1; }
+  .dat__zzz { position: absolute; top: .25rem; right: 0; font-family: var(--font-display); font-weight: 800; color: var(--color-brand-muted); opacity: 0; }
+  .dat__zzz span { display: inline-block; font-size: .8em; }
+  .dat[data-stage='geriatric'] .dat__zzz { opacity: 1; animation: dat-zzz 2.6s ease-in-out infinite; }
+
+  .dat__result-label { margin: 0; font-size: .9rem; color: var(--color-brand-muted); }
+  .dat__big { margin: .1rem 0 .9rem; color: var(--color-brand-text); }
+  .dat__num {
+    counter-reset: n var(--num);
+    font-family: var(--font-display); font-size: clamp(3.4rem, 14vw, 4.75rem); font-weight: 900; line-height: 1; letter-spacing: -.04em;
+    color: var(--stage-color);
+    transition: --num 1s cubic-bezier(.22,1,.36,1), color .6s;
+  }
+  .dat__num::after { content: counter(n); }
+  .dat__unit { display: block; font-weight: 700; font-size: 1rem; }
+
+  .dat__life { margin: 0 auto 1rem; max-width: 30rem; }
+  .dat__track { position: relative; height: .6rem; border-radius: 99px; background: linear-gradient(90deg, #a9c18e, #d8c18f, #e2a774, #c9775a); }
+  .dat__fill { position: absolute; inset: 0 auto 0 0; width: var(--pos); border-radius: inherit; box-shadow: inset 0 0 0 99px rgb(255 255 255 / 0); }
+  .dat__marker {
+    position: absolute; top: 50%; left: clamp(.7rem, var(--pos), calc(100% - .7rem)); width: 1.4rem; height: 1.4rem; translate: -50% -50%;
+    border-radius: 50%; background: var(--color-brand-card); border: 4px solid var(--stage-color);
+    box-shadow: 0 4px 12px rgb(0 0 0 / .2);
+  }
+  .dat__stages { display: grid; grid-template-columns: repeat(5, 1fr); margin: .5rem 0 0; padding: 0; list-style: none; font-size: .64rem; color: var(--color-brand-muted); }
+  .dat__stages li { transition: color .3s, font-weight .3s; }
+  .dat[data-stage='puppy'] [data-s='puppy'], .dat[data-stage='adult'] [data-s='adult'], .dat[data-stage='mature'] [data-s='mature'],
+  .dat[data-stage='senior'] [data-s='senior'], .dat[data-stage='geriatric'] [data-s='geriatric'] { color: var(--stage-color); font-weight: 800; }
+
+  .dat__facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-bottom: .9rem; }
+  .dat__fact { border-radius: 1rem; padding: .65rem .4rem; background: var(--color-brand-bg); }
+  .dat__fact span { display: block; font-size: .65rem; color: var(--color-brand-muted); line-height: 1.2; }
+  .dat__fact strong { display: block; margin-top: .2rem; font-size: .92rem; color: var(--color-brand-text); }
+  .dat__advice { margin: 0 0 1rem; font-size: .88rem; line-height: 1.55; color: var(--color-brand-text); }
+
+  .dat__actions { display: grid; gap: .5rem; }
+  @media (min-width: 30rem) { .dat__actions { grid-template-columns: 1fr 1fr; } }
+  .dat__btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3rem; border-radius: 99px;
+    padding: .6rem 1rem; font-size: .9rem; font-weight: 800; text-decoration: none; cursor: pointer; transition: transform .2s, background-color .2s;
+  }
+  .dat__btn:hover { transform: translateY(-2px); }
+  .dat__btn svg { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .dat__btn--primary { border: 0; background: var(--color-brand-primary); color: #fff; }
+  .dat__btn--quiet { border: 1px solid var(--color-brand-border); background: var(--color-brand-bg); color: var(--color-brand-text); }
+  .dat__note { margin: .9rem 0 0; font-size: .7rem; color: var(--color-brand-muted); }
+
+  /* Entrada del resultado cada vez que cambia */
+  .dat__result.is-bump .dat__big, .dat__result.is-bump .dat__facts { animation: dat-pop .5s cubic-bezier(.22,1,.36,1); }
+
+  /* Barra fija móvil */
+  .dat__sticky {
+    position: fixed; inset: auto 5.25rem calc(.9rem + env(safe-area-inset-bottom)) .75rem; z-index: 40;
+    display: flex; justify-content: space-between; gap: .75rem; align-items: center;
+    border-radius: 99px; padding: .8rem 1.1rem; background: var(--color-brand-primary); color: #fff; font-size: .85rem; text-decoration: none;
+    box-shadow: 0 12px 30px rgb(0 0 0 / .25);
+    translate: 0 150%; transition: translate .35s cubic-bezier(.22,1,.36,1);
+  }
+  .dat__sticky.is-on { translate: 0 0; }
+  @media (min-width: 56rem) { .dat__sticky { display: none; } }
+
+  @keyframes dat-breathe { 50% { translate: 0 -2px; } }
+  @keyframes dat-blink { 0%, 92%, 100% { scale: 1 1; } 95% { scale: 1 .1; } }
+  @keyframes dat-zzz { 0% { translate: 0 6px; opacity: 0; } 40% { opacity: 1; } 100% { translate: 8px -10px; opacity: 0; } }
+  @keyframes dat-pop { from { opacity: .3; scale: .96; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dat, .dat *, .dat__num { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<script>
+  import { dogAge, STAGE_LABELS, type DogSize } from '../../lib/dog-age';
+
+  const root = document.querySelector<HTMLElement>('.dat');
+  const $ = <T,>(id: string) => document.getElementById(id) as T | null;
+  const form = $<HTMLFormElement>('dat-form');
+  const nameInput = $<HTMLInputElement>('dat-name');
+  const years = $<HTMLInputElement>('dat-years');
+  const months = $<HTMLSelectElement>('dat-months');
+  const monthsWrap = $<HTMLElement>('dat-months-wrap');
+  const result = $<HTMLElement>('dat-result');
+  const sticky = $<HTMLElement>('dat-sticky');
+
+  const advice: Record<string, string> = {
+    puppy: 'Etapa de crecimiento rápido: socialización, vacunas y una base de hábitos que le servirán toda la vida.',
+    adult: 'Plena forma. Es el mejor momento para cuidar su peso y su boca: es la mejor inversión para su vejez.',
+    mature: 'Se acerca la etapa senior. Una revisión completa ahora te da valores de referencia para comparar después.',
+    senior: 'Ya es senior. Las revisiones cada seis meses y los pequeños ajustes en casa marcan la diferencia.',
+    geriatric: 'Senior avanzado: el confort manda. Vigila el dolor, el apetito y la movilidad, y mide su calidad de vida.',
+  };
+  const guides: Record<string, [string, string]> = {
+    puppy: ['/salud-perros-mayores', 'Ver cómo prepararlo para el futuro →'],
+    adult: ['/alimentacion-perros-senior', 'Ver alimentación y peso →'],
+    mature: ['/salud-perros-mayores', 'Ver plan preventivo senior →'],
+    senior: ['/movilidad-dolor-perros-mayores', 'Ver cuidados de movilidad →'],
+    geriatric: ['/herramientas/calculadora-calidad-vida-perros', 'Medir su calidad de vida →'],
+  };
+
+  let state = dogAge('medium', 8);
+  let dogName = '';
+
+  function render(bump = true) {
+    if (!root || !years || !months) return;
+    const size = (form?.querySelector<HTMLInputElement>('input[name="size"]:checked')?.value ?? 'medium') as DogSize;
+    const y = Number(years.value);
+    const m = y < 2 ? Number(months.value) : 0;
+    monthsWrap?.classList.toggle('is-on', y < 2);
+    state = dogAge(size, y, m);
+    dogName = (nameInput?.value ?? '').trim();
+
+    const ageText = y === 0 ? `${m} ${m === 1 ? 'mes' : 'meses'}` : `${y} ${y === 1 ? 'año' : 'años'}${m ? ` y ${m} m` : ''}`;
+    const stageLabel = STAGE_LABELS[state.stage];
+    const pct = Math.min(Math.round(state.lifeFraction * 100), 100);
+    const set = (id: string, text: string) => { const el = $<HTMLElement>(id); if (el) el.textContent = text; };
+
+    const apply = () => {
+      root.dataset.stage = state.stage;
+      root.style.setProperty('--pos', `${Math.min(state.lifeFraction, 1) * 100}%`);
+      root.style.setProperty('--gray', String(Math.max(0, Math.min(1, (state.dogYears - state.profile.seniorFrom + 2) / (state.profile.lifeExpectancy - state.profile.seniorFrom + 2)))));
+      $<HTMLElement>('dat-num')?.style.setProperty('--num', String(state.humanYears));
+      set('dat-age-text', ageText);
+      set('dat-name-out', dogName || 'Tu perro');
+      set('dat-stage', stageLabel);
+      set('dat-pct', `${pct} %`);
+      set('dat-senior-label', state.yearsToSenior > 0 ? 'Será senior en' : 'Senior desde');
+      set('dat-senior', state.yearsToSenior > 0 ? `${Math.ceil(state.yearsToSenior)} ${Math.ceil(state.yearsToSenior) === 1 ? 'año' : 'años'}` : `los ${state.profile.seniorFrom} años`);
+      set('dat-advice', advice[state.stage]);
+      set('dat-sr', `${dogName || 'Tu perro'} tiene el equivalente a ${state.humanYears} años humanos. Etapa: ${stageLabel}.`);
+      set('dat-sticky-num', String(state.humanYears));
+      set('dat-sticky-stage', stageLabel);
+      const guide = $<HTMLAnchorElement>('dat-guide');
+      if (guide) { guide.href = guides[state.stage][0]; guide.textContent = guides[state.stage][1]; }
+      if (bump && result) { result.classList.remove('is-bump'); void result.offsetWidth; result.classList.add('is-bump'); }
+    };
+    apply();
+  }
+
+  form?.addEventListener('input', () => render());
+  render(false);
+
+  // Barra fija en móvil: solo cuando el resultado queda por debajo de la pantalla.
+  if (result && sticky) {
+    let touched = false;
+    const update = () => sticky.classList.toggle('is-on', touched && result.getBoundingClientRect().top > window.innerHeight - 60);
+    form?.addEventListener('input', () => { touched = true; update(); });
+    window.addEventListener('scroll', update, { passive: true });
+  }
+
+  // Tarjeta para compartir (canvas → PNG).
+  async function buildCard(): Promise<Blob | null> {
+    const c = document.createElement('canvas');
+    c.width = 1080; c.height = 1350;
+    const ctx = c.getContext('2d');
+    if (!ctx) return null;
+    const css = getComputedStyle(root!);
+    const accent = css.getPropertyValue('--stage-color').trim() || '#b9714f';
+    ctx.fillStyle = '#f7f1e6'; ctx.fillRect(0, 0, 1080, 1350);
+    try {
+      const img = new Image();
+      img.src = '/images/herramientas/calculadora-edad-perro-hero-movil.webp';
+      await img.decode();
+      const h = 1080 * img.height / img.width;
+      ctx.drawImage(img, 0, 0, 1080, h);
+      const g = ctx.createLinearGradient(0, h - 200, 0, h);
+      g.addColorStop(0, 'rgba(247,241,230,0)'); g.addColorStop(1, '#f7f1e6');
+      ctx.fillStyle = g; ctx.fillRect(0, h - 200, 1080, 200);
+    } catch { /* la tarjeta funciona sin imagen */ }
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#4a4a42';
+    ctx.font = '600 46px "Plus Jakarta Sans", system-ui, sans-serif';
+    ctx.fillText(`${dogName || 'Mi perro'} tiene ${years!.value === '0' ? 'meses' : `${years!.value} ${years!.value === '1' ? 'año' : 'años'}`}, que equivalen a`, 540, 640);
+    ctx.fillStyle = accent;
+    ctx.font = '900 260px Outfit, system-ui, sans-serif';
+    ctx.fillText(String(state.humanYears), 540, 900);
+    ctx.fillStyle = '#2f3b2c';
+    ctx.font = '800 64px Outfit, system-ui, sans-serif';
+    ctx.fillText('años humanos', 540, 990);
+    ctx.fillStyle = accent;
+    const label = `Etapa: ${STAGE_LABELS[state.stage]}`;
+    ctx.font = '800 44px "Plus Jakarta Sans", system-ui, sans-serif';
+    const w = ctx.measureText(label).width + 80;
+    ctx.beginPath(); ctx.roundRect(540 - w / 2, 1040, w, 84, 42); ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.fillText(label, 540, 1097);
+    ctx.fillStyle = '#6f6f63';
+    ctx.font = '600 38px "Plus Jakarta Sans", system-ui, sans-serif';
+    ctx.fillText('Calcula la de tu perro en cuidatuperroviejo.com', 540, 1260);
+    return new Promise((res) => c.toBlob(res, 'image/png'));
+  }
+
+  $<HTMLElement>('dat-share')?.addEventListener('click', async () => {
+    const blob = await buildCard();
+    if (!blob) return;
+    const file = new File([blob], 'edad-de-mi-perro.png', { type: 'image/png' });
+    const text = `${dogName || 'Mi perro'} tiene el equivalente a ${state.humanYears} años humanos 🐾`;
+    const url = 'https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro';
+    if (navigator.canShare?.({ files: [file] })) {
+      try { await navigator.share({ files: [file], text: `${text} ${url}` }); return; } catch { return; }
+    }
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  });
+</script>
