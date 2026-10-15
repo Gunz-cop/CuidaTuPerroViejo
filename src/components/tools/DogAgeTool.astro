@@ -80,6 +80,7 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
     <div class="dat__card dat__result" id="dat-result" role="status" aria-live="polite" aria-atomic="true">
       <div class="dat__stage-art" aria-hidden="true">
         <Fragment set:html={dogSvg} />
+        <span class="dat__zzz">z<span>z</span><span>z</span></span>
       </div>
 
       <p class="dat__result-label"><span id="dat-name-out">Tu perro</span> tiene el equivalente a</p>
@@ -235,6 +236,11 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   .dat__bed { fill: color-mix(in srgb, var(--stage-color) 30%, transparent); transform-origin: 100px 166px; transform: scaleX(.3); opacity: 0; transition: transform .6s, opacity .6s; }
   .dat[data-stage='senior'] .dat__bed, .dat[data-stage='longevous'] .dat__bed { transform: scaleX(1); opacity: 1; }
 
+  .dat__zzz { position: absolute; top: .25rem; right: 0; font-family: var(--font-display); font-weight: 800; color: var(--color-brand-muted); opacity: 0; }
+  .dat__zzz span { display: inline-block; font-size: .8em; }
+  .dat[data-stage='senior'] .dat__zzz, .dat[data-stage='longevous'] .dat__zzz { opacity: 1; animation: dat-zzz 3.2s ease-in-out infinite; }
+  .dat[data-stage='longevous'] .dat__zzz { animation-duration: 2.6s; }
+  @keyframes dat-zzz { 0% { translate: 0 6px; opacity: 0; } 40% { opacity: 1; } 100% { translate: 8px -10px; opacity: 0; } }
   .dat__result-label { margin: 0; font-size: .9rem; color: var(--color-brand-muted); }
   .dat__big { margin: .1rem 0 .9rem; color: var(--color-brand-text); }
   .dat__num {
@@ -307,8 +313,8 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
     puppy: 'Etapa de crecimiento rápido: socialización, vacunas y una base de hábitos que le servirán toda la vida.',
     young: 'Plena forma. Es el mejor momento para cuidar su peso y su boca: es la mejor inversión para su vejez.',
     mature: 'Adulto maduro. Una revisión completa ahora te da valores de referencia para comparar cuando llegue a senior.',
-    senior: 'Ya es senior. Revisiones más frecuentes y pequeños ajustes en casa ayudan a que disfrute esta etapa con salud.',
-    longevous: '¡Un perro longevo! Ya superó la edad media de su tamaño, y eso habla muy bien de sus cuidados. Ahora el foco está en su confort y en disfrutar cada día juntos.',
+    senior: 'Ya es senior. Es normal que duerma más y más profundo; consulta si le cuesta mucho despertar o el cambio es brusco. Revisiones más frecuentes y pequeños ajustes en casa ayudan a que disfrute esta etapa.',
+    longevous: '¡Un perro longevo! Ya superó la edad media de su tamaño, y eso habla muy bien de sus cuidados. Dormir mucho es parte de esta etapa: una cama cómoda y rutinas tranquilas le ayudan a descansar.',
   };
   const guides: Record<string, [string, string]> = {
     puppy: ['/salud-perros-mayores', 'Ver cómo prepararlo para el futuro →'],
