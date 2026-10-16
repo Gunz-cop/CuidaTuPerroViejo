@@ -1,0 +1,232 @@
+---
+interface Props { variant: 'decision' | 'secuencia' | 'audicion'; }
+const { variant } = Astro.props;
+const uid = `ojos-oidos-${variant}`;
+const earSource = 'https://www.vet.cornell.edu/departments-centers-and-institutes/riney-canine-health-center/canine-health-topics/how-clean-your-dogs-ears';
+const eyeSource = 'https://www.vet.cornell.edu/departments-centers-and-institutes/riney-canine-health-center/canine-health-topics/keratoconjunctivitis-sicca-kcs-dogs';
+const steps = [
+  { title: 'Confirma y prepara', tag: 'Antes de acercarte', text: 'Solo si la limpieza está indicada y la tolera. Comprueba producto, oído y pauta; deja el material al alcance.', cue: 'Producto y pauta comprobados' },
+  { title: 'Aplica según la pauta', tag: 'Sin introducir la boquilla', text: 'Sigue la indicación del veterinario y del producto. No encajes la boquilla, selles la entrada ni fuerces presión.', cue: 'La cantidad no se improvisa' },
+  { title: 'Masaje suave, si está indicado', tag: 'En la base de la oreja', text: 'Respeta la demostración profesional. Si aparece dolor o deja de tolerarlo, detente; no sujetes con más fuerza para terminar.', cue: 'El dolor cambia la decisión: parar' },
+  { title: 'Permite sacudir y retira el exceso', tag: 'Solo lo exterior accesible', text: 'Deja que sacuda la cabeza y retira suavemente los restos accesibles. No persigas material con bastoncillos ni repitas para dejarlo impecable.', cue: 'Termina sin buscar más adentro' },
+];
+---
+<div class={`ojv ojv-${variant}`} data-ojos-visual={variant} data-step="0" data-playing="false">
+  {variant === 'decision' && <section aria-labelledby={`${uid}-title`}>
+    <header class="ojv-heading"><p class="ojv-eyebrow">01 / Antes del paño o del frasco</p><h3 id={`${uid}-title`}>La primera decisión es cuándo parar.</h3><p>Busca la situación que se parece a la de hoy. Las señales no permiten diagnosticar en casa.</p></header>
+    <div class="ojv-routes">
+      <div class="ojv-route ojv-urgent"><span class="ojv-symbol" aria-hidden="true">!</span><p class="ojv-tag">Busca atención urgente</p><h4>Dolor ocular marcado o cambio visual repentino</h4><p>Un ojo cerrado, dolor importante o un cambio súbito de visión requieren valoración. No esperes a ver si mejora al limpiarlo.</p><a href="#cuándo-dejar-de-limpiar">Ver las señales oculares <span aria-hidden="true">↗</span></a></div>
+      <div class="ojv-route ojv-consult"><span class="ojv-symbol" aria-hidden="true">?</span><p class="ojv-tag">Consulta antes de insistir</p><h4>Secreción que vuelve, olor o molestia</h4><p>Explica qué ha cambiado. Si se sospecha otitis, pregunta a la clínica antes de limpiar: puede necesitar tomar muestras.</p><a href="#antes-de-limpiar-puede-ser-necesario-tomar-muestras">Por qué importan las muestras <span aria-hidden="true">↗</span></a></div>
+      <div class="ojv-route ojv-observe"><span class="ojv-symbol" aria-hidden="true">○</span><p class="ojv-tag">Observa y respeta su pauta</p><h4>Un oído sano y limpio no obliga a intervenir</h4><p>La edad no impone una limpieza diaria. Si hay una pauta indicada, sigue sus límites y detente ante dolor.</p><a href="#cómo-limpiar-los-oídos-cuando-está-indicado">Ir al cuidado indicado <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <p class="ojv-note">Si pierde audición de repente, se desequilibra o aparece una nueva inclinación de cabeza, pide valoración pronta. Este mapa no incluye todas las urgencias ni permite descartar enfermedad. Fuentes: <a href={eyeSource}>Cornell, ojo seco</a> y <a href={earSource}>Cornell, cuidados del oído</a>.</p>
+  </section>}
+
+  {variant === 'secuencia' && <section aria-labelledby={`${uid}-title`}>
+    <header class="ojv-heading"><p class="ojv-eyebrow">02 / Una pauta, cuatro momentos</p><h3 id={`${uid}-title`}>Recorre el cuidado sin forzar.</h3><p>Solo para una limpieza indicada y tolerada. Si hay dolor, cambios repentinos o dudas sobre el tímpano, consulta antes de aplicar líquidos.</p></header>
+    <div class="ojv-sequence-layout">
+      <div class="ojv-scene">
+        <p class="ojv-scene-caption">Cocker senior · ilustración orientativa</p>
+        <svg viewBox="0 0 760 500" role="img" aria-labelledby={`${uid}-svg-title ${uid}-svg-desc`}>
+          <title id={`${uid}-svg-title`}>Los momentos de una limpieza ótica indicada</title>
+          <desc id={`${uid}-svg-desc`}>El mismo cocker senior canela de hocico y cejas blancos. Cambian los marcadores de preparación, aplicación pautada, masaje en la base externa y retirada exterior. No se representa una exploración del conducto ni movimiento real del perro.</desc>
+          <defs><linearGradient id={`${uid}-room`} x2="0" y2="1"><stop stop-color="#e7eee5"/><stop offset="1" stop-color="#f7f1e5"/></linearGradient></defs>
+          <rect width="760" height="500" rx="24" fill={`url(#${uid}-room)`}/>
+          <path d="M42 446H718" stroke="#bfccba" stroke-width="2"/>
+          <image href="/images/blog/limpieza-ojos-oidos-perros-ancianos/cocker-senior-guia-otica-v1.webp" x="128" y="24" width="594" height="396" preserveAspectRatio="xMidYMid meet"/>
+          <g class="ojv-kit" fill="none" stroke="#365a46" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="45" y="112" width="111" height="156" rx="18" fill="#fffdf7" stroke="#aabd9d"/>
+            <rect x="72" y="151" width="35" height="65" rx="8" fill="#49765c"/><path d="M80 151v-18h18v18"/><path d="M80 174h19m-19 10h19" stroke="#fffdf7"/>
+            <path d="M110 218h23l3 28h-29z" fill="#ead7b7" stroke="#a08b67"/>
+            <path d="M64 235h30m-30 8h30" stroke="#a08b67"/>
+          </g>
+          <g class="ojv-dose" fill="none" stroke="#365a46" stroke-width="3" stroke-linecap="round">
+            <rect x="45" y="112" width="111" height="115" rx="18" fill="#fffdf7" stroke="#aabd9d"/>
+            <path d="M69 147h59m-59 17h48m-48 17h56m-56 17h35"/>
+            <path d="m118 190 9 9 16-22" stroke="#8b6130"/>
+          </g>
+          <g class="ojv-base" transform="translate(30 -40)" fill="none" stroke="#234335" stroke-width="4" stroke-linecap="round">
+            <circle cx="356" cy="194" r="43" stroke="#fffdf7" stroke-width="10"/>
+            <circle cx="356" cy="194" r="43" fill="#f4d99e" fill-opacity=".17" stroke-dasharray="5 6"/>
+            <path class="ojv-massage-arrows" d="M330 157a43 43 0 0 1 58 37m-1-13 1 13 12-6M382 231a43 43 0 0 1-58-37m1 13-1-13-12 6"/>
+            <path d="M313 194H176" stroke-dasharray="3 7"/>
+          </g>
+          <g class="ojv-outside" fill="none" stroke="#365a46" stroke-width="3" stroke-linecap="round">
+            <rect x="53" y="234" width="101" height="70" rx="12" fill="#f8eedb" stroke="#a08b67"/><path d="M66 254h73m-73 12h73m-73 12h55" stroke="#baa481"/>
+            <path d="M297 287c-26 15-41 23-72 25m12-11-12 11 14 7" stroke="#8b6130"/>
+          </g>
+          <g class="ojv-graphic-step" aria-hidden="true">{steps.map((_, i) => <circle cx={317+i*34} cy="465" r="5" data-ojv-dot={i} fill="#9eb098"/>)}</g>
+        </svg>
+        <p class="ojv-cue" aria-hidden="true">{steps.map((step,i) => <span data-ojv-cue={i} hidden={i !== 0}>{step.cue}</span>)}</p>
+      </div>
+      <div class="ojv-reader">
+        <ol class="ojv-steps">{steps.map((step,i) => <li data-ojv-panel={i}><span class="ojv-step-no">0{i+1}</span><div><p class="ojv-tag">{step.tag}</p><h4>{step.title}</h4><p>{step.text}</p></div></li>)}</ol>
+        <div class="ojv-controls" hidden>
+          <div class="ojv-transport"><button type="button" data-ojv-action="prev" aria-label="Paso anterior de la limpieza ótica">←</button><button type="button" data-ojv-action="play">Reproducir</button><button type="button" data-ojv-action="next" aria-label="Paso siguiente de la limpieza ótica">→</button></div>
+          <p class="ojv-position" aria-live="polite" aria-atomic="true"></p>
+          <p class="ojv-motion-help">También puedes avanzar a tu ritmo con las flechas.</p>
+        </div>
+      </div>
+    </div>
+    <p class="ojv-stop"><strong>Dolor = parar.</strong> No aumentes la sujeción ni añadas más producto para terminar.</p>
+    <p class="ojv-note">Síntesis de <a href={earSource}>Cornell: cómo limpiar los oídos</a>. Pide una demostración adaptada a tu perro. Ilustración generada con IA; no es un vídeo ni representa a un paciente del estudio.</p>
+  </section>}
+
+  {variant === 'audicion' && <section aria-labelledby={`${uid}-title`}>
+    <header class="ojv-heading"><p class="ojv-eyebrow">03 / Mira el dato completo</p><h3 id={`${uid}-title`}>39 perros. Una distinción importante.</h3><p>Fefer y colaboradores compararon respuestas auditivas mediante BAER. Estos grupos describen participantes distintos; no son etapas de un mismo perro.</p></header>
+    <div class="ojv-cohort" aria-hidden="true">{Array.from({length:39},(_,i) => <span class={i<19?'ojv-group50':i<31?'ojv-group70':'ojv-group90'}>{i+1}</span>)}</div>
+    <div class="ojv-data-grid">
+      <div><strong class="ojv-big">19</strong><span>Respondieron a <b>50 dB</b></span></div>
+      <div><strong class="ojv-big">12</strong><span>Respondieron a <b>70 dB</b></span></div>
+      <div><strong class="ojv-big">8</strong><span>Formaron el grupo de análisis <b>«90 dB»</b></span></div>
+    </div>
+    <details class="ojv-details"><summary>¿Por qué el grupo de ocho no son ocho respuestas a 90 dB?</summary><div class="ojv-breakdown"><div><strong>5</strong><p>Respondieron a 90 dB.</p></div><div><strong>2</strong><p>No fueron probados a esa intensidad.</p></div><div><strong>1</strong><p>No mostró respuesta a 90 dB.</p></div></div><p class="ojv-detail-note">5 + 2 + 1 = 8 participantes agrupados para el análisis. Una etiqueta estadística no describe ocho resultados idénticos.</p></details>
+    <p class="ojv-note">No reproduzcas sonidos fuertes para probar su audición. Este estudio no demuestra que limpiar los oídos prevenga sordera o deterioro cognitivo. Fuente: <a href="https://onlinelibrary.wiley.com/doi/10.1111/jvim.16510">Fefer y colaboradores, 2022, resultados §3.2</a>.</p>
+  </section>}
+</div>
+
+<script>
+  class EarSequence {
+    private step = 0;
+    private playing = false;
+    private timer: ReturnType<typeof setTimeout> | undefined;
+    private aborter = new AbortController();
+    private reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    constructor(private root: HTMLElement) {}
+    connect() {
+      this.root.dataset.enhanced = 'true';
+      this.root.querySelector<HTMLElement>('.ojv-controls')!.hidden = false;
+      this.root.querySelectorAll<HTMLButtonElement>('[data-ojv-action]').forEach(button => button.addEventListener('click', () => {
+        const action = button.dataset.ojvAction;
+        if (action === 'play') {
+          if (this.playing) this.stop();
+          else if (!this.reduced.matches) {
+            if (this.step === 3) this.step = 0;
+            this.playing = true; this.render(); this.schedule();
+          }
+        } else {
+          this.stop();
+          this.step = Math.max(0, Math.min(3, this.step + (action === 'next' ? 1 : -1)));
+          this.render();
+        }
+      }, { signal:this.aborter.signal }));
+      this.reduced.addEventListener('change', this.preference, {signal:this.aborter.signal});
+      document.addEventListener('visibilitychange', this.visibility, {signal:this.aborter.signal});
+      this.preference();
+    }
+    private preference = () => {
+      this.stop();
+      this.root.querySelector<HTMLButtonElement>('[data-ojv-action="play"]')!.disabled = this.reduced.matches;
+      this.root.querySelector<HTMLElement>('.ojv-motion-help')!.textContent = this.reduced.matches ? 'Movimiento reducido: recorre cada paso con las flechas, sin animación.' : 'También puedes avanzar a tu ritmo con las flechas.';
+    };
+    private visibility = () => { if (document.hidden) this.stop(); };
+    private schedule() {
+      this.timer = setTimeout(() => {
+        if (!this.root.isConnected) { this.stop(); return; }
+        if (!this.playing) return;
+        if (this.step < 3) { this.step++; this.render(); this.schedule(); }
+        else this.stop();
+      }, 6500);
+    }
+    private render() {
+      this.root.dataset.step = String(this.step);
+      this.root.dataset.playing = String(this.playing);
+      this.root.querySelectorAll<HTMLElement>('[data-ojv-panel]').forEach((p,i) => p.dataset.active = String(i === this.step));
+      this.root.querySelectorAll<HTMLElement>('[data-ojv-cue]').forEach((p,i) => p.hidden = i !== this.step);
+      const position = this.root.querySelector<HTMLElement>('.ojv-position')!;
+      position.setAttribute('aria-live',this.playing?'off':'polite');
+      position.textContent = `Paso ${this.step+1} de 4`;
+      this.root.querySelector<HTMLButtonElement>('[data-ojv-action="prev"]')!.disabled = this.step === 0;
+      this.root.querySelector<HTMLButtonElement>('[data-ojv-action="next"]')!.disabled = this.step === 3;
+      this.root.querySelector<HTMLButtonElement>('[data-ojv-action="play"]')!.textContent = this.playing?'Pausar':this.step===3?'Repetir':'Reproducir';
+    }
+    private stop() { clearTimeout(this.timer); this.playing=false; this.render(); }
+    disconnect() { clearTimeout(this.timer); this.playing=false; this.aborter.abort(); }
+  }
+  const instances = new Map<HTMLElement,EarSequence>();
+  function initialize() {
+    document.querySelectorAll<HTMLElement>('[data-ojos-visual="secuencia"]').forEach(root => {
+      if (instances.has(root)) return;
+      const instance = new EarSequence(root); instances.set(root,instance); instance.connect();
+    });
+  }
+  document.addEventListener('astro:before-swap', () => { instances.forEach(i => i.disconnect()); instances.clear(); });
+  document.addEventListener('astro:page-load',initialize);
+  initialize();
+</script>
+
+<style>
+  .ojv { --ink:#234335; --muted:#455f50; --line:#bdcbb8; --paper:#fbfaf3; margin:2.5rem 0; color:var(--ink); background:var(--paper); border:1px solid var(--line); border-radius:1.4rem; overflow:hidden; font-family:system-ui,sans-serif; box-shadow:0 12px 36px #1835240a; }
+  .ojv .ojv-heading { padding:1.5rem 1.5rem 1.1rem; }
+  .ojv .ojv-heading h3 { color:var(--ink)!important; margin:0; padding:0; border:0; font:700 clamp(1.3rem,3vw,1.9rem)/1.2 system-ui,sans-serif; letter-spacing:-.035em; }
+  .ojv .ojv-eyebrow { color:var(--muted); margin:0 0 .65rem; font-size:.7rem; font-weight:750; letter-spacing:.12em; text-transform:uppercase; }
+  .ojv .ojv-heading>p:last-child { color:var(--muted); margin:.85rem 0 0; font-size:.94rem; line-height:1.65; }
+  .ojv .ojv-note { margin:0; padding:1.1rem 1.5rem; color:var(--muted); font-size:.8rem; line-height:1.65; border-top:1px solid var(--line); }
+  .ojv a { color:#285b44!important; text-decoration:underline; text-underline-offset:3px; }
+  .ojv a:focus-visible,.ojv button:focus-visible,.ojv summary:focus-visible { outline:3px solid #88591f; outline-offset:4px; }
+  .ojv .ojv-routes { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; padding:0 1.5rem 1.4rem; }
+  .ojv .ojv-route { position:relative; min-width:0; padding:1.1rem; border:1px solid #c9d4c2; border-top:4px solid #526f50; border-radius:.9rem; background:#edf2e7; display:flex; flex-direction:column; align-items:flex-start; }
+  .ojv .ojv-urgent { background:#faece5; border-color:#dfb9a5; border-top-color:#97482e; }
+  .ojv .ojv-consult { background:#f7efd9; border-color:#d9c58c; border-top-color:#886126; }
+  .ojv .ojv-symbol { display:grid; place-items:center; width:2.3rem; height:2.3rem; border-radius:50%; border:1.5px solid currentColor; font-size:1.2rem; font-weight:700; }
+  .ojv .ojv-tag { margin:.8rem 0 .45rem; color:var(--muted); font-size:.68rem; line-height:1.5; font-weight:750; letter-spacing:.05em; text-transform:uppercase; }
+  .ojv h4 { color:var(--ink); margin:0; font-size:1.05rem; line-height:1.35; font-weight:750; }
+  .ojv .ojv-route>p:not(.ojv-tag) { color:var(--muted); margin:.8rem 0 1rem; font-size:.88rem; line-height:1.65; }
+  .ojv .ojv-route a { display:flex; align-items:center; gap:.6rem; min-height:44px; margin-top:auto; font-size:.8rem; font-weight:700; }
+  .ojv .ojv-sequence-layout { display:grid; grid-template-columns:1.05fr 1fr; align-items:start; gap:1.2rem; padding:0 1.5rem 1.2rem; }
+  .ojv .ojv-scene { min-width:0; overflow:hidden; border:1px solid #c2cdb9; border-radius:1rem; background:#e7eee5; }
+  .ojv .ojv-scene-caption { color:var(--muted); margin:0; padding:.65rem 1rem 0; font-size:.65rem; line-height:1.5; }
+  .ojv svg { display:block; width:100%; height:auto; }
+  .ojv .ojv-cue { min-height:3.4rem; margin:0; padding:.7rem 1rem; color:var(--ink); background:#e0e9d8; font-size:.77rem; font-weight:700; line-height:1.5; }
+  .ojv[data-enhanced=true] .ojv-reader { min-height:21rem; display:flex; flex-direction:column; }
+  .ojv .ojv-steps { list-style:none; padding:0; margin:0; }
+  .ojv .ojv-steps>li { display:flex; gap:.85rem; margin:0 0 1rem; padding:0; }
+  .ojv [hidden] { display:none!important; }
+  .ojv[data-enhanced=true] .ojv-steps>li[data-active=false] { display:none; }
+  .ojv .ojv-step-no { flex-shrink:0; display:grid; place-items:center; width:2.5rem; height:2.5rem; background:#e2eadb; border:1px solid var(--line); border-radius:.75rem; font-size:.85rem; font-weight:750; }
+  .ojv .ojv-steps .ojv-tag { margin:0 0 .5rem; }
+  .ojv .ojv-steps h4 { margin:0 0 .6rem; font-size:1.16rem; }
+  .ojv .ojv-steps p:not(.ojv-tag) { color:var(--muted); margin:0; font-size:.94rem; line-height:1.7; }
+  .ojv .ojv-controls { padding-top:1.2rem; margin-top:auto; }
+  .ojv .ojv-transport { display:flex; gap:.5rem; }
+  .ojv button { min-width:44px; min-height:44px; padding:.7rem .85rem; border:1px solid #9cae92; border-radius:.65rem; background:#fffdf8; color:var(--ink); font:700 .85rem/1.4 system-ui,sans-serif; cursor:pointer; }
+  .ojv [data-ojv-action=play] { flex:1; color:#fff; background:#315a40; border-color:#315a40; }
+  .ojv button:disabled { opacity:.5; cursor:default; }
+  .ojv .ojv-position { color:var(--ink); margin:.75rem 0 .2rem; font-size:.8rem; font-weight:750; }
+  .ojv .ojv-motion-help { color:var(--muted); margin:0; font-size:.75rem; line-height:1.6; }
+  .ojv .ojv-stop { margin:0; padding:.9rem 1.5rem; background:#f4e7dc; color:#6c3e29; font-size:.85rem; line-height:1.6; }
+  .ojv .ojv-stop strong { color:#6c3e29!important; }
+  .ojv .ojv-kit,.ojv .ojv-dose,.ojv .ojv-base,.ojv .ojv-outside { transition:opacity .4s ease,transform .5s ease; transform-box:fill-box; transform-origin:center; }
+  .ojv .ojv-dose,.ojv .ojv-base,.ojv .ojv-outside { opacity:0; }
+  .ojv[data-step='1'] .ojv-kit,.ojv[data-step='2'] .ojv-kit,.ojv[data-step='3'] .ojv-kit { opacity:0; transform:translateY(10px); }
+  .ojv[data-step='1'] .ojv-dose,.ojv[data-step='2'] .ojv-base,.ojv[data-step='3'] .ojv-outside { opacity:1; transform:none; }
+  .ojv[data-step='0'] [data-ojv-dot='0'],.ojv[data-step='1'] [data-ojv-dot='1'],.ojv[data-step='2'] [data-ojv-dot='2'],.ojv[data-step='3'] [data-ojv-dot='3'] { fill:#315a40; r:7; }
+  .ojv[data-step='2'] .ojv-massage-arrows { animation:ojv-massage 2s ease-in-out 3; animation-play-state:paused; transform-box:fill-box; transform-origin:center; }
+  .ojv[data-step='2'][data-playing=true] .ojv-massage-arrows { animation-play-state:running; }
+  @keyframes ojv-massage { 50% { transform:rotate(10deg); } }
+  .ojv .ojv-cohort { display:grid; grid-template-columns:repeat(13,minmax(0,1fr)); gap:.4rem; padding:0 1.5rem 1.2rem; }
+  .ojv .ojv-cohort>span { aspect-ratio:1; display:grid; place-items:center; border-radius:50%; font-size:.65rem; font-weight:700; }
+  .ojv .ojv-group50 { color:#fff; background:#315a40; }
+  .ojv .ojv-group70 { color:#fff; background:#3e6277; }
+  .ojv .ojv-group90 { color:#503b1a; background:#e6c47d; border:1px dashed #85612c; }
+  .ojv .ojv-data-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); padding:0 1.5rem 1.2rem; gap:.8rem; }
+  .ojv .ojv-data-grid>div { padding:.9rem; background:#edf2e7; border-top:3px solid #315a40; border-radius:.5rem; }
+  .ojv .ojv-data-grid>div:nth-child(2) { background:#edf1f5; border-color:#3e6277; }
+  .ojv .ojv-data-grid>div:nth-child(3) { background:#f7efd9; border-color:#a17c3f; }
+  .ojv .ojv-big { display:block; color:var(--ink)!important; font:750 2rem/1.2 system-ui,sans-serif; }
+  .ojv .ojv-data-grid span { display:block; color:var(--muted); font-size:.84rem; line-height:1.6; margin-top:.3rem; }
+  .ojv .ojv-data-grid b { white-space:nowrap; }
+  .ojv .ojv-details { background:#f7efd9!important; border:1px solid #cfb77e!important; border-radius:.8rem!important; padding:0!important; margin:0 1.5rem 1.4rem!important; overflow:hidden; }
+  .ojv .ojv-details[open] { background:#f7efd9!important; border-color:#cfb77e!important; }
+  .ojv .ojv-details summary { color:#543e1c!important; min-height:44px; margin:0; padding:1rem; font-size:.9rem; line-height:1.55; font-weight:700; cursor:pointer; }
+  .ojv .ojv-details summary::after { color:#543e1c!important; }
+  .ojv .ojv-breakdown { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.6rem; padding:.2rem 1rem .75rem; }
+  .ojv .ojv-breakdown>div { background:#fffaf0; border:1px solid #d8c796; border-radius:.6rem; padding:.8rem; }
+  .ojv .ojv-breakdown strong { color:#543e1c!important; font:750 1.7rem/1 system-ui,sans-serif; }
+  .ojv .ojv-breakdown p { color:#543e1c; margin:.6rem 0 0; font-size:.8rem; line-height:1.6; }
+  .ojv .ojv-detail-note { color:#543e1c; margin:0; padding:0 1rem 1rem; font-size:.8rem; line-height:1.6; }
+  @media(max-width:860px) { .ojv .ojv-routes { grid-template-columns:1fr; } .ojv .ojv-sequence-layout { grid-template-columns:1fr; } .ojv .ojv-scene { max-width:32rem; width:100%; margin-inline:auto; } }
+  @media(max-width:480px) { .ojv .ojv-heading { padding:1.2rem 1rem 1rem; } .ojv .ojv-routes,.ojv .ojv-sequence-layout { padding-inline:1rem; } .ojv .ojv-note,.ojv .ojv-stop { padding-inline:1rem; } .ojv .ojv-cohort { padding-inline:1rem; gap:.25rem; } .ojv .ojv-cohort>span { font-size:.5rem; } .ojv .ojv-data-grid { gap:.5rem; padding-inline:1rem; } .ojv .ojv-data-grid>div { padding:.6rem; } .ojv .ojv-big { font-size:1.65rem; } .ojv .ojv-data-grid span { font-size:.76rem; } .ojv .ojv-details { margin-inline:1rem!important; } .ojv .ojv-breakdown { grid-template-columns:1fr; } .ojv .ojv-breakdown>div { display:flex; gap:1rem; align-items:center; } .ojv .ojv-breakdown p { margin:0; } }
+  @media(prefers-reduced-motion:reduce) { .ojv *, .ojv *::before, .ojv *::after { animation:none!important; transition:none!important; } }
+  @media print { .ojv { break-inside:avoid; box-shadow:none; } .ojv .ojv-controls { display:none!important; } .ojv[data-enhanced=true] .ojv-steps>li[data-active=false] { display:flex!important; } .ojv .ojv-details:not([open])>* { display:block; } }
+</style>

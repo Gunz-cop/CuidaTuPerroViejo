@@ -1,0 +1,115 @@
+# limpieza-ojos-oidos-perros-ancianos
+
+## 1. Volumen y distribución
+  Total: 6201 palabras (contrato 5440–7360)  OK
+
+  | # | Sección del artículo | Real | Target | Desv. |
+  |---|---|---|---|---|
+  | 1 | INTRODUCCIÓN | 763 | 800 | -5% |
+  | 2 | Ojos: qué observar y cuándo sospechar en | 1069 | 1200 | -11% |
+  | 3 | Higiene exterior de los ojos sin forzar | 765 | 800 | -4% |
+  | 4 | Oídos: por qué no todo se resuelve retir | 1100 | 1200 | -8% |
+  | 5 | Cómo limpiar los oídos cuando está indic | 901 | 900 | 0% |
+  | 6 | Volver a los 39 perros: qué sabemos y qu | 676 | 700 | -3% |
+  | 7 | Cuidar sin forzar: conclusión y respuest | 874 | 800 | +9% |
+
+  Emparejamiento posicional brief↔artículo. Si los títulos de una fila no
+  se corresponden, el artículo reordenó o fusionó secciones: revisalo a mano.
+
+## 2. Densidad de párrafo
+  párrafos: 133 | media: 38 | mediana: 39 | >50 palabras: 1% | máx: 76
+  fragmentos sueltos (<12 palabras): 2
+  spec mobile-first: 30–40 palabras.
+  OK.
+  H2: 6 | H3: 27 | ~230 palabras por H3 (spec 150–200)
+
+## 3. Fuentes citadas por nombre, dentro de su H2
+  [1] Fefer et al. (2022)
+      asignada a: H2-3 y H2-5  ->  secciones 3, 5
+      ·   sec 0 INTRODUCCIÓN  (aguja "Fefer")
+      OK  sec 3 Oídos: por qué no todo se resuelve  (aguja "Fefer")
+      OK  sec 5 Volver a los 39 perros: qué sabemo  (aguja "Fefer")
+  [2] Cornell, How to Clean Your Dog’s Ears
+      asignada a: H2-3 y H2-4; apoyo H2-5  ->  secciones 3, 4, 5
+      ·   sec 0 INTRODUCCIÓN  (aguja "Cornell")
+      ·   sec 1 Ojos: qué observar y cuándo sospec  (aguja "Cornell")
+      ·   sec 2 Higiene exterior de los ojos sin f  (aguja "Cornell")
+      OK  sec 3 Oídos: por qué no todo se resuelve  (aguja "Cornell")
+      OK  sec 4 Cómo limpiar los oídos cuando está  (aguja "Cornell")
+      OK  sec 5 Volver a los 39 perros: qué sabemo  (aguja "Cornell")
+      (agujas débiles: sin apellido+año en la etiqueta, verificá a mano que el match sea real)
+  [3] Merck, Otitis Externa in Animals
+      asignada a: H2-3 y H2-4  ->  secciones 3, 4
+      OK  sec 3 Oídos: por qué no todo se resuelve  (aguja "Merck")
+      OK  sec 4 Cómo limpiar los oídos cuando está  (aguja "Merck")
+      (agujas débiles: sin apellido+año en la etiqueta, verificá a mano que el match sea real)
+  [4] Moog et al., ensayo ceruminolítico
+      asignada a: H2-4, con límites  ->  secciones 4
+      OK  sec 4 Cómo limpiar los oídos cuando está  (aguja "Moog")
+  [5] Cornell, KCS
+      asignada a: H2-1; apoyo H2-2  ->  secciones 1, 2
+      ·   sec 0 INTRODUCCIÓN  (aguja "Cornell")
+      OK  sec 1 Ojos: qué observar y cuándo sospec  (aguja "Cornell")
+      OK  sec 2 Higiene exterior de los ojos sin f  (aguja "KCS")
+      ·   sec 3 Oídos: por qué no todo se resuelve  (aguja "Cornell")
+      ·   sec 4 Cómo limpiar los oídos cuando está  (aguja "Cornell")
+      ·   sec 5 Volver a los 39 perros: qué sabemo  (aguja "Cornell")
+      (agujas débiles: sin apellido+año en la etiqueta, verificá a mano que el match sea real)
+  [6] Nascimento et al., comparación de pruebas
+      asignada a: H2-1  ->  secciones 1
+      OK  sec 1 Ojos: qué observar y cuándo sospec  (aguja "Schirmer")
+      ·   sec 6 Cuidar sin forzar: conclusión y re  (aguja "Schirmer")
+  [7] VCA, KCS, clínica complementaria
+      asignada a: H2-2  ->  secciones 2
+      ·   sec 1 Ojos: qué observar y cuándo sospec  (aguja "KCS")
+      OK  sec 2 Higiene exterior de los ojos sin f  (aguja "VCA")
+      (agujas débiles: sin apellido+año en la etiqueta, verificá a mano que el match sea real)
+
+## 4. Enlaces internos
+  presentes: /higiene-hogar-perros-senior, /higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores, /higiene-hogar-perros-senior/incontinencia-fecal-perros-senior, /salud-perros-mayores/chequeo-geriatrico-canino, /herramientas/calculadora-calidad-vida-perros
+  OK   Pilar: /higiene-hogar-perros-senior
+  OK   Spoke 1: /higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores
+  OK   Spoke 2: /higiene-hogar-perros-senior/incontinencia-fecal-perros-senior
+  OK   Puente: /salud-perros-mayores/chequeo-geriatrico-canino
+  OK   Herramienta: /herramientas/calculadora-calidad-vida-perros
+
+## 5. Componentes
+  AlertBox de cuerpo: 3 (info, danger, warning) + cuadro de fuentes: 1
+  FAQ: 7 preguntas
+
+## 6. Imágenes
+  OK    limpieza-ojos-cocker-senior.webp  (hero — se olvida al contar, cuéntala)
+  OK    masaje-base-oreja-limpiador-otico.webp
+  OK    masaje-base-oreja-limpiador-otico-400.webp
+  OK    masaje-base-oreja-limpiador-otico-800.webp
+  OK    revision-semanal-oidos-perro-senior.webp
+  OK    revision-semanal-oidos-perro-senior-400.webp
+  OK    revision-semanal-oidos-perro-senior-800.webp
+  (en disco sin referenciar: cocker-senior-guia-otica-v1-400.webp, cocker-senior-guia-otica-v1-800.webp, cocker-senior-guia-otica-v1.webp, limpieza-ojos-cocker-senior-400.webp, limpieza-ojos-cocker-senior-800.webp)
+
+## 7. Frontmatter y fechas
+  status: Publicado | datePublished: 2026-10-16 | metaDescription: 136 car.
+  byline: 16 de octubre de 2026  ->  2026-10-16
+
+---
+
+# VEREDICTO
+
+## limpieza-ojos-oidos-perros-ancianos: APTO
+
+  PENDIENTES MANUALES (sin esto el veredicto está incompleto):
+    - fuente 1: abrir la URL y confirmar que respalda la afirmación exacta, y que autoría/año/revista coincidan con la fuente real
+    - fuente 2: abrir la URL y confirmar que respalda la afirmación exacta, y que autoría/año/revista coincidan con la fuente real
+    - fuente 3: abrir la URL y confirmar que respalda la afirmación exacta, y que autoría/año/revista coincidan con la fuente real
+    - fuente 4: abrir la URL y confirmar que respalda la afirmación exacta, y que autoría/año/revista coincidan con la fuente real
+    - fuente 5: abrir la URL y confirmar que respalda la afirmación exacta, y que autoría/año/revista coincidan con la fuente real
+    - fuente 6: abrir la URL y confirmar que respalda la afirmación exacta, y que autoría/año/revista coincidan con la fuente real
+    - fuente 7: abrir la URL y confirmar que respalda la afirmación exacta, y que autoría/año/revista coincidan con la fuente real
+    - abrir cada imagen y verificar: sujeto fijo del brief (raza/edad), restricciones visuales de la Sección 8, y que el alt describa lo que de verdad se ve
+    - leer el artículo entero buscando instrucciones del brief filtradas al texto
+
+Resumen: 1 artículo(s), 0 bloqueante(s).
+
+APTO significa "no quedan defectos mecánicos", no "el artículo es bueno".
+Un autor inventado, una cifra que la fuente no dice o una imagen que
+contradice su pie pasan este script sin despeinarse.

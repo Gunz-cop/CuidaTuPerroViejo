@@ -268,3 +268,7 @@ Aportación: síntesis con decisiones para observar/limpiar/consultar, separaci�
 Fuentes: tabla de afirmaciones, pasajes, fecha, identidad y limitaciones en `docs/contenido/limpieza-ojos-oidos-perros-ancianos/auditoria-editorial-r2.md`. Moog sigue limitado al objeto descrito en el resumen. El artículo se revisa el16 de octubre y toma esa fecha para su primera publicación. Pendiente cierre independiente R3 y confirmación de despliegue; autorización de push a main recibida del usuario.
 
 **Publicación confirmada, 2026-10-16:** artículo aprobado en ronda3/3, commit de producto `f0fecbe048996e10ef82ecbff801446123a3aa70` en main y Workers Builds finalizado con éxito. URL pública HTTP200, un H1, tres imágenes de artículo, nueve WebP accesibles y presencia en sitemap. Ver `docs/contenido/limpieza-ojos-oidos-perros-ancianos/publicacion-verificada.json`. Los estados pendientes anteriores se conservan como historial y quedan superados por esta confirmación.
+
+## 12. Ampliación visual solicitada el2026-10-16
+
+El usuario encarga experiencias visuales y delega cantidad/utilidad. Se acuerdan tres nuevas: mapa de decisiones temprano, secuencia controlable de limpieza indicada y desglose de la cohorte. No se reabre el contrato científico ni sus rondas ya concluidas; la extensión visual tiene revisión propia y conserva afirmaciones y límites aprobados. Ver `docs/contenido/limpieza-ojos-oidos-perros-ancianos/experiencias-visuales/plan.md`.
