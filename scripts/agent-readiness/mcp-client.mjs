@@ -66,7 +66,9 @@ try {
     const transport = new StreamableHTTPClientTransport(new URL('/api/mcp', root), { fetch: capture, ...(localHttp ? { redirectPolicy: 'follow', requestInit: { redirect: 'manual' }, reconnectionOptions: { maxRetries: 0, initialReconnectionDelay: 1000, maxReconnectionDelay: 1000, reconnectionDelayGrowFactor: 1 } } : {}) });
     try {
       await client.connect(transport); const list = await client.listTools();
-      assert.deepEqual(list.tools.map((tool) => tool.name), ['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids']);
+      assert.deepEqual(list.tools.map((tool) => tool.name), ['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids', 'calculate_dog_age']);
+      const ageTool = list.tools.find((tool) => tool.name === 'calculate_dog_age');
+      assert.equal(ageTool.annotations.readOnlyHint, true); assert.equal(ageTool.annotations.destructiveHint, false);
       const search = domain(await client.callTool({ name: 'search_guides', arguments: { q: 'cushing' } }), modern);
       assert.deepEqual(search, await api('/api/agent/v1/search?q=cushing')); assert.ok(search.results.length > 0);
       const id = search.results[0].document.documentId;
@@ -79,13 +81,20 @@ try {
       assert.deepEqual(qualityResult, await api(`/api/agent/v1/tools/calidad-vida?${new URLSearchParams(quality)}`)); assert.equal(qualityResult.band, 'compromised');
       const mobility = { level: 'severe', handling: 'stressed' };
       assert.deepEqual(domain(await client.callTool({ name: 'recommend_mobility_aids', arguments: mobility }), modern), await api(`/api/agent/v1/tools/movilidad?${new URLSearchParams(mobility)}`));
+      const luna = domain(await client.callTool({ name: 'calculate_dog_age', arguments: { size: 'small', years: 11, name: 'Luna' } }), modern);
+      assert.equal(luna.human_years, 68); assert.deepEqual(luna.stage, { id: 'senior', label: 'Senior' }); assert.equal(luna.years_to_senior, null);
+      const giant = domain(await client.callTool({ name: 'calculate_dog_age', arguments: { size: 'giant', years: 10 } }), modern);
+      assert.equal(giant.human_years, 83); assert.equal(giant.stage.id, 'longevous'); assert.equal(giant.recommended_action.url, 'https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores');
+      const badAge = await client.callTool({ name: 'calculate_dog_age', arguments: { size: 'giant', years: 26 } });
+      assert.equal(badAge.isError, true); assert.equal(JSON.parse(badAge.content[0].text).error.code, 'INVALID_REQUEST');
+      results.push({ criterion: 'edad-mcp', era: modern ? '2026-07-28' : '2025-11-25', luna, giant, invalid: 'INVALID_REQUEST', status: 'PASS' });
       const nonexistent = await client.callTool({ name: 'read_guide', arguments: { documentId: 'article--f4b-nonexistent' } });
       assert.equal(nonexistent.isError, true); assert.equal(JSON.parse(nonexistent.content[0].text).error.code, 'DOCUMENT_NOT_FOUND');
       const invalid = await client.callTool({ name: 'evaluate_quality_of_life', arguments: { ...quality, hurt: 11 } });
       assert.equal(invalid.isError, true); assert.equal(JSON.parse(invalid.content[0].text).error.code, 'INVALID_REQUEST');
       if (modern) {
         const index = await api('/agent-content/v1/index.json');
-        assert.equal(index.documents.length, 28, 'corpus fijo F4A de 28 documentos');
+        assert.equal(index.documents.length, 32, 'corpus vigente de 32 documentos (F4A fijó 28)');
         const catalog = { corpusSha256: index.corpusSha256, documents: [] };
         let offset = 0; const pages = [];
         while (true) {
