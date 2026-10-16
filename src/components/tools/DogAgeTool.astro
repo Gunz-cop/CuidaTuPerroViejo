@@ -26,7 +26,6 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
             <path class="dat__tongue" d="M94 124 q6 14 12 0 Z" />
             <path class="dat__sleep dat__sleep-eyes" d="M70 84 Q78 91 86 84 M114 84 Q122 91 130 84" />
             <path class="dat__sleep dat__sleep-mouth" d="M93 121 q7 5 14 0" />
-            <circle class="dat__bubble" cx="122" cy="101" r="6" />
           </g>
         </svg>`;
 ---
@@ -234,13 +233,10 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   .dat__eyes { transition: transform .4s, opacity .5s; animation: dat-blink 5s infinite; transform-origin: 100px 84px; }
   .dat__nose { fill: #2b1d14; }
   .dat__sleep { fill: none; stroke: #2b1d14; stroke-width: 3; stroke-linecap: round; opacity: 0; transition: opacity .5s; }
-  .dat__bubble { fill: rgb(214 236 246 / .85); stroke: #4f93b3; stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: left center; }
-  /* Senior longevo: duerme a gusto (ojos cerrados, hocico relajado y burbujita). */
+  /* Senior longevo: duerme a gusto (ojos cerrados y hocico relajado). */
   .dat[data-stage='longevous'] .dat__head { transform: rotate(-6deg) translateY(8px); animation-duration: 4.5s; }
   .dat[data-stage='longevous'] .dat__eyes, .dat[data-stage='longevous'] .dat__mouth { opacity: 0; }
   .dat[data-stage='longevous'] .dat__sleep { opacity: 1; }
-  .dat[data-stage='longevous'] .dat__bubble { animation: dat-bubble 4.5s ease-in-out infinite; }
-  @keyframes dat-bubble { 0%, 100% { opacity: .9; scale: .4; } 50% { opacity: .9; scale: 1.25; } 92% { opacity: 0; } }
   .dat__mouth { fill: none; stroke: #2b1d14; stroke-width: 2.5; stroke-linecap: round; }
   .dat__tongue { fill: #e98a8a; transform-origin: 100px 124px; transition: transform .4s; }
   .dat[data-stage='mature'] .dat__tongue, .dat[data-stage='senior'] .dat__tongue, .dat[data-stage='longevous'] .dat__tongue { transform: scaleY(0); }
