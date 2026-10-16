@@ -164,7 +164,7 @@ try {
   if (localHttp) await localDefenses(h, discover);
   results.push({ criterion: 'C07/C08', methods: 4, modernPing: 404, legacyPing: 200, origin: 'PASS', cors: 'PASS', sessions: 'stateless', legacyCancelled: 202, oversized: 413, malformed: 'PASS', status: 'PASS' });
   await writeFile(resolve(output, 'result.json'), JSON.stringify({ base, transport: localHttp ? 'node:http' : 'Node fetch', product: localHttp ? '192dcdd52d2790652ef2dbcb6d23a0f5006ade43' : undefined, harnessCommit: localHttp ? process.env.F4B_HARNESS_COMMIT : undefined, at: new Date().toISOString(), status: 'PASS', results, limitations: ['Este harness no acredita por sí solo UI/WebMCP, presupuesto, cancelación, todosIDs o receipt de build.'] }, null, 2) + '\n');
-  process.stdout.write(`PASS: SDK HTTP real, ambas eras, cuatro tools, paridad API, hash Markdown, inválidos y card/ARD (${observations.length} exchanges).\n`);
+  process.stdout.write(`PASS: SDK HTTP real, ambas eras, cinco tools, paridad API, hash Markdown, inválidos y card/ARD (${observations.length} exchanges).\n`);
 } catch (error) {
   await writeFile(resolve(output, 'result.json'), JSON.stringify({ base, transport: localHttp ? 'node:http' : 'Node fetch', product: localHttp ? '192dcdd52d2790652ef2dbcb6d23a0f5006ade43' : undefined, harnessCommit: localHttp ? process.env.F4B_HARNESS_COMMIT : undefined, at: new Date().toISOString(), status: 'FAIL', results, error: String(error) }, null, 2) + '\n');
   throw error;

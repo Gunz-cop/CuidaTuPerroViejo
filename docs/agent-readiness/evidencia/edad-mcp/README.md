@@ -12,3 +12,14 @@ PR #116, rama `herramientas/edad-mcp`, producto `8ed5c7c`. Build: `npx astro bui
 Casos: cachorro 0 a 1 m → 1, Cachorro · Luna (pequeña, 11 a) → 68, Senior · Dakota (mediana, 12 a) → 76, Senior · gigante 10 a → 83, Senior longevo.
 
 Decisión: la página sigue siendo `page--calculadora-edad-perro`; promoverla a `tool--` cambiaría IDs públicos y necesita consultarlo con el propietario.
+
+## Vista previa de Cloudflare (Workers Builds, version `b7e9a097`, producto `a97a743`)
+
+URL: `https://b7e9a097-cuidatuperroviejo.g1721m.workers.dev` (recibo: check run «Workers Builds: cuidatuperroviejo» del PR #116).
+
+| Archivo | Resultado |
+|---|---|
+| `preview/webmcp-chrome155.json` | PASS 121/121 |
+| `preview/webmcp-chromium141-sin-api.json` | PASS 35/35 |
+| `preview/ui-parity.json` | PASS 5/5 |
+| `preview/mcp-client-preview.json` | PASS: las dos eras con `calculate_dog_age`, paridad con la API, card/ARD y matriz de transporte C07/C08 (156 intercambios) |
