@@ -1,0 +1,1306 @@
+{
+  "schemaVersion": "f4a-webmcp-browser/1",
+  "commit": "8ed5c7c132b48203280704773227d0911b804fbf",
+  "baseUrl": "http://localhost:8787",
+  "mode": "supported",
+  "browser": "Chrome/155.0.8059.39",
+  "flags": [
+    "--enable-features=WebMCPTesting"
+  ],
+  "pass": true,
+  "passed": 121,
+  "total": 121,
+  "checks": [
+    {
+      "id": "C4A-08",
+      "name": "/: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-18",
+      "name": "/: el adaptador WebMCP está en una plantilla inerte",
+      "ok": true,
+      "detail": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js"
+      ]
+    },
+    {
+      "id": "C4A-18",
+      "name": "/: con API se carga el chunk de la plantilla",
+      "ok": true,
+      "detail": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "/_astro/HomeAgeCalculator.astro_astro_type_script_index_0_lang.DQoZqBbO.js",
+        "/_astro/calidad-vida.CkucuN4v.js",
+        "/_astro/contract.Cu9QodcA.js",
+        "/_astro/dog-age.DuKgCMbW.js",
+        "/_astro/movilidad.B1WnJKyW.js"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: WebMCP.toolsAdded entrega exactamente las cinco tools",
+      "ok": true,
+      "detail": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids",
+        "calculate_dog_age"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: search_guides vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: read_guide vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: evaluate_quality_of_life vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: recommend_mobility_aids vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: calculate_dog_age vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: search_guides vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: read_guide vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: evaluate_quality_of_life vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: recommend_mobility_aids vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/: calculate_dog_age vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-09",
+      "name": "search_guides {q:\"cushing\"} = API",
+      "ok": true,
+      "detail": {
+        "status": "Completed",
+        "total": 3,
+        "first": "article--sindrome-cushing-perros-mayores"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "read_guide article--sindrome-cushing-perros-mayores con corpus = API (Markdown íntegro)",
+      "ok": true,
+      "detail": {
+        "status": "Completed",
+        "markdownSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [0,0,0,0,0,0,0] = API",
+      "ok": true,
+      "detail": {
+        "score": 0,
+        "band": "compromised"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [10,10,10,10,10,10,10] = API",
+      "ok": true,
+      "detail": {
+        "score": 70,
+        "band": "good"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [4,5,5,5,5,5,5] = API",
+      "ok": true,
+      "detail": {
+        "score": 34,
+        "band": "compromised"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [5,5,5,5,5,5,5] = API",
+      "ok": true,
+      "detail": {
+        "score": 35,
+        "band": "compromised"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [6,5,5,5,5,5,5] = API",
+      "ok": true,
+      "detail": {
+        "score": 36,
+        "band": "acceptable"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [10,10,10,10,9,0,0] = API",
+      "ok": true,
+      "detail": {
+        "score": 49,
+        "band": "acceptable"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [10,10,10,10,10,0,0] = API",
+      "ok": true,
+      "detail": {
+        "score": 50,
+        "band": "acceptable"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [10,10,10,10,10,1,0] = API",
+      "ok": true,
+      "detail": {
+        "score": 51,
+        "band": "good"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life [7,2,9,0,6,3,8] = API",
+      "ok": true,
+      "detail": {
+        "score": 35,
+        "band": "compromised"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids light/calm = API",
+      "ok": true,
+      "detail": {
+        "resultKey": "LA"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids light/stressed = API",
+      "ok": true,
+      "detail": {
+        "resultKey": "LB"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids moderate/calm = API",
+      "ok": true,
+      "detail": {
+        "resultKey": "MA"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids moderate/stressed = API",
+      "ok": true,
+      "detail": {
+        "resultKey": "MB"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids severe/calm = API",
+      "ok": true,
+      "detail": {
+        "resultKey": "SA"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids severe/stressed = API",
+      "ok": true,
+      "detail": {
+        "resultKey": "SB"
+      }
+    },
+    {
+      "id": "edad-mcp",
+      "name": "calculate_dog_age {\"size\":\"medium\",\"years\":0,\"months\":1} = MCP remoto (1, puppy)",
+      "ok": true,
+      "detail": {
+        "human_years": 1,
+        "stage": {
+          "id": "puppy",
+          "label": "Cachorro"
+        },
+        "recommended_action": "https://cuidatuperroviejo.com/salud-perros-mayores"
+      }
+    },
+    {
+      "id": "edad-mcp",
+      "name": "calculate_dog_age {\"size\":\"small\",\"years\":11,\"name\":\"Luna\"} = MCP remoto (68, senior)",
+      "ok": true,
+      "detail": {
+        "human_years": 68,
+        "stage": {
+          "id": "senior",
+          "label": "Senior"
+        },
+        "recommended_action": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores"
+      }
+    },
+    {
+      "id": "edad-mcp",
+      "name": "calculate_dog_age {\"size\":\"medium\",\"years\":12,\"name\":\"Dakota\"} = MCP remoto (76, senior)",
+      "ok": true,
+      "detail": {
+        "human_years": 76,
+        "stage": {
+          "id": "senior",
+          "label": "Senior"
+        },
+        "recommended_action": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores"
+      }
+    },
+    {
+      "id": "edad-mcp",
+      "name": "calculate_dog_age {\"size\":\"giant\",\"years\":10} = MCP remoto (83, longevous)",
+      "ok": true,
+      "detail": {
+        "human_years": 83,
+        "stage": {
+          "id": "longevous",
+          "label": "Senior longevo"
+        },
+        "recommended_action": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores"
+      }
+    },
+    {
+      "id": "C4A-12",
+      "name": "durante las llamadas: sólo GET same-origin a /api/agent/v1/",
+      "ok": true,
+      "detail": [
+        "GET /api/agent/v1/search?q=cushing",
+        "GET /api/agent/v1/documents/article--sindrome-cushing-perros-mayores?corpus=116440df9a076e690b5b57efdb26016860d54e6ec89a53fef1a052121ad7e773"
+      ]
+    },
+    {
+      "id": "C4A-12",
+      "name": "durante las llamadas: búsqueda y lectura hacen un fetch cada una; cálculos ninguno",
+      "ok": true,
+      "detail": 2
+    },
+    {
+      "id": "C4A-12",
+      "name": "sin escrituras de cookies/localStorage/sessionStorage atribuibles a execute",
+      "ok": true
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life {\"hurt\":11} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "evaluate_quality_of_life {\"hurt\":1.5,\"hunger\":5,\"hydration\":5,\"hygiene\":5,\"happiness\":5,\"mobility\":5,\"moreGoodDays\":5} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "recommend_mobility_aids {\"level\":\"Severe\",\"handling\":\"calm\"} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "calculate_dog_age {\"size\":\"tiny\",\"years\":3} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "calculate_dog_age {\"size\":\"small\",\"years\":26} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "search_guides {\"q\":\"x\",\"limit\":0} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "search_guides {\"q\":\"x\",\"extra\":1} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "read_guide {\"documentId\":\"../../admin/contact-messages\"} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "read_guide {\"documentId\":\"https://example.org/x\"} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "read_guide {\"documentId\":\"home\",\"corpus\":\"nope\"} → INVALID_REQUEST sin red",
+      "ok": true,
+      "detail": {
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "C4A-09",
+      "name": "read_guide inexistente → DOCUMENT_NOT_FOUND de la API",
+      "ok": true
+    },
+    {
+      "id": "C4A-09",
+      "name": "read_guide con corpus discordante → CORPUS_CHANGED de la API",
+      "ok": true
+    },
+    {
+      "id": "C4A-10",
+      "name": "cancelInvocation durante read_guide → Canceled",
+      "ok": true,
+      "detail": {
+        "status": "Canceled",
+        "held": 1
+      }
+    },
+    {
+      "id": "C4A-10",
+      "name": "la cancelación aborta el fetch en curso (Network.loadingFailed canceled)",
+      "ok": true,
+      "detail": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "id": "C4A-10",
+      "name": "transporte fallido → Error y un solo intento (sin reintentos)",
+      "ok": true,
+      "detail": {
+        "status": "Error",
+        "attempts": 1,
+        "errorText": ""
+      }
+    },
+    {
+      "id": "C4A-10",
+      "name": "executeTool con señal ya abortada → AbortError",
+      "ok": true,
+      "detail": "AbortError"
+    },
+    {
+      "id": "info",
+      "name": "representación de output en WebMCP.toolResponded por tool",
+      "ok": true,
+      "detail": {
+        "search_guides": [
+          "string",
+          "object"
+        ],
+        "read_guide": [
+          "object"
+        ],
+        "evaluate_quality_of_life": [
+          "object"
+        ],
+        "recommend_mobility_aids": [
+          "object"
+        ],
+        "calculate_dog_age": [
+          "object"
+        ]
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-18",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: el adaptador WebMCP está en una plantilla inerte",
+      "ok": true,
+      "detail": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js"
+      ]
+    },
+    {
+      "id": "C4A-18",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: con API se carga el chunk de la plantilla",
+      "ok": true,
+      "detail": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "/_astro/calidad-vida.CkucuN4v.js",
+        "/_astro/contract.Cu9QodcA.js",
+        "/_astro/dog-age.DuKgCMbW.js",
+        "/_astro/movilidad.B1WnJKyW.js"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: WebMCP.toolsAdded entrega exactamente las cinco tools",
+      "ok": true,
+      "detail": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids",
+        "calculate_dog_age"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: search_guides vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: read_guide vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: evaluate_quality_of_life vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: recommend_mobility_aids vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: calculate_dog_age vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: search_guides vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: read_guide vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: evaluate_quality_of_life vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: recommend_mobility_aids vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/salud-perros-mayores/sindrome-cushing-perros-mayores: calculate_dog_age vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/herramientas/calculadora-calidad-vida-perros: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-18",
+      "name": "/herramientas/calculadora-calidad-vida-perros: el adaptador WebMCP está en una plantilla inerte",
+      "ok": true,
+      "detail": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js"
+      ]
+    },
+    {
+      "id": "C4A-18",
+      "name": "/herramientas/calculadora-calidad-vida-perros: con API se carga el chunk de la plantilla",
+      "ok": true,
+      "detail": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+        "/_astro/calidad-vida.CkucuN4v.js",
+        "/_astro/contract.Cu9QodcA.js",
+        "/_astro/dog-age.DuKgCMbW.js",
+        "/_astro/movilidad.B1WnJKyW.js"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: WebMCP.toolsAdded entrega exactamente las cinco tools",
+      "ok": true,
+      "detail": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids",
+        "calculate_dog_age"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: search_guides vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: read_guide vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: evaluate_quality_of_life vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: recommend_mobility_aids vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: calculate_dog_age vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: search_guides vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: read_guide vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: evaluate_quality_of_life vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: recommend_mobility_aids vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-calidad-vida-perros: calculate_dog_age vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/herramientas/calculadora-edad-perro: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-18",
+      "name": "/herramientas/calculadora-edad-perro: el adaptador WebMCP está en una plantilla inerte",
+      "ok": true,
+      "detail": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js"
+      ]
+    },
+    {
+      "id": "C4A-18",
+      "name": "/herramientas/calculadora-edad-perro: con API se carga el chunk de la plantilla",
+      "ok": true,
+      "detail": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "/_astro/DogAgeTool.astro_astro_type_script_index_0_lang.hoMi-XIx.js",
+        "/_astro/calidad-vida.CkucuN4v.js",
+        "/_astro/contract.Cu9QodcA.js",
+        "/_astro/dog-age.DuKgCMbW.js",
+        "/_astro/movilidad.B1WnJKyW.js"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: WebMCP.toolsAdded entrega exactamente las cinco tools",
+      "ok": true,
+      "detail": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids",
+        "calculate_dog_age"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: search_guides vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: read_guide vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: evaluate_quality_of_life vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: recommend_mobility_aids vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: calculate_dog_age vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: search_guides vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: read_guide vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: evaluate_quality_of_life vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: recommend_mobility_aids vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/herramientas/calculadora-edad-perro: calculate_dog_age vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: sin peticiones a /api/agent/v1 al cargar",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: sin excepciones de página",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "C4A-12",
+      "name": "/politica-editorial: sin atributos declarativos WebMCP",
+      "ok": true
+    },
+    {
+      "id": "C4A-18",
+      "name": "/politica-editorial: el adaptador WebMCP está en una plantilla inerte",
+      "ok": true,
+      "detail": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js"
+      ]
+    },
+    {
+      "id": "C4A-18",
+      "name": "/politica-editorial: con API se carga el chunk de la plantilla",
+      "ok": true,
+      "detail": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "/_astro/calidad-vida.CkucuN4v.js",
+        "/_astro/contract.Cu9QodcA.js",
+        "/_astro/dog-age.DuKgCMbW.js",
+        "/_astro/movilidad.B1WnJKyW.js"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: WebMCP.toolsAdded entrega exactamente las cinco tools",
+      "ok": true,
+      "detail": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids",
+        "calculate_dog_age"
+      ]
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: search_guides vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: read_guide vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: evaluate_quality_of_life vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: recommend_mobility_aids vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: calculate_dog_age vía CDP (description, inputSchema, readOnly)",
+      "ok": true,
+      "detail": {
+        "hasInputSchema": true,
+        "annotations": {
+          "readOnly": true,
+          "untrustedContent": false,
+          "consequential": false
+        }
+      }
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: search_guides vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: read_guide vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: evaluate_quality_of_life vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: recommend_mobility_aids vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    },
+    {
+      "id": "C4A-08",
+      "name": "/politica-editorial: calculate_dog_age vía getTools() (title, inputSchema, readOnlyHint)",
+      "ok": true
+    }
+  ],
+  "scripts": {
+    "/": {
+      "requested": [
+        {
+          "path": "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+          "sha256": "17e90172b974dcb90dc0f5e2829949645b76e4cb2b2bc0c65b0e655f1afd401f"
+        },
+        {
+          "path": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+          "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+        },
+        {
+          "path": "/_astro/HomeAgeCalculator.astro_astro_type_script_index_0_lang.DQoZqBbO.js",
+          "sha256": "1369538f635ceeb0182d2ec947bb91025db71dd91acbcc3b006c9932f685b53f"
+        },
+        {
+          "path": "/_astro/calidad-vida.CkucuN4v.js",
+          "sha256": "6f3e16f3ed447234d5e7e3a7226f512283ab6a8b9e9727736e65f1876c5b0d38"
+        },
+        {
+          "path": "/_astro/contract.Cu9QodcA.js",
+          "sha256": "512414df1c0c948fa3d24e3923aa17bfc45b1043459d0a1c083db6e1bb0f0e76"
+        },
+        {
+          "path": "/_astro/dog-age.DuKgCMbW.js",
+          "sha256": "f82f26cd36b2053ad046b73782faf6b2af279914776ade8c173b2012be0335a3"
+        },
+        {
+          "path": "/_astro/movilidad.B1WnJKyW.js",
+          "sha256": "b0c7e640bdf4e223d602b4b9c04d24bc43dc63caa8923acaf92eddd7cd4b4e53"
+        }
+      ],
+      "expectedWithoutApi": [
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "/_astro/HomeAgeCalculator.astro_astro_type_script_index_0_lang.DQoZqBbO.js",
+        "/_astro/dog-age.DuKgCMbW.js"
+      ],
+      "template": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js"
+      ],
+      "templateOnly": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+        "/_astro/calidad-vida.CkucuN4v.js",
+        "/_astro/contract.Cu9QodcA.js",
+        "/_astro/movilidad.B1WnJKyW.js"
+      ]
+    },
+    "/salud-perros-mayores/sindrome-cushing-perros-mayores": {
+      "requested": [
+        {
+          "path": "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+          "sha256": "17e90172b974dcb90dc0f5e2829949645b76e4cb2b2bc0c65b0e655f1afd401f"
+        },
+        {
+          "path": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+          "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+        },
+        {
+          "path": "/_astro/calidad-vida.CkucuN4v.js",
+          "sha256": "6f3e16f3ed447234d5e7e3a7226f512283ab6a8b9e9727736e65f1876c5b0d38"
+        },
+        {
+          "path": "/_astro/contract.Cu9QodcA.js",
+          "sha256": "512414df1c0c948fa3d24e3923aa17bfc45b1043459d0a1c083db6e1bb0f0e76"
+        },
+        {
+          "path": "/_astro/dog-age.DuKgCMbW.js",
+          "sha256": "f82f26cd36b2053ad046b73782faf6b2af279914776ade8c173b2012be0335a3"
+        },
+        {
+          "path": "/_astro/movilidad.B1WnJKyW.js",
+          "sha256": "b0c7e640bdf4e223d602b4b9c04d24bc43dc63caa8923acaf92eddd7cd4b4e53"
+        }
+      ],
+      "expectedWithoutApi": [
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+      ],
+      "template": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js"
+      ],
+      "templateOnly": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+        "/_astro/calidad-vida.CkucuN4v.js",
+        "/_astro/contract.Cu9QodcA.js",
+        "/_astro/dog-age.DuKgCMbW.js",
+        "/_astro/movilidad.B1WnJKyW.js"
+      ]
+    },
+    "/herramientas/calculadora-calidad-vida-perros": {
+      "requested": [
+        {
+          "path": "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+          "sha256": "17e90172b974dcb90dc0f5e2829949645b76e4cb2b2bc0c65b0e655f1afd401f"
+        },
+        {
+          "path": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+          "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+        },
+        {
+          "path": "/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+          "sha256": "f766f22002d928c37aeb58a65e2222d7203623e13f8558d3079db1151d378357"
+        },
+        {
+          "path": "/_astro/calidad-vida.CkucuN4v.js",
+          "sha256": "6f3e16f3ed447234d5e7e3a7226f512283ab6a8b9e9727736e65f1876c5b0d38"
+        },
+        {
+          "path": "/_astro/contract.Cu9QodcA.js",
+          "sha256": "512414df1c0c948fa3d24e3923aa17bfc45b1043459d0a1c083db6e1bb0f0e76"
+        },
+        {
+          "path": "/_astro/dog-age.DuKgCMbW.js",
+          "sha256": "f82f26cd36b2053ad046b73782faf6b2af279914776ade8c173b2012be0335a3"
+        },
+        {
+          "path": "/_astro/movilidad.B1WnJKyW.js",
+          "sha256": "b0c7e640bdf4e223d602b4b9c04d24bc43dc63caa8923acaf92eddd7cd4b4e53"
+        }
+      ],
+      "expectedWithoutApi": [
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "/_astro/calculadora-calidad-vida-perros.astro_astro_type_script_index_0_lang.hNhk24tz.js",
+        "/_astro/calidad-vida.CkucuN4v.js",
+        "/_astro/contract.Cu9QodcA.js"
+      ],
+      "template": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js"
+      ],
+      "templateOnly": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+        "/_astro/dog-age.DuKgCMbW.js",
+        "/_astro/movilidad.B1WnJKyW.js"
+      ]
+    },
+    "/herramientas/calculadora-edad-perro": {
+      "requested": [
+        {
+          "path": "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+          "sha256": "17e90172b974dcb90dc0f5e2829949645b76e4cb2b2bc0c65b0e655f1afd401f"
+        },
+        {
+          "path": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+          "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+        },
+        {
+          "path": "/_astro/DogAgeTool.astro_astro_type_script_index_0_lang.hoMi-XIx.js",
+          "sha256": "0667b8553be9a1f74d0007ca8304212bddcf4e0a7aa9aa0c67bc317e9abc3951"
+        },
+        {
+          "path": "/_astro/calidad-vida.CkucuN4v.js",
+          "sha256": "6f3e16f3ed447234d5e7e3a7226f512283ab6a8b9e9727736e65f1876c5b0d38"
+        },
+        {
+          "path": "/_astro/contract.Cu9QodcA.js",
+          "sha256": "512414df1c0c948fa3d24e3923aa17bfc45b1043459d0a1c083db6e1bb0f0e76"
+        },
+        {
+          "path": "/_astro/dog-age.DuKgCMbW.js",
+          "sha256": "f82f26cd36b2053ad046b73782faf6b2af279914776ade8c173b2012be0335a3"
+        },
+        {
+          "path": "/_astro/movilidad.B1WnJKyW.js",
+          "sha256": "b0c7e640bdf4e223d602b4b9c04d24bc43dc63caa8923acaf92eddd7cd4b4e53"
+        }
+      ],
+      "expectedWithoutApi": [
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+        "/_astro/DogAgeTool.astro_astro_type_script_index_0_lang.hoMi-XIx.js",
+        "/_astro/dog-age.DuKgCMbW.js"
+      ],
+      "template": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js"
+      ],
+      "templateOnly": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+        "/_astro/calidad-vida.CkucuN4v.js",
+        "/_astro/contract.Cu9QodcA.js",
+        "/_astro/movilidad.B1WnJKyW.js"
+      ]
+    },
+    "/politica-editorial": {
+      "requested": [
+        {
+          "path": "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+          "sha256": "17e90172b974dcb90dc0f5e2829949645b76e4cb2b2bc0c65b0e655f1afd401f"
+        },
+        {
+          "path": "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js",
+          "sha256": "75386c4676e948ceceed2735cc221dd6b14ade36d63027a762d348f67d47981a"
+        },
+        {
+          "path": "/_astro/calidad-vida.CkucuN4v.js",
+          "sha256": "6f3e16f3ed447234d5e7e3a7226f512283ab6a8b9e9727736e65f1876c5b0d38"
+        },
+        {
+          "path": "/_astro/contract.Cu9QodcA.js",
+          "sha256": "512414df1c0c948fa3d24e3923aa17bfc45b1043459d0a1c083db6e1bb0f0e76"
+        },
+        {
+          "path": "/_astro/dog-age.DuKgCMbW.js",
+          "sha256": "f82f26cd36b2053ad046b73782faf6b2af279914776ade8c173b2012be0335a3"
+        },
+        {
+          "path": "/_astro/movilidad.B1WnJKyW.js",
+          "sha256": "b0c7e640bdf4e223d602b4b9c04d24bc43dc63caa8923acaf92eddd7cd4b4e53"
+        }
+      ],
+      "expectedWithoutApi": [
+        "/_astro/CanineAiAssistant.astro_astro_type_script_index_0_lang.BGkTvlqC.js"
+      ],
+      "template": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js"
+      ],
+      "templateOnly": [
+        "/_astro/AgentToolsScript.astro_astro_type_script_index_0_lang.iM7BU35-.js",
+        "/_astro/calidad-vida.CkucuN4v.js",
+        "/_astro/contract.Cu9QodcA.js",
+        "/_astro/dog-age.DuKgCMbW.js",
+        "/_astro/movilidad.B1WnJKyW.js"
+      ]
+    }
+  }
+}
