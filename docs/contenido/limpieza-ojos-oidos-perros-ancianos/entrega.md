@@ -24,3 +24,9 @@ SHA-256 del MDX aprobado: `2d1aace9b3677c9d16d0c9969e3f1cebd4e4ea3950fe58ef2b064
 - Auditoría visual independiente previa conservada en `auditoria-visual.md`; las imágenes no cambiaron tras ella. No se presenta como una nueva revisión visual del usuario.
 
 El usuario autorizó expresamente push a main con el artículo y las skills. La validación local no prueba el despliegue: su comprobación pública se registra después del push. Esta entrega no corrige los artículos antiguos señalados en el informe AdSense ni garantiza aceptación por Google.
+
+## Confirmación pública
+
+Despliegue de `f0fecbe048996e10ef82ecbff801446123a3aa70` completado con éxito por Workers Builds. Comprobado el2026-10-16: artículo HTTP200, fecha16, un H1, tres imágenes, nueve variantes/principales WebP HTTP200 y artículo en sitemap. Evidencia: `publicacion-verificada.json`. Inventario actualizado a Publicado únicamente después de esta prueba.
+
+URL: https://cuidatuperroviejo.com/higiene-hogar-perros-senior/limpieza-ojos-oidos-perros-ancianos

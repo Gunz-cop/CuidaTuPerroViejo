@@ -277,13 +277,13 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [x] *Agresividad de aparición tardía en perros mayores: cuándo es dolor y cuándo es deterioro cognitivo* (Publicado — 2026-08-15) **[Nuevo - Tema añadido 2026-08-14, no previsto en el catálogo original]**
 
 ### Pilar 6: Higiene y Hogar para Perros Senior (11 artículos totales propuestos)
-*Estado del código local: 5 implementados, incluidos ojos/oídos; 6 temas solo en briefing. La publicación remota de ojos/oídos está pendiente. El estado de despliegue se comprueba en el CI.*
+*Estado: 5 artículos implementados y publicados, incluidos ojos/oídos; 6 temas solo en briefing. Publicación de ojos/oídos comprobada en producción el 2026-10-16.*
 - [x] *Incontinencia urinaria en perros mayores: causas y soluciones* (Publicado)
 - [x] *Incontinencia fecal en perros senior: manejo de higiene, alimentación y consejos de limpieza* (Publicado)
 - [x] *Cómo bañar y asear a un perro viejo con movilidad reducida* (Publicado — comprobado en web pública 2026-10-16. Brief: `briefings/briefing-banar-perro-viejo-movilidad-reducida.md`)
 - [~] *Verrugas, bultos y quistes cutáneos en la vejez: guía visual de dermatología geriátrica* (En Briefing — ver `briefings/briefing-verrugas-bultos-quistes-perros-mayores.md`)
 - [~] *Cuidado de la piel y el pelo del perro senior: sequedad, descamación y callos de apoyo* (En Briefing — ver `briefings/briefing-cuidado-piel-pelo-perro-senior.md`)
-- [~] *Limpieza segura de ojos y oídos en perros ancianos con secreciones frecuentes* (Redactado e integrado localmente — 2026-10-15; texto e imágenes auditados, build/check y navegador correctos. Publicación remota pendiente. Brief: `briefings/briefing-limpieza-ojos-oidos-perros-ancianos.md`)
+- [x] *Limpieza segura de ojos y oídos en perros ancianos con secreciones frecuentes* (Publicado — 2026-10-16; auditoría editorial final3/3 aprobada, Cloudflare correcto y URL/imágenes/sitemap comprobados en producción. Brief: `briefings/briefing-limpieza-ojos-oidos-perros-ancianos.md`)
 - [~] *Productos de higiene indispensables: empapadores, pañales y limpiadores enzimáticos* (En Briefing — ver `briefings/briefing-empapadores-panales-limpiadores-enzimaticos-perros.md`)
 - [~] *Corte de uñas y cuidado de almohadillas en perros que ya no desgastan por caminar* (En Briefing — ver `briefings/briefing-corte-unas-almohadillas-perros-mayores.md`)
 - [~] *Eliminación de olores a orina y accidentes de perros ancianos en el hogar* (En Briefing — ver `briefings/briefing-eliminar-olor-orina-perro-casa.md`)

@@ -266,3 +266,5 @@ Aportación: síntesis con decisiones para observar/limpiar/consultar, separaci�
 | PDF/vídeo descargable | No se anuncia | No crear promesas sin recurso |
 
 Fuentes: tabla de afirmaciones, pasajes, fecha, identidad y limitaciones en `docs/contenido/limpieza-ojos-oidos-perros-ancianos/auditoria-editorial-r2.md`. Moog sigue limitado al objeto descrito en el resumen. El artículo se revisa el16 de octubre y toma esa fecha para su primera publicación. Pendiente cierre independiente R3 y confirmación de despliegue; autorización de push a main recibida del usuario.
+
+**Publicación confirmada, 2026-10-16:** artículo aprobado en ronda3/3, commit de producto `f0fecbe048996e10ef82ecbff801446123a3aa70` en main y Workers Builds finalizado con éxito. URL pública HTTP200, un H1, tres imágenes de artículo, nueve WebP accesibles y presencia en sitemap. Ver `docs/contenido/limpieza-ojos-oidos-perros-ancianos/publicacion-verificada.json`. Los estados pendientes anteriores se conservan como historial y quedan superados por esta confirmación.
