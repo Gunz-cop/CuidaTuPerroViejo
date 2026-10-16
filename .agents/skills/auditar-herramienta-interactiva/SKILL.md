@@ -13,6 +13,14 @@ léelo primero.
 **No corrijas nada.** Quien corrige adquiere interés en que su corrección sea
 la buena. Si hay que corregir, deja instrucciones para otra sesión.
 
+## Decisiones del propietario
+
+Antes de auditar, lee [`docs/herramientas/decisiones-del-propietario.md`](../../../docs/herramientas/decisiones-del-propietario.md).
+Lo que esté ahí es una decisión de producto del propietario, **no un
+hallazgo**: no lo marques como fallo ni como bloqueante. Si crees que una de
+esas decisiones causa un problema nuevo y concreto, ponlo en una sección
+aparte del informe, "Propuestas para el propietario", con el motivo.
+
 ## Procedimiento
 
 Trabaja sobre la rama o el PR indicado. Identifica los tres archivos: lógica
