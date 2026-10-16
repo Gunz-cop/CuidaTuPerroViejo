@@ -34,7 +34,7 @@ export const F3_LLMS_SECTION = '\n## Interfaces públicas de contenido\n\n'
   + '- [OpenAPI](https://cuidatuperroviejo.com/agent-api/v1/openapi.json): contrato de catálogo, búsqueda, lectura íntegra y cálculos de las dos herramientas.\n'
   + '- [Skills](https://cuidatuperroviejo.com/.well-known/agent-skills/index.json): instrucciones verificables para buscar, leer y citar.\n'
   + '- [ARD](https://cuidatuperroviejo.com/.well-known/ard.json): capacidades públicas activas.\n'
-  + '- [MCP remoto](https://cuidatuperroviejo.com/api/mcp/server-card): transporte público para buscar, leer y ejecutar las dos herramientas educativas.\n';
+  + '- [MCP remoto](https://cuidatuperroviejo.com/api/mcp/server-card): transporte público para buscar, leer y ejecutar las tres herramientas educativas.\n';
 
 function completeLlms(prefix) {
   const bytes = Buffer.concat([prefix, Buffer.from(F3_LLMS_SECTION, 'utf8')]);

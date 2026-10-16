@@ -7,6 +7,7 @@ import { readFileSync } from 'node:fs';
 import { INPUT_SCHEMAS, TOOLS, findModelContext, registerAgentTools } from '../../src/scripts/agent-tools.ts';
 import { evaluateQualityOfLife } from '../../src/lib/agent-tools/calidad-vida.ts';
 import { recommendMobilityAids } from '../../src/lib/agent-tools/movilidad.ts';
+import { calculateDogAge } from '../../src/lib/agent-tools/edad.ts';
 
 const ANNEX = readFileSync(new URL('../../docs/agent-readiness/evidencia/f4a/contratos/webmcp-input-schemas.json', import.meta.url), 'utf8');
 const INVALID = { schemaVersion: 'agent-api/1', error: { code: 'INVALID_REQUEST', message: 'Invalid request.' } };
@@ -41,16 +42,17 @@ test('el anexo de inputSchema es ASCII puro y el módulo lo usa con igualdad exa
   assert.deepEqual(INPUT_SCHEMAS, JSON.parse(ANNEX));
 });
 
-test('registro: cuatro tools en orden, metadatos exactos, readOnlyHint y una sola señal', async () => {
+test('registro: cinco tools en orden, metadatos exactos, readOnlyHint y una sola señal', async () => {
   const context = fakeContext();
   assert.equal(await registerAgentTools(context), true);
-  assert.deepEqual(context.registered.map((r) => r.tool.name), ['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids']);
-  assert.deepEqual(context.registered.map((r) => r.tool.title), ['Buscar guías', 'Leer guía completa', 'Calculadora HHHHHMM', 'Selector de movilidad']);
+  assert.deepEqual(context.registered.map((r) => r.tool.name), ['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids', 'calculate_dog_age']);
+  assert.deepEqual(context.registered.map((r) => r.tool.title), ['Buscar guías', 'Leer guía completa', 'Calculadora HHHHHMM', 'Selector de movilidad', 'Calculadora de edad']);
   assert.deepEqual(context.registered.map((r) => r.tool.description), [
     'Busca guías publicadas de Cuida tu Perro Viejo por palabras completas y devuelve documentos con su puntuación léxica. No genera consejo veterinario.',
     'Lee el contenido íntegro en Markdown de una guía por su documentId, con metadata, URL canónica y enlaces originales.',
     'Calcula la escala HHHHHMM de calidad de vida (siete criterios de 0 a 10) igual que la calculadora del sitio. Es orientativa, no un diagnóstico ni una decisión.',
     'Recomienda ayudas de movilidad según el nivel de movilidad y la tolerancia a la manipulación, igual que el selector del sitio. Orientativo; consulta al veterinario.',
+    'Calcula la edad equivalente en años humanos de un perro según su tamaño y edad, igual que la calculadora del sitio: etapa de vida (AAHA 2019), edad de inicio senior, esperanza de vida media por tamaño (Montoya 2023), comparación epigenética (Wang 2020), un mensaje para su etapa y la guía recomendada. Úsala cuando alguien pregunte cuántos años humanos tiene su perro, si ya es senior o en qué etapa está. Orientativa; no sustituye una valoración veterinaria.',
   ]);
   const annex = JSON.parse(ANNEX);
   for (const { tool: t, options } of context.registered) {
@@ -168,5 +170,18 @@ test('cancelación: señal ya abortada rechaza sin red; abortar durante fetch re
     await assert.rejects(pending, { name: 'AbortError', message: 'cancelado' });
     assert.equal(net.calls.length, 1);
     assert.equal(net.calls[0]!.init.signal, during.signal);
+  } finally { net.restore(); }
+});
+
+test('calculate_dog_age: mismo resultado que el módulo, sin red, e inválidos → INVALID_REQUEST', async () => {
+  const net = stubFetch(() => { throw new Error('sin red'); });
+  try {
+    const luna = { size: 'small', years: 11, name: 'Luna' };
+    assert.deepEqual(await tool('calculate_dog_age')(luna), calculateDogAge(luna));
+    assert.deepEqual(await tool('calculate_dog_age')(JSON.stringify(luna)), calculateDogAge(luna));
+    for (const bad of [{ size: 'tiny', years: 3 }, { size: 'small', years: 26 }, { size: 'small' }, { size: 'small', years: 1, months: 12 }, { size: 'small', years: 1, x: 1 }]) {
+      assert.deepEqual(await tool('calculate_dog_age')(bad), INVALID);
+    }
+    assert.equal(net.calls.length, 0);
   } finally { net.restore(); }
 });

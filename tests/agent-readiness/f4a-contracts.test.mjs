@@ -84,7 +84,7 @@ test('API Catalog, ARD, skill y llms anuncian exactamente las operaciones implem
   assert.ok(F3_LLMS_SECTION.includes('- [OpenAPI](https://cuidatuperroviejo.com/agent-api/v1/openapi.json): contrato de catálogo, búsqueda, lectura íntegra y cálculos de las dos herramientas.\n'));
   assert.doesNotMatch(F3_LLMS_SECTION, /webmcp/iu);
   assert.equal(F3_LLMS_SECTION.match(/\[MCP remoto\]/gu)?.length, 1);
-  assert.ok(F3_LLMS_SECTION.endsWith('- [MCP remoto](https://cuidatuperroviejo.com/api/mcp/server-card): transporte público para buscar, leer y ejecutar las dos herramientas educativas.\n'));
+  assert.ok(F3_LLMS_SECTION.endsWith('- [MCP remoto](https://cuidatuperroviejo.com/api/mcp/server-card): transporte público para buscar, leer y ejecutar las tres herramientas educativas.\n'));
   assert.equal(ard.entries[1].type, 'application/mcp-server-card+json');
   assert.equal(ard.entries[1].url, `${SITE}/api/mcp/server-card`);
 });

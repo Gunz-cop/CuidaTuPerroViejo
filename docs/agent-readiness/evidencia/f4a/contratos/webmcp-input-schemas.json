@@ -143,5 +143,42 @@
       "handling"
     ],
     "additionalProperties": false
+  },
+  "calculate_dog_age": {
+    "type": "object",
+    "properties": {
+      "size": {
+        "type": "string",
+        "enum": [
+          "small",
+          "medium",
+          "large",
+          "giant"
+        ],
+        "description": "Tamano adulto por peso: small = menos de 11 kg; medium = 11-25 kg; large = 26-44 kg; giant = 45 kg o mas."
+      },
+      "years": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 25,
+        "description": "Anos cumplidos del perro (entero 0..25)."
+      },
+      "months": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 11,
+        "description": "Meses adicionales (0..11, opcional). Solo cuentan por debajo de 2 anos; con 0 anos y 0 meses se usa 1 mes, igual que la calculadora."
+      },
+      "name": {
+        "type": "string",
+        "maxLength": 20,
+        "description": "Nombre del perro (opcional, hasta 20 caracteres) para personalizar el mensaje."
+      }
+    },
+    "required": [
+      "size",
+      "years"
+    ],
+    "additionalProperties": false
   }
 }

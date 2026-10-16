@@ -4,6 +4,7 @@ import { Client, StreamableHTTPClientTransport } from '@modelcontextprotocol/cli
 import { createAgentMcpWorker, MAX_BODY } from '../../src/lib/agent-mcp/runtime';
 import { evaluateQualityOfLife } from '../../src/lib/agent-tools/calidad-vida';
 import { recommendMobilityAids } from '../../src/lib/agent-tools/movilidad';
+import { calculateDogAge } from '../../src/lib/agent-tools/edad';
 import registry from '../../src/agent-api/capabilities.json';
 
 function fixture() {
@@ -27,7 +28,9 @@ test('SDK real: initialize legacy y moderno; listado y cálculos exactos sin I/O
       assert.equal(server?.name, registry.mcp.name); assert.equal(server?.version, registry.mcp.version);
       assert.deepEqual(client.getServerCapabilities(), registry.mcp.capabilities);
       const listed = await client.listTools();
-      assert.deepEqual(listed.tools.map((tool) => tool.name), ['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids']);
+      assert.deepEqual(listed.tools.map((tool) => tool.name), ['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids', 'calculate_dog_age']);
+      const ageTool = listed.tools.find((tool) => tool.name === 'calculate_dog_age')!;
+      assert.deepEqual(ageTool.annotations, { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false });
       const quality = { hurt: 5, hunger: 5, hydration: 5, hygiene: 5, happiness: 5, mobility: 5, moreGoodDays: 5 };
       const result = await client.callTool({ name: 'evaluate_quality_of_life', arguments: quality });
       const value = modern ? result.structuredContent : (result.structuredContent as any)?.result;
@@ -35,6 +38,12 @@ test('SDK real: initialize legacy y moderno; listado y cálculos exactos sin I/O
       const mobility = { level: 'severe', handling: 'stressed' };
       const recommended = await client.callTool({ name: 'recommend_mobility_aids', arguments: mobility });
       assert.deepEqual(modern ? recommended.structuredContent : (recommended.structuredContent as any)?.result, recommendMobilityAids(mobility));
+      const giant = { size: 'giant', years: 10 };
+      const aged = await client.callTool({ name: 'calculate_dog_age', arguments: giant });
+      const ageValue = modern ? aged.structuredContent : (aged.structuredContent as any)?.result;
+      assert.deepEqual(ageValue, calculateDogAge(giant)); assert.equal((ageValue as any).human_years, 83);
+      const badAge = await client.callTool({ name: 'calculate_dog_age', arguments: { size: 'giant', years: 26 } });
+      assert.equal(badAge.isError, true); assert.equal(JSON.parse((badAge.content as any)[0].text).error.code, 'INVALID_REQUEST');
       const invalid = await client.callTool({ name: 'evaluate_quality_of_life', arguments: { ...quality, hurt: 11 } });
       assert.equal(invalid.isError, true); assert.equal(JSON.parse((invalid.content as any)[0].text).error.code, 'INVALID_REQUEST');
       assert.equal(f.reads(), 0);

@@ -4,6 +4,7 @@
 // no hace nada: ni polyfill, ni peticiones, ni errores visibles.
 import { evaluateQualityOfLife } from '../lib/agent-tools/calidad-vida.ts';
 import { recommendMobilityAids } from '../lib/agent-tools/movilidad.ts';
+import { calculateDogAge } from '../lib/agent-tools/edad.ts';
 import { ToolInputError, isPlainObject } from '../lib/agent-tools/contract.ts';
 
 type Input = Record<string, unknown>;
@@ -165,6 +166,43 @@ export const INPUT_SCHEMAS = {
       "handling"
     ],
     "additionalProperties": false
+  },
+  "calculate_dog_age": {
+    "type": "object",
+    "properties": {
+      "size": {
+        "type": "string",
+        "enum": [
+          "small",
+          "medium",
+          "large",
+          "giant"
+        ],
+        "description": "Tamano adulto por peso: small = menos de 11 kg; medium = 11-25 kg; large = 26-44 kg; giant = 45 kg o mas."
+      },
+      "years": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 25,
+        "description": "Anos cumplidos del perro (entero 0..25)."
+      },
+      "months": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 11,
+        "description": "Meses adicionales (0..11, opcional). Solo cuentan por debajo de 2 anos; con 0 anos y 0 meses se usa 1 mes, igual que la calculadora."
+      },
+      "name": {
+        "type": "string",
+        "maxLength": 20,
+        "description": "Nombre del perro (opcional, hasta 20 caracteres) para personalizar el mensaje."
+      }
+    },
+    "required": [
+      "size",
+      "years"
+    ],
+    "additionalProperties": false
   }
 } as const;
 
@@ -264,6 +302,12 @@ export const TOOLS = [
     title: 'Selector de movilidad',
     description: 'Recomienda ayudas de movilidad según el nivel de movilidad y la tolerancia a la manipulación, igual que el selector del sitio. Orientativo; consulta al veterinario.',
     execute: tool((input) => recommendMobilityAids(input)),
+  },
+  {
+    name: 'calculate_dog_age',
+    title: 'Calculadora de edad',
+    description: 'Calcula la edad equivalente en años humanos de un perro según su tamaño y edad, igual que la calculadora del sitio: etapa de vida (AAHA 2019), edad de inicio senior, esperanza de vida media por tamaño (Montoya 2023), comparación epigenética (Wang 2020), un mensaje para su etapa y la guía recomendada. Úsala cuando alguien pregunte cuántos años humanos tiene su perro, si ya es senior o en qué etapa está. Orientativa; no sustituye una valoración veterinaria.',
+    execute: tool((input) => calculateDogAge(input)),
   },
 ] as const;
 
