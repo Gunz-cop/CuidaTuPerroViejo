@@ -272,3 +272,5 @@ Fuentes: tabla de afirmaciones, pasajes, fecha, identidad y limitaciones en `doc
 ## 12. Ampliación visual solicitada el2026-10-16
 
 El usuario encarga experiencias visuales y delega cantidad/utilidad. Se acuerdan tres nuevas: mapa de decisiones temprano, secuencia controlable de limpieza indicada y desglose de la cohorte. No se reabre el contrato científico ni sus rondas ya concluidas; la extensión visual tiene revisión propia y conserva afirmaciones y límites aprobados. Ver `docs/contenido/limpieza-ojos-oidos-perros-ancianos/experiencias-visuales/plan.md`.
+
+**Ampliación visual publicada y comprobada:** tres experiencias integradas, auditoría visualR2aprobada y Cloudflare correcto para `e89f3354c5673f5757c6ac0c0ad780084948ee9d`. URL, HTML, scripts y recorte verificados públicamente; evidencia en `experiencias-visuales/publicacion.json`.

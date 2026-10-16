@@ -23,3 +23,7 @@ No se ha medido una mejora de permanencia: esa hipótesis requiere Analytics tra
 `cocker-senior-guia-otica-v1.webp` (1200×800) y variantes800/400, alfa conservado. La animación SVG utiliza el principal; las variantes quedan disponibles, no se afirma selección responsive de SVG. La identidad y anatomía se inspeccionaron a partir de la escena publicada de masaje; el sujeto es ilustrativo, no paciente real. El nombrev1evita sustituir imágenes con caché larga.
 
 Los originales se conservan según `plan.md`. Recursos sin dependencias nuevas; CSS/JS limitados al componente. Pendiente registro público después del push autorizado dentro del trabajo del artículo.
+
+## Publicación comprobada
+
+Workers Builds completó con éxito el commit `e89f3354c5673f5757c6ac0c0ad780084948ee9d` enmain. Se comprobó la URL pública HTTP200, las tres variantes visuales en HTML, los cuatro paneles, el desglose5+2+1, los scripts de control y los tres archivos del recorte decodificados conalfa. Evidencia: `publicacion.json`. Las pruebas de interacción y contraste corresponden al mismo build local descrito arriba; no se atribuye una medición pública de retención.
