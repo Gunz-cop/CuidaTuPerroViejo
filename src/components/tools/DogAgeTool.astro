@@ -320,7 +320,7 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
 </style>
 
 <script>
-  import { dogAge, roundToHalf, STAGE_LABELS, type DogSize } from '../../lib/dog-age';
+  import { dogAge, effectiveAge, roundToHalf, STAGE_ADVICE, STAGE_GUIDES, STAGE_LABELS, type DogSize } from '../../lib/dog-age';
 
   const root = document.querySelector<HTMLElement>('.dat');
   const $ = <T,>(id: string) => document.getElementById(id) as T | null;
@@ -331,20 +331,8 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   const monthsWrap = $<HTMLElement>('dat-months-wrap');
   const result = $<HTMLElement>('dat-result');
 
-  const advice: Record<string, string> = {
-    puppy: 'Etapa de crecimiento rápido: socialización, vacunas y una base de hábitos que le servirán toda la vida.',
-    young: 'Plena forma. Es el mejor momento para cuidar su peso y su boca: es la mejor inversión para su vejez.',
-    mature: 'Adulto maduro. Una revisión completa ahora te da valores de referencia para comparar cuando llegue a senior.',
-    senior: 'Ya es senior. Es normal que duerma más y más profundo; consulta si le cuesta mucho despertar o el cambio es brusco. Revisiones más frecuentes y pequeños ajustes en casa ayudan a que disfrute esta etapa.',
-    longevous: '¡Un perro longevo! Ya superó la edad media de su tamaño, y eso habla muy bien de sus cuidados. Dormir mucho es parte de esta etapa: una cama cómoda y rutinas tranquilas le ayudan a descansar.',
-  };
-  const guides: Record<string, [string, string]> = {
-    puppy: ['/salud-perros-mayores', 'Ver cómo prepararlo para el futuro →'],
-    young: ['/alimentacion-perros-senior', 'Ver alimentación y peso →'],
-    mature: ['/salud-perros-mayores', 'Ver plan preventivo senior →'],
-    senior: ['/movilidad-dolor-perros-mayores', 'Ver cuidados de movilidad →'],
-    longevous: ['/movilidad-dolor-perros-mayores', 'Ver cómo darle más confort →'],
-  };
+  const advice = STAGE_ADVICE;
+  const guides = STAGE_GUIDES;
 
   let state = dogAge('medium', 8);
   let ageText = '8 años';
@@ -365,9 +353,9 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
     if (!root || !years || !months) return;
     const size = (form?.querySelector<HTMLInputElement>('input[name="size"]:checked')?.value ?? 'medium') as DogSize;
     const y = Number(years.value);
-    // Con 0 años, al menos 1 mes: evita el estado "0 meses".
-    if (y === 0 && months.value === '0') months.value = '1';
-    const m = y < 2 ? Number(months.value) : 0;
+    // Con 0 años, al menos 1 mes; desde los 2 años no cuentan los meses.
+    const m = effectiveAge(y, Number(months.value)).months;
+    if (y < 2) months.value = String(m);
     monthsWrap?.classList.toggle('is-on', y < 2);
     state = dogAge(size, y, m);
     dogName = (nameInput?.value ?? '').trim();
