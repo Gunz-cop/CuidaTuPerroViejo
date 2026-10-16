@@ -1,6 +1,6 @@
 ---
 name: Redactar Artículo de Blog - Cuida Tu Perro Viejo
-description: Convierte un briefing de contenidos (generado por la skill generar-briefing-contenido) en el artículo final .mdx listo para publicar en el blog Astro de cuidatuperroviejo.com, respetando la arquitectura real del sitio.
+description: Convierte un briefing de contenidos (generado por la skill generar-briefing-contenido) en el artículo final .mdx listo para publicar en el blog Astro de cuidatuperroviejo.com, respetando la arquitectura real del sitio e integrando infografías y animaciones útiles, accesibles y verificadas según el tema.
 ---
 
 # Habilidad: Redactor de Artículos de Contenido (Astro/MDX)
@@ -20,6 +20,7 @@ Lee y aplica [calidad-editorial-adsense.md](../references/calidad-editorial-adse
 *   [reglas_astro_mdx.md](./references/reglas_astro_mdx.md): qué automatiza el layout (y por tanto qué NO debe escribirse a mano), extraído directamente del código fuente de los componentes.
 *   [plantilla_articulo.mdx](./resources/plantilla_articulo.mdx): esqueleto de artículo limpio para copiar y rellenar.
 *   [analisis_corpus.md](./examples/analisis_corpus.md): barrido completo de los 11 artículos publicados con una tabla comparativa y el veredicto definitivo por elemento (qué adoptar, qué evitar y por qué, con evidencia del corpus completo, no de una muestra).
+*   [experiencias-visuales.md](./references/experiencias-visuales.md) — criterio de cantidad, utilidad, ubicación y entrega de infografías/secuencias; referencia implementada en ojos y oídos. Lectura obligatoria para artículos completos.
 *   [crear-animaciones-articulo-blog](../crear-animaciones-articulo-blog/SKILL.md) — genera imágenes coherentes de perros senior, recortes realistas, infografías y secuencias didácticas cuando el usuario o el brief las requieren. Incluye validación visual en móvil y modo oscuro.
 *   Skill hermana: [generar-briefing-contenido](../generar-briefing-contenido/SKILL.md) — produce el input de esta skill.
 *   [config.ts](../../../src/content.config.ts): schema **estricto** (`.strict()`) del frontmatter. Cualquier campo no listado ahí rompe el build.
@@ -38,6 +39,16 @@ Lee y aplica [calidad-editorial-adsense.md](../references/calidad-editorial-adse
     *   Relee `INVENTARIO_CONTENIDO.md` y confirma que los spokes de interlinking del brief siguen marcados como publicados (pudo cambiar desde que se generó el brief).
     *   Confirma que el slug no colisiona ya con un archivo existente en `src/content/blog/`.
 3.  Sea brief formal o datos recopilados a mano, si falta la lista de fuentes con su H2 asignado (Sección 3) o los criterios de cierre — volumen de palabras, componentes obligatorios, arco narrativo (Sección 9) —, no improvises esos datos: pídeselos al usuario, o si es un brief formal, ofrece regenerarlo con la skill hermana antes de continuar.
+
+### Fase 1.5: Plan visual integrado en la redacción
+
+Para un **artículo completo**, evalúa y produce los apoyos visuales que ayuden a comprender, decidir o aplicar lo explicado; no esperes a que el usuario tenga que pedirlos en otra sesión. Lee [experiencias-visuales.md](./references/experiencias-visuales.md) y aplica [crear-animaciones-articulo-blog](../crear-animaciones-articulo-blog/SKILL.md) para ejecutarlos. Si se pidió expresamente solo texto, respeta ese alcance y deja el plan de recursos pendientes identificado.
+
+- Decide la cantidad por utilidad y complejidad; no impongas dos infografías y una animación a todos los temas. Cada recurso debe responder una pregunta diferente. Si ninguno añade valor, justifica la decisión y conserva la lectura directa.
+- Antes de redactar los bloques, registra formato, pregunta, ubicación/H2, fuente y límites, interacción, archivos/componentes y prueba de aceptación. Si el brief antiguo no lo contempla, añade una adenda visual sin reabrir su contrato científico aprobado ni sus auditorías por rutina.
+- Una infografía puede orientar decisiones, comparar opciones o explicar cifras; una secuencia animada debe mostrar un orden o cambio comprensible. No añadir movimiento decorativo, sonidos, bloqueos de lectura o una segunda explicación idéntica para aparentar más contenido.
+- Integra cada apoyo junto al pasaje que explica, con la información esencial disponible sin interactuar. Los desplegables sirven para profundizar o consultar una referencia; las señales de alarma no quedan escondidas.
+- Informa de la selección con razones concretas. La finalidad es facilitar comprensión y continuidad de lectura; no afirmes que aumentó la retención sin medirlo.
 
 ### Fase 2: Arquitectura Técnica Real (Reglas Invariables)
 
@@ -70,19 +81,22 @@ Lee y aplica [calidad-editorial-adsense.md](../references/calidad-editorial-adse
     ![Alt descriptivo SEO](/images/blog/{{slug}}/{{archivo}}.webp)
     *Pie de foto que aporta contexto o dato adicional.*
     ```
-    Los nombres de archivo, alt y captions salen de la Sección 8 del brief. **Si el usuario pide generar o mejorar las imágenes, infografías o animaciones, aplica [crear-animaciones-articulo-blog](../crear-animaciones-articulo-blog/SKILL.md) y entrega los recursos integrados**, sin dejar los binarios a cargo del usuario cuando la herramienta está disponible. Si solo se encargó texto, pueden quedar imágenes planificadas pendientes, identificadas con precisión antes de publicar. Un placeholder no cuenta como recurso terminado.
+    Los nombres de archivo, alt y captions salen de la Sección 8 del brief. **Para ejecutar el plan visual del artículo completo o un encargo específico de imágenes, infografías o animaciones, aplica [crear-animaciones-articulo-blog](../crear-animaciones-articulo-blog/SKILL.md) y entrega los recursos integrados**, sin dejar los binarios a cargo del usuario cuando la herramienta está disponible. Si solo se encargó texto, pueden quedar imágenes planificadas pendientes, identificadas con precisión antes de publicar. Un placeholder no cuenta como recurso terminado.
 
 ### Recursos visuales y continuidad del sujeto
 
-Cuando el encargo incluya recursos visuales, sigue este flujo antes de darlos por terminados:
+Ejecuta el plan de Fase 1.5 y consulta [experiencias-visuales.md](./references/experiencias-visuales.md) antes de darlo por terminado:
 
-1. Fija un perro de referencia coherente con el brief y la elección del usuario. Debe **parecer senior**: la palabra en el prompt no sustituye la revisión de edad, anatomía, expresión y apoyos. No uses enfermedad como requisito de vejez ni presentes la ilustración como fotografía clínica.
-2. Deriva de esa referencia la hero y las escenas de cuerpo, conservando orejas, marcas, proporciones y edad. Si el caso no determina raza, usa la elección ilustrativa acordada; no impongas el dogo del ejemplo a otros artículos.
-3. Para animaciones que necesiten al perro, considera un recorte realista con transparencia y SVG/CSS para acciones y zonas explicativas. Evita sustituirlo por una silueta anatómicamente pobre. El recorte no es un vídeo: los cambios deben comunicar lo que realmente se anima.
-4. Asigna cada infografía/animación a un párrafo y una pregunta concreta. Respeta las cantidades del encargo y ofrece controles, consulta sin movimiento y alternativa sin JavaScript.
-5. Verifica imágenes cargadas, móvil, modo oscuro, contraste, movimiento reducido y compatibilidad con el proyector Markdown. Entrega una captura real, no solo una descripción del diseño. Para reemplazos publicados, revisa la caché y utiliza rutas nuevas cuando corresponda.
+1. Fija un sujeto ilustrativo coherente con el brief: mismo perro, edad senior visible, anatomía y apoyos correctos, sin inventar patología. Deriva hero, escenas y recorte de una referencia inspeccionada. Respeta el estilo elegido; una imagen IA no se presenta como paciente real.
+2. Usa recortes con transparencia real cuando se necesiten, con marcadores adaptados al encuadre. Comprueba en móvil que señalen la zona correcta y se distingan del pelo; no deformes el cuerpo para simular movimiento. Una escena estática no es un vídeo.
+3. Implementa componentes Astro con HTML estándar, CSS acotado y sin dependencias pesadas. Reutiliza patrones/configuración cuando proceda. No copies el cocker ni la cifra 39 a temas distintos: son contenido del ejemplo, no valores predeterminados.
+4. Sin autoplay; controles anterior/siguiente, reproducir/pausar/repetir, reproducción finita, teclado, foco visible y objetivos de al menos 44 px. Pausar debe detener avance y movimiento. Limpia temporizadores al ocultar/navegar y evita inicializaciones duplicadas.
+5. `prefers-reduced-motion` conserva el recorrido manual sin animaciones. Sin JavaScript se leen todos los pasos y no aparecen controles inertes. La impresión muestra todos los pasos **también con JavaScript activado**; no deducirlo de que funcione sin JavaScript.
+6. Verifica imágenes decodificadas, todas las anclas, móvil de 375–390 px y escritorio, claro/oscuro, contraste de texto de al menos 4,5:1 y proyección Markdown. Los estilos globales de `.content-body`, incluidos los `details` con `!important`, pueden invalidar los colores locales: comprobar el resultado calculado.
+7. Conserva recursos originales y evita caché antigua usando nombres nuevos al reemplazar imágenes publicadas. Reporta los tamaños/variantes que realmente selecciona el navegador; crear una variante no demuestra que se sirva.
+8. Entrega capturas reales de todos los estados relevantes, con transiciones finalizadas para no confundir un estado a mitad de cambio con un defecto. Identifica las pruebas propias, las del auditor y cualquier limitación; no declares aprobación visual del usuario sin ella.
 
-La referencia aprobada por el usuario y sus archivos están en [patron-bano-senior.md](../crear-animaciones-articulo-blog/references/patron-bano-senior.md).
+Referencias implementadas: [patrón de baño](../crear-animaciones-articulo-blog/references/patron-bano-senior.md) y [OjosOidosVisual.astro](../../../src/components/article/OjosOidosVisual.astro). La evidencia de ojos/oídos está enlazada en la referencia de experiencias visuales.
 
 ### Fase 3: Redacción por Bloques
 
@@ -129,6 +143,8 @@ Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra 
 *   Si alguna fuente estaba marcada `[URL no verificada]`, confirma que quedó citada por nombre sin enlace (ni placeholder literal ni URL inventada) y que está anotada para el resumen de entrega.
 *   Confirma que los 3 tipos narrativos de `AlertBox` están presentes (`info` en intro, `danger`, `warning`), uno de cada, sin repetir tipo entre ellos — el cuadro de fuentes (también `info`, ver arriba) es un cuarto `AlertBox` aparte, obligatorio por separado, no cuenta como repetición.
 *   Confirma que las imágenes de la Sección 8 están referenciadas con alt y caption, sin duplicar la hero en el cuerpo. Si el encargo incluye producción visual, comprueba también que existen los binarios y que el navegador los decodifica; un placeholder no cumple esa entrega. Si se encargó solo texto, conserva las referencias planificadas y declara los archivos pendientes antes de publicar.
+*   Comprueba el plan visual recurso por recurso: utilidad, ubicación, fuente, archivos reales, controles y alternativas. Las síntesis de los componentes también requieren verificación clínica; no quedan fuera del alcance porque el contador MDX no las mida. Una captura, un build o un APTO mecánico no sustituyen las pruebas de interacción.
+*   Si el encargo incluye recursos visuales, conserva la revisión independiente de esa ampliación, con alcance/versiones y máximo tres rondas. No reinicies las auditorías de un artículo para eludir un bloqueo; una ampliación nueva debe estar encargada y documentada como tal.
 *   Confirma que el `FAQ` tiene el número de preguntas pactado.
 *   Confirma que los enlaces internos obligatorios (pilar, spokes, calculadora si aplica) están presentes como enlaces reales, no como texto plano — salvo los spokes que el brief marcó explícitamente como `Pendiente`, que no deben existir como enlace (si aparecen, es que se inventó uno).
 *   Confirma el arco documentado acordado, si lo hay, o la estructura útil de una guía sin caso; no exigir resultados desconocidos.
@@ -205,12 +221,18 @@ Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra 
 *   [ ] ¿Se marcó el estado en el brief (redactado + fecha + ruta del `.mdx`) y se actualizó `INVENTARIO_CONTENIDO.md` (título, casilla, y si aplica, "reescrito {{fecha}}")?
 
 
-### Comprobación visual cuando forma parte del encargo
+### Comprobación del plan visual y sus recursos
 
+* [ ] Plan de cantidad/utilidad documentado; cada apoyo responde una pregunta distinta y está junto al pasaje correspondiente.
+* [ ] Recursos integrados en el artículo completo, o pendientes explícitos por alcance solo texto/herramienta no disponible; sin placeholders presentados como terminados.
 * [ ] Mismo perro en todas las escenas, edad senior visible y anatomía revisada.
 * [ ] Infografías y animaciones explican acciones del texto y respetan el número acordado.
 * [ ] Si se usa recorte realista, tiene transparencia limpia y marcadores adaptados al sujeto.
 * [ ] Títulos y destacados legibles sobre sus fondos tanto en modo claro como oscuro.
 * [ ] Capturas móvil/escritorio, controles con teclado, pausa, movimiento reducido y alternativa sin JavaScript verificados.
 * [ ] Recursos y versiones responsive cargados; rutas nuevas cuando la caché pueda conservar una imagen anterior.
+* [ ] Sin autoplay; pausa real, reproducción finita y limpieza de temporizadores verificadas.
+* [ ] Impresión con y sin JavaScript muestra todos los pasos; señales de alarma visibles y anclas comprobadas.
+* [ ] Contraste calculado de títulos, resúmenes, notas y controles en claro/oscuro, incluidos desplegables abiertos.
 * [ ] Build completo, incluida la proyección Markdown, sin error por etiquetas no admitidas.
+* [ ] Entrega con tabla recurso/pregunta/H2/estado/evidencia y auditoría independiente cuando corresponda; no prometer mejora de retención sin datos.
