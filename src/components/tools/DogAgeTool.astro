@@ -144,12 +144,10 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   }
   .dat__peek {
     position: sticky; top: 4.75rem; z-index: 5;
-    padding-block: .45rem !important;
     display: flex; align-items: center; gap: .9rem;
-    margin: 0 -.25rem 1.1rem; padding: .6rem .9rem; border-radius: 1.1rem;
+    margin: 0 -.25rem 1.1rem; padding: .45rem .9rem; border-radius: 1.1rem;
     border: 1px solid var(--color-brand-border);
-    background: color-mix(in srgb, var(--color-brand-card) 92%, transparent);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    background: var(--color-brand-card);
     box-shadow: 0 10px 24px -18px rgb(0 0 0 / .5);
   }
   .dat__peek-art { flex: 0 0 3.6rem; }
@@ -223,7 +221,7 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   .dat__dog { display: block; width: 100%; height: auto; overflow: visible; }
   .dat__head { transform-origin: 100px 150px; animation: dat-breathe 3.2s ease-in-out infinite; transition: transform .6s; }
   .dat[data-stage='puppy'] .dat__head { transform: scale(.86) translateY(10px); animation-duration: 1.4s; }
-  .dat__face { fill: color-mix(in srgb, #f1e6d4 calc(var(--gray) * 85%), #c8915c); }
+  .dat__face { fill: color-mix(in srgb, #f1e6d4 calc(var(--gray) * 85%), #c8915c); stroke: rgb(142 93 55 / calc(var(--gray) * .45)); stroke-width: 1.5; }
   .dat__ear { fill: color-mix(in srgb, #e4cfac calc(var(--gray) * 85%), #8e5d37); transition: transform .6s; }
   .dat__ear--l { transform-origin: 60px 56px; transform: rotate(calc(var(--gray) * 10deg)); }
   .dat__ear--r { transform-origin: 140px 56px; transform: rotate(calc(var(--gray) * -10deg)); }
@@ -254,7 +252,8 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   .dat[data-stage='senior'] .dat__bed, .dat[data-stage='longevous'] .dat__bed { transform: scaleX(1); opacity: 1; }
 
   /* "Zzz" al estilo del emoji 😴: tres Z azules que suben y crecen. */
-  .dat__zzz { position: absolute; top: -.25rem; right: -.25rem; width: 3.6rem; height: 3.6rem; font-family: var(--font-display); font-weight: 900; color: #3d8fe0; pointer-events: none; }
+  .dat__zzz { position: absolute; top: -.25rem; right: -.25rem; width: 3.6rem; height: 3.6rem; font-family: var(--font-display); font-weight: 900; color: #2f7fd0; pointer-events: none; }
+  .dark .dat__zzz { color: #3d8fe0; }
   .dat__zzz b { position: absolute; line-height: 1; opacity: 0; }
   .dat__zzz b:nth-child(1) { left: 0; bottom: 0; font-size: .85rem; }
   .dat__zzz b:nth-child(2) { left: 1rem; bottom: .85rem; font-size: 1.15rem; }
@@ -366,6 +365,8 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
     if (!root || !years || !months) return;
     const size = (form?.querySelector<HTMLInputElement>('input[name="size"]:checked')?.value ?? 'medium') as DogSize;
     const y = Number(years.value);
+    // Con 0 años, al menos 1 mes: evita el estado "0 meses".
+    if (y === 0 && months.value === '0') months.value = '1';
     const m = y < 2 ? Number(months.value) : 0;
     monthsWrap?.classList.toggle('is-on', y < 2);
     state = dogAge(size, y, m);
@@ -383,7 +384,7 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
       set('dat-age-text', ageText);
       set('dat-name-out', dogName || 'Tu perro');
       set('dat-stage', stageLabel);
-      set('dat-epi', state.epigeneticYears !== null ? `${state.epigeneticYears} años` : state.dogYears > 16 ? 'Fuera de rango' : '—');
+      set('dat-epi', state.epigeneticYears !== null ? `${state.epigeneticYears} años` : 'Fuera de rango');
       set('dat-peek-age', ageText);
       set('dat-senior-label', state.yearsToSenior > 0 ? 'Será senior en' : 'Senior desde');
       set('dat-senior', state.yearsToSenior > 0 ? untilSenior(state.yearsToSenior) : `los ${String(state.seniorFrom).replace('.', ',')} años`);

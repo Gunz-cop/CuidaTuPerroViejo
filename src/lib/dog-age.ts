@@ -106,7 +106,7 @@ function humanYears(age: number, lifeExpectancy: number): number {
   const rate = (HUMAN_LIFESPAN - 24) / (lifeExpectancy - 2);
   if (age <= lifeExpectancy) return 24 + (age - 2) * rate;
   // Por encima de la esperanza de vida: misma pendiente al empezar, pero se
-  // aproxima a HUMAN_MAX sin alcanzarlo (no hay personas de 150 años).
+  // aproxima a HUMAN_MAX sin superarlo; redondeado puede mostrar 100 (no hay personas de 150 años).
   const room = HUMAN_MAX - HUMAN_LIFESPAN;
   return HUMAN_LIFESPAN + room * (1 - Math.exp(-((age - lifeExpectancy) * rate) / room));
 }
