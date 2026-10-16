@@ -155,6 +155,8 @@ Registro en **todas las páginas renderizadas por `src/layouts/BaseLayout.astro`
 | `evaluate_quality_of_life` | `Calculadora HHHHHMM` | `Calcula la escala HHHHHMM de calidad de vida (siete criterios de 0 a 10) igual que la calculadora del sitio. Es orientativa, no un diagnóstico ni una decisión.` |
 | `recommend_mobility_aids` | `Selector de movilidad` | `Recomienda ayudas de movilidad según el nivel de movilidad y la tolerancia a la manipulación, igual que el selector del sitio. Orientativo; consulta al veterinario.` |
 
+> Nota (2026-10-16, PR #116): desde la [adenda edad-mcp](../evidencia/edad-mcp/adenda-contratos.md) el registro vigente tiene una quinta tool, `calculate_dog_age`; el texto de esta sección refleja el cierre de F4A.
+
 `inputSchema` de cada tool: **exactamente** el objeto homónimo del anexo [webmcp-input-schemas.json](../evidencia/f4a/contratos/webmcp-input-schemas.json) (igualdad profunda; `type:"object"`, `additionalProperties:false`). **Todas las cadenas de los `inputSchema` son ASCII (U+0000–U+007F)**: Chrome 155 omite `inputSchema` en `WebMCP.toolsAdded` cuando una cadena del schema contiene caracteres Latin-1 no ASCII ([B4](../evidencia/f4a/auditoria/sdd-r2.md), [comprobación](../evidencia/f4a/ciclo2/README.md)); por eso sus descripciones van en español sin tildes. `name`, `title` y `description` de cada tool no tienen esa restricción y conservan las tildes de la tabla. Resumen: `search_guides` `q` (required), `kind`, `limit` 1..20, `offset` 0..98, `corpus`; `read_guide` `documentId` (patrón F3, ≤160, required), `corpus`; `evaluate_quality_of_life` las siete keys integer 0..10 required; `recommend_mobility_aids` `level`/`handling` enums required.
 
 ### 5.3 Ejecución, resultados, errores y cancelación

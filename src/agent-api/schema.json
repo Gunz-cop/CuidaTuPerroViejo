@@ -1064,6 +1064,7 @@
       "additionalProperties": false
     },
     "DogAgeResult": {
+      "description": "Salida de calculate_dog_age en MCP remoto y WebMCP. No tiene endpoint REST, por eso no figura en el oneOf raíz.",
       "type": "object",
       "required": [
         "schemaVersion",

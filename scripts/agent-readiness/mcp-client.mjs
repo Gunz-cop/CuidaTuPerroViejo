@@ -94,7 +94,8 @@ try {
       assert.equal(invalid.isError, true); assert.equal(JSON.parse(invalid.content[0].text).error.code, 'INVALID_REQUEST');
       if (modern) {
         const index = await api('/agent-content/v1/index.json');
-        assert.equal(index.documents.length, 32, 'corpus vigente de 32 documentos (F4A fijó 28)');
+        // Sin literal: la cardinalidad se contrasta con el catálogo paginado del mismo build (adenda edad-mcp).
+        assert.ok(index.documents.length > 0, 'corpus no vacío');
         const catalog = { corpusSha256: index.corpusSha256, documents: [] };
         let offset = 0; const pages = [];
         while (true) {

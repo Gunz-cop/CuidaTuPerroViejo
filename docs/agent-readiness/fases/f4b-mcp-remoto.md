@@ -24,6 +24,8 @@ Se leyeron AGENTS, plan/método SDD, contratos F3/F4A y SDD seguimiento D33–35
 
 Antes de integrar: recibir cierre F4A final, verificar SHA/tree/ancestry y diff contra base técnica y captura documental; detener/corregir contrato si cambia módulo de cálculo, schemas, input WebMCP, errores, metodología, corpus/proyección, build/routing, discovery o requisitos de evidencia. Cambios sólo documentales también pueden cambiar HTML/CSS del build por Tailwind: receipt/hash del build final no se heredan. No polling continuo ni merge/rebase automático.
 
+> Nota (2026-10-16, PR #116): el servidor MCP vigente expone además `calculate_dog_age` y el harness `mcp-client.mjs` la cubre; ver la [adenda edad-mcp](../evidencia/edad-mcp/adenda-contratos.md). El texto de esta fase refleja su cierre.
+
 ## 2. Resultado, alcance y ownership
 
 Servidor MCP público real para las cuatro tools F4A, sin efectos, auth, comercio, modelo, administración ni URLs arbitrarias. Mantiene `search=yes, ai-input=yes, ai-train=no`. Recorrido: discovery→conexión→lista→buscar→leer íntegro/citar; evaluar HHHHHMM y recomendar movilidad con paridad API/UI/WebMCP. No scores prometidos:73general es estimación histórica.
