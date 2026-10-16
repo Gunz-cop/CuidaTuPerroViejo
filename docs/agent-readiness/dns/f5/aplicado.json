@@ -1,0 +1,93 @@
+{
+  "state": "configuration-applied-public-acceptance-pending",
+  "phaseComplete": false,
+  "sourceProductCommit": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+  "sddCommit": "c0a65c666827387ac19a2aef7bf9fe88a4d6857b",
+  "ratificationCommit": "2df6ab0e168246b13c05537601507d966c5e1fff",
+  "authorization": "Owner authorized advancing over the DNSSEC prohibition in this conversation; autorizacion.md",
+  "before": {
+    "recordsConfigured": 18,
+    "ownerEmpty": true,
+    "dnssecStatus": "disabled",
+    "dnssecKeyFields": null,
+    "registrar": "Cloudflare",
+    "registrarDs": []
+  },
+  "record": {
+    "createdAt": "2026-10-14T20:41:23.866Z",
+    "readbackAt": "2026-10-14T20:41:41.375Z",
+    "id": "2446932a54da14312104127108a4fa3e",
+    "name": "_index._agents.cuidatuperroviejo.com",
+    "type": "SVCB",
+    "content": "1 cuidatuperroviejo.com. mandatory=\"alpn,port\" alpn=\"h2\" port=\"443\"",
+    "proxiable": false,
+    "proxied": false,
+    "ttl": 300,
+    "data": {
+      "priority": 1,
+      "target": "cuidatuperroviejo.com.",
+      "value": "mandatory=\"alpn,port\" alpn=\"h2\" port=\"443\""
+    },
+    "settings": {},
+    "meta": {},
+    "comment": null,
+    "tags": [],
+    "created_on": "2026-10-14T20:41:24.047561Z",
+    "modified_on": "2026-10-14T20:41:24.047561Z"
+  },
+  "dnssec": {
+    "requestedAt": "2026-10-14T20:41:53.321Z",
+    "readbackAt": "2026-10-14T20:42:08.304Z",
+    "algorithm": "13",
+    "digest": "5E6137DBCC6A4F83ABF5F05D1ECD953C8F640DF80B8F6C8CEC4ED591EB3FE166",
+    "digest_algorithm": "SHA256",
+    "digest_type": "2",
+    "ds": "cuidatuperroviejo.com. 3600 IN DS 2371 13 2 5E6137DBCC6A4F83ABF5F05D1ECD953C8F640DF80B8F6C8CEC4ED591EB3FE166",
+    "flags": 257,
+    "key_tag": 2371,
+    "key_type": "ECDSAP256SHA256",
+    "modified_on": "2026-10-14T20:41:53.489342+00:00",
+    "public_key": "mdsswUyr3DPW132mOi8V9xESWE8jTo0dxCjjnopKl+GqJxpVXckHAeF+KkxLbxILfDLUT0rAK9iUzy1L53eKGQ==",
+    "status": "pending",
+    "dsPresentationTtlScope": "3600 in Cloudflare-generated DS presentation; actual parent DS TTL not yet observed because parent DS absent"
+  },
+  "audit": {
+    "sdd": "R1/2 FAIL -> R2/2 PASS, same auditor /root/auditor_f5 gpt-6.1-sol/high",
+    "implementationReviewsConsumed": 0
+  },
+  "budget": {
+    "cloudflareApiCallsSinceFreeze": 11,
+    "cloudflareApiLimit": 32,
+    "dnsQueriesSinceFreeze": 4,
+    "dnsLimit": 36,
+    "httpProductRequestsConservativeUpperBound": 5,
+    "httpLimit": 12,
+    "sdkRequests": 0,
+    "sdkLimit": 24,
+    "evaluatorScans": 0,
+    "evaluatorLimit": 2
+  },
+  "rollback": {
+    "svcbRecordId": "2446932a54da14312104127108a4fa3e",
+    "svcb": "GET and semantic match then DELETE only this id",
+    "dnssec": "PATCH disabled keeps signatures; no DELETE until DS removed and observed TTL expired; unknown TTL => preserve signing"
+  },
+  "pending": [
+    "Automatic Registrar DS publication",
+    "Direct authoritative and parent queries",
+    "V02 authenticated DNSSEC acceptance",
+    "Full HTTP read/citation with complete archive (#110)",
+    "Compatible SDK MCP run and pertinent regressions",
+    "Implementation audit",
+    "Two frozen CLI scans"
+  ],
+  "unchanged": [
+    "Nameservers",
+    "Existing unrelated records",
+    "Proxy configuration",
+    "WAF/protections",
+    "Plan/billing",
+    "Product/main",
+    "Content Signals policy"
+  ]
+}

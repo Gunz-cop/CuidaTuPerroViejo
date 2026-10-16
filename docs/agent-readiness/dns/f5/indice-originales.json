@@ -1,0 +1,239 @@
+{
+  "scope": "Original tool results and exact decoded public response bodies; Registrar contact data remains private",
+  "files": [
+    {
+      "path": "all-ui/request.json",
+      "bytes": 307,
+      "sha256": "d7533cffd3ab7c60b2e1ef9ac0a5c96cf6a0631192a16d2f5ba76194ab8fff8a",
+      "visibility": "private"
+    },
+    {
+      "path": "all-ui/response-metadata.json",
+      "bytes": 163,
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062",
+      "visibility": "private"
+    },
+    {
+      "path": "all-ui/response.raw.json",
+      "bytes": 52227,
+      "sha256": "71df3aa6a068aaa51f8cb15291f1846c0b12ee4da724dbb7e640fb638ac25bae",
+      "visibility": "private"
+    },
+    {
+      "path": "all-ui/summary.json",
+      "bytes": 5591,
+      "sha256": "e6f449184592115f1f115725a920068aa385775022c0c2f50ee3c87736ae38c1",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/01-create-svcb.tool-result.json",
+      "bytes": 1423,
+      "sha256": "54ab0705f2973c3f54a2bf983cef8289a5f6ad8a13a6efb00714e2ca2c245b06",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/02-readback-svcb.tool-result.json",
+      "bytes": 1124,
+      "sha256": "53b047f5af1f60800d36314a65474268a679866af6cc0cc4a589ea278a4f2671",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/03-enable-dnssec.tool-result.json",
+      "bytes": 1043,
+      "sha256": "0006039835d1f03eda61f874dc21ca5e930bc67a284bafc6fd7b7c8843bf1c83",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/04-readback-dnssec.tool-result.json",
+      "bytes": 986,
+      "sha256": "18a5ece77ca64eb2ccd337fe8b87dcaf99e2474eb48c05dff4c5184025a585a4",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/05-initial-doh-request.json",
+      "bytes": 1709,
+      "sha256": "f5f7ab83da401e8520f62ae6f11d42d6da3f5f15632d06448dedf197cf4c95a0",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/05-initial-doh.tool-result.json",
+      "bytes": 7980,
+      "sha256": "dacbf0e1946b3553fd0975df21c2513207282fe98f6209d510e8e5b282830060",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/decoded-source.bundle.json",
+      "bytes": 8962,
+      "sha256": "684aadd355307e245b5f26cf2594983426c78225c91efc2cdf0b41825a2fbc01",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/doh-1.body.json",
+      "bytes": 517,
+      "sha256": "8348fa04bebbb3e75f840982620bbce27bd36749437aa865426460f15a639f1a",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/doh-1.capture.json",
+      "bytes": 1313,
+      "sha256": "1be3998209481afd9d4b6c0448ea3a143c53eba647edd451d2bd53a962889514",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/doh-2.body.json",
+      "bytes": 563,
+      "sha256": "d9d3c74fb00e1eaba873a465bb83649bbc49738037a929407b05ca8de4152d46",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/doh-2.capture.json",
+      "bytes": 1426,
+      "sha256": "4e68e62373a34902b88c6bc4310ee68bd53dea8fdea036943e29939d63828259",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/doh-3.body.json",
+      "bytes": 1139,
+      "sha256": "f0fef021ee33f1af18ceb6376472f5d9bafd46de77cfcd4c10249e0ce31bfa79",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/doh-3.capture.json",
+      "bytes": 2109,
+      "sha256": "1c446a77f31e4de2a89050129678c936eac31b00ff950185650d705b3cf1859f",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/doh-4.body.json",
+      "bytes": 1184,
+      "sha256": "ccd3f97a801df2fb31d141a4a30758a30bb1d9aad7ac85ecef4fe754e862607e",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/doh-4.capture.json",
+      "bytes": 2221,
+      "sha256": "e78ed9dbaccbd2fbbc615918569ee495c2b1eab142e06f4b2e8f117ab8738ac5",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/generated-ds-consistency.json",
+      "bytes": 193,
+      "sha256": "7448a82bfecf899c24fd56de71339be0391172ce3e6016c03d8b708d0c202c76",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/prechecks.private.tool-results.json",
+      "bytes": 30727,
+      "sha256": "cba4aacf58abf4d9ba5e1fec3ebd9842a83bb0253bd4e4f288ef1f84817dfb80",
+      "visibility": "private"
+    },
+    {
+      "path": "aplicacion/public-initial.summary.json",
+      "bytes": 2341,
+      "sha256": "f5ef3986395252f4f2d0db0d180e3da1de80070cb603b50a5a48232e4ff16c1d",
+      "visibility": "private"
+    },
+    {
+      "path": "bundle.json",
+      "bytes": 126591,
+      "sha256": "3514d9ced4216d1834ffb49545ca58893fc3b423ffab1cb3689cb314b5cec46e",
+      "visibility": "private"
+    },
+    {
+      "path": "cloudflare-lectura/additional-access.tool-result.json",
+      "bytes": 1609,
+      "sha256": "ecf219dd9116a301b9393d35dbccef16c44780e4b36e62c0ec32f9394d213c20",
+      "visibility": "private"
+    },
+    {
+      "path": "cloudflare-lectura/bundle.tool-results.json",
+      "bytes": 34123,
+      "sha256": "661b69ec355b043664f6d6ab4e612a0813fd11d237fb3bc86842adb5e488f3f2",
+      "visibility": "private"
+    },
+    {
+      "path": "content/request.json",
+      "bytes": 160,
+      "sha256": "94daf42c1ee9ecfce1528d303e4b19d35e7544d8d38b6ac72ff56436708d2c21",
+      "visibility": "private"
+    },
+    {
+      "path": "content/response-metadata.json",
+      "bytes": 163,
+      "sha256": "63be70110e53931a1db3c5435ef0b825ecd903c8fe42bd581a639e6eeef36062",
+      "visibility": "private"
+    },
+    {
+      "path": "content/response.raw.json",
+      "bytes": 47054,
+      "sha256": "c310f43254b6aa54288a1fe530e6529599bbc00816dd5a0d3abc48246c55cbd5",
+      "visibility": "private"
+    },
+    {
+      "path": "content/summary.json",
+      "bytes": 5656,
+      "sha256": "4d20dfb059d8c550f393488d8c8a650f19a9c30ef5534b138a2e543557d7c81e",
+      "visibility": "private"
+    },
+    {
+      "path": "dnssec-preparacion/api-schema.tool-result.json",
+      "bytes": 3770,
+      "sha256": "06657eade761f5a8d56133daa2600b4fc7c9736847ce6f1ffdafb8a894624eac",
+      "visibility": "private"
+    },
+    {
+      "path": "dnssec-preparacion/docs.tool-results.json",
+      "bytes": 71288,
+      "sha256": "dc38cf331f4ed273a0170cf06f768c9f96c81067d1aed04299e4b6cb8418d7e2",
+      "visibility": "private"
+    },
+    {
+      "path": "dnssec-preparacion/ds-before-browser.tool-result.json",
+      "bytes": 25101,
+      "sha256": "4c5fbfd05de349800312593539048540933fda4ae333cf9b055d675e6a6dd9ff",
+      "visibility": "private"
+    },
+    {
+      "path": "dnssec-preparacion/registrar-and-dnssec.private.tool-result.json",
+      "bytes": 16973,
+      "sha256": "8284da068488db640fab2b4a9078a4eaf9625f7bd28105f58912bd8166a4af9d",
+      "visibility": "private"
+    },
+    {
+      "path": "environment-status.tool-result.json",
+      "bytes": 1177,
+      "sha256": "d300dc14d4d615421d31ea70b66e7e8bb02e29bbaf7971033a02a6fbf2fc385a",
+      "visibility": "private"
+    },
+    {
+      "path": "fuentes-y-destinos.tool-results.json",
+      "bytes": 11691,
+      "sha256": "8e075ac4dea39223c65b68d339a81861949323f8ff413c57b3959e9d20de42eb",
+      "visibility": "private"
+    },
+    {
+      "path": "integridad.json",
+      "bytes": 1339,
+      "sha256": "547130fa0a28d9e4f2411edd4409a758830a565f1136f1b23d4a8dd6ea59843d",
+      "visibility": "private"
+    },
+    {
+      "path": "recorrido/01-discovery-search.request.json",
+      "bytes": 4182,
+      "sha256": "faeedc916a9c8ba349019207ba3050d35f664560a69cc9b83c14a0c082a77f68",
+      "visibility": "private"
+    },
+    {
+      "path": "recorrido/01-discovery-search.tool-result.json",
+      "bytes": 6681,
+      "sha256": "faabdd2490677e172cd479a91fd61796a50276c1d6144a611a4efafb7957589e",
+      "visibility": "private"
+    },
+    {
+      "path": "referencia-dnsaid.tool-results.json",
+      "bytes": 67945,
+      "sha256": "d4dbce9ee84520b8c7bec7d11e9410f3c292076b585bf74a641c992d07e296ee",
+      "visibility": "private"
+    }
+  ]
+}

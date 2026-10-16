@@ -1,0 +1,79 @@
+{
+  "scope": "Initial observation; signed SVCB resolves publicly, authenticated chain pending DS; NOT V02 PASS",
+  "observations": [
+    {
+      "at": "2026-10-14T20:42:57.243Z",
+      "url": "https://cloudflare-dns.com/dns-query?name=_index._agents.cuidatuperroviejo.com&type=SVCB&do=1&cd=0",
+      "httpStatus": 200,
+      "bytes": 517,
+      "sha256": "8348fa04bebbb3e75f840982620bbce27bd36749437aa865426460f15a639f1a",
+      "dnsStatus": 0,
+      "AD": false,
+      "CD": false,
+      "type": 64,
+      "answer": [
+        {
+          "name": "_index._agents.cuidatuperroviejo.com",
+          "type": 64,
+          "TTL": 300,
+          "data": "1 cuidatuperroviejo.com. mandatory=alpn,port alpn=h2 port=443"
+        }
+      ],
+      "rrsigPresent": true,
+      "authorityTtl": []
+    },
+    {
+      "at": "2026-10-14T20:42:57.364Z",
+      "url": "https://dns.google/resolve?name=_index._agents.cuidatuperroviejo.com&type=SVCB&do=1&cd=0",
+      "httpStatus": 200,
+      "bytes": 563,
+      "sha256": "d9d3c74fb00e1eaba873a465bb83649bbc49738037a929407b05ca8de4152d46",
+      "dnsStatus": 0,
+      "AD": false,
+      "CD": false,
+      "type": 64,
+      "answer": [
+        {
+          "name": "_index._agents.cuidatuperroviejo.com.",
+          "type": 64,
+          "TTL": 300,
+          "data": "1 cuidatuperroviejo.com. mandatory=alpn,port alpn=h2 port=443"
+        }
+      ],
+      "rrsigPresent": true,
+      "authorityTtl": []
+    },
+    {
+      "at": "2026-10-14T20:42:57.525Z",
+      "url": "https://cloudflare-dns.com/dns-query?name=cuidatuperroviejo.com&type=DS&do=1&cd=0",
+      "httpStatus": 200,
+      "bytes": 1139,
+      "sha256": "f0fef021ee33f1af18ceb6376472f5d9bafd46de77cfcd4c10249e0ce31bfa79",
+      "dnsStatus": 0,
+      "AD": false,
+      "CD": false,
+      "type": 43,
+      "answer": [],
+      "rrsigPresent": false,
+      "authorityTtl": [
+        900
+      ]
+    },
+    {
+      "at": "2026-10-14T20:42:57.547Z",
+      "url": "https://dns.google/resolve?name=cuidatuperroviejo.com&type=DS&do=1&cd=0",
+      "httpStatus": 200,
+      "bytes": 1184,
+      "sha256": "ccd3f97a801df2fb31d141a4a30758a30bb1d9aad7ac85ecef4fe754e862607e",
+      "dnsStatus": 0,
+      "AD": false,
+      "CD": false,
+      "type": 43,
+      "answer": [],
+      "rrsigPresent": false,
+      "authorityTtl": [
+        900
+      ]
+    }
+  ]
+}
