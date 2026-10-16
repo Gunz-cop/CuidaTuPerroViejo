@@ -18,7 +18,7 @@
 | **Ruta Pilar** | `/{{SLUG_DEL_PILAR}}` |
 | **Intención Principal** | Informacional — el dueño necesita entender... |
 | **Intención Secundaria** | Práctica / Resolutiva / Comercial — el dueño busca... |
-| **Objetivo Global** | 6.000 – 6.500 palabras (Skyscraper Content) |
+| **Objetivo Global** | {{TARGET_JUSTIFICADO}} palabras; alcance según utilidad, no requisito de AdSense |
 | **Fecha brief** | {{FECHA_DE_HOY}} |
 
 ### Bloque de Frontmatter MDX
@@ -40,25 +40,23 @@ datePublished: "{{FECHA_PUBLICACION_AÑO_MES_DIA}}"
 
 ---
 
-## 2. EXPERIENCIA REAL — MATERIAL E-E-A-T (FUENTE LITERAL)
+## 2. PROCEDENCIA DEL MATERIAL Y VALOR PROPIO
 
-> *Texto íntegro tal como lo proporcionó el autor:*
->
-> "{{HISTORIA_REAL_DEL_USUARIO}}"
+**Tipo:** {{EXPERIENCIA_APORTADA / CASO_PUBLICADO / VINETA_DECLARADA / GUIA_SIN_CASO}}
+**Procedencia:** {{AUTOR_O_FUENTE_Y_LOCALIZACION; DATOS_CONOCIDOS_Y_LIMITES}}
+**Declaración para el lector:** {{COMO_SE_IDENTIFICARA_EL_TIPO_DE_MATERIAL}}
+**Pregunta del lector y respuesta práctica:** {{DECISIONES_QUE_RESOLVERA}}
+**Aportación propia:** {{REGISTRO_COMPARATIVA_SINTESIS_CRITICA_O_ADAPTACION; DIFERENCIA_CON_OTROS_ARTICULOS}}
 
-**Instrucciones de uso para el redactor:**
-La experiencia real debe integrarse como el hilo narrativo del artículo. No es un bloque aislado. Debe aparecer en al menos 3 momentos clave:
-1.  **Introducción** — Gancho emocional: el momento de crisis o el síntoma inicial.
-2.  **Desarrollo (H2)** — Ejemplo práctico de la dificultad (el suelo resbaladizo, la cama hundida, etc.) y la improvisación inicial.
-3.  **Cierre o H2 Final** — El estado de recuperación actual, ofreciendo esperanza realista al lector.
+Si se usa arco narrativo, planificar apertura, desarrollo y cierre solo con hechos documentados. Si no hay desenlace conocido, cerrar con límites. Una guía sin caso no requiere paciente ni recuperación inventados.
 
 ---
 
 ## 3. FUENTES CIENTÍFICAS DE AUTORIDAD (SOURCE-FIRST)
 
 > [!IMPORTANT]
-> A continuación se detallan las **mínimo 6 fuentes de alta autoridad** científicas o veterinarias. Toda la base médica, datos fisiopatológicos y recomendaciones de seguridad de este artículo se originan directamente de este listado.
-> Cada enlace debe apuntar al documento/estudio específico citado, no a la homepage genérica de la institución. Si no puedes verificar la URL exacta, no la inventes: escribe el nombre completo del estudio/institución y marca `[URL no verificada — confirmar antes de publicar]`. Si el tema no tiene 6 fuentes de esta autoridad disponibles, documenta las que sí encontraste y explica la limitación en vez de rellenar con enlaces débiles.
+> A continuación se detallan las **fuentes suficientes y pertinentes** científicas o veterinarias. Toda la base médica, datos fisiopatológicos y recomendaciones de seguridad de este artículo se originan directamente de este listado.
+> Cada enlace debe apuntar al documento/estudio específico citado, no a la homepage genérica de la institución. Si no puedes verificar la URL exacta, no la inventes: escribe el nombre completo del estudio/institución y marca `[URL no verificada — confirmar antes de publicar]`. Documenta la cobertura y los límites; no rellenes una cuota con enlaces débiles.
 
 1.  **Fuente 1 (Estudio/Directriz):** [Nombre del estudio/entidad y URL profunda en texto plano, o `[URL no verificada]` si no se pudo confirmar]
     *   *Dato clave:* [Mecanismo fisiológico, estadísticas o pauta médica extraída]
@@ -69,6 +67,8 @@ La experiencia real debe integrarse como el hilo narrativo del artículo. No es 
 6.  **Fuente 6 (Estudio/Directriz):** [Detalles]
 
 ---
+
+Para cada fuente: título, autor/institución, año, PMID/DOI/URL comprobados, fecha, afirmación respaldada, apartado/tabla/pasaje, H2 asignado y límites. Añadir/eliminar filas según necesidad.
 
 ## 4. REQUISITOS TÉCNICOS DE ASTRO Y MDX
 
@@ -107,14 +107,14 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 
 ## 6. ESTRUCTURA DETALLADA Y PRESUPUESTO DE PALABRAS
 
-> **Target total: 6.000 – 6.500 palabras.**
+> **Target total: {{TARGET_TOTAL}} palabras, justificado por la cobertura necesaria.**
 > El redactor debe respetar el presupuesto asignado por sección con una desviación máxima de ±15%.
 
-### INTRODUCCIÓN — Target: ~800 palabras
+### INTRODUCCIÓN — Target: ~{{TARGET_SECCION}} palabras
 
 **Objetivo:** Conectar emocionalmente con la lectora preocupada usando el gancho E-E-A-T.
 
-*   **Párrafo 1 — Gancho emocional (Experiencia real):** [Detallar cómo entra la historia de E-E-A-T aquí]
+*   **Párrafo 1 — Respuesta y contexto:** [Contestar la necesidad o introducir material atribuido sin dramatización innecesaria]
 *   **Párrafo 2 — Diagnóstico latente e incertidumbre:** [Explicar la conexión del caso con el problema general]
 *   **Párrafo 3 — La promesa del artículo:** [Describir lo que aprenderá en la guía]
 *   **Componente AlertBox:**
@@ -126,7 +126,7 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 
 ---
 
-### [H2 - {{TITULO_DEL_TEMA_FISIOLOGICO_1}}] — Target: ~1.200 palabras
+### [H2 - {{TITULO_DEL_TEMA_FISIOLOGICO_1}}] — Target: ~{{TARGET_SECCION}} palabras
 *   *Sustentado en:* [Fuentes de la sección 3 que respaldan esta sección]
 *   *Objetivo:* Explicar los mecanismos biológicos y anatómicos del problema.
 
@@ -144,7 +144,7 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 
 ---
 
-### [H2 - {{TITULO_DE_SINTOMAS_Y_DIAGNOSTICO_2}}] — Target: ~1.200 palabras
+### [H2 - {{TITULO_DE_SINTOMAS_Y_DIAGNOSTICO_2}}] — Target: ~{{TARGET_SECCION}} palabras
 *   *Sustentado en:* [Fuentes que respaldan]
 *   *Objetivo:* Enseñar al tutor a identificar los síntomas clínicos y de comportamiento en casa.
 
@@ -156,7 +156,7 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 
 ---
 
-### [H2 - {{TITULO_DE_TRATAMIENTOS_Y_CUIDADOS_3}}] — Target: ~900 palabras
+### [H2 - {{TITULO_DE_TRATAMIENTOS_Y_CUIDADOS_3}}] — Target: ~{{TARGET_SECCION}} palabras
 *   *Sustentado en:* [Fuentes que respaldan]
 *   *Objetivo:* Guía práctica de rutinas, adaptaciones domésticas y manejo farmacológico seguro.
 
@@ -173,7 +173,7 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 
 ---
 
-### [H2 - {{TITULO_DE_CALIDAD_DE_VIDA_4}}] — Target: ~800 palabras
+### [H2 - {{TITULO_DE_CALIDAD_DE_VIDA_4}}] — Target: ~{{TARGET_SECCION}} palabras
 *   *Sustentado en:* [Fuentes que respaldan]
 *   *Objetivo:* Abordaje de calidad de vida y confort.
 
@@ -183,18 +183,18 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 
 ---
 
-### [H2 - {{TITULO_DE_CASO_REAL_Y_RESULTADOS_5}}] — Target: ~700 palabras
+### [H2 - {{TITULO_DE_CASO_REAL_Y_RESULTADOS_5}}] — Target: ~{{TARGET_SECCION}} palabras
 > [!IMPORTANT]
-> **Sección de inclusión obligatoria.** Es el 3er y último momento del arco narrativo del caso real (Apertura en Intro → Desarrollo en H2 intermedio → Cierre aquí). No se puede omitir ni fusionar silenciosamente con la sección de Conclusión.
+> **Solo si el material y su utilidad lo justifican.** Retomar lo documentado sin fabricar recuperación. Si se omite, ajustar estructura y presupuesto explícitamente.
 
 *   *Objetivo:* Cierre narrativo y emocional uniendo el desenlace de la historia real con la esperanza práctica.
 
-*   [Detalles de la recuperación y vida diaria actual del perro de la historia]
+*   [Desenlace documentado o límites de lo conocido, sin fabricar recuperación]
 *   [Mensaje de empoderamiento al tutor para tomar el control del bienestar de su compañero]
 
 ---
 
-### CONCLUSIÓN Y PREGUNTAS FRECUENTES — Target: ~900 palabras
+### CONCLUSIÓN Y PREGUNTAS FRECUENTES — Target: ~{{TARGET_SECCION}} palabras
 *   *Cierre:* Párrafo integrador de cierre.
 *   **Componente FAQ:**
     ```mdx
@@ -221,21 +221,21 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 ## 8. GUÍA VISUAL — 3 PROMPTS DE IMAGEN
 
 > [!IMPORTANT]
-> **Sujeto/raza fija en los 3 prompts:** `{{RAZA_Y_RASGOS_DEL_PROTAGONISTA_REAL}}` (ej. "Beagle senior, pelaje tricolor, complexión robusta") debe aparecer nombrado explícitamente en el prompt de **cada una** de las 3 imágenes — nunca sustituido por "a dog" o "a senior dog" genérico en ninguna. Si la historia tiene más de un perro, indica en cada prompt cuál protagoniza esa imagen específica.
+> **Sujeto/raza fija en los 3 prompts:** `{{RAZA_Y_RASGOS_DEL_SUJETO_VISUAL; DECLARAR_SI_ES_ILUSTRATIVO}}` (ej. "Beagle senior, pelaje tricolor, complexión robusta") debe aparecer nombrado explícitamente en el prompt de **cada una** de las 3 imágenes — nunca sustituido por "a dog" o "a senior dog" genérico en ninguna. Si la historia tiene más de un perro, indica en cada prompt cuál protagoniza esa imagen específica.
 
 ### Imagen 1 — [Tipo de Imagen (Educativa / Resolutiva / Emocional)]
 *   **Nombre de archivo SEO:** `{{keyword-principal-descriptiva}}.jpg`
-*   **Prompt visual:** [Tipo de plano | Escenario realista y concreto (no genérico) | Acción específica | **`{{RAZA_Y_RASGOS_DEL_PROTAGONISTA_REAL}}`** | Contexto emocional/narrativo ligado a la historia real | Iluminación natural cálida | Profundidad de campo estrecha (shallow DOF) | Detalle de texturas (pelaje, piel, entorno) | Estilo fotoperiodístico/cinematográfico, cero apariencia de banco de imágenes]
+*   **Prompt visual:** [Tipo de plano | Escenario realista y concreto (no genérico) | Acción específica | **`{{RAZA_Y_RASGOS_DEL_SUJETO_VISUAL; DECLARAR_SI_ES_ILUSTRATIVO}}`** | Contexto emocional/narrativo ligado a la historia real | Iluminación natural cálida | Profundidad de campo estrecha (shallow DOF) | Detalle de texturas (pelaje, piel, entorno) | Estilo fotoperiodístico/cinematográfico, cero apariencia de banco de imágenes]
 *   **Caption (Pie de foto):** [Máximo 2 líneas de texto que aporta valor e información adicional]
 
 ### Imagen 2 — [Tipo]
 *   **Nombre de archivo SEO:** `{{nombre-archivo-2}}.jpg`
-*   **Prompt visual:** [Mismo nivel de detalle que Imagen 1, con **`{{RAZA_Y_RASGOS_DEL_PROTAGONISTA_REAL}}`** nombrada explícitamente de nuevo — no la des por sobreentendida]
+*   **Prompt visual:** [Mismo nivel de detalle que Imagen 1, con **`{{RAZA_Y_RASGOS_DEL_SUJETO_VISUAL; DECLARAR_SI_ES_ILUSTRATIVO}}`** nombrada explícitamente de nuevo — no la des por sobreentendida]
 *   **Caption:** [Pie de foto]
 
 ### Imagen 3 — [Tipo]
 *   **Nombre de archivo SEO:** `{{nombre-archivo-3}}.jpg`
-*   **Prompt visual:** [Mismo nivel de detalle, con **`{{RAZA_Y_RASGOS_DEL_PROTAGONISTA_REAL}}`** nombrada explícitamente una tercera vez]
+*   **Prompt visual:** [Mismo nivel de detalle, con **`{{RAZA_Y_RASGOS_DEL_SUJETO_VISUAL; DECLARAR_SI_ES_ILUSTRATIVO}}`** nombrada explícitamente una tercera vez]
 *   **Caption:** [Pie de foto]
 
 ---
@@ -246,7 +246,7 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 > Esta sección es el contrato mínimo entre el brief y el artículo final. El artículo `.mdx` **no se considera terminado** si incumple cualquiera de estos puntos, sin importar que el texto "se lea bien" o "suene completo". Sirve como checklist de auditoría independiente del brief — para el redactor humano y para la futura skill de redacción automatizada.
 
 **1. Volumen mínimo real (no estimado):**
-El artículo final debe medir entre **{{PALABRAS_MIN}} y {{PALABRAS_MAX}} palabras** (tolerancia ±15% sobre el target de la Sección 6), contadas sobre el cuerpo `.mdx` real, no sobre la suma de targets del brief. Si el conteo real cae por debajo del mínimo, el artículo se rechaza y se completa antes de publicar — no se marca como listo "porque cubre los temas".
+El artículo final debe medir entre **{{PALABRAS_MIN}} y {{PALABRAS_MAX}} palabras** (tolerancia ±15% sobre el target de la Sección 6), contadas sobre el cuerpo `.mdx` real, no sobre la suma de targets del brief. Si el conteo no cumple el contrato, revisar omisiones útiles o proponer un ajuste justificado; no aprobar el incumplimiento ni añadir relleno.
 
 **2. Fuentes que deben aparecer citadas por nombre en el cuerpo, no solo en el brief:**
 Cada una de las fuentes listadas en la Sección 3 debe aparecer **mencionada por su nombre** (autor/institución) en el H2/H3 al que fue asignada en la Sección 6. Lista de control:
@@ -266,7 +266,7 @@ Si una fuente termina sin citar en el artículo final, el H2 correspondiente se 
 - [ ] El enlace a la calculadora de calidad de vida presente, si el pilar es Salud o Cuidados Paliativos (ver Sección 5).
 - [ ] Los enlaces internos de la Sección 5 (pilar + spokes) presentes tal como se definieron.
 
-**4. Arco narrativo del caso real presente en el artículo, no solo planificado:**
+**4. Arco documentado, solo si se justificó en el contrato (si no, marcar guía sin caso):**
 - [ ] Apertura del caso real en la Introducción.
 - [ ] Desarrollo del caso real en el H2 intermedio asignado.
 - [ ] **Cierre del caso real en el último H2 antes de Conclusión/FAQ** — este es el punto que más se ha saltado en entregas anteriores; verificar explícitamente que existe como sección propia, no como una frase suelta en la conclusión.
@@ -278,19 +278,32 @@ Si una fuente termina sin citar en el artículo final, el H2 correspondiente se 
 **A validar en este briefing (antes de pasar a redacción):**
 - [ ] ¿El frontmatter YAML es idéntico al configurado en la Sección 1 y el `pilar` es un enum válido de `config.ts`?
 - [ ] ¿El `seoTitle` mide ≤55 caracteres y la `metaDescription` ≤160 caracteres (contados, no estimados)?
-- [ ] ¿Se incluyeron las 6 fuentes al inicio, cada una con URL profunda verificable (o marcada `[URL no verificada]`)?
+- [ ] ¿Se incluyeron todas las fuentes al inicio, cada una con URL profunda verificable (o marcada `[URL no verificada]`)?
 - [ ] ¿Los enlaces internos usan rutas reales hacia artículos publicados en el inventario, o están marcados como "Pendiente" si no existen aún?
 - [ ] ¿La keyword/slug no canibaliza un artículo ya existente?
-- [ ] ¿La suma de los targets de palabras por sección está entre 6.000 y 6.500?
-- [ ] ¿Se completó la tabla de trazabilidad de fuentes de la Sección 9 (las 6 fuentes tienen H2 asignado)?
+- [ ] ¿La suma de los targets de palabras por sección está dentro del rango justificado del contrato?
+- [ ] ¿Se completó la tabla de trazabilidad de fuentes de la Sección 9 (todas las fuentes tienen H2 asignado)?
 
 **A validar en el artículo `.mdx` final contra el Contrato de Entrega (Sección 9):**
 - [ ] ¿Se importan correctamente AlertBox y FAQ al inicio del MDX?
 - [ ] ¿El texto empieza directamente sin título H1 `#`?
-- [ ] ¿Se referencia la historia real en sus 3 momentos obligatorios (apertura, desarrollo y **cierre**)?
+- [ ] ¿La procedencia narrativa está declarada y se cumple el arco justificado, o la guía sin caso?
 - [ ] ¿Ningún párrafo supera las 3 líneas en pantallas móviles?
 - [ ] ¿Los H3 están colocados cada 150-200 palabras?
 - [ ] ¿Las imágenes tienen nombres SEO y prompts descriptivos sin estilo publicitario?
-- [ ] ¿El recuento de palabras real del artículo está entre 6.000 y 6.500 palabras (contado sobre el `.mdx`, no estimado)?
-- [ ] ¿Las 6 fuentes de la tabla de trazabilidad quedaron efectivamente citadas por nombre en el artículo?
+- [ ] ¿El recuento de palabras real del artículo está dentro del rango justificado del contrato (contado sobre el `.mdx`, no estimado)?
+- [ ] ¿Todas las fuentes de la tabla de trazabilidad quedaron efectivamente citadas por nombre en el artículo?
 - [ ] ¿Los 3 `AlertBox`, el `FAQ` completo y el enlace a la calculadora (si aplica) están presentes en el `.mdx` publicado?
+
+## 11. RECURSOS PROMETIDOS Y GATE EDITORIAL
+
+| Recurso y utilidad | Ubicación | Ruta/destino | Estado y responsable | Prueba previa a publicación |
+|---|---|---|---|---|
+| {{PDF_VIDEO_PLANTILLA_HERRAMIENTA_O_NO_APLICA}} | {{SECCION}} | {{RUTA_REAL_O_PENDIENTE}} | {{PLANIFICADO_CREADO_VERIFICADO}} | {{ABRIR_REPRODUCIR_COMPLETAR_RECORRIDO}} |
+
+- [ ] Extensión y cada H2 justificados por una respuesta distinta, sin relleno.
+- [ ] Registro fuente→afirmación→localización completo; afirmaciones clave verificadas.
+- [ ] Procedencia narrativa e imágenes ilustrativas declaradas; sin credenciales ni resultados inventados.
+- [ ] Coherencia con política editorial; sin pauta farmacológica para el lector ni recetas universales sin respaldo.
+- [ ] Cada recurso prometido quedará operativo o se retirará su promesa antes de publicar; no basta con compilar.
+- [ ] Historial de auditoría numerado, máximo tres rondas; detener si falla la tercera.

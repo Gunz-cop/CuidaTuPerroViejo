@@ -1,3 +1,6 @@
+> **EJEMPLO HISTÓRICO NO VALIDADO — no usar como fuente ni como patrón de contenido.**
+> Conservado para trazabilidad. Su historia no acredita una experiencia del usuario, incluye referencias no verificadas y objetivos de extensión que ya no rigen. No copiar casos, identificadores, pautas ni afirmaciones de este archivo. Usar la plantilla vigente y `../../references/calidad-editorial-adsense.md`; verificar cada nueva fuente de forma independiente.
+
 # 📋 BRIEF DE CONTENIDOS TÉCNICO: Síndrome de Cushing en perros mayores
 **Sitio:** cuidatuperroviejo.com | **Pilar:** Salud de Perros Mayores | **Tipo:** Artículo spoke (Astro/MDX)
 

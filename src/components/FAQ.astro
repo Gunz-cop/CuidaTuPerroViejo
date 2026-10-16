@@ -28,7 +28,7 @@ const { items = [], title = 'Preguntas frecuentes' } = Astro.props;
       <div class="h-px flex-1 bg-brand-border/60"></div>
       <h2
         id="faq-heading"
-        class="text-xs font-bold tracking-widest uppercase text-brand-primary whitespace-nowrap"
+        class="min-w-0 text-center text-xs font-bold tracking-widest uppercase text-brand-primary"
       >
         {title}
       </h2>
@@ -58,3 +58,12 @@ const { items = [], title = 'Preguntas frecuentes' } = Astro.props;
     </div>
   </section>
 )}
+
+<style>
+  /* Keep the compact FAQ label from inheriting the article's large H2 size. */
+  .faq-section #faq-heading {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+</style>

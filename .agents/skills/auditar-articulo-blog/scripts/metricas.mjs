@@ -119,10 +119,10 @@ function parseBrief(raw) {
   }
 
   // Rango de palabras del contrato.
-  const rango = raw.match(/Entre\s+\*{0,2}([\d.]+)\s*y\s*([\d.]+)\s*palabras/i);
+  const rango = raw.match(/(?:Entre\s+\*{0,2}([\d.]+)\s*y\s*([\d.]+)|intervalo\s+([\d.]+)\s*[–—-]\s*([\d.]+))\s*palabras/i);
   if (rango) {
-    b.min = parseInt(rango[1].replace(/\./g, ''), 10);
-    b.max = parseInt(rango[2].replace(/\./g, ''), 10);
+    b.min = parseInt((rango[1] || rango[3]).replace(/\./g, ''), 10);
+    b.max = parseInt((rango[2] || rango[4]).replace(/\./g, ''), 10);
   }
 
   // Sección 3: la ficha completa de cada fuente (título real + URL). La tabla de
@@ -138,7 +138,7 @@ function parseBrief(raw) {
   }
 
   // Tabla de trazabilidad: | 1 | Fuente | H2 asignado | ☐ |
-  const reFuente = /^\|\s*(\d)\s*\|\s*(.+?)\s*\|\s*(.+?)\s*\|\s*[☐☑x ]*\|/gim;
+  const reFuente = /^\|\s*(\d+)\s*(?:\|\s*)?([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*[☐☑x ]*\|/gim;
   while ((m = reFuente.exec(raw)) !== null) {
     const extra = s3.get(m[1]) || {};
     b.fuentes.push({
@@ -151,7 +151,7 @@ function parseBrief(raw) {
   }
 
   // Enlaces internos obligatorios de la Sección 5 (solo los que tienen URL real).
-  const reEnlace = /\|\s*\*\*(Pilar|Spoke 1|Spoke 2|Calculadora)\*\*\s*\|\s*(.+?)\s*\|\s*`?(\/[^`|\s]*)`?\s*\|/gi;
+  const reEnlace = /\|\s*(?:\*\*)?(Pilar|Spoke \d+|Calculadora|Puente|Herramienta)(?:\*\*)?\s*\|\s*(.+?)\s*\|\s*`?(\/[^`|\s]*)`?\s*\|/gi;
   while ((m = reEnlace.exec(raw)) !== null) {
     if (m[3] && m[3].startsWith('/')) b.enlaces.push({ tipo: m[1], url: m[3] });
   }
@@ -215,7 +215,7 @@ function agujas(etiqueta) {
   for (const m of limpio.matchAll(/([A-ZÁÉÍÓÚÑ][\wáéíóúñ'-]{2,})\s*(?:et al\.|\(\d{4}\))/g)) {
     fuertes.push(m[1]);
   }
-  for (const w of limpio.match(/[A-ZÁÉÍÓÚÑ][\wáéíóúñ'-]{3,}/g) || []) {
+  for (const w of limpio.match(/[A-ZÁÉÍÓÚÑ][\wáéíóúñ'-]{2,}/g) || []) {
     if (!STOP.has(norm(w)) && !fuertes.includes(w)) debiles.push(w);
   }
   // Respaldo por frase: hay fuentes cuya etiqueta es solo un título en inglés
@@ -268,9 +268,12 @@ function auditar(slug) {
   p(`## 1. Volumen y distribución`);
   if (!brief) {
     p(`  AVISO: no existe briefings/briefing-${slug}.md — sin contrato contra el que medir.`);
-    v.avisos.push('sin brief: volumen no verificable contra contrato');
+    v.bloqueantes.push('sin brief: contrato no verificable');
     p(`  Total: ${total} palabras`);
   } else {
+    if (!brief.min || !brief.max || brief.min > brief.max) v.bloqueantes.push('rango del contrato ausente, inválido o no interpretable');
+    if (!brief.targets.length) v.bloqueantes.push('targets por sección ausentes o no interpretables');
+    if (!brief.enlaces.length) v.bloqueantes.push('enlaces del contrato ausentes o no interpretables');
     const dentro = brief.min && total >= brief.min && total <= brief.max;
     p(`  Total: ${total} palabras (contrato ${brief.min}–${brief.max})  ${dentro ? 'OK' : 'FUERA'}`);
     if (brief.min && total < brief.min) v.bloqueantes.push(`volumen ${total} < mínimo ${brief.min} (faltan ${brief.min - total})`);
@@ -402,7 +405,8 @@ function auditar(slug) {
       }
     }
   } else {
-    p(`  (sin tabla de trazabilidad en el brief)`);
+    p(`  BLOQUEA: tabla de trazabilidad ausente o no interpretable.`);
+    v.bloqueantes.push('tabla de fuentes ausente o no interpretable');
   }
   p();
 
@@ -441,11 +445,17 @@ function auditar(slug) {
   const refs = new Set();
   if (fm.heroImage) refs.add(fm.heroImage);
   for (const m of raw.matchAll(/\((\/images\/blog\/[^)]+)\)/g)) refs.add(m[1]);
+  for (const m of raw.matchAll(/\b(?:src|srcset)="([^"]+)"/g)) {
+    for (const u of m[1].split(',')) {
+      const ruta = u.trim().split(/\s+/)[0];
+      if (ruta.startsWith('/images/blog/')) refs.add(ruta);
+    }
+  }
   const dir = path.join(IMGS, slug);
   const existen = fs.existsSync(dir) ? fs.readdirSync(dir) : [];
   for (const r of refs) {
     const base = path.basename(r);
-    const ok = existen.includes(base);
+    const ok = fs.existsSync(path.join(ROOT, 'public', r));
     const esHero = fm.heroImage === r;
     p(`  ${ok ? 'OK   ' : 'FALTA'} ${base}${esHero ? '  (hero — se olvida al contar, cuéntala)' : ''}`);
     if (!ok) v.bloqueantes.push(`imagen inexistente: ${base}${esHero ? ' (hero)' : ''}`);
@@ -527,4 +537,4 @@ p(`contradice su pie pasan este script sin despeinarse.`);
 
 console.log(out.join('\n'));
 
-if (STRICT && totalBloq > 0) process.exit(1);
+if (STRICT && totalBloq > 0) process.exitCode = 1;

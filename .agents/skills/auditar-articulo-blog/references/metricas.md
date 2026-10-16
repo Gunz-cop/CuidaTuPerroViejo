@@ -23,7 +23,7 @@ por título, porque el redactor casi siempre reformula los títulos. Si los
 títulos de una fila no se corresponden, el artículo **fusionó o reordenó
 secciones**: eso es un hallazgo en sí mismo y hay que mirarlo a mano.
 
-**Umbral: ±15 %** sobre el target de cada sección. Fuera de ahí, bloqueante.
+**Umbral interno: ±15 %** sobre el target de cada sección. Fuera de ahí requiere resolver el contrato, no rellenar prosa. No es un requisito de Google. Sin rango, targets o tabla de fuentes interpretables, el script bloquea: no declara APTO sobre controles omitidos. Admite rango «Entre X y Y palabras» o «intervalo X–Y palabras», tablas con número de fuente separado o integrado y referencias HTML `src`/`srcset`.
 
 Presta atención especial a la **penúltima fila**, el H2 de cierre narrativo. Es
 donde vive el caso clínico y es el que más se sacrifica cuando el presupuesto se
@@ -46,9 +46,7 @@ Referencias reales de este blog: un artículo aprobado da **media 30 / mediana 2
 
 **Lee esta métrica junto con la anterior, no por separado.** Si el artículo va
 corto de palabras **y** la densidad está alta, el orden de corrección importa:
-**partir los párrafos primero, ampliar después**. Ampliar párrafos ya densos
-arregla el número y empeora exactamente lo que el formato móvil existe para
-evitar. Dilo en el informe, porque es la corrección que se hace mal por defecto.
+**reorganizar para móvil y comprobar omisiones útiles antes de ampliar**. No añadir texto solo para alcanzar el número. Dilo en el informe, porque es la corrección que se hace mal por defecto.
 
 **El otro extremo: fragmentos sueltos (<12 palabras).** Partir párrafos a lo
 bruto para bajar la media deja frases descolgadas, y la media *mejora* mientras

@@ -22,6 +22,11 @@ Dos consecuencias prácticas de ese papel:
   casillas marcadas no significa nada: las marcas las puso quien generó el
   brief, que es justo la parte interesada que esta skill existe para sustituir.
 
+## Control obligatorio de calidad editorial (2026-10-16)
+
+Lee y aplica [calidad-editorial-adsense.md](../references/calidad-editorial-adsense.md) antes de ejecutar esta skill. Verifica utilidad propia, correspondencia fuente→afirmación, procedencia narrativa, coherencia con la política editorial y entrega real de cada recurso anunciado. Ni el conteo de palabras ni un APTO mecánico sustituyen esos controles. Máximo tres rondas por documento; al fallar la tercera, detenerse y presentar el bloqueo al usuario.
+
+
 ## Separación de roles: auditas, no corriges
 
 Esta skill **no** modifica el brief, ni el inventario, ni ningún otro archivo.
@@ -40,11 +45,10 @@ editarlo, no.
 
 La regla con la que se audita es la propia [generar-briefing-contenido](../generar-briefing-contenido/SKILL.md):
 su flujo de 5 fases y su Validación Final son el estándar. Tenlos a mano durante
-toda la auditoría. El ejemplo de referencia es
-[ejemplo_briefing_cushing.md](../generar-briefing-contenido/examples/ejemplo_briefing_cushing.md).
+toda la auditoría junto con el control compartido de calidad. El ejemplo de Cushing es histórico y no validado, nunca una referencia normativa ni una fuente.
 
 Si el brief documenta una excepción prevista por la skill generadora (Fase 2.5:
-menos de 6 fuentes fuertes, con aprobación del usuario; Fase 3.3: pilar sin dos
+cobertura limitada de evidencia documentada; Fase 3.3: pilar sin dos
 spokes publicados), **eso no es un fallo**: es una decisión ya tomada y
 justificada. Auditar contra ella es ruido. Lo que sí verificas es que la
 excepción esté *documentada*, no silenciosa — la omisión decidida en silencio sí
@@ -71,7 +75,7 @@ esté completo antes de gastar horas de redacción en él.
 - Cuenta los caracteres del `seoTitle` (máx. 55) y de la `metaDescription`
   (máx. 160) con un comando, no a ojo.
 - Verifica que el bloque YAML del frontmatter está completo según el template y
-  que el valor de `pilar` existe en el enum de `src/content/config.ts`.
+  que el valor de `pilar` existe en el enum de `src/content.config.ts`.
 - Comprueba coherencia slug ↔ ruta relativa ↔ nombres de archivo de imágenes
   (sin `ñ`, tildes ni espacios en rutas públicas).
 
@@ -127,16 +131,16 @@ Notas de método:
 ### 5. Estructura, componentes y arco narrativo
 
 - **Presupuesto de palabras:** suma los targets por sección de la Sección 6. Debe
-  dar entre 6.000 y 6.500. Suma exacta, no estimación.
+  coincidir con el target justificado del contrato, sin mínimo universal. Suma exacta, no estimación; señalar relleno aunque el total cumpla.
 - **AlertBox:** deben planificarse los 3 tipos, uno mínimo cada uno, en sus
   secciones correctas: `info` en Introducción, `danger` en síntomas/diagnóstico,
   `warning` en tratamiento/manejo. Repetir el mismo tipo o faltar uno no pasa
   validación.
 - **FAQ:** planificado con sus preguntas borrador.
-- **Arco narrativo en 3 momentos:** apertura en Intro, desarrollo en un H2
+- **Arco narrativo cuando el contrato lo justifica:** apertura en Intro, desarrollo en un H2
   intermedio, y **cierre en el último H2 antes de Conclusión/FAQ** como sección
   propia. Si hay varios sujetos en la historia, debe declararse cuál es el hilo
-  narrativo principal. El cierre omitido o fusionado con la conclusión es P1 —
+  narrativo principal. Si el contrato justifica un cierre propio, omitirlo es P1 —
   es el punto que más se salta después en redacción cuando el brief ya lo dejó
   débil.
 - **Límite brief vs. redacción:** las secciones deben dar instrucciones y puntos
@@ -156,7 +160,7 @@ Notas de método:
 
 ### 7. Contrato de Entrega (Sección 9)
 
-- Tabla de trazabilidad completa: las 6 fuentes con H2 asignado.
+- Tabla de trazabilidad completa: todas las fuentes con H2 asignado.
 - Checklist de no negociables presente: volumen mínimo real, componentes
   estructurales, arco narrativo.
 - Rango de palabras del contrato coherente con los targets de la Sección 6.
@@ -182,7 +186,7 @@ Por orden de gravedad real en este sitio:
 3. **Datos clave atribuidos a fuentes que no los contienen** (verificado abriendo
    la URL).
 4. **Fuentes decorativas** listadas pero sin H2 que las desarrolle.
-5. **Excepciones aplicadas en silencio** (menos de 6 fuentes, spokes faltantes)
+5. **Excepciones aplicadas en silencio** (lagunas de evidencia, spokes faltantes)
    sin documentar ni preguntar.
 6. **Arco narrativo incompleto**, sobre todo el cierre ausente.
 7. **Metadatos fuera de límite** o `pilar` inválido.

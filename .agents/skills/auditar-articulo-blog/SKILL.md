@@ -24,6 +24,11 @@ Dos consecuencias prácticas de ese papel:
   estaba creada, y "faltan 2 imágenes" cuando faltaban 3. Ninguna era mentira
   deliberada; todas eran verificaciones que el autor creyó haber hecho.
 
+## Control obligatorio de calidad editorial (2026-10-16)
+
+Lee y aplica [calidad-editorial-adsense.md](../references/calidad-editorial-adsense.md) antes de ejecutar esta skill. Verifica utilidad propia, correspondencia fuente→afirmación, procedencia narrativa, coherencia con la política editorial y entrega real de cada recurso anunciado. Ni el conteo de palabras ni un APTO mecánico sustituyen esos controles. Máximo tres rondas por documento; al fallar la tercera, detenerse y presentar el bloqueo al usuario.
+
+
 ## Separación de roles: auditas, no corriges
 
 Esta skill **no** modifica el `.mdx`, ni el brief, ni el inventario. Entrega un
@@ -57,7 +62,7 @@ El brief es `briefings/briefing-{{slug}}.md` y es el contrato. Lee en este orden
   como tal, explícitamente, en el cuerpo).
 - **Sección 8** — sujeto fijo de las imágenes y restricciones visuales.
 
-Si el brief documentó una limitación (Fase 2.5: menos de 6 fuentes fuertes, o
+Si el brief documentó una limitación (Fase 2.5: cobertura limitada de evidencia, o
 una fuente sin texto completo verificable), **eso no es un fallo del artículo**.
 Es una decisión ya tomada y justificada. Auditar contra ella es ruido.
 
@@ -147,8 +152,7 @@ negociable no es tu papel; detectar que se incumplió tal como está escrito, s�
   porcentajes"* dentro de un párrafo dirigido a la tutora. El "úsalo" le hablaba
   al redactor. Busca segunda persona que no sea la lectora, menciones a
   "el brief", "la fuente 6", "el redactor", o corchetes de anotación.
-- **El arco narrativo en sus tres momentos**, con el cierre en su sección propia
-  y no como una frase suelta.
+- **El arco documentado si el contrato lo justifica**, o la estructura de una guía sin caso. No exigir un paciente ni un desenlace desconocido.
 - **La declaración de viñeta compuesta**, si aplica, y que el caso nunca se
   cuente en primera persona.
 - **Los no negociables de la Sección 9**, uno por uno. Suelen proteger una
@@ -182,7 +186,7 @@ Por orden de gravedad real en este sitio:
    venta.
 4. **Una fuente citada solo en el cuadro de cierre**, o fuera de su H2.
 5. **Distribución rota entre secciones.** El total puede cumplir mientras el H2
-   de cierre —el caso clínico, el activo que un blog genérico no tiene— se queda
+   de cierre —si el contrato lo justifica— se queda
    a la mitad. Es el fallo más repetido: 500/700, 314/700 y 272/700 en los tres
    primeros artículos.
 6. **Densidad de párrafo al doble.** Además de incumplir el formato móvil,

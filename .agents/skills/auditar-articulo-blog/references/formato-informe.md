@@ -106,3 +106,7 @@ Y si en el curso de la auditoría mides algo que contradice una crítica que ya
 hiciste —tuya, de una sesión anterior o de este mismo informe— corrígela de
 forma explícita y sigue. Sostener una impresión contra un dato propio es la
 forma más rápida de que el informe deje de servir.
+
+## Controles editoriales adicionales obligatorios
+
+Registrar versión/hash y ronda (máximo tres), utilidad distinta por sección, procedencia del material narrativo y coherencia con la política editorial. Añadir tabla fuente → afirmación → localización → comprobación/limitación y tabla recurso prometido → ruta → prueba → resultado/pendiente. Distinguir comprobación local de publicación real. Referencias erróneas, casos sin procedencia, pautas incompatibles con la política y recursos prometidos ausentes bloquean; no compensarlos con palabras o componentes. Si el brief solo planifica un recurso, comprobar su gate de entrega, sin fingir que ya existe.
