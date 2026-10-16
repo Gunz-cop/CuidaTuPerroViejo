@@ -14,6 +14,9 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
             <ellipse class="dat__gray dat__gray--muzzle" cx="100" cy="120" rx="34" ry="24" />
             <ellipse class="dat__gray dat__gray--brow" cx="78" cy="68" rx="9" ry="5" />
             <ellipse class="dat__gray dat__gray--brow" cx="122" cy="68" rx="9" ry="5" />
+            <ellipse class="dat__gray dat__gray--ring" cx="78" cy="84" rx="13" ry="12" />
+            <ellipse class="dat__gray dat__gray--ring" cx="122" cy="84" rx="13" ry="12" />
+            <ellipse class="dat__gray dat__gray--forehead" cx="100" cy="58" rx="22" ry="20" />
             <g class="dat__eyes">
               <ellipse cx="78" cy="84" rx="7" ry="8" />
               <ellipse cx="122" cy="84" rx="7" ry="8" />
@@ -220,13 +223,17 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   .dat__dog { display: block; width: 100%; height: auto; overflow: visible; }
   .dat__head { transform-origin: 100px 150px; animation: dat-breathe 3.2s ease-in-out infinite; transition: transform .6s; }
   .dat[data-stage='puppy'] .dat__head { transform: scale(.86) translateY(10px); animation-duration: 1.4s; }
-  .dat__face, .dat__ear { fill: #c8915c; }
-  .dat__ear { fill: #8e5d37; transition: transform .6s; }
+  .dat__face { fill: color-mix(in srgb, #ead8bd calc(var(--gray) * 70%), #c8915c); }
+  .dat__ear { fill: color-mix(in srgb, #d9bd98 calc(var(--gray) * 65%), #8e5d37); transition: transform .6s; }
   .dat__ear--l { transform-origin: 60px 56px; transform: rotate(calc(var(--gray) * 10deg)); }
   .dat__ear--r { transform-origin: 140px 56px; transform: rotate(calc(var(--gray) * -10deg)); }
   .dat__blaze, .dat__muzzle { fill: #f3e2c9; }
+  /* La franja blanca se ensancha con la edad. */
+  .dat__blaze { transform-box: fill-box; transform-origin: center; transform: scaleX(calc(1 + var(--gray) * .7)); }
   .dat__gray { fill: #f7f4ef; opacity: var(--gray); }
   .dat__gray--muzzle { opacity: calc(var(--gray) * .85); }
+  .dat__gray--ring { opacity: calc(var(--gray) * .55); }
+  .dat__gray--forehead { opacity: calc(var(--gray) * .25); filter: blur(3px); }
   .dat__eyes { fill: #2b1d14; }
   .dat__shine { fill: #fff; }
   .dat__lid { fill: none; stroke: #6b4a2e; stroke-width: 3; stroke-linecap: round; opacity: 0; transition: opacity .4s; }
@@ -369,7 +376,7 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
     const apply = () => {
       root.dataset.stage = state.stage;
       root.style.setProperty('--pos', `${state.stagePosition * 100}%`);
-      root.style.setProperty('--gray', String(Math.max(0, Math.min(1, (state.dogYears - state.seniorFrom + 2) / (state.profile.lifeExpectancy - state.seniorFrom + 2)))));
+      root.style.setProperty('--gray', String(Math.max(0, Math.min(1, (state.dogYears - state.seniorFrom + 4) / (state.profile.lifeExpectancy - state.seniorFrom + 4)))));
       root.style.setProperty('--num', String(state.humanYears));
       set('dat-age-text', ageText);
       set('dat-name-out', dogName || 'Tu perro');
