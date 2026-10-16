@@ -223,11 +223,13 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   .dat__dog { display: block; width: 100%; height: auto; overflow: visible; }
   .dat__head { transform-origin: 100px 150px; animation: dat-breathe 3.2s ease-in-out infinite; transition: transform .6s; }
   .dat[data-stage='puppy'] .dat__head { transform: scale(.86) translateY(10px); animation-duration: 1.4s; }
-  .dat__face { fill: color-mix(in srgb, #ead8bd calc(var(--gray) * 70%), #c8915c); }
-  .dat__ear { fill: color-mix(in srgb, #d9bd98 calc(var(--gray) * 65%), #8e5d37); transition: transform .6s; }
+  .dat__face { fill: color-mix(in srgb, #f1e6d4 calc(var(--gray) * 85%), #c8915c); }
+  .dat__ear { fill: color-mix(in srgb, #e4cfac calc(var(--gray) * 85%), #8e5d37); transition: transform .6s; }
   .dat__ear--l { transform-origin: 60px 56px; transform: rotate(calc(var(--gray) * 10deg)); }
   .dat__ear--r { transform-origin: 140px 56px; transform: rotate(calc(var(--gray) * -10deg)); }
   .dat__blaze, .dat__muzzle { fill: #f3e2c9; }
+  /* Mejillas algo más caídas con la edad, como las de un Beagle mayor. */
+  .dat__muzzle, .dat__gray--muzzle { transform-box: fill-box; transform-origin: center top; transform: scale(calc(1 + var(--gray) * .12), calc(1 + var(--gray) * .1)); }
   /* La franja blanca se ensancha con la edad. */
   .dat__blaze { transform-box: fill-box; transform-origin: center; transform: scaleX(calc(1 + var(--gray) * .7)); }
   .dat__gray { fill: #f7f4ef; opacity: var(--gray); }
