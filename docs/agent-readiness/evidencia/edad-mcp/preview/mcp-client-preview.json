@@ -1,0 +1,322 @@
+{
+  "base": "https://b7e9a097-cuidatuperroviejo.g1721m.workers.dev",
+  "transport": "Node fetch",
+  "at": "2026-10-16T18:07:08.932Z",
+  "status": "PASS",
+  "results": [
+    {
+      "criterion": "edad-mcp",
+      "era": "2025-11-25",
+      "luna": {
+        "schemaVersion": "agent-api/1",
+        "tool": {
+          "name": "Calculadora de edad de perro en años humanos",
+          "documentId": "page--calculadora-edad-perro",
+          "url": "https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro",
+          "method_url": "https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro#metodo"
+        },
+        "input": {
+          "size": "small",
+          "years": 11,
+          "months": 0,
+          "name": "Luna"
+        },
+        "size": {
+          "id": "small",
+          "label": "Pequeño",
+          "weight": "Menos de 11 kg"
+        },
+        "human_years": 68,
+        "stage": {
+          "id": "senior",
+          "label": "Senior"
+        },
+        "senior_from_years": 10,
+        "years_to_senior": null,
+        "life_expectancy_years": 13.5,
+        "epigenetic_years": 69,
+        "message": "Luna tiene el equivalente a 68 años humanos. Ya es senior. Es normal que duerma más y más profundo; consulta si le cuesta mucho despertar o el cambio es brusco. Revisiones más frecuentes y pequeños ajustes en casa ayudan a que disfrute esta etapa.",
+        "recommended_action": {
+          "label": "Ver cuidados de movilidad →",
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores"
+        },
+        "notices": [
+          "Estimación basada en estudios veterinarios. No sustituye una valoración veterinaria."
+        ],
+        "human_equivalence_note": "La equivalencia en años humanos es un ajuste propio de Cuida tu Perro Viejo, no un dato de un estudio: los dos primeros años equivalen a 15 y 24 años humanos y después cada tamaño avanza a un ritmo calibrado para que su esperanza de vida equivalga a 80 años humanos.",
+        "sources": [
+          {
+            "id": "montoya",
+            "citation": "Montoya M, Morrison JA, Arrignon F, et al. Life expectancy tables for dogs and cats derived from clinical data. Front Vet Sci. 2023;10:1082102.",
+            "doi": "10.3389/fvets.2023.1082102",
+            "url": "https://doi.org/10.3389/fvets.2023.1082102"
+          },
+          {
+            "id": "aaha",
+            "citation": "Creevy KE, Grady J, Little SE, et al. 2019 AAHA Canine Life Stage Guidelines. J Am Anim Hosp Assoc. 2019;55(6):267-290.",
+            "doi": "10.5326/JAAHA-MS-6999",
+            "url": "https://doi.org/10.5326/JAAHA-MS-6999"
+          },
+          {
+            "id": "wang",
+            "citation": "Wang T, Ma J, Hogan AN, et al. Quantitative translation of dog-to-human aging by conserved remodeling of the DNA methylome. Cell Syst. 2020;11(2):176-185.e6.",
+            "doi": "10.1016/j.cels.2020.06.006",
+            "url": "https://doi.org/10.1016/j.cels.2020.06.006"
+          }
+        ]
+      },
+      "giant": {
+        "schemaVersion": "agent-api/1",
+        "tool": {
+          "name": "Calculadora de edad de perro en años humanos",
+          "documentId": "page--calculadora-edad-perro",
+          "url": "https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro",
+          "method_url": "https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro#metodo"
+        },
+        "input": {
+          "size": "giant",
+          "years": 10,
+          "months": 0,
+          "name": null
+        },
+        "size": {
+          "id": "giant",
+          "label": "Gigante",
+          "weight": "45 kg o más"
+        },
+        "human_years": 83,
+        "stage": {
+          "id": "longevous",
+          "label": "Senior longevo"
+        },
+        "senior_from_years": 7,
+        "years_to_senior": null,
+        "life_expectancy_years": 9.5,
+        "epigenetic_years": 68,
+        "message": "Tu perro tiene el equivalente a 83 años humanos. ¡Un perro longevo! Ya superó la edad media de su tamaño, y eso habla muy bien de sus cuidados. Dormir mucho es parte de esta etapa: una cama cómoda y rutinas tranquilas le ayudan a descansar.",
+        "recommended_action": {
+          "label": "Ver cómo darle más confort →",
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores"
+        },
+        "notices": [
+          "Estimación basada en estudios veterinarios. No sustituye una valoración veterinaria."
+        ],
+        "human_equivalence_note": "La equivalencia en años humanos es un ajuste propio de Cuida tu Perro Viejo, no un dato de un estudio: los dos primeros años equivalen a 15 y 24 años humanos y después cada tamaño avanza a un ritmo calibrado para que su esperanza de vida equivalga a 80 años humanos.",
+        "sources": [
+          {
+            "id": "montoya",
+            "citation": "Montoya M, Morrison JA, Arrignon F, et al. Life expectancy tables for dogs and cats derived from clinical data. Front Vet Sci. 2023;10:1082102.",
+            "doi": "10.3389/fvets.2023.1082102",
+            "url": "https://doi.org/10.3389/fvets.2023.1082102"
+          },
+          {
+            "id": "aaha",
+            "citation": "Creevy KE, Grady J, Little SE, et al. 2019 AAHA Canine Life Stage Guidelines. J Am Anim Hosp Assoc. 2019;55(6):267-290.",
+            "doi": "10.5326/JAAHA-MS-6999",
+            "url": "https://doi.org/10.5326/JAAHA-MS-6999"
+          },
+          {
+            "id": "wang",
+            "citation": "Wang T, Ma J, Hogan AN, et al. Quantitative translation of dog-to-human aging by conserved remodeling of the DNA methylome. Cell Syst. 2020;11(2):176-185.e6.",
+            "doi": "10.1016/j.cels.2020.06.006",
+            "url": "https://doi.org/10.1016/j.cels.2020.06.006"
+          }
+        ]
+      },
+      "invalid": "INVALID_REQUEST",
+      "status": "PASS"
+    },
+    {
+      "era": "2025-11-25",
+      "tools": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids",
+        "calculate_dog_age"
+      ],
+      "searchTotal": 3,
+      "documentId": "article--sindrome-cushing-perros-mayores",
+      "markdownSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+      "qualityScore": 35,
+      "qualityBand": "compromised",
+      "status": "PASS"
+    },
+    {
+      "criterion": "edad-mcp",
+      "era": "2026-07-28",
+      "luna": {
+        "schemaVersion": "agent-api/1",
+        "tool": {
+          "name": "Calculadora de edad de perro en años humanos",
+          "documentId": "page--calculadora-edad-perro",
+          "url": "https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro",
+          "method_url": "https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro#metodo"
+        },
+        "input": {
+          "size": "small",
+          "years": 11,
+          "months": 0,
+          "name": "Luna"
+        },
+        "size": {
+          "id": "small",
+          "label": "Pequeño",
+          "weight": "Menos de 11 kg"
+        },
+        "human_years": 68,
+        "stage": {
+          "id": "senior",
+          "label": "Senior"
+        },
+        "senior_from_years": 10,
+        "years_to_senior": null,
+        "life_expectancy_years": 13.5,
+        "epigenetic_years": 69,
+        "message": "Luna tiene el equivalente a 68 años humanos. Ya es senior. Es normal que duerma más y más profundo; consulta si le cuesta mucho despertar o el cambio es brusco. Revisiones más frecuentes y pequeños ajustes en casa ayudan a que disfrute esta etapa.",
+        "recommended_action": {
+          "label": "Ver cuidados de movilidad →",
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores"
+        },
+        "notices": [
+          "Estimación basada en estudios veterinarios. No sustituye una valoración veterinaria."
+        ],
+        "human_equivalence_note": "La equivalencia en años humanos es un ajuste propio de Cuida tu Perro Viejo, no un dato de un estudio: los dos primeros años equivalen a 15 y 24 años humanos y después cada tamaño avanza a un ritmo calibrado para que su esperanza de vida equivalga a 80 años humanos.",
+        "sources": [
+          {
+            "id": "montoya",
+            "citation": "Montoya M, Morrison JA, Arrignon F, et al. Life expectancy tables for dogs and cats derived from clinical data. Front Vet Sci. 2023;10:1082102.",
+            "doi": "10.3389/fvets.2023.1082102",
+            "url": "https://doi.org/10.3389/fvets.2023.1082102"
+          },
+          {
+            "id": "aaha",
+            "citation": "Creevy KE, Grady J, Little SE, et al. 2019 AAHA Canine Life Stage Guidelines. J Am Anim Hosp Assoc. 2019;55(6):267-290.",
+            "doi": "10.5326/JAAHA-MS-6999",
+            "url": "https://doi.org/10.5326/JAAHA-MS-6999"
+          },
+          {
+            "id": "wang",
+            "citation": "Wang T, Ma J, Hogan AN, et al. Quantitative translation of dog-to-human aging by conserved remodeling of the DNA methylome. Cell Syst. 2020;11(2):176-185.e6.",
+            "doi": "10.1016/j.cels.2020.06.006",
+            "url": "https://doi.org/10.1016/j.cels.2020.06.006"
+          }
+        ]
+      },
+      "giant": {
+        "schemaVersion": "agent-api/1",
+        "tool": {
+          "name": "Calculadora de edad de perro en años humanos",
+          "documentId": "page--calculadora-edad-perro",
+          "url": "https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro",
+          "method_url": "https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro#metodo"
+        },
+        "input": {
+          "size": "giant",
+          "years": 10,
+          "months": 0,
+          "name": null
+        },
+        "size": {
+          "id": "giant",
+          "label": "Gigante",
+          "weight": "45 kg o más"
+        },
+        "human_years": 83,
+        "stage": {
+          "id": "longevous",
+          "label": "Senior longevo"
+        },
+        "senior_from_years": 7,
+        "years_to_senior": null,
+        "life_expectancy_years": 9.5,
+        "epigenetic_years": 68,
+        "message": "Tu perro tiene el equivalente a 83 años humanos. ¡Un perro longevo! Ya superó la edad media de su tamaño, y eso habla muy bien de sus cuidados. Dormir mucho es parte de esta etapa: una cama cómoda y rutinas tranquilas le ayudan a descansar.",
+        "recommended_action": {
+          "label": "Ver cómo darle más confort →",
+          "url": "https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores"
+        },
+        "notices": [
+          "Estimación basada en estudios veterinarios. No sustituye una valoración veterinaria."
+        ],
+        "human_equivalence_note": "La equivalencia en años humanos es un ajuste propio de Cuida tu Perro Viejo, no un dato de un estudio: los dos primeros años equivalen a 15 y 24 años humanos y después cada tamaño avanza a un ritmo calibrado para que su esperanza de vida equivalga a 80 años humanos.",
+        "sources": [
+          {
+            "id": "montoya",
+            "citation": "Montoya M, Morrison JA, Arrignon F, et al. Life expectancy tables for dogs and cats derived from clinical data. Front Vet Sci. 2023;10:1082102.",
+            "doi": "10.3389/fvets.2023.1082102",
+            "url": "https://doi.org/10.3389/fvets.2023.1082102"
+          },
+          {
+            "id": "aaha",
+            "citation": "Creevy KE, Grady J, Little SE, et al. 2019 AAHA Canine Life Stage Guidelines. J Am Anim Hosp Assoc. 2019;55(6):267-290.",
+            "doi": "10.5326/JAAHA-MS-6999",
+            "url": "https://doi.org/10.5326/JAAHA-MS-6999"
+          },
+          {
+            "id": "wang",
+            "citation": "Wang T, Ma J, Hogan AN, et al. Quantitative translation of dog-to-human aging by conserved remodeling of the DNA methylome. Cell Syst. 2020;11(2):176-185.e6.",
+            "doi": "10.1016/j.cels.2020.06.006",
+            "url": "https://doi.org/10.1016/j.cels.2020.06.006"
+          }
+        ]
+      },
+      "invalid": "INVALID_REQUEST",
+      "status": "PASS"
+    },
+    {
+      "criterion": "C05/C06",
+      "documents": 32,
+      "pages": [
+        {
+          "offset": 0,
+          "documents": 20,
+          "nextOffset": 20
+        },
+        {
+          "offset": 20,
+          "documents": 12,
+          "nextOffset": null
+        }
+      ],
+      "corpusSha256": "116440df9a076e690b5b57efdb26016860d54e6ec89a53fef1a052121ad7e773",
+      "qualityBoundaries": 8,
+      "mobilityCombinations": 6,
+      "searchCases": 5,
+      "corpusChanged": "PASS",
+      "status": "PASS"
+    },
+    {
+      "era": "2026-07-28",
+      "tools": [
+        "search_guides",
+        "read_guide",
+        "evaluate_quality_of_life",
+        "recommend_mobility_aids",
+        "calculate_dog_age"
+      ],
+      "searchTotal": 3,
+      "documentId": "article--sindrome-cushing-perros-mayores",
+      "markdownSha256": "621ece8b53f598a4bb6ae04ab9ed7899f4426a43b9620926f5c5fe651ec40dd3",
+      "qualityScore": 35,
+      "qualityBand": "compromised",
+      "status": "PASS"
+    },
+    {
+      "criterion": "C07/C08",
+      "methods": 4,
+      "modernPing": 404,
+      "legacyPing": 200,
+      "origin": "PASS",
+      "cors": "PASS",
+      "sessions": "stateless",
+      "legacyCancelled": 202,
+      "oversized": 413,
+      "malformed": "PASS",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "Este harness no acredita por sí solo UI/WebMCP, presupuesto, cancelación, todosIDs o receipt de build."
+  ]
+}

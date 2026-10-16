@@ -31,7 +31,8 @@ const EDITORIAL_ROUTES = new Map([
   ['/acerca-de', 'acerca-de'],
   ['/politica-editorial', 'politica-editorial'],
   // Calculadora de edad: su guía, método y fuentes se proyectan como documento editorial.
-  // Exponerla como herramienta del MCP (tool--edad) es un cambio de contrato aparte.
+  // Se expone a agentes como calculate_dog_age (WebMCP y MCP remoto) sin promoverla a tool--:
+  // promoverla cambiaría su documentId público y es un cambio de contrato aparte.
   ['/herramientas/calculadora-edad-perro', 'calculadora-edad-perro'],
 ]);
 const TOOL_ROUTES = new Map([

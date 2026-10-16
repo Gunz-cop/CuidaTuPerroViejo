@@ -16,14 +16,15 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { isDeepStrictEqual, parseArgs } from 'node:util';
 import { launchChrome, openPage } from './cdp.mjs';
 
-const PAGES = ['/', '/salud-perros-mayores/sindrome-cushing-perros-mayores', '/herramientas/calculadora-calidad-vida-perros', '/politica-editorial'];
-const TOOL_NAMES = ['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids'];
-const TITLES = { search_guides: 'Buscar guías', read_guide: 'Leer guía completa', evaluate_quality_of_life: 'Calculadora HHHHHMM', recommend_mobility_aids: 'Selector de movilidad' };
+const PAGES = ['/', '/salud-perros-mayores/sindrome-cushing-perros-mayores', '/herramientas/calculadora-calidad-vida-perros', '/herramientas/calculadora-edad-perro', '/politica-editorial'];
+const TOOL_NAMES = ['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids', 'calculate_dog_age'];
+const TITLES = { search_guides: 'Buscar guías', read_guide: 'Leer guía completa', evaluate_quality_of_life: 'Calculadora HHHHHMM', recommend_mobility_aids: 'Selector de movilidad', calculate_dog_age: 'Calculadora de edad' };
 const DESCRIPTIONS = {
   search_guides: 'Busca guías publicadas de Cuida tu Perro Viejo por palabras completas y devuelve documentos con su puntuación léxica. No genera consejo veterinario.',
   read_guide: 'Lee el contenido íntegro en Markdown de una guía por su documentId, con metadata, URL canónica y enlaces originales.',
   evaluate_quality_of_life: 'Calcula la escala HHHHHMM de calidad de vida (siete criterios de 0 a 10) igual que la calculadora del sitio. Es orientativa, no un diagnóstico ni una decisión.',
   recommend_mobility_aids: 'Recomienda ayudas de movilidad según el nivel de movilidad y la tolerancia a la manipulación, igual que el selector del sitio. Orientativo; consulta al veterinario.',
+  calculate_dog_age: 'Calcula la edad equivalente en años humanos de un perro según su tamaño y edad, igual que la calculadora del sitio: etapa de vida (AAHA 2019), edad de inicio senior, esperanza de vida media por tamaño (Montoya 2023), comparación epigenética (Wang 2020), un mensaje para su etapa y la guía recomendada. Úsala cuando alguien pregunte cuántos años humanos tiene su perro, si ya es senior o en qué etapa está. Orientativa; no sustituye una valoración veterinaria.',
 };
 const INVALID = { schemaVersion: 'agent-api/1', error: { code: 'INVALID_REQUEST', message: 'Invalid request.' } };
 const KEYS = ['hurt', 'hunger', 'hydration', 'hygiene', 'happiness', 'mobility', 'moreGoodDays'];
@@ -135,7 +136,7 @@ async function main() {
         await page.close();
         continue;
       }
-      check('C4A-08', `${path}: WebMCP.toolsAdded entrega exactamente las cuatro tools`, isDeepStrictEqual(added.map((t) => t.name).sort(), [...TOOL_NAMES].sort()), added.map((t) => t.name));
+      check('C4A-08', `${path}: WebMCP.toolsAdded entrega exactamente las cinco tools`, isDeepStrictEqual(added.map((t) => t.name).sort(), [...TOOL_NAMES].sort()), added.map((t) => t.name));
       for (const name of TOOL_NAMES) {
         const entry = added.find((t) => t.name === name);
         check('C4A-08', `${path}: ${name} vía CDP (description, inputSchema, readOnly)`,
@@ -155,6 +156,15 @@ async function main() {
   await writeFile(values.out, `${JSON.stringify({ schemaVersion: 'f4a-webmcp-browser/1', commit: values.commit ?? null, baseUrl: base, mode: values.mode, browser: product, flags: supported ? ['--enable-features=WebMCPTesting'] : [], pass, passed: checks.filter((c) => c.ok).length, total: checks.length, checks, scripts }, null, 2)}\n`);
   process.stdout.write(`${pass ? 'PASS' : 'FAIL'}: ${checks.filter((c) => c.ok).length}/${checks.length} comprobaciones en ${product} (${values.mode}).\n`);
   return pass ? 0 : 2;
+}
+
+// Llamada moderna (2026-07-28) al MCP remoto del mismo origen; devuelve structuredContent.
+async function mcpCall(base, name, args) {
+  const body = { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name, arguments: args, _meta: { 'io.modelcontextprotocol/protocolVersion': '2026-07-28', 'io.modelcontextprotocol/clientCapabilities': {} } } };
+  const response = await fetch(`${base}/api/mcp`, { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream', 'MCP-Protocol-Version': '2026-07-28', 'Mcp-Method': 'tools/call', 'Mcp-Name': name } });
+  const text = await response.text();
+  const data = text.split('\n').find((line) => line.startsWith('data:'));
+  return JSON.parse(data ? data.slice(5) : text).result?.structuredContent;
 }
 
 async function invocations(page, state, base, frameId) {
@@ -196,6 +206,13 @@ async function invocations(page, state, base, frameId) {
     const result = await invoke('recommend_mobility_aids', { level, handling });
     check('C4A-09', `recommend_mobility_aids ${level}/${handling} = API`, result.status === 'Completed' && isDeepStrictEqual(result.output, await api(`/api/agent/v1/tools/movilidad?level=${level}&handling=${handling}`)), { resultKey: result.output?.resultKey });
   }
+  // edad-mcp: calculate_dog_age por WebMCP = misma llamada por el MCP remoto del mismo origen.
+  for (const [input, human, stage] of [[{ size: 'medium', years: 0, months: 1 }, 1, 'puppy'], [{ size: 'small', years: 11, name: 'Luna' }, 68, 'senior'], [{ size: 'medium', years: 12, name: 'Dakota' }, 76, 'senior'], [{ size: 'giant', years: 10 }, 83, 'longevous']]) {
+    const result = await invoke('calculate_dog_age', input);
+    const remote = await mcpCall(base, 'calculate_dog_age', input);
+    check('edad-mcp', `calculate_dog_age ${JSON.stringify(input)} = MCP remoto (${human}, ${stage})`, result.status === 'Completed' && isDeepStrictEqual(result.output, remote)
+      && result.output.human_years === human && result.output.stage.id === stage, { human_years: result.output?.human_years, stage: result.output?.stage, recommended_action: result.output?.recommended_action?.url });
+  }
   const during = state.requests.slice(mark);
   check('C4A-12', 'durante las llamadas: sólo GET same-origin a /api/agent/v1/', during.every((r) => r.method === 'GET' && r.url.startsWith(`${base}/api/agent/v1/`)), during.map((r) => `${r.method} ${r.url.slice(base.length)}`));
   check('C4A-12', 'durante las llamadas: búsqueda y lectura hacen un fetch cada una; cálculos ninguno', during.length === 2, during.length);
@@ -204,7 +221,7 @@ async function invocations(page, state, base, frameId) {
   // C4A-09: entradas inválidas → INVALID_REQUEST sin red, incluido un ID que intenta salir del namespace.
   const invalid = [
     ['evaluate_quality_of_life', { hurt: 11 }], ['evaluate_quality_of_life', { ...Object.fromEntries(KEYS.map((k) => [k, 5])), hurt: 1.5 }],
-    ['recommend_mobility_aids', { level: 'Severe', handling: 'calm' }], ['search_guides', { q: 'x', limit: 0 }], ['search_guides', { q: 'x', extra: 1 }],
+    ['recommend_mobility_aids', { level: 'Severe', handling: 'calm' }], ['calculate_dog_age', { size: 'tiny', years: 3 }], ['calculate_dog_age', { size: 'small', years: 26 }], ['search_guides', { q: 'x', limit: 0 }], ['search_guides', { q: 'x', extra: 1 }],
     ['read_guide', { documentId: '../../admin/contact-messages' }], ['read_guide', { documentId: 'https://example.org/x' }], ['read_guide', { documentId: 'home', corpus: 'nope' }],
   ];
   for (const [toolName, input] of invalid) {

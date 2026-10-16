@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "edad-mcp-ui-parity/1",
+  "baseUrl": "https://b7e9a097-cuidatuperroviejo.g1721m.workers.dev",
+  "browser": "/opt/pw-browsers/chromium-1194/chrome-linux/chrome",
+  "pass": true,
+  "results": [
+    {
+      "input": {
+        "size": "medium",
+        "years": 0,
+        "months": 1
+      },
+      "ok": true,
+      "ui": {
+        "human": 1,
+        "stage": "puppy",
+        "stageLabel": "Cachorro",
+        "advice": "Etapa de crecimiento rápido: socialización, vacunas y una base de hábitos que le servirán toda la vida.",
+        "epi": "Fuera de rango",
+        "guide": "/salud-perros-mayores",
+        "guideLabel": "Ver cómo prepararlo para el futuro →",
+        "sr": "Tu perro tiene el equivalente a 1 años humanos. Etapa: Cachorro."
+      }
+    },
+    {
+      "input": {
+        "size": "small",
+        "years": 11,
+        "name": "Luna"
+      },
+      "ok": true,
+      "ui": {
+        "human": 68,
+        "stage": "senior",
+        "stageLabel": "Senior",
+        "advice": "Ya es senior. Es normal que duerma más y más profundo; consulta si le cuesta mucho despertar o el cambio es brusco. Revisiones más frecuentes y pequeños ajustes en casa ayudan a que disfrute esta etapa.",
+        "epi": "69 años",
+        "guide": "/movilidad-dolor-perros-mayores",
+        "guideLabel": "Ver cuidados de movilidad →",
+        "sr": "Luna tiene el equivalente a 68 años humanos. Etapa: Senior."
+      }
+    },
+    {
+      "input": {
+        "size": "medium",
+        "years": 12,
+        "name": "Dakota"
+      },
+      "ok": true,
+      "ui": {
+        "human": 76,
+        "stage": "senior",
+        "stageLabel": "Senior",
+        "advice": "Ya es senior. Es normal que duerma más y más profundo; consulta si le cuesta mucho despertar o el cambio es brusco. Revisiones más frecuentes y pequeños ajustes en casa ayudan a que disfrute esta etapa.",
+        "epi": "71 años",
+        "guide": "/movilidad-dolor-perros-mayores",
+        "guideLabel": "Ver cuidados de movilidad →",
+        "sr": "Dakota tiene el equivalente a 76 años humanos. Etapa: Senior."
+      }
+    },
+    {
+      "input": {
+        "size": "giant",
+        "years": 10
+      },
+      "ok": true,
+      "ui": {
+        "human": 83,
+        "stage": "longevous",
+        "stageLabel": "Senior longevo",
+        "advice": "¡Un perro longevo! Ya superó la edad media de su tamaño, y eso habla muy bien de sus cuidados. Dormir mucho es parte de esta etapa: una cama cómoda y rutinas tranquilas le ayudan a descansar.",
+        "epi": "68 años",
+        "guide": "/movilidad-dolor-perros-mayores",
+        "guideLabel": "Ver cómo darle más confort →",
+        "sr": "Tu perro tiene el equivalente a 83 años humanos. Etapa: Senior longevo."
+      }
+    },
+    {
+      "input": {
+        "size": "large",
+        "years": 1,
+        "months": 6
+      },
+      "ok": true,
+      "ui": {
+        "human": 20,
+        "stage": "young",
+        "stageLabel": "Adulto joven",
+        "advice": "Plena forma. Es el mejor momento para cuidar su peso y su boca: es la mejor inversión para su vejez.",
+        "epi": "37 años",
+        "guide": "/alimentacion-perros-senior",
+        "guideLabel": "Ver alimentación y peso →",
+        "sr": "Tu perro tiene el equivalente a 20 años humanos. Etapa: Adulto joven."
+      }
+    }
+  ]
+}

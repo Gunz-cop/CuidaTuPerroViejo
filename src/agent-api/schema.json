@@ -1062,6 +1062,246 @@
         }
       },
       "additionalProperties": false
+    },
+    "DogAgeResult": {
+      "description": "Salida de calculate_dog_age en MCP remoto y WebMCP. No tiene endpoint REST, por eso no figura en el oneOf raíz.",
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "tool",
+        "input",
+        "size",
+        "human_years",
+        "stage",
+        "senior_from_years",
+        "years_to_senior",
+        "life_expectancy_years",
+        "epigenetic_years",
+        "message",
+        "recommended_action",
+        "notices",
+        "human_equivalence_note",
+        "sources"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "agent-api/1"
+        },
+        "tool": {
+          "type": "object",
+          "required": [
+            "name",
+            "documentId",
+            "url",
+            "method_url"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "documentId": {
+              "const": "page--calculadora-edad-perro"
+            },
+            "url": {
+              "const": "https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro"
+            },
+            "method_url": {
+              "const": "https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro#metodo"
+            }
+          },
+          "additionalProperties": false
+        },
+        "input": {
+          "type": "object",
+          "required": [
+            "size",
+            "years",
+            "months",
+            "name"
+          ],
+          "properties": {
+            "size": {
+              "enum": [
+                "small",
+                "medium",
+                "large",
+                "giant"
+              ]
+            },
+            "years": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 25
+            },
+            "months": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 11
+            },
+            "name": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "size": {
+          "type": "object",
+          "required": [
+            "id",
+            "label",
+            "weight"
+          ],
+          "properties": {
+            "id": {
+              "enum": [
+                "small",
+                "medium",
+                "large",
+                "giant"
+              ]
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "weight": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "human_years": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stage": {
+          "type": "object",
+          "required": [
+            "id",
+            "label"
+          ],
+          "properties": {
+            "id": {
+              "enum": [
+                "puppy",
+                "young",
+                "mature",
+                "senior",
+                "longevous"
+              ]
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "senior_from_years": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "years_to_senior": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "life_expectancy_years": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "epigenetic_years": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recommended_action": {
+          "type": "object",
+          "required": [
+            "label",
+            "url"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "additionalProperties": false
+        },
+        "notices": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "human_equivalence_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "citation",
+              "doi",
+              "url"
+            ],
+            "properties": {
+              "id": {
+                "enum": [
+                  "montoya",
+                  "aaha",
+                  "wang"
+                ]
+              },
+              "citation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "doi": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     }
   }
 }

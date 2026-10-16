@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import DogAgeTool from '../../components/tools/DogAgeTool.astro';
 import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
 import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
-import { SIZE_PROFILES, seniorAge, dogAge, type DogSize } from '../../lib/dog-age';
+import { AGE_SOURCES, SIZE_PROFILES, seniorAge, dogAge, type DogSize } from '../../lib/dog-age';
 
 const title = 'Calculadora de edad de perro en años humanos según su tamaño';
 const description = 'Calcula la edad de tu perro en años humanos según su tamaño y descubre si ya está en etapa senior y qué cuidados conviene anticipar.';
@@ -44,13 +44,7 @@ const stages = (Object.keys(SIZE_PROFILES) as DogSize[]).map((id) => ({
   at10: dogAge(id, 10).humanYears,
 }));
 
-const sources = [
-  { id: 'aaha', text: 'Creevy KE, Grady J, Little SE, et al. 2019 AAHA Canine Life Stage Guidelines. J Am Anim Hosp Assoc. 2019;55(6):267-290.', href: 'https://doi.org/10.5326/JAAHA-MS-6999', use: 'Definición de las etapas de vida y del inicio de la etapa senior (último 25 % de la esperanza de vida).' },
-  { id: 'montoya', text: 'Montoya M, Morrison JA, Arrignon F, et al. Life expectancy tables for dogs and cats derived from clinical data. Front Vet Sci. 2023;10:1082102.', href: 'https://doi.org/10.3389/fvets.2023.1082102', use: 'Esperanza de vida al nacer por tamaño, con datos clínicos de más de 1.000 hospitales Banfield en EE. UU.' },
-  { id: 'mcmillan', text: 'McMillan KM, Bielby J, Williams CL, et al. Longevity of companion dog breeds: those at risk from early death. Sci Rep. 2024;14:531.', href: 'https://doi.org/10.1038/s41598-023-50458-w', use: 'Confirma en 584.734 perros del Reino Unido que el tamaño y la forma del hocico influyen en la longevidad (mediana: 12,5 años).' },
-  { id: 'kraus', text: 'Kraus C, Pavard S, Promislow DEL. The size–life span trade-off decomposed: why large dogs die young. Am Nat. 2013;181(4):492-505.', href: 'https://doi.org/10.1086/669665', use: 'Explica por qué los perros grandes envejecen a un ritmo más rápido: la base del ajuste por tamaño.' },
-  { id: 'wang', text: 'Wang T, Ma J, Hogan AN, et al. Quantitative translation of dog-to-human aging by conserved remodeling of the DNA methylome. Cell Syst. 2020;11(2):176-185.e6.', href: 'https://doi.org/10.1016/j.cels.2020.06.006', use: 'Fórmula epigenética (16 × ln(edad) + 31) que mostramos como comparación en «Según su ADN».' },
-];
+const sources = AGE_SOURCES.map((src) => ({ ...src, href: `https://doi.org/${src.doi}` }));
 
 const schema = {
   '@context': 'https://schema.org',

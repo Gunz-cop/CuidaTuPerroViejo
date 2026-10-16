@@ -3,6 +3,7 @@ import { CfWorkerJsonSchemaValidator } from '@modelcontextprotocol/server/valida
 import { createAgentApiWorker } from '../agent-api/runtime';
 import { evaluateQualityOfLife } from '../agent-tools/calidad-vida';
 import { recommendMobilityAids } from '../agent-tools/movilidad';
+import { calculateDogAge } from '../agent-tools/edad';
 import { ToolInputError, isPlainObject, SITE } from '../agent-tools/contract';
 import { INPUT_SCHEMAS, TOOLS } from '../../scripts/agent-tools';
 import capabilities from '../../agent-api/capabilities.json';
@@ -27,7 +28,7 @@ const DISCOVERY_LINK = [
 ].map(([path, rel, type]) => `<${SITE}/${path}>; rel="${rel}"; type="${type}"`).concat(MCP_LINK).join(', ');
 const invalid = { schemaVersion: 'agent-api/1', error: { code: 'INVALID_REQUEST', message: 'Invalid request.' } };
 const unavailable = { schemaVersion: 'agent-api/1', error: { code: 'CONTENT_UNAVAILABLE', message: 'Content temporarily unavailable.' } };
-const outputNames = ['Search', 'Read', 'QualityOfLifeResult', 'MobilityResult'] as const;
+const outputNames = ['Search', 'Read', 'QualityOfLifeResult', 'MobilityResult', 'DogAgeResult'] as const;
 const definitions = domainSchema.$defs;
 const inputs = TOOLS.map((tool) => validator.getValidator(INPUT_SCHEMAS[tool.name]));
 const outputs = outputNames.map((name) => ({ $schema: domainSchema.$schema, $ref: `#/$defs/${name}`, $defs: definitions }));
@@ -152,6 +153,7 @@ export function createAgentMcpWorker<Env extends AgentEnv>(next: AstroHandler<En
         let value: unknown;
         if (index === 2) value = evaluateQualityOfLife(args);
         else if (index === 3) value = recommendMobilityAids(args);
+        else if (index === 4) value = calculateDogAge(args);
         else {
           const input = args as Record<string, unknown>; const query = new URLSearchParams(); let path: string;
           if (index === 0) {

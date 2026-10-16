@@ -328,7 +328,7 @@ function validateMcpRegistry(capabilities) {
     || mcp.name !== 'cuidatuperroviejo.com/guias-herramientas' || mcp.version !== '1.0.0'
     || mcp.title !== 'Cuida tu Perro Viejo' || mcp.description !== 'Servidor MCP público de guías y herramientas educativas para perros mayores.'
     || JSON.stringify(mcp.protocolVersions) !== JSON.stringify(['2026-07-28', '2025-11-25'])
-    || JSON.stringify(mcp.tools) !== JSON.stringify(['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids'])
+    || JSON.stringify(mcp.tools) !== JSON.stringify(['search_guides', 'read_guide', 'evaluate_quality_of_life', 'recommend_mobility_aids', 'calculate_dog_age'])
     || mcp.ardEntry?.identifier !== 'urn:air:cuidatuperroviejo.com:mcp:guias-herramientas'
     || mcp.ardEntry?.type !== 'application/mcp-server-card+json' || mcp.ardEntry?.url !== `${SITE}${mcp.cardPath}`
     || JSON.stringify(mcp.capabilities) !== JSON.stringify({ tools: { listChanged: false } })) fail('MCP_REGISTRY_INVALID');
