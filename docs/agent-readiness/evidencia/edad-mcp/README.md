@@ -23,3 +23,7 @@ URL: `https://b7e9a097-cuidatuperroviejo.g1721m.workers.dev` (recibo: check run 
 | `preview/webmcp-chromium141-sin-api.json` | PASS 35/35 |
 | `preview/ui-parity.json` | PASS 5/5 |
 | `preview/mcp-client-preview.json` | PASS: las dos eras con `calculate_dog_age`, paridad con la API, card/ARD y matriz de transporte C07/C08 (156 intercambios) |
+
+## Vista previa tras los ajustes de la R1 (producto `d242f97`, `https://455cd7d3-cuidatuperroviejo.g1721m.workers.dev`)
+
+`preview/mcp-client-preview-d242f97.json`: `mcp-client.mjs` sin el literal de corpus. Resultado: PASS.
