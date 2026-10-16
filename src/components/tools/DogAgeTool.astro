@@ -1,14 +1,8 @@
 ---
-import { SIZE_PROFILES } from '../../lib/dog-age';
+import { SIZE_PROFILES, STAGE_ORDER, SHORT_STAGE_LABELS } from '../../lib/dog-age';
 
 const sizes = Object.entries(SIZE_PROFILES) as [string, (typeof SIZE_PROFILES)[keyof typeof SIZE_PROFILES]][];
-const stages = [
-  { id: 'puppy', label: 'Cachorro' },
-  { id: 'young', label: 'Joven' },
-  { id: 'mature', label: 'Maduro' },
-  { id: 'senior', label: 'Senior' },
-  { id: 'longevous', label: 'Longevo' },
-];
+const stages = STAGE_ORDER.map((id) => ({ id, label: SHORT_STAGE_LABELS[id] }));
 const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
           <ellipse class="dat__bed" cx="100" cy="166" rx="88" ry="14" />
           <g class="dat__head">
@@ -20,6 +14,9 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
             <ellipse class="dat__gray dat__gray--muzzle" cx="100" cy="120" rx="34" ry="24" />
             <ellipse class="dat__gray dat__gray--brow" cx="78" cy="68" rx="9" ry="5" />
             <ellipse class="dat__gray dat__gray--brow" cx="122" cy="68" rx="9" ry="5" />
+            <ellipse class="dat__gray dat__gray--ring" cx="78" cy="84" rx="13" ry="12" />
+            <ellipse class="dat__gray dat__gray--ring" cx="122" cy="84" rx="13" ry="12" />
+            <ellipse class="dat__gray dat__gray--forehead" cx="100" cy="58" rx="22" ry="20" />
             <g class="dat__eyes">
               <ellipse cx="78" cy="84" rx="7" ry="8" />
               <ellipse cx="122" cy="84" rx="7" ry="8" />
@@ -30,6 +27,8 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
             <ellipse class="dat__nose" cx="100" cy="106" rx="11" ry="8" />
             <path class="dat__mouth" d="M100 114 v6 M88 122 q12 8 24 0" />
             <path class="dat__tongue" d="M94 124 q6 14 12 0 Z" />
+            <path class="dat__sleep dat__sleep-eyes" d="M70 84 Q78 91 86 84 M114 84 Q122 91 130 84" />
+            <ellipse class="dat__sleep dat__sleep-mouth" cx="100" cy="123" rx="3.5" ry="4" />
           </g>
         </svg>`;
 ---
@@ -46,7 +45,7 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
         <div class="dat__peek-art"><Fragment set:html={dogSvg} /></div>
         <div class="dat__peek-text">
           <p class="dat__peek-num"><span class="dat__num"></span> <span>años humanos</span></p>
-          <p class="dat__peek-stage" id="dat-peek-stage">Senior</p>
+          <p class="dat__peek-stage"><span class="dat__peek-dot" aria-hidden="true"></span><span id="dat-peek-stage">Senior</span> · <span id="dat-peek-age">8 años</span></p>
         </div>
       </div>
 
@@ -86,7 +85,7 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
     <div class="dat__card dat__result" id="dat-result" role="status" aria-live="polite" aria-atomic="true">
       <div class="dat__stage-art" aria-hidden="true">
         <Fragment set:html={dogSvg} />
-        <span class="dat__zzz">z<span>z</span><span>z</span></span>
+        <span class="dat__zzz" aria-hidden="true"><b>Z</b><b>Z</b><b>Z</b></span>
       </div>
 
       <p class="dat__result-label"><span id="dat-name-out">Tu perro</span> tiene el equivalente a</p>
@@ -146,17 +145,17 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   .dat__peek {
     position: sticky; top: 4.75rem; z-index: 5;
     display: flex; align-items: center; gap: .9rem;
-    margin: 0 -.25rem 1.1rem; padding: .6rem .9rem; border-radius: 1.1rem;
+    margin: 0 -.25rem 1.1rem; padding: .45rem .9rem; border-radius: 1.1rem;
     border: 1px solid var(--color-brand-border);
-    background: color-mix(in srgb, var(--color-brand-card) 92%, transparent);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    background: var(--color-brand-card);
     box-shadow: 0 10px 24px -18px rgb(0 0 0 / .5);
   }
-  .dat__peek-art { flex: 0 0 4.75rem; }
-  .dat__peek .dat__num { font-size: 2.6rem; }
+  .dat__peek-art { flex: 0 0 3.6rem; }
+  .dat__peek .dat__num { font-size: 2.1rem; }
   .dat__peek-num { margin: 0; line-height: 1; color: var(--color-brand-text); }
   .dat__peek-num span:last-child { font-size: .8rem; font-weight: 700; }
-  .dat__peek-stage { margin: .3rem 0 0; font-size: .78rem; font-weight: 800; color: var(--stage-color); }
+  .dat__peek-stage { display: flex; align-items: center; gap: .35rem; margin: .3rem 0 0; font-size: .78rem; font-weight: 700; color: var(--color-brand-text); }
+  .dat__peek-dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--stage-color); }
   .dat__peek .dat__bed { display: none; }
   @media (min-width: 56rem) { .dat__peek { display: none; } }
   .dat__grid { display: grid; gap: 1rem; width: min(100% - 2rem, 68rem); margin-inline: auto; }
@@ -210,6 +209,7 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
 
   /* Resultado */
   .dat__result { position: relative; overflow: hidden; text-align: center; }
+  @media (max-width: 55.99rem) { .dat__result { padding-bottom: 5rem; } }
   .dat__result::before {
     content: ''; position: absolute; inset: 0 0 auto; height: 14rem; z-index: 0;
     background: radial-gradient(closest-side, color-mix(in srgb, var(--stage-color) 20%, transparent), transparent);
@@ -221,30 +221,47 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   .dat__dog { display: block; width: 100%; height: auto; overflow: visible; }
   .dat__head { transform-origin: 100px 150px; animation: dat-breathe 3.2s ease-in-out infinite; transition: transform .6s; }
   .dat[data-stage='puppy'] .dat__head { transform: scale(.86) translateY(10px); animation-duration: 1.4s; }
-  .dat[data-stage='longevous'] .dat__head { transform: rotate(-6deg) translateY(10px); animation-duration: 4.5s; }
-  .dat__face, .dat__ear { fill: #c8915c; }
-  .dat__ear { fill: #8e5d37; transition: transform .6s; }
+  .dat__face { fill: color-mix(in srgb, #f1e6d4 calc(var(--gray) * 85%), #c8915c); stroke: rgb(142 93 55 / calc(var(--gray) * .45)); stroke-width: 1.5; }
+  .dat__ear { fill: color-mix(in srgb, #e4cfac calc(var(--gray) * 85%), #8e5d37); transition: transform .6s; }
   .dat__ear--l { transform-origin: 60px 56px; transform: rotate(calc(var(--gray) * 10deg)); }
   .dat__ear--r { transform-origin: 140px 56px; transform: rotate(calc(var(--gray) * -10deg)); }
   .dat__blaze, .dat__muzzle { fill: #f3e2c9; }
+  /* Mejillas algo más caídas con la edad, como las de un Beagle mayor. */
+  .dat__muzzle, .dat__gray--muzzle { transform-box: fill-box; transform-origin: center top; transform: scale(calc(1 + var(--gray) * .12), calc(1 + var(--gray) * .1)); }
+  /* La franja blanca se ensancha con la edad. */
+  .dat__blaze { transform-box: fill-box; transform-origin: center; transform: scaleX(calc(1 + var(--gray) * .7)); }
   .dat__gray { fill: #f7f4ef; opacity: var(--gray); }
   .dat__gray--muzzle { opacity: calc(var(--gray) * .85); }
+  .dat__gray--ring { opacity: calc(var(--gray) * .55); }
+  .dat__gray--forehead { opacity: calc(var(--gray) * .25); filter: blur(3px); }
   .dat__eyes { fill: #2b1d14; }
   .dat__shine { fill: #fff; }
   .dat__lid { fill: none; stroke: #6b4a2e; stroke-width: 3; stroke-linecap: round; opacity: 0; transition: opacity .4s; }
-  .dat[data-stage='longevous'] .dat__lid { opacity: 1; }
-  .dat[data-stage='longevous'] .dat__eyes { transform: scaleY(.55); transform-origin: 100px 84px; }
-  .dat__eyes { transition: transform .4s; animation: dat-blink 5s infinite; transform-origin: 100px 84px; }
+  .dat__eyes { transition: transform .4s, opacity .5s; animation: dat-blink 5s infinite; transform-origin: 100px 84px; }
   .dat__nose { fill: #2b1d14; }
+  .dat__sleep { fill: none; stroke: #2b1d14; stroke-width: 3; stroke-linecap: round; opacity: 0; transition: opacity .5s; }
+  /* Senior longevo: duerme a gusto (ojos cerrados y hocico relajado). */
+  .dat[data-stage='longevous'] .dat__head { transform: rotate(-6deg) translateY(8px); animation-duration: 4.5s; }
+  .dat[data-stage='longevous'] .dat__eyes, .dat[data-stage='longevous'] .dat__mouth { opacity: 0; }
+  .dat[data-stage='longevous'] .dat__sleep { opacity: 1; }
+  .dat__sleep-mouth { fill: #2b1d14; stroke-width: 1; }
   .dat__mouth { fill: none; stroke: #2b1d14; stroke-width: 2.5; stroke-linecap: round; }
   .dat__tongue { fill: #e98a8a; transform-origin: 100px 124px; transition: transform .4s; }
   .dat[data-stage='mature'] .dat__tongue, .dat[data-stage='senior'] .dat__tongue, .dat[data-stage='longevous'] .dat__tongue { transform: scaleY(0); }
   .dat__bed { fill: color-mix(in srgb, var(--stage-color) 30%, transparent); transform-origin: 100px 166px; transform: scaleX(.3); opacity: 0; transition: transform .6s, opacity .6s; }
   .dat[data-stage='senior'] .dat__bed, .dat[data-stage='longevous'] .dat__bed { transform: scaleX(1); opacity: 1; }
-  .dat__zzz { position: absolute; top: .25rem; right: 0; font-family: var(--font-display); font-weight: 800; color: var(--color-brand-muted); opacity: 0; }
-  .dat__zzz span { display: inline-block; font-size: .8em; }
-  .dat[data-stage='longevous'] .dat__zzz { opacity: 1; animation: dat-zzz 2.6s ease-in-out infinite; }
 
+  /* "Zzz" al estilo del emoji 😴: tres Z azules que suben y crecen. */
+  .dat__zzz { position: absolute; top: -.25rem; right: -.25rem; width: 3.6rem; height: 3.6rem; font-family: var(--font-display); font-weight: 900; color: #2f7fd0; pointer-events: none; }
+  .dark .dat__zzz { color: #3d8fe0; }
+  .dat__zzz b { position: absolute; line-height: 1; opacity: 0; }
+  .dat__zzz b:nth-child(1) { left: 0; bottom: 0; font-size: .85rem; }
+  .dat__zzz b:nth-child(2) { left: 1rem; bottom: .85rem; font-size: 1.15rem; }
+  .dat__zzz b:nth-child(3) { left: 2.1rem; bottom: 1.9rem; font-size: 1.5rem; }
+  .dat[data-stage='senior'] .dat__zzz b, .dat[data-stage='longevous'] .dat__zzz b { animation: dat-zzz 3s ease-in-out infinite; }
+  .dat__zzz b:nth-child(2) { animation-delay: .5s !important; }
+  .dat__zzz b:nth-child(3) { animation-delay: 1s !important; }
+  @keyframes dat-zzz { 0% { translate: -4px 6px; opacity: 0; } 25%, 70% { opacity: 1; } 100% { translate: 4px -6px; opacity: 0; } }
   .dat__result-label { margin: 0; font-size: .9rem; color: var(--color-brand-muted); }
   .dat__big { margin: .1rem 0 .9rem; color: var(--color-brand-text); }
   .dat__num {
@@ -267,7 +284,7 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   .dat__stages { display: grid; grid-template-columns: repeat(5, 1fr); margin: .5rem 0 0; padding: 0; list-style: none; font-size: .64rem; color: var(--color-brand-muted); }
   .dat__stages li { transition: color .3s, font-weight .3s; }
   .dat[data-stage='puppy'] [data-s='puppy'], .dat[data-stage='young'] [data-s='young'], .dat[data-stage='mature'] [data-s='mature'],
-  .dat[data-stage='senior'] [data-s='senior'], .dat[data-stage='longevous'] [data-s='longevous'] { color: var(--stage-color); font-weight: 800; }
+  .dat[data-stage='senior'] [data-s='senior'], .dat[data-stage='longevous'] [data-s='longevous'] { color: var(--color-brand-text); font-weight: 800; }
 
   .dat__facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-bottom: .9rem; }
   .dat__fact { border-radius: 1rem; padding: .65rem .4rem; background: var(--color-brand-bg); }
@@ -294,16 +311,16 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
 
   @keyframes dat-breathe { 50% { translate: 0 -2px; } }
   @keyframes dat-blink { 0%, 92%, 100% { scale: 1 1; } 95% { scale: 1 .1; } }
-  @keyframes dat-zzz { 0% { translate: 0 6px; opacity: 0; } 40% { opacity: 1; } 100% { translate: 8px -10px; opacity: 0; } }
   @keyframes dat-pop { from { opacity: .3; scale: .96; } }
 
   @media (prefers-reduced-motion: reduce) {
     .dat, .dat *, .dat__num { animation: none !important; transition: none !important; }
   }
+  @media (prefers-reduced-motion: reduce) { .dat[data-stage='senior'] .dat__zzz b, .dat[data-stage='longevous'] .dat__zzz b { opacity: 1; } }
 </style>
 
 <script>
-  import { dogAge, STAGE_LABELS, type DogSize } from '../../lib/dog-age';
+  import { dogAge, roundToHalf, STAGE_LABELS, type DogSize } from '../../lib/dog-age';
 
   const root = document.querySelector<HTMLElement>('.dat');
   const $ = <T,>(id: string) => document.getElementById(id) as T | null;
@@ -318,44 +335,59 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
     puppy: 'Etapa de crecimiento rápido: socialización, vacunas y una base de hábitos que le servirán toda la vida.',
     young: 'Plena forma. Es el mejor momento para cuidar su peso y su boca: es la mejor inversión para su vejez.',
     mature: 'Adulto maduro. Una revisión completa ahora te da valores de referencia para comparar cuando llegue a senior.',
-    senior: 'Ya es senior. Revisiones más frecuentes y pequeños ajustes en casa ayudan a que disfrute esta etapa con salud.',
-    longevous: '¡Un perro longevo! Ya superó la edad media de su tamaño, y eso habla muy bien de sus cuidados. Ahora el foco está en su confort y en disfrutar cada día juntos.',
+    senior: 'Ya es senior. Es normal que duerma más y más profundo; consulta si le cuesta mucho despertar o el cambio es brusco. Revisiones más frecuentes y pequeños ajustes en casa ayudan a que disfrute esta etapa.',
+    longevous: '¡Un perro longevo! Ya superó la edad media de su tamaño, y eso habla muy bien de sus cuidados. Dormir mucho es parte de esta etapa: una cama cómoda y rutinas tranquilas le ayudan a descansar.',
   };
   const guides: Record<string, [string, string]> = {
     puppy: ['/salud-perros-mayores', 'Ver cómo prepararlo para el futuro →'],
     young: ['/alimentacion-perros-senior', 'Ver alimentación y peso →'],
     mature: ['/salud-perros-mayores', 'Ver plan preventivo senior →'],
     senior: ['/movilidad-dolor-perros-mayores', 'Ver cuidados de movilidad →'],
-    longevous: ['/herramientas/calculadora-calidad-vida-perros', 'Revisar su bienestar →'],
+    longevous: ['/movilidad-dolor-perros-mayores', 'Ver cómo darle más confort →'],
   };
 
   let state = dogAge('medium', 8);
+  let ageText = '8 años';
+  const decimal = (n: number) => String(n).replace('.', ',');
+  function formatAge(y: number, m: number) {
+    const yy = y ? `${y} ${y === 1 ? 'año' : 'años'}` : '';
+    const mm = m ? `${m} ${m === 1 ? 'mes' : 'meses'}` : '';
+    return [yy, mm].filter(Boolean).join(' y ') || '0 meses';
+  }
+  function untilSenior(years: number) {
+    if (years < 0.75) return 'menos de 1 año';
+    const half = roundToHalf(years);
+    return `unos ${decimal(half)} ${half === 1 ? 'año' : 'años'}`;
+  }
   let dogName = '';
 
   function render(bump = true) {
     if (!root || !years || !months) return;
     const size = (form?.querySelector<HTMLInputElement>('input[name="size"]:checked')?.value ?? 'medium') as DogSize;
     const y = Number(years.value);
+    // Con 0 años, al menos 1 mes: evita el estado "0 meses".
+    if (y === 0 && months.value === '0') months.value = '1';
     const m = y < 2 ? Number(months.value) : 0;
     monthsWrap?.classList.toggle('is-on', y < 2);
     state = dogAge(size, y, m);
     dogName = (nameInput?.value ?? '').trim();
 
-    const ageText = y === 0 ? `${m} ${m === 1 ? 'mes' : 'meses'}` : `${y} ${y === 1 ? 'año' : 'años'}${m ? ` y ${m} m` : ''}`;
+    ageText = formatAge(y, m);
     const stageLabel = STAGE_LABELS[state.stage];
     const set = (id: string, text: string) => { const el = $<HTMLElement>(id); if (el) el.textContent = text; };
 
     const apply = () => {
       root.dataset.stage = state.stage;
-      root.style.setProperty('--pos', `${state.lifePosition * 100}%`);
-      root.style.setProperty('--gray', String(Math.max(0, Math.min(1, (state.dogYears - state.seniorFrom + 2) / (state.profile.lifeExpectancy - state.seniorFrom + 2)))));
+      root.style.setProperty('--pos', `${state.stagePosition * 100}%`);
+      root.style.setProperty('--gray', String(Math.max(0, Math.min(1, (state.dogYears - state.seniorFrom + 4) / (state.profile.lifeExpectancy - state.seniorFrom + 4)))));
       root.style.setProperty('--num', String(state.humanYears));
       set('dat-age-text', ageText);
       set('dat-name-out', dogName || 'Tu perro');
       set('dat-stage', stageLabel);
-      set('dat-epi', state.epigeneticYears === null ? '—' : `${state.epigeneticYears} años`);
+      set('dat-epi', state.epigeneticYears !== null ? `${state.epigeneticYears} años` : 'Fuera de rango');
+      set('dat-peek-age', ageText);
       set('dat-senior-label', state.yearsToSenior > 0 ? 'Será senior en' : 'Senior desde');
-      set('dat-senior', state.yearsToSenior > 0 ? `${Math.ceil(state.yearsToSenior)} ${Math.ceil(state.yearsToSenior) === 1 ? 'año' : 'años'}` : `los ${String(state.seniorFrom).replace('.', ',')} años`);
+      set('dat-senior', state.yearsToSenior > 0 ? untilSenior(state.yearsToSenior) : `los ${String(state.seniorFrom).replace('.', ',')} años`);
       set('dat-advice', advice[state.stage]);
       set('dat-sr', `${dogName || 'Tu perro'} tiene el equivalente a ${state.humanYears} años humanos. Etapa: ${stageLabel}.`);
       set('dat-peek-stage', stageLabel);
@@ -391,7 +423,8 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
     ctx.textAlign = 'center';
     ctx.fillStyle = '#4a4a42';
     ctx.font = '600 46px "Plus Jakarta Sans", system-ui, sans-serif';
-    ctx.fillText(`${dogName || 'Mi perro'} tiene ${years!.value === '0' ? 'meses' : `${years!.value} ${years!.value === '1' ? 'año' : 'años'}`}, que equivalen a`, 540, 640);
+    ctx.fillText(`${dogName || 'Mi perro'} tiene ${ageText},`, 540, 600, 960);
+    ctx.fillText('que equivalen a', 540, 660, 960);
     ctx.fillStyle = accent;
     ctx.font = '900 260px Outfit, system-ui, sans-serif';
     ctx.fillText(String(state.humanYears), 540, 900);

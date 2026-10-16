@@ -81,6 +81,16 @@ export const CROSS_PILLAR_LINKS: Record<string, string[]> = {
 };
 
 export const TOOL_LINKS: Record<string, { href: string; label: string; description: string }> = {
+  'chequeo-geriatrico-canino': {
+    href: '/herramientas/calculadora-edad-perro',
+    label: 'Calculadora de edad de tu perro en años humanos',
+    description: 'Comprueba si ya está en etapa senior según su tamaño y cuándo conviene empezar las revisiones geriátricas.',
+  },
+  'vacunas-desparasitacion-perros-senior': {
+    href: '/herramientas/calculadora-edad-perro',
+    label: 'Calculadora de edad de tu perro en años humanos',
+    description: 'Descubre en qué etapa de vida está para ajustar su plan preventivo con el veterinario.',
+  },
   'cama-ortopedica-perros-mayores-displasia-artrosis': {
     href: '/herramientas/selector-movilidad-perros-mayores',
     label: 'Selector de ayudas de movilidad para perros mayores',

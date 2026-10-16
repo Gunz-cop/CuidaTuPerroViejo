@@ -57,6 +57,10 @@ function selectedRoots(document, page) {
     const body = exactOne(visit(article, (node) => node.tagName === 'div' && hasClass(node, 'content-body', 'prose')), page, 'article .content-body.prose');
     return [header, body];
   }
+  if (page.documentId === 'page--calculadora-edad-perro') {
+    const guide = exactOne(visit(document, (node) => node.tagName === 'article' && hasClass(node, 'age-guide')), page, 'article.age-guide');
+    return [h1.parentNode, guide];
+  }
   if (page.documentId === 'page--acerca-de') return [h1.parentNode, exactOne(nodeById(document, 'about-us', 'article'), page, 'article#about-us')];
   if (page.documentId === 'page--politica-editorial') return [h1.parentNode, exactOne(visit(document, (node) => node.tagName === 'main' && hasClass(node, 'max-w-3xl')), page, 'main.max-w-3xl')];
   if (page.kind === 'tool') return [exactOne(visit(document, (node) => node.tagName === 'main' && hasClass(node, 'max-w-3xl')), page, 'main.max-w-3xl')];

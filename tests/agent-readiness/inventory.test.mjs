@@ -28,7 +28,7 @@ const toolRoutes = [
   '/herramientas/calculadora-calidad-vida-perros',
   '/herramientas/selector-movilidad-perros-mayores',
 ];
-const editorialRoutes = ['/acerca-de', '/politica-editorial'];
+const editorialRoutes = ['/acerca-de', '/politica-editorial', '/herramientas/calculadora-edad-perro'];
 
 async function fullProjectionFixture(t, articleCount = 16, options = {}) {
   const articles = Array.from({ length: articleCount }, (_, index) => ({
@@ -122,7 +122,7 @@ test('inventory detecta canonical duplicado en páginas proyectadas', async (t) 
   assert.ok(result.errors.some((error) => error.code === 'CANONICAL_DUPLICATE' && error.htmlFile));
 });
 
-test('inventario deriva correspondencia exacta y admite crecimiento concordante 28 → 29', async (t) => {
+test('inventario deriva correspondencia exacta y admite crecimiento concordante 29 → 30', async (t) => {
   for (const articleCount of [16, 17]) {
     const { assets } = await fullProjectionFixture(t, articleCount);
     const parent = await mkdtemp(join(tmpdir(), 'ctpv-inventory-out-'));
@@ -131,7 +131,7 @@ test('inventario deriva correspondencia exacta y admite crecimiento concordante 
     assert.equal(await inventory(join(assets, '..', '..'), out), 0);
     const result = JSON.parse(await readFile(join(out, 'inventory.json'), 'utf8'));
     assert.equal(result.state, 'valid');
-    assert.equal(result.pages.filter((page) => page.disposition === 'document').length, articleCount + 12);
+    assert.equal(result.pages.filter((page) => page.disposition === 'document').length, articleCount + 13);
   }
 });
 

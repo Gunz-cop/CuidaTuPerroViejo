@@ -17,7 +17,7 @@ const paths = [
   '/', ...pillars.map((slug) => `/${slug}`),
   ...Array.from({ length: 16 }, (_, index) => `/${pillars[index % pillars.length]}/articulo-${String(index + 1).padStart(2, '0')}`),
   '/herramientas/calculadora-calidad-vida-perros', '/herramientas/selector-movilidad-perros-mayores',
-  '/acerca-de', '/politica-editorial',
+  '/acerca-de', '/politica-editorial', '/herramientas/calculadora-edad-perro',
 ];
 
 async function makeValidBuild(t) {

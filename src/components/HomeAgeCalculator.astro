@@ -1,3 +1,7 @@
+---
+import { SIZE_PROFILES } from '../lib/dog-age';
+---
+
 <section id="calculadora" class="border-y border-brand-border bg-brand-card/35 py-16 sm:py-20 lg:py-24">
   <div class="mx-auto grid max-w-6xl gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:items-center lg:gap-14 lg:px-8">
     <div class="lg:col-span-5">
@@ -48,30 +52,14 @@
         <fieldset class="mt-6">
           <legend class="mb-3 text-sm font-bold text-brand-text">1. ¿Cuál es su tamaño?</legend>
           <div class="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
-            <label class="cursor-pointer">
-              <input class="peer sr-only" name="size" type="radio" value="small" />
-              <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
-                <span class="text-sm font-bold text-brand-text">Pequeño</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">Menos de 11 kg</span>
-              </span>
-            </label>
-            <label class="cursor-pointer">
-              <input checked class="peer sr-only" name="size" type="radio" value="medium" />
-              <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
-                <span class="text-sm font-bold text-brand-text">Mediano</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">11–25 kg</span>
-              </span>
-            </label>
-            <label class="cursor-pointer">
-              <input class="peer sr-only" name="size" type="radio" value="large" />
-              <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
-                <span class="text-sm font-bold text-brand-text">Grande</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">26–44 kg</span>
-              </span>
-            </label>
-            <label class="cursor-pointer">
-              <input class="peer sr-only" name="size" type="radio" value="giant" />
-              <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
-                <span class="text-sm font-bold text-brand-text">Gigante</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">45 kg o más</span>
-              </span>
-            </label>
+            {(Object.entries(SIZE_PROFILES) as [string, { label: string; weight: string }][]).map(([id, p]) => (
+              <label class="cursor-pointer">
+                <input checked={id === 'medium'} class="peer sr-only" name="size" type="radio" value={id} />
+                <span class="flex min-h-16 flex-col justify-center rounded-2xl border border-brand-border bg-brand-card/45 px-3 py-3 text-center transition hover:border-brand-primary/40 peer-checked:border-brand-primary peer-checked:bg-brand-primary/10 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-primary/25">
+                  <span class="text-sm font-bold text-brand-text">{p.label}</span><span class="mt-0.5 text-[0.7rem] text-brand-muted">{p.weight}</span>
+                </span>
+              </label>
+            ))}
           </div>
         </fieldset>
 

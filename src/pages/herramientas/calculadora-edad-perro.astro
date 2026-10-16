@@ -9,6 +9,9 @@ const title = 'Calculadora de edad de perro en años humanos según su tamaño';
 const description = 'Calcula la edad de tu perro en años humanos según su tamaño y descubre si ya está en etapa senior y qué cuidados conviene anticipar.';
 const url = 'https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro';
 
+const fmtAge = (n: number) => String(n).replace('.', ',');
+const seniorText = `hacia los ${fmtAge(seniorAge('small'))} años en perros pequeños, los ${fmtAge(seniorAge('medium'))} en medianos, los ${fmtAge(seniorAge('large'))} en grandes y los ${fmtAge(seniorAge('giant'))} en gigantes`;
+
 const faqs = [
   {
     q: '¿Es verdad que un año de perro equivale a siete años humanos?',
@@ -16,7 +19,7 @@ const faqs = [
   },
   {
     q: '¿A qué edad se considera senior a un perro?',
-    a: 'Las guías de la Asociación Americana de Hospitales Veterinarios (AAHA, 2019) definen la etapa senior como el último 25 % de la esperanza de vida, que depende del tamaño. Con datos de esperanza de vida de 2023, eso sitúa el inicio hacia los 10 años en perros pequeños, los 9,5 en medianos, los 8,5 en grandes y los 7 en gigantes. Más que la cifra exacta, importa empezar a vigilar cambios.',
+    a: `Las guías de la Asociación Americana de Hospitales Veterinarios (AAHA, 2019) definen la etapa senior como el último 25 % de la esperanza de vida, que depende del tamaño. Con datos de esperanza de vida de 2023, eso sitúa el inicio ${seniorText}. Más que la cifra exacta, importa empezar a vigilar cambios.`,
   },
   {
     q: '¿Esta calculadora sirve para cualquier raza?',
@@ -165,14 +168,14 @@ const schema = {
       </ul>
 
       <h2 id="metodo">Cómo calculamos la edad: método y fuentes</h2>
-      <p>No inventamos las cifras. La calculadora combina tres piezas, cada una respaldada por estudios publicados en revistas veterinarias y científicas con revisión por pares:</p>
+      <p>La calculadora combina tres piezas: dos respaldadas por estudios publicados en revistas veterinarias y científicas con revisión por pares, y un ajuste propio que explicamos tal cual es:</p>
       <ol>
         <li><strong>Etapas de vida (AAHA, 2019).</strong> Cachorro hasta los 6–9 meses, adulto joven hasta los 3–4 años, adulto maduro después, y senior a partir del último 25 % de la esperanza de vida.</li>
-        <li><strong>Esperanza de vida por tamaño (Montoya et al., 2023).</strong> 13,5 años en perros de menos de 11 kg, 12,7 en medianos, 11,5 en grandes y 9,5 en gigantes. Los mestizos viven de media 12,7 años: elige el tamaño según su peso.</li>
-        <li><strong>Equivalencia en años humanos.</strong> El primer año equivale a unos 15 años humanos y el segundo a 24, por la maduración rápida. Desde ahí, cada tamaño avanza a su propio ritmo, ajustado para que su esperanza de vida media equivalga a una vida humana larga (80 años). Así, un perro pequeño suma unos 5 años humanos por año y uno gigante unos 7,5.</li>
+        <li><strong>Esperanza de vida por tamaño (Montoya et al., 2023).</strong> 13,5 años en perros de menos de 11 kg (el estudio separa toy, 13,36, y pequeños, 13,53; aquí los agrupamos), 12,7 en medianos, 11,5 en grandes y 9,5 en gigantes. Los mestizos viven de media 12,7 años: elige el tamaño según su peso.</li>
+        <li><strong>Equivalencia en años humanos (ajuste propio, no dato de un estudio).</strong> El primer año equivale a unos 15 años humanos y el segundo a 24, por la maduración rápida. Desde ahí, cada tamaño avanza a su propio ritmo, ajustado para que su esperanza de vida media equivalga a una vida humana larga (80 años). Así, un perro pequeño suma unos 5 años humanos por año y uno gigante unos 7,5. Cuando un perro supera la esperanza de vida de su tamaño, el ritmo se va frenando y la cifra se acerca a 100 sin pasarla, para no dar equivalencias imposibles.</li>
       </ol>
       <p>
-        Como comparación, en la casilla <strong>«Según su ADN»</strong> mostramos el resultado de la fórmula epigenética de la Universidad de California en San Diego (Wang et al., 2020), basada en cambios químicos del ADN con la edad: <em>16 × ln(edad) + 31</em>. Es interesante, pero se calibró solo con labradores, por eso no la usamos como resultado principal.
+        Como comparación, en la casilla <strong>«Según su ADN»</strong> mostramos el resultado de la fórmula epigenética de la Universidad de California en San Diego (Wang et al., 2020), basada en cambios químicos del ADN con la edad: <em>16 × ln(edad) + 31</em>. Es interesante, pero se calibró solo con 104 labradores de hasta 16 años, por eso no la usamos como resultado principal ni la mostramos fuera de ese rango.
       </p>
       <p>
         Ningún método es exacto para un perro concreto: la raza, la genética, el peso y la salud cambian la película. Por eso hablamos de <em>equivalencia orientativa</em>.

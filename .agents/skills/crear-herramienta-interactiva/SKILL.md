@@ -53,6 +53,12 @@ Léelas antes de empezar; copia sus patrones en vez de inventar otros.
 
 ## 3. Tono: cálido, nunca alarmante
 
+Antes de tocar una herramienta existente, lee
+[`docs/herramientas/decisiones-del-propietario.md`](../../../docs/herramientas/decisiones-del-propietario.md):
+son decisiones del propietario (por ejemplo, que el perro senior duerma con
+"Zzz") y no se deshacen sin que él lo pida. Cuando el propietario tome una
+decisión nueva sobre una herramienta, regístrala ahí.
+
 El público convive con perros mayores y a menudo con miedo a perderlos.
 
 - **Nunca** muestres cifras que suenen a cuenta atrás: "% de vida vivida",
