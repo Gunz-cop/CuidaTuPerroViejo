@@ -25,7 +25,7 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
             <path class="dat__mouth" d="M100 114 v6 M88 122 q12 8 24 0" />
             <path class="dat__tongue" d="M94 124 q6 14 12 0 Z" />
             <path class="dat__sleep dat__sleep-eyes" d="M70 84 Q78 91 86 84 M114 84 Q122 91 130 84" />
-            <path class="dat__sleep dat__sleep-mouth" d="M93 121 q7 5 14 0" />
+            <ellipse class="dat__sleep dat__sleep-mouth" cx="100" cy="123" rx="3.5" ry="4" />
           </g>
         </svg>`;
 ---
@@ -82,7 +82,7 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
     <div class="dat__card dat__result" id="dat-result" role="status" aria-live="polite" aria-atomic="true">
       <div class="dat__stage-art" aria-hidden="true">
         <Fragment set:html={dogSvg} />
-        <span class="dat__zzz">z<span>z</span><span>z</span></span>
+        <span class="dat__zzz" aria-hidden="true"><b>Z</b><b>Z</b><b>Z</b></span>
       </div>
 
       <p class="dat__result-label"><span id="dat-name-out">Tu perro</span> tiene el equivalente a</p>
@@ -237,17 +237,23 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   .dat[data-stage='longevous'] .dat__head { transform: rotate(-6deg) translateY(8px); animation-duration: 4.5s; }
   .dat[data-stage='longevous'] .dat__eyes, .dat[data-stage='longevous'] .dat__mouth { opacity: 0; }
   .dat[data-stage='longevous'] .dat__sleep { opacity: 1; }
+  .dat__sleep-mouth { fill: #2b1d14; stroke-width: 1; }
   .dat__mouth { fill: none; stroke: #2b1d14; stroke-width: 2.5; stroke-linecap: round; }
   .dat__tongue { fill: #e98a8a; transform-origin: 100px 124px; transition: transform .4s; }
   .dat[data-stage='mature'] .dat__tongue, .dat[data-stage='senior'] .dat__tongue, .dat[data-stage='longevous'] .dat__tongue { transform: scaleY(0); }
   .dat__bed { fill: color-mix(in srgb, var(--stage-color) 30%, transparent); transform-origin: 100px 166px; transform: scaleX(.3); opacity: 0; transition: transform .6s, opacity .6s; }
   .dat[data-stage='senior'] .dat__bed, .dat[data-stage='longevous'] .dat__bed { transform: scaleX(1); opacity: 1; }
 
-  .dat__zzz { position: absolute; top: .25rem; right: 0; font-family: var(--font-display); font-weight: 800; color: var(--color-brand-muted); opacity: 0; }
-  .dat__zzz span { display: inline-block; font-size: .8em; }
-  .dat[data-stage='senior'] .dat__zzz, .dat[data-stage='longevous'] .dat__zzz { opacity: 1; animation: dat-zzz 3.2s ease-in-out infinite; }
-  .dat[data-stage='longevous'] .dat__zzz { animation-duration: 2.6s; }
-  @keyframes dat-zzz { 0% { translate: 0 6px; opacity: 0; } 40% { opacity: 1; } 100% { translate: 8px -10px; opacity: 0; } }
+  /* "Zzz" al estilo del emoji 😴: tres Z azules que suben y crecen. */
+  .dat__zzz { position: absolute; top: -.25rem; right: -.25rem; width: 3.6rem; height: 3.6rem; font-family: var(--font-display); font-weight: 900; color: #3d8fe0; pointer-events: none; }
+  .dat__zzz b { position: absolute; line-height: 1; opacity: 0; }
+  .dat__zzz b:nth-child(1) { left: 0; bottom: 0; font-size: .85rem; }
+  .dat__zzz b:nth-child(2) { left: 1rem; bottom: .85rem; font-size: 1.15rem; }
+  .dat__zzz b:nth-child(3) { left: 2.1rem; bottom: 1.9rem; font-size: 1.5rem; }
+  .dat[data-stage='senior'] .dat__zzz b, .dat[data-stage='longevous'] .dat__zzz b { animation: dat-zzz 3s ease-in-out infinite; }
+  .dat__zzz b:nth-child(2) { animation-delay: .5s !important; }
+  .dat__zzz b:nth-child(3) { animation-delay: 1s !important; }
+  @keyframes dat-zzz { 0% { translate: -4px 6px; opacity: 0; } 25%, 70% { opacity: 1; } 100% { translate: 4px -6px; opacity: 0; } }
   .dat__result-label { margin: 0; font-size: .9rem; color: var(--color-brand-muted); }
   .dat__big { margin: .1rem 0 .9rem; color: var(--color-brand-text); }
   .dat__num {
@@ -302,6 +308,7 @@ const dogSvg = `<svg class="dat__dog" viewBox="0 0 200 180">
   @media (prefers-reduced-motion: reduce) {
     .dat, .dat *, .dat__num { animation: none !important; transition: none !important; }
   }
+  @media (prefers-reduced-motion: reduce) { .dat[data-stage='senior'] .dat__zzz b, .dat[data-stage='longevous'] .dat__zzz b { opacity: 1; } }
 </style>
 
 <script>
