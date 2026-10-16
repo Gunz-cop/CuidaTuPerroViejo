@@ -1,0 +1,510 @@
+---
+// Selector de ayudas de movilidad. Los IDs m5* son contrato: los leen
+// scripts/agent-readiness/tools-ui-parity.mjs (paridad UI ↔ API/MCP) y la
+// proyección Markdown (#m5widget, #m5s0, #m5alert[role=alert], último <p> de #m5s3).
+// Opciones y resultados salen de src/lib/agent-tools/movilidad.ts.
+import { PALLIATIVE_ALERT } from '../../lib/agent-tools/movilidad.ts';
+
+const [, turning, pain] = PALLIATIVE_ALERT.items;
+const dogSvg = `<svg class="mt__dog" viewBox="0 0 260 150">
+  <path class="mt__ramp" d="M150 132 L250 132 L250 92 Z" />
+  <rect class="mt__rug" x="18" y="128" width="200" height="10" rx="5" />
+  <rect class="mt__bed" x="22" y="112" width="190" height="24" rx="12" />
+  <g class="mt__body">
+    <path class="mt__tail" d="M178 70 q22 -10 26 -32" />
+    <rect class="mt__leg mt__leg--bf" x="150" y="86" width="12" height="44" rx="6" />
+    <rect class="mt__leg mt__leg--ff" x="78" y="86" width="12" height="44" rx="6" />
+    <ellipse class="mt__torso" cx="124" cy="80" rx="62" ry="28" />
+    <rect class="mt__leg mt__leg--b" x="164" y="88" width="13" height="42" rx="6.5" />
+    <rect class="mt__leg mt__leg--f" x="92" y="88" width="13" height="42" rx="6.5" />
+    <rect class="mt__sock" x="90" y="118" width="17" height="14" rx="5" />
+    <rect class="mt__sock" x="162" y="118" width="17" height="14" rx="5" />
+    <path class="mt__harness" d="M150 56 q4 26 0 52 M168 58 q4 24 0 48" />
+    <path class="mt__handle" d="M152 54 q8 -26 16 0" />
+    <g class="mt__cart">
+      <path d="M150 70 h46 M186 70 v34" />
+      <circle cx="190" cy="118" r="17" /><circle cx="190" cy="118" r="3" />
+    </g>
+    <g class="mt__head">
+      <path class="mt__neck" d="M66 74 q-6 -14 4 -30 l22 14 q-4 14 -10 22 Z" />
+      <ellipse class="mt__skull" cx="62" cy="46" rx="26" ry="22" />
+      <ellipse class="mt__snout" cx="38" cy="56" rx="17" ry="12" />
+      <ellipse class="mt__gray" cx="38" cy="58" rx="15" ry="9" />
+      <circle class="mt__nose" cx="23" cy="53" r="5" />
+      <circle class="mt__eye" cx="54" cy="40" r="3.6" />
+      <path class="mt__ear" d="M70 30 q16 4 12 38 q-12 -4 -18 -30 Z" />
+    </g>
+  </g>
+  <path class="mt__heart" d="M222 26 c-6 -8 -18 -2 -12 8 l12 12 l12 -12 c6 -10 -6 -16 -12 -8 Z" />
+</svg>`;
+---
+
+<section id="m5widget" class="mt" aria-label="Selector de ayudas de movilidad para perros mayores" role="region" data-level="" data-handling="" data-step="0">
+  <div id="cm5-selector" class="mt__anchor"></div>
+  <div class="mt__art" aria-hidden="true"><Fragment set:html={dogSvg} /></div>
+
+  <!-- PANTALLA 0: Intro -->
+  <div class="mt__screen" id="m5s0">
+    <p class="mt__kicker">Test gratuito · 2 preguntas · 30 segundos</p>
+    <h2 class="mt__title">Encontremos la ayuda exacta para tu perro</h2>
+    <p class="mt__lead">Responde según cómo está hoy. Al final recibes un plan de acción claro y, si lo necesita, orientación sobre cuidados paliativos.</p>
+    <ul class="mt__levels">
+      <li data-l="L"><span aria-hidden="true">🐾</span> Ligero</li>
+      <li data-l="M"><span aria-hidden="true">🚶</span> Moderado</li>
+      <li data-l="S"><span aria-hidden="true">🛏️</span> Severo</li>
+    </ul>
+    <button class="mt__btn mt__btn--primary mt__start" id="m5start" type="button">Empezar ahora <span aria-hidden="true">→</span></button>
+  </div>
+
+  <!-- PANTALLA 1: Nivel de movilidad -->
+  <div class="mt__screen off" id="m5s1" role="group" aria-labelledby="m5qt1">
+    <div class="mt__nav">
+      <button class="mt__back" id="m5b1" type="button">← Volver</button>
+      <div class="mt__progress" role="progressbar" aria-valuemin="0" aria-valuemax="2" aria-valuenow="1" aria-label="Paso 1 de 2"><span style="--p: 50%"></span></div>
+      <span class="mt__count" aria-hidden="true">1 / 2</span>
+    </div>
+    <p class="mt__q" id="m5qt1" tabindex="-1"><span class="mt__q-label">Nivel de movilidad</span>¿Qué ayuda necesita tu perro hoy?</p>
+    <div class="mt__options" id="m5oo1"></div>
+  </div>
+
+  <!-- PANTALLA 2: Carácter -->
+  <div class="mt__screen off" id="m5s2" role="group" aria-labelledby="m5qt2">
+    <div class="mt__nav">
+      <button class="mt__back" id="m5b2" type="button">← Volver</button>
+      <div class="mt__progress" role="progressbar" aria-valuemin="0" aria-valuemax="2" aria-valuenow="2" aria-label="Paso 2 de 2"><span style="--p: 100%"></span></div>
+      <span class="mt__count" aria-hidden="true">2 / 2</span>
+    </div>
+    <p class="mt__q" id="m5qt2" tabindex="-1"><span class="mt__q-label">Carácter con su cuerpo</span>¿Cómo es con sus patas y cuerpo?</p>
+    <div class="mt__options" id="m5oo2"></div>
+  </div>
+
+  <!-- PANTALLA 3: Resultado -->
+  <div class="mt__screen off" id="m5s3">
+    <p class="sr-only" id="m5sr" role="status" aria-live="polite" aria-atomic="true"></p>
+
+    <!-- Alerta paliativa (visible solo nivel S). Texto = PALLIATIVE_ALERT del contrato. -->
+    <div class="mt__alert off" id="m5alert" role="alert">
+      <div class="mt__alert-title"><span>⚠️</span> Cuidado paliativo importante</div>
+      <ul>
+        <li><span aria-hidden="true">⚠️</span> Para la higiene: considera <strong>pañales caninos</strong> y <strong>empapadores absorbentes</strong> bajo su zona de descanso. Cámbialos con frecuencia para evitar dermatitis.</li>
+        <li><span aria-hidden="true">⚠️</span> <strong>Cambia su posición cada 4 horas</strong> si no puede moverse solo, para prevenir úlceras de decúbito.{' '}
+          <a href={new URL(turning.link!.url).pathname}>{turning.link!.label}</a></li>
+        <li><span aria-hidden="true">⚠️</span> Evalúa si hay <strong>dolor controlado</strong> con nuestra{' '}
+          <a href={new URL(pain.link!.url).pathname}>{pain.link!.label}</a></li>
+      </ul>
+    </div>
+
+    <div class="mt__hero">
+      <div class="mt__ico" aria-hidden="true"><span id="m5rico"></span></div>
+      <div class="mt__badge" id="m5rbadge"></div>
+      <h3 class="mt__rtitle" id="m5rtit"></h3>
+      <div class="mt__rdesc" id="m5rdesc"></div>
+    </div>
+
+    <h4 class="mt__plan-title"><span aria-hidden="true">🧭</span> Tu plan de acción</h4>
+    <div class="mt__plan" id="m5prods"></div>
+
+    <div class="mt__actions">
+      <button class="mt__btn mt__btn--primary" id="m5share" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13" /></svg>
+        Compartir su plan
+      </button>
+      <a class="mt__btn mt__btn--quiet" href="/movilidad-dolor-perros-mayores">📖 Leer la guía completa de movilidad y dolor →</a>
+      <button class="mt__btn mt__btn--quiet" id="m5copy" type="button">📋 Copiar resultado</button>
+      <button class="mt__btn mt__btn--quiet mt__desk" id="m5wa" type="button">📲 Enviar por WhatsApp</button>
+      <button class="mt__btn mt__btn--ghost mt__desk" id="m5rst" type="button">↻ Repetir</button>
+    </div>
+    <div class="mt__toast" id="m5copyok" aria-live="polite" hidden>¡Copiado! Ahora pégalo donde quieras.</div>
+    <p class="mt__note">Esta recomendación es una guía de apoyo. Ante dudas, consulta siempre a tu veterinario.</p>
+  </div>
+</section>
+
+<!-- Barra fija (solo móvil, solo con resultado). Deja libre el botón del asistente (right: 5.25rem). -->
+<div id="m5stickybar" class="mt-sticky off" aria-label="Acciones del resultado" role="group">
+  <button class="mt-sticky__round" id="m5rstFixed" type="button" aria-label="Repetir el test">↻</button>
+  <button class="mt-sticky__main" id="m5waFixed" type="button">📲 Enviar por WhatsApp</button>
+</div>
+
+<style is:global>
+  .mt .off, .mt.off, .mt-sticky.off { display: none !important; }
+  .mt {
+    --lvl: var(--color-brand-primary);
+    position: relative; margin: 0 0 3rem; padding: clamp(1.1rem, 4vw, 2.25rem);
+    border: 1px solid var(--color-brand-border); border-radius: 1.75rem;
+    background:
+      radial-gradient(120% 60% at 50% 0%, color-mix(in srgb, var(--lvl) 14%, transparent), transparent 70%),
+      var(--color-brand-card);
+    box-shadow: 0 30px 70px -50px rgb(27 28 25 / .55);
+    transition: background-color .5s;
+  }
+  .mt[data-level='L'] { --lvl: #6f8f52; }
+  .mt[data-level='M'] { --lvl: #b08a4a; }
+  .mt[data-level='S'] { --lvl: var(--color-brand-accent); }
+  .mt__anchor { position: absolute; top: -5rem; }
+
+  /* Ilustración: un perro mayor que se equipa según el resultado */
+  .mt__art { width: min(17rem, 78%); margin: -.25rem auto .75rem; }
+  .mt[data-step='1'] .mt__art, .mt[data-step='2'] .mt__art { width: min(12rem, 58%); }
+  .mt__dog { display: block; width: 100%; height: auto; overflow: visible; }
+  .mt__torso, .mt__skull, .mt__neck, .mt__leg { fill: #c8915c; }
+  .mt__leg--bf, .mt__leg--ff { fill: #a8763f; }
+  .mt__snout { fill: #f3e2c9; }
+  .mt__gray { fill: #f7f4ef; opacity: .85; }
+  .mt__ear { fill: #8e5d37; transform-origin: 72px 32px; animation: mt-ear 4s ease-in-out infinite; }
+  .mt__nose, .mt__eye { fill: #2b1d14; }
+  .mt__eye { transform-box: fill-box; transform-origin: center; animation: mt-blink 5s infinite; }
+  .mt__tail { fill: none; stroke: #a8763f; stroke-width: 8; stroke-linecap: round; transform-origin: 178px 70px; animation: mt-wag 1.6s ease-in-out infinite; }
+  .mt__body { animation: mt-breathe 3.4s ease-in-out infinite; transform-origin: 124px 130px; }
+  .mt__ramp { fill: color-mix(in srgb, var(--lvl) 30%, var(--color-brand-bg)); }
+  .mt__rug { fill: color-mix(in srgb, var(--lvl) 40%, var(--color-brand-bg)); }
+  .mt__bed { fill: color-mix(in srgb, var(--lvl) 25%, var(--color-brand-bg)); }
+  .mt__sock { fill: var(--lvl); }
+  .mt__harness, .mt__handle { fill: none; stroke: var(--lvl); stroke-width: 7; stroke-linecap: round; }
+  .mt__handle { stroke-width: 4; }
+  .mt__cart path { fill: none; stroke: #5d6b57; stroke-width: 5; stroke-linecap: round; }
+  .mt__cart circle { fill: none; stroke: #4a4a42; stroke-width: 5; }
+  .mt__cart circle + circle { fill: #4a4a42; }
+  .mt__heart { fill: var(--color-brand-accent); transform-box: fill-box; transform-origin: center; }
+  .mt__ramp, .mt__rug, .mt__bed, .mt__sock, .mt__harness, .mt__handle, .mt__cart, .mt__heart {
+    opacity: 0; transition: opacity .5s, transform .5s cubic-bezier(.22,1,.36,1);
+  }
+  .mt__sock, .mt__harness, .mt__handle, .mt__cart { transform: translateY(-8px); }
+  /* Accesorio según la combinación (mismas claves LA…SB que el contrato) */
+  .mt[data-step='3'][data-level='L'][data-handling='A'] .mt__sock,
+  .mt[data-step='3'][data-handling='B']:not([data-level='S']) .mt__rug,
+  .mt[data-step='3'][data-level='M'][data-handling='A'] :is(.mt__harness, .mt__handle, .mt__ramp),
+  .mt[data-step='3'][data-level='M'][data-handling='B'] .mt__ramp,
+  .mt[data-step='3'][data-level='S'] :is(.mt__cart, .mt__bed) { opacity: 1; transform: none; }
+  .mt[data-step='3'] .mt__heart { opacity: 1; animation: mt-beat 1.8s ease-in-out infinite; }
+  .mt[data-level='S'] .mt__leg--b, .mt[data-level='S'] .mt__leg--bf { transform: translateY(-4px); }
+  .mt[data-level='M'] .mt__body, .mt[data-level='S'] .mt__body { animation-duration: 4.4s; }
+
+  /* Pantallas */
+  .mt__screen { text-align: center; }
+  .mt__screen.is-in { animation: mt-in .35s cubic-bezier(.22,1,.36,1); }
+  .mt__kicker { margin: 0; color: var(--color-brand-primary); font-size: .7rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+  .mt__title { margin: .35rem 0 .75rem; font-family: var(--font-display); font-size: clamp(1.45rem, 5vw, 2rem); font-weight: 800; line-height: 1.12; color: var(--color-brand-text); }
+  .mt__lead { max-width: 32rem; margin: 0 auto 1.1rem; font-size: .95rem; line-height: 1.6; color: var(--color-brand-muted); }
+  .mt__levels { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin: 0 0 1.5rem; padding: 0; list-style: none; }
+  .mt__levels li { padding: .4rem .85rem; border-radius: 99px; font-size: .78rem; font-weight: 700; color: var(--color-brand-text); background: color-mix(in srgb, var(--c) 16%, var(--color-brand-bg)); }
+  .mt__levels [data-l='L'] { --c: #6f8f52; } .mt__levels [data-l='M'] { --c: #b08a4a; } .mt__levels [data-l='S'] { --c: var(--color-brand-accent); }
+
+  .mt__btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3rem; padding: .7rem 1.2rem;
+    border-radius: 99px; border: 1px solid transparent; font-size: .9rem; font-weight: 800; text-decoration: none; cursor: pointer;
+    transition: transform .2s, background-color .2s, border-color .2s;
+  }
+  .mt__btn:hover { transform: translateY(-2px); }
+  .mt__btn:focus-visible, .mt__back:focus-visible, .mt__opt:focus-visible, .mt-sticky button:focus-visible { outline: 3px solid color-mix(in srgb, var(--color-brand-primary) 45%, transparent); outline-offset: 2px; }
+  .mt__btn svg { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .mt__btn--primary { background: var(--color-brand-primary); color: var(--color-brand-bg); }
+  .mt__btn--primary:hover { background: var(--color-brand-primary-hover); }
+  .mt__btn--quiet { border-color: var(--color-brand-border); background: var(--color-brand-bg); color: var(--color-brand-text); }
+  .mt__btn--ghost { grid-column: 1 / -1; background: transparent; color: var(--color-brand-muted); }
+  .mt__start { width: 100%; max-width: 20rem; font-size: 1rem; }
+
+  .mt__nav { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.25rem; }
+  .mt__back { min-height: 2.75rem; padding: 0 .9rem; border: 1px solid var(--color-brand-border); border-radius: 99px; background: var(--color-brand-bg); font-size: .8rem; font-weight: 700; color: var(--color-brand-text); cursor: pointer; }
+  .mt__progress { flex: 1; height: .5rem; border-radius: 99px; background: color-mix(in srgb, var(--color-brand-border) 60%, transparent); overflow: hidden; }
+  .mt__progress span { display: block; height: 100%; width: var(--p); border-radius: inherit; background: var(--lvl); animation: mt-grow .6s cubic-bezier(.22,1,.36,1); }
+  .mt__count { font-size: .78rem; font-weight: 800; color: var(--color-brand-primary); }
+  .mt__q { display: block; width: 100%; margin: 0 0 1.1rem; padding: 0; font-family: var(--font-display); font-size: clamp(1.25rem, 4.2vw, 1.6rem); font-weight: 800; line-height: 1.2; color: var(--color-brand-text); outline: none; }
+  .mt__q-label { display: block; margin-bottom: .35rem; font-family: var(--font-body, inherit); font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--color-brand-primary); }
+
+  .mt__options { display: grid; gap: .65rem; text-align: left; }
+  .mt__opt {
+    --c: var(--color-brand-primary);
+    display: flex; align-items: center; gap: .9rem; width: 100%; min-height: 4.75rem; padding: .9rem 1rem;
+    border: 1.5px solid var(--color-brand-border); border-radius: 1.25rem; background: var(--color-brand-bg);
+    cursor: pointer; text-align: left; transition: border-color .2s, transform .2s, box-shadow .2s;
+    animation: mt-in .4s cubic-bezier(.22,1,.36,1) backwards; animation-delay: calc(var(--i) * 60ms);
+  }
+  .mt__opt[data-code='L'] { --c: #6f8f52; } .mt__opt[data-code='M'] { --c: #b08a4a; } .mt__opt[data-code='S'] { --c: var(--color-brand-accent); }
+  .mt__opt:hover, .mt__opt:focus-visible { border-color: var(--c); transform: translateY(-2px); box-shadow: 0 14px 30px -24px rgb(0 0 0 / .6); }
+  .mt__opt-ico { display: grid; place-items: center; flex: 0 0 2.9rem; height: 2.9rem; border-radius: 1rem; font-size: 1.35rem; background: color-mix(in srgb, var(--c) 16%, var(--color-brand-card)); }
+  .mt__opt-body { display: flex; flex: 1; flex-direction: column; gap: .2rem; }
+  .mt__opt-body strong { font-size: .95rem; color: var(--color-brand-text); }
+  .mt__opt-body small { font-size: .8rem; line-height: 1.4; color: var(--color-brand-muted); }
+  .mt__opt-arrow { font-size: 1.4rem; color: var(--c); transition: translate .2s; }
+  .mt__opt:hover .mt__opt-arrow { translate: 4px 0; }
+
+  /* Resultado */
+  .mt__alert { margin: 0 0 1.5rem; padding: 1.1rem 1.2rem; border: 1px solid color-mix(in srgb, var(--color-brand-accent) 45%, transparent); border-radius: 1.25rem; text-align: left; background: color-mix(in srgb, var(--color-brand-accent) 9%, var(--color-brand-bg)); }
+  .mt__alert-title { margin-bottom: .6rem; font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--color-brand-accent); }
+  .mt__alert ul { display: grid; gap: .65rem; margin: 0; padding: 0; list-style: none; }
+  .mt__alert li { position: relative; padding-left: 1.6rem; font-size: .88rem; line-height: 1.55; color: var(--color-brand-text); }
+  .mt__alert li > span { position: absolute; left: 0; }
+  .mt__alert a { display: block; margin-top: .2rem; font-weight: 800; color: var(--color-brand-primary); }
+
+  .mt__hero { padding-bottom: 1.25rem; margin-bottom: 1.25rem; border-bottom: 1px dashed var(--color-brand-border); }
+  .mt__ico { display: inline-grid; place-items: center; width: 3.5rem; height: 3.5rem; margin-bottom: .6rem; border-radius: 1.1rem; font-size: 1.6rem; background: color-mix(in srgb, var(--lvl) 16%, var(--color-brand-bg)); }
+  .mt__badge { display: inline-block; margin-bottom: .6rem; padding: .35rem .85rem; border-radius: 99px; font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--color-brand-text); background: color-mix(in srgb, var(--lvl) 20%, var(--color-brand-bg)); }
+  .mt__rtitle { margin: 0 0 .5rem; font-family: var(--font-display); font-size: clamp(1.35rem, 4.6vw, 1.85rem); font-weight: 800; line-height: 1.15; color: var(--color-brand-text); }
+  .mt__rdesc { max-width: 34rem; margin: 0 auto; font-size: .95rem; line-height: 1.6; color: var(--color-brand-muted); }
+  .mt__plan-title { margin: 0 0 .8rem; font-size: .72rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; color: var(--color-brand-primary); text-align: left; }
+  .mt__plan { display: grid; gap: .65rem; margin-bottom: 1.5rem; text-align: left; counter-reset: step; }
+  @media (min-width: 40rem) { .mt__plan { grid-template-columns: 1fr 1fr; } }
+  .mt__step { display: flex; gap: .85rem; padding: 1rem; border: 1px solid var(--color-brand-border); border-radius: 1.25rem; background: var(--color-brand-bg); animation: mt-in .45s cubic-bezier(.22,1,.36,1) backwards; animation-delay: calc(var(--i) * 90ms + 150ms); }
+  .mt__step-num { display: grid; place-items: center; flex: 0 0 2rem; height: 2rem; border-radius: 50%; font-size: .85rem; font-weight: 900; color: var(--color-brand-bg); background: var(--lvl); }
+  .mt__step-body { display: flex; flex-direction: column; gap: .25rem; }
+  .mt__step-body > div:first-child { font-weight: 800; font-size: .95rem; color: var(--color-brand-text); }
+  .mt__step-body > div:nth-child(2) { font-size: .85rem; line-height: 1.5; color: var(--color-brand-muted); }
+  .mt__step-body a { align-self: flex-start; font-size: .75rem; font-weight: 800; color: var(--color-brand-primary); }
+
+  .mt__actions { display: grid; gap: .55rem; }
+  @media (min-width: 40rem) { .mt__actions { grid-template-columns: 1fr 1fr; } }
+  .mt__desk { display: none; }
+  @media (min-width: 40rem) { .mt__desk { display: inline-flex; } }
+  .mt__toast { margin-top: .75rem; font-size: .85rem; font-weight: 700; color: #4f7a3a; animation: mt-in .3s ease; }
+  .mt__note { margin: 1rem auto 0; max-width: 28rem; font-size: .75rem; line-height: 1.5; color: var(--color-brand-muted); }
+  @media (max-width: 39.99rem) { .mt__screen#m5s3 { padding-bottom: 4.5rem; } }
+
+  .mt-sticky {
+    position: fixed; z-index: 40; left: .75rem; right: 5.25rem; bottom: max(.75rem, env(safe-area-inset-bottom));
+    display: flex; gap: .5rem; padding: .45rem; border: 1px solid var(--color-brand-border); border-radius: 99px;
+    background: color-mix(in srgb, var(--color-brand-bg) 92%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 12px 30px -16px rgb(0 0 0 / .45); animation: mt-up .4s cubic-bezier(.22,1,.36,1);
+  }
+  @media (min-width: 40rem) { .mt-sticky { display: none !important; } }
+  .mt-sticky button { min-height: 3rem; border-radius: 99px; font-weight: 800; cursor: pointer; }
+  .mt-sticky__round { flex: 0 0 3rem; border: 1px solid var(--color-brand-border); background: var(--color-brand-card); color: var(--color-brand-text); font-size: 1.1rem; }
+  .mt-sticky__main { flex: 1; border: 0; background: var(--color-brand-primary); color: var(--color-brand-bg); font-size: .88rem; }
+
+  @keyframes mt-in { from { opacity: 0; translate: 0 8px; } }
+  @keyframes mt-up { from { opacity: 0; translate: 0 100%; } }
+  @keyframes mt-grow { from { width: 0; } }
+  @keyframes mt-breathe { 50% { translate: 0 -1.5px; } }
+  @keyframes mt-wag { 50% { rotate: 14deg; } }
+  @keyframes mt-ear { 50% { rotate: 4deg; } }
+  @keyframes mt-blink { 0%, 93%, 100% { scale: 1 1; } 96% { scale: 1 .1; } }
+  @keyframes mt-beat { 50% { scale: 1.15; } }
+  @media (prefers-reduced-motion: reduce) {
+    .mt *, .mt-sticky { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<script>
+  import { HANDLING, LEVELS, RESULTS, resultKey, type HandlingCode, type LevelCode, type ResultKey } from '../../lib/agent-tools/movilidad.ts';
+  import { AFFILIATE_URLS } from '../../lib/agent-tools/movilidad-afiliados.ts';
+
+  /** Enlaces de afiliados: ocultos por el momento (la paridad exige 0 enlaces por paso). */
+  const SHOW_AFFILIATE_LINKS = false;
+  const PAGE_URL = 'https://cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores';
+  const LEVEL_COLORS: Record<LevelCode, string> = { L: '#6f8f52', M: '#b08a4a', S: '#b9714f' };
+
+  const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
+  const root = $('m5widget');
+  const screens = [$('m5s0'), $('m5s1'), $('m5s2'), $('m5s3')];
+  const sticky = $('m5stickybar');
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let level: LevelCode | null = null;
+  let current: ResultKey | null = null;
+
+  function el<K extends keyof HTMLElementTagNameMap>(tag: K, className: string, text?: string) {
+    const node = document.createElement(tag);
+    node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  function add(parent: HTMLElement, ...kids: HTMLElement[]) {
+    for (const kid of kids) parent.appendChild(kid);
+  }
+
+  function show(step: 0 | 1 | 2 | 3) {
+    screens.forEach((screen, i) => {
+      screen.classList.toggle('off', i !== step);
+      screen.classList.remove('is-in');
+    });
+    const target = screens[step];
+    void target.offsetWidth;
+    target.classList.add('is-in');
+    root.dataset.step = String(step);
+    const isResult = step === 3;
+    sticky.classList.toggle('off', !isResult);
+    root.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    // Lleva el foco a la pregunta o al resultado para lectores de pantalla y teclado.
+    const focusTarget = step === 1 ? $('m5qt1') : step === 2 ? $('m5qt2') : step === 3 ? $('m5rtit') : $('m5start');
+    focusTarget.focus({ preventScroll: true });
+  }
+
+  type Option = { code: string; icon: string; title: string; subtitle: string };
+  function buildOptions(container: HTMLElement, options: readonly Option[], onPick: (code: string) => void) {
+    options.forEach((o, i) => {
+      const btn = el('button', 'mt__opt');
+      btn.type = 'button';
+      btn.dataset.code = o.code;
+      btn.style.setProperty('--i', String(i));
+      btn.setAttribute('aria-label', `${o.title}: ${o.subtitle}`);
+      const ico = el('span', 'mt__opt-ico', o.icon);
+      ico.setAttribute('aria-hidden', 'true');
+      const body = el('span', 'mt__opt-body');
+      add(body, el('strong', '', o.title), el('small', '', o.subtitle));
+      const arrow = el('span', 'mt__opt-arrow', '›');
+      arrow.setAttribute('aria-hidden', 'true');
+      add(btn, ico, body, arrow);
+      btn.addEventListener('click', () => onPick(o.code));
+      add(container, btn);
+    });
+  }
+
+  function showResult(key: ResultKey) {
+    const r = RESULTS[key];
+    current = key;
+    root.dataset.handling = key[1];
+    $('m5alert').classList.toggle('off', key[0] !== 'S');
+    $('m5rico').textContent = r.icon;
+    $('m5rbadge').textContent = r.badge;
+    $('m5rtit').textContent = r.title;
+    $('m5rdesc').textContent = r.description;
+    $('m5rtit').tabIndex = -1;
+
+    const plan = $('m5prods');
+    plan.replaceChildren(...r.plan.map((p, i) => {
+      const card = el('div', 'mt__step');
+      card.style.setProperty('--i', String(i));
+      const num = el('div', 'mt__step-num', String(i + 1));
+      num.setAttribute('aria-hidden', 'true');
+      const body = el('div', 'mt__step-body');
+      add(body, el('div', '', p.name), el('div', '', p.why));
+      const url = AFFILIATE_URLS[key][i];
+      if (SHOW_AFFILIATE_LINKS && url) {
+        const link = el('a', '', 'Ver en AliExpress');
+        link.href = url; link.target = '_blank'; link.rel = 'noopener sponsored';
+        add(body, link);
+      }
+      add(card, num, body);
+      return card;
+    }));
+    $('m5sr').textContent = `Resultado: ${r.title}. ${r.description} Plan de acción en ${r.plan.length} pasos.`;
+    show(3);
+  }
+
+  function resultText() {
+    if (!current) return '';
+    const r = RESULTS[current];
+    return [
+      `Resultado: ${r.title}`, '', r.description, '', 'Plan de acción:',
+      ...r.plan.map((p, i) => `  ${i + 1}. ${p.name} - ${p.why}`),
+      '', PAGE_URL,
+    ].join('\n');
+  }
+
+  function reset() {
+    level = null;
+    current = null;
+    root.dataset.level = '';
+    root.dataset.handling = '';
+    show(0);
+  }
+
+  async function copyResult() {
+    const text = resultText();
+    if (!text || !navigator.clipboard) return;
+    try {
+      await navigator.clipboard.writeText(text);
+      const ok = $('m5copyok');
+      ok.hidden = false;
+      setTimeout(() => { ok.hidden = true; }, 3000);
+    } catch (err) {
+      console.error('Error al copiar: ', err);
+    }
+  }
+
+  function shareWhatsApp() {
+    const text = resultText();
+    if (text) window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+  }
+
+  // Tarjeta para compartir (canvas → PNG 1080×1350).
+  function wrap(ctx: CanvasRenderingContext2D, text: string, maxWidth: number) {
+    const lines: string[] = [];
+    let line = '';
+    for (const word of text.split(' ')) {
+      const probe = line ? `${line} ${word}` : word;
+      if (ctx.measureText(probe).width > maxWidth && line) { lines.push(line); line = word; } else line = probe;
+    }
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  async function buildCard(): Promise<Blob | null> {
+    if (!current) return null;
+    const r = RESULTS[current];
+    const accent = LEVEL_COLORS[current[0] as LevelCode];
+    const c = document.createElement('canvas');
+    c.width = 1080; c.height = 1350;
+    const ctx = c.getContext('2d');
+    if (!ctx) return null;
+    ctx.fillStyle = '#f7f1e6'; ctx.fillRect(0, 0, 1080, 1350);
+    let y = 120;
+    try {
+      const img = new Image();
+      img.src = '/images/home/selector-movilidad-perro.webp';
+      await img.decode();
+      const h = 1080 * img.height / img.width;
+      ctx.drawImage(img, 0, 0, 1080, h);
+      const g = ctx.createLinearGradient(0, h - 180, 0, h);
+      g.addColorStop(0, 'rgba(247,241,230,0)'); g.addColorStop(1, '#f7f1e6');
+      ctx.fillStyle = g; ctx.fillRect(0, h - 180, 1080, 180);
+      y = h + 40;
+    } catch { /* la tarjeta funciona sin imagen */ }
+    ctx.textAlign = 'center';
+    ctx.font = '800 34px "Plus Jakarta Sans", system-ui, sans-serif';
+    const badge = r.badge.toUpperCase();
+    const bw = Math.min(980, ctx.measureText(badge).width + 70);
+    ctx.fillStyle = accent; ctx.beginPath(); ctx.roundRect(540 - bw / 2, y, bw, 70, 35); ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.fillText(badge, 540, y + 47, 940);
+    y += 140;
+    ctx.fillStyle = '#2f3b2c';
+    ctx.font = '800 62px Outfit, system-ui, sans-serif';
+    for (const line of wrap(ctx, r.title, 940).slice(0, 3)) { ctx.fillText(line, 540, y); y += 74; }
+    y += 30;
+    ctx.textAlign = 'left';
+    ctx.font = '600 40px "Plus Jakarta Sans", system-ui, sans-serif';
+    for (const [i, p] of r.plan.entries()) {
+      if (y > 1180) break;
+      ctx.fillStyle = accent; ctx.beginPath(); ctx.arc(110, y - 13, 26, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.fillText(String(i + 1), 110, y + 1);
+      ctx.textAlign = 'left'; ctx.fillStyle = '#4a4a42';
+      ctx.fillText(p.name, 160, y, 840);
+      y += 72;
+    }
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#6f6f63';
+    ctx.font = '600 36px "Plus Jakarta Sans", system-ui, sans-serif';
+    ctx.fillText('Encuentra la ayuda para tu perro en cuidatuperroviejo.com', 540, 1280, 980);
+    return new Promise((res) => c.toBlob(res, 'image/png'));
+  }
+
+  async function shareCard() {
+    const blob = await buildCard();
+    if (!blob || !current) return;
+    const file = new File([blob], 'plan-movilidad-mi-perro.png', { type: 'image/png' });
+    if (navigator.canShare?.({ files: [file] })) {
+      try { await navigator.share({ files: [file], text: `${RESULTS[current].title} 🐾 ${PAGE_URL}` }); } catch { /* cancelado */ }
+      return;
+    }
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  }
+
+  buildOptions($('m5oo1'), LEVELS, (code) => {
+    level = code as LevelCode;
+    root.dataset.level = level;
+    show(2);
+  });
+  buildOptions($('m5oo2'), HANDLING, (code) => {
+    if (level) showResult(resultKey(level, code as HandlingCode));
+  });
+
+  $('m5start').addEventListener('click', () => show(1));
+  $('m5b1').addEventListener('click', () => show(0));
+  $('m5b2').addEventListener('click', () => { level = null; root.dataset.level = ''; show(1); });
+  $('m5copy').addEventListener('click', copyResult);
+  $('m5share').addEventListener('click', shareCard);
+  for (const id of ['m5wa', 'm5waFixed']) $(id).addEventListener('click', shareWhatsApp);
+  for (const id of ['m5rst', 'm5rstFixed']) $(id).addEventListener('click', reset);
+</script>
