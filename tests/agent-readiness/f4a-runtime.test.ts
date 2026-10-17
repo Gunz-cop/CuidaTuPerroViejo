@@ -75,10 +75,10 @@ test('200: ejemplos normativos byteexactos, umbrales y extremos; sin ASSETS ni d
     [[4, 5, 5, 5, 5, 5, 5], 34, 'compromised'], [[5, 5, 5, 5, 5, 5, 5], 35, 'compromised'], [[6, 5, 5, 5, 5, 5, 5], 36, 'acceptable'],
     [[10, 10, 10, 10, 9, 0, 0], 49, 'acceptable'], [[10, 10, 10, 10, 10, 0, 0], 50, 'acceptable'], [[10, 10, 10, 10, 10, 1, 0], 51, 'good'],
   ];
-  for (const [values, score, band] of cases) {
+  for (const [values, score] of cases) {
     const body = await (await h.request(quality(values))).json() as { score: number; band: string };
     assert.equal(body.score, score);
-    assert.equal(body.band, band);
+    assert.equal(body.band, 'not-classified');
     assert.ok(validate.QualityOfLifeResult!(body), JSON.stringify(validate.QualityOfLifeResult!.errors));
   }
   for (const level of ['light', 'moderate', 'severe']) for (const handling of ['calm', 'stressed']) {

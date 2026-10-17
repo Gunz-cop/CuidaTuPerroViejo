@@ -1,0 +1,150 @@
+{
+  "method": "Chromium local, build estático; terceros bloqueados. No acredita despliegue ni consentimiento.",
+  "cases": [
+    {
+      "case": "minimo",
+      "width": 390,
+      "theme": "light",
+      "score": 0,
+      "warnings": "Dolor/alivio: has marcado 0/10. Contacta con tu veterinario cuanto antes, aunque la suma sea alta. Si tiene dificultad para respirar o dolor intenso, busca atención veterinaria inmediata; no esperes a repetir el registro.\nApetito: has marcado 0/10. Describe esta dificultad a tu veterinario; los puntos de otras áreas no la compensan.\nHidratación: has marcado 0/10. Describe esta dificultad a tu veterinario; los puntos de otras áreas no la compensan.\nHigiene: has marcado 0/10. Describe esta dificultad a tu veterinario; los puntos de otras áreas no la compensan.\nFelicidad: has marcado 0/10. Describe esta dificultad a tu veterinario; los puntos de otras áreas no la compensan.\nMovilidad: has marcado 0/10. Describe esta dificultad a tu veterinario; los puntos de otras áreas no la compensan.\nBalance: has marcado 0/10. Describe esta dificultad a tu veterinario; los puntos de otras áreas no la compensan.",
+      "expectedZeroCriteria": [
+        "hurt",
+        "hunger",
+        "hydration",
+        "hygiene",
+        "happiness",
+        "mobility",
+        "moreGoodDays"
+      ],
+      "errors": []
+    },
+    {
+      "case": "maximo",
+      "width": 390,
+      "theme": "light",
+      "score": 70,
+      "warnings": "No has marcado respuestas en 0. Revisa también las dificultades y cambios que la puntuación no recoja; esto no es una confirmación de bienestar.",
+      "expectedZeroCriteria": [],
+      "errors": []
+    },
+    {
+      "case": "dolor_uno_total61",
+      "width": 390,
+      "theme": "light",
+      "score": 61,
+      "warnings": "No has marcado respuestas en 0. Revisa también las dificultades y cambios que la puntuación no recoja; esto no es una confirmación de bienestar.",
+      "expectedZeroCriteria": [],
+      "errors": []
+    },
+    {
+      "case": "todos_cinco",
+      "width": 390,
+      "theme": "light",
+      "score": 35,
+      "warnings": "No has marcado respuestas en 0. Revisa también las dificultades y cambios que la puntuación no recoja; esto no es una confirmación de bienestar.",
+      "expectedZeroCriteria": [],
+      "errors": []
+    },
+    {
+      "case": "misma_suma35_con_ceros",
+      "width": 390,
+      "theme": "light",
+      "score": 35,
+      "warnings": "Dolor/alivio: has marcado 0/10. Contacta con tu veterinario cuanto antes, aunque la suma sea alta. Si tiene dificultad para respirar o dolor intenso, busca atención veterinaria inmediata; no esperes a repetir el registro.\nMovilidad: has marcado 0/10. Describe esta dificultad a tu veterinario; los puntos de otras áreas no la compensan.\nBalance: has marcado 0/10. Describe esta dificultad a tu veterinario; los puntos de otras áreas no la compensan.",
+      "expectedZeroCriteria": [
+        "hurt",
+        "mobility",
+        "moreGoodDays"
+      ],
+      "errors": []
+    },
+    {
+      "case": "apetito_cero",
+      "width": 390,
+      "theme": "light",
+      "score": 60,
+      "warnings": "Apetito: has marcado 0/10. Describe esta dificultad a tu veterinario; los puntos de otras áreas no la compensan.",
+      "expectedZeroCriteria": [
+        "hunger"
+      ],
+      "errors": []
+    },
+    {
+      "case": "balance_cero",
+      "width": 390,
+      "theme": "light",
+      "score": 60,
+      "warnings": "Balance: has marcado 0/10. Describe esta dificultad a tu veterinario; los puntos de otras áreas no la compensan.",
+      "expectedZeroCriteria": [
+        "moreGoodDays"
+      ],
+      "errors": []
+    },
+    {
+      "case": "dolor_cero_total60",
+      "width": 390,
+      "theme": "light",
+      "score": 60,
+      "warnings": "Dolor/alivio: has marcado 0/10. Contacta con tu veterinario cuanto antes, aunque la suma sea alta. Si tiene dificultad para respirar o dolor intenso, busca atención veterinaria inmediata; no esperes a repetir el registro.",
+      "expectedZeroCriteria": [
+        "hurt"
+      ],
+      "errors": []
+    },
+    {
+      "case": "dolor_cero_total60",
+      "width": 390,
+      "theme": "dark",
+      "score": 60,
+      "warnings": "Dolor/alivio: has marcado 0/10. Contacta con tu veterinario cuanto antes, aunque la suma sea alta. Si tiene dificultad para respirar o dolor intenso, busca atención veterinaria inmediata; no esperes a repetir el registro.",
+      "expectedZeroCriteria": [
+        "hurt"
+      ],
+      "errors": []
+    },
+    {
+      "case": "dolor_cero_total60",
+      "width": 820,
+      "theme": "light",
+      "score": 60,
+      "warnings": "Dolor/alivio: has marcado 0/10. Contacta con tu veterinario cuanto antes, aunque la suma sea alta. Si tiene dificultad para respirar o dolor intenso, busca atención veterinaria inmediata; no esperes a repetir el registro.",
+      "expectedZeroCriteria": [
+        "hurt"
+      ],
+      "errors": []
+    },
+    {
+      "case": "dolor_cero_total60",
+      "width": 820,
+      "theme": "dark",
+      "score": 60,
+      "warnings": "Dolor/alivio: has marcado 0/10. Contacta con tu veterinario cuanto antes, aunque la suma sea alta. Si tiene dificultad para respirar o dolor intenso, busca atención veterinaria inmediata; no esperes a repetir el registro.",
+      "expectedZeroCriteria": [
+        "hurt"
+      ],
+      "errors": []
+    },
+    {
+      "case": "dolor_cero_total60",
+      "width": 1366,
+      "theme": "light",
+      "score": 60,
+      "warnings": "Dolor/alivio: has marcado 0/10. Contacta con tu veterinario cuanto antes, aunque la suma sea alta. Si tiene dificultad para respirar o dolor intenso, busca atención veterinaria inmediata; no esperes a repetir el registro.",
+      "expectedZeroCriteria": [
+        "hurt"
+      ],
+      "errors": []
+    },
+    {
+      "case": "dolor_cero_total60",
+      "width": 1366,
+      "theme": "dark",
+      "score": 60,
+      "warnings": "Dolor/alivio: has marcado 0/10. Contacta con tu veterinario cuanto antes, aunque la suma sea alta. Si tiene dificultad para respirar o dolor intenso, busca atención veterinaria inmediata; no esperes a repetir el registro.",
+      "expectedZeroCriteria": [
+        "hurt"
+      ],
+      "errors": []
+    }
+  ]
+}

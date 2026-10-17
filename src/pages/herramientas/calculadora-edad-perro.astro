@@ -3,14 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import DogAgeTool from '../../components/tools/DogAgeTool.astro';
 import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
 import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
-import { AGE_SOURCES, SIZE_PROFILES, seniorAge, dogAge, type DogSize } from '../../lib/dog-age';
+import { seniorFrameworkText, AGE_SOURCES, SIZE_PROFILES, seniorAge, dogAge, type DogSize } from '../../lib/dog-age';
 
 const title = 'Calculadora de edad de perro en años humanos según su tamaño';
 const description = 'Calcula la edad de tu perro en años humanos según su tamaño y descubre si ya está en etapa senior y qué cuidados conviene anticipar.';
 const url = 'https://cuidatuperroviejo.com/herramientas/calculadora-edad-perro';
 
-const fmtAge = (n: number) => String(n).replace('.', ',');
-const seniorText = `hacia los ${fmtAge(seniorAge('small'))} años en perros pequeños, los ${fmtAge(seniorAge('medium'))} en medianos, los ${fmtAge(seniorAge('large'))} en grandes y los ${fmtAge(seniorAge('giant'))} en gigantes`;
+
 
 const faqs = [
   {
@@ -19,7 +18,7 @@ const faqs = [
   },
   {
     q: '¿A qué edad se considera senior a un perro?',
-    a: `Las guías de la Asociación Americana de Hospitales Veterinarios (AAHA, 2019) definen la etapa senior como el último 25 % de la esperanza de vida, que depende del tamaño. Con datos de esperanza de vida de 2023, eso sitúa el inicio ${seniorText}. Más que la cifra exacta, importa empezar a vigilar cambios.`,
+    a: seniorFrameworkText(),
   },
   {
     q: '¿Esta calculadora sirve para cualquier raza?',
@@ -134,7 +133,7 @@ const schema = {
       </p>
 
       <h2 id="etapa-senior">¿Cuándo empieza la etapa senior según el tamaño?</h2>
-      <p>Las guías veterinarias de la AAHA definen la etapa senior como <strong>el último 25 % de la esperanza de vida</strong>. Con la esperanza de vida por tamaño medida en millones de perros, queda así:</p>
+      <p>Las guías veterinarias de la AAHA definen la etapa senior como <strong>el último 25 % de la esperanza de vida</strong>. Aplicamos ese marco a las medias por tamaño de Montoya (2023) y redondeamos a medio año. Es una derivación propia para orientar, no una tabla de cortes clínicos establecida por AAHA:</p>
       <div class="not-prose my-6 overflow-x-auto rounded-2xl border border-brand-border">
         <table class="w-full text-left text-sm">
           <thead class="bg-brand-card/60 text-brand-text">
@@ -169,7 +168,7 @@ const schema = {
         <li><strong>Equivalencia en años humanos (ajuste propio, no dato de un estudio).</strong> El primer año equivale a unos 15 años humanos y el segundo a 24, por la maduración rápida. Desde ahí, cada tamaño avanza a su propio ritmo, ajustado para que su esperanza de vida media equivalga a una vida humana larga (80 años). Así, un perro pequeño suma unos 5 años humanos por año y uno gigante unos 7,5. Cuando un perro supera la esperanza de vida de su tamaño, el ritmo se va frenando y la cifra se acerca a 100 sin pasarla, para no dar equivalencias imposibles.</li>
       </ol>
       <p>
-        Como comparación, en la casilla <strong>«Según su ADN»</strong> mostramos el resultado de la fórmula epigenética de la Universidad de California en San Diego (Wang et al., 2020), basada en cambios químicos del ADN con la edad: <em>16 × ln(edad) + 31</em>. Es interesante, pero se calibró solo con 104 labradores de hasta 16 años, por eso no la usamos como resultado principal ni la mostramos fuera de ese rango.
+        Como comparación, en la casilla <strong>«Fórmula de Wang»</strong> mostramos el resultado de la fórmula epigenética de la Universidad de California en San Diego (Wang et al., 2020), basada en cambios químicos del ADN con la edad: <em>16 × ln(edad) + 31</em>. Solo aplicamos una fórmula a la edad que introduces: no analizamos el ADN de tu perro ni medimos su edad biológica individual. Se calibró solo con 104 labradores de hasta 16 años, por eso no la usamos como resultado principal ni la mostramos fuera de ese rango.
       </p>
       <p>
         Ningún método es exacto para un perro concreto: la raza, la genética, el peso y la salud cambian la película. Por eso hablamos de <em>equivalencia orientativa</em>.

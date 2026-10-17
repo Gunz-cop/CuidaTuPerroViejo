@@ -463,6 +463,7 @@
         "maxScore",
         "band",
         "thresholds",
+        "warnings",
         "breakdown",
         "interpretation",
         "message",
@@ -536,29 +537,12 @@
           "const": 70
         },
         "band": {
-          "description": "Franja decidida con mínimos exclusivos sobre thresholds: good si score > 50, acceptable si score > 35, compromised en otro caso. Usa este campo en lugar de recalcular la franja.",
-          "enum": [
-            "good",
-            "acceptable",
-            "compromised"
-          ]
+          "const": "not-classified",
+          "description": "No se clasifica el bienestar por el total. Campo conservado para identificar explícitamente la retirada de las bandas clínicas anteriores."
         },
         "thresholds": {
-          "description": "Mínimos exclusivos de cada franja: la franja exige score > umbral (good > 50, acceptable > 35).",
-          "type": "object",
-          "required": [
-            "good",
-            "acceptable"
-          ],
-          "properties": {
-            "good": {
-              "const": 50
-            },
-            "acceptable": {
-              "const": 35
-            }
-          },
-          "additionalProperties": false
+          "type": "null",
+          "description": "Sin umbrales de clasificación clínica. No utilizar los antiguos cortes en 35 o 50."
         },
         "breakdown": {
           "type": "array",
@@ -651,6 +635,35 @@
           "items": {
             "type": "string",
             "minLength": 1
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "description": "Avisos editoriales propios por respuestas en 0, independientes de la suma; no son umbrales clínicos validados. Su ausencia no garantiza bienestar.",
+          "items": {
+            "type": "object",
+            "required": [
+              "criterion",
+              "message"
+            ],
+            "properties": {
+              "criterion": {
+                "enum": [
+                  "hurt",
+                  "hunger",
+                  "hydration",
+                  "hygiene",
+                  "happiness",
+                  "mobility",
+                  "moreGoodDays"
+                ]
+              },
+              "message": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
           }
         }
       },

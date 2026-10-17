@@ -5,8 +5,8 @@
     "documentId": "tool--calidad-vida",
     "name": "Calculadora de Calidad de Vida Canina HHHHHMM",
     "canonicalUrl": "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros",
-    "softwareVersion": "2.0",
-    "lastReviewed": "2026-07-21"
+    "softwareVersion": "3.0",
+    "lastReviewed": "2026-10-17"
   },
   "input": {
     "hurt": 5,
@@ -19,11 +19,9 @@
   },
   "score": 35,
   "maxScore": 70,
-  "band": "compromised",
-  "thresholds": {
-    "good": 50,
-    "acceptable": 35
-  },
+  "band": "not-classified",
+  "thresholds": null,
+  "warnings": [],
   "breakdown": [
     {
       "criterion": "hurt",
@@ -68,15 +66,15 @@
       "max": 10
     }
   ],
-  "interpretation": "🛑 Calidad de Vida COMPROMETIDA.",
-  "message": "Es un momento difícil. Buscar claridad ahora también es una forma de cuidar de él.",
-  "recommendation": "💡 Importante: El puntaje indica sufrimiento significativo. Consulta a tu veterinario lo antes posible para evaluar opciones paliativas.",
+  "interpretation": "Registro de observaciones; no es un diagnóstico.",
+  "message": "Una suma alta no garantiza bienestar ni compensa una dificultad importante en un criterio.",
+  "recommendation": "Revisa cada respuesta con tu veterinario y describe los cambios respecto a su situación habitual. No cambies tratamientos basándote en esta suma.",
   "guide": {
-    "label": "📖 Entender los cuidados paliativos y las opciones disponibles",
+    "label": "Preparar la consulta sobre cuidados y bienestar",
     "url": "https://cuidatuperroviejo.com/cuidados-paliativos-perros"
   },
   "notices": [
-    "💛 Esta herramienta es una guía. Tu amor y criterio siempre son lo más importante.",
-    "Esta herramienta no toma decisiones por ti. Solo te ayuda a ver con más claridad lo que ya estás sintiendo."
+    "Esta herramienta ordena observaciones y no sustituye una valoración veterinaria.",
+    "Una suma alta no descarta dolor ni enfermedad. Si observas dificultad respiratoria o dolor intenso, busca atención veterinaria inmediata."
   ]
 }

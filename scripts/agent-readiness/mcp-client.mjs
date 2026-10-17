@@ -78,7 +78,7 @@ try {
       assert.equal(Buffer.byteLength(read.markdown), read.document.markdownBytes);
       const quality = { hurt: 5, hunger: 5, hydration: 5, hygiene: 5, happiness: 5, mobility: 5, moreGoodDays: 5 };
       const qualityResult = domain(await client.callTool({ name: 'evaluate_quality_of_life', arguments: quality }), modern);
-      assert.deepEqual(qualityResult, await api(`/api/agent/v1/tools/calidad-vida?${new URLSearchParams(quality)}`)); assert.equal(qualityResult.band, 'compromised');
+      assert.deepEqual(qualityResult, await api(`/api/agent/v1/tools/calidad-vida?${new URLSearchParams(quality)}`)); assert.equal(qualityResult.band, 'not-classified');
       const mobility = { level: 'severe', handling: 'stressed' };
       assert.deepEqual(domain(await client.callTool({ name: 'recommend_mobility_aids', arguments: mobility }), modern), await api(`/api/agent/v1/tools/movilidad?${new URLSearchParams(mobility)}`));
       const luna = domain(await client.callTool({ name: 'calculate_dog_age', arguments: { size: 'small', years: 11, name: 'Luna' } }), modern);
@@ -121,7 +121,7 @@ try {
           let remaining = score;
           const input = Object.fromEntries(Object.keys(quality).map((key) => { const value = Math.min(10, remaining); remaining -= value; return [key, value]; }));
           const evaluated = domain(await client.callTool({ name: 'evaluate_quality_of_life', arguments: input }), true);
-          assert.deepEqual(evaluated, await api(`/api/agent/v1/tools/calidad-vida?${new URLSearchParams(input)}`)); assert.equal(evaluated.score, score); assert.equal(evaluated.band, band);
+          assert.deepEqual(evaluated, await api(`/api/agent/v1/tools/calidad-vida?${new URLSearchParams(input)}`)); assert.equal(evaluated.score, score); assert.equal(evaluated.band, 'not-classified');
         }
         for (const level of ['light', 'moderate', 'severe']) for (const handling of ['calm', 'stressed']) {
           const input = { level, handling };

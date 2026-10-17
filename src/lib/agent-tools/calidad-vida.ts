@@ -1,12 +1,12 @@
-// Escala HHHHHMM (contratos F4A §1.1). Datos y suma copiados sin cambios del
-// script de la página en la base eff4ce1: siete criterios 0–10, máximo 70.
-// Franjas con mínimos exclusivos (SDD seguimiento D33): >50 buena, >35 aceptable.
+// Adaptación digital de HHHHHMM: siete observaciones 0–10; suma 0–70.
+// No clasificamos el bienestar por la suma. Avisar de cada respuesta en 0 es
+// una regla editorial propia (no un umbral clínico validado); no altera el total.
 import { SCHEMA_VERSION, SITE, requireExactKeys, requireInteger, type Guide, type ToolInfo } from './contract.ts';
 
 export const QUALITY_KEYS = ['hurt', 'hunger', 'hydration', 'hygiene', 'happiness', 'mobility', 'moreGoodDays'] as const;
 export type QualityKey = (typeof QUALITY_KEYS)[number];
 export type QualityInput = Record<QualityKey, number>;
-export type QualityBand = 'good' | 'acceptable' | 'compromised';
+export type QualityBand = 'not-classified';
 
 export const CRITERIA = [
   { key: 'hurt', emoji: '❤️', name: 'Hurt (Dolor)', label: 'Dolor', question: '¿Control adecuado del dolor y la respiración?', lo: 'Mucho dolor', hi: 'Sin dolor' },
@@ -20,40 +20,27 @@ export const CRITERIA = [
 
 export const CRITERION_MAX = 10;
 export const MAX_SCORE = CRITERIA.length * CRITERION_MAX;
-export const THRESHOLDS = { good: 50, acceptable: 35 } as const;
+export const INTERPRETATION = 'Registro de observaciones; no es un diagnóstico.';
+export const RESULT_MESSAGE = 'Una suma alta no garantiza bienestar ni compensa una dificultad importante en un criterio.';
+export const RECOMMENDATION = 'Revisa cada respuesta con tu veterinario y describe los cambios respecto a su situación habitual. No cambies tratamientos basándote en esta suma.';
+export interface QualityWarning { criterion: QualityKey; message: string }
 
-/**
- * Textos por franja. `interpretation` es el contenido del <strong> de
- * #qol-interpretation; `recommendation` reproduce `💡 <strong>…</strong>…` de
- * #qol-recommendation; `guideLabel` es el texto del CTA (null = CTA oculto).
- */
-export const BANDS = {
-  good: {
-    interpretation: '✅ Calidad de Vida BUENA.',
-    message: 'Tu perro aún disfruta momentos importantes contigo.',
-    recommendation: { lead: '💡 ', strong: 'Sigue así:', rest: ' Mantén los cuidados actuales y visita al veterinario en los controles rutinarios. Tu perro está respondiendo bien.' },
-    guideLabel: null,
-  },
-  acceptable: {
-    interpretation: '⚠️ Calidad de Vida ACEPTABLE.',
-    message: 'Estás en un punto donde observar y acompañar es clave.',
-    recommendation: { lead: '💡 ', strong: 'Atención:', rest: ' Hay áreas que merecen seguimiento. Consulta a tu veterinario pronto para ajustar el plan de cuidados.' },
-    guideLabel: '📖 Cómo mejorar la calidad de vida de tu perro',
-  },
-  compromised: {
-    interpretation: '🛑 Calidad de Vida COMPROMETIDA.',
-    message: 'Es un momento difícil. Buscar claridad ahora también es una forma de cuidar de él.',
-    recommendation: { lead: '💡 ', strong: 'Importante:', rest: ' El puntaje indica sufrimiento significativo. Consulta a tu veterinario lo antes posible para evaluar opciones paliativas.' },
-    guideLabel: '📖 Entender los cuidados paliativos y las opciones disponibles',
-  },
-} as const satisfies Record<QualityBand, { interpretation: string; message: string; recommendation: { lead: string; strong: string; rest: string }; guideLabel: string | null }>;
+/** Regla editorial propia: destacar los extremos negativos declarados por quien responde. */
+export function qualityWarnings(input: QualityInput): QualityWarning[] {
+  return CRITERIA.filter(({ key }) => input[key] === 0).map(({ key, label }) => ({
+    criterion: key,
+    message: key === 'hurt'
+      ? 'Dolor/alivio: has marcado 0/10. Contacta con tu veterinario cuanto antes, aunque la suma sea alta. Si tiene dificultad para respirar o dolor intenso, busca atención veterinaria inmediata; no esperes a repetir el registro.'
+      : `${label}: has marcado 0/10. Describe esta dificultad a tu veterinario; los puntos de otras áreas no la compensan.`,
+  }));
+}
 
 export const GUIDE_PATH = '/cuidados-paliativos-perros';
 
 /** Avisos estáticos de la página (#qol-result-box y .qol-anti-guilt). */
 export const QUALITY_NOTICES = [
-  '💛 Esta herramienta es una guía. Tu amor y criterio siempre son lo más importante.',
-  'Esta herramienta no toma decisiones por ti. Solo te ayuda a ver con más claridad lo que ya estás sintiendo.',
+  'Esta herramienta ordena observaciones y no sustituye una valoración veterinaria.',
+  'Una suma alta no descarta dolor ni enfermedad. Si observas dificultad respiratoria o dolor intenso, busca atención veterinaria inmediata.',
 ] as const;
 
 export const QUALITY_TOOL: ToolInfo = {
@@ -61,15 +48,9 @@ export const QUALITY_TOOL: ToolInfo = {
   documentId: 'tool--calidad-vida',
   name: 'Calculadora de Calidad de Vida Canina HHHHHMM',
   canonicalUrl: `${SITE}/herramientas/calculadora-calidad-vida-perros`,
-  softwareVersion: '2.0',
-  lastReviewed: '2026-07-21',
+  softwareVersion: '3.0',
+  lastReviewed: '2026-10-17',
 };
-
-export function qualityBand(score: number): QualityBand {
-  if (score > THRESHOLDS.good) return 'good';
-  if (score > THRESHOLDS.acceptable) return 'acceptable';
-  return 'compromised';
-}
 
 /** Valida una entrada estructurada (WebMCP/API): siete enteros 0..10, sin keys extra. */
 export function parseQualityInput(value: unknown): QualityInput {
@@ -84,7 +65,8 @@ export interface QualityOfLifeResult {
   score: number;
   maxScore: number;
   band: QualityBand;
-  thresholds: { good: number; acceptable: number };
+  thresholds: null;
+  warnings: QualityWarning[];
   breakdown: Array<{ criterion: QualityKey; label: string; value: number; max: number }>;
   interpretation: string;
   message: string;
@@ -96,21 +78,20 @@ export interface QualityOfLifeResult {
 export function evaluateQualityOfLife(value: unknown): QualityOfLifeResult {
   const input = parseQualityInput(value);
   const score = QUALITY_KEYS.reduce((total, key) => total + input[key], 0);
-  const band = qualityBand(score);
-  const text = BANDS[band];
   return {
     schemaVersion: SCHEMA_VERSION,
     tool: { ...QUALITY_TOOL },
     input,
     score,
     maxScore: MAX_SCORE,
-    band,
-    thresholds: { good: THRESHOLDS.good, acceptable: THRESHOLDS.acceptable },
+    band: 'not-classified',
+    thresholds: null,
+    warnings: qualityWarnings(input),
     breakdown: CRITERIA.map((criterion) => ({ criterion: criterion.key, label: criterion.label, value: input[criterion.key], max: CRITERION_MAX })),
-    interpretation: text.interpretation,
-    message: text.message,
-    recommendation: text.recommendation.lead + text.recommendation.strong + text.recommendation.rest,
-    guide: text.guideLabel === null ? null : { label: text.guideLabel, url: SITE + GUIDE_PATH },
+    interpretation: INTERPRETATION,
+    message: RESULT_MESSAGE,
+    recommendation: RECOMMENDATION,
+    guide: { label: 'Preparar la consulta sobre cuidados y bienestar', url: SITE + GUIDE_PATH },
     notices: [...QUALITY_NOTICES],
   };
 }
