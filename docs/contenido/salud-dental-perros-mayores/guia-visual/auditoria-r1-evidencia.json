@@ -1,0 +1,27 @@
+{
+  "round": 1,
+  "result": "NO APTO",
+  "observed_print": {
+    "matchMedia_print": true,
+    "visible_panels": 1,
+    "expected_panels": 4,
+    "computed_display": [
+      "list-item",
+      "none",
+      "none",
+      "none"
+    ],
+    "cause": "Tailwind important layered [hidden] rule overrides unlayered component print rule"
+  },
+  "source_independent": {
+    "url": "https://vcahospitals.com/know-your-pet/brushing-teeth-in-dogs",
+    "status": 200,
+    "sha256_response": "630a0fce4c1ba43596a0bdb2449704a56dd7aed8ac17309c00299323a46a8a4a"
+  },
+  "originals": {
+    "original-labio.png": "38144a234d51992fa3deec5b9901b58e74ba5a8ee2ff6fd8b789bf3c30bacd6f",
+    "original-reposo.png": "e842589ea65238447ad04dd3c4490b47b334d3ad4299a0cd45f6f6377f182b95",
+    "original-contacto.png": "56e83b5a460876925868b92c7d80d6c20b831402af91fdfe326ec38f0de2d75a"
+  },
+  "limit": "Source changed by corrector during tests before a source manifest was frozen; R1 records observed rendered failure, not a frozen final source hash."
+}
