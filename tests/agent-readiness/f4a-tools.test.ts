@@ -5,6 +5,12 @@
 // seguimiento D33 («>50 good; >35 acceptable»), que difiere de la legada
 // («>=50; >=35») sólo en las sumas 35 y 50. No se usa la implementación para
 // construir las expectativas.
+//
+// Movilidad 1.1 (2026-10-17): las opciones siguen siendo las legadas, pero la
+// tabla de resultados y el aviso de nivel severo se revisaron contra fuentes
+// (src/lib/mobility-sources.ts). Su oráculo es ahora la tabla congelada
+// fixtures/f4a/movilidad-v1.1.json, revisada a mano; las URLs de afiliado se
+// siguen comparando con la base legada.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
@@ -43,6 +49,7 @@ const qualitySource = legacySource('quality');
 const mobilitySource = legacySource('mobility');
 const legacyQuality = legacyData(qualitySource, ['CRITERIA', 'MAX']);
 const legacyMobility = legacyData(mobilitySource, ['OPT1', 'OPT2', 'RES', 'SHOW_AFFILIATE_LINKS']);
+const mobilityV11 = JSON.parse(readFileSync(new URL('movilidad-v1.1.json', FIXTURES), 'utf8'));
 
 const stripTags = (html: string) => html.replace(/<[^>]+>/gu, '');
 function legacyBandTexts() {
@@ -85,13 +92,13 @@ const LEVEL_CODES = { light: 'L', moderate: 'M', severe: 'S' } as const;
 const HANDLING_CODES = { calm: 'A', stressed: 'B' } as const;
 function oracleMobility(level: keyof typeof LEVEL_CODES, handling: keyof typeof HANDLING_CODES) {
   const key = LEVEL_CODES[level] + HANDLING_CODES[handling];
-  const r = legacyMobility.RES[key];
+  const r = mobilityV11.results[key];
   return {
     schemaVersion: 'agent-api/1',
-    tool: { toolId: 'movilidad', documentId: 'tool--movilidad', name: 'Selector de Ayudas de Movilidad para Perros Mayores', canonicalUrl: `${SITE}/herramientas/selector-movilidad-perros-mayores`, softwareVersion: '1.0', lastReviewed: '2026-05-14' },
-    input: { level, handling }, resultKey: key, icon: r.ico, badge: r.badge, title: r.tit, description: r.desc,
-    plan: r.prods.map((p: { name: string; why: string }) => ({ name: p.name, why: p.why })),
-    palliativeAlert: level === 'severe' ? JSON.parse(readFileSync(new URL('../../docs/agent-readiness/evidencia/f4a/contratos/ejemplo-movilidad-200.json', import.meta.url), 'utf8')).palliativeAlert : null,
+    tool: { toolId: 'movilidad', documentId: 'tool--movilidad', name: 'Selector de Ayudas de Movilidad para Perros Mayores', canonicalUrl: `${SITE}/herramientas/selector-movilidad-perros-mayores`, softwareVersion: '1.1', lastReviewed: '2026-10-17' },
+    input: { level, handling }, resultKey: key, icon: r.icon, badge: r.badge, title: r.title, description: r.description,
+    plan: r.plan.map((p: { name: string; why: string }) => ({ name: p.name, why: p.why })),
+    palliativeAlert: level === 'severe' ? mobilityV11.palliativeAlert : null,
     guide: { label: '📖 Leer la guía completa de movilidad y dolor →', url: `${SITE}/movilidad-dolor-perros-mayores` },
     notices: ['Esta recomendación es una guía de apoyo. Ante dudas, consulta siempre a tu veterinario.'],
   };
@@ -112,11 +119,13 @@ test('C4A-02: datos compartidos = literales legados de la base', () => {
   assert.equal(QUALITY_NOTICES.length, 2);
   assert.deepEqual(LEVELS.map((o) => ({ ico: o.icon, tx: o.title, sub: o.subtitle, v: o.code, lvl: o.code })), legacyMobility.OPT1);
   assert.deepEqual(HANDLING.map((o) => ({ ico: o.icon, tx: o.title, sub: o.subtitle, v: o.code, lvl: '' })), legacyMobility.OPT2);
-  const recombined = Object.fromEntries(Object.entries(RESULTS).map(([key, r]) => [key, {
-    ico: r.icon, badge: r.badge, tit: r.title, desc: r.description,
-    prods: r.plan.map((p, i) => ({ name: p.name, why: p.why, url: (AFFILIATE_URLS as Record<string, readonly string[]>)[key]![i] })),
-  }]));
-  assert.deepEqual(recombined, legacyMobility.RES);
+  assert.deepEqual(JSON.parse(JSON.stringify(RESULTS)), mobilityV11.results);
+  assert.deepEqual(JSON.parse(JSON.stringify(PALLIATIVE_ALERT)), mobilityV11.palliativeAlert);
+  // Mismas claves y mismo número de pasos que la base: las URLs de afiliado siguen alineadas por índice.
+  for (const [key, r] of Object.entries(RESULTS)) {
+    assert.equal(r.plan.length, legacyMobility.RES[key].prods.length, key);
+    assert.deepEqual([...(AFFILIATE_URLS as Record<string, readonly string[]>)[key]!], legacyMobility.RES[key].prods.map((p: { url: string }) => p.url), key);
+  }
   assert.equal(legacyMobility.SHOW_AFFILIATE_LINKS, false);
   assert.equal(PALLIATIVE_ALERT.items.length, 3);
 });

@@ -5,7 +5,13 @@
 // Opciones y resultados salen de src/lib/agent-tools/movilidad.ts.
 import { PALLIATIVE_ALERT } from '../../lib/agent-tools/movilidad.ts';
 
-const [, turning, pain] = PALLIATIVE_ALERT.items;
+// Separa el emoji inicial del texto: la paridad lee «icono + resto» (alertItemText).
+const splitIcon = (value: string) => {
+  const [icon = '', ...rest] = value.split(' ');
+  return { icon, text: rest.join(' ') };
+};
+const alertTitle = splitIcon(PALLIATIVE_ALERT.title);
+const alertItems = PALLIATIVE_ALERT.items.map((item) => ({ ...splitIcon(item.text), link: item.link }));
 const dogSvg = `<svg class="mt__dog" viewBox="0 0 260 150">
   <path class="mt__ramp" d="M150 132 L250 132 L250 92 Z" />
   <rect class="mt__rug" x="18" y="128" width="200" height="10" rx="5" />
@@ -47,7 +53,7 @@ const dogSvg = `<svg class="mt__dog" viewBox="0 0 260 150">
   <div class="mt__screen" id="m5s0">
     <p class="mt__kicker">Test gratuito · 2 preguntas · 30 segundos</p>
     <h2 class="mt__title">Encontremos la ayuda exacta para tu perro</h2>
-    <p class="mt__lead">Responde según cómo está hoy. Al final recibes un plan de acción claro y, si lo necesita, orientación sobre cuidados paliativos.</p>
+    <p class="mt__lead">Responde según cómo está hoy. Al final recibes un plan de acción claro y, si lo necesita, los cuidados diarios para cuando ya no se levanta solo.</p>
     <ul class="mt__levels">
       <li data-l="L"><span aria-hidden="true">🐾</span> Ligero</li>
       <li data-l="M"><span aria-hidden="true">🚶</span> Moderado</li>
@@ -82,15 +88,13 @@ const dogSvg = `<svg class="mt__dog" viewBox="0 0 260 150">
   <div class="mt__screen off" id="m5s3">
     <p class="sr-only" id="m5sr" role="status" aria-live="polite" aria-atomic="true"></p>
 
-    <!-- Alerta paliativa (visible solo nivel S). Texto = PALLIATIVE_ALERT del contrato. -->
+    <!-- Aviso de nivel severo: se genera desde PALLIATIVE_ALERT (mismo texto que la API y el MCP). -->
     <div class="mt__alert off" id="m5alert" role="alert">
-      <div class="mt__alert-title"><span>⚠️</span> Cuidado paliativo importante</div>
+      <div class="mt__alert-title"><span>{alertTitle.icon}</span> {alertTitle.text}</div>
       <ul>
-        <li><span aria-hidden="true">⚠️</span> Para la higiene: considera <strong>pañales caninos</strong> y <strong>empapadores absorbentes</strong> bajo su zona de descanso. Cámbialos con frecuencia para evitar dermatitis.</li>
-        <li><span aria-hidden="true">⚠️</span> <strong>Cambia su posición cada 4 horas</strong> si no puede moverse solo, para prevenir úlceras de decúbito.{' '}
-          <a href={new URL(turning.link!.url).pathname}>{turning.link!.label}</a></li>
-        <li><span aria-hidden="true">⚠️</span> Evalúa si hay <strong>dolor controlado</strong> con nuestra{' '}
-          <a href={new URL(pain.link!.url).pathname}>{pain.link!.label}</a></li>
+        {alertItems.map((item) => (
+          <li><span aria-hidden="true">{item.icon}</span> {item.text}{item.link && <>{' '}<a href={new URL(item.link.url).pathname}>{item.link.label}</a></>}</li>
+        ))}
       </ul>
     </div>
 

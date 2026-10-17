@@ -46,6 +46,40 @@ Fecha: 2026-10-16. PR #115.
 - Longevo: dormir mucho es parte de la etapa; cama cómoda y rutinas
   tranquilas.
 
+## Selector de movilidad (`/herramientas/selector-movilidad-perros-mayores`)
+
+Fecha: 2026-10-17. Rama `herramientas/movilidad-rediseno`.
+
+### 1. Se actualiza también el MCP para que todo sea coherente
+
+El propietario autorizó cambiar los datos compartidos
+(`src/lib/agent-tools/movilidad.ts`, versión 1.1) aunque eso cambie la
+respuesta de la API y el MCP. Detalle y evidencia en
+[`movilidad-revision-1.1.md`](movilidad-revision-1.1.md).
+
+### 2. El nivel severo es «apoyo total», no «cuidado paliativo»
+
+Una silla de ruedas puede devolverle el paseo a un perro: no es una señal de
+final. El aviso del nivel severo se llama «Cuidados diarios si ya no se
+levanta solo».
+
+### 3. Cambios de postura cada 2 a 4 horas
+
+Es la pauta habitual de enfermería veterinaria (no un dato de ensayo); la
+página lo dice así.
+
+### 4. Nada de enlaces de afiliado dentro de la app
+
+Los productos se enlazarán desde artículos propios (por ejemplo, comparativas
+de sillas de ruedas). La app solo enlazará a esos artículos.
+`SHOW_AFFILIATE_LINKS` sigue en `false`.
+
+### 5. Un mismo beagle senior en toda la app
+
+El hero y las ilustraciones del resultado usan el mismo perro, generado
+editando una imagen base (una escena por resultado), en lugar de dibujarlo en
+SVG.
+
 ## Cómo usar este archivo
 
 - **Al crear o rediseñar** una herramienta (`crear-herramienta-interactiva`):
