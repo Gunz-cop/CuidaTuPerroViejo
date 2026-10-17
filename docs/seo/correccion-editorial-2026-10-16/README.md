@@ -24,6 +24,7 @@ Se comprobó el archivo de 19 artículos. Se modificaron 16. Ojos/oídos conserv
 |Agresividad y ansiedad|Fefer: 5 respuestas a 90 dB, 2 no probados y 1 sin respuesta dentro del grupo de 8; corregido cuerpo/FAQ. Serie de 12 casos no demuestra «casi siempre dolor». Viñeta compuesta sin diagnóstico o recuperación ficticiamente documentados; encuesta de 318 no es ensayo de eficacia.|
 |Portada y herramientas|Retirada atribución de historia real de uñas sin procedencia. Selector de movilidad sin garantías, pautas universales o citas no identificables; textos visibles, esquema y API coherentes. Cuatro títulos del catálogo del asistente sincronizados.|
 |Páginas institucionales|Privacidad sin Blogger; formulario, asistente, votos/huella IP y almacenamiento local descritos contra código. Retirado panel que aparentaba controlar una analítica no incorporada. Responsabilidad editorial y contacto reales, sin credenciales o revisión veterinaria inventadas.|
+|Navegación por anclas|Restaurado el destino del enlace para saltar al contenido en once plantillas/páginas; añadido foco programático en esos destinos y cuatro destinos existentes. Restaurados siete encabezados del índice de alimentación. Cambios de atributos/etiquetas, sin alterar recomendaciones clínicas. Adenda técnica independiente.|
 |Imágenes responsive|Se detectaron cuatro hero sin variante de 400 px. Helper y tarjetas de portada anuncian solo variantes existentes; test y navegador confirman carga. No se editaron/generaron imágenes para simular pruebas clínicas.|
 
 Detalle verificable: [fuentes y correcciones](fuentes-y-correcciones.md), [contrato del alcance](contrato-correccion.md) y [anexo de imágenes/procedencia](auditoria-anexo-imagenes-procedencia-vacunas-r1.md).
@@ -51,6 +52,7 @@ El corrector no emitió su auditoría independiente. Un auditor separado leyó v
 - [Auditoría inicial del archivo](auditoria-fuentes-resto-r1.md) y [anexo](auditoria-anexo-imagenes-procedencia-vacunas-r1.md).
 - [Cierre editorial de 21 archivos](auditoria-final-editorial.md): apto dentro del alcance; documentos que alcanzaron R3 cerrados sin reinicio.
 - [Cierre adicional de portada, movilidad, catálogo y expectativas](auditoria-adicional-final.md), [rondas del selector](auditoria-movilidad-catalogo-r1.md).
+- [Adenda técnica de anclas y foco](auditoria-anclas-tecnica-r1.md): apta en R1; comprobación independiente de 38 HTML y 30 recorridos de teclado.
 - [Responsive](auditoria-srcset-r1.md) y [sincronización técnica del aviso ya aprobado](auditoria-paridad-aviso-r1.md), separada de las rondas clínicas.
 - [Formato de copias/hash de evidencia](formato-evidencia.md): snapshots terminan en `.txt` para que no se compilen como código.
 
@@ -63,6 +65,7 @@ El corrector no emitió su auditoría independiente. Un auditor separado leyó v
 |SEO offline y specs migración|Sin problemas; 7 specs comprobadas.|
 |Navegador Chromium|36 páginas a 1440 y 390 px: 72 visitas, 120 destinos/recursos internos con respuesta 200, sin imágenes fallidas ni desbordamiento horizontal.|
 |Herramientas|Seis recorridos: edad actualiza resultado/ARIA, HHHHHMM: 5 × 7 → 35 e invoca impresión, selector muestra resultado/alerta, en ambos anchos. No se alojó un PDF de prueba ni se enviaron mensajes externos.|
+|Anclas internas|953 comprobadas; sin destinos rotos ni IDs duplicados. Teclado y enlaces de sección comprobados en móvil y escritorio.|
 |Tipos|0 errores, 0 advertencias y 59 sugerencias; registro en `evidencias/check.log`.|
 
 Resultados reproducibles, capturas móvil/claro/oscuro, scripts y registro de versión en `evidencias/`. Los fallos responsive, aviso UI/API y formato de snapshots encontrados durante el trabajo se corrigieron; no se ocultan tras el primer build aprobado. La primera prueba de edad leyó un span vacío que usa contador CSS; se corrigió la prueba para observar CSS/ARIA, no se alteró la herramienta para satisfacerla.
@@ -76,3 +79,7 @@ Los criterios oficiales de Google enlazados exigen valor/contenido propio, naveg
 La trazabilidad detallada de fuentes, separación de historias/ilustraciones, política de dosis, límites de tres rondas y revisión editorial son controles del proyecto y recomendaciones de fiabilidad. No se presentan como cuotas oficiales de Google ni como requisitos de un número fijo de artículos, palabras, visitas o días de espera. La autoría institucional no se considera por sí sola una infracción. No se garantiza aprobación de AdSense ni se atribuyen a Google motivos internos que no conocemos.
 
 La repetición final está en `evidencias/integracion-main-*.log`. El primer intento de build/tipos encontró una ruta de configuración de Astro no escribible: se repitió con `ASTRO_TELEMETRY_DISABLED=1` y `XDG_CONFIG_HOME=/tmp/ctpv-config`. Las pruebas offline necesitan sockets locales y se repitieron con ese permiso. Estos fallos de entorno no se presentan como pruebas aprobadas.
+
+Adenda posterior al commit editorial `872517c`: navegación por anclas. Los informes clínicos y sus hashes corresponden a las versiones auditadas; esta adenda modifica únicamente atributos de foco/ID y etiquetas equivalentes, con revisión técnica separada. La CI del commit editorial aprobó sus criterios completos y Workers Builds; la actualización de navegación vuelve a ejecutar esas comprobaciones en el PR.
+
+La comprobación pública al cierre se conserva en `evidencias/publicacion-observada-cierre.json`; confirma por separado el estado servido en producción.

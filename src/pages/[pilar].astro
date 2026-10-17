@@ -326,7 +326,7 @@ const hideHeroCSS = heroImage
         </div>
       </section>
 
-      <main class="health-main" id="main-content">
+      <main tabindex="-1" class="health-main" id="main-content">
         <div class="health-byline"><ArticleByline dateModified={pilar.data.dateModified} /></div>
 
         <section class="health-signal-strip" aria-label="Cómo usar esta guía">
@@ -448,7 +448,7 @@ const hideHeroCSS = heroImage
         </div>
       </div>
 
-      <main class="mx-auto w-full max-w-4xl px-4 py-8 sm:py-12">
+      <main id="main-content" tabindex="-1" class="mx-auto w-full max-w-4xl px-4 py-8 sm:py-12">
         <div class="mb-6 border-b border-brand-border pb-6"><ArticleByline dateModified={pilar.data.dateModified} /></div>
         <div class="content-body prose dark:prose-invert max-w-none mb-12"><Content /></div>
         <AdBanner300x250 />
