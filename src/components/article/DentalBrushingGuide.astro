@@ -5,35 +5,37 @@ const steps = [
   { label: 'Prepara', title: 'Empieza antes de tocar la boca', image: 'reposo', alt: 'Ilustración de un beagle senior con la boca cerrada y sin sujeción.', text: 'Ten a mano un cepillo suave y pasta para perros. Busca un momento tranquilo y deja que se familiarice con ellos. No empieces cepillando si hay dolor.', cue: 'La adaptación puede necesitar varias sesiones. Estos pasos no son una cuenta atrás.', detail: false },
   { label: 'Levanta el labio', title: 'El labio sube; la mandíbula no se fuerza', image: 'labio', alt: 'Una mano levanta suavemente el labio de un beagle senior. Se ven el colmillo superior hacia la nariz y los premolares detrás.', text: 'Solo si acepta el contacto, levanta suavemente un lado del labio. Así puedes acceder a la cara externa de los dientes, sin forzar la apertura de la boca.', cue: 'Observa el dedo sobre el labio: no está dentro de la boca ni inmoviliza el hocico.', detail: true },
   { label: 'Cepilla por fuera', title: 'Poco a poco, sobre la cara externa', image: 'contacto', alt: 'Un cepillo pequeño contacta la cara externa de los premolares superiores, junto al borde de la encía, mientras otra mano eleva el labio.', text: 'Cuando tolere el cepillo, haz pasadas cortas y suaves por fuera de unos pocos dientes. Trabaja junto al borde de la encía, sin clavar las cerdas ni introducirlas debajo.', cue: 'La imagen muestra dónde apoyar el cepillo. No mide la presión ni sustituye una demostración veterinaria.', detail: true },
-  { label: 'Descansa', title: 'Retira el contacto y deja espacio', image: 'reposo', alt: 'El mismo beagle senior vuelve a aparecer sin manos ni cepillo junto a la boca.', text: 'Retira el cepillo y la mano. Premia la cooperación y termina antes de que se incomode. No hace falta completar toda la boca para acabar la sesión.', cue: 'Si aparta la cabeza o se resiste, para. Si hay dolor o sangrado, consulta antes de continuar.', detail: false },
+  { label: 'Descansa', title: 'Retira el contacto y deja espacio', image: 'reposo', alt: 'El mismo beagle senior vuelve a aparecer sin manos ni cepillo junto a la boca.', text: 'Retira el cepillo y la mano. Si aparta la cabeza o se resiste, para. Ante dolor o sangrado, consulta antes de continuar.', cue: 'Si aparta la cabeza o se resiste, para. Si hay dolor o sangrado, consulta antes de continuar.', detail: false },
 ];
 ---
 
-<section class="dental-guide" data-dental-guide aria-labelledby={`${uid}-title`}>
+<section class="dental-guide" data-dental-guide data-reader-atomic aria-labelledby={`${uid}-title`}>
   <header class="guide-header">
     <p class="eyebrow">Aprende el gesto · a tu ritmo</p>
-    <h3 id={`${uid}-title`}>Cepillado: mira dónde y cómo acercarte</h3>
+    <h3 id={`${uid}-title`}>Cepillado, paso a paso</h3>
     <p>No sujetes el hocico ni fuerces la boca. Si hay dolor o sangrado, pide valoración antes de empezar.</p>
   </header>
+  <div class="guide-player">
   <div class="guide-tabs" hidden role="group" aria-label="Elegir paso de la guía">
     {steps.map((step, i) => <button type="button" data-step={i} aria-pressed={i === 0} aria-controls={`${uid}-panel-${i}`}><span aria-hidden="true">{i + 1}</span>{step.label}</button>)}
+  </div>
+  <div class="guide-controls" hidden>
+    <div class="transport"><button type="button" data-action="prev" aria-label="Paso anterior">←</button><button type="button" data-action="play">Ver secuencia</button><button type="button" data-action="next" aria-label="Paso siguiente">→</button></div>
+    <p class="position" aria-live="polite" aria-atomic="true">Paso 1 de 4</p>
+    <p class="motion-note">Sin reproducción automática. Puedes avanzar con los botones de cada paso.</p>
   </div>
   <ol class="guide-panels">
     {steps.map((step, i) => <li id={`${uid}-panel-${i}`} data-panel={i}>
       <figure class="guide-figure" data-detail="false">
         <div class="image-window"><img src={`${base}beagle-senior-${step.image}-800-v1.webp`} srcset={`${base}beagle-senior-${step.image}-400-v1.webp 400w, ${base}beagle-senior-${step.image}-800-v1.webp 800w, ${base}beagle-senior-${step.image}-1200-v1.webp 1200w`} sizes="(min-width: 900px) 800px, 100vw" alt={step.alt} width="1200" height="800" loading="lazy" decoding="async" /></div>
         {step.detail && <button class="detail-button" type="button" data-detail-toggle aria-pressed="false" hidden>Ampliar zona de contacto</button>}
-        <figcaption>Ilustración generada con IA. El perro es representativo; no es un paciente documentado.</figcaption>
+        <figcaption>Ilustración con IA; no representa un paciente.</figcaption>
       </figure>
-      <div class="step-copy"><p class="step-number">Paso {i + 1} de 4</p><h4>{step.title}</h4><p>{step.text}</p><p class="visual-cue">{step.cue}</p></div>
+      <div class="step-copy"><p class="step-number">Paso {i + 1} de 4</p><h4>{step.title}</h4><p>{step.text}</p></div>
     </li>)}
   </ol>
-  <div class="guide-controls" hidden>
-    <div class="transport"><button type="button" data-action="prev" aria-label="Paso anterior">←</button><button type="button" data-action="play">Ver secuencia</button><button type="button" data-action="next" aria-label="Paso siguiente">→</button></div>
-    <p class="position" aria-live="polite" aria-atomic="true">Paso 1 de 4</p>
-    <p class="motion-note">Sin reproducción automática. Puedes avanzar con los botones de cada paso.</p>
   </div>
-  <footer class="guide-footer"><p><strong>Es una secuencia ilustrada.</strong> El tiempo en pantalla sirve para leer; no indica cuánto debe durar la maniobra. No representa una limpieza profesional ni elimina sarro.</p><p>Técnica de referencia: <a href="https://vcahospitals.com/know-your-pet/brushing-teeth-in-dogs">VCA: cepillado dental en perros</a>. Empieza de forma gradual y pide que tu veterinario te enseñe el gesto si tienes dudas.</p></footer>
+  <footer class="guide-footer"><details><summary>Consejos, límites y fuente</summary><ol>{steps.map(step => <li><strong>{step.label}:</strong> {step.cue}</li>)}</ol><p><strong>Es una secuencia ilustrada.</strong> El tiempo en pantalla sirve para leer; no indica cuánto debe durar la maniobra. No representa una limpieza profesional ni elimina sarro.</p><p>Técnica de referencia: <a href="https://vcahospitals.com/know-your-pet/brushing-teeth-in-dogs">VCA: cepillado dental en perros</a>. Empieza de forma gradual y pide que tu veterinario te enseñe el gesto si tienes dudas.</p></details></footer>
 </section>
 
 <script>
@@ -66,6 +68,7 @@ const steps = [
       this.preference();
     }
     private preference = () => {
+      this.root.dataset.reduced = String(this.reduced.matches);
       if (this.reduced.matches) this.stop();
       this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.disabled = this.reduced.matches;
       this.root.querySelector<HTMLElement>('.motion-note')!.textContent = this.reduced.matches ? 'Movimiento reducido: consulta los pasos manualmente, sin transiciones.' : 'Sin reproducción automática. Puedes avanzar con los botones de cada paso.';
@@ -131,11 +134,41 @@ const steps = [
   .dental-guide .motion-note { font-size:.75rem; text-align:center; }
   .guide-footer { padding:1rem 1.5rem; background:#e8eddf; border-top:1px solid #c8d2be; }
   .guide-footer p { font-size:.78rem; }
+  .guide-footer li { font-size:.8rem; line-height:1.45; margin:.65rem 0; }
   .dental-guide strong { color:#253c32!important; }
   .dental-guide a { color:#28523c!important; text-decoration:underline; text-underline-offset:3px; }
   .dental-guide [hidden] { display:none!important; }
   .dental-guide[data-enhanced="true"] [data-panel][data-active="false"] { display:none; }
+  .dental-guide summary { min-height:44px; display:list-item; align-content:center; cursor:pointer; color:#334d3e; font:650 .8rem/1.4 system-ui,sans-serif; padding:.65rem 0; }
+  .dental-guide details { margin:0!important; padding:0!important; border:0!important; border-radius:0!important; background:transparent!important; box-shadow:none!important; }
+  .dental-guide details summary { color:#334d3e!important; }
+  .dental-guide details:not([open]) > :not(summary) { display:none; }
+  .dental-guide summary:focus-visible { outline:3px solid #315c43; outline-offset:2px; }
   @media(max-width:480px) { .guide-header,.step-copy,.guide-controls,.guide-footer { padding-left:1rem; padding-right:1rem; } .guide-tabs { gap:.25rem; padding-left:.65rem; padding-right:.65rem; } .guide-tabs button { font-size:.7rem; padding:.55rem .2rem; } .dental-guide .detail-button { font-size:.7rem; top:.4rem; right:.4rem; } }
+  @media screen and (max-width:600px) {
+    .guide-header { padding:.75rem .85rem .55rem; }
+    .dental-guide .eyebrow { display:none; }
+    .dental-guide h3 { font-size:1.15rem; margin:0 0 .35rem; }
+    .guide-header p { font-size:.8rem; line-height:1.4; margin:.3rem 0 0; }
+    .guide-tabs { padding:0 .65rem .4rem; gap:.3rem; }
+    .guide-tabs button { min-height:44px; font-size:.75rem; padding:.35rem .2rem; }
+    .guide-tabs button span { display:none; }
+    .guide-controls { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:.4rem; padding:.4rem .65rem; border-top:0; border-bottom:1px solid #c8d2be; }
+    .transport { grid-template-columns:44px minmax(0,1fr) 44px; gap:.35rem; }
+    .dental-guide .position { font-size:.7rem; margin:0; max-width:3rem; }
+    .dental-guide .motion-note { display:none; }
+    .dental-guide[data-reduced="true"] .motion-note { display:block; grid-column:1/-1; margin:0; font-size:.7rem; }
+    .image-window { height:clamp(110px,20svh,200px); aspect-ratio:auto; }
+    .image-window img { object-position:56% 43%; }
+    .dental-guide .detail-button { top:auto; bottom:1.7rem; right:auto; left:.4rem; }
+    .dental-guide figcaption { padding:.25rem .7rem; font-size:.65rem; line-height:1.35; }
+    .step-copy { padding:.6rem .85rem .3rem; }
+    .dental-guide[data-enhanced="true"] .step-copy .step-number, .dental-guide[data-enhanced="true"] .step-copy h4 { display:none; }
+    .step-copy > p:not(.step-number) { font-size:.9rem; line-height:1.4; margin:0; }
+    .step-extra summary { font-size:.75rem; }
+    .guide-footer { padding:0 .85rem; }
+    .guide-footer summary { font-size:.75rem; }
+  }
   @media(prefers-reduced-motion:reduce) { .image-window img { transition:none; } }
   @media print { .dental-guide .guide-tabs,.dental-guide .guide-controls,.dental-guide .detail-button { display:none!important; } .dental-guide .guide-panels [data-panel] { display:block!important; } .image-window { max-height:250px; aspect-ratio:auto; } .image-window img { height:250px; object-fit:contain; transform:none!important; } .step-copy { break-inside:avoid; } }
 </style>
