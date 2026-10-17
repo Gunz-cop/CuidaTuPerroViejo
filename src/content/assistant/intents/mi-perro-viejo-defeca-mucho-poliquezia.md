@@ -3,7 +3,7 @@ kind: "intent"
 schemaVersion: "assistant-intent/v1"
 slug: "mi-perro-viejo-defeca-mucho-poliquezia"
 articleHref: "/salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia"
-title: "Mi perro viejo defeca mucho: causas reales de la poliquezia y cómo solucionarla"
+title: "Mi perro viejo defeca mucho: causas posibles y cuándo consultar"
 primaryIntents:
   - "defecación muy frecuente con heces relativamente formadas"
   - "perro mayor que pide salir muchas veces a hacer popó"
@@ -24,5 +24,5 @@ exclusions:
   - "estreñimiento, esfuerzo sin producir heces o abdomen doloroso"
 groundingSnippet: "La poliquezia describe un aumento de la frecuencia de defecación y puede presentarse con heces formadas; no es sinónimo de diarrea. La dieta, los extras, el peso, la colitis, los parásitos y otros problemas pueden contribuir. Un cambio que persiste merece revisión y un registro de frecuencia, aspecto de las heces y alimentación."
 fallbackAdvice: "Si tu perro mayor defeca muchas veces pero las heces parecen formadas, anota durante varios días la frecuencia, el aspecto, los premios y cualquier cambio de alimento. Evita sobras y cambios bruscos. Si aparece sangre, diarrea, vómitos, dolor, decaimiento o pérdida de peso, consulta con prioridad; si el patrón persiste, programa una revisión veterinaria."
-editorialVersion: "2026-08-18.1"
+editorialVersion: "2026-10-16.1"
 ---

@@ -3,7 +3,7 @@ kind: "intent"
 schemaVersion: "assistant-intent/v1"
 slug: "ulceras-presion-perros"
 articleHref: "/cuidados-paliativos-perros/ulceras-presion-perros"
-title: "Úlceras por Presión en Perros: El 'Protocolo Max' de Cura"
+title: "Úlceras por presión en perros: cuidado y señales de alarma"
 primaryIntents:
   - "llaga, escara o úlcera por presión en un perro inmóvil"
   - "prevenir heridas en codos, caderas o corvejones de un perro mayor"
@@ -24,5 +24,5 @@ exclusions:
   - "lesión que afecta a una persona o urgencia respiratoria"
 groundingSnippet: "Las úlceras por presión aparecen cuando el peso y el roce dañan la piel sobre prominencias óseas, especialmente en perros con movilidad muy limitada. La prevención combina una superficie de descanso adecuada, cambios prudentes de posición, piel limpia y seca y observación frecuente; una herida profunda, que empeora o que huele mal necesita valoración veterinaria."
 fallbackAdvice: "Revisa a diario codos, caderas y corvejones, mantén la piel limpia y seca y ofrece una superficie acolchada que no se deforme. No arranques costras ni apliques cremas o desinfectantes sin indicación veterinaria. Si la zona está abierta, negra, muy dolorida, huele mal o aumenta, pide atención veterinaria pronto."
-editorialVersion: "2026-08-18.1"
+editorialVersion: "2026-10-16.1"
 ---

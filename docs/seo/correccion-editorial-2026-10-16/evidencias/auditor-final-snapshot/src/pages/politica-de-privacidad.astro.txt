@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Política de privacidad | Cuida tu Perro Viejo';
+const description = 'Información sobre contacto, asistente, almacenamiento local y proveedores de Cuida tu Perro Viejo.';
+---
+<BaseLayout title={title} description={description} showAiAssistant={false}>
+  <main class="max-w-3xl mx-auto px-5 py-10 md:py-16 content-body">
+    <h1>Política de privacidad</h1>
+    <p>Actualizada: 16 de octubre de 2026.</p>
+    <h2>Responsable y contacto</h2>
+    <p>Este sitio informativo es gestionado por el proyecto Cuida tu Perro Viejo. Para consultas sobre tus datos o para solicitar acceso, rectificación o supresión, escribe a <a href="mailto:toxedocat@gmail.com">toxedocat@gmail.com</a>. También puedes usar <a href="/contacto">el formulario de contacto</a>. Describe tu petición sin enviar documentos de identidad u otros datos sensibles salvo que se te soliciten justificadamente.</p>
+    <h2>Formulario y correo</h2>
+    <p>El formulario recoge nombre, correo, asunto y mensaje para atender consultas. Utiliza comprobaciones contra abuso, incluido Cloudflare Turnstile. El sistema puede almacenar el mensaje, fecha, navegador, estado de revisión y una huella derivada de la dirección IP para seguridad y gestión; también puede remitir una notificación por correo al responsable.</p>
+    <p>Los mensajes se utilizan para gestionar la consulta y sus incidencias. Puedes solicitar su eliminación al correo indicado. No publiques en ellos información que no sea necesaria para tu solicitud. El sitio actual no ofrece comentarios públicos.</p>
+    <h2>Asistente con inteligencia artificial</h2>
+    <p>Si utilizas el asistente, la pregunta se envía al servidor y puede procesarse con Cloudflare Workers AI para orientar hacia contenido del sitio. Pueden generarse registros técnicos de funcionamiento y errores. Evita incluir datos personales o información sensible en las preguntas. El asistente puede equivocarse y no sustituye atención veterinaria.</p>
+    <h2>Preferencias y datos técnicos</h2>
+    <p>El navegador puede guardar preferencias de tema, el estado de las listas de cuidado de la portada y que ya has valorado un contenido. Esos datos locales no equivalen a un expediente clínico. Cuando valoras un contenido, el voto y la página a la que corresponde se envían al servidor. El sistema almacena el voto y una huella derivada de la dirección IP para controlar duplicaciones, y actualiza contadores agregados. El alojamiento y los servicios de seguridad también pueden tratar datos técnicos de las solicitudes para prestar y proteger el servicio.</p>
+    <p>Consulta la <a href="/politica-de-cookies">política de cookies y almacenamiento local</a> para gestionar los datos guardados en tu navegador. Eliminar datos locales puede borrar tus preferencias y listas.</p>
+    <h2>Proveedores y recursos externos</h2>
+    <p>Cloudflare presta servicios de alojamiento, seguridad, almacenamiento del formulario y procesamiento del asistente. El sitio incluye recursos de Google Fonts y enlaces a servicios externos. Al abrir un destino externo se aplican también sus políticas.</p>
+    <p>El sitio utiliza publicidad de Adsterra mediante recursos de terceros y puede incluir enlaces de afiliación. Estos proveedores pueden tratar identificadores y datos técnicos según sus propias políticas. La configuración publicitaria debe revisarse cuando cambien los servicios utilizados.</p>
+    <h2>Tus solicitudes y seguridad</h2>
+    <p>Puedes contactar para conocer el tratamiento de tus datos y ejercer los derechos que correspondan según tu jurisdicción, incluida la retirada del consentimiento cuando sea su base. Podemos necesitar información proporcionada para localizar el mensaje y verificar la solicitud. También puedes dirigirte a la autoridad de protección de datos competente.</p>
+    <p>Se aplican medidas de acceso y seguridad, pero no puede garantizarse que toda transmisión o almacenamiento esté libre de riesgos. El contenido está dirigido a personas adultas. Comunica cualquier envío de datos de un menor o incidente al correo de contacto.</p>
+    <h2>Cambios de esta política</h2>
+    <p>Los cambios relevantes se reflejarán en esta página con su fecha de actualización. Consultar esta información no equivale a consentir automáticamente tratamientos que requieran una decisión específica.</p>
+  </main>
+</BaseLayout>

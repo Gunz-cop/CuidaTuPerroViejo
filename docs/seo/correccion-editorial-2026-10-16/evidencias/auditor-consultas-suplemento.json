@@ -1,0 +1,947 @@
+[
+  {
+    "query": "TITLE:\"Under diagnosis of canine cognitive dysfunction\"",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Under+diagnosis+of+canine+cognitive+dysfunction%22&format=json&resultType=core",
+    "data": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "TITLE:\"Under diagnosis of canine cognitive dysfunction\"",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 25,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "20005753",
+            "source": "MED",
+            "pmid": "20005753",
+            "doi": "10.1016/j.tvjl.2009.11.007",
+            "title": "Under diagnosis of canine cognitive dysfunction: a cross-sectional survey of older companion dogs.",
+            "authorString": "Salvin HE, McGreevy PD, Sachdev PS, Valenzuela MJ.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Salvin HE",
+                  "lastName": "Salvin",
+                  "firstName": "Hannah E",
+                  "initials": "HE",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Faculty of Veterinary Science (B19), University of Sydney, Camperdown, NSW 2006, Australia. hsal8835@uni.sydney.edu.au"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "McGreevy PD",
+                  "lastName": "McGreevy",
+                  "firstName": "Paul D",
+                  "initials": "PD",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-7220-8378"
+                  }
+                },
+                {
+                  "fullName": "Sachdev PS",
+                  "lastName": "Sachdev",
+                  "firstName": "Perminder S",
+                  "initials": "PS",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-9595-3220"
+                  }
+                },
+                {
+                  "fullName": "Valenzuela MJ",
+                  "lastName": "Valenzuela",
+                  "firstName": "Michael J",
+                  "initials": "MJ",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-7162-6607"
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-7162-6607"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-7220-8378"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-9595-3220"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics"
+              ]
+            },
+            "journalInfo": {
+              "issue": "3",
+              "volume": "184",
+              "journalIssueId": 1727892,
+              "dateOfPublication": "2010 Jun",
+              "monthOfPublication": 6,
+              "yearOfPublication": 2010,
+              "journal": {
+                "medlineAbbreviation": "Vet J",
+                "title": "Veterinary journal (London, England : 1997)",
+                "essn": "1532-2971",
+                "issn": "1090-0233",
+                "nlmid": "9706281",
+                "isoabbreviation": "Vet J"
+              },
+              "printPublicationDate": "2010-06-01"
+            },
+            "pubYear": "2010",
+            "pageInfo": "277-281",
+            "abstractText": "Canine cognitive dysfunction (CCD) is a neurobehavioural syndrome affecting aged dogs. Using a large cross-sectional epidemiological study of older dogs, this study aimed to estimate the prevalence of CCD amongst community based dogs (mean age 11.67years; range 8-19.75) and to determine the rate of veterinary diagnosis amongst affected dogs. An 84-item questionnaire was used to obtain information across six behavioural domains. Of the eligible survey responses obtained (n=957) a randomly selected one-half (n=497) was used for this study. Using a provisional diagnosis based on 27 significant behavioural items, the prevalence rate of CCD was estimated to be 14.2%. This was in contrast with only 1.9% diagnosed with CCD by a veterinarian. There was an exponential increase in prevalence of CCD with age (R2=0.9435), but prevalence did not differ by breed size or between longevity groups. The prevalence rate of CCD reported here is consistent with previous findings, and further supports the contention that the majority of these dogs do not receive a formal diagnosis.",
+            "affiliation": "Faculty of Veterinary Science (B19), University of Sydney, Camperdown, NSW 2006, Australia. hsal8835@uni.sydney.edu.au",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print-Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Research Support, Non-U.S. Gov't",
+                "Journal Article"
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Animals"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dogs",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "PX",
+                        "qualifierName": "psychology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Humans"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dog Diseases",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "DI",
+                        "qualifierName": "diagnosis"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "EP",
+                        "qualifierName": "epidemiology"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PX",
+                        "qualifierName": "psychology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Prevalence"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Cluster Analysis"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Risk Factors"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Cross-Sectional Studies"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Behavior, Animal"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Cognition Disorders",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "DI",
+                        "qualifierName": "diagnosis"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "EP",
+                        "qualifierName": "epidemiology"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PX",
+                        "qualifierName": "psychology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Age Factors"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Aging",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "PX",
+                        "qualifierName": "psychology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Longevity"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Female"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Male"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Surveys and Questionnaires"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1016/j.tvjl.2009.11.007"
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "N",
+            "inPMC": "N",
+            "citedByCount": 79,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "N",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "Y",
+            "hasData": "N",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2010-06-14",
+            "dateOfCreation": "2009-12-17",
+            "dateOfRevision": "2015-11-19",
+            "electronicPublicationDate": "2009-12-14",
+            "firstPublicationDate": "2009-12-14",
+            "firstIndexDate": "2010-06-15",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "DOI:10.2460/ajvr.25.02.0053",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.2460%2Fajvr.25.02.0053&format=json&resultType=core",
+    "data": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "DOI:10.2460/ajvr.25.02.0053",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 25,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "40300622",
+            "source": "MED",
+            "pmid": "40300622",
+            "doi": "10.2460/ajvr.25.02.0053",
+            "title": "Recent advances in diagnostic and therapeutic strategies for canine cognitive dysfunction.",
+            "authorString": "Kim SH, Hao J.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Kim SH",
+                  "lastName": "Kim",
+                  "firstName": "Sang Hyun",
+                  "initials": "SH"
+                },
+                {
+                  "fullName": "Hao J",
+                  "lastName": "Hao",
+                  "firstName": "Jijun",
+                  "initials": "J",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-6769-9069"
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-6769-9069"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics"
+              ]
+            },
+            "journalInfo": {
+              "issue": "8",
+              "volume": "86",
+              "journalIssueId": 3987114,
+              "dateOfPublication": "2025 Aug",
+              "monthOfPublication": 8,
+              "yearOfPublication": 2025,
+              "journal": {
+                "medlineAbbreviation": "Am J Vet Res",
+                "title": "American journal of veterinary research",
+                "essn": "1943-5681",
+                "issn": "0002-9645",
+                "nlmid": "0375011",
+                "isoabbreviation": "Am J Vet Res"
+              },
+              "printPublicationDate": "2025-08-01"
+            },
+            "pubYear": "2025",
+            "pageInfo": "ajvr.25.02.0053",
+            "abstractText": "Canine cognitive dysfunction (CCD) is a common neurodegenerative disorder among geriatric dogs, characterized by disorientation, interaction changes, sleep-wake cycle disturbances, house soiling, activity level changes, and anxiety. Canine cognitive dysfunction is currently underdiagnosed due to the lack of an objective and reliable diagnostic tool, and treatment options are severely limited. Importantly, CCD shares common pathological hallmarks of human Alzheimer disease, such as \u03b2-amyloid accumulation, \u03c4 protein phosphorylation, neuronal loss, and neuroinflammation. \u03b2-Amyloid deposits in Alzheimer disease and CCD appear in 2 main forms: extracellular amyloid plaques, which disrupt synaptic function and contribute to neurotoxicity, and cerebral amyloid angiopathy, where \u03b2-amyloid accumulates in the walls of cerebral blood vessels. Cerebral amyloid angiopathy leads to vascular dysfunction, chronic hypoxia, microhemorrhages, and neuroinflammation, further exacerbating cognitive decline. Research into these shared pathologies offers potential therapeutic targets that could benefit both canine and human patients suffering from these neurodegenerative disorders. In this article, we review the latest understanding of CCD pathology and discuss new advancements in diagnostic and therapeutic options as well as the outlook of the CCD disorder.",
+            "publicationStatus": "epublish",
+            "language": "eng",
+            "pubModel": "Electronic-Print",
+            "pubTypeList": {
+              "pubType": [
+                "Review",
+                "Journal Article"
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Animals"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dogs"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Dog Diseases",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DI",
+                        "qualifierName": "diagnosis"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "TH",
+                        "qualifierName": "therapy"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Cognitive Dysfunction",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DI",
+                        "qualifierName": "diagnosis"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "TH",
+                        "qualifierName": "therapy"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "Alzheimer disease",
+                "Diagnosis",
+                "Neurodegenerative disorder",
+                "Amyloid Plaques",
+                "Canine Cognitive Dysfunction"
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.2460/ajvr.25.02.0053"
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "N",
+            "inPMC": "N",
+            "citedByCount": 6,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "N",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "Y",
+            "hasData": "N",
+            "license": "cc by-nc",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2025-08-01",
+            "dateOfCreation": "2025-04-29",
+            "dateOfRevision": "2025-08-01",
+            "electronicPublicationDate": "2025-04-29",
+            "firstPublicationDate": "2025-04-29",
+            "firstIndexDate": "2025-04-30",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "DOI:10.1002/9781119187240.ch16",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1002%2F9781119187240.ch16&format=json&resultType=core",
+    "data": {
+      "version": "6.9",
+      "hitCount": 0,
+      "request": {
+        "queryString": "DOI:10.1002/9781119187240.ch16",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 25,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": []
+      }
+    }
+  },
+  {
+    "query": "DOI:10.3389/fvets.2025.1717581",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.3389%2Ffvets.2025.1717581&format=json&resultType=core",
+    "data": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "DOI:10.3389/fvets.2025.1717581",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 25,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "41602626",
+            "source": "MED",
+            "pmid": "41602626",
+            "pmcid": "PMC12832543",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC12832543"
+              ]
+            },
+            "doi": "10.3389/fvets.2025.1717581",
+            "title": "Age-related evaluation of skin barrier parameters in retrievers.",
+            "authorString": "Lee EH, Yoo D, Lee JR, Kim JS, Han HJ, Hyun JE.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Lee EH",
+                  "lastName": "Lee",
+                  "firstName": "Eun-Hae",
+                  "initials": "EH",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Veterinary Internal Medicine, College of Veterinary Medicine, Konkuk University, Seoul, Republic of Korea."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Yoo D",
+                  "lastName": "Yoo",
+                  "firstName": "Dongkuk",
+                  "initials": "D",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0009-0007-3352-1303"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Veterinary Internal Medicine, College of Veterinary Medicine, Konkuk University, Seoul, Republic of Korea."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Lee JR",
+                  "lastName": "Lee",
+                  "firstName": "Ju-Ri",
+                  "initials": "JR",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Veterinary Internal Medicine, College of Veterinary Medicine, Konkuk University, Seoul, Republic of Korea."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Kim JS",
+                  "lastName": "Kim",
+                  "firstName": "Ji-Seon",
+                  "initials": "JS",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Veterinary Internal Medicine, College of Veterinary Medicine, Konkuk University, Seoul, Republic of Korea."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Han HJ",
+                  "lastName": "Han",
+                  "firstName": "Hyun-Jung",
+                  "initials": "HJ",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Veterinary Emergency and Critical Care, College of Veterinary Medicine, Konkuk University, Seoul, Republic of Korea."
+                      },
+                      {
+                        "affiliation": "KU Center for Animal Blood Medical Science, Konkuk University, Seoul, Republic of Korea."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Hyun JE",
+                  "lastName": "Hyun",
+                  "firstName": "Jae-Eun",
+                  "initials": "JE",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Veterinary Internal Medicine, College of Veterinary Medicine, Konkuk University, Seoul, Republic of Korea."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0009-0007-3352-1303"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics",
+                "supporting_data"
+              ]
+            },
+            "journalInfo": {
+              "volume": "12",
+              "journalIssueId": 3893250,
+              "dateOfPublication": "2025 ",
+              "monthOfPublication": 0,
+              "yearOfPublication": 2025,
+              "journal": {
+                "medlineAbbreviation": "Front Vet Sci",
+                "title": "Frontiers in veterinary science",
+                "essn": "2297-1769",
+                "issn": "2297-1769",
+                "isoabbreviation": "Front Vet Sci",
+                "nlmid": "101666658"
+              },
+              "printPublicationDate": "2025-01-01"
+            },
+            "pubYear": "2025",
+            "pageInfo": "1717581",
+            "abstractText": "<h4>Introduction</h4>A disruption in the skin barrier, which serves as the primary defense against external pathogens, can lead to skin disorders. In humans, various factors influence the skin barrier, including age and anatomical site. Research on the canine skin barrier is limited; this study evaluated its function across age groups and anatomical sites in healthy retrievers.<h4>Methods</h4>Forty-five healthy retrievers were included and divided into three age groups: young (2-3\u202fyears, <i>n</i>\u202f=\u202f15), middle-aged (4-6\u202fyears, <i>n</i>\u202f=\u202f15), and old (7-8\u202fyears, <i>n</i>\u202f=\u202f15). The skin barrier parameters, including pH, transepidermal water loss (TEWL), skin hydration, sebum, and surface temperature, were measured at the ear pinnae, axillae, and inguinal region. Statistical analyses were used to compare parameters by age and site and to assess correlations between them.<h4>Results</h4>Skin hydration significantly decreased with age at all anatomical sites. The pH and sebum levels varied by site, with the inguinal region showing the highest pH value and the pinnae showing the highest sebum and hydration levels. Negative correlations were found between TEWL and hydration and between TEWL and sebum. Meanwhile, positive correlations were observed between TEWL and temperature and between sebum and hydration.<h4>Conclusion</h4>Skin hydration decreased with age and varied by anatomical site. The pH and sebum levels showed site-specific differences. The significant correlations between parameters highlight physiological interactions in skin barrier function. These baseline data provide a useful reference for dermatological evaluation and a foundation for future studies on canine skin barrier physiology.",
+            "affiliation": "Department of Veterinary Internal Medicine, College of Veterinary Medicine, Konkuk University, Seoul, Republic of Korea.",
+            "publicationStatus": "epublish",
+            "language": "eng",
+            "pubModel": "Electronic-eCollection",
+            "pubTypeList": {
+              "pubType": [
+                "research-article",
+                "Journal Article"
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "Sebum",
+                "Transepidermal Water Loss",
+                "Skin Hydration",
+                "Skin Ph",
+                "Aging Effects",
+                "Retrievers",
+                "Canine Skin Barrier"
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.3389/fvets.2025.1717581"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC12832543"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC12832543?pdf=render"
+                }
+              ]
+            },
+            "isOpenAccess": "Y",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 0,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "Y",
+            "hasLabsLinks": "Y",
+            "hasData": "Y",
+            "license": "cc by",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "Y",
+            "tmAccessionTypeList": {
+              "accessionType": [
+                "doi"
+              ]
+            },
+            "dateOfCompletion": "2026-01-28",
+            "dateOfCreation": "2026-01-28",
+            "dateOfRevision": "2026-01-31",
+            "electronicPublicationDate": "2026-01-12",
+            "firstPublicationDate": "2026-01-12",
+            "firstIndexDate": "2026-01-29",
+            "fullTextReceivedDate": "2026-01-27",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "DOI:10.3389/fvets.2025.1634970",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.3389%2Ffvets.2025.1634970&format=json&resultType=core",
+    "data": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "DOI:10.3389/fvets.2025.1634970",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 25,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "40901065",
+            "source": "MED",
+            "pmid": "40901065",
+            "pmcid": "PMC12400514",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC12400514"
+              ]
+            },
+            "doi": "10.3389/fvets.2025.1634970",
+            "title": "Handling techniques and risk factors reported by veterinary professionals during dog examinations: a cross-sectional survey across Canada and the United States.",
+            "authorString": "Nakonechny L, Cisneros A, Moody CM, Stellato AC.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Nakonechny L",
+                  "lastName": "Nakonechny",
+                  "firstName": "Lindsay",
+                  "initials": "L",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0009-0000-2190-4066"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Animal and Food Sciences, Texas Tech University, Lubbock, TX, United States."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Cisneros A",
+                  "lastName": "Cisneros",
+                  "firstName": "Alissa",
+                  "initials": "A",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Animal and Food Sciences, Texas Tech University, Lubbock, TX, United States."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Moody CM",
+                  "lastName": "Moody",
+                  "firstName": "Carly M",
+                  "initials": "CM",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Animal Science, University of California, Davis, Davis, CA, United States."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Stellato AC",
+                  "lastName": "Stellato",
+                  "firstName": "Anastasia Chiara",
+                  "initials": "AC",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Animal and Food Sciences, Texas Tech University, Lubbock, TX, United States."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0009-0000-2190-4066"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics",
+                "supporting_data"
+              ]
+            },
+            "journalInfo": {
+              "volume": "12",
+              "journalIssueId": 3893250,
+              "dateOfPublication": "2025 ",
+              "monthOfPublication": 0,
+              "yearOfPublication": 2025,
+              "journal": {
+                "medlineAbbreviation": "Front Vet Sci",
+                "title": "Frontiers in veterinary science",
+                "essn": "2297-1769",
+                "issn": "2297-1769",
+                "nlmid": "101666658",
+                "isoabbreviation": "Front Vet Sci"
+              },
+              "printPublicationDate": "2025-01-01"
+            },
+            "pubYear": "2025",
+            "pageInfo": "1634970",
+            "abstractText": "<h4>Introduction</h4>Handling techniques are known to influence dog stress in veterinary settings; however, little is known about the current handling techniques applied to dogs during routine veterinary care or risk factors associated with their use. This cross-sectional survey aimed to assess common handling techniques used on calm, fearful, and aggressive dogs by veterinary professionals in Canada and the United States and identify risk factors for minimal and full-body restraint.<h4>Methods</h4>A convenience sample of veterinary professionals completed an online questionnaire. It collected information on participant characteristics and clinic experience (e.g., gender, Ten Item Personality Index, bite history, stress-reducing certification), participant professional quality of life (using the ProQOL scale), general examination practices (e.g., use of treats), perceptions and importance of examination factors (e.g., staff safety), and frequency of using 14 different dog handling techniques. Logistic regression models were used to identify risk factors for the use of minimal and full-body restraint on fearful and aggressive dogs.<h4>Results</h4>Participants (<i>N</i>\u202f=\u202f691) were veterinarians (39.2%, 271/691) and non-veterinarians (60.8%, 420/691), who routinely handle dogs during routine examinations in Canada (21.7%, 150/691) and the United States (79.1%, 541/691). Minimal restraint was reported to be used for calm (82.7%, 566/684), fearful (73.1%, 499/683), and aggressive (51.9%, 352/678) dogs during routine examinations. Full-body restraint was commonly reported to be used for calm dogs (58.5%, 400/684) and most frequently reported for fearful (63.9%, 434/679) and aggressive dogs (68.6%, 465/678). Handling decisions were influenced by factors including age, gender, practice type, graduation year, bite history, stress-reducing certification, and owner presence. Professionals prioritizing staff safety and using stress-reducing strategies (e.g., treats) were more likely to use minimal restraint, while owner presence and focus on examination completeness were linked to full-body restraint. Personality traits and professional well-being, particularly extraversion and secondary traumatic stress, also influenced handling choices.<h4>Discussion</h4>Handling techniques vary with dog behavior and are shaped by numerous factors, highlighting the complex relationship between personal and clinic-level influences on veterinary staff interactions with dog patients. These findings generate hypotheses for future observational research exploring factors that support stress-reducing techniques to improve dog welfare in clinical settings.",
+            "affiliation": "Department of Animal and Food Sciences, Texas Tech University, Lubbock, TX, United States.",
+            "publicationStatus": "epublish",
+            "language": "eng",
+            "pubModel": "Electronic-eCollection",
+            "pubTypeList": {
+              "pubType": [
+                "research-article",
+                "Journal Article"
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "Dog Aggression",
+                "Physical Restraint",
+                "Routine Examination",
+                "Dog Welfare",
+                "Dog Fear"
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.3389/fvets.2025.1634970"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC12400514"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC12400514?pdf=render"
+                }
+              ]
+            },
+            "commentCorrectionList": {
+              "commentCorrection": [
+                {
+                  "source": "MED",
+                  "id": "42058557",
+                  "reference": "Front Vet Sci. 2026 Apr 14;13:1845949. doi: 10.3389/fvets.2026.1845949.",
+                  "type": "Erratum in",
+                  "orderIn": 1
+                }
+              ]
+            },
+            "isOpenAccess": "Y",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 2,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "Y",
+            "hasLabsLinks": "Y",
+            "hasData": "Y",
+            "license": "cc by",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "Y",
+            "tmAccessionTypeList": {
+              "accessionType": [
+                "doi"
+              ]
+            },
+            "dateOfCompletion": "2025-09-15",
+            "dateOfCreation": "2025-09-03",
+            "dateOfRevision": "2026-04-30",
+            "electronicPublicationDate": "2025-08-18",
+            "firstPublicationDate": "2025-08-18",
+            "firstIndexDate": "2025-09-04",
+            "fullTextReceivedDate": "2025-11-29",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  }
+]

@@ -32,8 +32,8 @@ const secciones = [
   {
     titulo: "Qué fuentes usamos",
     parrafos: [
-      "Priorizamos estudios revisados por pares, series de casos clínicos publicadas, guías de asociaciones veterinarias y manuales de referencia. Los enlazamos directamente donde sostienen una afirmación concreta, no en un bloque de bibliografía al final.",
-      "No citamos a profesionales cuyas declaraciones no podamos documentar, ni atribuimos a “veterinarios” en general afirmaciones que en realidad son criterio editorial nuestro."
+      "Priorizamos estudios revisados por pares, series de casos clínicos publicadas, guías de asociaciones veterinarias y manuales de referencia. Comprobamos su identidad y, por separado, si respaldan la afirmación exacta. Añadimos citas junto al pasaje y una bibliografía para ampliar la consulta.",
+      "Distinguimos experiencias aportadas por su propietario, casos publicados y ejemplos ilustrativos. No añadimos resultados, conversaciones o recuperaciones sin procedencia documentada. Las imágenes ilustrativas, incluidas las generadas con IA cuando se indica, no se presentan como fotografías clínicas de pacientes."
     ]
   },
   {
@@ -46,7 +46,7 @@ const secciones = [
   {
     titulo: "Correcciones",
     parrafos: [
-      "Si detectas un error —clínico, factual o de fuente— escríbenos y lo revisamos. Cuando una corrección cambia el sentido de una recomendación, actualizamos el texto y la fecha de revisión."
+      "La responsabilidad editorial corresponde al proyecto Cuida tu Perro Viejo; el correo de contacto es toxedocat@gmail.com. Si detectas un error clínico, factual o de fuente, indica la página y el pasaje para revisarlo. Cuando una corrección cambia el sentido de una recomendación, actualizamos el texto y la fecha de revisión."
     ]
   },
   {
@@ -84,7 +84,7 @@ const secciones = [
     </div>
   </div>
 
-  <main class="max-w-3xl mx-auto px-5 py-10 md:py-14">
+  <main id="main-content" tabindex="-1" class="max-w-3xl mx-auto px-5 py-10 md:py-14">
     <div class="flex flex-col gap-10">
       {secciones.map((seccion) => (
         <section>

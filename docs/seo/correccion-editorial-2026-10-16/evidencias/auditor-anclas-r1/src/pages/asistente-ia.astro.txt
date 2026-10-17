@@ -1,0 +1,260 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Asistente para cuidar a tu perro mayor | Cuida tu Perro Viejo';
+const description = 'Cuéntanos qué le ocurre a tu perro senior y recibe orientación inicial junto con las guías más relevantes de nuestro sitio.';
+---
+
+<BaseLayout title={title} description={description} showAiAssistant={false}>
+  <script slot="head" type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Asistente de bienestar para perros mayores",
+      "url": "https://cuidatuperroviejo.com/asistente-ia",
+      "description": "Orientación inicial y recomendaciones de lectura sobre el bienestar de perros mayores.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "All",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Cuida tu Perro Viejo",
+        "url": "https://cuidatuperroviejo.com/"
+      }
+    }
+  </script>
+
+  <main tabindex="-1" id="main-content" class="mx-auto w-full max-w-5xl flex-1 px-4 pb-14 pt-6 sm:px-6 sm:pb-20 sm:pt-10 lg:px-8">
+    <header class="mx-auto max-w-3xl text-left sm:text-center">
+      <div class="mb-4 inline-flex min-h-9 items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-primary/10 px-3 text-xs font-bold uppercase tracking-[0.12em] text-brand-primary">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a5 5 0 0 0-5 5v1a4 4 0 0 1-2 3.46V14h14v-1.54A4 4 0 0 1 17 9V8a5 5 0 0 0-5-5Z"></path>
+          <path d="M9.5 18a2.5 2.5 0 0 0 5 0"></path>
+        </svg>
+        Orientación y guías del sitio
+      </div>
+      <h1 class="font-display text-3xl font-extrabold leading-[1.08] tracking-[-0.035em] text-brand-text sm:text-5xl">
+        Cuéntanos qué le pasa a tu perro mayor
+      </h1>
+      <p class="mt-4 max-w-2xl text-base leading-7 text-brand-muted sm:mx-auto sm:text-lg">
+        Te damos una orientación inicial y, si ya tenemos una guía sobre el tema, te llevamos directamente a ella.
+      </p>
+    </header>
+
+    <section class="mx-auto mt-7 max-w-3xl overflow-hidden rounded-[1.75rem] border border-brand-border bg-brand-card shadow-[0_18px_50px_rgba(25,50,32,0.08)] dark:shadow-[0_20px_55px_rgba(0,0,0,0.25)] sm:mt-10" aria-labelledby="assistant-title">
+      <div class="border-b border-brand-border px-5 py-5 sm:px-7 sm:py-6">
+        <div class="flex items-center gap-3">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-primary text-white dark:text-brand-bg" aria-hidden="true">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="7.2" cy="8" r="2.2"></circle><circle cx="16.8" cy="8" r="2.2"></circle><circle cx="4.8" cy="12.7" r="1.9"></circle><circle cx="19.2" cy="12.7" r="1.9"></circle><path d="M12 11.2c-3.5 0-6.4 2.7-6.4 6 0 2 1.5 3.2 3.4 3.2 1.1 0 2-.5 3-.5s1.9.5 3 .5c1.9 0 3.4-1.2 3.4-3.2 0-3.3-2.9-6-6.4-6Z"></path>
+            </svg>
+          </span>
+          <div class="min-w-0">
+            <h2 id="assistant-title" class="font-display text-lg font-bold tracking-tight text-brand-text">¿Qué has notado?</h2>
+            <p class="mt-0.5 text-sm leading-5 text-brand-muted">Describe desde cuándo ocurre y qué ha cambiado.</p>
+          </div>
+        </div>
+
+        <form id="assistant-form" class="mt-5" novalidate>
+          <label for="assistant-question" class="sr-only">Consulta sobre tu perro mayor</label>
+          <textarea
+            id="assistant-question"
+            name="question"
+            rows="3"
+            maxlength="500"
+            required
+            placeholder="Ej.: Mi perro de 13 años se resbala y le cuesta levantarse desde hace una semana…"
+            class="min-h-[7.5rem] w-full resize-y rounded-2xl border border-brand-border bg-brand-bg px-4 py-3.5 text-base leading-6 text-brand-text outline-none transition-colors placeholder:text-brand-muted/70 focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/15"
+            aria-describedby="question-help question-error"
+          ></textarea>
+          <div class="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p id="question-help" class="text-xs leading-5 text-brand-muted">No incluyas nombres, teléfonos ni otros datos personales.</p>
+            <button id="assistant-submit" type="submit" class="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl bg-brand-primary px-5 text-sm font-bold text-white shadow-sm transition-colors hover:bg-brand-primary-hover focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/25 disabled:cursor-wait disabled:opacity-65 dark:text-brand-bg sm:w-auto">
+              <span id="submit-label">Obtener orientación</span>
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+            </button>
+          </div>
+          <p id="question-error" class="mt-3 hidden text-sm font-semibold text-red-700 dark:text-red-300" role="alert"></p>
+        </form>
+
+        <div class="mt-5 border-t border-brand-border pt-4">
+          <p class="text-xs font-bold uppercase tracking-[0.12em] text-brand-muted">Prueba con una consulta</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <button type="button" class="suggestion min-h-11 rounded-full border border-brand-border bg-brand-bg px-4 text-left text-sm font-semibold text-brand-text transition-colors hover:border-brand-primary/40 hover:bg-brand-primary/10 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Le cuesta levantarse</button>
+            <button type="button" class="suggestion min-h-11 rounded-full border border-brand-border bg-brand-bg px-4 text-left text-sm font-semibold text-brand-text transition-colors hover:border-brand-primary/40 hover:bg-brand-primary/10 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Se desorienta de noche</button>
+            <button type="button" class="suggestion min-h-11 rounded-full border border-brand-border bg-brand-bg px-4 text-left text-sm font-semibold text-brand-text transition-colors hover:border-brand-primary/40 hover:bg-brand-primary/10 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Llora cuando se queda solo</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="assistant-result" class="hidden px-5 py-6 sm:px-7 sm:py-7" aria-live="polite" aria-busy="false">
+        <div id="assistant-loading" class="hidden items-center gap-3 text-sm font-semibold text-brand-muted">
+          <span class="assistant-spinner h-5 w-5 rounded-full border-2 border-brand-primary/25 border-t-brand-primary" aria-hidden="true"></span>
+          Revisando nuestras guías…
+        </div>
+
+        <div id="assistant-response" class="hidden">
+          <p class="text-xs font-bold uppercase tracking-[0.12em] text-brand-primary">Orientación inicial</p>
+          <p id="assistant-answer" class="mt-3 whitespace-pre-line text-base leading-7 text-brand-text"></p>
+
+          <div id="recommendations-section" class="mt-7 hidden border-t border-brand-border pt-6">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary" aria-hidden="true">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path></svg>
+              </span>
+              <div>
+                <h3 class="font-display text-lg font-bold text-brand-text">Tenemos contenido sobre este tema</h3>
+                <p class="mt-1 text-sm leading-5 text-brand-muted">Estas recomendaciones salen de los artículos publicados en el sitio.</p>
+              </div>
+            </div>
+            <div id="recommendations-list" class="mt-4 grid gap-3"></div>
+          </div>
+
+          <p id="no-recommendations" class="mt-6 hidden rounded-2xl border border-brand-border bg-brand-bg p-4 text-sm leading-6 text-brand-muted">
+            Aún no tenemos una guía específica para esta consulta. La orientación anterior es general y no sustituye una revisión veterinaria.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="mx-auto mt-5 flex max-w-3xl items-start gap-3 rounded-2xl border border-amber-500/25 bg-amber-500/10 px-4 py-3.5 text-sm leading-6 text-brand-text" aria-label="Aviso veterinario">
+      <svg class="mt-0.5 h-5 w-5 shrink-0 text-amber-700 dark:text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 2.9 1.8 17a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 2.9a2 2 0 0 0-3.4 0Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+      <p><strong>Esto no es un diagnóstico.</strong> Si hay dificultad para respirar, colapso, convulsiones, sangrado abundante o dolor intenso, contacta a un veterinario de urgencia.</p>
+    </aside>
+  </main>
+</BaseLayout>
+
+<style>
+  @keyframes assistant-spin { to { transform: rotate(360deg); } }
+  .assistant-spinner { animation: assistant-spin 0.8s linear infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .assistant-spinner { animation-duration: 1.8s; }
+  }
+</style>
+
+<script>
+  type Recommendation = {
+    title: string;
+    description: string;
+    href: string;
+    pillar: string;
+  };
+
+  const form = document.getElementById('assistant-form') as HTMLFormElement | null;
+  const question = document.getElementById('assistant-question') as HTMLTextAreaElement | null;
+  const submit = document.getElementById('assistant-submit') as HTMLButtonElement | null;
+  const submitLabel = document.getElementById('submit-label');
+  const error = document.getElementById('question-error');
+  const result = document.getElementById('assistant-result');
+  const loading = document.getElementById('assistant-loading');
+  const response = document.getElementById('assistant-response');
+  const answer = document.getElementById('assistant-answer');
+  const recommendationsSection = document.getElementById('recommendations-section');
+  const recommendationsList = document.getElementById('recommendations-list');
+  const noRecommendations = document.getElementById('no-recommendations');
+
+  const setLoading = (isLoading: boolean) => {
+    if (!submit || !submitLabel || !result || !loading || !response) return;
+    submit.disabled = isLoading;
+    submitLabel.textContent = isLoading ? 'Consultando…' : 'Obtener orientación';
+    result.classList.remove('hidden');
+    result.setAttribute('aria-busy', String(isLoading));
+    loading.classList.toggle('hidden', !isLoading);
+    loading.classList.toggle('flex', isLoading);
+    response.classList.toggle('hidden', isLoading);
+  };
+
+  const renderRecommendations = (items: Recommendation[]) => {
+    if (!recommendationsList || !recommendationsSection || !noRecommendations) return;
+    recommendationsList.replaceChildren();
+    recommendationsSection.classList.toggle('hidden', items.length === 0);
+    noRecommendations.classList.toggle('hidden', items.length > 0);
+
+    items.forEach((item) => {
+      const link = document.createElement('a');
+      link.href = item.href;
+      link.className = 'group flex min-h-20 items-center justify-between gap-4 rounded-2xl border border-brand-border bg-brand-bg p-4 transition-colors hover:border-brand-primary/40 hover:bg-brand-primary/10 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20';
+
+      const copy = document.createElement('span');
+      copy.className = 'min-w-0';
+      const title = document.createElement('strong');
+      title.className = 'block text-sm font-bold leading-5 text-brand-text group-hover:text-brand-primary';
+      title.textContent = item.title;
+      const description = document.createElement('span');
+      description.className = 'mt-1 block text-xs leading-5 text-brand-muted';
+      description.textContent = item.description;
+      // appendChild y no append: @cloudflare/workers-types declara su propio
+      // `interface Element` (el de HTMLRewriter, con `append(content: string)`)
+      // que se fusiona con el del DOM y rechaza pasarle nodos. Revisar cuando
+      // cambie el adaptador.
+      copy.appendChild(title);
+      copy.appendChild(description);
+
+      const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      icon.setAttribute('viewBox', '0 0 24 24');
+      icon.setAttribute('fill', 'none');
+      icon.setAttribute('stroke', 'currentColor');
+      icon.setAttribute('stroke-width', '2');
+      icon.setAttribute('aria-hidden', 'true');
+      icon.setAttribute('class', 'h-5 w-5 shrink-0 text-brand-primary');
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', 'M5 12h14m-6-6 6 6-6 6');
+      path.setAttribute('stroke-linecap', 'round');
+      path.setAttribute('stroke-linejoin', 'round');
+      icon.appendChild(path);
+      link.appendChild(copy);
+      link.appendChild(icon);
+      recommendationsList.appendChild(link);
+    });
+  };
+
+  const ask = async (value: string) => {
+    const cleanQuestion = value.trim();
+    if (!question || !error || !answer) return;
+
+    error.classList.add('hidden');
+    if (cleanQuestion.length < 3) {
+      error.textContent = 'Cuéntanos un poco más para poder orientarte.';
+      error.classList.remove('hidden');
+      question.focus();
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const request = await fetch('/api/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: cleanQuestion }),
+      });
+      const data = await request.json() as {
+        answer?: string;
+        error?: string;
+        recommendations?: unknown;
+      };
+      if (!request.ok) throw new Error(data.error || 'No pudimos procesar la consulta.');
+
+      answer.textContent = data.answer || 'No conseguimos preparar una orientación. Inténtalo de nuevo en unos segundos.';
+      renderRecommendations(Array.isArray(data.recommendations) ? data.recommendations : []);
+      setLoading(false);
+      result?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+    } catch (requestError) {
+      setLoading(false);
+      error.textContent = requestError instanceof Error ? requestError.message : 'No pudimos conectar. Inténtalo de nuevo.';
+      error.classList.remove('hidden');
+      result?.classList.add('hidden');
+    }
+  };
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (question) ask(question.value);
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('.suggestion').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!question) return;
+      question.value = button.textContent?.trim() || '';
+      ask(question.value);
+    });
+  });
+</script>

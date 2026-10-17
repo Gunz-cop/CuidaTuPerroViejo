@@ -1,0 +1,13 @@
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
+
+/** Used by prerendered Astro templates: advertise only thumbnails present at build time. */
+export function buildSrcset(src: string | undefined): string {
+  if (!src) return '';
+
+  const base = src.replace(/\.webp$/i, '');
+  const thumbnail = `${base}-400.webp`;
+  return existsSync(resolve('public', `.${thumbnail}`))
+    ? `${thumbnail} 400w, ${src} 1200w`
+    : `${src} 1200w`;
+}

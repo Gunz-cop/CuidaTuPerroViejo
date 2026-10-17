@@ -81,6 +81,10 @@ function oracleQuality(values: number[]) {
   };
 }
 
+// Editorial wording was independently reviewed on 2026-10-16. Preserve the
+// legacy decision oracle while making the deliberate copy changes explicit.
+const editorialMobility = JSON.parse(readFileSync(new URL('./fixtures/f4a/editorial-2026-10-16.json', import.meta.url), 'utf8'));
+
 const LEVEL_CODES = { light: 'L', moderate: 'M', severe: 'S' } as const;
 const HANDLING_CODES = { calm: 'A', stressed: 'B' } as const;
 function oracleMobility(level: keyof typeof LEVEL_CODES, handling: keyof typeof HANDLING_CODES) {
@@ -88,12 +92,12 @@ function oracleMobility(level: keyof typeof LEVEL_CODES, handling: keyof typeof 
   const r = legacyMobility.RES[key];
   return {
     schemaVersion: 'agent-api/1',
-    tool: { toolId: 'movilidad', documentId: 'tool--movilidad', name: 'Selector de Ayudas de Movilidad para Perros Mayores', canonicalUrl: `${SITE}/herramientas/selector-movilidad-perros-mayores`, softwareVersion: '1.0', lastReviewed: '2026-05-14' },
-    input: { level, handling }, resultKey: key, icon: r.ico, badge: r.badge, title: r.tit, description: r.desc,
-    plan: r.prods.map((p: { name: string; why: string }) => ({ name: p.name, why: p.why })),
+    tool: { toolId: 'movilidad', documentId: 'tool--movilidad', name: 'Selector de Ayudas de Movilidad para Perros Mayores', canonicalUrl: `${SITE}/herramientas/selector-movilidad-perros-mayores`, softwareVersion: '1.0', lastReviewed: editorialMobility.lastReviewed },
+    input: { level, handling }, resultKey: key, icon: r.ico, badge: r.badge, title: r.tit, description: editorialMobility.results[key].description,
+    plan: r.prods.map((p: { name: string; why: string }, i: number) => ({ name: p.name, why: editorialMobility.results[key].why[i] })),
     palliativeAlert: level === 'severe' ? JSON.parse(readFileSync(new URL('../../docs/agent-readiness/evidencia/f4a/contratos/ejemplo-movilidad-200.json', import.meta.url), 'utf8')).palliativeAlert : null,
     guide: { label: '📖 Leer la guía completa de movilidad y dolor →', url: `${SITE}/movilidad-dolor-perros-mayores` },
-    notices: ['Esta recomendación es una guía de apoyo. Ante dudas, consulta siempre a tu veterinario.'],
+    notices: editorialMobility.notices,
   };
 }
 
@@ -116,7 +120,12 @@ test('C4A-02: datos compartidos = literales legados de la base', () => {
     ico: r.icon, badge: r.badge, tit: r.title, desc: r.description,
     prods: r.plan.map((p, i) => ({ name: p.name, why: p.why, url: (AFFILIATE_URLS as Record<string, readonly string[]>)[key]![i] })),
   }]));
-  assert.deepEqual(recombined, legacyMobility.RES);
+  const expectedMobility = Object.fromEntries(Object.entries(legacyMobility.RES).map(([key, entry]) => {
+    const r = entry as { prods: Array<Record<string, unknown>> };
+    return [key, { ...r, desc: editorialMobility.results[key].description,
+      prods: r.prods.map((product, i) => ({ ...product, why: editorialMobility.results[key].why[i] })) }];
+  }));
+  assert.deepEqual(recombined, expectedMobility);
   assert.equal(legacyMobility.SHOW_AFFILIATE_LINKS, false);
   assert.equal(PALLIATIVE_ALERT.items.length, 3);
 });

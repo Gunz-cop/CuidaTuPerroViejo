@@ -1,0 +1,3206 @@
+[
+  {
+    "query": "TITLE:\"Diagnosis of spontaneous canine hyperadrenocorticism\"",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Diagnosis+of+spontaneous+canine+hyperadrenocorticism%22&format=json&resultType=core&pageSize=5",
+    "response": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "TITLE:\"Diagnosis of spontaneous canine hyperadrenocorticism\"",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 5,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "24112317",
+            "source": "MED",
+            "pmid": "24112317",
+            "doi": "10.1111/jvim.12192",
+            "title": "Diagnosis of spontaneous canine hyperadrenocorticism: 2012 ACVIM consensus statement (small animal).",
+            "authorString": "Behrend EN, Kooistra HS, Nelson R, Reusch CE, Scott-Moncrieff JC.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Behrend EN",
+                  "lastName": "Behrend",
+                  "firstName": "E N",
+                  "initials": "EN",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Clinical Sciences, College of Veterinary Medicine, Auburn University, Auburn, AL."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Kooistra HS",
+                  "lastName": "Kooistra",
+                  "firstName": "H S",
+                  "initials": "HS"
+                },
+                {
+                  "fullName": "Nelson R",
+                  "lastName": "Nelson",
+                  "firstName": "R",
+                  "initials": "R"
+                },
+                {
+                  "fullName": "Reusch CE",
+                  "lastName": "Reusch",
+                  "firstName": "C E",
+                  "initials": "CE"
+                },
+                {
+                  "fullName": "Scott-Moncrieff JC",
+                  "lastName": "Scott-Moncrieff",
+                  "firstName": "J C",
+                  "initials": "JC"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics"
+              ]
+            },
+            "journalInfo": {
+              "issue": "6",
+              "volume": "27",
+              "journalIssueId": 2138829,
+              "dateOfPublication": "2013 Nov-Dec",
+              "monthOfPublication": 0,
+              "yearOfPublication": 2013,
+              "journal": {
+                "medlineAbbreviation": "J Vet Intern Med",
+                "title": "Journal of veterinary internal medicine",
+                "essn": "1939-1676",
+                "issn": "0891-6640",
+                "nlmid": "8708660",
+                "isoabbreviation": "J Vet Intern Med"
+              },
+              "printPublicationDate": "2013-11-01"
+            },
+            "pubYear": "2013",
+            "pageInfo": "1292-1304",
+            "abstractText": "This report offers a consensus opinion on the diagnosis of spontaneous canine hyperadrenocorticism. The possibility that a patient has hyperadrenocorticism is based on the history and physical examination. Endocrine tests should be performed only when clinical signs consistent with HAC are present. None of the biochemical screening or differentiating tests for hyperadrenocorticism are perfect. Imaging can also play a role. Awareness of hyperadrenocorticism has heightened over time. Thus, case presentation is more subtle. Due to the changes in manifestations as well as test technology the Panel believes that references ranges should be reestablished. The role of cortisol precursors and sex hormones in causing a syndrome of occult hyperadrenocorticism remains unclear.",
+            "affiliation": "Department of Clinical Sciences, College of Veterinary Medicine, Auburn University, Auburn, AL.",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print-Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Consensus Statement",
+                "Journal Article"
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Animals"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dogs"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Adrenocortical Hyperfunction",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DI",
+                        "qualifierName": "diagnosis"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PP",
+                        "qualifierName": "physiopathology"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "VE",
+                        "qualifierName": "veterinary"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dog Diseases",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DI",
+                        "qualifierName": "diagnosis"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "PP",
+                        "qualifierName": "physiopathology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Hydrocortisone",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "ME",
+                        "qualifierName": "metabolism"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Consensus"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Female"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Male"
+                }
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "Adrenal cortex",
+                "Dog",
+                "pituitary",
+                "Cushing's Syndrome"
+              ]
+            },
+            "chemicalList": {
+              "chemical": [
+                {
+                  "name": "Hydrocortisone",
+                  "registryNumber": "WI4X0X7BPJ"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1111/jvim.12192"
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "N",
+            "inPMC": "N",
+            "citedByCount": 139,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "N",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "Y",
+            "hasData": "N",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2014-10-22",
+            "dateOfCreation": "2013-10-12",
+            "dateOfRevision": "2026-01-28",
+            "electronicPublicationDate": "2013-09-20",
+            "firstPublicationDate": "2013-09-20",
+            "firstIndexDate": "2013-10-12",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "TITLE:\"Cortisol, aldosterone, cortisol precursor\"",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Cortisol%2C+aldosterone%2C+cortisol+precursor%22&format=json&resultType=core&pageSize=5",
+    "response": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "TITLE:\"Cortisol, aldosterone, cortisol precursor\"",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 5,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "16233969",
+            "source": "MED",
+            "pmid": "16233969",
+            "doi": "10.1016/j.domaniend.2005.09.004",
+            "title": "Cortisol, aldosterone, cortisol precursor, androgen and endogenous ACTH concentrations in dogs with pituitary-dependant hyperadrenocorticism treated with trilostane.",
+            "authorString": "Sieber-Ruckstuhl NS, Boretti FS, Wenger M, Maser-Gluth C, Reusch CE.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Sieber-Ruckstuhl NS",
+                  "lastName": "Sieber-Ruckstuhl",
+                  "firstName": "N S",
+                  "initials": "NS",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Clinic for Small Animal Internal Medicine, Vetsuisse Faculty University of Zurich, Winterthurerstrasse 260, 8057 Zurich, Switzerland. nsieber@vetclinics.unizh.ch"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Boretti FS",
+                  "lastName": "Boretti",
+                  "firstName": "F S",
+                  "initials": "FS"
+                },
+                {
+                  "fullName": "Wenger M",
+                  "lastName": "Wenger",
+                  "firstName": "M",
+                  "initials": "M"
+                },
+                {
+                  "fullName": "Maser-Gluth C",
+                  "lastName": "Maser-Gluth",
+                  "firstName": "C",
+                  "initials": "C"
+                },
+                {
+                  "fullName": "Reusch CE",
+                  "lastName": "Reusch",
+                  "firstName": "C E",
+                  "initials": "CE"
+                }
+              ]
+            },
+            "journalInfo": {
+              "issue": "1",
+              "volume": "31",
+              "journalIssueId": 1326264,
+              "dateOfPublication": "2006 Jul",
+              "monthOfPublication": 7,
+              "yearOfPublication": 2006,
+              "journal": {
+                "medlineAbbreviation": "Domest Anim Endocrinol",
+                "title": "Domestic animal endocrinology",
+                "essn": "1879-0054",
+                "issn": "0739-7240",
+                "nlmid": "8505191",
+                "isoabbreviation": "Domest Anim Endocrinol"
+              },
+              "printPublicationDate": "2006-07-01"
+            },
+            "pubYear": "2006",
+            "pageInfo": "63-75",
+            "abstractText": "Trilostane is thought to be a competitive inhibitor of the 3beta-hydroxysteroid dehydrogenase (3beta-HSD), an essential enzyme system for the synthesis of cortisol, aldosterone and androstenedione. Due to its reliable clinical efficacy, trilostane is increasingly used to treat dogs with pituitary-dependant hyperadrenocorticism (PDH). The objective of our study was to investigate the effect of trilostane on precursor concentrations located before (17alpha-OH-pregnenolone, dehydroepiandrostenedione) and after (17alpha-OH-progesterone, androstenedione, 11-deoxycortisol, 21-deoxycortisol) the proposed enzyme inhibition, on end products of steroid biosynthesis (cortisol and aldosterone) and on endogenous adrenocorticotrophic hormone (ACTH) concentrations in dogs with PDH. Hormones of the steroid biosynthesis pathway were evaluated in 15 dogs before and 1h after injection of synthetic ACTH prior to (t(0)), in weeks 1-2 (t(1)) and in weeks 3-7 (t(2)) of trilostane treatment. Endogenous ACTH concentrations were measured at the same time points before performing the ACTH stimulation test. During trilostane treatment baseline and post-stimulation cortisol concentrations decreased significantly. Baseline serum aldosterone levels showed a significant increase; post-stimulation values decreased. Baseline and post-stimulation 17alpha-OH-pregnenolone and dehydroepiandrostenedione concentrations increased significantly. 17alpha-OH-progesterone and androstenedione levels did not change. Post-stimulation 21-deoxycortisol concentrations decreased significantly, baseline 11-deoxycortisol concentrations increased significantly. Endogenous ACTH levels showed a significant increase. The significant increase in 17alpha-OH-pregnenolone and dehydroepiandrostenedione concentrations confirms an inhibitory effect of trilostane on the 3beta-HSD. Since 17alpha-OH-progesterone concentrations did not change, but cortisol concentrations markedly decreased, trilostane seems to influence additional enzymes of the hormone cascade, like the 11beta-hydroxylase and possibly the 11beta-hydroxysteroid dehydrogenase.",
+            "affiliation": "Clinic for Small Animal Internal Medicine, Vetsuisse Faculty University of Zurich, Winterthurerstrasse 260, 8057 Zurich, Switzerland. nsieber@vetclinics.unizh.ch",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print-Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Journal Article"
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Animals"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dogs"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Adrenocortical Hyperfunction",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DT",
+                        "qualifierName": "drug therapy"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "VE",
+                        "qualifierName": "veterinary"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dog Diseases",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "DT",
+                        "qualifierName": "drug therapy"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dihydrotestosterone",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "AA",
+                        "qualifierName": "analogs & derivatives"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "TU",
+                        "qualifierName": "therapeutic use"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Androstenedione",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dehydroepiandrosterone",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Aldosterone",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Cortodoxone",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Hydrocortisone",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "17-alpha-Hydroxypregnenolone",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "3-Hydroxysteroid Dehydrogenases",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "AI",
+                        "qualifierName": "antagonists & inhibitors"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Enzyme Inhibitors",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "TU",
+                        "qualifierName": "therapeutic use"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Statistics, Nonparametric"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Prospective Studies"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Female"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Male"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Adrenocorticotropic Hormone",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "chemicalList": {
+              "chemical": [
+                {
+                  "name": "21-deoxycortisol",
+                  "registryNumber": "641-77-0"
+                },
+                {
+                  "name": "Enzyme Inhibitors",
+                  "registryNumber": "0"
+                },
+                {
+                  "name": "3-Hydroxysteroid Dehydrogenases",
+                  "registryNumber": "EC 1.1.-"
+                },
+                {
+                  "name": "17-alpha-Hydroxypregnenolone",
+                  "registryNumber": "387-79-1"
+                },
+                {
+                  "name": "Adrenocorticotropic Hormone",
+                  "registryNumber": "9002-60-2"
+                },
+                {
+                  "name": "Hydrocortisone",
+                  "registryNumber": "WI4X0X7BPJ"
+                },
+                {
+                  "name": "Aldosterone",
+                  "registryNumber": "4964P6T9RB"
+                },
+                {
+                  "name": "Dihydrotestosterone",
+                  "registryNumber": "08J2K08A3Y"
+                },
+                {
+                  "name": "Androstenedione",
+                  "registryNumber": "409J2J96VR"
+                },
+                {
+                  "name": "Dehydroepiandrosterone",
+                  "registryNumber": "459AG36T1B"
+                },
+                {
+                  "name": "Cortodoxone",
+                  "registryNumber": "WDT5SLP0HQ"
+                },
+                {
+                  "name": "trilostane",
+                  "registryNumber": "L0FPV48Q5R"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1016/j.domaniend.2005.09.004"
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "N",
+            "inPMC": "N",
+            "citedByCount": 40,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "N",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "N",
+            "hasData": "N",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2006-08-03",
+            "dateOfCreation": "2005-10-20",
+            "dateOfRevision": "2015-11-19",
+            "electronicPublicationDate": "2005-09-27",
+            "firstPublicationDate": "2005-09-27",
+            "firstIndexDate": "2008-01-29",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "TITLE:\"2023 AAHA Selected Endocrinopathies\"",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%222023+AAHA+Selected+Endocrinopathies%22&format=json&resultType=core&pageSize=5",
+    "response": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "TITLE:\"2023 AAHA Selected Endocrinopathies\"",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 5,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "37167252",
+            "source": "MED",
+            "pmid": "37167252",
+            "doi": "10.5326/jaaha-ms-7368",
+            "title": "2023 AAHA Selected Endocrinopathies of Dogs and Cats Guidelines.",
+            "authorString": "Bugbee A, Rucinsky R, Cazabon S, Kvitko-White H, Lathan P, Nichelason A, Rudolph L.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Bugbee A",
+                  "lastName": "Bugbee",
+                  "firstName": "Andrew",
+                  "initials": "A",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Small Animal Medicine and Surgery, University of Georgia, Athens, Georgia (A.B.); Mid Atlantic Cat Hospital, Mid Atlantic Feline Thyroid Center, Queenstown, Maryland (R.R.); Boston Veterinary Clinic, Boston, Massachusetts (S.C.); KW Veterinary Consulting, LLC, Kansas City, Missouri (H.K.-W.); Mississippi State University, Mississippi State, Mississippi (P.L.); School of Veterinary Medicine, University of Wisconsin-Madison, Madison, Wisconsin (A.N.); Rowan College of South Jersey, Sewell, New Jersey (L.R.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Rucinsky R",
+                  "lastName": "Rucinsky",
+                  "firstName": "Renee",
+                  "initials": "R",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Small Animal Medicine and Surgery, University of Georgia, Athens, Georgia (A.B.); Mid Atlantic Cat Hospital, Mid Atlantic Feline Thyroid Center, Queenstown, Maryland (R.R.); Boston Veterinary Clinic, Boston, Massachusetts (S.C.); KW Veterinary Consulting, LLC, Kansas City, Missouri (H.K.-W.); Mississippi State University, Mississippi State, Mississippi (P.L.); School of Veterinary Medicine, University of Wisconsin-Madison, Madison, Wisconsin (A.N.); Rowan College of South Jersey, Sewell, New Jersey (L.R.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Cazabon S",
+                  "lastName": "Cazabon",
+                  "firstName": "Sarah",
+                  "initials": "S",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Small Animal Medicine and Surgery, University of Georgia, Athens, Georgia (A.B.); Mid Atlantic Cat Hospital, Mid Atlantic Feline Thyroid Center, Queenstown, Maryland (R.R.); Boston Veterinary Clinic, Boston, Massachusetts (S.C.); KW Veterinary Consulting, LLC, Kansas City, Missouri (H.K.-W.); Mississippi State University, Mississippi State, Mississippi (P.L.); School of Veterinary Medicine, University of Wisconsin-Madison, Madison, Wisconsin (A.N.); Rowan College of South Jersey, Sewell, New Jersey (L.R.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Kvitko-White H",
+                  "lastName": "Kvitko-White",
+                  "firstName": "Heather",
+                  "initials": "H",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Small Animal Medicine and Surgery, University of Georgia, Athens, Georgia (A.B.); Mid Atlantic Cat Hospital, Mid Atlantic Feline Thyroid Center, Queenstown, Maryland (R.R.); Boston Veterinary Clinic, Boston, Massachusetts (S.C.); KW Veterinary Consulting, LLC, Kansas City, Missouri (H.K.-W.); Mississippi State University, Mississippi State, Mississippi (P.L.); School of Veterinary Medicine, University of Wisconsin-Madison, Madison, Wisconsin (A.N.); Rowan College of South Jersey, Sewell, New Jersey (L.R.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Lathan P",
+                  "lastName": "Lathan",
+                  "firstName": "Patty",
+                  "initials": "P",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Small Animal Medicine and Surgery, University of Georgia, Athens, Georgia (A.B.); Mid Atlantic Cat Hospital, Mid Atlantic Feline Thyroid Center, Queenstown, Maryland (R.R.); Boston Veterinary Clinic, Boston, Massachusetts (S.C.); KW Veterinary Consulting, LLC, Kansas City, Missouri (H.K.-W.); Mississippi State University, Mississippi State, Mississippi (P.L.); School of Veterinary Medicine, University of Wisconsin-Madison, Madison, Wisconsin (A.N.); Rowan College of South Jersey, Sewell, New Jersey (L.R.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Nichelason A",
+                  "lastName": "Nichelason",
+                  "firstName": "Amy",
+                  "initials": "A",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Small Animal Medicine and Surgery, University of Georgia, Athens, Georgia (A.B.); Mid Atlantic Cat Hospital, Mid Atlantic Feline Thyroid Center, Queenstown, Maryland (R.R.); Boston Veterinary Clinic, Boston, Massachusetts (S.C.); KW Veterinary Consulting, LLC, Kansas City, Missouri (H.K.-W.); Mississippi State University, Mississippi State, Mississippi (P.L.); School of Veterinary Medicine, University of Wisconsin-Madison, Madison, Wisconsin (A.N.); Rowan College of South Jersey, Sewell, New Jersey (L.R.)."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Rudolph L",
+                  "lastName": "Rudolph",
+                  "firstName": "Liza",
+                  "initials": "L",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Small Animal Medicine and Surgery, University of Georgia, Athens, Georgia (A.B.); Mid Atlantic Cat Hospital, Mid Atlantic Feline Thyroid Center, Queenstown, Maryland (R.R.); Boston Veterinary Clinic, Boston, Massachusetts (S.C.); KW Veterinary Consulting, LLC, Kansas City, Missouri (H.K.-W.); Mississippi State University, Mississippi State, Mississippi (P.L.); School of Veterinary Medicine, University of Wisconsin-Madison, Madison, Wisconsin (A.N.); Rowan College of South Jersey, Sewell, New Jersey (L.R.)."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "journalInfo": {
+              "issue": "3",
+              "volume": "59",
+              "journalIssueId": 3566315,
+              "dateOfPublication": "2023 May",
+              "monthOfPublication": 5,
+              "yearOfPublication": 2023,
+              "journal": {
+                "medlineAbbreviation": "J Am Anim Hosp Assoc",
+                "title": "Journal of the American Animal Hospital Association",
+                "essn": "1547-3317",
+                "issn": "0587-2871",
+                "isoabbreviation": "J Am Anim Hosp Assoc",
+                "nlmid": "0415027"
+              },
+              "printPublicationDate": "2023-05-01"
+            },
+            "pubYear": "2023",
+            "pageInfo": "113-135",
+            "abstractText": "Canine and feline endocrinopathies reflect an endocrine gland disease or dysfunction with resulting hormonal abnormali ties that can variably affect the patient's wellbeing, quality of life, and life expectancy. These guidelines provide consensus recommendations for diagnosis and treatment of four canine and feline endocrinopathies commonly encountered in clini cal practice: canine hypothyroidism, canine hypercortisolism (Cushing's syndrome), canine hypoadrenocorticism (Addi son's disease), and feline hyperthyroidism. To aid the general practitioner in navigating these common diseases, a stepwise diagnosis and treatment algorithm and relevant background information is provided for managing each of these diseases. The guidelines also describe, in lesser detail, the diagnosis and treatment of three relatively less common endo crinopathies of cats: feline hyperaldosteronism, feline hypothyroidism, and feline hyperadrenocorticism. Additionally, the guidelines present tips on effective veterinary team utilization and client communication when discussing endocrine cases.",
+            "affiliation": "Department of Small Animal Medicine and Surgery, University of Georgia, Athens, Georgia (A.B.); Mid Atlantic Cat Hospital, Mid Atlantic Feline Thyroid Center, Queenstown, Maryland (R.R.); Boston Veterinary Clinic, Boston, Massachusetts (S.C.); KW Veterinary Consulting, LLC, Kansas City, Missouri (H.K.-W.); Mississippi State University, Mississippi State, Mississippi (P.L.); School of Veterinary Medicine, University of Wisconsin-Madison, Madison, Wisconsin (A.N.); Rowan College of South Jersey, Sewell, New Jersey (L.R.).",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print",
+            "pubTypeList": {
+              "pubType": [
+                "Journal Article"
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Animals"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dogs"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Cats"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Adrenocortical Hyperfunction",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "TH",
+                        "qualifierName": "therapy"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "VE",
+                        "qualifierName": "veterinary"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Hypothyroidism",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "TH",
+                        "qualifierName": "therapy"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "VE",
+                        "qualifierName": "veterinary"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Cat Diseases",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DI",
+                        "qualifierName": "diagnosis"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "TH",
+                        "qualifierName": "therapy"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Dog Diseases",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "TH",
+                        "qualifierName": "therapy"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Quality of Life"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.5326/JAAHA-MS-7368"
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "N",
+            "inPMC": "N",
+            "citedByCount": 15,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "N",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "N",
+            "hasData": "N",
+            "license": "cc by-nc-nd",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2023-05-15",
+            "dateOfCreation": "2023-05-11",
+            "dateOfRevision": "2023-05-15",
+            "firstPublicationDate": "2023-05-01",
+            "firstIndexDate": "2023-05-11",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "TITLE:\"Under diagnosis of canine cognitive dysfunction\"",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Under+diagnosis+of+canine+cognitive+dysfunction%22&format=json&resultType=core&pageSize=5",
+    "response": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "TITLE:\"Under diagnosis of canine cognitive dysfunction\"",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 5,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "20005753",
+            "source": "MED",
+            "pmid": "20005753",
+            "doi": "10.1016/j.tvjl.2009.11.007",
+            "title": "Under diagnosis of canine cognitive dysfunction: a cross-sectional survey of older companion dogs.",
+            "authorString": "Salvin HE, McGreevy PD, Sachdev PS, Valenzuela MJ.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Salvin HE",
+                  "lastName": "Salvin",
+                  "firstName": "Hannah E",
+                  "initials": "HE",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Faculty of Veterinary Science (B19), University of Sydney, Camperdown, NSW 2006, Australia. hsal8835@uni.sydney.edu.au"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "McGreevy PD",
+                  "lastName": "McGreevy",
+                  "firstName": "Paul D",
+                  "initials": "PD",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-7220-8378"
+                  }
+                },
+                {
+                  "fullName": "Sachdev PS",
+                  "lastName": "Sachdev",
+                  "firstName": "Perminder S",
+                  "initials": "PS",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-9595-3220"
+                  }
+                },
+                {
+                  "fullName": "Valenzuela MJ",
+                  "lastName": "Valenzuela",
+                  "firstName": "Michael J",
+                  "initials": "MJ",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-7162-6607"
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-7162-6607"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-7220-8378"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-9595-3220"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics"
+              ]
+            },
+            "journalInfo": {
+              "issue": "3",
+              "volume": "184",
+              "journalIssueId": 1727892,
+              "dateOfPublication": "2010 Jun",
+              "monthOfPublication": 6,
+              "yearOfPublication": 2010,
+              "journal": {
+                "medlineAbbreviation": "Vet J",
+                "title": "Veterinary journal (London, England : 1997)",
+                "essn": "1532-2971",
+                "issn": "1090-0233",
+                "nlmid": "9706281",
+                "isoabbreviation": "Vet J"
+              },
+              "printPublicationDate": "2010-06-01"
+            },
+            "pubYear": "2010",
+            "pageInfo": "277-281",
+            "abstractText": "Canine cognitive dysfunction (CCD) is a neurobehavioural syndrome affecting aged dogs. Using a large cross-sectional epidemiological study of older dogs, this study aimed to estimate the prevalence of CCD amongst community based dogs (mean age 11.67years; range 8-19.75) and to determine the rate of veterinary diagnosis amongst affected dogs. An 84-item questionnaire was used to obtain information across six behavioural domains. Of the eligible survey responses obtained (n=957) a randomly selected one-half (n=497) was used for this study. Using a provisional diagnosis based on 27 significant behavioural items, the prevalence rate of CCD was estimated to be 14.2%. This was in contrast with only 1.9% diagnosed with CCD by a veterinarian. There was an exponential increase in prevalence of CCD with age (R2=0.9435), but prevalence did not differ by breed size or between longevity groups. The prevalence rate of CCD reported here is consistent with previous findings, and further supports the contention that the majority of these dogs do not receive a formal diagnosis.",
+            "affiliation": "Faculty of Veterinary Science (B19), University of Sydney, Camperdown, NSW 2006, Australia. hsal8835@uni.sydney.edu.au",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print-Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Research Support, Non-U.S. Gov't",
+                "Journal Article"
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Animals"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dogs",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "PX",
+                        "qualifierName": "psychology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Humans"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dog Diseases",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "DI",
+                        "qualifierName": "diagnosis"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "EP",
+                        "qualifierName": "epidemiology"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PX",
+                        "qualifierName": "psychology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Prevalence"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Cluster Analysis"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Risk Factors"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Cross-Sectional Studies"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Behavior, Animal"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Cognition Disorders",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "DI",
+                        "qualifierName": "diagnosis"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "EP",
+                        "qualifierName": "epidemiology"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PX",
+                        "qualifierName": "psychology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Age Factors"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Aging",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "PX",
+                        "qualifierName": "psychology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Longevity"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Female"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Male"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Surveys and Questionnaires"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1016/j.tvjl.2009.11.007"
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "N",
+            "inPMC": "N",
+            "citedByCount": 79,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "N",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "Y",
+            "hasData": "N",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2010-06-14",
+            "dateOfCreation": "2009-12-17",
+            "dateOfRevision": "2015-11-19",
+            "electronicPublicationDate": "2009-12-14",
+            "firstPublicationDate": "2009-12-14",
+            "firstIndexDate": "2010-06-15",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "TITLE:\"Effect of S-adenosylmethionine\"",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Effect+of+S-adenosylmethionine%22&format=json&resultType=core&pageSize=5",
+    "response": {
+      "version": "6.9",
+      "hitCount": 35,
+      "nextCursorMark": "AoIIPzRXLigzMzExMjk5NA==",
+      "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Effect+of+S-adenosylmethionine%22&cursorMark=AoIIPzRXLigzMzExMjk5NA%3D%3D&resultType=core&pageSize=5&format=json",
+      "request": {
+        "queryString": "TITLE:\"Effect of S-adenosylmethionine\"",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 5,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "39182548",
+            "source": "MED",
+            "pmid": "39182548",
+            "doi": "10.1016/j.ejphar.2024.176939",
+            "title": "The protective effect of S-adenosylmethionine on chronic adolescent stress-induced depression-like behaviors by regulating gut microbiota.",
+            "authorString": "Xu J, Wang X, Xu W, Zhang Y, Pan L, Gao J.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Xu J",
+                  "lastName": "Xu",
+                  "firstName": "Jingjing",
+                  "initials": "J",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Clinical Psychology, Qilu Hospital (Qingdao), Cheeloo College of Medicine, Shandong University, Qingdao, Shandong, 266035, China."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Wang X",
+                  "lastName": "Wang",
+                  "firstName": "Xinqi",
+                  "initials": "X",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Clinical Psychology, Qilu Hospital (Qingdao), Cheeloo College of Medicine, Shandong University, Qingdao, Shandong, 266035, China."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Xu W",
+                  "lastName": "Xu",
+                  "firstName": "Wangwang",
+                  "initials": "W",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Clinical Psychology, Qilu Hospital (Qingdao), Cheeloo College of Medicine, Shandong University, Qingdao, Shandong, 266035, China."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Zhang Y",
+                  "lastName": "Zhang",
+                  "firstName": "Yang",
+                  "initials": "Y",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Clinical Psychology, Qilu Hospital (Qingdao), Cheeloo College of Medicine, Shandong University, Qingdao, Shandong, 266035, China."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Pan L",
+                  "lastName": "Pan",
+                  "firstName": "Liangke",
+                  "initials": "L",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Qingdao No.9 High School, Shandong Province, Qingdao, Shandong, 266000, China."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Gao J",
+                  "lastName": "Gao",
+                  "firstName": "Jin",
+                  "initials": "J",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Clinical Psychology, Qilu Hospital (Qingdao), Cheeloo College of Medicine, Shandong University, Qingdao, Shandong, 266035, China. Electronic address: gj028960@qlyyqd.com."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "journalInfo": {
+              "volume": "982",
+              "journalIssueId": 3829035,
+              "dateOfPublication": "2024 Nov",
+              "monthOfPublication": 11,
+              "yearOfPublication": 2024,
+              "journal": {
+                "medlineAbbreviation": "Eur J Pharmacol",
+                "title": "European journal of pharmacology",
+                "essn": "1879-0712",
+                "issn": "0014-2999",
+                "isoabbreviation": "Eur J Pharmacol",
+                "nlmid": "1254354"
+              },
+              "printPublicationDate": "2024-11-01"
+            },
+            "pubYear": "2024",
+            "pageInfo": "176939",
+            "abstractText": "The efficacy and tolerability of current antidepressants for adolescent depression are inadequate. S-adenosylmethionine (SAMe), known for its effectiveness and minimal side effects in adult depression, remains unstudied in adolescents. This study explored the potential of SAMe to address depression-like behaviors in juvenile rats induced by chronic unpredictable mild stress (CUMS), with a focus on gut microbiome interactions. Adolescent male Wistar rats were subjected to a 4-week CUMS regimen and received daily intraperitoneal injections of 300 mg/kg SAMe. Behavioral assessments included the sucrose preference test, elevated plus maze test, open field test, and Y-maze test. Histopathological changes of the hippocampus and colon were observed by Nissl staining and hematoxylin and eosin staining, respectively. Gut microbiome composition was analyzed using Accurate 16S absolute quantification sequencing. The results showed that SAMe significantly improved behavioral outcomes, reduced histopathological damages in hippocampal neurons and colon tissues, and modulated the gut microbiota of depressed rats. It favorably altered the ratio of Bacteroidetes to Firmicutes, decreased the absolute abundance of Deferribacteres, and adjusted levels of key microbial genera associated with depression-like behaviors. These results suggested that SAMe could effectively counter depression-like behaviors in CUMS-exposed adolescent rats by mitigating hippocampal neuronal and colon damage and modulating the gut microbiota. This supports SAMe as a viable and tolerable treatment option for adolescent depression, highlighting the importance of the gut-brain axis in therapeutic strategies.",
+            "affiliation": "Department of Clinical Psychology, Qilu Hospital (Qingdao), Cheeloo College of Medicine, Shandong University, Qingdao, Shandong, 266035, China.",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print-Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Journal Article"
+              ]
+            },
+            "grantsList": {
+              "grant": [
+                {
+                  "agency": "Natural Science Foundation of Shandong Province",
+                  "grantId": "ZR2021MH286",
+                  "orderIn": 0
+                },
+                {
+                  "agency": "Department of Science and Technology of Shandong Province",
+                  "orderIn": 0
+                }
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Colon",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DE",
+                        "qualifierName": "drug effects"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "MI",
+                        "qualifierName": "microbiology"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PA",
+                        "qualifierName": "pathology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Hippocampus",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DE",
+                        "qualifierName": "drug effects"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PA",
+                        "qualifierName": "pathology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Animals"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Rats"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Rats, Wistar"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Disease Models, Animal"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "S-Adenosylmethionine",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PD",
+                        "qualifierName": "pharmacology"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "TU",
+                        "qualifierName": "therapeutic use"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Antidepressive Agents",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PD",
+                        "qualifierName": "pharmacology"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "TU",
+                        "qualifierName": "therapeutic use"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Behavior, Animal",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DE",
+                        "qualifierName": "drug effects"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Depression",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DT",
+                        "qualifierName": "drug therapy"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Stress, Psychological",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "CO",
+                        "qualifierName": "complications"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DT",
+                        "qualifierName": "drug therapy"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Male"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Gastrointestinal Microbiome",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DE",
+                        "qualifierName": "drug effects"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "Adolescent",
+                "S-Adenosylmethionine",
+                "Gut Microbiota",
+                "Chronic Unpredictable Mild Stress",
+                "Depression-like Behavior"
+              ]
+            },
+            "chemicalList": {
+              "chemical": [
+                {
+                  "name": "Antidepressive Agents",
+                  "registryNumber": "0"
+                },
+                {
+                  "name": "S-Adenosylmethionine",
+                  "registryNumber": "7LP2MPO46S"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1016/j.ejphar.2024.176939"
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "N",
+            "inPMC": "N",
+            "citedByCount": 4,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "N",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "N",
+            "hasData": "N",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2024-09-14",
+            "dateOfCreation": "2024-08-25",
+            "dateOfRevision": "2024-09-14",
+            "electronicPublicationDate": "2024-08-23",
+            "firstPublicationDate": "2024-08-23",
+            "firstIndexDate": "2024-08-28",
+            "hasEvaluations": "N"
+          },
+          {
+            "id": "31607891",
+            "source": "MED",
+            "pmid": "31607891",
+            "pmcid": "PMC6787411",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC6787411"
+              ]
+            },
+            "doi": "10.1159/000502568",
+            "title": "The Effect of S-Adenosylmethionine Treatment on Neurobehavioral Phenotypes in Lesch-Nyhan Disease: A Case Report.",
+            "authorString": "Momosaki K, Kido J, Matsumoto S, Taniguchi A, Akiyama T, Sawada T, Ozasa S, Nakamura K.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Momosaki K",
+                  "lastName": "Momosaki",
+                  "firstName": "Ken",
+                  "initials": "K",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Pediatrics, Graduate School of Medical Sciences, Kumamoto University, Kumamoto, Japan."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Kido J",
+                  "lastName": "Kido",
+                  "firstName": "Jun",
+                  "initials": "J",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Pediatrics, Graduate School of Medical Sciences, Kumamoto University, Kumamoto, Japan."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Matsumoto S",
+                  "lastName": "Matsumoto",
+                  "firstName": "Shiro",
+                  "initials": "S",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Pediatrics, Graduate School of Medical Sciences, Kumamoto University, Kumamoto, Japan."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Taniguchi A",
+                  "lastName": "Taniguchi",
+                  "firstName": "Atsuo",
+                  "initials": "A",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Institute of Rheumatology, Tokyo Women's Medical University, Tokyo, Japan."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Akiyama T",
+                  "lastName": "Akiyama",
+                  "firstName": "Tomoyuki",
+                  "initials": "T",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Child Neurology, Okayama University Hospital, Okayama, Japan."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Sawada T",
+                  "lastName": "Sawada",
+                  "firstName": "Takaaki",
+                  "initials": "T",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-9256-7551"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Pediatrics, Graduate School of Medical Sciences, Kumamoto University, Kumamoto, Japan."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Ozasa S",
+                  "lastName": "Ozasa",
+                  "firstName": "Shiro",
+                  "initials": "S",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Pediatrics, Graduate School of Medical Sciences, Kumamoto University, Kumamoto, Japan."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Nakamura K",
+                  "lastName": "Nakamura",
+                  "firstName": "Kimitoshi",
+                  "initials": "K",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Pediatrics, Graduate School of Medical Sciences, Kumamoto University, Kumamoto, Japan."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-9256-7551"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-4903-2428"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "supporting_data"
+              ]
+            },
+            "journalInfo": {
+              "issue": "3",
+              "volume": "11",
+              "journalIssueId": 2871138,
+              "dateOfPublication": "2019 Sep-Dec",
+              "monthOfPublication": 0,
+              "yearOfPublication": 2019,
+              "journal": {
+                "medlineAbbreviation": "Case Rep Neurol",
+                "title": "Case reports in neurology",
+                "essn": "1662-680X",
+                "issn": "1662-680X",
+                "isoabbreviation": "Case Rep Neurol",
+                "nlmid": "101517693"
+              },
+              "printPublicationDate": "2019-09-01"
+            },
+            "pubYear": "2019",
+            "pageInfo": "256-264",
+            "abstractText": "Lesch-Nyhan disease (LND) is an X-linked recessive disorder caused by a deficiency in hypoxanthine-guanine phosphoribosyl transferase. Patients with LND experience involuntary movements, including dystonia, choreoathetosis, opisthotonos, ballismus, and self-injury. Alleviating these involuntary movements is important to improve the quality of life in patients with LND. Many clinicians have difficulty controlling these involuntary movements in their patients, and there are no established and effective treatments. A 6-month-old boy with LND presented with generalized dystonia and self-injury behavior that was alleviated after receiving S-adenosylmethionine (SAMe). His self-injury behavior completely resolved after he received SAMe and risperidone. Although he had often experienced inspiratory stridor because of laryngeal dystonia and frequently developed aspiration pneumonitis and bronchitis, no inspiratory stridor was noted after SAMe treatment. The patient is continuing to receive SAMe and risperidone. SAMe treatment alleviates dystonic movements and improves quality of life in pediatric patients with LND. Additional research is needed to determine the long-term safety and efficacy of SAMe and its appropriate dosage.",
+            "affiliation": "Department of Pediatrics, Graduate School of Medical Sciences, Kumamoto University, Kumamoto, Japan.",
+            "publicationStatus": "epublish",
+            "language": "eng",
+            "pubModel": "Electronic-eCollection",
+            "pubTypeList": {
+              "pubType": [
+                "Journal Article",
+                "Case Reports",
+                "case-report"
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "S-Adenosylmethionine",
+                "Dystonia",
+                "Self-injury",
+                "Lesch-nyhan Disease",
+                "Laryngeal Stridor",
+                "G.151c>t"
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1159/000502568"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC6787411"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC6787411?pdf=render"
+                }
+              ]
+            },
+            "isOpenAccess": "Y",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 6,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "Y",
+            "hasData": "Y",
+            "license": "cc by-nc",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "Y",
+            "tmAccessionTypeList": {
+              "accessionType": [
+                "omim"
+              ]
+            },
+            "dateOfCreation": "2019-10-15",
+            "dateOfRevision": "2020-09-30",
+            "electronicPublicationDate": "2019-09-19",
+            "firstPublicationDate": "2019-09-19",
+            "firstIndexDate": "2019-10-14",
+            "fullTextReceivedDate": "2025-02-03",
+            "hasEvaluations": "N"
+          },
+          {
+            "id": "30582404",
+            "source": "MED",
+            "pmid": "30582404",
+            "doi": "10.1080/09168451.2018.1559721",
+            "title": "Anti-diabetic effect of S-adenosylmethionine and α-glycerophosphocholine in KK-A<sup>y</sup> mice.",
+            "authorString": "Izu H, Okuda M, Shibata S, Fujii T, Matsubara K.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Izu H",
+                  "lastName": "Izu",
+                  "firstName": "Hanae",
+                  "initials": "H",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "a Safety and Quality Division , National Research Institute of Brewing , Higashi-Hiroshima , Japan."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Okuda M",
+                  "lastName": "Okuda",
+                  "firstName": "Mayumi",
+                  "initials": "M",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "b Department of Human Life Science Education, Graduate School of Education , Hiroshima University , Higashi-Hiroshima , Japan."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Shibata S",
+                  "lastName": "Shibata",
+                  "firstName": "Sachi",
+                  "initials": "S",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "c Department of Nutrition and Life Science, Faculty of Life Science and Biotechnology , Fukuyama University , Fukuyama , Japan."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Fujii T",
+                  "lastName": "Fujii",
+                  "firstName": "Tsutomu",
+                  "initials": "T",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "a Safety and Quality Division , National Research Institute of Brewing , Higashi-Hiroshima , Japan."
+                      },
+                      {
+                        "affiliation": "d School of Applied Biological Science, Graduate School of Biosphere Science , Hiroshima University , Higashi-Hiroshima , Japan."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Matsubara K",
+                  "lastName": "Matsubara",
+                  "firstName": "Kiminori",
+                  "initials": "K",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "b Department of Human Life Science Education, Graduate School of Education , Hiroshima University , Higashi-Hiroshima , Japan."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "journalInfo": {
+              "issue": "4",
+              "volume": "83",
+              "journalIssueId": 2795918,
+              "dateOfPublication": "2019 Apr",
+              "monthOfPublication": 4,
+              "yearOfPublication": 2019,
+              "journal": {
+                "medlineAbbreviation": "Biosci Biotechnol Biochem",
+                "title": "Bioscience, biotechnology, and biochemistry",
+                "essn": "1347-6947",
+                "issn": "0916-8451",
+                "isoabbreviation": "Biosci Biotechnol Biochem",
+                "nlmid": "9205717"
+              },
+              "printPublicationDate": "2019-04-01"
+            },
+            "pubYear": "2019",
+            "pageInfo": "747-750",
+            "abstractText": "Six-week-old male KK-A<sup>y</sup> mice received drinking water with S-adenosylmethionine (SAM), α-glycerophosphocholine (GPC), or SAM+GPC for 10 weeks. The serum glucose of SAM+GPC at 15 weeks old, total cholesterol of GPC at 12 weeks old, and triglyceride of GPC at 15 weeks old and of SAM at 16 weeks old were reduced. SAM+GPC reduced serum leptin and food intake. Abbreviations: SAM: S-adenosylmethionine; GPC: α-glycerophosphocholine.",
+            "affiliation": "a Safety and Quality Division , National Research Institute of Brewing , Higashi-Hiroshima , Japan.",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print-Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Journal Article"
+              ]
+            },
+            "grantsList": {
+              "grant": [
+                {
+                  "agency": "Cabinet Office, Government of Japan",
+                  "grantId": "Cross-ministerial Strategic Innovation Promotion P",
+                  "orderIn": 0
+                }
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Animals"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Mice, Transgenic"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Mice"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Diabetes Mellitus, Experimental",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "DT",
+                        "qualifierName": "drug therapy"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PP",
+                        "qualifierName": "physiopathology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Hyperglycemia",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "DT",
+                        "qualifierName": "drug therapy"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PP",
+                        "qualifierName": "physiopathology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Hyperinsulinism",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "DT",
+                        "qualifierName": "drug therapy"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PP",
+                        "qualifierName": "physiopathology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Obesity",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "DT",
+                        "qualifierName": "drug therapy"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PP",
+                        "qualifierName": "physiopathology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Disease Models, Animal"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Body Weight",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DE",
+                        "qualifierName": "drug effects"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Cholesterol",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Leptin",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Blood Glucose",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DE",
+                        "qualifierName": "drug effects"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "ME",
+                        "qualifierName": "metabolism"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Glycerylphosphorylcholine",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "PD",
+                        "qualifierName": "pharmacology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Triglycerides",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "S-Adenosylmethionine",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "PD",
+                        "qualifierName": "pharmacology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Drug Combinations"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Hypoglycemic Agents",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "PD",
+                        "qualifierName": "pharmacology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Administration, Oral"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Eating",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "DE",
+                        "qualifierName": "drug effects"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Male"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Hyperlipidemias",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "BL",
+                        "qualifierName": "blood"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "DT",
+                        "qualifierName": "drug therapy"
+                      },
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PP",
+                        "qualifierName": "physiopathology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Drinking Water"
+                }
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "Leptin",
+                "Α-glycerophosphocholine",
+                "-Adenosylmethionine",
+                "Kk-a Mouse"
+              ]
+            },
+            "chemicalList": {
+              "chemical": [
+                {
+                  "name": "Triglycerides",
+                  "registryNumber": "0"
+                },
+                {
+                  "name": "Blood Glucose",
+                  "registryNumber": "0"
+                },
+                {
+                  "name": "Hypoglycemic Agents",
+                  "registryNumber": "0"
+                },
+                {
+                  "name": "Drug Combinations",
+                  "registryNumber": "0"
+                },
+                {
+                  "name": "Leptin",
+                  "registryNumber": "0"
+                },
+                {
+                  "name": "Drinking Water",
+                  "registryNumber": "0"
+                },
+                {
+                  "name": "Cholesterol",
+                  "registryNumber": "97C5T2UQ7J"
+                },
+                {
+                  "name": "S-Adenosylmethionine",
+                  "registryNumber": "7LP2MPO46S"
+                },
+                {
+                  "name": "Glycerylphosphorylcholine",
+                  "registryNumber": "60M22SGW66"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1080/09168451.2018.1559721"
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "N",
+            "inPMC": "N",
+            "citedByCount": 7,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "N",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "N",
+            "hasData": "N",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2019-04-01",
+            "dateOfCreation": "2018-12-25",
+            "dateOfRevision": "2019-04-01",
+            "electronicPublicationDate": "2018-12-22",
+            "firstPublicationDate": "2018-12-22",
+            "firstIndexDate": "2018-12-31",
+            "hasEvaluations": "N"
+          },
+          {
+            "id": "27295197",
+            "source": "MED",
+            "pmid": "27295197",
+            "pmcid": "PMC5362561",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC5362561"
+              ]
+            },
+            "doi": "10.1007/8904_2016_571",
+            "title": "The Effect of S-Adenosylmethionine on Self-Mutilation in a Patient with Lesch-Nyhan Disease.",
+            "authorString": "Lauber M, Plecko B, Pfiffner M, Nuoffer JM, Häberle J.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Lauber M",
+                  "lastName": "Lauber",
+                  "firstName": "Matthias",
+                  "initials": "M",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Division of Metabolism and Children's Research Center, University Children's Hospital, Steinwiesstr. 75, 8032, Zurich, Switzerland."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Plecko B",
+                  "lastName": "Plecko",
+                  "firstName": "Barbara",
+                  "initials": "B",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-3203-1325"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Division of Neuropaediatrics and Children's Research Center, University Children's Hospital, Steinwiesstr. 75, 8032, Zurich, Switzerland."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Pfiffner M",
+                  "lastName": "Pfiffner",
+                  "firstName": "Miriam",
+                  "initials": "M",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Division of Pharmacy, University Children's Hospital, Steinwiesstr. 75, 8032, Zurich, Switzerland."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Nuoffer JM",
+                  "lastName": "Nuoffer",
+                  "firstName": "Jean-Marc",
+                  "initials": "JM",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0003-3650-6153"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Paediatrics, Inselspital, University Hospital Bern, Bern, Switzerland."
+                      },
+                      {
+                        "affiliation": "Institute of Clinical Chemistry, Inselspital, University Hospital Bern, Bern, Switzerland."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Häberle J",
+                  "lastName": "Häberle",
+                  "firstName": "Johannes",
+                  "initials": "J",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0003-0635-091X"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Division of Metabolism and Children's Research Center, University Children's Hospital, Steinwiesstr. 75, 8032, Zurich, Switzerland. Johannes.Haeberle@kispi.uzh.ch."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-3203-1325"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-0635-091X"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0003-3650-6153"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "supporting_data"
+              ]
+            },
+            "journalInfo": {
+              "volume": "32",
+              "journalIssueId": 2537891,
+              "dateOfPublication": "2017 ",
+              "monthOfPublication": 0,
+              "yearOfPublication": 2017,
+              "journal": {
+                "medlineAbbreviation": "JIMD Rep",
+                "title": "JIMD reports",
+                "essn": "2192-8312",
+                "issn": "2192-8304",
+                "isoabbreviation": "JIMD Rep",
+                "nlmid": "101568557"
+              },
+              "printPublicationDate": "2017-01-01"
+            },
+            "pubYear": "2017",
+            "pageInfo": "51-57",
+            "abstractText": "<h4>Background</h4>Lesch-Nyhan disease (LND) is an X-chromosomal disorder of purine metabolism characterized by hyperuricemia, dystonia, and self-mutilation, leading to an extremely high burden of disease in affected patients and families. Although allopurinol therapy can control hyperuricemia, it has no effect on self-mutilation and neurological symptoms. Single reports describe a beneficial effect of S-adenosylmethionine (SAM) on the neurological symptoms, which motivated us to evaluate this alternative treatment.<h4>Methods</h4>We performed a double-blind placebo-controlled trial to analyze the effects of SAM on self-mutilation attempts in a male patient affected by LND. The trial lasted for 282 days and comprised three alternating verum and placebo periods of 50 days each. The mother of the patient recorded attempts of self-mutilation during the entire trial.<h4>Results</h4>While verum and placebo were both well tolerated, a total of 1,762 events of self-mutilation were recorded, of which 1,281 events were in the placebo period and 481 in the verum period. The daily mean of events was 8.6 with placebo and 4.5 with SAM corresponding to a 50 % decrease in self-mutilation events under SAM treatment (p < 0.05).<h4>Conclusion</h4>The results of this double-blind placebo-controlled single-case trial suggest that SAM can have a beneficial effect on self-mutilation in patients with LND, possibly by replenishing the purine pool in affected brain cells.",
+            "affiliation": "Division of Metabolism and Children's Research Center, University Children's Hospital, Steinwiesstr. 75, 8032, Zurich, Switzerland.",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print-Electronic",
+            "pubTypeList": {
+              "pubType": [
+                "Journal Article",
+                "case-report"
+              ]
+            },
+            "keywordList": {
+              "keyword": [
+                "S-Adenosylmethionine",
+                "Self-mutilation",
+                "Lesch–nyhan Disease",
+                "Placebo-controlled Double-blind Trial"
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Free",
+                  "availabilityCode": "F",
+                  "documentStyle": "html",
+                  "site": "Unpaywall",
+                  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5362561"
+                },
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1007/8904_2016_571"
+                },
+                {
+                  "availability": "Free",
+                  "availabilityCode": "F",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC5362561"
+                },
+                {
+                  "availability": "Free",
+                  "availabilityCode": "F",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC5362561?pdf=render"
+                },
+                {
+                  "availability": "Free",
+                  "availabilityCode": "F",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1007/8904_2016_571"
+                }
+              ]
+            },
+            "isOpenAccess": "N",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 5,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "Y",
+            "hasData": "Y",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "Y",
+            "tmAccessionTypeList": {
+              "accessionType": [
+                "omim"
+              ]
+            },
+            "dateOfCreation": "2016-06-14",
+            "dateOfRevision": "2020-10-01",
+            "electronicPublicationDate": "2016-06-14",
+            "firstPublicationDate": "2016-06-14",
+            "firstIndexDate": "2016-06-14",
+            "fullTextReceivedDate": "2025-02-03",
+            "hasEvaluations": "N"
+          },
+          {
+            "id": "25347725",
+            "source": "MED",
+            "pmid": "25347725",
+            "pmcid": "PMC4210123",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC4210123"
+              ]
+            },
+            "doi": "10.1371/journal.pone.0107756",
+            "title": "The effect of S-adenosylmethionine on cognitive performance in mice: an animal model meta-analysis.",
+            "authorString": "Montgomery SE, Sepehry AA, Wangsgaard JD, Koenig JE.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Montgomery SE",
+                  "lastName": "Montgomery",
+                  "firstName": "Sarah E",
+                  "initials": "SE",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Applied Human Nutrition, Mount Saint Vincent University, Halifax, Nova Scotia, Canada."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Sepehry AA",
+                  "lastName": "Sepehry",
+                  "firstName": "Amir A",
+                  "initials": "AA",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-6055-4457"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "College for Interdisciplinary Studies, Graduate program in Neuroscience, University of British Columbia (UBC), Vancouver, BC, Canada; UBC Division of Neurology, Department of Medicine, University of British Columbia (UBC), Vancouver, BC, Canada."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Wangsgaard JD",
+                  "lastName": "Wangsgaard",
+                  "firstName": "John D",
+                  "initials": "JD",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Department of Applied Human Nutrition, Mount Saint Vincent University, Halifax, Nova Scotia, Canada."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Koenig JE",
+                  "lastName": "Koenig",
+                  "firstName": "Jeremy E",
+                  "initials": "JE",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Faculty of Computer Science, Dalhousie University, Halifax, NS, Canada."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-6055-4457"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "altmetrics",
+                "supporting_data"
+              ]
+            },
+            "journalInfo": {
+              "issue": "10",
+              "volume": "9",
+              "journalIssueId": 2213695,
+              "dateOfPublication": "2014 ",
+              "monthOfPublication": 0,
+              "yearOfPublication": 2014,
+              "journal": {
+                "medlineAbbreviation": "PLoS One",
+                "title": "PloS one",
+                "essn": "1932-6203",
+                "issn": "1932-6203",
+                "isoabbreviation": "PLoS One",
+                "nlmid": "101285081"
+              },
+              "printPublicationDate": "2014-01-01"
+            },
+            "pubYear": "2014",
+            "pageInfo": "e107756",
+            "abstractText": "<h4>Background</h4>Alzheimer's disease (AD) is the most frequently diagnosed form of dementia resulting in cognitive impairment. Many AD mouse studies, using the methyl donor S-adenosylmethionine (SAM), report improved cognitive ability, but conflicting results between and within studies currently exist. To address this, we conducted a meta-analysis to evaluate the effect of SAM on cognitive ability as measured by Y maze performance. As supporting evidence, we include further discussion of improvements in cognitive ability, by SAM, as measured by the Morris water maze (MWM).<h4>Methods</h4>We conducted a comprehensive literature review up to April 2014 based on searches querying MEDLINE, EMBASE, Web of Science, the Cochrane Library and Proquest Theses and Dissertation databases. We identified three studies containing a total of 12 experiments that met our inclusion criteria and one study for qualitative review. The data from these studies were used to evaluate the effect of SAM on cognitive performance according to two scenarios: 1. SAM supplemented folate deficient (SFD) diet compared to a folate deficient (FD) diet and 2. SFD diet compared to a nutrient complete (NC) diet. Hedge's g was used to calculate effect sizes and mixed effects model meta-regression was used to evaluate moderating factors.<h4>Results</h4>Our findings showed that the SFD diet was associated with improvements in cognitive performance. SFD diet mice also had superior cognitive performance compared to mice on an NC diet. Further to this, meta-regression analyses indicated a significant positive effect of study quality score and treatment duration on the effect size estimate for both the FD vs SFD analysis and the SFD vs NC analysis.<h4>Conclusion</h4>The findings of this meta-analysis demonstrate efficacy of SAM in acting as a cognitive performance-enhancing agent. As a corollary, SAM may be useful in improving spatial memory in patients suffering from many dementia forms including AD.",
+            "affiliation": "Department of Applied Human Nutrition, Mount Saint Vincent University, Halifax, Nova Scotia, Canada.",
+            "publicationStatus": "epublish",
+            "language": "eng",
+            "pubModel": "Electronic-eCollection",
+            "pubTypeList": {
+              "pubType": [
+                "Meta-Analysis",
+                "Research Support, Non-U.S. Gov't",
+                "research-article",
+                "Review",
+                "Journal Article"
+              ]
+            },
+            "grantsList": {
+              "grant": [
+                {
+                  "agency": "NCATS NIH HHS",
+                  "acronym": "TR",
+                  "grantId": "UL1 TR001425",
+                  "orderIn": 0
+                }
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Animals"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Mice"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Alzheimer Disease"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Folic Acid Deficiency"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "S-Adenosylmethionine",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "AD",
+                        "qualifierName": "administration & dosage"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "PD",
+                        "qualifierName": "pharmacology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Nootropic Agents",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "PD",
+                        "qualifierName": "pharmacology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Diet"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Models, Animal"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Cognition",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "DE",
+                        "qualifierName": "drug effects"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Dietary Supplements"
+                }
+              ]
+            },
+            "chemicalList": {
+              "chemical": [
+                {
+                  "name": "Nootropic Agents",
+                  "registryNumber": "0"
+                },
+                {
+                  "name": "S-Adenosylmethionine",
+                  "registryNumber": "7LP2MPO46S"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.1371/journal.pone.0107756"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC4210123"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC4210123?pdf=render"
+                }
+              ]
+            },
+            "isOpenAccess": "Y",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 30,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "Y",
+            "hasLabsLinks": "Y",
+            "hasData": "Y",
+            "license": "cc by",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "N",
+            "dateOfCompletion": "2015-06-24",
+            "dateOfCreation": "2014-10-28",
+            "dateOfRevision": "2018-11-13",
+            "electronicPublicationDate": "2014-10-27",
+            "firstPublicationDate": "2014-10-27",
+            "firstIndexDate": "2014-10-28",
+            "fullTextReceivedDate": "2020-07-09",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "query": "TITLE:\"Environmental enrichment and antioxidant\"",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Environmental+enrichment+and+antioxidant%22&format=json&resultType=core&pageSize=5",
+    "response": {
+      "version": "6.9",
+      "hitCount": 1,
+      "request": {
+        "queryString": "TITLE:\"Environmental enrichment and antioxidant\"",
+        "resultType": "core",
+        "cursorMark": "*",
+        "pageSize": 5,
+        "sort": "",
+        "synonym": false
+      },
+      "resultList": {
+        "result": [
+          {
+            "id": "31482985",
+            "source": "MED",
+            "pmid": "31482985",
+            "pmcid": "PMC7020968",
+            "fullTextIdList": {
+              "fullTextId": [
+                "PMC7020968"
+              ]
+            },
+            "doi": "10.5935/abc.20190166",
+            "title": "Environmental Enrichment Promotes Antioxidant Effect in the Ventrolateral Medulla and Kidney of Renovascular Hypertensive Rats.",
+            "authorString": "Sousa LE, Favero IFD, Bezerra FS, Souza ABF, Alzamora AC.",
+            "authorList": {
+              "author": [
+                {
+                  "fullName": "Sousa LE",
+                  "lastName": "Sousa",
+                  "firstName": "Luiz Eduardo",
+                  "initials": "LE",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-3601-5517"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Universidade Federal de Ouro Preto, Ouro Preto, MG - Brazil."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Favero IFD",
+                  "lastName": "Favero",
+                  "firstName": "Iuri Ferrari Del",
+                  "initials": "IFD",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Universidade Federal de Ouro Preto, Ouro Preto, MG - Brazil."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Bezerra FS",
+                  "lastName": "Bezerra",
+                  "firstName": "Frank Silva",
+                  "initials": "FS",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0002-0804-5196"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Universidade Federal de Ouro Preto, Ouro Preto, MG - Brazil."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Souza ABF",
+                  "lastName": "Souza",
+                  "firstName": "Ana Beatriz Farias de",
+                  "initials": "ABF",
+                  "authorId": {
+                    "type": "ORCID",
+                    "value": "0000-0001-5226-6378"
+                  },
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Universidade Federal de Ouro Preto, Ouro Preto, MG - Brazil."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "fullName": "Alzamora AC",
+                  "lastName": "Alzamora",
+                  "firstName": "Andreia Carvalho",
+                  "initials": "AC",
+                  "authorAffiliationDetailsList": {
+                    "authorAffiliation": [
+                      {
+                        "affiliation": "Universidade Federal de Ouro Preto, Ouro Preto, MG - Brazil."
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "authorIdList": {
+              "authorId": [
+                {
+                  "type": "ORCID",
+                  "value": "0000-0001-5226-6378"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-0804-5196"
+                },
+                {
+                  "type": "ORCID",
+                  "value": "0000-0002-3601-5517"
+                }
+              ]
+            },
+            "dataLinksTagsList": {
+              "dataLinkstag": [
+                "supporting_data"
+              ]
+            },
+            "journalInfo": {
+              "issue": "5",
+              "volume": "113",
+              "journalIssueId": 2888776,
+              "dateOfPublication": "2019 Nov",
+              "monthOfPublication": 11,
+              "yearOfPublication": 2019,
+              "journal": {
+                "medlineAbbreviation": "Arq Bras Cardiol",
+                "title": "Arquivos brasileiros de cardiologia",
+                "essn": "1678-4170",
+                "issn": "0066-782X",
+                "nlmid": "0421031",
+                "isoabbreviation": "Arq Bras Cardiol"
+              },
+              "printPublicationDate": "2019-11-01"
+            },
+            "pubYear": "2019",
+            "pageInfo": "905-912",
+            "abstractText": "<h4>Background</h4>Arterial hypertension is a precursor to the development of heart and renal failure, furthermore is associated with elevated oxidative markers. Environmental enrichment of rodents increases performance in memory tasks, also appears to exert an antioxidant effect in the hippocampus of normotensive rats.<h4>Objectives</h4>Evaluate the effect of environmental enrichment on oxidative stress in the ventrolateral medulla, heart, and kidneys of renovascular hypertensive rats.<h4>Methods</h4>Forty male Fischer rats (6 weeks old) were divided into four groups: normotensive standard condition (Sham-St), normotensive enriched environment (Sham-EE), hypertensive standard condition (2K1C-St), and hypertensive enriched environment (2K1C-EE). Animals were kept in enriched or standard cages for four weeks after all animals were euthanized. The level of significance was at p < 0.05.<h4>Results</h4>2K1C-St group presented higher mean arterial pressure (mmHg) 147.0 (122.0; 187.0) compared to Sham-St 101.0 (94.0; 109.0) and Sham-EE 106.0 (90.8; 117.8). Ventrolateral medulla from 2K1C-EE had higher superoxide dismutase (SOD) (49.1 ± 7.9 U/mg ptn) and catalase activity (0.8 ± 0.4 U/mg ptn) compared to SOD (24.1 ± 9.8 U/mg ptn) and catalase activity (0.3 ± 0.1 U/mg ptn) in 2K1C-St. 2K1C-EE presented lower lipid oxidation (0.39 ± 0.06 nmol/mg ptn) than 2K1C-St (0.53 ± 0.22 nmol/mg ptn) in ventrolateral medulla. Furthermore, the kidneys of 2K1C-EE (11.9 ± 2.3 U/mg ptn) animals presented higher superoxide-dismutase activity than those of 2K1C-St animals (9.1 ± 2.3 U/mg ptn).<h4>Conclusion</h4>Environmental enrichment induced an antioxidant effect in the ventrolateral medulla and kidneys that contributes to reducing oxidative damage among hypertensive rats.",
+            "affiliation": "Universidade Federal de Ouro Preto, Ouro Preto, MG - Brazil.",
+            "publicationStatus": "ppublish",
+            "language": "eng",
+            "pubModel": "Print",
+            "pubTypeList": {
+              "pubType": [
+                "Research Support, Non-U.S. Gov't",
+                "research-article",
+                "Journal Article"
+              ]
+            },
+            "meshHeadingList": {
+              "meshHeading": [
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Kidney",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "EN",
+                        "qualifierName": "enzymology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Heart Ventricles",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "EN",
+                        "qualifierName": "enzymology"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Medulla Oblongata",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "EN",
+                        "qualifierName": "enzymology"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "ME",
+                        "qualifierName": "metabolism"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Animals"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Rats, Inbred F344"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Hypertension, Renovascular",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "CI",
+                        "qualifierName": "chemically induced"
+                      },
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "ME",
+                        "qualifierName": "metabolism"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Catalase",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "ME",
+                        "qualifierName": "metabolism"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Superoxide Dismutase",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "N",
+                        "abbreviation": "ME",
+                        "qualifierName": "metabolism"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Antioxidants",
+                  "meshQualifierList": {
+                    "meshQualifier": [
+                      {
+                        "majorTopic_YN": "Y",
+                        "abbreviation": "ME",
+                        "qualifierName": "metabolism"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Environment"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Housing, Animal"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Lipid Peroxidation"
+                },
+                {
+                  "majorTopic_YN": "Y",
+                  "descriptorName": "Oxidative Stress"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Male"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Protein Carbonylation"
+                },
+                {
+                  "majorTopic_YN": "N",
+                  "descriptorName": "Arterial Pressure"
+                }
+              ]
+            },
+            "chemicalList": {
+              "chemical": [
+                {
+                  "name": "Catalase",
+                  "registryNumber": "EC 1.11.1.6"
+                },
+                {
+                  "name": "Antioxidants",
+                  "registryNumber": "0"
+                },
+                {
+                  "name": "Superoxide Dismutase",
+                  "registryNumber": "EC 1.15.1.1"
+                }
+              ]
+            },
+            "subsetList": {
+              "subset": [
+                {
+                  "code": "IM",
+                  "name": "Index Medicus"
+                }
+              ]
+            },
+            "fullTextUrlList": {
+              "fullTextUrl": [
+                {
+                  "availability": "Subscription required",
+                  "availabilityCode": "S",
+                  "documentStyle": "doi",
+                  "site": "DOI",
+                  "url": "https://doi.org/10.5935/abc.20190166"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "html",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC7020968"
+                },
+                {
+                  "availability": "Open access",
+                  "availabilityCode": "OA",
+                  "documentStyle": "pdf",
+                  "site": "Europe_PMC",
+                  "url": "https://europepmc.org/articles/PMC7020968?pdf=render"
+                }
+              ]
+            },
+            "commentCorrectionList": {
+              "commentCorrection": [
+                {
+                  "source": "MED",
+                  "id": "31800716",
+                  "reference": "Arq Bras Cardiol. 2019 Nov;113(5):913-914. doi: 10.5935/abc.20190221",
+                  "type": "Comment in",
+                  "orderIn": 1
+                }
+              ]
+            },
+            "isOpenAccess": "Y",
+            "inEPMC": "Y",
+            "inPMC": "Y",
+            "citedByCount": 5,
+            "hasReferences": "Y",
+            "hasTextMinedTerms": "Y",
+            "hasDbCrossReferences": "N",
+            "hasPDF": "Y",
+            "hasBook": "N",
+            "hasSuppl": "N",
+            "hasLabsLinks": "N",
+            "hasData": "Y",
+            "license": "cc by",
+            "authMan": "N",
+            "epmcAuthMan": "N",
+            "nihAuthMan": "N",
+            "hasTMAccessionNumbers": "Y",
+            "tmAccessionTypeList": {
+              "accessionType": [
+                "doi"
+              ]
+            },
+            "dateOfCompletion": "2020-04-28",
+            "dateOfCreation": "2019-09-05",
+            "dateOfRevision": "2024-07-25",
+            "firstPublicationDate": "2019-11-01",
+            "firstIndexDate": "2019-09-05",
+            "fullTextReceivedDate": "2025-02-04",
+            "hasEvaluations": "N"
+          }
+        ]
+      }
+    }
+  }
+]

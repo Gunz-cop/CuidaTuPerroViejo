@@ -98,7 +98,7 @@ const schema = {
 <BaseLayout title={title} description={description}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
 
-  <main id="main-content">
+  <main tabindex="-1" id="main-content">
     <header class="age-hero">
       <picture class="age-hero__media">
         <source media="(min-width: 64rem)" srcset="/images/herramientas/calculadora-edad-perro-hero-400.webp 400w, /images/herramientas/calculadora-edad-perro-hero.webp 1200w" sizes="100vw" />

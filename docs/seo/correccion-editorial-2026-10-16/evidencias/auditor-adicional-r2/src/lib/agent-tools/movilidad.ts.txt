@@ -1,0 +1,169 @@
+// Selector de ayudas de movilidad (contratos F4A §1.2). Opciones y tabla de
+// resultados copiadas sin cambios del script de la página en la base eff4ce1:
+// la clave es código de nivel + código de manejo. Las URLs de afiliado viven en
+// movilidad-afiliados.ts y no forman parte de este dato.
+import { SCHEMA_VERSION, SITE, requireEnum, requireExactKeys, type Guide, type ToolInfo } from './contract.ts';
+
+export const MOBILITY_KEYS = ['level', 'handling'] as const;
+export const LEVELS = [
+  { value: 'light', code: 'L', icon: '\uD83D\uDC3E', title: 'Nivel Ligero', subtitle: 'Camina pero resbala o tiene miedo al suelo' },
+  { value: 'moderate', code: 'M', icon: '\uD83D\uDEB6', title: 'Nivel Moderado', subtitle: 'Se fatiga r\u00e1pido, debilidad trasera o le cuestan las escaleras' },
+  { value: 'severe', code: 'S', icon: '\uD83D\uDECC', title: 'Nivel Severo', subtitle: 'Ya no puede levantarse solo o perdi\u00f3 el uso de las patas traseras' },
+] as const;
+export const HANDLING = [
+  { value: 'calm', code: 'A', icon: '\uD83D\uDE0C', title: 'Se deja manipular con calma', subtitle: 'Tolera que le toquen las patas y el cuerpo' },
+  { value: 'stressed', code: 'B', icon: '\uD83D\uDE2C', title: 'Se estresa o reacciona mal', subtitle: 'Intenta morder, huye o gru\u00f1e cuando le tocan' },
+] as const;
+
+export type MobilityLevel = (typeof LEVELS)[number]['value'];
+export type MobilityHandling = (typeof HANDLING)[number]['value'];
+export type LevelCode = (typeof LEVELS)[number]['code'];
+export type HandlingCode = (typeof HANDLING)[number]['code'];
+export type ResultKey = `${LevelCode}${HandlingCode}`;
+export interface MobilityInput { level: MobilityLevel; handling: MobilityHandling }
+interface MobilityResultText { icon: string; badge: string; title: string; description: string; plan: ReadonlyArray<{ name: string; why: string }> }
+
+export const RESULTS = {
+  LA: {
+    icon: '✅',
+    badge: 'Nivel Ligero – Tolera accesorios',
+    title: 'Calcetines y botas antideslizantes',
+    description: 'Valora la tracción del suelo y consulta qué accesorios tolera. Calcetines o botas pueden ser opciones si se ajustan bien; no son adecuados para todos los perros.',
+    plan: [
+      { name: 'Calcetines antideslizantes de silicona', why: 'Comprueba ajuste, agarre y tolerancia; retíralos si hay molestias o resbalones.' },
+      { name: 'Botas de caucho con suela estructurada', why: 'Necesitan ajuste y prueba supervisada; no corrigen por sí solas la causa de inestabilidad.' },
+    ],
+  },
+  LB: {
+    icon: '✅',
+    badge: 'Nivel Ligero – Mejor sin accesorios en patas',
+    title: 'Alfombras antideslizantes por toda la casa',
+    description: 'Prioriza rutas estables sin forzar accesorios que rechaza. Comprueba que las superficies no se muevan; ninguna adaptación elimina todo riesgo.',
+    plan: [
+      { name: 'Alfombras de yoga (antideslizantes)', why: 'Comprueba que queden planas, fijadas y permitan buen agarre en ese suelo.' },
+      { name: 'Runners para pasillos', why: 'Revisa la sujeción y los bordes; algunos materiales se desplazan o arrugan.' },
+    ],
+  },
+  MA: {
+    icon: '✅',
+    badge: 'Nivel Moderado – Tolera arnés',
+    title: 'Arnés de soporte trasero + rampa de acceso',
+    description: 'Consulta si necesita apoyo y qué dispositivo encaja con su capacidad. Pide una demostración de ajuste y uso antes de ayudarlo a caminar.',
+    plan: [
+      { name: 'Arnés de soporte trasero con asa dorsal', why: 'Valorar ajuste y técnica de soporte con el equipo veterinario.' },
+      { name: 'Rampa plegable para coches y sofás', why: 'Elimina el salto. Superficie antideslizante, inclinación gradual.' },
+      { name: 'Escaleras adaptadas (espuma + funda lavable)', why: 'Para espacios reducidos. Más compactas que la rampa.' },
+    ],
+  },
+  MB: {
+    icon: '✅',
+    badge: 'Nivel Moderado – Prefiere manipulación mínima',
+    title: 'Rampa de acceso + alfombras de ruta',
+    description: 'Prioriza un entorno estable y consulta por el dolor o miedo al contacto. Rampa y alfombras requieren valorar ajuste y tolerancia.',
+    plan: [
+      { name: 'Rampa plegable con superficie antideslizante', why: 'Usarla solo si es estable, está bien ajustada y el perro la tolera sin forzarlo.' },
+      { name: 'Alfombras runner para rutas habituales', why: 'Traza su camino seguro sin que necesite llevar nada encima.' },
+      { name: 'Cama ortopédica de memory foam', why: 'Valora apoyo, acceso y salida; no se exige un material ni bordes concretos.' },
+    ],
+  },
+  SA: {
+    icon: '❤️',
+    badge: 'Nivel Severo – Cuidado paliativo',
+    title: 'Silla de ruedas canina + cama ortopédica + soporte de cadera',
+    description: 'La movilidad muy limitada necesita evaluación y un plan de apoyo. Una silla puede ser inapropiada en algunos pacientes; la cama no garantiza prevenir úlceras. Revisa la alerta paliativa.',
+    plan: [
+      { name: 'Silla de ruedas canina trasera (a medida)', why: 'Requiere indicación, ajuste y prueba profesional; no garantiza autonomía.' },
+      { name: 'Cama de memory foam ortopédico (bordes altos)', why: 'Buscar apoyo cómodo y acceso adecuado; revisar piel y cambios de postura según plan clínico.' },
+      { name: 'Soporte de cadera / faja lumbar canina', why: 'Para los momentos en que le ayudas a caminar sin silla.' },
+      { name: 'Pañales caninos + empapadores absorbentes', why: 'Para la higiene cuando ya no controla esfínteres.' },
+    ],
+  },
+  SB: {
+    icon: '❤️',
+    badge: 'Nivel Severo – Cuidado paliativo',
+    title: 'Silla de ruedas + cama ortopédica + entorno adaptado',
+    description: 'Como se estresa con el contacto, lo prioritario es darle el máximo de autonomía posible con ayudas de entorno. Revisa la alerta paliativa arriba.',
+    plan: [
+      { name: 'Silla de ruedas canina trasera (a medida)', why: 'Valorar con el veterinario si puede usarla y qué ayuda necesita; no garantiza reducir ansiedad.' },
+      { name: 'Cama de memory foam ortopédico', why: 'Valorar apoyo, humedad y comodidad; ningún material garantiza prevenir úlceras.' },
+      { name: 'Pañales caninos desechables + empapadores', why: 'Para la higiene. Revísalos y cambia los húmedos o sucios; consulta si la piel se irrita.' },
+    ],
+  },
+} as const satisfies Record<ResultKey, MobilityResultText>;
+
+
+/** Contenido estático de #m5alert (visible sólo en nivel severo), según alertItemText de contratos §1.2. */
+export const PALLIATIVE_ALERT = {
+  title: '⚠️ Cuidado paliativo importante',
+  items: [
+    { text: '⚠️ Para la higiene: considera pañales caninos y empapadores absorbentes bajo su zona de descanso. Revísalos y cambia los húmedos o sucios; consulta si la piel se irrita.', link: null },
+    { text: '⚠️ Si no puede cambiar de postura, pide un plan individual de movilización y revisión de la piel; no hay un intervalo que garantice prevenir úlceras.', link: { label: 'Cuidados y señales para consultar →', url: `${SITE}/cuidados-paliativos-perros/ulceras-presion-perros` } },
+    { text: '⚠️ Ordena observaciones de bienestar para la consulta con nuestra', link: { label: 'Calculadora HHHHHMM →', url: `${SITE}/herramientas/calculadora-calidad-vida-perros` } },
+  ],
+} as const;
+
+export const MOBILITY_GUIDE: Guide = { label: '📖 Leer la guía completa de movilidad y dolor →', url: `${SITE}/movilidad-dolor-perros-mayores` };
+export const MOBILITY_NOTICES = ['Estas opciones orientan preguntas para el veterinario; no diagnostican ni prescriben un dispositivo. No fuerces el uso de una ayuda que cause dolor o miedo.'] as const;
+
+export const MOBILITY_TOOL: ToolInfo = {
+  toolId: 'movilidad',
+  documentId: 'tool--movilidad',
+  name: 'Selector de Ayudas de Movilidad para Perros Mayores',
+  canonicalUrl: `${SITE}/herramientas/selector-movilidad-perros-mayores`,
+  softwareVersion: '1.0',
+  lastReviewed: '2026-05-14',
+};
+
+export function resultKey(level: LevelCode, handling: HandlingCode): ResultKey {
+  return `${level}${handling}`;
+}
+
+export function parseMobilityInput(value: unknown): MobilityInput {
+  const raw = requireExactKeys(value, MOBILITY_KEYS);
+  return {
+    level: requireEnum(raw.level, LEVELS.map((entry) => entry.value)),
+    handling: requireEnum(raw.handling, HANDLING.map((entry) => entry.value)),
+  };
+}
+
+type PalliativeAlert = { title: string; items: Array<{ text: string; link: Guide | null }> };
+
+export interface MobilityResult {
+  schemaVersion: typeof SCHEMA_VERSION;
+  tool: ToolInfo;
+  input: MobilityInput;
+  resultKey: ResultKey;
+  icon: string;
+  badge: string;
+  title: string;
+  description: string;
+  plan: Array<{ name: string; why: string }>;
+  palliativeAlert: PalliativeAlert | null;
+  guide: Guide;
+  notices: string[];
+}
+
+export function recommendMobilityAids(value: unknown): MobilityResult {
+  const input = parseMobilityInput(value);
+  const level = LEVELS.find((entry) => entry.value === input.level)!;
+  const handling = HANDLING.find((entry) => entry.value === input.handling)!;
+  const key = resultKey(level.code, handling.code);
+  const result = RESULTS[key];
+  return {
+    schemaVersion: SCHEMA_VERSION,
+    tool: { ...MOBILITY_TOOL },
+    input,
+    resultKey: key,
+    icon: result.icon,
+    badge: result.badge,
+    title: result.title,
+    description: result.description,
+    plan: result.plan.map((item) => ({ name: item.name, why: item.why })),
+    palliativeAlert: level.code === 'S' ? {
+      title: PALLIATIVE_ALERT.title,
+      items: PALLIATIVE_ALERT.items.map((item) => ({ text: item.text, link: item.link === null ? null : { label: item.link.label, url: item.link.url } })),
+    } : null,
+    guide: { ...MOBILITY_GUIDE },
+    notices: [...MOBILITY_NOTICES],
+  };
+}

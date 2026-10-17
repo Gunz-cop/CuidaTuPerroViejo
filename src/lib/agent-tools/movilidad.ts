@@ -1,5 +1,6 @@
 // Selector de ayudas de movilidad (contratos F4A §1.2). Opciones y tabla de
-// resultados copiadas sin cambios del script de la página en la base eff4ce1:
+// resultados basadas en el script de la base eff4ce1; textos clínicos corregidos
+// en la revisión editorial 2026-10-16 (ver docs/seo/correccion-editorial-2026-10-16):
 // la clave es código de nivel + código de manejo. Las URLs de afiliado viven en
 // movilidad-afiliados.ts y no forman parte de este dato.
 import { SCHEMA_VERSION, SITE, requireEnum, requireExactKeys, type Guide, type ToolInfo } from './contract.ts';
@@ -28,29 +29,29 @@ export const RESULTS = {
     icon: '✅',
     badge: 'Nivel Ligero – Tolera accesorios',
     title: 'Calcetines y botas antideslizantes',
-    description: 'Tu perro necesita tracción segura en el suelo. Los calcetines de silicona son el primer paso; las botas de caucho dan soporte lateral extra.',
+    description: 'Valora la tracción del suelo y consulta qué accesorios tolera. Calcetines o botas pueden ser opciones si se ajustan bien; no son adecuados para todos los perros.',
     plan: [
-      { name: 'Calcetines antideslizantes de silicona', why: 'Agarre inmediato en parquet. Fáciles de poner, se lavan a diario.' },
-      { name: 'Botas de caucho con suela estructurada', why: 'Cubren el tobillo. Ideales cuando las patas se abren lateralmente.' },
+      { name: 'Calcetines antideslizantes de silicona', why: 'Comprueba ajuste, agarre y tolerancia; retíralos si hay molestias o resbalones.' },
+      { name: 'Botas de caucho con suela estructurada', why: 'Necesitan ajuste y prueba supervisada; no corrigen por sí solas la causa de inestabilidad.' },
     ],
   },
   LB: {
     icon: '✅',
     badge: 'Nivel Ligero – Mejor sin accesorios en patas',
     title: 'Alfombras antideslizantes por toda la casa',
-    description: 'Como no tolera cosas en las patas, la solución es el entorno. Cubrir sus rutas elimina el riesgo sin ningún estrés para él.',
+    description: 'Prioriza rutas estables sin forzar accesorios que rechaza. Comprueba que las superficies no se muevan; ninguna adaptación elimina todo riesgo.',
     plan: [
-      { name: 'Alfombras de yoga (antideslizantes)', why: 'Bajan el riesgo de caída sin que el perro note nada. Una por corredor.' },
-      { name: 'Runners para pasillos', why: 'Cubren tramos largos. Se pueden cortar a medida y no se deslizan.' },
+      { name: 'Alfombras de yoga (antideslizantes)', why: 'Comprueba que queden planas, fijadas y permitan buen agarre en ese suelo.' },
+      { name: 'Runners para pasillos', why: 'Revisa la sujeción y los bordes; algunos materiales se desplazan o arrugan.' },
     ],
   },
   MA: {
     icon: '✅',
     badge: 'Nivel Moderado – Tolera arnés',
     title: 'Arnés de soporte trasero + rampa de acceso',
-    description: 'Necesita apoyo activo para caminar y acceder a superficies elevadas. El arnés te permite guiarle sin dañar su espalda ni la tuya.',
+    description: 'Consulta si necesita apoyo y qué dispositivo encaja con su capacidad. Pide una demostración de ajuste y uso antes de ayudarlo a caminar.',
     plan: [
-      { name: 'Arnés de soporte trasero con asa dorsal', why: 'Sostiene las caderas al caminar. Te protege la espalda a ti también.' },
+      { name: 'Arnés de soporte trasero con asa dorsal', why: 'Valorar ajuste y técnica de soporte con el equipo veterinario.' },
       { name: 'Rampa plegable para coches y sofás', why: 'Elimina el salto. Superficie antideslizante, inclinación gradual.' },
       { name: 'Escaleras adaptadas (espuma + funda lavable)', why: 'Para espacios reducidos. Más compactas que la rampa.' },
     ],
@@ -59,21 +60,21 @@ export const RESULTS = {
     icon: '✅',
     badge: 'Nivel Moderado – Prefiere manipulación mínima',
     title: 'Rampa de acceso + alfombras de ruta',
-    description: 'Como se estresa con el contacto, priorizamos soluciones de entorno. La rampa le da autonomía; las alfombras crean un camino seguro sin tocarlo.',
+    description: 'Prioriza un entorno estable y consulta por el dolor o miedo al contacto. Rampa y alfombras requieren valorar ajuste y tolerancia.',
     plan: [
-      { name: 'Rampa plegable con superficie antideslizante', why: 'Se adapta a coches y muebles. Él sube y baja solo cuando esté listo.' },
+      { name: 'Rampa plegable con superficie antideslizante', why: 'Usarla solo si es estable, está bien ajustada y el perro la tolera sin forzarlo.' },
       { name: 'Alfombras runner para rutas habituales', why: 'Traza su camino seguro sin que necesite llevar nada encima.' },
-      { name: 'Cama ortopédica de memory foam', why: 'Reduce el esfuerzo de levantarse. Bordes firmes como punto de apoyo.' },
+      { name: 'Cama ortopédica de memory foam', why: 'Valora apoyo, acceso y salida; no se exige un material ni bordes concretos.' },
     ],
   },
   SA: {
     icon: '❤️',
     badge: 'Nivel Severo – Cuidado paliativo',
     title: 'Silla de ruedas canina + cama ortopédica + soporte de cadera',
-    description: 'Tu perro necesita apoyo total. La silla de ruedas le devuelve movilidad; la cama ortopédica previene úlceras de decúbito. Revisa la alerta paliativa arriba.',
+    description: 'La movilidad muy limitada necesita evaluación y un plan de apoyo. Una silla puede ser inapropiada en algunos pacientes; la cama no garantiza prevenir úlceras. Revisa la alerta paliativa.',
     plan: [
-      { name: 'Silla de ruedas canina trasera (a medida)', why: 'Le permite moverse solo. Fundamental para su calidad de vida y estado mental.' },
-      { name: 'Cama de memory foam ortopédico (bordes altos)', why: 'Distribuye el peso, previene llagas. Los bordes firmes ayudan a incorporarse.' },
+      { name: 'Silla de ruedas canina trasera (a medida)', why: 'Requiere indicación, ajuste y prueba profesional; no garantiza autonomía.' },
+      { name: 'Cama de memory foam ortopédico (bordes altos)', why: 'Buscar apoyo cómodo y acceso adecuado; revisar piel y cambios de postura según plan clínico.' },
       { name: 'Soporte de cadera / faja lumbar canina', why: 'Para los momentos en que le ayudas a caminar sin silla.' },
       { name: 'Pañales caninos + empapadores absorbentes', why: 'Para la higiene cuando ya no controla esfínteres.' },
     ],
@@ -84,9 +85,9 @@ export const RESULTS = {
     title: 'Silla de ruedas + cama ortopédica + entorno adaptado',
     description: 'Como se estresa con el contacto, lo prioritario es darle el máximo de autonomía posible con ayudas de entorno. Revisa la alerta paliativa arriba.',
     plan: [
-      { name: 'Silla de ruedas canina trasera (a medida)', why: 'Le permite moverse sin depender de tu ayuda. Reduce su ansiedad.' },
-      { name: 'Cama de memory foam ortopédico', why: 'Previene úlceras. Elige una con cubierta de felpa suave: menos fricción.' },
-      { name: 'Pañales caninos desechables + empapadores', why: 'Para la higiene. Cámbialos cada vez que estén mojados para evitar dermatitis.' },
+      { name: 'Silla de ruedas canina trasera (a medida)', why: 'Valorar con el veterinario si puede usarla y qué ayuda necesita; no garantiza reducir ansiedad.' },
+      { name: 'Cama de memory foam ortopédico', why: 'Valorar apoyo, humedad y comodidad; ningún material garantiza prevenir úlceras.' },
+      { name: 'Pañales caninos desechables + empapadores', why: 'Para la higiene. Revísalos y cambia los húmedos o sucios; consulta si la piel se irrita.' },
     ],
   },
 } as const satisfies Record<ResultKey, MobilityResultText>;
@@ -96,14 +97,14 @@ export const RESULTS = {
 export const PALLIATIVE_ALERT = {
   title: '⚠️ Cuidado paliativo importante',
   items: [
-    { text: '⚠️ Para la higiene: considera pañales caninos y empapadores absorbentes bajo su zona de descanso. Cámbialos con frecuencia para evitar dermatitis.', link: null },
-    { text: '⚠️ Cambia su posición cada 4 horas si no puede moverse solo, para prevenir úlceras de decúbito.', link: { label: 'Cómo hacerlo sin causarle dolor →', url: `${SITE}/cuidados-paliativos-perros/ulceras-presion-perros` } },
-    { text: '⚠️ Evalúa si hay dolor controlado con nuestra', link: { label: 'Calculadora HHHHHMM →', url: `${SITE}/herramientas/calculadora-calidad-vida-perros` } },
+    { text: '⚠️ Para la higiene: considera pañales caninos y empapadores absorbentes bajo su zona de descanso. Revísalos y cambia los húmedos o sucios; consulta si la piel se irrita.', link: null },
+    { text: '⚠️ Si no puede cambiar de postura, pide un plan individual de movilización y revisión de la piel; no hay un intervalo que garantice prevenir úlceras.', link: { label: 'Cuidados y señales para consultar →', url: `${SITE}/cuidados-paliativos-perros/ulceras-presion-perros` } },
+    { text: '⚠️ Ordena observaciones de bienestar para la consulta con nuestra', link: { label: 'Calculadora HHHHHMM →', url: `${SITE}/herramientas/calculadora-calidad-vida-perros` } },
   ],
 } as const;
 
 export const MOBILITY_GUIDE: Guide = { label: '📖 Leer la guía completa de movilidad y dolor →', url: `${SITE}/movilidad-dolor-perros-mayores` };
-export const MOBILITY_NOTICES = ['Esta recomendación es una guía de apoyo. Ante dudas, consulta siempre a tu veterinario.'] as const;
+export const MOBILITY_NOTICES = ['Estas opciones orientan preguntas para el veterinario; no diagnostican ni prescriben un dispositivo. No fuerces el uso de una ayuda que cause dolor o miedo.'] as const;
 
 export const MOBILITY_TOOL: ToolInfo = {
   toolId: 'movilidad',
@@ -111,7 +112,7 @@ export const MOBILITY_TOOL: ToolInfo = {
   name: 'Selector de Ayudas de Movilidad para Perros Mayores',
   canonicalUrl: `${SITE}/herramientas/selector-movilidad-perros-mayores`,
   softwareVersion: '1.0',
-  lastReviewed: '2026-05-14',
+  lastReviewed: '2026-10-16',
 };
 
 export function resultKey(level: LevelCode, handling: HandlingCode): ResultKey {
