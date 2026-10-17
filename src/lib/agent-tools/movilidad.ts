@@ -1,7 +1,9 @@
 // Selector de ayudas de movilidad (contratos F4A §1.2). Las opciones son las
 // de la base eff4ce1; la tabla de resultados y el aviso de nivel severo se
 // revisaron en la versión 1.1 (2026-10-17) contra las fuentes de
-// src/lib/mobility-sources.ts. La clave es código de nivel + código de manejo. Las URLs de afiliado viven en
+// src/lib/mobility-sources.ts, incorporando la revisión editorial 2026-10-16
+// (docs/seo/correccion-editorial-2026-10-16): aviso general, higiene y plan
+// individual de cambios de postura. La clave es código de nivel + código de manejo. Las URLs de afiliado viven en
 // movilidad-afiliados.ts y no forman parte de este dato.
 import { SCHEMA_VERSION, SITE, requireEnum, requireExactKeys, type Guide, type ToolInfo } from './contract.ts';
 
@@ -97,14 +99,14 @@ export const RESULTS = {
 export const PALLIATIVE_ALERT = {
   title: '💛 Cuidados diarios si ya no se levanta solo',
   items: [
-    { text: '🧻 Para la higiene: considera pañales caninos y empapadores absorbentes bajo su zona de descanso. Cámbialos con frecuencia para evitar dermatitis.', link: null },
-    { text: '🔄 Cambia su postura cada 2 a 4 horas si no puede moverse solo, y más a menudo si es delgado o su cama es dura, para prevenir úlceras por presión.', link: { label: 'Cómo hacerlo sin causarle dolor →', url: `${SITE}/cuidados-paliativos-perros/ulceras-presion-perros` } },
+    { text: '🧻 Para la higiene: considera pañales caninos y empapadores absorbentes bajo su zona de descanso. Revísalos y cambia los húmedos o sucios; consulta si la piel se irrita.', link: null },
+    { text: '🔄 Si no puede cambiar de postura solo, muévelo con frecuencia y pide a tu veterinario un plan individual de cambios de postura y revisión de la piel: no hay un intervalo que sirva para todos. Atiende sus señales de incomodidad.', link: { label: 'Cuidados y señales para consultar →', url: `${SITE}/cuidados-paliativos-perros/ulceras-presion-perros` } },
     { text: '🩺 Pide a tu veterinario que valore si su dolor está bien controlado, y sigue su bienestar con nuestra', link: { label: 'Calculadora HHHHHMM →', url: `${SITE}/herramientas/calculadora-calidad-vida-perros` } },
   ],
 } as const;
 
 export const MOBILITY_GUIDE: Guide = { label: '📖 Leer la guía completa de movilidad y dolor →', url: `${SITE}/movilidad-dolor-perros-mayores` };
-export const MOBILITY_NOTICES = ['Esta recomendación es una guía de apoyo. Ante dudas, consulta siempre a tu veterinario.'] as const;
+export const MOBILITY_NOTICES = ['Estas opciones orientan preguntas para el veterinario; no diagnostican ni prescriben un dispositivo. No fuerces el uso de una ayuda que cause dolor o miedo.'] as const;
 
 export const MOBILITY_TOOL: ToolInfo = {
   toolId: 'movilidad',

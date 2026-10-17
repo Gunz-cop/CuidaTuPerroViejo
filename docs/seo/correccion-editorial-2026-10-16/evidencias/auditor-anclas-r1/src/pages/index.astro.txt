@@ -1,0 +1,132 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeAgeCalculator from '../components/HomeAgeCalculator.astro';
+import HomeCareDashboard from '../components/HomeCareDashboard.astro';
+import HomeCareStory from '../components/HomeCareStory.astro';
+import HomeFaqSection from '../components/HomeFaqSection.astro';
+import HomeHero from '../components/HomeHero.astro';
+import HomePillarsHub from '../components/HomePillarsHub.astro';
+import HomeQuickGuide from '../components/HomeQuickGuide.astro';
+import HomeRecentPosts from '../components/HomeRecentPosts.astro';
+import HomeResources from '../components/HomeResources.astro';
+import HomeStatsBand from '../components/HomeStatsBand.astro';
+
+const blogEntries = await getCollection('blog', ({ data }) => data.status === 'Publicado');
+const recentPosts = blogEntries
+  .sort((a, b) => new Date(b.data.datePublished).getTime() - new Date(a.data.datePublished).getTime())
+  .slice(0, 3);
+
+const faqItems = [
+  {
+    question: '¿A qué edad se considera senior un perro?',
+    answer: 'Depende sobre todo de su tamaño y de su estado de salud. Como referencia, los perros pequeños y medianos suelen entrar en la etapa senior alrededor de los 7 u 8 años; los grandes y gigantes, hacia los 5 o 6. Tu veterinario puede valorar mejor su etapa individual.',
+  },
+  {
+    question: '¿Cuánto debe caminar un perro mayor al día?',
+    answer: 'Suelen funcionar mejor varios paseos cortos y tranquilos que uno largo. Ajusta el tiempo y el ritmo según su dolor, fatiga, temperatura ambiental y recuperación después de cada salida.',
+  },
+  {
+    question: '¿Qué comida es mejor para un perro senior?',
+    answer: 'La dieta debe adaptarse a su condición corporal, actividad y posibles enfermedades. Conviene priorizar proteínas de buena calidad y controlar las calorías, siempre con indicación veterinaria si existen problemas renales, digestivos u otras condiciones.',
+  },
+  {
+    question: '¿Cómo sé si mi perro mayor tiene dolor?',
+    answer: 'Fíjate en rigidez al levantarse, dificultad para subir o bajar, menor interés por pasear, jadeo sin calor, irritabilidad, aislamiento o cambios en el sueño. Un cambio persistente merece una consulta veterinaria.',
+  },
+  {
+    question: '¿Cómo adapto la casa si tiene movilidad reducida?',
+    answer: 'Añade superficies antideslizantes, evita saltos, facilita el acceso con rampas estables, coloca una cama cómoda y deja agua y comida en lugares fáciles de alcanzar.',
+  },
+  {
+    question: '¿Cuándo debo acudir a urgencias?',
+    answer: 'Busca atención inmediata ante dificultad para respirar, colapso, convulsiones, dolor intenso, sangrado que no cede, vómitos repetidos o una desorientación repentina y severa.',
+  },
+];
+
+const siteUrl = 'https://cuidatuperroviejo.com';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: `${siteUrl}/`,
+      name: 'Cuida tu Perro Viejo',
+      description: 'Guías y herramientas para cuidar el bienestar de perros senior.',
+      inLanguage: 'es',
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/#webpage`,
+      url: `${siteUrl}/`,
+      name: 'Cuidados para perros senior: guía práctica y herramientas',
+      description: 'Reconoce cambios, adapta su rutina y encuentra guías claras para cuidar la salud y el bienestar de tu perro senior.',
+      isPartOf: { '@id': `${siteUrl}/#website` },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/images/home/perro-senior-hero-cama-ortopedica.webp`,
+        width: 1200,
+        height: 800,
+      },
+      inLanguage: 'es',
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${siteUrl}/#faq`,
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+      inLanguage: 'es',
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${siteUrl}/#guias`,
+      name: 'Guías para cuidar a un perro senior',
+      numberOfItems: 6,
+      itemListElement: [
+        ['Salud en perros mayores', '/salud-perros-mayores'],
+        ['Alimentación del perro senior', '/alimentacion-perros-senior'],
+        ['Movilidad y dolor', '/movilidad-dolor-perros-mayores'],
+        ['Salud mental y emociones', '/salud-mental-emocional-perros'],
+        ['Higiene y hogar', '/higiene-hogar-perros-senior'],
+        ['Cuidados paliativos', '/cuidados-paliativos-perros'],
+      ].map(([name, path], index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: { '@type': 'WebPage', name, url: `${siteUrl}${path}` },
+      })),
+      inLanguage: 'es',
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Cuidados para perros senior: guía práctica y herramientas"
+  description="Reconoce cambios, adapta su rutina y encuentra guías claras para cuidar la salud y el bienestar de tu perro senior."
+  keywords="cuidar perro senior, perro viejo, perros mayores, salud perros mayores, alimentación perro senior, movilidad perros mayores"
+  image="/images/home/perro-senior-hero-cama-ortopedica.webp"
+  imageWidth={1200}
+  imageHeight={800}
+  ogType="website"
+>
+  <slot name="head" slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </slot>
+
+  <main tabindex="-1" id="main-content" class="w-full overflow-hidden">
+    <HomeHero />
+    <HomeStatsBand />
+    <HomePillarsHub />
+    <HomeAgeCalculator />
+    <HomeCareStory />
+    <HomeQuickGuide />
+    <HomeCareDashboard />
+    <HomeRecentPosts posts={recentPosts} />
+    <HomeFaqSection items={faqItems} />
+    <HomeResources />
+  </main>
+</BaseLayout>

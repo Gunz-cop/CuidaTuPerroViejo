@@ -302,3 +302,8 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [ ] *El papel de la medicina veterinaria compasiva a domicilio en la etapa final* (Búsqueda GSC)
 - [ ] *Alimentación asistida con papillas y jeringa para perros en fase terminal* (Búsqueda GSC)
 - [ ] *Manejo de la disnea y soporte respiratorio en el hogar (oxigenoterapia geriátrica)*
+
+
+## Edición de tres guías — PR120, 2026-10-17
+
+Baño con movilidad reducida, ojos/oídos y callosidades/higromas: versiones publicadas históricas conservadas; nueva edición práctica autorizada por el propietario y preparada en el PR120. Validación y preview de esta edición se documentan en `docs/seo/correcciones-confianza-2026-10-17/edicion-tres-guias/`. No son artículos nuevos ni una reescritura ya publicada en producción; no se reinicia R3 de ojos/oídos. Contratos históricos de extensión y narrativa sustituidos para este alcance por la adenda autorizada. Fusión y solicitud AdSense no autorizadas.

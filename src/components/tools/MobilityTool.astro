@@ -3,7 +3,7 @@
 // scripts/agent-readiness/tools-ui-parity.mjs (paridad UI ↔ API/MCP) y la
 // proyección Markdown (#m5widget, #m5s0, #m5alert[role=alert], último <p> de #m5s3).
 // Opciones y resultados salen de src/lib/agent-tools/movilidad.ts.
-import { PALLIATIVE_ALERT } from '../../lib/agent-tools/movilidad.ts';
+import { MOBILITY_NOTICES, PALLIATIVE_ALERT } from '../../lib/agent-tools/movilidad.ts';
 
 // Separa el emoji inicial del texto: la paridad lee «icono + resto» (alertItemText).
 const splitIcon = (value: string) => {
@@ -97,7 +97,7 @@ const dogSrcset = (name: string) => [240, 400, 640].map((w) => `${DOG_DIR}/${nam
       <button class="mt__btn mt__btn--ghost mt__desk" id="m5rst" type="button">↻ Repetir</button>
     </div>
     <div class="mt__toast" id="m5copyok" aria-live="polite" hidden>¡Copiado! Ahora pégalo donde quieras.</div>
-    <p class="mt__note">Esta recomendación es una guía de apoyo. Ante dudas, consulta siempre a tu veterinario.</p>
+    <p class="mt__note">{MOBILITY_NOTICES[0]}</p>
   </div>
 </section>
 

@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { seniorFrameworkText } from '../lib/dog-age';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeAgeCalculator from '../components/HomeAgeCalculator.astro';
 import HomeCareDashboard from '../components/HomeCareDashboard.astro';
@@ -20,7 +21,7 @@ const recentPosts = blogEntries
 const faqItems = [
   {
     question: '¿A qué edad se considera senior un perro?',
-    answer: 'Depende sobre todo de su tamaño y de su estado de salud. Como referencia, los perros pequeños y medianos suelen entrar en la etapa senior alrededor de los 7 u 8 años; los grandes y gigantes, hacia los 5 o 6. Tu veterinario puede valorar mejor su etapa individual.',
+    answer: seniorFrameworkText(),
   },
   {
     question: '¿Cuánto debe caminar un perro mayor al día?',
@@ -117,7 +118,7 @@ const structuredData = {
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </slot>
 
-  <main id="main-content" class="w-full overflow-hidden">
+  <main tabindex="-1" id="main-content" class="w-full overflow-hidden">
     <HomeHero />
     <HomeStatsBand />
     <HomePillarsHub />

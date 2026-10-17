@@ -1,4 +1,6 @@
 ---
+import { mobileImageFor } from '../utils/image';
+
 interface Props {
   posts: any[];
 }
@@ -18,7 +20,7 @@ const pilarLabels: Record<string, string> = {
 const cards = posts.map((post) => ({
   post,
   image: post.data.heroImage,
-  mobileImage: post.data.heroImage?.replace(/\.webp$/i, '-400.webp'),
+  mobileImage: mobileImageFor(post.data.heroImage),
 }));
 ---
 

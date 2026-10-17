@@ -3,7 +3,7 @@ kind: "intent"
 schemaVersion: "assistant-intent/v1"
 slug: "comida-casera-perros-mayores"
 articleHref: "/alimentacion-perros-senior/comida-casera-perros-mayores"
-title: "Comida casera para perros mayores: Guía de nutrición natural y segura"
+title: "Comida casera para perros mayores: cómo planificar una dieta segura"
 primaryIntents:
   - "alimentación casera para un perro senior"
   - "cómo preparar comida natural de forma segura para un perro mayor"
@@ -24,5 +24,5 @@ exclusions:
   - "pregunta sobre qué hacer cuando el perro deja de comer por completo"
 groundingSnippet: "Una dieta casera no es automáticamente completa ni segura por ser natural. En un perro senior hay que evitar alimentos peligrosos, cuidar la higiene y coordinar cualquier cambio sostenido con el veterinario o un profesional de nutrición veterinaria, especialmente si existe una enfermedad, pérdida de peso o inapetencia."
 fallbackAdvice: "Antes de cambiar por completo la comida de tu perro mayor, consulta al veterinario para comprobar que la dieta cubra sus necesidades y que no choque con una enfermedad o tratamiento. Evita improvisar con alimentos tóxicos o suplementos. Si deja de comer, vomita, tiene diarrea o pierde peso, necesita valoración en lugar de una receta casera genérica."
-editorialVersion: "2026-08-18.1"
+editorialVersion: "2026-10-16.1"
 ---

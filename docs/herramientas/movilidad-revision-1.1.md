@@ -67,3 +67,15 @@ veterinaria en estos dispositivos); el contrato recomienda «un rehabilitador o
 un veterinario con formación en rehabilitación». N2: aviso de urgencia fijo en
 la sección «Si ya no se levanta solo». M1–M5 aplicados; «Revisa también los
 cuidados diarios de este resultado» sustituye a «justo debajo» (también en la API).
+
+## Integración con la corrección editorial de `main` (2026-10-17)
+
+Al fusionar `main` (PR #117 y #120, corrección editorial 2026-10-16) se
+conservó esta versión 1.1 como base y se incorporaron de `main`: el aviso
+general («Estas opciones orientan preguntas para el veterinario…»), la higiene
+(«Revísalos y cambia los húmedos o sucios…»), la etiqueta «Cuidados y señales
+para consultar», la descripción de la página y la nota de responsabilidad
+editorial. Por decisión del propietario, los cambios de postura pasan a un
+**plan individual**; 2–4 h queda solo como referencia general en la página.
+El oráculo `editorial-2026-10-16.json` de `main` queda sustituido para
+movilidad por `movilidad-v1.1.json`.

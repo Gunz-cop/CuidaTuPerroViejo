@@ -135,7 +135,7 @@ const hideHeroCSS = heroImage
     <style slot="head" is:inline set:html={hideHeroCSS} />
   )}
 
-  <main class="max-w-5xl mx-auto px-4 py-8 md:py-12 w-full">
+  <main id="main-content" tabindex="-1" class="max-w-5xl mx-auto px-4 py-8 md:py-12 w-full">
     <!-- Breadcrumbs -->
     <Breadcrumbs pilarSlug={entry.data.pilar} pilarName={pilarName} title={entry.data.title} />
 

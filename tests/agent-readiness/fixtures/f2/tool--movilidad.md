@@ -24,11 +24,11 @@ Aviso condicional de la interfaz para nivel severo:
 
 💛 Cuidados diarios si ya no se levanta solo
 
-- Para la higiene: considera pañales caninos y empapadores absorbentes bajo su zona de descanso. Cámbialos con frecuencia para evitar dermatitis.
-- Cambia su postura cada 2 a 4 horas si no puede moverse solo, y más a menudo si es delgado o su cama es dura, para prevenir úlceras por presión. [Cómo hacerlo sin causarle dolor →](<https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros>)
+- Para la higiene: considera pañales caninos y empapadores absorbentes bajo su zona de descanso. Revísalos y cambia los húmedos o sucios; consulta si la piel se irrita.
+- Si no puede cambiar de postura solo, muévelo con frecuencia y pide a tu veterinario un plan individual de cambios de postura y revisión de la piel: no hay un intervalo que sirva para todos. Atiende sus señales de incomodidad. [Cuidados y señales para consultar →](<https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros>)
 - Pide a tu veterinario que valore si su dolor está bien controlado, y sigue su bienestar con nuestra [Calculadora HHHHHMM →](<https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros>)
 
-Esta recomendación es una guía de apoyo. Ante dudas, consulta siempre a tu veterinario.
+Estas opciones orientan preguntas para el veterinario; no diagnostican ni prescriben un dispositivo. No fuerces el uso de una ayuda que cause dolor o miedo.
 
 ## Cómo leer el resultado
 
@@ -75,7 +75,7 @@ La silla de ruedas no es una señal de final: para muchos perros es lo que les d
 
 Un perro que pasa casi todo el día tumbado necesita cuidados que no se ven en una lista de compras. Al estar de lado, la presión se concentra sobre el hombro, la cadera y las últimas costillas, y es más alta en perros delgados. Un colchón de espuma la reduce, pero no lo suficiente: el estudio de laboratorio de Caraty y colaboradores (2019), hecho con cadáveres de tres perros, concluye que, además de una buena superficie, hay que cambiarle de postura con frecuencia.
 
-- **Cambios de postura cada 2 a 4 horas.** Es la pauta habitual en enfermería veterinaria; no sale de un ensayo concreto. Acórtala si es delgado o si ves la piel enrojecida. La [guía de úlceras por presión](<https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros>) explica cómo hacerlo sin causarle dolor.
+- **Cambios de postura según un plan individual.** Como referencia general se suele hablar de cada 2 a 4 horas, pero es una pauta de enfermería, no un dato de ensayo, y no hay un intervalo que garantice prevenir úlceras. Pide a tu veterinario un plan para tu perro: hazlo más a menudo si es delgado, si su cama es dura o si ves la piel enrojecida, y atiende sus señales. Muchos perros avisan, con ladridos o inquietud, cuando el sol, el calor o la postura les incomodan. La [guía de úlceras por presión](<https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros>) explica cómo hacerlo sin causarle dolor.
 - **Piel seca y limpia.** Empapadores bajo la zona de descanso y pañal si lo necesita, cambiados en cuanto se mojen.
 - **Dolor bajo control.** Pide a tu veterinario que lo valore. La [calculadora HHHHHMM](<https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros>) te ayuda a seguir su bienestar semana a semana.
 
@@ -87,7 +87,9 @@ La movilidad de un perro mayor cambia, a veces poco a poco y a veces de golpe. V
 
 El selector no es una prueba diagnóstica. Es una **tabla de decisión editorial** de seis combinaciones (tres niveles de movilidad por dos tipos de carácter) que ordena las ayudas como lo hacen las guías veterinarias: primero el entorno y el confort, después el apoyo activo con arnés y rampas, y en los casos más avanzados dispositivos con ruedas, junto con cuidados diarios de piel, postura e higiene. La asignación concreta de cada ayuda a cada combinación es criterio nuestro, no una tabla publicada en esas guías.
 
-El aviso de cuidados diarios aparece solo en el nivel severo. El mismo resultado lo devuelve nuestra API para asistentes de IA, para que una persona y un agente reciban siempre el mismo plan. En la versión 1.1 (revisada el 17 de octubre de 2026) cambiamos la etiqueta del nivel severo de «cuidado paliativo» a «apoyo total», porque una silla de ruedas puede devolverle el paseo; ajustamos la pauta de cambios de postura a 2–4 horas, añadimos cuándo una silla tiene sentido y un aviso para llevarlo hoy al veterinario si ha perdido la fuerza de golpe.
+El aviso de cuidados diarios aparece solo en el nivel severo. El mismo resultado lo devuelve nuestra API para asistentes de IA, para que una persona y un agente reciban siempre el mismo plan. En la versión 1.1 (revisada el 17 de octubre de 2026) cambiamos la etiqueta del nivel severo de «cuidado paliativo» a «apoyo total», porque una silla de ruedas puede devolverle el paseo; cambiamos la pauta fija de cambios de postura por un plan individual (con 2–4 horas solo como referencia general), añadimos cuándo una silla tiene sentido y un aviso para llevarlo hoy al veterinario si ha perdido la fuerza de golpe.
+
+Responsabilidad editorial: Cuida tu Perro Viejo. Son opciones orientativas, sin revisión veterinaria individual: las fuentes respaldan el marco de las recomendaciones, no una precisión clínica demostrada del selector. Si hay dolor intenso, incapacidad súbita para levantarse o arrastre nuevo de las patas, busca atención urgente y no lo fuerces a caminar para completar la herramienta.
 
 ### Fuentes
 

@@ -1,6 +1,7 @@
 ---
 // src/components/PostReader.astro
 const { entry } = Astro.props;
+import { readerAtomicRanges } from '../utils/reader-atomic';
 const html = await Astro.slots.render('default');
 
 // 1. Clean slugifier function for Spanish
@@ -65,14 +66,17 @@ const AD_300x250_HTML = `<div class="ad-slot ad-slot--300x250 not-prose my-8 fle
 // al estilo housegatitos.com. Se calcula el párrafo del medio en base al total.
 const AD_320x50_MID_HTML = `<div class="ad-slot ad-slot--320x50-mid not-prose my-8 flex w-full justify-center" data-ad-pending="true" aria-label="Espacio publicitario"><div class="ad-slot__placeholder flex h-[50px] w-[320px] max-w-full items-center justify-center overflow-hidden rounded-xl border border-brand-border/40 bg-brand-card/30 text-[10px] uppercase tracking-wide text-brand-muted/50"><span aria-hidden="true">Publicidad</span></div><template><script is:inline>atOptions = {'key' : '77fb25612074d9660a62a330b778e5ad','format' : 'iframe','height' : 50,'width' : 320,'params' : {}};</script><script is:inline src="https://www.highperformanceformat.com/77fb25612074d9660a62a330b778e5ad/invoke.js"></script></template></div>`;
 
-const totalParagraphs = (processedHtml.match(/<p\b[^>]*>[\s\S]*?<\/p>/gi) || []).length;
+const atomicRanges = readerAtomicRanges(processedHtml);
+const isEditorialParagraph = (offset: number) => !atomicRanges.some(range => offset >= range.start && offset < range.end);
+const totalParagraphs = [...processedHtml.matchAll(/<p\b[^>]*>[\s\S]*?<\/p>/gi)].filter(match => isEditorialParagraph(match.index!)).length;
 // Si el artículo es muy corto, el párrafo "medio" quedaría pegado al 300x250 (índice 2); en ese caso se omite el segundo banner.
 const midParagraphIndex = Math.ceil(totalParagraphs / 2) > 2 ? Math.ceil(totalParagraphs / 2) : 0;
 
 let paragraphCount = 0;
 let ad300Inserted = false;
 let ad320Inserted = false;
-const withInContentAd = processedHtml.replace(/<p\b[^>]*>[\s\S]*?<\/p>/gi, (match) => {
+const withInContentAd = processedHtml.replace(/<p\b[^>]*>[\s\S]*?<\/p>/gi, (match, offset: number) => {
+  if (!isEditorialParagraph(offset)) return match;
   paragraphCount++;
   let result = match;
   if (!ad300Inserted && paragraphCount === 2) {

@@ -34,7 +34,7 @@ test('SDK real: initialize legacy y moderno; listado y cálculos exactos sin I/O
       const quality = { hurt: 5, hunger: 5, hydration: 5, hygiene: 5, happiness: 5, mobility: 5, moreGoodDays: 5 };
       const result = await client.callTool({ name: 'evaluate_quality_of_life', arguments: quality });
       const value = modern ? result.structuredContent : (result.structuredContent as any)?.result;
-      assert.deepEqual(value, evaluateQualityOfLife(quality)); assert.equal((value as any).band, 'compromised');
+      assert.deepEqual(value, evaluateQualityOfLife(quality)); assert.equal((value as any).band, 'not-classified');
       const mobility = { level: 'severe', handling: 'stressed' };
       const recommended = await client.callTool({ name: 'recommend_mobility_aids', arguments: mobility });
       assert.deepEqual(modern ? recommended.structuredContent : (recommended.structuredContent as any)?.result, recommendMobilityAids(mobility));

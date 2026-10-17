@@ -1,0 +1,226 @@
+---
+import { env } from 'cloudflare:workers';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export const prerender = true;
+
+const title = "Contacto | Cuida tu perro viejo";
+const description = "¿Tienes dudas sobre el cuidado de tu perro senior? Escríbenos y resolveremos tus preguntas. Formulario de contacto directo.";
+const turnstileSiteKey = env.TURNSTILE_SITE_KEY || import.meta.env.TURNSTILE_SITE_KEY;
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Head injection using slots -->
+  <script slot="head" type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contacto",
+    "url": "https://cuidatuperroviejo.com/contacto",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Cuida tu perro viejo",
+      "url": "https://cuidatuperroviejo.com/"
+    },
+    "description": "Página de contacto de Cuida tu perro viejo para consultas sobre el cuidado de perros ancianos."
+  }
+  </script>
+  <script slot="head" src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+  <!-- ===== PAGE HERO BANNER ===== -->
+  <div class="w-full bg-gradient-to-br from-brand-secondary/40 via-brand-primary/8 to-brand-secondary/20 dark:from-brand-primary/10 dark:via-brand-secondary/5 dark:to-transparent border-b border-brand-border">
+    <div class="max-w-3xl mx-auto px-5 py-12 md:py-16 flex flex-col items-center text-center">
+      <!-- Icon -->
+      <div class="w-16 h-16 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center mb-5 shadow-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <nav class="mb-3 text-xs text-brand-muted flex items-center gap-1.5">
+        <a href="/" class="hover:text-brand-primary transition-colors">Inicio</a>
+        <span>/</span>
+        <span class="text-brand-text font-medium">Contacto</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-text leading-tight mb-3">
+        Escríbenos
+      </h1>
+      <p class="text-base md:text-lg text-brand-muted leading-relaxed max-w-xl font-light">
+        ¿Tienes dudas sobre el cuidado de tu perro senior? Te responderemos personalmente.
+      </p>
+    </div>
+  </div>
+
+  <main id="main-content" tabindex="-1" class="max-w-3xl mx-auto px-5 py-10 md:py-14">
+    <!-- Navigation back -->
+    <div class="mb-6">
+      <a href="/" class="inline-flex items-center text-sm text-brand-primary hover:text-brand-primary-hover font-semibold gap-1 no-underline transition-colors back-btn">
+        <span>← Volver al inicio</span>
+      </a>
+    </div>
+
+    <!-- Contact Form Container -->
+    <div class="bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-6 md:p-10 shadow-sm max-w-xl mx-auto">
+      <form action="/api/contact" method="POST" class="space-y-6" data-contact-form>
+        
+        <!-- Name Input -->
+        <div>
+          <label for="name" class="block text-sm font-semibold text-brand-text mb-2 font-sans">
+            Tu nombre
+          </label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            required 
+            class="w-full px-4 py-3 bg-brand-bg/50 dark:bg-slate-900/50 border border-brand-border/80 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 rounded-xl text-brand-text placeholder-brand-muted/50 focus:outline-none transition-all duration-200"
+            placeholder="Ej. María García"
+          />
+        </div>
+
+        <!-- Email Input -->
+        <div>
+          <label for="email" class="block text-sm font-semibold text-brand-text mb-2 font-sans">
+            Tu correo electrónico
+          </label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            class="w-full px-4 py-3 bg-brand-bg/50 dark:bg-slate-900/50 border border-brand-border/80 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 rounded-xl text-brand-text placeholder-brand-muted/50 focus:outline-none transition-all duration-200"
+            placeholder="Ej. maria@ejemplo.com"
+          />
+        </div>
+
+        <!-- Subject Input -->
+        <div>
+          <label for="subject" class="block text-sm font-semibold text-brand-text mb-2 font-sans">
+            Asunto
+          </label>
+          <input 
+            type="text" 
+            id="subject" 
+            name="subject" 
+            required 
+            class="w-full px-4 py-3 bg-brand-bg/50 dark:bg-slate-900/50 border border-brand-border/80 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 rounded-xl text-brand-text placeholder-brand-muted/50 focus:outline-none transition-all duration-200"
+            placeholder="Ej. Consulta sobre artrosis o alimentación"
+          />
+        </div>
+
+        <!-- Message Textarea -->
+        <div>
+          <label for="message" class="block text-sm font-semibold text-brand-text mb-2 font-sans">
+            Mensaje
+          </label>
+          <textarea 
+            id="message" 
+            name="message" 
+            rows="6" 
+            required 
+            class="w-full px-4 py-3 bg-brand-bg/50 dark:bg-slate-900/50 border border-brand-border/80 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 rounded-xl text-brand-text placeholder-brand-muted/50 focus:outline-none transition-all duration-200 resize-y"
+            placeholder="Describe detalladamente tu consulta, la edad de tu perro y sus síntomas..."
+          ></textarea>
+        </div>
+
+        <!-- Anti-spam -->
+        <input
+          type="text"
+          name="website"
+          tabindex="-1"
+          autocomplete="off"
+          style="position:absolute; left:-9999px;"
+          aria-hidden="true"
+        />
+        <input type="hidden" name="startedAt" value={Date.now().toString()} data-started-at />
+
+        <!-- Redirección tras enviar -->
+        <input type="hidden" name="_redirect" value="https://cuidatuperroviejo.com/gracias" />
+
+        <div
+          class="cf-turnstile"
+          data-sitekey={turnstileSiteKey}
+          data-action="turnstile-spin-v1"
+        ></div>
+
+        <!-- Consentimiento (Checkbox) -->
+        <div class="flex items-start gap-3">
+          <input 
+            type="checkbox" 
+            id="privacy-consent" 
+            required 
+            class="mt-1 h-4.5 w-4.5 rounded border-brand-border/80 text-brand-primary focus:ring-brand-primary/20 focus:ring-offset-0 accent-brand-primary cursor-pointer"
+          />
+          <label for="privacy-consent" class="text-xs text-brand-muted leading-relaxed font-light select-none cursor-pointer">
+            Acepto el uso de mis datos exclusivamente para responder a esta consulta.
+            <span class="block mt-0.5 text-[11px]">
+              Consulta la <a href="/politica-de-privacidad" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline font-normal">Política de Privacidad</a>.
+            </span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-2">
+          <button 
+            type="submit" 
+            class="w-full sm:w-auto px-8 py-3.5 bg-brand-primary hover:bg-brand-primary-hover active:scale-[0.98] text-white text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer inline-flex items-center justify-center gap-2 disabled:cursor-wait disabled:opacity-75 disabled:hover:bg-brand-primary"
+            data-submit-button
+          >
+            <span class="hidden h-4 w-4 rounded-full border-2 border-white/40 border-t-white motion-safe:animate-spin" data-submit-spinner aria-hidden="true"></span>
+            <span data-submit-label>Enviar mensaje</span>
+            <svg class="w-4 h-4" data-submit-icon fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </button>
+          <p class="mt-3 hidden text-xs font-medium text-brand-muted" data-submit-status role="status" aria-live="polite">
+            Enviando tu mensaje...
+          </p>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const contactForm = document.querySelector('[data-contact-form]');
+    const submitButton = document.querySelector('[data-submit-button]');
+    const submitLabel = document.querySelector('[data-submit-label]');
+    const submitIcon = document.querySelector('[data-submit-icon]');
+    const submitSpinner = document.querySelector('[data-submit-spinner]');
+    const submitStatus = document.querySelector('[data-submit-status]');
+    const startedAt = document.querySelector('[data-started-at]');
+
+    if (startedAt instanceof HTMLInputElement) {
+      startedAt.value = Date.now().toString();
+    }
+
+    contactForm?.addEventListener('submit', async (event) => {
+      if (!(contactForm instanceof HTMLFormElement) || !contactForm.checkValidity()) return;
+      event.preventDefault();
+
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.disabled = true;
+        submitButton.setAttribute('aria-busy', 'true');
+      }
+      if (submitLabel) submitLabel.textContent = 'Enviando...';
+      submitIcon?.classList.add('hidden');
+      submitSpinner?.classList.remove('hidden');
+      submitStatus?.classList.remove('hidden');
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' },
+        });
+
+        if (response.ok) {
+          window.location.href = '/gracias';
+          return;
+        }
+      } catch {
+        // Keep public feedback generic.
+      }
+
+      window.location.href = '/gracias';
+    });
+  </script>
+</BaseLayout>

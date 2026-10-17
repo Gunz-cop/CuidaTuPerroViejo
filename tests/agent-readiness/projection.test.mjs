@@ -81,7 +81,7 @@ test('los goldens cubren los perfiles editoriales, FAQ, tablas, citas e imágene
   assert.match(qol, /\\> 50 Buena 36–50 Aceptable ≤ 35 Comprometida/u);
   assert.doesNotMatch(qol, /qol-result-score|qol-human-msg|qol-recommendation/u);
   assert.match(mobility, /Aviso condicional de la interfaz para nivel severo:/u);
-  assert.match(mobility, /Esta recomendación es una guía de apoyo/u);
+  assert.match(mobility, /Estas opciones orientan preguntas para el veterinario/u);
   assert.doesNotMatch(mobility, /m5rtit|m5rdesc|WhatsApp|#m5copyok/u);
 });
 

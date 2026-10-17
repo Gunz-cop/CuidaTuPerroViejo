@@ -63,10 +63,13 @@ Una silla de ruedas puede devolverle el paseo a un perro: no es una señal de
 final. El aviso del nivel severo se llama «Cuidados diarios si ya no se
 levanta solo».
 
-### 3. Cambios de postura cada 2 a 4 horas
+### 3. Cambios de postura: plan individual (actualizada 2026-10-17)
 
-Es la pauta habitual de enfermería veterinaria (no un dato de ensayo); la
-página lo dice así.
+No se fija un intervalo: cada perro es distinto y muchos avisan cuando están
+incómodos (por ejemplo, ladrando cuando el sol empieza a quemarles). La app
+pide un plan individual al veterinario y menciona 2–4 horas solo como
+referencia general de enfermería, coherente con la guía de úlceras por
+presión revisada en la corrección editorial del 2026-10-16.
 
 ### 4. Nada de enlaces de afiliado dentro de la app
 
