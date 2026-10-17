@@ -1,5 +1,5 @@
 // Fuentes de la página del selector de movilidad. Verificadas una a una contra
-// Crossref y el texto del artículo el 2026-10-16. La tabla de decisión del
+// Crossref y el texto del artículo el 2026-10-17. La tabla de decisión del
 // selector (nivel × manejo) vive en agent-tools/movilidad.ts y es criterio
 // editorial alineado con estas guías, no una tabla publicada en ellas.
 //
@@ -12,11 +12,12 @@
 // - Narum 2024 (doi:10.3389/fvets.2024.1466405): encuesta a cuidadores; la
 //   mayoría reporta mejor calidad de vida con carros, con complicaciones
 //   frecuentes (sobre todo heridas).
-// - Caraty 2019 (doi:10.1111/jsap.13061): presión en perros en decúbito lateral
+// - Caraty 2019 (doi:10.1111/jsap.13061): estudio con 3 cadáveres; presión en decúbito lateral
 //   (hombro, trocánter, 13.ª costilla); los colchones de espuma la reducen pero
 //   no bastan: hay que cambiar de postura con frecuencia. La pauta de 2–4 h es
 //   práctica de enfermería veterinaria, no dato del estudio.
-// - Freeman 2012 (doi:10.1111/j.1939-1676.2011.00838.x): sarcopenia.
+// - Freeman 2012 (doi:10.1111/j.1939-1676.2011.00838.x): sarcopenia como
+//   pérdida de masa magra con la edad (no habla de fuerza).
 
 export interface MobilitySource { id: string; text: string; doi: string; use: string }
 
@@ -43,18 +44,18 @@ export const MOBILITY_SOURCES: readonly MobilitySource[] = [
     id: 'narum',
     text: 'Narum M, Miscioscia E, Repac J. Caretaker-reported quality of life, functionality, and complications associated with assistive mobility cart use in companion animals. Front Vet Sci. 2024;11:1466405.',
     doi: '10.3389/fvets.2024.1466405',
-    use: 'Qué aporta una silla de ruedas y cuáles son sus complicaciones más frecuentes (heridas por roce).',
+    use: 'Qué aporta una silla de ruedas según sus cuidadores y cuáles son sus complicaciones más frecuentes (heridas por roce).',
   },
   {
     id: 'caraty',
     text: 'Caraty J, De Vreught L, Cachon T, et al. Comparison of the different supports used in veterinary medicine for pressure sore prevention. J Small Anim Pract. 2019;60(10):623-630.',
     doi: '10.1111/jsap.13061',
-    use: 'Puntos de presión en un perro tumbado y por qué, además de una buena cama, hay que cambiarle de postura con frecuencia.',
+    use: 'Estudio de laboratorio (tres perros, sobre colchón y manta): puntos de presión de un perro tumbado y por qué, además de una buena cama, hay que cambiarle de postura con frecuencia.',
   },
   {
     id: 'freeman',
     text: 'Freeman LM. Cachexia and sarcopenia: emerging syndromes of importance in dogs and cats. J Vet Intern Med. 2012;26(1):3-17.',
     doi: '10.1111/j.1939-1676.2011.00838.x',
-    use: 'Qué es la sarcopenia: pérdida progresiva de masa y fuerza muscular con la edad.',
+    use: 'Qué es la sarcopenia: pérdida progresiva de masa muscular con la edad.',
   },
 ];

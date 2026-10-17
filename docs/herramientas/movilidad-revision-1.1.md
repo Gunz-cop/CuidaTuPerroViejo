@@ -22,8 +22,10 @@ de `src/lib/agent-tools/movilidad.ts`.
 | Título del aviso severo | «Cuidado paliativo importante» | «Cuidados diarios si ya no se levanta solo» | Mismo motivo; tono cálido. |
 | Cambios de postura | «cada 4 horas» | «cada 2 a 4 horas, y más a menudo si es delgado o su cama es dura» | Caraty 2019: la espuma reduce la presión pero no basta, y es mayor en perros delgados. 2–4 h es pauta de enfermería veterinaria. |
 | Dolor | «Evalúa si hay dolor controlado con…» | «Pide a tu veterinario que valore si su dolor está bien controlado, y sigue su bienestar con…» | WSAVA 2022: el dolor lo valora el veterinario; la HHHHHMM sirve para seguimiento. |
-| Silla de ruedas | «Fundamental para su calidad de vida» | Solo si conserva fuerza delante; que la ajuste un profesional; rozaduras como complicación más frecuente | Narum 2024: mejor calidad de vida según cuidadores, pero complicaciones en ~2/3 (sobre todo heridas). |
+| Silla de ruedas | «Fundamental para su calidad de vida» | Solo si conserva fuerza delante; que la ajuste un profesional; rozaduras como complicación más frecuente | Narum 2024: mejor calidad de vida según cuidadores, pero complicaciones en el 60 % de los perros (sobre todo heridas). La encuesta no muestra que el ajuste veterinario las reduzca (72 % frente a 47 %, probablemente casos más graves): se recomienda como buena práctica, sin atribuirlo al estudio. |
 | Cama ortopédica | «Previene úlceras/llagas» | «Reparte el peso y reduce la presión» | Caraty 2019 mide menos presión, no prevención; no hay ensayo controlado de camas. |
+| Urgencia en nivel severo | No se mencionaba | Primera frase de la descripción de SA y SB: si perdió la fuerza de golpe (horas o pocos días), al veterinario hoy (el schema público fija 3 puntos en el aviso) | Auditoría 2026-10-17 (B2): una pérdida súbita puede ser una urgencia tratable (p. ej., hernia discal). |
+| Orden del resultado | Aviso antes del título | Título y descripción primero; el aviso justo debajo | Auditoría (I4): en móvil el título quedaba tapado. |
 | Calcetines/botas | Sin advertencias | Solo para caminar, retirar para descansar | Sin evidencia publicada sobre calcetines; COAST prioriza el suelo. |
 | Arnés | «Te protege la espalda» | Paseos y salidas, no todo el día; revisar ingles | Rozaduras por uso continuo. |
 | Escaleras adaptadas | «Más compactas» | Exigen doblar articulaciones: si le cuesta, mejor rampa | Coherencia con la FAQ. |
@@ -48,3 +50,11 @@ ToeGrips (no se encontró la publicación).
   ejemplo regenerado con la respuesta 1.1.
 - Golden F2 `tool--movilidad` regenerado.
 - Paridad UI↔API (`tools-ui-parity.mjs`): 36/36 casos sin diferencias.
+
+## Correcciones tras la auditoría del 2026-10-17
+
+Informe: [`auditorias/selector-movilidad-2026-10-17.md`](auditorias/selector-movilidad-2026-10-17.md).
+Se corrigieron B1, B2, I1–I4 y los menores 1–6 y 11. El aviso mantiene
+`role="alert"` porque la proyección y `agent-api.mjs` lo exigen
+(`#m5alert[role=alert]`); cambiarlo es un trabajo de contrato aparte (menor 7).
+Los menores 8–10 quedan como propuestas para el propietario (P2, P3).

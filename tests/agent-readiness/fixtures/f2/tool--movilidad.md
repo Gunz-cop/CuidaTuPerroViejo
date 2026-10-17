@@ -56,22 +56,22 @@ Pide una revisión si notas que **cojea, se levanta con rigidez, evita escaleras
 
 ## Por qué conviene que siga moviéndose
 
-Con la edad, muchos perros pierden masa y fuerza muscular de forma progresiva: es lo que se llama **sarcopenia**. Hace que levantarse, subir un escalón o aguantar un paseo cueste más. El movimiento suave y frecuente ayuda a conservar el músculo que le queda, y las guías COAST recomiendan un programa de ejercicio adaptado y, cuando sea posible, la ayuda de un especialista en rehabilitación.
+Con la edad, muchos perros pierden masa muscular de forma progresiva: es lo que se llama **sarcopenia** (Freeman, 2012). Hace que levantarse, subir un escalón o aguantar un paseo cueste más. El movimiento suave y frecuente ayuda a conservar el músculo que le queda, y las guías COAST recomiendan un programa de ejercicio adaptado y, cuando sea posible, la ayuda de un especialista en rehabilitación.
 
 Por eso las ayudas tienen tanto valor: un arnés que le permite seguir saliendo o una silla que le devuelve el paseo no son un capricho, son la forma de que siga explorando y compartiendo su día contigo. Si quieres profundizar, la [guía completa de movilidad y dolor](<https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores>) lo explica paso a paso.
 
 ## Silla de ruedas: cuándo ayuda y qué vigilar
 
-La silla de ruedas no es una señal de final: para muchos perros es lo que les devuelve el paseo. En la mayor encuesta publicada a cuidadores de animales con carros de movilidad (Narum y colaboradores, 2024), la mayoría de las respuestas sobre perros describía **mejor calidad de vida** para el perro y también para quien lo cuida. La misma encuesta muestra el otro lado: casi dos de cada tres animales tuvieron alguna complicación, y la más frecuente fueron **heridas por roce**.
+La silla de ruedas no es una señal de final: para muchos perros es lo que les devuelve el paseo. En una encuesta a más de 1.200 cuidadores de animales con carros de movilidad (Narum y colaboradores, 2024), la mayoría de las respuestas sobre perros describía **mejor calidad de vida** para el perro y también para quien lo cuida. La misma encuesta muestra el otro lado: tres de cada cinco perros (60 %) tuvieron alguna complicación, y la más frecuente fueron **heridas por roce**.
 
 - **Necesita fuerza delante.** La silla trasera sostiene las patas de atrás; las delanteras tienen que poder tirar del cuerpo.
-- **Mídela con ayuda.** Tu veterinario o un rehabilitador puede ajustar la altura y los apoyos para que no roce.
+- **Mídela con ayuda.** Tu veterinario o un rehabilitador puede ajustar la altura y los apoyos. Es una buena práctica, aunque no garantiza que no roce: en la encuesta, las sillas ajustadas por un veterinario tuvieron más complicaciones, seguramente porque eran los casos más difíciles.
 - **Sesiones cortas al principio.** Unos minutos, con premios, y alargando poco a poco.
-- **Revisa la piel cada día** en ingles, axilas y pecho, que es donde suelen aparecer las rozaduras.
+- **Revisa la piel cada día** en ingles, axilas, dorso de las patas y vientre, que es donde más aparecieron las heridas en la encuesta.
 
 ## Si ya no se levanta solo: piel, postura e higiene
 
-Un perro que pasa casi todo el día tumbado necesita cuidados que no se ven en una lista de compras. Al estar de lado, la presión se concentra sobre el hombro, la cadera y las últimas costillas, y es más alta en perros delgados. Un colchón de espuma la reduce, pero no lo suficiente: el estudio de Caraty y colaboradores (2019) concluye que, además de una buena superficie, hay que cambiarle de postura con frecuencia.
+Un perro que pasa casi todo el día tumbado necesita cuidados que no se ven en una lista de compras. Al estar de lado, la presión se concentra sobre el hombro, la cadera y las últimas costillas, y es más alta en perros delgados. Un colchón de espuma la reduce, pero no lo suficiente: el estudio de laboratorio de Caraty y colaboradores (2019), hecho con tres perros, concluye que, además de una buena superficie, hay que cambiarle de postura con frecuencia.
 
 - **Cambios de postura cada 2 a 4 horas.** Es la pauta habitual en enfermería veterinaria; no sale de un ensayo concreto. Acórtala si es delgado o si ves la piel enrojecida. La [guía de úlceras por presión](<https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros>) explica cómo hacerlo sin causarle dolor.
 - **Piel seca y limpia.** Empapadores bajo la zona de descanso y pañal si lo necesita, cambiados en cuanto se mojen.
@@ -85,7 +85,7 @@ La movilidad de un perro mayor cambia, a veces poco a poco y a veces de golpe. V
 
 El selector no es una prueba diagnóstica. Es una **tabla de decisión editorial** de seis combinaciones (tres niveles de movilidad por dos tipos de carácter) que ordena las ayudas como lo hacen las guías veterinarias: primero el entorno y el confort, después el apoyo activo con arnés y rampas, y en los casos más avanzados dispositivos con ruedas, junto con cuidados diarios de piel, postura e higiene. La asignación concreta de cada ayuda a cada combinación es criterio nuestro, no una tabla publicada en esas guías.
 
-El aviso de cuidados diarios aparece solo en el nivel severo. El mismo resultado lo devuelve nuestra API para asistentes de IA, para que una persona y un agente reciban siempre el mismo plan. En la versión 1.1 (revisada el 17 de octubre de 2026) cambiamos la etiqueta del nivel severo de «cuidado paliativo» a «apoyo total», porque una silla de ruedas puede devolverle el paseo; ajustamos la pauta de cambios de postura a 2–4 horas y añadimos cuándo una silla tiene sentido.
+El aviso de cuidados diarios aparece solo en el nivel severo. El mismo resultado lo devuelve nuestra API para asistentes de IA, para que una persona y un agente reciban siempre el mismo plan. En la versión 1.1 (revisada el 17 de octubre de 2026) cambiamos la etiqueta del nivel severo de «cuidado paliativo» a «apoyo total», porque una silla de ruedas puede devolverle el paseo; ajustamos la pauta de cambios de postura a 2–4 horas, añadimos cuándo una silla tiene sentido y un aviso para llevarlo hoy al veterinario si ha perdido la fuerza de golpe.
 
 ### Fuentes
 
@@ -96,17 +96,17 @@ El aviso de cuidados diarios aparece solo en el nivel severo. El mismo resultado
 3. [Monteiro BP, Lascelles BDX, Murrell J, et al. 2022 WSAVA guidelines for the recognition, assessment and treatment of pain. J Small Anim Pract. 2023;64(4):177-254.](<https://doi.org/10.1111/jsap.13566>)  
    Por qué una ayuda de movilidad no sustituye el control del dolor crónico.
 4. [Narum M, Miscioscia E, Repac J. Caretaker-reported quality of life, functionality, and complications associated with assistive mobility cart use in companion animals. Front Vet Sci. 2024;11:1466405.](<https://doi.org/10.3389/fvets.2024.1466405>)  
-   Qué aporta una silla de ruedas y cuáles son sus complicaciones más frecuentes (heridas por roce).
+   Qué aporta una silla de ruedas según sus cuidadores y cuáles son sus complicaciones más frecuentes (heridas por roce).
 5. [Caraty J, De Vreught L, Cachon T, et al. Comparison of the different supports used in veterinary medicine for pressure sore prevention. J Small Anim Pract. 2019;60(10):623-630.](<https://doi.org/10.1111/jsap.13061>)  
-   Puntos de presión en un perro tumbado y por qué, además de una buena cama, hay que cambiarle de postura con frecuencia.
+   Estudio de laboratorio (tres perros, sobre colchón y manta): puntos de presión de un perro tumbado y por qué, además de una buena cama, hay que cambiarle de postura con frecuencia.
 6. [Freeman LM. Cachexia and sarcopenia: emerging syndromes of importance in dogs and cats. J Vet Intern Med. 2012;26(1):3-17.](<https://doi.org/10.1111/j.1939-1676.2011.00838.x>)  
-   Qué es la sarcopenia: pérdida progresiva de masa y fuerza muscular con la edad.
+   Qué es la sarcopenia: pérdida progresiva de masa muscular con la edad.
 
 ## Preguntas frecuentes
 
 ### ¿Cómo saber si mi perro necesita silla de ruedas?
 
-Las guías de artrosis canina (COAST, 2023) reservan los carros de ruedas para los casos más avanzados, sobre todo cuando el dolor está controlado en reposo pero no al moverse. Suele encajar en perros que ya no sostienen bien las patas traseras pero conservan fuerza en las delanteras, apetito y ganas de explorar. En una encuesta a cuidadores (Narum y colaboradores, 2024), la mayoría notó mejor calidad de vida con la silla, pero casi dos de cada tres perros tuvieron alguna complicación, sobre todo heridas por roce. Por eso conviene que la ajuste tu veterinario o un rehabilitador.
+Las guías de artrosis canina (COAST, 2023) reservan los carros de ruedas para los casos más avanzados, sobre todo cuando el dolor está controlado en reposo pero no al moverse. Suele encajar en perros que ya no sostienen bien las patas traseras pero conservan fuerza en las delanteras, apetito y ganas de explorar. En una encuesta a más de 1.200 cuidadores (Narum y colaboradores, 2024), la mayoría notó mejor calidad de vida con la silla, pero tres de cada cinco perros (60 %) tuvieron alguna complicación, sobre todo heridas por roce. Que la ajuste un profesional es una buena práctica para evitar rozaduras, aunque esa encuesta no demuestra que el ajuste reduzca las complicaciones: en ella, las sillas ajustadas por un veterinario tuvieron más (probablemente porque eran los casos más difíciles). Revisa su piel cada día.
 
 ### ¿Rampa o escalera adaptada? ¿Cuál es mejor?
 
@@ -114,7 +114,7 @@ La rampa evita el salto y el paso de escalón, así que suele ser la opción má
 
 ### ¿Por qué una buena cama importa tanto en un perro mayor?
 
-Un perro con movilidad reducida pasa muchas horas tumbado. Tumbado de lado, la presión se concentra sobre el hombro, la cadera y las últimas costillas. Un estudio con colchones de espuma viscoelástica (Caraty y colaboradores, 2019) midió menos presión en esos puntos que sobre una manta en el suelo, aunque no la suficiente como para dejar de cambiarle de postura. Tanto la AAHA como las guías COAST incluyen el descanso acolchado entre las primeras medidas de confort. Una cama firme con bordes también le sirve de apoyo para levantarse.
+Un perro con movilidad reducida pasa muchas horas tumbado. Tumbado de lado, la presión se concentra sobre el hombro, la cadera y las últimas costillas. Un estudio de laboratorio con colchones de espuma viscoelástica (Caraty y colaboradores, 2019) midió menos presión en esos puntos que sobre una manta en el suelo, aunque no la suficiente como para dejar de cambiarle de postura. Tanto la AAHA como las guías COAST incluyen el descanso acolchado entre las primeras medidas de confort. Una cama firme con bordes también le sirve de apoyo para levantarse.
 
 ### ¿El arnés de soporte trasero se puede usar todo el día?
 

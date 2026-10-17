@@ -66,6 +66,13 @@ const dogSrcset = (name: string) => [240, 400, 640].map((w) => `${DOG_DIR}/${nam
   <div class="mt__screen off" id="m5s3">
     <p class="sr-only" id="m5sr" role="status" aria-live="polite" aria-atomic="true"></p>
 
+    <div class="mt__hero">
+      <div class="mt__ico" aria-hidden="true"><span id="m5rico"></span></div>
+      <div class="mt__badge" id="m5rbadge"></div>
+      <h3 class="mt__rtitle" id="m5rtit"></h3>
+      <div class="mt__rdesc" id="m5rdesc"></div>
+    </div>
+
     <!-- Aviso de nivel severo: se genera desde PALLIATIVE_ALERT (mismo texto que la API y el MCP). -->
     <div class="mt__alert off" id="m5alert" role="alert">
       <div class="mt__alert-title"><span>{alertTitle.icon}</span> {alertTitle.text}</div>
@@ -74,13 +81,6 @@ const dogSrcset = (name: string) => [240, 400, 640].map((w) => `${DOG_DIR}/${nam
           <li><span aria-hidden="true">{item.icon}</span> {item.text}{item.link && <>{' '}<a href={new URL(item.link.url).pathname}>{item.link.label}</a></>}</li>
         ))}
       </ul>
-    </div>
-
-    <div class="mt__hero">
-      <div class="mt__ico" aria-hidden="true"><span id="m5rico"></span></div>
-      <div class="mt__badge" id="m5rbadge"></div>
-      <h3 class="mt__rtitle" id="m5rtit"></h3>
-      <div class="mt__rdesc" id="m5rdesc"></div>
     </div>
 
     <h4 class="mt__plan-title"><span aria-hidden="true">🧭</span> Tu plan de acción</h4>
@@ -402,15 +402,30 @@ const dogSrcset = (name: string) => [240, 400, 640].map((w) => `${DOG_DIR}/${nam
     const ctx = c.getContext('2d');
     if (!ctx) return null;
     ctx.fillStyle = '#f7f1e6'; ctx.fillRect(0, 0, 1080, 1350);
+    // Primero se mide el texto; la imagen ocupa el alto que sobra (entre 260 y 500 px),
+    // así caben los cuatro pasos de SA y los nombres largos se parten en vez de comprimirse.
+    const TITLE_FONT = '800 62px Outfit, system-ui, sans-serif';
+    const STEP_FONT = '600 38px "Plus Jakarta Sans", system-ui, sans-serif';
+    ctx.font = TITLE_FONT;
+    const titleLines = wrap(ctx, r.title, 940).slice(0, 3);
+    ctx.font = STEP_FONT;
+    const steps = r.plan.map((p) => wrap(ctx, p.name, 840).slice(0, 2));
+    const BOTTOM = 1200;
+    const textHeight = 140 + titleLines.length * 74 + 30 + steps.reduce((sum, lines) => sum + lines.length * 48 + 22, 0);
+    const imgH = Math.max(260, Math.min(500, BOTTOM - 50 - 40 - textHeight));
     let y = 120;
     try {
-      // La escena del resultado, con el mismo recorte 16:10 que en pantalla.
+      // La escena del resultado, con el mismo recorte que en pantalla.
       const img = new Image();
       img.src = `/images/herramientas/movilidad-perro/${current.toLowerCase()}-640.webp`;
       await img.decode();
-      if (current === 'SB') ctx.drawImage(img, 0, img.height * 0.18, img.width, img.height * 0.82, 235, 50, 610, 500);
-      else ctx.drawImage(img, 0, img.height * 0.18, img.width, img.height * 0.625, 140, 50, 800, 500);
-      y = 620;
+      if (current === 'SB') {
+        const w = imgH * 0.82 * 1.49;
+        ctx.drawImage(img, 0, img.height * 0.18, img.width, img.height * 0.82, 540 - w / 2, 50, w, imgH);
+      } else {
+        ctx.drawImage(img, 0, img.height * 0.18, img.width, img.height * 0.625, 540 - imgH * 0.8, 50, imgH * 1.6, imgH);
+      }
+      y = 50 + imgH + 40;
     } catch { /* la tarjeta funciona sin imagen */ }
     ctx.textAlign = 'center';
     ctx.font = '800 34px "Plus Jakarta Sans", system-ui, sans-serif';
@@ -420,18 +435,21 @@ const dogSrcset = (name: string) => [240, 400, 640].map((w) => `${DOG_DIR}/${nam
     ctx.fillStyle = '#fff'; ctx.fillText(badge, 540, y + 47, 940);
     y += 140;
     ctx.fillStyle = '#2f3b2c';
-    ctx.font = '800 62px Outfit, system-ui, sans-serif';
-    for (const line of wrap(ctx, r.title, 940).slice(0, 3)) { ctx.fillText(line, 540, y); y += 74; }
+    ctx.font = TITLE_FONT;
+    for (const line of titleLines) { ctx.fillText(line, 540, y); y += 74; }
     y += 30;
-    ctx.textAlign = 'left';
-    ctx.font = '600 40px "Plus Jakarta Sans", system-ui, sans-serif';
-    for (const [i, p] of r.plan.entries()) {
-      if (y > 1180) break;
+    ctx.font = STEP_FONT;
+    for (const [i, lines] of steps.entries()) {
+      if (y + (lines.length - 1) * 48 > BOTTOM) {
+        ctx.textAlign = 'left'; ctx.fillStyle = '#6f6f63';
+        ctx.fillText(`+${steps.length - i} pasos más en la web`, 160, y);
+        break;
+      }
       ctx.fillStyle = accent; ctx.beginPath(); ctx.arc(110, y - 13, 26, 0, Math.PI * 2); ctx.fill();
       ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.fillText(String(i + 1), 110, y + 1);
       ctx.textAlign = 'left'; ctx.fillStyle = '#4a4a42';
-      ctx.fillText(p.name, 160, y, 840);
-      y += 72;
+      for (const line of lines) { ctx.fillText(line, 160, y); y += 48; }
+      y += 22;
     }
     ctx.textAlign = 'center';
     ctx.fillStyle = '#6f6f63';
