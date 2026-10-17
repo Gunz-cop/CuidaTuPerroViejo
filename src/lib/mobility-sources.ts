@@ -50,7 +50,7 @@ export const MOBILITY_SOURCES: readonly MobilitySource[] = [
     id: 'caraty',
     text: 'Caraty J, De Vreught L, Cachon T, et al. Comparison of the different supports used in veterinary medicine for pressure sore prevention. J Small Anim Pract. 2019;60(10):623-630.',
     doi: '10.1111/jsap.13061',
-    use: 'Estudio de laboratorio (tres perros, sobre colchón y manta): puntos de presión de un perro tumbado y por qué, además de una buena cama, hay que cambiarle de postura con frecuencia.',
+    use: 'Estudio de laboratorio con cadáveres de tres perros, sobre colchones y manta: puntos de presión de un perro tumbado y por qué, además de una buena cama, hay que cambiarle de postura con frecuencia.',
   },
   {
     id: 'freeman',

@@ -23,7 +23,7 @@ const sources = MOBILITY_SOURCES.map((src) => ({ ...src, href: `https://doi.org/
 const faqs = [
   {
     q: '¿Cómo saber si mi perro necesita silla de ruedas?',
-    a: 'Las guías de artrosis canina (COAST, 2023) reservan los carros de ruedas para los casos más avanzados, sobre todo cuando el dolor está controlado en reposo pero no al moverse. Suele encajar en perros que ya no sostienen bien las patas traseras pero conservan fuerza en las delanteras, apetito y ganas de explorar. En una encuesta a más de 1.200 cuidadores (Narum y colaboradores, 2024), la mayoría notó mejor calidad de vida con la silla, pero tres de cada cinco perros (60 %) tuvieron alguna complicación, sobre todo heridas por roce. Que la ajuste un profesional es una buena práctica para evitar rozaduras, aunque esa encuesta no demuestra que el ajuste reduzca las complicaciones: en ella, las sillas ajustadas por un veterinario tuvieron más (probablemente porque eran los casos más difíciles). Revisa su piel cada día.',
+    a: 'Las guías de artrosis canina (COAST, 2023) reservan los carros de ruedas para los casos más avanzados, sobre todo cuando el dolor está controlado en reposo pero no al moverse. Suele encajar en perros que ya no sostienen bien las patas traseras pero conservan fuerza en las delanteras, apetito y ganas de explorar. En una encuesta con más de 1.200 respuestas de cuidadores (Narum y colaboradores, 2024), la mayoría notó mejor calidad de vida con la silla, pero tres de cada cinco perros (60 %) tuvieron alguna complicación, sobre todo heridas por roce. Que la ajuste un profesional es una buena práctica para evitar rozaduras, aunque esa encuesta no demuestra que el ajuste reduzca las complicaciones: en ella, las sillas ajustadas por un veterinario tuvieron más. Los autores lo atribuyen en parte a que eran casos más difíciles y a que pocos veterinarios tienen formación en estos dispositivos, así que, si puedes, busca a alguien con formación en rehabilitación. Revisa su piel cada día.',
   },
   {
     q: '¿Rampa o escalera adaptada? ¿Cuál es mejor?',
@@ -157,18 +157,19 @@ const schema = {
 
       <h2 id="silla-de-ruedas">Silla de ruedas: cuándo ayuda y qué vigilar</h2>
       <p>
-        La silla de ruedas no es una señal de final: para muchos perros es lo que les devuelve el paseo. En una encuesta a más de 1.200 cuidadores de animales con carros de movilidad (Narum y colaboradores, 2024), la mayoría de las respuestas sobre perros describía <strong>mejor calidad de vida</strong> para el perro y también para quien lo cuida. La misma encuesta muestra el otro lado: tres de cada cinco perros (60 %) tuvieron alguna complicación, y la más frecuente fueron <strong>heridas por roce</strong>.
+        La silla de ruedas no es una señal de final: para muchos perros es lo que les devuelve el paseo. En una encuesta con más de 1.200 respuestas de cuidadores de animales con carros de movilidad (Narum y colaboradores, 2024), la mayoría de las respuestas sobre perros describía <strong>mejor calidad de vida</strong> para el perro y también para quien lo cuida. La misma encuesta muestra el otro lado: tres de cada cinco perros (60 %) tuvieron alguna complicación, y la más frecuente fueron <strong>heridas por roce</strong>.
       </p>
       <ul>
         <li><strong>Necesita fuerza delante.</strong> La silla trasera sostiene las patas de atrás; las delanteras tienen que poder tirar del cuerpo.</li>
-        <li><strong>Mídela con ayuda.</strong> Tu veterinario o un rehabilitador puede ajustar la altura y los apoyos. Es una buena práctica, aunque no garantiza que no roce: en la encuesta, las sillas ajustadas por un veterinario tuvieron más complicaciones, seguramente porque eran los casos más difíciles.</li>
+        <li><strong>Mídela con ayuda.</strong> Tu veterinario o un rehabilitador puede ajustar la altura y los apoyos. Es una buena práctica, aunque no garantiza que no roce: en la encuesta, las sillas ajustadas por un veterinario tuvieron más complicaciones. Los autores lo atribuyen en parte a que eran casos más difíciles y a que pocos veterinarios tienen formación en estos dispositivos, así que, si puedes, busca a alguien con formación en rehabilitación.</li>
         <li><strong>Sesiones cortas al principio.</strong> Unos minutos, con premios, y alargando poco a poco.</li>
         <li><strong>Revisa la piel cada día</strong> en ingles, axilas, dorso de las patas y vientre, que es donde más aparecieron las heridas en la encuesta.</li>
       </ul>
 
       <h2 id="si-no-se-levanta">Si ya no se levanta solo: piel, postura e higiene</h2>
+      <p><strong>Si ha dejado de levantarse de golpe, en horas o pocos días, llévalo hoy al veterinario: puede ser una urgencia tratable.</strong></p>
       <p>
-        Un perro que pasa casi todo el día tumbado necesita cuidados que no se ven en una lista de compras. Al estar de lado, la presión se concentra sobre el hombro, la cadera y las últimas costillas, y es más alta en perros delgados. Un colchón de espuma la reduce, pero no lo suficiente: el estudio de laboratorio de Caraty y colaboradores (2019), hecho con tres perros, concluye que, además de una buena superficie, hay que cambiarle de postura con frecuencia.
+        Un perro que pasa casi todo el día tumbado necesita cuidados que no se ven en una lista de compras. Al estar de lado, la presión se concentra sobre el hombro, la cadera y las últimas costillas, y es más alta en perros delgados. Un colchón de espuma la reduce, pero no lo suficiente: el estudio de laboratorio de Caraty y colaboradores (2019), hecho con cadáveres de tres perros, concluye que, además de una buena superficie, hay que cambiarle de postura con frecuencia.
       </p>
       <ul>
         <li><strong>Cambios de postura cada 2 a 4 horas.</strong> Es la pauta habitual en enfermería veterinaria; no sale de un ensayo concreto. Acórtala si es delgado o si ves la piel enrojecida. La <a href="/cuidados-paliativos-perros/ulceras-presion-perros">guía de úlceras por presión</a> explica cómo hacerlo sin causarle dolor.</li>
@@ -178,7 +179,7 @@ const schema = {
 
       <h2 id="cuando-repetir">Cuándo repetir el test</h2>
       <p>
-        La movilidad de un perro mayor cambia, a veces poco a poco y a veces de golpe. Vuelve a hacer el test cuando notes que <strong>resbala más, se cansa antes, le cuesta más levantarse o deja de tolerar algo</strong> que antes aceptaba, como los calcetines o el arnés. Si el cambio es brusco, en días, o aparece junto con dolor, cojera intensa o pérdida de control de la orina, consulta antes con tu veterinario.
+        La movilidad de un perro mayor cambia, a veces poco a poco y a veces de golpe. Vuelve a hacer el test cuando notes que <strong>resbala más, se cansa antes, le cuesta más levantarse o deja de tolerar algo</strong> que antes aceptaba, como los calcetines o el arnés. Si el cambio es brusco, en días, o aparece junto con dolor, cojera intensa o pérdida de control de la orina, consulta cuanto antes con tu veterinario; si ha perdido la fuerza de las patas de golpe, ese mismo día.
       </p>
 
       <h2 id="metodo">Método y fuentes</h2>

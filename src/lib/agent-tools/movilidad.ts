@@ -71,9 +71,9 @@ export const RESULTS = {
     icon: '❤️',
     badge: 'Nivel Severo – Apoyo total',
     title: 'Silla de ruedas canina + cama ortopédica + soporte de cadera',
-    description: 'Si ha perdido la fuerza de golpe, en horas o pocos días, llévalo hoy al veterinario: puede ser una urgencia tratable. Este plan es para cuando ya está valorado. Tu perro necesita apoyo total. Si conserva fuerza en las patas delanteras, una silla de ruedas puede devolverle el paseo; una cama acolchada y los cambios de postura protegen su piel. Revisa los cuidados diarios justo debajo.',
+    description: 'Si ha perdido la fuerza de golpe, en horas o pocos días, llévalo hoy al veterinario: puede ser una urgencia tratable. Este plan es para cuando ya está valorado. Tu perro necesita apoyo total. Si conserva fuerza en las patas delanteras, una silla de ruedas puede devolverle el paseo; una cama acolchada y los cambios de postura protegen su piel. Revisa también los cuidados diarios de este resultado.',
     plan: [
-      { name: 'Silla de ruedas canina trasera (a medida)', why: 'Le permite volver a moverse por su cuenta. Que la ajuste tu veterinario o un rehabilitador, y revisa su piel cada día: las heridas son la complicación más frecuente.' },
+      { name: 'Silla de ruedas canina trasera (a medida)', why: 'Le permite volver a moverse por su cuenta. Que la ajuste un rehabilitador o un veterinario con formación en rehabilitación, y revisa su piel cada día: las heridas son la complicación más frecuente.' },
       { name: 'Cama de memory foam ortopédico (bordes altos)', why: 'Reparte el peso y reduce la presión sobre caderas, hombros y costillas. Los bordes firmes ayudan a incorporarse.' },
       { name: 'Soporte de cadera / faja lumbar canina', why: 'Para los momentos en que le ayudas a caminar sin silla.' },
       { name: 'Pañales caninos + empapadores absorbentes', why: 'Para la higiene cuando ya no controla esfínteres.' },
@@ -83,9 +83,9 @@ export const RESULTS = {
     icon: '❤️',
     badge: 'Nivel Severo – Apoyo total',
     title: 'Silla de ruedas + cama ortopédica + entorno adaptado',
-    description: 'Si ha perdido la fuerza de golpe, en horas o pocos días, llévalo hoy al veterinario: puede ser una urgencia tratable. Este plan es para cuando ya está valorado. Como se estresa con el contacto, lo prioritario es darle la máxima autonomía posible con ayudas de entorno. Si conserva fuerza en las patas delanteras, la silla le permite moverse sin depender de tus manos. Revisa los cuidados diarios justo debajo.',
+    description: 'Si ha perdido la fuerza de golpe, en horas o pocos días, llévalo hoy al veterinario: puede ser una urgencia tratable. Este plan es para cuando ya está valorado. Como se estresa con el contacto, lo prioritario es darle la máxima autonomía posible con ayudas de entorno. Si conserva fuerza en las patas delanteras, la silla le permite moverse sin depender de tus manos. Revisa también los cuidados diarios de este resultado.',
     plan: [
-      { name: 'Silla de ruedas canina trasera (a medida)', why: 'Le permite moverse sin depender de tu ayuda. Acostúmbralo en sesiones cortas y con premios; si le cuesta aceptarla, pide ayuda a tu veterinario o a un rehabilitador.' },
+      { name: 'Silla de ruedas canina trasera (a medida)', why: 'Le permite moverse sin depender de tu ayuda. Acostúmbralo en sesiones cortas y con premios; si le cuesta aceptarla, pide ayuda a un rehabilitador o a un veterinario con formación en rehabilitación.' },
       { name: 'Cama de memory foam ortopédico', why: 'Reduce la presión al descansar. Elige una con cubierta suave y lavable: menos fricción.' },
       { name: 'Pañales caninos desechables + empapadores', why: 'Para la higiene. Cámbialos cada vez que estén mojados para evitar dermatitis.' },
     ],

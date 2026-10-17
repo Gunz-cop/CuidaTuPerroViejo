@@ -209,6 +209,7 @@ const dogSrcset = (name: string) => [240, 400, 640].map((w) => `${DOG_DIR}/${nam
   .mt__badge { display: inline-block; margin-bottom: .6rem; padding: .35rem .85rem; border-radius: 99px; font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--color-brand-text); background: color-mix(in srgb, var(--lvl) 20%, var(--color-brand-bg)); }
   .mt__rtitle { margin: 0 0 .5rem; font-family: var(--font-display); font-size: clamp(1.35rem, 4.6vw, 1.85rem); font-weight: 800; line-height: 1.15; color: var(--color-brand-text); }
   .mt__rdesc { max-width: 34rem; margin: 0 auto; font-size: .95rem; line-height: 1.6; color: var(--color-brand-muted); }
+  .mt__urgent { display: block; margin-bottom: .5rem; padding: .6rem .8rem; border-radius: .9rem; font-weight: 700; color: var(--color-brand-text); background: color-mix(in srgb, var(--color-brand-accent) 14%, var(--color-brand-bg)); }
   .mt__plan-title { margin: 0 0 .8rem; font-size: .72rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; color: var(--color-brand-primary); text-align: left; }
   .mt__plan { display: grid; gap: .65rem; margin-bottom: 1.5rem; text-align: left; counter-reset: step; }
   @media (min-width: 40rem) { .mt__plan { grid-template-columns: 1fr 1fr; } }
@@ -321,7 +322,14 @@ const dogSrcset = (name: string) => [240, 400, 640].map((w) => `${DOG_DIR}/${nam
     $('m5rico').textContent = r.icon;
     $('m5rbadge').textContent = r.badge;
     $('m5rtit').textContent = r.title;
-    $('m5rdesc').textContent = r.description;
+    // En nivel severo, el aviso de urgencia (hasta «…ya está valorado.») va destacado;
+    // el textContent total no cambia (la paridad con la API lo compara).
+    const desc = $('m5rdesc');
+    const cut = r.description.indexOf('ya está valorado. ');
+    if (key[0] === 'S' && cut > 0) {
+      const end = cut + 'ya está valorado.'.length;
+      desc.replaceChildren(el('strong', 'mt__urgent', r.description.slice(0, end)), document.createTextNode(r.description.slice(end)));
+    } else desc.textContent = r.description;
     $('m5rtit').tabIndex = -1;
 
     const plan = $('m5prods');
@@ -412,7 +420,7 @@ const dogSrcset = (name: string) => [240, 400, 640].map((w) => `${DOG_DIR}/${nam
     const steps = r.plan.map((p) => wrap(ctx, p.name, 840).slice(0, 2));
     const BOTTOM = 1200;
     const textHeight = 140 + titleLines.length * 74 + 30 + steps.reduce((sum, lines) => sum + lines.length * 48 + 22, 0);
-    const imgH = Math.max(260, Math.min(500, BOTTOM - 50 - 40 - textHeight));
+    const imgH = Math.max(260, Math.min(580, BOTTOM - 50 - 40 - textHeight));
     let y = 120;
     try {
       // La escena del resultado, con el mismo recorte que en pantalla.

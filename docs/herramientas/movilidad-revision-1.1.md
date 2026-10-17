@@ -22,7 +22,7 @@ de `src/lib/agent-tools/movilidad.ts`.
 | Título del aviso severo | «Cuidado paliativo importante» | «Cuidados diarios si ya no se levanta solo» | Mismo motivo; tono cálido. |
 | Cambios de postura | «cada 4 horas» | «cada 2 a 4 horas, y más a menudo si es delgado o su cama es dura» | Caraty 2019: la espuma reduce la presión pero no basta, y es mayor en perros delgados. 2–4 h es pauta de enfermería veterinaria. |
 | Dolor | «Evalúa si hay dolor controlado con…» | «Pide a tu veterinario que valore si su dolor está bien controlado, y sigue su bienestar con…» | WSAVA 2022: el dolor lo valora el veterinario; la HHHHHMM sirve para seguimiento. |
-| Silla de ruedas | «Fundamental para su calidad de vida» | Solo si conserva fuerza delante; que la ajuste un profesional; rozaduras como complicación más frecuente | Narum 2024: mejor calidad de vida según cuidadores, pero complicaciones en el 60 % de los perros (sobre todo heridas). La encuesta no muestra que el ajuste veterinario las reduzca (72 % frente a 47 %, probablemente casos más graves): se recomienda como buena práctica, sin atribuirlo al estudio. |
+| Silla de ruedas | «Fundamental para su calidad de vida» | Solo si conserva fuerza delante; que la ajuste un profesional; rozaduras como complicación más frecuente | Narum 2024: mejor calidad de vida según cuidadores, pero complicaciones en el 60 % de los perros (sobre todo heridas). La encuesta no muestra que el ajuste veterinario las reduzca (72 % frente a 47 %, en parte casos más graves y formación veterinaria desigual, según los autores): se recomienda como buena práctica, sin atribuirlo al estudio. |
 | Cama ortopédica | «Previene úlceras/llagas» | «Reparte el peso y reduce la presión» | Caraty 2019 mide menos presión, no prevención; no hay ensayo controlado de camas. |
 | Urgencia en nivel severo | No se mencionaba | Primera frase de la descripción de SA y SB: si perdió la fuerza de golpe (horas o pocos días), al veterinario hoy (el schema público fija 3 puntos en el aviso) | Auditoría 2026-10-17 (B2): una pérdida súbita puede ser una urgencia tratable (p. ej., hernia discal). |
 | Orden del resultado | Aviso antes del título | Título y descripción primero; el aviso justo debajo | Auditoría (I4): en móvil el título quedaba tapado. |
@@ -58,3 +58,12 @@ Se corrigieron B1, B2, I1–I4 y los menores 1–6 y 11. El aviso mantiene
 `role="alert"` porque la proyección y `agent-api.mjs` lo exigen
 (`#m5alert[role=alert]`); cambiarlo es un trabajo de contrato aparte (menor 7).
 Los menores 8–10 quedan como propuestas para el propietario (P2, P3).
+
+## Correcciones tras la ronda 2 (2026-10-17)
+
+Informe: [`auditorias/selector-movilidad-2026-10-17-r2.md`](auditorias/selector-movilidad-2026-10-17-r2.md).
+N1: las dos explicaciones de los autores (casos más difíciles y poca formación
+veterinaria en estos dispositivos); el contrato recomienda «un rehabilitador o
+un veterinario con formación en rehabilitación». N2: aviso de urgencia fijo en
+la sección «Si ya no se levanta solo». M1–M5 aplicados; «Revisa también los
+cuidados diarios de este resultado» sustituye a «justo debajo» (también en la API).
