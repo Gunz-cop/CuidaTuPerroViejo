@@ -1,0 +1,311 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+16:25:40 [@astrojs/cloudflare] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+16:25:41 [content] Syncing content
+16:25:41 [content] Synced content
+16:25:41 [types] Generated 1.04s
+16:25:41 [check] Getting diagnostics for Astro files in /workspace/CuidaTuPerroViejo...
+[96mdocs/agent-readiness/evidencia/f4a/ciclo2/probe-schemas-ascii.mjs[0m:[93m15[0m:[93m32[0m - [93mwarning[0m[90m ts(6133): [0m'q' is declared but its value is never read.
+
+[7m15[0m const srv = http.createServer((q, s) => { s.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }); s.end(html); }).listen(0);
+[7m  [0m [93m                               ~[0m
+
+[96mdocs/agent-readiness/evidencia/f4a/referencias/sondeo/probe.mjs[0m:[93m20[0m:[93m32[0m - [93mwarning[0m[90m ts(6133): [0m'q' is declared but its value is never read.
+
+[7m20[0m const srv = http.createServer((q, s) => { s.writeHead(200, { 'content-type': 'text/html' }); s.end(html); }).listen(0);
+[7m  [0m [93m                               ~[0m
+
+[96mdocs/agent-readiness/evidencia/f4a/referencias/sondeo/probe2.mjs[0m:[93m30[0m:[93m32[0m - [93mwarning[0m[90m ts(6133): [0m'q' is declared but its value is never read.
+
+[7m30[0m const srv = http.createServer((q, s) => { s.writeHead(200, { 'content-type': 'text/html' }); s.end(html); }).listen(0);
+[7m  [0m [93m                               ~[0m
+
+[96mdocs/agent-readiness/evidencia/f4a/stop-sdd/probe-b4.mjs[0m:[93m9[0m:[93m32[0m - [93mwarning[0m[90m ts(6133): [0m'q' is declared but its value is never read.
+
+[7m9[0m const srv = http.createServer((q, s) => { s.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }); s.end(html); }).listen(0);
+[7m [0m [93m                               ~[0m
+
+[96mdocs/agent-readiness/evidencia/mcp-discovery-104/referencias/ui.body.js[0m:[93m2[0m:[93m11892[0m - [93mwarning[0m[90m ts(6133): [0m't' is declared but its value is never read.
+
+[7m2[0m Content-Signal: ai-train=no, search=yes, ai-input=no`,skillUrl:`${k}/content-signals/SKILL.md`},sitemap:{description:"Publish a sitemap and reference it from robots.txt",specUrls:["https://www.sitemaps.org/protocol.html"],prompt:"Generate /sitemap.xml listing canonical URLs, keep it updated on publish, and reference it from /robots.txt.",skillUrl:`${k}/sitemap/SKILL.md`},markdownNegotiation:{description:"Return HTML responses as markdown when agents request it",specUrls:["https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/"],prompt:"Enable Markdown for Agents so requests with Accept: text/markdown return a markdown version of your HTML response while HTML stays the default for browsers. Confirm the response uses Content-Type: text/markdown (and x-markdown-tokens if available).",skillUrl:`${k}/markdown-negotiation/SKILL.md`},webBotAuth:{description:"Let your site identify itself as a bot with Web Bot Auth",specUrls:["https://datatracker.ietf.org/wg/webbotauth/about/","https://developers.cloudflare.com/bots/reference/bot-verification/web-bot-auth/"],prompt:"Publish a JWKS at /.well-known/http-message-signatures-directory so your site can identify itself when it sends bot or agent requests. Receiving sites can use it to verify those signed requests.",skillUrl:`${k}/web-bot-auth/SKILL.md`},oauthDiscovery:{description:"Publish OAuth/OIDC discovery metadata so agents can authenticate with your APIs",specUrls:["http://openid.net/specs/openid-connect-discovery-1_0.html","https://www.rfc-editor.org/rfc/rfc8414"],prompt:"If your site has protected APIs, publish /.well-known/openid-configuration (for OpenID Connect) or /.well-known/oauth-authorization-server (for pure OAuth 2.0) with your issuer, authorization_endpoint, token_endpoint, jwks_uri, and grant_types_supported. This allows AI agents to programmatically discover how to authenticate.",skillUrl:`${k}/oauth-discovery/SKILL.md`},oauthProtectedResource:{description:"Publish OAuth Protected Resource Metadata so agents can discover how to authenticate",specUrls:["https://www.rfc-editor.org/rfc/rfc9728"],prompt:"Publish /.well-known/oauth-protected-resource with your resource identifier, authorization_servers (list of OAuth/OIDC issuer URLs that can issue tokens for this resource), and scopes_supported. This tells agents how to obtain access tokens for your protected APIs.",skillUrl:`${k}/oauth-protected-resource/SKILL.md`},authMd:{description:"Publish Auth.md metadata for agent registration",specUrls:["https://workos.com/auth-md","https://github.com/workos/auth.md"],prompt:"Serve /auth.md at the site root with agent registration instructions, publish /.well-known/oauth-protected-resource, and include an agent_auth block in /.well-known/oauth-authorization-server with register_uri, supported identity types, credential types, and claim/revocation URLs where applicable.",skillUrl:`${k}/auth-md/SKILL.md`},mcpServerCard:{description:"Publish an MCP Server Card for agent discovery",specUrls:["https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2127"],prompt:"Serve an MCP Server Card (SEP-1649) at /.well-known/mcp/server-card.json with serverInfo (name, version), transport endpoint, and capabilities. The schema is being standardized at https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2127",skillUrl:`${k}/mcp-server-card/SKILL.md`},a2aAgentCard:{description:"Publish an A2A Agent Card for agent-to-agent discovery",specUrls:["https://a2a-protocol.org/latest/specification/","https://a2a-protocol.org/latest/topics/agent-discovery/"],prompt:"Serve an A2A Agent Card (JSON) at /.well-known/agent-card.json describing your agent. Include name, version, description, supportedInterfaces (with service URL and transport protocol), capabilities, and skills (each with id, name, description). This enables other AI agents to discover and interact with your agent via the A2A protocol.",skillUrl:`${k}/a2a-agent-card/SKILL.md`},agentSkills:{description:"Publish an agent skills discovery index",specUrls:["https://github.com/cloudflare/agent-skills-discovery-rfc","https://agentskills.io/"],prompt:"Publish a skills discovery index at /.well-known/agent-skills/index.json (per the Agent Skills Discovery RFC v0.2.0). Include a $schema field, and a skills array where each entry has name, type, description, url, and a sha256 digest.",skillUrl:`${k}/agent-skills/SKILL.md`},apiCatalog:{description:"Publish an API catalog for automated API discovery (RFC 9727)",specUrls:["https://www.rfc-editor.org/rfc/rfc9727","https://www.rfc-editor.org/rfc/rfc9264"],prompt:'Create /.well-known/api-catalog returning application/linkset+json with a "linkset" array. Each entry should include an "anchor" URL for the API and link relations for service-desc (OpenAPI spec), service-doc (documentation), and status (health endpoint). See RFC 9727 Appendix A for examples.',skillUrl:`${k}/api-catalog/SKILL.md`},ucp:{description:"Enable content payments via Universal Commerce Protocol",specUrls:["https://ucp.dev/specification/overview/"],prompt:"Serve /.well-known/ucp with protocol version, services, capabilities, and endpoints, and ensure spec URLs and schemas are reachable.",skillUrl:`${k}/ucp/SKILL.md`},x402:{description:"Support x402 protocol for agent-native HTTP payments",specUrls:["https://x402.org","https://github.com/coinbase/x402","https://docs.x402.org"],prompt:"Add x402 payment middleware to your API routes to enable AI agents to pay for access via HTTP. Use @x402/express, @x402/hono, or @x402/next middleware with a facilitator URL and wallet address. Protected routes will return HTTP 402 with payment requirements that agents can fulfill automatically.",skillUrl:`${k}/x402/SKILL.md`},mpp:{description:"Support MPP (Machine Payment Protocol) for agent-native HTTP payments",specUrls:["https://mpp.dev","https://paymentauth.org/draft-payment-discovery-00.txt"],prompt:"Publish an OpenAPI document at /openapi.json with x-payment-info extensions on payable operations. Each operation should declare intent (charge or session), method (tempo, stripe, lightning, card), amount, and currency. Use the MPP SDK (mppx for TypeScript, pympp for Python) with framework middleware for Hono, Express, Next.js, or Elysia to add MPP payment handling.",skillUrl:`${k}/mpp/SKILL.md`},acp:{description:"Publish ACP discovery metadata so agents can discover your commerce API",specUrls:["https://agenticcommerce.dev","https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/rfcs/rfc.discovery.md"],prompt:'Serve /.well-known/acp.json at the origin root with protocol.name "acp", protocol.version, api_base_url, supported transports, and capabilities.services so agents can discover your ACP implementation without creating a checkout session first.',skillUrl:`${k}/acp/SKILL.md`},webMcp:{description:"Support WebMCP to expose site tools to AI agents via the browser",specUrls:["https://webmachinelearning.github.io/webmcp/","https://github.com/webmachinelearning/webmcp/blob/main/declarative-api-explainer.md"],prompt:"Implement the WebMCP API by calling document.modelContext.registerTool() for each tool that exposes your site's key actions to AI agents. Each tool needs a name, description, inputSchema (JSON Schema), and an execute callback function; registerTool() returns a Promise. Pass an AbortSignal in the options to unregister tools when no longer needed. For existing HTML forms, add toolname and tooldescription attributes to the <form> and toolparamdescription to its inputs to expose them declaratively.",skillUrl:`${k}/webmcp/SKILL.md`},ard:{description:"Publish an ARD (Agentic Resource Discovery) manifest so agents can discover your site's capabilities (MCP servers, A2A agents, OpenAPI schemas, and more)",specUrls:["https://agenticresourcediscovery.org/","https://github.com/ards-project/ard-spec","https://github.com/Agent-Card/ai-catalog"],prompt:'Serve /.well-known/ai-catalog.json at the origin root with Content-Type: application/json and Access-Control-Allow-Origin: *. Include specVersion, a host object, and an entries array. Give each entry a urn:air:<your-domain>:<namespace>:<name> identifier, a displayName, an IANA media type in "type", and exactly one of url or data. Add 2-5 representativeQueries per entry so registries can build semantic embeddings.',skillUrl:`${k}/ard/SKILL.md`},linkHeaders:{description:"Include Link response headers for agent discovery (RFC 8288)",specUrls:["https://www.rfc-editor.org/rfc/rfc8288","https://www.rfc-editor.org/rfc/rfc9727#section-3"],prompt:'Add Link response headers to your homepage that point agents to useful resources. For example: Link: </.well-known/api-catalog>; rel="api-catalog" to advertise your API catalog, or Link: </docs/api>; rel="service-doc" for API documentation. See RFC 8288 for the Link header format and IANA Link Relations for registered relation types.',skillUrl:`${k}/link-headers/SKILL.md`},dnsAid:{description:"Publish DNS for AI Discovery (DNS-AID) records for DNS-based agent discovery",specUrls:["https://datatracker.ietf.org/doc/draft-mozleywilliams-dnsop-dnsaid/","https://www.rfc-editor.org/rfc/rfc9460"],prompt:"Publish DNS for AI Discovery (DNS-AID) records under your domain, for example _index._agents.example.com or _a2a._agents.example.com, using ServiceMode SVCB/HTTPS records with alpn and endpoint parameters. Sign the public discovery zone with DNSSEC so validating resolvers return authenticated data.",skillUrl:`${k}/dns-aid/SKILL.md`}},ce=document.getElementById("scan-form"),D=document.getElementById("url-input"),fe=document.getElementById("scan-button"),pt=fe.querySelector(".button-text"),ht=fe.querySelector(".button-loading"),le=document.getElementById("form-error"),I=document.getElementById("results"),F=document.getElementById("results-timestamp"),De=document.getElementById("score-card-container"),Be=document.getElementById("check-categories"),mt=document.getElementById("scan-another"),V=document.getElementById("info-cards"),ne=document.getElementById("copy-all-fab"),j=document.getElementById("customize-toggle"),de=document.getElementById("customize-panel"),_e=document.getElementById("profile-pills"),xe=document.getElementById("profile-description"),ue=document.getElementById("checks-grid");let Oe=!1,Se=!1,T="all",x=null;function Ce(e){Oe=e,fe.disabled=e,D.disabled=e,pt.hidden=e,ht.hidden=!e}function pe(e){le.textContent=e,le.hidden=!1}function gt(){le.hidden=!0}function Ne(){return x?[...x]:[...O[T].checks]}function he(){const e=x||O[T].checks;ue.querySelectorAll('input[name="check"]').forEach(t=>{t.checked=e.has(t.value)})}function X(){_e.querySelectorAll(".profile-pill").forEach(e=>{const t=e.dataset.profile,n=!x&&t===T;e.classList.toggle("profile-pill--active",n),e.setAttribute("aria-checked",String(n))}),x?xe.textContent=`Custom selection — ${x.size} of ${ge.length} checks enabled`:xe.textContent=O[T].description}j.addEventListener("click",()=>{const e=j.getAttribute("aria-expanded")==="true";j.setAttribute("aria-expanded",String(!e)),de.hidden=e});_e.addEventListener("click",e=>{const t=e.target.closest(".profile-pill");if(!t)return;const n=t.dataset.profile;!n||!(n in O)||(T=n,x=null,he(),X(),Fe())});ue.addEventListener("change",e=>{if(e.target.name!=="check")return;const n=new Set;ue.querySelectorAll('input[name="check"]:checked').forEach(o=>{n.add(o.value)});let s=null;for(const[o,r]of Object.entries(O))if(n.size===r.checks.size&&[...n].every(i=>r.checks.has(i))){s=o;break}s?(T=s,x=null):x=n,X(),Fe()});function qe(e){const t=new Date(e);return`Last scanned ${t.toLocaleDateString()} at ${t.toLocaleTimeString()}`}function ft(e){return Me.has(e)?(x||O[T].checks).has(e):!0}function je(e){return Object.fromEntries(Object.entries(e).filter(([t])=>{const n=me.find(s=>s===t);return n?ft(n):!0}))}function Q(e){return e.total===0&&e.checkCount>0}function vt(e,t){const n=[{name:"discoverability",checks:e.discoverability,countInScore:!0},{name:"contentAccessibility",checks:e.contentAccessibility,countInScore:!0},{name:"botAccessControl",checks:e.botAccessControl,countInScore:!0},{name:"discovery",checks:e.discovery,countInScore:!0},{name:"commerce",checks:e.commerce,countInScore:!1}];let s=0,o=0;const r=n.map(({name:l,checks:d,countInScore:a})=>{const u=je(d),c=Object.values(u),m=c.filter(p=>p.status==="pass").length,b=c.filter(p=>p.status==="neutral").length,y=c.length-b;return a&&(s+=m,o+=y),{name:l,score:y>0?Math.round(m/y*100):0,passed:m,total:y,checkCount:c.length}}),i=o>0?Math.round(s/o*100):0;return{categories:r,overall:i}}function K(e){return e>=90?"var(--color-score-good)":e>=50?"var(--color-score-average)":"var(--color-score-poor)"}const ve={discoverability:"Discoverability",contentAccessibility:"Content",botAccessControl:"Bot Access Control",discovery:"API, Auth, MCP & Skill Discovery",commerce:"Commerce"},Ae={0:"var(--color-level-0)",1:"var(--color-level-1)",2:"var(--color-level-2)",3:"var(--color-level-3)",4:"var(--color-level-4)",5:"var(--color-level-5)"};function yt(e,t){const m=180-12*(t.length-1),b=t.reduce((v,$)=>v+$.checkCount,0),y=v=>v*Math.PI/180,p=v=>({x:120+95*Math.cos(y(v)),y:125-95*Math.sin(y(v))}),f=(v,$)=>{if(Math.abs(v-$)<.5)return"";const A=p(v),L=p($),_=Math.abs(v-$)>180?1:0,H=v>$?1:0;return`M ${A.x.toFixed(2)} ${A.y.toFixed(2)} A 95 95 0 ${_} ${H} ${L.x.toFixed(2)} ${L.y.toFixed(2)}`},w=f(180,0),g=180*(e/100),S=f(180,180-g),C=K(e),B=`
+[7m [0m [93m                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ~[0m
+[96mdocs/agent-readiness/evidencia/mcp-discovery-104/referencias/ui.body.js[0m:[93m1[0m:[93m76[0m - [93mwarning[0m[90m ts(6133): [0m's' is declared but its value is never read.
+
+[7m1[0m const ze="modulepreload",Ye=function(e){return"/"+e},ke={},Je=function(t,n,s){let o=Promise.resolve();if(n&&n.length>0){let i=function(a){return Promise.all(a.map(u=>Promise.resolve(u).then(c=>({status:"fulfilled",value:c}),c=>({status:"rejected",reason:c}))))};document.getElementsByTagName("link");const l=document.querySelector("meta[property=csp-nonce]"),d=l?.nonce||l?.getAttribute("nonce");o=i(n.map(a=>{if(a=Ye(a),a in ke)return;ke[a]=!0;const u=a.endsWith(".css"),c=u?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${a}"]${c}`))return;const m=document.createElement("link");if(m.rel=u?"stylesheet":ze,u||(m.as="script"),m.crossOrigin="",m.href=a,d&&m.setAttribute("nonce",d),document.head.appendChild(m),u)return new Promise((b,y)=>{m.addEventListener("load",b),m.addEventListener("error",()=>y(new Error(`Unable to preload CSS for ${a}`)))})}))}function r(i){const l=new Event("vite:preloadError",{cancelable:!0});if(l.payload=i,window.dispatchEvent(l),!l.defaultPrevented)throw i}return o.then(i=>{for(const l of i||[])l.status==="rejected"&&r(l.reason);return t().catch(r)})},Xe=["imperative_api","declarative_html","both"];function Qe(e){return typeof e=="string"&&Xe.includes(e)}function et(e){if(typeof e!="object"||e===null)return null;const t=e;return typeof t.name!="string"||t.name===""?null:{name:t.name,...typeof t.title=="string"?{title:t.title}:{},...typeof t.description=="string"?{description:t.description}:{},...typeof t.hasSchema=="boolean"?{hasSchema:t.hasSchema}:{}}}function tt(e){if(!e||!Array.isArray(e.tools))return null;const t=e.tools.map(et).filter(s=>s!==null);return t.length===0?null:{toolCount:typeof e.toolCount=="number"?e.toolCount:t.length,tools:t,...Qe(e.detectionMethod)?{detectionMethod:e.detectionMethod}:{}}}function nt(e){const t=tt(e);if(!t)return null;const n=t.tools.slice(0,50).map(s=>{const o=s.description??s.title;return{name:s.name,...o?{description:o}:{}}});return{total:t.tools.length,rows:n,remaining:t.tools.length-n.length}}const st="excluded by scan configuration",ot="scanner.checkExcluded";function rt(e){return e.messageRef?e.messageRef.code===ot:e.message?.toLowerCase().includes(st)===!0}function ie(e){const t=e.trim();try{const n=/^https?:\/\//i.test(t)?t:`https://${t}`,s=new URL(n);s.username="",s.password="",s.hash="";const o=s.toString(),r=s.protocol==="https:"&&s.pathname==="/"&&!s.search;return{scanUrl:o,pathSegment:r?s.host:o}}catch{return{scanUrl:t,pathSegment:t}}}function at(e){return`/${encodeURIComponent(e)}`}function Ue(e){const t=e.replace(/^\/+/,"");if(!t)return null;try{return decodeURIComponent(t)}catch{return null}}function it(e,t){const n=s=>s.replace(/\/+$/,"");return n(e)===n(t)}function we(){try{const e=localStorage.getItem("theme");if(e==="light"||e==="dark"||e==="system")return e}catch{}return"system"}function $e(e){const t=document.documentElement;e==="system"?t.removeAttribute("data-theme"):t.setAttribute("data-theme",e),t.setAttribute("data-theme-pref",e);try{localStorage.setItem("theme",e)}catch{}}function ct(){const e=document.getElementById("theme-toggle");if(!e)return;const t=["light","dark","system"],n={light:"Light mode — click for dark",dark:"Dark mode — click for system",system:"System mode — click for light"};function s(r){e.setAttribute("aria-label",n[r]),e.setAttribute("title",n[r])}e.addEventListener("click",()=>{const r=we(),i=(t.indexOf(r)+1)%t.length,l=t[i];$e(l),s(l)});const o=we();$e(o),s(o)}function lt(){const e=document.documentElement.getAttribute("data-theme");return e==="dark"||e==="light"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}ct();const me=["robotsTxt","sitemap","linkHeaders","dnsAid","markdownNegotiation","robotsTxtAiRules","contentSignals","webBotAuth","apiCatalog","oauthDiscovery","oauthProtectedResource","authMd","mcpServerCard","a2aAgentCard","agentSkills","webMcp","ard","x402","mpp","ucp","acp","ap2"],Me=new Set(["a2aAgentCard","ap2"]),ge=me.filter(e=>!Me.has(e)),O={all:{name:"All Checks",description:"Run all default checks — best for comprehensive audits",checks:new Set(ge)},content:{name:"Content Site",description:"Blog, docs, or marketing site — focuses on discoverability and content accessibility",checks:new Set(["robotsTxt","sitemap","linkHeaders","dnsAid","markdownNegotiation","robotsTxtAiRules","contentSignals"])},apiApp:{name:"API / Application",description:"API service or web app — all checks except commerce",checks:new Set(["robotsTxt","sitemap","linkHeaders","dnsAid","markdownNegotiation","robotsTxtAiRules","contentSignals","webBotAuth","apiCatalog","oauthDiscovery","oauthProtectedResource","authMd","mcpServerCard","agentSkills","webMcp","ard"])}},dt={robotsTxt:"robots.txt",sitemap:"Sitemap",linkHeaders:"Link headers",dnsAid:"DNS for AI Discovery (DNS-AID)",markdownNegotiation:"Markdown Negotiation",robotsTxtAiRules:"AI bot rules in robots.txt",contentSignals:"Content Signals in robots.txt",webBotAuth:"Web Bot Auth request signing",oauthDiscovery:"OAuth / OIDC discovery",oauthProtectedResource:"OAuth Protected Resource",authMd:"Auth.md agent registration",mcpServerCard:"MCP Server Card",a2aAgentCard:"A2A Agent Card",agentSkills:"Agent Skills index",apiCatalog:"API Catalog",webMcp:"WebMCP",ard:"ARD (Agentic Resource Discovery)",ucp:"Universal Commerce Protocol",x402:"x402 Protocol",mpp:"MPP (Machine Payment Protocol)",acp:"ACP (Agentic Commerce Protocol)"},k=`${window.location.origin}/.well-known/agent-skills`,ut={robotsTxt:{description:"Publish /robots.txt with clear crawl rules",specUrls:["https://www.rfc-editor.org/rfc/rfc9309"],prompt:"Create /robots.txt at the site root with explicit User-agent directives and allow/disallow rules for key paths. Ensure it is plain text and returns 200.",skillUrl:`${k}/robots-txt/SKILL.md`},robotsTxtAiRules:{description:"Add User-agent rules for AI crawlers like OAI-SearchBot, Claude-SearchBot, GPTBot, and ClaudeBot",specUrls:["https://www.rfc-editor.org/rfc/rfc9309","https://developers.cloudflare.com/ai-crawl-control/"],prompt:"Add explicit User-agent entries for AI crawlers with allow/disallow rules that match your policy. Search crawlers (OAI-SearchBot, Claude-SearchBot, PerplexityBot) fetch the pages AI assistants use in their answers, so blocking them affects whether you appear in AI answers. Training crawlers (GPTBot, ClaudeBot, Google-Extended) collect model training data; blocking them does not affect whether your pages appear in AI search results.",skillUrl:`${k}/ai-rules/SKILL.md`},contentSignals:{description:"Declare AI content usage preferences with Content Signals in robots.txt",specUrls:["https://contentsignals.org/","https://datatracker.ietf.org/doc/draft-romm-aipref-contentsignals/"],prompt:`Add Content-Signal directives to your robots.txt declaring preferences for ai-train, search, and ai-input. For example:
+[7m [0m [93m                                                                           ~[0m
+[96mdocs/agent-readiness/evidencia/mcp-discovery-104/referencias/ui.body.js[0m:[93m1[0m:[93m60[0m - [93mwarning[0m[90m ts(80006): [0mThis may be converted to an async function.
+
+[7m1[0m const ze="modulepreload",Ye=function(e){return"/"+e},ke={},Je=function(t,n,s){let o=Promise.resolve();if(n&&n.length>0){let i=function(a){return Promise.all(a.map(u=>Promise.resolve(u).then(c=>({status:"fulfilled",value:c}),c=>({status:"rejected",reason:c}))))};document.getElementsByTagName("link");const l=document.querySelector("meta[property=csp-nonce]"),d=l?.nonce||l?.getAttribute("nonce");o=i(n.map(a=>{if(a=Ye(a),a in ke)return;ke[a]=!0;const u=a.endsWith(".css"),c=u?'[rel="stylesheet"]':"";if(document.querySelector(`link[href="${a}"]${c}`))return;const m=document.createElement("link");if(m.rel=u?"stylesheet":ze,u||(m.as="script"),m.crossOrigin="",m.href=a,d&&m.setAttribute("nonce",d),document.head.appendChild(m),u)return new Promise((b,y)=>{m.addEventListener("load",b),m.addEventListener("error",()=>y(new Error(`Unable to preload CSS for ${a}`)))})}))}function r(i){const l=new Event("vite:preloadError",{cancelable:!0});if(l.payload=i,window.dispatchEvent(l),!l.defaultPrevented)throw i}return o.then(i=>{for(const l of i||[])l.status==="rejected"&&r(l.reason);return t().catch(r)})},Xe=["imperative_api","declarative_html","both"];function Qe(e){return typeof e=="string"&&Xe.includes(e)}function et(e){if(typeof e!="object"||e===null)return null;const t=e;return typeof t.name!="string"||t.name===""?null:{name:t.name,...typeof t.title=="string"?{title:t.title}:{},...typeof t.description=="string"?{description:t.description}:{},...typeof t.hasSchema=="boolean"?{hasSchema:t.hasSchema}:{}}}function tt(e){if(!e||!Array.isArray(e.tools))return null;const t=e.tools.map(et).filter(s=>s!==null);return t.length===0?null:{toolCount:typeof e.toolCount=="number"?e.toolCount:t.length,tools:t,...Qe(e.detectionMethod)?{detectionMethod:e.detectionMethod}:{}}}function nt(e){const t=tt(e);if(!t)return null;const n=t.tools.slice(0,50).map(s=>{const o=s.description??s.title;return{name:s.name,...o?{description:o}:{}}});return{total:t.tools.length,rows:n,remaining:t.tools.length-n.length}}const st="excluded by scan configuration",ot="scanner.checkExcluded";function rt(e){return e.messageRef?e.messageRef.code===ot:e.message?.toLowerCase().includes(st)===!0}function ie(e){const t=e.trim();try{const n=/^https?:\/\//i.test(t)?t:`https://${t}`,s=new URL(n);s.username="",s.password="",s.hash="";const o=s.toString(),r=s.protocol==="https:"&&s.pathname==="/"&&!s.search;return{scanUrl:o,pathSegment:r?s.host:o}}catch{return{scanUrl:t,pathSegment:t}}}function at(e){return`/${encodeURIComponent(e)}`}function Ue(e){const t=e.replace(/^\/+/,"");if(!t)return null;try{return decodeURIComponent(t)}catch{return null}}function it(e,t){const n=s=>s.replace(/\/+$/,"");return n(e)===n(t)}function we(){try{const e=localStorage.getItem("theme");if(e==="light"||e==="dark"||e==="system")return e}catch{}return"system"}function $e(e){const t=document.documentElement;e==="system"?t.removeAttribute("data-theme"):t.setAttribute("data-theme",e),t.setAttribute("data-theme-pref",e);try{localStorage.setItem("theme",e)}catch{}}function ct(){const e=document.getElementById("theme-toggle");if(!e)return;const t=["light","dark","system"],n={light:"Light mode — click for dark",dark:"Dark mode — click for system",system:"System mode — click for light"};function s(r){e.setAttribute("aria-label",n[r]),e.setAttribute("title",n[r])}e.addEventListener("click",()=>{const r=we(),i=(t.indexOf(r)+1)%t.length,l=t[i];$e(l),s(l)});const o=we();$e(o),s(o)}function lt(){const e=document.documentElement.getAttribute("data-theme");return e==="dark"||e==="light"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}ct();const me=["robotsTxt","sitemap","linkHeaders","dnsAid","markdownNegotiation","robotsTxtAiRules","contentSignals","webBotAuth","apiCatalog","oauthDiscovery","oauthProtectedResource","authMd","mcpServerCard","a2aAgentCard","agentSkills","webMcp","ard","x402","mpp","ucp","acp","ap2"],Me=new Set(["a2aAgentCard","ap2"]),ge=me.filter(e=>!Me.has(e)),O={all:{name:"All Checks",description:"Run all default checks — best for comprehensive audits",checks:new Set(ge)},content:{name:"Content Site",description:"Blog, docs, or marketing site — focuses on discoverability and content accessibility",checks:new Set(["robotsTxt","sitemap","linkHeaders","dnsAid","markdownNegotiation","robotsTxtAiRules","contentSignals"])},apiApp:{name:"API / Application",description:"API service or web app — all checks except commerce",checks:new Set(["robotsTxt","sitemap","linkHeaders","dnsAid","markdownNegotiation","robotsTxtAiRules","contentSignals","webBotAuth","apiCatalog","oauthDiscovery","oauthProtectedResource","authMd","mcpServerCard","agentSkills","webMcp","ard"])}},dt={robotsTxt:"robots.txt",sitemap:"Sitemap",linkHeaders:"Link headers",dnsAid:"DNS for AI Discovery (DNS-AID)",markdownNegotiation:"Markdown Negotiation",robotsTxtAiRules:"AI bot rules in robots.txt",contentSignals:"Content Signals in robots.txt",webBotAuth:"Web Bot Auth request signing",oauthDiscovery:"OAuth / OIDC discovery",oauthProtectedResource:"OAuth Protected Resource",authMd:"Auth.md agent registration",mcpServerCard:"MCP Server Card",a2aAgentCard:"A2A Agent Card",agentSkills:"Agent Skills index",apiCatalog:"API Catalog",webMcp:"WebMCP",ard:"ARD (Agentic Resource Discovery)",ucp:"Universal Commerce Protocol",x402:"x402 Protocol",mpp:"MPP (Machine Payment Protocol)",acp:"ACP (Agentic Commerce Protocol)"},k=`${window.location.origin}/.well-known/agent-skills`,ut={robotsTxt:{description:"Publish /robots.txt with clear crawl rules",specUrls:["https://www.rfc-editor.org/rfc/rfc9309"],prompt:"Create /robots.txt at the site root with explicit User-agent directives and allow/disallow rules for key paths. Ensure it is plain text and returns 200.",skillUrl:`${k}/robots-txt/SKILL.md`},robotsTxtAiRules:{description:"Add User-agent rules for AI crawlers like OAI-SearchBot, Claude-SearchBot, GPTBot, and ClaudeBot",specUrls:["https://www.rfc-editor.org/rfc/rfc9309","https://developers.cloudflare.com/ai-crawl-control/"],prompt:"Add explicit User-agent entries for AI crawlers with allow/disallow rules that match your policy. Search crawlers (OAI-SearchBot, Claude-SearchBot, PerplexityBot) fetch the pages AI assistants use in their answers, so blocking them affects whether you appear in AI answers. Training crawlers (GPTBot, ClaudeBot, Google-Extended) collect model training data; blocking them does not affect whether your pages appear in AI search results.",skillUrl:`${k}/ai-rules/SKILL.md`},contentSignals:{description:"Declare AI content usage preferences with Content Signals in robots.txt",specUrls:["https://contentsignals.org/","https://datatracker.ietf.org/doc/draft-romm-aipref-contentsignals/"],prompt:`Add Content-Signal directives to your robots.txt declaring preferences for ai-train, search, and ai-input. For example:
+[7m [0m [93m                                                           ~~[0m
+
+[96mscripts/sdi-shadow-compare.mjs[0m:[93m116[0m:[93m10[0m - [93mwarning[0m[90m ts(80006): [0mThis may be converted to an async function.
+
+[7m116[0m function makeTemporaryConfig(tempDirectory) {
+[7m   [0m [93m         ~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscripts/agent-readiness/agent-api.mjs[0m:[93m211[0m:[93m10[0m - [93mwarning[0m[90m ts(80006): [0mThis may be converted to an async function.
+
+[7m211[0m function readJson(path) {
+[7m   [0m [93m         ~~~~~~~~[0m
+
+[96mscripts/agent-readiness/index.mjs[0m:[93m354[0m:[93m25[0m - [93mwarning[0m[90m ts(6133): [0m'filename' is declared but its value is never read.
+
+[7m354[0m   for (const { profile, filename, body, responseBytes, enabledChecks } of prepared) {
+[7m   [0m [93m                        ~~~~~~~~[0m
+[96mscripts/agent-readiness/index.mjs[0m:[93m12[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'EVIDENCE_SCHEMA' is declared but its value is never read.
+
+[7m12[0m const EVIDENCE_SCHEMA = 'agent-readiness-evidence/1';
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96mscripts/agent-readiness/inventory.mjs[0m:[93m328[0m:[93m9[0m - [93mwarning[0m[90m ts(6133): [0m'allHtmlPaths' is declared but its value is never read.
+
+[7m328[0m   const allHtmlPaths = new Set(pages.filter((page) => page.canonicalPath).map((page) => page.canonicalPath));
+[7m   [0m [93m        ~~~~~~~~~~~~[0m
+[96mscripts/agent-readiness/inventory.mjs[0m:[93m161[0m:[93m48[0m - [93mwarning[0m[90m ts(6133): [0m'assetDirectory' is declared but its value is never read.
+
+[7m161[0m function extractSitemapPaths(xmlText, xmlFile, assetDirectory, errors) {
+[7m   [0m [93m                                               ~~~~~~~~~~~~~~[0m
+[96mscripts/agent-readiness/inventory.mjs[0m:[93m136[0m:[93m35[0m - [93mwarning[0m[90m ts(6133): [0m'buildDir' is declared but its value is never read.
+
+[7m136[0m async function findAssetDirectory(buildDir, files) {
+[7m   [0m [93m                                  ~~~~~~~~[0m
+[96mscripts/agent-readiness/inventory.mjs[0m:[93m106[0m:[93m34[0m - [93mwarning[0m[90m ts(6133): [0m'htmlFile' is declared but its value is never read.
+
+[7m106[0m function canonicalFrom(document, htmlFile) {
+[7m   [0m [93m                                 ~~~~~~~~[0m
+[96mscripts/agent-readiness/inventory.mjs[0m:[93m55[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'hasRel' is declared but its value is never read.
+
+[7m55[0m function hasRel(children, tagName, predicate = () => true) {
+[7m  [0m [93m         ~~~~~~[0m
+[96mscripts/agent-readiness/inventory.mjs[0m:[93m5[0m:[93m24[0m - [93mwarning[0m[90m ts(6133): [0m'exclusiveFile' is declared but its value is never read.
+
+[7m5[0m import { exclusiveDir, exclusiveFile, manifestFor, saveJson, sha256, sourceState } from './shared.mjs';
+[7m [0m [93m                       ~~~~~~~~~~~~~[0m
+
+[96mscripts/agent-readiness/projection-dom.mjs[0m:[93m509[0m:[93m38[0m - [93mwarning[0m[90m ts(6133): [0m'h1' is declared but its value is never read.
+
+[7m509[0m function projectToolMain(root, page, h1) {
+[7m   [0m [93m                                     ~~[0m
+[96mscripts/agent-readiness/projection-dom.mjs[0m:[93m362[0m:[93m34[0m - [93mwarning[0m[90m ts(6133): [0m'canonicalUrl' is declared but its value is never read.
+
+[7m362[0m function renderTable(node, page, canonicalUrl) {
+[7m   [0m [93m                                 ~~~~~~~~~~~~[0m
+[96mscripts/agent-readiness/projection-dom.mjs[0m:[93m3[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'SITE' is declared but its value is never read.
+
+[7m3[0m const SITE = 'https://cuidatuperroviejo.com';
+[7m [0m [93m      ~~~~[0m
+
+[96mscripts/agent-readiness/projection.mjs[0m:[93m12[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'DOCUMENTS_DIR' is declared but its value is never read.
+
+[7m12[0m const DOCUMENTS_DIR = 'agent-content/v1/documents';
+[7m  [0m [93m      ~~~~~~~~~~~~~[0m
+[96mscripts/agent-readiness/projection.mjs[0m:[93m4[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'basename' is declared but its value is never read.
+
+[7m4[0m import { basename, dirname, join, relative, resolve, sep } from 'node:path';
+[7m [0m [93m         ~~~~~~~~[0m
+
+[96msrc/content.config.ts[0m:[93m52[0m:[93m19[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m52[0m     dateModified: z.string().optional(),
+[7m  [0m [93m                  ~[0m
+[96msrc/content.config.ts[0m:[93m50[0m:[93m16[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m50[0m     legacyUrl: z.string().optional(),
+[7m  [0m [93m               ~[0m
+[96msrc/content.config.ts[0m:[93m49[0m:[93m19[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m49[0m     heroImageAlt: z.string().optional(),
+[7m  [0m [93m                  ~[0m
+[96msrc/content.config.ts[0m:[93m48[0m:[93m16[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m48[0m     heroImage: z.string().optional(),
+[7m  [0m [93m               ~[0m
+[96msrc/content.config.ts[0m:[93m47[0m:[93m15[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m47[0m     keywords: z.string().optional(),
+[7m  [0m [93m              ~[0m
+[96msrc/content.config.ts[0m:[93m46[0m:[93m22[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m46[0m     metaDescription: z.string(),
+[7m  [0m [93m                     ~[0m
+[96msrc/content.config.ts[0m:[93m45[0m:[93m15[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m45[0m     seoTitle: z.string(),
+[7m  [0m [93m              ~[0m
+[96msrc/content.config.ts[0m:[93m44[0m:[93m12[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m44[0m     title: z.string(),
+[7m  [0m [93m           ~[0m
+[96msrc/content.config.ts[0m:[93m43[0m:[93m11[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m43[0m   schema: z.object({
+[7m  [0m [93m          ~[0m
+[96msrc/content.config.ts[0m:[93m33[0m:[93m19[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m33[0m     dateModified: z.string().optional(),
+[7m  [0m [93m                  ~[0m
+[96msrc/content.config.ts[0m:[93m30[0m:[93m20[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m30[0m     datePublished: z.string().default('2025-10-01'),
+[7m  [0m [93m                   ~[0m
+[96msrc/content.config.ts[0m:[93m29[0m:[93m13[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m29[0m     status: z.string().default('Publicado'),
+[7m  [0m [93m            ~[0m
+[96msrc/content.config.ts[0m:[93m28[0m:[93m16[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m28[0m     legacyUrl: z.string().optional(),
+[7m  [0m [93m               ~[0m
+[96msrc/content.config.ts[0m:[93m27[0m:[93m19[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m27[0m     heroImageAlt: z.string().optional(),
+[7m  [0m [93m                  ~[0m
+[96msrc/content.config.ts[0m:[93m26[0m:[93m16[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m26[0m     heroImage: z.string().optional(),
+[7m  [0m [93m               ~[0m
+[96msrc/content.config.ts[0m:[93m25[0m:[93m23[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m25[0m     keywordPrincipal: z.string().optional(),
+[7m  [0m [93m                      ~[0m
+[96msrc/content.config.ts[0m:[93m16[0m:[93m12[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m16[0m     pilar: z.enum([
+[7m  [0m [93m           ~[0m
+[96msrc/content.config.ts[0m:[93m13[0m:[93m22[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m13[0m     metaDescription: z.string().max(160, {
+[7m  [0m [93m                     ~[0m
+[96msrc/content.config.ts[0m:[93m12[0m:[93m15[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m12[0m     seoTitle: z.string(),
+[7m  [0m [93m              ~[0m
+[96msrc/content.config.ts[0m:[93m11[0m:[93m12[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m11[0m     title: z.string(),
+[7m  [0m [93m           ~[0m
+[96msrc/content.config.ts[0m:[93m10[0m:[93m11[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m10[0m   schema: z.strictObject({
+[7m  [0m [93m          ~[0m
+[96msrc/content.config.ts[0m:[93m2[0m:[93m28[0m - [93mwarning[0m[90m ts(6385): [0m'z' is deprecated.
+
+[7m2[0m import { defineCollection, z } from 'astro:content';
+[7m [0m [93m                           ~[0m
+
+[96msrc/components/Breadcrumbs.astro[0m:[93m95[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m95[0m <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+[7m  [0m [93m        ~~~~[0m
+
+[96msrc/components/CanineAiAssistant.astro[0m:[93m243[0m:[93m56[0m - [93mwarning[0m[90m ts(6133): [0m'match' is declared but its value is never read.
+
+[7m243[0m       html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, url) => {
+[7m   [0m [93m                                                       ~~~~~[0m
+
+[96msrc/components/PostReader.astro[0m:[93m132[0m:[93m23[0m - [93mwarning[0m[90m ts(6133): [0m'depthClass' is declared but its value is never read.
+
+[7m132[0m                 const depthClass = heading.depth === 3 ? "pl-4 text-xs text-brand-muted" : "font-semibold text-brand-text";
+[7m   [0m [93m                      ~~~~~~~~~~[0m
+[96msrc/components/PostReader.astro[0m:[93m3[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'entry' is declared but its value is never read.
+
+[7m3[0m const { entry } = Astro.props;
+[7m [0m [93m      ~~~~~~~~~[0m
+
+[96msrc/layouts/BaseLayout.astro[0m:[93m96[0m:[93m81[0m - [93mwarning[0m[90m ts(6133): [0m'media' is declared but its value is never read.
+
+[7m96[0m     <link rel="stylesheet" href={materialSymbolsURL} media="print" onload="this.media='all'" />
+[7m  [0m [93m                                                                                ~~~~~[0m
+[96msrc/layouts/BaseLayout.astro[0m:[93m95[0m:[93m75[0m - [93mwarning[0m[90m ts(6133): [0m'media' is declared but its value is never read.
+
+[7m95[0m     <link rel="stylesheet" href={textFontsURL} media="print" onload="this.media='all'" />
+[7m  [0m [93m                                                                          ~~~~~[0m
+
+[96msrc/lib/assistant/v2/contracts.ts[0m:[93m12[0m:[93m3[0m - [93mwarning[0m[90m ts(6196): [0m'RiskTag' is declared but never used.
+
+[7m12[0m   RiskTag,
+[7m  [0m [93m  ~~~~~~~[0m
+
+[96msrc/pages/[pilar].astro[0m:[93m294[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m294[0m   <script slot="head" type="application/ld+json" set:html={JSON.stringify(pilarSchema)} />
+[7m   [0m [93m          ~~~~[0m
+
+[96msrc/pages/acerca-de.astro[0m:[93m50[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m50[0m   <script slot="head" type="application/ld+json" set:html={JSON.stringify(aboutSchema)} />
+[7m  [0m [93m          ~~~~[0m
+
+[96msrc/pages/contacto.astro[0m:[93m28[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m28[0m   <script slot="head" src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+[7m  [0m [93m          ~~~~[0m
+
+[96msrc/pages/index.astro[0m:[93m117[0m:[93m13[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m117[0m     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+[7m   [0m [93m            ~~~~[0m
+
+[96msrc/pages/politica-editorial.astro[0m:[93m69[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m69[0m   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
+[7m  [0m [93m          ~~~~[0m
+
+[96msrc/pages/[pilar]/[slug].astro[0m:[93m131[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m131[0m   <script slot="head" type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
+[7m   [0m [93m          ~~~~[0m
+
+[96msrc/pages/admin/contact-messages.astro[0m:[93m3[0m:[93m37[0m - [93mwarning[0m[90m ts(6133): [0m'unauthorizedResponse' is declared but its value is never read.
+
+[7m3[0m import { hashIp, hasValidBasicAuth, unauthorizedResponse } from '../../lib/contact/security';
+[7m [0m [93m                                    ~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/herramientas/calculadora-edad-perro.astro[0m:[93m99[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m99[0m   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
+[7m  [0m [93m          ~~~~[0m
+
+Result (182 files): 
+- 0 errors
+- 0 warnings
+- 59 hints
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
