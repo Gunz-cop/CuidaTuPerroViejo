@@ -2,7 +2,7 @@
 
 Trabajo realizado el 16 de octubre de 2026; cierre de entrega el 17. Base inicial `main` b46f7c7. Antes del cierre se incorporó `main` da32d5c, cuyo único cambio era documental en la skill de redacción y su referencia visual; se leyeron y conservaron esos cambios. Al cierre también se incorporó `main` 8b53656 (herramienta de edad MCP, sin solapamiento editorial) y se repitieron build, tipos, tests e integración de artefactos. Rama `correccion/editorial-adsense-2026-10-16`.
 
-**Resultado: correcciones implementadas y auditoría editorial independiente apta dentro del alcance. Recomendaría solicitar la revisión después de publicar estos cambios y comprobar su versión pública y rastreo. Ahora todavía corresponde esperar: producción conserva los errores antiguos.** No se envió solicitud a AdSense ni se desplegó esta rama. Adsterra no forma parte de la evaluación.
+**Resultado: correcciones implementadas y auditoría editorial independiente apta dentro del alcance. Recomendaría solicitar la revisión después de publicar estos cambios y comprobar su versión pública y rastreo. Ahora todavía corresponde esperar: falta comprobar públicamente esta versión. La última lectura legible de producción conservaba los errores antiguos.** No se envió solicitud a AdSense ni se desplegó esta rama. Adsterra no forma parte de la evaluación.
 
 ## 1. Qué se corrigió
 
@@ -82,4 +82,4 @@ La repetición final está en `evidencias/integracion-main-*.log`. El primer int
 
 Adenda posterior al commit editorial `872517c`: navegación por anclas. Los informes clínicos y sus hashes corresponden a las versiones auditadas; esta adenda modifica únicamente atributos de foco/ID y etiquetas equivalentes, con revisión técnica separada. La CI del commit editorial aprobó sus criterios completos y Workers Builds; la actualización de navegación vuelve a ejecutar esas comprobaciones en el PR.
 
-La comprobación pública al cierre se conserva en `evidencias/publicacion-observada-cierre.json`; confirma por separado el estado servido en producción.
+El GET público al cierre devolvió 403: `evidencias/publicacion-observada-cierre.json`. Este bloqueo impide confirmar la versión servida y no se interpreta como prueba de que el contenido sea falso o esté actualizado. La última lectura legible corresponde al 16 de octubre.
