@@ -174,5 +174,11 @@ export const AGE_SOURCES = [
   { id: 'montoya', text: 'Montoya M, Morrison JA, Arrignon F, et al. Life expectancy tables for dogs and cats derived from clinical data. Front Vet Sci. 2023;10:1082102.', doi: '10.3389/fvets.2023.1082102', use: 'Esperanza de vida al nacer por tamaño, con datos clínicos de más de 1.000 hospitales Banfield en EE. UU.' },
   { id: 'mcmillan', text: 'McMillan KM, Bielby J, Williams CL, et al. Longevity of companion dog breeds: those at risk from early death. Sci Rep. 2024;14:531.', doi: '10.1038/s41598-023-50458-w', use: 'Confirma en 584.734 perros del Reino Unido que el tamaño y la forma del hocico influyen en la longevidad (mediana: 12,5 años).' },
   { id: 'kraus', text: 'Kraus C, Pavard S, Promislow DEL. The size–life span trade-off decomposed: why large dogs die young. Am Nat. 2013;181(4):492-505.', doi: '10.1086/669665', use: 'Explica por qué los perros grandes envejecen a un ritmo más rápido: la base del ajuste por tamaño.' },
-  { id: 'wang', text: 'Wang T, Ma J, Hogan AN, et al. Quantitative translation of dog-to-human aging by conserved remodeling of the DNA methylome. Cell Syst. 2020;11(2):176-185.e6.', doi: '10.1016/j.cels.2020.06.006', use: 'Fórmula epigenética (16 × ln(edad) + 31) que mostramos como comparación en «Según su ADN».' },
+  { id: 'wang', text: 'Wang T, Ma J, Hogan AN, et al. Quantitative translation of dog-to-human aging by conserved remodeling of the DNA methylome. Cell Syst. 2020;11(2):176-185.e6.', doi: '10.1016/j.cels.2020.06.006', use: 'Fórmula epigenética (16 × ln(edad) + 31) que mostramos como comparación en «Fórmula de Wang».' },
 ] as const;
+
+/** Marco común de portada y calculadora; edades derivadas, no cortes clínicos individuales. */
+export function seniorFrameworkText(): string {
+  const age = (size: DogSize) => String(seniorAge(size)).replace('.', ',');
+  return `Usamos como marco la definición de AAHA: el último 25 % de la esperanza de vida estimada. Aplicada a las medias por tamaño del estudio de Montoya (2023), nuestra calculadora sitúa el inicio aproximadamente en ${age('small')} años para pequeños, ${age('medium')} para medianos, ${age('large')} para grandes y ${age('giant')} para gigantes. Son referencias poblacionales redondeadas a medio año, no edades universales ni una predicción individual. La raza, la salud y la valoración veterinaria pueden cambiar el seguimiento; no esperes a esas edades para consultar por cambios.`;
+}

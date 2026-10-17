@@ -99,7 +99,7 @@ const uid = `bano-${variant}`;
       <p class="position" aria-live="polite" aria-atomic="true"></p>
       <p class="motion-help">También puedes recorrerla paso a paso, sin reproducción.</p>
     </div>
-    <p class="lesson-note">{scene.note} Ilustración representativa; el dogo no es un paciente del estudio.</p>
+    <p class="lesson-note">{scene.note} Ilustración generada con IA; no es una fotografía clínica.</p>
   </section>
 </div>
 
@@ -144,7 +144,7 @@ const uid = `bano-${variant}`;
     private stop() { clearTimeout(this.timer); this.playing = false; this.render(); }
     private render() {
       this.root.dataset.step = String(this.step); this.root.dataset.playing = String(this.playing);
-      this.root.querySelectorAll<HTMLElement>('[data-panel]').forEach((panel, index) => panel.hidden = index !== this.step);
+      this.root.querySelectorAll<HTMLElement>('[data-panel]').forEach((panel, index) => panel.dataset.active = String(index === this.step));
       const label = this.root.querySelector<HTMLElement>('.position')!;
       label.setAttribute('aria-live', this.playing ? 'off' : 'polite');
       label.textContent = `Paso ${this.step+1} de 4`;
@@ -188,7 +188,7 @@ const uid = `bano-${variant}`;
   [data-step='0'] [data-pip='0'] i,[data-step='1'] [data-pip='1'] i,[data-step='2'] [data-pip='2'] i,[data-step='3'] [data-pip='3'] i { background:#355e41; }
   .lesson .step-list { padding:0 1.5rem; margin:.6rem 0; list-style:none; }
   .lesson .step-list li { display:flex; align-items:flex-start; gap:1rem; padding:.8rem 0; margin:0; }
-  .lesson .step-list li[hidden] { display:none; }
+  .lesson .step-list li[data-active='false'] { display:none; }
   .ordinal { flex:0 0 2.5rem; height:2.5rem; display:grid; place-items:center; border-radius:.8rem; background:#e4ecdb; color:#355a3d; font:700 .9rem system-ui,sans-serif; }
   .lesson .step-list strong { color:#294b3d!important; font-size:1.07rem; }
   .lesson .step-list p { color:#3f5844; margin:.3rem 0 0; font-size:.95rem; line-height:1.65; }
@@ -227,5 +227,5 @@ const uid = `bano-${variant}`;
   @keyframes cloth-blot { 0%,100% { transform:translate(3px,-2px); } 50% { transform:translate(-5px,2px); } }
   @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
   @media(max-width:480px) { .lesson header { padding:1.2rem 1rem .8rem; } .canvas { margin:0 .6rem; } .scene-label { padding:.6rem .6rem .1rem; font-size:.6rem; } .scene-progress { padding:.2rem .7rem .7rem; gap:.35rem; } .scene-progress>span { font-size:.58rem; } .controls,.lesson .step-list { padding-inline:1rem; } .lesson .lesson-note { margin:0;  padding:1rem; } }
-  @media print { .controls { display:none; } .lesson .step-list li[hidden] { display:flex!important; } .lesson { break-inside:avoid; box-shadow:none; } }
+  @media print { .controls { display:none; } .lesson .step-list li[data-active='false'] { display:flex!important; } .lesson { break-inside:avoid; box-shadow:none; } }
 </style>

@@ -139,7 +139,7 @@ export async function runSmoke({ baseUrl, expectedPath, receiptPath, mode, outpu
             const api = await control(`${paths[index]}?${query}`); assert.equal(api.response.status, 200); assert.deepEqual(value, api.value());
             if (index === 0) { assert.ok(value.results.length > 0); assert.equal(value.corpusSha256, expected.corpusSha256); }
             if (index === 1) { assert.deepEqual(value.document, expected.document); assert.equal(hash(Buffer.from(value.markdown)), expected.document.markdownSha256); assert.equal(Buffer.byteLength(value.markdown), expected.document.markdownBytes); }
-            if (index === 2) { assert.equal(value.score, 35); assert.equal(value.band, 'compromised'); }
+            if (index === 2) { assert.equal(value.score, 35); assert.equal(value.band, 'not-classified'); }
             results.push({ tool, status: 'PASS', apiParity: true, ...(index === 1 ? { markdownSha256: hash(Buffer.from(value.markdown)) } : {}) });
           }
         }

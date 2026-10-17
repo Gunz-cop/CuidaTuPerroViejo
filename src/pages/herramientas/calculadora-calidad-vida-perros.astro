@@ -4,7 +4,7 @@ import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
 import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
 
 const title = "Calculadora de Calidad de Vida Canina (Escala HHHHHMM) | Test Interactivo";
-const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calculadora HHHHHMM interactiva. Evalúa dolor y bienestar en segundos. Test gratuito.";
+const description = "Registra siete observaciones de tu perro con una adaptación de HHHHHMM. Conserva el desglose y prepara la consulta veterinaria; la suma no diagnostica bienestar.";
 ---
 
 <BaseLayout title={title} description={description}>
@@ -36,12 +36,12 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
         "@id": "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros",
         "url": "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros",
         "name": "Calculadora de Calidad de Vida Canina (Escala HHHHHMM) | Test Interactivo",
-        "description": "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calculadora HHHHHMM interactiva. Evalúa dolor y bienestar en segundos. Test gratuito.",
+        "description": "Registra siete observaciones de tu perro con una adaptación de HHHHHMM. Conserva el desglose y prepara la consulta veterinaria; la suma no diagnostica bienestar.",
         "isPartOf": { "@id": "https://cuidatuperroviejo.com/#website" },
         "about": { "@id": "https://cuidatuperroviejo.com/cuidados-paliativos-perros" },
         "breadcrumb": { "@id": "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros#breadcrumb" },
         "mainEntity": { "@id": "https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros#calculator" },
-        "lastReviewed": "2026-07-21",
+        "lastReviewed": "2026-10-17",
         "inLanguage": "es"
       },
       {
@@ -69,8 +69,8 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock"
         },
-        "description": "Herramienta interactiva gratuita para calcular el puntaje HHHHHMM de calidad de vida en perros mayores, basada en la escala de la Dra. Alice Villalobos.",
-        "softwareVersion": "2.0"
+        "description": "Herramienta interactiva gratuita para calcular el puntaje HHHHHMM de calidad de vida en perros mayores, adaptada de HHHHHMM de Alice Villalobos; sin clasificación clínica por el total.",
+        "softwareVersion": "3.0"
       },
       {
         "@type": "FAQPage",
@@ -81,7 +81,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
             "name": "¿Cuál es un puntaje aceptable en la escala HHHHHMM?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Un puntaje superior a 35 sobre 70 se considera aceptable. Por encima de 50 indica buena calidad de vida. Con 35 o menos, la calidad de vida está comprometida y se recomienda consultar al veterinario."
+              "text": "Esta adaptación no clasifica el bienestar por el total. Registra siete observaciones de 0 a 10 y destaca por separado las respuestas en 0. Una suma alta no compensa dolor u otra dificultad y no sustituye la valoración veterinaria."
             }
           }
         ]
@@ -117,9 +117,9 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
       </h1>
 
       <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-muted border-b border-brand-border pb-4 mb-5 sm:pb-6 sm:mb-8 font-light">
-        <span>Por <strong>Equipo de Cuida a tu perro viejo</strong></span>
+        <span>Por <strong>Cuida tu Perro Viejo</strong></span>
         <span class="text-brand-border">•</span>
-        <span>Actualizado el <strong>21 de julio de 2026</strong></span>
+        <span>Actualizado el <strong>17 de octubre de 2026</strong></span>
       </div>
     </header>
 
@@ -134,14 +134,15 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
           <li><a href="#cvc-calc" class="hover:text-brand-accent transition-colors no-underline">Calculadora interactiva HHHHHMM</a></li>
           <li><a href="#criterios" class="hover:text-brand-accent transition-colors no-underline">Qué significan los 7 criterios</a></li>
           <li><a href="#cvc-faq" class="hover:text-brand-accent transition-colors no-underline">Preguntas frecuentes</a></li>
+          <li><a href="#metodo">Método y límites de la adaptación</a></li>
           <li><a href="#cvc-refs" class="hover:text-brand-accent transition-colors no-underline">Referencias médicas</a></li>
         </ul>
       </details>
     </nav>
 
     <div id="intro-text" class="text-lg text-brand-muted leading-relaxed mb-5 sm:mb-8">
-      <p>Ver envejecer a nuestro perro es un acto de amor profundo, pero a menudo viene acompañado de dudas dolorosas. Nos preguntamos: <em>"¿Está sufriendo?", "¿Tiene todavía calidad de vida?", "¿Estoy tomando la decisión correcta?"</em>.</p>
-      <p>Para ayudarte a encontrar respuestas objetivas en medio de tantas emociones, hemos digitalizado la reconocida <strong>Escala de Calidad de Vida HHHHHMM</strong>, desarrollada por la Dra. Alice Villalobos (especialista en oncología veterinaria).</p>
+      <p>Registra cómo está tu perro en siete áreas y lleva el desglose a la consulta. Esta <strong>adaptación digital de HHHHHMM</strong>, escala desarrollada por Alice Villalobos, conserva la suma de 0 a 70, pero no la convierte en un diagnóstico ni en una decisión sobre el final de vida.</p>
+      <p>Si ahora tiene dolor intenso o dificultad para respirar, busca atención veterinaria inmediata; no esperes a completar la herramienta.</p>
     </div>
 
     <!-- Banner PDF -->
@@ -160,16 +161,12 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
       <!-- PANTALLA 0: Intro -->
       <div class="text-center" id="qol-intro">
         <div aria-hidden="true" class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-brand-secondary/50 dark:bg-slate-800/50 text-4xl mb-5 select-none">🩺</div>
-        <span class="inline-block text-[11px] font-bold tracking-widest uppercase text-brand-primary mb-2">Test • 7 preguntas • ~1 minuto</span>
-        <h3 class="text-2xl md:text-3xl font-extrabold text-brand-text mb-4 font-serif leading-tight">Evaluemos la calidad de vida de tu perro</h3>
+        <span class="inline-block text-[11px] font-bold tracking-widest uppercase text-brand-primary mb-2">Registro • 7 preguntas</span>
+        <h3 class="text-2xl md:text-3xl font-extrabold text-brand-text mb-4 font-serif leading-tight">Registra cómo está tu perro</h3>
         <p class="text-brand-muted text-sm max-w-lg mx-auto leading-relaxed mb-2">
-          Responde según cómo ha estado tu perro en los <strong>últimos 3 días</strong>. Sé sincero/a en cada respuesta: al final verás su puntaje y qué hacer con él.
+          Responde según el <strong>periodo que estás observando</strong> y anota cuándo fue. Al final verás la suma, el desglose y los avisos; no es un diagnóstico.
         </p>
-        <div class="flex flex-wrap items-center justify-center gap-2 mb-8 mt-4">
-          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-green-500/10 text-green-700 dark:text-green-300"><span aria-hidden="true">✅</span> &gt; 50 Buena</span>
-          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300"><span aria-hidden="true">⚠️</span> 36–50 Aceptable</span>
-          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-red-500/10 text-red-700 dark:text-red-300"><span aria-hidden="true">🛑</span> ≤ 35 Comprometida</span>
-        </div>
+        <p class="text-sm text-brand-muted mb-8 mt-4">Siete observaciones de 0 a 10. Las advertencias se muestran por separado: ninguna suma garantiza bienestar.</p>
         <button class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-brand-primary text-white hover:bg-brand-primary-hover active:bg-brand-primary-hover active:scale-[0.98] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-150 cursor-pointer" id="qol-start" type="button">
           Empezar ahora →
         </button>
@@ -195,11 +192,11 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
           <span id="qol-q-help-lo"></span>
           <span id="qol-q-help-hi"></span>
         </div>
-        <div class="grid grid-cols-6 sm:grid-cols-11 gap-2 sm:gap-3" id="qol-q-chips" role="radiogroup"></div>
+        <div class="grid grid-cols-4 sm:grid-cols-11 gap-2 sm:gap-3" id="qol-q-chips" role="radiogroup"></div>
       </div>
 
       <!-- PANTALLA 8: Resultado -->
-      <div class="off" id="qol-result">
+      <div class="off" id="qol-result" role="status" aria-live="polite" aria-atomic="true">
         <div class="p-6 md:p-8 rounded-2xl border text-center transition-all duration-300 shadow-sm my-2 sm:my-4" id="qol-result-box">
           <span class="text-xs font-semibold tracking-wider uppercase text-brand-muted">Puntaje Total (Mín 0 – Máx 70)</span>
           <span class="block text-5xl font-extrabold my-3 font-['Outfit']" id="qol-result-score">35</span>
@@ -208,14 +205,19 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
           <p class="mt-2 text-sm italic opacity-90" id="qol-human-msg"></p>
 
           <!-- PROGRESS BAR -->
-          <div aria-label="Progreso de calidad de vida" aria-valuemax="70" aria-valuemin="0" aria-valuenow="35" class="qol-progress-wrap mt-4" id="qol-result-progress" role="progressbar">
+          <div aria-label="Puntuación registrada; no indica un porcentaje de bienestar" aria-valuemax="70" aria-valuemin="0" aria-valuenow="35" class="qol-progress-wrap mt-4" id="qol-result-progress" role="progressbar">
             <div class="h-2.5 bg-brand-border/40 rounded-full overflow-hidden">
-              <div class="h-full rounded-full transition-all duration-500 bg-amber-500" id="qol-result-fill" style="width:50%"></div>
+              <div class="h-full rounded-full transition-all duration-500 bg-brand-primary" id="qol-result-fill" style="width:50%"></div>
             </div>
           </div>
-          <p class="mt-4 text-xs font-light">💛 Esta herramienta es una guía. Tu amor y criterio siempre son lo más importante.</p>
+          <p class="mt-4 text-xs font-light">Esta herramienta ordena observaciones y no sustituye una valoración veterinaria.</p>
         </div>
 
+        <section class="my-5 rounded-2xl border border-amber-500/40 p-5" aria-labelledby="qol-warnings-title">
+          <h3 id="qol-warnings-title" class="font-bold">Advertencias independientes del total</h3>
+          <p class="text-xs mt-2">Destacar las respuestas en 0 es una adaptación propia; no es un umbral clínico validado. La ausencia de estos avisos no garantiza bienestar.</p>
+          <ul id="qol-warnings" class="mt-3 space-y-3"></ul>
+        </section>
         <!-- RECOMENDACIÓN DINÁMICA -->
         <div class="bg-blue-500/10 border border-blue-500/20 text-brand-text text-sm rounded-2xl p-5 my-6 leading-relaxed shadow-sm" id="qol-recommendation"></div>
 
@@ -235,7 +237,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
         </div>
 
         <p class="qol-anti-guilt text-xs text-brand-muted text-center italic mt-4 max-w-md mx-auto leading-relaxed">
-          Esta herramienta no toma decisiones por ti. Solo te ayuda a ver con más claridad lo que ya estás sintiendo.
+          Una suma alta no descarta dolor ni enfermedad. Si observas dificultad respiratoria o dolor intenso, busca atención veterinaria inmediata.
         </p>
 
         <!-- ACCIONES (en móvil, WhatsApp y Repetir viven en la barra fija de abajo) -->
@@ -247,7 +249,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
             📲 Enviar por WhatsApp
           </button>
           <button class="w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 active:scale-[0.98] text-center flex items-center justify-center gap-2 cursor-pointer" id="qol-ics" type="button">
-            📅 Recordar en 3 días
+            📅 Recordatorio opcional: 3 días
           </button>
           <button class="w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 active:scale-[0.98] text-center flex items-center justify-center gap-2 cursor-pointer" id="qol-print" type="button">
             🖨️ Guardar PDF
@@ -287,7 +289,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
         ¿Qué significan los criterios de la escala HHHHHMM?
       </h3>
       <p class="text-brand-muted mb-6 leading-relaxed">
-        La Dra. Alice Villalobos diseñó esta escala para ayudar a los cuidadores y veterinarios a evaluar de manera objetiva hechos observables de la vida diaria del animal, reduciendo el sesgo emocional al tomar decisiones difíciles:
+        La Dra. Alice Villalobos diseñó esta escala para ayudar a los cuidadores y veterinarios a registrar observaciones de la vida diaria del animal para comentarlas en consulta:
       </p>
 
       <ul class="space-y-4 text-brand-muted leading-relaxed list-none pl-0">
@@ -309,7 +311,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
           <span class="text-xl">💧</span>
           <div>
             <strong class="text-brand-text">Hydration (Hidratación):</strong>{' '}
-            ¿Bebe agua o necesita fluidoterapia subcutánea para combatir la deshidratación?
+            ¿Bebe suficiente o muestra cambios que deban valorarse en consulta? La necesidad de fluidoterapia la determina el veterinario.
           </div>
         </li>
         <li class="flex items-start gap-3">
@@ -361,7 +363,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
             </span>
           </summary>
           <div class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted">
-            Un puntaje acumulado superior a 35 sobre 70 se considera aceptable y sugiere que se puede continuar apoyando la calidad de vida con cuidados paliativos o geriátricos ajustados. Un puntaje de 35 o menos indica que la calidad de vida está gravemente comprometida y es imperativo hablar con el veterinario sobre opciones para evitar el sufrimiento.
+            Esta adaptación no asigna categorías clínicas al total. El documento HHHHHMM de referencia propone valorar cada área y la situación individual; aquí conservamos la suma y mostramos cada criterio por separado. Una respuesta crítica no queda compensada por las demás. Consulta el método y comparte tus observaciones con el veterinario.
           </div>
         </details>
 
@@ -373,7 +375,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
             </span>
           </summary>
           <div class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted">
-            En fases estables del envejecimiento, evaluarlo una vez al mes es suficiente. Sin embargo, si tu perro sufre de una enfermedad crónica avanzada, oncológica o en fase paliativa, es recomendable hacer el test cada 3 o 7 días para monitorizar la velocidad de declive y ajustar su medicación de dolor.
+            Acuerda la frecuencia con tu veterinario según su estado. Anota la fecha, las circunstancias y los cambios para comparar registros. Un deterioro brusco requiere consulta sin esperar al siguiente registro. El recordatorio opcional de tres días es una función de agenda, no un intervalo clínico recomendado; no ajustes medicación por tu cuenta.
           </div>
         </details>
 
@@ -385,26 +387,26 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
             </span>
           </summary>
           <div class="border-t border-brand-border/40 px-5 py-4 text-sm leading-relaxed text-brand-muted">
-            Un puntaje bajo (35 o menos) no significa que debas tomar una decisión apresurada tú solo. Su función principal es alertarte para que organices una visita prioritaria con tu veterinario de confianza. El profesional puede ajustar analgésicos, recomendar soporte de movilidad o ayudarte a tomar una decisión compasiva libre de culpa.
+            Describe al veterinario qué áreas han empeorado y desde cuándo, con independencia de la suma. Esta herramienta no determina sufrimiento, pronóstico ni decisiones sobre eutanasia. Si observas dificultad para respirar o dolor intenso, busca atención inmediata.
           </div>
         </details>
       </div>
     </section>
 
+    <section id="metodo" class="mt-10 border-t border-brand-border pt-6">
+      <h2 class="text-2xl font-bold">Método y límites de esta adaptación</h2>
+      <p>La <a href="https://www.speakingforspot.com/PDF/VillalobosDVM_QualityOfLifeScale.pdf" target="_blank" rel="noopener">explicación de HHHHHMM de Alice Villalobos (PDF)</a> describe siete áreas de 1 a 10 y subraya la valoración individual de cada animal. La prioridad que da al control del dolor incluye poder respirar correctamente. No utilizamos bandas clínicas ni cortes en 35 o 50 para interpretar la suma.</p>
+      <p>Son adaptaciones propias ampliar la respuesta hasta 0 para registrar el extremo negativo, la suma mostrada de 0 a 70, la traducción y simplificación de preguntas, la interacción paso a paso y destacar cualquier respuesta en 0 con un aviso separado. Esta regla muestra extremos negativos declarados: no ha sido validada como detector clínico y no cambia la suma. Las puntuaciones intermedias también pueden reflejar problemas que requieren consulta.</p>
+      <p>El registro y sus cambios sirven para conversar con el veterinario. La impresión y el texto para compartir incluyen desglose, límites y advertencias. El estudio de Testoni y colaboradores analiza una versión italiana y no valida esta implementación web ni sus avisos.</p>
+    </section>
     <!-- REFERENCIAS -->
     <div id="cvc-refs" class="scroll-mt-20"></div>
     <footer class="mt-10 sm:mt-12 border-t border-brand-border pt-6 text-xs text-brand-muted leading-relaxed">
       <p class="mb-0">
         <strong>Referencias médicas:</strong>{' '}
-        <a href="https://cvm.ncsu.edu/wp-content/uploads/2024/09/Quality-of-Life-Scale.pdf" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">Villalobos, A. — Quality of Life Scale, "HHHHHMM" (NCSU, 2024)</a>{' '}
+        <a href="https://www.speakingforspot.com/PDF/VillalobosDVM_QualityOfLifeScale.pdf" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">Alice Villalobos — Quality of Life Scale Helps Make Final Call (PDF)</a>{' '}
         ·{' '}
-        <a href="https://www.aaha.org/wp-content/uploads/globalassets/02-guidelines/end-of-life-care/2016_aaha_iaahpc_eolc_guidelines.pdf" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">2016 AAHA/IAAHPC End-of-Life Care Guidelines</a>{' '}
-        ·{' '}
-        <a href="https://iaahpc.org/veterinary-guidelines/general-practice-guidelines/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">IAAHPC — General Practice Guidelines</a>{' '}
-        ·{' '}
-        <a href="https://www.aaha.org/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats/end-of-life-and-euthanasia/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">2023 AAHA Senior Care Guidelines — End of Life</a>{' '}
-        ·{' '}
-        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10044252/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">Validación científica de la escala HHHHHMM (estudio revisado por pares)</a>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10044252/" rel="nofollow noopener" target="_blank" class="text-brand-primary hover:underline">Testoni et al. (2023): estudio de una versión italiana de HHHHHMM</a>
       </p>
     </footer>
   </main>
@@ -416,6 +418,8 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
   .off {
     display: none !important;
   }
+
+  @media (prefers-reduced-motion: reduce) { .qolanim { animation: none !important; } }
 
   /* Fade-in animation */
   @keyframes qolin {
@@ -444,7 +448,6 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
     /* Ocultar elementos innecesarios */
     .qol-actions,
     .qol-cta-pilar,
-    #qol-recommendation,
     #qol-copy-confirm,
     .qol-anti-guilt,
     #qol-stickybar,
@@ -491,7 +494,7 @@ const description = "¿Tu perro sufre? Mide su Calidad de Vida con nuestra Calcu
 
 <script>
 // @ts-nocheck -- script de UI legado, sin tipos; la lógica tipada vive en src/lib/agent-tools/.
-import { BANDS, CRITERIA, MAX_SCORE, evaluateQualityOfLife } from '../../lib/agent-tools/calidad-vida.ts';
+import { CRITERIA, MAX_SCORE, evaluateQualityOfLife } from '../../lib/agent-tools/calidad-vida.ts';
 
 (function () {
   'use strict';
@@ -503,6 +506,7 @@ import { BANDS, CRITERIA, MAX_SCORE, evaluateQualityOfLife } from '../../lib/age
   var answers = new Array(CRITERIA.length).fill(null);
   var currentIndex = 0;
   var lastScore = null;
+  var lastResult = null;
 
   /* ── DOM (cacheado en init) ── */
   var D = {};
@@ -530,6 +534,7 @@ import { BANDS, CRITERIA, MAX_SCORE, evaluateQualityOfLife } from '../../lib/age
     D.resultFill= document.getElementById('qol-result-fill');
     D.recBox    = document.getElementById('qol-recommendation');
     D.breakdown = document.getElementById('qol-breakdown');
+    D.warnings = document.getElementById('qol-warnings');
     D.ctaPilar  = document.getElementById('qol-cta-pilar');
     D.copy      = document.getElementById('qol-copy');
     D.wa        = document.getElementById('qol-wa');
@@ -646,6 +651,7 @@ import { BANDS, CRITERIA, MAX_SCORE, evaluateQualityOfLife } from '../../lib/age
     var result = evaluateQualityOfLife(input);
     var total = result.score;
     lastScore = total;
+    lastResult = result;
 
     D.score.textContent = total;
     D.resultFill.style.width = Math.round((total / MAX_SCORE) * 100) + '%';
@@ -678,25 +684,23 @@ import { BANDS, CRITERIA, MAX_SCORE, evaluateQualityOfLife } from '../../lib/age
     D.resultBox.className = 'p-6 md:p-8 rounded-2xl border text-center transition-all duration-300 shadow-sm my-2 sm:my-4';
     D.resultFill.className = 'h-full rounded-full transition-all duration-500';
 
-    /* Tema visual por franja; los textos salen del resultado compartido. */
-    var THEME = {
-      good:        { box: ['bg-green-500/10', 'border-green-500/20', 'text-green-900', 'dark:text-green-100'], fill: 'bg-green-600' },
-      acceptable:  { box: ['bg-amber-500/10', 'border-amber-500/20', 'text-amber-900', 'dark:text-amber-100'], fill: 'bg-amber-500' },
-      compromised: { box: ['bg-red-500/10', 'border-red-500/20', 'text-red-900', 'dark:text-red-100'], fill: 'bg-red-600' }
-    };
-    var theme = THEME[result.band];
-    theme.box.forEach(function (cls) { D.resultBox.classList.add(cls); });
-    D.resultFill.classList.add(theme.fill);
+    // Color neutral: el total no clasifica la situación clínica.
+    D.resultBox.classList.add('bg-brand-primary/5', 'border-brand-border', 'text-brand-text');
+    D.resultFill.classList.add('bg-brand-primary');
+    D.warnings.replaceChildren();
+    var warningTexts = result.warnings.length ? result.warnings.map(function (w) { return w.message; }) : ['No has marcado respuestas en 0. Revisa también las dificultades y cambios que la puntuación no recoja; esto no es una confirmación de bienestar.'];
+    warningTexts.forEach(function (text) {
+      var li = document.createElement('li');
+      li.textContent = text;
+      D.warnings.appendChild(li);
+    });
 
     var strong = document.createElement('strong');
     strong.textContent = result.interpretation;
     D.interp.replaceChildren(strong);
     D.humanMsg.textContent = result.message;
 
-    var rec = BANDS[result.band].recommendation;
-    var recStrong = document.createElement('strong');
-    recStrong.textContent = rec.strong;
-    D.recBox.replaceChildren(document.createTextNode(rec.lead), recStrong, document.createTextNode(rec.rest));
+    D.recBox.textContent = result.recommendation;
 
     if (result.guide) {
       D.ctaPilar.querySelector('a').textContent = result.guide.label;
@@ -718,6 +722,10 @@ import { BANDS, CRITERIA, MAX_SCORE, evaluateQualityOfLife } from '../../lib/age
       lines.push('  • ' + c.label + ': ' + answers[i] + '/10');
     });
     lines.push('');
+    lines.push(lastResult.message);
+    lastResult.warnings.forEach(function (warning) { lines.push(warning.message); });
+    lines.push(lastResult.recommendation);
+    lines.push(lastResult.notices.join(' '));
     lines.push('🔗 https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros');
     return lines.join('\n');
   }
@@ -737,11 +745,7 @@ import { BANDS, CRITERIA, MAX_SCORE, evaluateQualityOfLife } from '../../lib/age
   /* ── Compartir por WhatsApp ── */
   function shareWhatsApp() {
     if (lastScore === null) return;
-    var text =
-      '📊 *Evalué la calidad de vida de mi perro*\n' +
-      'Resultado: ' + lastScore + '/70\n\n' +
-      'Hazlo aquí:\n' +
-      'https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros';
+    var text = resultText();
     window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
   }
 
@@ -787,6 +791,7 @@ import { BANDS, CRITERIA, MAX_SCORE, evaluateQualityOfLife } from '../../lib/age
     answers = new Array(CRITERIA.length).fill(null);
     currentIndex = 0;
     lastScore = null;
+    lastResult = null;
 
     D.result.classList.add('off');
     D.result.classList.remove('qolanim');
