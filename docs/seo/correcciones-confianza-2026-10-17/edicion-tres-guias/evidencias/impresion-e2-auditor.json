@@ -1,0 +1,47 @@
+{
+  "method": "Ejecuci\u00f3n independiente Chromium local build; terceros bloqueados. No acredita preview o producci\u00f3n.",
+  "cases": [
+    {
+      "javascript": true,
+      "variant": "espacio",
+      "screenVisible": 1,
+      "printVisible": 4,
+      "returnScreenCorrect": true
+    },
+    {
+      "javascript": true,
+      "variant": "pausa",
+      "screenVisible": 1,
+      "printVisible": 4,
+      "returnScreenCorrect": true
+    },
+    {
+      "javascript": true,
+      "variant": "zonas",
+      "screenVisible": 1,
+      "printVisible": 4,
+      "returnScreenCorrect": true
+    },
+    {
+      "javascript": false,
+      "variant": "espacio",
+      "screenVisible": 4,
+      "printVisible": 4,
+      "returnScreenCorrect": true
+    },
+    {
+      "javascript": false,
+      "variant": "pausa",
+      "screenVisible": 4,
+      "printVisible": 4,
+      "returnScreenCorrect": true
+    },
+    {
+      "javascript": false,
+      "variant": "zonas",
+      "screenVisible": 4,
+      "printVisible": 4,
+      "returnScreenCorrect": true
+    }
+  ]
+}
