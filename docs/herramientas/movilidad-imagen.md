@@ -29,8 +29,8 @@ El máster se ajustó a 1536 × 864 y las variantes se redujeron con Lanczos.
 
 ## Personaje del selector: base y seis variantes
 
-Archivos en `public/images/herramientas/movilidad-perro/`. Se conservan siete
-másteres PNG RGBA de 1024 × 1024: `base`, `la`, `lb`, `ma`, `mb`,
+Archivos en `public/images/herramientas/movilidad-perro/`. Los siete
+másteres PNG RGBA (en `assets-originales/movilidad-perro/`) de 1024 × 1024: `base`, `la`, `lb`, `ma`, `mb`,
 `sa` y `sb`. Cada uno tiene WebP de 640, 400 y 240 px, sin recorte entre
 estados, con calidad 80 y transparencia.
 
@@ -71,7 +71,7 @@ Base, referencia: `public/images/herramientas/movilidad-hero.webp`.
 
 > Using the attached hero as exact character reference, create ONE square 1024x1024 transparent PNG watercolor illustration of that same senior tricolor beagle. Same warm modern digital watercolor, clean drawing, soft paper texture within the painted subject, sage cream soft terracotta honey palette. Same black saddle, honey brown ears and flanks, white grey muzzle, white grey eyebrows, white chest and lower legs, dignified happy calm older face. Full body strict side profile facing LEFT, standing calmly on all four paws, relaxed tail, no harness or accessories. Center dog within x=210..810 and y=350..720 leaving generous transparent margins for later accessories and a bed. Ground contact at y=720. Very subtle soft translucent contact shadow only. No background, no floor, no furniture, no people, no objects, no text, logos, watermark. Transparent alpha background. This is the immutable base for seven aligned animation states: make a clear stable silhouette.
 
-Variantes iniciales, referencia: `movilidad-perro/base.png`. Cada prompt
+Variantes iniciales, referencia: `assets-originales/movilidad-perro/base.png`. Cada prompt
 se compone del prefijo común siguiente más el texto específico del estado.
 
 > Edit the attached transparent 1024x1024 base PNG IN PLACE. It is an animation state, so preserve the exact dog's contour, pose, anatomy, coat markings, expression, painted texture, size and pixel coordinates. Dog occupies x=212..812 y=308..720; paws baseline y=715. Do NOT zoom, recenter, rotate, redraw or move the dog or change its face. Keep canvas square with generous empty transparent margins and tiny existing shadow. Same warm watercolor sage cream terracotta honey palette. Add ONLY the described accessory. Background truly transparent alpha. No letters, text, logos, humans or additional objects. Output 1024x1024 transparent PNG. Accessory:
@@ -122,5 +122,5 @@ algo más alejada. La tarjeta PNG para compartir usa la misma escena del
 resultado. Solo la base se carga con prioridad; el resto es `loading="lazy"`.
 Con `prefers-reduced-motion` no hay respiración ni fundidos.
 
-Los PNG máster de 1024 px viven junto a los WebP en `public/` (se publican);
-si se quiere aligerar el despliegue, pueden moverse fuera de `public/`.
+Los PNG máster de 1024 px (~3 MB) viven en `assets-originales/movilidad-perro/`,
+fuera de `public/`, para no publicarlos: sirven solo para regenerar los WebP.
