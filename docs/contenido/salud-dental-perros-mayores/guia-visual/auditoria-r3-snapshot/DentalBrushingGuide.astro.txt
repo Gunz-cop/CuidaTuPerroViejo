@@ -1,0 +1,174 @@
+---
+const uid = `dental-${crypto.randomUUID().slice(0, 8)}`;
+const base = '/images/blog/salud-dental-perros-mayores/guia-cepillado/';
+const steps = [
+  { label: 'Prepara', title: 'Empieza antes de tocar la boca', image: 'reposo', alt: 'Ilustración de un beagle senior con la boca cerrada y sin sujeción.', text: 'Ten a mano un cepillo suave y pasta para perros. Busca un momento tranquilo y deja que se familiarice con ellos. No empieces cepillando si hay dolor.', cue: 'La adaptación puede necesitar varias sesiones. Estos pasos no son una cuenta atrás.', detail: false },
+  { label: 'Levanta el labio', title: 'El labio sube; la mandíbula no se fuerza', image: 'labio', alt: 'Una mano levanta suavemente el labio de un beagle senior. Se ven el colmillo superior hacia la nariz y los premolares detrás.', text: 'Solo si acepta el contacto, levanta suavemente un lado del labio. Así puedes acceder a la cara externa de los dientes, sin forzar la apertura de la boca.', cue: 'Observa el dedo sobre el labio: no está dentro de la boca ni inmoviliza el hocico.', detail: true },
+  { label: 'Cepilla por fuera', title: 'Poco a poco, sobre la cara externa', image: 'contacto', alt: 'Un cepillo pequeño contacta la cara externa de los premolares superiores, junto al borde de la encía, mientras otra mano eleva el labio.', text: 'Cuando tolere el cepillo, haz pasadas cortas y suaves por fuera de unos pocos dientes. Trabaja junto al borde de la encía, sin clavar las cerdas ni introducirlas debajo.', cue: 'La imagen muestra dónde apoyar el cepillo. No mide la presión ni sustituye una demostración veterinaria.', detail: true },
+  { label: 'Descansa', title: 'Retira el contacto y deja espacio', image: 'reposo', alt: 'El mismo beagle senior vuelve a aparecer sin manos ni cepillo junto a la boca.', text: 'Retira el cepillo y la mano. Si aparta la cabeza o se resiste, para. Ante dolor o sangrado, consulta antes de continuar.', cue: 'Si aparta la cabeza o se resiste, para. Si hay dolor o sangrado, consulta antes de continuar.', detail: false },
+];
+---
+
+<section class="dental-guide" data-dental-guide data-reader-atomic aria-labelledby={`${uid}-title`}>
+  <header class="guide-header">
+    <p class="eyebrow">Aprende el gesto · a tu ritmo</p>
+    <h3 id={`${uid}-title`}>Cepillado, paso a paso</h3>
+    <p>No sujetes el hocico ni fuerces la boca. Si hay dolor o sangrado, pide valoración antes de empezar.</p>
+  </header>
+  <div class="guide-player">
+  <div class="guide-tabs" hidden role="group" aria-label="Elegir paso de la guía">
+    {steps.map((step, i) => <button type="button" data-step={i} aria-pressed={i === 0} aria-controls={`${uid}-panel-${i}`}><span aria-hidden="true">{i + 1}</span>{step.label}</button>)}
+  </div>
+  <div class="guide-controls" hidden>
+    <div class="transport"><button type="button" data-action="prev" aria-label="Paso anterior">←</button><button type="button" data-action="play">Ver secuencia</button><button type="button" data-action="next" aria-label="Paso siguiente">→</button></div>
+    <p class="position" aria-live="polite" aria-atomic="true">Paso 1 de 4</p>
+    <p class="motion-note">Sin reproducción automática. Puedes avanzar con los botones de cada paso.</p>
+  </div>
+  <ol class="guide-panels">
+    {steps.map((step, i) => <li id={`${uid}-panel-${i}`} data-panel={i}>
+      <figure class="guide-figure" data-detail="false">
+        <div class="image-window"><img src={`${base}beagle-senior-${step.image}-800-v1.webp`} srcset={`${base}beagle-senior-${step.image}-400-v1.webp 400w, ${base}beagle-senior-${step.image}-800-v1.webp 800w, ${base}beagle-senior-${step.image}-1200-v1.webp 1200w`} sizes="(min-width: 900px) 800px, 100vw" alt={step.alt} width="1200" height="800" loading="lazy" decoding="async" /></div>
+        {step.detail && <button class="detail-button" type="button" data-detail-toggle aria-pressed="false" hidden>Ampliar zona de contacto</button>}
+        <figcaption>Ilustración con IA; no representa un paciente.</figcaption>
+      </figure>
+      <div class="step-copy"><p class="step-number">Paso {i + 1} de 4</p><h4>{step.title}</h4><p>{step.text}</p></div>
+    </li>)}
+  </ol>
+  </div>
+  <footer class="guide-footer"><details><summary>Consejos, límites y fuente</summary><ol>{steps.map(step => <li><strong>{step.label}:</strong> {step.cue}</li>)}</ol><p><strong>Es una secuencia ilustrada.</strong> El tiempo en pantalla sirve para leer; no indica cuánto debe durar la maniobra. No representa una limpieza profesional ni elimina sarro.</p><p>Técnica de referencia: <a href="https://vcahospitals.com/know-your-pet/brushing-teeth-in-dogs">VCA: cepillado dental en perros</a>. Empieza de forma gradual y pide que tu veterinario te enseñe el gesto si tienes dudas.</p></details></footer>
+</section>
+
+<script>
+  class DentalGuide {
+    private step = 0;
+    private playing = false;
+    private timer: ReturnType<typeof setTimeout> | undefined;
+    private abort = new AbortController();
+    private reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    constructor(private root: HTMLElement) {
+      root.dataset.enhanced = 'true';
+      root.querySelectorAll<HTMLElement>('.guide-tabs,.guide-controls,[data-detail-toggle]').forEach(el => el.hidden = false);
+      root.querySelectorAll<HTMLButtonElement>('[data-step]').forEach(button => button.addEventListener('click', () => { this.stop(); this.step = Number(button.dataset.step); this.render(); }, { signal: this.abort.signal }));
+      root.querySelectorAll<HTMLButtonElement>('[data-action]').forEach(button => button.addEventListener('click', () => {
+        if (button.dataset.action === 'play') {
+          if (this.playing) this.stop();
+          else { if (this.step === 3) this.step = 0; this.playing = true; this.render(); this.schedule(); }
+        } else { this.stop(); this.step = Math.max(0, Math.min(3, this.step + (button.dataset.action === 'next' ? 1 : -1))); this.render(); }
+      }, { signal: this.abort.signal }));
+      root.querySelectorAll<HTMLButtonElement>('[data-detail-toggle]').forEach(button => button.addEventListener('click', () => {
+        this.stop();
+        const figure = button.closest<HTMLElement>('figure')!;
+        const detail = figure.dataset.detail !== 'true';
+        figure.dataset.detail = String(detail);
+        button.setAttribute('aria-pressed', String(detail));
+        button.textContent = detail ? 'Volver al encuadre completo' : 'Ampliar zona de contacto';
+      }, { signal: this.abort.signal }));
+      document.addEventListener('visibilitychange', () => { if (document.hidden) this.stop(); }, { signal: this.abort.signal });
+      this.reduced.addEventListener('change', this.preference, { signal: this.abort.signal });
+      this.preference();
+    }
+    private preference = () => {
+      this.root.dataset.reduced = String(this.reduced.matches);
+      if (this.reduced.matches) this.stop();
+      this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.disabled = this.reduced.matches;
+      this.root.querySelector<HTMLElement>('.motion-note')!.textContent = this.reduced.matches ? 'Movimiento reducido: consulta los pasos manualmente, sin transiciones.' : 'Sin reproducción automática. Puedes avanzar con los botones de cada paso.';
+      this.render();
+    };
+    private schedule() {
+      this.timer = setTimeout(() => {
+        if (!this.root.isConnected || !this.playing) return;
+        if (this.step < 3) { this.step++; this.render(); this.schedule(); }
+        else this.stop();
+      }, 9000);
+    }
+    private stop() { clearTimeout(this.timer); this.playing = false; this.render(); }
+    private render() {
+      this.root.dataset.playing = String(this.playing);
+      this.root.querySelectorAll<HTMLElement>('[data-panel]').forEach((panel, index) => { panel.dataset.active = String(index === this.step); });
+      this.root.querySelectorAll<HTMLButtonElement>('[data-step]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.step) === this.step)));
+      this.root.querySelector<HTMLButtonElement>('[data-action="prev"]')!.disabled = this.step === 0;
+      this.root.querySelector<HTMLButtonElement>('[data-action="next"]')!.disabled = this.step === 3;
+      this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.textContent = this.playing ? 'Pausar' : this.step === 3 ? 'Repetir secuencia' : 'Ver secuencia';
+      const position = this.root.querySelector<HTMLElement>('.position')!;
+      position.setAttribute('aria-live', this.playing ? 'off' : 'polite');
+      position.textContent = `Paso ${this.step + 1} de 4`;
+    }
+    disconnect() { clearTimeout(this.timer); this.abort.abort(); }
+  }
+  const instances = new Map<HTMLElement, DentalGuide>();
+  function initialize() { document.querySelectorAll<HTMLElement>('[data-dental-guide]').forEach(root => { if (!instances.has(root)) instances.set(root, new DentalGuide(root)); }); }
+  document.addEventListener('astro:before-swap', () => { instances.forEach(instance => instance.disconnect()); instances.clear(); });
+  document.addEventListener('astro:page-load', initialize);
+  initialize();
+</script>
+
+<style>
+  .dental-guide { margin:2.5rem 0; border:1px solid #bdcbbd; border-radius:1.3rem; background:#f8f8ef; color:#253c32; overflow:hidden; }
+  .guide-header { padding:1.5rem 1.5rem 1rem; }
+  .dental-guide .eyebrow { margin:0 0 .6rem; color:#49604e!important; font:700 .7rem/1.5 system-ui,sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+  .dental-guide h3 { margin:0 0 .7rem; color:#253c32!important; font:750 clamp(1.3rem,3vw,1.85rem)/1.2 system-ui,sans-serif; letter-spacing:-.035em; }
+  .dental-guide p { color:#334d3e; font-size:.95rem; line-height:1.6; margin:.6rem 0; }
+  .guide-tabs { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.4rem; padding:0 1rem 1rem; }
+  .dental-guide button { min-height:44px; border:1px solid #b1c0ad; border-radius:.65rem; background:#fffef8; color:#334d3e; font:650 .8rem/1.3 system-ui,sans-serif; cursor:pointer; padding:.65rem; }
+  .dental-guide button:hover:not(:disabled) { background:#e8eee1; }
+  .dental-guide button:focus-visible { outline:3px solid #315c43; outline-offset:3px; }
+  .dental-guide button:disabled { opacity:.5; cursor:default; }
+  .guide-tabs button { display:flex; flex-direction:column; align-items:center; gap:.3rem; }
+  .guide-tabs button span { font-size:.7rem; }
+  .dental-guide .guide-tabs button[aria-pressed="true"], .dental-guide .guide-tabs button[aria-pressed="true"]:hover { background:#284d3b; color:#fffef6; border-color:#284d3b; }
+  .guide-panels { margin:0!important; padding:0!important; list-style:none!important; }
+  .guide-panels li { margin:0!important; padding:0!important; }
+  .guide-figure { margin:0!important; padding:0!important; position:relative; }
+  .image-window { aspect-ratio:3/2; overflow:hidden; background:#e9e9d8; }
+  .image-window img { width:100%; height:100%; margin:0!important; border-radius:0!important; object-fit:cover; transform-origin:56% 43%; transition:transform .65s ease; }
+  .guide-figure[data-detail="true"] img { transform:scale(1.9); }
+  .dental-guide .detail-button { position:absolute; top:.7rem; right:.7rem; max-width:75%; background:#fffef8f5; box-shadow:0 2px 12px #273c3220; }
+  .dental-guide figcaption { margin:0!important; padding:.55rem 1rem; background:#e8eddf; color:#425545!important; font:400 .72rem/1.5 system-ui,sans-serif; }
+  .step-copy { padding:1rem 1.5rem 1.3rem; }
+  .dental-guide .step-number { margin:0 0 .4rem; font:700 .72rem/1.4 system-ui,sans-serif; color:#4a6350; text-transform:uppercase; letter-spacing:.08em; }
+  .dental-guide h4 { margin:0 0 .6rem!important; color:#253c32!important; font:750 1.15rem/1.3 system-ui,sans-serif; }
+  .dental-guide .visual-cue { border-left:3px solid #8c7546; padding:.55rem .8rem; margin-top:1rem; background:#eee9d9; color:#4d4430; font-size:.85rem; }
+  .guide-controls { border-top:1px solid #c8d2be; padding:1rem 1.5rem; }
+  .transport { display:grid; grid-template-columns:48px minmax(0,1fr) 48px; gap:.5rem; }
+  .dental-guide .position { font-size:.8rem; font-weight:700; text-align:center; }
+  .dental-guide .motion-note { font-size:.75rem; text-align:center; }
+  .guide-footer { padding:1rem 1.5rem; background:#e8eddf; border-top:1px solid #c8d2be; }
+  .guide-footer p { font-size:.78rem; }
+  .guide-footer li { font-size:.8rem; line-height:1.45; margin:.65rem 0; }
+  .dental-guide strong { color:#253c32!important; }
+  .dental-guide a { color:#28523c!important; text-decoration:underline; text-underline-offset:3px; }
+  .dental-guide [hidden] { display:none!important; }
+  .dental-guide[data-enhanced="true"] [data-panel][data-active="false"] { display:none; }
+  .dental-guide summary { min-height:44px; display:list-item; align-content:center; cursor:pointer; color:#334d3e; font:650 .8rem/1.4 system-ui,sans-serif; padding:.65rem 0; }
+  .dental-guide details { margin:0!important; padding:0!important; border:0!important; border-radius:0!important; background:transparent!important; box-shadow:none!important; }
+  .dental-guide details summary { color:#334d3e!important; }
+  .dental-guide details:not([open]) > :not(summary) { display:none; }
+  .dental-guide summary:focus-visible { outline:3px solid #315c43; outline-offset:2px; }
+  @media(max-width:480px) { .guide-header,.step-copy,.guide-controls,.guide-footer { padding-left:1rem; padding-right:1rem; } .guide-tabs { gap:.25rem; padding-left:.65rem; padding-right:.65rem; } .guide-tabs button { font-size:.7rem; padding:.55rem .2rem; } .dental-guide .detail-button { font-size:.7rem; top:.4rem; right:.4rem; } }
+  @media screen and (max-width:600px) {
+    .guide-header { padding:.75rem .85rem .55rem; }
+    .dental-guide .eyebrow { display:none; }
+    .dental-guide h3 { font-size:1.15rem; margin:0 0 .35rem; }
+    .guide-header p { font-size:.8rem; line-height:1.4; margin:.3rem 0 0; }
+    .guide-tabs { padding:0 .65rem .4rem; gap:.3rem; }
+    .guide-tabs button { min-height:44px; font-size:.75rem; padding:.35rem .2rem; }
+    .guide-tabs button span { display:none; }
+    .guide-controls { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:.4rem; padding:.4rem .65rem; border-top:0; border-bottom:1px solid #c8d2be; }
+    .transport { grid-template-columns:44px minmax(0,1fr) 44px; gap:.35rem; }
+    .dental-guide .position { font-size:.7rem; margin:0; max-width:3rem; }
+    .dental-guide .motion-note { display:none; }
+    .dental-guide[data-reduced="true"] .motion-note { display:block; grid-column:1/-1; margin:0; font-size:.7rem; }
+    .image-window { height:clamp(110px,20svh,200px); aspect-ratio:auto; }
+    .image-window img { object-position:56% 43%; }
+    .dental-guide .detail-button { top:auto; bottom:1.7rem; right:auto; left:.4rem; }
+    .dental-guide figcaption { padding:.25rem .7rem; font-size:.65rem; line-height:1.35; }
+    .step-copy { padding:.6rem .85rem .3rem; }
+    .dental-guide[data-enhanced="true"] .step-copy .step-number, .dental-guide[data-enhanced="true"] .step-copy h4 { display:none; }
+    .step-copy > p:not(.step-number) { font-size:.9rem; line-height:1.4; margin:0; }
+    .step-extra summary { font-size:.75rem; }
+    .guide-footer { padding:0 .85rem; }
+    .guide-footer summary { font-size:.75rem; }
+  }
+  @media(prefers-reduced-motion:reduce) { .image-window img { transition:none; } }
+  @media print { .dental-guide .guide-tabs,.dental-guide .guide-controls,.dental-guide .detail-button { display:none!important; } .dental-guide .guide-panels [data-panel] { display:block!important; } .image-window { max-height:250px; aspect-ratio:auto; } .image-window img { height:250px; object-fit:contain; transform:none!important; } .step-copy { break-inside:avoid; } }
+</style>
