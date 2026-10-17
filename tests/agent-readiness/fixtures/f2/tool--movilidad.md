@@ -4,7 +4,7 @@
 > Idioma: es
 > Modificación editorial: 2026-10-16T00:00:00Z
 
-![Mujer ayudando a un perro senior con debilidad en las patas traseras a caminar dentro de casa usando un arnés de soporte de movilidad](<https://cuidatuperroviejo.com/images/home/selector-movilidad-perro.webp>)
+![Beagle senior de morro canoso caminando tranquilo sobre una alfombra antideslizante, acompañado por unas manos que sujetan su arnés de soporte trasero; al fondo, una rampa y una cama con bordes](<https://cuidatuperroviejo.com/images/herramientas/movilidad-hero.webp>)
 
 Si ves que resbala, que le cuesta levantarse o que ya no sube al sofá, hay ayudas concretas. Responde dos preguntas y te proponemos un plan según cómo está hoy y cómo lleva que le toquen.
 

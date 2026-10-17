@@ -89,7 +89,8 @@ const schema = {
   <main id="main-content" class="mob max-w-3xl mx-auto px-5 pb-12 sm:px-6">
     <header class="mob-hero">
       <picture class="mob-hero__media">
-        <img src="/images/home/selector-movilidad-perro.webp" alt="Mujer ayudando a un perro senior con debilidad en las patas traseras a caminar dentro de casa usando un arnés de soporte de movilidad" width="800" height="349" loading="eager" fetchpriority="high" decoding="async" />
+        <source media="(max-width: 63.999rem)" srcset="/images/herramientas/movilidad-hero-movil-400.webp 400w, /images/herramientas/movilidad-hero-movil-600.webp 600w, /images/herramientas/movilidad-hero-movil.webp 900w" sizes="100vw" width="900" height="675" />
+        <img src="/images/herramientas/movilidad-hero.webp" srcset="/images/herramientas/movilidad-hero-400.webp 400w, /images/herramientas/movilidad-hero-800.webp 800w, /images/herramientas/movilidad-hero.webp 1200w, /images/herramientas/movilidad-hero-1536.webp 1536w" sizes="100vw" alt="Beagle senior de morro canoso caminando tranquilo sobre una alfombra antideslizante, acompañado por unas manos que sujetan su arnés de soporte trasero; al fondo, una rampa y una cama con bordes" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" />
       </picture>
       <div class="mob-hero__copy">
         <nav class="breadcrumb mob-hero__crumbs" aria-label="breadcrumb">
@@ -188,7 +189,8 @@ const schema = {
 <style>
   .mob-hero { position: relative; margin: 0 calc(50% - 50vw) 1.5rem; background: #f7efe1; overflow: hidden; }
   :global(.dark) .mob-hero { background: var(--color-brand-card); }
-  .mob-hero__media img { display: block; width: 100%; height: auto; max-height: 22rem; object-fit: cover; object-position: 70% center; }
+  .mob-hero__media { display: block; }
+  .mob-hero__media img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
   .mob-hero__copy { width: min(100% - 2.5rem, 48rem); margin: 0 auto; padding-block: 1.1rem 1.25rem; }
   .mob-hero h1 { margin: 0; font-family: var(--font-display); font-size: clamp(1.85rem, 6.2vw, 3.2rem); font-weight: 800; line-height: 1.05; letter-spacing: -.035em; color: var(--color-brand-text); }
   .mob-hero__copy > p { margin: .8rem 0 0; max-width: 34rem; font-size: clamp(.95rem, 1.6vw, 1.08rem); line-height: 1.6; color: var(--color-brand-muted); }
@@ -198,12 +200,14 @@ const schema = {
   .mob-hero__crumbs a:hover { color: var(--color-brand-primary); }
   @media (min-width: 64rem) {
     .mob-hero { display: flex; align-items: center; min-height: clamp(22rem, 36vw, 30rem); }
-    .mob-hero__media { position: absolute; inset: 0 0 0 auto; width: 60%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 32%); mask-image: linear-gradient(90deg, transparent, #000 32%); }
-    .mob-hero__media img { height: 100%; max-height: none; }
+    .mob-hero__media { position: absolute; inset: 0; width: 100%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 32%); mask-image: linear-gradient(90deg, transparent, #000 32%); }
+    .mob-hero__media img { height: 100%; aspect-ratio: auto; object-position: right 60%; }
     .mob-hero__copy { width: min(100% - 4rem, 68rem); padding-block: 3rem; position: relative; }
     .mob-hero__copy > *, .mob-hero__copy > p { max-width: 25rem; }
     .mob-hero__crumbs { display: flex; }
     .mob-hero h1, .mob-hero__copy > p { color: #2f3b2c; }
+    :global(.dark) .mob-hero { background: #f7efe1; }
+    :global(.dark) .mob-hero__crumbs { color: #2f3b2c; }
   }
 
   .mob-guide { margin-top: 3rem; }
