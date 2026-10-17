@@ -110,3 +110,17 @@ Reintento **sb** (entregado), referencia: PNG generado en el reintento
 `sa`:
 
 > Edit this transparent PNG IN PLACE, preserving the entire dog AND its wheelchair unchanged: exact same pixels, pose, silhouette including tail, paws, face, coat markings, equipment design, size and coordinates. Do not move, scale, redraw or recenter anything. Add ONLY one sage green orthopedic dog bed with raised bolster edges and cream cushion in empty transparent foreground below and to the right of dog. Bed around x=550..1180 y=900..1140 on this 1254x1254 canvas. Do not cover paws or wheels. Same warm watercolor style and sage cream terracotta honey palette. Keep transparent alpha background, same square canvas, subtle shadow. No text logos or additional objects.
+
+### Integración en la app
+
+`MobilityTool.astro` apila las siete imágenes (`srcset` 240/400/640) y muestra
+la franja 16:10 donde está el perro (`object-position: 50% 48%`). En las
+preguntas se ve la base; en el resultado, la escena de su clave (`la`…`sb`)
+aparece con un fundido de opacidad. Como todas comparten encuadre, el perro no
+salta. `sb` incluye la cama bajo el perro: se muestra completa desde y=18 %,
+algo más alejada. La tarjeta PNG para compartir usa la misma escena del
+resultado. Solo la base se carga con prioridad; el resto es `loading="lazy"`.
+Con `prefers-reduced-motion` no hay respiración ni fundidos.
+
+Los PNG máster de 1024 px viven junto a los WebP en `public/` (se publican);
+si se quiere aligerar el despliegue, pueden moverse fuera de `public/`.

@@ -12,42 +12,20 @@ const splitIcon = (value: string) => {
 };
 const alertTitle = splitIcon(PALLIATIVE_ALERT.title);
 const alertItems = PALLIATIVE_ALERT.items.map((item) => ({ ...splitIcon(item.text), link: item.link }));
-const dogSvg = `<svg class="mt__dog" viewBox="0 0 260 150">
-  <path class="mt__ramp" d="M150 132 L250 132 L250 92 Z" />
-  <rect class="mt__rug" x="18" y="128" width="200" height="10" rx="5" />
-  <rect class="mt__bed" x="22" y="112" width="190" height="24" rx="12" />
-  <g class="mt__body">
-    <path class="mt__tail" d="M178 70 q22 -10 26 -32" />
-    <rect class="mt__leg mt__leg--bf" x="150" y="86" width="12" height="44" rx="6" />
-    <rect class="mt__leg mt__leg--ff" x="78" y="86" width="12" height="44" rx="6" />
-    <ellipse class="mt__torso" cx="124" cy="80" rx="62" ry="28" />
-    <rect class="mt__leg mt__leg--b" x="164" y="88" width="13" height="42" rx="6.5" />
-    <rect class="mt__leg mt__leg--f" x="92" y="88" width="13" height="42" rx="6.5" />
-    <rect class="mt__sock" x="90" y="118" width="17" height="14" rx="5" />
-    <rect class="mt__sock" x="162" y="118" width="17" height="14" rx="5" />
-    <path class="mt__harness" d="M150 56 q4 26 0 52 M168 58 q4 24 0 48" />
-    <path class="mt__handle" d="M152 54 q8 -26 16 0" />
-    <g class="mt__cart">
-      <path d="M150 70 h46 M186 70 v34" />
-      <circle cx="190" cy="118" r="17" /><circle cx="190" cy="118" r="3" />
-    </g>
-    <g class="mt__head">
-      <path class="mt__neck" d="M66 74 q-6 -14 4 -30 l22 14 q-4 14 -10 22 Z" />
-      <ellipse class="mt__skull" cx="62" cy="46" rx="26" ry="22" />
-      <ellipse class="mt__snout" cx="38" cy="56" rx="17" ry="12" />
-      <ellipse class="mt__gray" cx="38" cy="58" rx="15" ry="9" />
-      <circle class="mt__nose" cx="23" cy="53" r="5" />
-      <circle class="mt__eye" cx="54" cy="40" r="3.6" />
-      <path class="mt__ear" d="M70 30 q16 4 12 38 q-12 -4 -18 -30 Z" />
-    </g>
-  </g>
-  <path class="mt__heart" d="M222 26 c-6 -8 -18 -2 -12 8 l12 12 l12 -12 c6 -10 -6 -16 -12 -8 Z" />
-</svg>`;
+// Ilustraciones del mismo beagle (ver docs/herramientas/movilidad-imagen.md):
+// la base y una escena por resultado, alineadas píxel a píxel para el fundido.
+const DOG_DIR = '/images/herramientas/movilidad-perro';
+const dogStates = ['base', 'la', 'lb', 'ma', 'mb', 'sa', 'sb'];
+const dogSrcset = (name: string) => [240, 400, 640].map((w) => `${DOG_DIR}/${name}-${w}.webp ${w}w`).join(', ');
 ---
 
 <section id="m5widget" class="mt" aria-label="Selector de ayudas de movilidad para perros mayores" role="region" data-level="" data-handling="" data-step="0">
   <div id="cm5-selector" class="mt__anchor"></div>
-  <div class="mt__art" aria-hidden="true"><Fragment set:html={dogSvg} /></div>
+  <div class="mt__art" aria-hidden="true">
+    {dogStates.map((name) => (
+      <img class="mt__dog" data-dog={name} src={`${DOG_DIR}/${name}-400.webp`} srcset={dogSrcset(name)} sizes="(min-width: 40rem) 18rem, 75vw" width="640" height="640" alt="" loading={name === 'base' ? 'eager' : 'lazy'} decoding="async" />
+    ))}
+  </div>
 
   <!-- PANTALLA 0: Intro -->
   <div class="mt__screen" id="m5s0">
@@ -146,42 +124,28 @@ const dogSvg = `<svg class="mt__dog" viewBox="0 0 260 150">
   .mt[data-level='S'] { --lvl: var(--color-brand-accent); }
   .mt__anchor { position: absolute; top: -5rem; }
 
-  /* Ilustración: un perro mayor que se equipa según el resultado */
-  .mt__art { width: min(17rem, 78%); margin: -.25rem auto .75rem; }
-  .mt[data-step='1'] .mt__art, .mt[data-step='2'] .mt__art { width: min(12rem, 58%); }
-  .mt__dog { display: block; width: 100%; height: auto; overflow: visible; }
-  .mt__torso, .mt__skull, .mt__neck, .mt__leg { fill: #c8915c; }
-  .mt__leg--bf, .mt__leg--ff { fill: #a8763f; }
-  .mt__snout { fill: #f3e2c9; }
-  .mt__gray { fill: #f7f4ef; opacity: .85; }
-  .mt__ear { fill: #8e5d37; transform-origin: 72px 32px; animation: mt-ear 4s ease-in-out infinite; }
-  .mt__nose, .mt__eye { fill: #2b1d14; }
-  .mt__eye { transform-box: fill-box; transform-origin: center; animation: mt-blink 5s infinite; }
-  .mt__tail { fill: none; stroke: #a8763f; stroke-width: 8; stroke-linecap: round; transform-origin: 178px 70px; animation: mt-wag 1.6s ease-in-out infinite; }
-  .mt__body { animation: mt-breathe 3.4s ease-in-out infinite; transform-origin: 124px 130px; }
-  .mt__ramp { fill: color-mix(in srgb, var(--lvl) 30%, var(--color-brand-bg)); }
-  .mt__rug { fill: color-mix(in srgb, var(--lvl) 40%, var(--color-brand-bg)); }
-  .mt__bed { fill: color-mix(in srgb, var(--lvl) 25%, var(--color-brand-bg)); }
-  .mt__sock { fill: var(--lvl); }
-  .mt__harness, .mt__handle { fill: none; stroke: var(--lvl); stroke-width: 7; stroke-linecap: round; }
-  .mt__handle { stroke-width: 4; }
-  .mt__cart path { fill: none; stroke: #5d6b57; stroke-width: 5; stroke-linecap: round; }
-  .mt__cart circle { fill: none; stroke: #4a4a42; stroke-width: 5; }
-  .mt__cart circle + circle { fill: #4a4a42; }
-  .mt__heart { fill: var(--color-brand-accent); transform-box: fill-box; transform-origin: center; }
-  .mt__ramp, .mt__rug, .mt__bed, .mt__sock, .mt__harness, .mt__handle, .mt__cart, .mt__heart {
-    opacity: 0; transition: opacity .5s, transform .5s cubic-bezier(.22,1,.36,1);
+  /* Ilustración: el mismo beagle; en el resultado aparece su escena con fundido.
+     Las imágenes son cuadradas con margen transparente: se muestra la franja
+     16:10 donde está el perro (y=18–80 %). La escena con cama (sb) llega hasta el
+     borde inferior: se muestra entera desde y=18 %, algo más alejada. */
+  .mt__art {
+    position: relative; width: min(20rem, 85%); aspect-ratio: 16 / 10; margin: -.5rem auto .5rem;
+    transition: width .5s cubic-bezier(.22,1,.36,1);
   }
-  .mt__sock, .mt__harness, .mt__handle, .mt__cart { transform: translateY(-8px); }
-  /* Accesorio según la combinación (mismas claves LA…SB que el contrato) */
-  .mt[data-step='3'][data-level='L'][data-handling='A'] .mt__sock,
-  .mt[data-step='3'][data-handling='B']:not([data-level='S']) .mt__rug,
-  .mt[data-step='3'][data-level='M'][data-handling='A'] :is(.mt__harness, .mt__handle, .mt__ramp),
-  .mt[data-step='3'][data-level='M'][data-handling='B'] .mt__ramp,
-  .mt[data-step='3'][data-level='S'] :is(.mt__cart, .mt__bed) { opacity: 1; transform: none; }
-  .mt[data-step='3'] .mt__heart { opacity: 1; animation: mt-beat 1.8s ease-in-out infinite; }
-  .mt[data-level='S'] .mt__leg--b, .mt[data-level='S'] .mt__leg--bf { transform: translateY(-4px); }
-  .mt[data-level='M'] .mt__body, .mt[data-level='S'] .mt__body { animation-duration: 4.4s; }
+  .mt[data-step='1'] .mt__art, .mt[data-step='2'] .mt__art { width: min(12rem, 55%); }
+  .mt__dog {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 48%;
+    opacity: 0; transform: translateY(6px) scale(.98); transition: opacity .6s ease, transform .6s cubic-bezier(.22,1,.36,1);
+  }
+  .mt__dog[data-dog='sb'] { inset: -22% auto auto 50%; width: auto; height: 122%; aspect-ratio: 1; translate: -50% 0; }
+  .mt__dog[data-dog='base'] { opacity: 1; transform: none; animation: mt-breathe 3.4s ease-in-out infinite; }
+  .mt[data-step='3'] .mt__dog[data-dog='base'] { opacity: 0; }
+  .mt[data-step='3'][data-level='L'][data-handling='A'] [data-dog='la'],
+  .mt[data-step='3'][data-level='L'][data-handling='B'] [data-dog='lb'],
+  .mt[data-step='3'][data-level='M'][data-handling='A'] [data-dog='ma'],
+  .mt[data-step='3'][data-level='M'][data-handling='B'] [data-dog='mb'],
+  .mt[data-step='3'][data-level='S'][data-handling='A'] [data-dog='sa'],
+  .mt[data-step='3'][data-level='S'][data-handling='B'] [data-dog='sb'] { opacity: 1; transform: none; }
 
   /* Pantallas */
   .mt__screen { text-align: center; }
@@ -278,10 +242,6 @@ const dogSvg = `<svg class="mt__dog" viewBox="0 0 260 150">
   @keyframes mt-up { from { opacity: 0; translate: 0 100%; } }
   @keyframes mt-grow { from { width: 0; } }
   @keyframes mt-breathe { 50% { translate: 0 -1.5px; } }
-  @keyframes mt-wag { 50% { rotate: 14deg; } }
-  @keyframes mt-ear { 50% { rotate: 4deg; } }
-  @keyframes mt-blink { 0%, 93%, 100% { scale: 1 1; } 96% { scale: 1 .1; } }
-  @keyframes mt-beat { 50% { scale: 1.15; } }
   @media (prefers-reduced-motion: reduce) {
     .mt *, .mt-sticky { animation: none !important; transition: none !important; }
   }
@@ -444,15 +404,13 @@ const dogSvg = `<svg class="mt__dog" viewBox="0 0 260 150">
     ctx.fillStyle = '#f7f1e6'; ctx.fillRect(0, 0, 1080, 1350);
     let y = 120;
     try {
+      // La escena del resultado, con el mismo recorte 16:10 que en pantalla.
       const img = new Image();
-      img.src = '/images/herramientas/movilidad-hero.webp';
+      img.src = `/images/herramientas/movilidad-perro/${current.toLowerCase()}-640.webp`;
       await img.decode();
-      const h = 1080 * img.height / img.width;
-      ctx.drawImage(img, 0, 0, 1080, h);
-      const g = ctx.createLinearGradient(0, h - 180, 0, h);
-      g.addColorStop(0, 'rgba(247,241,230,0)'); g.addColorStop(1, '#f7f1e6');
-      ctx.fillStyle = g; ctx.fillRect(0, h - 180, 1080, 180);
-      y = h + 40;
+      if (current === 'SB') ctx.drawImage(img, 0, img.height * 0.18, img.width, img.height * 0.82, 235, 50, 610, 500);
+      else ctx.drawImage(img, 0, img.height * 0.18, img.width, img.height * 0.625, 140, 50, 800, 500);
+      y = 620;
     } catch { /* la tarjeta funciona sin imagen */ }
     ctx.textAlign = 'center';
     ctx.font = '800 34px "Plus Jakarta Sans", system-ui, sans-serif';
