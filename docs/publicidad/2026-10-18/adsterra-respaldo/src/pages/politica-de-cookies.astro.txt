@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Cookies y almacenamiento local | Cuida tu Perro Viejo';
+const description = 'Qué datos se guardan en el navegador y cómo gestionarlos en Cuida tu Perro Viejo.';
+---
+<BaseLayout title={title} description={description} showAiAssistant={false}>
+  <main id="main-content" tabindex="-1" class="max-w-3xl mx-auto px-5 py-10 md:py-16 content-body">
+    <h1>Cookies y almacenamiento local</h1>
+    <p>Actualizada: 17 de octubre de 2026.</p>
+    <h2>Qué se guarda en tu navegador</h2>
+    <p>El sitio utiliza almacenamiento local para recordar el tema claro u oscuro, las listas de cuidados de la portada y si ya has valorado un contenido. La lista de cuidados permite borrar el historial desde su propia interfaz. El almacenamiento local permanece hasta que se elimina o cambia; no tiene necesariamente una caducidad automática.</p>
+    <p>Las herramientas de calidad de vida y movilidad permiten generar resultados e imprimirlos desde el navegador. Guarda esos documentos con cuidado si incluyen información que no quieras compartir. No son un diagnóstico ni un expediente veterinario.</p>
+    <h2>Servicios y contenido externo</h2>
+    <p>Cloudflare presta alojamiento y seguridad, incluido Turnstile en el formulario. Google Fonts sirve tipografías. Los recursos de publicidad de Adsterra pueden utilizar cookies, identificadores y datos técnicos de acuerdo con su funcionamiento y su <a href="https://adsterra.com/privacy-policy/" target="_blank" rel="noopener">política de privacidad</a>.</p>
+    <p>Los enlaces a fuentes o servicios externos se abren bajo las condiciones de esos destinos. La página de <a href="/politica-de-privacidad">privacidad</a> describe el formulario y el asistente.</p>
+    <h2>Analítica y preferencias</h2>
+    <p>La versión actual del sitio no incorpora un cargador propio de Google Analytics. Las preferencias antiguas de analítica que pudieran quedar guardadas no constituyen un control de todos los servicios externos. La información de esta página debe actualizarse si se incorpora un servicio de analítica o cambia la configuración.</p>
+    <h2>Cómo gestionar los datos del navegador</h2>
+    <p>En la configuración de privacidad de tu navegador puedes revisar, bloquear o borrar cookies y almacenamiento del sitio. Borrar los datos de cuidatuperroviejo.com puede reiniciar el tema, las listas de cuidado y las valoraciones recordadas. Bloquear recursos externos puede afectar fuentes, publicidad o las comprobaciones de seguridad del formulario.</p>
+    <p>La gestión desde el navegador actúa sobre ese navegador y dispositivo; no elimina por sí sola mensajes enviados mediante el formulario. Para solicitudes sobre mensajes o datos del servidor, escribe a <a href="mailto:toxedocat@gmail.com">toxedocat@gmail.com</a>.</p>
+    <h2>Contacto y mantenimiento</h2>
+    <p>Si detectas una diferencia entre esta información y el funcionamiento del sitio, indícanos la página y el servicio observado en <a href="/contacto">contacto</a>. La fecha superior señala la última revisión de este documento.</p>
+  </main>
+</BaseLayout>

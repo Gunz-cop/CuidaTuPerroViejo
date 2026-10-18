@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MobilityTool from '../../components/tools/MobilityTool.astro';
-import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
-import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
 import { HANDLING, LEVELS, MOBILITY_TOOL, RESULTS, resultKey } from '../../lib/agent-tools/movilidad.ts';
 import { MOBILITY_SOURCES } from '../../lib/mobility-sources';
 
@@ -105,8 +103,6 @@ const schema = {
     </header>
 
     <MobilityTool />
-
-    <AdBanner300x250 />
 
     <article class="mob-guide content-body prose dark:prose-invert">
       <h2 id="como-leer">Cómo leer el resultado</h2>
@@ -215,7 +211,6 @@ const schema = {
       </p>
     </article>
   </main>
-  <AdSlotLoader />
 </BaseLayout>
 
 <style>

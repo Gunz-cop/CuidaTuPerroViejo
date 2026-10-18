@@ -1,0 +1,78 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+02:41:33 [@astrojs/cloudflare] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+02:41:35 [content] Syncing content
+02:41:35 [content] Synced content
+02:41:35 [types] Generated 1.37s
+02:41:35 [build] output: "static"
+02:41:35 [build] mode: "server"
+02:41:35 [build] directory: /workspace/CuidaTuPerroViejo/dist/
+02:41:35 [build] adapter: @astrojs/cloudflare
+02:41:35 [build] Collecting build info...
+02:41:35 [build] ✓ Completed in 1.42s.
+02:41:35 [build] Building server entrypoints...
+02:41:39 [vite] ✓ built in 4.01s
+02:41:39 [vite] ✓ built in 376ms
+02:41:40 [vite] ✓ built in 258ms
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mAI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.[0m
+
+
+
+ prerendering static routes 
+✨ Parsed 23 valid redirect rules.
+✨ Parsed 16 valid header rules.
+02:41:41   ├─ /404.html (+36ms) 
+02:41:41   ├─ /acerca-de.html (+18ms) 
+02:41:41   ├─ /api/assistant-catalog.json (+25ms) 
+02:41:41   ├─ /asistente-ia.html (+15ms) 
+02:41:41   ├─ /contacto.html (+14ms) 
+02:41:41   ├─ /gracias.html (+15ms) 
+02:41:41   ├─ /herramientas/calculadora-calidad-vida-perros.html (+16ms) 
+02:41:41   ├─ /herramientas/calculadora-edad-perro.html (+27ms) 
+02:41:41   ├─ /herramientas/selector-movilidad-perros-mayores.html (+21ms) 
+02:41:41   ├─ /politica-de-cookies.html (+15ms) 
+02:41:41   ├─ /politica-de-privacidad.html (+12ms) 
+02:41:41   ├─ /politica-editorial.html (+11ms) 
+02:41:41   ├─ /salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor.html (+28ms) 
+02:41:41   ├─ /salud-mental-emocional-perros/ansiedad-separacion-perros-senior.html (+18ms) 
+02:41:41   ├─ /higiene-hogar-perros-senior/banar-perro-viejo-movilidad-reducida.html (+17ms) 
+02:41:41   ├─ /higiene-hogar-perros-senior/callosidades-higromas-codos-perros-senior.html (+15ms) 
+02:41:41   ├─ /movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis.html (+16ms) 
+02:41:41   ├─ /salud-perros-mayores/chequeo-geriatrico-canino.html (+14ms) 
+02:41:41   ├─ /alimentacion-perros-senior/comida-casera-perros-mayores.html (+13ms) 
+02:41:41   ├─ /cuidados-paliativos-perros/como-dar-medicacion-perro.html (+22ms) 
+02:41:42   ├─ /salud-mental-emocional-perros/disfuncion-cognitiva-canina.html (+18ms) 
+02:41:42   ├─ /higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html (+15ms) 
+02:41:42   ├─ /higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores.html (+15ms) 
+02:41:42   ├─ /salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.html (+18ms) 
+02:41:42   ├─ /higiene-hogar-perros-senior/limpieza-ojos-oidos-perros-ancianos.html (+16ms) 
+02:41:42   ├─ /salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html (+19ms) 
+02:41:42   ├─ /movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor.html (+15ms) 
+02:41:42   ├─ /salud-perros-mayores/salud-dental-perros-mayores.html (+17ms) 
+02:41:42   ├─ /salud-perros-mayores/sindrome-cushing-perros-mayores.html (+13ms) 
+02:41:42   ├─ /cuidados-paliativos-perros/ulceras-presion-perros.html (+13ms) 
+02:41:42   ├─ /salud-perros-mayores/vacunas-desparasitacion-perros-senior.html (+14ms) 
+02:41:42   ├─ /alimentacion-perros-senior.html (+20ms) 
+02:41:42   ├─ /cuidados-paliativos-perros.html (+14ms) 
+02:41:42   ├─ /herramientas.html (+14ms) 
+02:41:42   ├─ /higiene-hogar-perros-senior.html (+16ms) 
+02:41:42   ├─ /movilidad-dolor-perros-mayores.html (+13ms) 
+02:41:42   ├─ /salud-mental-emocional-perros.html (+15ms) 
+02:41:42   ├─ /salud-perros-mayores.html (+15ms) 
+02:41:42   ├─ /index.html (+23ms) 
+02:41:42 ✓ Completed in 2.26s.
+
+02:41:42 [build] Rearranging server assets...
+02:41:42 [build] ✓ Completed in 7.04s.
+02:41:42 [@astrojs/sitemap] `sitemap-index.xml` created at `dist/client`
+02:41:42 [agent-readiness-discovery] llms.txt generado después de sitemap (3728 bytes).
+02:41:43 [agent-readiness-markdown-projection] Proyección agent-content/v1 generada: 32 documentos, 30128 bytes de índice.
+02:41:44 [agent-readiness-api-generation] Artifacts F3A generados: 32 documentos, 491109 bytes de query-index.
+02:41:44 [build] Server built in 11.04s
+02:41:44 [build] Complete!
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

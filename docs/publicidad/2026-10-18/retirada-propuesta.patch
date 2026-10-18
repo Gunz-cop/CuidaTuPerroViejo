@@ -1,0 +1,371 @@
+--- a/src/components/ads/AdBanner300x250.astro
++++ /dev/null
+@@ -1,28 +0,0 @@
+----
+-// src/components/ads/AdBanner300x250.astro
+-// Banner in-content 300x250 (Adsterra). Contenedor con dimensiones fijas
+-// reservadas de antemano para evitar CLS. Se inserta programáticamente
+-// dentro del cuerpo del artículo (ver PostReader.astro).
+----
+-
+-<div
+-  class="ad-slot ad-slot--300x250 not-prose my-8 flex w-full justify-center"
+-  data-ad-pending="true"
+-  aria-label="Espacio publicitario"
+->
+-  <div class="ad-slot__placeholder flex h-[250px] w-[300px] max-w-full items-center justify-center overflow-hidden rounded-xl border border-brand-border/40 bg-brand-card/30 text-[10px] uppercase tracking-wide text-brand-muted/50">
+-    <span aria-hidden="true">Publicidad</span>
+-  </div>
+-  <template>
+-    <script is:inline>
+-      atOptions = {
+-        'key' : '10df6b95565e4b70f014e77906b6218c',
+-        'format' : 'iframe',
+-        'height' : 250,
+-        'width' : 300,
+-        'params' : {}
+-      };
+-    </script>
+-    <script is:inline src="https://www.highperformanceformat.com/10df6b95565e4b70f014e77906b6218c/invoke.js"></script>
+-  </template>
+-</div>
+--- a/src/components/ads/AdStickyMobile320x50.astro
++++ /dev/null
+@@ -1,19 +0,0 @@
+----
+-// src/components/ads/AdStickyMobile320x50.astro
+-// Banner sticky 320x50 (Adsterra), fijo al pie de pantalla SOLO en mobile/tablet.
+-// Se omite por completo en desktop (md:hidden). Altura reservada de 50px para
+-// evitar CLS y que no tape la navegación del sitio.
+----
+-
+-<div
+-  class="ad-slot ad-slot--sticky-320x50 fixed inset-x-0 bottom-0 z-40 flex h-[50px] justify-center border-t border-brand-border/40 bg-brand-bg/95 backdrop-blur [-webkit-backdrop-filter:blur(8px)] md:hidden"
+-  data-ad-pending="true"
+-  aria-label="Espacio publicitario"
+->
+-  <div class="ad-slot__placeholder flex h-[50px] w-[320px] max-w-full items-center justify-center text-[10px] uppercase tracking-wide text-brand-muted/50">
+-    <span aria-hidden="true">Publicidad</span>
+-  </div>
+-  <template>
+-    <!-- ADSTERRA_STICKY_320x50 -->
+-  </template>
+-</div>
+--- a/src/components/ads/AdNativeBanner.astro
++++ /dev/null
+@@ -1,19 +0,0 @@
+----
+-// src/components/ads/AdNativeBanner.astro
+-// Native Banner (Adsterra), entre el contenido del artículo y la sección
+-// de artículos relacionados (SiloNavigation). Altura mínima reservada
+-// aproximada para evitar CLS; el native banner se adapta al ancho del contenedor.
+----
+-
+-<div
+-  class="ad-slot ad-slot--native not-prose my-10 w-full"
+-  data-ad-pending="true"
+-  aria-label="Espacio publicitario"
+->
+-  <div class="ad-slot__placeholder flex min-h-[100px] w-full items-center justify-center rounded-xl border border-brand-border/40 bg-brand-card/30 text-[10px] uppercase tracking-wide text-brand-muted/50">
+-    <span aria-hidden="true">Publicidad</span>
+-  </div>
+-  <template>
+-    <!-- ADSTERRA_NATIVE_BANNER (pausado: la zona nativa servía anuncios de citas, fuera de marca para el sitio) -->
+-  </template>
+-</div>
+--- a/src/components/ads/AdSlotLoader.astro
++++ /dev/null
+@@ -1,59 +0,0 @@
+----
+-// src/components/ads/AdSlotLoader.astro
+-// Carga diferida (lazy) de los slots de Adsterra: el código de anuncio real
+-// vive dentro de un <template> y solo se inyecta en el DOM cuando el slot
+-// entra en viewport (o cerca de él). Así el script de Adsterra nunca bloquea
+-// el render inicial del artículo. Incluir una sola vez por página.
+----
+-
+-<script is:inline>
+-  (() => {
+-    const initAdSlots = () => {
+-      const slots = document.querySelectorAll('.ad-slot[data-ad-pending="true"]');
+-      if (!slots.length) return;
+-
+-      const loadSlot = (slot) => {
+-        const template = slot.querySelector('template');
+-        // El template solo trae el placeholder de código (comentario) hasta que
+-        // se pegue el script real de Adsterra: en ese caso no hay nada que
+-        // insertar todavía, así que dejamos visible el placeholder reservado.
+-        const hasRealAdCode = template && Array.from(template.content.childNodes).some(
+-          (node) => node.nodeType !== Node.COMMENT_NODE && !(node.nodeType === Node.TEXT_NODE && !node.textContent.trim())
+-        );
+-        if (template && hasRealAdCode) {
+-          slot.appendChild(template.content.cloneNode(true));
+-          template.remove();
+-          const placeholder = slot.querySelector('.ad-slot__placeholder');
+-          if (placeholder) placeholder.style.display = 'none';
+-        }
+-        slot.removeAttribute('data-ad-pending');
+-      };
+-
+-      if (!('IntersectionObserver' in window)) {
+-        slots.forEach(loadSlot);
+-        return;
+-      }
+-
+-      const observer = new IntersectionObserver(
+-        (entries) => {
+-          entries.forEach((entry) => {
+-            if (entry.isIntersecting) {
+-              loadSlot(entry.target);
+-              observer.unobserve(entry.target);
+-            }
+-          });
+-        },
+-        { rootMargin: '200px 0px', threshold: 0.01 }
+-      );
+-
+-      slots.forEach((slot) => observer.observe(slot));
+-    };
+-
+-    document.addEventListener('astro:page-load', initAdSlots);
+-    if (document.readyState === 'loading') {
+-      document.addEventListener('DOMContentLoaded', initAdSlots);
+-    } else {
+-      initAdSlots();
+-    }
+-  })();
+-</script>
+--- a/src/components/PostReader.astro
++++ b/src/components/PostReader.astro
+@@ -1,7 +1,6 @@
+ ---
+ // src/components/PostReader.astro
+ const { entry } = Astro.props;
+-import { readerAtomicRanges } from '../utils/reader-atomic';
+ const html = await Astro.slots.render('default');
+ 
+ // 1. Clean slugifier function for Spanish
+@@ -57,38 +56,7 @@
+   return `<h${tag}${newAttrs}>${content}</h${tag}>`;
+ });
+ 
+-// 3. Insertar banner 300x250 (Adsterra) tras el 1º/2º párrafo del artículo.
+-// Contenedor con dimensiones fijas reservadas para evitar CLS; el código real
+-// se carga de forma diferida (ver AdSlotLoader.astro) cuando entra en viewport.
+-const AD_300x250_HTML = `<div class="ad-slot ad-slot--300x250 not-prose my-8 flex w-full justify-center" data-ad-pending="true" aria-label="Espacio publicitario"><div class="ad-slot__placeholder flex h-[250px] w-[300px] max-w-full items-center justify-center overflow-hidden rounded-xl border border-brand-border/40 bg-brand-card/30 text-[10px] uppercase tracking-wide text-brand-muted/50"><span aria-hidden="true">Publicidad</span></div><template><script is:inline>atOptions = {'key' : '10df6b95565e4b70f014e77906b6218c','format' : 'iframe','height' : 250,'width' : 300,'params' : {}};</script><script is:inline src="https://www.highperformanceformat.com/10df6b95565e4b70f014e77906b6218c/invoke.js"></script></template></div>`;
+-
+-// 4. Insertar banner horizontal 320x50 (Adsterra) aprox. a la mitad del artículo,
+-// al estilo housegatitos.com. Se calcula el párrafo del medio en base al total.
+-const AD_320x50_MID_HTML = `<div class="ad-slot ad-slot--320x50-mid not-prose my-8 flex w-full justify-center" data-ad-pending="true" aria-label="Espacio publicitario"><div class="ad-slot__placeholder flex h-[50px] w-[320px] max-w-full items-center justify-center overflow-hidden rounded-xl border border-brand-border/40 bg-brand-card/30 text-[10px] uppercase tracking-wide text-brand-muted/50"><span aria-hidden="true">Publicidad</span></div><template><script is:inline>atOptions = {'key' : '77fb25612074d9660a62a330b778e5ad','format' : 'iframe','height' : 50,'width' : 320,'params' : {}};</script><script is:inline src="https://www.highperformanceformat.com/77fb25612074d9660a62a330b778e5ad/invoke.js"></script></template></div>`;
+-
+-const atomicRanges = readerAtomicRanges(processedHtml);
+-const isEditorialParagraph = (offset: number) => !atomicRanges.some(range => offset >= range.start && offset < range.end);
+-const totalParagraphs = [...processedHtml.matchAll(/<p\b[^>]*>[\s\S]*?<\/p>/gi)].filter(match => isEditorialParagraph(match.index!)).length;
+-// Si el artículo es muy corto, el párrafo "medio" quedaría pegado al 300x250 (índice 2); en ese caso se omite el segundo banner.
+-const midParagraphIndex = Math.ceil(totalParagraphs / 2) > 2 ? Math.ceil(totalParagraphs / 2) : 0;
+-
+-let paragraphCount = 0;
+-let ad300Inserted = false;
+-let ad320Inserted = false;
+-const withInContentAd = processedHtml.replace(/<p\b[^>]*>[\s\S]*?<\/p>/gi, (match, offset: number) => {
+-  if (!isEditorialParagraph(offset)) return match;
+-  paragraphCount++;
+-  let result = match;
+-  if (!ad300Inserted && paragraphCount === 2) {
+-    ad300Inserted = true;
+-    result += AD_300x250_HTML;
+-  }
+-  if (midParagraphIndex && !ad320Inserted && paragraphCount === midParagraphIndex) {
+-    ad320Inserted = true;
+-    result += AD_320x50_MID_HTML;
+-  }
+-  return result;
+-});
++
+ ---
+ 
+ <div class="relative w-full">
+@@ -146,7 +114,7 @@
+ 
+       <!-- Rendered HTML Content -->
+       <div class="content-body prose dark:prose-invert max-w-full">
+-        <Fragment set:html={withInContentAd} />
++        <Fragment set:html={processedHtml} />
+       </div>
+     </div>
+   </div>
+--- a/src/pages/[pilar]/[slug].astro
++++ b/src/pages/[pilar]/[slug].astro
+@@ -6,8 +6,6 @@
+ import PostReader from '../../components/PostReader.astro';
+ import ArticleByline from '../../components/ArticleByline.astro';
+ import FeedbackWidget from '../../components/FeedbackWidget.astro';
+-import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
+-import AdStickyMobile320x50 from '../../components/ads/AdStickyMobile320x50.astro';
+ import { buildSrcset } from '../../utils/image';
+ 
+ 
+@@ -212,14 +210,6 @@
+ 
+     <FeedbackWidget slug={entry.id} />
+ 
+-    <!-- Native Banner (Adsterra) pausado: la zona nativa servía anuncios de citas, fuera de marca.
+-         Componente y código quedan listos en AdNativeBanner.astro para reactivar cuando se ajusten
+-         las categorías bloqueadas en el panel de Adsterra. -->
+-
+     <SiloNavigation currentPilar={entry.data.pilar} currentSlug={entry.id} />
+   </main>
+-
+-  <!-- Sticky 320x50 (Adsterra): solo mobile/tablet, fijo al pie de pantalla -->
+-  <AdStickyMobile320x50 />
+-  <AdSlotLoader />
+ </BaseLayout>
+--- a/src/pages/[pilar].astro
++++ b/src/pages/[pilar].astro
+@@ -2,8 +2,6 @@
+ import { getCollection, render } from 'astro:content';
+ import BaseLayout from '../layouts/BaseLayout.astro';
+ import ArticleByline from '../components/ArticleByline.astro';
+-import AdBanner300x250 from '../components/ads/AdBanner300x250.astro';
+-import AdSlotLoader from '../components/ads/AdSlotLoader.astro';
+ import { buildSrcset } from '../utils/image';
+ 
+ export async function getStaticPaths() {
+@@ -357,8 +355,6 @@
+             <Content />
+           </article>
+         </div>
+-
+-        <AdBanner300x250 />
+ 
+         <section class="health-related" id="guias" aria-labelledby="health-related-title">
+           <div class="health-related__heading">
+@@ -451,7 +447,6 @@
+       <main id="main-content" tabindex="-1" class="mx-auto w-full max-w-4xl px-4 py-8 sm:py-12">
+         <div class="mb-6 border-b border-brand-border pb-6"><ArticleByline dateModified={pilar.data.dateModified} /></div>
+         <div class="content-body prose dark:prose-invert max-w-none mb-12"><Content /></div>
+-        <AdBanner300x250 />
+         <hr class="my-10 border-brand-border" />
+         <h2 class="mb-8 text-2xl font-extrabold tracking-tight text-brand-text md:text-3xl">Guías Especializadas de {pilar.data.title}</h2>
+         {posts.length > 0 ? (
+@@ -467,7 +462,6 @@
+       </main>
+     </>
+   )}
+-  <AdSlotLoader />
+ </BaseLayout>
+ 
+ {isModernPilar && (
+--- a/src/pages/herramientas/calculadora-edad-perro.astro
++++ b/src/pages/herramientas/calculadora-edad-perro.astro
+@@ -1,8 +1,6 @@
+ ---
+ import BaseLayout from '../../layouts/BaseLayout.astro';
+ import DogAgeTool from '../../components/tools/DogAgeTool.astro';
+-import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
+-import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
+ import { seniorFrameworkText, AGE_SOURCES, SIZE_PROFILES, seniorAge, dogAge, type DogSize } from '../../lib/dog-age';
+ 
+ const title = 'Calculadora de edad de perro en años humanos según su tamaño';
+@@ -197,9 +195,7 @@
+       </p>
+     </article>
+ 
+-    <div class="mx-auto max-w-3xl px-5 pb-12 sm:px-6"><AdBanner300x250 /></div>
+   </main>
+-  <AdSlotLoader />
+ </BaseLayout>
+ 
+ <style>
+--- a/src/pages/herramientas/calculadora-calidad-vida-perros.astro
++++ b/src/pages/herramientas/calculadora-calidad-vida-perros.astro
+@@ -1,7 +1,5 @@
+ ---
+ import BaseLayout from '../../layouts/BaseLayout.astro';
+-import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
+-import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
+ 
+ const title = "Calculadora de Calidad de Vida Canina (Escala HHHHHMM) | Test Interactivo";
+ const description = "Registra siete observaciones de tu perro con una adaptación de HHHHHMM. Conserva el desglose y prepara la consulta veterinaria; la suma no diagnostica bienestar.";
+@@ -269,8 +267,6 @@
+ 
+     </div><!--/.qol-container-->
+ 
+-    <AdBanner300x250 />
+-
+     <!-- Barra de acciones fija (solo móvil, solo mientras se ve el resultado) -->
+     <div id="qol-stickybar" class="off sm:hidden fixed bottom-0 inset-x-0 z-40 border-t border-brand-border bg-brand-bg/95 backdrop-blur-md [-webkit-backdrop-filter:blur(12px)] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
+       <div class="flex items-center gap-3">
+@@ -410,7 +406,6 @@
+       </p>
+     </footer>
+   </main>
+-  <AdSlotLoader />
+ </BaseLayout>
+ 
+ <style>
+--- a/src/pages/herramientas/selector-movilidad-perros-mayores.astro
++++ b/src/pages/herramientas/selector-movilidad-perros-mayores.astro
+@@ -1,8 +1,6 @@
+ ---
+ import BaseLayout from '../../layouts/BaseLayout.astro';
+ import MobilityTool from '../../components/tools/MobilityTool.astro';
+-import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
+-import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
+ import { HANDLING, LEVELS, MOBILITY_TOOL, RESULTS, resultKey } from '../../lib/agent-tools/movilidad.ts';
+ import { MOBILITY_SOURCES } from '../../lib/mobility-sources';
+ 
+@@ -106,8 +104,6 @@
+ 
+     <MobilityTool />
+ 
+-    <AdBanner300x250 />
+-
+     <article class="mob-guide content-body prose dark:prose-invert">
+       <h2 id="como-leer">Cómo leer el resultado</h2>
+       <p>
+@@ -215,7 +211,6 @@
+       </p>
+     </article>
+   </main>
+-  <AdSlotLoader />
+ </BaseLayout>
+ 
+ <style>
+--- a/src/pages/politica-de-privacidad.astro
++++ b/src/pages/politica-de-privacidad.astro
+@@ -6,7 +6,7 @@
+ <BaseLayout title={title} description={description} showAiAssistant={false}>
+   <main id="main-content" tabindex="-1" class="max-w-3xl mx-auto px-5 py-10 md:py-16 content-body">
+     <h1>Política de privacidad</h1>
+-    <p>Actualizada: 17 de octubre de 2026.</p>
++    <p>Actualizada: 18 de octubre de 2026.</p>
+     <h2>Responsable y contacto</h2>
+     <p>Gonzalo es el responsable del proyecto informativo Cuida tu Perro Viejo. Para consultas sobre tus datos o para solicitar acceso, rectificación o supresión, escribe a <a href="mailto:toxedocat@gmail.com">toxedocat@gmail.com</a>. También puedes usar <a href="/contacto">el formulario de contacto</a>. Describe tu petición sin enviar documentos de identidad u otros datos sensibles salvo que se te soliciten justificadamente.</p>
+     <h2>Formulario y correo</h2>
+@@ -19,7 +19,7 @@
+     <p>Consulta la <a href="/politica-de-cookies">política de cookies y almacenamiento local</a> para gestionar los datos guardados en tu navegador. Eliminar datos locales puede borrar tus preferencias y listas.</p>
+     <h2>Proveedores y recursos externos</h2>
+     <p>Cloudflare presta servicios de alojamiento, seguridad, almacenamiento del formulario y procesamiento del asistente. El sitio incluye recursos de Google Fonts y enlaces a servicios externos. Al abrir un destino externo se aplican también sus políticas.</p>
+-    <p>El sitio utiliza publicidad de Adsterra mediante recursos de terceros y puede incluir enlaces de afiliación. Estos proveedores pueden tratar identificadores y datos técnicos según sus propias políticas; puedes consultar la <a href="https://adsterra.com/privacy-policy/" target="_blank" rel="noopener">política de privacidad de Adsterra</a>. La configuración publicitaria debe revisarse cuando cambien los servicios utilizados.</p>
++    <p>En esta versión no se sirven anuncios publicitarios. Si se incorpora publicidad, se actualizarán esta política y los controles de consentimiento antes de activarla. Los enlaces de afiliación se identifican en los artículos donde se utilizan.</p>
+     <h2>Tus solicitudes y seguridad</h2>
+     <p>Puedes contactar para conocer el tratamiento de tus datos y ejercer los derechos que correspondan según tu jurisdicción, incluida la retirada del consentimiento cuando sea su base. Podemos necesitar información proporcionada para localizar el mensaje y verificar la solicitud. También puedes dirigirte a la autoridad de protección de datos competente.</p>
+     <p>Se aplican medidas de acceso y seguridad, pero no puede garantizarse que toda transmisión o almacenamiento esté libre de riesgos. El contenido está dirigido a personas adultas. Comunica cualquier envío de datos de un menor o incidente al correo de contacto.</p>
+--- a/src/pages/politica-de-cookies.astro
++++ b/src/pages/politica-de-cookies.astro
+@@ -6,12 +6,12 @@
+ <BaseLayout title={title} description={description} showAiAssistant={false}>
+   <main id="main-content" tabindex="-1" class="max-w-3xl mx-auto px-5 py-10 md:py-16 content-body">
+     <h1>Cookies y almacenamiento local</h1>
+-    <p>Actualizada: 17 de octubre de 2026.</p>
++    <p>Actualizada: 18 de octubre de 2026.</p>
+     <h2>Qué se guarda en tu navegador</h2>
+     <p>El sitio utiliza almacenamiento local para recordar el tema claro u oscuro, las listas de cuidados de la portada y si ya has valorado un contenido. La lista de cuidados permite borrar el historial desde su propia interfaz. El almacenamiento local permanece hasta que se elimina o cambia; no tiene necesariamente una caducidad automática.</p>
+     <p>Las herramientas de calidad de vida y movilidad permiten generar resultados e imprimirlos desde el navegador. Guarda esos documentos con cuidado si incluyen información que no quieras compartir. No son un diagnóstico ni un expediente veterinario.</p>
+     <h2>Servicios y contenido externo</h2>
+-    <p>Cloudflare presta alojamiento y seguridad, incluido Turnstile en el formulario. Google Fonts sirve tipografías. Los recursos de publicidad de Adsterra pueden utilizar cookies, identificadores y datos técnicos de acuerdo con su funcionamiento y su <a href="https://adsterra.com/privacy-policy/" target="_blank" rel="noopener">política de privacidad</a>.</p>
++    <p>Cloudflare presta alojamiento y seguridad, incluido Turnstile en el formulario. Google Fonts sirve tipografías. En esta versión no se cargan proveedores publicitarios; la gestión de consentimiento se actualizará antes de incorporar anuncios.</p>
+     <p>Los enlaces a fuentes o servicios externos se abren bajo las condiciones de esos destinos. La página de <a href="/politica-de-privacidad">privacidad</a> describe el formulario y el asistente.</p>
+     <h2>Analítica y preferencias</h2>
+     <p>La versión actual del sitio no incorpora un cargador propio de Google Analytics. Las preferencias antiguas de analítica que pudieran quedar guardadas no constituyen un control de todos los servicios externos. La información de esta página debe actualizarse si se incorpora un servicio de analítica o cambia la configuración.</p>

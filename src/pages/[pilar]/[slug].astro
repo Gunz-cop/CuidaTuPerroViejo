@@ -6,8 +6,6 @@ import SiloNavigation from '../../components/SiloNavigation.astro';
 import PostReader from '../../components/PostReader.astro';
 import ArticleByline from '../../components/ArticleByline.astro';
 import FeedbackWidget from '../../components/FeedbackWidget.astro';
-import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
-import AdStickyMobile320x50 from '../../components/ads/AdStickyMobile320x50.astro';
 import { buildSrcset } from '../../utils/image';
 
 
@@ -212,14 +210,6 @@ const hideHeroCSS = heroImage
 
     <FeedbackWidget slug={entry.id} />
 
-    <!-- Native Banner (Adsterra) pausado: la zona nativa servía anuncios de citas, fuera de marca.
-         Componente y código quedan listos en AdNativeBanner.astro para reactivar cuando se ajusten
-         las categorías bloqueadas en el panel de Adsterra. -->
-
     <SiloNavigation currentPilar={entry.data.pilar} currentSlug={entry.id} />
   </main>
-
-  <!-- Sticky 320x50 (Adsterra): solo mobile/tablet, fijo al pie de pantalla -->
-  <AdStickyMobile320x50 />
-  <AdSlotLoader />
 </BaseLayout>

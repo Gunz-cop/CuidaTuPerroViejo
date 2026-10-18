@@ -1,0 +1,294 @@
+{
+  "baseCommit": "9d05e9b95bb39679826134810ca864d3952bf15e",
+  "state": "propuesta; no aplicada ni publicada",
+  "files": [
+    {
+      "path": "src/components/ads/AdBanner300x250.astro",
+      "snapshot": "adsterra-respaldo/src/components/ads/AdBanner300x250.astro.txt",
+      "sha256": "08a1b627ca8be0936600d960a2dc7fcfc5cd5da8aee57008509be3622b9d368c",
+      "locations": [
+        {
+          "line": 2,
+          "text": "// src/components/ads/AdBanner300x250.astro"
+        },
+        {
+          "line": 3,
+          "text": "// Banner in-content 300x250 (Adsterra). Contenedor con dimensiones fijas"
+        },
+        {
+          "line": 26,
+          "text": "<script is:inline src=\"https://www.highperformanceformat.com/10df6b95565e4b70f014e77906b6218c/invoke.js\"></script>"
+        }
+      ]
+    },
+    {
+      "path": "src/components/ads/AdStickyMobile320x50.astro",
+      "snapshot": "adsterra-respaldo/src/components/ads/AdStickyMobile320x50.astro.txt",
+      "sha256": "6bb9e8c73b5654a551645bf00e357c3c70b9fa3d650e6bb931714c85900ddd55",
+      "locations": [
+        {
+          "line": 2,
+          "text": "// src/components/ads/AdStickyMobile320x50.astro"
+        },
+        {
+          "line": 3,
+          "text": "// Banner sticky 320x50 (Adsterra), fijo al pie de pantalla SOLO en mobile/tablet."
+        }
+      ]
+    },
+    {
+      "path": "src/components/ads/AdNativeBanner.astro",
+      "snapshot": "adsterra-respaldo/src/components/ads/AdNativeBanner.astro.txt",
+      "sha256": "ed535ff02adaac252d522a45f7e421ea0377e72f29d677390732e060d0aee202",
+      "locations": [
+        {
+          "line": 2,
+          "text": "// src/components/ads/AdNativeBanner.astro"
+        },
+        {
+          "line": 3,
+          "text": "// Native Banner (Adsterra), entre el contenido del artículo y la sección"
+        }
+      ]
+    },
+    {
+      "path": "src/components/ads/AdSlotLoader.astro",
+      "snapshot": "adsterra-respaldo/src/components/ads/AdSlotLoader.astro.txt",
+      "sha256": "43980c6b7f54f240df459b0256a2adc2eaddfd2fa791b6309e7491abe3a6c563",
+      "locations": [
+        {
+          "line": 2,
+          "text": "// src/components/ads/AdSlotLoader.astro"
+        },
+        {
+          "line": 3,
+          "text": "// Carga diferida (lazy) de los slots de Adsterra: el código de anuncio real"
+        },
+        {
+          "line": 5,
+          "text": "// entra en viewport (o cerca de él). Así el script de Adsterra nunca bloquea"
+        },
+        {
+          "line": 11,
+          "text": "const initAdSlots = () => {"
+        },
+        {
+          "line": 18,
+          "text": "// se pegue el script real de Adsterra: en ese caso no hay nada que"
+        },
+        {
+          "line": 52,
+          "text": "document.addEventListener('astro:page-load', initAdSlots);"
+        },
+        {
+          "line": 54,
+          "text": "document.addEventListener('DOMContentLoaded', initAdSlots);"
+        },
+        {
+          "line": 56,
+          "text": "initAdSlots();"
+        }
+      ]
+    },
+    {
+      "path": "src/components/PostReader.astro",
+      "snapshot": "adsterra-respaldo/src/components/PostReader.astro.txt",
+      "sha256": "e27aa2983d55de09d7c6e7eccd803f7221cacfe58bc41041d8dddcfcb28daa00",
+      "locations": [
+        {
+          "line": 60,
+          "text": "// 3. Insertar banner 300x250 (Adsterra) tras el 1º/2º párrafo del artículo."
+        },
+        {
+          "line": 62,
+          "text": "// se carga de forma diferida (ver AdSlotLoader.astro) cuando entra en viewport."
+        },
+        {
+          "line": 63,
+          "text": "const AD_300x250_HTML = `<div class=\"ad-slot ad-slot--300x250 not-prose my-8 flex w-full justify-center\" data-ad-pending=\"true\" aria-label=\"Espacio publicitario\"><div class=\"ad-slot__placeholder flex h-[250px] w-[300px] max-w-full items-center justify-center overflow-hidden rounded-xl border border-brand-border/40 bg-brand-card/30 text-[10px] uppercase tracking-wide text-brand-muted/50\"><span aria-hidden=\"true\">Publicidad</span></div><template><script is:inline>atOptions = {'key' : '10df6b95565e4b70f014e77906b6218c','format' : 'iframe','height' : 250,'width' : 300,'params' : {}};</script><script is:inline src=\"https://www.highperformanceformat.com/10df6b95565e4b70f014e77906b6218c/invoke.js\"></script></template></div>`;"
+        },
+        {
+          "line": 65,
+          "text": "// 4. Insertar banner horizontal 320x50 (Adsterra) aprox. a la mitad del artículo,"
+        },
+        {
+          "line": 67,
+          "text": "const AD_320x50_MID_HTML = `<div class=\"ad-slot ad-slot--320x50-mid not-prose my-8 flex w-full justify-center\" data-ad-pending=\"true\" aria-label=\"Espacio publicitario\"><div class=\"ad-slot__placeholder flex h-[50px] w-[320px] max-w-full items-center justify-center overflow-hidden rounded-xl border border-brand-border/40 bg-brand-card/30 text-[10px] uppercase tracking-wide text-brand-muted/50\"><span aria-hidden=\"true\">Publicidad</span></div><template><script is:inline>atOptions = {'key' : '77fb25612074d9660a62a330b778e5ad','format' : 'iframe','height' : 50,'width' : 320,'params' : {}};</script><script is:inline src=\"https://www.highperformanceformat.com/77fb25612074d9660a62a330b778e5ad/invoke.js\"></script></template></div>`;"
+        },
+        {
+          "line": 78,
+          "text": "const withInContentAd = processedHtml.replace(/<p\\b[^>]*>[\\s\\S]*?<\\/p>/gi, (match, offset: number) => {"
+        },
+        {
+          "line": 84,
+          "text": "result += AD_300x250_HTML;"
+        },
+        {
+          "line": 88,
+          "text": "result += AD_320x50_MID_HTML;"
+        },
+        {
+          "line": 149,
+          "text": "<Fragment set:html={withInContentAd} />"
+        }
+      ]
+    },
+    {
+      "path": "src/pages/[pilar]/[slug].astro",
+      "snapshot": "adsterra-respaldo/src/pages/[pilar]/[slug].astro.txt",
+      "sha256": "e9bb6f88647cb1ef053fec5c5e7a42c1eeae1433f4c10ca601c6971c902bb3ea",
+      "locations": [
+        {
+          "line": 9,
+          "text": "import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';"
+        },
+        {
+          "line": 10,
+          "text": "import AdStickyMobile320x50 from '../../components/ads/AdStickyMobile320x50.astro';"
+        },
+        {
+          "line": 215,
+          "text": "<!-- Native Banner (Adsterra) pausado: la zona nativa servía anuncios de citas, fuera de marca."
+        },
+        {
+          "line": 216,
+          "text": "Componente y código quedan listos en AdNativeBanner.astro para reactivar cuando se ajusten"
+        },
+        {
+          "line": 217,
+          "text": "las categorías bloqueadas en el panel de Adsterra. -->"
+        },
+        {
+          "line": 222,
+          "text": "<!-- Sticky 320x50 (Adsterra): solo mobile/tablet, fijo al pie de pantalla -->"
+        },
+        {
+          "line": 223,
+          "text": "<AdStickyMobile320x50 />"
+        },
+        {
+          "line": 224,
+          "text": "<AdSlotLoader />"
+        }
+      ]
+    },
+    {
+      "path": "src/pages/[pilar].astro",
+      "snapshot": "adsterra-respaldo/src/pages/[pilar].astro.txt",
+      "sha256": "6d58b008d9980e6d2b53d483325dd1ad070734296403bfa1fc179a7148db3ffe",
+      "locations": [
+        {
+          "line": 5,
+          "text": "import AdBanner300x250 from '../components/ads/AdBanner300x250.astro';"
+        },
+        {
+          "line": 6,
+          "text": "import AdSlotLoader from '../components/ads/AdSlotLoader.astro';"
+        },
+        {
+          "line": 361,
+          "text": "<AdBanner300x250 />"
+        },
+        {
+          "line": 454,
+          "text": "<AdBanner300x250 />"
+        },
+        {
+          "line": 470,
+          "text": "<AdSlotLoader />"
+        }
+      ]
+    },
+    {
+      "path": "src/pages/herramientas/calculadora-edad-perro.astro",
+      "snapshot": "adsterra-respaldo/src/pages/herramientas/calculadora-edad-perro.astro.txt",
+      "sha256": "f75aa5e49a402b332bc5631b1e2bb2d473619d5cf30ab8e1622d057e7f89cce9",
+      "locations": [
+        {
+          "line": 4,
+          "text": "import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';"
+        },
+        {
+          "line": 5,
+          "text": "import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';"
+        },
+        {
+          "line": 200,
+          "text": "<div class=\"mx-auto max-w-3xl px-5 pb-12 sm:px-6\"><AdBanner300x250 /></div>"
+        },
+        {
+          "line": 202,
+          "text": "<AdSlotLoader />"
+        }
+      ]
+    },
+    {
+      "path": "src/pages/herramientas/calculadora-calidad-vida-perros.astro",
+      "snapshot": "adsterra-respaldo/src/pages/herramientas/calculadora-calidad-vida-perros.astro.txt",
+      "sha256": "fd057550046ddb18ce9186b597a65710e7af82f4d44019bacdcbfbc1c49ee991",
+      "locations": [
+        {
+          "line": 3,
+          "text": "import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';"
+        },
+        {
+          "line": 4,
+          "text": "import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';"
+        },
+        {
+          "line": 272,
+          "text": "<AdBanner300x250 />"
+        },
+        {
+          "line": 413,
+          "text": "<AdSlotLoader />"
+        }
+      ]
+    },
+    {
+      "path": "src/pages/herramientas/selector-movilidad-perros-mayores.astro",
+      "snapshot": "adsterra-respaldo/src/pages/herramientas/selector-movilidad-perros-mayores.astro.txt",
+      "sha256": "e41b1c0e801de0d157a44847cbbfb7abeecdb197f5ac5eab27e206632475cc8b",
+      "locations": [
+        {
+          "line": 4,
+          "text": "import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';"
+        },
+        {
+          "line": 5,
+          "text": "import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';"
+        },
+        {
+          "line": 109,
+          "text": "<AdBanner300x250 />"
+        },
+        {
+          "line": 218,
+          "text": "<AdSlotLoader />"
+        }
+      ]
+    },
+    {
+      "path": "src/pages/politica-de-privacidad.astro",
+      "snapshot": "adsterra-respaldo/src/pages/politica-de-privacidad.astro.txt",
+      "sha256": "7b4c7ceee2bccb4830b205e9b223c9ba4a4eff3f763d9750ef3efebaa8fa7fc4",
+      "locations": [
+        {
+          "line": 22,
+          "text": "<p>El sitio utiliza publicidad de Adsterra mediante recursos de terceros y puede incluir enlaces de afiliación. Estos proveedores pueden tratar identificadores y datos técnicos según sus propias políticas; puedes consultar la <a href=\"https://adsterra.com/privacy-policy/\" target=\"_blank\" rel=\"noopener\">política de privacidad de Adsterra</a>. La configuración publicitaria debe revisarse cuando cambien los servicios utilizados.</p>"
+        }
+      ]
+    },
+    {
+      "path": "src/pages/politica-de-cookies.astro",
+      "snapshot": "adsterra-respaldo/src/pages/politica-de-cookies.astro.txt",
+      "sha256": "c22b86418d3685243921c3fc1ff59e559a842bb84ffd52634f6fce13da6cc33e",
+      "locations": [
+        {
+          "line": 14,
+          "text": "<p>Cloudflare presta alojamiento y seguridad, incluido Turnstile en el formulario. Google Fonts sirve tipografías. Los recursos de publicidad de Adsterra pueden utilizar cookies, identificadores y datos técnicos de acuerdo con su funcionamiento y su <a href=\"https://adsterra.com/privacy-policy/\" target=\"_blank\" rel=\"noopener\">política de privacidad</a>.</p>"
+        }
+      ]
+    }
+  ]
+}
