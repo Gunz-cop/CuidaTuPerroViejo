@@ -1,6 +1,6 @@
 # Adsterra: dónde estaba y qué código se conserva
 
-Respaldo histórico exacto de `main` **9d05e9b95bb39679826134810ca864d3952bf15e**, preparado2026-10-18. **No se ha retirado ni restaurado publicidad con este documento.** Ninguna copia vive en `public/` ni se importa en Astro. No se inventan nuevos códigos.
+Respaldo histórico exacto de `main` **9d05e9b95bb39679826134810ca864d3952bf15e**, preparado2026-10-18. Este documento conserva la base anterior a la retirada; el estado de aplicación/publicación figura en [el informe de retirada](retirada-aplicada/README.md). Ninguna copia vive en `public/` ni se importa en Astro. No se inventan nuevos códigos.
 
 ## Mapa de ubicación
 
@@ -56,7 +56,7 @@ Son identificadores publicitarios públicos ya presentes en el sitio, no credenc
 
 ## Cómo retirar y, si se decide, recuperar sin perder mejoras
 
-La retirada preparada es [retirada-propuesta.patch](retirada-propuesta.patch). Primero revisar su diff y la propuesta de consentimiento; todavía no está aplicada.
+La retirada preparada es [retirada-propuesta.patch](retirada-propuesta.patch). Se conserva sin alterar como referencia reversible. Primero revisar su diff y el estado actual: después de aplicarlo ya no volverá a pasar su comprobación en sentido directo sobre ese mismo árbol.
 
 ```sh
 # Desde la raíz, comprobar antes de aplicar el cambio acordado:

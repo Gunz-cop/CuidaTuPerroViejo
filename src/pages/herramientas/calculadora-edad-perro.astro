@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DogAgeTool from '../../components/tools/DogAgeTool.astro';
-import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
-import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
 import { seniorFrameworkText, AGE_SOURCES, SIZE_PROFILES, seniorAge, dogAge, type DogSize } from '../../lib/dog-age';
 
 const title = 'Calculadora de edad de perro en años humanos según su tamaño';
@@ -197,9 +195,7 @@ const schema = {
       </p>
     </article>
 
-    <div class="mx-auto max-w-3xl px-5 pb-12 sm:px-6"><AdBanner300x250 /></div>
   </main>
-  <AdSlotLoader />
 </BaseLayout>
 
 <style>

@@ -2,7 +2,7 @@
 
 Fecha: 2026-10-18. Base: `9d05e9b95bb39679826134810ca864d3952bf15e`.
 
-**Estado: propuesta preparada, no aplicada ni desplegada.** `src/`, `public/`, contratos, imágenes y fixtures siguen idénticos a main. La sesión anterior del PR120 está cerrada; no se solicita otra revisión de AdSense. Los builds duplicados quedan fuera de este trabajo.
+**Actualización tras «Adelante» del propietario:** retirada aplicada en la rama del PR121; comprobación y publicación registradas en [retirada-aplicada/README.md](retirada-aplicada/README.md). Las recomendaciones siguientes conservan el contexto de la propuesta inicial. El contrato, componente e imágenes de movilidad no se modifican; su golden HTML se regenera por retirar el banner y su Markdown permanece idéntico. La sesión anterior del PR120 está cerrada; no se solicita otra revisión de AdSense. Los builds duplicados quedan fuera de este trabajo.
 
 ## Configuración recomendada para decidir
 
@@ -20,11 +20,11 @@ Para poder comprobar el comportamiento sin disparos automáticos imprevistos, pr
 
 | Punto | Propuesta | Qué necesita concretar Gonzalo |
 |---|---|---|
-| Momento de retirada | Primera entrega: sin Adsterra y sin anuncios nuevos | Confirmar cuándo aplicar/publicar esa entrega. No se deduce autorización de despliegue de esta petición de propuesta. |
+| Momento de retirada | Primera entrega: sin Adsterra y sin anuncios nuevos | Autorizado avanzar por el propietario con «Adelante». Estado de pruebas/publicación en el informe de aplicación. |
 | Modalidad Google | No personalizados inicialmente | Elegir ANP, personalizados tras consentimiento o continuar sin anuncios. Pregunta enviada durante el trabajo. |
 | Visitantes monetizados | Territorios permitidos que se acuerden; nunca inferirlos del idioma | Todos incluidos EEE/UK/CH, excluirlos de publicidad o lista concreta de países. Pregunta enviada. Excluir anuncios no debe bloquear el acceso al contenido. |
 | CMP | Google CMP; mensajes y proveedores estrictamente necesarios | Confirmar proveedor. Hace falta configuración real en la cuenta: dominio, ID público de editor y código/mensaje generado. No contraseñas. No encontré identificador de editor ni cargador Google en el código. No tengo una herramienta conectada para operar el panel AdSense. |
-| Beacon | Conservarlo, documentado | Si se usa esa medición o se prefiere apagar RUM. No se cambia automáticamente por retirar publicidad. |
+| Beacon | Conservarlo, documentado | Se mantiene la configuración de Cloudflare; la información legal se actualiza con su función comprobada. |
 
 Si el mensaje real de Google no estuviera disponible para el dominio en su estado actual, se documentará ese límite: la alternativa sería esperar sin anuncios o elegir una CMP certificada independiente con configuración real. No se simularán aceptación/rechazo para declarar la CMP validada.
 
@@ -79,7 +79,7 @@ No se instala Google Analytics ni GTM para resolver el consentimiento de AdSense
 
 Puedo preparar el PR de retirada, la actualización legal, integrar el código real de la CMP elegida, controlar las solicitudes y revalidar herramientas y navegación. Puedo consultar/cambiar el RUM de esta zona cuando se decida su tratamiento. La elección de publicidad, cobertura territorial y proveedor sigue siendo del propietario; la cuenta AdSense debe aportar la configuración real sin enviar aún una solicitud de revisión.
 
-La entrega aplicada debe seguir [pruebas-previstas.md](pruebas-previstas.md). No se declara ahora que aceptación, rechazo o retirada hayan pasado: aún no se ha aplicado ni publicado una CMP. La versión actual conserva Adsterra.
+La entrega aplicada sigue [pruebas-previstas.md](pruebas-previstas.md). No se declara que aceptación, rechazo o retirada del consentimiento hayan pasado: aún no se ha integrado una CMP real. No se inventa un ID de editor ni se activa Google mientras falta esa configuración. El estado histórico previo de Adsterra se conserva en las snapshots; el estado vigente de la retirada está en el informe de aplicación.
 
 Verificación de esta propuesta: `npm ci` correcto; doce snapshots idénticas a la base; `git apply --check` correcto; aplicación y reversión del parche en copias temporales recuperan los doce archivos byte a byte; hashes de movilidad/fixtures intactos. Evidencia: [verificacion-propuesta.json](verificacion-propuesta.json). Esto comprueba la recuperación documental, no equivale al build ni a los controles del código una vez aplicado el parche. No se ejecutó otra ronda de auditoría clínica ni de las herramientas.
 

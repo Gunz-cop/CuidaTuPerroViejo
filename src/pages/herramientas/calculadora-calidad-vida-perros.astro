@@ -1,7 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
-import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
 
 const title = "Calculadora de Calidad de Vida Canina (Escala HHHHHMM) | Test Interactivo";
 const description = "Registra siete observaciones de tu perro con una adaptación de HHHHHMM. Conserva el desglose y prepara la consulta veterinaria; la suma no diagnostica bienestar.";
@@ -269,8 +267,6 @@ const description = "Registra siete observaciones de tu perro con una adaptació
 
     </div><!--/.qol-container-->
 
-    <AdBanner300x250 />
-
     <!-- Barra de acciones fija (solo móvil, solo mientras se ve el resultado) -->
     <div id="qol-stickybar" class="off sm:hidden fixed bottom-0 inset-x-0 z-40 border-t border-brand-border bg-brand-bg/95 backdrop-blur-md [-webkit-backdrop-filter:blur(12px)] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
       <div class="flex items-center gap-3">
@@ -410,7 +406,6 @@ const description = "Registra siete observaciones de tu perro con una adaptació
       </p>
     </footer>
   </main>
-  <AdSlotLoader />
 </BaseLayout>
 
 <style>
