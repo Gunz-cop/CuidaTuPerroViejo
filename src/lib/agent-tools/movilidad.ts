@@ -31,7 +31,7 @@ export const RESULTS = {
     icon: '✅',
     badge: 'Nivel Ligero – Tolera accesorios',
     title: 'Calcetines y botas antideslizantes',
-    description: 'Tu perro necesita tracción segura en el suelo. Cubre con alfombras sus rutas habituales y, como tolera accesorios, añade calcetines o botas antideslizantes. Ponlos solo para caminar y retíralos para descansar.',
+    description: 'Puede necesitar más tracción en el suelo. Cubre con alfombras sus rutas habituales y, como tolera accesorios, valora calcetines o botas antideslizantes si se ajustan bien: no sirven a todos los perros. Ponlos solo para caminar y retíralos para descansar.',
     plan: [
       { name: 'Calcetines antideslizantes de silicona', why: 'Agarre inmediato en suelos lisos. Revisa que no le aprieten y quítaselos para dormir.' },
       { name: 'Botas de caucho con suela estructurada', why: 'Más firmes que el calcetín. Úsalas para paseos y salidas; deja que se acostumbre poco a poco.' },
@@ -51,11 +51,11 @@ export const RESULTS = {
     icon: '✅',
     badge: 'Nivel Moderado – Tolera arnés',
     title: 'Arnés de soporte trasero + rampa de acceso',
-    description: 'Necesita apoyo activo para caminar y para subir a superficies elevadas. El arnés te permite ayudarle sin forzar su espalda ni la tuya, y la rampa le ahorra el salto.',
+    description: 'Puede necesitar apoyo activo para caminar y para subir a superficies elevadas. Consulta con tu veterinario qué apoyo encaja con él y pide que te enseñen a ajustar el arnés; así le ayudas sin forzar su espalda ni la tuya, y la rampa le ahorra el salto.',
     plan: [
       { name: 'Arnés de soporte trasero con asa dorsal', why: 'Sostiene las caderas al caminar y al levantarse. Úsalo en paseos y salidas, no todo el día, y revisa la piel de las ingles.' },
       { name: 'Rampa plegable para coches y sofás', why: 'Evita el salto al sofá o al coche. Busca superficie antideslizante e inclinación suave.' },
-      { name: 'Escaleras adaptadas (espuma + funda lavable)', why: 'Para espacios reducidos. Más compactas que la rampa, pero exigen doblar las articulaciones: si le cuesta, mejor rampa.' },
+      { name: 'Escaleras adaptadas (espuma + funda lavable)', why: 'Para espacios reducidos. Más compactas que la rampa, pero exigen doblar las articulaciones: si le cuesta, valora la rampa.' },
     ],
   },
   MB: {
@@ -89,7 +89,7 @@ export const RESULTS = {
     plan: [
       { name: 'Silla de ruedas canina trasera (a medida)', why: 'Le permite moverse sin depender de tu ayuda. Acostúmbralo en sesiones cortas y con premios; si le cuesta aceptarla, pide ayuda a un rehabilitador o a un veterinario con formación en rehabilitación.' },
       { name: 'Cama de memory foam ortopédico', why: 'Reduce la presión al descansar. Elige una con cubierta suave y lavable: menos fricción.' },
-      { name: 'Pañales caninos desechables + empapadores', why: 'Para la higiene. Cámbialos cada vez que estén mojados para evitar dermatitis.' },
+      { name: 'Pañales caninos desechables + empapadores', why: 'Para la higiene. Revísalos y cambia los húmedos o sucios; consulta si la piel se irrita.' },
     ],
   },
 } as const satisfies Record<ResultKey, MobilityResultText>;
@@ -114,7 +114,7 @@ export const MOBILITY_TOOL: ToolInfo = {
   name: 'Selector de Ayudas de Movilidad para Perros Mayores',
   canonicalUrl: `${SITE}/herramientas/selector-movilidad-perros-mayores`,
   softwareVersion: '1.1',
-  lastReviewed: '2026-10-17',
+  lastReviewed: '2026-10-18',
 };
 
 export function resultKey(level: LevelCode, handling: HandlingCode): ResultKey {

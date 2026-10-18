@@ -58,7 +58,7 @@ function oracleMobility(level: keyof typeof LEVEL_CODES, handling: keyof typeof 
   const r = mobilityV11.results[key];
   return {
     schemaVersion: 'agent-api/1',
-    tool: { toolId: 'movilidad', documentId: 'tool--movilidad', name: 'Selector de Ayudas de Movilidad para Perros Mayores', canonicalUrl: `${SITE}/herramientas/selector-movilidad-perros-mayores`, softwareVersion: '1.1', lastReviewed: '2026-10-17' },
+    tool: { toolId: 'movilidad', documentId: 'tool--movilidad', name: 'Selector de Ayudas de Movilidad para Perros Mayores', canonicalUrl: `${SITE}/herramientas/selector-movilidad-perros-mayores`, softwareVersion: '1.1', lastReviewed: '2026-10-18' },
     input: { level, handling }, resultKey: key, icon: r.icon, badge: r.badge, title: r.title, description: r.description,
     plan: r.plan.map((p: { name: string; why: string }) => ({ name: p.name, why: p.why })),
     palliativeAlert: level === 'severe' ? mobilityV11.palliativeAlert : null,

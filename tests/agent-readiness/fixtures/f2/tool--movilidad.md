@@ -2,17 +2,17 @@
 
 > URL canónica: [https://cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores](<https://cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores>)
 > Idioma: es
-> Modificación editorial: 2026-10-17T00:00:00Z
+> Modificación editorial: 2026-10-18T00:00:00Z
 
 ![Beagle senior de morro canoso caminando tranquilo sobre una alfombra antideslizante, acompañado por unas manos que sujetan su arnés de soporte trasero; al fondo, una rampa y una cama con bordes](<https://cuidatuperroviejo.com/images/herramientas/movilidad-hero.webp>)
 
 Si ves que resbala, que le cuesta levantarse o que ya no sube al sofá, hay ayudas concretas. Responde dos preguntas y te proponemos un plan según cómo está hoy y cómo lleva que le toquen.
 
-Por **Equipo de Cuida tu perro viejo** · Actualizado el 17 de octubre de 2026
+Por **Equipo de Cuida tu perro viejo** · Actualizado el 18 de octubre de 2026
 
 Test gratuito · 2 preguntas · 30 segundos
 
-## Encontremos la ayuda exacta para tu perro
+## Exploremos opciones de apoyo para tu perro
 
 Responde según cómo está hoy. Al final recibes un plan de acción claro y, si lo necesita, los cuidados diarios para cuando ya no se levanta solo.
 
@@ -75,7 +75,7 @@ La silla de ruedas no es una señal de final: para muchos perros es lo que les d
 
 Un perro que pasa casi todo el día tumbado necesita cuidados que no se ven en una lista de compras. Al estar de lado, la presión se concentra sobre el hombro, la cadera y las últimas costillas, y es más alta en perros delgados. Un colchón de espuma la reduce, pero no lo suficiente: el estudio de laboratorio de Caraty y colaboradores (2019), hecho con cadáveres de tres perros, concluye que, además de una buena superficie, hay que cambiarle de postura con frecuencia.
 
-- **Cambios de postura según un plan individual.** Como referencia general se suele hablar de cada 2 a 4 horas, pero es una pauta de enfermería, no un dato de ensayo, y no hay un intervalo que garantice prevenir úlceras. Pide a tu veterinario un plan para tu perro: hazlo más a menudo si es delgado, si su cama es dura o si ves la piel enrojecida, y atiende sus señales. Muchos perros avisan, con ladridos o inquietud, cuando el sol, el calor o la postura les incomodan. La [guía de úlceras por presión](<https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros>) explica cómo hacerlo sin causarle dolor.
+- **Cambios de postura según un plan individual.** Como referencia general se suele hablar de cada 2 a 4 horas, pero es una pauta de enfermería, no un dato de ensayo, y no hay un intervalo que garantice prevenir úlceras. Pide a tu veterinario un plan para tu perro: hazlo más a menudo si es delgado, si su cama es dura o si ves la piel enrojecida, y atiende sus señales. Muchos perros avisan, con ladridos o inquietud, cuando el sol, el calor o la postura les incomodan. La [guía de úlceras por presión](<https://cuidatuperroviejo.com/cuidados-paliativos-perros/ulceras-presion-perros>) explica qué pedir al veterinario y cómo moverlo con cuidado.
 - **Piel seca y limpia.** Empapadores bajo la zona de descanso y pañal si lo necesita, cambiados en cuanto se mojen.
 - **Dolor bajo control.** Pide a tu veterinario que lo valore. La [calculadora HHHHHMM](<https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros>) te ayuda a seguir su bienestar semana a semana.
 
@@ -87,7 +87,7 @@ La movilidad de un perro mayor cambia, a veces poco a poco y a veces de golpe. V
 
 El selector no es una prueba diagnóstica. Es una **tabla de decisión editorial** de seis combinaciones (tres niveles de movilidad por dos tipos de carácter) que ordena las ayudas como lo hacen las guías veterinarias: primero el entorno y el confort, después el apoyo activo con arnés y rampas, y en los casos más avanzados dispositivos con ruedas, junto con cuidados diarios de piel, postura e higiene. La asignación concreta de cada ayuda a cada combinación es criterio nuestro, no una tabla publicada en esas guías.
 
-El aviso de cuidados diarios aparece solo en el nivel severo. El mismo resultado lo devuelve nuestra API para asistentes de IA, para que una persona y un agente reciban siempre el mismo plan. En la versión 1.1 (revisada el 17 de octubre de 2026) cambiamos la etiqueta del nivel severo de «cuidado paliativo» a «apoyo total», porque una silla de ruedas puede devolverle el paseo; cambiamos la pauta fija de cambios de postura por un plan individual (con 2–4 horas solo como referencia general), añadimos cuándo una silla tiene sentido y un aviso para llevarlo hoy al veterinario si ha perdido la fuerza de golpe.
+El aviso de cuidados diarios aparece solo en el nivel severo. El mismo resultado lo devuelve nuestra API para asistentes de IA, para que una persona y un agente reciban siempre el mismo plan. En la versión 1.1 (revisada el 18 de octubre de 2026) cambiamos la etiqueta del nivel severo de «cuidado paliativo» a «apoyo total», porque una silla de ruedas puede devolverle el paseo; cambiamos la pauta fija de cambios de postura por un plan individual (con 2–4 horas solo como referencia general), añadimos cuándo una silla tiene sentido y un aviso para llevarlo hoy al veterinario si ha perdido la fuerza de golpe.
 
 Responsabilidad editorial: Cuida tu Perro Viejo. Son opciones orientativas, sin revisión veterinaria individual: las fuentes respaldan el marco de las recomendaciones, no una precisión clínica demostrada del selector. Si hay dolor intenso, incapacidad súbita para levantarse o arrastre nuevo de las patas, busca atención urgente y no lo fuerces a caminar para completar la herramienta.
 
@@ -110,11 +110,11 @@ Responsabilidad editorial: Cuida tu Perro Viejo. Son opciones orientativas, sin 
 
 ### ¿Cómo saber si mi perro necesita silla de ruedas?
 
-Las guías de artrosis canina (COAST, 2023) reservan los carros de ruedas para los casos más avanzados, sobre todo cuando el dolor está controlado en reposo pero no al moverse. Suele encajar en perros que ya no sostienen bien las patas traseras pero conservan fuerza en las delanteras, apetito y ganas de explorar. En una encuesta con más de 1.200 respuestas de cuidadores (Narum y colaboradores, 2024), la mayoría notó mejor calidad de vida con la silla, pero tres de cada cinco perros (60 %) tuvieron alguna complicación, sobre todo heridas por roce. Que la ajuste un profesional es una buena práctica para evitar rozaduras, aunque esa encuesta no demuestra que el ajuste reduzca las complicaciones: en ella, las sillas ajustadas por un veterinario tuvieron más. Los autores lo atribuyen en parte a que eran casos más difíciles y a que pocos veterinarios tienen formación en estos dispositivos, así que, si puedes, busca a alguien con formación en rehabilitación. Revisa su piel cada día.
+Las guías de artrosis canina (COAST, 2023) reservan los carros de ruedas para los casos más avanzados, sobre todo cuando el dolor está controlado en reposo pero no al moverse. Puede valorarse en perros que ya no sostienen bien las patas traseras pero conservan fuerza en las delanteras; la indicación depende del diagnóstico, el dolor y una prueba de ajuste con el veterinario, no solo del apetito o las ganas de moverse. En una encuesta con más de 1.200 respuestas de cuidadores (Narum y colaboradores, 2024), la mayoría notó mejor calidad de vida con la silla, pero tres de cada cinco perros (60 %) tuvieron alguna complicación, sobre todo heridas por roce. Que la ajuste un profesional es una buena práctica para evitar rozaduras, aunque esa encuesta no demuestra que el ajuste reduzca las complicaciones: en ella, las sillas ajustadas por un veterinario tuvieron más. Los autores lo atribuyen en parte a que eran casos más difíciles y a que pocos veterinarios tienen formación en estos dispositivos, así que, si puedes, busca a alguien con formación en rehabilitación. Revisa su piel cada día.
 
 ### ¿Rampa o escalera adaptada? ¿Cuál es mejor?
 
-La rampa evita el salto y el paso de escalón, así que suele ser la opción más amable para caderas y codos doloridos; necesita superficie antideslizante y una inclinación suave. Las escaleras adaptadas ocupan menos, pero exigen doblar las articulaciones en cada peldaño. Si le cuesta o cojea al bajar un escalón normal, empieza por la rampa.
+La rampa evita el salto y el paso de escalón, así que suele ser la opción más amable para caderas y codos doloridos; necesita superficie antideslizante y una inclinación suave. Las escaleras adaptadas ocupan menos, pero exigen doblar las articulaciones en cada peldaño. Si le cuesta o cojea al bajar un escalón, coméntalo con tu veterinario; la rampa suele ser más fácil de tolerar.
 
 ### ¿Por qué una buena cama importa tanto en un perro mayor?
 

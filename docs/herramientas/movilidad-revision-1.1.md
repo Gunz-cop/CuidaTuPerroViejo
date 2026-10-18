@@ -77,5 +77,15 @@ general («Estas opciones orientan preguntas para el veterinario…»), la higie
 para consultar», la descripción de la página y la nota de responsabilidad
 editorial. Por decisión del propietario, los cambios de postura pasan a un
 **plan individual**; 2–4 h queda solo como referencia general en la página.
-El oráculo `editorial-2026-10-16.json` de `main` queda sustituido para
-movilidad por `movilidad-v1.1.json`.
+El oráculo `editorial-2026-10-16.json` de `main` se eliminó: lo sustituye
+`movilidad-v1.1.json`.
+
+## Correcciones tras la ronda 4 post-merge (2026-10-18)
+
+Informe: [`auditorias/selector-movilidad-2026-10-17-r4-postmerge.md`](auditorias/selector-movilidad-2026-10-17-r4-postmerge.md).
+Se recuperan las salvedades de la corrección editorial de `main` que el merge
+había perdido: higiene de SB igual que la alerta, FAQ de la silla sin el
+criterio «apetito y ganas», rampa como opción a valorar y no indicación
+automática, encabezado «Exploremos opciones de apoyo», descripciones de LA y MA
+condicionadas y enlace a la guía de úlceras acorde con su contenido.
+`lastReviewed` pasa a 2026-10-18.
