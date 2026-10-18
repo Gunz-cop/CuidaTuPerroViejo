@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MobilityTool from '../../components/tools/MobilityTool.astro';
+import AdBanner300x250 from '../../components/ads/AdBanner300x250.astro';
+import AdSlotLoader from '../../components/ads/AdSlotLoader.astro';
+import { HANDLING, LEVELS, MOBILITY_TOOL, RESULTS, resultKey } from '../../lib/agent-tools/movilidad.ts';
+import { MOBILITY_SOURCES } from '../../lib/mobility-sources';
+
+const title = 'Selector de Ayudas de Movilidad para Perros Mayores | Test Interactivo';
+const description = 'Selector interactivo que orienta sobre opciones de apoyo (calcetines, arnés, rampa, silla de ruedas) según el nivel de movilidad real y temperamento de tu perro mayor.';
+const url = MOBILITY_TOOL.canonicalUrl;
+// La fecha visible y la del JSON-LD salen de MOBILITY_TOOL: la misma que publica la API/MCP.
+const updated = { iso: MOBILITY_TOOL.lastReviewed, text: new Date(`${MOBILITY_TOOL.lastReviewed}T12:00:00Z`).toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) };
+
+// Tabla de referencia generada desde el contrato: nada de cifras copiadas a mano.
+const table = LEVELS.map((level) => ({
+  level,
+  cells: HANDLING.map((handling) => RESULTS[resultKey(level.code, handling.code)].title),
+}));
+
+const sources = MOBILITY_SOURCES.map((src) => ({ ...src, href: `https://doi.org/${src.doi}` }));
+
+const faqs = [
+  {
+    q: '¿Cómo saber si mi perro necesita silla de ruedas?',
+    a: 'Las guías de artrosis canina (COAST, 2023) reservan los carros de ruedas para los casos más avanzados, sobre todo cuando el dolor está controlado en reposo pero no al moverse. Puede valorarse en perros que ya no sostienen bien las patas traseras pero conservan fuerza en las delanteras; la indicación depende del diagnóstico, el dolor y una prueba de ajuste con el veterinario, no solo del apetito o las ganas de moverse. En una encuesta con más de 1.200 respuestas de cuidadores (Narum y colaboradores, 2024), la mayoría notó mejor calidad de vida con la silla, pero tres de cada cinco perros (60 %) tuvieron alguna complicación, sobre todo heridas por roce. Que la ajuste un profesional es una buena práctica para evitar rozaduras, aunque esa encuesta no demuestra que el ajuste reduzca las complicaciones: en ella, las sillas ajustadas por un veterinario tuvieron más. Los autores lo atribuyen en parte a que eran casos más difíciles y a que pocos veterinarios tienen formación en estos dispositivos, así que, si puedes, busca a alguien con formación en rehabilitación. Revisa su piel cada día.',
+  },
+  {
+    q: '¿Rampa o escalera adaptada? ¿Cuál es mejor?',
+    a: 'La rampa evita el salto y el paso de escalón, así que suele ser la opción más amable para caderas y codos doloridos; necesita superficie antideslizante y una inclinación suave. Las escaleras adaptadas ocupan menos, pero exigen doblar las articulaciones en cada peldaño. Si le cuesta o cojea al bajar un escalón, coméntalo con tu veterinario; la rampa suele ser más fácil de tolerar.',
+  },
+  {
+    q: '¿Por qué una buena cama importa tanto en un perro mayor?',
+    a: 'Un perro con movilidad reducida pasa muchas horas tumbado. Tumbado de lado, la presión se concentra sobre el hombro, la cadera y las últimas costillas. Un estudio de laboratorio con colchones de espuma viscoelástica (Caraty y colaboradores, 2019) midió menos presión en esos puntos que sobre una manta en el suelo, aunque no la suficiente como para dejar de cambiarle de postura. Tanto la AAHA como las guías COAST incluyen el descanso acolchado entre las primeras medidas de confort. Una cama firme con bordes también le sirve de apoyo para levantarse.',
+  },
+  {
+    q: '¿El arnés de soporte trasero se puede usar todo el día?',
+    a: 'No conviene. El arnés es para los paseos, las salidas a hacer sus necesidades y los momentos en que le ayudas a levantarse; después, quítaselo para que descanse la piel. Revisa cada día las zonas de roce (ingles y axilas traseras) y ajústalo para que sostenga sin apretar.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': url,
+      url,
+      name: title,
+      description,
+      isPartOf: { '@id': 'https://cuidatuperroviejo.com/#website' },
+      about: { '@id': 'https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores' },
+      breadcrumb: { '@id': `${url}#breadcrumb` },
+      mainEntity: { '@id': `${url}#selector` },
+      citation: sources.map((src) => ({ '@type': 'ScholarlyArticle', name: src.text, url: src.href })),
+      lastReviewed: MOBILITY_TOOL.lastReviewed,
+      dateModified: `${updated.iso}T00:00:00Z`,
+      inLanguage: 'es',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://cuidatuperroviejo.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Herramientas', item: 'https://cuidatuperroviejo.com/herramientas' },
+        { '@type': 'ListItem', position: 3, name: 'Selector de Movilidad', item: url },
+      ],
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${url}#selector`,
+      name: MOBILITY_TOOL.name,
+      operatingSystem: 'Web',
+      applicationCategory: 'HealthApplication',
+      offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
+      description: 'Herramienta interactiva gratuita que recomienda ayudas de movilidad canina (calcetines, arnés, rampa, silla de ruedas, cama ortopédica) según el nivel de movilidad del perro mayor y su temperamento.',
+      softwareVersion: MOBILITY_TOOL.softwareVersion,
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <main id="main-content" tabindex="-1" class="mob max-w-3xl mx-auto px-5 pb-12 sm:px-6">
+    <header class="mob-hero">
+      <picture class="mob-hero__media">
+        <source media="(max-width: 63.999rem)" srcset="/images/herramientas/movilidad-hero-movil-400.webp 400w, /images/herramientas/movilidad-hero-movil-600.webp 600w, /images/herramientas/movilidad-hero-movil.webp 900w" sizes="100vw" width="900" height="675" />
+        <img src="/images/herramientas/movilidad-hero.webp" srcset="/images/herramientas/movilidad-hero-400.webp 400w, /images/herramientas/movilidad-hero-800.webp 800w, /images/herramientas/movilidad-hero.webp 1200w, /images/herramientas/movilidad-hero-1536.webp 1536w" sizes="100vw" alt="Beagle senior de morro canoso caminando tranquilo sobre una alfombra antideslizante, acompañado por unas manos que sujetan su arnés de soporte trasero; al fondo, una rampa y una cama con bordes" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" />
+      </picture>
+      <div class="mob-hero__copy">
+        <nav class="breadcrumb mob-hero__crumbs" aria-label="breadcrumb">
+          <a href="/">Inicio</a><span aria-hidden="true">/</span><a href="/herramientas">Herramientas</a><span aria-hidden="true">/</span><span>Selector de movilidad</span>
+        </nav>
+        <h1>¿Qué ayuda de movilidad necesita tu perro mayor?</h1>
+        <p>Si ves que resbala, que le cuesta levantarse o que ya no sube al sofá, hay ayudas concretas. Responde dos preguntas y te proponemos un plan según cómo está hoy y cómo lleva que le toquen.</p>
+        <p class="mob-hero__meta">Por <strong>Equipo de Cuida tu perro viejo</strong> · Actualizado el <time datetime={updated.iso}>{updated.text}</time></p>
+      </div>
+    </header>
+
+    <MobilityTool />
+
+    <AdBanner300x250 />
+
+    <article class="mob-guide content-body prose dark:prose-invert">
+      <h2 id="como-leer">Cómo leer el resultado</h2>
+      <p>
+        El selector cruza dos cosas: <strong>cuánto le cuesta moverse</strong> y <strong>cómo tolera que le manipulen</strong>. La segunda importa tanto como la primera: unos calcetines perfectos no sirven si se los quita a mordiscos, y un perro que se estresa con el contacto gana más con un entorno adaptado que con accesorios encima.
+      </p>
+      <div class="not-prose mob-table">
+        <table>
+          <thead>
+            <tr><th scope="col">Nivel</th>{HANDLING.map((h) => <th scope="col">{h.title}</th>)}</tr>
+          </thead>
+          <tbody>
+            {table.map((row) => (
+              <tr data-l={row.level.code}>
+                <th scope="row"><span aria-hidden="true">{row.level.icon}</span> {row.level.title}<small><span class="mob-sep">: </span>{row.level.subtitle}</small></th>
+                {row.cells.map((cell) => <td>{cell}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="entorno">Antes de comprar nada: el suelo y la casa</h2>
+      <p>
+        Las guías internacionales de artrosis canina (COAST, 2023) recomiendan empezar por el entorno en cuanto aparecen los primeros problemas: <strong>suelos que agarren, camas cómodas y rampas o escalones</strong> para llegar a donde lo necesita. La AAHA insiste en lo mismo para los perros senior: alfombras, superficies con buena tracción y mucho acolchado.
+      </p>
+      <ul>
+        <li><strong>Traza sus rutas.</strong> Del descanso al agua, a la comida y a la puerta de salida. Cubre esos tramos con alfombras que no se deslicen.</li>
+        <li><strong>Acerca lo importante.</strong> En los casos más avanzados, COAST propone reducir la distancia y el esfuerzo para comer, beber y hacer sus necesidades.</li>
+        <li><strong>Evita el salto.</strong> Una rampa al sofá o al coche ahorra un impacto que se repite muchas veces al día.</li>
+      </ul>
+
+      <h2 id="dolor">Una ayuda de movilidad no sustituye al control del dolor</h2>
+      <p>
+        Cuando un perro mayor se mueve peor, muchas veces hay dolor detrás, sobre todo por artrosis. Las guías de la WSAVA sobre dolor recuerdan que el dolor crónico se puede reconocer, medir y tratar, y que tratarlo cambia su día a día. Un arnés o una rampa le facilitan moverse, pero no le quitan el dolor.
+      </p>
+      <p>
+        Pide una revisión si notas que <strong>cojea, se levanta con rigidez, evita escaleras que antes subía, se lame una articulación o está más irritable</strong> cuando le tocas. En perros muy mayores, la <a href="/herramientas/calculadora-calidad-vida-perros">calculadora de calidad de vida HHHHHMM</a> te ayuda a registrar cómo evoluciona su bienestar semana a semana.
+      </p>
+
+      <h2 id="musculo">Por qué conviene que siga moviéndose</h2>
+      <p>
+        Con la edad, muchos perros pierden masa muscular de forma progresiva: es lo que se llama <strong>sarcopenia</strong> (Freeman, 2012). Hace que levantarse, subir un escalón o aguantar un paseo cueste más. El movimiento suave y frecuente ayuda a conservar el músculo que le queda, y las guías COAST recomiendan un programa de ejercicio adaptado y, cuando sea posible, la ayuda de un especialista en rehabilitación.
+      </p>
+      <p>
+        Por eso las ayudas tienen tanto valor: un arnés que le permite seguir saliendo o una silla que le devuelve el paseo no son un capricho, son la forma de que siga explorando y compartiendo su día contigo. Si quieres profundizar, la <a href="/movilidad-dolor-perros-mayores">guía completa de movilidad y dolor</a> lo explica paso a paso.
+      </p>
+
+      <h2 id="silla-de-ruedas">Silla de ruedas: cuándo ayuda y qué vigilar</h2>
+      <p>
+        La silla de ruedas no es una señal de final: para muchos perros es lo que les devuelve el paseo. En una encuesta con más de 1.200 respuestas de cuidadores de animales con carros de movilidad (Narum y colaboradores, 2024), la mayoría de las respuestas sobre perros describía <strong>mejor calidad de vida</strong> para el perro y también para quien lo cuida. La misma encuesta muestra el otro lado: tres de cada cinco perros (60 %) tuvieron alguna complicación, y la más frecuente fueron <strong>heridas por roce</strong>.
+      </p>
+      <ul>
+        <li><strong>Necesita fuerza delante.</strong> La silla trasera sostiene las patas de atrás; las delanteras tienen que poder tirar del cuerpo.</li>
+        <li><strong>Mídela con ayuda.</strong> Tu veterinario o un rehabilitador puede ajustar la altura y los apoyos. Es una buena práctica, aunque no garantiza que no roce: en la encuesta, las sillas ajustadas por un veterinario tuvieron más complicaciones. Los autores lo atribuyen en parte a que eran casos más difíciles y a que pocos veterinarios tienen formación en estos dispositivos, así que, si puedes, busca a alguien con formación en rehabilitación.</li>
+        <li><strong>Sesiones cortas al principio.</strong> Unos minutos, con premios, y alargando poco a poco.</li>
+        <li><strong>Revisa la piel cada día</strong> en ingles, axilas, dorso de las patas y vientre, que es donde más aparecieron las heridas en la encuesta.</li>
+      </ul>
+
+      <h2 id="si-no-se-levanta">Si ya no se levanta solo: piel, postura e higiene</h2>
+      <p><strong>Si ha dejado de levantarse de golpe, en horas o pocos días, llévalo hoy al veterinario: puede ser una urgencia tratable.</strong></p>
+      <p>
+        Un perro que pasa casi todo el día tumbado necesita cuidados que no se ven en una lista de compras. Al estar de lado, la presión se concentra sobre el hombro, la cadera y las últimas costillas, y es más alta en perros delgados. Un colchón de espuma la reduce, pero no lo suficiente: el estudio de laboratorio de Caraty y colaboradores (2019), hecho con cadáveres de tres perros, concluye que, además de una buena superficie, hay que cambiarle de postura con frecuencia.
+      </p>
+      <ul>
+        <li><strong>Cambios de postura según un plan individual.</strong> Como referencia general se suele hablar de cada 2 a 4 horas, pero es una pauta de enfermería, no un dato de ensayo, y no hay un intervalo que garantice prevenir úlceras. Pide a tu veterinario un plan para tu perro: hazlo más a menudo si es delgado, si su cama es dura o si ves la piel enrojecida, y atiende sus señales. Muchos perros avisan, con ladridos o inquietud, cuando el sol, el calor o la postura les incomodan. La <a href="/cuidados-paliativos-perros/ulceras-presion-perros">guía de úlceras por presión</a> explica qué pedir al veterinario y cómo moverlo con cuidado.</li>
+        <li><strong>Piel seca y limpia.</strong> Empapadores bajo la zona de descanso y pañal si lo necesita, cambiados en cuanto se mojen.</li>
+        <li><strong>Dolor bajo control.</strong> Pide a tu veterinario que lo valore. La <a href="/herramientas/calculadora-calidad-vida-perros">calculadora HHHHHMM</a> te ayuda a seguir su bienestar semana a semana.</li>
+      </ul>
+
+      <h2 id="cuando-repetir">Cuándo repetir el test</h2>
+      <p>
+        La movilidad de un perro mayor cambia, a veces poco a poco y a veces de golpe. Vuelve a hacer el test cuando notes que <strong>resbala más, se cansa antes, le cuesta más levantarse o deja de tolerar algo</strong> que antes aceptaba, como los calcetines o el arnés. Si el cambio es brusco, en días, o aparece junto con dolor, cojera intensa o pérdida de control de la orina, consulta cuanto antes con tu veterinario; si ha perdido la fuerza de las patas de golpe, ese mismo día.
+      </p>
+
+      <h2 id="metodo">Método y fuentes</h2>
+      <p>
+        El selector no es una prueba diagnóstica. Es una <strong>tabla de decisión editorial</strong> de seis combinaciones (tres niveles de movilidad por dos tipos de carácter) que ordena las ayudas como lo hacen las guías veterinarias: primero el entorno y el confort, después el apoyo activo con arnés y rampas, y en los casos más avanzados dispositivos con ruedas, junto con cuidados diarios de piel, postura e higiene. La asignación concreta de cada ayuda a cada combinación es criterio nuestro, no una tabla publicada en esas guías.
+      </p>
+      <p>
+        El aviso de cuidados diarios aparece solo en el nivel severo. El mismo resultado lo devuelve nuestra API para asistentes de IA, para que una persona y un agente reciban siempre el mismo plan. En la versión {MOBILITY_TOOL.softwareVersion} (revisada el {updated.text}) cambiamos la etiqueta del nivel severo de «cuidado paliativo» a «apoyo total», porque una silla de ruedas puede devolverle el paseo; cambiamos la pauta fija de cambios de postura por un plan individual (con 2–4 horas solo como referencia general), añadimos cuándo una silla tiene sentido y un aviso para llevarlo hoy al veterinario si ha perdido la fuerza de golpe.
+      </p>
+      <p>
+        Responsabilidad editorial: Cuida tu Perro Viejo. Son opciones orientativas, sin revisión veterinaria individual: las fuentes respaldan el marco de las recomendaciones, no una precisión clínica demostrada del selector. Si hay dolor intenso, incapacidad súbita para levantarse o arrastre nuevo de las patas, busca atención urgente y no lo fuerces a caminar para completar la herramienta.
+      </p>
+      <h3 id="fuentes">Fuentes</h3>
+      <ol class="text-sm">
+        {sources.map((src) => (
+          <li id={`fuente-${src.id}`}>
+            <a href={src.href} rel="noopener" target="_blank">{src.text}</a><br />
+            <span class="text-brand-muted">{src.use}</span>
+          </li>
+        ))}
+      </ol>
+
+      <h2 id="preguntas">Preguntas frecuentes</h2>
+      {faqs.map((f) => (
+        <>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </>
+      ))}
+
+      <p class="not-prose mob-more">
+        ¿Quieres ver todas nuestras apps? Vuelve al <a href="/herramientas">centro de herramientas para perros senior</a> o pregunta tus dudas al <a href="/asistente-ia">asistente IA</a>.
+      </p>
+    </article>
+  </main>
+  <AdSlotLoader />
+</BaseLayout>
+
+<style>
+  .mob-hero { position: relative; margin: 0 calc(50% - 50vw) 1.5rem; background: #f7efe1; overflow: hidden; }
+  :global(.dark) .mob-hero { background: var(--color-brand-card); }
+  .mob-hero__media { display: block; }
+  .mob-hero__media img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+  .mob-hero__copy { width: min(100% - 2.5rem, 48rem); margin: 0 auto; padding-block: 1.1rem 1.25rem; }
+  .mob-hero h1 { margin: 0; font-family: var(--font-display); font-size: clamp(1.85rem, 6.2vw, 3.2rem); font-weight: 800; line-height: 1.05; letter-spacing: -.035em; color: var(--color-brand-text); }
+  .mob-hero__copy > p { margin: .8rem 0 0; max-width: 34rem; font-size: clamp(.95rem, 1.6vw, 1.08rem); line-height: 1.6; color: var(--color-brand-muted); }
+  .mob-hero__copy > .mob-hero__meta { font-size: .8rem; }
+  .mob-hero__crumbs { display: none; gap: .4rem; margin-bottom: 1rem; font-size: .75rem; color: var(--color-brand-muted); }
+  .mob-hero__crumbs a { color: inherit; text-decoration: none; }
+  .mob-hero__crumbs a:hover { color: var(--color-brand-primary); }
+  @media (min-width: 64rem) {
+    .mob-hero { display: flex; align-items: center; min-height: clamp(22rem, 36vw, 30rem); }
+    .mob-hero__media { position: absolute; inset: 0; width: 100%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 32%); mask-image: linear-gradient(90deg, transparent, #000 32%); }
+    .mob-hero__media img { height: 100%; aspect-ratio: auto; object-position: right 60%; }
+    .mob-hero__copy { width: min(100% - 4rem, 68rem); padding-block: 3rem; position: relative; }
+    .mob-hero__copy > *, .mob-hero__copy > p { max-width: 25rem; }
+    .mob-hero__crumbs { display: flex; }
+    .mob-hero h1, .mob-hero__copy > p { color: #2f3b2c; }
+    :global(.dark) .mob-hero { background: #f7efe1; }
+    :global(.dark) .mob-hero__crumbs { color: #2f3b2c; }
+  }
+
+  .mob-guide { margin-top: 3rem; }
+  .mob-guide :global(h2) { margin-top: 3rem; padding-top: 2rem; border-top: 1px dashed var(--color-brand-border); }
+  .mob-guide :global(h2:first-child) { margin-top: 0; padding-top: 0; border-top: 0; }
+  .mob-table { margin: 1.5rem 0; overflow-x: auto; border: 1px solid var(--color-brand-border); border-radius: 1.25rem; }
+  .mob-table table { width: 100%; border-collapse: collapse; font-size: .85rem; text-align: left; }
+  .mob-table th, .mob-table td { padding: .8rem 1rem; vertical-align: top; color: var(--color-brand-muted); }
+  .mob-table thead th { background: color-mix(in srgb, var(--color-brand-card) 70%, transparent); color: var(--color-brand-text); font-weight: 800; }
+  .mob-table tbody tr { border-top: 1px solid var(--color-brand-border); }
+  .mob-table tbody th { color: var(--color-brand-text); font-weight: 800; border-left: 4px solid var(--c); }
+  .mob-table tbody th small { display: block; margin-top: .2rem; font-weight: 500; color: var(--color-brand-muted); }
+  .mob-table [data-l='L'] { --c: #6f8f52; } .mob-table [data-l='M'] { --c: #b08a4a; } .mob-table [data-l='S'] { --c: var(--color-brand-accent); }
+  .mob-sep { display: none; }
+  .mob-more { margin-top: 2.5rem; padding: 1.25rem; border: 1px solid var(--color-brand-border); border-radius: 1.25rem; font-size: .9rem; line-height: 1.6; color: var(--color-brand-muted); background: color-mix(in srgb, var(--color-brand-card) 40%, transparent); }
+  .mob-more a { font-weight: 700; color: var(--color-brand-primary); }
+</style>

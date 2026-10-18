@@ -1,0 +1,13 @@
+{
+  "base": "9d05e9b95bb39679826134810ca864d3952bf15e",
+  "scope": "Solo copias temporales; no modifica src/public del repositorio ni producción. No sustituye CI de la entrega aplicada.",
+  "snapshots": 12,
+  "forwardCheck": true,
+  "forwardAppliedTemporary": true,
+  "temporarySourceResiduals": [],
+  "reverseCheck": true,
+  "restoredByteIdentical": true,
+  "dependencies": "npm ci correcto con cache /tmp/ctp-npm-cache; primer intento no pudo escribir cache predeterminada fuera del workspace",
+  "executionPatchInRepo": "not applied",
+  "productionConsentTests": "pending real implementation and configuration"
+}

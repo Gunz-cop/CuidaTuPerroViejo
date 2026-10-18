@@ -1,0 +1,572 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleByline from '../components/ArticleByline.astro';
+import AdBanner300x250 from '../components/ads/AdBanner300x250.astro';
+import AdSlotLoader from '../components/ads/AdSlotLoader.astro';
+import { buildSrcset } from '../utils/image';
+
+export async function getStaticPaths() {
+  const pilaresEntries = await getCollection('pilares');
+  const blogEntries = await getCollection('blog');
+
+  return pilaresEntries.map((pilar) => {
+    const filteredPosts = blogEntries
+      .filter((post) => post.data.pilar === pilar.id)
+      .sort((a, b) => a.id.localeCompare(b.id));
+
+    return {
+      params: { pilar: pilar.id },
+      props: { pilar, posts: filteredPosts },
+    };
+  });
+}
+
+const { pilar, posts } = Astro.props;
+const { Content } = await render(pilar);
+const isHealthPilar = pilar.id === 'salud-perros-mayores';
+const isNutritionPilar = pilar.id === 'alimentacion-perros-senior';
+const isMentalPilar = pilar.id === 'salud-mental-emocional-perros';
+const isPalliativePilar = pilar.id === 'cuidados-paliativos-perros';
+const isMobilityPilar = pilar.id === 'movilidad-dolor-perros-mayores';
+const isHygienePilar = pilar.id === 'higiene-hogar-perros-senior';
+const isToolsPilar = pilar.id === 'herramientas';
+const isModernPilar = isToolsPilar || isHealthPilar || isNutritionPilar || isMentalPilar || isPalliativePilar || isMobilityPilar || isHygienePilar;
+
+const heroImage = pilar.data.heroImage;
+const heroImageAlt = pilar.data.heroImageAlt || pilar.data.title;
+const heroImageSrcset = buildSrcset(heroImage);
+
+const pilarURL = new URL(`/${pilar.id}`, Astro.site).href;
+const siteURL = Astro.site?.href ?? 'https://cuidatuperroviejo.com/';
+const dateModified = pilar.data.dateModified
+  ? new Date(pilar.data.dateModified).toISOString()
+  : null;
+
+const schemaImage = heroImage
+  ? new URL(heroImage, Astro.site).href
+  : new URL('/images/home/perro-senior-hero-cama-ortopedica.webp', Astro.site).href;
+
+const pilarSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${pilarURL}#webpage`,
+      url: pilarURL,
+      name: pilar.data.seoTitle,
+      description: pilar.data.metaDescription,
+      isPartOf: { '@id': `${siteURL}#website` },
+      breadcrumb: { '@id': `${pilarURL}#breadcrumb` },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: schemaImage,
+        width: 1200,
+        height: 675,
+      },
+      ...(dateModified ? { dateModified } : {}),
+      inLanguage: 'es',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pilarURL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: siteURL },
+        { '@type': 'ListItem', position: 2, name: pilar.data.title, item: pilarURL },
+      ],
+    },
+  ],
+};
+
+const healthToc = [
+  { id: 'envejecer-no-es-una-enfermedad', label: 'Qué cambia' },
+  { id: 'urgencias', label: 'Señales de alarma' },
+  { id: 'chequeos', label: 'Plan preventivo' },
+  { id: 'prevencion', label: 'Prevención' },
+  { id: 'casa', label: 'Cuidados en casa' },
+  { id: 'alimentacion', label: 'Alimentación' },
+  { id: 'calidad-de-vida', label: 'Calidad de vida' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const nutritionToc = [
+  { id: 'que-cambia', label: 'Qué cambia' },
+  { id: 'que-dar', label: 'Qué darle' },
+  { id: 'racion', label: 'Ración y peso' },
+  { id: 'casera', label: 'Comida casera' },
+  { id: 'apetito', label: 'Apetito e hidratación' },
+  { id: 'senales', label: 'Cuándo consultar' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const mentalToc = [
+  { id: 'que-cambia', label: 'Qué cambia' },
+  { id: 'senales', label: 'Señales y ansiedad' },
+  { id: 'diferenciales', label: 'Qué descartar' },
+  { id: 'consulta', label: 'Cuándo consultar' },
+  { id: 'rutina', label: 'Rutina y entorno' },
+  { id: 'enriquecimiento', label: 'Estimulación mental' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const palliativeToc = [
+  { id: 'que-es', label: 'Qué son' },
+  { id: 'confort', label: 'Confort diario' },
+  { id: 'calidad', label: 'Calidad de vida' },
+  { id: 'plan', label: 'Plan en casa' },
+  { id: 'eutanasia', label: 'Decisiones de final de vida' },
+  { id: 'duelo', label: 'Acompañar el duelo' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const mobilityToc = [
+  { id: 'senales', label: 'Señales de dolor' },
+  { id: 'consulta', label: 'Cuándo consultar' },
+  { id: 'plan', label: 'Plan multimodal' },
+  { id: 'casa', label: 'Casa adaptada' },
+  { id: 'movimiento', label: 'Movimiento seguro' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const hygieneToc = [
+  { id: 'rutina', label: 'Rutina de higiene' },
+  { id: 'piel', label: 'Piel y pelaje' },
+  { id: 'incontinencia', label: 'Humedad e incontinencia' },
+  { id: 'casa', label: 'Hogar seguro' },
+  { id: 'prevencion', label: 'Qué vigilar' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const toolsToc = [
+  { id: 'herramientas', label: 'Las herramientas' },
+  { id: 'cual-usar', label: 'Cuál usar primero' },
+  { id: 'medir', label: 'Por qué medir' },
+  { id: 'veterinario', label: 'Con tu veterinario' },
+  { id: 'limites', label: 'Qué no hacen' },
+  { id: 'preguntas', label: 'Preguntas frecuentes' },
+];
+
+const toolCards = [
+  { href: '/herramientas/calculadora-calidad-vida-perros', tag: 'Bienestar y dolor', title: 'Calculadora de calidad de vida HHHHHMM', text: 'Puntúa dolor, hambre, hidratación, higiene, felicidad, movilidad y días buenos con la escala de la Dra. Villalobos.', image: '/images/home/calculadora-hhhhhmm-perro.webp', alt: 'Perro senior descansando junto a su cuidadora mientras evalúan su bienestar' },
+  { href: '/herramientas/selector-movilidad-perros-mayores', tag: 'Movilidad', title: 'Selector de ayudas de movilidad', text: 'Responde unas preguntas y descubre si le conviene un arnés, una rampa, calcetines antideslizantes o una silla de ruedas.', image: '/images/herramientas/movilidad-hero.webp', alt: 'Beagle senior caminando con un arnés de soporte trasero sobre una alfombra antideslizante' },
+  { href: '/herramientas/calculadora-edad-perro', tag: 'Edad y etapa', title: 'Calculadora de edad en años humanos', text: 'Convierte su edad según su tamaño y averigua si ya está en la etapa senior.', image: '/images/home/perro-senior-revision-veterinaria.webp', alt: 'Perro senior en una revisión veterinaria' },
+  { href: '/asistente-ia', tag: 'Orientación', title: 'Asistente IA para perros mayores', text: 'Cuéntale qué le pasa a tu perro y recibe una orientación inicial con las guías del sitio más relevantes.', image: '/images/home/perro-senior-cognicion-juego-olfato.webp', alt: 'Perro senior olfateando un juguete de estimulación' },
+];
+
+const modernConfigs: Record<string, {
+  toc: { id: string; label: string }[];
+  eyebrow: string;
+  primaryAction: { href: string; label: string };
+  secondaryAction: { href: string; label: string };
+  heroCaption: string;
+  signalCards: { label: string; title: string; text: string; href: string; danger: boolean }[];
+  relatedTitle: string;
+  relatedDescription: string;
+}> = {
+  'herramientas': {
+    toc: toolsToc,
+    eyebrow: 'Centro de herramientas · gratis y sin registro',
+    primaryAction: { href: '#herramientas', label: 'Ver las herramientas' },
+    secondaryAction: { href: '#cual-usar', label: '¿Cuál uso primero?' },
+    heroCaption: 'Medir con calma ayuda a decidir mejor junto a tu veterinario.',
+    signalCards: [
+      { label: 'Bienestar', title: '¿Tiene dolor o está sufriendo?', text: 'Puntúa su calidad de vida con la escala HHHHHMM.', href: '/herramientas/calculadora-calidad-vida-perros', danger: true },
+      { label: 'Movilidad', title: '¿Qué ayuda necesita?', text: 'Arnés, rampa, calcetines o silla según cómo se mueve.', href: '/herramientas/selector-movilidad-perros-mayores', danger: false },
+      { label: 'Edad', title: '¿Ya es senior?', text: 'Calcula su edad humana según su tamaño.', href: '/herramientas/calculadora-edad-perro', danger: false },
+    ],
+    relatedTitle: 'Todas las herramientas',
+    relatedDescription: 'Cuatro apps gratuitas, sin registro, pensadas para el día a día con un perro mayor.',
+  },
+  'salud-perros-mayores': {
+    toc: healthToc,
+    eyebrow: 'Guía central · salud senior',
+    primaryAction: { href: '#urgencias', label: 'Ver señales de alarma' },
+    secondaryAction: { href: '#chequeos', label: 'Plan preventivo' },
+    heroCaption: 'Un hogar adaptado ayuda a conservar independencia y confianza.',
+    signalCards: [
+      { label: 'Primero', title: 'Descarta una urgencia', text: 'Dificultad respiratoria, colapso, convulsiones o abdomen hinchado.', href: '#urgencias', danger: true },
+      { label: 'Después', title: 'Ordena el seguimiento', text: 'Consulta, dolor, boca, peso, prevención y pruebas según el caso.', href: '#chequeos', danger: false },
+      { label: 'Cada día', title: 'Hazlo más fácil', text: 'Tracción, rutina, paseos adaptados y observación sin dramatismo.', href: '#casa', danger: false },
+    ],
+    relatedTitle: 'Guías para una duda concreta',
+    relatedDescription: `${posts.length} recursos especializados para seguir cuidando con contexto.`,
+  },
+  'alimentacion-perros-senior': {
+    toc: nutritionToc,
+    eyebrow: 'Guía central · alimentación senior',
+    primaryAction: { href: '#racion', label: 'Ajustar la ración' },
+    secondaryAction: { href: '#casera', label: 'Ver comida casera' },
+    heroCaption: 'La mejor ración es la que mantiene un peso y una masa muscular saludables.',
+    signalCards: [
+      { label: 'Primero', title: 'Mira su condición corporal', text: 'Peso, músculo, apetito y heces dicen más que la palabra “senior” del envase.', href: '#que-cambia', danger: false },
+      { label: 'Después', title: 'Elige una base completa', text: 'La dieta debe cubrir sus necesidades y adaptarse a su salud, actividad y presupuesto.', href: '#que-dar', danger: false },
+      { label: 'Cada día', title: 'Pesa y observa', text: 'Ración medida, agua accesible y cambios anotados para decidir con menos ensayo.', href: '#racion', danger: false },
+    ],
+    relatedTitle: 'Una duda concreta sobre su comida',
+    relatedDescription: 'Continúa con una guía especializada para convertir esta orientación en decisiones prácticas.',
+  },
+  'salud-mental-emocional-perros': {
+    toc: mentalToc,
+    eyebrow: 'Guía central · bienestar emocional',
+    primaryAction: { href: '#senales', label: 'Ver señales' },
+    secondaryAction: { href: '#rutina', label: 'Adaptar la rutina' },
+    heroCaption: 'La previsibilidad, el vínculo y los estímulos adecuados ayudan a orientarse mejor.',
+    signalCards: [
+      { label: 'Primero', title: 'Mira el cambio', text: 'Sueño, orientación, interacción, hábitos y ansiedad cuentan una historia.', href: '#senales', danger: true },
+      { label: 'Después', title: 'Descarta causas', text: 'Dolor, pérdida sensorial y enfermedad pueden parecer un problema de conducta.', href: '#diferenciales', danger: false },
+      { label: 'Cada día', title: 'Hazlo predecible', text: 'Rutina, caminos despejados y juegos breves sin frustración.', href: '#rutina', danger: false },
+    ],
+    relatedTitle: 'Una duda sobre su conducta',
+    relatedDescription: 'Continúa con una guía especializada para entender un cambio concreto sin perder el contexto.',
+  },
+  'cuidados-paliativos-perros': {
+    toc: palliativeToc,
+    eyebrow: 'Guía central · confort y acompañamiento',
+    primaryAction: { href: '#calidad', label: 'Evaluar su bienestar' },
+    secondaryAction: { href: '#plan', label: 'Preparar la casa' },
+    heroCaption: 'El objetivo de los cuidados paliativos es sumar confort, claridad y compañía.',
+    signalCards: [
+      { label: 'Primero', title: 'Mide cómo está hoy', text: 'Dolor, respiración, apetito, descanso y vínculo orientan la conversación.', href: '#calidad', danger: true },
+      { label: 'Después', title: 'Diseña un plan realista', text: 'Veterinario, familia, medicación y ambiente deben apuntar al mismo objetivo.', href: '#plan', danger: false },
+      { label: 'Cada día', title: 'Protege su confort', text: 'Agua accesible, descanso, higiene, temperatura y presencia sin forzar.', href: '#confort', danger: false },
+    ],
+    relatedTitle: 'Acompañar una etapa delicada',
+    relatedDescription: 'Recursos para tomar decisiones de confort con información y sin cargar todo sobre una sola persona.',
+  },
+  'movilidad-dolor-perros-mayores': {
+    toc: mobilityToc,
+    eyebrow: 'Guía central · movilidad y dolor',
+    primaryAction: { href: '#senales', label: 'Reconocer señales' },
+    secondaryAction: { href: '#casa', label: 'Adaptar la casa' },
+    heroCaption: 'Moverse con seguridad empieza por reconocer el dolor y quitar obstáculos.',
+    signalCards: [
+      { label: 'Primero', title: 'Observa cómo se mueve', text: 'Rigidez, resbalones, dificultad al levantarse o cambios en el paseo importan.', href: '#senales', danger: true },
+      { label: 'Después', title: 'Busca un plan completo', text: 'Dolor, peso, rehabilitación y entorno se ajustan juntos con el veterinario.', href: '#plan', danger: false },
+      { label: 'Cada día', title: 'Reduce el esfuerzo', text: 'Tracción, rampas, descansos y paseos cortos pueden devolver confianza.', href: '#casa', danger: false },
+    ],
+    relatedTitle: 'Una duda sobre su movilidad',
+    relatedDescription: 'Sigue con recursos concretos para aliviar el día a día sin improvisar tratamientos.',
+  },
+  'higiene-hogar-perros-senior': {
+    toc: hygieneToc,
+    eyebrow: 'Guía central · higiene y hogar',
+    primaryAction: { href: '#rutina', label: 'Crear una rutina' },
+    secondaryAction: { href: '#casa', label: 'Hacer la casa segura' },
+    heroCaption: 'La higiene senior funciona mejor cuando es suave, predecible y fácil de repetir.',
+    signalCards: [
+      { label: 'Primero', title: 'Mantén piel y pelo secos', text: 'La humedad atrapada, el mal olor o el lamido persistente merecen atención.', href: '#piel', danger: true },
+      { label: 'Después', title: 'Simplifica el entorno', text: 'Superficies con agarre, cama estable y materiales lavables reducen accidentes.', href: '#casa', danger: false },
+      { label: 'Cada día', title: 'Revisa sin invadir', text: 'Cepillado breve, patas limpias y una observación tranquila detectan cambios pronto.', href: '#rutina', danger: false },
+    ],
+    relatedTitle: 'Una duda sobre sus cuidados diarios',
+    relatedDescription: 'Guías prácticas para convertir la limpieza, la prevención y el entorno en una rutina sostenible.',
+  },
+};
+
+const modernConfig = modernConfigs[pilar.id] ?? modernConfigs['salud-perros-mayores'];
+const modernToc = modernConfig.toc;
+const modernEyebrow = modernConfig.eyebrow;
+const modernPrimaryAction = modernConfig.primaryAction;
+const modernSecondaryAction = modernConfig.secondaryAction;
+const displayDate = dateModified
+  ? new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(dateModified))
+  : 'fecha por confirmar';
+const modernMeta = `Revisada el ${displayDate} · Lectura práctica`;
+const modernHeroCaption = modernConfig.heroCaption;
+const modernSignalCards = modernConfig.signalCards;
+const modernRelatedTitle = modernConfig.relatedTitle;
+const modernRelatedDescription = modernConfig.relatedDescription;
+
+const hideHeroCSS = heroImage
+  ? `.content-body img[src="${heroImage}"],
+     .content-body p:has(> img[src="${heroImage}"]) { display: none !important; }
+     .content-body p:has(> img[src="${heroImage}"]) + p:has(> em:only-child) { display: none !important; }`
+  : '';
+---
+
+<BaseLayout
+  title={pilar.data.seoTitle}
+  description={pilar.data.metaDescription}
+  keywords={pilar.data.keywords}
+  image={pilar.data.heroImage}
+  ogType="article"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(pilarSchema)} />
+
+  {heroImage && !isModernPilar && <style slot="head" is:inline set:html={hideHeroCSS} />}
+
+  {isModernPilar ? (
+    <>
+      <section class="health-hero" aria-labelledby="health-title">
+        <div class="health-shell health-hero__shell">
+          <div class="health-hero__copy">
+            <a class="health-hero__eyebrow" href={`/${pilar.id}`}>{modernEyebrow}</a>
+            <h1 id="health-title">{pilar.data.title}</h1>
+            <p class="health-hero__lede">{pilar.data.metaDescription}</p>
+            <div class="health-hero__actions">
+              <a class="health-button health-button--primary" href={modernPrimaryAction.href}>{modernPrimaryAction.label}</a>
+              <a class="health-button health-button--quiet" href={modernSecondaryAction.href}>{modernSecondaryAction.label} <span aria-hidden="true">↓</span></a>
+            </div>
+            <p class="health-hero__meta"><span aria-hidden="true">●</span> {modernMeta}</p>
+          </div>
+          <figure class="health-hero__media">
+            <img
+              src={heroImage}
+              alt={heroImageAlt}
+              width="1200"
+              height="675"
+              srcset={heroImageSrcset}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+            <figcaption>{modernHeroCaption}</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <main tabindex="-1" class="health-main" id="main-content">
+        <div class="health-byline"><ArticleByline dateModified={pilar.data.dateModified} /></div>
+
+        <section class="health-signal-strip" aria-label="Cómo usar esta guía">
+          {modernSignalCards.map((card) => (
+            <a class:list={['health-signal-card', card.danger && 'health-signal-card--danger']} href={card.href}>
+              <span class="health-signal-card__label">{card.label}</span>
+              <strong>{card.title}</strong>
+              <span>{card.text}</span>
+            </a>
+          ))}
+        </section>
+
+        <div class="health-layout">
+          <aside class="health-toc" aria-label="En esta guía">
+            <p class="health-toc__title">En esta guía</p>
+            <nav>
+              {modernToc.map((item) => (
+                <a href={`#${item.id}`}>{item.label}</a>
+              ))}
+            </nav>
+            <div class="health-toc__source">
+              <span class="health-toc__source-dot" aria-hidden="true"></span>
+              <p>Información educativa para conversar mejor con tu veterinario.</p>
+            </div>
+          </aside>
+
+          <article class="content-body health-content prose dark:prose-invert max-w-none">
+            <Content />
+          </article>
+        </div>
+
+        <AdBanner300x250 />
+
+        <section class="health-related" id="guias" aria-labelledby="health-related-title">
+          <div class="health-related__heading">
+            <div>
+              <p class="health-kicker">Siguiente paso</p>
+            <h2 id="health-related-title">{modernRelatedTitle}</h2>
+          </div>
+            <p>{modernRelatedDescription}</p>
+          </div>
+
+          {isToolsPilar ? (
+            <div class="health-post-grid">
+              {toolCards.map((tool) => (
+                <a href={tool.href} class="health-post-card">
+                  <div class="health-post-card__image">
+                    <img src={tool.image} alt={tool.alt} srcset={buildSrcset(tool.image)} sizes="(min-width: 768px) 33vw, 100vw" width="800" height="450" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="health-post-card__body">
+                    <span class="health-post-card__tag">{tool.tag}</span>
+                    <h3>{tool.title}</h3>
+                    <p>{tool.text}</p>
+                    <span class="health-post-card__link">Abrir herramienta <span aria-hidden="true">↗</span></span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          ) : posts.length > 0 ? (
+            <div class="health-post-grid">
+              {posts.map((post) => (
+                <a href={`/${pilar.id}/${post.id}`} class="health-post-card">
+                  {post.data.heroImage ? (
+                    <div class="health-post-card__image">
+                      <img
+                        src={post.data.heroImage}
+                        alt={post.data.heroImageAlt || post.data.title}
+                        srcset={buildSrcset(post.data.heroImage)}
+                        sizes="(min-width: 768px) 33vw, 100vw"
+                        width="800"
+                        height="450"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  ) : <div class="health-post-card__placeholder" aria-hidden="true"></div>}
+                  <div class="health-post-card__body">
+                    <span class="health-post-card__tag">Guía especializada</span>
+                    <h3>{post.data.title}</h3>
+                    {post.data.metaDescription && <p>{post.data.metaDescription}</p>}
+                    <span class="health-post-card__link">Leer guía <span aria-hidden="true">↗</span></span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <div class="health-empty-state">Estamos preparando nuevas guías para esta sección.</div>
+          )}
+        </section>
+      </main>
+    </>
+  ) : (
+    <>
+      <div class="relative w-full overflow-hidden" style="min-height: 360px;">
+        {heroImage ? (
+          <img
+            src={heroImage}
+            alt={heroImageAlt}
+            class="absolute inset-0 h-full w-full object-cover object-center"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            width="1200"
+            height="675"
+            srcset={heroImageSrcset}
+            sizes="100vw"
+          />
+        ) : <div class="absolute inset-0 bg-gradient-to-br from-brand-primary/80 to-brand-secondary/60"></div>}
+        <div class="absolute inset-0 bg-gradient-to-b from-black/15 via-black/55 to-black/80 dark:from-black/35 dark:via-black/65 dark:to-black/88"></div>
+        <div class="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-4 py-14 text-center md:py-20">
+          <nav class="mb-4 flex items-center gap-1.5 text-xs text-white/70" aria-label="breadcrumb">
+            <a href="/" class="hover:text-white transition-colors">Inicio</a>
+            <span aria-hidden="true">/</span>
+            <span class="font-medium text-white">{pilar.data.title}</span>
+          </nav>
+          <h1 class="mb-4 max-w-3xl text-3xl font-extrabold leading-tight tracking-tight text-white drop-shadow-lg md:text-4xl lg:text-5xl">{pilar.data.title}</h1>
+          {pilar.data.metaDescription && <p class="max-w-2xl text-base font-light leading-relaxed text-white/85 drop-shadow-sm md:text-lg">{pilar.data.metaDescription}</p>}
+          {posts.length > 0 && <div class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">{posts.length} guía{posts.length !== 1 ? 's' : ''} especializada{posts.length !== 1 ? 's' : ''}</div>}
+        </div>
+      </div>
+
+      <main id="main-content" tabindex="-1" class="mx-auto w-full max-w-4xl px-4 py-8 sm:py-12">
+        <div class="mb-6 border-b border-brand-border pb-6"><ArticleByline dateModified={pilar.data.dateModified} /></div>
+        <div class="content-body prose dark:prose-invert max-w-none mb-12"><Content /></div>
+        <AdBanner300x250 />
+        <hr class="my-10 border-brand-border" />
+        <h2 class="mb-8 text-2xl font-extrabold tracking-tight text-brand-text md:text-3xl">Guías Especializadas de {pilar.data.title}</h2>
+        {posts.length > 0 ? (
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {posts.map((post) => (
+              <a href={`/${pilar.id}/${post.id}`} class="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-brand-border bg-brand-card shadow-sm transition duration-300 hover:border-brand-primary/40 hover:shadow-md">
+                {post.data.heroImage ? <div class="aspect-[16/9] overflow-hidden bg-brand-secondary/10"><img src={post.data.heroImage} alt={post.data.heroImageAlt || post.data.title} class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy" decoding="async" width="800" height="450" /></div> : <div class="absolute left-0 right-0 top-0 h-1 bg-brand-primary transition-transform duration-300 group-hover:translate-y-0" />}
+                <div class="flex flex-1 flex-col justify-between p-5"><div><h3 class="line-clamp-2 text-lg font-bold leading-snug text-brand-text transition-colors duration-200 group-hover:text-brand-accent">{post.data.title}</h3>{post.data.metaDescription && <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-brand-muted">{post.data.metaDescription}</p>}</div><div class="mt-4 flex items-center text-xs font-semibold text-brand-primary transition-colors duration-200 group-hover:text-brand-accent">Leer artículo <span class="ml-1.5 transition-transform group-hover:translate-x-1" aria-hidden="true">→</span></div></div>
+              </a>
+            ))}
+          </div>
+        ) : <div class="rounded-xl border border-brand-border bg-brand-card px-4 py-12 text-center text-sm text-brand-muted">Aún no hay artículos en esta sección.</div>}
+      </main>
+    </>
+  )}
+  <AdSlotLoader />
+</BaseLayout>
+
+{isModernPilar && (
+  <style is:global>
+      .health-shell,
+      .health-main { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+      .health-hero { overflow: hidden; border-bottom: 1px solid var(--color-brand-border); background: linear-gradient(135deg, rgb(var(--color-brand-primary-rgb) / 0.12), transparent 55%), var(--color-bg-base); }
+      .health-hero__shell { display: grid; align-items: stretch; gap: 2rem; padding-block: clamp(1.5rem, 4vw, 3.75rem); }
+      .health-hero__copy { display: flex; flex-direction: column; justify-content: center; padding-block: 1rem; }
+      .health-hero__eyebrow,
+      .health-kicker { color: var(--color-brand-primary); font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+      .health-hero__eyebrow { width: fit-content; border-bottom: 1px solid rgb(var(--color-brand-primary-rgb) / .35); padding-bottom: .35rem; }
+      .health-hero h1 { max-width: 13ch; margin: 1rem 0 1.25rem; color: var(--color-text-base); font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: clamp(2.35rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: -.055em; line-height: .98; }
+      .health-hero__lede { max-width: 38rem; color: var(--color-text-muted); font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.7; }
+      .health-hero__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+      .health-button { display: inline-flex; min-height: 2.9rem; align-items: center; justify-content: center; gap: .5rem; border-radius: 999px; padding: .7rem 1.1rem; font-size: .9rem; font-weight: 800; text-decoration: none !important; transition: transform .2s ease, background-color .2s ease, border-color .2s ease; }
+      .health-button:hover { transform: translateY(-2px); }
+      .health-button--primary { background: var(--color-brand-primary); color: #fff !important; box-shadow: 0 8px 22px rgb(var(--color-brand-primary-rgb) / .2); }
+      .health-button--primary:hover { background: var(--color-brand-primary-hover); }
+      .health-button--quiet { border: 1px solid var(--color-brand-border); color: var(--color-text-base) !important; background: var(--color-bg-card); }
+      .health-button--quiet:hover { border-color: var(--color-brand-primary); }
+      .health-hero__meta { display: flex; align-items: center; gap: .5rem; margin-top: 1.25rem; color: var(--color-text-muted); font-size: .78rem; }
+      .health-hero__meta span { color: var(--color-brand-accent); font-size: .8rem; }
+      .health-hero__media { position: relative; margin: 0; min-height: 20rem; overflow: hidden; border-radius: 1.5rem; background: var(--color-bg-card); box-shadow: 0 20px 50px rgb(27 28 25 / .12); }
+      .health-hero__media img { display: block; height: 100%; width: 100%; object-fit: cover; object-position: center center; }
+      .health-hero__media figcaption { position: absolute; right: 1rem; bottom: 1rem; max-width: 18rem; border-radius: .8rem; padding: .65rem .8rem; background: rgb(20 24 20 / .72); color: #fff; font-size: .75rem; line-height: 1.45; backdrop-filter: blur(8px); }
+      .health-byline { margin-block: 1.5rem 1.25rem; }
+      .health-signal-strip { display: grid; gap: .75rem; margin-bottom: clamp(2.25rem, 5vw, 4rem); }
+      .health-signal-card { display: flex; flex-direction: column; gap: .35rem; min-height: 8rem; border: 1px solid var(--color-brand-border); border-radius: 1rem; padding: 1rem; background: var(--color-bg-card); color: var(--color-text-base); text-decoration: none !important; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+      .health-signal-card:hover { transform: translateY(-3px); border-color: var(--color-brand-primary); box-shadow: 0 12px 28px rgb(27 28 25 / .08); }
+      .health-signal-card--danger { border-color: rgb(239 68 68 / .35); background: linear-gradient(135deg, rgb(254 226 226 / .6), var(--color-bg-card)); }
+      .health-signal-card__label { color: var(--color-brand-primary); font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+      .health-signal-card--danger .health-signal-card__label { color: #b42318; }
+      .health-signal-card strong { font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: 1.05rem; }
+      .health-signal-card > span:last-child { color: var(--color-text-muted); font-size: .84rem; line-height: 1.5; }
+      .health-layout { display: grid; gap: clamp(2rem, 6vw, 4.5rem); align-items: start; }
+      .health-toc { position: sticky; top: 6.75rem; display: none; }
+      .health-toc__title { margin: 0 0 .65rem; color: var(--color-text-base); font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+      .health-toc nav { display: grid; gap: .1rem; border-left: 1px solid var(--color-brand-border); }
+      .health-toc nav a { min-height: 2.5rem; display: flex; align-items: center; border-left: 2px solid transparent; margin-left: -1px; padding: .35rem .75rem; color: var(--color-text-muted); font-size: .84rem; line-height: 1.35; text-decoration: none; }
+      .health-toc nav a:hover { border-left-color: var(--color-brand-primary); color: var(--color-brand-primary); background: rgb(var(--color-brand-primary-rgb) / .06); }
+      .health-toc__source { display: flex; gap: .55rem; margin-top: 2rem; border-top: 1px solid var(--color-brand-border); padding-top: 1rem; }
+      .health-toc__source p { margin: 0; color: var(--color-text-muted); font-size: .73rem; line-height: 1.5; }
+      .health-toc__source-dot { flex: 0 0 auto; width: .55rem; height: .55rem; margin-top: .25rem; border-radius: 999px; background: var(--color-brand-accent); }
+      .health-content { min-width: 0; }
+      .health-content > p:first-child { max-width: 48rem; font-size: clamp(1.08rem, 1.4vw, 1.24rem); line-height: 1.75; }
+      .health-content h2 { scroll-margin-top: 7rem; }
+      .health-content h3 { scroll-margin-top: 7rem; }
+      .health-content .health-quick-grid { display: grid; gap: .75rem; margin: 1.75rem 0; }
+      .health-quick-card { display: grid; grid-template-columns: auto 1fr; column-gap: .7rem; align-items: center; border: 1px solid var(--color-brand-border); border-radius: 1rem; padding: .9rem 1rem; background: var(--color-bg-card); color: var(--color-text-base); text-decoration: none !important; transition: border-color .2s ease, transform .2s ease; }
+      .health-quick-card:hover { transform: translateY(-2px); border-color: var(--color-brand-primary); }
+      .health-quick-card > span:last-child { grid-column: 2; color: var(--color-text-muted); font-size: .82rem; line-height: 1.45; }
+      .health-quick-card strong { font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: .95rem; }
+      .health-quick-card__number { grid-row: span 2; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: .7rem; background: rgb(var(--color-brand-primary-rgb) / .12); color: var(--color-brand-primary); font-size: .68rem; font-weight: 900; }
+      .health-quick-card--danger { border-color: rgb(239 68 68 / .35); }
+      .health-quick-card--danger .health-quick-card__number { background: rgb(239 68 68 / .12); color: #b42318; }
+      .health-note { border-left: 3px solid var(--color-brand-accent); border-radius: 0 .9rem .9rem 0; padding: 1rem 1.1rem !important; background: rgb(var(--color-brand-accent-rgb) / .08); color: var(--color-text-base); font-size: .96rem !important; line-height: 1.65 !important; }
+      .health-content table { font-size: .86rem; }
+      .health-content table th { white-space: nowrap; }
+      .health-content img { aspect-ratio: 16 / 9; object-fit: cover; }
+      .health-related { margin: clamp(3.5rem, 8vw, 6rem) 0 2rem; border-top: 1px solid var(--color-brand-border); padding-top: 2.25rem; }
+      .health-related__heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+      .health-related__heading h2 { margin: .35rem 0 0; color: var(--color-text-base); font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: -.035em; }
+      .health-related__heading > p { max-width: 20rem; margin: 0; color: var(--color-text-muted); font-size: .85rem; line-height: 1.5; text-align: right; }
+      .health-post-grid { display: grid; gap: 1rem; }
+      .health-post-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--color-brand-border); border-radius: 1.1rem; background: var(--color-bg-card); color: var(--color-text-base); text-decoration: none !important; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+      .health-post-card:hover { transform: translateY(-4px); border-color: rgb(var(--color-brand-primary-rgb) / .5); box-shadow: 0 16px 30px rgb(27 28 25 / .08); }
+      .health-post-card__image, .health-post-card__placeholder { aspect-ratio: 16 / 9; overflow: hidden; background: rgb(var(--color-brand-primary-rgb) / .08); }
+      .health-post-card__image img { display: block; height: 100%; width: 100%; object-fit: cover; transition: transform .45s ease; }
+      .health-post-card:hover .health-post-card__image img { transform: scale(1.04); }
+      .health-post-card__body { display: flex; flex: 1; flex-direction: column; padding: 1rem; }
+      .health-post-card__tag { color: var(--color-brand-primary); font-size: .67rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+      .health-post-card h3 { margin: .55rem 0 .35rem; color: var(--color-text-base); font-family: Outfit, ui-sans-serif, system-ui, sans-serif; font-size: 1.05rem; line-height: 1.2; }
+      .health-post-card p { display: -webkit-box; overflow: hidden; margin: 0; color: var(--color-text-muted); font-size: .84rem; line-height: 1.5; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+      .health-post-card__link { margin-top: auto; padding-top: 1rem; color: var(--color-brand-primary); font-size: .78rem; font-weight: 800; }
+      .health-empty-state { border: 1px solid var(--color-brand-border); border-radius: 1rem; padding: 3rem 1rem; color: var(--color-text-muted); text-align: center; }
+      @media (min-width: 40rem) {
+        .health-shell, .health-main { width: min(100% - 3rem, 72rem); }
+        .health-signal-strip, .health-quick-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .health-post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+      @media (min-width: 48rem) {
+        .health-hero__shell { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); }
+        .health-hero__media { min-height: 31rem; }
+        .health-layout { grid-template-columns: 12rem minmax(0, 1fr); }
+        .health-toc { display: block; }
+      }
+      @media (min-width: 64rem) {
+        .health-shell, .health-main { width: min(100% - 4rem, 72rem); }
+        .health-post-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      }
+      @media (max-width: 47.99rem) {
+        .health-hero__media { min-height: 15rem; }
+        .health-hero__media figcaption { right: .7rem; bottom: .7rem; max-width: 14rem; }
+        .health-related__heading { align-items: start; flex-direction: column; }
+        .health-related__heading > p { text-align: left; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .health-button, .health-signal-card, .health-quick-card, .health-post-card, .health-post-card__image img { transition: none; }
+      }
+  </style>
+)}

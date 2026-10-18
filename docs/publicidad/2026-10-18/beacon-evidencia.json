@@ -1,0 +1,56 @@
+{
+  "checked": "2026-10-18",
+  "codeBase": "9d05e9b95bb39679826134810ca864d3952bf15e",
+  "method": "Cloudflare API GET de configuración y navegador remoto contra producción; scripts publicitarios bloqueados en esta visita. No prueba de consentimiento ni de ausencia de Adsterra.",
+  "configuration": {
+    "zone": "cuidatuperroviejo.com",
+    "rum": "on",
+    "autoInstall": true,
+    "rulesetEnabled": true,
+    "lite": false,
+    "rule": {
+      "host": "*",
+      "paths": [
+        "*"
+      ],
+      "inclusive": true,
+      "isPaused": false
+    }
+  },
+  "observed": {
+    "url": "https://cuidatuperroviejo.com/herramientas/selector-movilidad-perros-mayores",
+    "status": 200,
+    "beacons": [
+      {
+        "src": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+        "configKeys": [
+          "version",
+          "token",
+          "r",
+          "spa"
+        ],
+        "hasToken": true,
+        "serverTiming": null,
+        "spa": 2
+      }
+    ],
+    "requests": [
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+        "initiatorType": "script"
+      },
+      {
+        "url": "https://cuidatuperroviejo.com/cdn-cgi/rum",
+        "initiatorType": "xmlhttprequest"
+      }
+    ],
+    "cookieNames": [],
+    "mobility": {
+      "hero": 8,
+      "alert": true,
+      "notice": true
+    }
+  },
+  "interpretation": "Cloudflare Web Analytics/RUM inyectado por la capa Cloudflare; no cargador del repositorio. Se observó beacon.min.js y solicitud real /cdn-cgi/rum. CookieNames vacío en una visita no demuestra ausencia universal de cookies de todos los servicios. No se afirma cobertura geográfica completa.",
+  "changes": "Ninguna modificación a zona/RUM/Workers."
+}

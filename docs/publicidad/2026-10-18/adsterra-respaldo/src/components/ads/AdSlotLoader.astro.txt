@@ -1,0 +1,59 @@
+---
+// src/components/ads/AdSlotLoader.astro
+// Carga diferida (lazy) de los slots de Adsterra: el código de anuncio real
+// vive dentro de un <template> y solo se inyecta en el DOM cuando el slot
+// entra en viewport (o cerca de él). Así el script de Adsterra nunca bloquea
+// el render inicial del artículo. Incluir una sola vez por página.
+---
+
+<script is:inline>
+  (() => {
+    const initAdSlots = () => {
+      const slots = document.querySelectorAll('.ad-slot[data-ad-pending="true"]');
+      if (!slots.length) return;
+
+      const loadSlot = (slot) => {
+        const template = slot.querySelector('template');
+        // El template solo trae el placeholder de código (comentario) hasta que
+        // se pegue el script real de Adsterra: en ese caso no hay nada que
+        // insertar todavía, así que dejamos visible el placeholder reservado.
+        const hasRealAdCode = template && Array.from(template.content.childNodes).some(
+          (node) => node.nodeType !== Node.COMMENT_NODE && !(node.nodeType === Node.TEXT_NODE && !node.textContent.trim())
+        );
+        if (template && hasRealAdCode) {
+          slot.appendChild(template.content.cloneNode(true));
+          template.remove();
+          const placeholder = slot.querySelector('.ad-slot__placeholder');
+          if (placeholder) placeholder.style.display = 'none';
+        }
+        slot.removeAttribute('data-ad-pending');
+      };
+
+      if (!('IntersectionObserver' in window)) {
+        slots.forEach(loadSlot);
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              loadSlot(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { rootMargin: '200px 0px', threshold: 0.01 }
+      );
+
+      slots.forEach((slot) => observer.observe(slot));
+    };
+
+    document.addEventListener('astro:page-load', initAdSlots);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAdSlots);
+    } else {
+      initAdSlots();
+    }
+  })();
+</script>
