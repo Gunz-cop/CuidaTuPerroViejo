@@ -1,6 +1,6 @@
 # Brief de contenidos: Cómo alimentar a un perro mayor sin dientes con seguridad
 
-**Sitio:** cuidatuperroviejo.com · **Pilar:** Alimentación de perros senior · **Tipo:** spoke Astro/MDX · **Versión inicial:** 2026-10-19 · **Estado:** corregido tras auditoría independiente R1; pendiente de ronda 2 de 3.
+**Sitio:** cuidatuperroviejo.com · **Pilar:** Alimentación de perros senior · **Tipo:** spoke Astro/MDX · **Versión inicial:** 2026-10-19 · **Estado:** APTO en auditoría R2; reabierto por fallo nuevo de integración del estado técnico, corregido y pendiente de ronda 3 de 3.
 
 ## 1. Datos, metadatos y frontmatter MDX
 
@@ -30,12 +30,12 @@ pilar: "alimentacion-perros-senior"
 keywordPrincipal: "alimentación para perros mayores sin dientes"
 heroImage: "/images/blog/alimentacion-perros-mayores-sin-dientes/beagle-senior-comida-blanda-v1.webp"
 heroImageAlt: "Ilustración generada con IA: beagle senior tricolor de hocico canoso ante un plato de comida blanda en una cocina; el plato no representa una receta universal."
-status: "Borrador"
+status: "Publicado"
 datePublished: "2026-10-19"
 ---
 ```
 
-Mantener `Borrador` durante entrega en rama/PR y no marcar inventario como publicado. El schema admite este valor; la generación local de ruta no demuestra publicación. No cambiar a Publicado sin verificar URL pública, fuera del alcance autorizado.
+Usar el valor técnico `status: "Publicado"` únicamente tras completar los autocontroles de redacción y recursos, antes de guardar el artículo en `src/content/blog/`, conforme al gate de la skill de redacción. El catálogo de proyección acepta este valor y el schema lo usa por defecto; otra etiqueta no impide crear la ruta y puede dejarla fuera de la clasificación del build. Esta etiqueta técnica no prueba ni autoriza despliegue. Mantener el inventario como redactado/validado localmente, sin marcarlo publicado. La entrega sigue limitada a rama y PR: no fusionar ni desplegar; comprobar una URL pública nueva queda fuera de este encargo.
 
 **Encuadre del encargo:** el usuario menciona un plan adjunto que no aparece en el entorno. Se ejecuta la instrucción explícita sobre este tema y su entrada pendiente del inventario; no se certifica haber leído el adjunto. El título de inventario promete «recetas blandas y papillas caseras». Se propone título seguro que resuelve esa intención mediante preparaciones de textura a partir de una dieta completa ya indicada, sin inventar recetas nutricionalmente completas. Registrar esta decisión en expediente, conservando el título original del catálogo.
 
@@ -188,13 +188,13 @@ Aplicar `.agents/skills/crear-animaciones-articulo-blog/SKILL.md`. **Ficha fija:
 2. Citas nominales próximas y bibliografía: F1 H2 2; F2 H2 2/3/5; F3 H2 1; F4 H2 1/3; F5 H2 1; F6 H2 4. Todas deben usarse con su límite y no solo figurar listadas. Casillas a verificar en artículo: F1 ☐ F2 ☐ F3 ☐ F4 ☐ F5 ☐ F6 ☐.
 3. Tres `AlertBox` de cuerpo: info introducción, danger H2 1, warning H2 3; además un cuarto `AlertBox type="info" title="Fuentes científicas y de autoridad"` antes del FAQ final, con seis entradas de título real enlazado, institución/autor, descripción breve y nota de responsabilidad. Un `FAQ` final, seis preguntas. Enlaces reales de sección 5; contingencia de segundo spoke explícita solo en brief, no filtrar al lector. Calculadora no aplica.
 4. Guía sin caso; no arco de paciente exigido, no testimonios ni tratamientos inventados. Responsabilidad editorial sin revisión veterinaria ficticia. IA declarada visiblemente en hero y cada figura, con alt descriptivo.
-5. Tres imágenes reales integradas y funcionando; hero con declaración IA visible mediante el `figcaption` que usa `heroImageAlt`, sin duplicar la imagen. Matriz, secuencia y registro operativos. La secuencia de tres pasos tendrá anterior/siguiente, reproducir/pausar/repetir, reproducción opcional finita sin autoplay, pausa efectiva, foco y objetivos de 44 px. Limpiar temporizadores al ocultar/navegar/desmontar y evitar inicializaciones duplicadas. Movimiento reducido conservará consulta manual sin animaciones/transiciones. Sin JS, todos los pasos legibles y controles inertes ocultos; impresión con y sin JS mostrará todos los pasos. No movimiento corporal del perro ni vídeo. No recursos pendientes presentados como disponibles. `status: Borrador`, inventario en curso, sin declaración Publicado.
+5. Tres imágenes reales integradas y funcionando; hero con declaración IA visible mediante el `figcaption` que usa `heroImageAlt`, sin duplicar la imagen. Matriz, secuencia y registro operativos. La secuencia de tres pasos tendrá anterior/siguiente, reproducir/pausar/repetir, reproducción opcional finita sin autoplay, pausa efectiva, foco y objetivos de 44 px. Limpiar temporizadores al ocultar/navegar/desmontar y evitar inicializaciones duplicadas. Movimiento reducido conservará consulta manual sin animaciones/transiciones. Sin JS, todos los pasos legibles y controles inertes ocultos; impresión con y sin JS mostrará todos los pasos. No movimiento corporal del perro ni vídeo. No recursos pendientes presentados como disponibles. `status: "Publicado"` como etiqueta técnica del catálogo solo tras completar los autocontroles, sin declarar publicación pública; inventario en curso/redactado y validado localmente. Entregar en rama/PR sin fusionar ni desplegar.
 6. No proporciones, kcal objetivo, cantidad de agua, tiempo de remojo, días tras extracción ni formulación universal. No medicamentos/dosis, no diagnóstico por imagen, no maniobras de alimentación forzada ni cambio de postura para disfagia sin equipo clínico.
 7. Verificación local real: móvil/escritorio, claro/oscuro, teclado, foco, contraste, zoom/reflujo, reduced motion, recursos HTTP/tipo/dimensiones, impresión y proyección Markdown, build con `npx astro build`. Capturas e informe ligados a versión. No confundir build con recursos probados.
 
 ## 10. Validación previa del creador
 
-Comprobado: metadatos contados y enum; inventario y diferenciación; seis fuentes abiertas con afirmación/localizador/límite y uso H2; presupuesto suma 2.200; componentes; prompts con misma raza; material sin caso; enlaces reales y contingencia; sin colisión de brief al crear. No es auditoría independiente ni APTO. Auditoría independiente R1 completada con NO APTO; correcciones registradas en `docs/contenido/alimentacion-perros-mayores-sin-dientes/correcciones-brief-r1.md`. Pendiente: auditoría del brief (ronda 2 de 3), producción y todas las pruebas del artículo completo. Esta corrección no es un veredicto independiente.
+Comprobado: metadatos contados y enum; inventario y diferenciación; seis fuentes abiertas con afirmación/localizador/límite y uso H2; presupuesto suma 2.200; componentes; prompts con misma raza; material sin caso; enlaces reales y contingencia; sin colisión de brief al crear. No es auditoría independiente ni APTO. Auditoría independiente R1 completada con NO APTO; correcciones registradas en `docs/contenido/alimentacion-perros-mayores-sin-dientes/correcciones-brief-r1.md`. Auditoría independiente R2: APTO, sobre SHA256 `accdd752038ed26bd5d30971bfecefe8237c26562c9262f23196fa449e8cf79c`. Fallo nuevo de integración: la etiqueta técnica previamente exigida excluye el artículo del catálogo de proyección aunque su ruta se genere; corrección documentada en `docs/contenido/alimentacion-perros-mayores-sin-dientes/correcciones-brief-integracion.md`. Pendiente: auditoría del brief (ronda 3 de 3), producción y todas las pruebas del artículo completo. Esta corrección no es un veredicto independiente.
 
 ## 11. Recursos prometidos y gate editorial
 
