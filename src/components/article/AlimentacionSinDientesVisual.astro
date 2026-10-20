@@ -1,0 +1,240 @@
+---
+interface Props { variant: 'decision' | 'comparacion' | 'secuencia' | 'registro'; }
+const { variant } = Astro.props;
+const uid = `alimentacion-${variant}`;
+const steps = [
+  { title: 'Parte de una dieta adecuada', label: 'Base', text: 'Separa la cantidad de alimento base indicada. Comprueba dieta y presentación con tu veterinario, especialmente si hay una enfermedad o una extracción reciente.', cue: 'Primero la dieta, después su presentación.' },
+  { title: 'Adapta solo cuando proceda', label: 'Textura', text: 'Con utensilios limpios, deshaz el alimento o humedécelo solo si está permitido. Comprueba que no queden partes duras. No hay una proporción de agua válida para todos.', cue: 'Cambiar la textura no equilibra una receta.' },
+  { title: 'Ofrece y observa sin forzar', label: 'Observación', text: 'Coloca el plato estable y accesible. Deja que coma voluntariamente. Ante tos, regurgitación o dificultad para tragar, detén el intento y consulta; si respira mal, acude a urgencias.', cue: 'La tolerancia decide el siguiente paso.' },
+];
+const fields = [
+  ['fecha', 'Fecha y hora'], ['dieta', 'Dieta exacta / presentación'],
+  ['ofrecido', 'Alimento base ofrecido (cantidad y unidad)'], ['restante', 'Alimento base restante (misma unidad)'],
+  ['textura', 'Adaptación de textura / agua añadida'], ['apetito', 'Apetito y facilidad para comer'],
+  ['peso', 'Peso y fecha, solo si se mide sin riesgo'], ['consulta', 'Pregunta o indicación de la clínica'],
+];
+---
+
+<section class={`asv asv-${variant}`} data-feeding-visual={variant} data-reader-atomic aria-labelledby={`${uid}-title`}>
+  {variant === 'decision' && <>
+    <header><p class="asv-kicker">Antes de elegir textura</p><h3 id={`${uid}-title`}>Tres situaciones, tres siguientes pasos</h3><p>La falta de dientes no dice por sí sola si hay dolor, cicatrización o un problema al tragar.</p></header>
+    <ol class="asv-map">
+      <li><span class="asv-number" aria-hidden="true">01</span><h4>Boca ya cicatrizada</h4><p><strong>Comprueba:</strong> si come cómodamente y mantiene su consumo.</p><p><strong>Siguiente paso:</strong> acordar una dieta adecuada y una presentación tolerable; pedir revisión ante dolor o cambios.</p></li>
+      <li><span class="asv-number" aria-hidden="true">02</span><h4>Extracción reciente</h4><p><strong>Comprueba:</strong> las instrucciones escritas de quien lo operó.</p><p><strong>Siguiente paso:</strong> preguntar qué alimento, textura y revisión necesita. No copiar los días de otra cirugía.</p></li>
+      <li class="asv-caution"><span class="asv-number" aria-hidden="true">03</span><h4>Tos o dificultad al tragar</h4><p><strong>Comprueba:</strong> qué ocurre durante la toma, sin repetirla para probar.</p><p><strong>Siguiente paso:</strong> detener el intento y consultar. Dificultad respiratoria: urgencias.</p></li>
+    </ol>
+    <p class="asv-note">Ayuda para ordenar la consulta; no es un test diagnóstico. Basada en las Guías Dentales de WSAVA y las fuentes VCA citadas en este apartado.</p>
+  </>}
+
+  {variant === 'comparacion' && <>
+    <header><p class="asv-kicker">Comparar sin elegir por apariencia</p><h3 id={`${uid}-title`}>Qué comprobar en cada presentación</h3></header>
+    <table class="asv-table" tabindex="0" aria-labelledby={`${uid}-title`}>
+      <caption>Opciones condicionadas al plan individual; ninguna es mejor para todos.</caption>
+      <thead><tr><th scope="col">Presentación</th><th scope="col">Ventaja práctica</th><th scope="col">Qué comprobar antes</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Húmedo completo</th><td>Puede ofrecer una textura blanda sin remojo</td><td>Adecuación, energía y compatibilidad con su plan</td></tr>
+        <tr><th scope="row">Seco humedecido, si procede</th><td>Permite adaptar el alimento que ya utiliza</td><td>Que esté permitido y que lo tolere</td></tr>
+        <tr><th scope="row">Receta formulada adaptada</th><td>Conserva una receta individual con otra presentación</td><td>Cambios autorizados de preparación y conservación</td></tr>
+      </tbody>
+    </table>
+    <p class="asv-note">Si no cabe toda la tabla, desplázala lateralmente; con teclado, enfócala y utiliza las flechas.</p>
+  </>}
+
+  {variant === 'secuencia' && <>
+    <header><p class="asv-kicker">Secuencia didáctica · tres momentos</p><h3 id={`${uid}-title`}>De la dieta al plato, con una pausa para observar</h3><p>Solo cuando la adaptación sea apropiada para tu perro. El tiempo de reproducción sirve para leer: no fija la duración de la preparación ni de una toma.</p></header>
+    <div class="asv-sequence" data-feeding-sequence data-step="0" data-playing="false">
+      <div class="asv-process" aria-hidden="true">
+        <svg viewBox="0 0 660 190" focusable="false">
+          <path d="M130 94H530" stroke="#bacbbd" stroke-width="3" stroke-dasharray="5 8"/>
+          <g class="asv-stage asv-stage-0" stroke="#244d3e" stroke-width="3" fill="#fffdf5">
+            <circle cx="105" cy="94" r="61" fill="#e5eedf"/>
+            <rect x="77" y="54" width="56" height="76" rx="8"/><path d="M88 67h34m-34 15h26m-26 17 9 9 23-26" fill="none"/>
+          </g>
+          <g class="asv-stage asv-stage-1" stroke="#244d3e" stroke-width="3" fill="#fffdf5">
+            <circle cx="330" cy="94" r="61" fill="#e5eedf"/>
+            <path d="M289 90h82l-12 40h-58z"/><path class="asv-mash" d="m317 56 21 46m-29-42 12 25m1-31 12 25m-22 1 22-10" fill="none"/><path d="M302 102h56m-50 10h44" stroke="#9b754e"/>
+          </g>
+          <g class="asv-stage asv-stage-2" stroke="#244d3e" stroke-width="3" fill="#fffdf5">
+            <circle cx="555" cy="94" r="61" fill="#e5eedf"/>
+            <path d="M514 103h82l-12 24h-58z"/><path d="M523 81q32-31 64 0-32 31-64 0z"/><circle cx="555" cy="81" r="9" fill="#244d3e"/>
+          </g>
+        </svg>
+        <div class="asv-stage-labels">{steps.map((step,i) => <span data-stage={i}>{step.label}</span>)}</div>
+      </div>
+      <div class="asv-controls" hidden>
+        <div class="asv-transport"><button type="button" data-action="prev" aria-label="Paso anterior de preparación">←</button><button type="button" data-action="play">Reproducir secuencia</button><button type="button" data-action="next" aria-label="Paso siguiente de preparación">→</button></div>
+        <p class="asv-position" aria-live="polite" aria-atomic="true"></p>
+        <p class="asv-motion">También puedes avanzar a tu ritmo con las flechas.</p>
+      </div>
+      <ol class="asv-steps">{steps.map((step,i) => <li data-panel={i}><span class="asv-number" aria-hidden="true">0{i+1}</span><div><h4>{step.title}</h4><p>{step.text}</p><p class="asv-cue">{step.cue}</p></div></li>)}</ol>
+    </div>
+    <p class="asv-stop"><strong>No fuerces comida ni agua con una jeringa.</strong> Un problema para tragar requiere valoración, aunque la comida esté muy triturada.</p>
+    <p class="asv-note">Síntesis doméstica orientativa de WSAVA, evaluación nutricional, y VCA, megaesófago, citadas en este apartado. El esquema no representa un vídeo ni movimiento corporal del perro.</p>
+  </>}
+
+  {variant === 'registro' && <>
+    <header><p class="asv-kicker">Una toma · datos para la consulta</p><h3 id={`${uid}-title`}>Registro de alimento y tolerancia</h3><p>Puedes completar estos campos o imprimirlos en blanco. No se envían ni se guardan: copia lo que quieras conservar antes de cerrar o recargar la página.</p><p class="asv-note">Para copiar en una libreta: fecha y hora; dieta; alimento base ofrecido y restante con su unidad; adaptación de textura; apetito; signos durante o después de comer; peso con fecha, si puede medirse sin riesgo; preguntas para la clínica.</p></header>
+    <div class="asv-record-fields">{fields.map(([id,label]) => <div class="asv-field"><label for={`${uid}-${id}`}>{label}</label><input id={`${uid}-${id}`} type="text" maxlength="160" autocomplete="off" /></div>)}</div>
+    <div class="asv-field"><label for={`${uid}-signos`}>Tos, regurgitación, dolor, vómitos o cambios en las heces (qué ocurrió y cuándo)</label><textarea id={`${uid}-signos`} rows="3" maxlength="350"></textarea></div>
+    <p class="asv-note">Compara el alimento base con la misma unidad. El peso o volumen de una papilla con agua no equivale directamente a las calorías de otra dieta. Si no puedes estimar lo restante, anótalo sin inventar precisión.</p>
+    <p class="asv-stop"><strong>No esperes a completar el registro si empeora.</strong> Detén la toma ante dificultad para tragar y consulta; dificultad respiratoria requiere urgencias.</p>
+    <button class="asv-print" type="button" hidden>Imprimir este registro</button>
+    <noscript><p class="asv-note">Puedes imprimir la página con la opción Imprimir de tu navegador o copiar los campos en una libreta.</p></noscript>
+  </>}
+</section>
+
+<script>
+  class FeedingSequence {
+    private step = 0;
+    private playing = false;
+    private timer: ReturnType<typeof setTimeout> | undefined;
+    private aborter = new AbortController();
+    private reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    constructor(private root: HTMLElement) {
+      root.dataset.enhanced = 'true';
+      root.querySelector<HTMLElement>('.asv-controls')!.hidden = false;
+      root.querySelectorAll<HTMLButtonElement>('[data-action]').forEach(button => button.addEventListener('click', () => {
+        if (button.dataset.action === 'play') {
+          if (this.playing) this.stop();
+          else if (!this.reduced.matches) { if (this.step === 2) this.step = 0; this.playing = true; this.render(); this.schedule(); }
+        } else { this.stop(); this.step = Math.max(0, Math.min(2, this.step + (button.dataset.action === 'next' ? 1 : -1))); this.render(); }
+      }, { signal: this.aborter.signal }));
+      this.reduced.addEventListener('change', this.preference, { signal: this.aborter.signal });
+      document.addEventListener('visibilitychange', this.visibility, { signal: this.aborter.signal });
+      window.addEventListener('pagehide', this.stop, { signal: this.aborter.signal });
+      this.preference();
+    }
+    private preference = () => {
+      this.stop();
+      this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.disabled = this.reduced.matches;
+      this.root.querySelector<HTMLElement>('.asv-motion')!.textContent = this.reduced.matches ? 'Movimiento reducido: recorre los pasos con las flechas, sin animación.' : 'También puedes avanzar a tu ritmo con las flechas.';
+    };
+    private visibility = () => { if (document.hidden) this.stop(); };
+    private stop = () => { clearTimeout(this.timer); this.playing = false; this.render(); };
+    private schedule() {
+      this.timer = setTimeout(() => {
+        if (!this.root.isConnected || !this.playing) { this.stop(); return; }
+        if (this.step < 2) { this.step++; this.render(); this.schedule(); }
+        else this.stop();
+      }, 6500);
+    }
+    private render() {
+      this.root.dataset.step = String(this.step); this.root.dataset.playing = String(this.playing);
+      this.root.querySelectorAll<HTMLElement>('[data-panel]').forEach((panel,i) => panel.dataset.active = String(i === this.step));
+      const position = this.root.querySelector<HTMLElement>('.asv-position')!;
+      position.setAttribute('aria-live', this.playing ? 'off' : 'polite'); position.textContent = `Paso ${this.step+1} de 3`;
+      this.root.querySelector<HTMLButtonElement>('[data-action="prev"]')!.disabled = this.step === 0;
+      this.root.querySelector<HTMLButtonElement>('[data-action="next"]')!.disabled = this.step === 2;
+      this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.textContent = this.playing ? 'Pausar' : this.step === 2 ? 'Repetir secuencia' : 'Reproducir secuencia';
+    }
+    disconnect() { clearTimeout(this.timer); this.aborter.abort(); }
+  }
+  const instances = new Map<HTMLElement, FeedingSequence>();
+  const recordAborters = new Map<HTMLElement, AbortController>();
+  let printCopy: HTMLElement | null = null;
+  function clearPrint() { printCopy?.remove(); printCopy = null; delete document.body.dataset.feedingPrint; }
+  function initialize() {
+    document.querySelectorAll<HTMLElement>('[data-feeding-sequence]').forEach(root => {
+      if (!instances.has(root)) instances.set(root, new FeedingSequence(root));
+    });
+    document.querySelectorAll<HTMLElement>('[data-feeding-visual="registro"]').forEach(root => {
+      if (recordAborters.has(root)) return;
+      const aborter = new AbortController(); recordAborters.set(root, aborter);
+      const button = root.querySelector<HTMLButtonElement>('.asv-print')!; button.hidden = false;
+      button.addEventListener('click', () => {
+        clearPrint();
+        printCopy = root.cloneNode(true) as HTMLElement;
+        printCopy.classList.add('asv-print-copy');
+        printCopy.removeAttribute('aria-labelledby');
+        printCopy.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
+        printCopy.querySelectorAll('label').forEach(el => el.removeAttribute('for'));
+        printCopy.querySelectorAll('button,noscript').forEach(el => el.remove());
+        const originals = root.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input,textarea');
+        printCopy.querySelectorAll('input,textarea').forEach((el,i) => {
+          const value = document.createElement('p'); value.className = 'asv-printed-value'; value.textContent = originals[i].value || '________________________________'; el.replaceWith(value);
+        });
+        document.body.appendChild(printCopy); document.body.dataset.feedingPrint = 'true'; window.print();
+      }, {signal:aborter.signal});
+    });
+  }
+  window.addEventListener('afterprint', clearPrint);
+  document.addEventListener('astro:before-swap', () => {
+    instances.forEach(instance => instance.disconnect()); instances.clear();
+    recordAborters.forEach(aborter => aborter.abort()); recordAborters.clear(); clearPrint();
+  });
+  document.addEventListener('astro:page-load', initialize);
+  initialize();
+</script>
+
+<style>
+  .asv { margin:2rem 0; padding:1.4rem; border:1px solid #c2d0bf; border-radius:1.2rem; background:#fffdf5; color:#244d3e; font-family:system-ui,sans-serif; }
+  .asv header { margin:0 0 1.2rem; }
+  .asv .asv-kicker { margin:0 0 .5rem; color:#4b6655; font-size:.73rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+  .asv h3 { color:#244d3e!important; margin:0 0 .75rem!important; font-size:clamp(1.2rem,3vw,1.7rem); line-height:1.3; }
+  .asv h4 { color:#244d3e!important; margin:0 0 .5rem; font-size:1.05rem; line-height:1.4; }
+  .asv p { color:#365543; margin:.6rem 0; font-size:.94rem; line-height:1.65; }
+  .asv strong { color:#244d3e!important; }
+  .asv-map { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; list-style:none; margin:0; padding:0; }
+  .asv-map li { padding:1rem; background:#edf3e7; border:1px solid #c7d6bf; border-radius:.8rem; margin:0; }
+  .asv-map .asv-caution { background:#fbefda; border-color:#d7c39d; }
+  .asv-number { display:inline-grid; place-items:center; width:2rem; height:2rem; margin-bottom:.65rem; border:1px solid #718a73; border-radius:50%; font-size:.8rem; font-weight:700; color:#244d3e; flex-shrink:0; }
+  .asv .asv-note { font-size:.81rem; color:#4b6251; margin:1rem 0 0; }
+  .asv .asv-stop { margin:1rem 0 0; padding:.9rem 1rem; border-left:4px solid #9c6229; background:#fbefd9; color:#563d22; }
+  .asv-process { background:#edf3e7; border-radius:.9rem; padding:.5rem .5rem 1rem; }
+  .asv-process svg { display:block; width:100%; height:auto; max-height:190px; }
+  .asv-stage-labels { display:grid; grid-template-columns:repeat(3,1fr); text-align:center; color:#365543; font-size:.8rem; font-weight:700; }
+  [data-enhanced="true"] .asv-stage { opacity:.36; transition:opacity .25s; }
+  [data-step="0"] .asv-stage-0,[data-step="1"] .asv-stage-1,[data-step="2"] .asv-stage-2 { opacity:1; }
+  [data-playing="true"][data-step="1"] .asv-mash { animation:feeding-mash 1.3s ease-in-out infinite; transform-origin:330px 85px; }
+  @keyframes feeding-mash { 50% { transform:translateY(7px); } }
+  .asv-controls { padding:1rem 0 .3rem; }
+  .asv [hidden] { display:none!important; }
+  .asv-transport { display:flex; gap:.5rem; }
+  .asv button { min-width:44px; min-height:44px; border:1px solid #829b81; border-radius:.6rem; padding:.65rem .8rem; color:#244d3e; background:#fffdf5; font:600 .85rem/1.4 system-ui,sans-serif; cursor:pointer; }
+  .asv [data-action="play"],.asv .asv-print { color:#fff; background:#244d3e; }
+  .asv [data-action="play"] { flex:1; }
+  .asv button:disabled { cursor:default; background:#e8eade; color:#4e6252; border-color:#abb9a7; }
+  .asv button:focus-visible,.asv input:focus-visible,.asv textarea:focus-visible,.asv-table:focus-visible { outline:3px solid #986420; outline-offset:3px; }
+  .asv-table { display:block; width:100%; max-width:100%; overflow-x:auto; color:#244d3e; border-collapse:collapse; font-size:.88rem; }
+  .asv-table caption { text-align:left; color:#365543; font-size:.84rem; padding:0 0 .8rem; }
+  .asv-table th,.asv-table td { min-width:135px; text-align:left; vertical-align:top; padding:.75rem; border:1px solid #b4c6b0; color:#244d3e; background:#fffdf5; line-height:1.6; }
+  .asv-table th { background:#e5eedf; font-weight:700; }
+  .asv .asv-position { font-weight:700; margin:.6rem 0 0; font-size:.83rem; }
+  .asv .asv-motion { margin:.2rem 0; font-size:.79rem; }
+  .asv-steps { margin:1rem 0 0; padding:0; list-style:none; }
+  .asv-steps li { display:flex; gap:.8rem; margin:0; padding:.7rem 0; }
+  [data-enhanced="true"] .asv-steps li[data-active="false"] { display:none; }
+  .asv .asv-cue { font-size:.84rem; font-weight:600; }
+  .asv-record-fields { display:grid; grid-template-columns:1fr 1fr; gap:.85rem; }
+  .asv-field { margin:0 0 .8rem; min-width:0; }
+  .asv label { display:block; color:#244d3e; font-size:.85rem; font-weight:600; line-height:1.5; margin-bottom:.4rem; }
+  .asv input,.asv textarea { width:100%; min-height:44px; box-sizing:border-box; border:1px solid #829b81; border-radius:.35rem; color:#244d3e; background:#fff; padding:.6rem; font:400 1rem/1.5 system-ui,sans-serif; }
+  .asv textarea { resize:vertical; }
+  .asv .asv-print { margin-top:1rem; }
+  :global(.asv-print-copy) { display:none; }
+  @media(max-width:700px) { .asv-map { grid-template-columns:1fr; } .asv { padding:1rem; } }
+  @media(max-width:480px) { .asv-record-fields { grid-template-columns:1fr; } .asv-stage-labels { font-size:.7rem; } }
+  @media(prefers-reduced-motion:reduce) { .asv * { animation:none!important; transition:none!important; } }
+  @media print {
+    .asv { border-color:#888; background:white; color:#111; box-shadow:none; break-inside:auto; }
+    .asv-controls,.asv-process,.asv-print { display:none!important; }
+    [data-enhanced="true"] .asv-steps li[data-active="false"] { display:flex!important; }
+    .asv-record-fields { grid-template-columns:1fr 1fr; }
+    .asv input,.asv textarea { border-color:#666; }
+    .asv-table { display:table; overflow:visible; font-size:.8rem; }
+    .asv-table th,.asv-table td { min-width:0; }
+    :global(body[data-feeding-print="true"] > :not(.asv-print-copy)) { display:none!important; }
+    :global(body[data-feeding-print="true"] > .asv-print-copy) { display:block!important; margin:0; padding:8mm; border:0; border-radius:0; font-family:system-ui,sans-serif; color:#111; background:#fff; }
+    :global(.asv-print-copy .asv-field) { break-inside:avoid; }
+    :global(.asv-print-copy .asv-printed-value) { min-height:1.2rem; border-bottom:1px solid #888; white-space:pre-wrap; overflow-wrap:anywhere; margin:.25rem 0 .6rem; }
+    :global(.asv-print-copy label) { font-weight:700; }
+    :global(.asv-print-copy header) { margin-bottom:8pt; }
+    :global(.asv-print-copy h3) { font-size:15pt!important; line-height:1.2!important; margin-bottom:6pt!important; }
+    :global(.asv-print-copy p),:global(.asv-print-copy label) { font-size:10pt!important; line-height:1.35!important; }
+    :global(.asv-print-copy .asv-kicker) { font-size:8pt!important; }
+    :global(.asv-print-copy .asv-field) { margin-bottom:5pt; }
+    :global(.asv-print-copy .asv-record-fields) { gap:6pt 12pt; }
+    :global(.asv-print-copy .asv-printed-value) { margin:2pt 0 5pt; min-height:10pt; }
+    :global(.asv-print-copy .asv-stop) { padding:8pt; margin-top:8pt; }
+  }
+</style>

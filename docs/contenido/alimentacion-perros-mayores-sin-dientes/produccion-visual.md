@@ -28,4 +28,4 @@ Diferencia entre el prompt propuesto en el brief y el recurso real: no aparece u
 
 ## Verificación funcional
 
-Pendiente de integrar el artículo tras APTO del brief. El cierre de esta sección registrará decodificación en navegador, tamaños realmente seleccionados, capturas y pruebas de los componentes. Este estado no equivale a recurso publicado.
+Las tres escenas están integradas en el artículo. La verificación propia de navegador y sus capturas se conservan en `verificacion-creacion.json` y `capturas-creacion/`; véase `informe-creacion-articulo.md` para recorrido, procedencia de las pruebas y límites. Se comprueba decodificación real y `currentSrc`, no solo existencia de archivos. La hero anuncia 400/1200 según el helper del sitio; las imágenes de cuerpo anuncian 400/800/1200. La variante 800 de hero se conserva sin afirmar que el helper la sirva. Este estado no equivale a recurso publicado.

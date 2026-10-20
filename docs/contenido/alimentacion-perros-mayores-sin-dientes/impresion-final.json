@@ -1,0 +1,35 @@
+{
+  "fecha_prueba": "2026-10-20",
+  "alcance": "Prueba propia focal sobre el build final de appendChild y CSS de impresión a 10 pt.",
+  "casos": [
+    {
+      "tipo": "normal",
+      "pdf": "registro-relleno.pdf",
+      "paginas_A4": 1,
+      "valores_exactos_preservados": true,
+      "font_px": "13.3333px",
+      "font_pt": 10,
+      "beforeprint_real": true,
+      "afterprint_limpia": true,
+      "campos_maxlength": {
+        "inputs": 160,
+        "notas": 350
+      }
+    },
+    {
+      "tipo": "maximo",
+      "pdf": "registro-maximo.pdf",
+      "paginas_A4": 1,
+      "valores_exactos_preservados": true,
+      "font_px": "13.3333px",
+      "font_pt": 10,
+      "beforeprint_real": true,
+      "afterprint_limpia": true,
+      "campos_maxlength": {
+        "inputs": 160,
+        "notas": 350
+      }
+    }
+  ],
+  "errores_js": []
+}
