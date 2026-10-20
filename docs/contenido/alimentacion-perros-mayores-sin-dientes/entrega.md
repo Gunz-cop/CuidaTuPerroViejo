@@ -2,7 +2,7 @@
 
 > **Entrega v1 rechazada por el propietario el 2026-10-20, incluido su brief.** Los resultados y enlaces que siguen se conservan como antecedentes y no constituyen aceptación vigente. Se inicia un encargo nuevo desde investigación y brief, sin ampliar el artículo rechazado. [Encargo, roles y rondas de v2](reinicio-v2/encargo-y-rondas.md). La PR vuelve a borrador; no publicar esta versión.
 
-[Abrir la entrega v2 y sus recursos para revisión](reinicio-v2/entrega-v2.md).
+[Abrir la corrección vigente, lectura y auditoría R3](correccion-2026-10-20/entrega.md). [Entrega histórica v2/R2](reinicio-v2/entrega-v2.md).
 
 ## Antecedente v1 rechazado
 

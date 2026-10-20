@@ -1,0 +1,5684 @@
+{
+  "scope": "Auditoría propia Chromium local, sin despliegue",
+  "checks": [
+    {
+      "check": "390-light: tema real",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "390-light: sin overflow global",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "390-light: cinco escenas decodificadas",
+      "pass": true,
+      "evidence": [
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/beagle-senior-comida-blanda-v1.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/medir-racion-base-beagle-senior-v2-400.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/preparar-textura-comida-perro-v1-400.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/observar-comida-perro-senior-v1-400.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/registro-alimentacion-consulta-beagle-senior-v2-400.webp",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "390-light: dos secuencias sin autoplay",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "390-light: controles tactiles 44px",
+      "pass": true,
+      "evidence": [
+        {
+          "text": "←",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Reproducir secuencia",
+          "w": 220,
+          "h": 44
+        },
+        {
+          "text": "→",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "←",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Reproducir secuencia",
+          "w": 220,
+          "h": 44
+        },
+        {
+          "text": "→",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Imprimir este registro",
+          "w": 181.59375,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "check": "390-light: axe cuerpo",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "390-light:base: avance teclado",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "390-light:base: foco visible",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "check": "390-light:ingesta: avance teclado",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "390-light:ingesta: foco visible",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "check": "390-light: anclas internas cuerpo",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "390-dark: tema real",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "390-dark: sin overflow global",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "390-dark: cinco escenas decodificadas",
+      "pass": true,
+      "evidence": [
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/beagle-senior-comida-blanda-v1.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/medir-racion-base-beagle-senior-v2-400.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/preparar-textura-comida-perro-v1-400.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/observar-comida-perro-senior-v1-400.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/registro-alimentacion-consulta-beagle-senior-v2-400.webp",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "390-dark: dos secuencias sin autoplay",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "390-dark: controles tactiles 44px",
+      "pass": true,
+      "evidence": [
+        {
+          "text": "←",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Reproducir secuencia",
+          "w": 220,
+          "h": 44
+        },
+        {
+          "text": "→",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "←",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Reproducir secuencia",
+          "w": 220,
+          "h": 44
+        },
+        {
+          "text": "→",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Imprimir este registro",
+          "w": 181.59375,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "check": "390-dark: axe cuerpo",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "390-dark:base: avance teclado",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "390-dark:base: foco visible",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "check": "390-dark:ingesta: avance teclado",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "390-dark:ingesta: foco visible",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "check": "390-dark: anclas internas cuerpo",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "393-light: tema real",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "393-light: sin overflow global",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "393-light: cinco escenas decodificadas",
+      "pass": true,
+      "evidence": [
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/beagle-senior-comida-blanda-v1.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/medir-racion-base-beagle-senior-v2-400.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/preparar-textura-comida-perro-v1-400.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/observar-comida-perro-senior-v1-400.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/registro-alimentacion-consulta-beagle-senior-v2-400.webp",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "393-light: dos secuencias sin autoplay",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "393-light: controles tactiles 44px",
+      "pass": true,
+      "evidence": [
+        {
+          "text": "←",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Reproducir secuencia",
+          "w": 223,
+          "h": 44
+        },
+        {
+          "text": "→",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "←",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Reproducir secuencia",
+          "w": 223,
+          "h": 44
+        },
+        {
+          "text": "→",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Imprimir este registro",
+          "w": 181.59375,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "check": "393-light: axe cuerpo",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "393-light:base: avance teclado",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "393-light:base: foco visible",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "check": "393-light:ingesta: avance teclado",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "393-light:ingesta: foco visible",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "check": "393-light: anclas internas cuerpo",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "393-dark: tema real",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "393-dark: sin overflow global",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "393-dark: cinco escenas decodificadas",
+      "pass": true,
+      "evidence": [
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/beagle-senior-comida-blanda-v1.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/medir-racion-base-beagle-senior-v2-400.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/preparar-textura-comida-perro-v1-400.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/observar-comida-perro-senior-v1-400.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/registro-alimentacion-consulta-beagle-senior-v2-400.webp",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "393-dark: dos secuencias sin autoplay",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "393-dark: controles tactiles 44px",
+      "pass": true,
+      "evidence": [
+        {
+          "text": "←",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Reproducir secuencia",
+          "w": 223,
+          "h": 44
+        },
+        {
+          "text": "→",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "←",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Reproducir secuencia",
+          "w": 223,
+          "h": 44
+        },
+        {
+          "text": "→",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Imprimir este registro",
+          "w": 181.59375,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "check": "393-dark: axe cuerpo",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "393-dark:base: avance teclado",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "393-dark:base: foco visible",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "check": "393-dark:ingesta: avance teclado",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "393-dark:ingesta: foco visible",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "check": "393-dark: anclas internas cuerpo",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "1366-light: tema real",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "1366-light: sin overflow global",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "1366-light: cinco escenas decodificadas",
+      "pass": true,
+      "evidence": [
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/beagle-senior-comida-blanda-v1.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/medir-racion-base-beagle-senior-v2-800.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/preparar-textura-comida-perro-v1-800.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/observar-comida-perro-senior-v1-800.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/registro-alimentacion-consulta-beagle-senior-v2-800.webp",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "1366-light: dos secuencias sin autoplay",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "1366-light: controles tactiles 44px",
+      "pass": true,
+      "evidence": [
+        {
+          "text": "←",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Reproducir secuencia",
+          "w": 535.21875,
+          "h": 44
+        },
+        {
+          "text": "→",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "←",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Reproducir secuencia",
+          "w": 535.21875,
+          "h": 44
+        },
+        {
+          "text": "→",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Imprimir este registro",
+          "w": 181.59375,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "check": "1366-light: axe cuerpo",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "1366-light:base: avance teclado",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "1366-light:base: foco visible",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "check": "1366-light:ingesta: avance teclado",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "1366-light:ingesta: foco visible",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "check": "1366-light: anclas internas cuerpo",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "1366-dark: tema real",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "1366-dark: sin overflow global",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "1366-dark: cinco escenas decodificadas",
+      "pass": true,
+      "evidence": [
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/beagle-senior-comida-blanda-v1.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/medir-racion-base-beagle-senior-v2-800.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/preparar-textura-comida-perro-v1-800.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/observar-comida-perro-senior-v1-800.webp",
+          "ok": true
+        },
+        {
+          "src": "http://127.0.0.1:8766/images/blog/alimentacion-perros-mayores-sin-dientes/registro-alimentacion-consulta-beagle-senior-v2-800.webp",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "1366-dark: dos secuencias sin autoplay",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "1366-dark: controles tactiles 44px",
+      "pass": true,
+      "evidence": [
+        {
+          "text": "←",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Reproducir secuencia",
+          "w": 535.21875,
+          "h": 44
+        },
+        {
+          "text": "→",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "←",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Reproducir secuencia",
+          "w": 535.21875,
+          "h": 44
+        },
+        {
+          "text": "→",
+          "w": 44,
+          "h": 44
+        },
+        {
+          "text": "Imprimir este registro",
+          "w": 181.59375,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "check": "1366-dark: axe cuerpo",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "1366-dark:base: avance teclado",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "1366-dark:base: foco visible",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "check": "1366-dark:ingesta: avance teclado",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "1366-dark:ingesta: foco visible",
+      "pass": true,
+      "evidence": {
+        "active": true,
+        "outline": "solid",
+        "width": "3px"
+      }
+    },
+    {
+      "check": "1366-dark: anclas internas cuerpo",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "temporizador: ambas avanzan realmente",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "pausa real: sin avance durante 7s",
+      "pass": true,
+      "evidence": [
+        {
+          "step": "1",
+          "playing": "false",
+          "transitions": [
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s"
+          ]
+        },
+        {
+          "step": "1",
+          "playing": "false",
+          "transitions": [
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s",
+            "0s"
+          ]
+        }
+      ]
+    },
+    {
+      "check": "pausa real: transiciones detenidas",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "reproduccion finita: ambas terminan",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "repetir disponible: base",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "repetir disponible: ingesta",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "repetir reinicia al primer paso",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "pagehide simulado detiene reproduccion",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "visibilitychange simulado detiene reproduccion",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "before-swap simulado detiene reproduccion",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "reinicializacion idempotente, un solo avance",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "impresion JS muestra ocho pasos",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "PDF articulo JS incluye ambos recorridos",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "registro False: conserva todos los valores",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "registro False: una pagina A4",
+      "pass": true,
+      "evidence": 1
+    },
+    {
+      "check": "registro False: valores completos en PDF",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "registro True: conserva todos los valores",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "registro True: una pagina A4",
+      "pass": true,
+      "evidence": 1
+    },
+    {
+      "check": "registro True: valores completos en PDF",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "registro: escribir e imprimir no envia solicitudes",
+      "pass": true,
+      "evidence": []
+    },
+    {
+      "check": "registro: sin persistencia de valores",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "sin JS: ocho pasos visibles",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "sin JS: controles no funcionales ocultos",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "sin JS: sin overflow a 375px",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "PDF sin JS conserva ambos finales",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "movimiento reducido base: reproduccion desactivada",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "movimiento reducido base: avance manual disponible",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "movimiento reducido base: sin transiciones",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "movimiento reducido ingesta: reproduccion desactivada",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "movimiento reducido ingesta: avance manual disponible",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "movimiento reducido ingesta: sin transiciones",
+      "pass": true,
+      "evidence": null
+    },
+    {
+      "check": "sin errores JavaScript",
+      "pass": true,
+      "evidence": []
+    }
+  ],
+  "failures": [],
+  "screens": [
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/390-light-cabecera.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/390-light-base-paso3.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/390-light-ingesta-paso3.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/390-dark-cabecera.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/390-dark-base-paso3.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/390-dark-ingesta-paso3.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/393-light-cabecera.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/393-light-base-paso3.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/393-light-ingesta-paso3.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/393-dark-cabecera.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/393-dark-base-paso3.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/393-dark-ingesta-paso3.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/1366-light-cabecera.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/1366-light-base-paso3.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/1366-light-ingesta-paso3.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/1366-dark-cabecera.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/1366-dark-base-paso3.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/1366-dark-ingesta-paso3.png",
+    "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/390-reduced-base.png"
+  ],
+  "pdf": [
+    {
+      "path": "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/articulo-completo-js.pdf",
+      "pages": 27
+    },
+    {
+      "path": "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/registro-ejemplo.pdf",
+      "pages": 1
+    },
+    {
+      "path": "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/registro-maximo.pdf",
+      "pages": 1
+    },
+    {
+      "path": "docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/auditor/capturas/articulo-completo-sin-js.pdf",
+      "pages": 27
+    }
+  ],
+  "browser_errors": [],
+  "hashes": {
+    "src/content/blog/alimentacion-perros-mayores-sin-dientes.mdx": "fd1033851fb70cd61c040ce1c4f0c83fba6952e53541fd4e2113a531de5df376",
+    "src/components/article/AlimentacionSinDientesRecursosV2.astro": "315146723f2ea05d62244a52725b1d89233dff95b66d9dd5481fef46b1720026"
+  },
+  "reading": {
+    "390-light": [
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 42,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 41,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 25,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 26,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 31,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 28,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 25,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 42,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 27,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 43,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 31,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 8,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 43,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 23,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 30,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 45,
+        "lines": 8,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 33,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 29,
+        "lines": 4,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 48,
+        "lines": 8,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 40,
+        "lines": 7,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 31,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 47,
+        "lines": 8,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      }
+    ],
+    "390-dark": [
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 42,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 41,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 25,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 26,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 31,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 28,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 25,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 42,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 27,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 43,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 31,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 8,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 43,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 23,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 30,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 45,
+        "lines": 8,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 33,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 29,
+        "lines": 4,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 48,
+        "lines": 8,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 40,
+        "lines": 7,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 31,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 47,
+        "lines": 8,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      }
+    ],
+    "393-light": [
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 42,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 41,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 25,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 26,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 31,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 28,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 25,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 42,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 27,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 43,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 31,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 8,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 43,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 23,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 30,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 45,
+        "lines": 8,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 33,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 29,
+        "lines": 4,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 48,
+        "lines": 8,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 40,
+        "lines": 7,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 31,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 47,
+        "lines": 7,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      }
+    ],
+    "393-dark": [
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 42,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 41,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 25,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 26,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 31,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 28,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 25,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 42,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 27,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 43,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 31,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 8,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 43,
+        "lines": 7,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 5,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 23,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 30,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 32,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 45,
+        "lines": 8,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 33,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 6,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 29,
+        "lines": 4,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 48,
+        "lines": 8,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 7,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 33,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 40,
+        "lines": 7,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 31,
+        "lines": 5,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 47,
+        "lines": 7,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      }
+    ],
+    "1366-light": [
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 42,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 41,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 25,
+        "lines": 2,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 2,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 26,
+        "lines": 2,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 31,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 28,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 25,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 42,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 27,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 43,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 31,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 43,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 23,
+        "lines": 2,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 30,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 45,
+        "lines": 4,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 29,
+        "lines": 2,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 48,
+        "lines": 4,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 40,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 31,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 47,
+        "lines": 4,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      }
+    ],
+    "1366-dark": [
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 42,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 41,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 25,
+        "lines": 2,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 2,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 26,
+        "lines": 2,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 31,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 28,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 25,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 42,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 27,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 29,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 37,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 40,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 38,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 43,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 31,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 30,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 41,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 39,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 43,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 36,
+        "lines": 4,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 23,
+        "lines": 2,
+        "font": "18px",
+        "lineHeight": "32.4px"
+      },
+      {
+        "words": 34,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 30,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 32,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 45,
+        "lines": 4,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 35,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 29,
+        "lines": 2,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 48,
+        "lines": 4,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 36,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 33,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 40,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 31,
+        "lines": 3,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      },
+      {
+        "words": 47,
+        "lines": 4,
+        "font": "14px",
+        "lineHeight": "22.75px"
+      }
+    ]
+  },
+  "reading_summary": {
+    "390-light": {
+      "paragraphs": 128,
+      "max_lines": 8,
+      "note": "Medición, no umbral universal de líneas o tamaño. La legibilidad se evalúa además en las capturas."
+    },
+    "390-dark": {
+      "paragraphs": 128,
+      "max_lines": 8,
+      "note": "Medición, no umbral universal de líneas o tamaño. La legibilidad se evalúa además en las capturas."
+    },
+    "393-light": {
+      "paragraphs": 128,
+      "max_lines": 8,
+      "note": "Medición, no umbral universal de líneas o tamaño. La legibilidad se evalúa además en las capturas."
+    },
+    "393-dark": {
+      "paragraphs": 128,
+      "max_lines": 8,
+      "note": "Medición, no umbral universal de líneas o tamaño. La legibilidad se evalúa además en las capturas."
+    },
+    "1366-light": {
+      "paragraphs": 128,
+      "max_lines": 4,
+      "note": "Medición, no umbral universal de líneas o tamaño. La legibilidad se evalúa además en las capturas."
+    },
+    "1366-dark": {
+      "paragraphs": 128,
+      "max_lines": 4,
+      "note": "Medición, no umbral universal de líneas o tamaño. La legibilidad se evalúa además en las capturas."
+    }
+  },
+  "note": "No se ocultaron nav/asistente para capturas. Eventos pagehide/visibility/Astro simulados; no se afirma navegación o cambio de pestaña nativos. window.print se interceptó solo en pruebas PDF del registro; se imprimió con su CSS real."
+}

@@ -239,7 +239,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 *Estado: 1 publicado, 10 por redactar*
 - [x] *Comida casera para perros mayores* (Publicado)
 - [🔒] *Yema o clara de huevo para perros senior: cómo alimentar a dos perros con necesidades opuestas (uno debe subir y otro bajar de peso) en la misma casa* (Caso propio: Luna y Dakota) **[RESERVA PERSONAL — no priorizar ni seleccionar sin petición expresa]**
-- [~] *Cómo alimentar a un perro senior sin dientes: recetas blandas y papillas caseras* (Entrega v1 rechazada; nuevo brief v2 APTO R2 y artículo integrado APTO R2, 5.858 palabras editoriales visibles. Pendiente de revisión del propietario y publicación; PR #123 en borrador, sin fusionar ni desplegar v2. Brief: `briefings/briefing-alimentacion-perros-mayores-sin-dientes-v2.md`; entrega y lectura: `docs/contenido/alimentacion-perros-mayores-sin-dientes/reinicio-v2/entrega-v2.md`; Búsqueda GSC)
+- [~] *Cómo alimentar a un perro mayor sin dientes: una guía para el día a día* (V1 rechazada; v2 fusionada en PR #123 por autorización del propietario el 2026-10-20. Corrección posterior solicitada y preparada para revisión: APTO R3 con observación cosmética en impresión, 5.288 palabras DOM; sin fusionar ni desplegar esta corrección. Brief: `briefings/briefing-alimentacion-perros-mayores-sin-dientes-v2.md`; entrega y lectura vigentes: `docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/entrega.md`; Búsqueda GSC)
 - [ ] *Dieta BARF para perros senior: pros, contras y cómo adaptarla de forma segura* (Búsqueda GSC)
 - [ ] *Pienso senior con condroprotectores: qué buscar en las etiquetas nutricionales* (Búsqueda GSC)
 - [ ] *Cómo abrir el apetito de un perro viejo que se niega a comer* (Búsqueda GSC)

@@ -32,4 +32,14 @@ Se conserva la rama `contenido/alimentacion-perros-mayores-sin-dientes` y la PR 
 | Artículo v2 y recursos | 1/3 | Scratch SHA256 `05ffebd06f2adf79a29495907b339bba5edf1f28dda15e09ebce0957172ee9f8` | APTO EDITORIAL PROVISIONAL; informe `auditoria-articulo-r1.md`. 5.844 palabras AST. No publicable aún: recursos y cierre integrado pendientes; producción visual autorizada tras el veredicto |
 | Artículo v2 y recursos | 2/3 | MDX `8600c7a8ec6a8fb9d58c3ad35d77770a8233ca8684bd38c694f486ef6d314be2`; componente `f06a38f052eb430e9b701a671607e93753709dade29905d2bc8749f39a92d899` | APTO / Publicable para entrega y revisión del propietario; conjunto completo verificado en `auditoria-articulo-r2.md`. 5.858 palabras DOM, recursos y lectura privada funcionando. No autoriza publicación |
 
-Brief y artículo conservan una tercera ronda disponible; no se consumió ni se abrió una serie separada para los recursos. Los cambios posteriores a este cierre se limitan al índice de entrega, inventario, metadatos de PR y evidencia de CI/no despliegue; no alteran los documentos ni recursos aprobados.
+Al cerrar R2, brief y artículo conservaban una tercera ronda disponible; no se consumió ni se abrió una serie separada para los recursos. Los cambios posteriores a este cierre se limitan al índice de entrega, inventario, metadatos de PR y evidencia de CI/no despliegue; no alteran los documentos ni recursos aprobados.
+
+## Corrección solicitada tras la fusión de la PR #123
+
+La PR #123 se fusionó por instrucción expresa del propietario el 2026-10-20 (`f0242e09c2addd7c2e6b2c7f20c37b11dfcdb326`). Después encargó aplicar `../instrucciones-correccion-2026-10-20.md`, recibido en la rama del revisor. Se conservan los estados anteriores como historia; esta corrección requiere revisión propia y no se fusiona ni despliega. [Encargo y adenda](../correccion-2026-10-20/encargo.md), [entrega vigente](../correccion-2026-10-20/entrega.md).
+
+| Documento | Ronda | Versión | Resultado |
+|---|---|---|---|
+| Artículo v2 y recursos corregidos | 3/3 | MDX `fd1033851fb70cd61c040ce1c4f0c83fba6952e53541fd4e2113a531de5df376`; recurso `315146723f2ea05d62244a52725b1d89233dff95b66d9dd5481fef46b1720026`; tabla `c640a373a219e89ec5c6c2736671a016982bec15810d1d373086e8fa0dfdc564` | APTO con observación P2 cosmética en impresión del registro, sin P0/P1; [informe](auditoria-articulo-r3.md). 5.288 palabras DOM, reducción por utilidad autorizada y justificada antes de editar. Sin nuevas rondas disponibles. |
+
+El brief sigue APTO R2, sin alteración de su documento ni auditoría adicional. No se ha reiniciado la serie del artículo y no hubo cambios al producto ni a los privados después de R3.
