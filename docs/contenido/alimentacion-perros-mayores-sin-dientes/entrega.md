@@ -1,0 +1,54 @@
+# Alimentación para perros mayores sin dientes
+
+> **Entrega v1 rechazada por el propietario el 2026-10-20, incluido su brief.** Los resultados y enlaces que siguen se conservan como antecedentes y no constituyen aceptación vigente. Se inicia un encargo nuevo desde investigación y brief, sin ampliar el artículo rechazado. [Encargo, roles y rondas de v2](reinicio-v2/encargo-y-rondas.md). La PR vuelve a borrador; no publicar esta versión.
+
+[Abrir la entrega v2 y sus recursos para revisión](reinicio-v2/entrega-v2.md).
+
+## Antecedente v1 rechazado
+
+Entrega limitada a este artículo. [PR #123](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/123). Rama: `contenido/alimentacion-perros-mayores-sin-dientes`. Base: `c9af722dd5cf27d8d37878ba01c4df339f0b6f76`. Producto completo preparado en `c386535d0e9b2c1a48596574555cf50e89fdc507`. No se ha fusionado ni desplegado a producción. El push sí activó una versión de prueba automática, documentada abajo.
+
+No se recibió un archivo adjunto. Durante el cierre se localizó el [plan editorial](../plan-elaboracion-articulos-2026-10-19.md) en la rama `docs/plan-editorial-search-console-2026-10-19` y se leyó esa versión. Su alcance coincide con el tema, la diferenciación y los recursos entregados. La lectura fue tardía: los informes anteriores conservaron honestamente la limitación de trabajar sin el plan localizado. [Comprobación y procedencia](comprobacion-plan-localizado.md).
+
+## Estado de auditoría
+
+- Brief: **APTO, ronda 3/3**, [informe final](auditoria-brief-r3.md). La tercera ronda resolvió una incompatibilidad real del estado técnico con el catálogo; no se reinició el contador.
+- Artículo completo y recursos: **APTO / Publicable en ronda 1/3**, sin hallazgos pendientes; [informe independiente](auditoria-articulo-r1.md). El auditor es distinto de creación y corrección. No se abrieron rondas separadas para los recursos.
+- [Roles, alcance e historial](coordinacion.md).
+
+## Contenido y recursos
+
+Guía sin caso clínico personal, basada en seis documentos identificados y verificados. Distingue boca cicatrizada, extracción reciente y dificultad para tragar. No ofrece recetas completas universales, proporciones de agua, días posoperatorios ni resultados clínicos inventados.
+
+Se entregan tres escenas coherentes de un beagle senior, declaradas visiblemente como ilustraciones generadas con IA; nueve WebP responsive y sus originales. El artículo integra matriz de situaciones, comparación accesible de presentaciones, secuencia de tres pasos y registro editable e imprimible, sin envío de los campos. Los recursos funcionan localmente y conservan alternativas sin JavaScript.
+
+- [Artículo MDX](../../../src/content/blog/alimentacion-perros-mayores-sin-dientes.mdx).
+- [Brief aprobado](../../../briefings/briefing-alimentacion-perros-mayores-sin-dientes.md).
+- [Informe de creación, tabla por H2 y fuentes](informe-creacion-articulo.md).
+- [Producción y continuidad visual](produccion-visual.md).
+
+## Comprobaciones locales
+
+Build completo: **33 documentos**. `astro check`: **0 errores, 0 advertencias, 62 hints preexistentes**. Las **107 pruebas generales** y las pruebas offline de agent-readiness pasaron. Inventario, descubrimiento, proyección Markdown, API, routing, crecimiento y correspondencia semántica también pasaron. Los registros están en [verificacion](verificacion/).
+
+La comprobación técnica de coordinación con axe no detectó infracciones automáticas en el artículo completo a 390 y 1366 px, claro y oscuro. Se confirmó decodificación de las tres imágenes y ausencia de anclas rotas. La validación propia cubre además 375/320 px, foco/teclado, pausa, reproducción finita, repetición, movimiento reducido y lectura de todos los pasos sin JavaScript y en impresión. No se presenta una prueba automática como certificación completa de accesibilidad.
+
+El registro normal y el rellenado hasta sus máximos caben en una A4 a 10 pt, conservando los valores. Los resultados y límites de esas pruebas están en [impresion-final.json](impresion-final.json) y en el informe de creación. Las pruebas usan Chromium local y no certifican un despliegue ni todos los navegadores.
+
+`status: Publicado` es el valor técnico requerido por el catálogo de este repositorio; no acredita publicación pública. El inventario mantiene el artículo en curso. La autorización termina en rama y PR.
+
+## Capturas y recursos de revisión
+
+- [Página móvil en oscuro](capturas-creacion/390-dark-pagina.png).
+- [Página de escritorio](capturas-creacion/1366-light-pagina.png).
+- [Detalle móvil de la secuencia](capturas-creacion/390-dark-paso-2.png).
+- [Matriz en escritorio](capturas-creacion/1366-light-matriz.png).
+- [Capturas y pruebas del auditor, sin retirar overlays](capturas-auditor-r1/).
+- [Registro rellenado: PDF de comprobación](capturas-creacion/registro-relleno.pdf).
+- [Registro al máximo: PDF de comprobación](capturas-creacion/registro-maximo.pdf).
+
+Las capturas de página conservan navegación y asistente. Las de detalle separan temporalmente esos overlays para mostrar el recurso completo; el informe de creación declara esa diferencia. Los PDF son evidencias locales de impresión, no descargas prometidas dentro del artículo.
+
+## Incidencia de la integración remota
+
+El push activó el disparador preexistente de Cloudflare para ramas no productivas, que ejecuta `wrangler versions upload` y creó una versión de prueba. No hubo despliegue de producción: la API mantiene activa al 100 % la versión del 18 de octubre. Se excluyó únicamente esta rama de futuras subidas automáticas, comprobando que el disparador de producción no cambió. La versión previa ya creada sigue registrada; no se ha desactivado globalmente el acceso a las demás versiones. [Registro completo y limitaciones](incidencia-preview-automatica.md).

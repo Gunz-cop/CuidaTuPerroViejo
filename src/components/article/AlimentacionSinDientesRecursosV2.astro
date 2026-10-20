@@ -1,0 +1,223 @@
+---
+interface Props { variant: 'base' | 'ingesta' | 'registro'; }
+const { variant } = Astro.props;
+const uid = `feeding-v2-${variant}-${crypto.randomUUID().slice(0, 8)}`;
+const lessons = {
+  base: {
+    title: 'La base se mide antes de cambiar la presentación',
+    intro: 'Sigue el recorrido del alimento: añadir agua, cuando esté indicado, cambia su presentación; no añade alimento ni demuestra cuánto acabará comiendo.',
+    labels: ['Medir la base', 'Adaptar', 'Distinguir volumen', 'Servir y registrar'],
+    steps: [
+      ['Separa la base indicada', 'Tara el recipiente vacío y mide la cantidad de alimento que corresponda a su plan. Las porciones dibujadas son símbolos: no representan gramos ni una ración recomendada.'],
+      ['Adapta solo si está permitido', 'Traslada esa misma base al recipiente de preparación. Añade agua o modifica la textura únicamente si es apropiado para ese producto y para tu perro; el dibujo no indica una proporción.'],
+      ['Más volumen, la misma base', 'La presentación puede ocupar más espacio después de añadir agua. Los mismos símbolos de alimento siguen dentro: el volumen de la mezcla no sustituye a la cantidad de base ni mide absorción.'],
+      ['Ofrece y anota lo que quede', 'Sirve sin forzar y observa la tolerancia. Distingue lo servido de lo realmente ingerido; si quedan restos o hay derrames, conserva esa incertidumbre en el registro.'],
+    ],
+    note: 'Solo ilustra la relación entre base y presentación. No es una receta, un cálculo de calorías ni una pauta para problemas de deglución.',
+  },
+  ingesta: {
+    title: 'Del plato al registro: qué sabemos y qué estimamos',
+    intro: 'Que falte alimento del plato no prueba por sí solo que se haya ingerido todo. La secuencia separa observaciones y dudas antes de llevarlas a la consulta.',
+    labels: ['Lo ofrecido', 'Restos y derrames', 'Grado de certeza', 'Llevar los datos'],
+    steps: [
+      ['Identifica lo que ofreciste', 'Anota el producto y la cantidad de alimento base con su unidad. Separa el agua de preparación y los extras. Los símbolos no son una cantidad recomendada ni un ejemplo de consumo medido.'],
+      ['Separa sobrante y derrame', 'Lo que queda en el plato y lo que cae fuera son observaciones distintas. Si no puedes medirlos o la mezcla no es homogénea, no conviertas lo que falta en una cifra exacta de ingesta.'],
+      ['Distingue medido, estimado y desconocido', 'Conserva la unidad y la calidad del dato. Una impresión puede anotarse como estimación; una cantidad que no pudiste comprobar sigue siendo desconocida. No hace falta inventar un número para completar una casilla.'],
+      ['Traslada datos y preguntas', 'Copia al registro lo ofrecido, los restos, la incertidumbre y los signos observados. Llévalo junto al envase y a tus preguntas. El registro ayuda a explicar lo ocurrido; no determina la causa ni ajusta una dieta.'],
+    ],
+    note: 'Esquema de observación, no una prueba diagnóstica. No provoques otra toma para grabar síntomas ni retrases atención por completar los datos.',
+  },
+};
+const lesson = variant === 'registro' ? null : lessons[variant];
+const fields = [
+  { key: 'fecha', label: 'Fecha y hora', max: 80 },
+  { key: 'cuidador', label: 'Persona cuidadora', max: 80 },
+  { key: 'producto', label: 'Producto exacto / envase', max: 120 },
+  { key: 'base', label: 'Base ofrecida: cantidad y unidad', max: 80 },
+  { key: 'presentacion', label: 'Presentación / agua añadida, si procede', max: 120 },
+  { key: 'restos', label: 'Sobrante y derrame: cantidad o descripción', max: 120 },
+  { key: 'certeza', label: 'Qué fue medido, estimado o desconocido', max: 120 },
+  { key: 'extras', label: 'Otros alimentos o extras', max: 120 },
+];
+---
+
+<section class={`feeding-v2 feeding-v2-${variant}`} data-editorial-visual data-feeding-v2-visual={variant} data-reader-atomic aria-labelledby={`${uid}-title`}>
+  {lesson ? <div data-feeding-v2-sequence data-variant={variant} data-step="0" data-playing="false">
+    <header><p class="feeding-kicker">Secuencia didáctica · cuatro pasos</p><h3 id={`${uid}-title`} data-toc-exclude="true">{lesson.title}</h3><p>{lesson.intro}</p></header>
+    <div class="feeding-canvas">
+      <svg viewBox="0 0 720 290" role="img" aria-labelledby={`${uid}-svg-title ${uid}-svg-desc`}>
+        <title id={`${uid}-svg-title`}>{variant === 'base' ? 'La misma base pasa de la báscula a la preparación y al plato' : 'El plato, los restos y las dudas pasan a un registro'}</title>
+        <desc id={`${uid}-svg-desc`}>{variant === 'base' ? 'Cuatro símbolos constantes representan el alimento base. Se traslada entre recipientes y el agua opcional aumenta el volumen, sin añadir alimento.' : 'Se representa alimento ofrecido, sobrante en el plato y derrame fuera; luego se distinguen datos medidos, estimados y desconocidos antes de anotarlos.'} Los pasos se explican completos a continuación.</desc>
+        <defs><pattern id={`${uid}-mat`} width="12" height="12" patternUnits="userSpaceOnUse"><path d="M0 6h12M6 0v12" stroke="#fff" stroke-opacity=".35"/></pattern><clipPath id={`${uid}-mix-clip`}><path d="M260 112h155l-17 103H277z"/></clipPath></defs>
+        <rect width="720" height="290" rx="18" fill="#edf3e8"/><path d="M24 233H696" stroke="#b6c8ad" stroke-width="2"/>
+        {variant === 'base' ? <>
+          <g class="base-scale"><rect x="44" y="202" width="177" height="29" rx="9" fill="#d2dfca" stroke="#355543" stroke-width="2"/><rect x="97" y="209" width="70" height="14" rx="3" fill="#fffdf6"/><path d="M103 216h56" stroke="#355543" stroke-width="2"/><path d="M58 130h148l-20 69H78z" fill="#fffdf6" stroke="#355543" stroke-width="3"/><path d="M92 118v-17h82v17" fill="none" stroke="#829478" stroke-width="2"/></g>
+          <g class="base-mix"><g clip-path={`url(#${uid}-mix-clip)`}><rect class="base-water-level" x="259" y="208" width="160" height="103" fill="#b7d9df"/></g><path d="M260 112h155l-17 103H277z" fill="none" stroke="#355543" stroke-width="3"/><path d="M280 126h113" stroke="#8ea28a" stroke-width="2"/></g>
+          <g class="base-jug"><path d="M365 35h68v61h-58z" fill="#d6e9e9" stroke="#355543" stroke-width="3"/><path d="M432 44h17q15 16 0 33h-17" fill="none" stroke="#355543" stroke-width="3"/><path d="M371 55h57" stroke="#78a9b7" stroke-width="3"/><path class="base-pour" d="M367 94q-16 12-21 44" fill="none" stroke="#5991a3" stroke-width="7" stroke-linecap="round"/></g>
+          <g class="base-plate"><rect x="479" y="222" width="196" height="16" rx="8" fill="#65916e"/><rect x="479" y="222" width="196" height="16" rx="8" fill={`url(#${uid}-mat)`}/><path d="M500 168h154l-17 48H517z" fill="#fffdf6" stroke="#355543" stroke-width="3"/></g>
+          <g class="base-food" fill="#9b693c" stroke="#61401f" stroke-width="2"><circle cx="-27" cy="0" r="10"/><circle cx="-9" cy="-17" r="10"/><circle cx="10" cy="1" r="10"/><circle cx="28" cy="-16" r="10"/></g>
+          <g class="base-leftover"><path d="M583 84h67v63h-67z" fill="#fffdf6" stroke="#355543" stroke-width="2"/><path d="M594 100h45m-45 13h30m-30 13h39" stroke="#5b7356" stroke-width="3"/><path d="M565 154q-18-42 11-51" fill="none" stroke="#8c662e" stroke-width="3"/><path d="m567 100 10 2-4 10" fill="none" stroke="#8c662e" stroke-width="3"/></g>
+          <g class="canvas-labels" fill="#355543"><text x="132" y="264" text-anchor="middle">Base medida</text><text x="336" y="264" text-anchor="middle">Agua solo si procede</text><text x="576" y="264" text-anchor="middle">Plato y sobrante</text></g>
+        </> : <>
+          <g class="intake-plate"><path d="M44 133h181l-20 72H64z" fill="#fffdf6" stroke="#355543" stroke-width="3"/><g fill="#9b693c" stroke="#61401f" stroke-width="2"><circle cx="104" cy="160" r="12"/><circle cx="134" cy="159" r="12"/><circle class="intake-falls" cx="164" cy="159" r="12"/><circle class="intake-unseen" cx="134" cy="133" r="12"/></g></g>
+          <g class="intake-spill"><path d="M245 211h77v18h-77z" fill="#e5d2ae"/><circle cx="265" cy="210" r="10" fill="#9b693c" stroke="#61401f" stroke-width="2"/><path d="M279 205h28" stroke="#8c662e" stroke-width="2"/></g>
+          <g class="intake-certainty"><g class="certainty-card certainty-measured"><rect x="339" y="55" width="140" height="47" rx="8" fill="#fffdf6" stroke="#355543" stroke-width="2"/><path d="m350 78 7 7 13-17" fill="none" stroke="#355543" stroke-width="3"/><text x="380" y="85">Medido</text></g><g class="certainty-card certainty-estimated"><rect x="339" y="119" width="140" height="47" rx="8" fill="#fffdf6" stroke="#8c662e" stroke-width="2" stroke-dasharray="5 4"/><text x="351" y="149">≈</text><text x="380" y="149">Estimado</text></g><g class="certainty-card certainty-unknown"><rect x="339" y="183" width="140" height="47" rx="8" fill="#fffdf6" stroke="#6c6473" stroke-width="2"/><text x="351" y="213">?</text><text x="380" y="213">Sin dato</text></g></g>
+          <g class="intake-record"><rect x="520" y="46" width="149" height="187" rx="10" fill="#fffdf6" stroke="#355543" stroke-width="3"/><path d="M552 41v18m23-18v18m23-18v18m23-18v18m23-18v18" stroke="#355543" stroke-width="3"/><g class="record-lines" stroke="#6d8b61" stroke-width="4"><path d="M539 86h109M539 116h109M539 146h109M539 176h70"/></g><path d="m622 194 8 9 16-21" fill="none" stroke="#355543" stroke-width="4"/></g>
+          <g class="canvas-labels" fill="#355543"><text x="134" y="264" text-anchor="middle">Plato observado</text><text x="282" y="264" text-anchor="middle">Derrame</text><text x="594" y="264" text-anchor="middle">Registro y preguntas</text></g>
+        </>}
+      </svg>
+      <p class="feeding-diagram-key">{variant === 'base' ? 'El esquema distingue base medida, adaptación autorizada y plato servido. Más agua no significa más alimento.' : 'Observaciones: plato y derrame. Calidad del dato: medido, estimado o desconocido.'}</p>
+      <ol class="feeding-progress" aria-hidden="true">{lesson.labels.map((label, i) => <li data-progress={i}><span></span>{label}</li>)}</ol>
+    </div>
+    <ol class="feeding-steps">{lesson.steps.map(([title, text], i) => <li data-panel={i}><span class="feeding-ordinal" aria-hidden="true">0{i + 1}</span><div><h4>{title}</h4><p>{text}</p></div></li>)}</ol>
+    <div class="feeding-controls" hidden><div class="feeding-transport"><button type="button" data-action="prev" aria-label={`Paso anterior: ${lesson.title}`}>←</button><button type="button" data-action="play">Reproducir secuencia</button><button type="button" data-action="next" aria-label={`Paso siguiente: ${lesson.title}`}>→</button></div><p class="feeding-position" aria-live="polite" aria-atomic="true"></p><p class="feeding-motion">También puedes recorrerla a tu ritmo con las flechas.</p></div>
+    <p class="feeding-stop"><strong>Detén el intento ante dificultad para tragar.</strong> Consulta; si respira con dificultad, busca atención urgente. No fuerces comida ni agua.</p><p class="feeding-note">{lesson.note} El tiempo de reproducción solo facilita la lectura; no indica la duración de una preparación o una toma.</p>
+  </div> : <>
+    <header><p class="feeding-kicker">Una toma · datos para compartir</p><h3 id={`${uid}-title`} data-toc-exclude="true">Registro de alimento y tolerancia</h3><p>Completa los campos o imprímelos en blanco. No se guardan ni se envían: copia o imprime lo que quieras conservar antes de cerrar o recargar la página.</p></header>
+    <div class="feeding-record-grid">{fields.map(field => <div class="feeding-field"><label for={`${uid}-${field.key}`}>{field.label}</label><input id={`${uid}-${field.key}`} type="text" maxlength={field.max} autocomplete="off" /></div>)}</div>
+    <div class="feeding-field"><label for={`${uid}-observacion`}>Qué ocurrió durante o después de comer y cuándo (máximo 300 caracteres)</label><textarea id={`${uid}-observacion`} rows="3" maxlength="300"></textarea></div><div class="feeding-field"><label for={`${uid}-pregunta`}>Preguntas e indicaciones para la revisión (máximo 220 caracteres)</label><textarea id={`${uid}-pregunta`} rows="2" maxlength="220"></textarea></div>
+    <p class="feeding-note">Los campos cortos admiten entre 80 y 120 caracteres. Usa la misma unidad para comparar la base ofrecida y el sobrante. Si no puedes medir algo, escribe «estimado» o «desconocido», sin inventar precisión.</p><p class="feeding-stop"><strong>No esperes a completar el registro si empeora.</strong> Dificultad respiratoria: atención urgente. Este registro no interpreta síntomas ni prescribe alimento.</p><button class="feeding-print" type="button" hidden>Imprimir este registro</button><noscript><p class="feeding-note">Sin JavaScript, copia las categorías a una libreta o imprime esta página desde tu navegador.</p></noscript>
+  </>}
+</section>
+
+<script>
+  class FeedingV2Sequence {
+    private step = 0;
+    private playing = false;
+    private timer: ReturnType<typeof setTimeout> | undefined;
+    private aborter = new AbortController();
+    private reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    constructor(private root: HTMLElement) {
+      root.dataset.enhanced = 'true';
+      root.querySelector<HTMLElement>('.feeding-controls')!.hidden = false;
+      root.querySelectorAll<HTMLButtonElement>('[data-action]').forEach(button => button.addEventListener('click', () => {
+        if (button.dataset.action === 'play') {
+          if (this.playing) this.stop();
+          else if (!this.reduced.matches) { if (this.step === 3) this.step = 0; this.playing = true; this.render(); this.schedule(); }
+        } else { this.stop(); this.step = Math.max(0, Math.min(3, this.step + (button.dataset.action === 'next' ? 1 : -1))); this.render(); }
+      }, { signal: this.aborter.signal }));
+      this.reduced.addEventListener('change', this.preference, { signal: this.aborter.signal });
+      document.addEventListener('visibilitychange', this.visibility, { signal: this.aborter.signal });
+      window.addEventListener('pagehide', this.stop, { signal: this.aborter.signal });
+      this.preference();
+    }
+    private preference = () => { this.stop(); this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.disabled = this.reduced.matches; this.root.querySelector<HTMLElement>('.feeding-motion')!.textContent = this.reduced.matches ? 'Movimiento reducido: usa las flechas para ver los pasos sin animación.' : 'También puedes recorrerla a tu ritmo con las flechas.'; };
+    private visibility = () => { if (document.hidden) this.stop(); };
+    private stop = () => { clearTimeout(this.timer); this.playing = false; this.render(); };
+    private schedule() { this.timer = setTimeout(() => { if (!this.playing || !this.root.isConnected) { this.stop(); return; } if (this.step < 3) { this.step++; this.render(); this.schedule(); } else this.stop(); }, 6500); }
+    private render() {
+      this.root.dataset.step = String(this.step); this.root.dataset.playing = String(this.playing);
+      this.root.querySelectorAll<HTMLElement>('[data-panel]').forEach((panel, i) => panel.dataset.active = String(i === this.step));
+      const position = this.root.querySelector<HTMLElement>('.feeding-position')!; position.setAttribute('aria-live', this.playing ? 'off' : 'polite'); position.textContent = `Paso ${this.step + 1} de 4`;
+      this.root.querySelector<HTMLButtonElement>('[data-action="prev"]')!.disabled = this.step === 0;
+      this.root.querySelector<HTMLButtonElement>('[data-action="next"]')!.disabled = this.step === 3;
+      this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.textContent = this.playing ? 'Pausar' : this.step === 3 ? 'Repetir secuencia' : 'Reproducir secuencia';
+    }
+    disconnect() { this.stop(); this.aborter.abort(); }
+  }
+  const sequences = new Map<HTMLElement, FeedingV2Sequence>();
+  const records = new Map<HTMLElement, AbortController>();
+  let printCopy: HTMLElement | null = null;
+  function clearPrint() { printCopy?.remove(); printCopy = null; delete document.body.dataset.feedingV2Print; }
+  function initializeFeedingV2() {
+    document.querySelectorAll<HTMLElement>('[data-feeding-v2-sequence]').forEach(root => { if (!sequences.has(root)) sequences.set(root, new FeedingV2Sequence(root)); });
+    document.querySelectorAll<HTMLElement>('[data-feeding-v2-visual="registro"]').forEach(root => {
+      if (records.has(root)) return;
+      const aborter = new AbortController(); records.set(root, aborter);
+      const button = root.querySelector<HTMLButtonElement>('.feeding-print')!; button.hidden = false;
+      button.addEventListener('click', () => {
+        clearPrint(); printCopy = root.cloneNode(true) as HTMLElement; printCopy.classList.add('feeding-v2-print-copy'); printCopy.removeAttribute('aria-labelledby');
+        printCopy.querySelectorAll('[id]').forEach(node => node.removeAttribute('id')); printCopy.querySelectorAll('label').forEach(node => node.removeAttribute('for')); printCopy.querySelectorAll('button,noscript').forEach(node => node.remove());
+        const originals = root.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input,textarea');
+        printCopy.querySelectorAll('input,textarea').forEach((node, i) => { const value = document.createElement('p'); value.className = 'feeding-printed-value'; value.textContent = originals[i].value || '________________________________'; node.replaceWith(value); });
+        document.body.appendChild(printCopy); document.body.dataset.feedingV2Print = 'true'; window.print();
+      }, { signal: aborter.signal });
+    });
+  }
+  window.addEventListener('afterprint', clearPrint);
+  document.addEventListener('astro:before-swap', () => { sequences.forEach(instance => instance.disconnect()); sequences.clear(); records.forEach(aborter => aborter.abort()); records.clear(); clearPrint(); });
+  document.addEventListener('astro:page-load', initializeFeedingV2);
+  initializeFeedingV2();
+</script>
+
+<style>
+  .feeding-v2 { margin:2.4rem 0; padding:1.4rem; color:#294b3d; background:#fffdf6; border:1px solid #bfceb7; border-radius:1.25rem; font-family:system-ui,sans-serif; }
+  .feeding-v2 header { margin:0 0 1rem; }
+  .feeding-v2 .feeding-kicker { margin:0 0 .5rem; color:#4d644b; font-size:.73rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+  .feeding-v2 h3 { margin:0 0 .75rem!important; color:#294b3d!important; font-size:clamp(1.2rem,3vw,1.65rem); line-height:1.35; }
+  .feeding-v2 h4 { color:#294b3d!important; font-size:1.06rem; line-height:1.4; margin:0 0 .3rem; }
+  .feeding-v2 p { color:#36533e; margin:.55rem 0; font-size:.94rem; line-height:1.65; }
+  .feeding-v2 strong { color:#294b3d!important; }
+  .feeding-v2 [hidden] { display:none!important; }
+  .feeding-canvas { overflow:hidden; background:#edf3e8; border-radius:.8rem; }
+  .feeding-canvas svg { display:block; width:100%; height:auto; }
+  .feeding-v2 .feeding-diagram-key { margin:.25rem .9rem .7rem; font-size:.875rem; line-height:1.55; color:#36533e; }
+  .canvas-labels { font:600 16px system-ui,sans-serif; }
+  .certainty-card text { fill:#355543; font:600 16px system-ui,sans-serif; }
+  .feeding-progress { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.5rem; padding:.4rem .9rem .9rem; margin:0!important; list-style:none; }
+  .feeding-progress li { color:#36533e; margin:0; font:600 .71rem/1.45 system-ui,sans-serif; }
+  .feeding-progress li span { display:block; height:4px; background:#bbcdb1; margin-bottom:.4rem; border-radius:4px; }
+  [data-step="0"] [data-progress="0"] span,[data-step="1"] [data-progress="1"] span,[data-step="2"] [data-progress="2"] span,[data-step="3"] [data-progress="3"] span { background:#294b3d; }
+  .feeding-steps { list-style:none; margin:1rem 0 0!important; padding:0!important; }
+  .feeding-steps li { display:flex; gap:.85rem; padding:.75rem 0; margin:0; }
+  [data-enhanced="true"] .feeding-steps li[data-active="false"] { display:none; }
+  .feeding-ordinal { flex:0 0 2.2rem; height:2.2rem; display:grid; place-items:center; color:#294b3d; background:#e5eedc; border:1px solid #8ca27f; border-radius:50%; font-weight:700; font-size:.8rem; }
+  .feeding-steps p { margin:0; }
+  .feeding-controls { padding:.6rem 0; }
+  .feeding-transport { display:flex; gap:.5rem; }
+  .feeding-v2 button { min-width:44px; min-height:44px; color:#294b3d; background:#fffdf6; border:1px solid #7f9972; border-radius:.6rem; padding:.65rem .85rem; font:600 .86rem/1.4 system-ui,sans-serif; cursor:pointer; }
+  .feeding-v2 [data-action="play"],.feeding-v2 .feeding-print { color:#fff; background:#294b3d; }
+  .feeding-v2 [data-action="play"] { flex:1; }
+  .feeding-v2 button:disabled { color:#4b6146; background:#e6eddf; border-color:#a3b397; cursor:default; }
+  .feeding-v2 button:focus-visible,.feeding-v2 input:focus-visible,.feeding-v2 textarea:focus-visible { outline:3px solid #95601f; outline-offset:3px; }
+  .feeding-v2 .feeding-position { margin:.65rem 0 .15rem; font-weight:700; font-size:.82rem; }
+  .feeding-v2 .feeding-motion,.feeding-v2 .feeding-note { color:#4c6047; font-size:.81rem; }
+  .feeding-v2 .feeding-stop { margin-top:1rem; padding:.9rem 1rem; color:#583d20; border-left:4px solid #9b642e; background:#fbefd8; font-size:.85rem; }
+  .base-food { transform:translate(132px,163px); }
+  .base-mix,.base-jug,.base-plate,.base-leftover { opacity:.12; }
+  .base-pour { opacity:0; }
+  [data-variant="base"][data-step="1"] .base-food,[data-variant="base"][data-step="2"] .base-food { transform:translate(336px,184px); }
+  [data-variant="base"]:is([data-step="1"],[data-step="2"]) .base-mix,[data-variant="base"][data-step="1"] .base-jug { opacity:1; }
+  [data-variant="base"][data-step="1"] .base-pour { opacity:1; }
+  [data-variant="base"][data-step="1"] .base-jug { transform:rotate(-13deg); transform-origin:365px 94px; }
+  [data-variant="base"][data-step="1"] .base-water-level { transform:translateY(-26px); }
+  [data-variant="base"][data-step="2"] .base-water-level { transform:translateY(-65px); }
+  [data-variant="base"][data-step="3"] .base-food { transform:translate(577px,187px); }
+  [data-variant="base"][data-step="3"] .base-plate,[data-variant="base"][data-step="3"] .base-leftover { opacity:1; }
+  [data-variant="base"]:not([data-step="0"]) .base-scale { opacity:.35; }
+  .intake-spill,.intake-certainty,.intake-record { opacity:0; }
+  [data-variant="ingesta"]:not([data-step="0"]) .intake-falls { transform:translate(101px,51px); }
+  [data-variant="ingesta"]:not([data-step="0"]) .intake-unseen { opacity:0; }
+  [data-variant="ingesta"]:not([data-step="0"]) .intake-spill { opacity:1; }
+  [data-variant="ingesta"]:is([data-step="2"],[data-step="3"]) .intake-certainty { opacity:1; }
+  [data-variant="ingesta"][data-step="3"] .intake-certainty { transform:translate(176px,5px) scale(.55); transform-origin:339px 55px; }
+  [data-variant="ingesta"][data-step="3"] .intake-record { opacity:1; }
+  [data-playing="true"] :is(.base-food,.base-mix,.base-jug,.base-plate,.base-leftover,.base-water-level,.base-scale,.intake-falls,.intake-unseen,.intake-spill,.intake-certainty,.intake-record) { transition:transform 1.15s ease,opacity .7s ease; }
+  [data-playing="false"] svg * { transition:none!important; animation:none!important; }
+  .feeding-record-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem 1rem; }
+  .feeding-field { min-width:0; margin:0 0 .7rem; }
+  .feeding-field label { display:block; color:#294b3d; margin:0 0 .4rem; font-size:.85rem; font-weight:600; line-height:1.5; }
+  .feeding-v2 input,.feeding-v2 textarea { display:block; width:100%; min-height:44px; box-sizing:border-box; color:#294b3d; background:#fff; border:1px solid #7e9773; border-radius:.4rem; padding:.65rem; font:400 1rem/1.5 system-ui,sans-serif; }
+  .feeding-v2 textarea { resize:vertical; }
+  .feeding-v2 .feeding-print { margin-top:.8rem; }
+  :global(.feeding-v2-print-copy) { display:none; }
+  @media(max-width:480px) { .feeding-v2 { padding:1rem; } .feeding-record-grid { grid-template-columns:1fr; } .feeding-progress { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem; padding-inline:.8rem; } .feeding-progress li { font-size:.875rem; } .feeding-canvas .canvas-labels,.feeding-canvas .certainty-card text { display:none; } .feeding-v2 .feeding-stop { padding:.8rem; } }
+  @media(prefers-reduced-motion:reduce) { .feeding-v2 *, .feeding-v2 *::before, .feeding-v2 *::after { transition:none!important; animation:none!important; } }
+  @media print {
+    .feeding-v2 { background:white; color:#111; border-color:#777; box-shadow:none; break-inside:auto; }
+    .feeding-controls,.feeding-print,.feeding-canvas { display:none!important; }
+    [data-enhanced="true"] .feeding-steps li[data-active="false"] { display:flex!important; }
+    .feeding-record-grid { grid-template-columns:1fr 1fr; }
+    :global(body[data-feeding-v2-print="true"] > :not(.feeding-v2-print-copy)) { display:none!important; }
+    :global(body[data-feeding-v2-print="true"] > .feeding-v2-print-copy) { display:block!important; margin:0; padding:5mm; border:0; border-radius:0; color:#111; background:#fff; font-family:system-ui,sans-serif; }
+    :global(.feeding-v2-print-copy header) { margin-bottom:8pt; }
+    :global(.feeding-v2-print-copy h3) { color:#111!important; font-size:15pt!important; line-height:1.25!important; margin:0 0 6pt!important; }
+    :global(.feeding-v2-print-copy p),:global(.feeding-v2-print-copy label) { color:#111!important; font-size:10pt!important; line-height:1.3!important; }
+    :global(.feeding-v2-print-copy .feeding-kicker) { font-size:8pt!important; }
+    :global(.feeding-v2-print-copy .feeding-record-grid) { gap:5pt 12pt; }
+    :global(.feeding-v2-print-copy .feeding-field) { margin-bottom:5pt; break-inside:avoid; }
+    :global(.feeding-v2-print-copy label) { margin-bottom:2pt; font-weight:700; }
+    :global(.feeding-v2-print-copy .feeding-printed-value) { min-height:11pt; margin:2pt 0 4pt; border-bottom:1px solid #888; white-space:pre-wrap; overflow-wrap:anywhere; }
+    :global(.feeding-v2-print-copy .feeding-stop) { padding:7pt; margin-top:7pt; }
+  }
+</style>

@@ -1,0 +1,108 @@
+[
+  {
+    "check": "npm-test",
+    "exit_code": 0,
+    "command": [
+      "npm",
+      "test"
+    ]
+  },
+  {
+    "check": "agent-readiness-tests",
+    "exit_code": 0,
+    "command": [
+      "node",
+      "--test",
+      "tests/agent-readiness/discovery.test.mjs",
+      "tests/agent-readiness/f3-contracts.test.mjs",
+      "tests/agent-readiness/f3-discovery.test.mjs",
+      "tests/agent-readiness/f3-generation.test.mjs",
+      "tests/agent-readiness/f4a-contracts.test.mjs",
+      "tests/agent-readiness/f4b-control-response.test.mjs",
+      "tests/agent-readiness/f4b-generation.test.mjs",
+      "tests/agent-readiness/f4b-identity.test.mjs",
+      "tests/agent-readiness/f4b-local-http.test.mjs",
+      "tests/agent-readiness/harness.test.mjs",
+      "tests/agent-readiness/inventory.test.mjs",
+      "tests/agent-readiness/mcp-discovery-104.test.mjs",
+      "tests/agent-readiness/parity.test.mjs",
+      "tests/agent-readiness/projection.test.mjs",
+      "tests/agent-readiness/routing.test.mjs"
+    ]
+  },
+  {
+    "check": "inventory",
+    "exit_code": 0,
+    "command": [
+      "node",
+      "scripts/agent-readiness/index.mjs",
+      "inventory",
+      "--build-dir",
+      "dist",
+      "--out-dir",
+      "/tmp/alimentacion-inventory-final"
+    ]
+  },
+  {
+    "check": "discovery",
+    "exit_code": 0,
+    "command": [
+      "node",
+      "scripts/agent-readiness/discovery.mjs",
+      "check",
+      "--build-dir",
+      "dist"
+    ]
+  },
+  {
+    "check": "projection",
+    "exit_code": 0,
+    "command": [
+      "node",
+      "scripts/agent-readiness/projection.mjs",
+      "check",
+      "--build-dir",
+      "dist"
+    ]
+  },
+  {
+    "check": "agent-api",
+    "exit_code": 0,
+    "command": [
+      "node",
+      "scripts/agent-readiness/agent-api.mjs",
+      "check",
+      "--build-dir",
+      "dist"
+    ]
+  },
+  {
+    "check": "routing",
+    "exit_code": 0,
+    "command": [
+      "node",
+      "scripts/agent-readiness/projection.mjs",
+      "check-routing",
+      "--build-dir",
+      "dist"
+    ]
+  },
+  {
+    "check": "growth",
+    "exit_code": 0,
+    "command": [
+      "node",
+      "--test",
+      "tests/agent-readiness/projection-growth.mjs"
+    ]
+  },
+  {
+    "check": "semantic",
+    "exit_code": 0,
+    "command": [
+      "node",
+      "tests/agent-readiness/projection-semantic.mjs",
+      "dist"
+    ]
+  }
+]
