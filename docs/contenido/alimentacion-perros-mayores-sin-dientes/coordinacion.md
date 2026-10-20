@@ -56,3 +56,5 @@ La corrección quedó documentada en `correcciones-brief-integracion.md` y aprob
 ## Cierre y publicación automática ajena al flujo local
 
 Artículo completo aprobado en R1, recursos incluidos. PR de entrega: https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/123. No se fusionó ni se ejecutó un despliegue a producción. El push activó una subida automática de versión de prueba en Cloudflare, incidencia documentada en `incidencia-preview-automatica.md`. Se excluyó exclusivamente esta rama del disparador no productivo para impedir nuevas subidas automáticas. La versión ya creada permanece registrada; producción conserva la versión del 18 de octubre y su disparador no cambió.
+
+Al cierre se encontró el plan en otra rama y se leyó su versión `74c4be567cf206ce316dd00e7c1e65531c1523fb`. La búsqueda inicial fue insuficiente para localizarlo; `comprobacion-plan-localizado.md` registra la lectura tardía y su correspondencia con el producto, sin reescribir los documentos aprobados ni alterar su contador.

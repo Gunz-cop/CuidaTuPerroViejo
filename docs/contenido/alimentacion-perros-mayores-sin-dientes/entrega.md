@@ -2,7 +2,7 @@
 
 Entrega limitada a este artículo. [PR #123](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/123). Rama: `contenido/alimentacion-perros-mayores-sin-dientes`. Base: `c9af722dd5cf27d8d37878ba01c4df339f0b6f76`. Producto completo preparado en `c386535d0e9b2c1a48596574555cf50e89fdc507`. No se ha fusionado ni desplegado a producción. El push sí activó una versión de prueba automática, documentada abajo.
 
-El plan mencionado como adjunto no llegó a la sesión. Se solicitó su ruta y se ejecutaron la instrucción explícita y el tema pendiente del inventario. Esa limitación se conserva en los informes; no se afirma haber leído el adjunto.
+No se recibió un archivo adjunto. Durante el cierre se localizó el [plan editorial](../plan-elaboracion-articulos-2026-10-19.md) en la rama `docs/plan-editorial-search-console-2026-10-19` y se leyó esa versión. Su alcance coincide con el tema, la diferenciación y los recursos entregados. La lectura fue tardía: los informes anteriores conservaron honestamente la limitación de trabajar sin el plan localizado. [Comprobación y procedencia](comprobacion-plan-localizado.md).
 
 ## Estado de auditoría
 
