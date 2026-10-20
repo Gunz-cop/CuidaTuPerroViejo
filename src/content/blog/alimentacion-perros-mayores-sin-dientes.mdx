@@ -12,6 +12,7 @@ datePublished: "2026-10-20"
 
 import AlertBox from '../../components/AlertBox.astro';
 import FAQ from '../../components/FAQ.astro';
+import TablaApilable from '../../components/article/TablaApilable.astro';
 import AlimentacionSinDientesRecursosV2 from '../../components/article/AlimentacionSinDientesRecursosV2.astro';
 
 **Un perro mayor sin dientes no necesita automáticamente una papilla ni cambiar toda su dieta.** Primero hay que distinguir si su boca ya está cicatrizada, si acaba de pasar por una extracción o si tiene dificultades para tragar.
@@ -48,17 +49,17 @@ Si devuelve alimento o aparece tos durante la toma, cuenta exactamente qué has 
 
 Esta matriz ayuda a explicar la situación al pedir orientación. No clasifica la gravedad de todos los casos ni confirma que una boca esté cicatrizada: eso depende de su evaluación y, cuando corresponde, de la revisión tras cirugía.
 
-<div role="region" aria-label="Situación de la boca y siguiente paso" style="overflow-x:auto;">
+<TablaApilable label="Situación de la boca y siguiente paso">
 <table tabindex="0" aria-labelledby="alimentacion-v2-situaciones-caption" class="focus-visible:outline-solid focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brand-primary">
   <caption id="alimentacion-v2-situaciones-caption">La situación actual decide qué necesitas aclarar antes de cambiar el plato.</caption>
   <thead><tr><th scope="col">Situación conocida</th><th scope="col">Qué comprobar</th><th scope="col">Siguiente paso</th></tr></thead>
   <tbody>
-    <tr><th scope="row">Boca revisada y cicatrizada</th><td>Come solo y mantiene su consumo habitual.</td><td>Organizar alimento y presentación; comunicar cambios nuevos.</td></tr>
-    <tr><th scope="row">Extracción o cirugía reciente</th><td>Instrucciones de alta sobre comida y revisión.</td><td>Seguir el plan del centro que lo intervino y aclarar dudas.</td></tr>
-    <tr><th scope="row">Dificultad para tragar, tos o alimento que vuelve</th><td>Qué ocurrió, sin repetir la toma para probar.</td><td>Detener el intento y contactar; dificultad respiratoria requiere urgencias.</td></tr>
+    <tr><th scope="row">Boca revisada y cicatrizada</th><td data-label="Qué comprobar">Come solo y mantiene su consumo habitual.</td><td data-label="Siguiente paso">Organizar alimento y presentación; comunicar cambios nuevos.</td></tr>
+    <tr><th scope="row">Extracción o cirugía reciente</th><td data-label="Qué comprobar">Instrucciones de alta sobre comida y revisión.</td><td data-label="Siguiente paso">Seguir el plan del centro que lo intervino y aclarar dudas.</td></tr>
+    <tr><th scope="row">Dificultad para tragar, tos o alimento que vuelve</th><td data-label="Qué comprobar">Qué ocurrió, sin repetir la toma para probar.</td><td data-label="Siguiente paso">Detener el intento y contactar; dificultad respiratoria requiere urgencias.</td></tr>
   </tbody>
 </table>
-</div>
+</TablaApilable>
 
 ### Qué señales cambian la prioridad
 
@@ -108,18 +109,18 @@ Al registrar la alimentación diaria, incluye lo que se utiliza para dar medicac
 
 Esta ficha permite reunir los datos de dos opciones antes de comprarlas o sustituir una por otra. No puntúa productos. Un espacio sin información señala una pregunta pendiente, no un permiso para completarla por intuición.
 
-<div role="region" aria-label="Ficha para comparar etiquetas" style="overflow-x:auto;">
+<TablaApilable label="Ficha para comparar etiquetas">
 <table tabindex="0" aria-labelledby="alimentacion-v2-etiquetas-caption" class="focus-visible:outline-solid focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brand-primary">
   <caption id="alimentacion-v2-etiquetas-caption">Datos que copiar del producto exacto; A y B no representan marcas.</caption>
   <thead><tr><th scope="col">Dato</th><th scope="col">Alimento A</th><th scope="col">Alimento B</th></tr></thead>
   <tbody>
-    <tr><th scope="row">Función y adecuación</th><td>Completo o complementario; especie y etapa.</td><td>La misma información, comprobada por separado.</td></tr>
-    <tr><th scope="row">Energía</th><td>Cifra y unidad exacta.</td><td>Cifra convertida a la misma unidad.</td></tr>
-    <tr><th scope="row">Cantidad indicada</th><td>Producto base y unidad del plan individual.</td><td>Nueva cantidad, si la sustitución se autoriza.</td></tr>
-    <tr><th scope="row">Preparación y conservación</th><td>Qué modificaciones admite y cómo guardarlo.</td><td>Instrucciones propias, sin copiar las de A.</td></tr>
+    <tr><th scope="row">Función y adecuación</th><td data-label="Alimento A">Completo o complementario; especie y etapa.</td><td data-label="Alimento B">La misma información, comprobada por separado.</td></tr>
+    <tr><th scope="row">Energía</th><td data-label="Alimento A">Cifra y unidad exacta.</td><td data-label="Alimento B">Cifra convertida a la misma unidad.</td></tr>
+    <tr><th scope="row">Cantidad indicada</th><td data-label="Alimento A">Producto base y unidad del plan individual.</td><td data-label="Alimento B">Nueva cantidad, si la sustitución se autoriza.</td></tr>
+    <tr><th scope="row">Preparación y conservación</th><td data-label="Alimento A">Qué modificaciones admite y cómo guardarlo.</td><td data-label="Alimento B">Instrucciones propias, sin copiar las de A.</td></tr>
   </tbody>
 </table>
-</div>
+</TablaApilable>
 
 **Ejemplo ficticio, solo aritmético; no es una ración recomendada:** A aporta 100 kilocalorías por 100 gramos y B aporta 200 kilocalorías por 100 gramos. En una comparación de 50 gramos, A representaría 50 kilocalorías y B, 100.
 
@@ -172,18 +173,18 @@ En lugar de cambiar producto, textura y añadidos a la vez, explica qué observa
 
 Comprueba también quién puede preparar cada opción y con qué material. Si una presentación exige pasos que no puedes repetir en todas las tomas, plantea esa dificultad antes de sustituirla ocasionalmente por otra comida sin una equivalencia acordada.
 
-<div role="region" aria-label="Comparación de presentaciones del alimento" style="overflow-x:auto;">
+<TablaApilable label="Comparación de presentaciones del alimento">
 <table tabindex="0" aria-labelledby="alimentacion-v2-presentaciones-caption" class="focus-visible:outline-solid focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brand-primary">
   <caption id="alimentacion-v2-presentaciones-caption">Cuatro posibilidades condicionadas a la adecuación y a la situación del perro.</caption>
   <thead><tr><th scope="col">Presentación</th><th scope="col">Qué puede facilitar</th><th scope="col">Qué hay que comprobar</th></tr></thead>
   <tbody>
-    <tr><th scope="row">Húmedo completo</th><td>Ofrecer una base blanda sin remojar.</td><td>Estructura real, cantidad indicada, compatibilidad y conservación tras abrir.</td></tr>
-    <tr><th scope="row">Pienso habitual sin modificar</th><td>Mantener una dieta y preparación conocidas.</td><td>Tamaño adecuado, boca recuperada y capacidad individual para comerlo.</td></tr>
-    <tr><th scope="row">Alimento habitual adaptado</th><td>Cambiar la presentación conservando una base identificada.</td><td>Adaptación autorizada, textura acordada, higiene y medición antes del añadido.</td></tr>
-    <tr><th scope="row">Receta casera formulada</th><td>Continuar un plan individual con presentación apropiada.</td><td>Instrucciones profesionales, ingredientes y cantidades preservados; no improvisar equivalencias.</td></tr>
+    <tr><th scope="row">Húmedo completo</th><td data-label="Qué puede facilitar">Ofrecer una base blanda sin remojar.</td><td data-label="Qué hay que comprobar">Estructura real, cantidad indicada, compatibilidad y conservación tras abrir.</td></tr>
+    <tr><th scope="row">Pienso habitual sin modificar</th><td data-label="Qué puede facilitar">Mantener una dieta y preparación conocidas.</td><td data-label="Qué hay que comprobar">Tamaño adecuado, boca recuperada y capacidad individual para comerlo.</td></tr>
+    <tr><th scope="row">Alimento habitual adaptado</th><td data-label="Qué puede facilitar">Cambiar la presentación conservando una base identificada.</td><td data-label="Qué hay que comprobar">Adaptación autorizada, textura acordada, higiene y medición antes del añadido.</td></tr>
+    <tr><th scope="row">Receta casera formulada</th><td data-label="Qué puede facilitar">Continuar un plan individual con presentación apropiada.</td><td data-label="Qué hay que comprobar">Instrucciones profesionales, ingredientes y cantidades preservados; no improvisar equivalencias.</td></tr>
   </tbody>
 </table>
-</div>
+</TablaApilable>
 
 ## Prepara una comida adaptada sin perder la cuenta de lo que come
 
