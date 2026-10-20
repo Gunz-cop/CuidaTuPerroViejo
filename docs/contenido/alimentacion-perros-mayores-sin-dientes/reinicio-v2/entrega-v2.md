@@ -59,8 +59,12 @@ En los registros de consola se normalizaron espacios al final de línea; no se c
 
 [Hashes finales de contrato, producto, build y lectura](verificacion/versiones-finales.json). Las pruebas remotas de CI se consultan en la PR; su resultado no sustituye la revisión visual local.
 
+La [CI del commit de producto `0eb000b`](https://github.com/Gunz-cop/CuidaTuPerroViejo/actions/runs/39488609213) terminó correctamente, incluida la compuerta completa del repositorio. [Resultado](verificacion/ci-producto.json) y [pasos](verificacion/ci-producto-jobs.json). Las actualizaciones posteriores de este expediente solo añaden esta evidencia y la comprobación remota de no despliegue; los hashes del producto aprobado permanecen iguales. La cabeza de la PR muestra además su propia ejecución vigente en Checks.
+
 ## Publicación e incidencia anterior
 
 Se comprobó mediante lectura de la API que esta rama sigue excluida del disparador de versiones de prueba de Cloudflare. Producción conserva el despliegue del 18 de octubre. [Comprobación previa](verificacion/cloudflare-antes.json).
+
+Después de subir el commit de producto, el build más reciente de Cloudflare sigue siendo el de v1 del 20 de octubre a las 01:48 UTC, asociado al commit `05bc868`; no se creó una versión nueva de v2 y producción sigue en la misma versión. [Comprobación posterior al push](verificacion/cloudflare-despues.json).
 
 La versión automática que se creó durante v1 sigue registrada, como documenta la [incidencia anterior](../incidencia-preview-automatica.md). No se reutiliza como vista autorizada de v2. El estado técnico `Publicado` del frontmatter es requerido por el catálogo del repositorio; no acredita ni autoriza publicación pública. Inventario, PR y entrega permanecen pendientes de publicación.

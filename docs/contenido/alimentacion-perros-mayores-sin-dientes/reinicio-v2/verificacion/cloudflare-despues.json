@@ -1,0 +1,46 @@
+{
+  "checked_product_commit": "0eb000bb1cbfbac9074da170a777ce146c04a0d6",
+  "read_only": true,
+  "no_v2_build_created": true,
+  "latest_build": [
+    {
+      "id": "2795ce8d-cd44-4f2c-a67c-f7446a5061f4",
+      "created_on": "2026-10-20T01:48:24.187Z",
+      "source_commit": "05bc868fb7fbf1f320a175ccb32cd4893c8e9834",
+      "outcome": "success"
+    }
+  ],
+  "production": [
+    {
+      "id": "b8577c76-8299-4ae3-b15e-eb0c5dd52e90",
+      "created_on": "2026-10-18T18:15:38.204585Z",
+      "versions": [
+        {
+          "version_id": "c5da62e1-d086-4eaf-b55e-a6c4731bb356",
+          "percentage": 100
+        }
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "id": "38498719-3307-44bd-b1d5-9880c6a01224",
+      "includes": [
+        "*"
+      ],
+      "excludes": [
+        "main",
+        "contenido/alimentacion-perros-mayores-sin-dientes"
+      ],
+      "modified_on": "2026-10-20T01:51:59.429Z"
+    },
+    {
+      "id": "5ec70653-b98c-460e-99f4-623fca73ff06",
+      "includes": [
+        "main"
+      ],
+      "excludes": [],
+      "modified_on": "2026-09-03T13:07:43.435Z"
+    }
+  ]
+}
