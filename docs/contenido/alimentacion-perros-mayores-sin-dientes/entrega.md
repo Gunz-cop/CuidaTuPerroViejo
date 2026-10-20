@@ -1,5 +1,11 @@
 # Alimentación para perros mayores sin dientes
 
+> **Entrega v1 rechazada por el propietario el 2026-10-20, incluido su brief.** Los resultados y enlaces que siguen se conservan como antecedentes y no constituyen aceptación vigente. Se inicia un encargo nuevo desde investigación y brief, sin ampliar el artículo rechazado. [Encargo, roles y rondas de v2](reinicio-v2/encargo-y-rondas.md). La PR vuelve a borrador; no publicar esta versión.
+
+[Abrir la entrega v2 y sus recursos para revisión](reinicio-v2/entrega-v2.md).
+
+## Antecedente v1 rechazado
+
 Entrega limitada a este artículo. [PR #123](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/123). Rama: `contenido/alimentacion-perros-mayores-sin-dientes`. Base: `c9af722dd5cf27d8d37878ba01c4df339f0b6f76`. Producto completo preparado en `c386535d0e9b2c1a48596574555cf50e89fdc507`. No se ha fusionado ni desplegado a producción. El push sí activó una versión de prueba automática, documentada abajo.
 
 No se recibió un archivo adjunto. Durante el cierre se localizó el [plan editorial](../plan-elaboracion-articulos-2026-10-19.md) en la rama `docs/plan-editorial-search-console-2026-10-19` y se leyó esa versión. Su alcance coincide con el tema, la diferenciación y los recursos entregados. La lectura fue tardía: los informes anteriores conservaron honestamente la limitación de trabajar sin el plan localizado. [Comprobación y procedencia](comprobacion-plan-localizado.md).
