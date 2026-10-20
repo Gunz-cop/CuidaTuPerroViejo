@@ -43,7 +43,7 @@ Se leyeron `AGENTS.md` y las skills editoriales correspondientes. Se instaló el
 | Brief | Corrección tras R1 | Rol de corrección separado; registro y hashes en `correcciones-brief-r1.md`. No es una auditoría adicional. |
 | Brief | 2/3 | **APTO para redacción**, sin pendientes. Ver `auditoria-brief-r2.md`; hash `accdd752038ed26bd5d30971bfecefe8237c26562c9262f23196fa449e8cf79c`. No se consume R3. |
 | Brief | 3/3 | **APTO** tras corregir la incompatibilidad técnica detectada en el build. Ver `auditoria-brief-r3.md`; hash `fb110f500fc009ac86263bd8ca817e361f3f073be6413ae3c5e57d92ec5af0fa`. No queda cuarta ronda disponible. |
-| Artículo completo con recursos | — | Sin rondas iniciadas; redacción y producción activadas tras APTO del brief. |
+| Artículo completo con recursos | 1/3 | Auditoría independiente iniciada sobre el commit `c386535d0e9b2c1a48596574555cf50e89fdc507`, con artículo y recursos completos. |
 
 ### Incidencia técnica posterior al APTO de R2
 
