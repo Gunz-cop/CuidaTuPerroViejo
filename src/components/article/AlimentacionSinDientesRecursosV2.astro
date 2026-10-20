@@ -69,13 +69,15 @@ const fields = [
       <p class="feeding-diagram-key">{variant === 'base' ? 'El esquema distingue base medida, adaptación autorizada y plato servido. Más agua no significa más alimento.' : 'Observaciones: plato y derrame. Calidad del dato: medido, estimado o desconocido.'}</p>
       <ol class="feeding-progress" aria-hidden="true">{lesson.labels.map((label, i) => <li data-progress={i}><span></span>{label}</li>)}</ol>
     </div>
-    <ol class="feeding-steps">{lesson.steps.map(([title, text], i) => <li data-panel={i}><span class="feeding-ordinal" aria-hidden="true">0{i + 1}</span><div><h4>{title}</h4><p>{text}</p></div></li>)}</ol>
     <div class="feeding-controls" hidden><div class="feeding-transport"><button type="button" data-action="prev" aria-label={`Paso anterior: ${lesson.title}`}>←</button><button type="button" data-action="play">Reproducir secuencia</button><button type="button" data-action="next" aria-label={`Paso siguiente: ${lesson.title}`}>→</button></div><p class="feeding-position" aria-live="polite" aria-atomic="true"></p><p class="feeding-motion">También puedes recorrerla a tu ritmo con las flechas.</p></div>
-    <p class="feeding-stop"><strong>Detén el intento ante dificultad para tragar.</strong> Consulta; si respira con dificultad, busca atención urgente. No fuerces comida ni agua.</p><p class="feeding-note">{lesson.note} El tiempo de reproducción solo facilita la lectura; no indica la duración de una preparación o una toma.</p>
+    <ol class="feeding-steps">{lesson.steps.map(([title, text], i) => <li data-panel={i}><span class="feeding-ordinal" aria-hidden="true">0{i + 1}</span><div><h4>{title}</h4><p>{text}</p></div></li>)}</ol>
+    <p class="feeding-stop"><strong>Detén el intento ante dificultad para tragar.</strong> Consulta; si respira con dificultad, busca atención urgente. No fuerces comida ni agua.</p><details class="feeding-limits"><summary>Qué no indica este esquema</summary><p class="feeding-note">{lesson.note} El tiempo de reproducción solo facilita la lectura; no indica la duración de una preparación o una toma.</p></details>
   </div> : <>
     <header><p class="feeding-kicker">Una toma · datos para compartir</p><h3 id={`${uid}-title`} data-toc-exclude="true">Registro de alimento y tolerancia</h3><p>Completa los campos o imprímelos en blanco. No se guardan ni se envían: copia o imprime lo que quieras conservar antes de cerrar o recargar la página.</p></header>
+    <details class="feeding-record-form" open><summary>Rellenar el registro <span>(10 campos)</span></summary>
     <div class="feeding-record-grid">{fields.map(field => <div class="feeding-field"><label for={`${uid}-${field.key}`}>{field.label}</label><input id={`${uid}-${field.key}`} type="text" maxlength={field.max} autocomplete="off" /></div>)}</div>
     <div class="feeding-field"><label for={`${uid}-observacion`}>Qué ocurrió durante o después de comer y cuándo (máximo 300 caracteres)</label><textarea id={`${uid}-observacion`} rows="3" maxlength="300"></textarea></div><div class="feeding-field"><label for={`${uid}-pregunta`}>Preguntas e indicaciones para la revisión (máximo 220 caracteres)</label><textarea id={`${uid}-pregunta`} rows="2" maxlength="220"></textarea></div>
+    </details>
     <p class="feeding-note">Los campos cortos admiten entre 80 y 120 caracteres. Usa la misma unidad para comparar la base ofrecida y el sobrante. Si no puedes medir algo, escribe «estimado» o «desconocido», sin inventar precisión.</p><p class="feeding-stop"><strong>No esperes a completar el registro si empeora.</strong> Dificultad respiratoria: atención urgente. Este registro no interpreta síntomas ni prescribe alimento.</p><button class="feeding-print" type="button" hidden>Imprimir este registro</button><noscript><p class="feeding-note">Sin JavaScript, copia las categorías a una libreta o imprime esta página desde tu navegador.</p></noscript>
   </>}
 </section>
@@ -117,25 +119,40 @@ const fields = [
   }
   const sequences = new Map<HTMLElement, FeedingV2Sequence>();
   const records = new Map<HTMLElement, AbortController>();
+  const printDetails = new Map<HTMLDetailsElement, boolean>();
   let printCopy: HTMLElement | null = null;
   function clearPrint() { printCopy?.remove(); printCopy = null; delete document.body.dataset.feedingV2Print; }
+  function openPrintDetails() {
+    document.querySelectorAll<HTMLDetailsElement>('.feeding-v2 details').forEach(details => {
+      if (!printDetails.has(details)) printDetails.set(details, details.open);
+      details.open = true;
+    });
+  }
+  function restorePrintDetails() { printDetails.forEach((open, details) => { details.open = open; }); printDetails.clear(); }
   function initializeFeedingV2() {
     document.querySelectorAll<HTMLElement>('[data-feeding-v2-sequence]').forEach(root => { if (!sequences.has(root)) sequences.set(root, new FeedingV2Sequence(root)); });
     document.querySelectorAll<HTMLElement>('[data-feeding-v2-visual="registro"]').forEach(root => {
       if (records.has(root)) return;
       const aborter = new AbortController(); records.set(root, aborter);
       const button = root.querySelector<HTMLButtonElement>('.feeding-print')!; button.hidden = false;
+      const form = root.querySelector<HTMLDetailsElement>('.feeding-record-form');
+      const compact = matchMedia('(max-width: 640px)');
+      if (form) {
+        form.open = !compact.matches;
+        compact.addEventListener('change', event => { form.open = !event.matches; }, { signal: aborter.signal });
+      }
       button.addEventListener('click', () => {
         clearPrint(); printCopy = root.cloneNode(true) as HTMLElement; printCopy.classList.add('feeding-v2-print-copy'); printCopy.removeAttribute('aria-labelledby');
-        printCopy.querySelectorAll('[id]').forEach(node => node.removeAttribute('id')); printCopy.querySelectorAll('label').forEach(node => node.removeAttribute('for')); printCopy.querySelectorAll('button,noscript').forEach(node => node.remove());
+        printCopy.querySelectorAll('[id]').forEach(node => node.removeAttribute('id')); printCopy.querySelectorAll('label').forEach(node => node.removeAttribute('for')); printCopy.querySelectorAll('button,noscript').forEach(node => node.remove()); printCopy.querySelectorAll('details').forEach(node => (node as HTMLDetailsElement).open = true); printCopy.querySelectorAll('summary').forEach(node => node.remove());
         const originals = root.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input,textarea');
         printCopy.querySelectorAll('input,textarea').forEach((node, i) => { const value = document.createElement('p'); value.className = 'feeding-printed-value'; value.textContent = originals[i].value || '________________________________'; node.replaceWith(value); });
         document.body.appendChild(printCopy); document.body.dataset.feedingV2Print = 'true'; window.print();
       }, { signal: aborter.signal });
     });
   }
-  window.addEventListener('afterprint', clearPrint);
-  document.addEventListener('astro:before-swap', () => { sequences.forEach(instance => instance.disconnect()); sequences.clear(); records.forEach(aborter => aborter.abort()); records.clear(); clearPrint(); });
+  window.addEventListener('beforeprint', openPrintDetails);
+  window.addEventListener('afterprint', () => { clearPrint(); restorePrintDetails(); });
+  document.addEventListener('astro:before-swap', () => { sequences.forEach(instance => instance.disconnect()); sequences.clear(); records.forEach(aborter => aborter.abort()); records.clear(); clearPrint(); restorePrintDetails(); });
   document.addEventListener('astro:page-load', initializeFeedingV2);
   initializeFeedingV2();
 </script>
@@ -200,12 +217,21 @@ const fields = [
   .feeding-v2 input,.feeding-v2 textarea { display:block; width:100%; min-height:44px; box-sizing:border-box; color:#294b3d; background:#fff; border:1px solid #7e9773; border-radius:.4rem; padding:.65rem; font:400 1rem/1.5 system-ui,sans-serif; }
   .feeding-v2 textarea { resize:vertical; }
   .feeding-v2 .feeding-print { margin-top:.8rem; }
+  .feeding-v2 details { background-color:#fffdf6!important; border-color:#bfceb7!important; }
+  .feeding-v2 summary { cursor:pointer; min-height:44px; display:flex; align-items:center; color:#294b3d!important; font:600 .9rem/1.4 system-ui,sans-serif; }
+  .feeding-v2 summary::after { color:#294b3d!important; }
+  .feeding-v2 summary:focus-visible { outline:3px solid #95601f; outline-offset:3px; }
+  .feeding-v2 .feeding-limits { margin:.5rem 0 0!important; padding:.65rem .8rem!important; }
+  .feeding-limits summary { font-size:.82rem; }
+  .feeding-record-form > summary { margin:0 0 .6rem; padding:.55rem .85rem; background:#e5eedc; border:1px solid #8ca27f; border-radius:.6rem; }
+  .feeding-record-form > summary span { font-weight:400; margin-left:.3rem; }
+  .feeding-record-form[open] > summary { margin-bottom:1rem; }
   :global(.feeding-v2-print-copy) { display:none; }
-  @media(max-width:480px) { .feeding-v2 { padding:1rem; } .feeding-record-grid { grid-template-columns:1fr; } .feeding-progress { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem; padding-inline:.8rem; } .feeding-progress li { font-size:.875rem; } .feeding-canvas .canvas-labels,.feeding-canvas .certainty-card text { display:none; } .feeding-v2 .feeding-stop { padding:.8rem; } }
+  @media(max-width:640px) { .feeding-v2 { padding:1rem; } .feeding-record-grid { grid-template-columns:1fr; } .feeding-progress { gap:.35rem; padding:.2rem .8rem .7rem; } .feeding-progress li { font-size:0; } .feeding-progress li span { margin:0; } .feeding-v2 .feeding-diagram-key,.feeding-v2 .feeding-motion { display:none; } .feeding-v2 header p:not(.feeding-kicker) { font-size:.9rem; margin:.3rem 0 0; } .feeding-v2 header { margin-bottom:.75rem; } .feeding-v2 h3 { margin-bottom:.4rem!important; } .feeding-steps { margin-top:.4rem!important; } .feeding-steps li { padding:.4rem 0; } .feeding-v2 .feeding-position { margin:.4rem 0 0; } .feeding-controls { padding:.6rem 0 0; } .feeding-canvas .canvas-labels,.feeding-canvas .certainty-card text { display:none; } .feeding-v2 .feeding-stop { padding:.8rem; } }
   @media(prefers-reduced-motion:reduce) { .feeding-v2 *, .feeding-v2 *::before, .feeding-v2 *::after { transition:none!important; animation:none!important; } }
   @media print {
     .feeding-v2 { background:white; color:#111; border-color:#777; box-shadow:none; break-inside:auto; }
-    .feeding-controls,.feeding-print,.feeding-canvas { display:none!important; }
+    .feeding-controls,.feeding-print,.feeding-canvas,.feeding-v2 summary { display:none!important; }
     [data-enhanced="true"] .feeding-steps li[data-active="false"] { display:flex!important; }
     .feeding-record-grid { grid-template-columns:1fr 1fr; }
     :global(body[data-feeding-v2-print="true"] > :not(.feeding-v2-print-copy)) { display:none!important; }

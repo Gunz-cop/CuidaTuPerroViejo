@@ -1,0 +1,43 @@
+{
+  "checked_at": "2026-10-20T21:13:49.609Z",
+  "success": true,
+  "triggers": [
+    {
+      "id": "38498719-3307-44bd-b1d5-9880c6a01224",
+      "includes": [
+        "*"
+      ],
+      "excludes": [
+        "main",
+        "contenido/alimentacion-perros-mayores-sin-dientes"
+      ]
+    },
+    {
+      "id": "5ec70653-b98c-460e-99f4-623fca73ff06",
+      "includes": [
+        "main"
+      ],
+      "excludes": []
+    }
+  ],
+  "deployment": {
+    "id": "09cae4bf-1913-45e0-bf72-ff8a088c0382",
+    "created_on": "2026-10-20T20:33:19.282302Z",
+    "versions": [
+      {
+        "version_id": "fc06a44f-6d44-4540-84d4-34a90d7499f1",
+        "percentage": 100
+      }
+    ]
+  },
+  "latest_build": [
+    {
+      "id": "a6c87233-2b51-4ca5-be14-85b6cad82a03",
+      "created_on": "2026-10-20T20:58:07.627Z",
+      "branch": "claude/sin-dientes-visuales-movil",
+      "commit": "86f0a12dce08428c040e8f190c914fdf7146d685",
+      "status": "stopped",
+      "outcome": "success"
+    }
+  ]
+}

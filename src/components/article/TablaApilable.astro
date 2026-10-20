@@ -1,0 +1,25 @@
+---
+// Envuelve una tabla del artículo: en escritorio se ve como tabla; por debajo de 640 px cada fila
+// se apila como tarjeta y cada celda muestra su encabezado (data-label), sin scroll horizontal.
+interface Props { label: string; }
+const { label } = Astro.props;
+---
+
+<div class="tabla-apilable" role="region" aria-label={label}>
+  <slot />
+</div>
+
+<style is:global>
+  .tabla-apilable { overflow-x:auto; }
+  @media (max-width: 640px) {
+    .tabla-apilable table { display:block; width:100%; border:0; }
+    .tabla-apilable caption { display:block; text-align:left; margin:0 0 .75rem; }
+    .tabla-apilable thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+    .tabla-apilable tbody { display:grid; gap:.75rem; }
+    .tabla-apilable tr { display:block; border:1px solid #d9ccb8; border-radius:.75rem; overflow:hidden; }
+    .tabla-apilable tbody th[scope="row"] { display:block; width:auto; padding:.4rem .9rem; text-align:left; }
+    .tabla-apilable td { display:block; padding:.25rem .9rem; border:0; text-align:left; }
+    .tabla-apilable td + td { border-top:1px solid #ece3d4; }
+    .tabla-apilable td[data-label]::before { content:attr(data-label); display:block; font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; opacity:.75; margin-bottom:.15rem; }
+  }
+</style>

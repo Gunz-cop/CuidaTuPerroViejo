@@ -158,6 +158,8 @@ Notas de método:
   parque") son hallazgo P2.
 - Si la historia tiene más de un perro, cada prompt indica cuál aparece.
 
+Comprueba también que cada recurso visual planificado sea viable según [apoyos visuales cómodos en móvil y escritorio](../references/apoyos-visuales-responsive.md); una tabla de 3+ columnas con celdas de párrafo o un formulario largo sin plan móvil es un hallazgo.
+
 ### 7. Contrato de Entrega (Sección 9)
 
 - Tabla de trazabilidad completa: todas las fuentes con H2 asignado.

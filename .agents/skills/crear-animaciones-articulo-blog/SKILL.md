@@ -80,6 +80,7 @@ Para el recorte, añade fondo transparente, cuerpo completo, orientación y marg
 
 - [ ] Inspección visual de la referencia y todas las escenas: mismo perro, edad senior evidente, anatomía y apoyos correctos, transparencia limpia.
 - [ ] Capturas de las animaciones en escritorio y móvil, en modo claro y oscuro. Muestra al usuario una vista concreta del resultado.
+- [ ] Cumple [apoyos visuales cómodos en móvil y escritorio](../references/apoyos-visuales-responsive.md): cada recurso ≤ ~900 px de alto en móvil, controles junto al dibujo, notas y formularios largos plegados, tablas apilables. Anota las alturas medidas.
 - [ ] Sin desbordamiento a 375–390 px. Títulos, destacados y explicaciones legibles; contraste mínimo de texto normal 4,5:1.
 - [ ] Controles, teclado, pausa, repetición y avance temporizado comprobados en navegador, sin errores JavaScript.
 - [ ] Movimiento reducido y alternativa sin JavaScript comprobados.

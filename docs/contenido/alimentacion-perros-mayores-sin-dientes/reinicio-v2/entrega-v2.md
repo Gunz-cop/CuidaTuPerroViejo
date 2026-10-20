@@ -1,5 +1,7 @@
 # Entrega v2 para revisión del propietario
 
+> **Archivo histórico del cierre R2.** La PR #123 se fusionó después por autorización del propietario. Posteriormente solicitó una corrección editorial y móvil, cerrada APTO en R3 con una observación menor. [Abrir la entrega vigente y su nueva lectura](../correccion-2026-10-20/entrega.md). Los estados de PR/publicación que siguen corresponden al momento de entrega R2, no al estado actual.
+
 Guía nueva sobre alimentación para perros mayores sin dientes, creada desde investigación y brief nuevos tras el rechazo completo de v1. **5.858 palabras editoriales visibles**, medidas en la página compilada y comprobadas por separado por coordinación y auditoría. No se ha ampliado el texto rechazado.
 
 Esta versión no se ha desplegado. Rama `contenido/alimentacion-perros-mayores-sin-dientes`, [PR #123 en borrador](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/123), sin fusionar. La aceptación del propietario sigue pendiente.

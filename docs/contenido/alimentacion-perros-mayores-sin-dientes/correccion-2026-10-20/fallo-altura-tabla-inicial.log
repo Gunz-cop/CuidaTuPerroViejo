@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/CuidaTuPerroViejo/docs/contenido/alimentacion-perros-mayores-sin-dientes/correccion-2026-10-20/verificar-recursos.py", line 39, in <module>
+    assert all(x['height']<=900 for x in tables) if w==390 else True,tables
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [{'width': 358, 'height': 668.859375, 'scrollWidth': 358, 'clientWidth': 358, 'labels': True}, {'width': 358, 'height': 777.828125, 'scrollWidth': 358, 'clientWidth': 358, 'labels': True}, {'width': 358, 'height': 914.609375, 'scrollWidth': 358, 'clientWidth': 358, 'labels': True}]
