@@ -239,7 +239,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 *Estado: 1 publicado, 10 por redactar*
 - [x] *Comida casera para perros mayores* (Publicado)
 - [🔒] *Yema o clara de huevo para perros senior: cómo alimentar a dos perros con necesidades opuestas (uno debe subir y otro bajar de peso) en la misma casa* (Caso propio: Luna y Dakota) **[RESERVA PERSONAL — no priorizar ni seleccionar sin petición expresa]**
-- [~] *Cómo alimentar a un perro senior sin dientes: recetas blandas y papillas caseras* (En Briefing — ver `briefings/briefing-alimentacion-perros-mayores-sin-dientes.md`; Búsqueda GSC)
+- [~] *Cómo alimentar a un perro senior sin dientes: recetas blandas y papillas caseras* (Redactado y auditado — artículo APTO R1; PR #123 sin fusionar, publicación pendiente. Brief: `briefings/briefing-alimentacion-perros-mayores-sin-dientes.md`; Búsqueda GSC)
 - [ ] *Dieta BARF para perros senior: pros, contras y cómo adaptarla de forma segura* (Búsqueda GSC)
 - [ ] *Pienso senior con condroprotectores: qué buscar en las etiquetas nutricionales* (Búsqueda GSC)
 - [ ] *Cómo abrir el apetito de un perro viejo que se niega a comer* (Búsqueda GSC)

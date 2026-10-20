@@ -1,13 +1,13 @@
 # Alimentación para perros mayores sin dientes
 
-Entrega limitada a este artículo. Rama: `contenido/alimentacion-perros-mayores-sin-dientes`. Base: `c9af722dd5cf27d8d37878ba01c4df339f0b6f76`. Producto completo preparado en `c386535d0e9b2c1a48596574555cf50e89fdc507`. No se ha fusionado ni desplegado.
+Entrega limitada a este artículo. [PR #123](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/123). Rama: `contenido/alimentacion-perros-mayores-sin-dientes`. Base: `c9af722dd5cf27d8d37878ba01c4df339f0b6f76`. Producto completo preparado en `c386535d0e9b2c1a48596574555cf50e89fdc507`. No se ha fusionado ni desplegado a producción. El push sí activó una versión de prueba automática, documentada abajo.
 
 El plan mencionado como adjunto no llegó a la sesión. Se solicitó su ruta y se ejecutaron la instrucción explícita y el tema pendiente del inventario. Esa limitación se conserva en los informes; no se afirma haber leído el adjunto.
 
 ## Estado de auditoría
 
 - Brief: **APTO, ronda 3/3**, [informe final](auditoria-brief-r3.md). La tercera ronda resolvió una incompatibilidad real del estado técnico con el catálogo; no se reinició el contador.
-- Artículo completo y recursos: **pendiente de cierre de la ronda 1/3**. El auditor es distinto de creación y corrección.
+- Artículo completo y recursos: **APTO / Publicable en ronda 1/3**, sin hallazgos pendientes; [informe independiente](auditoria-articulo-r1.md). El auditor es distinto de creación y corrección. No se abrieron rondas separadas para los recursos.
 - [Roles, alcance e historial](coordinacion.md).
 
 ## Contenido y recursos
@@ -37,7 +37,12 @@ El registro normal y el rellenado hasta sus máximos caben en una A4 a 10 pt, co
 - [Página de escritorio](capturas-creacion/1366-light-pagina.png).
 - [Detalle móvil de la secuencia](capturas-creacion/390-dark-paso-2.png).
 - [Matriz en escritorio](capturas-creacion/1366-light-matriz.png).
+- [Capturas y pruebas del auditor, sin retirar overlays](capturas-auditor-r1/).
 - [Registro rellenado: PDF de comprobación](capturas-creacion/registro-relleno.pdf).
 - [Registro al máximo: PDF de comprobación](capturas-creacion/registro-maximo.pdf).
 
 Las capturas de página conservan navegación y asistente. Las de detalle separan temporalmente esos overlays para mostrar el recurso completo; el informe de creación declara esa diferencia. Los PDF son evidencias locales de impresión, no descargas prometidas dentro del artículo.
+
+## Incidencia de la integración remota
+
+El push activó el disparador preexistente de Cloudflare para ramas no productivas, que ejecuta `wrangler versions upload` y creó una versión de prueba. No hubo despliegue de producción: la API mantiene activa al 100 % la versión del 18 de octubre. Se excluyó únicamente esta rama de futuras subidas automáticas, comprobando que el disparador de producción no cambió. La versión previa ya creada sigue registrada; no se ha desactivado globalmente el acceso a las demás versiones. [Registro completo y limitaciones](incidencia-preview-automatica.md).
