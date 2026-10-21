@@ -25,7 +25,7 @@ Declarar en la apertura de uso el tipo de material: (a) experiencia propia aport
 
 No añadir conversaciones, medidas, dosis, visitas o desenlaces ausentes de la fuente. No convertir una cohorte transversal en seguimiento. No contar casos publicados como experiencias del equipo. Si no hay desenlace documentado, cerrar con límites y decisiones posibles, no con curación inventada.
 
-Identificar la responsabilidad editorial real, sin credenciales ni revisión veterinaria ficticias. Diferenciar ilustraciones de fotografías clínicas; las generadas con IA llevan declaración visible en pie/hero, además de alt fiel. Ningún cocker ilustrativo se presenta como paciente identificado del estudio. Mantener continuidad anatómica y edad sin fabricar patología.
+Identificar la responsabilidad editorial real, sin credenciales ni revisión veterinaria ficticias. Diferenciar ilustraciones de fotografías clínicas. Desde el 2026-10-21 la declaración de IA es global: la firma de cada artículo y pilar (`ArticleByline`) dice «Ilustraciones generadas con IA» y la política editorial lo explica, así que no hace falta repetirla en cada pie. Solo una fotografía real necesita identificarse en su pie como tal. El alt sigue teniendo que ser fiel. Ningún cocker ilustrativo se presenta como paciente identificado del estudio. Mantener continuidad anatómica y edad sin fabricar patología.
 
 ## 4. Límites clínicos coherentes
 
