@@ -27,7 +27,7 @@ Para revisar una herramienta ya hecha, usa [`.agents/skills/auditar-herramienta-
 
 ## Redacción de contenido de blog
 
-Antes de generar un briefing o redactar/auditar un artículo de blog para `cuidatuperroviejo.com`, lee el [control compartido de calidad editorial](.agents/skills/references/calidad-editorial-adsense.md) y consulta las skills en `.agents/skills/`. La extensión se justifica por utilidad, los casos requieren procedencia y cada recurso prometido debe funcionar. Máximo tres auditorías por documento; si la tercera falla, detener y revisar con el usuario.
+Antes de generar un briefing o redactar/auditar un artículo de blog para `cuidatuperroviejo.com`, lee el [control compartido de calidad editorial](.agents/skills/references/calidad-editorial-adsense.md) y consulta las skills en `.agents/skills/`. La extensión se justifica por utilidad, los casos requieren procedencia y cada recurso prometido debe funcionar. Máximo tres auditorías por documento; si la tercera falla, detener y revisar con el usuario. La voz y el tono se rigen por la [guía de voz y tono](.agents/skills/references/guia-voz-tono.md); mídelos con `python3 .agents/skills/references/scripts/tono.py`.
 
 Skills del flujo:
 

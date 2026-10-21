@@ -9,6 +9,10 @@ Esta habilidad es la continuación natural de **`generar-briefing-contenido`**: 
 
 ---
 
+## Voz y tono (obligatorio)
+
+Redacta con la [guía de voz y tono](../references/guia-voz-tono.md): de tú, primero lo afirmativo, una salvedad por H3 como máximo, experiencia propia solo con procedencia. Antes de entregar, corre `python3 .agents/skills/references/scripts/tono.py <archivo>`: el resultado debe ser ≤ 3 muletillas por cada 1000 palabras.
+
 ## Control obligatorio de calidad editorial (2026-10-16)
 
 Lee y aplica [calidad-editorial-adsense.md](../references/calidad-editorial-adsense.md) antes de ejecutar esta skill. Verifica utilidad propia, correspondencia fuente→afirmación, procedencia narrativa, coherencia con la política editorial y entrega real de cada recurso anunciado. Ni el conteo de palabras ni un APTO mecánico sustituyen esos controles. Máximo tres rondas por documento; al fallar la tercera, detenerse y presentar el bloqueo al usuario.
@@ -103,7 +107,7 @@ Referencias implementadas: [patrón de baño](../crear-animaciones-articulo-blog
 La redacción debe seguir el alcance útil acordado, sin mínimo universal de palabras. Redacta por bloques, en este orden:
 
 1.  **Bloque de apertura:** frontmatter completo (solo campos del schema de `src/content.config.ts`) + imports + introducción (presupuesto justificado en el brief, con la pregunta del lector o material documentado, el byline `Autoría`/`Actualizado` tras el primer párrafo, y `AlertBox type="info"` de acompañamiento, según lo planeado en el brief). Responde pronto a la intención; una apertura larga necesita utilidad, no dramatización para completar volumen.
-2.  **Punto de control ligero:** si el usuario ya autorizó redactar todo seguido, continúa. Pide una preferencia de tono solo si es necesaria y no consta en el encargo.
+2.  **Punto de control ligero:** si el usuario ya autorizó redactar todo seguido, continúa. La voz está fijada en la guía de voz y tono; pide una preferencia solo si el usuario quiere desviarse y no consta en el encargo.
 3.  **Bloques de desarrollo:** un H2 del brief a la vez (o todos seguidos si el usuario lo pidió), respetando:
     *   El target de palabras de esa sección (±15%). **Aviso anti-scope-creep:** si mientras investigas o redactas sientes que el tema merece un H2 o H3 adicional que no está en la Sección 6 del brief (por ejemplo, "por qué falla el tratamiento" o "complicaciones"), no lo agregues por tu cuenta — es la causa más común de exceder el presupuesto total de palabras (verificado: un artículo real llegó a 8.993 palabras, 38% sobre el target, por agregar exactamente una sección así). Anota la idea y pliégala dentro de un H2 ya existente como subsección corta, o pregúntale al usuario si la quiere antes de expandir el artículo.
     *   El `AlertBox` planeado para esa sección (`danger` en síntomas/diagnóstico, `warning` en tratamiento/manejo), citando la fuente asignada por su nombre real.

@@ -82,6 +82,10 @@ Esta habilidad sigue la estructura avanzada de división de responsabilidades:
     > **Límite Brief vs. Redacción:** Este skill entrega un briefing de planificación, no prosa casi final. Para cada bloque (introducción, H2/H3, AlertBox, FAQ) escribe **instrucciones y puntos clave para el redactor** (qué debe explicar, qué fuente usar, qué dato de la historia real conectar), no el texto terminado. Excepción: los `items` de `FAQ` y el `title`/tipo de cada `AlertBox` sí pueden anticiparse como borrador corto, porque son datos estructurados que el redactor ajustará, no párrafos de desarrollo.
 7.  **Genera el Contrato de Entrega (Sección 9 del template):** Completa la tabla de trazabilidad de fuentes (fuente → H2 asignado → casilla de verificación) y el checklist de "no negociables" (volumen mínimo real, componentes estructurales, arco narrativo). Este contrato existe porque briefs anteriores fueron ignorados parcialmente en redacción (fuentes asignadas que nunca se citaron, AlertBox y enlaces planificados que no llegaron al artículo, conteos de palabras muy por debajo del target). El contrato no evita eso por sí solo, pero deja un criterio de auditoría explícito y verificable contra el `.mdx` final — tanto para revisión humana como para la skill [redactar-articulo-blog](../redactar-articulo-blog/SKILL.md), que toma este brief y valida el artículo final contra él.
 
+### Voz y tono
+
+El brief remite a la [guía de voz y tono](../references/guia-voz-tono.md) y no fija otra voz. Si existe experiencia propia del equipo (Luna, Dakota) con procedencia documentada, indica en qué H2 aporta; si no existe, declara «guía sin caso».
+
 ### Planificación visual cuando el usuario la solicita
 
 Si el encargo incluye producción de imágenes, infografías o animaciones, la Sección 8 debe enlazar el flujo de [crear-animaciones-articulo-blog](../crear-animaciones-articulo-blog/SKILL.md) y definir:

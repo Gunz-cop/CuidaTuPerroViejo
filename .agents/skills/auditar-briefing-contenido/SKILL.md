@@ -158,6 +158,8 @@ Notas de método:
   parque") son hallazgo P2.
 - Si la historia tiene más de un perro, cada prompt indica cuál aparece.
 
+Comprueba que el brief remita a la [guía de voz y tono](../references/guia-voz-tono.md) y que no pida una voz contraria (usted, tono clínico distante o una salvedad por párrafo).
+
 ### 7. Contrato de Entrega (Sección 9)
 
 - Tabla de trazabilidad completa: todas las fuentes con H2 asignado.
