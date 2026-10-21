@@ -13,7 +13,7 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
   - [x] Imagen principal de úlceras sin la marca «COZY PAWS»: nueva imagen aportada por el dueño — PR #143 (2026-10-21).
   - [x] PR #127–#139 fusionados con visto bueno del dueño (2026-10-21).
   - [ ] Pilares: los 7 a 0,0/1000 en `tono.py` — PR de pilares abierto (2026-10-21).
-- [x] **Recuperar la experiencia propia con Luna y Dakota** con procedencia documentada (fechas, fotos, qué pasó). Las versiones de agosto en git (`cbfa55c`) sirven de punto de partida; requiere material del dueño. (Anotado: 2026-10-21)
+- [ ] **Recuperar la experiencia propia con Luna y Dakota** con procedencia documentada (fechas, fotos, qué pasó). Las versiones de agosto en git (`cbfa55c`) sirven de punto de partida; requiere material del dueño. (Anotado: 2026-10-21)
   - [x] **Comida casera:** experiencia de Luna (rechazaba las croquetas; comida casera con receta de internet como complemento), aportada el 2026-10-21 y auditada — PR #143.
   - [x] **Cama ortopédica:** una cama para cada una, más de un año en perfecto estado, aportada el 2026-10-21 y auditada — PR #143.
   - [ ] **Poliquezia** (#132): ya usa la experiencia aportada de Dakota y Luna, ahora en primera persona del plural (aprobado 2026-10-21). Si ya sabes la causa de las deposiciones, aporta diagnóstico o desenlace con fecha.
