@@ -94,6 +94,7 @@ Si el encargo incluye producción de imágenes, infografías o animaciones, la S
 - Una primera imagen de referencia que se inspeccionará antes de derivar el resto. Pedir edad visible mediante rasgos naturales, anatomía correcta y apoyos adecuados, sin imponer enfermedades para aparentar vejez.
 - Para cada recurso: sección de inserción, pregunta que responde, composición/acción y texto alternativo. Respetar la cantidad solicitada; no añadir tres animaciones a todo artículo de forma automática.
 - Cuando resulte adecuado, recorte realista transparente del mismo perro y secuencia de cambios en herramientas o zonas. No planificar una silueta rudimentaria como sustituto de un sujeto convincente.
+- Cada recurso planificado debe poder cumplir [apoyos visuales cómodos en móvil y escritorio](../references/apoyos-visuales-responsive.md): indica cómo se verá en móvil (tabla apilable, pasos con controles, formulario plegado) y descarta tablas de celdas largas.
 - Criterios de entrega: imágenes reales, capturas en móvil y modo oscuro, contraste, controles y accesibilidad; compatibilidad con el build y rutas que eviten mostrar imágenes antiguas desde caché.
 
 Esto planifica la producción visual; no inventa un caso clínico ni modifica por sí solo el contrato científico del artículo.

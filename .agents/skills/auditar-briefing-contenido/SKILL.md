@@ -160,6 +160,8 @@ Notas de método:
 
 Comprueba que el brief remita a la [guía de voz y tono](../references/guia-voz-tono.md) y que no pida una voz contraria (usted, tono clínico distante o una salvedad por párrafo).
 
+Comprueba también que cada recurso visual planificado sea viable según [apoyos visuales cómodos en móvil y escritorio](../references/apoyos-visuales-responsive.md); una tabla de 3+ columnas con celdas de párrafo o un formulario largo sin plan móvil es un hallazgo.
+
 ### 7. Contrato de Entrega (Sección 9)
 
 - Tabla de trazabilidad completa: todas las fuentes con H2 asignado.
