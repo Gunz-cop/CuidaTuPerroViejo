@@ -42,3 +42,7 @@ Skills del flujo:
 > **Orden recomendado del flujo:** generar brief → auditar brief → redactar artículo → auditar artículo. Auditar el brief antes de redactar es más barato que descubrir el fallo en el artículo: un PMID mal asignado o un enlace inexistente en el contrato se propaga a todo lo que se escriba después. Si una auditoría de artículo encuentra un error de fuente, comprueba si nace en el brief con la skill de auditoría de briefing.
 
 Sigue el flujo descrito en esos archivos en vez de improvisar la estructura del brief o del artículo desde cero.
+
+## Pendientes del dueño
+
+Cuando el usuario mencione una idea, propuesta o algo que no quiere olvidar, regístralo en [`TODO.md`](TODO.md) y marca lo terminado con fecha y PR.
