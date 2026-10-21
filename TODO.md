@@ -20,15 +20,15 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 - [ ] Revisar documentación, evidencias e imágenes que no deberían vivir en el repo (por ejemplo, PDFs y capturas de auditorías en `docs/contenido/`). No tocar por ahora; decidir criterio antes. Las evidencias nuevas no se suben a `main`. (Anotado: 2026-10-21)
 
-## Herramientas
+## Herramientas (en cola: rediseño del dueño)
 
-- [ ] **Corregir el pilar `/herramientas`: los tramos de la escala HHHHHMM no coinciden con la calculadora.** El pilar dice que suma hasta 70 con tres tramos (≤35 comprometida, 36–50 aceptable, >50 buena) y que «la calculadora te explica cada resultado», pero `src/lib/agent-tools/calidad-vida.ts` y la página de la calculadora dicen que el total no se clasifica. Revisar también «es nuestra herramienta más usada» y «no guardamos los datos» contra la evidencia real. (Anotado: 2026-10-21)
-- [ ] **Calculadora de calidad de vida al estándar de la calculadora de edad:** hoy su lógica de interfaz vive en una página de 812 líneas, sin componente en `src/components/tools/` ni tests en `tests/`. Pasarla por `crear-herramienta-interactiva` (componente, `src/lib/`, tarjeta, imagen hero, responsive 390/820/1366) y después auditarla en otra sesión. (Anotado: 2026-10-21)
+El dueño está rediseñando estas piezas; van **en cola** y se retoman cuando él lo indique. No tocarlas antes.
+
+- [ ] **Calculadora de calidad de vida (HHHHHMM):** llevarla al estándar de la calculadora de edad. Hoy su lógica de interfaz vive en una página de 812 líneas, sin componente en `src/components/tools/` ni tests. Pasarla por `crear-herramienta-interactiva` (componente, `src/lib/`, tarjeta, imagen hero, responsive 390/820/1366) y auditarla en otra sesión. Antes, el dueño decide si muestra tramos por el total o sigue sin clasificarlo, y se registra en `docs/herramientas/decisiones-del-propietario.md`. (Anotado: 2026-10-21)
+- [ ] **Asistente IA (chat):** rediseño, incluida la pantalla en modo oscuro, que hoy se percibe poco pulida y con bajo confort visual.
+- [ ] **Aplicación de IA:** rediseño en cola junto con el asistente. (Anotado: 2026-10-21)
 - [ ] **Tests de lógica para movilidad y calidad de vida:** solo `dog-age` tiene tests (`tests/dog-age.test.ts`). (Anotado: 2026-10-21)
-
-## Diseño
-
-- [ ] Rediseñar la pantalla del chat de IA en modo oscuro; actualmente se percibe poco pulida y con bajo confort visual.
+- [x] Pilar `/herramientas` alineado con la calculadora: el total HHHHHMM no se clasifica por tramos; se retiran «la más usada» (sin dato) y se precisa qué se envía y qué no — PR #140 (2026-10-21).
 
 ## Hecho
 
