@@ -9,7 +9,8 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 - [x] **Alinear el tono de todos los artículos con la [guía de voz y tono](.agents/skills/references/guia-voz-tono.md).** Prompt listo en [docs/contenido/prompt-revision-tono.md](docs/contenido/prompt-revision-tono.md). Prioridad por clics: comida casera → incontinencia urinaria → úlceras → resto. (Anotado: 2026-10-21)
   - [x] Reescritos los 12 artículos, todos a 0,0 muletillas/1000 en `tono.py` y con `npx astro build` OK (2026-10-21). Un PR por artículo, abiertos y pendientes de tu visto bueno: comida casera #127, incontinencia urinaria #128, úlceras #129, cama ortopédica #130, prevención de caídas #131, poliquezia #132, incontinencia fecal #133, Cushing #134, disfunción cognitiva #135, insuficiencia pancreática #136, limpieza de ojos y oídos #137, salud dental #138.
   - [x] Auditoría de los 12 artículos en sesiones aparte (2026-10-21). Ronda 1: 11 NO APTO por frases cuyo alcance clínico cambió la reescritura; salud dental APTO con reservas. Corregido en PR #141; ronda 2: los 11 APTO. PR #141 fusionado (2026-10-21). Informes en las ramas `claude/auditoria-tono-a`, `-b` y `-d` (la `-c` sigue local en su sesión, pendiente de que el dueño confirme el push).
-  - [ ] Hallazgos menores de las auditorías (no bloqueantes): infografía dental con faltas («GINGIVTIS», «Encía firmo», «Diente limipio»); imágenes sin declarar que son de IA; etiqueta «COZY PAWS» en el hero de úlceras; ojos y oídos línea 65 («sigue con él mientras tanto»); IPE línea 82 (Merck desaconseja restringir grasa: requiere edición de contenido aprobada); briefs antiguos de poliquezia, incontinencia fecal y Cushing desalineados con la guía de calidad editorial.
+  - [x] Hallazgos menores resueltos o decididos (2026-10-21): infografía dental corregida y aviso de IA global en la firma y la política editorial — PR #142. IPE línea 82: el dueño decide dejarla como está (cambiaría contenido clínico). Informes de auditoría: el dueño decide no conservarlos.
+  - [ ] **Imagen principal de úlceras por presión:** la cama lleva una etiqueta de marca inventada, «COZY PAWS ORTHOPEDIC», que parece publicidad. Regenerarla sin texto ni marcas (prompt en la conversación del 2026-10-21) y reemplazar `public/images/blog/ulceras-presion-perros/perro-senior-cama-ortopedica.webp` y su versión de 400 px.
   - [x] PR #127–#139 fusionados con visto bueno del dueño (2026-10-21).
   - [ ] Pilares: los 7 a 0,0/1000 en `tono.py` — PR de pilares abierto (2026-10-21).
 - [ ] **Recuperar la experiencia propia con Luna y Dakota** con procedencia documentada (fechas, fotos, qué pasó). Las versiones de agosto en git (`cbfa55c`) sirven de punto de partida; requiere material del dueño. (Anotado: 2026-10-21)
@@ -19,7 +20,7 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 ## Limpieza del repositorio
 
-- [ ] Revisar documentación, evidencias e imágenes que no deberían vivir en el repo (por ejemplo, PDFs y capturas de auditorías en `docs/contenido/`). No tocar por ahora; decidir criterio antes. Las evidencias nuevas no se suben a `main`. (Anotado: 2026-10-21)
+- [x] Borrados 288 PDF y capturas de `docs/` que no usaba nada (se conservan las 3 que enlazan las skills) — PR #142 (2026-10-21).
 
 ## Herramientas (en cola: rediseño del dueño)
 
