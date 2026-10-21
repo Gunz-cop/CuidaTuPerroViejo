@@ -7,7 +7,8 @@ Regla compartida por briefing, redacción, animaciones y auditorías. Todo apoyo
 - Un recurso no debería superar **~1,2 alturas de pantalla (≈ 900 px CSS)** en su estado inicial. Si lo supera, se reorganiza; no se acepta "porque cabe".
 - En una secuencia, **el dibujo, los controles y el texto del paso activo** caben juntos en una pantalla: los controles van justo debajo del dibujo, nunca después de párrafos largos.
 - Lo secundario (límites del esquema, notas metodológicas, ayuda de teclado) va plegado en `<details>` o se oculta en móvil si repite lo que ya dice otro elemento.
-- Formularios de más de 5 campos: plegados en móvil tras un `<summary>` que diga cuántos campos hay; abiertos en escritorio y sin JavaScript. La impresión siempre muestra todo.
+- **Todo lo que pueda plegarse empieza plegado** (decisión del dueño, 2026-10-21), en móvil y en escritorio: preguntas frecuentes, notas metodológicas, ayudas y formularios. Es el lector quien lo despliega. Nunca uses `<details open>` ni abras por JavaScript al cargar.
+- Formularios de más de 5 campos: plegados tras un `<summary>` que diga cuántos campos hay. La impresión siempre muestra todo.
 - Leyendas dentro de un SVG a escala menor de ~12 px reales no se ocultan sin más: el paso activo o un texto HTML debe nombrar lo que se ve.
 
 ## Tablas
