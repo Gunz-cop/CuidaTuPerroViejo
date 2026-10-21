@@ -299,6 +299,24 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
       .content-body details[open] summary::after {
         content: "－" !important;
       }
+      /* El componente FAQ.astro trae su propio acordeón (chevron, relleno y título):
+         no le apliques el estilo genérico de details pensado para los pilares. */
+      .content-body .faq-section details {
+        padding: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+      .content-body .faq-section details + details {
+        margin-top: 0.75rem !important;
+      }
+      .content-body .faq-section details summary::after {
+        content: none !important;
+      }
+      .content-body .faq-section h2 {
+        border-left: 0;
+        padding-left: 0;
+        margin: 0;
+      }
 
       /* Estandarización de botones y CTAs dentro del cuerpo del contenido */
       .content-body a.inline-block,

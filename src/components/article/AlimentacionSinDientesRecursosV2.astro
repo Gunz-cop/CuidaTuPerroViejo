@@ -74,7 +74,7 @@ const fields = [
     <p class="feeding-stop"><strong>Detén el intento ante dificultad para tragar.</strong> Consulta; si respira con dificultad, busca atención urgente. No fuerces comida ni agua.</p><details class="feeding-limits"><summary>Qué no indica este esquema</summary><p class="feeding-note">{lesson.note} El tiempo de reproducción solo facilita la lectura; no indica la duración de una preparación o una toma.</p></details>
   </div> : <>
     <header><p class="feeding-kicker">Una toma · datos para compartir</p><h3 id={`${uid}-title`} data-toc-exclude="true">Registro de alimento y tolerancia</h3><p>Completa los campos o imprímelos en blanco. No se guardan ni se envían: copia o imprime lo que quieras conservar antes de cerrar o recargar la página.</p></header>
-    <details class="feeding-record-form" open><summary>Rellenar el registro <span>(10 campos)</span></summary>
+    <details class="feeding-record-form"><summary>Rellenar el registro <span>(10 campos)</span></summary>
     <div class="feeding-record-grid">{fields.map(field => <div class="feeding-field"><label for={`${uid}-${field.key}`}>{field.label}</label><input id={`${uid}-${field.key}`} type="text" maxlength={field.max} autocomplete="off" /></div>)}</div>
     <div class="feeding-field"><label for={`${uid}-observacion`}>Qué ocurrió durante o después de comer y cuándo (máximo 300 caracteres)</label><textarea id={`${uid}-observacion`} rows="3" maxlength="300"></textarea></div><div class="feeding-field"><label for={`${uid}-pregunta`}>Preguntas e indicaciones para la revisión (máximo 220 caracteres)</label><textarea id={`${uid}-pregunta`} rows="2" maxlength="220"></textarea></div>
     </details>
@@ -135,12 +135,6 @@ const fields = [
       if (records.has(root)) return;
       const aborter = new AbortController(); records.set(root, aborter);
       const button = root.querySelector<HTMLButtonElement>('.feeding-print')!; button.hidden = false;
-      const form = root.querySelector<HTMLDetailsElement>('.feeding-record-form');
-      const compact = matchMedia('(max-width: 640px)');
-      if (form) {
-        form.open = !compact.matches;
-        compact.addEventListener('change', event => { form.open = !event.matches; }, { signal: aborter.signal });
-      }
       button.addEventListener('click', () => {
         clearPrint(); printCopy = root.cloneNode(true) as HTMLElement; printCopy.classList.add('feeding-v2-print-copy'); printCopy.removeAttribute('aria-labelledby');
         printCopy.querySelectorAll('[id]').forEach(node => node.removeAttribute('id')); printCopy.querySelectorAll('label').forEach(node => node.removeAttribute('for')); printCopy.querySelectorAll('button,noscript').forEach(node => node.remove()); printCopy.querySelectorAll('details').forEach(node => (node as HTMLDetailsElement).open = true); printCopy.querySelectorAll('summary').forEach(node => node.remove());

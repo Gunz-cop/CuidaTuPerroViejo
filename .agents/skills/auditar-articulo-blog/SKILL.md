@@ -156,6 +156,7 @@ negociable no es tu papel; detectar que se incumplió tal como está escrito, s�
   porcentajes"* dentro de un párrafo dirigido a la tutora. El "úsalo" le hablaba
   al redactor. Busca segunda persona que no sea la lectora, menciones a
   "el brief", "la fuente 6", "el redactor", o corchetes de anotación.
+- **Preguntas frecuentes y bloques secundarios plegados.** Las FAQ deben ir en `<FAQ>` (artículos) o `<details>` (pilares), cerradas por defecto; un `## Preguntas frecuentes` con `###` sueltos o un `<details open>` es un hallazgo de formato que hay que corregir.
 - **El arco documentado si el contrato lo justifica**, o la estructura de una guía sin caso. No exigir un paciente ni un desenlace desconocido.
 - **La declaración de viñeta compuesta**, si aplica, y que el caso nunca se
   cuente en primera persona.

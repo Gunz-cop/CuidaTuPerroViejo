@@ -19,6 +19,8 @@ Usa esta skill cuando el usuario pida mejorar, reescribir, rediseñar o continua
 
 Organiza el pilar para responder primero a la intención principal: hero claro, propuesta de valor, CTA, señales rápidas, índice, secciones accionables, enlaces contextuales a satélites, preguntas frecuentes y bloque de fuentes. Mantén IDs de sección estables y comprueba que el índice coincida con ellos.
 
+Las preguntas frecuentes van siempre plegadas: bajo `<h2 id="preguntas">`, cada pregunta en `<details><summary>Pregunta</summary><p>Respuesta</p></details>`, como en `alimentacion-perros-senior.mdx`. Nunca como `###` o `<h3>` con el párrafo suelto, y nunca con `open`. Todo bloque secundario que pueda plegarse empieza plegado.
+
 El frontmatter debe conservar el esquema real del contenido, incluir `heroImage`, `heroImageAlt`, `dateModified` y la URL legacy cuando exista. Revisa canonical, metadatos, breadcrumbs, enlaces internos y cualquier componente Astro usado por el resto de los pilares.
 
 ## Imágenes centradas

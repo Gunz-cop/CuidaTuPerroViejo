@@ -73,6 +73,7 @@ Para un **artículo completo**, evalúa y produce los apoyos visuales que ayuden
     import AlertBox from '../../components/AlertBox.astro';
     import FAQ from '../../components/FAQ.astro';
     ```
+*   **Preguntas frecuentes siempre plegadas con el componente `<FAQ items={[...]} />`** (acordeón cerrado; el lector despliega). Nunca como `## Preguntas frecuentes` seguido de `###` o párrafos sueltos: así quedan desplegadas y ocupan pantallas enteras. Lo mismo para cualquier bloque secundario que pueda plegarse: va cerrado por defecto (ver [apoyos-visuales-responsive.md](../references/apoyos-visuales-responsive.md)).
 *   Empieza el cuerpo directo con el primer párrafo (sin encabezado).
 *   Justo después del primer párrafo, agrega el byline estandarizado (patrón mayoritario del corpus real — 8 de 11 artículos — con el nombre normalizado al que ya usa el schema real de `[slug].astro`):
     ```mdx
@@ -208,6 +209,7 @@ Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra 
 *   [ ] ¿El frontmatter usa exclusivamente campos del schema estricto, sin campos inventados?
 *   [ ] ¿El cuerpo no incluye H1, hero image duplicada, TOC manual, JSON-LD manual, ni bloque de artículos relacionados?
 *   [ ] ¿AlertBox y FAQ están importados y se usan con las props correctas (`type`, `title`, `items`)?
+*   [ ] ¿Las preguntas frecuentes están dentro de `<FAQ>` (plegadas) y no hay ningún `<details open>` ni bloque plegable abierto por defecto?
 *   [ ] ¿Hero e imágenes de cuerpo tienen referencias válidas, alt/captions y, si se encargó producción visual, binarios reales verificados en navegador?
 *   [ ] ¿Los enlaces internos obligatorios del brief están presentes como enlaces reales dentro de los párrafos, y ningún spoke marcado `Pendiente` fue reemplazado por un enlace inventado?
 *   [ ] ¿Se cumple el material narrativo documentado y declarado, o la estructura de guía sin caso justificada?
