@@ -145,6 +145,8 @@ Cuando una restricción visual admita lectura —un diagrama clínico frente a u
 foto doméstica— **señálala y deja que decida el usuario**. Reinterpretar un no
 negociable no es tu papel; detectar que se incumplió tal como está escrito, sí.
 
+**Voz y tono.** Mide con `python3 .agents/skills/references/scripts/tono.py <archivo>` y lee contra la [guía de voz y tono](../references/guia-voz-tono.md). Más de 3 muletillas por cada 1000 palabras, usted o voseo, párrafos que abren con una salvedad o el relleno SEO prohibido son hallazgos: cita la frase y su versión en afirmativo como evidencia.
+
 **Apoyos visuales en móvil y escritorio.** Captura cada recurso a 390 y 1366 px y mide su altura. Incumplir [apoyos visuales cómodos en móvil y escritorio](../references/apoyos-visuales-responsive.md) (recurso > ~900 px en móvil, scroll horizontal, controles lejos del dibujo, formulario largo desplegado) es un hallazgo con la altura medida como evidencia.
 
 ### 5. Lee el artículo entero, buscando lo que ningún script ve

@@ -27,7 +27,7 @@ Para revisar una herramienta ya hecha, usa [`.agents/skills/auditar-herramienta-
 
 ## Redacción de contenido de blog
 
-Antes de generar un briefing o redactar/auditar un artículo de blog para `cuidatuperroviejo.com`, lee el [control compartido de calidad editorial](.agents/skills/references/calidad-editorial-adsense.md) y consulta las skills en `.agents/skills/`. La extensión se justifica por utilidad, los casos requieren procedencia y cada recurso prometido debe funcionar. Máximo tres auditorías por documento; si la tercera falla, detener y revisar con el usuario.
+Antes de generar un briefing o redactar/auditar un artículo de blog para `cuidatuperroviejo.com`, lee el [control compartido de calidad editorial](.agents/skills/references/calidad-editorial-adsense.md) y consulta las skills en `.agents/skills/`. La extensión se justifica por utilidad, los casos requieren procedencia y cada recurso prometido debe funcionar. Máximo tres auditorías por documento; si la tercera falla, detener y revisar con el usuario. La voz y el tono se rigen por la [guía de voz y tono](.agents/skills/references/guia-voz-tono.md); mídelos con `python3 .agents/skills/references/scripts/tono.py`.
 
 Skills del flujo:
 
@@ -42,3 +42,7 @@ Skills del flujo:
 > **Orden recomendado del flujo:** generar brief → auditar brief → redactar artículo → auditar artículo. Auditar el brief antes de redactar es más barato que descubrir el fallo en el artículo: un PMID mal asignado o un enlace inexistente en el contrato se propaga a todo lo que se escriba después. Si una auditoría de artículo encuentra un error de fuente, comprueba si nace en el brief con la skill de auditoría de briefing.
 
 Sigue el flujo descrito en esos archivos en vez de improvisar la estructura del brief o del artículo desde cero.
+
+## Pendientes del dueño
+
+Cuando el usuario mencione una idea, propuesta o algo que no quiere olvidar, regístralo en [`TODO.md`](TODO.md) y marca lo terminado con fecha y PR.
