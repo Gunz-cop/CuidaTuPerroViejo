@@ -119,15 +119,28 @@ const fields = [
   }
   const sequences = new Map<HTMLElement, FeedingV2Sequence>();
   const records = new Map<HTMLElement, AbortController>();
+  const printDetails = new Map<HTMLDetailsElement, boolean>();
   let printCopy: HTMLElement | null = null;
   function clearPrint() { printCopy?.remove(); printCopy = null; delete document.body.dataset.feedingV2Print; }
+  function openPrintDetails() {
+    document.querySelectorAll<HTMLDetailsElement>('.feeding-v2 details').forEach(details => {
+      if (!printDetails.has(details)) printDetails.set(details, details.open);
+      details.open = true;
+    });
+  }
+  function restorePrintDetails() { printDetails.forEach((open, details) => { details.open = open; }); printDetails.clear(); }
   function initializeFeedingV2() {
     document.querySelectorAll<HTMLElement>('[data-feeding-v2-sequence]').forEach(root => { if (!sequences.has(root)) sequences.set(root, new FeedingV2Sequence(root)); });
     document.querySelectorAll<HTMLElement>('[data-feeding-v2-visual="registro"]').forEach(root => {
       if (records.has(root)) return;
       const aborter = new AbortController(); records.set(root, aborter);
       const button = root.querySelector<HTMLButtonElement>('.feeding-print')!; button.hidden = false;
-      const form = root.querySelector<HTMLDetailsElement>('.feeding-record-form'); if (form && matchMedia('(max-width: 640px)').matches) form.open = false;
+      const form = root.querySelector<HTMLDetailsElement>('.feeding-record-form');
+      const compact = matchMedia('(max-width: 640px)');
+      if (form) {
+        form.open = !compact.matches;
+        compact.addEventListener('change', event => { form.open = !event.matches; }, { signal: aborter.signal });
+      }
       button.addEventListener('click', () => {
         clearPrint(); printCopy = root.cloneNode(true) as HTMLElement; printCopy.classList.add('feeding-v2-print-copy'); printCopy.removeAttribute('aria-labelledby');
         printCopy.querySelectorAll('[id]').forEach(node => node.removeAttribute('id')); printCopy.querySelectorAll('label').forEach(node => node.removeAttribute('for')); printCopy.querySelectorAll('button,noscript').forEach(node => node.remove()); printCopy.querySelectorAll('details').forEach(node => (node as HTMLDetailsElement).open = true); printCopy.querySelectorAll('summary').forEach(node => node.remove());
@@ -137,8 +150,9 @@ const fields = [
       }, { signal: aborter.signal });
     });
   }
-  window.addEventListener('afterprint', clearPrint);
-  document.addEventListener('astro:before-swap', () => { sequences.forEach(instance => instance.disconnect()); sequences.clear(); records.forEach(aborter => aborter.abort()); records.clear(); clearPrint(); });
+  window.addEventListener('beforeprint', openPrintDetails);
+  window.addEventListener('afterprint', () => { clearPrint(); restorePrintDetails(); });
+  document.addEventListener('astro:before-swap', () => { sequences.forEach(instance => instance.disconnect()); sequences.clear(); records.forEach(aborter => aborter.abort()); records.clear(); clearPrint(); restorePrintDetails(); });
   document.addEventListener('astro:page-load', initializeFeedingV2);
   initializeFeedingV2();
 </script>
@@ -203,9 +217,11 @@ const fields = [
   .feeding-v2 input,.feeding-v2 textarea { display:block; width:100%; min-height:44px; box-sizing:border-box; color:#294b3d; background:#fff; border:1px solid #7e9773; border-radius:.4rem; padding:.65rem; font:400 1rem/1.5 system-ui,sans-serif; }
   .feeding-v2 textarea { resize:vertical; }
   .feeding-v2 .feeding-print { margin-top:.8rem; }
-  .feeding-v2 summary { cursor:pointer; min-height:44px; display:flex; align-items:center; color:#294b3d; font:600 .9rem/1.4 system-ui,sans-serif; }
+  .feeding-v2 details { background-color:#fffdf6!important; border-color:#bfceb7!important; }
+  .feeding-v2 summary { cursor:pointer; min-height:44px; display:flex; align-items:center; color:#294b3d!important; font:600 .9rem/1.4 system-ui,sans-serif; }
+  .feeding-v2 summary::after { color:#294b3d!important; }
   .feeding-v2 summary:focus-visible { outline:3px solid #95601f; outline-offset:3px; }
-  .feeding-limits { margin-top:.5rem; }
+  .feeding-v2 .feeding-limits { margin:.5rem 0 0!important; padding:.65rem .8rem!important; }
   .feeding-limits summary { font-size:.82rem; }
   .feeding-record-form > summary { margin:0 0 .6rem; padding:.55rem .85rem; background:#e5eedc; border:1px solid #8ca27f; border-radius:.6rem; }
   .feeding-record-form > summary span { font-weight:400; margin-left:.3rem; }
