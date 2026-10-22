@@ -31,3 +31,9 @@ El trabajo se entrega mediante PR. No se fusiona, no se despliega y el inventari
 | Artículo y recursos | [2](auditoria-articulo-r2.md) | APTO con avisos preexistentes; conjunto integrado, recursos y pruebas completos. Dos rondas consumidas, sin reinicio. |
 
 QA técnica conservó sus intentos y repeticiones; no se presentan como nuevas auditorías editoriales. El metadato menor del manifiesto señalado por R2 se corrigió a «ronda 3» sin alterar el contrato ni los hashes de producto auditados. No quedan bloqueantes locales nuevos. Los avisos compartidos y el desacuerdo del script editorial estricto están explicados en el informe final y en [validación](validacion.md).
+
+## Ronda final aportada por el usuario
+
+El 2026-10-22 se recibió en chat la [auditoría R3 APTO con tres avisos no bloqueantes](auditoria-articulo-r3.md). Se guarda con procedencia explícita, límites de acceso a dos fuentes y sin atribuirle pruebas nuevas de navegador. **Artículo: 3/3 consumidas; brief: 3/3 consumidas. No cabe cuarta auditoría ni reinicio.**
+
+Coordinación aplica solo la precisión de Illinois pedida en ese informe, como corrector separado del auditor, y ejecuta comprobaciones de producción. [Versión anterior, diff, nueva versión y alcance](correccion-tras-r3.md). El APTO del informe no se presenta como una auditoría posterior del hash corregido. La contradicción de skill/script se registra en TODO para otra sesión, sin modificar las reglas de este encargo.

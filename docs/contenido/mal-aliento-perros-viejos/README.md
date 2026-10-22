@@ -1,14 +1,14 @@
 # Mal aliento en perros viejos: expediente de entrega
 
-Segundo artículo del plan de elaboración del PR #122. Rama `contenido/mal-aliento-perros-viejos`, base `main`. Artículo completo de **5.862 palabras útiles** (6.265 brutas), con causas, síntomas acompañantes, decisiones y consulta; sin diagnóstico por el olor. Su diferenciación respecto a salud dental se verifica en el brief y las auditorías.
+Segundo artículo del plan de elaboración del PR #122. Rama `contenido/mal-aliento-perros-viejos`, base `main`. Artículo completo de **5.863 palabras útiles** (6.266 brutas), tras la corrección puntual indicada en R3, con causas, síntomas acompañantes, decisiones y consulta; sin diagnóstico por el olor. Su diferenciación respecto a salud dental se verifica en el brief y las auditorías.
 
 ## Documentos revisables
 
 - [Brief final y contrato R1–R7](../../../briefings/briefing-mal-aliento-perros-viejos.md), [investigación y fuentes](investigacion.md).
 - Auditorías independientes del brief: [R1](auditoria-brief-r1.md), [R2](auditoria-brief-r2.md), [R3 APTO](auditoria-brief-r3.md).
 - [Artículo MDX vigente](../../../src/content/blog/mal-aliento-perros-viejos.mdx), [correcciones y trazabilidad](correcciones-articulo.md).
-- Auditorías independientes del artículo: [R1 provisional](auditoria-articulo-r1.md), [R2 final APTO con avisos preexistentes](auditoria-articulo-r2.md).
-- [Contadores y separación de roles](flujo-y-rondas.md): brief 3/3; artículo 2/3. Sin reinicios.
+- Auditorías independientes del artículo: [R1 provisional](auditoria-articulo-r1.md), [R2 integrada](auditoria-articulo-r2.md), [R3 APTO aportada por el usuario](auditoria-articulo-r3.md) y [corrección puntual posterior, con comprobaciones de producción](correccion-tras-r3.md).
+- [Contadores y separación de roles](flujo-y-rondas.md): brief 3/3; artículo 3/3. Sin reinicios ni cuarta ronda.
 
 ## Recursos reales
 
@@ -19,6 +19,8 @@ Segundo artículo del plan de elaboración del PR #122. Rama `contenido/mal-alie
 - Animación sin reproducción inicial, con pausa, avance y reinicio; movimiento reducido manual, alternativa sin JavaScript e impresión. Registro sin envío ni persistencia de datos.
 
 ## Pruebas y evidencia
+
+[Recheck de la corrección R3](qa/recheck-r3/): conteo, tono, tipos/build y proyección. Las 103 pruebas extensivas siguientes corresponden al hash anterior auditado en R2; imágenes y componentes no se modificaron. No se atribuyen a la ronda 3 ni al hash corregido.
 
 [Validación completa](validacion.md), [19/19 checks vigentes con salida 0](qa/checks/resultados.tsv), [recheck tras corregir anclas](qa/recheck-anclas/). Incluyen build, tipos, tests, descubrimiento, proyección Markdown y empaquetado Worker solo con `--dry-run`.
 

@@ -23,3 +23,7 @@ La [prueba de navegador](qa/revision-tecnica.md) registra **103/103** comprobaci
 La hero usa 1200w en el layout compartido; sus variantes existen y decodifican, pero no se anuncian como seleccionadas en móvil. Las imágenes de cuerpo usan 400w en móvil y 800w en escritorio. El contraste insuficiente del botón compartido de valoración se documenta como preexistente en [validación](validacion.md); no se oculta ni se presenta como accesibilidad global perfecta.
 
 Versión integrada: MDX `6913314b0400dd6d071296c682a2d724775cdecb03008ff1b0b4839349634deb`; componente `e065d8b69ae45cd9609f8d3ca9f4e41d7231ce2b9873b401ad5eedc619d9c6fc`. Los originales y las nueve imágenes finales conservan los hashes de `imagenes.json`. La [auditoría independiente integrada R2](auditoria-articulo-r2.md) cerró el conjunto como **APTO con avisos preexistentes**, dentro del único contador del artículo.
+
+## Adenda R3
+
+La versión y las 103 comprobaciones anteriores se conservan como evidencia del cierre R2. La [R3 aportada por el usuario](auditoria-articulo-r3.md) aprueba con avisos y agota el contador del artículo. Su [corrección puntual de Illinois](correccion-tras-r3.md) cambia solo prosa del MDX; no cambia el brief, R1–R7, sus componentes ni imágenes. No se presenta esa corrección como una cuarta auditoría ni se trasladan los hashes históricos al nuevo archivo.

@@ -1,5 +1,7 @@
 # Validación del artículo integrado
 
+**Adenda tras R3:** el [informe recibido del usuario](auditoria-articulo-r3.md) es APTO con avisos y consume la tercera y última ronda. La [corrección de Illinois y sus comprobaciones](correccion-tras-r3.md) documentan un cambio posterior limitado del MDX (5.863 palabras útiles). Las métricas, hashes y 103 pruebas de navegador del cuerpo histórico de este informe corresponden al cierre R2; no se atribuyen al nuevo hash ni se afirma una nueva auditoría.
+
 Fecha: 2026-10-22. Base: `main`, commit `9ca247aff3546d3eba41253dda5236504efba32a`; se volvió a consultar el remoto durante el cierre y seguía en el mismo commit. Pruebas locales, sin fusión ni despliegue.
 
 ## Texto y contrato

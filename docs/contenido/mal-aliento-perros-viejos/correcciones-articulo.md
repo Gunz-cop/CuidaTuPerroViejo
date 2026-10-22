@@ -29,3 +29,7 @@ Archivo final: `src/content/blog/mal-aliento-perros-viejos.mdx`; SHA256 `6913314
 Conteo reproducido con `contar-articulo.py` sobre ese archivo: **5.862 palabras útiles, 6.265 brutas**, cada bloque dentro de ±15%. El resultado se conserva en `metricas-autor-final.json`, separado de las métricas del borrador auditado R1. Tono: 0,4/1.000; párrafos >50 palabras: 0%; H3: ningún tramo >200 palabras.
 
 No se modifican contenido científico, fuentes, estructura, enlaces o recursos contratados más allá de los cambios descritos. El brief APTO y el borrador histórico conservan sus hashes. No se cambia el inventario final, no se audita, no se hace commit/push ni se fusiona/despliega.
+
+## Tras el informe R3 aportado por el usuario
+
+Coordinación, como corrector y sin emitir auditoría, ajusta exclusivamente la atribución de Illinois conforme a la instrucción recibida. No modifica fuentes, enlaces, imágenes, componentes ni reglas del contrato. [Diff, hashes, pasajes comprobados y controles de producción](correccion-tras-r3.md). Se conserva el APTO recibido con su alcance y se agota el contador 3/3; no se abre otra ronda.
