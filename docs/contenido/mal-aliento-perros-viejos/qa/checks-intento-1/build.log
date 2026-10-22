@@ -1,0 +1,87 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+03:33:25 [@astrojs/cloudflare] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+03:33:25 [content] Syncing content
+03:33:26 [content] Synced content
+03:33:26 [types] Generated 780ms
+03:33:26 [build] output: "static"
+03:33:26 [build] mode: "server"
+03:33:26 [build] directory: /workspace/CuidaTuPerroViejo/dist/
+03:33:26 [build] adapter: @astrojs/cloudflare
+03:33:26 [build] Collecting build info...
+03:33:26 [build] ✓ Completed in 834ms.
+03:33:26 [build] Building server entrypoints...
+03:33:28 [vite] ✓ built in 2.46s
+03:33:28 [vite] ✓ built in 285ms
+03:33:28 [vite] ✓ built in 122ms
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mAI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.[0m
+
+
+
+ prerendering static routes
+✨ Parsed 23 valid redirect rules.
+✨ Parsed 16 valid header rules.
+03:33:29   ├─ /404.html (+42ms)
+03:33:29   ├─ /acerca-de.html (+14ms)
+03:33:29   ├─ /api/assistant-catalog.json (+18ms)
+03:33:30   ├─ /asistente-ia.html (+14ms)
+03:33:30   ├─ /contacto.html (+10ms)
+03:33:30   ├─ /gracias.html (+14ms)
+03:33:30   ├─ /herramientas/calculadora-calidad-vida-perros.html (+12ms)
+03:33:30   ├─ /herramientas/calculadora-edad-perro.html (+14ms)
+03:33:30   ├─ /herramientas/selector-movilidad-perros-mayores.html (+12ms)
+03:33:30   ├─ /politica-de-cookies.html (+11ms)
+03:33:30   ├─ /politica-de-privacidad.html (+8ms)
+03:33:30   ├─ /politica-editorial.html (+10ms)
+03:33:30   ├─ /salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor.html (+24ms)
+03:33:30   ├─ /alimentacion-perros-senior/alimentacion-perros-mayores-sin-dientes.html (+20ms)
+03:33:30   ├─ /salud-mental-emocional-perros/ansiedad-separacion-perros-senior.html (+15ms)
+03:33:30   ├─ /higiene-hogar-perros-senior/banar-perro-viejo-movilidad-reducida.html (+13ms)
+03:33:30   ├─ /higiene-hogar-perros-senior/callosidades-higromas-codos-perros-senior.html (+15ms)
+03:33:30   ├─ /movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis.html (+11ms)
+03:33:30   ├─ /salud-perros-mayores/chequeo-geriatrico-canino.html (+11ms)
+03:33:30   ├─ /alimentacion-perros-senior/comida-casera-perros-mayores.html (+12ms)
+03:33:30   ├─ /cuidados-paliativos-perros/como-dar-medicacion-perro.html (+15ms)
+03:33:30   ├─ /salud-mental-emocional-perros/disfuncion-cognitiva-canina.html (+14ms)
+03:33:30   ├─ /higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html (+12ms)
+03:33:30   ├─ /higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores.html (+11ms)
+03:33:30   ├─ /salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.html (+12ms)
+03:33:30   ├─ /higiene-hogar-perros-senior/limpieza-ojos-oidos-perros-ancianos.html (+13ms)
+03:33:30   ├─ /salud-perros-mayores/mal-aliento-perros-viejos.html (+16ms)
+03:33:30   ├─ /salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html (+11ms)
+03:33:30   ├─ /movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor.html (+13ms)
+03:33:30   ├─ /salud-perros-mayores/salud-dental-perros-mayores.html (+13ms)
+03:33:30   ├─ /salud-perros-mayores/sindrome-cushing-perros-mayores.html (+12ms)
+03:33:30   ├─ /cuidados-paliativos-perros/ulceras-presion-perros.html (+11ms)
+03:33:30   ├─ /salud-perros-mayores/vacunas-desparasitacion-perros-senior.html (+13ms)
+03:33:30   ├─ /alimentacion-perros-senior.html (+17ms)
+03:33:30   ├─ /cuidados-paliativos-perros.html (+13ms)
+03:33:30   ├─ /herramientas.html (+10ms)
+03:33:30   ├─ /higiene-hogar-perros-senior.html (+12ms)
+03:33:30   ├─ /movilidad-dolor-perros-mayores.html (+12ms)
+03:33:30   ├─ /salud-mental-emocional-perros.html (+12ms)
+03:33:30   ├─ /salud-perros-mayores.html (+12ms)
+03:33:30   ├─ /index.html (+13ms)
+03:33:30 ✓ Completed in 1.55s.
+
+03:33:30 [build] Rearranging server assets...
+03:33:30 [build] ✓ Completed in 4.50s.
+03:33:30 [@astrojs/sitemap] `sitemap-index.xml` created at `dist/client`
+03:33:30 [ERROR] [agent-readiness-discovery] An unhandled error occurred while running the "astro:build:done" hook
+Inventario inválido: UNCLASSIFIED_PAGE: La ruta /salud-perros-mayores/mal-aliento-perros-viejos no tiene clasificación de proyección.; SITEMAP_UNEXPLAINED_DIFFERENCE: Path /salud-perros-mayores/mal-aliento-perros-viejos is present in sitemap but has no eligible editorial document..
+  Hint:
+    Browser APIs are not available on the server.
+
+    If the code is in a framework component, try to access these objects after rendering using lifecycle methods or use a `client:only` directive to make the component exclusively run on the client.
+
+    See https://docs.astro.build/en/guides/troubleshooting/#document-or-window-is-not-defined for more information.
+
+  Location:
+    /workspace/CuidaTuPerroViejo/node_modules/astro/dist/integrations/hooks.js:34:12
+  Stack trace:
+    at inspectBuild (file:///workspace/CuidaTuPerroViejo/scripts/agent-readiness/discovery.mjs:145:27)
+    at async withTakingALongTimeMsg (file:///workspace/CuidaTuPerroViejo/node_modules/astro/dist/integrations/hooks.js:34:12)
+    at async runHookBuildDone (file:///workspace/CuidaTuPerroViejo/node_modules/astro/dist/integrations/hooks.js:464:5)
+    at async AstroBuilder.run (file:///workspace/CuidaTuPerroViejo/node_modules/astro/dist/core/build/index.js:202:7)
+    at async build (file:///workspace/CuidaTuPerroViejo/node_modules/astro/dist/cli/build/index.js:29:3)

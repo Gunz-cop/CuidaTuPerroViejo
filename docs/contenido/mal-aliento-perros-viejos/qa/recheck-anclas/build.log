@@ -1,0 +1,75 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+14:23:51 [@astrojs/cloudflare] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+14:23:52 [content] Syncing content
+14:23:52 [content] Synced content
+14:23:52 [types] Generated 1.07s
+14:23:52 [build] output: "static"
+14:23:52 [build] mode: "server"
+14:23:52 [build] directory: /workspace/CuidaTuPerroViejo/dist/
+14:23:52 [build] adapter: @astrojs/cloudflare
+14:23:52 [build] Collecting build info...
+14:23:52 [build] ✓ Completed in 1.13s.
+14:23:52 [build] Building server entrypoints...
+14:23:56 [vite] ✓ built in 3.30s
+14:23:56 [vite] ✓ built in 492ms
+14:23:56 [vite] ✓ built in 193ms
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mAI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.[0m
+
+
+
+ prerendering static routes
+✨ Parsed 23 valid redirect rules.
+✨ Parsed 16 valid header rules.
+14:23:58   ├─ /404.html (+44ms)
+14:23:58   ├─ /acerca-de.html (+27ms)
+14:23:58   ├─ /api/assistant-catalog.json (+35ms)
+14:23:58   ├─ /asistente-ia.html (+25ms)
+14:23:58   ├─ /contacto.html (+18ms)
+14:23:58   ├─ /gracias.html (+20ms)
+14:23:58   ├─ /herramientas/calculadora-calidad-vida-perros.html (+20ms)
+14:23:58   ├─ /herramientas/calculadora-edad-perro.html (+24ms)
+14:23:58   ├─ /herramientas/selector-movilidad-perros-mayores.html (+20ms)
+14:23:58   ├─ /politica-de-cookies.html (+14ms)
+14:23:58   ├─ /politica-de-privacidad.html (+15ms)
+14:23:58   ├─ /politica-editorial.html (+16ms)
+14:23:58   ├─ /salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor.html (+36ms)
+14:23:58   ├─ /alimentacion-perros-senior/alimentacion-perros-mayores-sin-dientes.html (+27ms)
+14:23:59   ├─ /salud-mental-emocional-perros/ansiedad-separacion-perros-senior.html (+20ms)
+14:23:59   ├─ /higiene-hogar-perros-senior/banar-perro-viejo-movilidad-reducida.html (+36ms)
+14:23:59   ├─ /higiene-hogar-perros-senior/callosidades-higromas-codos-perros-senior.html (+21ms)
+14:23:59   ├─ /movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis.html (+18ms)
+14:23:59   ├─ /salud-perros-mayores/chequeo-geriatrico-canino.html (+14ms)
+14:23:59   ├─ /alimentacion-perros-senior/comida-casera-perros-mayores.html (+18ms)
+14:23:59   ├─ /cuidados-paliativos-perros/como-dar-medicacion-perro.html (+18ms)
+14:23:59   ├─ /salud-mental-emocional-perros/disfuncion-cognitiva-canina.html (+27ms)
+14:23:59   ├─ /higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html (+19ms)
+14:23:59   ├─ /higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores.html (+17ms)
+14:23:59   ├─ /salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.html (+15ms)
+14:23:59   ├─ /higiene-hogar-perros-senior/limpieza-ojos-oidos-perros-ancianos.html (+23ms)
+14:23:59   ├─ /salud-perros-mayores/mal-aliento-perros-viejos.html (+23ms)
+14:23:59   ├─ /salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html (+17ms)
+14:23:59   ├─ /movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor.html (+14ms)
+14:23:59   ├─ /salud-perros-mayores/salud-dental-perros-mayores.html (+16ms)
+14:23:59   ├─ /salud-perros-mayores/sindrome-cushing-perros-mayores.html (+15ms)
+14:23:59   ├─ /cuidados-paliativos-perros/ulceras-presion-perros.html (+15ms)
+14:23:59   ├─ /salud-perros-mayores/vacunas-desparasitacion-perros-senior.html (+19ms)
+14:23:59   ├─ /alimentacion-perros-senior.html (+22ms)
+14:23:59   ├─ /cuidados-paliativos-perros.html (+14ms)
+14:23:59   ├─ /herramientas.html (+18ms)
+14:23:59   ├─ /higiene-hogar-perros-senior.html (+19ms)
+14:23:59   ├─ /movilidad-dolor-perros-mayores.html (+16ms)
+14:23:59   ├─ /salud-mental-emocional-perros.html (+15ms)
+14:23:59   ├─ /salud-perros-mayores.html (+28ms)
+14:23:59   ├─ /index.html (+17ms)
+14:23:59 ✓ Completed in 2.58s.
+
+14:23:59 [build] Rearranging server assets...
+14:23:59 [build] ✓ Completed in 6.71s.
+14:23:59 [@astrojs/sitemap] `sitemap-index.xml` created at `dist/client`
+14:24:00 [agent-readiness-discovery] llms.txt generado después de sitemap (3728 bytes).
+14:24:01 [agent-readiness-markdown-projection] Proyección agent-content/v1 generada: 34 documentos, 32135 bytes de índice.
+14:24:03 [agent-readiness-api-generation] Artifacts F3A generados: 34 documentos, 569446 bytes de query-index.
+14:24:03 [build] Server built in 11.52s
+14:24:03 [build] Complete!

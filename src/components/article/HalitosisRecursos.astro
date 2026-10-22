@@ -1,0 +1,334 @@
+---
+interface Props {
+  variant: 'prioridad' | 'proceso' | 'registro';
+  anchors?: { urgencias: string; hoy: string; cita: string };
+}
+const { variant, anchors = {
+  urgencias: '#urgencias-importa-cómo-respira-y-cómo-se-encuentra',
+  hoy: '#llama-hoy-si-cambia-su-forma-de-comer-o-está-enfermo',
+  cita: '#pide-cita-aunque-siga-activo',
+} } = Astro.props;
+const uid = `halitosis-${variant}-${crypto.randomUUID().slice(0, 8)}`;
+const priorities = [
+  { number: '01', label: 'Urgencias', text: 'Dificultad para respirar, atragantamiento, colapso, hemorragia abundante o dolor intenso o constante.', action: 'Busca atención inmediata', href: anchors.urgencias, kind: 'urgent' },
+  { number: '02', label: 'Llama hoy', text: 'Come o bebe peor, tiene dolor, babeo nuevo, sangre, hinchazón, vómitos o decaimiento.', action: 'Pide orientación a la clínica', href: anchors.hoy, kind: 'today' },
+  { number: '03', label: 'Pide cita', text: 'El mal aliento persiste o se repite, aunque siga comiendo y esté activo.', action: 'Acuerda cuándo revisarlo', href: anchors.cita, kind: 'appointment' },
+];
+const steps = [
+  { title: 'Una película sobre el diente', text: 'La placa es un biofilm adherido a la superficie dental. El dibujo amplía una película que puede pasar desapercibida a simple vista.', short: 'Superficie dental' },
+  { title: 'El margen de la encía', text: 'La placa también se acumula junto al borde de la encía. Aquí se destaca esa zona de contacto: el olor no indica hasta dónde llega el problema.', short: 'Margen gingival' },
+  { title: 'La respuesta de los tejidos', text: 'La inflamación puede acompañarse de enrojecimiento, sangrado o molestias. Estos signos necesitan valoración; cada boca puede mostrar cambios diferentes.', short: 'Tejidos inflamados' },
+  { title: 'Lo que queda bajo la encía', text: 'La raíz y los tejidos de soporte quedan ocultos. La exploración veterinaria y las radiografías, cuando proceden, permiten valorar zonas que no se ven desde fuera.', short: 'Zona oculta' },
+];
+const fields = [
+  { key: 'inicio', label: '1. Inicio y evolución', help: 'Cuándo lo notaste y si se repite o cambia.' },
+  { key: 'momento', label: '2. Momento y comida', help: 'Relación con comidas o momentos del día.' },
+  { key: 'ingesta', label: '3. Comida y agua ingeridas', help: 'Qué acepta y qué deja, comparado con lo habitual.' },
+  { key: 'comer', label: '4. Masticación y deglución', help: 'Comida que cae, esfuerzo o cambios espontáneos.' },
+  { key: 'cara', label: '5. Saliva, sangre y cara', help: 'Babeo, sangre, hinchazón o secreción que hayas visto.' },
+  { key: 'agua', label: '6. Sed y orina', help: 'Cambios respecto a su costumbre, si los conoces.' },
+  { key: 'general', label: '7. Ánimo, vómitos y peso', help: 'Qué ha cambiado y desde cuándo.' },
+  { key: 'productos', label: '8. Medicación y productos recientes', help: 'Nombre, envase y procedimientos recientes.' },
+];
+---
+
+<section class={`halitosis-visual halitosis-${variant}`} data-editorial-visual data-halitosis-resource={variant} data-reader-atomic aria-labelledby={`${uid}-title`}>
+  {variant === 'prioridad' ? <>
+    <header><p class="halitosis-kicker">Decide por los signos que acompañan al olor</p><h3 id={`${uid}-title`} data-toc-exclude="true">Qué hacer ahora</h3></header>
+    <ol class="halitosis-priorities">{priorities.map(item => <li class={`halitosis-priority halitosis-${item.kind}`}><span class="halitosis-number" aria-hidden="true">{item.number}</span><div><h4>{item.label}</h4><p>{item.text}</p><a href={item.href}>{item.action}<span aria-hidden="true"> →</span></a></div></li>)}</ol>
+    <p class="halitosis-note">Si empeora mientras esperas, vuelve a llamar. La clínica ajusta la prioridad al estado de tu perro.</p>
+    <details class="halitosis-details"><summary>Cómo usar este resumen</summary><p>Es una ayuda para pedir atención, basada en PDSA y Merck Veterinary Manual. La urgencia se decide por el estado y los síntomas acompañantes; aquí no se identifica una enfermedad por el olor.</p></details>
+  </> : variant === 'proceso' ? <div data-halitosis-sequence data-step="0" data-playing="false">
+    <header><p class="halitosis-kicker">Esquema conceptual · cuatro vistas</p><h3 id={`${uid}-title`} data-toc-exclude="true">De la superficie a la zona oculta</h3><p>Recorre dónde puede acumularse placa y qué necesita una evaluación más profunda.</p></header>
+    <div class="halitosis-canvas" data-halitosis-drawing>
+      <svg viewBox="0 0 720 350" role="img" aria-labelledby={`${uid}-svg-title ${uid}-svg-desc`}>
+        <title id={`${uid}-svg-title`}>Diente y encía en un corte conceptual</title><desc id={`${uid}-svg-desc`}>Se destaca primero la placa superficial, después el margen gingival, la inflamación y finalmente una ampliación de la raíz bajo la encía. No representa tiempos, estadios ni una progresión inevitable.</desc>
+        <defs><clipPath id={`${uid}-detail-clip`}><circle cx="566" cy="176" r="91"/></clipPath></defs>
+        <rect width="720" height="350" rx="16" fill="#edf2e8"/>
+        <g class="halitosis-main-tooth">
+          <path d="M111 174C156 165 204 166 251 175Q280 184 309 175C357 164 404 164 445 174V327H111Z" fill="#e9b6ac" stroke="#80564f" stroke-width="2"/>
+          <path d="M138 252H418M138 281H418M138 309H418" stroke="#ceaaa1" stroke-width="2" stroke-dasharray="7 8"/>
+          <path d="M227 58Q247 32 272 47Q285 54 300 47Q330 31 349 58C371 90 345 129 335 161L324 224L300 298Q286 321 279 291L265 225L251 161C240 129 208 90 227 58Z" fill="#fffdf4" stroke="#355044" stroke-width="3"/>
+          <path d="M257 68Q275 82 287 72Q307 79 324 66" fill="none" stroke="#c9c7b5" stroke-width="3"/>
+          <path d="M278 97Q288 116 291 160L290 256" fill="none" stroke="#d7b3a0" stroke-width="6" stroke-linecap="round"/>
+          <path d="M112 174C156 165 204 166 251 175Q280 184 309 175C357 164 404 164 445 174" fill="none" stroke="#80564f" stroke-width="4"/>
+          <g class="halitosis-biofilm" fill="#9c6c29" stroke="#634920" stroke-width="1.5"><circle cx="235" cy="99" r="5"/><circle cx="240" cy="112" r="6"/><circle cx="246" cy="125" r="5"/><circle cx="247" cy="138" r="5"/><circle cx="252" cy="150" r="5"/></g>
+          <g class="halitosis-margin-plaque" fill="#9c6c29" stroke="#634920" stroke-width="1.5"><circle cx="252" cy="168" r="5"/><circle cx="257" cy="178" r="5"/><circle cx="263" cy="184" r="5"/><circle cx="316" cy="178" r="5"/><circle cx="324" cy="169" r="5"/></g>
+          <g class="halitosis-inflammation"><path d="M171 175Q211 161 251 175Q280 191 309 175Q344 161 384 174L385 198Q347 187 315 201Q279 216 247 201Q213 187 171 200Z" fill="#ba5b52" fill-opacity=".62"/><path d="M181 153l-8-14m43 7-2-16m151 23 9-14" stroke="#903b33" stroke-width="3" stroke-linecap="round"/></g>
+          <circle class="halitosis-focus" cx="243" cy="120" r="39" fill="none" stroke="#294b3d" stroke-width="3" stroke-dasharray="7 5"/>
+          <g class="halitosis-surface-label"><path d="M182 95H141" fill="none" stroke="#355044" stroke-width="2"/><text x="132" y="93" text-anchor="end">Placa</text></g>
+          <text x="287" y="339" text-anchor="middle" class="halitosis-under-label">Raíz bajo la encía</text>
+        </g>
+        <g class="halitosis-root-detail">
+          <path d="M336 219L475 176" fill="none" stroke="#355044" stroke-width="2" stroke-dasharray="6 5"/>
+          <circle cx="566" cy="176" r="96" fill="#fffdf6" stroke="#355044" stroke-width="3"/>
+          <g clip-path={`url(#${uid}-detail-clip)`}>
+            <rect x="474" y="85" width="184" height="184" fill="#e9b6ac"/>
+            <path d="M474 121H658" stroke="#80564f" stroke-width="4"/>
+            <path d="M534 86L536 159L556 242Q566 263 575 242L597 158L599 86Z" fill="#fffdf4" stroke="#355044" stroke-width="3"/>
+            <path d="M566 103V217" stroke="#d7b3a0" stroke-width="7" stroke-linecap="round"/>
+            <path d="M520 152L539 148M519 179L545 171M524 211L552 201M608 151L594 147M613 178L588 171M606 210L580 202" stroke="#80564f" stroke-width="2"/>
+          </g>
+          <text x="566" y="302" text-anchor="middle">Zona de soporte</text>
+        </g>
+        <g class="halitosis-overview-label"><text x="543" y="112" text-anchor="middle">Lo visible</text><path d="M455 139H632" stroke="#80564f" stroke-width="2"/><text x="543" y="181" text-anchor="middle">y lo que queda</text><text x="543" y="213" text-anchor="middle">bajo la encía</text></g>
+      </svg>
+    </div>
+    <div class="halitosis-controls" hidden>
+      <div class="halitosis-transport"><button type="button" data-action="prev" aria-label="Paso anterior">←</button><button type="button" data-action="play">Reproducir</button><button type="button" data-action="next" aria-label="Paso siguiente">→</button><button type="button" data-action="restart" aria-label="Repetir desde el primer paso">↺</button></div>
+      <p class="halitosis-position" aria-live="polite" aria-atomic="true"></p><p class="halitosis-motion">También puedes recorrer las vistas con las flechas.</p>
+    </div>
+    <ol class="halitosis-steps">{steps.map((step, i) => <li data-panel={i}><span class="halitosis-step-number" aria-hidden="true">0{i + 1}</span><div><h4>{step.title}</h4><p>{step.text}</p></div></li>)}</ol>
+    <p class="halitosis-limit">Cuatro vistas explicativas, no un calendario ni una progresión inevitable. El olor no mide la extensión de una lesión.</p>
+    <details class="halitosis-details"><summary>Qué representa el esquema</summary><p>Un corte simplificado de un diente y sus tejidos, basado en Merck Veterinary Manual y Cornell. La ampliación localiza la raíz y el soporte: no dibuja una lesión concreta ni permite valorar la boca de tu perro.</p><p>El intervalo de reproducción solo facilita leer las vistas. Puedes pausar en cualquier momento; con movimiento reducido, usa los botones anterior y siguiente.</p></details>
+  </div> : <div data-halitosis-registro>
+    <header><p class="halitosis-kicker">Datos para la llamada o consulta</p><h3 id={`${uid}-title`} data-toc-exclude="true">Un registro breve, sin ponerlo a prueba</h3><p>Anota lo que hayas observado. Puedes escribir «no lo sé». Llama primero si está enfermo; el registro puede completarse después.</p></header>
+    <details class="halitosis-details halitosis-record-details"><summary>Rellenar el registro: ocho datos</summary><div class="halitosis-fields">{fields.map(field => <div class="halitosis-field"><label for={`${uid}-${field.key}`}>{field.label}</label><p id={`${uid}-${field.key}-help`}>{field.help}</p><textarea id={`${uid}-${field.key}`} rows="3" maxlength="240" aria-describedby={`${uid}-${field.key}-help`} autocomplete="off"></textarea><p class="halitosis-print-value"></p></div>)}</div></details>
+    <p class="halitosis-note">No se guardan ni envían los datos. Copia o imprime tus notas antes de cerrar o recargar la página. Cada campo admite 240 caracteres.</p>
+    <p class="halitosis-record-stop"><strong>No esperes a completar los ocho datos si empeora.</strong> Ante dificultad respiratoria, colapso o hemorragia abundante, busca atención urgente.</p>
+    <button class="halitosis-print" data-action="print" type="button" hidden>Imprimir el registro</button>
+    <noscript><p class="halitosis-note">Puedes usar la opción Imprimir de tu navegador o copiar las categorías a una libreta. La impresión incluye los ocho campos.</p></noscript>
+  </div>}
+</section>
+
+<script>
+  class HalitosisSequence {
+    private step = 0;
+    private playing = false;
+    private timer: ReturnType<typeof setTimeout> | undefined;
+    private events = new AbortController();
+    private reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    constructor(private root: HTMLElement) {
+      root.dataset.enhanced = 'true';
+      root.querySelector<HTMLElement>('.halitosis-controls')!.hidden = false;
+      root.querySelectorAll<HTMLButtonElement>('[data-action]').forEach(button => button.addEventListener('click', () => {
+        const action = button.dataset.action;
+        if (action === 'play') {
+          if (this.playing) this.stop();
+          else if (!this.reduced.matches) {
+            if (this.step === 3) this.step = 0;
+            this.playing = true;
+            this.render();
+            this.schedule();
+          }
+        } else {
+          this.stop();
+          if (action === 'restart') this.step = 0;
+          else this.step = Math.max(0, Math.min(3, this.step + (action === 'next' ? 1 : -1)));
+          this.render();
+        }
+      }, { signal: this.events.signal }));
+      this.reduced.addEventListener('change', this.preference, { signal: this.events.signal });
+      document.addEventListener('visibilitychange', this.visibility, { signal: this.events.signal });
+      window.addEventListener('pagehide', this.stop, { signal: this.events.signal });
+      this.preference();
+    }
+    private preference = () => {
+      this.stop();
+      this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.disabled = this.reduced.matches;
+      this.root.querySelector<HTMLElement>('.halitosis-motion')!.textContent = this.reduced.matches ? 'Movimiento reducido: recorre las vistas con las flechas, sin animación.' : 'También puedes recorrer las vistas con las flechas.';
+    };
+    private visibility = () => { if (document.hidden) this.stop(); };
+    private stop = () => { clearTimeout(this.timer); this.timer = undefined; this.playing = false; this.render(); };
+    private schedule() {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        if (!this.root.isConnected || !this.playing) { this.stop(); return; }
+        if (this.step < 3) { this.step++; this.render(); this.schedule(); }
+        else this.stop();
+      }, 6000);
+    }
+    private render() {
+      this.root.dataset.step = String(this.step);
+      this.root.dataset.playing = String(this.playing);
+      this.root.querySelectorAll<HTMLElement>('[data-panel]').forEach((panel, i) => panel.dataset.active = String(i === this.step));
+      const position = this.root.querySelector<HTMLElement>('.halitosis-position')!;
+      position.setAttribute('aria-live', this.playing ? 'off' : 'polite');
+      position.textContent = `Vista ${this.step + 1} de 4`;
+      this.root.querySelector<HTMLButtonElement>('[data-action="prev"]')!.disabled = this.step === 0;
+      this.root.querySelector<HTMLButtonElement>('[data-action="next"]')!.disabled = this.step === 3;
+      this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.textContent = this.playing ? 'Pausar' : this.step === 3 ? 'Reproducir de nuevo' : 'Reproducir';
+    }
+    disconnect() { this.stop(); this.events.abort(); }
+  }
+  const sequences = new Map<HTMLElement, HalitosisSequence>();
+  const records = new Map<HTMLElement, AbortController>();
+  const detailStates = new Map<HTMLDetailsElement, boolean>();
+  let printCopy: HTMLElement | null = null;
+  function clearPrintCopy() {
+    printCopy?.remove();
+    printCopy = null;
+    delete document.body.dataset.halitosisPrint;
+  }
+  function preparePrint() {
+    document.querySelectorAll<HTMLDetailsElement>('.halitosis-visual details').forEach(detail => {
+      if (!detailStates.has(detail)) detailStates.set(detail, detail.open);
+      detail.open = true;
+    });
+    records.forEach((_, root) => {
+      root.dataset.printPrepared = 'true';
+      root.querySelectorAll<HTMLElement>('.halitosis-field').forEach(field => {
+        field.querySelector<HTMLElement>('.halitosis-print-value')!.textContent = field.querySelector<HTMLTextAreaElement>('textarea')!.value || '________________________________________________';
+      });
+    });
+  }
+  function restorePrint() {
+    detailStates.forEach((open, detail) => detail.open = open);
+    detailStates.clear();
+    records.forEach((_, root) => delete root.dataset.printPrepared);
+    clearPrintCopy();
+  }
+  function printRecord(root: HTMLElement) {
+    clearPrintCopy();
+    preparePrint();
+    const section = root.closest<HTMLElement>('.halitosis-visual')!;
+    printCopy = section.cloneNode(true) as HTMLElement;
+    printCopy.classList.add('halitosis-record-print-copy');
+    printCopy.removeAttribute('aria-labelledby');
+    printCopy.setAttribute('aria-label', 'Registro de observación para la consulta veterinaria');
+    printCopy.removeAttribute('data-editorial-visual');
+    printCopy.querySelectorAll('[id]').forEach(node => node.removeAttribute('id'));
+    printCopy.querySelectorAll('label').forEach(node => node.removeAttribute('for'));
+    printCopy.querySelectorAll('[aria-describedby]').forEach(node => node.removeAttribute('aria-describedby'));
+    printCopy.querySelectorAll('[data-halitosis-registro]').forEach(node => node.removeAttribute('data-halitosis-registro'));
+    printCopy.querySelectorAll('button,noscript,.halitosis-print-value').forEach(node => node.remove());
+    printCopy.querySelectorAll('details').forEach(node => node.open = true);
+    const originals = root.querySelectorAll<HTMLTextAreaElement>('textarea');
+    printCopy.querySelectorAll('textarea').forEach((textarea, index) => {
+      const value = document.createElement('p');
+      value.className = 'halitosis-copied-value';
+      value.textContent = originals[index].value || '________________________________________________';
+      textarea.replaceWith(value);
+    });
+    document.body.appendChild(printCopy);
+    document.body.dataset.halitosisPrint = 'true';
+    window.print();
+  }
+  function initializeHalitosis() {
+    document.querySelectorAll<HTMLElement>('[data-halitosis-sequence]').forEach(root => { if (!sequences.has(root)) sequences.set(root, new HalitosisSequence(root)); });
+    document.querySelectorAll<HTMLElement>('[data-halitosis-registro]').forEach(root => {
+      if (records.has(root)) return;
+      const events = new AbortController();
+      records.set(root, events);
+      const button = root.querySelector<HTMLButtonElement>('[data-action="print"]')!;
+      button.hidden = false;
+      button.addEventListener('click', () => printRecord(root), { signal: events.signal });
+    });
+  }
+  window.addEventListener('beforeprint', preparePrint);
+  window.addEventListener('afterprint', restorePrint);
+  document.addEventListener('astro:before-swap', () => {
+    restorePrint();
+    sequences.forEach(instance => instance.disconnect());
+    sequences.clear();
+    records.forEach(events => events.abort());
+    records.clear();
+  });
+  document.addEventListener('astro:page-load', initializeHalitosis);
+  initializeHalitosis();
+</script>
+
+<style>
+  .halitosis-visual { margin:2.1rem 0; padding:1.35rem; color:#294b3d; background:#fffdf6; border:1px solid #bccbb7; border-radius:1.1rem; font-family:system-ui,sans-serif; }
+  .halitosis-visual header { margin:0 0 .9rem; }
+  .halitosis-visual .halitosis-kicker { margin:0 0 .45rem; color:#4b6249; font-size:.72rem; font-weight:700; line-height:1.5; letter-spacing:.06em; text-transform:uppercase; }
+  .halitosis-visual h3 { color:#294b3d!important; font-size:clamp(1.15rem,3vw,1.55rem); line-height:1.3; margin:0 0 .55rem!important; }
+  .halitosis-visual h4 { color:#294b3d!important; font-size:1rem; line-height:1.4; margin:0 0 .25rem; }
+  .halitosis-visual p { color:#36533e; margin:.4rem 0; font-size:.94rem; line-height:1.6; }
+  .halitosis-visual strong { color:#294b3d!important; }
+  .halitosis-visual [hidden] { display:none!important; }
+  .halitosis-visual a { color:#294b3d; text-decoration:underline; text-underline-offset:3px; font-weight:650; }
+  .halitosis-visual a:hover { color:#294b3d; text-decoration-thickness:2px; }
+  .halitosis-visual :is(button,summary,a,textarea):focus-visible { outline:3px solid #89551c; outline-offset:3px; }
+  .halitosis-priorities { display:grid; gap:.7rem; padding:0!important; margin:.8rem 0!important; list-style:none; }
+  .halitosis-priority { display:flex; gap:.8rem; border:1px solid #becbb8; border-left:5px solid #496c4a; border-radius:.7rem; padding:.85rem; margin:0!important; }
+  .halitosis-number { flex:0 0 2.2rem; height:2.2rem; display:grid; place-items:center; background:#e8eedf; color:#294b3d; border-radius:50%; font-size:.8rem; font-weight:700; }
+  .halitosis-urgent { border-left-color:#943d36; background:#fff3ee; }
+  .halitosis-today { border-left-color:#8b602c; background:#fff8e8; }
+  .halitosis-appointment { background:#edf3e8; }
+  .halitosis-priority p { margin:0 0 .35rem; font-size:.87rem; line-height:1.5; }
+  .halitosis-priority a { display:inline-flex; align-items:center; min-height:44px; font-size:.84rem; line-height:1.45; }
+  .halitosis-visual .halitosis-note { color:#4b6046; font-size:.82rem; line-height:1.55; }
+  .halitosis-visual .halitosis-details { background:#fffdf6!important; border-color:#bccbb7!important; border-radius:.7rem!important; padding:.65rem .8rem!important; margin:.75rem 0 0!important; }
+  .halitosis-visual .halitosis-details summary { color:#294b3d!important; min-height:44px; font:650 .85rem/1.5 system-ui,sans-serif!important; gap:.75rem; }
+  .halitosis-visual .halitosis-details summary::after { color:#294b3d!important; }
+  .halitosis-details p { font-size:.83rem; }
+  .halitosis-canvas { background:#edf2e8; border-radius:.75rem; overflow:hidden; }
+  .halitosis-canvas svg { display:block; width:100%; height:auto; }
+  .halitosis-canvas text { fill:#355044; font:600 23px system-ui,sans-serif; }
+  .halitosis-root-detail,.halitosis-inflammation,.halitosis-margin-plaque { opacity:0; }
+  .halitosis-focus { transform:translate(0,0); }
+  [data-step="1"] .halitosis-biofilm,[data-step="2"] .halitosis-biofilm,[data-step="3"] .halitosis-biofilm { transform:translate(9px,25px); }
+  [data-step="1"] .halitosis-margin-plaque,[data-step="2"] .halitosis-margin-plaque,[data-step="3"] .halitosis-margin-plaque { opacity:1; }
+  [data-step="1"] .halitosis-focus { transform:translate(19px,56px); }
+  [data-step="2"] .halitosis-inflammation { opacity:1; }
+  [data-step="2"] .halitosis-focus { transform:translate(39px,64px) scale(1.25); transform-origin:243px 120px; }
+  [data-step="3"] .halitosis-root-detail { opacity:1; }
+  [data-step="3"] .halitosis-main-tooth { transform:translateX(-32px); }
+  [data-step="3"] .halitosis-focus { transform:translate(46px,119px) scale(1.3); transform-origin:243px 120px; }
+  [data-step="3"] .halitosis-overview-label,[data-step="3"] .halitosis-surface-label { opacity:0; }
+  [data-playing="true"] :is(.halitosis-biofilm,.halitosis-margin-plaque,.halitosis-inflammation,.halitosis-focus,.halitosis-root-detail,.halitosis-main-tooth,.halitosis-overview-label,.halitosis-surface-label) { transition:transform .9s ease,opacity .6s ease; }
+  [data-playing="false"] svg * { transition:none!important; animation:none!important; }
+  .halitosis-controls { margin:.6rem 0 .2rem; }
+  .halitosis-transport { display:flex; gap:.45rem; }
+  .halitosis-visual button { min-width:44px; min-height:44px; box-sizing:border-box; border:1px solid #7d9671; border-radius:.55rem; background:#fffdf6; color:#294b3d; padding:.6rem .7rem; font:650 .85rem/1.4 system-ui,sans-serif; cursor:pointer; }
+  .halitosis-visual [data-action="play"],.halitosis-visual .halitosis-print { background:#294b3d; color:#fff; }
+  .halitosis-visual [data-action="play"] { flex:1; }
+  .halitosis-visual button:disabled { color:#4b6146; background:#e6eddf; border-color:#a3b397; cursor:default; }
+  .halitosis-visual .halitosis-position { margin:.4rem 0 0; font-size:.8rem; font-weight:700; }
+  .halitosis-visual .halitosis-motion { margin:.2rem 0 0; color:#4b6046; font-size:.79rem; }
+  .halitosis-steps { list-style:none; padding:0!important; margin:.6rem 0!important; }
+  .halitosis-steps li { display:flex; gap:.7rem; margin:0!important; padding:.5rem 0; }
+  .halitosis-step-number { display:grid; place-items:center; width:2rem; height:2rem; flex:0 0 2rem; background:#e5eedc; color:#294b3d; border-radius:50%; font-size:.76rem; font-weight:700; }
+  .halitosis-steps p { margin:0; font-size:.9rem; }
+  [data-enhanced="true"] .halitosis-steps [data-active="false"] { display:none; }
+  .halitosis-visual .halitosis-limit { padding:.7rem .8rem; background:#edf2e8; border-left:3px solid #496c4a; color:#36533e; font-size:.8rem; line-height:1.5; }
+  .halitosis-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.9rem 1rem; margin-top:.7rem; }
+  .halitosis-field { min-width:0; break-inside:avoid; }
+  .halitosis-field label { display:block; color:#294b3d; font-size:.9rem; line-height:1.5; font-weight:650; }
+  .halitosis-field p { font-size:.79rem; line-height:1.4; margin:.2rem 0 .4rem; color:#4b6046; }
+  .halitosis-visual textarea { width:100%; box-sizing:border-box; min-height:80px; padding:.55rem .65rem; font:400 1rem/1.5 system-ui,sans-serif; color:#294b3d; background:#fff; border:1px solid #7d9671; border-radius:.4rem; resize:vertical; }
+  .halitosis-visual .halitosis-print-value { display:none; white-space:pre-wrap; overflow-wrap:anywhere; }
+  .halitosis-visual .halitosis-record-stop { background:#fff3ee; color:#633c32; border-left:3px solid #943d36; padding:.7rem .8rem; font-size:.84rem; line-height:1.5; }
+  .halitosis-visual .halitosis-print { margin-top:.6rem; }
+  :global(.halitosis-record-print-copy) { display:none; }
+  @media(max-width:640px) {
+    .halitosis-visual { padding:1rem; }
+    .halitosis-visual header { margin-bottom:.7rem; }
+    .halitosis-visual header > p:not(.halitosis-kicker) { font-size:.88rem; line-height:1.5; }
+    .halitosis-visual .halitosis-kicker { font-size:.67rem; }
+    .halitosis-priority { padding:.65rem; gap:.6rem; }
+    .halitosis-number { flex-basis:1.8rem; height:1.8rem; font-size:.7rem; }
+    .halitosis-priority h4 { font-size:.95rem; }
+    .halitosis-priority p { font-size:.82rem; }
+    .halitosis-priority a { font-size:.8rem; }
+    .halitosis-fields { grid-template-columns:1fr; }
+    .halitosis-canvas text { display:none; }
+    .halitosis-visual .halitosis-motion { font-size:.76rem; }
+    .halitosis-steps li { padding:.35rem 0; }
+    .halitosis-steps h4 { font-size:.95rem; }
+    .halitosis-steps p { font-size:.85rem; line-height:1.5; }
+    .halitosis-visual .halitosis-limit { font-size:.76rem; }
+  }
+  @media(prefers-reduced-motion:reduce) { .halitosis-visual *,.halitosis-visual *::before,.halitosis-visual *::after { animation:none!important; transition:none!important; } }
+  @media print {
+    .halitosis-visual { color:#111; background:white; border-color:#777; box-shadow:none; padding:8pt; break-inside:auto; }
+    .halitosis-controls,.halitosis-print,.halitosis-canvas,.halitosis-visual summary { display:none!important; }
+    .halitosis-visual details::details-content { display:block!important; content-visibility:visible!important; }
+    .halitosis-visual details > :not(summary) { display:block!important; }
+    [data-enhanced="true"] .halitosis-steps [data-active="false"] { display:flex!important; }
+    .halitosis-visual :is(h3,h4,p,strong,label) { color:#111!important; }
+    .halitosis-visual .halitosis-kicker { font-size:8pt; }
+    .halitosis-visual h3 { font-size:14pt; }
+    .halitosis-visual :is(p,label) { font-size:10pt!important; line-height:1.35; }
+    .halitosis-fields { display:grid!important; grid-template-columns:1fr 1fr; gap:8pt 12pt; }
+    .halitosis-field p { font-size:9pt!important; }
+    .halitosis-visual textarea { height:75pt; min-height:75pt; resize:none; font-size:10pt; line-height:1.3; border-color:#777; }
+    [data-print-prepared="true"] textarea { display:none!important; }
+    [data-print-prepared="true"] .halitosis-print-value { display:block!important; color:#111; min-height:35pt; border-bottom:1px solid #777; margin:4pt 0 6pt; }
+    .halitosis-visual .halitosis-details { margin:5pt 0!important; padding:5pt!important; border:0!important; }
+    :global(body[data-halitosis-print="true"] > :not(.halitosis-record-print-copy)) { display:none!important; }
+    :global(body[data-halitosis-print="true"] > .halitosis-record-print-copy) { display:block!important; margin:0; padding:5mm; border:0; border-radius:0; color:#111; background:white; }
+    :global(.halitosis-record-print-copy .halitosis-copied-value) { white-space:pre-wrap; overflow-wrap:anywhere; min-height:35pt; border-bottom:1px solid #777; color:#111; margin:4pt 0 6pt; }
+  }
+</style>

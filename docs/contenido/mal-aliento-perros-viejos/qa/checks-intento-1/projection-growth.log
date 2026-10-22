@@ -1,0 +1,34 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: inventario del build real es válido
+
+3 !== 0
+
+    at expectedDocuments (file:///workspace/CuidaTuPerroViejo/tests/agent-readiness/projection-growth.mjs:16:12)
+    at async file:///workspace/CuidaTuPerroViejo/tests/agent-readiness/projection-growth.mjs:23:18 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 3,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+✖ tests/agent-readiness/projection-growth.mjs (771.298161ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 779.526434
+
+✖ failing tests:
+
+test at tests/agent-readiness/projection-growth.mjs:1:1
+✖ tests/agent-readiness/projection-growth.mjs (771.298161ms)
+  'test failed'

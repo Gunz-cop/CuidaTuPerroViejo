@@ -1,0 +1,20 @@
+✔ catalog schema, exact F2 metadata, filters, paging and empty page (44.523265ms)
+✔ AND, accent normalization, distinct tokens, exact weights and ASCII ties (11.12722ms)
+✔ read returns complete bytes, metadata, links and retained final warning/source (6.745753ms)
+✔ strict query decoding, closed keys, presence, integers and controls (8.217898ms)
+✔ query boundaries include raw 2048, q 200, 12 tokens and token 64; NFC before limits (6.075491ms)
+✔ path/method/query/data/corpus/membership precedence, OPTIONS without I/O (3.848045ms)
+✔ GET/HEAD parity, fixed headers, no reflection/conditional processing or header forwarding (4.523648ms)
+✔ query schema/invariants fail closed and failed promises recover on same binding (21.181339ms)
+✔ missing, malformed, invalid UTF-8, oversized indexes and binding isolation (30.16468ms)
+✔ document absence/hash/UTF-8/size failure is 503 also for HEAD, recoverable (10.116014ms)
+✔ inclusive streaming caps and response cap: full entity or 503, never truncation (60.764947ms)
+✔ document 512 KiB and JSON 2 MiB exact limits remain readable; +1 fails (55.439281ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 602.891401
