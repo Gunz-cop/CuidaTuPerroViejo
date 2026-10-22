@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "f5-dns-aid-change/1",
+  "status": "proposal-not-applied",
+  "zone": {
+    "id": "a31efda75e3253df2961f4266897e5dd",
+    "name": "cuidatuperroviejo.com",
+    "accountId": "972ab3666747a93c084965dd4585d4cc"
+  },
+  "preconditions": {
+    "baseProductCommit": "7e389a83c87cd5f14537f4b07f0cd783ca572251",
+    "ownerNameAbsentAllTypes": "_index._agents.cuidatuperroviejo.com",
+    "preserveDnssecStatus": "disabled",
+    "preserveNameservers": [
+      "eric.ns.cloudflare.com",
+      "lola.ns.cloudflare.com"
+    ],
+    "preserveExistingRecordIds": true,
+    "requires": "SDD PASS, ratification/freeze, applicable owner authorization; DNSSEC requirement decision recorded"
+  },
+  "request": {
+    "method": "POST",
+    "path": "/zones/a31efda75e3253df2961f4266897e5dd/dns_records",
+    "body": {
+      "type": "SVCB",
+      "name": "_index._agents.cuidatuperroviejo.com",
+      "ttl": 300,
+      "proxied": false,
+      "data": {
+        "priority": 1,
+        "target": "cuidatuperroviejo.com.",
+        "value": "mandatory=alpn,port alpn=\"h2\" port=443"
+      }
+    }
+  },
+  "presentation": "_index._agents.cuidatuperroviejo.com. 300 IN SVCB 1 cuidatuperroviejo.com. mandatory=alpn,port alpn=\"h2\" port=443",
+  "sourceCapacity": {
+    "source": "https://github.com/dns-aid/dns-aid-core/blob/c4944f511e85cc58ed606ca186371c33d35478fe/src/dns_aid/core/catalog_pointer.py",
+    "discoveredUrl": "https://cuidatuperroviejo.com/.well-known/ai-catalog.json",
+    "entries": [
+      "API OpenAPI for search/read/calculations",
+      "MCP native card -> /api/mcp -> four existing tools",
+      "buscar-leer-citar skill"
+    ]
+  },
+  "rollback": {
+    "method": "DELETE",
+    "pathTemplate": "/zones/a31efda75e3253df2961f4266897e5dd/dns_records/{createdRecordId}",
+    "precondition": "GET createdRecordId and require exact name/type/ttl/priority/normalized target/parameters match the successful creation receipt; on mismatch STOP",
+    "previousRecordsAtOwner": [],
+    "deleteOtherIds": false,
+    "unknownIdAction": "STOP; no blind deletion or automatic recreate"
+  }
+}
