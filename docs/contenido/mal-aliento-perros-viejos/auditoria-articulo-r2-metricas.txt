@@ -1,0 +1,74 @@
+# mal-aliento-perros-viejos
+
+## 1. Volumen y distribución
+  Total: 6265 palabras (contrato null–null)  FUERA
+
+  | # | Sección del artículo | Real | Target | Desv. |
+  |---|---|---|---|---|
+  | 1 | INTRODUCCIÓN | 218 | 200 | +9% |
+  | 2 | Cuándo consultar por el mal aliento de t | 651 | 650 | 0% |
+  | 3 | Qué puede decirte el olor y qué necesita | 430 | 450 | -4% |
+  | 4 | Causas en la boca, los dientes y los lab | 896 | 900 | 0% |
+  | 5 | Otras causas y los síntomas que ayudan a | 779 | 800 | -3% |
+  | 6 | Qué observar y anotar antes de llamar | 617 | 650 | -5% |
+  | 7 | Cómo busca la causa el veterinario | 819 | 800 | +2% |
+  | 8 | Qué hacer mientras llega la consulta y q | 617 | 600 | +3% |
+  | 9 | Cómo valorar la evolución después de la  | 393 | 400 | -2% |
+  | 10 | Conclusión y preguntas frecuentes | 763 | 550 | +39% FUERA |
+
+  Emparejamiento posicional brief↔artículo. Si los títulos de una fila no
+  se corresponden, el artículo reordenó o fusionó secciones: revisalo a mano.
+
+## 2. Densidad de párrafo
+  párrafos: 136 | media: 37 | mediana: 37 | >50 palabras: 0% | máx: 50
+  fragmentos sueltos (<12 palabras): 0
+  spec mobile-first: 30–40 palabras.
+  OK.
+  H2: 9 | H3: 34 | ~184 palabras por H3 (spec 150–200)
+
+## 3. Fuentes citadas por nombre, dentro de su H2
+  BLOQUEA: tabla de trazabilidad ausente o no interpretable.
+
+## 4. Enlaces internos
+  presentes: /salud-perros-mayores, /salud-perros-mayores/salud-dental-perros-mayores, /salud-perros-mayores/chequeo-geriatrico-canino, /herramientas/calculadora-calidad-vida-perros
+  OK   Pilar: /salud-perros-mayores
+  OK   Spoke 1: /salud-perros-mayores/salud-dental-perros-mayores
+  OK   Spoke 2: /salud-perros-mayores/chequeo-geriatrico-canino
+  OK   Herramienta: /herramientas/calculadora-calidad-vida-perros
+
+## 5. Componentes
+  AlertBox de cuerpo: 3 (info, danger, warning) + cuadro de fuentes: 1
+  FAQ: 7 preguntas
+
+## 6. Imágenes
+  OK    labrador-senior-observacion-v1.webp  (hero — se olvida al contar, cuéntala)
+  OK    labrador-senior-registro-comida-v1.webp
+  OK    labrador-senior-registro-comida-v1-400.webp
+  OK    labrador-senior-registro-comida-v1-800.webp
+  OK    labrador-senior-consulta-v1.webp
+  OK    labrador-senior-consulta-v1-400.webp
+  OK    labrador-senior-consulta-v1-800.webp
+  (en disco sin referenciar: labrador-senior-observacion-v1-400.webp, labrador-senior-observacion-v1-800.webp)
+
+## 7. Frontmatter y fechas
+  status: undefined | datePublished: 2026-10-22 | metaDescription: 148 car.
+
+---
+
+# VEREDICTO
+
+## mal-aliento-perros-viejos: NO APTO (4 bloqueante(s))
+  BLOQUEA  rango del contrato ausente, inválido o no interpretable
+  BLOQUEA  sección "Conclusión y preguntas frecuentes" 763/550 (+39%)
+  BLOQUEA  tabla de fuentes ausente o no interpretable
+  BLOQUEA  falta el byline **Autoría:** / **Actualizado:**
+
+  PENDIENTES MANUALES (sin esto el veredicto está incompleto):
+    - abrir cada imagen y verificar: sujeto fijo del brief (raza/edad), restricciones visuales de la Sección 8, y que el alt describa lo que de verdad se ve
+    - leer el artículo entero buscando instrucciones del brief filtradas al texto
+
+Resumen: 1 artículo(s), 4 bloqueante(s).
+
+APTO significa "no quedan defectos mecánicos", no "el artículo es bueno".
+Un autor inventado, una cifra que la fuente no dice o una imagen que
+contradice su pie pasan este script sin despeinarse.

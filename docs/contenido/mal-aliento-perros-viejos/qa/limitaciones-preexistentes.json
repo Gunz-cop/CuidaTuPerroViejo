@@ -1,0 +1,121 @@
+{
+  "timestamp": "2026-10-22T14:26:04.643Z",
+  "chromium": "154.0.8037.57",
+  "scope": "Referencias preexistentes del mismo build, sin modificar producto",
+  "references": [
+    {
+      "articlePath": "/salud-perros-mayores/salud-dental-perros-mayores",
+      "hero": {
+        "src": "/images/blog/salud-dental-perros-mayores/perro-senior-sarro-molares-encias.webp",
+        "srcset": "/images/blog/salud-dental-perros-mayores/perro-senior-sarro-molares-encias.webp 1200w"
+      },
+      "thumbnail": "/images/blog/salud-dental-perros-mayores/perro-senior-sarro-molares-encias-400.webp",
+      "thumbnailHTTP": 200,
+      "feedback": [
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#fdcb9b",
+                "bgColor": "#f8f5ee",
+                "contrastRatio": 1.35,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "bold",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<button data-feedback-no=\"\" class=\"px-6 py-3 bg-brand-s...\">",
+                  "target": [
+                    ".bg-brand-secondary\\/5"
+                  ]
+                },
+                {
+                  "html": "<div class=\"feedback-widget my-12 p-6 md:p-8 bg-brand-card/40 dark:bg-slate-900/20 border border-brand-border/60 rounded-3xl shadow-sm text-center max-w-xl mx-auto\" data-slug=\"salud-dental-perros-mayores\" data-feedback-ready=\"true\">",
+                  "target": [
+                    ".feedback-widget"
+                  ]
+                },
+                {
+                  "html": "<body class=\"bg-brand-bg text-brand-text transition-colors duration-200 antialiased min-h-screen relative flex flex-col justify-between overflow-x-hidden selection:bg-brand-accent selection:text-white \">",
+                  "target": [
+                    "body"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element has insufficient color contrast of 1.35 (foreground color: #fdcb9b, background color: #f8f5ee, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span>No del todo</span>",
+          "target": [
+            ".bg-brand-secondary\\/5 > span"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.35 (foreground color: #fdcb9b, background color: #f8f5ee, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "articlePath": "/alimentacion-perros-senior/alimentacion-perros-mayores-sin-dientes",
+      "hero": {
+        "src": "/images/blog/alimentacion-perros-mayores-sin-dientes/beagle-senior-comida-blanda-v1.webp",
+        "srcset": "/images/blog/alimentacion-perros-mayores-sin-dientes/beagle-senior-comida-blanda-v1.webp 1200w"
+      },
+      "thumbnail": "/images/blog/alimentacion-perros-mayores-sin-dientes/beagle-senior-comida-blanda-v1-400.webp",
+      "thumbnailHTTP": 200,
+      "feedback": [
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#fdcb9b",
+                "bgColor": "#f8f5ee",
+                "contrastRatio": 1.35,
+                "fontSize": "10.5pt (14px)",
+                "fontWeight": "bold",
+                "messageKey": null,
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [
+                {
+                  "html": "<button data-feedback-no=\"\" class=\"px-6 py-3 bg-brand-s...\">",
+                  "target": [
+                    ".bg-brand-secondary\\/5"
+                  ]
+                },
+                {
+                  "html": "<div class=\"feedback-widget my-12 p-6 md:p-8 bg-brand-card/40 dark:bg-slate-900/20 border border-brand-border/60 rounded-3xl shadow-sm text-center max-w-xl mx-auto\" data-slug=\"alimentacion-perros-mayores-sin-dientes\" data-feedback-ready=\"true\">",
+                  "target": [
+                    ".feedback-widget"
+                  ]
+                },
+                {
+                  "html": "<body class=\"bg-brand-bg text-brand-text transition-colors duration-200 antialiased min-h-screen relative flex flex-col justify-between overflow-x-hidden selection:bg-brand-accent selection:text-white \">",
+                  "target": [
+                    "body"
+                  ]
+                }
+              ],
+              "impact": "serious",
+              "message": "Element has insufficient color contrast of 1.35 (foreground color: #fdcb9b, background color: #f8f5ee, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": "serious",
+          "html": "<span>No del todo</span>",
+          "target": [
+            ".bg-brand-secondary\\/5 > span"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.35 (foreground color: #fdcb9b, background color: #f8f5ee, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    }
+  ]
+}

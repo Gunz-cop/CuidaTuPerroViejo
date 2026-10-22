@@ -227,7 +227,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [x] *Pérdida de peso extrema en la vejez canina: ¿qué es la Insuficiencia Pancreática Exocrina (IPE) y el síndrome de malabsorción?* (Publicado) **[Urgente - Pérdida peso]**
 - [🔒] *Glándulas adrenales agrandadas en la ecografía de tu perro senior: qué significa la hiperplasia bilateral y cuándo apunta a Cushing hipofisario* (Caso propio: Luna) **[RESERVA PERSONAL — no priorizar ni seleccionar sin petición expresa]**
 - [🔒] *Mi perro mayor pierde peso y los análisis salen normales: qué pruebas faltan y cuándo pedir una segunda opinión* (Caso propio: Luna) **[RESERVA PERSONAL — no priorizar ni seleccionar sin petición expresa]**
-- [ ] *Mal aliento (halitosis) en perros viejos: causas subyacentes y soluciones reales* (Búsqueda GSC)
+- [~] *Mal aliento en perros viejos: causas y cuándo consultar al veterinario* (Redactado y validado localmente — pendiente de publicación; ver `briefings/briefing-mal-aliento-perros-viejos.md` y `docs/contenido/mal-aliento-perros-viejos/validacion.md`)
 - [ ] *Limpieza bucal y anestesia en perros ancianos: balanceando riesgos y beneficios de la profilaxis* (Búsqueda GSC)
 - [ ] *Convulsiones y ataques epilépticos en la vejez: causas, riesgos y cómo actuar en una crisis* (Búsqueda GSC)
 - [ ] *Insuficiencia Renal Crónica (IRC) en perros senior: síntomas silenciosos y diagnóstico temprano*
