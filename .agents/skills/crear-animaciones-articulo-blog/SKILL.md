@@ -18,7 +18,7 @@ Lee y aplica la [dirección visual editorial](../references/direccion-visual-edi
 
 ## 2. El perro debe parecer senior
 
-Escribir «senior» en el prompt no garantiza un resultado de edad avanzada. Revisa la imagen antes de aceptarla.
+Escribir «senior» en el prompt no garantiza un resultado de edad avanzada. **Todo prompt de imagen, de recorte transparente y de fotograma o animación incluye los cinco rasgos del [requisito senior verificable](../references/direccion-visual-editorial.md#requisito-senior-verificable-obligatorio-en-todo-prompt)** (canas en hocico, cejas y párpados; ojos algo hundidos; lomo y musculatura de perro mayor; postura natural; sin enfermedad inventada), y se revisa la imagen real a tamaño móvil antes de aceptarla. Si un rasgo falta o parece adulto joven, se regenera.
 
 - Busca una combinación creíble de expresión envejecida, pliegues naturales, textura del pelo, postura y tono muscular acordes con ese perro. En un perro blanco, las canas no bastan como indicador de edad.
 - Evita un perro atlético de exposición cuando el contexto exige movilidad reducida. Conserva anatomía correcta y una presentación digna; no exageres debilidad, deformidad o sufrimiento para hacerlo parecer viejo.
@@ -29,7 +29,7 @@ Escribir «senior» en el prompt no garantiza un resultado de edad avanzada. Rev
 
 1. Usa la herramienta de generación/edición de imágenes disponible para crear o corregir una primera escena. Inspecciónala antes de generar el resto.
 2. Usa esa imagen como referencia de las escenas siguientes. Repite los rasgos distintivos y pide conservar la identidad. No generes cada perro por separado con un prompt genérico.
-3. Cuando una animación necesite un perro, genera un **recorte realista con fondo transparente** del mismo sujeto, con pose, orientación, encuadre y extremidades visibles adecuados al concepto. Comprueba transparencia real y bordes limpios.
+3. Cuando una animación necesite un perro, genera un **recorte realista con fondo transparente** del mismo sujeto, con pose, orientación, encuadre y extremidades visibles adecuados al concepto. Comprueba transparencia real y bordes limpios. **El recorte es donde más fácil se escapa un perro joven** (en golpe de calor, el recorte del podenco salió como adulto joven): su prompt repite íntegros los cinco rasgos de edad y la ficha del sujeto, y se inspecciona sobre fondo claro y oscuro a 390 px antes de animarlo. Una animación hereda la edad de su recorte; si el recorte no la cumple, no se integra.
 4. Evita dibujar un perro protagonista mediante elipses y trazos simplificados si el resultado pierde anatomía o aspecto senior. Puedes combinar el recorte realista con SVG para superficies, herramientas, llamadas y zonas destacadas.
 5. Si el usuario pide otro estilo, respétalo y conserva los mismos criterios de anatomía, edad y coherencia. El recorte fotorealista es un patrón disponible, no una imposición sobre una preferencia explícita.
 
@@ -39,13 +39,15 @@ Si la herramienta no está disponible, conserva los prompts y declara qué recur
 
 ```text
 Usa exactamente el mismo perro de la imagen de referencia: [ficha visual].
-Debe apreciarse su edad avanzada mediante [rasgos naturales del sujeto].
+Edad visible: canas en hocico, cejas y párpados [adaptado al pelaje]; ojos algo
+hundidos; lomo y musculatura de perro mayor [rasgo concreto]; postura natural de
+perro mayor; sin cojera, heridas ni enfermedad. Rechazar si a tamaño móvil parece adulto joven.
 Nueva escena: [acción concreta, postura y apoyo seguro].
 Mantén identidad, proporciones, orejas y marcas. [Plano, luz, fondo y estilo].
 Ilustración editorial; no representa una fotografía del paciente publicado.
 ```
 
-Para el recorte, añade fondo transparente, cuerpo completo, orientación y margen suficiente sin cortar patas, cola ni orejas. No uses un recorte con collar, manos u otros objetos si impedirán explicar la acción posterior.
+Para el recorte, repite el bloque de edad visible sin abreviarlo, añade fondo transparente, cuerpo completo, orientación y margen suficiente sin cortar patas, cola ni orejas. No uses un recorte con collar, manos u otros objetos si impedirán explicar la acción posterior.
 
 ## 4. Diseña una secuencia que enseñe
 
@@ -83,7 +85,8 @@ Para el recorte, añade fondo transparente, cuerpo completo, orientación y marg
 - [ ] Ficha visual y prompt completos según la dirección visual compartida; escenario propio del tema y público, sin vivienda estadounidense por defecto.
 - [ ] Dirección de marcha y miradas coherentes; manos, herramientas y correa con contactos y recorridos posibles. El gesto se entiende a tamaño móvil sin explicación adicional.
 
-- [ ] Inspección visual de la referencia y todas las escenas: mismo perro, edad senior evidente, anatomía y apoyos correctos, transparencia limpia.
+- [ ] Inspección visual de la referencia, todas las escenas **y todos los recortes**, a tamaño móvil: mismo perro y, rasgo por rasgo (canas en hocico/cejas/párpados, ojos hundidos, lomo y musculatura, postura), edad senior evidente; anatomía y apoyos correctos, transparencia limpia. Anota el resultado por imagen; un perro de aspecto joven obliga a regenerar.
+- [ ] La raza no repite la de los artículos recientes sin motivo documentado (registro en la dirección visual editorial).
 - [ ] Capturas de las animaciones en escritorio y móvil, en modo claro y oscuro. Muestra al usuario una vista concreta del resultado.
 - [ ] Cumple [apoyos visuales cómodos en móvil y escritorio](../references/apoyos-visuales-responsive.md): cada recurso ≤ ~900 px de alto en móvil, controles junto al dibujo, notas y formularios largos plegados, tablas apilables. Anota las alturas medidas.
 - [ ] Sin desbordamiento a 375–390 px. Títulos, destacados y explicaciones legibles; contraste mínimo de texto normal 4,5:1.

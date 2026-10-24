@@ -227,15 +227,24 @@ Aplicar [dirección visual editorial](../../references/direccion-visual-editoria
 | Función y sección | {{Qué enseña y dónde se inserta}} |
 | Público, contexto y entorno | {{Espacio plausible; sin país/vivienda estadounidense por defecto}} |
 | Materiales y detalles visibles | {{3–5 detalles pertinentes; sin acumulación decorativa}} |
-| Sujeto y referencia | {{Identidad senior y archivo de referencia que se inspeccionará}} |
+| Sujeto y referencia | {{Identidad y archivo de referencia que se inspeccionará}} |
+| Edad visible (los 5 rasgos) | {{Canas en hocico, cejas y párpados; ojos algo hundidos; lomo y musculatura de perro mayor; postura natural; sin enfermedad inventada — con detalle propio del sujeto}} |
 | Acción y relaciones espaciales | {{Posición, orientación, dirección de marcha, manos, contacto de herramientas y correa}} |
 | Cámara, luz y texturas | {{Plano, márgenes, fuente/dirección de luz, sombras y profundidad de campo apropiada}} |
-| Exclusiones y aceptación | {{Errores concretos que se rechazan y comprobaciones a tamaño grande/móvil}} |
+| Exclusiones y aceptación | {{Errores concretos que se rechazan y comprobaciones a tamaño grande/móvil, incluida «parece senior a 390 px: sí/no por rasgo»}} |
 
 Los tres prompts deben poder generar escenas detalladas y naturales con la calidad de casa/enfriamiento de golpe de calor. No trasladar automáticamente su país, raza, decoración o luz a otros temas. Si la persona pasea con el perro, definir una dirección de avance compartida y físicamente coherente. Las palabras «hermosa», «cinematográfica» o «no genérica» no sustituyen esta ficha.
 
 > [!IMPORTANT]
+> **Perro senior explícito:** cada prompt (imagen, recorte transparente y animación) incluye el bloque de **edad visible** de la ficha, con los cinco rasgos del [requisito senior verificable](../../references/direccion-visual-editorial.md#requisito-senior-verificable-obligatorio-en-todo-prompt), y termina con «Rechazar si a tamaño móvil parece un adulto joven». «Senior» suelto o solo «hocico canoso» no vale.
+>
+> **Razas ya usadas en artículos recientes:** {{LISTA_DE_RAZAS_RECIENTES_Y_DONDE_SE_COMPROBÓ}}. **Raza elegida y motivo:** {{RAZA_ELEGIDA_Y_POR_QUÉ_ES_CREÍBLE_PARA_EL_PÚBLICO; SI_REPITE_UNA_RECIENTE, MOTIVO_DOCUMENTADO}}.
+
+> [!IMPORTANT]
 > **Sujeto/raza fija en los 3 prompts:** `{{RAZA_Y_RASGOS_DEL_SUJETO_VISUAL; DECLARAR_SI_ES_ILUSTRATIVO}}` (ej. "Beagle senior, pelaje tricolor, complexión robusta") debe aparecer nombrado explícitamente en el prompt de **cada una** de las 3 imágenes — nunca sustituido por "a dog" o "a senior dog" genérico en ninguna. Si la historia tiene más de un perro, indica en cada prompt cuál protagoniza esa imagen específica.
+
+### Recortes transparentes y animaciones que necesitan al perro
+*   {{Si no hay ninguno: «No aplica — ningún apoyo requiere al perro». Si hay: por cada recorte, pose/orientación, para qué animación, y su prompt completo con fondo transparente, cuerpo completo y el bloque de edad visible íntegro.}}
 
 ### Imagen 1 — [Tipo de Imagen (Educativa / Resolutiva / Emocional)]
 *   **Nombre de archivo SEO:** `{{keyword-principal-descriptiva}}.jpg`
@@ -305,6 +314,7 @@ Si una fuente termina sin citar en el artículo final, el H2 correspondiente se 
 - [ ] ¿Ningún párrafo supera las 3 líneas en pantallas móviles?
 - [ ] ¿Los H3 están colocados cada 150-200 palabras?
 - [ ] ¿Las imágenes tienen nombres SEO y prompts descriptivos sin estilo publicitario?
+- [ ] ¿Todo prompt de imagen, recorte y animación incluye los cinco rasgos de edad y la línea de rechazo a tamaño móvil? ¿Se declararon las razas recientes y se eligió otra (o se justificó la repetición)?
 - [ ] ¿El recuento de palabras real del artículo está dentro del rango justificado del contrato (contado sobre el `.mdx`, no estimado)?
 - [ ] ¿Todas las fuentes de la tabla de trazabilidad quedaron efectivamente citadas por nombre en el artículo?
 - [ ] ¿Los 3 `AlertBox`, el `FAQ` completo y el enlace a la calculadora (si aplica) están presentes en el `.mdx` publicado?
