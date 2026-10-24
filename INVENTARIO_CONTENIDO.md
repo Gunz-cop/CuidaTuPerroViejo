@@ -128,7 +128,7 @@ Siguiendo el patrón "artículo clínico → herramienta interactiva que aplica 
 
 ---
 
-## 📝 Inventario de Artículos (17 implementados; nuevo artículo pendiente de despliegue)
+## 📝 Inventario de Artículos
 
 A continuación se listan los artículos de blog ya implementados en el código de Astro, clasificados por su pilar correspondiente con su ruta física y sus URLs reales de redireccionamiento SEO.
 
@@ -160,6 +160,12 @@ A continuación se listan los artículos de blog ya implementados en el código 
   - **URL real:** `/salud-perros-mayores/sindrome-cushing-perros-mayores`
   - **URL de origen:** *Nuevo artículo de la versión Astro (sin URL legacy)*
   - **Última reescritura:** 2026-07-21 (ver `briefings/briefing-sindrome-cushing-perros-mayores-v2.md`)
+
+- **Mal aliento en perros viejos: causas y cuándo consultar al veterinario**
+  - **Archivo físico:** `src/content/blog/mal-aliento-perros-viejos.mdx`
+  - **URL real:** `/salud-perros-mayores/mal-aliento-perros-viejos`
+  - **URL de origen:** *Nuevo artículo de la versión Astro (sin URL legacy)*
+  - **Estado:** Publicado — PR #145; publicación confirmada por el propietario el 2026-10-24.
 
 ### Pilar 3: Alimentación de Perros Senior
 - **Comida casera para perros mayores: recetas y pautas de nutrición**
@@ -218,7 +224,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - `[🔒]` **Reserva Personal** — tema bloqueado para selección automática; solo se trabaja por petición expresa del usuario.
 
 ### Pilar 2: Salud de Perros Mayores (15 artículos totales propuestos)
-*Estado: 6 publicados, 9 por redactar*
+*Estado: 7 publicados, 8 por redactar*
 - [x] *Chequeo geriátrico canino* (Publicado)
 - [x] *Salud dental en perros mayores* (Publicado)
 - [x] *Vacunas y desparasitación* (Publicado)
@@ -227,7 +233,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [x] *Pérdida de peso extrema en la vejez canina: ¿qué es la Insuficiencia Pancreática Exocrina (IPE) y el síndrome de malabsorción?* (Publicado) **[Urgente - Pérdida peso]**
 - [🔒] *Glándulas adrenales agrandadas en la ecografía de tu perro senior: qué significa la hiperplasia bilateral y cuándo apunta a Cushing hipofisario* (Caso propio: Luna) **[RESERVA PERSONAL — no priorizar ni seleccionar sin petición expresa]**
 - [🔒] *Mi perro mayor pierde peso y los análisis salen normales: qué pruebas faltan y cuándo pedir una segunda opinión* (Caso propio: Luna) **[RESERVA PERSONAL — no priorizar ni seleccionar sin petición expresa]**
-- [~] *Mal aliento en perros viejos: causas y cuándo consultar al veterinario* (Redactado y validado localmente — pendiente de publicación; ver `briefings/briefing-mal-aliento-perros-viejos.md` y `docs/contenido/mal-aliento-perros-viejos/validacion.md`)
+- [x] *Mal aliento en perros viejos: causas y cuándo consultar al veterinario* (Publicado — PR #145; publicación confirmada por el propietario el 2026-10-24. URL: `/salud-perros-mayores/mal-aliento-perros-viejos`; brief: `briefings/briefing-mal-aliento-perros-viejos.md`; expediente: `docs/contenido/mal-aliento-perros-viejos/README.md`)
 - [ ] *Limpieza bucal y anestesia en perros ancianos: balanceando riesgos y beneficios de la profilaxis* (Búsqueda GSC)
 - [ ] *Convulsiones y ataques epilépticos en la vejez: causas, riesgos y cómo actuar en una crisis* (Búsqueda GSC)
 - [ ] *Insuficiencia Renal Crónica (IRC) en perros senior: síntomas silenciosos y diagnóstico temprano*
