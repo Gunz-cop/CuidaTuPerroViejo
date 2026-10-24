@@ -6,7 +6,7 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 ## Contenido
 
-- [ ] **Golpe de calor: menores aceptados al publicar (2026-10-24).** Ninguno bloquea; retomar si se rehace el artículo o su animación. Detalle en `docs/contenido/golpe-de-calor-perros-mayores/auditoria-revision-r2.md`.
+- [ ] **Golpe de calor: menores aceptados al publicar (2026-10-24, `main` e22dd89).** Ninguno bloquea; retomar si se rehace el artículo o su animación. Detalle en `docs/contenido/golpe-de-calor-perros-mayores/auditoria-revision-r2.md`.
   - [ ] Recorte del podenco (`podenco-senior-perfil-transparente-v1`): no se ve senior (lomo y músculo de adulto) y aparece con el pelo seco en los pasos de mojarlo. Regenerar con edad visible y pelo mojado si se mejora la secuencia. Su alfa interior es 250–254, no 255 (no se nota).
   - [ ] Escala de avisos (`GolpeCalorRecursos`, variante `umbrales`): el recuadro discontinuo sigue marcando la distancia entre 30 °C y el umbral de la zona, aunque ya sin cifra. Valorar quitarlo.
   - [ ] Rótulos del dibujo de la secuencia: ~11,6 px en móvil, en el límite de legibilidad. Agrandarlos o confiar en el texto del paso.
@@ -32,6 +32,7 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 ## Mejoras del sitio
 
+- [ ] **API de valoraciones caída:** `GET /api/feedback?slug=…` devuelve 500 «Error interno del servidor» en producción para todos los artículos (comprobado el 2026-10-24 con golpe de calor, mal aliento y comida casera). El widget de valoración no carga. Revisar el Worker y su base de datos. (Anotado: 2026-10-24)
 - [ ] **Botón flotante de opiniones:** a 390 px tapa la esquina inferior derecha de tarjetas y recursos (visto en golpe de calor, pasa en todo el sitio). Valorar desplazarlo o reducirlo en móvil. (Anotado: 2026-10-24)
 
 ## Limpieza del repositorio
