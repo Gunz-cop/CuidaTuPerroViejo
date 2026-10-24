@@ -1,0 +1,330 @@
+---
+interface Props {
+  variant: 'primeros-minutos' | 'umbrales';
+}
+const { variant } = Astro.props;
+const uid = `golpe-calor-${variant}-${crypto.randomUUID().slice(0, 8)}`;
+const steps = [
+  { title: 'Sácalo del calor y llama', text: 'Sombra o la habitación más fresca de casa. Llama a su clínica o a urgencias 24 horas mientras empiezas a enfriarlo.' },
+  { title: 'Moja hasta la piel', text: 'Agua fresca del grifo, la ducha o una manguera suave, lejos de la cara. Que no se quede en la superficie del pelo. Nada de hielo.' },
+  { title: 'Dale aire en movimiento', text: 'Ventilador o corriente mientras sigue mojado: así se pierde el calor. Pregunta a la clínica cuándo parar.' },
+  { title: 'Llévalo a la clínica', text: 'Coche con el aire puesto. Si vais dos, uno conduce y el otro lo vigila. Aunque parezca mejor, que lo valoren.' },
+];
+const scaleMin = 26;
+const scaleMax = 40;
+const pct = (t: number) => `${((t - scaleMin) / (scaleMax - scaleMin)) * 100}%`;
+const ticks = [26, 28, 30, 32, 34, 36, 38, 40];
+const zones = [
+  { name: 'Sierra de Madrid', threshold: 34 },
+  { name: 'Metropolitana y Henares', threshold: 36 },
+  { name: 'Campiña sevillana', threshold: 38 },
+];
+---
+
+<section class={`gc-visual gc-${variant}`} data-editorial-visual data-reader-atomic aria-labelledby={`${uid}-title`}>
+  {variant === 'primeros-minutos' ? <div data-gc-sequence data-step="0" data-playing="false">
+    <header><p class="gc-kicker">Secuencia · cuatro pasos a la vez que llamas</p><h3 id={`${uid}-title`} data-toc-exclude="true">Los primeros minutos, de un vistazo</h3></header>
+    <div class="gc-canvas">
+      <svg viewBox="0 0 720 300" role="img" aria-labelledby={`${uid}-svg-title ${uid}-svg-desc`}>
+        <title id={`${uid}-svg-title`}>Esquema de los primeros minutos ante un golpe de calor</title>
+        <desc id={`${uid}-svg-desc`}>Cuatro escenas: pasar del sol a la sombra y llamar por teléfono; agua que atraviesa el pelo hasta la piel; un ventilador que mueve aire sobre el pelo mojado mientras el agua se evapora; y un coche con el aire puesto camino de la clínica.</desc>
+        <rect width="720" height="300" rx="16" fill="#edf2e8"/>
+        <g class="gc-scene" data-scene="0">
+          <g class="gc-sun"><circle cx="120" cy="92" r="34" fill="#f2b84b"/><path d="M120 38v-16M120 162v-16M66 92H50M190 92h-16M82 54l-11-11M158 130l11 11M82 130l-11 11M158 54l11-11" stroke="#d9952b" stroke-width="6" stroke-linecap="round"/></g>
+          <path d="M40 236H300" stroke="#c9a77a" stroke-width="6" stroke-linecap="round"/>
+          <path d="M300 236H500" stroke="#8fa98a" stroke-width="6" stroke-linecap="round"/>
+          <path d="M306 108L496 108L512 138L290 138Z" fill="#3f6e57"/>
+          <path d="M330 108L322 138M370 108L366 138M410 108L410 138M450 108L454 138" stroke="#fffdf6" stroke-width="5"/>
+          <path d="M312 138V236M492 138V236" stroke="#5b4a3a" stroke-width="6"/>
+          <rect x="314" y="140" width="176" height="94" fill="#294b3d" fill-opacity=".1"/>
+          <path class="gc-move-arrow" d="M200 206H286" stroke="#294b3d" stroke-width="5" stroke-linecap="round" marker-end={`url(#${uid}-arrow)`}/>
+          <text x="402" y="268" text-anchor="middle">Sombra</text>
+          <g transform="translate(572 92)">
+            <rect x="0" y="0" width="62" height="112" rx="12" fill="#294b3d"/>
+            <rect x="8" y="14" width="46" height="72" rx="4" fill="#d9e6d3"/>
+            <circle cx="31" cy="98" r="5" fill="#d9e6d3"/>
+            <g class="gc-ring" fill="none" stroke="#294b3d" stroke-width="5" stroke-linecap="round"><path d="M76 34q14 22 0 44"/><path d="M90 22q24 34 0 68"/></g>
+          </g>
+          <text x="603" y="268" text-anchor="middle">Llama</text>
+        </g>
+        <g class="gc-scene" data-scene="1">
+          <g transform="translate(300 34)"><path d="M0 0h120v18H0z" fill="#5b6f66"/><path d="M14 18h92l-12 22H26z" fill="#7d9671"/><path d="M52 -26h16v26H52z" fill="#5b6f66"/></g>
+          <g class="gc-drops" fill="#3b82b8"><circle cx="330" cy="92" r="7"/><circle cx="360" cy="106" r="7"/><circle cx="390" cy="88" r="7"/><circle cx="345" cy="132" r="7"/><circle cx="378" cy="140" r="7"/><circle cx="406" cy="120" r="7"/></g>
+          <rect x="110" y="226" width="500" height="36" rx="6" fill="#e9b6ac"/>
+          <g class="gc-fur" stroke="#a46c3c" stroke-width="5" stroke-linecap="round"><path d="M130 226l14-48M170 226l16-50M210 226l12-46M250 226l16-50M290 226l12-48M330 226l16-50M370 226l12-46M410 226l16-50M450 226l12-48M490 226l16-50M530 226l12-46M570 226l14-48"/></g>
+          <g class="gc-wet" fill="#3b82b8" fill-opacity=".55"><ellipse cx="300" cy="226" rx="34" ry="7"/><ellipse cx="380" cy="226" rx="34" ry="7"/><ellipse cx="460" cy="226" rx="30" ry="6"/></g>
+          <path d="M640 160V214" stroke="#294b3d" stroke-width="5" stroke-linecap="round" marker-end={`url(#${uid}-arrow)`}/>
+          <text x="96" y="196" text-anchor="end">Pelo</text>
+          <text x="96" y="252" text-anchor="end">Piel</text>
+          <text x="640" y="146" text-anchor="middle">Hasta la piel</text>
+        </g>
+        <g class="gc-scene" data-scene="2">
+          <g transform="translate(110 150)">
+            <circle r="68" fill="none" stroke="#294b3d" stroke-width="6"/>
+            <g class="gc-blades" fill="#5b8a74"><path d="M0 0C-10-30-6-56 10-58C22-46 16-20 0 0Z"/><path d="M0 0C30-10 56-6 58 10C46 22 20 16 0 0Z"/><path d="M0 0C10 30 6 56-10 58C-22 46-16 20 0 0Z"/><path d="M0 0C-30 10-56 6-58-10C-46-22-20-16 0 0Z"/></g>
+            <circle r="10" fill="#294b3d"/>
+            <path d="M0 68V108M-34 112H34" stroke="#294b3d" stroke-width="6" stroke-linecap="round"/>
+          </g>
+          <g class="gc-air" fill="none" stroke="#5b8a74" stroke-width="5" stroke-linecap="round" stroke-dasharray="24 18"><path d="M200 110C300 96 380 128 600 112"/><path d="M200 150C300 140 400 166 600 150"/><path d="M200 190C300 182 400 204 600 190"/></g>
+          <rect x="230" y="236" width="400" height="26" rx="6" fill="#e9b6ac"/>
+          <g stroke="#a46c3c" stroke-width="5" stroke-linecap="round"><path d="M250 236l10-30M290 236l12-32M330 236l10-30M370 236l12-32M410 236l10-30M450 236l12-32M490 236l10-30M530 236l12-32M570 236l10-30M610 236l10-30"/></g>
+          <g class="gc-vapor" fill="none" stroke="#7aa6c4" stroke-width="4" stroke-linecap="round"><path d="M300 200q-10-14 0-28t0-28"/><path d="M420 200q-10-14 0-28t0-28"/><path d="M540 200q-10-14 0-28t0-28"/></g>
+          <text x="420" y="66" text-anchor="middle">Aire sobre el pelo mojado</text>
+        </g>
+        <g class="gc-scene" data-scene="3">
+          <path d="M30 238H690" stroke="#5b6f66" stroke-width="8"/>
+          <path class="gc-road" d="M30 262H690" stroke="#8fa98a" stroke-width="5" stroke-dasharray="34 26"/>
+          <g class="gc-car" transform="translate(150 150)">
+            <path d="M0 70V40L40 8H150L192 40H222V70Z" fill="#3f6e57"/>
+            <path d="M50 16H96V40H24Z M106 16H144L174 40H106Z" fill="#d9e6d3"/>
+            <circle cx="48" cy="76" r="18" fill="#294b3d"/><circle cx="48" cy="76" r="7" fill="#d9e6d3"/>
+            <circle cx="176" cy="76" r="18" fill="#294b3d"/><circle cx="176" cy="76" r="7" fill="#d9e6d3"/>
+            <g class="gc-ac" fill="none" stroke="#3b82b8" stroke-width="4" stroke-linecap="round"><path d="M60 28q8-6 16 0t16 0"/><path d="M114 28q8-6 16 0t16 0"/></g>
+          </g>
+          <g transform="translate(520 100)">
+            <rect x="0" y="40" width="140" height="98" fill="#fffdf6" stroke="#294b3d" stroke-width="5"/>
+            <path d="M-10 44L70 0L150 44" fill="none" stroke="#294b3d" stroke-width="6" stroke-linejoin="round"/>
+            <rect x="52" y="58" width="36" height="36" fill="#943d36"/>
+            <path d="M70 64V88M58 76H82" stroke="#fffdf6" stroke-width="7"/>
+            <rect x="56" y="104" width="28" height="34" fill="#294b3d"/>
+          </g>
+          <text x="590" y="70" text-anchor="middle">Clínica</text>
+          <text x="260" y="128" text-anchor="middle">Aire puesto</text>
+        </g>
+        <defs><marker id={`${uid}-arrow`} viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#294b3d"/></marker></defs>
+      </svg>
+    </div>
+    <div class="gc-controls" hidden>
+      <div class="gc-transport"><button type="button" data-action="prev" aria-label="Paso anterior">←</button><button type="button" data-action="play">Reproducir</button><button type="button" data-action="next" aria-label="Paso siguiente">→</button><button type="button" data-action="restart" aria-label="Volver al primer paso">↺</button></div>
+      <p class="gc-position" aria-live="polite" aria-atomic="true"></p>
+    </div>
+    <ol class="gc-steps">{steps.map((step, i) => <li data-panel={i}><span class="gc-step-number" aria-hidden="true">{i + 1}</span><div><h4>{step.title}</h4><p>{step.text}</p></div></li>)}</ol>
+    <details class="gc-details"><summary>De dónde sale esta secuencia</summary><p>Resume las recomendaciones de enfriamiento que recoge Hall et al. 2023 (enfriar primero, transportar después; agua sobre piel y pelaje con aire para perros mayores) y el consejo del Colegio de Veterinarios de Madrid. Es una ayuda para actuar mientras llamas, no sustituye las indicaciones de la clínica.</p><p>La reproducción avanza sola cada pocos segundos y puedes pausarla cuando quieras. Con movimiento reducido, recorre los pasos con las flechas.</p></details>
+  </div> : <div data-gc-umbrales data-zone="1">
+    <header><p class="gc-kicker">Temperatura máxima del aire prevista para el día</p><h3 id={`${uid}-title`} data-toc-exclude="true">Tu perro mayor va por delante del aviso amarillo</h3><p>La guía del Ministerio marca el peligro para perros de edad avanzada antes de que la AEMET emita el primer aviso.</p></header>
+    <div class="gc-zones" role="group" aria-label="Zona de ejemplo de la AEMET" hidden>
+      {zones.map((zone, i) => <button type="button" data-zone-index={i} data-threshold={zone.threshold} data-name={zone.name} aria-pressed={i === 1 ? 'true' : 'false'}><span>{zone.name}</span><strong>{zone.threshold} °C</strong></button>)}
+    </div>
+    <div class="gc-scale" aria-hidden="true">
+      <div class="gc-bar"></div>
+      <div class="gc-gap" style={`left:${pct(30)}`}></div>
+      <div class="gc-range" style={`left:${pct(34)};width:calc(${pct(38)} - ${pct(34)})`}></div>
+      <span class="gc-mark gc-mark-ministerio" style={`left:${pct(30)}`}><span>30</span></span>
+      <span class="gc-mark gc-mark-todos" style={`left:${pct(32)}`}><span>32</span></span>
+      <span class="gc-mark gc-mark-aviso" style={`left:${pct(36)}`}><span>36</span></span>
+      <div class="gc-ticks">{ticks.map(t => <span style={`left:${pct(t)}`}>{t}°</span>)}</div>
+    </div>
+    <p class="gc-readout" aria-live="polite">Según la zona, el aviso amarillo por temperatura máxima empieza a 34, 36 o 38 °C. Ejemplos: Sierra de Madrid 34 °C, Metropolitana y Henares 36 °C, Campiña sevillana 38 °C.</p>
+    <ul class="gc-legend">
+      <li class="gc-legend-ministerio"><strong>30 °C</strong><span>Guía del Ministerio: ya puede ser peligroso para perros grandes, de edad avanzada o braquicéfalos.</span></li>
+      <li class="gc-legend-todos"><strong>32 °C</strong><span>Guía del Ministerio: riesgo alto de golpe de calor para todos los perros.</span></li>
+      <li class="gc-legend-aviso"><strong>34–38 °C</strong><span>AEMET: primer aviso amarillo por temperatura máxima, según tu zona.</span></li>
+    </ul>
+    <details class="gc-details"><summary>Cómo leer esta comparación</summary><p>Las dos referencias son temperaturas del aire. Las del Ministerio vienen de su guía para olas de calor (2024); las de la AEMET, del anexo de umbrales del Plan Meteoalerta (2022). Comprueba el umbral vigente de tu zona en la web de la AEMET.</p><p>Los avisos de la AEMET son generales y no están pensados para animales. La humedad, el esfuerzo y la salud de tu perro también cuentan: obsérvalo aunque el termómetro marque menos.</p></details>
+  </div>}
+</section>
+
+<script>
+  class GolpeCalorSequence {
+    private step = 0;
+    private playing = false;
+    private timer: ReturnType<typeof setTimeout> | undefined;
+    private events = new AbortController();
+    private reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    private readonly last = 3;
+    constructor(private root: HTMLElement) {
+      root.dataset.enhanced = 'true';
+      root.querySelector<HTMLElement>('.gc-controls')!.hidden = false;
+      root.querySelectorAll<HTMLButtonElement>('[data-action]').forEach(button => button.addEventListener('click', () => {
+        const action = button.dataset.action;
+        if (action === 'play') {
+          if (this.playing) this.stop();
+          else if (!this.reduced.matches) {
+            if (this.step === this.last) this.step = 0;
+            this.playing = true;
+            this.render();
+            this.schedule();
+          }
+        } else {
+          this.stop();
+          if (action === 'restart') this.step = 0;
+          else this.step = Math.max(0, Math.min(this.last, this.step + (action === 'next' ? 1 : -1)));
+          this.render();
+        }
+      }, { signal: this.events.signal }));
+      this.reduced.addEventListener('change', this.preference, { signal: this.events.signal });
+      document.addEventListener('visibilitychange', this.visibility, { signal: this.events.signal });
+      window.addEventListener('pagehide', this.stop, { signal: this.events.signal });
+      this.preference();
+    }
+    private preference = () => {
+      this.stop();
+      this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.disabled = this.reduced.matches;
+    };
+    private visibility = () => { if (document.hidden) this.stop(); };
+    private stop = () => { clearTimeout(this.timer); this.timer = undefined; this.playing = false; this.render(); };
+    private schedule() {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        if (!this.root.isConnected || !this.playing) { this.stop(); return; }
+        if (this.step < this.last) { this.step++; this.render(); this.schedule(); }
+        else this.stop();
+      }, 5500);
+    }
+    private render() {
+      this.root.dataset.step = String(this.step);
+      this.root.dataset.playing = String(this.playing);
+      this.root.querySelectorAll<HTMLElement>('[data-panel]').forEach((panel, i) => panel.dataset.active = String(i === this.step));
+      const position = this.root.querySelector<HTMLElement>('.gc-position')!;
+      position.setAttribute('aria-live', this.playing ? 'off' : 'polite');
+      position.textContent = this.reduced.matches ? `Paso ${this.step + 1} de 4 · movimiento reducido: usa las flechas` : `Paso ${this.step + 1} de 4`;
+      this.root.querySelector<HTMLButtonElement>('[data-action="prev"]')!.disabled = this.step === 0;
+      this.root.querySelector<HTMLButtonElement>('[data-action="next"]')!.disabled = this.step === this.last;
+      this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.textContent = this.playing ? 'Pausar' : this.step === this.last ? 'Reproducir de nuevo' : 'Reproducir';
+    }
+    disconnect() { this.stop(); this.events.abort(); }
+  }
+
+  const MIN = 26;
+  const MAX = 40;
+  const pct = (t: number) => `${((t - MIN) / (MAX - MIN)) * 100}%`;
+  function setupUmbrales(root: HTMLElement): AbortController {
+    const events = new AbortController();
+    root.dataset.enhanced = 'true';
+    const group = root.querySelector<HTMLElement>('.gc-zones')!;
+    group.hidden = false;
+    const buttons = [...group.querySelectorAll<HTMLButtonElement>('button')];
+    const select = (button: HTMLButtonElement) => {
+      const threshold = Number(button.dataset.threshold);
+      buttons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+      root.style.setProperty('--gc-aviso', pct(threshold));
+      root.style.setProperty('--gc-gap', `calc(${pct(threshold)} - ${pct(30)})`);
+      root.querySelector<HTMLElement>('.gc-mark-aviso span')!.textContent = String(threshold);
+      root.querySelector<HTMLElement>('.gc-readout')!.textContent = `${button.dataset.name}: el aviso amarillo empieza a ${threshold} °C, ${threshold - 30} grados por encima de la referencia del Ministerio para perros de edad avanzada.`;
+    };
+    buttons.forEach(button => button.addEventListener('click', () => select(button), { signal: events.signal }));
+    select(buttons.find(b => b.getAttribute('aria-pressed') === 'true') ?? buttons[0]);
+    return events;
+  }
+
+  const sequences = new Map<HTMLElement, GolpeCalorSequence>();
+  const umbrales = new Map<HTMLElement, AbortController>();
+  function initializeGolpeCalor() {
+    document.querySelectorAll<HTMLElement>('[data-gc-sequence]').forEach(root => { if (!sequences.has(root)) sequences.set(root, new GolpeCalorSequence(root)); });
+    document.querySelectorAll<HTMLElement>('[data-gc-umbrales]').forEach(root => { if (!umbrales.has(root)) umbrales.set(root, setupUmbrales(root)); });
+  }
+  document.addEventListener('astro:before-swap', () => {
+    sequences.forEach(instance => instance.disconnect());
+    sequences.clear();
+    umbrales.forEach(events => events.abort());
+    umbrales.clear();
+  });
+  document.addEventListener('astro:page-load', initializeGolpeCalor);
+  initializeGolpeCalor();
+</script>
+
+<style>
+  .gc-visual { margin:2.1rem 0; padding:1.35rem; color:#294b3d; background:#fffdf6; border:1px solid #bccbb7; border-radius:1.1rem; font-family:system-ui,sans-serif; max-width:46rem; }
+  .gc-visual header { margin:0 0 .9rem; }
+  .gc-visual .gc-kicker { margin:0 0 .45rem; color:#4b6249; font-size:.72rem; font-weight:700; line-height:1.5; letter-spacing:.06em; text-transform:uppercase; }
+  .gc-visual h3 { color:#294b3d!important; font-size:clamp(1.15rem,3vw,1.5rem); line-height:1.3; margin:0 0 .45rem!important; }
+  .gc-visual h4 { color:#294b3d!important; font-size:1rem; line-height:1.4; margin:0 0 .2rem; }
+  .gc-visual p { color:#36533e; margin:.4rem 0; font-size:.94rem; line-height:1.6; }
+  .gc-visual strong { color:#294b3d!important; }
+  .gc-visual [hidden] { display:none!important; }
+  .gc-visual li::before,.gc-visual li::marker { content:none!important; display:none!important; }
+  .gc-visual :is(button,summary):focus-visible { outline:3px solid #89551c; outline-offset:3px; }
+  .gc-visual .gc-details { background:#fffdf6!important; border-color:#bccbb7!important; border-radius:.7rem!important; padding:.65rem .8rem!important; margin:.75rem 0 0!important; }
+  .gc-visual .gc-details summary { color:#294b3d!important; min-height:44px; font:650 .85rem/1.5 system-ui,sans-serif!important; gap:.75rem; }
+  .gc-visual .gc-details summary::after { color:#294b3d!important; }
+  .gc-visual .gc-details p { font-size:.83rem; }
+  .gc-visual button { min-width:44px; min-height:44px; box-sizing:border-box; border:1px solid #7d9671; border-radius:.55rem; background:#fffdf6; color:#294b3d; padding:.55rem .7rem; font:650 .85rem/1.35 system-ui,sans-serif; cursor:pointer; }
+  .gc-visual button:disabled { color:#4b6146; background:#e6eddf; border-color:#a3b397; cursor:default; }
+
+  .gc-canvas { background:#edf2e8; border-radius:.75rem; overflow:hidden; }
+  .gc-canvas svg { display:block; width:100%; height:auto; }
+  .gc-canvas text { fill:#294b3d; font:700 26px system-ui,sans-serif; }
+  .gc-scene { opacity:0; }
+  [data-step="0"] [data-scene="0"],[data-step="1"] [data-scene="1"],[data-step="2"] [data-scene="2"],[data-step="3"] [data-scene="3"] { opacity:1; }
+  [data-gc-sequence]:not([data-enhanced]) [data-scene="0"] { opacity:1; }
+  [data-playing="true"] .gc-scene { transition:opacity .6s ease; }
+  .gc-blades { transform-origin:0 0; }
+  [data-playing="true"] [data-scene="0"] .gc-ring { animation:gc-ring 1.2s ease-in-out infinite; }
+  [data-playing="true"] [data-scene="0"] .gc-sun { animation:gc-sun 5.5s ease forwards; }
+  [data-playing="true"] [data-scene="1"] .gc-drops { animation:gc-drops 1.4s linear infinite; }
+  [data-playing="true"] [data-scene="2"] .gc-blades { animation:gc-spin .9s linear infinite; }
+  [data-playing="true"] [data-scene="2"] .gc-air { animation:gc-flow 1.2s linear infinite; }
+  [data-playing="true"] [data-scene="2"] .gc-vapor { animation:gc-vapor 2.4s ease-in-out infinite; }
+  [data-playing="true"] [data-scene="3"] .gc-road { animation:gc-flow .8s linear infinite; }
+  [data-playing="true"] [data-scene="3"] .gc-ac { animation:gc-ring 1.4s ease-in-out infinite; }
+  @keyframes gc-ring { 0%,100% { opacity:.25; } 50% { opacity:1; } }
+  @keyframes gc-sun { from { opacity:1; } to { opacity:.35; } }
+  @keyframes gc-drops { from { transform:translateY(-30px); opacity:0; } 20% { opacity:1; } to { transform:translateY(120px); opacity:.2; } }
+  @keyframes gc-spin { to { transform:rotate(360deg); } }
+  @keyframes gc-flow { to { stroke-dashoffset:-84; } }
+  @keyframes gc-vapor { 0% { transform:translateY(0); opacity:0; } 40% { opacity:.9; } 100% { transform:translateY(-40px); opacity:0; } }
+
+  .gc-controls { margin:.6rem 0 .2rem; }
+  .gc-transport { display:flex; gap:.45rem; }
+  .gc-visual [data-action="play"] { flex:1; background:#294b3d; color:#fff; }
+  .gc-visual [data-action="play"]:disabled { color:#4b6146; background:#e6eddf; }
+  .gc-visual .gc-position { margin:.35rem 0 0; font-size:.8rem; font-weight:700; }
+  .gc-steps { list-style:none; padding:0!important; margin:.5rem 0!important; }
+  .gc-steps li { display:flex; gap:.7rem; margin:0!important; padding:.45rem 0; }
+  .gc-step-number { display:grid; place-items:center; width:2rem; height:2rem; flex:0 0 2rem; background:#294b3d; color:#fff; border-radius:50%; font-size:.85rem; font-weight:700; }
+  .gc-steps p { margin:0; font-size:.9rem; }
+  [data-enhanced="true"] .gc-steps [data-active="false"] { display:none; }
+
+  .gc-zones { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.45rem; margin:.2rem 0 1rem; }
+  .gc-zones button { display:flex; flex-direction:column; align-items:flex-start; gap:.1rem; text-align:left; }
+  .gc-zones button span { font-weight:600; font-size:.8rem; line-height:1.3; }
+  .gc-zones button strong { font-size:1rem; }
+  .gc-zones button[aria-pressed="true"] { background:#294b3d; border-color:#294b3d; color:#fff; }
+  .gc-zones button[aria-pressed="true"] strong { color:#fff!important; }
+  .gc-scale { position:relative; height:5.6rem; margin:2.2rem .6rem .4rem; }
+  .gc-bar { position:absolute; left:0; right:0; top:1.1rem; height:.9rem; border-radius:999px; background:linear-gradient(90deg,#9cc3a5 0%,#e9d37a 35%,#e8a25a 60%,#c8553d 100%); }
+  .gc-gap { position:absolute; top:.75rem; height:1.6rem; width:var(--gc-gap,0); border:2px dashed #294b3d; border-radius:.4rem; box-sizing:border-box; display:none; }
+  .gc-range { position:absolute; top:.75rem; height:1.6rem; border:2px solid #8a6a00; background:rgba(242,201,76,.45); border-radius:.4rem; box-sizing:border-box; }
+  [data-enhanced="true"] .gc-range { display:none; }
+  [data-enhanced="true"] .gc-gap { display:block; }
+  .gc-mark { position:absolute; top:-1.6rem; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; }
+  .gc-mark span { display:grid; place-items:center; min-width:2.2rem; height:1.6rem; padding:0 .3rem; border-radius:.45rem; font:700 .8rem/1 system-ui,sans-serif; color:#fff; }
+  .gc-mark::after { content:''; width:3px; height:2.6rem; margin-top:.1rem; }
+  .gc-mark-ministerio span,.gc-mark-ministerio::after { background:#294b3d; }
+  .gc-mark-todos span,.gc-mark-todos::after { background:#7a3b1f; }
+  .gc-mark-aviso { left:var(--gc-aviso,71.43%)!important; }
+  .gc-mark-aviso span { background:#f2c94c; color:#3d3000; border:2px solid #8a6a00; }
+  .gc-mark-aviso::after { background:#8a6a00; }
+  [data-gc-umbrales]:not([data-enhanced]) .gc-mark-aviso { display:none; }
+  [data-enhanced="true"] .gc-mark-aviso { transition:left .5s ease; }
+  [data-enhanced="true"] .gc-gap { transition:width .5s ease; }
+  .gc-ticks span { position:absolute; top:2.6rem; transform:translateX(-50%); font-size:.75rem; color:#4b6249; }
+  .gc-visual .gc-readout { font-weight:650; color:#294b3d; min-height:3.2em; }
+  .gc-legend { list-style:none; padding:0!important; margin:.6rem 0 0!important; display:grid; gap:.5rem; }
+  .gc-legend li { display:grid; grid-template-columns:5.2rem 1fr; gap:.6rem; align-items:baseline; margin:0!important; padding:.5rem .65rem; border-left:5px solid; border-radius:.5rem; background:#f4f7ef; font-size:.88rem; line-height:1.5; color:#36533e; }
+  .gc-legend-ministerio { border-color:#294b3d!important; }
+  .gc-legend-todos { border-color:#7a3b1f!important; }
+  .gc-legend-aviso { border-color:#c9a227!important; background:#fdf6dc!important; }
+
+  @media(max-width:640px) {
+    .gc-visual { padding:1rem; }
+    .gc-visual .gc-kicker { font-size:.67rem; }
+    .gc-visual header > p:not(.gc-kicker) { font-size:.88rem; line-height:1.5; }
+    .gc-steps h4 { font-size:.95rem; }
+    .gc-steps p { font-size:.86rem; line-height:1.5; }
+    .gc-zones { gap:.35rem; }
+    .gc-zones button { padding:.45rem .5rem; }
+    .gc-zones button span { font-size:.72rem; }
+    .gc-scale { margin:2.1rem .4rem .2rem; }
+    .gc-legend li { grid-template-columns:4.4rem 1fr; font-size:.82rem; line-height:1.4; padding:.4rem .55rem; }
+    .gc-visual .gc-readout { font-size:.88rem; line-height:1.45; min-height:0; }
+    .gc-umbrales header { margin-bottom:.6rem; }
+  }
+  @media(prefers-reduced-motion:reduce) { .gc-visual *,.gc-visual *::before,.gc-visual *::after { animation:none!important; transition:none!important; } }
+  @media print {
+    .gc-visual { color:#111; background:white; border-color:#777; break-inside:avoid; }
+    .gc-controls,.gc-zones,.gc-canvas,.gc-visual summary { display:none!important; }
+    [data-enhanced="true"] .gc-steps [data-active="false"] { display:flex!important; }
+    .gc-visual details > :not(summary) { display:block!important; }
+  }
+</style>

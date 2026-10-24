@@ -52,5 +52,8 @@ Ilustración generada; no representa un paciente ni acredita un resultado clíni
 - El entorno tiene detalles específicos y materiales creíbles, compatibles con el público y la escena, sin convertirse en una escenografía turística o de catálogo.
 - Luz, sombras, perspectiva y escala concuerdan; el gesto se lee también en móvil.
 - La imagen respeta los límites de seguridad y no escenifica una recuperación o un paciente inventados.
+- **La escena es físicamente segura:** nada eléctrico enchufado sobre suelo mojado o junto a agua derramada, ningún objeto que el artículo desaconseja (hielo, toallas envolventes, correa tensa). Una escena bonita que enseña un riesgo contradice el texto.
+- **Imagen, pie y alt dicen lo mismo:** si el pie habla de persianas bajadas, la persiana está bajada; si el alt dice «moja el pecho», el agua cae en el pecho. Corregir la imagen o, si la diferencia no importa para el mensaje, el pie y el alt.
+- **La edad se ve sin buscarla:** además del hocico canoso, cejas y párpados, ojos algo hundidos, línea del lomo y masa muscular de un perro mayor. Si a tamaño móvil parece un adulto joven, regenerar.
 
 Corregir cualquier incoherencia antes de entregar, aunque la imagen resulte visualmente atractiva. Registrar qué referencia se usó y qué se corrigió. Mantener originales y versionar las sustituciones; actualizar artículo, brief, variantes y vista previa. Diferenciar preferencia expresada por el propietario, revisión propia y aprobación de cada imagen final.
