@@ -60,7 +60,7 @@ El Pilar 1 no se incluye en el recuento porque es un hub de herramientas, no un 
 - [ ] **[P1-09]** *Dirofilariosis en España: riesgo por zonas y prevención del gusano del corazón en perros senior* — Enfoque geográfico Península/Baleares/Canarias y diagnóstico geriátrico. Base: ES-02.
 - [ ] **[P1-10]** *Enfermedades de garrapatas en perros mayores en España: ehrlichiosis, anaplasmosis y babesiosis* — Clúster diagnóstico propio; distinto del mantenimiento higiénico tras el paseo. Base: ES-02.
 - [ ] **[P1-04]** *Procesionaria del pino y perros: primeros auxilios y cuándo correr a urgencias veterinarias* — Intención urgente, estacional y mediterránea. Base: ES-03.
-- [ ] **[P1-01]** *Golpe de calor en perros mayores: señales de alarma y plan para las olas de calor en España* — Prioridad máxima por recurrencia y severidad climática. Base: ES-01.
+- [~] **[P1-01]** *Golpe de calor en perros mayores: señales de alarma y plan para las olas de calor en España* — Prioridad máxima por recurrencia y severidad climática. Base: ES-01. (En Briefing — ver `briefings/briefing-golpe-de-calor-perros-mayores.md`; pendiente de auditoría independiente)
 
 #### Pilar 3 — Alimentación de Perros Senior
 
