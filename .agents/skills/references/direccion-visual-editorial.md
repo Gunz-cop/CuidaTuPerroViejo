@@ -69,15 +69,23 @@ El brief declara en su Sección 8 **qué razas o mestizos se usaron en los artí
 
 Registro de razas usadas (actualizar al cerrar cada brief):
 
-| Artículo | Sujeto visual |
+| Artículo (estado) | Sujeto visual |
 |---|---|
-| Golpe de calor (2026-10-24) | Podenco |
-| Mal aliento (2026-10-22) | Labrador chocolate |
-| Úlceras por presión (2026-10-21) | Golden retriever |
-| Cushing, limpieza de ojos y oídos, ansiedad por separación | Cocker spaniel |
-| Alimentación sin dientes, poliquezia | Beagle |
+| Golpe de calor (publicado) | Podenco |
+| Mal aliento (publicado) | Labrador chocolate |
+| Úlceras por presión (publicado) | Golden retriever |
+| Cushing, limpieza de ojos y oídos, ansiedad por separación, incontinencia fecal | Cocker spaniel |
+| Alimentación sin dientes, poliquezia, juegos de olfato, corte de uñas | Beagle |
 | Callosidades y codos | San Bernardo |
-| Baño senior, ejemplo aprobado | Dogo argentino |
+| Baño senior (ejemplo aprobado) | Dogo argentino |
+| Dermatitis por humedad, ceguera y sordera (briefs) | Pastor alemán |
+| Letargo (brief) | Bóxer |
+| Rutina cognitiva y ocaso (briefs) | Caniche miniatura |
+| Olor a orina (brief) | Schnauzer |
+| Feromonas (brief) | Teckel |
+| Depresión (brief) | Galgo español |
+| IPE (brief) | Setter gordon |
+| Leishmaniosis (brief, 2026-10-24) | Mestizo de tipo pastor-mastín, leonado con máscara negra |
 
 ## Revisión de la imagen generada
 
