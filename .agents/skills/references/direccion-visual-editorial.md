@@ -8,8 +8,8 @@ El propietario destacó la belleza, el detalle y la ambientación de las escenas
 
 Referencias visuales concretas:
 
-- [Casa fresca](../../../public/images/blog/golpe-de-calor-perros-mayores/podenco-senior-zona-fresca-casa-v1.webp): baldosa, persiana, cuenco cerámico, mobiliario y luz que construyen una vivienda reconocible; el perro sigue siendo protagonista.
-- [Enfriamiento](../../../public/images/blog/golpe-de-calor-perros-mayores/podenco-senior-enfriamiento-evaporativo-v1.webp): gesto comprensible, pelaje mojado, agua visible, patio con materiales concretos y objetos que explican la preparación del traslado. Contraejemplo en un detalle: el ventilador enchufado sobre el suelo mojado; no copiarlo (pendiente de sustituir por v2).
+- [Casa fresca](../../../public/images/blog/golpe-de-calor-perros-mayores/podenco-senior-zona-fresca-casa-v2.webp): baldosa, persiana, cuenco cerámico, mobiliario y luz que construyen una vivienda reconocible; el perro sigue siendo protagonista.
+- [Enfriamiento](../../../public/images/blog/golpe-de-calor-perros-mayores/podenco-senior-enfriamiento-evaporativo-v2.webp): gesto comprensible, pelaje mojado, agua visible, patio con materiales concretos y objetos que explican la preparación del traslado. Contraejemplo en un detalle: el ventilador enchufado sobre el suelo mojado; no copiarlo (pendiente de sustituir por v2).
 - [Portada v1 rechazada](../../../docs/contenido/golpe-de-calor-perros-mayores/originales/podenco-senior-paseo-amanecer-v1.png): conservar como contraejemplo de dirección de marcha incoherente; no usarla como referencia compositiva aprobada.
 
 Se adopta el cuidado de la escena, no el podenco, la vivienda española ni el color cálido como valores universales. En la serie España, ambientar para ese público; en otros artículos, seguir la audiencia y el contexto documentados. Evitar casas suburbanas estadounidenses por defecto. Si la ubicación no está definida, elegir un entorno doméstico plausible y describirlo, sin atribuirle un país o una ciudad reales.

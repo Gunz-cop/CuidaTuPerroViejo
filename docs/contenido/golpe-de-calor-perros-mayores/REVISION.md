@@ -1,5 +1,7 @@
 # Artículo e imágenes para revisión en GitHub
 
+> **Entrega posterior a la revisión de fondo:** las escenas de enfriamiento y casa se han sustituido por v2 y se ha preparado el recorte transparente. Ver [imágenes de la revisión](imagenes-revision-entrega.md), en `codex/golpe-calor-imagenes-revision`, sobre la rama revisada `claude/golpe-calor-revision`. El resto de este índice documenta la primera entrega.
+
 Rama de entrega: `codex/articulo-golpe-calor-imagenes`. Trabajo solicitado por el propietario: redacción del artículo, tres imágenes, corrección de la portada y mejora de las instrucciones de futuros briefs e imágenes. No se fusiona con `main` ni se solicita un despliegue de producción.
 
 ## Qué revisar

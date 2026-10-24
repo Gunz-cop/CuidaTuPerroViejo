@@ -364,16 +364,16 @@ En futuros temas se conserva este nivel de intención y detalle, adaptando entor
 - **Pie:** A primera hora: la guía del Ministerio aconseja dejar ahí los paseos más largos.
 
 ### Imagen 2 — Educativa en casa (inserción: H2-5, `### Paseos y casa`)
-- **Archivo:** `podenco-senior-zona-fresca-casa-v1.webp`
-- **Prompt:** plano general ligeramente elevado de un salón de piso español con suelo de baldosa clara y persianas de lamas medio bajadas; el **podenco andaluz senior canela y blanco, hocico canoso**, tumbado sobre la baldosa junto a un cuenco grande de agua y un ventilador de pie; luz en franjas a través de la persiana; profundidad de campo media; ambiente tranquilo; estilo documental, sin marcas.
-- **Alt:** Ilustración de un podenco senior tumbado en el suelo fresco de un salón con un cuenco de agua y un ventilador.
-- **Pie:** Persianas bajadas, suelo fresco y agua a mano antes de que llegue la ola de calor.
+- **Archivo vigente tras la revisión de fondo:** `podenco-senior-zona-fresca-casa-v2.webp`. Persiana medio bajada y visillo: luz filtrada sin rectángulos de sol directo sobre suelo o perro. Conservar v1 como historial.
+- **Prompt vigente v2:** mismo **podenco andaluz senior canela y blanco, hocico y cejas canosos**, tumbado naturalmente sobre baldosa clara. Mismo salón de piso español, mueble de madera, sofá con manta, cuenco cerámico y ventilador de pie en suelo seco. Persiana de lamas medio bajada y visillo que cubre el resto del cristal: luz indirecta tamizada, sin rectángulos ni haces de sol sobre el suelo o el perro. Cámara ligeramente elevada, texturas creíbles de pelo, cerámica y baldosa; profundidad de campo suficiente para comprender el espacio. Edad natural visible, sin emaciación ni patología inventada. Estilo documental, sin marcas ni pose de catálogo.
+- **Alt vigente:** Ilustración de un podenco senior descansando sobre baldosa en sombra, con agua y ventilador, junto a una persiana medio bajada y un visillo.
+- **Pie vigente:** Persiana y visillo filtran la luz: suelo en sombra, agua a mano y una zona tranquila para descansar.
 
 ### Imagen 3 — Resolutiva, primeros minutos (inserción: H2-3, `### 2. Mójalo y dale aire`)
-- **Archivo:** `podenco-senior-enfriamiento-evaporativo-v1.webp`
-- **Prompt:** plano medio en la sombra de un patio con azulejos; ventilador portátil junto a una cuidadora arrodillada que moja con agua fresca el pecho y el abdomen del **podenco andaluz senior canela y blanco, hocico canoso**, de pie y apoyado, con la lengua fuera pero atento; manos y agua visibles; llaves del coche y móvil en el suelo como señal de traslado; luz de tarde en sombra; profundidad de campo estrecha; estilo fotoperiodístico sobrio, sin colapso ni dramatismo.
-- **Alt:** Ilustración de una cuidadora mojando el pecho de un podenco senior junto a un ventilador antes de llevarlo al veterinario.
-- **Pie:** Agua fresca y aire en movimiento mientras avisas a la clínica y preparas el coche.
+- **Archivo vigente tras la revisión de fondo:** `podenco-senior-enfriamiento-evaporativo-v2.webp`. Ventilador elevado sobre banco seco, alejado de salpicaduras, con cable que sube por la pared hasta un enchufe alto. Conservar v1 como historial.
+- **Prompt vigente v2:** mismo **podenco andaluz senior canela y blanco, hocico y cejas canosos**, de pie con cuatro apoyos firmes en patio andaluz de azulejos y terracota. Misma cuidadora, camisa verde salvia y vaqueros, arrodillada, vierte agua fresca con jarra sobre el lomo y el pecho, sin mojar la cara. Ventilador portátil estable ENCIMA del banco de obra SECO, aproximadamente a un metro y fuera de salpicaduras; su cable sube por la pared hasta un enchufe alto y nunca toca el suelo mojado. Móvil y llaves sobre la repisa seca. Cámara a la altura del perro, manos, agua y separación entre zona mojada y electricidad legibles. Luz suave de tarde en sombra, pelaje mojado y materiales detallados; estilo documental sin colapso, hielo ni toallas envolventes.
+- **Alt vigente:** Ilustración de una cuidadora mojando el lomo y el pecho de un podenco senior; el ventilador está elevado en un banco seco, lejos del agua.
+- **Pie vigente:** Agua fresca y aire en movimiento; el ventilador y su cable quedan elevados, fuera de la zona mojada.
 
 ## 9. CONTRATO DE ENTREGA — NO NEGOCIABLES
 

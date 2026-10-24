@@ -126,13 +126,15 @@ Si jadea en reposo cuando hace fresco y sin haber hecho ejercicio, coméntalo ta
 
 ## Qué hacer en los primeros minutos
 
+
+
 ### 1. Sácalo del calor y llama
 
 Llévalo a la sombra o a una habitación fresca con ventilador o aire acondicionado. Interrumpe el esfuerzo y procura que tenga suelo fresco. Si estás acompañado, una persona puede llamar mientras la otra empieza a mojarlo y prepara la salida.
 
 Llama a su clínica o a urgencias veterinarias 24 horas. Di que sospechas un problema por calor, su edad, qué signos presenta y dónde estáis. Pregunta adónde llevarlo y cómo continuar el enfriamiento durante el trayecto.
 
-Ten a mano las llaves y el móvil. Si estás solo, usa el altavoz para seguir las indicaciones mientras lo atiendes. Busca una forma de traslado que te permita conducir con seguridad; el cuidado del perro durante la marcha corresponde a un acompañante.
+Ten a mano las llaves y el móvil. Si estás solo, usa el altavoz para seguir las indicaciones mientras lo atiendes. Empieza a enfriarlo antes de salir y, al volante, céntrate en conducir con el aire puesto; no intentes atenderlo durante la marcha.
 
 ### 2. Mójalo y dale aire
 
@@ -142,8 +144,8 @@ El estudio de [Hall y colaboradores de 2023 sobre métodos de enfriamiento](http
 
 Coloca un ventilador de forma estable o aprovecha una corriente de aire en el lugar fresco. Humedece el pelo hasta que el agua llegue a la piel. El gesto busca enfriar el cuerpo, así que evita quedarte solo en la superficie del manto.
 
-![Ilustración de una cuidadora mojando el pecho de un podenco senior junto a un ventilador antes de llevarlo al veterinario.](/images/blog/golpe-de-calor-perros-mayores/podenco-senior-enfriamiento-evaporativo-v1.webp)
-*Agua fresca y aire en movimiento mientras avisas a la clínica y preparas el coche.*
+![Ilustración de una cuidadora mojando el lomo y el pecho de un podenco senior; el ventilador está elevado en un banco seco, lejos del agua.](/images/blog/golpe-de-calor-perros-mayores/podenco-senior-enfriamiento-evaporativo-v2.webp)
+*Agua fresca y aire en movimiento; el ventilador y su cable quedan elevados, fuera de la zona mojada.*
 
 El [Colegio Oficial de Veterinarios de Madrid](https://www.colvema.org/noticia/26581) también aconseja un lugar fresco, toallas empapadas, corriente de aire y atención veterinaria inmediata. La coincidencia útil entre ambas recomendaciones es empezar a refrescarlo y buscar asistencia desde ese momento.
 
@@ -196,7 +198,7 @@ La revisión de Bruchim, Horowitz y Aroch destaca la importancia del enfriamient
 
 Llegar con tu perro así puede asustar mucho. Al equipo le ayuda saber qué ocurrió, qué signos viste primero y qué hiciste para enfriarlo. Puedes contarlo mientras empiezan a atenderlo, aunque algunos detalles todavía se te escapen.
 
-La revisión de [Bruchim, Horowitz y Aroch](https://pmc.ncbi.nlm.nih.gov/articles/PMC5800390/) describe el control de temperatura, el apoyo a la circulación mediante sueroterapia y la vigilancia de órganos con análisis. La exploración permite decidir qué medidas necesita cada paciente.
+Según [Hall y colaboradores, en 2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC7994647/), el tratamiento busca evitar que empeore: controlar pronto la temperatura, sueroterapia y apoyo a los órganos afectados. La revisión de Bruchim insiste en que el tratamiento y la vigilancia sean intensivos y prolongados.
 
 Cuenta también sus enfermedades conocidas y los tratamientos que recibe habitualmente. Si llevas informes en el móvil, déjalos accesibles. El veterinario reunirá esa información con la respiración, el nivel de consciencia, la temperatura y los resultados que vaya obteniendo.
 
@@ -236,6 +238,8 @@ El [anexo de umbrales del Plan Meteoalerta](https://www.aemet.es/documentos/es/e
 
 La [guía del Ministerio de Derechos Sociales para una ola de calor](https://www.dsca.gob.es/sites/default/files/publicaciones/Guia-ola-calor-animales.pdf) advierte de peligro en torno a 30 °C para perros de edad avanzada. A partir de 32 °C considera alto el riesgo para todos los perros.
 
+
+
 **Para tu perro mayor, prepara el día antes de que aparezca el amarillo.** Esas referencias del Ministerio orientan la prevención; la humedad, el esfuerzo y su salud también influyen. Los avisos de la AEMET son generales, no específicos para animales.
 
 ### Paseos y casa
@@ -246,8 +250,8 @@ Lleva agua y haz pausas en sitios frescos. El asfalto puede quemar las almohadil
 
 En casa, prepara la habitación más fresca, baja persianas y toldos frente al sol y procura circulación de aire. Deja que elija suelo fresco o su zona de descanso. Coloca el agua donde llegue con facilidad y comprueba que siga disponible.
 
-![Ilustración de un podenco senior tumbado en el suelo fresco de un salón con un cuenco de agua y un ventilador.](/images/blog/golpe-de-calor-perros-mayores/podenco-senior-zona-fresca-casa-v1.webp)
-*Persianas bajadas, suelo fresco y agua a mano antes de que llegue la ola de calor.*
+![Ilustración de un podenco senior descansando sobre baldosa en sombra, con agua y ventilador, junto a una persiana medio bajada y un visillo.](/images/blog/golpe-de-calor-perros-mayores/podenco-senior-zona-fresca-casa-v2.webp)
+*Persiana y visillo filtran la luz: suelo en sombra, agua a mano y una zona tranquila para descansar.*
 
 Comprueba cómo cambia la sombra durante el día, especialmente en terrazas y patios. Un rincón fresco por la mañana puede recibir sol después. Para un perro mayor, reserva dentro de casa un lugar cómodo al que pueda acceder cuando lo necesite.
 
@@ -257,7 +261,7 @@ Si varias personas lo cuidáis, acordad horarios y quién comprobará que está 
 
 Prepara el viaje al pueblo o a la playa con el coche ventilado y climatizado. Planifica paradas donde puedas atenderlo y evita depender de dejarlo dentro mientras haces compras. Si vais varios, organizad las gestiones para que permanezca acompañado fuera del vehículo.
 
-La [Ley 7/2023](https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a24), en su artículo 24.2 d), prohíbe dejar animales solos en vehículos cerrados expuestos a condiciones que pongan su vida en peligro. El [artículo 60.2](https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a60) exige aireación y temperatura adecuadas cuando permanezcan en vehículos estacionados.
+La [Ley 7/2023](https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a2-6), en su artículo 24.2 d), prohíbe dejar animales solos en vehículos cerrados expuestos a condiciones que pongan su vida en peligro. El [artículo 60.2](https://www.boe.es/buscar/act.php?id=BOE-A-2023-7936#a6-2) exige aireación y temperatura adecuadas cuando permanezcan en vehículos estacionados.
 
 En el estudio de [Hall y colaboradores de 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9144152/), los episodios relacionados con vehículos se asociaron con mayor probabilidad de cuadros graves que los debidos al esfuerzo. El grupo de vehículos era pequeño, de 35 perros, por lo que la estimación tiene incertidumbre.
 

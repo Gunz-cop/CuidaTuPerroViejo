@@ -57,6 +57,7 @@ def render(t):
     if inlist: out.append('</ul>')
     return '\n'.join(out)
 
+body=re.sub(r'<GolpeCalorRecursos\b[^>]*/>', '', body)
 body=re.sub(r'<FAQ items=\{\[.*?\]\} />',lambda m:'<section class="faq"><h2>Preguntas frecuentes</h2>'+''.join('<details><summary>'+html.escape(q)+'</summary><p>'+html.escape(a)+'</p></details>' for q,a in faq)+'</section>',body,flags=re.S)
 body=re.sub(r'<AlertBox type="(\w+)" title="([^"]+)">',r'<aside class="\1"><h3>\2</h3>',body).replace('</AlertBox>','</aside>')
 body=re.sub(r'<TablaApilable label="([^"]+)">',r'<div class="tabla-apilable" role="region" aria-label="\1">',body).replace('</TablaApilable>','</div>')
@@ -65,7 +66,7 @@ css+=(ROOT/'src/components/article/TablaApilable.astro').read_text().split('<sty
 doc='<!doctype html><html lang="es-ES"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+html.escape(fm['title'])+'</title><style>'+css+'</style><body><main><p class="preview-note">Vista de lectura aislada con imágenes integradas. Ilustraciones generadas con IA.</p><h1>'+html.escape(fm['title'])+'</h1>'+img(fm['heroImage'],fm['heroImageAlt'])+render(body)+'</main></body></html>'
 (HERE/'vista-previa.html').write_text(doc)
 # Versión Markdown legible: sin componentes del sitio ni expresiones JSX.
-md=editorial
+md=re.sub(r'<GolpeCalorRecursos\b[^>]*/>', '', editorial)
 md=re.sub(r'<FAQ items=\{\[.*?\]\} />','\n'.join('### '+q+'\n\n'+a+'\n' for q,a in faq),md,flags=re.S)
 md=re.sub(r'<AlertBox[^>]*title="([^"]+)"[^>]*>',r'**\1**',md).replace('</AlertBox>','')
 md=re.sub(r'</?TablaApilable[^>]*>','',md)
