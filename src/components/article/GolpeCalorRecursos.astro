@@ -4,11 +4,12 @@ interface Props {
 }
 const { variant } = Astro.props;
 const uid = `golpe-calor-${variant}-${crypto.randomUUID().slice(0, 8)}`;
+const dogSrc = '/images/blog/golpe-de-calor-perros-mayores/podenco-senior-perfil-transparente-v1-800.webp';
 const steps = [
-  { title: 'Sácalo del calor y llama', text: 'Sombra o la habitación más fresca de casa. Llama a su clínica o a urgencias 24 horas mientras empiezas a enfriarlo.' },
-  { title: 'Moja hasta la piel', text: 'Agua fresca del grifo, la ducha o una manguera suave, lejos de la cara. Que no se quede en la superficie del pelo. Nada de hielo.' },
-  { title: 'Dale aire en movimiento', text: 'Ventilador o corriente mientras sigue mojado: así se pierde el calor. Pregunta a la clínica cuándo parar.' },
-  { title: 'Llévalo a la clínica', text: 'Coche con el aire puesto. Si vais dos, uno conduce y el otro lo vigila. Aunque parezca mejor, que lo valoren.' },
+  { title: 'Sombra y llamada', text: 'Sombra o la habitación más fresca de casa. Llama a su clínica o a urgencias 24 horas mientras empiezas a enfriarlo.' },
+  { title: 'Agua hasta la piel', text: 'Agua fresca del grifo, la ducha o una manguera suave, lejos de la cara. Que no se quede en la superficie del pelo. Nada de hielo.' },
+  { title: 'Aire en movimiento', text: 'Ventilador o corriente mientras sigue mojado: así se pierde el calor. Pregunta a la clínica cuándo parar.' },
+  { title: 'Rumbo a la clínica', text: 'Coche con el aire puesto. Si vais dos, uno conduce y el otro lo vigila. Aunque parezca mejor, que lo valoren.' },
 ];
 const scaleMin = 26;
 const scaleMax = 40;
@@ -27,7 +28,7 @@ const zones = [
     <div class="gc-canvas">
       <svg viewBox="0 0 720 300" role="img" aria-labelledby={`${uid}-svg-title ${uid}-svg-desc`}>
         <title id={`${uid}-svg-title`}>Esquema de los primeros minutos ante un golpe de calor</title>
-        <desc id={`${uid}-svg-desc`}>Cuatro escenas: pasar del sol a la sombra y llamar por teléfono; agua que atraviesa el pelo hasta la piel; un ventilador que mueve aire sobre el pelo mojado mientras el agua se evapora; y un coche con el aire puesto camino de la clínica.</desc>
+        <desc id={`${uid}-svg-desc`}>Cuatro escenas: pasar del sol a la sombra y llamar por teléfono; agua que cae sobre el lomo de un podenco senior ilustrativo y, en una ampliación, atraviesa el pelo hasta la piel; un ventilador que mueve aire hacia el perro mojado mientras el agua se evapora; y un coche con el aire puesto camino de la clínica.</desc>
         <rect width="720" height="300" rx="16" fill="#edf2e8"/>
         <g class="gc-scene" data-scene="0">
           <g class="gc-sun"><circle cx="120" cy="92" r="34" fill="#f2b84b"/><path d="M120 38v-16M120 162v-16M66 92H50M190 92h-16M82 54l-11-11M158 130l11 11M82 130l-11 11M158 54l11-11" stroke="#d9952b" stroke-width="6" stroke-linecap="round"/></g>
@@ -48,28 +49,31 @@ const zones = [
           <text x="603" y="268" text-anchor="middle">Llama</text>
         </g>
         <g class="gc-scene" data-scene="1">
-          <g transform="translate(300 34)"><path d="M0 0h120v18H0z" fill="#5b6f66"/><path d="M14 18h92l-12 22H26z" fill="#7d9671"/><path d="M52 -26h16v26H52z" fill="#5b6f66"/></g>
-          <g class="gc-drops" fill="#3b82b8"><circle cx="330" cy="92" r="7"/><circle cx="360" cy="106" r="7"/><circle cx="390" cy="88" r="7"/><circle cx="345" cy="132" r="7"/><circle cx="378" cy="140" r="7"/><circle cx="406" cy="120" r="7"/></g>
-          <rect x="110" y="226" width="500" height="36" rx="6" fill="#e9b6ac"/>
-          <g class="gc-fur" stroke="#a46c3c" stroke-width="5" stroke-linecap="round"><path d="M130 226l14-48M170 226l16-50M210 226l12-46M250 226l16-50M290 226l12-48M330 226l16-50M370 226l12-46M410 226l16-50M450 226l12-48M490 226l16-50M530 226l12-46M570 226l14-48"/></g>
-          <g class="gc-wet" fill="#3b82b8" fill-opacity=".55"><ellipse cx="300" cy="226" rx="34" ry="7"/><ellipse cx="380" cy="226" rx="34" ry="7"/><ellipse cx="460" cy="226" rx="30" ry="6"/></g>
-          <path d="M640 160V214" stroke="#294b3d" stroke-width="5" stroke-linecap="round" marker-end={`url(#${uid}-arrow)`}/>
-          <text x="96" y="196" text-anchor="end">Pelo</text>
-          <text x="96" y="252" text-anchor="end">Piel</text>
-          <text x="640" y="146" text-anchor="middle">Hasta la piel</text>
+          <image href={dogSrc} x="360" y="86" width="330" height="206" preserveAspectRatio="xMidYMid meet"/>
+          <g transform="translate(470 28)"><path d="M0 0h90v14H0z" fill="#5b6f66"/><path d="M10 14h70l-9 18H19z" fill="#7d9671"/><path d="M39 -22h12v22H39z" fill="#5b6f66"/></g>
+          <g class="gc-drops" fill="#3b82b8"><circle cx="492" cy="74" r="6"/><circle cx="515" cy="86" r="6"/><circle cx="538" cy="70" r="6"/><circle cx="502" cy="104" r="6"/><circle cx="528" cy="112" r="6"/><circle cx="550" cy="96" r="6"/></g>
+          <path d="M264 150L478 156" stroke="#294b3d" stroke-width="3" stroke-dasharray="7 6"/>
+          <circle cx="160" cy="144" r="104" fill="#fffdf6"/>
+          <g clip-path={`url(#${uid}-inset)`}>
+            <rect x="50" y="178" width="220" height="80" fill="#e9b6ac"/>
+            <g stroke="#a46c3c" stroke-width="5" stroke-linecap="round"><path d="M74 178l10-44M104 178l12-46M134 178l10-44M164 178l12-46M194 178l10-44M224 178l12-46M244 178l10-40"/></g>
+            <g class="gc-wet" fill="#3b82b8" fill-opacity=".6"><ellipse cx="120" cy="178" rx="26" ry="6"/><ellipse cx="190" cy="178" rx="26" ry="6"/></g>
+          </g>
+          <circle cx="160" cy="144" r="104" fill="none" stroke="#294b3d" stroke-width="4"/>
+          <path d="M160 70V164" stroke="#294b3d" stroke-width="5" stroke-linecap="round" marker-end={`url(#${uid}-arrow)`}/>
+          <text x="160" y="284" text-anchor="middle">Hasta la piel</text>
         </g>
         <g class="gc-scene" data-scene="2">
-          <g transform="translate(110 150)">
-            <circle r="68" fill="none" stroke="#294b3d" stroke-width="6"/>
-            <g class="gc-blades" fill="#5b8a74"><path d="M0 0C-10-30-6-56 10-58C22-46 16-20 0 0Z"/><path d="M0 0C30-10 56-6 58 10C46 22 20 16 0 0Z"/><path d="M0 0C10 30 6 56-10 58C-22 46-16 20 0 0Z"/><path d="M0 0C-30 10-56 6-58-10C-46-22-20-16 0 0Z"/></g>
-            <circle r="10" fill="#294b3d"/>
-            <path d="M0 68V108M-34 112H34" stroke="#294b3d" stroke-width="6" stroke-linecap="round"/>
+          <image href={dogSrc} x="360" y="86" width="330" height="206" preserveAspectRatio="xMidYMid meet"/>
+          <g transform="translate(100 150)">
+            <circle r="62" fill="#fffdf6" stroke="#294b3d" stroke-width="6"/>
+            <g class="gc-blades" fill="#5b8a74"><path d="M0 0C-9-27-5-50 9-52C20-41 14-18 0 0Z"/><path d="M0 0C27-9 50-5 52 9C41 20 18 14 0 0Z"/><path d="M0 0C9 27 5 50-9 52C-20 41-14 18 0 0Z"/><path d="M0 0C-27 9-50 5-52-9C-41-20-18-14 0 0Z"/></g>
+            <circle r="9" fill="#294b3d"/>
+            <path d="M0 62V100M-32 104H32" stroke="#294b3d" stroke-width="6" stroke-linecap="round"/>
           </g>
-          <g class="gc-air" fill="none" stroke="#5b8a74" stroke-width="5" stroke-linecap="round" stroke-dasharray="24 18"><path d="M200 110C300 96 380 128 600 112"/><path d="M200 150C300 140 400 166 600 150"/><path d="M200 190C300 182 400 204 600 190"/></g>
-          <rect x="230" y="236" width="400" height="26" rx="6" fill="#e9b6ac"/>
-          <g stroke="#a46c3c" stroke-width="5" stroke-linecap="round"><path d="M250 236l10-30M290 236l12-32M330 236l10-30M370 236l12-32M410 236l10-30M450 236l12-32M490 236l10-30M530 236l12-32M570 236l10-30M610 236l10-30"/></g>
-          <g class="gc-vapor" fill="none" stroke="#7aa6c4" stroke-width="4" stroke-linecap="round"><path d="M300 200q-10-14 0-28t0-28"/><path d="M420 200q-10-14 0-28t0-28"/><path d="M540 200q-10-14 0-28t0-28"/></g>
-          <text x="420" y="66" text-anchor="middle">Aire sobre el pelo mojado</text>
+          <g class="gc-air" fill="none" stroke="#5b8a74" stroke-width="5" stroke-linecap="round" stroke-dasharray="24 18"><path d="M178 130C260 120 330 146 450 150"/><path d="M178 168C260 160 340 184 450 186"/><path d="M178 206C260 200 340 218 440 218"/></g>
+          <g class="gc-vapor" fill="none" stroke="#5f93b8" stroke-width="4" stroke-linecap="round"><path d="M480 140q-10-14 0-28t0-28"/><path d="M535 136q-10-14 0-28t0-28"/><path d="M590 140q-10-14 0-28t0-28"/></g>
+          <text x="300" y="56" text-anchor="middle">Aire sobre el pelo mojado</text>
         </g>
         <g class="gc-scene" data-scene="3">
           <path d="M30 238H690" stroke="#5b6f66" stroke-width="8"/>
@@ -91,7 +95,7 @@ const zones = [
           <text x="590" y="70" text-anchor="middle">Clínica</text>
           <text x="260" y="128" text-anchor="middle">Aire puesto</text>
         </g>
-        <defs><marker id={`${uid}-arrow`} viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#294b3d"/></marker></defs>
+        <defs><clipPath id={`${uid}-inset`}><circle cx="160" cy="144" r="102"/></clipPath><marker id={`${uid}-arrow`} viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#294b3d"/></marker></defs>
       </svg>
     </div>
     <div class="gc-controls" hidden>
@@ -200,7 +204,7 @@ const zones = [
       root.style.setProperty('--gc-aviso', pct(threshold));
       root.style.setProperty('--gc-gap', `calc(${pct(threshold)} - ${pct(30)})`);
       root.querySelector<HTMLElement>('.gc-mark-aviso span')!.textContent = String(threshold);
-      root.querySelector<HTMLElement>('.gc-readout')!.textContent = `${button.dataset.name}: el aviso amarillo empieza a ${threshold} °C, ${threshold - 30} grados por encima de la referencia del Ministerio para perros de edad avanzada.`;
+      root.querySelector<HTMLElement>('.gc-readout')!.textContent = `${button.dataset.name}: el aviso amarillo empieza a ${threshold} °C. La guía del Ministerio ya habla de peligro para perros de edad avanzada en torno a 30 °C.`;
     };
     buttons.forEach(button => button.addEventListener('click', () => select(button), { signal: events.signal }));
     select(buttons.find(b => b.getAttribute('aria-pressed') === 'true') ?? buttons[0]);
@@ -259,7 +263,7 @@ const zones = [
   [data-playing="true"] [data-scene="3"] .gc-ac { animation:gc-ring 1.4s ease-in-out infinite; }
   @keyframes gc-ring { 0%,100% { opacity:.25; } 50% { opacity:1; } }
   @keyframes gc-sun { from { opacity:1; } to { opacity:.35; } }
-  @keyframes gc-drops { from { transform:translateY(-30px); opacity:0; } 20% { opacity:1; } to { transform:translateY(120px); opacity:.2; } }
+  @keyframes gc-drops { from { transform:translateY(-20px); opacity:0; } 20% { opacity:1; } to { transform:translateY(58px); opacity:.15; } }
   @keyframes gc-spin { to { transform:rotate(360deg); } }
   @keyframes gc-flow { to { stroke-dashoffset:-84; } }
   @keyframes gc-vapor { 0% { transform:translateY(0); opacity:0; } 40% { opacity:.9; } 100% { transform:translateY(-40px); opacity:0; } }

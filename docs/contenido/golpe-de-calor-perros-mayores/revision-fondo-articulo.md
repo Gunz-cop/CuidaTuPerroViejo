@@ -100,3 +100,14 @@ Comprobado en navegador (Playwright, `verificacion-navegador.json`, capturas en 
 - `npx astro build` correcto, incluida la proyección Markdown; `npx astro check` con 0 errores y 0 advertencias. Comprobación local, sin publicar.
 
 Fuentes que sostienen los recursos: Hall et al. 2023 y COLVEMA (secuencia), guía del Ministerio de 2024 y anexo de umbrales Meteoalerta de la AEMET (escala). No añaden cifras nuevas al artículo.
+
+## Ajustes tras las imágenes v2 (2026-10-24)
+
+Sobre `aa96bbb` (rama `codex/golpe-calor-imagenes-revision`), a petición del propietario:
+
+- **Imágenes v2 revisadas:** en la escena de enfriamiento, el ventilador está en el banco seco y el cable sube por la pared. En la de casa, la persiana está bajada, con luz tamizada y sin sol directo. Ambas resuelven las incoherencias señaladas.
+- **Recorte transparente integrado** en los pasos 2 y 3 de la secuencia (`podenco-senior-perfil-transparente-v1-800.webp`, canal alfa real). En el paso 2, el agua cae sobre el lomo y una ampliación muestra que llega a la piel. En el paso 3, el aire del ventilador va hacia el perro mojado y sube vapor. El perro es una imagen estática: solo se animan el agua, el aire y el ventilador.
+- **Escala de umbrales:** se retira la diferencia calculada en grados («X grados por encima…»). Ahora solo da las dos cifras con fuente: el umbral de la zona (AEMET) y los ~30 °C de la guía del Ministerio.
+- **Títulos de la secuencia acortados**, para que no repitan los H3 del artículo: «Sombra y llamada», «Agua hasta la piel», «Aire en movimiento» y «Rumbo a la clínica».
+- **Comprobado:** 390 y 1366 px, claro y oscuro, movimiento reducido y sin JavaScript. Alturas en móvil: secuencia 498–518 px y escala 790 px. Sin desbordamiento; objetivos de 44 px; pausa efectiva. `astro build` correcto y `astro check` con 0 errores.
+- **Observación:** en el recorte, la edad del podenco se lee menos que en las escenas (lomo y musculatura de adulto). Es aceptable para un esquema; si se regenera, aplicar la comprobación «la edad se ve sin buscarla».
