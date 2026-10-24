@@ -9,6 +9,8 @@ El estándar de referencia es la revisión visual aprobada por el usuario para e
 
 ## 1. Define el objetivo y el sujeto
 
+Lee y aplica la [dirección visual editorial](../references/direccion-visual-editorial.md), fijada por el propietario el 2026-10-24. Cada escena requiere una ficha de ambiente, materiales, luz, encuadre, gesto y coherencia espacial. El acabado detallado de casa/enfriamiento de golpe de calor es referencia para los próximos artículos; ni su país ni su raza se generalizan. La portada v1 de ese artículo fue rechazada por direcciones de marcha contradictorias: una imagen bonita con acción incoherente debe corregirse antes de entregarse.
+
 - Lee el brief y los párrafos junto a los que aparecerá cada recurso. Define qué debe entender el lector, qué cambia durante la secuencia y qué acción puede realizar. Respeta el número de imágenes, infografías y animaciones acordado; no añadas recursos solo para llenar una cuota.
 - Si el caso publicado identifica un perro y el brief requiere conservar su raza, respétala. Si no identifica raza, sigue la elección visual del usuario o el sujeto ilustrativo acordado. **El dogo argentino pertenece al ejemplo, no es la raza predeterminada de todo el sitio.**
 - Fija una ficha visual: raza, tamaño, edad ilustrativa, pelaje, marcas, orejas, rasgos faciales y proporciones. Mantén esa identidad en hero, escenas de cuerpo y animaciones. Si el usuario aporta una referencia, úsala.
@@ -77,6 +79,9 @@ Para el recorte, añade fondo transparente, cuerpo completo, orientación y marg
 - Conserva los originales generados si están disponibles; no borres material de referencia del usuario. En el informe, registra rutas reales y qué recurso se usó como referencia.
 
 ## 7. Verificación antes de entregar
+
+- [ ] Ficha visual y prompt completos según la dirección visual compartida; escenario propio del tema y público, sin vivienda estadounidense por defecto.
+- [ ] Dirección de marcha y miradas coherentes; manos, herramientas y correa con contactos y recorridos posibles. El gesto se entiende a tamaño móvil sin explicación adicional.
 
 - [ ] Inspección visual de la referencia y todas las escenas: mismo perro, edad senior evidente, anatomía y apoyos correctos, transparencia limpia.
 - [ ] Capturas de las animaciones en escritorio y móvil, en modo claro y oscuro. Muestra al usuario una vista concreta del resultado.

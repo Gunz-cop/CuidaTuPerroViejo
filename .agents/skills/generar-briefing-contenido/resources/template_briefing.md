@@ -220,6 +220,20 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 
 ## 8. GUÍA VISUAL — 3 PROMPTS DE IMAGEN
 
+Aplicar [dirección visual editorial](../../references/direccion-visual-editorial.md). Completar para **cada imagen**, antes de escribir el prompt:
+
+| Decisión | Contenido específico de esta escena |
+|---|---|
+| Función y sección | {{Qué enseña y dónde se inserta}} |
+| Público, contexto y entorno | {{Espacio plausible; sin país/vivienda estadounidense por defecto}} |
+| Materiales y detalles visibles | {{3–5 detalles pertinentes; sin acumulación decorativa}} |
+| Sujeto y referencia | {{Identidad senior y archivo de referencia que se inspeccionará}} |
+| Acción y relaciones espaciales | {{Posición, orientación, dirección de marcha, manos, contacto de herramientas y correa}} |
+| Cámara, luz y texturas | {{Plano, márgenes, fuente/dirección de luz, sombras y profundidad de campo apropiada}} |
+| Exclusiones y aceptación | {{Errores concretos que se rechazan y comprobaciones a tamaño grande/móvil}} |
+
+Los tres prompts deben poder generar escenas detalladas y naturales con la calidad de casa/enfriamiento de golpe de calor. No trasladar automáticamente su país, raza, decoración o luz a otros temas. Si la persona pasea con el perro, definir una dirección de avance compartida y físicamente coherente. Las palabras «hermosa», «cinematográfica» o «no genérica» no sustituyen esta ficha.
+
 > [!IMPORTANT]
 > **Sujeto/raza fija en los 3 prompts:** `{{RAZA_Y_RASGOS_DEL_SUJETO_VISUAL; DECLARAR_SI_ES_ILUSTRATIVO}}` (ej. "Beagle senior, pelaje tricolor, complexión robusta") debe aparecer nombrado explícitamente en el prompt de **cada una** de las 3 imágenes — nunca sustituido por "a dog" o "a senior dog" genérico en ninguna. Si la historia tiene más de un perro, indica en cada prompt cuál protagoniza esa imagen específica.
 

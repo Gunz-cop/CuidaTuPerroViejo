@@ -1,5 +1,7 @@
 # BRIEF DE CONTENIDOS: Golpe de calor en perros mayores: señales de alarma y plan para las olas de calor en España
 
+> **Estado de redacción (2026-10-24):** artículo e imágenes creados a partir del APTO R2. Archivo: `src/content/blog/golpe-de-calor-perros-mayores.mdx`. Validación editorial propia y técnica local; sin auditoría independiente del artículo ni publicación. El estado R2 pendiente que figura debajo pertenece al historial de la versión auditada.
+
 **Sitio:** cuidatuperroviejo.com | **Pilar:** Salud de Perros Mayores | **Tipo:** Artículo spoke Astro/MDX | **Prioridad:** P1-01 (serie España, inventario)
 
 **Estado:** versión corregida tras la auditoría R1 (NO APTO, `docs/contenido/golpe-de-calor-perros-mayores/auditoria-brief-r1.md`, SHA-256 de la versión auditada `69c2ea4c…aeb3`). Correcciones hechas por la sesión autora con autorización expresa del propietario (2026-10-24): el autor corrige, la auditoría sigue siendo independiente. Pendiente de ronda 2 de 3. Redacción bloqueada hasta APTO. No fusionar ni desplegar.
@@ -34,7 +36,7 @@ seoTitle: "Golpe de calor en perros mayores: qué hacer en España"
 metaDescription: "Cómo reconocer un golpe de calor en tu perro mayor, qué hacer en los primeros minutos y cómo prepararlo para las olas de calor y los avisos de la AEMET."
 pilar: "salud-perros-mayores"
 keywordPrincipal: "golpe de calor en perros mayores"
-heroImage: "/images/blog/golpe-de-calor-perros-mayores/podenco-senior-paseo-amanecer-v1.webp"
+heroImage: "/images/blog/golpe-de-calor-perros-mayores/podenco-senior-paseo-amanecer-v2.webp"
 heroImageAlt: "Ilustración de un podenco senior de hocico canoso paseando con su cuidadora por una calle en sombra al amanecer"
 datePublished: "2026-10-24"
 ---
@@ -340,12 +342,24 @@ Validar con `npm run build` y [docs/seo/enlazado-interno.md](../docs/seo/enlazad
 
 ## 8. GUÍA VISUAL — 3 PROMPTS DE IMAGEN
 
+### Adenda de dirección visual — petición del propietario, 24 de octubre de 2026
+
+Aplicar la [dirección visual compartida](../.agents/skills/references/direccion-visual-editorial.md). El propietario destacó el acabado detallado de las escenas de casa y enfriamiento y pidió trasladar esa calidad a los próximos artículos. La portada v1 se rechazó: perro y cuidadora parecían caminar en sentidos opuestos. Sustituirla por v2 con avance compartido. Esta adenda afecta solo a dirección visual y archivos; mantiene las fuentes y el contrato científico aprobados en R2.
+
+| Escena | Dirección visual concreta | Comprobación de aceptación |
+|---|---|---|
+| Paseo al amanecer | Calle encalada con rejas, macetas de terracota y adoquines; luz baja al fondo y sujetos en sombra. Cámara a la altura del perro; perro y cuidadora caminan hacia la cámara, lado a lado, frente y pasos de ambos visibles, correa floja conectada de mano a collar. | Ambos cuerpos y pies avanzan en la misma dirección; anatomía, apoyos y correa coherentes; rostro senior reconocible; escena legible en móvil. |
+| Descanso en casa | Salón de piso español vivido, baldosa clara, persiana de lamas, cuenco cerámico y ventilador de pie; luz tamizada y perro en sombra. Texturas de pelo, cerámica y suelo, sin fondo vacío ni salón de catálogo. | Se entienden descanso, acceso al agua y ventilación; perro senior con postura natural, sin añadir patología; objetos a escala y sin saturar el encuadre. |
+| Enfriamiento | Patio en sombra con azulejos; cuidadora arrodillada, agua visible llegando al pecho y pelaje mojado; ventilador a distancia segura, móvil y llaves en repisa seca. Plano que muestre manos, patas y contacto del agua. | El gesto enseña agua y aire, con apoyos creíbles; sin agua en cara, inmersión, hielo ni toallas envolventes; elementos eléctricos fuera del agua. |
+
+En futuros temas se conserva este nivel de intención y detalle, adaptando entorno, materiales, luz y gesto al público y a lo explicado. España y el podenco no se convierten en plantilla para todos los artículos. Una imagen vistosa con acciones contradictorias debe corregirse antes de entregarse.
+
 > **Sujeto fijo (ilustrativo, no es un paciente):** **podenco andaluz mediano, macho de unos 12–13 años, pelo corto canela con blanco en el pecho y el hocico, hocico y cejas canosos, orejas grandes erguidas, constitución delgada.** Nombrado en los tres prompts. Es un perro muy común en España. La firma global del sitio ya indica que las ilustraciones están generadas con IA.
-> Este encargo no incluye producción de imágenes: se planifican, no se dan por hechas.
+> Alcance actualizado por el propietario: producir e integrar las tres imágenes. Las escenas de casa y enfriamiento ya están creadas; la portada se sustituye por v2 tras la observación sobre la marcha. Conservar los originales y registrar las comprobaciones de cada versión.
 
 ### Imagen 1 — Hero, preventiva (inserción: frontmatter `heroImage`)
-- **Archivo:** `podenco-senior-paseo-amanecer-v1.webp`
-- **Prompt:** plano medio-general a la altura de los ojos del perro, calle estrecha de un pueblo andaluz con fachadas encaladas, rejas y macetas, en sombra al amanecer; una cuidadora de unos 40 años, de espaldas, con la correa floja; el **podenco andaluz senior descrito (canela y blanco, hocico canoso, 12–13 años)** camina tranquilo con la lengua apenas fuera; luz natural cálida y baja; profundidad de campo estrecha, adoquines desenfocados; textura del pelo corto; estilo fotoperiodístico cinematográfico, sin pose de banco de imágenes.
+- **Archivo:** `podenco-senior-paseo-amanecer-v2.webp` (v1 conservada como original rechazado por incoherencia de marcha).
+- **Prompt:** plano medio-general a la altura de los ojos del perro; calle estrecha de un pueblo andaluz con fachadas encaladas, rejas de hierro, macetas de terracota y adoquines con textura, en sombra al amanecer, con luz cálida baja al fondo. El **podenco andaluz senior descrito (canela y blanco, hocico y cejas canosos, pecho blanco, orejas erguidas, 12–13 años)** y una cuidadora de unos 40 años con pelo castaño recogido, camisa verde salvia y vaqueros **caminan juntos hacia la cámara**. Se ven el frente de la persona y la orientación hacia delante de torso, caderas, rodillas y pies; el perro avanza en la misma dirección, a su lado. Ella lleva la correa en la mano más próxima al perro; curva floja y continua de mano a collar, sin tirar hacia atrás ni cruzar extremidades. Cuerpos completos, patas y pies apoyados de forma creíble, expresión senior natural, lengua apenas fuera, pelaje corto con textura. Composición documental cuidada, profundidad de campo que permita leer la acción y el entorno. Sin pose publicitaria, país genérico, marcha opuesta ni giro corporal ambiguo. Conservar la identidad del perro de referencia y la calidad de luz y materiales de las escenas de casa y enfriamiento.
 - **Alt:** Ilustración de un podenco senior de hocico canoso paseando con su cuidadora por una calle en sombra al amanecer.
 - **Pie:** A primera hora: la guía del Ministerio aconseja dejar ahí los paseos más largos.
 

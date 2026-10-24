@@ -90,6 +90,8 @@ Para un **artículo completo**, evalúa y produce los apoyos visuales que ayuden
 
 ### Recursos visuales y continuidad del sujeto
 
+Aplica la [dirección visual editorial compartida](../references/direccion-visual-editorial.md) incluso cuando un brief anterior solo tenga prompts genéricos. Completa la ficha visual como adenda sin alterar su contrato científico. Mantén escenas detalladas, propias del público y tema, y verifica orientación, marcha, manos y correa en el resultado real antes de entregarlo.
+
 Ejecuta el plan de Fase 1.5 y consulta [experiencias-visuales.md](./references/experiencias-visuales.md) antes de darlo por terminado:
 
 1. Fija un sujeto ilustrativo coherente con el brief: mismo perro, edad senior visible, anatomía y apoyos correctos, sin inventar patología. Deriva hero, escenas y recorte de una referencia inspeccionada. Respeta el estilo elegido; una imagen IA no se presenta como paciente real.

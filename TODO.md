@@ -6,6 +6,8 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 ## Contenido
 
+- [x] **Fijar el nivel de detalle y belleza de las imágenes de golpe de calor como criterio para próximos artículos.** Dirección visual compartida, skills de brief/redacción/producción y plantilla actualizadas; portada corregida para que perro y cuidadora avancen juntos. Preferencia registrada el 2026-10-24; entrega en la rama de revisión `codex/articulo-golpe-calor-imagenes`, sin publicación. Referencia: `.agents/skills/references/direccion-visual-editorial.md`.
+
 - [ ] **Alinear la firma automática y el parser de métricas de las skills editoriales con el sitio.** La skill `redactar-articulo-blog` pide una firma manual que duplicaría `ArticleByline`; el script no reconoce el rango/tabla del brief y suma bibliografía al cierre. Abordar en otra sesión, conservando las exclusiones y desacuerdos documentados, sin adaptar el contrato para aprobarlo. Hallazgo de la [auditoría R3 de mal aliento](docs/contenido/mal-aliento-perros-viejos/auditoria-articulo-r3.md), PR #145 (anotado: 2026-10-22).
 
 - [x] **Alinear el tono de todos los artículos con la [guía de voz y tono](.agents/skills/references/guia-voz-tono.md).** Prompt listo en [docs/contenido/prompt-revision-tono.md](docs/contenido/prompt-revision-tono.md). Prioridad por clics: comida casera → incontinencia urinaria → úlceras → resto. (Anotado: 2026-10-21)
