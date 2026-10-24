@@ -9,7 +9,7 @@ El propietario destacó la belleza, el detalle y la ambientación de las escenas
 Referencias visuales concretas:
 
 - [Casa fresca](../../../public/images/blog/golpe-de-calor-perros-mayores/podenco-senior-zona-fresca-casa-v1.webp): baldosa, persiana, cuenco cerámico, mobiliario y luz que construyen una vivienda reconocible; el perro sigue siendo protagonista.
-- [Enfriamiento](../../../public/images/blog/golpe-de-calor-perros-mayores/podenco-senior-enfriamiento-evaporativo-v1.webp): gesto comprensible, pelaje mojado, agua visible, patio con materiales concretos y objetos que explican la preparación del traslado.
+- [Enfriamiento](../../../public/images/blog/golpe-de-calor-perros-mayores/podenco-senior-enfriamiento-evaporativo-v1.webp): gesto comprensible, pelaje mojado, agua visible, patio con materiales concretos y objetos que explican la preparación del traslado. Contraejemplo en un detalle: el ventilador enchufado sobre el suelo mojado; no copiarlo (pendiente de sustituir por v2).
 - [Portada v1 rechazada](../../../docs/contenido/golpe-de-calor-perros-mayores/originales/podenco-senior-paseo-amanecer-v1.png): conservar como contraejemplo de dirección de marcha incoherente; no usarla como referencia compositiva aprobada.
 
 Se adopta el cuidado de la escena, no el podenco, la vivienda española ni el color cálido como valores universales. En la serie España, ambientar para ese público; en otros artículos, seguir la audiencia y el contexto documentados. Evitar casas suburbanas estadounidenses por defecto. Si la ubicación no está definida, elegir un entorno doméstico plausible y describirlo, sin atribuirle un país o una ciudad reales.
@@ -52,6 +52,8 @@ Ilustración generada; no representa un paciente ni acredita un resultado clíni
 - El entorno tiene detalles específicos y materiales creíbles, compatibles con el público y la escena, sin convertirse en una escenografía turística o de catálogo.
 - Luz, sombras, perspectiva y escala concuerdan; el gesto se lee también en móvil.
 - La imagen respeta los límites de seguridad y no escenifica una recuperación o un paciente inventados.
+Las tres comprobaciones siguientes se añadieron en la revisión de golpe de calor del 2026-10-24 (no son una preferencia expresa del propietario):
+
 - **La escena es físicamente segura:** nada eléctrico enchufado sobre suelo mojado o junto a agua derramada, ningún objeto que el artículo desaconseja (hielo, toallas envolventes, correa tensa). Una escena bonita que enseña un riesgo contradice el texto.
 - **Imagen, pie y alt dicen lo mismo:** si el pie habla de persianas bajadas, la persiana está bajada; si el alt dice «moja el pecho», el agua cae en el pecho. Corregir la imagen o, si la diferencia no importa para el mensaje, el pie y el alt.
 - **La edad se ve sin buscarla:** además del hocico canoso, cejas y párpados, ojos algo hundidos, línea del lomo y masa muscular de un perro mayor. Si a tamaño móvil parece un adulto joven, regenerar.

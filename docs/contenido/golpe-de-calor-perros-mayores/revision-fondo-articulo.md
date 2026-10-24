@@ -22,7 +22,7 @@ Había **un fallo de fuente** (H1) y varios detalles menores. Corregí todos en 
 | H2 | Menor | Los anclajes del BOE `#a24` y `#a60` no existen en la página consolidada: el lector llegaba al principio de la ley. Los anclajes reales son `#a2-6` (art. 24) y `#a6-2` (art. 60). | **Corregido**. |
 | H3 | Menor | «Si estás solo… el cuidado del perro durante la marcha corresponde a un acompañante» se contradecía: si vas solo, no hay acompañante. | **Corregido**: enfriar antes de salir y, al volante, conducir con el aire puesto, sin atenderlo en marcha. |
 | H4 | Menor | Alt de la escena de enfriamiento: decía «mojando el pecho», pero la imagen muestra agua vertida sobre el lomo que cae por el pecho. | **Corregido** en el alt. |
-| H5 | Menor | Pie de la escena de casa: decía «Persianas bajadas», pero en la imagen la persiana está subida y entra sol directo al suelo. | **Corregido el pie**; recomendado regenerar la imagen (prompt abajo). |
+| H5 | Menor | Pie de la escena de casa: decía «Persianas bajadas», pero en la imagen entra sol directo al suelo por la persiana medio bajada. | **Corregido el pie**; recomendado regenerar la imagen (prompt abajo). |
 | H6 | Observación | El recuento de olas de 2025 aparece en la Introducción y en H2-5. Es útil en ambos sitios y no se repite la cifra completa. | Sin cambio. |
 
 ## Imágenes
@@ -33,7 +33,7 @@ Las tres escenas consiguen lo que pedías: ambientación española creíble (cal
 |---|---|---|
 | Portada v2 | Muy buena. Acción coherente y escena reconocible. | Opcional: reforzar la edad del perro (cejas y párpados canosos, lomo algo más hundido). A tamaño móvil puede leerse como adulto. |
 | Enfriamiento | Muy buena: gesto claro, agua visible y teléfono y llaves preparados. | **Regenerar**: el ventilador eléctrico está en el suelo mojado, con el agua extendiéndose hacia él y el cable a la vista. Contradice el propio criterio de la adenda («elementos eléctricos fuera del agua») y enseña un riesgo real. |
-| Casa fresca | Muy buena: vivienda reconocible y perro protagonista. | **Regenerar o aceptar el pie corregido**: la persiana está subida y entra sol directo. Para el mensaje del artículo, conviene la persiana medio bajada con luz en franjas. |
+| Casa fresca | Muy buena: vivienda reconocible y perro protagonista. | **Regenerar o aceptar el pie corregido**: aunque la persiana está medio bajada, entran rectángulos de sol directo sobre el suelo. Para el mensaje del artículo, conviene luz tamizada en franjas finas. |
 
 ### Prompts para ChatGPT
 
@@ -69,6 +69,10 @@ Pelo seco, luz neutra suave sin sombra proyectada, bordes limpios. Edad visible 
 Formato horizontal 1600×1000 con margen alrededor del perro.
 ```
 
+## Origen del fallo H1
+
+La atribución errónea nació en el brief aprobado, que asignaba a S3 (Bruchim) el apartado «Qué hará el veterinario». El brief no se reabre por esto; queda registrado aquí para futuras actualizaciones.
+
 ## Corrección del criterio visual compartido
 
 `direccion-visual-editorial.md` está muy bien planteado: obliga a decidir escena, materiales, gesto y geometría antes de escribir el prompt, y adopta el cuidado de la escena sin convertir España ni el podenco en plantilla. Añadí tres comprobaciones a «Revisión de la imagen generada», que salen de esta revisión:
@@ -83,7 +87,7 @@ El artículo tenía dos tablas apilables y tres imágenes, pero ninguna animaci�
 
 | Recurso | Sección | Qué enseña | Altura en móvil (390 px) | Altura en escritorio (1366 px) |
 |---|---|---|---|---|
-| `primeros-minutos` | Al empezar «Qué hacer en los primeros minutos» | Secuencia de 4 pasos: sombra y llamada; agua hasta la piel (el agua atraviesa el pelo); aire en movimiento sobre el pelo mojado (ventilador girando, vapor); traslado con el aire puesto hasta la clínica | 498 px | 635 px |
+| `primeros-minutos` | Al empezar «Qué hacer en los primeros minutos» | Secuencia de 4 pasos: sombra y llamada; agua hasta la piel (el agua atraviesa el pelo); aire en movimiento sobre el pelo mojado (ventilador girando, vapor); traslado con el aire puesto hasta la clínica | 498–518 px según el paso | 635 px |
 | `umbrales` | «No esperes al aviso amarillo» | Escala de temperatura del aire con los 30 y 32 °C de la guía del Ministerio y el aviso amarillo de la AEMET; tres zonas de ejemplo (34, 36 y 38 °C) que el lector elige, y la distancia en grados respecto a la referencia del Ministerio | 790 px | 646 px |
 
 Comprobado en navegador (Playwright, `verificacion-navegador.json`, capturas en `recursos-animados/`):
