@@ -32,7 +32,7 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 ## Mejoras del sitio
 
-- [ ] **API de valoraciones caída:** `GET /api/feedback?slug=…` devuelve 500 «Error interno del servidor» en producción para todos los artículos (comprobado el 2026-10-24 con golpe de calor, mal aliento y comida casera). El widget de valoración no carga. Revisar el Worker y su base de datos. (Anotado: 2026-10-24)
+- [ ] **API de valoraciones caída (menor, lo arregla el dueño en otra sesión):** `GET /api/feedback?slug=…` devuelve 500 «Error interno del servidor» en producción para todos los artículos; el dueño lo vio fallar desde hace uno o dos días. No tumba el sitio y hoy no se usa como métrica: los votos «útil / no útil» se guardan como contadores en D1 (`feedback_counts`, `src/pages/api/feedback.ts`), pero solo los muestra el propio widget y no hay panel que los lea. Primera pista: comprobar que la tabla existe en la D1 de producción y revisar el log del Worker. (Anotado: 2026-10-24)
 - [ ] **Botón flotante de opiniones:** a 390 px tapa la esquina inferior derecha de tarjetas y recursos (visto en golpe de calor, pasa en todo el sitio). Valorar desplazarlo o reducirlo en móvil. (Anotado: 2026-10-24)
 
 ## Limpieza del repositorio
