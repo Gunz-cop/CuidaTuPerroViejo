@@ -85,7 +85,7 @@ Registro de razas usadas (actualizar al cerrar cada brief):
 | Feromonas (brief) | Teckel |
 | Depresión (brief) | Galgo español |
 | IPE (brief) | Setter gordon |
-| Leishmaniosis (brief, 2026-10-24) | Mestizo de tipo pastor-mastín, leonado con máscara negra |
+| Leishmaniosis (brief, 2026-10-24) | Mestizo de tipo pastor-mastín, atigrado oscuro |
 
 ## Revisión de la imagen generada
 
