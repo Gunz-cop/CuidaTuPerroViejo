@@ -15,7 +15,7 @@ Esta es una guía sin caso clínico, basada en las guías de la AEMPS y el MAPA 
 
 > **Si tu perro ha dado positivo**
 >
-> Empieza por el apartado de pruebas. Pregunta si hay infección sin enfermedad o si existen alteraciones compatibles, especialmente en el riñón, y lleva los resultados anteriores que tengas.
+> Empieza por el apartado de pruebas. La exploración, la serología y los análisis de sangre y orina permiten distinguir infección sin enfermedad de un cuadro clínico, y valorar especialmente el riñón.
 
 
 Encontrarás qué observar, qué aporta cada prueba y cómo organizar la protección frente a las picaduras. Para situar estos cuidados dentro de su salud general, puedes consultar la guía de [Salud de perros mayores](/salud-perros-mayores).
@@ -36,27 +36,27 @@ También es una zoonosis, una infección que puede afectar a personas. La vía h
 
 Hay transmisión documentada fuera de la imagen habitual de playa y verano. El estudio de **Alten y colaboradores, publicado en 2016**, incluyó Fuenlabrada, en Madrid, entre sus puntos de observación de flebotomos en países mediterráneos.
 
-Ese foco madrileño tenía particularidades, con liebres y conejos como reservorios relevantes. Sirve para mostrar que existe transmisión en ese entorno; sus capturas de insectos no describen cuántos perros de Madrid están infectados.
+Fuenlabrada era un foco atípico: un brote humano con baja prevalencia canina y liebres y conejos como reservorios relevantes. Las capturas de flebotomos documentan la presencia del vector en aquel entorno; no son un recuento de perros infectados en Madrid.
 
 En el noroeste, **Olmeda y colaboradores** estudiaron veinte años de pruebas de una clínica de O Barco de Valdeorras, en Ourense. Su [trabajo de 2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC11218365/) describe Valdeorras como un área de alto riesgo.
 
-Para tu perro, lo útil es comentar dónde vive, dónde ha vivido y adónde viaja. Si pasáis unas semanas fuera, incluye ese destino al preguntar por prevención. Los datos de una localidad ayudan a plantear preguntas, pero dejan pendiente valorar vuestra exposición concreta.
+La exposición depende también del lugar donde vive o viaja tu perro. ESCCAP incluye los desplazamientos a zonas endémicas entre las situaciones que aumentan el riesgo. Si pasáis unas semanas fuera, la prevención debe contemplar tanto vuestra vivienda habitual como el destino.
 
 ### La edad cambia lo que conviene vigilar
 
 La serie de **Miranda y colaboradores de 2008**, del Hospital Clínic Veterinari de Barcelona, encontró dos picos de casos clínicos: uno en perros jóvenes y otro desde los siete años. Ese segundo pico merece atención en el seguimiento senior.
 
-El trabajo de **Cabré y colaboradores de 2021**, realizado en tres centros de Cataluña, también recoge el patrón a partir de los siete u ocho años. Sus autores plantean cambios inmunitarios y enfermedades concomitantes como posibles explicaciones, todavía como hipótesis.
+El trabajo de **Cabré y colaboradores de 2021**, realizado en tres centros de Cataluña, recoge un segundo pico tras los ocho años. Sus autores plantean cambios inmunitarios y enfermedades concomitantes como posibles explicaciones, todavía como hipótesis.
 
 En esa serie catalana, los perros mayores presentaban más alteraciones generales y renales que los jóvenes, mientras que los signos de piel eran menos frecuentes. Incluía solo 25 perros mayores de ocho años: describe una asociación clínica, no el destino de cada perro.
 
-En casa, eso cambia el foco de atención. Además de mirar el pelo, fíjate en si adelgaza, pierde músculo o cambia su rutina al beber y salir a orinar. Anotar esos cambios ayuda aunque la piel parezca normal.
+En casa, eso cambia el foco de atención. Además de mirar el pelo, fíjate en si adelgaza, pierde músculo o cambia su rutina al beber y salir a orinar. La piel es solo una parte de la valoración de un perro mayor.
 
-### Qué llevar a la primera conversación
+### Una infección puede permanecer silenciosa
 
-Prepara una lista breve con las localidades donde ha estado, los resultados de pruebas anteriores y los productos preventivos que utiliza. Añade cuándo se colocó el collar o se aplicó la pipeta y si hubo interrupciones.
+LeishVet describe una infección de evolución lenta y crónica. Hay perros que albergan el parásito sin alteraciones clínicas y otros que desarrollan enfermedad. Esa diferencia explica por qué el cuidado continúa después de una prueba, incluso si el perro parece encontrarse bien.
 
-Lleva también la lista de enfermedades conocidas y medicamentos actuales. En un perro mayor, esa información permite interpretar mejor los síntomas y organizar las pruebas. La edad orienta la vigilancia; la exploración y los resultados deciden el siguiente paso.
+El equilibrio puede cambiar con una inmunosupresión o una enfermedad concurrente, según ese consenso. En un senior, vigilar la salud general y la infección permite detectar esa transición. Tener más años orienta la atención; el estado clínico se determina con exploración y análisis.
 
 ## Qué mirar en casa: señales y cuándo llamar
 
@@ -68,22 +68,30 @@ En la piel puedes ver descamación, zonas con menos pelo, úlceras o bultos. Tam
 
 La enfermedad renal puede ser la única manifestación clínica, como explica LeishVet. Los datos de Cabré en Cataluña refuerzan la importancia de mirar más allá de la piel cuando el perro es mayor.
 
+### Qué hacer ante cada cambio
+
 Estas señales comparten causas con otras enfermedades. La tabla organiza qué observar y comunicar, a partir de ambas guías; es una ayuda editorial, no una escala diagnóstica validada.
 
 
 | Qué ves | Qué puede significar | Qué haces |
 |---|---|---|
-| Adelgaza o come menos. | Puede acompañar a leishmaniosis y a otras enfermedades generales. | Anota peso, apetito y fecha del cambio para pedir consulta. |
+| Adelgaza o come menos. | Puede acompañar a leishmaniosis y a otras enfermedades generales. | Pide consulta para estudiar la pérdida de peso o apetito. |
 | Bebe y orina más. | Puede haber una alteración renal, diabetes u otra causa endocrina. | Comunica el cambio y pregunta por el análisis de orina. |
-| Tiene descamación, calvas o úlceras. | Son compatibles con leishmaniosis y con otros problemas de piel. | Haz una foto fechada y pide que exploren las lesiones. |
+| Tiene descamación, calvas o úlceras. | Son compatibles con leishmaniosis y con otros problemas de piel. | Pide que exploren las lesiones para aclarar su causa. |
 | Le crecen o se curvan mucho las uñas. | Puede intervenir la enfermedad o un menor desgaste. | Muestra cómo han cambiado durante la revisión. |
 | Tiene ojos rojos o molestias oculares. | Puede existir inflamación por distintas causas. | Llama a la clínica para valorar la atención que necesita. |
 | Sangra por la nariz o vomita repetidamente. | Son señales que requieren valoración por varias causas posibles. | Consulta el mismo día siguiendo el aviso de urgencias. |
 
 
+### Lo que se detecta en los análisis
+
+La **proteinuria** es la presencia de proteínas en la orina. LeishVet la describe entre las alteraciones renales de la enfermedad, desde formas leves hasta cuadros avanzados. Se busca en una muestra de orina, aunque desde casa no notes ningún cambio en su aspecto.
+
+El hemograma puede mostrar anemia y la bioquímica, cambios en las proteínas de la sangre. Son hallazgos descritos por las guías que ayudan a completar la exploración. La clínica los interpreta en conjunto con los síntomas y las pruebas del parásito.
+
 ### La revisión de cinco puntos
 
-Elige un momento tranquilo y observa sin forzar posturas. Esta revisión ordena lo que vas a contar en consulta; puedes hacerla mientras lo acaricias, si está cómodo. Para comparar cambios, conserva la fecha y una foto clara.
+Elige un momento tranquilo y observa sin forzar posturas. Puedes hacerlo mientras lo acaricias, si está cómodo. Reúne los cambios con su fecha, las fotos y los informes en un único registro para la consulta.
 
 1. **Orejas y bordes:** mira si hay descamación, heridas o pérdida de pelo en la parte visible.
 2. **Ojos y hocico:** observa enrojecimiento, secreciones, lesiones o sangrado nasal.
@@ -91,11 +99,7 @@ Elige un momento tranquilo y observa sin forzar posturas. Esta revisión ordena 
 4. **Cuerpo:** anota el peso disponible y si pierde volumen muscular o se le marca más la cadera.
 5. **Día a día:** registra apetito, energía, sed, orina, vómitos y diarrea.
 
-Una piel de aspecto normal deja abierta la valoración del riñón mediante análisis. Si notas más sed y orina, también hay causas endocrinas que se estudian aparte, como explica la guía del [síndrome de Cushing en perros mayores](/salud-perros-mayores/sindrome-cushing-perros-mayores).
-
-Describe los cambios con comparaciones sencillas: pide salir más veces, deja parte del pienso o tarda más en terminar el paseo. Esa información resulta más clara que decir únicamente que está «raro». Añade si el cambio fue gradual o apareció de golpe.
-
-Si tienes fotos anteriores o pesos anotados en las visitas, llévalos. Ayudan a situar lo que has observado en el tiempo. Procura que el registro sea fácil de mantener: unas líneas con fecha permiten explicar la evolución sin depender de la memoria.
+La sangre y la orina permiten valorar el riñón incluso con la piel normal. Si notas más sed y orina, también hay causas endocrinas que se estudian aparte, como explica la guía del [síndrome de Cushing en perros mayores](/salud-perros-mayores/sindrome-cushing-perros-mayores).
 
 ### Cuándo llamar el mismo día
 
@@ -117,9 +121,9 @@ Este umbral de consulta es un criterio editorial de prudencia, a partir de las s
 
 Para considerarlo sano se valoran la exploración y los análisis rutinarios: hemograma, bioquímica y orina. Que siga jugando o coma bien es una información útil, pero la valoración clínica incluye cambios que desde casa resultan invisibles.
 
-El perro infectado y sano no necesita tratamiento específico, según la guía española. Sí necesita seguimiento. Si presenta síntomas, el veterinario comprueba además otras causas: puede estar infectado y tener un problema distinto que explique lo que le ocurre.
+El perro infectado y sano no necesita tratamiento específico, según la guía española. Sí necesita seguimiento; el veterinario puede valorar inmunomoduladores como apoyo a su respuesta inmunitaria. Si presenta síntomas, también se comprueban otras causas, incluso aunque la infección esté confirmada.
 
-Por eso conviene preguntar «¿qué sabemos con esta prueba?» y «¿qué falta por comprobar?». Un informe positivo cobra sentido al juntarlo con la exploración, el tipo de análisis y las posibles alteraciones de órganos.
+Un resultado positivo cobra sentido al juntarlo con la exploración, el tipo de análisis y las posibles alteraciones de órganos. Ese conjunto permite decidir entre vigilar una infección subclínica o tratar una enfermedad que ya está causando problemas.
 
 ### Qué aporta cada prueba
 
@@ -130,11 +134,11 @@ El [consenso internacional de expertos LeishVet](https://pmc.ncbi.nlm.nih.gov/ar
 
 | Prueba | Para qué sirve | Qué no te dice |
 |---|---|---|
-| Serología cuantitativa, como IFI o ELISA. | Mide anticuerpos para interpretarlos con los signos y la analítica. | Deja pendiente valorar los órganos afectados. |
-| Test rápido. | Ofrece un resultado cualitativo sobre anticuerpos. | Su resultado aislado deja pendiente confirmar o estudiar el caso. |
-| Citología de ganglio o médula. | Permite buscar el parásito en una muestra celular. | Encontrarlo deja pendiente establecer la afectación clínica. |
-| PCR. | Detecta material genético del parásito y puede confirmar infección. | Una PCR positiva requiere evaluar si existe enfermedad. |
-| Analítica completa de sangre y orina. | Busca alteraciones generales y renales, incluidas proteínas en la orina. | Las alteraciones necesitan pruebas para aclarar su causa. |
+| Serología cuantitativa, como IFI o ELISA. | Mide anticuerpos para interpretarlos con los signos y la analítica. | Un nivel bajo exige otras pruebas para aclarar si hay enfermedad. |
+| Test rápido. | Ofrece un resultado cualitativo sobre anticuerpos. | Puede dar falsos negativos, especialmente en infecciones subclínicas. |
+| Citología de ganglio o médula. | Permite buscar el parásito en una muestra celular. | Con pocos parásitos, la muestra puede resultar negativa pese a existir infección. |
+| PCR. | Detecta material genético del parásito y puede confirmar infección. | Puede ser positiva tanto en perros enfermos como en infectados clínicamente sanos. |
+| Analítica completa de sangre y orina. | Busca alteraciones generales y renales, incluidas proteínas en la orina. | Anemia o proteínas en la orina también aparecen en enfermedades distintas de la leishmaniosis. |
 
 
 ### Por qué a veces hacen falta más resultados
@@ -143,23 +147,21 @@ Un nivel elevado de anticuerpos junto con signos compatibles puede ser concluyen
 
 La guía española desaconseja los test rápidos cuando existe un cuadro clínico compatible. ESCCAP también señala sus limitaciones para detectar infección subclínica. Además, los anticuerpos pueden tardar en aparecer, especialmente en perros infectados sin enfermedad clínica.
 
-Si el resultado es negativo y persisten signos compatibles, tu veterinario puede pedir otras pruebas. Lleva los informes completos: el nombre de la técnica y la fecha permiten entender mejor un resultado antiguo que una anotación que solo diga «negativo».
-
-Al recibir la analítica, pide que señalen qué resultados orientan hacia infección y cuáles muestran afectación del organismo. Esa separación ayuda a entender por qué se solicita orina aunque ya se haya extraído sangre, o por qué una prueba adicional cambia la decisión.
-
-Conserva una copia de cada informe junto con la fecha de la consulta. Si acudes a otro centro, podrás aportar resultados comparables y explicar qué se investigó antes. Pregunta qué dudas siguen abiertas y cuál de ellas pretende aclarar la siguiente prueba.
+Si el resultado es negativo y persisten signos compatibles, tu veterinario puede pedir otras pruebas. En la citología influye cuántos parásitos hay en la muestra; en la PCR, el tejido elegido y la técnica. LeishVet recoge estas diferencias al comparar los métodos.
 
 ### Cada cuánto repetirlas según su exposición
 
 La AEMPS y el MAPA recomiendan pruebas con periodicidad **«anual o bianual en función del nivel de riesgo»** en animales que viven o proceden de zonas endémicas. Pide que tu clínica concrete esa recomendación en una fecha para tu perro.
 
-LeishVet recoge el cribado al menos cada doce meses en perros sanos de zonas endémicas si lo solicita el tutor. Ese cribado y el seguimiento de un positivo responden a situaciones diferentes; la cita debe ajustarse a cuál sea la suya.
+LeishVet recoge el cribado al menos cada doce meses en perros sanos de zonas endémicas si lo solicita el tutor. El **cribado** busca detectar infección en un perro aparentemente sano expuesto al vector; empieza por su riesgo, aunque no haya síntomas.
+
+El **seguimiento** parte de una infección conocida y comprueba si aparecen alteraciones o si evoluciona una enfermedad ya diagnosticada. Por eso un perro positivo puede necesitar controles más frecuentes que otro al que se le hace una prueba preventiva anual.
 
 Para saber si vuestra zona se considera endémica, pregunta a la clínica o al colegio veterinario provincial y comenta los viajes. Puedes integrar la valoración con el [chequeo geriátrico canino](/salud-perros-mayores/chequeo-geriatrico-canino), incluyendo sangre y orina.
 
 ### Si da positivo y está bien
 
-En el perro infectado y clínicamente sano, LeishVet propone controles cada tres a seis meses. Es una orientación del consenso que tu veterinario adapta a sus resultados. Sal de consulta con una fecha y con las señales que adelantarían la revisión.
+En el perro infectado y clínicamente sano, LeishVet propone controles cada tres a seis meses. Incluyen exploración, análisis rutinarios y serología para detectar una posible progresión a enfermedad. Tu veterinario adapta esa orientación a los resultados y a la evolución de tu perro.
 
 Mantén la protección frente a flebotomos que te indiquen. ESCCAP destaca su importancia en perros infectados: prevenir nuevas picaduras forma parte del cuidado incluso cuando se encuentran bien. El resultado positivo inicia un seguimiento, con decisiones distintas según aparezcan o no alteraciones.
 
@@ -179,27 +181,29 @@ La edad aporta contexto, y el estadio describe la situación clínica. Los datos
 
 Recibir el diagnóstico puede dar vértigo. Pide que te expliquen el objetivo inmediato y cómo comprobarán la respuesta. En los cuadros leves la guía contempla vigilancia o tratamiento según el caso; en otros estadios se utilizan combinaciones de fármacos.
 
-La guía española describe un medicamento que actúa contra el parásito y otro que frena su multiplicación. La selección depende del estadio, la función renal y las demás enfermedades. El seguimiento incluye vigilar posibles efectos adversos con orina y, cuando corresponda, ecografía.
+La guía española describe un medicamento que actúa contra el parásito y otro que frena su multiplicación. La selección depende del estadio y la función renal. El seguimiento incluye vigilar posibles efectos adversos con orina y, cuando corresponda, ecografía.
 
 LeishVet describe mejoría clínica durante el primer mes en muchos perros tratados. Los perros **pueden seguir infectados** después y transmitir el parásito a flebotomos, aunque menos que antes del tratamiento. La mejoría y la vigilancia a largo plazo forman parte del mismo cuidado.
 
-La clínica decide cuánto dura la pauta y cuándo se revisa: **no la suspendas ni la alargues por tu cuenta**. Si aparece un problema al administrarla, llama para que te indiquen cómo actuar y deja anotado qué ha ocurrido.
+La clínica decide cuánto dura la pauta y cuándo se revisa: **no la suspendas ni la alargues por tu cuenta**. Si aparece un problema al administrarla, llama para que te indiquen cómo actuar.
 
 ### Revisiones: qué se mira durante el primer año
 
-El consenso LeishVet propone una revisión tras el primer mes y después controles cada pocos meses durante el primer año. También contempla repetir la serología a los seis meses del inicio. Son referencias de seguimiento que se adaptan a la evolución.
+El consenso LeishVet propone una revisión tras el primer mes y después controles cada pocos meses durante el primer año. Sitúa la serología a partir de los seis meses del inicio; la frecuencia se adapta a la evolución.
 
-En cada visita interesa valorar al perro completo: estado general, peso, síntomas y resultados. Los anticuerpos forman parte de esa revisión, junto con las pruebas de sangre y orina que permiten vigilar la afectación orgánica.
+En cada visita se valora al perro completo: estado general, peso, síntomas y resultados. Los anticuerpos, la sangre y la orina permiten vigilar la respuesta clínica y la afectación orgánica.
 
-Lleva una hoja sencilla con las tomas indicadas, los cambios observados y las dudas. Si varios cuidadores os turnáis, utilizad el mismo registro. Tener la información reunida facilita explicar si come mejor o si un cambio empezó después de una visita.
+Los anticuerpos pueden bajar más despacio que los síntomas. LeishVet describe perros que mejoran clínicamente sin un descenso paralelo de esos niveles durante los primeros meses. La respuesta se valora combinando la exploración y la analítica, además de la serología.
 
-Antes de salir, confirma la próxima cita y qué pruebas se prevén. Pregunta también cómo llevar una muestra de orina si la necesitan. Las instrucciones de tu clínica ayudan a evitar muestras mal recogidas o desplazamientos innecesarios.
+La vigilancia también busca problemas asociados a la medicación: LeishVet recoge la formación de cálculos urinarios entre los posibles efectos adversos de uno de los tratamientos. La guía española incluye controles del sedimento de la orina y ecografía para vigilar estos efectos.
+
+Tras el primer año, LeishVet contempla controles más espaciados si el perro se ha recuperado clínicamente con el tratamiento. La frecuencia se ajusta a su situación. Una mejoría estable sigue requiriendo revisiones porque el parásito puede permanecer en el organismo.
 
 ### Si además tiene otras enfermedades
 
 La AEMPS recoge enfermedades concurrentes como diabetes, hipotiroidismo o tumores, además de otras infecciones. En un perro mayor, revisar el conjunto permite estudiar qué explica cada señal y elegir un plan compatible con sus otros cuidados.
 
-Lleva los tratamientos y suplementos anotados, aunque se los hayan indicado en otra clínica. Explica también las dificultades prácticas: si rechaza las tomas, cuesta llevarlo a consulta o necesitáis ayuda para recoger la orina. Son datos útiles para organizar su atención.
+La guía también menciona coinfecciones por otros agentes transmitidos por vectores, como ehrlichiosis, anaplasmosis o babesiosis. Su búsqueda se orienta por el cuadro clínico y la zona. Diferenciar una enfermedad concurrente permite evitar que todos los síntomas se atribuyan automáticamente a la leishmaniosis.
 
 Cuando el pronóstico es reservado, la [Calculadora de Calidad de Vida Canina](/herramientas/calculadora-calidad-vida-perros) puede ayudarte a ordenar apetito, comodidad, movilidad y días buenos. Comparte el registro con tu veterinario; la herramienta sirve para observar y conversar, y las decisiones clínicas se toman en consulta.
 
@@ -213,7 +217,7 @@ Elige con tu clínica un producto indicado para ese vector. En el envase y la fi
 
 La [ficha técnica de un spot-on con permetrina autorizado en España](https://cimavet.aemps.es/cimavet/pdfs/es/ft/3212%20ESP/3212_ESP_ft.pdf), disponible en CIMAVet, muestra precisamente duraciones distintas según el parásito. Utilízala como ejemplo de por qué hay que leer la ficha del producto concreto.
 
-Ningún producto ofrece protección total. Anota la fecha de colocación o aplicación y la siguiente que indique tu clínica. Consulta también qué hacer con baños, pérdida del collar o reacciones en la piel, siguiendo las instrucciones del producto elegido.
+Ningún producto ofrece protección total. La misma ficha advierte que mojar mucho al perro, por ejemplo al bañarlo con champú, puede reducir la duración de la protección. Para los baños y las reaplicaciones, sigue la ficha de tu producto y la indicación veterinaria.
 
 ### Preparar la casa al anochecer
 
@@ -223,33 +227,39 @@ Organiza los paseos y el descanso para reducir exposición en esas horas. Si sue
 
 Ajusta esos hábitos a sus necesidades de perro mayor. Si necesita salir a orinar por la noche, coméntalo al planificar la protección. La idea es encontrar una rutina practicable, con el producto indicado y menos oportunidades de picadura.
 
-La actividad nocturna del flebotomo está documentada en el estudio de Alten y colaboradores. Esa información ayuda a organizar el hogar; las horas de mayor actividad observadas en un estudio no se convierten en una franja universal de seguridad.
+La actividad nocturna del flebotomo está documentada en el estudio de Alten y colaboradores. Por eso la medida doméstica abarca del anochecer al amanecer: cada especie y entorno tiene su propia actividad, como explica ESCCAP.
+
+### Reducir los refugios cerca de su descanso
+
+ESCCAP recomienda retirar basura y acumulaciones de materia orgánica próximas al lugar donde vive el perro, porque reducen los sitios de cría del flebotomo. LeishVet añade reducir los montones de leña y piedras junto a la vivienda o donde el perro pasa tiempo.
+
+La barrera física también abarca las puertas y la zona de dormir. ESCCAP describe mosquiteras tratadas con piretroides en ventanas, puertas y camas. Si se valora esa opción, la elección debe contemplar su uso concreto y la seguridad de los animales de casa, especialmente los gatos.
 
 ### ¿Cuándo empiezo y cuándo termino?
 
-Las fuentes dan respuestas diferentes sobre el calendario. Conviene distinguir una observación de campo, una guía de control y una recomendación profesional. Cada una aporta información útil, con fechas y alcance propios.
+Las fuentes dan respuestas diferentes sobre el calendario. Conviene distinguir una observación de campo, una guía de control y una recomendación profesional, cada una con su fecha y alcance.
 
 - **Alten y colaboradores, 2016:** en los lugares y años estudiados, con datos de 2011–2013, observaron mayor riesgo potencial de junio a octubre y ausencia aparente de riesgo de diciembre a marzo. La exposición se concentraba entre mayo y octubre.
 - **ESCCAP, adaptación española de 2012:** sitúa la temporada de riesgo de abril a octubre o noviembre y reconoce diferencias entre regiones y años.
 - **OCV, nota de 2024:** recomienda proteger durante todo el año. La postura se recoge en una [información de Europa Press difundida por Redacción Médica](https://www.redaccionmedica.com/ultimas-noticias/20240531/la-ocv-insta-la-colaboracion-entre-medicos-veterinarios-como-factor-clave-en-lucha-frente-leishmaniosis/118548_0.html).
 
-El estudio de Alten incluía un único punto español, Fuenlabrada. Sus resultados describen aquellas observaciones y dejan pendiente valorar otras zonas y las condiciones actuales. La recomendación de la OCV procede de una nota profesional más reciente, transmitida por una fuente secundaria.
+El estudio de Alten incluía un único punto español, Fuenlabrada, con datos de aquellos años. La OCV aporta una recomendación profesional más reciente, transmitida por una fuente secundaria. La decisión local requiere considerar la zona y las condiciones del año.
 
-**Tu clínica debe concretar cuándo empezar y cuándo terminar la protección en vuestra zona.** Pídele que tenga en cuenta los viajes y el tiempo necesario para que actúe el producto. Sal con fechas anotadas, en lugar de decidir solo por la temperatura de un día.
+**Tu clínica debe concretar cuándo empezar y cuándo terminar la protección en vuestra zona.** El calendario debe tener en cuenta los viajes y el tiempo necesario para que actúe el producto, además de las condiciones locales.
 
 ### Qué aporta el estudio de Valdeorras
 
 Olmeda y colaboradores observaron que los años con más medidas preventivas coincidían con menos casos nuevos en la clínica estudiada de Valdeorras. Es una asociación que apoya prestar atención a la prevención mantenida y a su seguimiento.
 
-El trabajo es retrospectivo, procede de una clínica y declara patrocinio de Elanco Animal Health. Las ventas de productos se usaron como indicador de prevención, con los límites de ese dato. Sus resultados describen ese contexto, no una eficacia individual ni un calendario nacional.
+El trabajo es retrospectivo, procede de una clínica y declara patrocinio de Elanco Animal Health. Las ventas de productos se usaron como indicador de prevención. Es una asociación observada en aquella clínica de Ourense; el calendario individual se concreta según vuestra exposición.
 
 ### La vacuna y la decisión de tu clínica
 
 La **Agencia Europea de Medicamentos, EMA**, recoge una vacuna frente a la leishmaniosis canina autorizada en la Unión Europea. ESCCAP describe la vacunación dirigida a perros no infectados. Tu clínica valora la situación de tu perro y la prueba previa correspondiente.
 
-La información consultada no ofrece resultados específicos para perros de más de diez años. Por eso la decisión se plantea con su estado de salud y los requisitos del producto. Aquí encontrarás el contexto de [vacunas y desparasitación en perros senior](/salud-perros-mayores/vacunas-desparasitacion-perros-senior).
+La guía española de 2026 y las de LeishVet (2011) y ESCCAP (2012) carecen de resultados de vacunación específicos para perros de más de diez años. La decisión depende de su salud y de los requisitos del producto. Aquí encontrarás el contexto de [vacunas y desparasitación en perros senior](/salud-perros-mayores/vacunas-desparasitacion-perros-senior).
 
-LeishVet propone un enfoque integrado que combina vacunación y protección tópica frente a picaduras. Plantea ambas cuestiones en la misma consulta, de forma que el plan preventivo quede organizado y sea fácil de seguir en casa.
+En 2011, LeishVet planteaba para el futuro un control integrado con una vacuna eficaz y protección tópica frente a picaduras. Es la propuesta de aquel consenso, condicionada a disponer de una vacuna eficaz; los requisitos del producto concreto se valoran en la clínica.
 
 ### Si convivís con un gato
 
@@ -265,7 +275,7 @@ Si un gato entra en contacto cutáneo con el producto, la ficha indica lavarlo c
 
 ## Qué llevarte de esta guía
 
-Un positivo es el inicio de una valoración: hay que saber si existe enfermedad y cómo está el riñón. En un perro mayor, sangre y orina completan lo que ves en casa. Anota los cambios, conserva los informes y acuerda la próxima revisión. La protección frente a flebotomos continúa siendo parte del cuidado; pide a tu clínica un calendario concreto para vuestra zona, los viajes y el producto elegido.
+Un positivo es el inicio de una valoración: hay que saber si existe enfermedad y cómo está el riñón. En un perro mayor, sangre y orina completan lo que ves en casa. Un resultado sin alteraciones conduce al seguimiento; un cuadro clínico requiere clasificar la gravedad y decidir el manejo. La protección frente a flebotomos continúa siendo parte del cuidado, con un calendario adaptado a vuestra zona, los viajes y el producto elegido.
 
 
 
@@ -274,10 +284,10 @@ Un positivo es el inicio de una valoración: hay que saber si existe enfermedad 
 - **AEMPS/MAPA, 2026.** [Leishmaniosis canina y felina. Guías para el manejo clínico](https://resistenciaantibioticos.es/sites/default/files/2026-07/Gu%C3%ADas%20para%20el%20manejo%20cl%C3%ADnico%20de%20la%20leishmaniosis%20canina%20y%20felina_0.pdf). Diagnóstico, estadios y manejo en España.
 - **Solano-Gallego y colaboradores, LeishVet, 2011.** [LeishVet guidelines for the practical management of canine leishmaniosis](https://pmc.ncbi.nlm.nih.gov/articles/PMC3125381/). Consenso internacional de diagnóstico y seguimiento. DOI: 10.1186/1756-3305-4-86.
 - **ESCCAP, 2012.** [Control de enfermedades transmitidas por vectores en perros y gatos. Guía n.º 5](https://www.esccap.es/wp-content/uploads/2016/06/guia5_P31620-FINAL.pdf). Adaptación al castellano; prevención y exposición estacional.
-- **Miranda y colaboradores, 2008.** [Characterization of sex, age, and breed for a population of canine leishmaniosis diseased dogs](https://doi.org/10.1016/j.rvsc.2007.09.003). Serie de Barcelona; información del resumen.
-- **Cabré y colaboradores, 2021.** [Is signalment associated with clinicopathological findings in dogs with leishmaniosis?](https://doi.org/10.1002/vetr.451). Serie de tres centros de Cataluña.
-- **Alten y colaboradores, 2016.** [Seasonal Dynamics of Phlebotomine Sand Fly Species Proven Vectors of Mediterranean Leishmaniasis Caused by Leishmania infantum](https://pmc.ncbi.nlm.nih.gov/articles/PMC4762948/). Observaciones de campo de 2011–2013.
-- **Olmeda y colaboradores, 2024.** [Twenty-year evolution of Leishmania infantum infection in dogs in Valdeorras (Galicia, Northwestern Spain): implication of climatic factors and preventive measures](https://pmc.ncbi.nlm.nih.gov/articles/PMC11218365/). Evolución de pruebas en una clínica de Ourense.
+- **Miranda y colaboradores, 2008.** [Characterization of sex, age, and breed for a population of canine leishmaniosis diseased dogs](https://doi.org/10.1016/j.rvsc.2007.09.003). Serie de Barcelona; información del resumen. DOI: 10.1016/j.rvsc.2007.09.003.
+- **Cabré y colaboradores, 2021.** [Is signalment associated with clinicopathological findings in dogs with leishmaniosis?](https://doi.org/10.1002/vetr.451). Serie de tres centros de Cataluña. DOI: 10.1002/vetr.451.
+- **Alten y colaboradores, 2016.** [Seasonal Dynamics of Phlebotomine Sand Fly Species Proven Vectors of Mediterranean Leishmaniasis Caused by Leishmania infantum](https://pmc.ncbi.nlm.nih.gov/articles/PMC4762948/). Observaciones de campo de 2011–2013. DOI: 10.1371/journal.pntd.0004458.
+- **Olmeda y colaboradores, 2024.** [Twenty-year evolution of Leishmania infantum infection in dogs in Valdeorras (Galicia, Northwestern Spain): implication of climatic factors and preventive measures](https://pmc.ncbi.nlm.nih.gov/articles/PMC11218365/). Evolución de pruebas en una clínica de Ourense. DOI: 10.1186/s13071-024-06357-8.
 - **Europa Press / Redacción Médica, 2024.** [La OCV insta a la colaboración entre médicos y veterinarios como factor clave en la lucha frente a la leishmaniosis](https://www.redaccionmedica.com/ultimas-noticias/20240531/la-ocv-insta-la-colaboracion-entre-medicos-veterinarios-como-factor-clave-en-lucha-frente-leishmaniosis/118548_0.html). Fuente secundaria de la recomendación de la OCV.
 - **AEMPS, CIMAVet.** [Resumen de las características de un medicamento veterinario spot-on con permetrina para perros](https://cimavet.aemps.es/cimavet/pdfs/es/ft/3212%20ESP/3212_ESP_ft.pdf). Indicaciones por parásito y seguridad para gatos.
 - **EMA.** [Página EPAR de la vacuna frente a la leishmaniosis canina](https://www.ema.europa.eu/en/medicines/veterinary/EPAR/letifend). Identificación de una vacuna autorizada; sin trasladar pautas ni eficacia.
@@ -299,7 +309,7 @@ La vía habitual de transmisión es la picadura del flebotomo, no la convivencia
 
 ### Ha dado positivo pero está bien: ¿hay que tratarlo?
 
-La guía de la AEMPS y el MAPA indica que el perro infectado y clínicamente sano no necesita tratamiento específico. Para saber si está sano se valoran exploración, sangre y orina, además de su comportamiento en casa. Necesita seguimiento; LeishVet propone controles cada tres a seis meses que tu clínica adapta a sus resultados.
+La guía de la AEMPS y el MAPA indica que el perro infectado y clínicamente sano no necesita tratamiento específico. Para valorarlo se utilizan exploración, sangre y orina. Tu veterinario puede considerar inmunomoduladores como apoyo a su respuesta inmunitaria. Necesita seguimiento; LeishVet propone controles cada tres a seis meses que tu clínica adapta a sus resultados.
 
 ### ¿Hay que hacer el test cada año?
 
@@ -307,7 +317,7 @@ La AEMPS y el MAPA hablan de periodicidad «anual o bianual» según el riesgo e
 
 ### ¿Se puede vacunar a un perro ya mayor?
 
-La vacunación descrita por ESCCAP va dirigida a perros no infectados. Tu veterinario valora su salud, la prueba previa y los requisitos del producto. Las fuentes consultadas no ofrecen resultados específicos en perros de más de diez años. Conviene plantearlo junto con la protección frente a picaduras, para salir de la consulta con un plan conjunto.
+La vacunación descrita por ESCCAP va dirigida a perros no infectados. Tu veterinario valora su salud, la prueba previa y los requisitos del producto. La guía española de 2026 y las de LeishVet (2011) y ESCCAP (2012) carecen de resultados de vacunación específicos para mayores de diez años. La protección frente a picaduras sigue formando parte de la prevención.
 
 ### ¿Sirve el mismo antiparasitario para mi gato?
 
