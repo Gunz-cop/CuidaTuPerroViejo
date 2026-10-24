@@ -6,6 +6,12 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 ## Contenido
 
+- [ ] **Golpe de calor: menores aceptados al publicar (2026-10-24).** Ninguno bloquea; retomar si se rehace el artículo o su animación. Detalle en `docs/contenido/golpe-de-calor-perros-mayores/auditoria-revision-r2.md`.
+  - [ ] Recorte del podenco (`podenco-senior-perfil-transparente-v1`): no se ve senior (lomo y músculo de adulto) y aparece con el pelo seco en los pasos de mojarlo. Regenerar con edad visible y pelo mojado si se mejora la secuencia. Su alfa interior es 250–254, no 255 (no se nota).
+  - [ ] Escala de avisos (`GolpeCalorRecursos`, variante `umbrales`): el recuadro discontinuo sigue marcando la distancia entre 30 °C y el umbral de la zona, aunque ya sin cifra. Valorar quitarlo.
+  - [ ] Rótulos del dibujo de la secuencia: ~11,6 px en móvil, en el límite de legibilidad. Agrandarlos o confiar en el texto del paso.
+  - [ ] Unificar la descripción de la persiana de la imagen de casa: el alt dice «medio bajada» y el informe de revisión dice «bajada».
+
 - [x] **Crear las imágenes pedidas en la revisión de fondo de golpe de calor.** Enfriamiento con ventilador elevado en seco, casa sin sol directo y recorte transparente opcional; escenas integradas y recorte listo para el autor de la animación. 2026-10-24, rama `codex/golpe-calor-imagenes-revision`, sin publicación. Ver `docs/contenido/golpe-de-calor-perros-mayores/imagenes-revision-entrega.md`.
 
 - [x] **Fijar el nivel de detalle y belleza de las imágenes de golpe de calor como criterio para próximos artículos.** Dirección visual compartida, skills de brief/redacción/producción y plantilla actualizadas; portada corregida para que perro y cuidadora avancen juntos. Preferencia registrada el 2026-10-24; entrega en la rama de revisión `codex/articulo-golpe-calor-imagenes`, sin publicación. Referencia: `.agents/skills/references/direccion-visual-editorial.md`.
@@ -23,6 +29,10 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
   - [x] **Comida casera:** experiencia de Luna (rechazaba las croquetas; comida casera con receta de internet como complemento), aportada el 2026-10-21 y auditada — PR #143.
   - [x] **Cama ortopédica:** una cama para cada una, más de un año en perfecto estado, aportada el 2026-10-21 y auditada — PR #143.
   - [ ] **Poliquezia** (#132): ya usa la experiencia aportada de Dakota y Luna, ahora en primera persona del plural (aprobado 2026-10-21). Si ya sabes la causa de las deposiciones, aporta diagnóstico o desenlace con fecha.
+
+## Mejoras del sitio
+
+- [ ] **Botón flotante de opiniones:** a 390 px tapa la esquina inferior derecha de tarjetas y recursos (visto en golpe de calor, pasa en todo el sitio). Valorar desplazarlo o reducirlo en móvil. (Anotado: 2026-10-24)
 
 ## Limpieza del repositorio
 
