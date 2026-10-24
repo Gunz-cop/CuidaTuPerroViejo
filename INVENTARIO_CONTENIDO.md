@@ -39,7 +39,7 @@ Actualizado el **2026-08-26** para aumentar la cobertura de búsquedas e impresi
 
 Estas fuentes justifican el ángulo local de la nueva serie. Son puntos de partida para validar la oportunidad; cada briefing futuro deberá hacer su propia investigación científica Source-First y no reutilizarlas como fuentes decorativas.
 
-- **ES-01 — Clima:** [AEMET: 2025 fue extremadamente cálido y registró cinco olas de calor entre Península/Baleares y Canarias](https://www.aemet.es/es/noticias/2026/01/resumen_anual_2025).
+- **ES-01 — Clima:** [AEMET: 2025 fue extremadamente cálido; hubo tres olas de calor en Península y Baleares y dos en Canarias, una de ellas compartida (cuatro distintas)](https://www.aemet.es/es/noticias/2026/01/resumen_anual_2025).
 - **ES-02 — Parásitos mediterráneos:** [ESCCAP España, guía de enfermedades transmitidas por vectores](https://www.esccap.es/wp-content/uploads/2016/06/guia5_P31620-FINAL.pdf) y [guía de vermes](https://www.esccap.es/wp-content/uploads/2020/10/guia1_2020.pdf), que identifica riesgo prolongado o anual de dirofilariosis en la cuenca mediterránea y Canarias.
 - **ES-03 — Procesionaria:** [Generalitat Valenciana: aviso fitosanitario y actuación urgente ante contacto en perros](https://www.gva.es/en/web/arees/medi-ambient-i-territori/-/asset_publisher/sCvAJqvRL2o0/content/aviso-fitosanitario-procesionaria-y-perros/20551003?_com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_sCvAJqvRL2o0_assetEntryId=173116793).
 - **ES-04 — Etiquetado de alimentos:** [MAPA, preguntas y respuestas del Reglamento 767/2009 actualizadas en 2025](https://www.mapa.gob.es/es/ganaderia/temas/alimentacion-animal/2009-doccncaa1_2009docpreguntasyrespuestasr767-2009-v3_20-05-2025_tcm30-437748.pdf), [código FEDIAF en español publicado por ANFAAC](https://www.anfaac.org/anfaac/noticias/anfaac-publica-en-espanol-el-nuevo-codigo-de-buenas-practicas-de-etiquetado-de-alimentos-para-animales-de-compania-de-fediaf_385_14_357_0_1_in.html) y [Reglamento (UE) 2023/2419 sobre etiquetado ecológico de alimentos para mascotas](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32023R2419).
@@ -60,7 +60,7 @@ El Pilar 1 no se incluye en el recuento porque es un hub de herramientas, no un 
 - [ ] **[P1-09]** *Dirofilariosis en España: riesgo por zonas y prevención del gusano del corazón en perros senior* — Enfoque geográfico Península/Baleares/Canarias y diagnóstico geriátrico. Base: ES-02.
 - [ ] **[P1-10]** *Enfermedades de garrapatas en perros mayores en España: ehrlichiosis, anaplasmosis y babesiosis* — Clúster diagnóstico propio; distinto del mantenimiento higiénico tras el paseo. Base: ES-02.
 - [ ] **[P1-04]** *Procesionaria del pino y perros: primeros auxilios y cuándo correr a urgencias veterinarias* — Intención urgente, estacional y mediterránea. Base: ES-03.
-- [~] **[P1-01]** *Golpe de calor en perros mayores: señales de alarma y plan para las olas de calor en España* — Prioridad máxima por recurrencia y severidad climática. Base: ES-01. (En Briefing — ver `briefings/briefing-golpe-de-calor-perros-mayores.md`; pendiente de auditoría independiente)
+- [~] **[P1-01]** *Golpe de calor en perros mayores: señales de alarma y plan para las olas de calor en España* — Prioridad máxima por recurrencia y severidad climática. Base: ES-01. (En Briefing — ver `briefings/briefing-golpe-de-calor-perros-mayores.md`; R1 NO APTO, corregido, pendiente de R2)
 
 #### Pilar 3 — Alimentación de Perros Senior
 

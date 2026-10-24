@@ -24,6 +24,18 @@ Límite del dato: Search Console mide posición y clics, no la lectura. El tono 
 8. **Fuentes como respaldo, no como ritual.** Enlaza la fuente donde sostiene una afirmación concreta, una vez por sección. No abras párrafos con «Según X…» en cadena.
 9. **Ritmo.** De 12 a 20 palabras por frase de media. Párrafos de 3 líneas en el móvil como máximo. Alguna pregunta retórica está bien; los signos de exclamación, casi nunca.
 
+## Excepción: serie España (P1) — español de España
+
+Decisión del propietario del 2026-10-24. Los artículos de la serie España del inventario (`[P1-xx]`) se escriben **para lectores residentes en España**, no solo sobre temas españoles, porque ese público aporta muchas visitas. En esta serie, la regla 1 cambia «español neutro» por **español de España**; el resto de la guía no cambia.
+
+- Tuteo y, en plural, vosotros. Nunca usted, ustedes ni voseo.
+- Vocabulario peninsular: coche, móvil, piso, aparcar, grifo, nevera, persiana, pienso, urgencias veterinarias 24 horas. Sin americanismos (carro, auto, celular, departamento, manejar, alberca).
+- Fuentes españolas siempre que existan (AEMET, ministerios, BOE, colegios veterinarios, universidades españolas), con la evidencia clínica internacional cuando sea la mejor disponible y diciendo de dónde son sus datos.
+- Ejemplos, lugares, fechas y costumbres reales de España, sin inventar datos regionales.
+- Formato español: coma decimal, punto de millar, «30 °C».
+
+El brief de cada artículo de la serie declara esta variante y el contrato la verifica.
+
 ## Muletillas prohibidas (las detecta `tono.py`)
 
 «no demuestra», «no sustituye», «no garantiza», «no basta», «no permite», «no convierte», «no confirma», «no autoriza», «no prueba», «no certifica», «no equivale», «no resuelve», «no descarta», «por sí solo», «sin atribuir», «sin convertir», «sin inventar», «sin deducir».
