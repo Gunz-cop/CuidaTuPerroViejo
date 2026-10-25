@@ -4,6 +4,8 @@ Procedencia: relato oral del propietario (dictado), aportado en sesión el 2026-
 
 Activación de la reserva personal Luna/Dakota: el propietario la ofrece expresamente para este artículo (2026-10-25).
 
+Decisión del propietario (2026-10-25): el artículo de España usa a Luna y Dakota (Costa Rica) y a la perra de unos vecinos (El Salvador). **Osa y Baltor se reservan para la versión latinoamericana**; siguen aquí con su procedencia. Cada hecho debe aparecer en un solo apartado del artículo.
+
 ## Luna (beagle, nacida en 2015)
 
 Hechos aportados:
