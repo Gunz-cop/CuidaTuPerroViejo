@@ -65,4 +65,3 @@ Pendiente de aclarar con el propietario: si Osa era mayor, desde cuándo reaccio
 ### Otros testimonios
 
 Pendientes: el propietario dice tener más.
- El propietario menciona haber visto perros que lloran, se esconden o corren por la casa. Se necesita de quién eran, aproximadamente cuándo y qué pasó después; si no se recuerda, queda como «no lo sé».
