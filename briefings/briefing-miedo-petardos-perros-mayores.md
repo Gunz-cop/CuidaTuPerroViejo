@@ -589,11 +589,11 @@ Si una fuente no queda citada por nombre en su H2, esa sección carece de susten
 - [ ] Procedencia narrativa e imágenes ilustrativas declaradas (firma global); sin credenciales ni resultados inventados.
 - [ ] Coherencia con la política editorial; sin pauta farmacológica para el lector.
 - [ ] Cada recurso prometido operativo o retirado antes de publicar; no basta con compilar (`npx astro build`).
-- [ ] Historial de auditoría numerado, máximo tres rondas. **R2 pendiente (sesión independiente).**
+- [ ] Historial de auditoría numerado, máximo tres rondas. **R2: APTO con reservas, correcciones pendientes; R3 es la última ronda.**
 
 ## Historial de auditoría
 
 | Ronda | Fecha | Auditor | Veredicto | Hallazgos | Estado |
 |---|---|---|---|---|---|
 | R1 | 2026-10-25 | Agente independiente (sesión distinta) | **APTO con reservas** | 0 P0, 6 P1, 9 P2. Informe: `docs/contenido/miedo-petardos-perros-mayores/auditoria-brief-r1.md` | Corregido el 2026-10-25 en v2 (ver `docs/contenido/miedo-petardos-perros-mayores/correccion-r1.md`) |
-| R2 | — | pendiente | — | — | Quedan R2 y R3 |
+| R2 | 2026-10-25 | Agente independiente (sesión distinta) | **APTO con reservas** | 0 P0, 4 P1 (S11 mal usada; testimonios repartidos en varios H2; fidelidad de testimonios; contrato de volumen), 12 P2. Informe: `docs/contenido/miedo-petardos-perros-mayores/auditoria-brief-r2.md` | Correcciones pendientes. **Queda solo R3: si falla, se detiene y se consulta al propietario** |
