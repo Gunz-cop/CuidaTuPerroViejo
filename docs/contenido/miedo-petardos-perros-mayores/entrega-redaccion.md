@@ -193,3 +193,11 @@ Las tres rutas están bajo `/images/blog/miedo-petardos-perros-mayores/`. No se 
 5. La skill general pide un cuarto AlertBox bibliográfico; §9.3 exige exactamente tres. Se conserva la bibliografía en un div con details cerrado, sin cuarto aviso ni H2 añadido. Los enlaces de la bibliografía de S7/S10 son descriptivos para evitar una marca farmacológica y no atribuir a la cobertura un título no recogido como tal en el brief.
 6. H2-2: las notas del brief incluyen «se esconde» entre lo no medido aunque S3 sí lo observó sin confirmar un aumento estadístico. Se sigue la ficha de S3 y el H3 explicativo: observado, sin convertirlo en regla individual. No se modifica el brief.
 7. No se actualizan brief ni inventario a «Publicado»: es un borrador documental con cita y fecha confirmadas, pendiente de revisión independiente y de los recursos y contrastes señalados arriba. Las reglas antiguas sobre umbrales y rondas de auditoría se leen como antecedentes, no como autorización para auditar de nuevo el brief.
+
+## Auditoría independiente del artículo — R1
+
+El 2026-10-25, a petición del propietario, un agente independiente auditó los temas de fondo y bloqueantes. Veredicto: **APTO con reservas; 0 P0 y 0 P1 sustantivos**. Informe completo: [auditoria-articulo-r1.md](auditoria-articulo-r1.md).
+
+El agente no exige correcciones de fondo ni otra ronda. Se cierra el ciclo en R1 de las tres máximas autorizadas; no se consumen R2 ni R3. El borrador evaluado permanece sin cambios, SHA-256 `f0c0a6e62f4de7f448f53721fac3794e6528c12c19e35682a31096e05bfbddf9`.
+
+Este resultado corresponde al texto, no a una autorización de publicación. Se conservan los pendientes de imágenes, prueba visual y contrastes documentales detallados en el informe. La observación sobre notas de procedencia en la bibliografía se registra como no bloqueante y fuera del alcance de pulido solicitado.
