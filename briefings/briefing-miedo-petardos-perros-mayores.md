@@ -2,7 +2,7 @@
 
 **Sitio:** cuidatuperroviejo.com | **Pilar:** Salud Mental y Emocional | **Tipo:** Artículo spoke Astro/MDX | **Prioridad:** P1-03 (serie España, inventario)
 
-**Estado:** v3 del 2026-10-25, corregida tras las auditorías R1 y R2 (ambas APTO con reservas) e incorporados los testimonios del propietario. Pendiente de auditoría R3, **la última ronda permitida: si falla, se detiene y se consulta al propietario**. No redactar hasta que pase. No fusionar ni desplegar sin orden del propietario. Qué se cambió y por qué: `docs/contenido/miedo-petardos-perros-mayores/correccion-r1.md` y `correccion-r2.md`.
+**Estado:** v3 del 2026-10-25. Auditorías: R1 y R2 APTO con reservas; **R3 NO APTO (1 P1 de fidelidad de testimonios, 9 P2)**. Es la última ronda permitida: **la corrección está detenida a la espera de la decisión del propietario**. No redactar hasta que se resuelva. No fusionar ni desplegar sin orden del propietario. Qué se cambió y por qué: `docs/contenido/miedo-petardos-perros-mayores/correccion-r1.md` y `correccion-r2.md`.
 
 **Seis decisiones de esta versión que el propietario debe conocer:**
 
@@ -580,7 +580,7 @@ Si una fuente no queda citada por nombre en su H2, esa sección carece de susten
 - [ ] Procedencia narrativa e imágenes ilustrativas declaradas (firma global); sin credenciales ni resultados inventados.
 - [ ] Coherencia con la política editorial; sin pauta farmacológica para el lector.
 - [ ] Cada recurso prometido operativo o retirado antes de publicar; no basta con compilar (`npx astro build`).
-- [ ] Historial de auditoría numerado, máximo tres rondas. **R3 pendiente (sesión independiente); es la última ronda.**
+- [ ] Historial de auditoría numerado, máximo tres rondas. **R3: NO APTO (1 P1). Última ronda agotada: corrección detenida; se consulta al propietario.**
 
 ## Historial de auditoría
 
@@ -588,4 +588,4 @@ Si una fuente no queda citada por nombre en su H2, esa sección carece de susten
 |---|---|---|---|---|---|
 | R1 | 2026-10-25 | Agente independiente (sesión distinta) | **APTO con reservas** | 0 P0, 6 P1, 9 P2. Informe: `docs/contenido/miedo-petardos-perros-mayores/auditoria-brief-r1.md` | Corregido el 2026-10-25 en v2 (ver `docs/contenido/miedo-petardos-perros-mayores/correccion-r1.md`) |
 | R2 | 2026-10-25 | Agente independiente (sesión distinta) | **APTO con reservas** | 0 P0, 4 P1 (S11 mal usada; testimonios repartidos en varios H2; fidelidad de testimonios; contrato de volumen), 12 P2. Informe: `docs/contenido/miedo-petardos-perros-mayores/auditoria-brief-r2.md` | Corregido el 2026-10-25 en v3 (ver `correccion-r2.md`) |
-| R3 | — | pendiente | — | — | **Última ronda: si falla, se detiene y se consulta al propietario** |
+| R3 | 2026-10-25 | Agente independiente (sesión distinta) | **NO APTO** | 0 P0, 1 P1 (N-1: fidelidad de los testimonios en H2-1 y H2-2), 9 P2. Informe: `docs/contenido/miedo-petardos-perros-mayores/auditoria-brief-r3.md` | **Tercera y última ronda. Corrección detenida; pendiente de decisión del propietario** |
