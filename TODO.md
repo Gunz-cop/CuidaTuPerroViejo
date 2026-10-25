@@ -6,6 +6,8 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 ## Contenido
 
+- [ ] **Volumen de los artículos: fijar 5.000–6.000 palabras como criterio de las skills (2026-10-25).** El propietario pide que los artículos de la serie ronden 5.000–6.000 palabras; golpe de calor (4.575) y leishmaniosis (5.134) salieron por debajo porque sus briefs fijaron 4.400 y 4.550 con ±15 %. El brief de petardos ya usa suelo 5.500 / target 6.000. Falta reflejarlo en `generar-briefing-contenido` (plantilla §1, §6 y §9.1) sin contradecir `calidad-editorial-adsense.md` §1 (extensión justificada por cobertura, sin relleno). Decidir con el propietario antes de tocar las skills.
+- [ ] **Base ES-06 del inventario: enlace roto.** `ajuntament.barcelona.cat/…/sant-joan_1079712` devuelve 404 (2026-10-25). Sustituir por una fuente viva en el inventario. (Anotado: 2026-10-25)
 - [ ] **Golpe de calor: menores aceptados al publicar (2026-10-24, `main` e22dd89).** Ninguno bloquea; retomar si se rehace el artículo o su animación. Detalle en `docs/contenido/golpe-de-calor-perros-mayores/auditoria-revision-r2.md`.
   - [ ] Recorte del podenco (`podenco-senior-perfil-transparente-v1`): no se ve senior (lomo y músculo de adulto) y aparece con el pelo seco en los pasos de mojarlo. Regenerar con edad visible y pelo mojado si se mejora la secuencia. Su alfa interior es 250–254, no 255 (no se nota).
   - [ ] Escala de avisos (`GolpeCalorRecursos`, variante `umbrales`): el recuadro discontinuo sigue marcando la distancia entre 30 °C y el umbral de la zona, aunque ya sin cifra. Valorar quitarlo.
