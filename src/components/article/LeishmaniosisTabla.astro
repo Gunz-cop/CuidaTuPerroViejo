@@ -1,0 +1,19 @@
+<div class="leish-tabla"><slot /></div>
+
+<style is:global>
+  @media (max-width:640px) {
+    .leish-tabla .tabla-apilable { overflow:visible; }
+    .leish-tabla .tabla-apilable table { margin:1rem 0; font-size:14px; line-height:1.45; }
+    .leish-tabla .tabla-apilable caption { font-size:14px; line-height:1.4; margin:0 0 .6rem; }
+    .leish-tabla .tabla-apilable tbody { gap:.4rem; }
+    .leish-tabla .tabla-apilable td { padding:.25rem .65rem; line-height:1.45; }
+    .leish-tabla .tabla-apilable td:first-child { font-weight:700; padding-top:.45rem; }
+    .leish-tabla .tabla-apilable td[data-label]::before { display:inline; font-size:12px; line-height:1.3; margin:0 .25rem 0 0; opacity:1; text-transform:none; letter-spacing:0; }
+    .leish-tabla .tabla-apilable td:first-child::before { display:none; }
+    .leish-tabla .tabla-apilable td[data-label='Qué puede significar']::before { content:'Posibles causas: '; }
+    .leish-tabla .tabla-apilable td[data-label='Qué haces']::before { content:'Qué hacer: '; }
+    .leish-tabla .tabla-apilable td[data-label='Para qué sirve']::before { content:'Aporta: '; }
+    .leish-tabla .tabla-apilable td[data-label='Qué no te dice']::before { content:'Límite: '; }
+    .leish-tabla .tabla-apilable td:last-child { padding-bottom:.45rem; }
+  }
+</style>

@@ -132,6 +132,17 @@ dentro. Abre cada `.webp` con la herramienta de lectura y comprueba:
 - **El sujeto fijo de la Sección 8.** ¿Es el mismo perro, de la misma raza y
   edad, en todas? En una infografía de este sitio el perro salió joven y sin
   hocico blanco mientras las otras tres imágenes tenían al senior de 19 años.
+- **El perro es senior y se ve senior a tamaño móvil.** Imagen por imagen, sin
+  muestreo, y también cada **recorte transparente** y fotograma de animación:
+  reduce a ~390 px de ancho (y comprueba el recorte sobre fondo claro y oscuro) y
+  anota por rasgo si se ven canas en hocico, cejas y párpados; ojos algo
+  hundidos; lomo y musculatura de perro mayor; postura natural; y que no haya
+  enfermedad inventada ([requisito senior verificable](../references/direccion-visual-editorial.md#requisito-senior-verificable-obligatorio-en-todo-prompt)).
+  Si parece un adulto joven, o solo se sostiene por el hocico canoso, es un
+  **hallazgo que obliga a regenerar** (no se arregla cambiando alt o pie). Es el
+  fallo que obligó a regenerar el recorte del podenco en golpe de calor. Comprueba
+  además que el `.mdx` y el brief no repiten la raza de artículos recientes sin
+  motivo documentado.
 - **Las restricciones visuales.** Están escritas como no negociables y se
   incumplen sin mala fe: una infografía correctísima de reservorio frente a
   esfínter dibujaba materia fecal y zona perianal, las dos cosas que su brief

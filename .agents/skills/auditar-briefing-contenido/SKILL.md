@@ -157,6 +157,19 @@ Notas de método:
   y estilo fotoperiodístico. Escenas de banco de imágenes ("perro feliz en
   parque") son hallazgo P2.
 - Si la historia tiene más de un perro, cada prompt indica cuál aparece.
+- **Perro senior, prompt por prompt.** Abre la Sección 8 y, para **cada** prompt
+  de imagen, recorte transparente y animación (no por muestreo), marca si pide
+  los cinco rasgos del [requisito senior verificable](../references/direccion-visual-editorial.md#requisito-senior-verificable-obligatorio-en-todo-prompt):
+  canas en hocico, cejas **y** párpados; ojos algo hundidos; lomo y musculatura de
+  perro mayor; postura natural; sin enfermedad inventada. Falta «senior» suelto,
+  solo «hocico canoso», o un recorte cuyo prompt omite la edad: **hallazgo P1 que
+  obliga a corregir el brief**. Comprueba también que cada prompt termine con el
+  criterio de rechazo a tamaño móvil y que la ficha de aceptación lo contemple.
+  Si un apoyo o animación necesita al perro y no hay prompt de recorte, es hallazgo.
+- **Raza no repetida.** Verifica la lista de razas recientes que declara el brief
+  contra `public/images/blog/`, los `heroImageAlt` de `src/content/blog/` y
+  `briefings/`; si omite una raza usada o repite una sin motivo documentado, es
+  hallazgo. Comprueba que la raza elegida esté justificada para el público.
 
 Comprueba que el brief remita a la [guía de voz y tono](../references/guia-voz-tono.md) y que no pida una voz contraria (usted, tono clínico distante o una salvedad por párrafo).
 
@@ -195,7 +208,7 @@ Por orden de gravedad real en este sitio:
 6. **Arco narrativo incompleto**, sobre todo el cierre ausente.
 7. **Metadatos fuera de límite** o `pilar` inválido.
 8. **Prosa final en vez de instrucciones** para el redactor.
-9. **Prompts de imagen genéricos o con raza inconsistente.**
+9. **Prompts de imagen genéricos, con raza inconsistente o sin los rasgos de edad senior** (incluidos los recortes y animaciones), o raza repetida sin motivo.
 
 **Mide antes de acusar.** Caracteres contados, no estimados; suma de targets
 calculada; identificadores resueltos con búsqueda. La credibilidad del informe

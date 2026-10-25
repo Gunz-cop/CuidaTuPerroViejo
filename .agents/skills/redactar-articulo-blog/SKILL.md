@@ -94,7 +94,7 @@ Aplica la [dirección visual editorial compartida](../references/direccion-visua
 
 Ejecuta el plan de Fase 1.5 y consulta [experiencias-visuales.md](./references/experiencias-visuales.md) antes de darlo por terminado:
 
-1. Fija un sujeto ilustrativo coherente con el brief: mismo perro, edad senior visible, anatomía y apoyos correctos, sin inventar patología. Deriva hero, escenas y recorte de una referencia inspeccionada. Respeta el estilo elegido; una imagen IA no se presenta como paciente real.
+1. Fija un sujeto ilustrativo coherente con el brief: mismo perro, anatomía y apoyos correctos, sin inventar patología, y **edad senior visible con los cinco rasgos del [requisito senior verificable](../references/direccion-visual-editorial.md#requisito-senior-verificable-obligatorio-en-todo-prompt)** (canas en hocico, cejas y párpados; ojos algo hundidos; lomo y musculatura de perro mayor; postura natural) en todo prompt de imagen, **recorte transparente** y animación. Si el brief omite alguno, complétalo como adenda. Revisa cada imagen y cada recorte a tamaño móvil rasgo por rasgo; si parece adulto joven, regenera antes de integrarlo. No cambies la raza del brief por tu cuenta ni la repitas de artículos recientes sin motivo documentado. Deriva hero, escenas y recorte de una referencia inspeccionada. Respeta el estilo elegido; una imagen IA no se presenta como paciente real.
 2. Usa recortes con transparencia real cuando se necesiten, con marcadores adaptados al encuadre. Comprueba en móvil que señalen la zona correcta y se distingan del pelo; no deformes el cuerpo para simular movimiento. Una escena estática no es un vídeo.
 3. Implementa componentes Astro con HTML estándar, CSS acotado y sin dependencias pesadas. Reutiliza patrones/configuración cuando proceda. No copies el cocker ni la cifra 39 a temas distintos: son contenido del ejemplo, no valores predeterminados.
 4. Sin autoplay; controles anterior/siguiente, reproducir/pausar/repetir, reproducción finita, teclado, foco visible y objetivos de al menos 44 px. Pausar debe detener avance y movimiento. Limpia temporizadores al ocultar/navegar y evita inicializaciones duplicadas.
@@ -233,9 +233,9 @@ Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra 
 
 * [ ] Plan de cantidad/utilidad documentado; cada apoyo responde una pregunta distinta y está junto al pasaje correspondiente.
 * [ ] Recursos integrados en el artículo completo, o pendientes explícitos por alcance solo texto/herramienta no disponible; sin placeholders presentados como terminados.
-* [ ] Mismo perro en todas las escenas, edad senior visible y anatomía revisada.
+* [ ] Mismo perro en todas las escenas; edad senior comprobada **imagen por imagen y recorte por recorte a tamaño móvil**, rasgo por rasgo (canas en hocico/cejas/párpados, ojos hundidos, lomo y musculatura, postura), y anatomía revisada. Anotado en el informe de entrega.
 * [ ] Infografías y animaciones explican acciones del texto y respetan el número acordado.
-* [ ] Si se usa recorte realista, tiene transparencia limpia y marcadores adaptados al sujeto.
+* [ ] Si se usa recorte realista, tiene transparencia limpia, marcadores adaptados al sujeto y el perro se ve senior sobre fondo claro y oscuro (el recorte es donde más fácil se escapa un perro joven).
 * [ ] Títulos y destacados legibles sobre sus fondos tanto en modo claro como oscuro.
 * [ ] Capturas móvil/escritorio, controles con teclado, pausa, movimiento reducido y alternativa sin JavaScript verificados.
 * [ ] Recursos y versiones responsive cargados; rutas nuevas cuando la caché pueda conservar una imagen anterior.

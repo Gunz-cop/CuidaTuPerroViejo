@@ -1,0 +1,61 @@
+---
+const uid = `leish-calendario-${crypto.randomUUID().slice(0, 8)}`;
+const months = [ ['ene','Enero'],['feb','Febrero'],['mar','Marzo'],['abr','Abril'],['may','Mayo'],['jun','Junio'],['jul','Julio'],['ago','Agosto'],['sep','Septiembre'],['oct','Octubre'],['nov','Noviembre'],['dic','Diciembre'] ];
+const sources = [
+  { name:'Alten y colaboradores · 2016', type:'Observación de campo · datos de 2011–2013', url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC4762948/', text:'Exposición concentrada de mayo a octubre; máximo potencial de junio a octubre. Sin riesgo aparente de diciembre a marzo en los lugares y años estudiados.', labels:['Sin riesgo aparente en el estudio','Sin riesgo aparente en el estudio','Sin riesgo aparente en el estudio','Actividad variable entre lugares','Exposición concentrada','Máximo potencial','Máximo potencial','Máximo potencial','Máximo potencial','Máximo potencial','Actividad variable entre lugares','Sin riesgo aparente en el estudio'], states:['quiet','quiet','quiet','variable','exposure','peak','peak','peak','peak','peak','variable','quiet'] },
+  { name:'ESCCAP · adaptación española de 2012', type:'Guía de control de enfermedades por vectores', url:'https://www.esccap.es/wp-content/uploads/2016/06/guia5_P31620-FINAL.pdf', text:'Temporada descrita de abril a octubre o noviembre. La guía reconoce diferencias entre regiones y entre años.', labels:['Fuera del tramo descrito','Fuera del tramo descrito','Fuera del tramo descrito','Temporada descrita','Temporada descrita','Temporada descrita','Temporada descrita','Temporada descrita','Temporada descrita','Temporada descrita','Final en octubre o noviembre','Fuera del tramo descrito'], states:['quiet','quiet','quiet','season','season','season','season','season','season','season','variable','quiet'] },
+  { name:'OCV · nota de 2024', type:'Recomendación profesional recogida por Europa Press', url:'https://www.redaccionmedica.com/ultimas-noticias/20240531/la-ocv-insta-la-colaboracion-entre-medicos-veterinarios-como-factor-clave-en-lucha-frente-leishmaniosis/118548_0.html', text:'Recomienda proteger durante todo el año. La atribución procede de una nota difundida por una fuente secundaria.', labels:months.map(()=>'Protección recomendada'), states:months.map(()=>'season') },
+];
+---
+
+<section class="lc-calendar" data-leish-calendar data-editorial-visual data-reader-atomic aria-labelledby={`${uid}-title`}>
+  <header><p class="lc-kicker">Tres fuentes, tres alcances</p><h3 id={`${uid}-title`} data-toc-exclude="true">El calendario necesita contexto local</h3></header>
+  <div class="lc-cards">
+    {sources.map((source,index) => <section class="lc-card" aria-labelledby={`${uid}-source-${index}`}>
+      <h4 id={`${uid}-source-${index}`}><a href={source.url}>{source.name}</a></h4>
+      <p class="lc-type">{source.type}</p>
+      <ol class="lc-months" aria-label={`Meses: ${source.name}`}>
+        {months.map(([abbr,full],month) => <li class={`lc-month lc-${source.states[month]}`} title={`${full}: ${source.labels[month]}`}><span aria-hidden="true">{abbr}</span><span class="lc-sr">{full}: {source.labels[month]}</span></li>)}
+      </ol>
+      {index === 0 && <p class="lc-key"><span><i class="lc-exposure"></i>Mayo: exposición</span><span><i class="lc-peak"></i>Junio–octubre: máximo</span><span><i class="lc-variable"></i>Abril y noviembre: actividad variable</span></p>}
+      {index === 1 && <p class="lc-key"><span><i class="lc-season"></i>Abril–octubre</span><span><i class="lc-variable"></i>Noviembre: extremo variable</span></p>}
+      {index === 2 && <p class="lc-key"><span><i class="lc-season"></i>Protección recomendada todo el año</span></p>}
+      <p class="lc-description">{source.text}</p>
+    </section>)}
+  </div>
+  <p class="lc-decision"><strong>Tu clínica concreta las fechas para vuestra zona y los viajes.</strong> Las franjas comparan lo que dice cada fuente; no calculan el riesgo de tu perro.</p>
+  <details class="lc-method"><summary>Cómo interpretar esta comparación</summary><p>Alten incluyó un único punto español: Fuenlabrada, en un foco atípico. Las celdas claras describen el estudio o quedan fuera del tramo citado por una guía; no equivalen a meses seguros en cualquier zona. Las celdas rayadas señalan los extremos variables. La fila de la OCV representa una recomendación de protección, no una medición mensual del vector.</p></details>
+</section>
+
+<style>
+  .lc-calendar { --lc-bg:#fffdf6; --lc-ink:#203e32; --lc-sub:#435c4b; --lc-card:#f0f3e9; --lc-border:#b7c6b0; color:var(--lc-ink); background:var(--lc-bg); border:1px solid var(--lc-border); padding:1.2rem; border-radius:1.2rem; margin:2rem 0; max-width:46rem; font-family:system-ui,sans-serif; }
+  :global(.dark) .lc-calendar { --lc-bg:#182e25; --lc-ink:#f4f1e7; --lc-sub:#d1dfcf; --lc-card:#253d31; --lc-border:#637b65; }
+  .lc-calendar .lc-kicker { color:var(--lc-sub); margin:0; font-size:.72rem; line-height:1.5; text-transform:uppercase; letter-spacing:.06em; font-weight:700; }
+  .lc-calendar h3 { margin:.25rem 0 1rem!important; color:var(--lc-ink)!important; font-size:clamp(1.15rem,3vw,1.6rem); line-height:1.3; }
+  .lc-cards { display:grid; gap:.65rem; }
+  .lc-card { background:var(--lc-card); border-radius:.7rem; padding:.8rem; min-width:0; }
+  .lc-calendar h4 { font-size:.94rem; line-height:1.4; margin:0; color:var(--lc-ink)!important; }
+  .lc-calendar h4 a { color:var(--lc-ink); font-weight:700; text-decoration-color:currentColor; }
+  .lc-calendar .lc-type { margin:.2rem 0 .6rem; color:var(--lc-sub); font-size:.73rem; line-height:1.4; }
+  .lc-calendar .lc-months { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:2px; padding:0; margin:.45rem 0; list-style:none; }
+  .lc-calendar .lc-months li { margin:0; padding:.35rem 0; text-align:center; min-width:0; font-size:.72rem; line-height:1.3; font-weight:700; border:1px solid #75856e; border-radius:3px; color:#203e32; }
+  .lc-month::marker { content:none; }
+  .lc-quiet { background:#e7e9e2; }
+  .lc-variable { background:repeating-linear-gradient(135deg,#eee7d5,#eee7d5 4px,#d2c5a5 4px,#d2c5a5 6px); background-color:#d2c5a5; }
+  .lc-exposure { background:#f2d798; }
+  .lc-peak { background:#a84716; color:#fff!important; }
+  .lc-season { background:#2b5844; color:#fff!important; }
+  .lc-calendar .lc-key { display:flex; flex-wrap:wrap; gap:.2rem .7rem; margin:.4rem 0; color:var(--lc-sub); font-size:.68rem; line-height:1.45; }
+  .lc-key span { display:inline-flex; align-items:center; gap:.3rem; }
+  .lc-key i { display:inline-block; width:.65rem; height:.65rem; border:1px solid #75856e; border-radius:2px; }
+  .lc-calendar .lc-description { color:var(--lc-sub); margin:.4rem 0 0; font-size:.81rem; line-height:1.5; }
+  .lc-calendar .lc-decision { color:var(--lc-sub); font-size:.88rem; line-height:1.5; margin:.85rem 0; }
+  .lc-calendar strong { color:var(--lc-ink)!important; }
+  .lc-calendar .lc-method { color:var(--lc-ink); background:var(--lc-card)!important; border-color:var(--lc-border)!important; padding:.6rem .75rem!important; margin:.6rem 0 0!important; }
+  .lc-calendar .lc-method summary { min-height:44px; color:var(--lc-ink)!important; font-size:.82rem; line-height:1.5; }
+  .lc-calendar .lc-method p { color:var(--lc-sub); font-size:.85rem; line-height:1.6; margin:.7rem 0; }
+  .lc-calendar :is(a,summary):focus-visible { outline:3px solid #b56325; outline-offset:3px; }
+  .lc-sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  @media(max-width:480px) { .lc-calendar { padding:.85rem; } .lc-card { padding:.65rem; } .lc-calendar .lc-months li { font-size:.69rem; } }
+  @media print { .lc-calendar { --lc-bg:#fff!important; --lc-ink:#203e32!important; --lc-sub:#435c4b!important; --lc-card:#f0f3e9!important; --lc-border:#aaa!important; } .lc-card { break-inside:avoid; } .lc-months { print-color-adjust:exact; } .lc-method { display:none!important; } }
+</style>
