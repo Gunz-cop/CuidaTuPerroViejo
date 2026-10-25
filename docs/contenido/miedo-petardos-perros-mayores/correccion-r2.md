@@ -17,7 +17,7 @@ Fecha: 2026-10-25. Brief: `briefings/briefing-miedo-petardos-perros-mayores.md` 
 | **P1-D** Volumen | 5.300–6.000, target 5.700; targets con títulos, avisos y FAQ; eliminadas las listas «Si hace falta más»; conclusión sin repetir las cinco decisiones; §9.1 conserva «parar y consultar» |
 | P2-1 S5 y medidas ambientales | H2-5 aclara que las medidas ambientales (esconderse, persianas, música) no se asociaron con mejoría en S5 y que el refugio se recomienda por S6 y S10 |
 | P2-2 Trazabilidad fina | Matriz única actualizada (S3: H2-2 y H2-4; S8: H2-3, 4, 5, 6, 8, 9; S1 solo H2-1); comprobada por script; ninguna fuente se cita fuera de «Sustentado en» |
-| P2-3 Datos sin usar | El 26 % de fuegos artificiales de S1 que cita el auditor **no aparece** en el texto que descargué (no se usa). Añadido S2 en el H3 de separación |
+| P2-3 Datos sin usar | **Rectificado en R3:** el 26 % de fuegos artificiales de S1 sí aparece (Resultados, «Prevalence»); mi descarga en HTML estaba truncada y lo busqué mal. Se incorpora en v4. Añadido S2 en el H3 de separación |
 | P2-4 Artículo publicado de ansiedad | Declarado en §2 y §9.8: tiene un H3 de feromonas con «moderada solo en miedo a tormentas» y no debe contradecirse |
 | P2-5 H2-3 y FAQ 6 | H3 de categorías condensado a «qué mirar en la etiqueta»; calendario con Hogueras de Alicante y San Fermín (a contrastar con el programa oficial); FAQ 6 abre con «Depende de la fecha, del lugar y de la ordenanza» |
 | P2-6 Grupo e individuo | H2-2: «diferencias de grupo»; lo no medido por S3 se lee contra su conducta habitual; el jadeo también puede ser calor |
