@@ -60,8 +60,33 @@ Límites para el redactor:
 - Narrar sin juzgar a la familia (regla de empatía sin culpa de la guía de tono). Lo que hacía la familia (jalar, regañar, mojar) se cuenta como lo que ocurrió y se contrasta con lo que dicen las fuentes del brief (S10 y la ESVCE: no castigar ni forzar la salida del refugio; Ley 7/2023, art. 24.2.b, no causar «ansiedad o miedo»); el artículo no lo presenta como algo a imitar.
 - Hechos que se ven en la escena y enlazan con el brief: perros en el patio durante la pólvora (riesgo de huida), búsqueda de refugio dentro de la casa (bajo la cama, el armario, la mesa), llanto.
 
-Pendiente de aclarar con el propietario: si Osa era mayor, desde cuándo reaccionaba así, si llegó a escaparse o lastimarse, y qué ocurrió después.
+Aclaraciones posteriores del propietario (2026-10-25):
+- Osa era una perra muy brava: si salía a la calle podía morder a alguien.
+- Durante los eventos de pólvora no recuerda con seguridad si se escapó. Cree que a veces, al abrir el portón, los perros salían disparados; en una ocasión salieron, pero fueron a esconderse en algún lugar y no a morder a nadie.
+- Nunca se lastimaron. En el patio buscaban dónde esconderse; al principio ladraban y después se metían, por ejemplo, bajo la pila (lavadero) u otro lugar del patio.
+- Su edad y el desenlace no se conocen. No se presenta como perra mayor.
+- Impresión del propietario (hipótesis suya): el conjunto de tantos sonidos es lo que los ahuyenta.
+- Límite añadido: un perro que puede morder y que está en pánico es un riesgo de manejo para quien intenta sacarlo; no convertir el relato en pauta.
+
+### Perra de unos vecinos (El Salvador, cuando el propietario era adolescente)
+
+Hechos aportados (relato oral, 2026-10-25; sin nombre, raza, edad ni fecha exacta):
+- Durante los momentos más fuertes de la pólvora, aullaba y ladraba.
+- Cuando la pólvora llegaba a un punto en que era demasiada, buscaba la casa y un lugar donde no se oyera tanto.
+- Impresión del propietario (hipótesis suya): empiezan ladrando y aullando y, cuando es demasiado, buscan refugio.
+
+Límites: observación lejana en el tiempo y de un perro ajeno. No se presenta como patrón ni como estudio.
+
+### Baltor (perro de un vecino, El Salvador, mismo periodo)
+
+Hechos aportados (relato oral, 2026-10-25; sin raza, edad ni fecha exacta):
+- Baltor vivía siempre dentro del apartamento de su familia, que estaba justo encima del que habitaba el propietario.
+- El día que reventaban pólvora, no salía de las habitaciones. Aunque le abrieran la puerta de la casa, no huía: se quedaba dentro. El miedo a salir era tan grande que, según el propietario, una vez se orinó o se defecó (no recuerda cuál de las dos) por el miedo.
+- La familia compró después una perra chow chow, muy enérgica, que solía molestar a Baltor. Aun así, los días de pólvora los dos perros se escondían.
+- El propietario no sabe si el hecho de que fuera el apartamento de arriba hacía que se oyera más; es una duda suya, no un dato.
+
+Límites: recuerdo de hace años, sin fechas ni desenlace, de un perro ajeno. Contrasta con Osa: Baltor, dentro de casa, no se escapa; Osa, en el patio, buscaba entrar. Ambos casos sostienen un único mensaje práctico, ya presente en el brief: un lugar interior y cerrado es donde los perros buscan refugio. No se interpreta como que dentro de casa el perro no sufra.
 
 ### Otros testimonios
 
-Pendientes: el propietario dice tener más.
+Pendientes: el propietario dice tener más; si ya los ha contado todos, se cierra este apartado.
