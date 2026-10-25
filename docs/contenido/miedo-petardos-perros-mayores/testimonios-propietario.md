@@ -33,6 +33,7 @@ Hechos aportados (relato oral, 2026-10-25; aproximados donde se indica):
 - El año pasado (2025) hubo bastante pólvora y **las dos perras estuvieron algo nerviosas y muy alerta**, pero se quedaron en casa, con la familia, con películas puestas y la gente hablando. Ese año hubo además una reunión en casa con mucha familia de su pareja; con pólvora incluida, los perros estuvieron en familia y muy tranquilos.
 - Cuando se pone nerviosa, le hablan. Cuando pierde el control, alzan un poco la voz para que los escuche y los vea y sepa que está con ellos. El propietario dice que en general ha sido muy tranquila.
 - No sabe si ella tuvo alguna vivencia previa a la adopción.
+- **Salud (aportado después, 2026-10-25):** tiene sobrepeso, displasia de cadera en fase inicial y «algo en la columna» cuyo nombre el propietario no recuerda: espinas o crecimientos en la parte final de la columna que van creciendo (diagnóstico exacto sin confirmar; el redactor no debe poner un nombre). Se cansa mucho al caminar. Viven en una zona de cuestas (hay que subir y bajar para llegar a sitios llanos), lo que la agota. Por eso el propietario ya no la saca a pasear con regularidad; cuando las saca, va a un parque de suelo más nivelado. Este es el contexto de «cuando toleraba los paseos».
 
 Límites para el redactor:
 - Alzar a Dakota fue posible después de un proceso, y una vez casi acabó en mordisco. **No presentar alzar o poner boca arriba a un perro asustado como consejo**; si se cuenta, que sea como vivencia con ese riesgo dicho.
@@ -43,4 +44,25 @@ Límites para el redactor:
 
 ## Otros perros que ha visto el propietario
 
-Pendiente. El propietario menciona haber visto perros que lloran, se esconden o corren por la casa. Se necesita de quién eran, aproximadamente cuándo y qué pasó después; si no se recuerda, queda como «no lo sé».
+### Osa (perra de la familia de un tío del propietario, El Salvador)
+
+Hechos aportados (relato oral, 2026-10-25; sin fecha, sin edad de Osa ni desenlace conocidos):
+- Osa era la perra de la familia del tío del propietario, en El Salvador. Había otros perros en la casa; Osa es el caso que más recuerda.
+- En El Salvador es costumbre reventar mucha pólvora (petardos, luces, de todo), sobre todo el 24 y el 31 de diciembre: según el propietario, son fechas en las que casi no se oye a la gente, solo fiesta y pólvora.
+- Los perros vivían en el patio y pasaban poco tiempo dentro de la casa; los dejaban entrar un rato. En esa familia, el perro «tiene que estar en el patio».
+- Con la pólvora, buscaban cómo entrar a la casa: a veces se abría la puerta y entraban corriendo, no se podía agarrarlos, se metían en los cuartos, bajo la cama o en el armario.
+- Para sacarlos había que jalarlos. No eran perros que se alzaran. A veces los regañaban y alguna vez les echaban agua porque no querían estar fuera. Los perros lloraban.
+- Una noche, durante una cena, abrieron la puerta (para tirar algo a la basura), Osa entró, se metió bajo la mesa del comedor donde cenaban y no quiso salir: «un miedo terrible».
+- El propietario cuenta que existen más testimonios (pendientes).
+
+Límites para el redactor:
+- Es una observación de un familiar, de otra familia y de otro país. No es un caso clínico ni tiene seguimiento. Sin edad ni desenlace conocidos, no se presenta como «perra mayor».
+- Narrar sin juzgar a la familia (regla de empatía sin culpa de la guía de tono). Lo que hacía la familia (jalar, regañar, mojar) se cuenta como lo que ocurrió y se contrasta con lo que dicen las fuentes del brief (S10 y la ESVCE: no castigar ni forzar la salida del refugio; Ley 7/2023, art. 24.2.b, no causar «ansiedad o miedo»); el artículo no lo presenta como algo a imitar.
+- Hechos que se ven en la escena y enlazan con el brief: perros en el patio durante la pólvora (riesgo de huida), búsqueda de refugio dentro de la casa (bajo la cama, el armario, la mesa), llanto.
+
+Pendiente de aclarar con el propietario: si Osa era mayor, desde cuándo reaccionaba así, si llegó a escaparse o lastimarse, y qué ocurrió después.
+
+### Otros testimonios
+
+Pendientes: el propietario dice tener más.
+ El propietario menciona haber visto perros que lloran, se esconden o corren por la casa. Se necesita de quién eran, aproximadamente cuándo y qué pasó después; si no se recuerda, queda como «no lo sé».
