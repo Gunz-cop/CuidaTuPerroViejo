@@ -1,4 +1,4 @@
-> Copia de lectura de la rama de revisión. Pendiente auditoría visual independiente; no publicado.
+> Copia de lectura de la rama de revisión. Correcciones visuales R3 pendientes de decisión del propietario; no publicado.
 
 # Leishmaniosis en perros mayores en España: síntomas, pruebas y prevención
 
@@ -13,9 +13,9 @@ Por [Equipo Cuida a tu Perro Viejo](<https://cuidatuperroviejo.com/acerca-de>) P
 
 Cómo reconocer la leishmaniosis en tu perro mayor, qué pruebas se hacen, qué significa un positivo sin síntomas y cómo protegerlo de los flebotomos en España.
 
-![Ilustración de una cuidadora comprobando la holgura del collar de una perra mestiza senior atigrada, sentada en el recibidor de un piso.](<../../../public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-colocacion-collar-v1.webp>)
+![Ilustración de una cuidadora ajustando un collar al cuello de una perra mestiza senior de hocico oscuro canoso, sentada en el recibidor de un piso](<../../../public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-colocacion-collar-v1.webp>)
 
-Ilustración de una cuidadora comprobando la holgura del collar de una perra mestiza senior atigrada, sentada en el recibidor de un piso.
+Ilustración de una cuidadora ajustando un collar al cuello de una perra mestiza senior de hocico oscuro canoso, sentada en el recibidor de un piso
 **Un positivo en leishmania puede indicar infección sin que tu perro esté enfermo.** La infección significa que alberga el parásito; la enfermedad aparece cuando provoca signos o alteraciones. La guía clínica española de 2026 separa ambas situaciones para decidir qué hacer.
 
 **Autoría:** Equipo Cuida a tu Perro Viejo · **Actualizado:** 24 de octubre de 2026
@@ -120,7 +120,7 @@ Observa sin forzar posturas
 
 Cinco puntos para ordenar lo que ves, antes de llevarlo a consulta.
 
-![Perra mestiza atigrada de edad avanzada, con hocico y cejas canosos, menor volumen muscular y postura relajada, vista de perfil.](<../../../public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-recorte-perfil-v2.webp>)
+![Ilustración de una perra mestiza atigrada oscura de perfil hacia la derecha, con hocico y cejas canosos, lomo cóncavo entre hombros y cadera, muslos estrechos y cabeza baja; se distinguen las cuatro patas.](<../../../public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-recorte-perfil-v3.webp>)
 
 Punto 1 de 5
 
@@ -196,7 +196,7 @@ La guía española desaconseja los test rápidos cuando existe un cuadro clínic
 
 Si el resultado es negativo y persisten signos compatibles, tu veterinario puede pedir otras pruebas. En la citología influye cuántos parásitos hay en la muestra; en la PCR, el tejido elegido y la técnica. LeishVet recoge estas diferencias al comparar los métodos.
 
-![Ilustración de una veterinaria extrayendo sangre de la pata de una perra mestiza senior atigrada mientras su tutora le sostiene suavemente la cabeza.](<../../../public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-analisis-sangre-consulta-v2.webp>)
+![Ilustración de una veterinaria con una jeringa en la pata delantera extendida de una perra mestiza de hocico canoso y lomo cóncavo, mientras su tutora le sostiene la cabeza.](<../../../public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-analisis-sangre-consulta-v3.webp>)
 
 La extracción de sangre forma parte del estudio de la infección y de la enfermedad.
 
@@ -323,7 +323,7 @@ Observación de campo · datos de 2011–2013
 11. Noviembre: Actividad variable entre lugares
 12. Diciembre: Sin riesgo aparente en el estudio
 
-Mayo: exposición Junio–octubre: máximo
+Mayo: exposición Junio–octubre: máximo Abril y noviembre: actividad variable
 
 Exposición concentrada de mayo a octubre; máximo potencial de junio a octubre. Sin riesgo aparente de diciembre a marzo en los lugares y años estudiados.
 

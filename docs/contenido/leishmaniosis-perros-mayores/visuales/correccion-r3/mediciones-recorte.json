@@ -1,0 +1,81 @@
+{
+  "method": "Coordinates chosen manually on the 1200x675 WebP; vertical separation from straight croup-withers chord. Luma Yprime=0.2126R+0.7152G+0.0722B, sRGB byte values, no gamma linearization. Not a diagnosis or automated age classifier.",
+  "points": {
+    "croup": {
+      "x": 380,
+      "y": 116,
+      "label": "Grupa"
+    },
+    "withers": {
+      "x": 760,
+      "y": 103,
+      "label": "Cruz"
+    },
+    "dorsal": {
+      "x": 550,
+      "y": 164
+    },
+    "nose": {
+      "x": 1118,
+      "y": 330
+    }
+  },
+  "chordY": 110.1842105263158,
+  "depression1200": 53.815789473684205,
+  "depression390": 17.490131578947366,
+  "noseBelowWithers1200": 227,
+  "coat": [
+    {
+      "version": "v2",
+      "roi": {
+        "left": 450,
+        "top": 215,
+        "width": 180,
+        "height": 115
+      },
+      "meanLuma": 66.62470823188254
+    },
+    {
+      "version": "v3",
+      "roi": {
+        "left": 466,
+        "top": 215,
+        "width": 180,
+        "height": 115
+      },
+      "meanLuma": 57.06754785507284
+    }
+  ],
+  "variants": [
+    {
+      "path": "public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-recorte-perfil-v3.webp",
+      "sha256": "2ade13fbc5f18234bc49763117cb6493366af776c84ee339b12e1c76775b84a4",
+      "width": 1200,
+      "height": 675,
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "fullyTransparentPixels": 523243,
+      "partialAlphaPixels": 286131
+    },
+    {
+      "path": "public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-recorte-perfil-v3-800.webp",
+      "sha256": "6d62e52ccd8d5f8420698c122291b878288292dd78b62f067196f1b978c445a7",
+      "width": 800,
+      "height": 450,
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "fullyTransparentPixels": 233225,
+      "partialAlphaPixels": 125886
+    },
+    {
+      "path": "public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-recorte-perfil-v3-400.webp",
+      "sha256": "844cd11063299f8bdf84f619e06ff6a78ca2f328837fddfd074d27e4ec2d9dde",
+      "width": 400,
+      "height": 225,
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "fullyTransparentPixels": 57123,
+      "partialAlphaPixels": 32051
+    }
+  ]
+}

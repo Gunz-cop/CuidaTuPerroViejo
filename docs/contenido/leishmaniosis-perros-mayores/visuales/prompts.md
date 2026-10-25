@@ -1,5 +1,11 @@
 # Prompts de producción visual
 
+## Corrección posterior a R3 — versiones v3
+
+La R3 invalidó las valoraciones anteriores de anatomía del recorte v2 y de punción de la consulta v2. Se conservan los prompts históricos de abajo para trazabilidad; no acreditan su resultado. La portada y casa no se regeneran.
+
+Se generaron primero **ocho recortes** y después **quince consultas**. Propuestas integradas: recorte 7 y consulta 15. Todos los originales y descartes están versionados. Los veintitrés prompts, cada uno con el bloque de edad íntegro y cierre del encargo, están en [prompts-generaciones.md](correccion-r3/prompts-generaciones.md). [Referencias por generación](correccion-r3/generaciones.json), [anotación a 390 px y motivos de descarte](correccion-r3/inspeccion-candidatos.md), [entrega actual](entrega-visuales.md). La decisión visual corresponde al propietario.
+
 Se aplica `.agents/skills/crear-animaciones-articulo-blog/SKILL.md` y la dirección visual compartida. La portada v1 se inspeccionó antes de usarla como referencia de casa, consulta y recorte. Las sustituciones v2 usan su v1 y la portada. Los originales se conservan en `originales/`.
 
 ## Hero v1 — referencia

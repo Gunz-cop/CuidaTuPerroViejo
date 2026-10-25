@@ -1,6 +1,6 @@
 ---
 const uid = `leish-calendario-${crypto.randomUUID().slice(0, 8)}`;
-const months = [ ['En','Enero'],['Fe','Febrero'],['Mr','Marzo'],['Ab','Abril'],['My','Mayo'],['Jn','Junio'],['Jl','Julio'],['Ag','Agosto'],['Se','Septiembre'],['Oc','Octubre'],['No','Noviembre'],['Di','Diciembre'] ];
+const months = [ ['ene','Enero'],['feb','Febrero'],['mar','Marzo'],['abr','Abril'],['may','Mayo'],['jun','Junio'],['jul','Julio'],['ago','Agosto'],['sep','Septiembre'],['oct','Octubre'],['nov','Noviembre'],['dic','Diciembre'] ];
 const sources = [
   { name:'Alten y colaboradores · 2016', type:'Observación de campo · datos de 2011–2013', url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC4762948/', text:'Exposición concentrada de mayo a octubre; máximo potencial de junio a octubre. Sin riesgo aparente de diciembre a marzo en los lugares y años estudiados.', labels:['Sin riesgo aparente en el estudio','Sin riesgo aparente en el estudio','Sin riesgo aparente en el estudio','Actividad variable entre lugares','Exposición concentrada','Máximo potencial','Máximo potencial','Máximo potencial','Máximo potencial','Máximo potencial','Actividad variable entre lugares','Sin riesgo aparente en el estudio'], states:['quiet','quiet','quiet','variable','exposure','peak','peak','peak','peak','peak','variable','quiet'] },
   { name:'ESCCAP · adaptación española de 2012', type:'Guía de control de enfermedades por vectores', url:'https://www.esccap.es/wp-content/uploads/2016/06/guia5_P31620-FINAL.pdf', text:'Temporada descrita de abril a octubre o noviembre. La guía reconoce diferencias entre regiones y entre años.', labels:['Fuera del tramo descrito','Fuera del tramo descrito','Fuera del tramo descrito','Temporada descrita','Temporada descrita','Temporada descrita','Temporada descrita','Temporada descrita','Temporada descrita','Temporada descrita','Final en octubre o noviembre','Fuera del tramo descrito'], states:['quiet','quiet','quiet','season','season','season','season','season','season','season','variable','quiet'] },
@@ -17,7 +17,7 @@ const sources = [
       <ol class="lc-months" aria-label={`Meses: ${source.name}`}>
         {months.map(([abbr,full],month) => <li class={`lc-month lc-${source.states[month]}`} title={`${full}: ${source.labels[month]}`}><span aria-hidden="true">{abbr}</span><span class="lc-sr">{full}: {source.labels[month]}</span></li>)}
       </ol>
-      {index === 0 && <p class="lc-key"><span><i class="lc-exposure"></i>Mayo: exposición</span><span><i class="lc-peak"></i>Junio–octubre: máximo</span></p>}
+      {index === 0 && <p class="lc-key"><span><i class="lc-exposure"></i>Mayo: exposición</span><span><i class="lc-peak"></i>Junio–octubre: máximo</span><span><i class="lc-variable"></i>Abril y noviembre: actividad variable</span></p>}
       {index === 1 && <p class="lc-key"><span><i class="lc-season"></i>Abril–octubre</span><span><i class="lc-variable"></i>Noviembre: extremo variable</span></p>}
       {index === 2 && <p class="lc-key"><span><i class="lc-season"></i>Protección recomendada todo el año</span></p>}
       <p class="lc-description">{source.text}</p>
