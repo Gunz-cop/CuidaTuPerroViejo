@@ -1,28 +1,25 @@
 Comando: npx astro build (con red habilitada para Cloudflare).
-Exit: 1. Marcador contractual de fecha conservado, sin fecha ficticia.
-Extracto:
-20:54:41   ├─ /higiene-hogar-perros-senior/limpieza-ojos-oidos-perros-ancianos.html (+11ms) 
-20:54:41   ├─ /salud-perros-mayores/mal-aliento-perros-viejos.html (+12ms) 
-20:54:41   ├─ /salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html (+11ms) 
-20:54:41   ├─ /salud-mental-emocional-perros/miedo-petardos-perros-mayores.html20:54:41 [ERROR] RangeError: Invalid time value
-    at Date.toISOString (<anonymous>)
-    at file:///workspace/cuidatuperroviejo/dist/server/.prerender/chunks/_slug__DVxhjva3.mjs:219:59
-    at async callComponentAsTemplateResultOrResponse (file:///workspace/cuidatuperroviejo/dist/server/.prerender/chunks/jsx-runtime_-Gf_IdcA.mjs:6723:24)
-    at async renderToAsyncIterable (file:///workspace/cuidatuperroviejo/dist/server/.prerender/chunks/jsx-runtime_-Gf_IdcA.mjs:6743:25)
-    at async renderPage (file:///workspace/cuidatuperroviejo/dist/server/.prerender/chunks/jsx-runtime_-Gf_IdcA.mjs:7193:33)
-    at async handlePages (file:///workspace/cuidatuperroviejo/dist/server/.prerender/chunks/entrypoints_CBNQuUVk.mjs:1898:16)
-    at async file:///workspace/cuidatuperroviejo/dist/server/.prerender/chunks/_virtual_astro_middleware_LKhwSQaB.mjs:35:194
-    at async callMiddleware (file:///workspace/cuidatuperroviejo/dist/server/.prerender/chunks/entrypoints_CBNQuUVk.mjs:3153:9)
-    at async handleMiddleware (file:///workspace/cuidatuperroviejo/dist/server/.prerender/chunks/entrypoints_CBNQuUVk.mjs:3243:14)
-    at async render (file:///workspace/cuidatuperroviejo/dist/server/.prerender/chunks/entrypoints_CBNQuUVk.mjs:4731:15)
-20:54:41 [ERROR] [build] Caught error rendering /salud-mental-emocional-perros/miedo-petardos-perros-mayores: Error: Failed to prerender https://cuidatuperroviejo.com/salud-mental-emocional-perros/miedo-petardos-perros-mayores.html: Invalid time value
-Failed to prerender https://cuidatuperroviejo.com/salud-mental-emocional-perros/miedo-petardos-perros-mayores.html: Invalid time value
-  Stack trace:
-    at Object.render (file:///workspace/cuidatuperroviejo/node_modules/@astrojs/cloudflare/dist/prerenderer.js:166:15)
-    at async renderPath (file:///workspace/cuidatuperroviejo/node_modules/astro/dist/core/build/generate.js:321:7)
-    at async generatePages (file:///workspace/cuidatuperroviejo/node_modules/astro/dist/core/build/generate.js:170:11)
-    at async Object.buildApp (file:///workspace/cuidatuperroviejo/node_modules/vite/dist/node/chunks/node.js:34236:5)
-    at async viteBuild (file:///workspace/cuidatuperroviejo/node_modules/astro/dist/core/build/static-build.js:68:3)
+Exit: 0. Fecha de publicación confirmada por el propietario: 2026-10-25.
+Copia temporal del borrador en src/content/blog/ retirada tras compilar.
+Extracto final:
+23:05:19   ├─ /alimentacion-perros-senior.html (+13ms)
+23:05:19   ├─ /cuidados-paliativos-perros.html (+11ms)
+23:05:19   ├─ /herramientas.html (+11ms)
+23:05:19   ├─ /higiene-hogar-perros-senior.html (+10ms)
+23:05:19   ├─ /movilidad-dolor-perros-mayores.html (+10ms)
+23:05:19   ├─ /salud-mental-emocional-perros.html (+12ms)
+23:05:19   ├─ /salud-perros-mayores.html (+11ms)
+23:05:20   ├─ /index.html (+11ms)
+23:05:20 ✓ Completed in 1.37s.
+
+23:05:20 [build] Rearranging server assets...
+23:05:20 [build] ✓ Completed in 4.14s.
+23:05:20 [@astrojs/sitemap] `sitemap-index.xml` created at `dist/client`
+23:05:20 [agent-readiness-discovery] llms.txt generado después de sitemap (3728 bytes).
+23:05:20 [agent-readiness-markdown-projection] Proyección agent-content/v1 generada: 37 documentos, 35154 bytes de índice.
+23:05:22 [agent-readiness-api-generation] Artifacts F3A generados: 37 documentos, 676757 bytes de query-index.
+23:05:22 [build] Server built in 6.86s
+23:05:22 [build] Complete!
 npm notice
 npm notice New major version of npm available! 11.9.0 -> 12.2.1
 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1

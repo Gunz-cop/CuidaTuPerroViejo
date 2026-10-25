@@ -6,7 +6,7 @@ Borrador: [articulo-borrador.mdx](articulo-borrador.mdx). **Redacción y comprob
 
 ## Recuento reproducible
 
-**5.651 palabras**, dentro del contrato 5.300–6.000 y del objetivo 5.500–5.800. Todas las secciones y H3 están dentro de ±10 %.
+**5.653 palabras**, dentro del contrato 5.300–6.000 y del objetivo 5.500–5.800. Todas las secciones y H3 están dentro de ±10 %.
 
 Método: separación por espacios sobre el texto visible del cuerpo MDX. Se elimina el frontmatter, imports, comentarios MDX, etiquetas de imagen, pies marcados `*Pie: …*` y el bloque `div data-editorial-bibliography`. Se conservan H2/H3, texto de celdas y cabeceras de tablas, títulos y cuerpo de los tres AlertBox y las ocho preguntas y respuestas del FAQ. Se retiran etiquetas, marcadores Markdown, numeración de listas y destinos de enlaces; se conserva el texto ancla. No se cuentan atributos HTML, llaves ni sintaxis del array del FAQ. El título automático del componente FAQ no está escrito en el cuerpo y no se añade al recuento. Las cifras, unidades y símbolos separados por espacios se cuentan como tokens separados, igual que en `wc -w` sobre ese texto limpio.
 
@@ -14,13 +14,13 @@ Desde la raíz: `python3 docs/contenido/miedo-petardos-perros-mayores/comprobaci
 
 | Sección | Palabras reales | Target §6 | Desviación |
 |---|---:|---:|---:|
-| Introducción | 334 | 350 | -4,6 % |
+| Introducción | 335 | 350 | -4,3 % |
 | Por qué los petardos asustan a un perro mayor | 544 | 540 | +0,7 % |
 | Cómo se ve el miedo: lo que midió el estudio y lo que no | 556 | 560 | -0,7 % |
 | El calendario del ruido en España y lo que dice la ley | 507 | 500 | +1,4 % |
 | Antes: la visita al veterinario, con semanas de margen | 613 | 640 | -4,2 % |
 | El refugio en casa: cómo montarlo en un piso | 552 | 550 | +0,4 % |
-| El día señalado: horarios y plan de la noche | 606 | 600 | +1,0 % |
+| El día señalado: horarios y plan de la noche | 607 | 600 | +1,2 % |
 | Lo que se vende y lo que dicen los dueños | 419 | 440 | -4,8 % |
 | El trabajo de fondo: acostumbrarlo al ruido sin prisa | 393 | 400 | -1,8 % |
 | Si se escapa: qué hacer en las primeras horas | 290 | 300 | -3,3 % |
@@ -53,7 +53,7 @@ Incluyen su título; los avisos se cuentan aparte dentro del H2. Imágenes, pies
 | 5 | Cómo ensayarlo con semanas de antelación | 83 | 80 | +3,8 % |
 | 6 | Por la tarde: paseo, comida y puertas | 186 | 180 | +3,3 % |
 | 6 | Por la noche: qué hacer mientras suenan | 146 | 150 | -2,7 % |
-| 6 | Consolar: qué hacemos nosotros y qué dice la encuesta | 192 | 190 | +1,1 % |
+| 6 | Consolar: qué hacemos nosotros y qué dice la encuesta | 193 | 190 | +1,6 % |
 | 6 | Si tiene que salir a medianoche | 73 | 70 | +4,3 % |
 | 7 | Qué dicen los dueños de la encuesta | 255 | 280 | -8,9 % |
 | 7 | Cómo comprar con criterio | 154 | 150 | +2,7 % |
@@ -120,7 +120,7 @@ Citas nominales con enlaces profundos en el desarrollo, además de bibliografía
 - [x] Voz familiar «en casa»/«nuestras perras»; singular para vivencias personales. Sin causas inventadas de la calma, visitas, resultados ni cierre narrativo añadido.
 - [x] No aparecen Osa, Baltor ni Jaspe en el borrador.
 - [x] Vocabulario de los relatos adaptado al español peninsular.
-- [ ] Cita «casi me muerde la cara»: pendiente confirmación del propietario. Comentario MDX en H2-6; texto visible con la alternativa neutra «una vez casi acabó en mordisco al levantarla». No se modifica el archivo de testimonios ni se registra una confirmación ficticia.
+- [x] Cita «casi me muerde la cara»: **confirmado el 2026-10-25** por el propietario con «Sí, era mi propia cara». Texto visible en H2-6 actualizado y confirmación registrada en comentario MDX. El archivo de testimonios permanece sin cambios.
 
 ### 9.5. Español de España
 
@@ -151,12 +151,12 @@ Citas nominales con enlaces profundos en el desarrollo, además de bibliografía
 - [x] Ejecución real sobre el archivo final:
 
 ```text
-articulo-borrador                                               5187 palabras    0 muletillas   0.0/1000
+articulo-borrador                                               5167 palabras    0 muletillas   0.0/1000
 ```
 
 Comando: `python3 .agents/skills/references/scripts/tono.py docs/contenido/miedo-petardos-perros-mayores/articulo-borrador.mdx`.
 
-El denominador de tono.py es distinto del contractual: elimina FAQ y avisos danger/warning, además de la bibliografía, y trata la sintaxis de otra forma. **El recuento contractual es 5.651**, no 5.187.
+El denominador de tono.py es distinto del contractual: elimina FAQ y avisos danger/warning, además de la bibliografía, y trata la sintaxis de otra forma. **El recuento contractual es 5.653**, no 5.167.
 
 ### 9.8. Coordinación sobre feromonas
 
@@ -167,8 +167,8 @@ El denominador de tono.py es distinto del contractual: elimina FAQ y avisos dang
 
 - Dependencias instaladas con `npm ci --ignore-scripts --cache /tmp/petardos-npm-cache`; sin cambios en package.json ni lockfile. El primer intento falló por el directorio de caché fuera del espacio escribible; se resolvió usando /tmp.
 - Copia temporal en `src/content/blog/miedo-petardos-perros-mayores.mdx`, mismo contenido del borrador. `npx astro check`: **exit 0; 199 archivos; 0 errores, 0 advertencias, 73 hints**. Se usaron `ASTRO_TELEMETRY_DISABLED=1`, `XDG_CONFIG_HOME` y `XDG_CACHE_HOME` bajo /tmp para evitar escrituras fuera del workspace.
-- `npx astro build`: la primera ejecución encontró una limitación de interfaces de red del sandbox. Con red habilitada, compiló las entradas y falló en el prerenderizado del artículo: **Invalid time value**, por el marcador visible de datePublished que exige el encargo. No se asignó fecha de prueba ni se alteró el layout para ocultar el fallo. No se declara build completo aprobado ni proyección Markdown final comprobada.
-- Las etiquetas img se conservan activas: no hubo error de sintaxis/compilación atribuido a ellas; `projection-dom.mjs` incluye img entre las etiquetas admitidas. Esto no verifica los binarios, que no existen, ni completa el prerenderizado bloqueado por la fecha.
+- `npx astro build`, repetido tras la confirmación de fecha del propietario: **exit 0**, incluido el prerenderizado del artículo y la generación de la proyección Markdown (37 documentos). La copia temporal usa `datePublished: "2026-10-25"`, fecha real elegida por el propietario. El error anterior `Invalid time value` correspondía al marcador pendiente y queda resuelto. No se modificó el layout. Evidencia actualizada en [comprobaciones/astro-build.txt](comprobaciones/astro-build.txt).
+- Las etiquetas img se conservan activas: el build y la proyección Markdown las admiten. Los binarios siguen pendientes y la compilación no acredita su existencia ni su visualización.
 - Intento visual con ruta local temporal que renderizaba solo el cuerpo, sin convertir el marcador a fecha: Astro dev terminó antes de arrancar en 4321 y 4399; Playwright recibió ERR_CONNECTION_REFUSED. [comprobaciones/navegador.json](comprobaciones/navegador.json) registra la limitación. Sin capturas, alturas, contraste o interacción certificados.
 - Se retiraron todas las copias y la ruta temporal de `src/`. Los artefactos dist/.astro son locales e ignorados; no se despliegan ni se incorporan al commit.
 
@@ -186,10 +186,10 @@ Las tres rutas están bajo `/images/blog/miedo-petardos-perros-mayores/`. No se 
 
 ## Decisiones pendientes y lecturas conservadoras
 
-1. **PÓRTICO — Cita de Dakota:** confirmar si «casi me muerde la cara» era la propia cara de Gonzalo o conservar la fórmula neutra. Solo después de respuesta se anotaría la fecha de confirmación.
-2. **PÓRTICO — Fecha:** el propietario debe fijar datePublished y la fecha visible de la firma. El marcador exacto del brief permanece visible.
+1. **PÓRTICO RESUELTO — Cita de Dakota:** confirmado el 2026-10-25. Respuesta del propietario: «Sí, era mi propia cara». Se incorpora «una vez casi me muerde la cara al levantarla» en H2-6 y se registra la confirmación en comentario MDX, sin reescribir los testimonios de origen.
+2. **PÓRTICO RESUELTO — Fecha:** respuesta del propietario: «La de hoy», recibida el 2026-10-25. Se fija `datePublished: "2026-10-25"` y «Actualizado: 25 de octubre de 2026» en la firma. Se retira el marcador.
 3. Antes de publicación: cerrar o limitar documentalmente S2/S5/S7/S10 según el brief; comprobar programas oficiales y completar la prueba visual de tablas y las imágenes pendientes. No son nuevas afirmaciones ni una solicitud de inventar datos al propietario.
-4. Conflicto de fecha: §1 del brief pide sustituir el marcador antes de commit, mientras el encargo actual pide conservarlo, avisar y hacer commit/push. Prevalece la orden actual: se versiona únicamente el borrador documental con marcador, fuera de la colección publicada.
+4. El marcador se conservó en la entrega inicial siguiendo el encargo. La confirmación posterior del propietario permite retirarlo y cumplir también el gate de fecha del §1 del brief. El artículo sigue fuera de la colección publicada.
 5. La skill general pide un cuarto AlertBox bibliográfico; §9.3 exige exactamente tres. Se conserva la bibliografía en un div con details cerrado, sin cuarto aviso ni H2 añadido. Los enlaces de la bibliografía de S7/S10 son descriptivos para evitar una marca farmacológica y no atribuir a la cobertura un título no recogido como tal en el brief.
 6. H2-2: las notas del brief incluyen «se esconde» entre lo no medido aunque S3 sí lo observó sin confirmar un aumento estadístico. Se sigue la ficha de S3 y el H3 explicativo: observado, sin convertirlo en regla individual. No se modifica el brief.
-7. No se actualizan brief ni inventario a «Publicado»: es un borrador documental pendiente de decisiones y revisión independiente. Las reglas antiguas sobre umbrales y rondas de auditoría se leen como antecedentes, no como autorización para auditar de nuevo el brief.
+7. No se actualizan brief ni inventario a «Publicado»: es un borrador documental con cita y fecha confirmadas, pendiente de revisión independiente y de los recursos y contrastes señalados arriba. Las reglas antiguas sobre umbrales y rondas de auditoría se leen como antecedentes, no como autorización para auditar de nuevo el brief.
