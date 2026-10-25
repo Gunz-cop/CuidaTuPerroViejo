@@ -1,13 +1,13 @@
 ---
 const uid = `leish-revision-${crypto.randomUUID().slice(0, 8)}`;
-const image = '/images/blog/leishmaniosis-perros-mayores/mestizo-senior-recorte-perfil-v3';
+const image = '/images/blog/leishmaniosis-perros-mayores/mestizo-senior-recorte-perfil-v4';
 const steps = [
-  { title: 'Orejas y bordes', text: 'Mira la parte visible: descamación, heridas o pérdida de pelo. Observa sin tirar de la oreja ni forzar posturas.' },
-  { title: 'Ojos y hocico', text: 'Observa enrojecimiento, secreciones, lesiones o sangrado nasal. El dibujo señala dónde mirar; la causa se estudia en la clínica.' },
-  { title: 'Uñas', text: 'Fíjate en cambios de longitud, curvatura o apoyo. Revisa solo lo accesible si está cómodo, sin levantar patas doloridas.' },
-  { title: 'Peso y músculo', text: 'Observa si adelgaza, pierde volumen muscular o se le marca más la cadera. Compara con su aspecto habitual.' },
-  { title: 'Su día a día', text: 'Mira también su rutina: apetito, energía, sed, orina, vómitos y diarrea. La observación incluye lo que ocurre fuera del dibujo.' },
-  { title: 'Lleva lo que has visto a tu clínica', text: 'Reúne los cambios para la consulta. La exploración y los análisis de sangre y orina completan lo que puedes observar en casa.' },
+  { title: 'Orejas y bordes', text: 'El dibujo muestra escamas y pelo ralo en una oreja. Son señales posibles, con distintas causas. Observa sin tirar ni forzar.' },
+  { title: 'Ojos y hocico', text: 'El dibujo muestra pelo ralo alrededor del ojo. No identifica la causa. Observa también cambios del hocico o secreciones, sin manipularlo.' },
+  { title: 'Uñas', text: 'Las uñas largas y curvas de la ilustración son una señal posible. Compara con lo habitual, sin levantar patas doloridas.' },
+  { title: 'Peso y músculo', text: 'Esta perra ilustrada tiene el lomo hundido y poca masa muscular. Compara con el aspecto habitual de tu perro; no basta para diagnosticar.' },
+  { title: 'Su día a día', text: 'Muchos perros infectados se ven normales. Observa también apetito, energía, sed, orina, vómitos y diarrea; el dibujo no muestra su rutina.' },
+  { title: 'Lleva lo que has visto a tu clínica', text: 'La ausencia de lesiones no descarta infección. La exploración y los análisis de sangre y orina permiten estudiar los cambios; el aspecto no diagnostica.' },
 ];
 ---
 
@@ -15,19 +15,19 @@ const steps = [
   <header>
     <p class="lv-kicker">Observa sin forzar posturas</p>
     <h3 id={`${uid}-title`} data-toc-exclude="true">De las orejas a su rutina</h3>
-    <p class="lv-intro">Cinco puntos para ordenar lo que ves, antes de llevarlo a consulta.</p>
+    <p class="lv-intro">Ilustración con señales posibles de enfermedad. Muchos perros infectados se ven normales.</p>
   </header>
   <div class="lv-board">
-    <img src={`${image}.webp`} srcset={`${image}-400.webp 400w, ${image}-800.webp 800w, ${image}.webp 1200w`} sizes="(max-width: 640px) calc(100vw - 70px), 680px" width="1200" height="675" loading="lazy" decoding="async" alt="Ilustración de una perra mestiza atigrada oscura de perfil hacia la derecha, con hocico y cejas canosos, lomo cóncavo entre hombros y cadera, muslos estrechos y cabeza baja; se distinguen las cuatro patas." />
+    <img src={`${image}.webp`} srcset={`${image}-400.webp 400w, ${image}-800.webp 800w, ${image}.webp 1200w`} sizes="(max-width: 640px) calc(100vw - 70px), 680px" width="1200" height="675" loading="lazy" decoding="async" alt="Ilustración de un perro con señales marcadas; muchos perros infectados se ven normales. Perra mestiza de perfil, con hocico canoso, lomo hundido, cabeza baja, pelo ralo alrededor del ojo, escamas en la oreja y uñas largas y curvadas." />
     <svg viewBox="0 0 1200 675" aria-hidden="true" focusable="false">
       <title>Zonas externas de la revisión de cinco puntos</title>
       <desc>Los marcadores recorren orejas, ojos y hocico, uñas y cuerpo. El quinto punto es su rutina diaria y el paso final conduce a la consulta.</desc>
-      <g class="lv-zone" data-zone="0"><ellipse cx="922" cy="274" rx="56" ry="66" /></g>
-      <g class="lv-zone" data-zone="1"><ellipse cx="1054" cy="311" rx="91" ry="72" /></g>
-      <g class="lv-zone" data-zone="2"><ellipse cx="748" cy="604" rx="67" ry="28" /><ellipse cx="280" cy="591" rx="54" ry="28" /><ellipse cx="834" cy="579" rx="59" ry="28" /><ellipse cx="397" cy="559" rx="52" ry="29" /></g>
-      <g class="lv-zone" data-zone="3"><ellipse cx="535" cy="258" rx="246" ry="143" /></g>
+      <g class="lv-zone" data-zone="0"><ellipse cx="935" cy="256" rx="60" ry="73" /></g>
+      <g class="lv-zone" data-zone="1"><ellipse cx="1080" cy="290" rx="100" ry="85" /></g>
+      <g class="lv-zone" data-zone="2"><ellipse cx="764" cy="610" rx="66" ry="33" /><ellipse cx="280" cy="598" rx="53" ry="32" /><ellipse cx="865" cy="588" rx="62" ry="32" /><ellipse cx="403" cy="570" rx="53" ry="32" /></g>
+      <g class="lv-zone" data-zone="3"><ellipse cx="535" cy="230" rx="250" ry="150" /></g>
     </svg>
-    <span class="lv-board-label" aria-hidden="true">Perra senior ilustrativa</span>
+    <span class="lv-board-label" aria-hidden="true">Señales posibles, no un diagnóstico</span>
   </div>
   <div class="lv-controls" hidden>
     <div class="lv-transport">
@@ -44,10 +44,10 @@ const steps = [
       <div><h4>{step.title}</h4><p>{step.text}</p></div>
     </li>)}
   </ol>
-  <p class="lv-essential">Esta revisión ayuda a observar; el diagnóstico se hace en la clínica. Las señales de urgencia están explicadas justo debajo.</p>
+  <p class="lv-essential">La ausencia de lesiones no descarta infección. El diagnóstico se hace en la clínica. Las señales de urgencia están justo debajo.</p>
   <details class="lv-method">
     <summary>Fuentes y cómo usar el recorrido</summary>
-    <p>Orden editorial de observación basado en las señales descritas por la guía AEMPS/MAPA de 2026 y LeishVet de 2011. La perra es una ilustración; los marcadores no representan lesiones.</p>
+    <p>Orden editorial basado en la guía AEMPS/MAPA de 2026 y LeishVet de 2011. Esta perra ilustrada muestra señales posibles de enfermedad; no representa un paciente real. Los marcadores señalan zonas de observación, no un diagnóstico ni un estadio clínico.</p>
     <p>Usa las flechas o las teclas ← y → desde los controles. Reproducir avanza una vez cada cinco segundos y se detiene al terminar. Pausar detiene el avance. Con movimiento reducido, el recorrido es manual.</p>
   </details>
 </section>

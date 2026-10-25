@@ -1,4 +1,4 @@
-> Copia de lectura de la rama de revisión. Correcciones visuales R3 pendientes de decisión del propietario; no publicado.
+> Copia de lectura de la rama de revisión. Propuestas visuales v4 para decisión del propietario; no publicado.
 
 # Leishmaniosis en perros mayores en España: síntomas, pruebas y prevención
 
@@ -118,36 +118,36 @@ Observa sin forzar posturas
 
 ### De las orejas a su rutina
 
-Cinco puntos para ordenar lo que ves, antes de llevarlo a consulta.
+Ilustración con señales posibles de enfermedad. Muchos perros infectados se ven normales.
 
-![Ilustración de una perra mestiza atigrada oscura de perfil hacia la derecha, con hocico y cejas canosos, lomo cóncavo entre hombros y cadera, muslos estrechos y cabeza baja; se distinguen las cuatro patas.](<../../../public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-recorte-perfil-v3.webp>)
+![Ilustración de un perro con señales marcadas; muchos perros infectados se ven normales. Perra mestiza de perfil, con hocico canoso, lomo hundido, cabeza baja, pelo ralo alrededor del ojo, escamas en la oreja y uñas largas y curvadas.](<../../../public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-recorte-perfil-v4.webp>)
 
 Punto 1 de 5
 
 1. #### Orejas y bordes
 
-   Mira la parte visible: descamación, heridas o pérdida de pelo. Observa sin tirar de la oreja ni forzar posturas.
+   El dibujo muestra escamas y pelo ralo en una oreja. Son señales posibles, con distintas causas. Observa sin tirar ni forzar.
 2. #### Ojos y hocico
 
-   Observa enrojecimiento, secreciones, lesiones o sangrado nasal. El dibujo señala dónde mirar; la causa se estudia en la clínica.
+   El dibujo muestra pelo ralo alrededor del ojo. No identifica la causa. Observa también cambios del hocico o secreciones, sin manipularlo.
 3. #### Uñas
 
-   Fíjate en cambios de longitud, curvatura o apoyo. Revisa solo lo accesible si está cómodo, sin levantar patas doloridas.
+   Las uñas largas y curvas de la ilustración son una señal posible. Compara con lo habitual, sin levantar patas doloridas.
 4. #### Peso y músculo
 
-   Observa si adelgaza, pierde volumen muscular o se le marca más la cadera. Compara con su aspecto habitual.
+   Esta perra ilustrada tiene el lomo hundido y poca masa muscular. Compara con el aspecto habitual de tu perro; no basta para diagnosticar.
 5. #### Su día a día
 
-   Mira también su rutina: apetito, energía, sed, orina, vómitos y diarrea. La observación incluye lo que ocurre fuera del dibujo.
+   Muchos perros infectados se ven normales. Observa también apetito, energía, sed, orina, vómitos y diarrea; el dibujo no muestra su rutina.
 6. #### Lleva lo que has visto a tu clínica
 
-   Reúne los cambios para la consulta. La exploración y los análisis de sangre y orina completan lo que puedes observar en casa.
+   La ausencia de lesiones no descarta infección. La exploración y los análisis de sangre y orina permiten estudiar los cambios; el aspecto no diagnostica.
 
-Esta revisión ayuda a observar; el diagnóstico se hace en la clínica. Las señales de urgencia están explicadas justo debajo.
+La ausencia de lesiones no descarta infección. El diagnóstico se hace en la clínica. Las señales de urgencia están justo debajo.
 
 **Fuentes y cómo usar el recorrido**
 
-Orden editorial de observación basado en las señales descritas por la guía AEMPS/MAPA de 2026 y LeishVet de 2011. La perra es una ilustración; los marcadores no representan lesiones.
+Orden editorial basado en la guía AEMPS/MAPA de 2026 y LeishVet de 2011. Esta perra ilustrada muestra señales posibles de enfermedad; no representa un paciente real. Los marcadores señalan zonas de observación, no un diagnóstico ni un estadio clínico.
 
 Usa las flechas o las teclas ← y → desde los controles. Reproducir avanza una vez cada cinco segundos y se detiene al terminar. Pausar detiene el avance. Con movimiento reducido, el recorrido es manual.
 
@@ -196,9 +196,9 @@ La guía española desaconseja los test rápidos cuando existe un cuadro clínic
 
 Si el resultado es negativo y persisten signos compatibles, tu veterinario puede pedir otras pruebas. En la citología influye cuántos parásitos hay en la muestra; en la PCR, el tejido elegido y la técnica. LeishVet recoge estas diferencias al comparar los métodos.
 
-![Ilustración de una veterinaria con una jeringa en la pata delantera extendida de una perra mestiza de hocico canoso y lomo cóncavo, mientras su tutora le sostiene la cabeza.](<../../../public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-analisis-sangre-consulta-v3.webp>)
+![Ilustración de una veterinaria extrayendo sangre a una perra mestiza mayor, delgada y con señales de enfermedad (pelo ralo alrededor de los ojos, uñas largas). Son señales posibles; muchos perros infectados se ven normales.](<../../../public/images/blog/leishmaniosis-perros-mayores/mestizo-senior-analisis-sangre-consulta-v4.webp>)
 
-La extracción de sangre forma parte del estudio de la infección y de la enfermedad.
+Ilustración de una veterinaria extrayendo sangre a una perra mestiza mayor, delgada y con señales de enfermedad (pelo ralo alrededor de los ojos, uñas largas). Son señales posibles; muchos perros infectados se ven normales.
 
 ### Cada cuánto repetirlas según su exposición
 

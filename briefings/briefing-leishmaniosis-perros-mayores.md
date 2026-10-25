@@ -392,6 +392,12 @@ Validar con `npm run build` y [docs/seo/enlazado-interno.md](../docs/seo/enlazad
 
 ## 8. GUÍA VISUAL — 3 PROMPTS DE IMAGEN, RECORTE Y ANIMACIÓN
 
+### Decisión del propietario — 2026-10-25, corrección visual v4
+
+La portada y la casa al anochecer muestran a la perra sana y mayor y no se regeneran. La consulta y el recorte de la animación muestran a la misma perra con señales ilustrativas de leishmaniosis clínica moderada: aro periocular de pelo ralo, descamación seca y una costra pequeña en el borde de la oreja, trufa seca con parches claros, caspa fina y uñas largas curvadas. Solo para esas dos imágenes, «sin enfermedad inventada» se sustituye por «con estas señales secas, superficiales y dignas», sin sangre exterior, úlceras abiertas, pus ni hinchazón. Se conserva la delgadez de v3, aceptada por el propietario (lomo hundido, cabeza baja, musculatura reducida y costillas visibles). Esta decisión prevalece sobre las exclusiones anteriores de costras, calvas y uñas largas para consulta/recorte; no se copia a otros artículos.
+
+Son señales posibles en una ilustración, no un diagnóstico visual ni un estadio clínico asignado por apariencia. Alts, pies y pasos deben recordar que muchos perros infectados se ven normales y que la ausencia de lesiones no descarta infección. No se modifica el cuerpo textual de R2 ni sus doce requisitos de seguridad (§9.6). El requisito senior y la continuidad de identidad de §9.7 siguen vigentes, con esta excepción explícita. [Encargo completo y prompts](../docs/contenido/leishmaniosis-perros-mayores/prompt-correccion-visual-v4.md).
+
 Aplicar la [dirección visual editorial](../.agents/skills/references/direccion-visual-editorial.md), incluido su **requisito senior verificable**. Completar la ficha por imagen, que va abajo. Esta sección planifica; no se ha generado ninguna imagen.
 
 ### Raza: razas recientes y elección

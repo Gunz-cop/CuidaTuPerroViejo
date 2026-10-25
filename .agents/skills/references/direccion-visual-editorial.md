@@ -47,6 +47,12 @@ Rechazar si a tamaño móvil parece un adulto joven.
 
 ## Requisito senior verificable (obligatorio en todo prompt)
 
+**Excepción limitada a leishmaniosis — decisión del propietario, 2026-10-25.**
+
+En `leishmaniosis-perros-mayores`, la portada y la escena de casa representan a la misma perra sana y mayor; se conservan sin cambios. Solo la consulta y el recorte de la animación representan una ilustración de señales clínicas moderadas: aro periocular de pelo ralo, descamación seca del borde de la oreja y una pequeña costra, trufa seca con parches claros, caspa fina y uñas largas curvadas. Para esas dos imágenes, «sin enfermedad inventada» se sustituye por «con las señales descritas, secas, superficiales y dignas». Se conserva la delgadez de v3 (lomo hundido, musculatura reducida, costillas visibles y cabeza baja), aceptada por el propietario como referencia corporal.
+
+Esta excepción no se aplica a otros artículos ni modifica el resto del requisito senior. No se representa un paciente real ni se diagnostica por aspecto: alts, pies y animación deben decir que son señales posibles, que muchos perros infectados se ven normales y que la ausencia de lesiones no descarta infección. Encargo y prompts: [prompt-correccion-visual-v4.md](../../../docs/contenido/leishmaniosis-perros-mayores/prompt-correccion-visual-v4.md).
+
 Origen: en golpe de calor hubo que regenerar imágenes y el recorte transparente del podenco salió con aspecto de adulto joven, porque los prompts no exigían la edad de forma explícita y comprobable. «Senior», «mayor» o «anciano» como palabra suelta **no cuenta**, y el hocico canoso tampoco basta.
 
 **Aplica a todo prompt de imagen, de recorte transparente y de fotograma o animación que muestre al perro.** Cada prompt incluye, con palabras propias del sujeto, estos rasgos de edad a la vez:

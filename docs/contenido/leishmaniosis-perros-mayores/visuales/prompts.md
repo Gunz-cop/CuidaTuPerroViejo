@@ -1,5 +1,40 @@
 # Prompts de producción visual
 
+## Corrección v4 — decisión del propietario, 2026-10-25
+
+Solo consulta y recorte añaden señales clínicas ilustrativas secas y superficiales. Portada/casa se conservan sanas y mayores; el cuerpo del texto R2 no se cambia. La delgadez de v3 se conserva como referencia aceptada por el propietario. La excepción queda documentada en el brief §8 y en la dirección visual; no se aplica a otros artículos.
+
+Se generaron **siete candidatos por imagen (catorce)** en modo edición. Propuestas integradas: recorte 7 y consulta 7. Los prompts cerrados originales están debajo, en inglés y sin abreviar. Las adendas y referencias de cada candidato están en [prompts-generaciones.md](correccion-v4/prompts-generaciones.md), con [originales](correccion-v4/candidatos/), [tabla de inspección y límites](correccion-v4/inspeccion-candidatos.md) y [entrega](entrega-visuales.md). La costra separada del recorte y las fisuras finas de trufa no quedan acreditadas; no se describen como conseguidas.
+
+### Prompt cerrado de consulta v4
+
+```text
+Edit the attached image. Keep composition, camera angle, lighting, both women, their clothes and hands, the steel table, the blue anti-slip mat, the cabinets and sink in the background, the small syringe with the needle under the skin of the lifted front forearm, and the dog's body shape, pose, thinness and head position exactly unchanged. Same dog: a 12-13 year old mixed-breed female, dark brindle short coat, white chest and white socks, semi-dropped dark ears, grey collar. Change ONLY the following details, which show moderate clinical canine leishmaniosis in an elderly dog. Photographic realism, matte skin and fur textures, documentary veterinary photograph.
+
+1. EYES: both eyes are surrounded by a ring of thinned, sparse hair about 8-12 mm wide where pale pink-grey skin shows through, with a few fine white flakes on that skin (spectacle-like pattern). The eyes themselves stay clear, brown, sunken and calm. The hollow above each eye (temporal muscle loss) is slightly deeper.
+2. EARS: the visible ear has a dry, fine white scaly edge along the outer margin and tip, sparse thin hair on the last third, and one tiny dry brown crust about 4 mm at the very tip of the ear. The skin of the ear is intact.
+3. NOSE AND MUZZLE: the nose leather is slightly dry and matte with a few small pale pink-grey depigmented patches along its upper edge and fine surface cracks. The white whiskered muzzle and white eyebrows stay as they are.
+4. COAT: the coat is duller and drier than before, with a light scatter of fine white dandruff-like flakes on the shoulders and along the spine. The brindle pattern stays the same.
+5. NAILS: on every visible paw, the nails are thick, overgrown and curve downward and slightly sideways, extending about 15-20 mm beyond the toe pads, with a dull, ridged surface.
+6. NOTHING ELSE changes: no bleeding, no open wounds, no pus, no swelling, no extra people or objects, no text or logos.
+
+Final constraints: every lesion is dry, superficial, grey-white or pale pink and subtle at full size. The dog stays dignified, calm and looking at her owner. Hands have five fingers, the syringe stays correctly angled under the skin.
+```
+
+### Prompt cerrado de recorte v4
+
+```text
+Edit the attached image of a full-body side-profile cut-out dog. Keep the exact pose (strict side profile facing right, head low with the nose below the withers, four legs separated and visible, tail relaxed), the thin body (sagging spine behind the withers, narrow thighs, visible hip bones and ribs), the grey-white muzzle and eyebrows, the dark brindle coat, the white chest and white socks, the semi-dropped dark ear, the long tail with a white tip, the lighting, the transparent background with no shadow, and the framing with margin around the animal, all exactly unchanged. Same dog as in the reference images. Change ONLY these details, which show moderate clinical canine leishmaniosis. Photographic realism, matte textures.
+
+1. EYE: the visible eye has a ring of thinned sparse hair about 10 mm wide around it where pale pink-grey skin shows, with a few fine white flakes. The eye stays brown, sunken and calm. The hollow above the eye is slightly deeper.
+2. EAR: the dark ear has a dry fine white scaly outer edge and tip, sparse hair on the last third, and one tiny dry brown crust about 4 mm at the tip. Skin intact.
+3. NOSE: slightly dry matte nose leather with a few small pale pink-grey depigmented patches along its upper edge and fine surface cracks.
+4. COAT: duller, drier coat with a light scatter of fine white dandruff-like flakes over the shoulder and along the spine. Brindle pattern unchanged.
+5. NAILS: the nails on all four visible paws are thick, overgrown, ridged and curve downward, extending about 15-20 mm beyond the toe pads.
+
+Final constraints: all lesions dry, superficial, grey-white or pale pink, subtle at full size. No blood, wounds, pus or swelling. No collar, no leash, no hands, no text. Transparent background with clean edges and no halo, especially on the fine hair of the ear and chest.
+```
+
 ## Corrección posterior a R3 — versiones v3
 
 La R3 invalidó las valoraciones anteriores de anatomía del recorte v2 y de punción de la consulta v2. Se conservan los prompts históricos de abajo para trazabilidad; no acreditan su resultado. La portada y casa no se regeneran.

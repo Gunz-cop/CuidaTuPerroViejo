@@ -1,72 +1,68 @@
-# Correcciones visuales tras R3 — 25 de octubre de 2026
+# Producción visual v4 — decisión del propietario, 2026-10-25
 
-**Estado: propuestas v3 integradas para decisión visual del propietario.** Rama `codex/leishmaniosis-articulo-revision`, desde `8806f61581d21d3f46325bdd64cb6b543a325ce2`. Sin nueva ronda de auditoría, PR, cambio en `main`, publicación ni despliegue.
+**Estado: dos propuestas v4 integradas, con límites documentados para la decisión estética del propietario.** Siete candidatos de recorte y siete de consulta, catorce generaciones en modo edición. Esta producción parte de `903b786`, en `codex/leishmaniosis-articulo-revision`. No se abre otra ronda de auditoría, no se modifica `main`, no se abre PR ni se despliega.
 
-La [R3 independiente](https://github.com/Gunz-cop/CuidaTuPerroViejo/blob/claude/senior-dog-requirement-leishmaniosis-brief/docs/contenido/leishmaniosis-perros-mayores/auditoria-articulo-r3-visual.md) señaló correctamente que el recorte v2 tenía lomo casi recto, muslos llenos y cabeza alta. **Retiro las descripciones anteriores «ligera depresión tras la cruz» y «menor masa muscular» sobre ese v2.** Tampoco se veía una comprobación de holgura en la portada y la punción de consulta v2 era incoherente. Este informe sustituye esas valoraciones de `8806f61`; versiones y originales anteriores se conservan.
+Encargo: [prompt-correccion-visual-v4.md](../prompt-correccion-visual-v4.md). La portada y casa se mantienen sanas y mayores; consulta/recorte añaden las señales secas y superficiales autorizadas. La delgadez v3 se conserva como referencia corporal aceptada. La excepción se documenta, con fecha y alcance exclusivo de este artículo, en el [brief §8](../../../../briefings/briefing-leishmaniosis-perros-mayores.md) y la [dirección visual](../../../../.agents/skills/references/direccion-visual-editorial.md). No cambia los requisitos de otros artículos.
 
-## Evidencia para decidir
+## Lo que puedes revisar
 
-- Recorte v3: [blanco a 390 px](correccion-r3/capturas/recorte-v3-claro-390.png), [oscuro a 390 px](correccion-r3/capturas/recorte-v3-oscuro-390.png), [recta cruz–grupa a 390](correccion-r3/capturas/recorte-v3-prueba-recta-390.png) y [a 1200](correccion-r3/capturas/recorte-v3-prueba-recta-1200.png).
-- **[Cinco rasgos, candidato por candidato, y límites observables](correccion-r3/inspeccion-candidatos.md).** Ocho recortes y quince consultas; todos los PNG originales y descartes en [candidatos/](correccion-r3/candidatos/).
-- Consulta: [móvil claro](correccion-r3/capturas/390-claro-consulta.png), [móvil oscuro](correccion-r3/capturas/390-oscuro-consulta.png), [escritorio claro](correccion-r3/capturas/1366-claro-consulta.png), [escritorio oscuro](correccion-r3/capturas/1366-oscuro-consulta.png), [punción ampliada](correccion-r3/candidatos/consulta-15-puncion-x3.png).
-- Animación: [móvil claro](correccion-r3/capturas/390-claro-revision-1.png), [móvil oscuro](correccion-r3/capturas/390-oscuro-revision-1.png), [escritorio claro](correccion-r3/capturas/1366-claro-revision-1.png), [escritorio oscuro](correccion-r3/capturas/1366-oscuro-revision-1.png). Se capturaron los seis pasos en cada tamaño y tema.
+- **[Tabla de rasgos a 390 y al 100 %, candidato por candidato y límites](correccion-v4/inspeccion-candidatos.md)**. Es inspección del productor, no una auditoría independiente.
+- Recorte final: [blanco a 390](correccion-v4/capturas/recorte-claro-390.png), [oscuro a 390](correccion-v4/capturas/recorte-oscuro-390.png), [recta cruz–grupa a 390](correccion-v4/capturas/recorte-recta-390.png) y [a 1200](correccion-v4/capturas/recorte-recta-1200.png).
+- Zonas de recorte al 100 %, 300×300 del WebP final: [ojo](correccion-v4/capturas/recorte-ojo-100.png), [oreja](correccion-v4/capturas/recorte-oreja-100.png), [trufa](correccion-v4/capturas/recorte-trufa-100.png), [pelaje](correccion-v4/capturas/recorte-pelaje-100.png), [uñas](correccion-v4/capturas/recorte-unas-100.png).
+- Zonas de consulta al 100 %: [ojo](correccion-v4/capturas/consulta-ojo-100.png), [oreja](correccion-v4/capturas/consulta-oreja-100.png), [trufa](correccion-v4/capturas/consulta-trufa-100.png), [pelaje](correccion-v4/capturas/consulta-pelaje-100.png), [uñas](correccion-v4/capturas/consulta-unas-100.png), [punción](correccion-v4/capturas/consulta-puncion-100.png).
+- Consulta integrada: [390 claro](correccion-v4/capturas/390-claro-consulta.png), [390 oscuro](correccion-v4/capturas/390-oscuro-consulta.png), [1366 claro](correccion-v4/capturas/1366-claro-consulta.png), [1366 oscuro](correccion-v4/capturas/1366-oscuro-consulta.png).
+- Animación: [390 claro](correccion-v4/capturas/390-claro-revision-1.png), [390 oscuro](correccion-v4/capturas/390-oscuro-revision-1.png), [1366 claro](correccion-v4/capturas/1366-claro-revision-1.png), [1366 oscuro](correccion-v4/capturas/1366-oscuro-revision-1.png). Se conservan capturas de los seis pasos en cada modo.
 
-Son observaciones y pruebas del productor. La decisión estética queda al propietario; no constituyen una revisión independiente.
+**No quedan acreditados todos los detalles del prompt.** En el recorte no distingo una costra marrón separada de las escamas de la punta de la oreja. En ambas imágenes las fisuras finas de la trufa no se resuelven inequívocamente. La propuesta conserva aro periocular, escamas, parches claros de trufa, caspa y uñas; el alt no atribuye costra ni fisuras no confirmadas. La alternativa si se exige ese detalle exacto es una edición focal de punta y trufa por un ilustrador, manteniendo la escena. La consulta 4 se conserva como alternativa con costra de punta especialmente legible.
 
-## Recursos actuales
+A 390 se distinguen el aro de piel con pelo ralo y las uñas largas/curvas. El borde escamoso, la caspa fina y los parches de trufa se documentan al 100 %; no se dan por identificables individualmente a 390. Las canas del hocico y cejas se leen, pero los pelos finos del borde palpebral no se separan a esa escala. Todos estos «sí/no» constan en la tabla.
 
-| Recurso | Archivo o componente | Cambios y observaciones |
+## Recursos y coherencia
+
+| Recurso | Actual | Cambios |
 |---|---|---|
-| Portada | `mestizo-senior-colocacion-collar-v1.webp` | Sin regenerar. Alt exacto encargado: «Ilustración de una cuidadora ajustando un collar al cuello de una perra mestiza senior de hocico oscuro canoso, sentada en el recibidor de un piso». El pie visible del layout coincide, comprobado en navegador. |
-| Casa | `mestizo-senior-anochecer-mosquitera-v1.webp` | Sin cambios. |
-| Recorte v3 | `mestizo-senior-recorte-perfil-v3.webp` | Candidato 7. Hocico y cejas canosos, borde ocular claro, órbita sombreada, lomo cóncavo entre cruz y grupa, muslo estrecho y cabeza baja, cuatro patas distinguibles. Propuesta pendiente de decisión visual, con evidencia enlazada arriba. |
-| Consulta v3 | `mestizo-senior-analisis-sangre-consulta-v3.webp` | Candidato 15. Jeringa pequeña con émbolo, aguja corta que termina en el antebrazo, poco rojo dentro del cilindro; sin sangre exterior. Sujeción proximal, dorso cóncavo y muslo más plano que v2. Un apoyo trasero queda oculto por los brazos. |
-| Animación | [LeishmaniosisRevision.astro](../../../../src/components/article/LeishmaniosisRevision.astro) | Imagen v3, alt que describe la silueta y nuevas coordenadas para oreja, cara, cuatro pies y tronco. Guion y mecánica conservados. |
-| Calendario | [LeishmaniosisCalendario.astro](../../../../src/components/article/LeishmaniosisCalendario.astro) | Primera leyenda: «Abril y noviembre: actividad variable». Meses: ene, feb, mar, abr, may, jun, jul, ago, sep, oct, nov, dic. Atribuciones y explicaciones conservadas. |
-| Dos tablas | `LeishmaniosisTabla.astro` y datos del MDX | Sin cambios. Las cabeceras se incluyen ahora en la medición de contraste. |
+| Portada y casa | `mestizo-senior-colocacion-collar-v1`, `mestizo-senior-anochecer-mosquitera-v1` | Archivos, alts y pies sin cambios respecto de 903b786. |
+| Recorte | `mestizo-senior-recorte-perfil-v4` | Candidato 7; perfil derecho, cabeza baja, lomo cóncavo, muslos estrechos, cuatro patas y alfa. Aro periocular y uñas visibles a 390. |
+| Consulta | `mestizo-senior-analisis-sangre-consulta-v4` | Candidato 7; misma escena, tutora/veterinaria, collar gris, mesa/alfombrilla y jeringa. Aro, escamas y uñas añadidos. |
+| Animación | [LeishmaniosisRevision.astro](../../../../src/components/article/LeishmaniosisRevision.astro) | Imagen v4, marcadores recolocados por la pequeña variación de escala del recorte, alt, introducción, seis pasos y nota metodológica adaptados. Mecánica conservada. |
+| Calendario y dos tablas | Componentes anteriores | Sin cambios. Contraste incluye cabeceras. |
 
-Variantes nuevas de **1200×675, 800×450 y 400×225 px**. Recorte con alfa real 0–255 en los tres tamaños; consulta opaca. Doce WebP activos: **1.086.832 bytes**. Seis variantes históricas v2 conservadas: dieciocho archivos, 1.585.002 bytes. [Dimensiones, bytes y SHA-256](archivos.json). Los seis PNG anteriores siguen en `originales/`; los veintitrés nuevos, en `correccion-r3/candidatos/`. Ninguna URL anterior con caché de 30 días se sobrescribe.
+Solo para consulta/recorte, las señales autorizadas sustituyen la exclusión anterior de enfermedad. No se ilustra un paciente real, no se diagnostica por aspecto y no se asigna un estadio clínico por la imagen. Introducción y alt del recorrido, pie/alt de consulta y pasos recuerdan que **son señales posibles y muchos perros infectados se ven normales**. La nota esencial y el último paso aclaran que **la ausencia de lesiones no descarta infección**. Se elimina la afirmación anterior de que la ilustración no representaba lesiones.
 
-### Recorte: medidas y transparencia
+La jeringa conserva cilindro transparente, émbolo, poco rojo dentro y un tramo de aguja que termina en el antebrazo, sin sangre exterior. El pulgar de sujeción está proximal. La imagen no permite acreditar el interior de una vena ni medir un ángulo anatómico tridimensional. Se ven el apoyo delantero opuesto y un apoyo trasero; el otro apoyo trasero queda oculto por los brazos y el pie muestreado está parcialmente tapado. No se promete que puedan contarse los cuatro pies o verificarse todas sus uñas.
 
-Recta entre grupa `(380,116)` y cruz `(760,103)`, lienzo 1200×675. En el contorno dorsal `(550,164)`, separación vertical de **53,8 px**, equivalente a **17,5 px a 390**. Nariz por debajo de la cruz. Es una prueba de silueta con puntos manuales, no un clasificador de edad.
+Las seis variantes nuevas son **1200×675, 800×450 y 400×225**. Recorte con alfa real 0–255 en los tres tamaños, consulta opaca. Doce WebP activos: **1.077.380 bytes**; doce variantes v2/v3 históricas se conservan, total veinticuatro archivos y **2.130.922 bytes**. [Archivos y SHA-256](archivos.json), [medidas de las variantes nuevas](correccion-v4/mediciones-imagenes.json), [SHA de originales y capturas](correccion-v4/evidencias-sha256.json).
 
-Costado v3: **57,1/255**, media de `Y′ = 0,2126R + 0,7152G + 0,0722B` sobre ROI `(466,215,180,115)`. Con otra ROI corporal en v2 este método da 66,6; **no reproduce el método/ROI del auditor que obtuvo 82**. [Mediciones y SHA](correccion-r3/mediciones-recorte.json). No percibo halo a 390 px en blanco ni en `#1a1a1a`; [bordes claros ampliados](correccion-r3/capturas/recorte-v3-bordes-claro-x3.png) y [oscuros](correccion-r3/capturas/recorte-v3-bordes-oscuro-x3.png) quedan disponibles para revisar ese juicio.
+Los catorce PNG originales, descartes y setenta recortes nativos de 300×300 por región se conservan en [candidatos/](correccion-v4/candidatos/). [Prompts ingleses completos](prompts.md), [las catorce ediciones con adendas](correccion-v4/prompts-generaciones.md), [referencias y selección](correccion-v4/generaciones.json). Los candidatos 1–6 editan cada v3 con portada v1 como identidad; el séptimo edita el sexto para distinguir mejor el aro, manteniendo esa referencia de identidad.
 
-### Consulta: lo visible y sus límites
+Recta del recorte: grupa `(370,85)`, cruz `(760,74)`, contorno dorsal `(550,136)`. Separación vertical: **56,1 px a 1200; 18,2 px a 390**. Nariz por debajo de la cruz. Son puntos manuales de silueta, no un clasificador de edad. No percibo halo a 390 sobre blanco ni `#1a1a1a`. [Método reproducible](correccion-v4/diagnosticos.cjs).
 
-Veterinaria a izquierda, tutora a derecha, collar gris, mirada hacia la tutora y alfombrilla azul. La mano de sujeción está por encima de la jeringa, con pulgar proximal. La otra mano sostiene un cilindro transparente con émbolo y aletas, con poca sangre dentro. El tramo de aguja termina en el contorno del antebrazo y no muestra punta libre flotando. Su inclinación es baja respecto de la superficie local. **No se puede acreditar una vena interna ni medir un ángulo anatómico real de 15–30° a partir de esta ilustración**: es una exigencia del prompt, no una medición del resultado.
+## Texto de R2 conservado
 
-La pata muestreada se extiende levantada hacia la veterinaria. Se ven el apoyo delantero opuesto y un apoyo trasero; **el otro apoyo trasero queda oculto por los brazos**, por lo que no afirmo que puedan contarse tres contactos visibles con la alfombrilla. Las uñas visibles son cortas; las del pie sujeto quedan parcialmente tapadas. La punta de la cola tampoco puede verificarse en este encuadre. Son límites que el propietario debe tener presentes al decidir. El alt enumera solo jeringa en pata extendida, hocico canoso, lomo cóncavo y sujeción de cabeza.
+- R2 archivado: `fb0c77099efe30c3d6b3b677807dcca0e982427b61098bfbad7adfd3f2e63a2b`, [archivo intacto](texto-aprobado-r2.mdx).
+- MDX actual: `f449151f705f33b2493ccaa9816e9ce4ba78bfbf9b533ff1dffbab603ebb0220`. Copia `../articulo-borrador.mdx` idéntica.
+- Frente a 903b786 cambia **solo la figura de consulta**: rutas/srcset, alt y pie. Cero líneas del texto R2 retiradas o reescritas. Los cambios en el texto de pasos pertenecen al componente y están autorizados por el encargo. [Integridad](correccion-v4/integridad-texto.json), [diff desde R2](integracion.diff), [SHA de integración](integracion-texto.json).
+- [Proyección Markdown](proyeccion-markdown.md) y [lectura para GitHub](../articulo-lectura.md) regeneradas desde el build. El informe, métricas y capturas de `correccion-r3/` son históricos; no se alteran.
 
-Primero se generó y seleccionó el recorte; después las consultas. [Prompts completos](correccion-r3/prompts-generaciones.md), [referencias de cada generación](correccion-r3/generaciones.json) y [motivos de descarte](correccion-r3/inspeccion-candidatos.md). Todos los prompts copian íntegro el bloque senior del brief y añaden las exigencias del encargo. No se deformó el cuerpo con código ni se dibujó una silueta sustitutiva.
+## Verificaciones locales
 
-## Texto preservado
+`npx astro build`: código 0, 36 documentos de proyección. `npx astro check`: **0 errores, 0 warnings y 73 hints** del proyecto. [Build](correccion-v4/build.log), [tipos](correccion-v4/astro-check.log). No cambian configuración, dependencias ni estilos globales.
 
-- R2 conservado: [texto-aprobado-r2.mdx](texto-aprobado-r2.mdx), SHA-256 `fb0c77099efe30c3d6b3b677807dcca0e982427b61098bfbad7adfd3f2e63a2b`.
-- MDX actual: `533c97656e8215538c2231594c1ef3c11e4c6899c4d9c21b75a302cd764cdd3a`; `../articulo-borrador.mdx` idéntico.
-- Frente a `8806f61`, solo cambian dos líneas del MDX: `heroImageAlt` y el `<img>` de consulta (rutas/alt). El resto es idéntico. Frente a R2, cero líneas del texto retiradas. [Comprobación](correccion-r3/integridad-texto.json), [diff](integracion.diff), [SHA de integración](integracion-texto.json).
-- [Proyección Markdown](proyeccion-markdown.md) regenerada desde el build y [copia de lectura](../articulo-lectura.md) con rutas de imagen relativas para GitHub. Párrafos clínicos, fuentes, tablas, avisos y FAQ conservados. Las métricas y capturas fuera de `correccion-r3/` son evidencia histórica de `8806f61`.
+Chromium sobre el build estático, a anchos 390 y 1366, claro/oscuro. La altura de ventana se inicia en 1200 y se amplía al capturar un recurso más alto, para que entre completo; el ancho permanece fijo. [Resultados](correccion-v4/verificacion-navegador.json), [script reproducible](correccion-v4/verificar.cjs), [registro](correccion-v4/navegador.log).
 
-## Verificación técnica local
-
-`npx astro build`: código 0 y 36 documentos de proyección. `npx astro check`: **0 errores, 0 warnings y 66 hints** del proyecto. [Build](correccion-r3/build.log), [tipos](correccion-r3/astro-check.log). Configuración, dependencias y estilos globales sin cambios.
-
-Chromium sobre el build estático, fuentes Lora, Outfit y Plus Jakarta Sans cargadas. [Resultados completos](correccion-r3/verificacion-navegador.json), [script reproducible](correccion-r3/verificar.cjs), [registro](correccion-r3/navegador.log). Imágenes decodificadas; consulta/recorte eligen 400 px en móvil y 800 en escritorio. La portada sigue sirviendo 1200 px según el helper existente.
-
-| Medición | 390 px claro / oscuro | 1366 px claro / oscuro |
+| Medición | 390 claro / oscuro | 1366 claro / oscuro |
 |---|---|---|
 | `scrollWidth` | 390 / 390 | 1366 / 1366 |
-| Revisión: máximo entre seis pasos | 713,9 / 713,9 px | 822,2 / 822,2 px |
-| Calendario, notas cerradas | 884,8 / 884,8 px | 782,7 / 782,7 px |
-| Tabla de señales | 876,3 / 876,3 px | 695,9 / 695,9 px |
-| Tabla de pruebas | 754,3 / 754,3 px | 625,3 / 625,3 px |
-| Contraste mínimo con cabeceras de tabla | **4,50:1 / 5,52:1** | **4,50:1 / 5,52:1** |
+| Revisión, máximo de seis pasos | 736,4 / 736,4 px | 844,8 / 844,8 px |
+| Calendario | 884,8 / 884,8 px | 782,7 / 782,7 px |
+| Tabla señales | 876,3 / 876,3 px | 695,9 / 695,9 px |
+| Tabla pruebas | 754,3 / 754,3 px | 625,3 / 625,3 px |
+| Contraste con cabeceras de tablas | **4,50:1 / 5,52:1** | **4,50:1 / 5,52:1** |
 
-El mínimo global documentado es **4,50:1, incluyendo cabeceras de tabla**. Sustituye 5,87:1, cifra anterior que las omitía. El JSON conserva las filas medidas. A 375 px, en ambos temas: `scrollWidth=375`, controles ≥44×44 px y calendario 901,1 px, aproximadamente el límite orientativo de 900. [Mediciones](correccion-r3/estrecho-375.json), [script adicional](correccion-r3/verificar-375.cjs).
+A 375 px: `scrollWidth=375`, controles ≥44×44; calendario 901,1 px, aproximadamente el límite orientativo de 900. [Mediciones](correccion-v4/estrecho-375.json). Imágenes decodificadas: cuerpo/recorte usan variante de 400 en móvil y 800 en escritorio; portada sirve 1200 según el helper existente.
 
-Sin autoplay; avance cada cinco segundos, pausa estable, fin al sexto paso, repetición, flechas con teclado, foco de 3 px y controles/desplegables ≥44 px. Movimiento reducido deshabilita reproducción y permite avance manual. Sin JavaScript aparecen seis pasos sin controles (819,4 px en móvil). Impresión desde ambos temas: seis pasos, controles ocultos y tinta `rgb(32,62,50)` sobre blanco. [Movimiento reducido](correccion-r3/capturas/movimiento-reducido.png), [sin JS](correccion-r3/capturas/sin-javascript.png), [impresión desde oscuro](correccion-r3/capturas/390-oscuro-impresion-revision.png).
+Sin autoplay, avance cada cinco segundos, pausa estable, fin tras seis pasos, repetición, flechas de teclado, foco visible de 3 px y controles/desplegables ≥44 px. Movimiento reducido permite avance manual y deshabilita reproducción. Sin JavaScript muestra los seis pasos sin controles, **878,5 px** en móvil. En impresión desde ambos temas se ven seis pasos sin controles, tinta `rgb(32,62,50)` sobre blanco. [Sin JS](correccion-v4/capturas/sin-javascript.png), [movimiento reducido](correccion-v4/capturas/movimiento-reducido.png), [impresión desde oscuro](correccion-v4/capturas/390-oscuro-impresion-revision.png).
 
-Siete FAQ operables con Enter, anclas internas válidas y cero errores JavaScript. Se prueba reinicialización sin duplicar eventos, `pagehide` y navegación Astro; la prueba de `visibilitychange` simula `document.hidden`, no una sesión real en segundo plano.
+Siete FAQ operables con Enter, anclas internas válidas y cero errores JavaScript. Se prueba reinicialización sin eventos duplicados, `pagehide` y navegación Astro; el manejador de ocultación se comprueba simulando `document.hidden` y disparando `visibilitychange`.
 
-Las capturas aisladas ocultan solo durante la captura los elementos fijos/flotantes del sitio, como indica el script. Se bloquean terceros salvo Google Fonts, descargadas con `curl` mediante proxy y confianza TLS heredados y servidas a Playwright desde caché; TLS no se desactiva. No se han probado Safari/Firefox, lector de pantalla, móvil físico o impresión en papel/PDF: se emula `print`. Todas las comprobaciones son locales; no se afirma publicación real.
+Las capturas aisladas ocultan solo durante la captura elementos fijos/flotantes del sitio. Google Fonts se descarga con `curl`, proxy y confianza TLS heredados, y se sirve al navegador desde caché; otros terceros se bloquean. Lora, Outfit y Plus Jakarta Sans cargadas; TLS no se desactiva. No se han probado Safari/Firefox, móvil físico, lector de pantalla ni papel/PDF: la impresión se emula en navegador. No se comprueba publicación pública ni despliegue.
