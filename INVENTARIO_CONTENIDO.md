@@ -56,7 +56,7 @@ El Pilar 1 no se incluye en el recuento porque es un hub de herramientas, no un 
 
 #### Pilar 2 — Salud de Perros Mayores
 
-- [~] **[P1-02]** *Leishmaniosis en perros mayores en España: síntomas, pruebas y prevención durante todo el año* (En Briefing — ver `briefings/briefing-leishmaniosis-perros-mayores.md`; el H1 deja de prometer «todo el año» porque las fuentes no coinciden) — Intención clínica local; no sustituye la guía general de vacunas/desparasitación. Base: ES-02.
+- [~] **[P1-02]** *Leishmaniosis en perros mayores en España: síntomas, pruebas y prevención* (Integrado en `codex/leishmaniosis-articulo-revision` el 2026-10-25; texto APTO en R2; recursos visuales producidos y comprobados localmente, pendiente revisión independiente R3; no publicado) — Ver `briefings/briefing-leishmaniosis-perros-mayores.md` y `docs/contenido/leishmaniosis-perros-mayores/visuales/entrega-visuales.md`. Intención clínica local; no sustituye la guía general de vacunas/desparasitación. Base: ES-02.
 - [ ] **[P1-09]** *Dirofilariosis en España: riesgo por zonas y prevención del gusano del corazón en perros senior* — Enfoque geográfico Península/Baleares/Canarias y diagnóstico geriátrico. Base: ES-02.
 - [ ] **[P1-10]** *Enfermedades de garrapatas en perros mayores en España: ehrlichiosis, anaplasmosis y babesiosis* — Clúster diagnóstico propio; distinto del mantenimiento higiénico tras el paseo. Base: ES-02.
 - [ ] **[P1-04]** *Procesionaria del pino y perros: primeros auxilios y cuándo correr a urgencias veterinarias* — Intención urgente, estacional y mediterránea. Base: ES-03.

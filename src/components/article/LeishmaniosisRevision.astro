@@ -1,0 +1,188 @@
+---
+const uid = `leish-revision-${crypto.randomUUID().slice(0, 8)}`;
+const image = '/images/blog/leishmaniosis-perros-mayores/mestizo-senior-recorte-perfil-v2';
+const steps = [
+  { title: 'Orejas y bordes', text: 'Mira la parte visible: descamación, heridas o pérdida de pelo. Observa sin tirar de la oreja ni forzar posturas.' },
+  { title: 'Ojos y hocico', text: 'Observa enrojecimiento, secreciones, lesiones o sangrado nasal. El dibujo señala dónde mirar; la causa se estudia en la clínica.' },
+  { title: 'Uñas', text: 'Fíjate en cambios de longitud, curvatura o apoyo. Revisa solo lo accesible si está cómodo, sin levantar patas doloridas.' },
+  { title: 'Peso y músculo', text: 'Observa si adelgaza, pierde volumen muscular o se le marca más la cadera. Compara con su aspecto habitual.' },
+  { title: 'Su día a día', text: 'Mira también su rutina: apetito, energía, sed, orina, vómitos y diarrea. La observación incluye lo que ocurre fuera del dibujo.' },
+  { title: 'Lleva lo que has visto a tu clínica', text: 'Reúne los cambios para la consulta. La exploración y los análisis de sangre y orina completan lo que puedes observar en casa.' },
+];
+---
+
+<section class="lv-revision" data-leish-revision data-step="0" data-playing="false" data-editorial-visual data-reader-atomic aria-labelledby={`${uid}-title`}>
+  <header>
+    <p class="lv-kicker">Observa sin forzar posturas</p>
+    <h3 id={`${uid}-title`} data-toc-exclude="true">De las orejas a su rutina</h3>
+    <p class="lv-intro">Cinco puntos para ordenar lo que ves, antes de llevarlo a consulta.</p>
+  </header>
+  <div class="lv-board">
+    <img src={`${image}.webp`} srcset={`${image}-400.webp 400w, ${image}-800.webp 800w, ${image}.webp 1200w`} sizes="(max-width: 640px) calc(100vw - 70px), 680px" width="1200" height="675" loading="lazy" decoding="async" alt="Perra mestiza atigrada de edad avanzada, con hocico y cejas canosos, menor volumen muscular y postura relajada, vista de perfil." />
+    <svg viewBox="0 0 1200 675" aria-hidden="true" focusable="false">
+      <title>Zonas externas de la revisión de cinco puntos</title>
+      <desc>Los marcadores recorren orejas, ojos y hocico, uñas y cuerpo. El quinto punto es su rutina diaria y el paso final conduce a la consulta.</desc>
+      <g class="lv-zone" data-zone="0"><ellipse cx="888" cy="147" rx="51" ry="67" /></g>
+      <g class="lv-zone" data-zone="1"><ellipse cx="1018" cy="155" rx="91" ry="68" /></g>
+      <g class="lv-zone" data-zone="2"><ellipse cx="818" cy="626" rx="72" ry="30" /><ellipse cx="317" cy="618" rx="59" ry="33" /><ellipse cx="896" cy="608" rx="57" ry="30" /><ellipse cx="451" cy="580" rx="54" ry="30" /></g>
+      <g class="lv-zone" data-zone="3"><ellipse cx="537" cy="292" rx="245" ry="126" /></g>
+    </svg>
+    <span class="lv-board-label" aria-hidden="true">Perra senior ilustrativa</span>
+  </div>
+  <div class="lv-controls" hidden>
+    <div class="lv-transport">
+      <button type="button" data-action="prev" aria-label="Punto anterior">←</button>
+      <button type="button" data-action="play">Reproducir</button>
+      <button type="button" data-action="next" aria-label="Punto siguiente">→</button>
+      <button type="button" data-action="restart" aria-label="Volver al primer punto">↺</button>
+    </div>
+    <p class="lv-position" aria-live="polite" aria-atomic="true">Punto 1 de 5</p>
+  </div>
+  <ol class="lv-panels">
+    {steps.map((step, index) => <li data-panel={index}>
+      <span class="lv-number" aria-hidden="true">{index < 5 ? index + 1 : '✓'}</span>
+      <div><h4>{step.title}</h4><p>{step.text}</p></div>
+    </li>)}
+  </ol>
+  <p class="lv-essential">Esta revisión ayuda a observar; el diagnóstico se hace en la clínica. Las señales de urgencia están explicadas justo debajo.</p>
+  <details class="lv-method">
+    <summary>Fuentes y cómo usar el recorrido</summary>
+    <p>Orden editorial de observación basado en las señales descritas por la guía AEMPS/MAPA de 2026 y LeishVet de 2011. La perra es una ilustración; los marcadores no representan lesiones.</p>
+    <p>Usa las flechas o las teclas ← y → desde los controles. Reproducir avanza una vez cada cinco segundos y se detiene al terminar. Pausar detiene el avance. Con movimiento reducido, el recorrido es manual.</p>
+  </details>
+</section>
+
+<noscript>
+  <style is:inline>
+    @media screen and (max-width:640px) {
+      [data-leish-revision] .lv-board,[data-leish-revision] .lv-intro { display:none!important; }
+      [data-leish-revision] .lv-panels li { padding:.35rem 0!important; }
+      [data-leish-revision] .lv-panels h4 { font-size:.95rem!important; line-height:1.3!important; }
+      [data-leish-revision] .lv-panels p { font-size:.85rem!important; line-height:1.45!important; }
+    }
+  </style>
+</noscript>
+
+<script>
+  class LeishRevision {
+    private step = 0;
+    private playing = false;
+    private timer: ReturnType<typeof setTimeout> | undefined;
+    private readonly last = 5;
+    private events = new AbortController();
+    private reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    constructor(private root: HTMLElement) {
+      root.dataset.enhanced = 'true';
+      root.querySelector<HTMLElement>('.lv-controls')!.hidden = false;
+      root.querySelectorAll<HTMLButtonElement>('[data-action]').forEach(button => button.addEventListener('click', () => this.action(button.dataset.action!), { signal: this.events.signal }));
+      root.querySelector<HTMLElement>('.lv-controls')!.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          this.action(event.key === 'ArrowLeft' ? 'prev' : 'next');
+        }
+      }, { signal: this.events.signal });
+      this.reduced.addEventListener('change', this.preference, { signal: this.events.signal });
+      document.addEventListener('visibilitychange', this.visibility, { signal: this.events.signal });
+      window.addEventListener('pagehide', this.stop, { signal: this.events.signal });
+      this.preference();
+    }
+    private action(action: string) {
+      if (action === 'play') {
+        if (this.playing) this.stop();
+        else if (!this.reduced.matches) {
+          if (this.step === this.last) this.step = 0;
+          this.playing = true;
+          this.render();
+          this.schedule();
+        }
+        return;
+      }
+      this.stop();
+      this.step = action === 'restart' ? 0 : Math.max(0, Math.min(this.last, this.step + (action === 'next' ? 1 : -1)));
+      this.render();
+    }
+    private preference = () => { this.stop(); };
+    private visibility = () => { if (document.hidden) this.stop(); };
+    private stop = () => {
+      clearTimeout(this.timer);
+      this.timer = undefined;
+      this.playing = false;
+      this.render();
+    };
+    private schedule() {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        if (!this.root.isConnected || !this.playing) { this.stop(); return; }
+        if (this.step < this.last) { this.step++; this.render(); this.schedule(); }
+        else this.stop();
+      }, 5000);
+    }
+    private render() {
+      this.root.dataset.step = String(this.step);
+      this.root.dataset.playing = String(this.playing);
+      this.root.querySelectorAll<HTMLElement>('[data-panel]').forEach((panel, index) => panel.dataset.active = String(index === this.step));
+      const position = this.root.querySelector<HTMLElement>('.lv-position')!;
+      position.setAttribute('aria-live', this.playing ? 'off' : 'polite');
+      position.textContent = (this.step < 5 ? `Punto ${this.step + 1} de 5` : 'Para la consulta') + (this.reduced.matches ? ' · movimiento reducido: usa las flechas' : '');
+      this.root.querySelector<HTMLButtonElement>('[data-action="prev"]')!.disabled = this.step === 0;
+      this.root.querySelector<HTMLButtonElement>('[data-action="next"]')!.disabled = this.step === this.last;
+      const play = this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!;
+      play.disabled = this.reduced.matches;
+      play.textContent = this.playing ? 'Pausar' : this.step === this.last ? 'Repetir' : 'Reproducir';
+    }
+    disconnect() { this.stop(); this.events.abort(); }
+  }
+  const instances = new Map<HTMLElement, LeishRevision>();
+  function initializeLeishRevision() {
+    document.querySelectorAll<HTMLElement>('[data-leish-revision]').forEach(root => {
+      if (!instances.has(root)) instances.set(root, new LeishRevision(root));
+    });
+  }
+  document.addEventListener('astro:before-swap', () => {
+    instances.forEach(instance => instance.disconnect());
+    instances.clear();
+  });
+  document.addEventListener('astro:page-load', initializeLeishRevision);
+  initializeLeishRevision();
+</script>
+
+<style>
+  .lv-revision { --lv-ink:#203e32; --lv-sub:#435c4b; --lv-bg:#fffdf6; --lv-board:#e9eee3; --lv-border:#b7c6b0; --lv-action:#244f3d; --lv-action-text:#fffdf6; color:var(--lv-ink); background:var(--lv-bg); border:1px solid var(--lv-border); border-radius:1.2rem; padding:1.2rem; margin:2rem 0; max-width:46rem; font-family:system-ui,sans-serif; }
+  :global(.dark) .lv-revision { --lv-ink:#f4f1e7; --lv-sub:#d1dfcf; --lv-bg:#182e25; --lv-board:#253d31; --lv-border:#637b65; --lv-action:#e8ce8e; --lv-action-text:#182e25; }
+  .lv-revision h3 { margin:.25rem 0 .5rem!important; font-size:clamp(1.15rem,3vw,1.6rem); color:var(--lv-ink)!important; line-height:1.3; }
+  .lv-revision .lv-kicker { margin:0; font-size:.72rem; line-height:1.5; text-transform:uppercase; letter-spacing:.06em; font-weight:700; color:var(--lv-sub); }
+  .lv-revision .lv-intro { margin:.4rem 0 .9rem; font-size:.94rem; line-height:1.5; color:var(--lv-sub); }
+  .lv-board { position:relative; aspect-ratio:16/9; background:var(--lv-board); border-radius:.75rem; overflow:hidden; }
+  .lv-board img,.lv-board svg { width:100%; height:100%; display:block; margin:0; position:absolute; inset:0; object-fit:contain; border-radius:0; box-shadow:none; }
+  .lv-zone { opacity:0; fill:none; stroke:#fff; stroke-width:9; paint-order:stroke; }
+  .lv-zone ellipse { filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff); stroke:#a5440b; stroke-width:6; }
+  .lv-board-label { position:absolute; top:.4rem; left:.6rem; font-size:.65rem; color:var(--lv-sub); }
+  [data-enhanced][data-step='0'] [data-zone='0'],[data-enhanced][data-step='1'] [data-zone='1'],[data-enhanced][data-step='2'] [data-zone='2'],[data-enhanced][data-step='3'] [data-zone='3'] { opacity:1; }
+  .lv-controls { margin:.8rem 0 .4rem; }
+  .lv-revision [hidden] { display:none!important; }
+  .lv-transport { display:flex; gap:.4rem; }
+  .lv-transport button { min-width:44px; min-height:44px; padding:.55rem .7rem; border-radius:.6rem; border:1px solid var(--lv-border); background:var(--lv-bg); color:var(--lv-ink); font:600 .9rem/1.2 system-ui,sans-serif; cursor:pointer; }
+  .lv-transport button[data-action='play'] { flex:1; background:var(--lv-action); color:var(--lv-action-text); border-color:var(--lv-action); }
+  .lv-transport button:disabled { opacity:.5; cursor:default; }
+  .lv-revision :is(button,summary):focus-visible { outline:3px solid #b56325; outline-offset:3px; }
+  .lv-revision .lv-position { margin:.45rem 0; font-size:.78rem; color:var(--lv-sub); line-height:1.4; }
+  .lv-revision .lv-panels { padding:0; margin:.6rem 0; list-style:none; }
+  .lv-revision .lv-panels li { display:grid; grid-template-columns:2rem 1fr; gap:.65rem; margin:0; padding:.65rem 0; }
+  .lv-panels li::marker { content:none; }
+  [data-enhanced] .lv-panels li[data-active='false'] { display:none; }
+  .lv-number { width:2rem; height:2rem; display:grid; place-items:center; border-radius:50%; background:var(--lv-action); color:var(--lv-action-text); font-size:.85rem; font-weight:700; }
+  .lv-revision h4 { margin:0; color:var(--lv-ink)!important; font-size:1.05rem; line-height:1.4; }
+  .lv-revision .lv-panels p { margin:.25rem 0 0; color:var(--lv-sub); font-size:.94rem; line-height:1.6; }
+  .lv-revision .lv-essential { color:var(--lv-sub); margin:.8rem 0; font-size:.82rem; line-height:1.5; }
+  .lv-revision .lv-method { color:var(--lv-ink); background:var(--lv-board)!important; border-color:var(--lv-border)!important; padding:.65rem .8rem!important; margin:.6rem 0 0!important; }
+  .lv-revision .lv-method summary { color:var(--lv-ink)!important; min-height:44px; font-size:.82rem; line-height:1.5; }
+  .lv-revision .lv-method p { color:var(--lv-sub); margin:.75rem 0; font-size:.85rem; line-height:1.6; }
+  @media(max-width:480px) { .lv-revision { padding:.85rem; } .lv-transport { gap:.3rem; } .lv-transport button { padding:.5rem; } }
+  @media print {
+    .lv-revision { color:#203e32; background:#fff; border-color:#aaa; --lv-ink:#203e32!important; --lv-sub:#435c4b!important; --lv-bg:#fff!important; --lv-board:#e9eee3!important; --lv-action:#244f3d!important; --lv-action-text:#fff!important; }
+    .lv-controls,.lv-method { display:none!important; }
+    [data-enhanced] .lv-panels li[data-active='false'] { display:grid!important; }
+    .lv-panels li { break-inside:avoid; }
+    .lv-zone { display:none; }
+  }
+</style>

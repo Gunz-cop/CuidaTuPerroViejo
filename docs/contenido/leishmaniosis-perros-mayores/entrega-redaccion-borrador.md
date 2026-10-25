@@ -1,5 +1,7 @@
 # Entrega de redacción — 24 de octubre de 2026
 
+> **Seguimiento del 25 de octubre:** este informe conserva la entrega textual previa. Los recursos ya están producidos e integrados en la rama de revisión; el estado actual, el nuevo hash y las pruebas están en [visuales/entrega-visuales.md](visuales/entrega-visuales.md). El texto aprobado R2 se conserva en `visuales/texto-aprobado-r2.mdx`. Pendiente revisión visual independiente; no publicado.
+
 Texto: `articulo-borrador.mdx`. Rama de referencia consultada mediante GitHub: `claude/senior-dog-requirement-leishmaniosis-brief` de `Gunz-cop/CuidaTuPerroViejo`. Entrega para revisión en la rama `codex/leishmaniosis-articulo-revision`, creada desde la anterior. El propietario solicitó subir el borrador para revisarlo. Se incluyen el MDX, una versión Markdown de lectura y este informe; no se abre PR ni se despliega.
 
 ## Alcance y estado

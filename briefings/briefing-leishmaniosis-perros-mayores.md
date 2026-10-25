@@ -9,6 +9,8 @@
 1. **El título deja de prometer «durante todo el año».** El inventario titula el tema «…prevención durante todo el año». Las fuentes no lo respaldan por igual (ver §3, laguna 3): la fuente entomológica con datos de Madrid no encuentra riesgo de transmisión de diciembre a marzo, ESCCAP sitúa la temporada entre abril y octubre o noviembre y solo la Organización Colegial Veterinaria (OCV) aconseja proteger «durante todo el año». El artículo cuenta las tres posturas y deja la decisión de calendario a la clínica de cada zona. El título H1 no afirma nada que el cuerpo no pueda sostener.
 2. **Raza del perro de las imágenes: mestizo, no podenco.** Justificación y comprobación de razas recientes en §8.
 
+> **Seguimiento de producción (2026-10-25):** texto APTO en R2 de artículo; tres imágenes, recorte, animación y calendario integrados en la rama `codex/leishmaniosis-articulo-revision`. Comprobaciones y capturas: `docs/contenido/leishmaniosis-perros-mayores/visuales/entrega-visuales.md`. Pendiente R3 independiente del conjunto visual; sin publicación. Esta nota actualiza el estado de ejecución y conserva el contrato científico y visual aprobado.
+
 ## 1. DATOS, METADATOS Y FRONTMATTER MDX
 
 | Campo | Valor |
