@@ -1,7 +1,18 @@
 # Preparación de publicación — miedo a los petardos
 
-Fecha: 2026-10-26. Integración y comprobación técnica; no es auditoría ni aprobación editorial. Sin fusión o despliegue.
+Fecha de cierre: 2026-10-26. Artículo fusionado y verificado en producción por orden posterior del propietario. Los apartados de preparación siguientes conservan el historial de sus versiones; el estado vigente se registra aquí.
 
+
+
+## PUBLICADO Y VERIFICADO — estado vigente
+
+[Artículo público](https://cuidatuperroviejo.com/salud-mental-emocional-perros/miedo-petardos-perros-mayores), HTTP200, comprobado el 2026-10-26. Código #148 fusionado como `b0c4aa1`; artículo #149 como `589548a`. Orden posterior del propietario: «Adelante y si todo sale bien Pushealo a main». Base del PR editorial cambiada a main e integrada en `b9e5fd2`, sin conflicto ni cambio del árbol auditado; CI actualizado SUCCESS, ejecución40358569106. No se reescribió el artículo ni se cambiaron sus fuentes, fecha o imágenes durante la fusión.
+
+Comprobados públicamente: cuatro WebP con hashes auditados, tres imágenes cargadas, pie correcto, dos tablas y tres avisos en390/1366 claro/oscuro, ocho FAQ plegadas y operativas, diez enlaces internos HTTP200 y entradas desde pilar/artículos vecinos. JSON-LD con fecha aprobada, imagen/caption correctos; sitemap, llms, catálogo y proyección públicos comprobados. Proyección y lectura API coinciden exactamente con el hash verificado. [Entrega y límites de la prueba pública](publicacion/produccion/README.md), [resumen numérico](publicacion/produccion/resumen.json).
+
+**P1-03 marcado Publicado solo tras esa verificación.** Se conserva el frontmatter2026-10-25. Capturas fuera de Git:36 generadas,12 abiertas; transporte de respuestas públicas mediante proxy con TLS verificado y render Playwright, sin prueba de TLS directo en Chromium, Safari/Firefox, móvil físico o validador externo de Google. No se presenta como otra auditoría independiente.
+
+Persiste la API general de valoraciones con500, también en dos artículos de control: tarea previa de TODO desde2026-10-24, reconfirmada y separada del artículo. No se realizaron cambios en la API ni D1.
 
 ## Estado vigente — corroboración posterior a R1
 
@@ -147,16 +158,16 @@ Tabla 2 y FAQ 4 distinguen encuesta de ensayos y no contradicen «moderada solo 
 4. Siguen en TODO: criterio 5.000–6.000 en skills, ES-06 roto, reconciliación futura de feromonas y versión latinoamericana con Osa/Baltor. Firma manual conservada conforme al encargo; su alineación con la automática sigue en la tarea general preexistente.
 5. **Fusionar a main despliega producción.** Abrir estos PR no autoriza esa acción. Las pruebas descritas son locales; el estado de CI remoto se añadirá al cierre.
 
-## Checklist POST-FUSIÓN, para otra sesión
+## Checklist POST-FUSIÓN — completado el 2026-10-26
 
-- [ ] Orden expresa del propietario para código #148; después reorientar/actualizar el PR editorial a main, revisar diff/CI y obtener orden separada de fusión.
-- [ ] Confirmar despliegue del commit autorizado y HTTP200 de `https://cuidatuperroviejo.com/salud-mental-emocional-perros/miedo-petardos-perros-mayores`, sin extensión, con canónico correcto.
-- [ ] Abrir tres imágenes públicas, verificar dimensiones/hashes y srcset 400; pie editorial y alt separados.
-- [ ] Probar390px claro/oscuro: imágenes estables, dos tablas legibles/apiladas, contraste y ausencia de desbordes; tres avisos visibles.
-- [ ] FAQ inicialmente plegada y operativa; enlaces internos y entradas desde pilar/artículos del silo.
-- [ ] JSON-LD público con fecha aprobada, imagen v2 y caption correcto; sin dateModified inventado.
-- [ ] Sitemap público con URL nueva; llms HTTP 200 y descubrimiento del pilar/catálogo; catálogo y proyección públicos incluyen el artículo.
-- [ ] Registrar fecha, commit, HTTP y pruebas vistas. **Solo entonces** marcar P1-03 `[x] Publicado` y cerrar TODO con fecha, commit y PR.
+- [x] Orden expresa posterior del propietario para ambos PR; código #148 fusionado, artículo #149 reorientado e integrado con main, diff idéntico y CI SUCCESS antes de fusionarlo.
+- [x] Confirmar despliegue del commit autorizado y HTTP200 de `https://cuidatuperroviejo.com/salud-mental-emocional-perros/miedo-petardos-perros-mayores`, sin extensión, con canónico correcto.
+- [x] Abrir tres imágenes públicas, verificar dimensiones/hashes y srcset 400; pie editorial y alt separados.
+- [x] Probar390px claro/oscuro: imágenes estables, dos tablas legibles/apiladas, contraste y ausencia de desbordes; tres avisos visibles.
+- [x] FAQ inicialmente plegada y operativa; enlaces internos y entradas desde pilar/artículos del silo.
+- [x] JSON-LD público con fecha aprobada, imagen v2 y caption correcto; sin dateModified inventado.
+- [x] Sitemap público con URL nueva; llms HTTP 200 y descubrimiento del pilar/catálogo; catálogo y proyección públicos incluyen el artículo.
+- [x] Registrar fecha, commit, HTTP y pruebas vistas. **Solo entonces** marcar P1-03 `[x] Publicado` y cerrar TODO con fecha, commit y PR.
 
 
 ## Cierre de comprobaciones antes de abrir el PR editorial
@@ -200,3 +211,8 @@ La comparación independiente confirma que el MDX solo difiere del original audi
 CI del ajuste `e35073e`: **SUCCESS**, [ejecución 40351805943](https://github.com/Gunz-cop/CuidaTuPerroViejo/actions/runs/40351805943). Consultado por el integrador, no presentado como prueba propia del auditor. El commit posterior solo incorpora informe/evidencia R2 y cierre documental, sin cambios de producto. Su CI se consultará y registrará en el PR.
 
 No se fusiona ni despliega. Quedan la orden expresa de fusión, código #148 → reorientar/actualizar #149 a main → revisar diff/CI resultantes → orden de fusión editorial y checklist público. Se conserva la fecha 2026-10-25. P1-03 sigue NO publicado; los pendientes generales de skills, ES-06, feromonas y versión latinoamericana permanecen separados en TODO.
+
+
+## Registro final de producción
+
+Verificación pública documentada en `publicacion/produccion/`. P1-03 y la tarea de fusión se cierran con fecha2026-10-26 y commit589548a; los informes de auditoría previos se mantienen intactos. Este cierre solo modifica inventario, TODO y evidencia documental; no cambia producto ni pretende convertir las pruebas del integrador en auditoría independiente.

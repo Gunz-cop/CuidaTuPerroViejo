@@ -1,0 +1,75 @@
+{
+  "fecha_utc": "2026-10-26T16:38:43.216791+00:00",
+  "autorizacion": "Adelante y si todo sale bien Pushealo a main",
+  "pr_codigo": 148,
+  "commit_codigo_main": "b0c4aa1acf8aa45f073ea464be11d0929276d1b2",
+  "pr_articulo": 149,
+  "commit_articulo_main": "589548abd29106c210f30c5407730ad38ac4424f",
+  "commit_integracion_ci": "b9e5fd2d3caf22491cbb4a57b955e94910feefb7",
+  "ci_integracion_run": 40358569106,
+  "ci_integracion_conclusion": "success",
+  "tree_auditado_y_publicado": "5b81d68a564945f53594d62d36c2631abb05e001",
+  "url": "https://cuidatuperroviejo.com/salud-mental-emocional-perros/miedo-petardos-perros-mayores",
+  "articulo_http": 200,
+  "imagenes_publicas_coinciden_con_auditadas": 4,
+  "enlaces_internos_http200": 10,
+  "capturas_generadas": 36,
+  "capturas_inspeccionadas": 12,
+  "modos": [
+    {
+      "width": 390,
+      "theme": "light",
+      "pass": true,
+      "contrast_minimum": 4.504492059318877,
+      "cls_observado": 0,
+      "errores_js": [],
+      "altura_tablas": [
+        777.53125,
+        889.921875
+      ]
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "pass": true,
+      "contrast_minimum": 5.516990353269591,
+      "cls_observado": 0,
+      "errores_js": [],
+      "altura_tablas": [
+        777.53125,
+        889.921875
+      ]
+    },
+    {
+      "width": 1366,
+      "theme": "light",
+      "pass": true,
+      "contrast_minimum": 4.504492059318877,
+      "cls_observado": 0,
+      "errores_js": [],
+      "altura_tablas": [
+        488.5625,
+        650.34375
+      ]
+    },
+    {
+      "width": 1366,
+      "theme": "dark",
+      "pass": true,
+      "contrast_minimum": 5.516990353269591,
+      "cls_observado": 0,
+      "errores_js": [],
+      "altura_tablas": [
+        488.5625,
+        650.34375
+      ]
+    }
+  ],
+  "texto_proyeccion_sha256": "d5ad63584c25c02d56bb4e4eb1239f8131af05dfd7af0f7af7bfc3e1802eca94",
+  "cierre_inventario_solo_despues_de_verificacion": true,
+  "limites": [
+    "Sin inspección de logs/versiones internas de Cloudflare Workers Builds; producto público identificado por hash de proyección e imágenes y contenido/DOM",
+    "Sin Safari/Firefox, móvil físico ni lector de pantalla; sin validador Google externo",
+    "API de valoraciones devuelve500 también en dos artículos de control; incidencia general ya anotada en TODO desde2026-10-24"
+  ]
+}

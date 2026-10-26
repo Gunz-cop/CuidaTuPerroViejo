@@ -1,0 +1,7 @@
+{
+  "chromium_tls": "La conexión TLS directa de Chromium no confía en la CA del proxy del entorno. No se desactiva la validación: urllib descarga respuestas públicas con proxy y TLS verificado, y route.fulfill las entrega al navegador. No se sirvió un HTML local de prueba.",
+  "colores": "El primer cálculo interpretaba colores OKLab como RGB y produjo falsos fallos en avisos claros. Se corrigió únicamente el instrumento de medición con conversión continua OKLab/OKLCH→sRGB. No cambió el CSS del sitio. En la ejecución final los cuatro modos pasan; primeros artefactos quedan en /tmp.",
+  "cls": "Primer intento: CLS0 en móvil/oscuro y 0,020981416496423284 en escritorio claro. Ejecución final:0 en los cuatro modos; dimensiones reservadas en las tres imágenes. Es una observación bajo transporte mediado, no una medida de Core Web Vitals públicas.",
+  "jsonld": "La comprobación inicial esperaba objeto image único; el schema real contiene un array válido. Se normalizó la lectura del instrumento y se verificó cada ImageObject. No se cambió el schema del sitio.",
+  "ua": "urllib por defecto recibió403; User-Agent de navegador normal recibió404 antes del despliegue y200 después. No se alteraron reglas del sitio ni se desactivó TLS."
+}
