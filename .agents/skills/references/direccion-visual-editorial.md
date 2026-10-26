@@ -91,7 +91,7 @@ Registro de razas usadas (actualizar al cerrar cada brief):
 | Feromonas (brief) | Teckel |
 | Depresión (brief) | Galgo español |
 | IPE (brief) | Setter gordon |
-| Leishmaniosis (publicado, 2026-10-25; portada: cuidadora ajustando el collar) | Mestizo de tipo pastor-mastín, atigrado oscuro |
+| Leishmaniosis (publicado, 2026-10-24; portada: cuidadora ajustando el collar) | Mestizo de tipo pastor-mastín, atigrado oscuro |
 | Miedo a los petardos, España (publicado, 2026-10-26) | Bodeguero andaluz tricolor |
 | Miedo a la pólvora, Latinoamérica (brief, 2026-10-26; excepción pendiente de aprobación del propietario) | Mestizo criollo mediano, canela con máscara negra |
 
