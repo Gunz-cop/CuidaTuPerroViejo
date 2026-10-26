@@ -89,6 +89,20 @@ Hechos aportados (relato oral, 2026-10-25; sin raza, edad ni fecha exacta):
 
 Límites: recuerdo de hace años, sin fechas ni desenlace, de un perro ajeno. Contrasta con Osa: Baltor, dentro de casa, no se escapa; Osa, en el patio, buscaba entrar. Ambos casos sostienen un único mensaje práctico, ya presente en el brief: un lugar interior y cerrado es donde los perros buscan refugio. No se interpreta como que dentro de casa el perro no sufra.
 
+### Perra de un compañero de trabajo del propietario (Costa Rica, 2026-10-26)
+
+Procedencia: mensaje escrito del compañero al propietario, en un chat de trabajo, el 2026-10-26. El propietario lo compartió como captura en la sesión. **No se registra el nombre del compañero.** No se le pidió permiso para publicarlo ni se le preguntó por su perro que ya no se levanta (el propietario prefirió no ser directo).
+
+Hechos (texto del mensaje, sin añadir nada):
+- En su casa, «solo una se pone muy nerviosa» con la pólvora (tiene más de un perro; no se sabe cuántos).
+- Lo que hacen: dejarla dentro de la casa.
+- Ella busca meterse debajo del escritorio del compañero y ahí se queda.
+
+Límites para el redactor:
+- No se sabe la edad de esa perra, su raza ni si es la que ya no se levanta: **no presentarla como perra mayor ni relacionarla con el H2-4**.
+- **Uso solo con permiso del compañero.** Mientras no lo dé, no aparece en ningún artículo, ni anónima.
+- Si lo da: anónima («la perra de un compañero de trabajo, en Costa Rica»), una o dos frases, como ilustración de que buscan un hueco cerrado bajo un mueble (encaja con la cueva bajo la mesa de S9). Sin causa ni pauta.
+
 ### Otros testimonios
 
 Pendientes: el propietario dice tener más; si ya los ha contado todos, se cierra este apartado.

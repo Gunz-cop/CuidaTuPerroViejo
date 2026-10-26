@@ -62,7 +62,7 @@ datePublished: "{{FECHA_DE_PUBLICACION_AAAA-MM-DD}}"
 - **Luna** (beagle, 2015, Costa Rica): el hecho nuevo: **sus sustos no son solo la pólvora, también temblores, terremotos y choques**. Que busca a la familia ya está publicado en España («ante un susto cualquiera, Luna nos busca»): solo media frase de contexto. Lo de alzarla y que se calme con él no se repite.
 - **No se usan:** Dakota (todo ya contado en España), la perra de unos vecinos y la hipótesis «buscan un lugar menos ruidoso» (publicadas en España).
 
-**Caso para H2-4 (opcional, pendiente de permiso):** un compañero de trabajo del propietario tiene un perro mayor que ya no puede levantarse. **El propietario no conoce cómo lo manejan** y no hay datos aportados. Sin permiso y sin hechos dictados, **no aparece en el artículo, ni anónimo**. La consideración de la familia sobre la eutanasia **no se menciona en ningún caso** sin que ellos lo pidan.
+**H2-4 sin caso (decidido el 2026-10-26):** un compañero de trabajo del propietario tiene un perro mayor que ya no puede levantarse, pero el propietario prefirió no preguntarle cómo lo manejan. Ese perro **no aparece en el artículo, ni anónimo**. **Testimonio opcional para H2-3, pendiente de permiso:** el mismo compañero contó por escrito (2026-10-26) que en su casa solo una de sus perras se pone muy nerviosa con la pólvora: la dejan dentro y ella se mete debajo de su escritorio y ahí se queda. Ficha y límites en el archivo de testimonios. Solo entra si el compañero autoriza que se cuente, anónimo, en una o dos frases en `### Una mesa, una sábana y su frazada`; sin edad ni relación con el H2-4. Si no hay permiso, el H3 no cambia. La consideración de la familia sobre la eutanasia **no se menciona en ningún caso** sin que ellos lo pidan.
 
 **Declaración para el lector (introducción):** una o dos frases: estudios internacionales, reportes de Bogotá y recomendaciones de colegios y universidades veterinarias de la región; además, recuerdos de perros de la familia y de un vecino en El Salvador y de casa, en Costa Rica: recuerdos, no casos clínicos.
 
@@ -629,7 +629,8 @@ No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mis
 | Tarjeta de versiones | Tras la introducción | **Decisión del propietario** | PR aparte; móvil, modo oscuro, lector de pantalla |
 
 - [ ] Decisión del propietario: tarjeta (A/B/C) y raza (mestizo o chihuahua).
-- [ ] Testimonio del perro que no se levanta: solo con permiso y datos dictados; si no, sin caso.
+- [x] H2-4 sin caso (2026-10-26).
+- [ ] Perra del compañero bajo el escritorio (H2-3): solo con su permiso; si no, fuera.
 - [ ] Verificaciones parciales cerradas o limitadas (S4 publicado; originales de S9–S11).
 - [ ] Antes de publicar, volver a abrir S12–S14 y comprobar si en Colombia se expidió la reglamentación de la Ley 2224 y si Bogotá abre el formulario en 2026.
 - [ ] Tabla manual de paráfrasis (§9.5) y comprobación de 8 palabras.
