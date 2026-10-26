@@ -1,0 +1,122 @@
+# Registro de hallazgos del artículo de leishmaniosis, reconstruido con el formato propuesto.
+# LEI-A-001 a 004 vienen de auditoria-articulo-r1.md; LEI-V-001 de auditoria-articulo-r3-visual.md.
+# LEI-A-101 a 103 son la pasada adversarial de omisiones de 2026-10-26 sobre el texto publicado
+# (SHA-256 f449151f…0220). El control negativo de omisión falsa está en control-omision-falsa.yaml.
+articulo: leishmaniosis-perros-mayores
+fase: articulo
+documento: src/content/blog/leishmaniosis-perros-mayores.mdx
+rondas:
+  - {n: 1, hash: ebe21070, resultado: NO APROBADO}
+  - {n: 2, hash: fb0c7709, resultado: APROBADO}
+hallazgos:
+  - id: LEI-A-001
+    severidad: P1
+    estado: cerrado
+    origen: redaccion
+    ronda_apertura: 1
+    regla: "calidad-editorial-adsense.md §1; brief §9.1 «sin relleno»"
+    localizacion: "líneas 64, 66, 107, 109, 161, 163, 207, 209, 215 (hash ebe21070)"
+    evidencia: "La misma idea («lleva los informes, anota fechas») aparece 14 veces; 363 palabras"
+    impacto: "El volumen del contrato se sostiene con repetición, no con utilidad"
+    correccion: "Dejar el consejo una vez; sustituir el resto por contenido de las fuentes ya citadas"
+    criterio_cierre: "grep del consejo administrativo = 1 aparición; total dentro de 3.868–5.232"
+    historial:
+      - {ronda: 1, estado: abierto, evidencia: "14 apariciones"}
+      - {ronda: 2, estado: cerrado, evidencia: "1 aparición (línea 105 de fb0c7709)"}
+  - id: LEI-A-002
+    severidad: P1
+    estado: cerrado
+    origen: redaccion
+    ronda_apertura: 1
+    regla: "brief §11, recurso «Prueba / Para qué sirve / Qué no te dice»"
+    localizacion: "tabla de pruebas, líneas 144-148"
+    evidencia: "4 de 5 celdas dicen «deja pendiente…» sin una limitación concreta"
+    impacto: "El lector no sabe qué limita cada prueba"
+    correccion: "Una limitación concreta por fila, tomada de LeishVet Tabla 3 y AEMPS Fig. 1"
+    criterio_cierre: "Cada celda contiene una limitación localizable en la fuente; 0 «deja pendiente»"
+    historial:
+      - {ronda: 1, estado: abierto, evidencia: "celdas literales en el informe R1"}
+      - {ronda: 2, estado: cerrado, evidencia: "5 celdas contrastadas con LeishVet Tabla 3"}
+  - id: LEI-A-003
+    severidad: P2
+    estado: cerrado
+    origen: redaccion
+    ronda_apertura: 1
+    localizacion: "línea 56"
+    evidencia: "Cabré dice «older than 8 years»; el texto dice «siete u ocho»"
+    impacto: "Atribución de edad imprecisa"
+    correccion: "Miranda: desde siete; Cabré: tras los ocho"
+    criterio_cierre: "Cada cifra de edad junto a su autor correcto"
+  - id: LEI-A-004
+    severidad: P2
+    estado: cerrado
+    origen: redaccion
+    ronda_apertura: 1
+    tipo: omision
+    busqueda_negativa: {terminos: ["inmunomodulador"], secciones: ["H2-2", "FAQ 3"]}
+    texto_existente_insuficiente_porque: "Ya corregido: la regla se ejecuta sobre el texto publicado, que contiene la corrección"
+    localizacion: "línea 129 y FAQ 3 (hash ebe21070)"
+    evidencia: "AEMPS admite inmunomoduladores a criterio del clínico en subclínicos"
+    impacto: "Contradicción aparente con lo que proponga el veterinario"
+    correccion: "Cláusula sin nombrar fármacos"
+    criterio_cierre: "La cláusula existe en cuerpo y FAQ 3"
+  - id: LEI-V-001
+    severidad: P1   # El informe R3 lo marcó P0; con el contrato nuevo no es un riesgo clínico.
+    estado: aceptado_por_propietario
+    origen: visual
+    ronda_apertura: 3
+    regla: "brief §9.7 requisito senior (bloqueante por decisión del propietario)"
+    localizacion: "mestizo-senior-recorte-perfil-v2.webp"
+    evidencia: "A 390 px: lomo recto, muslos llenos, cabeza alta"
+    impacto: "Un perro joven ilustra un artículo de perros mayores"
+    correccion: "Regenerar con lomo hundido y menos masa (prompt cerrado en R3)"
+    criterio_cierre: "Tabla de cinco rasgos a 390 px con lomo y musculatura en «sí»"
+  - id: LEI-A-101
+    severidad: P2
+    estado: abierto
+    origen: brief
+    ronda_apertura: 3
+    en_texto_modificado: false
+    tipo: omision
+    busqueda_negativa: {terminos: ["deltametrina"], secciones: ["H2-5 completo", "FAQ 6"]}
+    texto_existente_insuficiente_porque: >-
+      La línea 245 nombra collares con deltametrina; el aviso de gatos (304-310) solo nombra la
+      permetrina. La línea 305 prohíbe en general aplicar al gato un producto para perros, así que
+      la vía de daño principal está cubierta: queda una falta de precisión, no un riesgo abierto.
+    localizacion: "AlertBox «Permetrina: precaución especial con los gatos», línea 304"
+    evidencia: "RCM Scalibor (CIMAVet 1326 ESP) §3.3: «No usar en gatos»"
+    impacto: "Un lector puede creer que solo la permetrina es un problema para el gato"
+    correccion: "Título «Antiparasitarios para perros: precaución con los gatos» y una frase: los collares con deltametrina tampoco se usan en gatos"
+    criterio_cierre: "El aviso de gatos nombra permetrina y deltametrina"
+  - id: LEI-A-102
+    severidad: P1
+    estado: abierto
+    origen: brief
+    ronda_apertura: 3
+    en_texto_modificado: false
+    por_que_no_antes: "El brief solo incluyó la ficha de la permetrina (S9) y el contrato §9.6 solo pedía «gatos y permetrina»; ninguna auditoría leyó las precauciones para personas de las fichas"
+    tipo: omision
+    busqueda_negativa: {terminos: ["niño", "niña", "dormir con", "jueguen"], secciones: ["artículo completo"]}
+    regla: "contrato propuesto: cada producto recomendado aporta sus precauciones de ficha (§3.3 y §3.5)"
+    localizacion: "H2-5, «Collar, pipeta y hábitos que se complementan», tras la línea 245"
+    evidencia: >-
+      RCM Piretrón (CIMAVet 3212 ESP) §3.5: «Los animales tratados no deben dormir con sus propietarios
+      el día del tratamiento, especialmente con los niños». RCM Scalibor §3.5: «No se debe permitir que
+      los niños jueguen con el collar»; «Evitar un contacto prolongado con el collar o con el perro que
+      lleve el collar».
+    impacto: "Familias con niños aplican pipeta o collar sin conocer una precaución explícita de la ficha"
+    correccion: "Una frase sin marcas ni dosis: las fichas incluyen precauciones para las personas de casa (niños y collar, no dormir con el perro el día de la pipeta); síguelas"
+    criterio_cierre: "grep de «niños» en H2-5 devuelve la frase, atribuida a las fichas"
+  - id: LEI-A-103
+    severidad: P2
+    estado: abierto
+    origen: brief
+    ronda_apertura: 3
+    en_texto_modificado: false
+    tipo: omision
+    busqueda_negativa: {terminos: ["acuátic", "estanque", "nadar", "bañarse en"], secciones: ["artículo completo"]}
+    localizacion: "H2-5, tras el baño (línea 233)"
+    evidencia: "RCM Piretrón §3.5: no bañarse en cursos de agua 2 días; RCM Scalibor §3.5: retirar el collar antes de nadar, 5 primeros días sin nadar"
+    impacto: "Daño ambiental; no afecta a los animales de la casa"
+    correccion: "Media frase en la línea del baño, remitiendo a la ficha"
+    criterio_cierre: "La precaución ambiental aparece remitida a la ficha"
