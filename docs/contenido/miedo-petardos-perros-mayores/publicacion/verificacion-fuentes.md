@@ -30,3 +30,8 @@ Los hashes de la copia del artículo científico y de la guía gráfica, guardad
 1. Añadir a la entrada de Riemer la referencia publicada y distinguirla del preprint ya enlazado. Conservar el límite de encuesta.
 2. Sustituir en S10 la nota «guía original no localizada» y enlazar el documento colegial localizado. El cuerpo puede mantener la atribución secundaria mientras no se autorice otra edición.
 3. Mantener S2 y S7 como verificaciones parciales declaradas, o aportar sus documentos pendientes antes de ordenar la fusión. El propietario decide el cierre editorial; estas comprobaciones no son una nueva auditoría.
+
+
+## Actualización autorizada posterior — 2026-10-26
+
+Con «Ok, ajusta y audita», el propietario autoriza corregir la nota de Málaga. El comunicado colegial se abrió de nuevo y su entrada bibliográfica se actualiza, conservando la prensa como cobertura secundaria. La propuesta2 queda aplicada; los párrafos anteriores son el registro previo a esta autorización. El cuerpo no cambia. S2/S7 conservan su verificación parcial; la propuesta1 sobre Riemer no se aplica al no ser necesaria para corregir la nota obsoleta. Véase ajuste-bibliografia.json.

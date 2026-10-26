@@ -2,6 +2,15 @@
 
 Fecha: 2026-10-26. Integración y comprobación técnica; no es auditoría ni aprobación editorial. Sin fusión o despliegue.
 
+
+## Actualización autorizada — bibliografía y auditoría del diff
+
+El propietario pide «Ok, ajusta y audita» tras los pendientes de publicación. Se sustituye exclusivamente la entrada bibliográfica de Málaga por el comunicado primario, reabierto el 2026-10-26, con su guía gráfica y la cobertura de prensa conservada. El resto del MDX es idéntico. [Prueba exacta del cambio](publicacion/ajuste-bibliografia.json). Los registros de traslado anteriores describen la versión inicial; este ajuste no se oculta como un traslado literal.
+
+Se mantiene la fecha 2026-10-25 y la separación de PR #148/#149. Blackwell completo y PDF español regulatorio siguen como verificaciones parciales declaradas; no se inventan documentos ni una aceptación editorial del propietario. La auditoría independiente que se solicita ahora se limita al diff final de integración y al ajuste bibliográfico, con revisión de los tres archivos compartidos. No reinicia ni reemplaza las auditorías clínicas o visuales anteriores. Las comprobaciones afectadas se han repetido: check sin errores/advertencias, build y proyección correctos. La prueba visual anterior se conserva como evidencia de esos mismos binarios/componentes.
+
+Sin fusión ni despliegue.
+
 ## Base elegida, antes de abrir PR
 
 `main`, commit `b79ee0b` (comprobado en origin/main), es la base vigente. La especificación `docs/migracion-stack/README.md` marca la migración Astro 4→7 completada y Astro 7 en producción desde PR #38 (2026-09-03). El tag `migration-astro-7` es histórico. Esta integración editorial no pertenece a una fase de migración y no debe dirigirse a la rama histórica `migracion/astro-7`.
@@ -18,7 +27,7 @@ Código 625ef8a listo: HTML de tres artículos publicado idéntico byte a byte a
 
 Texto del artículo trasladado byte a byte desde 717ee60 a src/content/blog/miedo-petardos-perros-mayores.mdx. Brief, testimonios e informes de auditoría copiados íntegros. Se excluyen WebP hero v1 y PNG intermedios del candidato; la rama histórica conserva los originales y las pruebas. Registro de retiradas en publicacion/politica-archivos.json.
 
-Los apartados anteriores registran la elección de base **antes de abrir los PR**. El cierre técnico y sus límites están a continuación; no se altera ningún texto clínico, cifra, FAQ, testimonio ni bibliografía.
+Los apartados anteriores registran la elección de base **antes de abrir los PR**. El cierre técnico y sus límites están a continuación; el texto clínico, las cifras, FAQ y testimonios permanecen intactos. La única edición bibliográfica posterior es S10, autorizada y documentada arriba.
 
 ## PR y orden de fusión propuesto
 
@@ -33,7 +42,7 @@ Revisar primero el código. Tras su fusión **ordenada por el propietario**, cam
 
 | Acción | Archivos | Motivo o garantía |
 |---|---|---|
-| Traslado | `articulo-borrador.mdx` de docs → `src/content/blog/miedo-petardos-perros-mayores.mdx` | Igualdad byte a byte con `717ee60`. No se deja una segunda copia del borrador. |
+| Traslado | `articulo-borrador.mdx` de docs → `src/content/blog/miedo-petardos-perros-mayores.mdx` | Igualdad byte a byte con `717ee60` en el traslado inicial `2894178`; edición posterior autorizada solo de S10. No se duplica el borrador. |
 | Conservación íntegra | Brief v7, testimonios, auditorías anteriores y sus JSON | Hashes contrastados con la fuente. Los informes no se reescriben. |
 | Conservación de originales | `imagen-1-v10.png`, `imagen-2-v8.png`, `imagen-3-v1.png`, bajo `visuales/originales/` | Solo tres PNG finales, 7.716.999 bytes. |
 | Activos públicos | Portada v2 y variante v2-400; paseo v1 y consulta v1 | Binarios auditados, dimensiones y hashes idénticos. |
@@ -115,14 +124,14 @@ Se abrieron las once referencias con herramienta web, distinta de curl, distingu
 - **Blackwell:** texto completo no obtenido; verificación parcial declarada.
 - **Riemer publicado:** PDF editorial completo en espejo, identidad DOI y pasajes utilizados contrastados. Acceso directo a editorial/repositorio primario sin certificar.
 - **Ficha española:** AEMPS y registro localizados; PDF regulatorio no leído por redirección/formulario. Verificación parcial declarada; atribución británica conservada. La copia del distribuidor no certifica vigencia regulatoria.
-- **Málaga:** comunicado y guía gráfica originales localizados y abiertos. La bibliografía aún dice «guía original no localizada»: se propone actualizar esa nota y el enlace, **sin aplicar la modificación** por la prohibición de editar bibliografía.
+- **Málaga:** comunicado y guía gráfica originales localizados y abiertos. Tras la autorización «Ok, ajusta y audita», la entrada bibliográfica enlaza la fuente primaria y conserva la cobertura de prensa. Se retira la nota obsoleta; el cuerpo no cambia.
 
 Tabla 2 y FAQ 4 distinguen encuesta de ensayos y no contradicen «moderada solo en miedo a tormentas» del brief de feromonas y del artículo de ansiedad por separación. [Registro](publicacion/reconciliacion-feromonas.json). La futura redacción conserva su tarea en TODO; no se edita el brief.
 
 ## Límites y decisiones antes de fusionar
 
-1. Revisar código y después artículo. **Se propone al propietario una auditoría independiente breve del diff final**: traslado mecánico, enlaces, pesos y separación del código. No la hace el integrador; la R3 visual previa no se presenta como auditoría de este PR.
-2. Resolver propuestas bibliográficas y aceptar documentalmente o completar S2/S7. Estas verificaciones no sustituyen el cierre editorial.
+1. Revisar código y después artículo. **Se solicita, por orden del propietario, una auditoría independiente breve del diff final**: traslado mecánico, enlaces, pesos y separación del código. No la hace el integrador; la R3 visual previa no se presenta como auditoría de este PR.
+2. El ajuste de Málaga está aplicado. Aceptar documentalmente o completar S2/S7; la propuesta bibliográfica opcional de Riemer queda separada. Estas verificaciones no sustituyen el cierre editorial.
 3. Confirmar si se conserva la fecha heredada o se autoriza otra edición mecánica al conocer la fecha real de fusión. No anticiparla ni inventar dateModified.
 4. Siguen en TODO: criterio 5.000–6.000 en skills, ES-06 roto, reconciliación futura de feromonas y versión latinoamericana con Osa/Baltor. Firma manual conservada conforme al encargo; su alineación con la automática sigue en la tarea general preexistente.
 5. **Fusionar a main despliega producción.** Abrir estos PR no autoriza esa acción. Las pruebas descritas son locales; el estado de CI remoto se añadirá al cierre.
@@ -148,6 +157,11 @@ Como main no contenía el borrador, GitHub mostrará el MDX de destino como arch
 
 ## PR abiertos: cierre de esta sesión
 
-Ambos permanecen abiertos y draft, sin fusionar: **#148 código → main; #149 artículo → rama de código**. El primero contiene solo los tres archivos permitidos; el segundo no los incluye en su diff. Primer commit de integración editorial: `2894178` (146 archivos, 9.799.374 bytes físicos de los archivos del candidato, incluidas las modificaciones de documentación). Este cierre posterior solo actualiza referencias a PR y estados documentales, no el producto probado.
+Ambos permanecen abiertos y draft, sin fusionar: **#148 código → main; #149 artículo → rama de código**. El primero contiene solo los tres archivos permitidos; el segundo no los incluye en su diff. Primer commit de integración editorial: `2894178` (146 archivos, 9.799.374 bytes físicos de los archivos del candidato, incluidas las modificaciones de documentación). Ese cierre actualizó solo referencias y estados; el ajuste bibliográfico autorizado posterior se describe al comienzo.
 
 CI remoto del código: SUCCESS registrado. El CI del PR editorial se lanza al abrir/sincronizar el PR; consultar su estado vigente en GitHub. No se presenta la ausencia de un estado registrado como prueba superada. La entrega conserva todas las comprobaciones locales y el checklist post-fusión. No hay autorización implícita de publicación.
+
+
+### Comprobaciones del ajuste bibliográfico
+
+Recuento contractual 5.653; tono 0,0/1.000; `npx astro build` correcto y proyección/guarda semántica de 37 documentos correctas. Se conserva la evidencia visual anterior: no cambia ningún binario, componente, estilo o dimensión. La auditoría independiente evaluará por separado el diff de publicación R1; no se consume otra ronda visual ni se declara una aprobación propia.
