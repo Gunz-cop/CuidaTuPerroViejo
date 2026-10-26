@@ -1,0 +1,45 @@
+{
+  "fecha": "2026-10-26",
+  "tipo": "Verificación técnica del integrador, no auditoría",
+  "check": {
+    "cmd": "npx astro check",
+    "exit": 0,
+    "files": 211,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 74
+  },
+  "build": {
+    "cmd": "npx astro build",
+    "exit": 0,
+    "markdown_documents": 37
+  },
+  "enlazado_build": {
+    "cmd": "npm run build",
+    "exit": 0,
+    "postbuild_ausente": true,
+    "nota_entorno": "Un primer intento sin las variables de caché falló por /home/agent/.config/astro. Repetido correctamente con ASTRO_TELEMETRY_DISABLED=1 y XDG_CONFIG_HOME/XDG_CACHE_HOME bajo /tmp; no se modifica configuración."
+  },
+  "projection_check": {
+    "cmd": "node scripts/agent-readiness/projection.mjs check --build-dir dist",
+    "exit": 0
+  },
+  "semantic_guard": {
+    "cmd": "node tests/agent-readiness/projection-semantic.mjs dist",
+    "exit": 0,
+    "documents": 37
+  },
+  "recuento": 5653,
+  "tono": {
+    "muletillas": 0,
+    "por_1000": 0,
+    "denominador_tono": 5167
+  },
+  "logs_locales": [
+    "/tmp/petardos-publicacion/articulo-check.log",
+    "/tmp/petardos-publicacion/articulo-build.log",
+    "/tmp/petardos-publicacion/articulo-npm-build.log",
+    "/tmp/petardos-publicacion/articulo-check-final.log",
+    "/tmp/petardos-publicacion/articulo-build-final.log"
+  ]
+}

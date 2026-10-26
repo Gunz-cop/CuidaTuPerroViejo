@@ -6,6 +6,12 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 ## Contenido
 
+- [ ] **Publicar P1-03 (miedo a los petardos).** Integración preparada el 2026-10-26; PR de código y artículo pendientes de abrir. Mantener «NO publicado» hasta fusión autorizada y comprobación pública; pasos en `docs/contenido/miedo-petardos-perros-mayores/entrega-publicacion.md`.
+- [ ] **Volumen de las skills: criterio de 5.000–6.000 palabras.** Pendiente de decisión/editorial y ajuste de las skills sin relleno; no se modifican en esta integración. El contrato particular de petardos sigue siendo 5.300–6.000. (2026-10-26)
+- [ ] **Base ES-06 del inventario: enlace roto.** Sustituir la referencia de Barcelona declarada 404 por una fuente vigente; no se inventa ni cambia en este PR. (2026-10-26)
+- [ ] **Reconciliar al redactar el brief de feromonas.** La comprobación de integración de 2026-10-26 no encuentra contradicción entre tabla 2/FAQ 4 de petardos (percepciones de encuesta) y «moderada solo en miedo a tormentas» en ansiedad por separación y el brief; queda pendiente trasladar esa distinción a la futura redacción de feromonas, sin modificar ahora su brief.
+- [ ] **Versión latinoamericana de petardos con Osa y Baltor.** Planificación y procedencia por concretar; fuera del artículo español. (2026-10-26)
+
 - [ ] **Golpe de calor: menores aceptados al publicar (2026-10-24, `main` e22dd89).** Ninguno bloquea; retomar si se rehace el artículo o su animación. Detalle en `docs/contenido/golpe-de-calor-perros-mayores/auditoria-revision-r2.md`.
   - [ ] Recorte del podenco (`podenco-senior-perfil-transparente-v1`): no se ve senior (lomo y músculo de adulto) y aparece con el pelo seco en los pasos de mojarlo. Regenerar con edad visible y pelo mojado si se mejora la secuencia. Su alfa interior es 250–254, no 255 (no se nota).
   - [ ] Escala de avisos (`GolpeCalorRecursos`, variante `umbrales`): el recuadro discontinuo sigue marcando la distancia entre 30 °C y el umbral de la zona, aunque ya sin cifra. Valorar quitarlo.

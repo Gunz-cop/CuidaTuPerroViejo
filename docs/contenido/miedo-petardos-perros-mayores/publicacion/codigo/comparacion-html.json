@@ -1,0 +1,264 @@
+{
+  "metodo": "Dos npx astro build normales, comparaci\u00f3n literal de todos los HTML sin normalizaci\u00f3n. Los componentes con crypto.randomUUID preexistente se identifican aparte.",
+  "base": "b79ee0b",
+  "resultados": [
+    {
+      "ruta": "404.html",
+      "antes_sha256": "f43e0e65ae1a0919336fb8acb1c22b2f8f800bda7d62d1cde091b4bace327dc7",
+      "despues_sha256": "f43e0e65ae1a0919336fb8acb1c22b2f8f800bda7d62d1cde091b4bace327dc7",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "acerca-de.html",
+      "antes_sha256": "1e650b18cd9e2edb9a5695af95d945317106d8d10f119ade3236394314a12541",
+      "despues_sha256": "1e650b18cd9e2edb9a5695af95d945317106d8d10f119ade3236394314a12541",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "alimentacion-perros-senior/alimentacion-perros-mayores-sin-dientes.html",
+      "antes_sha256": "4b66d85d5a76465866110b632972677c800deea60f7fb9192a8e2a3cc19bf5c4",
+      "despues_sha256": "e020b9acae4354a134628eef39f0fb3888432e8af34cc0c3252caa04d0b9654c",
+      "html_identico_byte_a_byte": false,
+      "igual_excluidos_solo_uuid_preexistentes": true
+    },
+    {
+      "ruta": "alimentacion-perros-senior/comida-casera-perros-mayores.html",
+      "antes_sha256": "9b4abc341ed3bc96500047692fa81428bf3f965d57e8c60a308a863c40a80c15",
+      "despues_sha256": "9b4abc341ed3bc96500047692fa81428bf3f965d57e8c60a308a863c40a80c15",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "alimentacion-perros-senior.html",
+      "antes_sha256": "f17a78c7d051ed345c7ebafc3ed4ab4cd94eb5a1a49c84e8b5933bf6df27bf62",
+      "despues_sha256": "f17a78c7d051ed345c7ebafc3ed4ab4cd94eb5a1a49c84e8b5933bf6df27bf62",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "asistente-ia.html",
+      "antes_sha256": "95144d8668f198082ef0c9f102c9a4b33c33d0a8dfd771e82e2ac09c5167ec47",
+      "despues_sha256": "95144d8668f198082ef0c9f102c9a4b33c33d0a8dfd771e82e2ac09c5167ec47",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "contacto.html",
+      "antes_sha256": "9e1db71387bcec81d37b2682a24ebc817eba9a5968741f5afd1d2d84a1176dc4",
+      "despues_sha256": "914bf6c8a296fee2c33a5e609c3b37b02c24b402834c4b6f7312a219bac2f51c",
+      "html_identico_byte_a_byte": false,
+      "igual_excluidos_solo_uuid_preexistentes": false
+    },
+    {
+      "ruta": "cuidados-paliativos-perros/como-dar-medicacion-perro.html",
+      "antes_sha256": "2aa512142a5c92500ee2117ac612f916d2161a80d90d819d0fbf3c6045ee31a0",
+      "despues_sha256": "2aa512142a5c92500ee2117ac612f916d2161a80d90d819d0fbf3c6045ee31a0",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "cuidados-paliativos-perros/ulceras-presion-perros.html",
+      "antes_sha256": "3236fcaa1727b23356c1f57273afd8d4736a5a97705a9bd79fa0098698a0d2a0",
+      "despues_sha256": "3236fcaa1727b23356c1f57273afd8d4736a5a97705a9bd79fa0098698a0d2a0",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "cuidados-paliativos-perros.html",
+      "antes_sha256": "66f5acfc875ea9cbc8c4e8939bc5c041d2210c2367882433a4ae2e72d4782668",
+      "despues_sha256": "66f5acfc875ea9cbc8c4e8939bc5c041d2210c2367882433a4ae2e72d4782668",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "gracias.html",
+      "antes_sha256": "6a6133b5a61076b83ecad216c20915b094d96e6de50e40ebd4793057a21d5457",
+      "despues_sha256": "6a6133b5a61076b83ecad216c20915b094d96e6de50e40ebd4793057a21d5457",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "herramientas/calculadora-calidad-vida-perros.html",
+      "antes_sha256": "56b7fe53aa69f2eb4cd048817917d503dc6fa159a09ea4791fe84454799af059",
+      "despues_sha256": "56b7fe53aa69f2eb4cd048817917d503dc6fa159a09ea4791fe84454799af059",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "herramientas/calculadora-edad-perro.html",
+      "antes_sha256": "e4eace0e615e69cbbb17c5192d11ef518f64d7e56a3577547de50b53ab85d08e",
+      "despues_sha256": "e4eace0e615e69cbbb17c5192d11ef518f64d7e56a3577547de50b53ab85d08e",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "herramientas/selector-movilidad-perros-mayores.html",
+      "antes_sha256": "b9d582c343f9486bba36c800947f9e821359433a844f5885b9b2de02188cef65",
+      "despues_sha256": "b9d582c343f9486bba36c800947f9e821359433a844f5885b9b2de02188cef65",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "herramientas.html",
+      "antes_sha256": "c25d90e6fa0cf195dd4dbd7a00d0affa4044870410fea460925e51249d510d08",
+      "despues_sha256": "c25d90e6fa0cf195dd4dbd7a00d0affa4044870410fea460925e51249d510d08",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "higiene-hogar-perros-senior/banar-perro-viejo-movilidad-reducida.html",
+      "antes_sha256": "0fa73f90aef7203823e0fc55d9a52874bd17cc9ee202e47b6393969ccb03adb1",
+      "despues_sha256": "0fa73f90aef7203823e0fc55d9a52874bd17cc9ee202e47b6393969ccb03adb1",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "higiene-hogar-perros-senior/callosidades-higromas-codos-perros-senior.html",
+      "antes_sha256": "88f1c5b92948c5bff615a143ad133169c29fabf05c5418ccfb36802bd8f88372",
+      "despues_sha256": "88f1c5b92948c5bff615a143ad133169c29fabf05c5418ccfb36802bd8f88372",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "higiene-hogar-perros-senior/incontinencia-fecal-perros-senior.html",
+      "antes_sha256": "2ccf2e1b435ef3889d428492cc15107453269ac511d41ba039e15669555e6505",
+      "despues_sha256": "2ccf2e1b435ef3889d428492cc15107453269ac511d41ba039e15669555e6505",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores.html",
+      "antes_sha256": "42d8b3c8f527a0c7b514711d7ac2c2b76a2780a385cde4aa75c9e8b1a0369e1d",
+      "despues_sha256": "42d8b3c8f527a0c7b514711d7ac2c2b76a2780a385cde4aa75c9e8b1a0369e1d",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "higiene-hogar-perros-senior/limpieza-ojos-oidos-perros-ancianos.html",
+      "antes_sha256": "9516cf77ba37ad497711b3bc7963b19689d6d1650bf1ad80016c3c2574a1de75",
+      "despues_sha256": "9516cf77ba37ad497711b3bc7963b19689d6d1650bf1ad80016c3c2574a1de75",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "higiene-hogar-perros-senior.html",
+      "antes_sha256": "68f2e306bbcccc2c1a9f6267e00011ebf1c7952c581798b933f974bde2f1af00",
+      "despues_sha256": "68f2e306bbcccc2c1a9f6267e00011ebf1c7952c581798b933f974bde2f1af00",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "index.html",
+      "antes_sha256": "0a6cd164598b762a9f4a35e658c712ffbc63a77dc190a8cebabb585d91a25491",
+      "despues_sha256": "0a6cd164598b762a9f4a35e658c712ffbc63a77dc190a8cebabb585d91a25491",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis.html",
+      "antes_sha256": "dac16d8051d9af3d10387e264151efab43dc945d8a847a7e1f132f377489b89a",
+      "despues_sha256": "dac16d8051d9af3d10387e264151efab43dc945d8a847a7e1f132f377489b89a",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor.html",
+      "antes_sha256": "dbb75669aa1ee271ff67e4bd0f8849ae98a1c669ce11f4a60c9f0a3961e4dd48",
+      "despues_sha256": "dbb75669aa1ee271ff67e4bd0f8849ae98a1c669ce11f4a60c9f0a3961e4dd48",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "movilidad-dolor-perros-mayores.html",
+      "antes_sha256": "f3a3ae79637d8840184d1f56f42a577f33c86d3e8cacd4b7d69a17d7048ca7b4",
+      "despues_sha256": "f3a3ae79637d8840184d1f56f42a577f33c86d3e8cacd4b7d69a17d7048ca7b4",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "politica-de-cookies.html",
+      "antes_sha256": "015f4a76b7e298d99d64f3673fe36a5e140bc7a671dcbfe767f4046f80d6727a",
+      "despues_sha256": "015f4a76b7e298d99d64f3673fe36a5e140bc7a671dcbfe767f4046f80d6727a",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "politica-de-privacidad.html",
+      "antes_sha256": "117fb6ebd67d9d4d107ba3cb57d9bcc9a64a1790384beae7894e20279e6de3ef",
+      "despues_sha256": "117fb6ebd67d9d4d107ba3cb57d9bcc9a64a1790384beae7894e20279e6de3ef",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "politica-editorial.html",
+      "antes_sha256": "56693e93c26c94afdb79816f65cffcdae3cbf412005e2992fd5dae019a3c344c",
+      "despues_sha256": "56693e93c26c94afdb79816f65cffcdae3cbf412005e2992fd5dae019a3c344c",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "salud-mental-emocional-perros/agresividad-tardia-perros-mayores-dolor.html",
+      "antes_sha256": "af795e228af22f3a95301a2656055980ece286a5f8a5bd3fa4520387a0c1fee4",
+      "despues_sha256": "af795e228af22f3a95301a2656055980ece286a5f8a5bd3fa4520387a0c1fee4",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "salud-mental-emocional-perros/ansiedad-separacion-perros-senior.html",
+      "antes_sha256": "250bc288ed9a91a5f2b5952c0bda7e0077e2ee73ed621641220a3338cb29e7eb",
+      "despues_sha256": "250bc288ed9a91a5f2b5952c0bda7e0077e2ee73ed621641220a3338cb29e7eb",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "salud-mental-emocional-perros/disfuncion-cognitiva-canina.html",
+      "antes_sha256": "3c0e1728dbdf18c2edb2b5e6de64bcd1b0aaf4d193c30f22617e7d0ac70494a8",
+      "despues_sha256": "3c0e1728dbdf18c2edb2b5e6de64bcd1b0aaf4d193c30f22617e7d0ac70494a8",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "salud-mental-emocional-perros.html",
+      "antes_sha256": "c7249228ed41d63e53d927aca549412d7bdfd90d96fcabd9e48069773bbfe791",
+      "despues_sha256": "c7249228ed41d63e53d927aca549412d7bdfd90d96fcabd9e48069773bbfe791",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "salud-perros-mayores/chequeo-geriatrico-canino.html",
+      "antes_sha256": "c7a8a5000ab047b44ba614277b0d0296c62728a970ada7a83882bf721dfcb868",
+      "despues_sha256": "c7a8a5000ab047b44ba614277b0d0296c62728a970ada7a83882bf721dfcb868",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "salud-perros-mayores/golpe-de-calor-perros-mayores.html",
+      "antes_sha256": "ea4b3bcf22e56f22a09af5c51d6e13164a2f13a6ed080caec4a34320c8b92633",
+      "despues_sha256": "180a4f5717d4556037c423d045d169f6af697f715eecdb0c493d9b9998bdaaaa",
+      "html_identico_byte_a_byte": false,
+      "igual_excluidos_solo_uuid_preexistentes": true
+    },
+    {
+      "ruta": "salud-perros-mayores/insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion.html",
+      "antes_sha256": "5a271a2dfad26def1b5c9a6b1131839f6f0886e7ac0e915e55c50a1966bb5b83",
+      "despues_sha256": "5a271a2dfad26def1b5c9a6b1131839f6f0886e7ac0e915e55c50a1966bb5b83",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "salud-perros-mayores/leishmaniosis-perros-mayores.html",
+      "antes_sha256": "e765c8a521701fb33f999ff90aea4c083b660f99e3de3ec8a775f490e38fe264",
+      "despues_sha256": "2401c21bc5046a5004ccffadcbefe0a409f6087909dc4f24a31f4188fae5e476",
+      "html_identico_byte_a_byte": false,
+      "igual_excluidos_solo_uuid_preexistentes": true
+    },
+    {
+      "ruta": "salud-perros-mayores/mal-aliento-perros-viejos.html",
+      "antes_sha256": "7725b8a9da43f71a30884bcf043af9176718998b5e63fdb276b7e1328318b070",
+      "despues_sha256": "d375673cd21aaf9b06193d5304b54e749cd5c8f330bea9742a1d5a4b9db3edde",
+      "html_identico_byte_a_byte": false,
+      "igual_excluidos_solo_uuid_preexistentes": true
+    },
+    {
+      "ruta": "salud-perros-mayores/mi-perro-viejo-defeca-mucho-poliquezia.html",
+      "antes_sha256": "5146befb6b9d8f13e6774077eed58f9449756792e6b518707f1c7eae2d399075",
+      "despues_sha256": "5146befb6b9d8f13e6774077eed58f9449756792e6b518707f1c7eae2d399075",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "salud-perros-mayores/salud-dental-perros-mayores.html",
+      "antes_sha256": "1bd067a8a1032639b447090784935f5500a9c5dcdad32da74dc68953290c6c7b",
+      "despues_sha256": "a4c806582536383ad093018d9b8a2a28c33fbb4f359e1fb1f3f272251b2cba0c",
+      "html_identico_byte_a_byte": false,
+      "igual_excluidos_solo_uuid_preexistentes": true
+    },
+    {
+      "ruta": "salud-perros-mayores/sindrome-cushing-perros-mayores.html",
+      "antes_sha256": "7ed1d83d5511e1bd659c14f905e89bdcd34568f212a5da998a598e8da870d163",
+      "despues_sha256": "7ed1d83d5511e1bd659c14f905e89bdcd34568f212a5da998a598e8da870d163",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "salud-perros-mayores/vacunas-desparasitacion-perros-senior.html",
+      "antes_sha256": "143f8badee088e105cb8a49ba10ff31cbdf90fe6ba7f7dd0fd0986fe8c533810",
+      "despues_sha256": "143f8badee088e105cb8a49ba10ff31cbdf90fe6ba7f7dd0fd0986fe8c533810",
+      "html_identico_byte_a_byte": true
+    },
+    {
+      "ruta": "salud-perros-mayores.html",
+      "antes_sha256": "318e680bbfc2e5d17b9ff4b6ecdfbc7cec9a97dd4050445f0ecdca394219a19e",
+      "despues_sha256": "318e680bbfc2e5d17b9ff4b6ecdfbc7cec9a97dd4050445f0ecdca394219a19e",
+      "html_identico_byte_a_byte": true
+    }
+  ]
+}

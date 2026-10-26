@@ -1,6 +1,6 @@
 # Enlazado interno del sitio
 
-Última revisión: 2026-08-18
+Última revisión: 2026-10-26
 
 Skill operativa: [`.agents/skills/enlazado-interno-sitio/SKILL.md`](../../.agents/skills/enlazado-interno-sitio/SKILL.md). Úsala cuando haya que volver a analizar, ajustar o ampliar el enlazado interno del sitio.
 
@@ -73,3 +73,8 @@ Fuentes oficiales:
 - [SEO Starter Guide: enlaces relevantes, anchor text y organización](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
 - [Breadcrumb structured data](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb)
 - [Build and submit a sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
+
+
+## Incorporación propuesta: miedo a los petardos (P1-03)
+
+El candidato `miedo-petardos-perros-mayores` pertenece a `salud-mental-emocional-perros`. La página del pilar y los artículos de ese silo lo descubren por la colección y las relaciones automáticas existentes; no se reescriben sus cuerpos. El mapa añade dos salidas hacia `chequeo-geriatrico-canino` y `prevencion-caidas-perro-mayor`, como continuación de la revisión de salud y de la adaptación de accesos seguros al refugio. No se crean enlaces a feromonas o tormentas sin artículo publicado. Integración propuesta en PR; no acredita publicación.
