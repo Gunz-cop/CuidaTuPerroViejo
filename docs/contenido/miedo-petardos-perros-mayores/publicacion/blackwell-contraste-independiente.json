@@ -1,0 +1,114 @@
+{
+  "fecha": "2026-10-26",
+  "head_inicial": "1d1c389e0f39257bfc52b46fcb7ae3beefa32095",
+  "identidad": {
+    "autores": [
+      "Emily-Jayne Blackwell",
+      "John W S Bradshaw",
+      "Rachel A Casey"
+    ],
+    "ano": 2013,
+    "revista": "Applied Animal Behaviour Science",
+    "volumen": 145,
+    "numero": "1-2",
+    "paginas": "15-25",
+    "doi": "10.1016/j.applanim.2012.12.004"
+  },
+  "fuente_primaria": "https://research-information.bris.ac.uk/en/publications/fear-responses-to-noises-in-domestic-dogs-prevalence-risk-factors/",
+  "fuente_http": 200,
+  "bristol_html_sha256": "38692dcc04c4e1e347e106fdf22ddc646374c60254b892261fc065166049522d",
+  "abstract_primario_leido": true,
+  "texto_integro_obtenido": false,
+  "afirmaciones": [
+    {
+      "linea": 52,
+      "afirmacion": "Mayor riesgo de miedo al ruido con la edad",
+      "abstract": "Párrafo sobre factores generales: riesgo que aumenta con edad",
+      "resultado": "Explícito y respaldado; asociación observacional, no causalidad"
+    },
+    {
+      "linea": 52,
+      "afirmacion": "Fuegos como desencadenante más frecuente",
+      "abstract": "Párrafo de tipos de ruido: fuegos como respuesta de miedo más notificada",
+      "resultado": "Respaldado como notificación de propietarios en este estudio"
+    },
+    {
+      "linea": 52,
+      "afirmacion": "Casi mitad de entrevistados describe alguna señal",
+      "abstract": "Segundo párrafo: casi mitad de propietarios en entrevista estructurada describe al menos un comportamiento típico de miedo",
+      "resultado": "Explícito y respaldado"
+    },
+    {
+      "linea": 52,
+      "afirmacion": "Solo cuarta parte había llamado miedoso a su perro",
+      "abstract": "Segundo párrafo: cuarta parte lo había indicado en encuesta general",
+      "resultado": "Explícito; precisar instrumentos evita que parezca idéntico denominador/pregunta"
+    },
+    {
+      "linea": 54,
+      "afirmacion": "Menos de un tercio pidió consejo profesional",
+      "abstract": "Última oración: menos de un tercio buscó consejo profesional para respuesta al ruido",
+      "resultado": "Explícito y respaldado"
+    },
+    {
+      "linea": 82,
+      "afirmacion": "Respuestas a fuegos/disparos/truenos tendían a coincidir",
+      "abstract": "Párrafo sobre tipos de ruido: coexistencia frecuente entre esos tres",
+      "resultado": "Explícito y respaldado"
+    },
+    {
+      "linea": 82,
+      "afirmacion": "Sin asociarse con conducta de separación",
+      "abstract": "Párrafo sobre tipos de ruido: coexistencia poco frecuente con conducta relacionada con separación",
+      "resultado": "Más fuerte que fuente accesible. No acredita ausencia de asociación estadística; corregir a coexistencia infrecuente"
+    },
+    {
+      "linea": 99,
+      "afirmacion": "Etiquetas de dueños podían dejar señales sin reconocer",
+      "abstract": "Segundo párrafo: reconocen comportamientos pero pueden no interpretarlos como miedo/estado subjetivo",
+      "resultado": "Interpretación imprecisa: mejor decir señales reconocidas sin identificarlas como miedo, o discrepancia entre signos descritos y etiqueta miedoso"
+    }
+  ],
+  "intentos_integro": [
+    {
+      "via": "Bristol + Handle",
+      "resultado": "Ficha y abstract completos; solo enlace DOI, sin archivo PDF adjunto"
+    },
+    {
+      "via": "DOI + ScienceDirect PII S016815911200367X, abs, pdf, viaihub",
+      "resultado": "403 en apertura; búsqueda indexa abstract/previews y muestra compra/acceso organización; no íntegro leído"
+    },
+    {
+      "via": "API Elsevier text/plain y text/xml enlazadas por Crossref",
+      "resultado": "403; no acceso concedido"
+    },
+    {
+      "via": "ResearchGate",
+      "resultado": "Página abierta con Request full-text y No full-text available; no se envía solicitud"
+    },
+    {
+      "via": "OpenAlex DOI",
+      "resultado": "closed, sin best_oa_location ni pdf_url repositorio; indicador de búsqueda, no contenido de respaldo"
+    },
+    {
+      "via": "Semantic Scholar API",
+      "resultado": "429"
+    },
+    {
+      "via": "Búsquedas exactas título/DOI/PII y manuscrito aceptado",
+      "resultado": "Sin copia legítima íntegra identificada. Fuentes secundarias/indexaciones no sustituyen al estudio"
+    },
+    {
+      "via": "VetAgroSup2015lyon093 PDF sugerido",
+      "resultado": "503 por HTTP y no accesible herramienta web; no se atribuye ningún anexo leído"
+    }
+  ],
+  "correcciones_propuestas": {
+    "linea82": "Fíjate en qué coincide con la reacción: el ruido o tu ausencia. Blackwell, Bradshaw y Casey encontraron que las respuestas a fuegos, disparos y truenos tendían a coincidir entre ellas, aunque en su estudio no solían presentarse junto con conductas relacionadas con la separación.",
+    "linea99": "Blackwell, Bradshaw y Casey mostraron además que algunos dueños podían reconocer las conductas sin identificarlas como señales de miedo.",
+    "linea52_precision_opcional": "En las entrevistas estructuradas, casi la mitad de los propietarios describía alguna señal típica de miedo; en la encuesta general, solo una cuarta parte había calificado a su perro de «miedoso»."
+  },
+  "conclusion": "Datos principales corroborados contra abstract primario; corregir separación y precisar reconocimiento para ceñir todas las atribuciones al material efectivamente leído. No se cierra falsamente lectura íntegra ni un gate de texto completo. Sin cambios de repo.",
+  "mdx_sha256_version_contrastada": "b1b73c08263fcd60cef9723fe746e4a7b625c3f9dedee505bcf592370380986a",
+  "nota_worktree": "Al cierre el productor modificaba el MDX para sus correcciones. La matriz se refiere al blob HEAD1d1c389 leído al inicio; el investigador no editó el repositorio."
+}

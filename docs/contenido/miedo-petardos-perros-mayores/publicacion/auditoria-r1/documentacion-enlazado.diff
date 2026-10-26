@@ -1,0 +1,67 @@
+diff --git a/INVENTARIO_CONTENIDO.md b/INVENTARIO_CONTENIDO.md
+index c71ff32..2a0d32d 100644
+--- a/INVENTARIO_CONTENIDO.md
++++ b/INVENTARIO_CONTENIDO.md
+@@ -80,7 +80,7 @@ El Pilar 1 no se incluye en el recuento porque es un hub de herramientas, no un
+ 
+ #### Pilar 5 — Salud Mental y Emocional
+ 
+-- [ ] **[P1-03]** *Petardos, Fallas y San Juan: cómo proteger a un perro mayor del miedo al ruido* — Intención española recurrente; aborda preparación, refugio y señales de urgencia. Base: ES-06.
++- [~] **[P1-03]** *Miedo a los petardos en perros mayores: cómo protegerlo en Nochevieja, Fallas y San Juan* (Redactado y auditado; PR abierto; NO publicado — [artículo #149](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/149), dependiente de [código #148](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/148) — brief v7 y entregas en `docs/contenido/miedo-petardos-perros-mayores/`; artículo R1 APTO con reservas y visual R3 APTO. Pendiente revisión del PR y verificación pública tras fusión.) — Intención española recurrente; preparación, refugio y señales de urgencia. Base: ES-06 (el enlace de Barcelona sigue pendiente de sustitución; fuentes BOE y Colegio de Málaga).
+ - [ ] **[P1-14]** *Tormentas y DANA: qué hacer cuando un perro senior tiembla, jadea o intenta escapar* — Fobia a tormentas y seguridad durante episodios meteorológicos; no se mezcla con pirotecnia.
+ - [ ] **[P1-20]** *Residencia canina o cuidador a domicilio: qué conviene a un perro mayor durante las vacaciones* — Decisión de servicio con foco en rutina, medicación y deterioro cognitivo.
+ - [ ] **[P1-25]** *Ferias, romerías y terrazas llenas: cómo evitar la sobreestimulación de un perro senior* — Multitudes, calor, ruido y rutas de escape; distinto de fobias a petardos, tormentas y ansiedad por separación.
+diff --git a/TODO.md b/TODO.md
+index 6974ab6..4afd2d9 100644
+--- a/TODO.md
++++ b/TODO.md
+@@ -6,6 +6,13 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
+ 
+ ## Contenido
+ 
++- [x] **Preparar P1-03 para publicación.** Traslado mecánico, recursos activos, limpieza y pruebas completados el 2026-10-26; [código #148](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/148) y [artículo #149](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/149), abiertos como draft. No publicado.
++- [ ] **Fusionar y verificar P1-03 en producción.** Revisión independiente breve del diff y orden expresa del propietario; código → artículo. Mantener «NO publicado» hasta comprobar la URL pública, recursos, enlaces y JSON-LD; pasos en `docs/contenido/miedo-petardos-perros-mayores/entrega-publicacion.md`.
++- [ ] **Volumen de las skills: criterio de 5.000–6.000 palabras.** Pendiente de decisión/editorial y ajuste de las skills sin relleno; no se modifican en esta integración. El contrato particular de petardos sigue siendo 5.300–6.000. (2026-10-26)
++- [ ] **Base ES-06 del inventario: enlace roto.** Sustituir la referencia de Barcelona declarada 404 por una fuente vigente; no se inventa ni cambia en este PR. (2026-10-26)
++- [ ] **Reconciliar al redactar el brief de feromonas.** La comprobación de integración de 2026-10-26 no encuentra contradicción entre tabla 2/FAQ 4 de petardos (percepciones de encuesta) y «moderada solo en miedo a tormentas» en ansiedad por separación y el brief; queda pendiente trasladar esa distinción a la futura redacción de feromonas, sin modificar ahora su brief.
++- [ ] **Versión latinoamericana de petardos con Osa y Baltor.** Planificación y procedencia por concretar; fuera del artículo español. (2026-10-26)
++
+ - [ ] **Golpe de calor: menores aceptados al publicar (2026-10-24, `main` e22dd89).** Ninguno bloquea; retomar si se rehace el artículo o su animación. Detalle en `docs/contenido/golpe-de-calor-perros-mayores/auditoria-revision-r2.md`.
+   - [ ] Recorte del podenco (`podenco-senior-perfil-transparente-v1`): no se ve senior (lomo y músculo de adulto) y aparece con el pelo seco en los pasos de mojarlo. Regenerar con edad visible y pelo mojado si se mejora la secuencia. Su alfa interior es 250–254, no 255 (no se nota).
+   - [ ] Escala de avisos (`GolpeCalorRecursos`, variante `umbrales`): el recuadro discontinuo sigue marcando la distancia entre 30 °C y el umbral de la zona, aunque ya sin cifra. Valorar quitarlo.
+diff --git a/docs/seo/enlazado-interno.md b/docs/seo/enlazado-interno.md
+index 9bb09c3..ac0f848 100644
+--- a/docs/seo/enlazado-interno.md
++++ b/docs/seo/enlazado-interno.md
+@@ -1,6 +1,6 @@
+ # Enlazado interno del sitio
+ 
+-Última revisión: 2026-08-18
++Última revisión: 2026-10-26
+ 
+ Skill operativa: [`.agents/skills/enlazado-interno-sitio/SKILL.md`](../../.agents/skills/enlazado-interno-sitio/SKILL.md). Úsala cuando haya que volver a analizar, ajustar o ampliar el enlazado interno del sitio.
+ 
+@@ -73,3 +73,8 @@ Fuentes oficiales:
+ - [SEO Starter Guide: enlaces relevantes, anchor text y organización](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
+ - [Breadcrumb structured data](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb)
+ - [Build and submit a sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
++
++
++## Incorporación propuesta: miedo a los petardos (P1-03)
++
++El candidato `miedo-petardos-perros-mayores` pertenece a `salud-mental-emocional-perros`. La página del pilar y los artículos de ese silo lo descubren por la colección y las relaciones automáticas existentes; no se reescriben sus cuerpos. El mapa añade dos salidas hacia `chequeo-geriatrico-canino` y `prevencion-caidas-perro-mayor`, como continuación de la revisión de salud y de la adaptación de accesos seguros al refugio. No se crean enlaces a feromonas o tormentas sin artículo publicado. Integración propuesta en PR; no acredita publicación.
+diff --git a/src/data/internal-links.ts b/src/data/internal-links.ts
+index 4844754..da5713a 100644
+--- a/src/data/internal-links.ts
++++ b/src/data/internal-links.ts
+@@ -58,6 +58,10 @@ export const CROSS_PILLAR_LINKS: Record<string, string[]> = {
+     'insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion',
+     'incontinencia-fecal-perros-senior',
+   ],
++  'miedo-petardos-perros-mayores': [
++    'chequeo-geriatrico-canino',
++    'prevencion-caidas-perro-mayor',
++  ],
+   'prevencion-caidas-perro-mayor': [
+     'cama-ortopedica-perros-mayores-displasia-artrosis',
+     'ulceras-presion-perros',

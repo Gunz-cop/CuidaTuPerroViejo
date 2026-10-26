@@ -1,0 +1,48 @@
+{
+  "fecha": "2026-10-26",
+  "metodo": "Descarga propia de los tres PDF municipales, comprobación de application/pdf y lectura del texto extraído con pdftotext; pasajes precisos identificados. URLs aportadas por el productor, contraste realizado por el auditor.",
+  "fuentes": [
+    {
+      "nombre": "valencia",
+      "url": "https://www.valencia.es/documents/d/guest/20260128-programa-oficial-festejos-fallas-2026-1",
+      "http": 200,
+      "content_type": "application/pdf",
+      "bytes": 143752,
+      "sha256": "8bb413a6673d514bc30b2b14e3dfeac5d344479436f27db00350a619f0f8b000",
+      "pagina_pdf": 8,
+      "mes_contrastado": "marzo",
+      "pasaje_leido": "MARZO; Domingo 1; “Mascletà” en la Plaza del Ayuntamiento; Espectáculo pirotécnico nocturno",
+      "resultado": "Programa oficial 2026 real, mes coincidente con el artículo",
+      "comprobacion_propia": true
+    },
+    {
+      "nombre": "alicante",
+      "url": "https://www.alicante.es/sites/default/files/documentos/202606/agenda-fiestas-fogueres-sant-joan-2026-lectura-facil-web.pdf",
+      "http": 200,
+      "content_type": "application/pdf",
+      "bytes": 697859,
+      "sha256": "57f749a9a4824803e43cc10b49744a9bfa5268234a937488cc33d7d56ec55f87",
+      "pagina_pdf": 1,
+      "mes_contrastado": "junio",
+      "pasaje_leido": "Agenda de fiestas de les Fogueres de Sant Joan 2026; Del 20 al 24 de junio",
+      "resultado": "Programa oficial 2026 real, mes coincidente con el artículo",
+      "comprobacion_propia": true
+    },
+    {
+      "nombre": "pamplona",
+      "url": "https://www.pamplona.es/sites/default/files/2026-06/programasanfermin2026cas.pdf",
+      "http": 200,
+      "content_type": "application/pdf",
+      "bytes": 2270838,
+      "sha256": "aba314e37e52370aed951b50a3bd75c61dade8485546123a5b9c137e6a62f6cc",
+      "pagina_pdf": 25,
+      "mes_contrastado": "julio",
+      "pasaje_leido": "Desde la Ciudadela, del 6 al 14 de julio, se lanzan las colecciones de fuegos artificiales; fiestas de San Fermín 2026",
+      "resultado": "Programa oficial 2026 real, mes coincidente con el artículo",
+      "comprobacion_propia": true
+    }
+  ],
+  "gate_brief_11_meses_habituales_contrastados": true,
+  "alcance": "Contraste con programas de 2026 de meses y existencia de eventos. No acredita programas futuros de 2027, horarios futuros, ordenanzas, todas las localidades o toda la programación. No se añade ningún dato, día ni horario al MDX. La instrucción al lector de consultar el programa de su localidad se conserva.",
+  "archivos_fuente_fuera_git": "/tmp/auditoria-publicacion-r1-{valencia,alicante,pamplona}.{pdf,txt}"
+}

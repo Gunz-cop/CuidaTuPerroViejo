@@ -1,0 +1,10 @@
+--- 717ee60:docs/contenido/miedo-petardos-perros-mayores/comprobaciones/recuento.py
++++ de55e25ac17f196bb1b771b46fc86b888c1f15ae:docs/contenido/miedo-petardos-perros-mayores/comprobaciones/recuento.py
+@@ -1,6 +1,6 @@
+ import re,json,html,statistics
+ from pathlib import Path
+-p=Path('docs/contenido/miedo-petardos-perros-mayores/articulo-borrador.mdx')
++p=Path('src/content/blog/miedo-petardos-perros-mayores.mdx')
+ s=p.read_text().split('---',2)[2]
+ def visible(s):
+  s=re.sub(r'\{/\*.*?\*/\}', '',s,flags=re.S)

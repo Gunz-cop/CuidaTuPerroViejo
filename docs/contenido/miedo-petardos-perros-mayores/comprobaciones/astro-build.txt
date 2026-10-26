@@ -1,0 +1,27 @@
+Comando: npx astro build (con red habilitada para Cloudflare).
+Exit: 0. Fecha de publicación confirmada por el propietario: 2026-10-25.
+Copia temporal del borrador en src/content/blog/ retirada tras compilar.
+Extracto final:
+23:05:19   ├─ /alimentacion-perros-senior.html (+13ms)
+23:05:19   ├─ /cuidados-paliativos-perros.html (+11ms)
+23:05:19   ├─ /herramientas.html (+11ms)
+23:05:19   ├─ /higiene-hogar-perros-senior.html (+10ms)
+23:05:19   ├─ /movilidad-dolor-perros-mayores.html (+10ms)
+23:05:19   ├─ /salud-mental-emocional-perros.html (+12ms)
+23:05:19   ├─ /salud-perros-mayores.html (+11ms)
+23:05:20   ├─ /index.html (+11ms)
+23:05:20 ✓ Completed in 1.37s.
+
+23:05:20 [build] Rearranging server assets...
+23:05:20 [build] ✓ Completed in 4.14s.
+23:05:20 [@astrojs/sitemap] `sitemap-index.xml` created at `dist/client`
+23:05:20 [agent-readiness-discovery] llms.txt generado después de sitemap (3728 bytes).
+23:05:20 [agent-readiness-markdown-projection] Proyección agent-content/v1 generada: 37 documentos, 35154 bytes de índice.
+23:05:22 [agent-readiness-api-generation] Artifacts F3A generados: 37 documentos, 676757 bytes de query-index.
+23:05:22 [build] Server built in 6.86s
+23:05:22 [build] Complete!
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

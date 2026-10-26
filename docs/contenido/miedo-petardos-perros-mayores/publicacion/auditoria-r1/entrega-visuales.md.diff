@@ -1,0 +1,11 @@
+--- 717ee60:docs/contenido/miedo-petardos-perros-mayores/visuales/entrega-visuales.md
++++ de55e25ac17f196bb1b771b46fc86b888c1f15ae:docs/contenido/miedo-petardos-perros-mayores/visuales/entrega-visuales.md
+@@ -448,3 +448,8 @@
+ 4. **Pendientes clínico-documentales del artículo:** no se cierran por producir imágenes; siguen en la entrega textual.
+ 5. **Integridad:** artículo, brief y testimonios conservan los SHA iniciales. Solo se actualizan las tres celdas de existencia/ruta de recursos en entrega-redaccion.md, sin alterar su veredicto. El resto de esa entrega es histórico de la fase de redacción.
+ 6. Sin PR, merge, publicación ni artículo permanente en src/content/blog/. Se permanece en `claude/imagenes-miedo-petardos-perros-mayores`.
++
++
++## Preparación de publicación — política de archivos (2026-10-26)
++
++Se aplica la política por defecto solicitada por el propietario: se conservan textos, scripts y JSON, y únicamente los PNG originales finales imagen-1-v10, imagen-2-v8 e imagen-3-v1. Las capturas, recortes de diagnóstico, guía PNG y originales descartados no se trasladan al candidato de publicación. Los informes de auditoría y sus JSON se conservan íntegros; sus enlaces a PNG retirados son referencias históricas, no evidencias disponibles en esta rama. Pueden abrirse en el commit fuente [717ee60](https://github.com/Gunz-cop/CuidaTuPerroViejo/tree/717ee60/docs/contenido/miedo-petardos-perros-mayores/visuales). Las rutas, tamaños y hashes retirados están en [publicacion/politica-archivos.json](../publicacion/politica-archivos.json). Las capturas nuevas de integración se guardan fuera del repositorio; entrega-publicacion.md recoge método, métricas y sus hashes. Se excluyen también los WebP de portada v1 sin uso; no se alteran los originales activos ni el contenido clínico.

@@ -1,0 +1,209 @@
+{
+  "fecha": "2026-10-26",
+  "base_antes_de_corroborar": "1d1c389e0f39257bfc52b46fcb7ae3beefa32095",
+  "autorizacion_propietario": {
+    "trabajo": "Corroborar los datos de Blackwell y la ficha del medicamento",
+    "criterio_s7": "El propietario autoriza usar como fuente la británica y prescindir de una mención española ornamental; deja la elección al integrador",
+    "cita": "No me importaría que la ficha española, digamos, no sea la fuente de nosotros, más bien que sea la fuente británica",
+    "sin_autorizacion_fusion": true
+  },
+  "s2": {
+    "doi": "10.1016/j.applanim.2012.12.004",
+    "fuente_primaria": "https://research-information.bris.ac.uk/en/publications/fear-responses-to-noises-in-domestic-dogs-prevalence-risk-factors/",
+    "resumen_primario_leido": true,
+    "datos_corroborados": [
+      "Aumento del riesgo con la edad",
+      "Fuegos como desencadenante más notificado",
+      "Casi mitad en entrevistas con señales frente a cuarta parte del conjunto de participantes que había descrito miedo",
+      "Menos de un tercio buscó ayuda profesional",
+      "Respuestas a fuegos, disparos y truenos frecuentemente coincidentes",
+      "Coexistencia infrecuente con conductas de separación",
+      "Dueños podían reconocer señales sin interpretarlas como miedo"
+    ],
+    "limite": "Texto del estudio completo por secciones y tablas legibles, consultado en transcripción pública de copia alojada por tercero; no se certifica identidad binaria ni maquetación del PDF ni se interpretan sus gráficos.",
+    "evidencia_independiente": "blackwell-texto-publicado-independiente.json",
+    "texto_publicado_leido_en_transcripcion": true,
+    "pdf_editorial_obtenido": false,
+    "acceso_directo_editorial": false,
+    "graficos_inspeccionados": false,
+    "via_copia_publica": "https://www.scribd.com/document/851031407/1-s2-0-S016815911200367X-main",
+    "fase_previa_resumen": "blackwell-contraste-independiente.json",
+    "afirmaciones_limitadas_al_texto_leido": true
+  },
+  "s7": {
+    "fuente_elegida": "Veterinary Medicines Directorate, regulador británico; fuente primaria",
+    "url": "https://www.vmd.defra.gov.uk/productinformationdatabase/files/SPC_Documents/SPC_3219375.PDF",
+    "version_leida": "Issued: March 2026; AN03168/2024",
+    "paginas": 10,
+    "datos_corroborados": [
+      {
+        "afirmacion": "Contraindicación en enfermedad cardiovascular grave o sistémica grave, con ejemplos renales/hepáticos terminales",
+        "apartado": "3.3",
+        "pagina_pdf": 1
+      },
+      {
+        "afirmacion": "Seguridad no estudiada en perros de más de diecisiete años",
+        "apartado": "3.5",
+        "pagina_pdf": 2
+      },
+      {
+        "afirmacion": "Vómitos, sedación, incontinencia urinaria y palidez de mucosas entre los efectos adversos frecuentes",
+        "apartado": "3.6",
+        "pagina_pdf": 3
+      },
+      {
+        "afirmacion": "La nota de palidez se refiere a un cambio transitorio en la mucosa de la zona de aplicación",
+        "apartado": "3.6, nota1",
+        "pagina_pdf": 3
+      }
+    ],
+    "afirmaciones_iguales_al_mdx": true,
+    "dosis_pautas_marcas_ni_datos_nuevos_al_articulo": false,
+    "pdf_espanol_del_regulador_leido": false,
+    "fuente_espanola_no_descartada_por_falsa": "Limitación de acceso; no indicio de falta de fiabilidad de AEMPS/EMA",
+    "decision": "Mantener atribución y enlace primarios británicos ya presentes; no añadir equivalencia de fichas, vigencia española o recomendación de uso",
+    "brief_9_6_4_sustituido_por_decision_explicita_usuario": true
+  },
+  "fuentes_medicamento_descargadas": [
+    {
+      "nombre": "vmd-britanica",
+      "url": "https://www.vmd.defra.gov.uk/productinformationdatabase/files/SPC_Documents/SPC_3219375.PDF",
+      "url_final": "https://www.vmd.defra.gov.uk/productinformationdatabase/files/SPC_Documents/SPC_3219375.PDF",
+      "http": 200,
+      "content_type": "application/pdf",
+      "bytes": 727452,
+      "sha256": "845fb79d99da08adf99f6d547f86383156e4a1ed1d3281d8fcb25c9431dbc066",
+      "archivo_local": "/tmp/petardos-fuentes-cierre/vmd-britanica.pdf",
+      "pdf": true
+    },
+    {
+      "nombre": "bristol-resumen",
+      "url": "https://research-information.bris.ac.uk/en/publications/fear-responses-to-noises-in-domestic-dogs-prevalence-risk-factors/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "nombre": "upd-registro-es",
+      "url": "https://medicines.health.europa.eu/veterinary/es/600000001298",
+      "url_final": "https://medicines.health.europa.eu/veterinary/es/600000001298",
+      "http": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 107991,
+      "sha256": "cbf67d217564b56cfb35529a7eae2fc90bd8ebd225d6edcf9837af8f959bf11f",
+      "archivo_local": "/tmp/petardos-fuentes-cierre/upd-registro-es.html",
+      "pdf": false
+    },
+    {
+      "nombre": "cimavet-api",
+      "url": "https://cimavet.aemps.es/cimavet/rest/medicamento?nregistro=EU%2F2%2F15%2F181%2F001",
+      "url_final": "https://cimavet.aemps.es/cimavet/rest/medicamento?nregistro=EU%2F2%2F15%2F181%2F001",
+      "http": 200,
+      "content_type": "application/json; charset=UTF-8",
+      "bytes": 5907,
+      "sha256": "b2dc557211878d5c24aa7afa4ae2354b391e2dcc0673bf08075c395c8958d63e",
+      "archivo_local": "/tmp/petardos-fuentes-cierre/cimavet-api.json",
+      "pdf": false
+    },
+    {
+      "nombre": "ema-epar",
+      "url": "https://www.ema.europa.eu/en/medicines/veterinary/EPAR/sileo",
+      "url_final": "https://www.ema.europa.eu/en/medicines/veterinary/EPAR/sileo",
+      "http": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 183573,
+      "sha256": "27e4583932ba318f13b4de087499af84984a61c819637bff3596d54f0d61c963",
+      "archivo_local": "/tmp/petardos-fuentes-cierre/ema-epar.html",
+      "pdf": false
+    },
+    {
+      "nombre": "comision-registro",
+      "url": "https://ec.europa.eu/health/documents/community-register/html/v181.htm",
+      "url_final": "https://ec.europa.eu/health/documents/community-register/html/v181.htm",
+      "http": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 31056,
+      "sha256": "416b50d4d91d5d4e1e28f92ff614f678f778c89b6821be9657411c1980526b8a",
+      "archivo_local": "/tmp/petardos-fuentes-cierre/comision-registro.html",
+      "pdf": false
+    },
+    {
+      "nombre": "ema-ficha-es",
+      "url": "https://www.ema.europa.eu/es/documents/product-information/sileo-epar-product-information_es.pdf",
+      "url_final": "https://www.ema.europa.eu/es/documents/product-information/sileo-epar-product-information_es.pdf",
+      "content_type": "application/pdf",
+      "bytes": 83469,
+      "sha256": "e03127ea77f97d02d83744a8260c2dc9625bec946fa70ff0b09b9c5aa36c5c09",
+      "pdf": true,
+      "archivo_local": "/tmp/petardos-fuentes-cierre/ema-ficha-es.pdf"
+    },
+    {
+      "nombre": "upd-ficha-es",
+      "url": "https://medicines.health.europa.eu/veterinary/es/documents/download/088da1c3-418c-4a8d-bc5f-c49617d1c968",
+      "url_final": "https://medicines.health.europa.eu/veterinary/es/documents/download/088da1c3-418c-4a8d-bc5f-c49617d1c968",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 22959,
+      "sha256": "30d2b0fa2e81da89662590bdd8c93c6cb299c9cc37c3d19b767285d217ba2528",
+      "pdf": false,
+      "archivo_local": "/tmp/petardos-fuentes-cierre/upd-ficha-es.html"
+    },
+    {
+      "nombre": "aemps-ficha-es",
+      "url": "https://cimavet.aemps.es/cimavet/pdfs/es/ft/EU%402%4015%40181%40001/FT_EU-2-15-181-001.pdf",
+      "url_final": "https://medicines.health.europa.eu/veterinary/es/600000001298",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 107991,
+      "sha256": "cbf67d217564b56cfb35529a7eae2fc90bd8ebd225d6edcf9837af8f959bf11f",
+      "pdf": false,
+      "archivo_local": "/tmp/petardos-fuentes-cierre/aemps-ficha-es.html"
+    }
+  ],
+  "cambio_mdx": {
+    "archivo": "src/content/blog/miedo-petardos-perros-mayores.mdx",
+    "sha256_anterior": "b1b73c08263fcd60cef9723fe746e4a7b625c3f9dedee505bcf592370380986a",
+    "sha256_actual": "876247f430552cdef962da67d64e3ff5ddd0af0a19801dcf5212a6a7b0a6857c",
+    "lineas_cambiadas": [
+      52,
+      82,
+      99,
+      488
+    ],
+    "cambios": [
+      "Precisión del grupo al que corresponde la cuarta parte",
+      "Ausencia de asociación → coexistencia infrecuente",
+      "Señales sin reconocer → señales reconocidas sin interpretarlas como miedo",
+      "Bibliografía S2 declara consulta del texto en copia pública"
+    ],
+    "resto_del_mdx_inalterado": true
+  },
+  "pruebas": {
+    "recuento": 5659,
+    "recuento_anterior": 5653,
+    "tono_muletillas": 0,
+    "tono_por_mil": 0.0,
+    "tono_denominador": 5173,
+    "astro_check": {
+      "files": 212,
+      "errors": 0,
+      "warnings": 0,
+      "hints": 74,
+      "exit": 0
+    },
+    "primer_build_sin_acceso_red": "Fallo de instrumental uv_interface_addresses; no un error de MDX. Se repite con permisos de red para prerender de Cloudflare",
+    "build_con_red": {
+      "exit": 0,
+      "markdown_documents": 37
+    },
+    "no_repetido": "No se repiten capturas ni auditoría anatómica; mismos binarios/componentes/estilos. La auditoría R2 comprobará exclusivamente los cambios documentales y de atribución",
+    "projection_check_exit": 0,
+    "semantic_guard_exit": 0,
+    "logs_finales": "/tmp/petardos-fuentes-cierre/astro-{check,build}-final.log"
+  },
+  "copia_publica_metadata": {
+    "url": "https://www.scribd.com/document/851031407/1-s2-0-S016815911200367X-main",
+    "http": 200,
+    "bytes_html": 1414361,
+    "sha256_html": "d97aaf4b261a31ce783ff744cf1564a7a6f50fd8406a116048e4cc8260e460c2",
+    "bytes_texto": 91612,
+    "sha256_texto": "3a178ecb625a81d2cb4d16dbfbf67f9ab154f9d819885828fc1899a2e3810575",
+    "metodo": "Lectura online pública de una transcripción del documento editorial; sin login, pago o descarga del PDF; no se certifica integridad del PDF original"
+  }
+}

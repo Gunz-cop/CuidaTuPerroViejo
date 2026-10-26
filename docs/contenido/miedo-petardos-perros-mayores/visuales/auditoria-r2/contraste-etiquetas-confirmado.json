@@ -1,0 +1,46 @@
+{
+  "source": "getComputedStyle sobre td::before, viewport390 tema claro; sin modificación de DOM/estilos",
+  "foreground_rgb": [
+    66,
+    72,
+    67
+  ],
+  "background_rgb": [
+    250,
+    249,
+    244
+  ],
+  "font_px": 12,
+  "actual_opacity": 0.75,
+  "visible_labels_affected": 22,
+  "calculation": "sRGB alpha composite -> WCAG linear luminance -> ratio; no rounding of threshold",
+  "rows": [
+    {
+      "opacity": 0.75,
+      "effective_srgb": [
+        112.0,
+        116.25,
+        111.25
+      ],
+      "ratio_without_rounding": 4.49765014952612
+    },
+    {
+      "opacity": 0.8,
+      "effective_srgb": [
+        102.79999999999998,
+        107.39999999999999,
+        102.39999999999999
+      ],
+      "ratio_without_rounding": 5.1243417398846445
+    },
+    {
+      "opacity": 1,
+      "effective_srgb": [
+        66,
+        72,
+        67
+      ],
+      "ratio_without_rounding": 8.894890387523809
+    }
+  ]
+}
