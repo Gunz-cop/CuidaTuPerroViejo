@@ -2,7 +2,7 @@
   "fecha": "2026-10-26",
   "branch": "claude/imagenes-miedo-petardos-perros-mayores",
   "base": "486d55f",
-  "estado": "R2: tres imágenes APTO; integración NO APTO por contraste. Corrección CSS y prueba sin redondeo completas, pendiente R3 final independiente.",
+  "estado": "APTO VISUAL FINAL según auditoría independiente R3 sobre eb82b43: portada original v10/WebP v2, paseo v8/WebP v1 y consulta v1/WebP v1. Sin publicación.",
   "imagenes_2_y_3": "Generadas usando portada v9 como referencia de identidad. Paseo v8 y consulta v1 seleccionadas.",
   "reference_image_paths": [],
   "generaciones": [
@@ -376,5 +376,12 @@
     "mdx_sin_cambios": true,
     "ronda_siguiente": "R3 visual final",
     "medicion_contraste": "correccion-r2/contraste.json"
+  },
+  "auditoria_final": {
+    "ronda": 3,
+    "resultado": "APTO VISUAL FINAL",
+    "informe": "docs/contenido/miedo-petardos-perros-mayores/visuales/auditoria-visual-r3.md",
+    "fuente_auditada": "eb82b43e6aa5e4e06f0975f5c258d020a93b89fe",
+    "sin_cambios_de_produccion_posteriores": true
   }
 }

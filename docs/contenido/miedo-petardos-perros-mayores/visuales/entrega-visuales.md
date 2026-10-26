@@ -2,7 +2,24 @@
 
 Fecha: 2026-10-26. Rama: `claude/imagenes-miedo-petardos-perros-mayores`, desde la rama de redacción, base `486d55f`.
 
-**Resultado posterior de auditoría independiente R1 (2026-10-26): conjunto NO APTO.** Portada NO APTO por falta de franjas rojas y amarillas sobre la pared; paseo final v8 APTO y consulta v1 APTO. El descarte de paseo v6 contiene tres zapatos; el final v8 contiene dos. [Informe independiente y evidencias](auditoria-visual-r1.md). Las revisiones del productor que siguen se conservan como historial de producción, no prevalecen sobre este resultado. No se han corregido ni regenerado recursos en esta ronda.
+## Estado final — R3 independiente APTO
+
+**El auditor independiente cierra el conjunto como APTO VISUAL FINAL en R3**, sobre la versión de producción `eb82b43`. [Informe final](auditoria-visual-r3.md), [evidencias propias y hashes](auditoria-r3/README.md). No hay P0, P1 ni P2 nuevos en el alcance visual auditado. R1 y R2 se conservan sin modificaciones. Las secciones posteriores son historial de producción/corrección y mantienen los pendientes tal como existían en su fecha; este cierre recoge el estado actual.
+
+| Selección activa | Original | Binario principal |
+|---|---|---|
+| Portada v10, corregida tras R1 | [imagen-1-v10.png](originales/imagen-1-v10.png) | [WebP v2](../../../../public/images/blog/miedo-petardos-perros-mayores/bodeguero-senior-refugio-dormitorio-nochevieja-v2.webp), variante400 con sufijo `-v2-400.webp` |
+| Paseo v8, conservado | [imagen-2-v8.png](originales/imagen-2-v8.png) | [WebP v1](../../../../public/images/blog/miedo-petardos-perros-mayores/bodeguero-senior-paseo-antes-de-nochevieja-v1.webp) |
+| Consulta v1, conservada | [imagen-3-v1.png](originales/imagen-3-v1.png) | [WebP v1](../../../../public/images/blog/miedo-petardos-perros-mayores/bodeguero-senior-revision-dolor-consulta-v1.webp) |
+
+Solo se generó una portada adicional en esta corrección: v10. Acumulado conservado: diez originales de portada, ocho de paseo y uno de consulta, sin sobrescribir. Paseo v6 de tres zapatos sigue descartado; el auditor volvió a comprobar dos zapatos en v8. Los WebP hero v1 se conservan como historial y no son la ruta activa del borrador.
+
+Cerrados por auditor: franjas rojas/amarillas sobre pared, tablas móviles de777,53125/889,921875px, pie editorial y contraste de rótulos5,1243417398846445:1 en claro/7,320617352599585:1 en oscuro. Build y prueba de32capturas por corrección disponibles; el auditor repitió su propia prueba y deja límites precisos en R3. Producción no vuelve a cambiar tras ese veredicto: este cierre solo actualiza documentación/manifiestos.
+
+El artículo permanece en docs. Se ha realizado commit/push en la rama de imágenes, sin PR, fusión, despliegue o publicación. No queda decisión del propietario necesaria para este alcance visual; los pendientes clínico-documentales del artículo conservan su estado y no quedan aprobados por una auditoría de imágenes.
+
+
+**Historial: resultado de auditoría independiente R1 (2026-10-26): conjunto NO APTO.** Portada NO APTO por falta de franjas rojas y amarillas sobre la pared; paseo final v8 APTO y consulta v1 APTO. El descarte de paseo v6 contiene tres zapatos; el final v8 contiene dos. [Informe independiente y evidencias](auditoria-visual-r1.md). Las revisiones del productor que siguen se conservan como historial de producción, no prevalecen sobre este resultado. No se han corregido ni regenerado recursos en esta ronda.
 
 **Estado anterior a la corrección R1: las tres imágenes tenían binario final seleccionado por el productor: portada v9, paseo v8 y consulta v1.** Se han ejecutado build y pruebas de integración con las tres. El conjunto queda documentado para auditoría visual independiente, **sin declarar aprobación**. Pendientes conocidos: altura móvil de las tablas y diferencia preexistente del pie de portada. Véase el cierre de producción al final; las secciones intermedias conservan el historial de descartes y pruebas parciales.
 
