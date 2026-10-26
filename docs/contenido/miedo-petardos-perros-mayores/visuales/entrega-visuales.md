@@ -2,6 +2,8 @@
 
 Fecha: 2026-10-26. Rama: `claude/imagenes-miedo-petardos-perros-mayores`, desde la rama de redacción, base `486d55f`.
 
+**Resultado posterior de auditoría independiente R1 (2026-10-26): conjunto NO APTO.** Portada NO APTO por falta de franjas rojas y amarillas sobre la pared; paseo final v8 APTO y consulta v1 APTO. El descarte de paseo v6 contiene tres zapatos; el final v8 contiene dos. [Informe independiente y evidencias](auditoria-visual-r1.md). Las revisiones del productor que siguen se conservan como historial de producción, no prevalecen sobre este resultado. No se han corregido ni regenerado recursos en esta ronda.
+
 **Estado actual: las tres imágenes tienen binario final seleccionado por el productor: portada v9, paseo v8 y consulta v1.** Se han ejecutado build y pruebas de integración con las tres. El conjunto queda documentado para auditoría visual independiente, **sin declarar aprobación**. Pendientes conocidos: altura móvil de las tablas y diferencia preexistente del pie de portada. Véase el cierre de producción al final; las secciones intermedias conservan el historial de descartes y pruebas parciales.
 
 **Historial de los dos primeros ciclos:** producción detenida tras ocho versiones de portada no seleccionadas, dos ciclos autorizados de cuatro intentos. Se aplica el límite expreso del encargo: «Máximo 4 versiones por imagen; si a la cuarta sigue fallando, detente y pide decisión». El segundo ciclo fue autorizado por el propietario el 2026-10-26 con «Autorizar adenda y cuatro intentos» y comprende v5–v8. En esos dos primeros ciclos no se generaron las imágenes 2 y 3: el proceso exigía una primera imagen seleccionada como referencia de identidad. No se emite auditoría independiente ni se declara aprobado el conjunto.
