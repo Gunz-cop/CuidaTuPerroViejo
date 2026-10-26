@@ -33,6 +33,7 @@ const pilarNames: Record<string, string> = {
 const pilarName = pilarNames[entry.data.pilar] || entry.data.pilar;
 const heroImage = entry.data.heroImage;
 const heroImageAlt = entry.data.heroImageAlt || entry.data.title;
+const heroImageCaption = entry.data.heroImageCaption || heroImageAlt;
 
 const heroImageSrcset = buildSrcset(heroImage);
 
@@ -69,7 +70,7 @@ const blogPostingSchema = {
           'url': schemaImage,
           'width': 1200,
           'height': 675,
-          'caption': heroImageAlt,
+          'caption': heroImageCaption,
         },
       ],
       'datePublished': datePublished,
@@ -188,7 +189,7 @@ const hideHeroCSS = heroImage
               />
             </div>
             <figcaption class="mt-2 text-center text-xs text-brand-muted italic px-4 sm:px-0">
-              {heroImageAlt}
+              {heroImageCaption}
             </figcaption>
           </figure>
         ) : (
