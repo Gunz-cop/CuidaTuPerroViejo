@@ -2,7 +2,7 @@
   "fecha": "2026-10-26",
   "branch": "claude/imagenes-miedo-petardos-perros-mayores",
   "base": "486d55f",
-  "estado": "DETENIDO tras ocho versiones rechazadas de Imagen 1: dos ciclos de cuatro autorizados",
+  "estado": "Producción parcial: portada v9 y consulta v1 seleccionadas por productor; paseo detenido tras cuatro descartes",
   "imagenes_2_y_3": "No generadas: falta referencia de identidad que supere la revisión",
   "reference_image_paths": [],
   "generaciones": [
@@ -117,6 +117,112 @@
       "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/capturas/imagen-1-v8-390.png",
       "seleccionada": false,
       "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-1-v8-entrada-herramienta.txt"
+    },
+    {
+      "imagen": 1,
+      "version": 9,
+      "ciclo": 3,
+      "original": "docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v9.png",
+      "source": "/workspace/generated_images/exec-a4adf6b6-e3fa-4b43-b20b-be5479b88305.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2580165,
+      "sha256": "679545eb85dd4a7ea092f0c8d2fe4ba2f6ea59e23bb2f0ccd321185a9eeb9859",
+      "identical_to_generated_original": true,
+      "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/capturas/imagen-1-v9-390.png",
+      "seleccionada": true,
+      "reference_image_paths": [],
+      "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-1-v9-entrada-herramienta.txt"
+    },
+    {
+      "imagen": 2,
+      "version": 1,
+      "ciclo": 1,
+      "original": "docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-2-v1.png",
+      "source": "/workspace/generated_images/exec-ed7b750f-6c07-4739-8248-37b8b4091d62.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2458979,
+      "sha256": "4eabe564aa92ce1e2f32a75d1b2278a97b3aa5beb36ecfbb37119fffa4918736",
+      "identical_to_generated_original": true,
+      "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/capturas/imagen-2-v1-390.png",
+      "seleccionada": false,
+      "reference_image_paths": [
+        "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v9.png"
+      ],
+      "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-2-v1-entrada-herramienta.txt"
+    },
+    {
+      "imagen": 2,
+      "version": 2,
+      "ciclo": 1,
+      "original": "docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-2-v2.png",
+      "source": "/workspace/generated_images/exec-4578b804-eac2-4fe8-a680-e4dbbcf8247e.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2601033,
+      "sha256": "ea8f7403a8ead16bbe29ba5b40018885ec40258007a037d056fdea3d9d0c4a2f",
+      "identical_to_generated_original": true,
+      "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/capturas/imagen-2-v2-390.png",
+      "seleccionada": false,
+      "reference_image_paths": [
+        "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v9.png"
+      ],
+      "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-2-v2-entrada-herramienta.txt"
+    },
+    {
+      "imagen": 2,
+      "version": 3,
+      "ciclo": 1,
+      "original": "docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-2-v3.png",
+      "source": "/workspace/generated_images/exec-e5305eba-5fdb-427a-9f8c-a8c21449b18b.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2475180,
+      "sha256": "97a03eb40bd0650369dd41d46365ec7707b837f23efc5e6d21386711cb319595",
+      "identical_to_generated_original": true,
+      "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/capturas/imagen-2-v3-390.png",
+      "seleccionada": false,
+      "reference_image_paths": [
+        "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v9.png"
+      ],
+      "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-2-v3-entrada-herramienta.txt"
+    },
+    {
+      "imagen": 2,
+      "version": 4,
+      "ciclo": 1,
+      "original": "docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-2-v4.png",
+      "source": "/workspace/generated_images/exec-dd344605-017f-4832-9359-85f2f396f441.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2486997,
+      "sha256": "788f777e56cf43afa71ea2b6c7f0153d6397d95a799c07b3f8d7abd2fe28beed",
+      "identical_to_generated_original": true,
+      "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/capturas/imagen-2-v4-390.png",
+      "seleccionada": false,
+      "reference_image_paths": [
+        "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v9.png"
+      ],
+      "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-2-v4-entrada-herramienta.txt"
+    },
+    {
+      "imagen": 3,
+      "version": 1,
+      "ciclo": 1,
+      "original": "docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-3-v1.png",
+      "source": "/workspace/generated_images/exec-8946a72b-00d6-4613-be8e-366b7d345ad1.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2574715,
+      "sha256": "67eab9262388fe9d745528f1de97b422eecdb44f29308893f61854bd102bacde",
+      "identical_to_generated_original": true,
+      "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/capturas/imagen-3-v1-390.png",
+      "seleccionada": true,
+      "reference_image_paths": [
+        "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v9.png"
+      ],
+      "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-3-v1-entrada-herramienta.txt"
     }
   ],
   "autorizacion_ciclo_2": {
@@ -129,5 +235,23 @@
       7,
       8
     ]
+  },
+  "autorizacion_ciclo_3": {
+    "fecha": "2026-10-26",
+    "respuesta_propietario": "Autorizo",
+    "pregunta_previa": "¿Prefieres revisar esas candidatas o autorizar un cambio de encuadre/postura que permita comprobar mejor el dorso?",
+    "alcance": "Cambio de encuadre/postura de portada; límite de cuatro comunicado al iniciar el turno; usada v9 y no consumidas v10–v12",
+    "seleccion_portada": 9
+  },
+  "paseo": {
+    "estado": "Pendiente de autorización para adenda; no hay quinto intento",
+    "versiones_rechazadas": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "motivo": "No se acredita correa floja en J y unión inequívoca del segundo mosquetón al collar",
+    "propuesta": "prompts/propuesta-adenda-paseo.md"
   }
 }

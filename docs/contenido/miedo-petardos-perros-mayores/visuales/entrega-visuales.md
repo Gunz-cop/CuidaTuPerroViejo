@@ -2,7 +2,9 @@
 
 Fecha: 2026-10-26. Rama: `claude/imagenes-miedo-petardos-perros-mayores`, desde la rama de redacción, base `486d55f`.
 
-**Estado actual: producción detenida tras ocho versiones de la Imagen 1, ninguna seleccionada; dos ciclos de cuatro intentos, ambos autorizados.** Se aplica el límite expreso del encargo: «Máximo 4 versiones por imagen; si a la cuarta sigue fallando, detente y pide decisión». El segundo ciclo fue autorizado por el propietario el 2026-10-26 con «Autorizar adenda y cuatro intentos» y comprende v5–v8. Las imágenes 2 y 3 no se generan porque el proceso exige que la primera supere todas las comprobaciones antes de utilizarla como referencia de identidad. No se emite auditoría independiente ni se declara aprobado el conjunto.
+**Estado actual: producción parcial. Portada v9 y consulta v1 seleccionadas por el productor; paseo detenido tras cuatro versiones rechazadas.** Véase al final el tercer ciclo y la prueba de integración parcial.
+
+**Historial de los dos primeros ciclos:** producción detenida tras ocho versiones de portada no seleccionadas, dos ciclos autorizados de cuatro intentos. Se aplica el límite expreso del encargo: «Máximo 4 versiones por imagen; si a la cuarta sigue fallando, detente y pide decisión». El segundo ciclo fue autorizado por el propietario el 2026-10-26 con «Autorizar adenda y cuatro intentos» y comprende v5–v8. En esos dos primeros ciclos no se generaron las imágenes 2 y 3: el proceso exigía una primera imagen seleccionada como referencia de identidad. No se emite auditoría independiente ni se declara aprobado el conjunto.
 
 ## Archivos y método
 
@@ -88,7 +90,7 @@ No se corrigen el alt o el pie para ajustarlos a estas candidatas rechazadas. Ta
 | Paleta y estética documental | **No comprobadas** | **No comprobadas** |
 | Coherencia con alt y pie | **No comprobada** | **No comprobada** |
 
-## Integración, pruebas y discrepancias
+## Integración, pruebas y discrepancias de los primeros ciclos (histórico)
 
 - Se inspeccionaron las referencias del MDX sin editarlo: heroImage apunta a la portada exacta; las dos img de cuerpo apuntan a consulta y paseo, con `width="1200" height="675"`, alt y pie coincidentes con §8. El hero adquiere esas dimensiones del layout, no de un img escrito en el MDX.
 - **Discrepancia de pie de portada ya existente:** el pie previsto en §8 no está escrito en el cuerpo y el layout usa el alt como figcaption. Se anota; no se cambia ni el texto ni el layout por cuenta propia.
@@ -168,3 +170,97 @@ Artículo, brief y testimonios siguen idénticos a los hashes iniciales. La entr
 ## Decisión ahora pendiente
 
 Se ha agotado el segundo ciclo autorizado; no se hace un noveno intento por inercia. Se propone que el propietario abra las v7/v8 y decida si el criterio de edad corporal debe seguir exigiéndose íntegramente a 390 px en esta postura recogida o si autoriza ajustar el encuadre/postura para hacerlo comprobable. Cualquier relajación de criterios, aceptación de candidata o nuevo ciclo requiere su decisión explícita. El conjunto de tres finales sigue sin estar listo para auditoría visual independiente.
+
+
+## Tercer ciclo autorizado: portada v9 y escenas dependientes
+
+El propietario autorizó el cambio de encuadre/postura con «Autorizo», en respuesta a la pregunta sobre hacer comprobable el dorso. Se comunicó un límite de cuatro intentos para este ciclo; se selecciona v9 en el primero y no se consumen v10–v12. La postura ahora es más extendida: sigue tumbada en su cama, apoyada en los codos, con cabeza baja pero sin apoyar el mentón sobre las patas. La cámara queda ligeramente más alta y el borde de la cama es bajo. Son las diferencias autorizadas respecto a la postura inicial del §8; se conservan el significado del alt («tumbada en su cama»), el pie y la identidad. El brief no se modifica.
+
+[Adenda autorizada](prompts/adenda-portada-ciclo-3-v9.md), [entrada íntegra](prompts/imagen-1-v9-entrada-herramienta.txt), [original v9](originales/imagen-1-v9.png), [reducción a 390 px](capturas/imagen-1-v9-390.png), [detalle nativo de mano](capturas/imagen-1-v9-mano-detalle.png). No hay retoque de edad ni anatomía; el detalle de mano es un recorte diagnóstico, no parte del final.
+
+Las escenas 2 y 3 se generaron solo después de abrir y seleccionar la v9, pasando ese PNG como referencia explícita. Se conservó el prompt literal de cada escena y se añadió únicamente el formato técnico. Se produjeron cuatro versiones del paseo y una de consulta. **Seleccionar para producción no equivale a aprobar una auditoría independiente.**
+
+| Imagen | Versiones nuevas de este turno | Selección del productor | Archivo final |
+|---|---|---|---|
+| 1, portada | v9; ciclos anteriores v1–v8 conservados | v9 | `public/images/blog/miedo-petardos-perros-mayores/bodeguero-senior-refugio-dormitorio-nochevieja-v1.webp` |
+| 2, paseo | v1–v4 | Ninguna | Pendiente; no se escribe un descarte en la ruta pública. |
+| 3, consulta | v1 | v1 | `public/images/blog/miedo-petardos-perros-mayores/bodeguero-senior-revision-dolor-consulta-v1.webp` |
+
+Los dos WebP finales son **1200×675**, calidad 92. Se conserva cada PNG original, sin sobrescribirlo. La transformación final es solo escalado proporcional, ajuste geométrico subpíxel para 16:9 y codificación WebP; no cambia color, textura, anatomía o contenido para disimular defectos. Se crea además una variante de portada de 400×225 acorde al helper del sitio. No se crean variantes de cuerpo sin uso: el MDX mantiene sus img originales sin srcset. Dimensiones, tamaños y SHA en [binarios-finales-parciales.json](binarios-finales-parciales.json).
+
+### Portada y consulta: revisión del productor rasgo a rasgo
+
+| Comprobación | Portada v9 | Consulta v1 |
+|---|---|---|
+| Canas en hocico, cejas y párpados, con fuego apagado y blanco mate a 390 | **Sí**, contorno facial plateado y marcas menos intensas; no se pretende resolver cada pelo individual. | **Sí**, conserva las zonas plateadas de referencia. |
+| Ojos marrones algo hundidos, párpados algo caídos y mirada serena a 390 | **Sí**, ojo más pequeño con arco superior bajo y contorno retraído. | **Sí**, mirada tranquila al premio y contorno semejante. |
+| Dorso ligeramente suavizado/hundido, menor masa en hombros y muslos, pelvis discreta a 390 | **Sí**, ahora se ve la silueta; los muslos estrechos y el flanco suelto resultan legibles. | **Sí**, cintura, muslos y relieve pélvico discretos, sin emaciación. |
+| Postura natural de mayor, cabeza a la altura del lomo o baja | **Sí**, tumbada extendida; diferencia de postura autorizada. | **Sí**, de pie con apoyos prudentes y cuello relajado. |
+| Sin enfermedad inventada, jadeo, temblor, heridas o sufrimiento | **Sí** | **Sí** |
+| Misma identidad: perfil derecho, antifaz, manchas negras, fuego, orejas plegadas y cola fina | **Sí**, sujeto de referencia. | **Sí**, correspondencia de cabeza, marcas, collar y proporciones con v9. |
+| Collar de nailon gris y chapa metálica lisa | **Sí**, sin letras discernibles. | **Sí**, sin letras discernibles. |
+| Cuatro extremidades naturales sin fusión/duplicación | **Sí**, postura nueva permite localizar delanteras y traseras. | **Sí**, cuatro apoyos sobre la alfombrilla. |
+| Manos sin dedos extra ni fusiones visibles | **Sí**, mano en grande revisada también mediante recorte nativo. | **Sí**, manos de ambas mujeres con gestos anatómicos naturales; algunos dedos doblados por la sujeción o premio. |
+| Geometría propia de la escena | **Sí**, perfil a derecha, mano desde abajo/derecha sin tocar/tapar; ventana al fondo derecho con suelo libre entre ella y cama. | **Sí**, veterinaria izquierda/detrás en lado opuesto a cámara, una mano bajo abdomen y otra en lumbar/cadera; tutora derecha frente a cabeza, pecho y premio. |
+| Edad facial/corporal legible conjuntamente a 390 | **Sí según revisión del productor**; queda para contraste independiente. | **Sí según revisión del productor**; mismo límite. |
+| Persiana bajada y franjas finas rojas/amarillas en pared | **Sí**, visibles; sin fuegos ni humo. | No aplica. |
+| Lámpara fuera de campo a izquierda, luz neutra-fría | **Sí**, sin lámpara visible; madera conserva su tono propio y destellos cálidos localizados. | No aplica; luz de consulta fría/neutra. |
+| Cama junto a cama matrimonial/armario, lejos de ventana | **Sí**, profundidad legible; no se mide una distancia física exacta desde la imagen. | No aplica. |
+| Agua y juguete relleno, sin texto/logos | **Sí**, comida visible en abertura del juguete; superficies lisas. | No aplica. |
+| Mesa de acero y alfombrilla gris, perra estable | No aplica. | **Sí**, cuatro apoyos sin inmovilización forzada. |
+| Veterinaria verde botella con estetoscopio, tutora con rebeca gris | No aplica. | **Sí**, miradas acordes con la exploración/premio. |
+| Ordenador apagado, armario con cajones, estor y báscula en fondo | No aplica. | **Sí**, visibles; parte de la zona inferior queda detrás de la mesa. |
+| Grano fino/texturas de captura, sin piel plástica, glow, HDR o viñeteado evidente | **Sí en revisión de tamaño grande**, detalle fino y texturas mates. | **Sí**, pelo, tejido y acero sin acabado suave de anuncio. |
+| Paleta propia de escena, saturación contenida | **Sí**, noche neutra con franjas rojas/amarillas. | **Sí**, clínica de luz fría. |
+| Coherencia con alt y pie existentes | **Sí**, perra tumbada, persiana/reflejos, mano; refugio, agua y juguete. | **Sí**, revisión lumbar/cadera con ayuda de tutora y premio. |
+| Escena físicamente segura | **Sí**, sin cables/velas eléctricos al alcance ni contacto forzado. | **Sí**, alfombrilla, apoyo respetuoso, sin sangre, jeringas, collar isabelino o dolor evidente. |
+
+La distancia aproximada de la mano se valora como cercanía sin contacto, no como una medida exacta de veinte centímetros. No se modifican alt o pie para acomodarlos a defectos; el cambio autorizado de postura sí queda expresamente consignado.
+
+### Paseo: cuatro descartes y parada
+
+| Versión | Original / 390 px | Edad/identidad | Geometría/anatomía y motivo de rechazo |
+|---|---|---|---|
+| v1 | [Original](originales/imagen-2-v1.png), [390](capturas/imagen-2-v1-390.png) | Conserva referencia tricolor, canas, cuello/cuerpo fino y cuatro patas. | Marcha a derecha y posiciones de persona/perra correctas; **no** se acredita caída en J, parecen dos tiras rectas desde mano. |
+| v2 | [Original](originales/imagen-2-v2.png), [390](capturas/imagen-2-v2-390.png) | Misma lectura general senior; no seleccionada. | **No**, dos tiras casi paralelas, correa recta; enganche al collar ambiguo. |
+| v3 | [Original](originales/imagen-2-v3.png), [390](capturas/imagen-2-v3-390.png) | Misma referencia y anatomía general. | **No**, tramo recto con eslabones/ramales; además signos luminosos en el bar que no permiten asegurar cero letras. |
+| v4 | [Original](originales/imagen-2-v4.png), [390](capturas/imagen-2-v4-390.png) | Misma referencia, cuatro patas, sin otros perros. | Mejora el cabo único hasta la zona de bifurcación, pero **no** queda flojo en J ni inequívoco que el segundo mosquetón vaya al collar, separado del arnés. |
+
+En las cuatro: parka oliva, bufanda gris, recorte por el pecho, perra en primer plano junto a fachada, tutor hacia calzada, ambos hacia derecha, cielo azul y farolas cálidas. Ese contexto sí se cumple, pero el alt/pie prometen doble sujeción y correa floja, por lo que **no** se considera suficiente. La estética/edad o el fondo correctos no compensan la geometría fallida. No se declara ninguna de las cuatro apta para final.
+
+Se alcanza el límite de cuatro versiones del paseo y se pide autorización específica antes de una quinta. [Propuesta de adenda todavía no ejecutada](prompts/propuesta-adenda-paseo.md): un solo cabo claramente curvado, bifurcación baja y enganches diferenciados a arnés y collar. No se cambia el brief ni se publica un descarte.
+
+## Prueba de integración parcial real
+
+Se copió temporalmente el MDX intacto a src/content/blog/, se ejecutó `npx astro build` con resultado **0**, incluida la proyección Markdown, y se retiró la copia. [Log](build-parcial.log). No hay movimiento permanente del artículo ni despliegue.
+
+Se sirvió **dist/client con `python3 -m http.server 4466 --bind 127.0.0.1`** y se usó Playwright ya instalado con Chromium del sistema. No se usó astro dev ni se reinstaló Playwright. Son capturas del artículo generado por el layout real, no una maqueta HTML. [Script](verificar-navegador.cjs), [resultados](verificacion-navegador.json), [contraste](contraste.json), [script de contraste](medir-contraste.cjs).
+
+| Medición | 390 claro / oscuro | 1366 claro / oscuro |
+|---|---|---|
+| scrollWidth | 390 / 390 | 1366 / 1366 |
+| Portada y consulta | Decodificadas en ambos modos | Decodificadas en ambos modos |
+| Paseo | **404, pendiente**, no comprobado | **404, pendiente**, no comprobado |
+| Tabla calendario | **991 / 991 px** | 443 / 443 px |
+| Tabla encuesta | **1291,4 / 1291,4 px** | 650,3 / 650,3 px |
+| Aviso info | 348,5 / 348,5 px | 243 / 243 px |
+| Aviso danger | 424 / 424 px | 273 / 273 px |
+| Aviso warning | 394 / 394 px | 243 / 243 px |
+| Contraste mínimo de texto/pseudo-labels/pies | **4,50:1 / 5,52:1** | **4,50:1 / 5,52:1** |
+| CLS observado en esa carga controlada | 0 / 0 | 0 / 0 |
+
+**Pendiente concreto encontrado:** las tablas se apilan (`td display:block` y data-label presentes), pero superan el presupuesto móvil orientativo de ~900 px. Se registran las capturas/alturas sin cambiar texto o estilos fuera del alcance autorizado. No se declara cumplida la comodidad móvil de las dos tablas. Los tres avisos caben por debajo de ese límite y son legibles en las capturas inspeccionadas.
+
+Se generaron 28 capturas aisladas: dos imágenes seleccionadas, dos tablas y tres avisos × dos anchos × dos temas. En la inspección se abrieron las imágenes/recursos móviles y una selección de sus equivalentes de escritorio; todos los archivos quedan disponibles para que el auditor los abra por separado. No se afirma una auditoría visual independiente ni una inspección individual de cada píxel de las 28 capturas.
+
+Fuentes Lora, Outfit y Plus Jakarta Sans cargadas: se descargaron con curl usando proxy y confianza TLS heredados y se sirvieron a Chromium desde caché. Otros terceros bloqueados. Elementos fijos/sticky del sitio ocultos **solo durante las capturas aisladas** para no tapar los recursos. La medición de ancho y CLS se tomó antes de ocultarlos. No se desactiva la comprobación TLS.
+
+El srcset del hero y la precarga del layout hicieron que el navegador eligiera la ruta principal de 1200 en las cuatro combinaciones registradas, pese a existir variante 400. Las dimensiones naturales informadas por el DOM pueden estar corregidas por densidad; los tamaños reales de archivos están en el manifiesto. Consulta sirve el WebP de 1200 por el img original del MDX. No se afirma servir una variante solo por haberla creado.
+
+No hay errores JavaScript en las páginas probadas. El servidor estático da un 404 adicional para `/api/feedback`, que requiere el backend y no se valida aquí. No se envían formularios ni mensajes. CLS=0 es observación de esta prueba con retraso de carga de imágenes y fuentes, no garantía de rendimiento en todos los dispositivos. No se prueban Safari/Firefox, dispositivo móvil físico, la página desplegada ni los tres finales completos.
+
+Se verificaron las tres referencias exactas y las dimensiones de cuerpo/hero: [rutas-y-dimensiones.json](rutas-y-dimensiones.json). Sigue sin resolverse por cuenta propia la discrepancia del pie de portada: el layout muestra el alt como figcaption, no el pie específico de §8. Artículo, brief y testimonios intactos según los hashes. En entrega-redaccion.md solo se actualizan las dos celdas de recursos para indicar existencia y ruta de los binarios; el veredicto no se cambia.
+
+## Decisión pendiente actual
+
+Portada y consulta quedan disponibles para revisión independiente de esos recursos. El conjunto de tres no está completo. Está pendiente la respuesta a la pregunta sobre **adenda correctora y hasta cuatro intentos adicionales del paseo**. No se genera una quinta versión sin ella. La altura de las tablas y el pie del hero quedan documentados para resolución editorial posterior, sin modificar el artículo ni sus componentes en esta producción.

@@ -178,9 +178,9 @@ El denominador de tono.py es distinto del contractual: elimina FAQ y avisos dang
 |---|---|---|
 | Tabla de calendario | Decidir cuándo preparar cada fecha, H2-3 | Escrita; prueba visual pendiente |
 | Tabla de encuesta | Comparar percepciones y límites, H2-7 | Escrita; prueba visual pendiente |
-| Portada: bodeguero-senior-refugio-dormitorio-nochevieja-v1.webp | Refugio; heroImage | Binario pendiente; alt y ruta del brief |
+| Portada: bodeguero-senior-refugio-dormitorio-nochevieja-v1.webp | Refugio; heroImage | Binario existente: `public/images/blog/miedo-petardos-perros-mayores/bodeguero-senior-refugio-dormitorio-nochevieja-v1.webp` |
 | bodeguero-senior-paseo-antes-de-nochevieja-v1.webp | Paseo y doble sujeción, H2-6 | Binario pendiente; img y pie del brief |
-| bodeguero-senior-revision-dolor-consulta-v1.webp | Revisión de dolor, H2-4 | Binario pendiente; img y pie del brief |
+| bodeguero-senior-revision-dolor-consulta-v1.webp | Revisión de dolor, H2-4 | Binario existente: `public/images/blog/miedo-petardos-perros-mayores/bodeguero-senior-revision-dolor-consulta-v1.webp` |
 
 Las tres rutas están bajo `/images/blog/miedo-petardos-perros-mayores/`. No se generaron imágenes, recortes, animaciones ni cambios en prompts. No se promete PDF ni vídeo. El pie de portada permanece en §8: no se duplica la hero ni se modifica el layout para añadirlo.
 
