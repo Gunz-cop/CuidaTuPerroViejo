@@ -2,7 +2,7 @@
 
 Fecha: 2026-10-26. Rama: `claude/imagenes-miedo-petardos-perros-mayores`, desde la rama de redacción, base `486d55f`.
 
-**Estado actual: producción parcial. Portada v9 y consulta v1 seleccionadas por el productor; paseo detenido tras cuatro versiones rechazadas.** Véase al final el tercer ciclo y la prueba de integración parcial.
+**Estado actual: las tres imágenes tienen binario final seleccionado por el productor: portada v9, paseo v8 y consulta v1.** Se han ejecutado build y pruebas de integración con las tres. El conjunto queda documentado para auditoría visual independiente, **sin declarar aprobación**. Pendientes conocidos: altura móvil de las tablas y diferencia preexistente del pie de portada. Véase el cierre de producción al final; las secciones intermedias conservan el historial de descartes y pruebas parciales.
 
 **Historial de los dos primeros ciclos:** producción detenida tras ocho versiones de portada no seleccionadas, dos ciclos autorizados de cuatro intentos. Se aplica el límite expreso del encargo: «Máximo 4 versiones por imagen; si a la cuarta sigue fallando, detente y pide decisión». El segundo ciclo fue autorizado por el propietario el 2026-10-26 con «Autorizar adenda y cuatro intentos» y comprende v5–v8. En esos dos primeros ciclos no se generaron las imágenes 2 y 3: el proceso exigía una primera imagen seleccionada como referencia de identidad. No se emite auditoría independiente ni se declara aprobado el conjunto.
 
@@ -264,3 +264,108 @@ Se verificaron las tres referencias exactas y las dimensiones de cuerpo/hero: [r
 ## Decisión pendiente actual
 
 Portada y consulta quedan disponibles para revisión independiente de esos recursos. El conjunto de tres no está completo. Está pendiente la respuesta a la pregunta sobre **adenda correctora y hasta cuatro intentos adicionales del paseo**. No se genera una quinta versión sin ella. La altura de las tablas y el pie del hero quedan documentados para resolución editorial posterior, sin modificar el artículo ni sus componentes en esta producción.
+
+
+## Cierre de producción: paseo v8 y conjunto de tres imágenes
+
+El propietario autorizó el segundo ciclo del paseo con **«Autorizar adenda y cuatro intentos»** el 2026-10-26. Se conservó el prompt original completo y se ejecutaron v5–v8. Las adendas se centran en la correa y posición del paseo, sin cambiar raza, edad, entorno o sentido de marcha.
+
+| Imagen | Original seleccionado | Total de versiones | Final público, 1200×675 |
+|---|---|---|---|
+| Portada | [imagen-1-v9.png](originales/imagen-1-v9.png) | **9**, en tres ciclos autorizados; v1–v8 rechazadas | `bodeguero-senior-refugio-dormitorio-nochevieja-v1.webp` |
+| Paseo | [imagen-2-v8.png](originales/imagen-2-v8.png) | **8**, en dos ciclos autorizados; v1–v7 rechazadas | `bodeguero-senior-paseo-antes-de-nochevieja-v1.webp` |
+| Consulta | [imagen-3-v1.png](originales/imagen-3-v1.png) | **1** | `bodeguero-senior-revision-dolor-consulta-v1.webp` |
+
+Los tres finales están en `public/images/blog/miedo-petardos-perros-mayores/`. Existe además la variante de portada `bodeguero-senior-refugio-dormitorio-nochevieja-v1-400.webp` de 400×225. [Tamaños, bytes y SHA actuales](binarios-finales.json). Se conservan **18 PNG originales** sin sobrescribir ni retocar, más sus reducciones reales a 390 px. El manifiesto histórico parcial no se reescribe para simular que siempre hubo tres archivos.
+
+### Segundo ciclo de paseo: versiones y motivos
+
+| Versión | Archivo / vista a 390 px | Resultado y motivo |
+|---|---|---|
+| v5 | [Original](originales/imagen-2-v5.png), [390](capturas/imagen-2-v5-390.png) | Rechazada. Mejora la caída floja y el enganche al collar, pero la unión coincide con la anilla del arnés en vez de una bifurcación separada, y la perra queda adelantada. |
+| v6 | [Original](originales/imagen-2-v6.png), [390](capturas/imagen-2-v6-390.png) | Rechazada. Introduce una tira extra que asciende desde la unión hacia la ropa; la topología deja de ser de tres conexiones. |
+| v7 | [Original](originales/imagen-2-v7.png), [390](capturas/imagen-2-v7-390.png) | Rechazada. Unión y enganches más claros, pero el cabo principal sigue pareciendo diagonal en vez de caer en la J solicitada. |
+| v8 | [Original](originales/imagen-2-v8.png), [390](capturas/imagen-2-v8-390.png), [detalle nativo de enganches](capturas/imagen-2-v8-enganches-detalle.png) | Seleccionada por el productor. Cabo único con curva floja y punto bajo antes de subir a la unión; dos ramales, dos mosquetones, uno al arnés y otro al collar. |
+
+[Adenda v5](prompts/adenda-paseo-v5.md), [v6](prompts/adenda-paseo-v6.md), [v7](prompts/adenda-paseo-v7.md), [v8](prompts/adenda-paseo-v8.md). Las entradas completas están junto a esas adendas con nombres `imagen-2-v5-entrada-herramienta.txt` a `imagen-2-v8-entrada-herramienta.txt`. Cada una conserva íntegro el prompt original. El archivo de propuesta no ejecutada anterior queda como antecedente; las entradas autorizadas sí se ejecutaron.
+
+Las v7/v8 recibieron como referencia auxiliar una [guía de topología](prompts/guia-topologia-correa.png), renderizada desde [SVG](prompts/guia-topologia-correa.svg), solo para aclarar un cabo, una unión y dos extremos. Es material técnico de producción, **no un recurso insertado en el artículo ni una edición de la foto**. La identidad siguió viniendo únicamente de la portada v9. La generación final no contiene el diagrama ni texto explicativo. No se corrigieron cables mediante retoque posterior.
+
+### Paseo v8: comprobación rasgo a rasgo del productor
+
+Se abrió el PNG completo y su reducción de 390 px, después el detalle nativo de mosquetones y las capturas del WebP integrado. Esta tabla es revisión de producción; la auditoría independiente debe abrir los archivos y confirmar o discrepar.
+
+| Comprobación | Sí/no y nota |
+|---|---|
+| Canas simultáneas en hocico, cejas y contorno palpebral a 390 | **Sí**, gris plateado del hocico y contorno del antifaz, fuego apagado y blanco mate; no se pretende contar pelos individuales. |
+| Ojos marrones algo hundidos, párpados algo caídos y mirada serena | **Sí**, conserva la fisonomía de la referencia, ojo pequeño y arco palpebral bajo. |
+| Lomo suavizado/hundido y menor masa de hombros y muslos; pelvis/costillas discretas | **Sí según revisión del productor**, cintura y cuartos traseros finos con contorno dorsal suavizado, sin delgadez extrema. |
+| Postura natural de mayor, cabeza a la altura del lomo o baja | **Sí**, paseo a ritmo tranquilo, cabeza baja respecto a la cruz, sin salto o carrera. |
+| Sin enfermedad inventada, cojera, lesiones, ojos rojos, jadeo o sufrimiento | **Sí**, boca cerrada y apoyos naturales. |
+| Misma identidad que portada/consulta | **Sí**, mismo tipo bodeguero tricolor, antifaz derecho, manchas dorsales, marcas fuego apagadas, orejas plegadas, cola larga/fina, collar gris y chapa lisa. |
+| Cuatro patas y anatomía del perro | **Sí**, cuatro extremidades separadas, sin duplicaciones ni fusiones visibles. |
+| Mano derecha anatómica, sin dedos adicionales/fusionados | **Sí**, agarre natural del bucle; los dedos doblados quedan parcialmente superpuestos como corresponde al gesto. |
+| Cámara próxima a fachada, a altura del lomo, con vista del costado derecho | **Sí**, fachada próxima a izquierda, perra en primer plano y calzada detrás. |
+| Tutor y perra avanzan juntos de izquierda a derecha | **Sí**, cuerpos, pasos y cabeza de la perra orientados a derecha. |
+| Perra junto a la pierna, del lado de fachada y más cerca de cámara | **Sí**, tutor detrás hacia calzada; sin perro distante tirando por delante. |
+| Tutor recortado por pecho, sin cabeza/cara; parka oliva y bufanda gris | **Sí**, extremos de bufanda sobre el pecho. |
+| Un solo cabo no extensible desde mano derecha | **Sí**, un tramo principal, sin segunda correa paralela ni mecanismo extensible. |
+| Curva floja en J/U legible a 390 | **Sí**, punto bajo visible antes de subir a la unión; no línea diagonal recta. |
+| Bifurcación en dos ramales cortos | **Sí**, unión separada con dos extremos; no tira adicional ascendente. |
+| Mosquetón a anilla dorsal del arnés | **Sí**, comprobado en detalle nativo. |
+| Otro mosquetón a collar separado, con chapa lisa | **Sí**, enganche en anilla superior del collar distinto de la cinta del arnés; chapa cuelga de la zona del collar. |
+| Dos ramales visibles en móvil; enganches discernibles en grande | **Sí**, se revisaron ambos tamaños y el detalle nativo. |
+| Correa sin tensión ni ramales entre patas; cola neutra y orejas relajadas | **Sí**, caída libre, sin tracción visible del cuello. |
+| Hora azul, farolas anaranjadas y luces navideñas blancas | **Sí**, sin convertir toda la imagen en filtro dorado. |
+| Fondo de ladrillo, coches aparcados, terraza recogida con sillas y contenedores amarillo/azul | **Sí**, detalles presentes; las conexiones de cierre de sillas quedan pequeñas en el fondo, sin lectura de cada eslabón a 390. |
+| Sin otros perros, móviles, carrera o sentido contrario | **Sí**, no se ven esos elementos. |
+| Sin texto, letras o logos discernibles | **Sí en inspección**, superficies de fondo sin inscripciones legibles ni marca en collar/chapa. |
+| Texturas documentales y grano fino, saturación contenida, sin glow/HDR/viñeteado evidente | **Sí en revisión grande**, pelo, tela y acera mates con detalle fino. |
+| Imagen sostiene alt/pie: marcha conjunta, arnés/collar con chapa y correa floja | **Sí**, no se modificaron los textos para acomodarlos a un fallo. |
+
+La longitud de unos 1,2 m no puede medirse exactamente desde una perspectiva generada; se comprueba una correa corta, no extensible, con holgura y geometría coherente. No se presenta esa lectura como una medida física precisa. La postura autorizada de portada y la revisión detallada de consulta se conservan arriba; ninguna de esas dos imágenes se ha alterado para producir el paseo.
+
+## Integración de las tres imágenes: prueba completa de esta producción
+
+[Build](integracion-completa/build.log): `npx astro build`, **exit 0**, con las tres imágenes existentes y proyección Markdown generada. La copia temporal del artículo se retiró después. No se modifica el contenido, no se deja el artículo en src/content/blog/ y no se publica.
+
+[Script de navegador](integracion-completa/verificar-navegador.cjs), [resultados completos](integracion-completa/verificacion-navegador.json), [contraste](integracion-completa/contraste.json), [rutas/dimensiones](integracion-completa/rutas-y-dimensiones.json). Se conserva la prueba parcial anterior en sus rutas, sin sustituir su 404 histórico por un éxito retrospectivo.
+
+Se sirvió el build real de `dist/client` con Python HTTP local en 127.0.0.1:4466 y se usaron Playwright ya instalado y Chromium del sistema. No se reinstaló Playwright, no se necesitó astro dev ni se fabricó una maqueta. Tres imágenes, dos tablas y tres avisos × cuatro combinaciones = **32 capturas aisladas** en [integracion-completa/capturas/](integracion-completa/capturas/).
+
+| Resultado | 390 claro / oscuro | 1366 claro / oscuro |
+|---|---|---|
+| Tres imágenes decodificadas | Sí / Sí | Sí / Sí |
+| Archivos de imagen ausentes | Ninguno | Ninguno |
+| scrollWidth | 390 / 390 | 1366 / 1366 |
+| CLS observado en la carga controlada | 0 / 0 | 0 / 0 |
+| Errores JavaScript | 0 / 0 | 0 / 0 |
+| Contraste mínimo de textos medidos, incluidas etiquetas de celdas | 4,50:1 / 5,52:1 | 4,50:1 / 5,52:1 |
+| Tabla calendario, altura | **991 / 991 px** | 443 / 443 px |
+| Tabla encuesta, altura | **1291,4 / 1291,4 px** | 650,3 / 650,3 px |
+
+### Capturas para abrir en la auditoría
+
+| Recurso | 390 claro | 390 oscuro | 1366 claro | 1366 oscuro |
+|---|---|---|---|---|
+| Portada | [Abrir](integracion-completa/capturas/390-claro-portada.png) | [Abrir](integracion-completa/capturas/390-oscuro-portada.png) | [Abrir](integracion-completa/capturas/1366-claro-portada.png) | [Abrir](integracion-completa/capturas/1366-oscuro-portada.png) |
+| Paseo | [Abrir](integracion-completa/capturas/390-claro-paseo.png) | [Abrir](integracion-completa/capturas/390-oscuro-paseo.png) | [Abrir](integracion-completa/capturas/1366-claro-paseo.png) | [Abrir](integracion-completa/capturas/1366-oscuro-paseo.png) |
+| Consulta | [Abrir](integracion-completa/capturas/390-claro-consulta.png) | [Abrir](integracion-completa/capturas/390-oscuro-consulta.png) | [Abrir](integracion-completa/capturas/1366-claro-consulta.png) | [Abrir](integracion-completa/capturas/1366-oscuro-consulta.png) |
+| Calendario | [Abrir](integracion-completa/capturas/390-claro-tabla-calendario.png) | [Abrir](integracion-completa/capturas/390-oscuro-tabla-calendario.png) | [Abrir](integracion-completa/capturas/1366-claro-tabla-calendario.png) | [Abrir](integracion-completa/capturas/1366-oscuro-tabla-calendario.png) |
+| Encuesta | [Abrir](integracion-completa/capturas/390-claro-tabla-encuesta.png) | [Abrir](integracion-completa/capturas/390-oscuro-tabla-encuesta.png) | [Abrir](integracion-completa/capturas/1366-claro-tabla-encuesta.png) | [Abrir](integracion-completa/capturas/1366-oscuro-tabla-encuesta.png) |
+| Aviso info | [Abrir](integracion-completa/capturas/390-claro-aviso-info.png) | [Abrir](integracion-completa/capturas/390-oscuro-aviso-info.png) | [Abrir](integracion-completa/capturas/1366-claro-aviso-info.png) | [Abrir](integracion-completa/capturas/1366-oscuro-aviso-info.png) |
+| Aviso danger | [Abrir](integracion-completa/capturas/390-claro-aviso-danger.png) | [Abrir](integracion-completa/capturas/390-oscuro-aviso-danger.png) | [Abrir](integracion-completa/capturas/1366-claro-aviso-danger.png) | [Abrir](integracion-completa/capturas/1366-oscuro-aviso-danger.png) |
+| Aviso warning | [Abrir](integracion-completa/capturas/390-claro-aviso-warning.png) | [Abrir](integracion-completa/capturas/390-oscuro-aviso-warning.png) | [Abrir](integracion-completa/capturas/1366-claro-aviso-warning.png) | [Abrir](integracion-completa/capturas/1366-oscuro-aviso-warning.png) |
+
+Se han abierto los originales y las reducciones a 390 de las tres selecciones, así como las cuatro capturas integradas del paseo y recursos de portada/consulta/tablas/avisos de la prueba anterior. Las 32 capturas actuales se conservan completas para la revisión independiente; no se presenta la captura automática como auditoría de cada detalle. El estado claro/oscuro y contraste se midió con el estilo computado, incluyendo pseudo-labels.
+
+Los métodos y límites de la prueba parcial siguen aplicando: fuentes descargadas con curl/proxy/TLS heredados, otros terceros bloqueados, elementos fijos/sticky ocultos solo al capturar recursos. La carga se retrasó para observar estabilidad; CLS=0 se limita a esta ejecución de laboratorio, sin afirmar un resultado universal de Core Web Vitals. No se prueban Safari/Firefox, móvil físico, lector de pantalla o despliegue público. El 404 de `/api/feedback` corresponde al backend no servido por Python; no es un fallo de carga de las imágenes y no se envían formularios. Los tamaños efectivamente elegidos están en currentSrc del JSON, sin equiparar naturalWidth corregido por densidad a bytes físicos.
+
+## Pendientes conocidos y límites de la entrega final
+
+1. **Auditoría visual independiente pendiente.** Se entregan tres finales, fuentes de generación, descartes, hashes y pruebas; el productor no los declara aprobados.
+2. **Altura móvil de tablas incumple el presupuesto orientativo (~900 px):** 991 y 1291,4 px. Se apilan y no desbordan en horizontal, pero necesitan decisión de diseño/corrección autorizada. No se modificaron ni texto ni componentes para ocultar el problema.
+3. **Pie de portada preexistente:** el layout usa el alt como figcaption y no el pie particular del brief. No se cambia por cuenta propia. El cambio de postura de portada sí está expresamente autorizado y documentado; los alt/pies no se reescribieron.
+4. **Pendientes clínico-documentales del artículo:** no se cierran por producir imágenes; siguen en la entrega textual.
+5. **Integridad:** artículo, brief y testimonios conservan los SHA iniciales. Solo se actualizan las tres celdas de existencia/ruta de recursos en entrega-redaccion.md, sin alterar su veredicto. El resto de esa entrega es histórico de la fase de redacción.
+6. Sin PR, merge, publicación ni artículo permanente en src/content/blog/. Se permanece en `claude/imagenes-miedo-petardos-perros-mayores`.

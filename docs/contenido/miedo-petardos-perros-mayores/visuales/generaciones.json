@@ -2,8 +2,8 @@
   "fecha": "2026-10-26",
   "branch": "claude/imagenes-miedo-petardos-perros-mayores",
   "base": "486d55f",
-  "estado": "Producción parcial: portada v9 y consulta v1 seleccionadas por productor; paseo detenido tras cuatro descartes",
-  "imagenes_2_y_3": "No generadas: falta referencia de identidad que supere la revisión",
+  "estado": "Tres imágenes seleccionadas por productor: portada v9, paseo v8, consulta v1. Pendiente auditoría independiente; altura móvil de tablas documentada.",
+  "imagenes_2_y_3": "Generadas usando portada v9 como referencia de identidad. Paseo v8 y consulta v1 seleccionadas.",
   "reference_image_paths": [],
   "generaciones": [
     {
@@ -223,6 +223,80 @@
         "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v9.png"
       ],
       "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-3-v1-entrada-herramienta.txt"
+    },
+    {
+      "imagen": 2,
+      "version": 5,
+      "ciclo": 2,
+      "original": "docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-2-v5.png",
+      "source": "/workspace/generated_images/exec-a820f6f4-b362-4db2-86b4-bf7bedae7066.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2454090,
+      "sha256": "5a625491dfef2fb06f3978a9821ebb21b20f7404d6670b81f817272c46f4f922",
+      "identical_to_generated_original": true,
+      "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/capturas/imagen-2-v5-390.png",
+      "seleccionada": false,
+      "reference_image_paths": [
+        "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v9.png"
+      ],
+      "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-2-v5-entrada-herramienta.txt"
+    },
+    {
+      "imagen": 2,
+      "version": 6,
+      "ciclo": 2,
+      "original": "docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-2-v6.png",
+      "source": "/workspace/generated_images/exec-21c6dfd6-057d-4ed7-adbc-832b7ff52d21.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2829040,
+      "sha256": "2664c626fa88c82346719398aad9238ef760fd68d96d277b42caee7dbfabee9e",
+      "identical_to_generated_original": true,
+      "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/capturas/imagen-2-v6-390.png",
+      "seleccionada": false,
+      "reference_image_paths": [
+        "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v9.png"
+      ],
+      "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-2-v6-entrada-herramienta.txt"
+    },
+    {
+      "imagen": 2,
+      "version": 7,
+      "ciclo": 2,
+      "original": "docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-2-v7.png",
+      "source": "/workspace/generated_images/exec-896047a7-2f03-4dce-a900-fb2d848beda5.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2507339,
+      "sha256": "d2c1e0f8d70eda40cc5e4ea0a882b2fa0e74e1466effe10bb786fdfaf862dc19",
+      "identical_to_generated_original": true,
+      "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/capturas/imagen-2-v7-390.png",
+      "seleccionada": false,
+      "reference_image_paths": [
+        "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v9.png",
+        "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/guia-topologia-correa.png"
+      ],
+      "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-2-v7-entrada-herramienta.txt"
+    },
+    {
+      "imagen": 2,
+      "version": 8,
+      "ciclo": 2,
+      "original": "docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-2-v8.png",
+      "source": "/workspace/generated_images/exec-de72f5ee-2ae8-408d-a799-3e81d41961be.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2551868,
+      "sha256": "16e09073ed58061677c31565b4655c8ac0d4c25a2c25dc381e3ed852a615dd97",
+      "identical_to_generated_original": true,
+      "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/capturas/imagen-2-v8-390.png",
+      "seleccionada": true,
+      "reference_image_paths": [
+        "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v9.png",
+        "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/guia-topologia-correa.png"
+      ],
+      "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-2-v8-entrada-herramienta.txt"
     }
   ],
   "autorizacion_ciclo_2": {
@@ -244,14 +318,28 @@
     "seleccion_portada": 9
   },
   "paseo": {
-    "estado": "Pendiente de autorización para adenda; no hay quinto intento",
-    "versiones_rechazadas": [
+    "estado": "v8 seleccionada por el productor tras segundo ciclo autorizado",
+    "descartes": [
       1,
       2,
       3,
-      4
+      4,
+      5,
+      6,
+      7
     ],
-    "motivo": "No se acredita correa floja en J y unión inequívoca del segundo mosquetón al collar",
-    "propuesta": "prompts/propuesta-adenda-paseo.md"
+    "final": "public/images/blog/miedo-petardos-perros-mayores/bodeguero-senior-paseo-antes-de-nochevieja-v1.webp"
+  },
+  "autorizacion_paseo_ciclo_2": {
+    "fecha": "2026-10-26",
+    "respuesta_propietario": "Autorizar adenda y cuatro intentos",
+    "alcance": "Adenda centrada en geometría de correa y hasta cuatro nuevos intentos del paseo",
+    "versiones": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "referencia_auxiliar_v7_v8": "guia-topologia-correa.png: solo topología, no identidad ni estilo del final"
   }
 }
