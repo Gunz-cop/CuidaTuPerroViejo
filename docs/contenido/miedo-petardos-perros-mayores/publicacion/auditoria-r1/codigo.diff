@@ -1,0 +1,85 @@
+diff --git a/src/components/article/TablaApilable.astro b/src/components/article/TablaApilable.astro
+index e46e3d7..6b7a818 100644
+--- a/src/components/article/TablaApilable.astro
++++ b/src/components/article/TablaApilable.astro
+@@ -1,11 +1,11 @@
+ ---
+ // Envuelve una tabla del artículo: en escritorio se ve como tabla; por debajo de 640 px cada fila
+ // se apila como tarjeta y cada celda muestra su encabezado (data-label), sin scroll horizontal.
+-interface Props { label: string; }
+-const { label } = Astro.props;
++interface Props { label: string; compacta?: boolean; }
++const { label, compacta = false } = Astro.props;
+ ---
+ 
+-<div class="tabla-apilable" role="region" aria-label={label}>
++<div class="tabla-apilable" data-compacta={compacta || undefined} role="region" aria-label={label}>
+   <slot />
+ </div>
+ 
+@@ -21,5 +21,23 @@ const { label } = Astro.props;
+     .tabla-apilable td { display:block; padding:.25rem .9rem; border:0; text-align:left; }
+     .tabla-apilable td + td { border-top:1px solid #ece3d4; }
+     .tabla-apilable td[data-label]::before { content:attr(data-label); display:block; font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; opacity:.75; margin-bottom:.15rem; }
++
+   }
+ </style>
++
++
++{compacta && (
++  <style is:inline>
++    @media (max-width: 640px) {
++    /* Solo se emite al activar compacta: conserva el HTML de los demás artículos. */
++    .content-body .tabla-apilable[data-compacta] tbody { gap:.5rem; }
++    .content-body .tabla-apilable[data-compacta] td { padding:.25rem .75rem; }
++    .content-body .tabla-apilable[data-compacta] td:first-child { font-weight:700; padding-top:.5rem; }
++    .content-body .tabla-apilable[data-compacta] td:first-child::before { display:none; }
++    .content-body .tabla-apilable[data-compacta] td:last-child { padding-bottom:.5rem; }
++    .content-body .tabla-apilable[data-compacta] td[data-label]::before { content:attr(data-label) ": "; display:inline; letter-spacing:normal; text-transform:none; margin-bottom:0; opacity:.8; }
++    .content-body .tabla-apilable[data-compacta] td[data-label-corto]::before { content:attr(data-label-corto) ": "; }
++    .content-body .tabla-apilable[data-compacta] td[data-label]:first-child::before { display:none; }
++    }
++  </style>
++)}
+diff --git a/src/content.config.ts b/src/content.config.ts
+index 0f13c89..6324936 100644
+--- a/src/content.config.ts
++++ b/src/content.config.ts
+@@ -25,6 +25,7 @@ const blog = defineCollection({
+     keywordPrincipal: z.string().optional(),
+     heroImage: z.string().optional(),
+     heroImageAlt: z.string().optional(),
++    heroImageCaption: z.string().optional(),
+     legacyUrl: z.string().optional(),
+     status: z.string().default('Publicado'),
+     datePublished: z.string().default('2025-10-01'),
+diff --git a/src/pages/[pilar]/[slug].astro b/src/pages/[pilar]/[slug].astro
+index bf425c9..a8ac553 100644
+--- a/src/pages/[pilar]/[slug].astro
++++ b/src/pages/[pilar]/[slug].astro
+@@ -33,6 +33,7 @@ const pilarNames: Record<string, string> = {
+ const pilarName = pilarNames[entry.data.pilar] || entry.data.pilar;
+ const heroImage = entry.data.heroImage;
+ const heroImageAlt = entry.data.heroImageAlt || entry.data.title;
++const heroImageCaption = entry.data.heroImageCaption || heroImageAlt;
+ 
+ const heroImageSrcset = buildSrcset(heroImage);
+ 
+@@ -69,7 +70,7 @@ const blogPostingSchema = {
+           'url': schemaImage,
+           'width': 1200,
+           'height': 675,
+-          'caption': heroImageAlt,
++          'caption': heroImageCaption,
+         },
+       ],
+       'datePublished': datePublished,
+@@ -188,7 +189,7 @@ const hideHeroCSS = heroImage
+               />
+             </div>
+             <figcaption class="mt-2 text-center text-xs text-brand-muted italic px-4 sm:px-0">
+-              {heroImageAlt}
++              {heroImageCaption}
+             </figcaption>
+           </figure>
+         ) : (

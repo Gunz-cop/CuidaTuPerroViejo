@@ -1,0 +1,13 @@
+{
+  "componente": "src/components/article/TablaApilable.astro",
+  "css_global_anterior_identico_salvo_espacios": true,
+  "compacta_por_defecto": false,
+  "css_compacto_condicional": true,
+  "media_query": "max-width:640px",
+  "selector_requiere": [
+    ".content-body",
+    ".tabla-apilable",
+    "[data-compacta]"
+  ],
+  "revision_de_selectores": "Solo descendientes del wrapper marcado; td:first-child conserva el texto de la primera celda y oculta el rótulo repetido; td[data-label-corto] cambia solo el pseudorrótulo. No nueva JS ni CSS global distinto."
+}

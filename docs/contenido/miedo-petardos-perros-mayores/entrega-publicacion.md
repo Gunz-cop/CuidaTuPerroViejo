@@ -7,7 +7,7 @@ Fecha: 2026-10-26. Integración y comprobación técnica; no es auditoría ni ap
 
 El propietario pide «Ok, ajusta y audita» tras los pendientes de publicación. Se sustituye exclusivamente la entrada bibliográfica de Málaga por el comunicado primario, reabierto el 2026-10-26, con su guía gráfica y la cobertura de prensa conservada. El resto del MDX es idéntico. [Prueba exacta del cambio](publicacion/ajuste-bibliografia.json). Los registros de traslado anteriores describen la versión inicial; este ajuste no se oculta como un traslado literal.
 
-Se mantiene la fecha 2026-10-25 y la separación de PR #148/#149. Blackwell completo y PDF español regulatorio siguen como verificaciones parciales declaradas; no se inventan documentos ni una aceptación editorial del propietario. La auditoría independiente que se solicita ahora se limita al diff final de integración y al ajuste bibliográfico, con revisión de los tres archivos compartidos. No reinicia ni reemplaza las auditorías clínicas o visuales anteriores. Las comprobaciones afectadas se han repetido: check sin errores/advertencias, build y proyección correctos. La prueba visual anterior se conserva como evidencia de esos mismos binarios/componentes.
+Se mantiene la fecha 2026-10-25 y la separación de PR #148/#149. Blackwell completo y PDF español regulatorio siguen como verificaciones parciales declaradas; no se inventan documentos ni una aceptación editorial del propietario. La auditoría independiente de publicación R1 evaluó el diff final de integración y el ajuste bibliográfico, con revisión de los tres archivos compartidos; el resultado y sus límites se registran al final de esta entrega. No reinicia ni reemplaza las auditorías clínicas o visuales anteriores. Las comprobaciones afectadas se han repetido: check sin errores/advertencias, build y proyección correctos. La prueba visual anterior se conserva como evidencia de esos mismos binarios/componentes.
 
 Sin fusión ni despliegue.
 
@@ -130,7 +130,7 @@ Tabla 2 y FAQ 4 distinguen encuesta de ensayos y no contradicen «moderada solo 
 
 ## Límites y decisiones antes de fusionar
 
-1. Revisar código y después artículo. **Se solicita, por orden del propietario, una auditoría independiente breve del diff final**: traslado mecánico, enlaces, pesos y separación del código. No la hace el integrador; la R3 visual previa no se presenta como auditoría de este PR.
+1. Revisar código y después artículo. **Auditoría independiente breve del diff final completada**, por orden del propietario: traslado mecánico, enlaces, pesos y separación del código. Ver [R1 de publicación](auditoria-publicacion-r1.md) y cierre posterior. La R3 visual previa conserva su alcance propio.
 2. El ajuste de Málaga está aplicado. Aceptar documentalmente o completar S2/S7; la propuesta bibliográfica opcional de Riemer queda separada. Estas verificaciones no sustituyen el cierre editorial.
 3. Confirmar si se conserva la fecha heredada o se autoriza otra edición mecánica al conocer la fecha real de fusión. No anticiparla ni inventar dateModified.
 4. Siguen en TODO: criterio 5.000–6.000 en skills, ES-06 roto, reconciliación futura de feromonas y versión latinoamericana con Osa/Baltor. Firma manual conservada conforme al encargo; su alineación con la automática sigue en la tarea general preexistente.
@@ -164,4 +164,17 @@ CI remoto del código: SUCCESS registrado. El CI del PR editorial se lanza al ab
 
 ### Comprobaciones del ajuste bibliográfico
 
-Recuento contractual 5.653; tono 0,0/1.000; `npx astro build` correcto y proyección/guarda semántica de 37 documentos correctas. Se conserva la evidencia visual anterior: no cambia ningún binario, componente, estilo o dimensión. La auditoría independiente evaluará por separado el diff de publicación R1; no se consume otra ronda visual ni se declara una aprobación propia.
+Recuento contractual 5.653; tono 0,0/1.000; `npx astro build` correcto y proyección/guarda semántica de 37 documentos correctas. Se conserva la evidencia visual anterior: no cambia ningún binario, componente, estilo o dimensión. La auditoría independiente evaluó por separado el diff de publicación R1; no se consume otra ronda visual ni se declara una aprobación propia.
+
+
+## Cierre del ajuste y auditoría independiente — 2026-10-26
+
+El agente independiente entrega **APTO el diff de integración: 0 P0, 0 P1 y 0 P2 nuevos confirmados**, en la primera ronda de publicación. [Informe íntegro](auditoria-publicacion-r1.md) y [métodos y evidencia propia](publicacion/auditoria-r1/README.md). Evalúa `main b79ee0b` → código `625ef8a` → artículo `de55e25`; los commits posteriores de cierre incorporan documentación, sin cambios adicionales de producto. El integrador conserva el informe sin editarlo y no emite un veredicto editorial propio.
+
+La comparación independiente confirma que el MDX solo difiere del original auditado en la entrada bibliográfica S10. Los tres archivos compartidos siguen limitados al PR #148; binarios, clínica, cifras, FAQ, testimonios y fecha permanecen intactos. El auditor ejecutó sus comprobaciones de Git, HTML y navegador; los builds, contraste, CLS y capturas anteriores se identifican como pruebas del productor, no como nuevas pruebas del auditor.
+
+**Calendario:** el auditor descargó y leyó los tres programas municipales originales de 2026: Fallas de Valencia, marzo; Fogueres de Alicante, junio; San Fermín de Pamplona, julio. Queda contrastado el requisito de meses habituales del brief §11. [URLs, páginas, tamaños y hashes](publicacion/auditoria-r1/programas-oficiales.json). No se certifican programas ni horarios de 2027, todas las localidades o cambios futuros; se conserva la indicación del artículo de consultar el programa local. No se modifica el brief ni la tabla del artículo.
+
+**CI del ajuste:** `de55e25`, SUCCESS, [ejecución 40321092610](https://github.com/Gunz-cop/CuidaTuPerroViejo/actions/runs/40321092610), consultada por el integrador tras la auditoría. Código #148 mantiene `625ef8a` y su CI SUCCESS. El cierre documental se empuja después y tendrá su propio CI; comprobar el HEAD vigente antes de fusionar.
+
+**Pendiente para publicar:** cierre editorial de S2 (Blackwell completo) y S7 (ficha española del regulador), y orden expresa del propietario. La R1 conserva esos límites; no se inventa su aceptación. No hace falta otra ronda para corregir el diff, pues esta R1 no exige correcciones del producto. Después de la orden correspondiente: código #148 → reorientar/actualizar #149 a main → revisar diff y CI resultantes → orden de fusión del artículo → checklist público. Ambos PR permanecen draft, sin fusión ni despliegue; P1-03 sigue NO publicado.
