@@ -2,11 +2,11 @@
 
 Fecha: 2026-10-26. Rama: `claude/imagenes-miedo-petardos-perros-mayores`, desde la rama de redacción, base `486d55f`.
 
-**Producción detenida tras cuatro versiones de la Imagen 1, ninguna seleccionada.** Se aplica el límite expreso del encargo: «Máximo 4 versiones por imagen; si a la cuarta sigue fallando, detente y pide decisión». Las imágenes 2 y 3 no se generan porque el proceso exige que la primera supere todas las comprobaciones antes de utilizarla como referencia de identidad. No se emite auditoría independiente ni se declara aprobado el conjunto.
+**Estado actual: producción detenida tras ocho versiones de la Imagen 1, ninguna seleccionada; dos ciclos de cuatro intentos, ambos autorizados.** Se aplica el límite expreso del encargo: «Máximo 4 versiones por imagen; si a la cuarta sigue fallando, detente y pide decisión». El segundo ciclo fue autorizado por el propietario el 2026-10-26 con «Autorizar adenda y cuatro intentos» y comprende v5–v8. Las imágenes 2 y 3 no se generan porque el proceso exige que la primera supere todas las comprobaciones antes de utilizarla como referencia de identidad. No se emite auditoría independiente ni se declara aprobado el conjunto.
 
 ## Archivos y método
 
-Los cuatro PNG son copias íntegras de los originales generados, sin retoque, recorte, cambio de color ni recompresión con pérdida. Se conservan todos, sin sobrescrituras. [generaciones.json](generaciones.json) contiene rutas, dimensiones nativas, bytes, SHA-256 y comparación binaria con el original de la herramienta. La herramienta devolvió imágenes de 1672×941; no se han convertido a WebP final ni asignado a las rutas públicas, porque fueron rechazadas.
+Los ocho PNG son copias íntegras de los originales generados, sin retoque, recorte, cambio de color ni recompresión con pérdida. Se conservan todos, sin sobrescrituras. [generaciones.json](generaciones.json) contiene rutas, dimensiones nativas, bytes, SHA-256 y comparación binaria con el original de la herramienta. La herramienta devolvió imágenes de 1672×941; no se han convertido a WebP final ni asignado a las rutas públicas, porque fueron rechazadas.
 
 Cada archivo se abrió en grande y también como reducción real a **390×219 px**, sin ampliar esa reducción para juzgar la edad. Solo esas reducciones de revisión usan escalado; no son finales editados para ocultar defectos.
 
@@ -19,13 +19,13 @@ Cada archivo se abrió en grande y también como reducción real a **390×219 px
 | 2 / — | No generada | No realizada | No existe todavía una Imagen 1 seleccionada para identidad. |
 | 3 / — | No generada | No realizada | Mismo motivo. |
 
-### Uso literal de los prompts
+### Primer ciclo: uso literal de los prompts
 
-Los textos de §8 se extrajeron automáticamente, conservando palabras, orden, puntuación y marcadores Markdown: [imagen 1](prompts/imagen-1-literal.md), [imagen 2](prompts/imagen-2-literal.md), [imagen 3](prompts/imagen-3-literal.md). No se reescribió ni mejoró el brief. Las cuatro generaciones repitieron el mismo prompt de la Imagen 1, sin adendas correctoras, sin referencias visuales y sin escoger otro perro como referencia.
+Los textos de §8 se extrajeron automáticamente, conservando palabras, orden, puntuación y marcadores Markdown: [imagen 1](prompts/imagen-1-literal.md), [imagen 2](prompts/imagen-2-literal.md), [imagen 3](prompts/imagen-3-literal.md). No se reescribió ni mejoró el brief. Las cuatro generaciones del primer ciclo repitieron el mismo prompt de la Imagen 1, sin adendas correctoras, sin referencias visuales y sin escoger otro perro como referencia.
 
 La única instrucción técnica separada fue «Formato de salida solicitado: imagen horizontal 16:9, 1200×675», tomada del encargo. [Entrada exacta enviada a la herramienta](prompts/imagen-1-entrada-herramienta.txt). Las líneas finales del prompt se trataron como instrucciones, no como texto a pintar. No se observa texto impreso en ninguna de las cuatro imágenes.
 
-## Revisión rasgo a rasgo de la Imagen 1
+## Primer ciclo: revisión rasgo a rasgo de la Imagen 1
 
 Son observaciones del productor, realizadas sobre los archivos reales, no mediciones clínicas ni una auditoría. **«No verificable» se trata como «no» y obliga a rechazar**, no como autorización para pasar a la siguiente imagen. La distancia de varios metros se juzga por la composición; no se afirma poder medir una distancia real en una imagen generada.
 
@@ -94,12 +94,77 @@ No se corrigen el alt o el pie para ajustarlos a estas candidatas rechazadas. Ta
 - **Discrepancia de pie de portada ya existente:** el pie previsto en §8 no está escrito en el cuerpo y el layout usa el alt como figcaption. Se anota; no se cambia ni el texto ni el layout por cuenta propia.
 - La ficha de imagen 2 mezcla «28–35 mm» y «50 mm», y el prompt dice «ligeramente picado hacia arriba». Para una futura generación, la lectura conservadora sería la cámara baja de 45 cm y el gran angular del prompt literal; no se reescribió el brief. La cláusula de cabeza/orejas/cola se entiende referida a la perra, conforme al encargo, no al tutor.
 - La postura recogida de la portada oculta parte de las patas y del dorso. Se registra como dificultad de comprobación, sin declarar visibles rasgos que quedan tapados.
-- **No hay WebP finales** en las tres rutas públicas. No se actualiza la entrega de redacción para afirmar que existen binarios finales: siguen pendientes. Los cuatro PNG aquí conservados son descartes de producción.
+- **No hay WebP finales** en las tres rutas públicas. No se actualiza la entrega de redacción para afirmar que existen binarios finales: siguen pendientes. Los ocho PNG aquí conservados son descartes de producción.
 - **No se ejecuta un nuevo build ni una prueba Playwright de integración con los finales**, porque no existe una primera imagen seleccionada y se ha alcanzado el límite de parada. El build anterior del texto no valida estos PNG ni la integración de tres imágenes nuevas.
-- Capturas realizadas: cuatro reducciones PNG de cada original a 390 px, abiertas una a una. **No** son capturas Playwright del artículo.
+- Capturas realizadas: ocho reducciones PNG de cada original a 390 px, abiertas una a una. **No** son capturas Playwright del artículo.
 - Pendiente sin probar en esta producción: artículo con tres imágenes decodificadas; CLS; 390/1366 px claro/oscuro; tablas apiladas; alturas; tres avisos; contraste y desbordamiento. No se presentan pruebas previas como pruebas repetidas.
 - Artículo, brief y testimonios intactos: [integridad inicial](integridad-inicial.json) y [comparación final](integridad-final.json). No se ha creado copia permanente ni temporal en `src/content/blog/`, ni PR, merge o publicación.
 
-## Decisión que necesita el propietario
+## Decisión del primer ciclo y su resolución
 
-Se solicita decisión antes de un quinto intento de portada o de producir las escenas dependientes. La opción técnica propuesta es autorizar una adenda correctora al prompt, conservando su texto original y los descartes: reforzar los rasgos senior legibles y corregir encuadre, separación de ventana y luz. **Esa adenda no se ha aplicado ni se ha modificado el brief.** El propietario también puede revisar estas candidatas antes de decidir otra vía. El conjunto todavía no está listo para la auditoría visual de tres finales.
+La petición de autorizar una adenda y un segundo ciclo se resolvió el 2026-10-26 con «Autorizar adenda y cuatro intentos». Se ejecutó ese alcance, sin modificar el brief. El segundo ciclo y la decisión ahora pendiente se documentan a continuación.
+
+
+## Segundo ciclo autorizado — versiones 5 a 8
+
+Se conserva el prompt original íntegro en las cuatro entradas. Las adendas se guardan separadas y cada entrada completa queda versionada, sin modificar las de los intentos anteriores:
+
+- v5: [adenda inicial](prompts/adenda-portada-ciclo-2.md), [entrada completa](prompts/imagen-1-v5-entrada-herramienta.txt). Prioriza envejecimiento, suelo libre entre refugio/ventana, fuente de luz fuera de campo y dedos distinguibles.
+- v6: [adenda v6](prompts/adenda-portada-v6.md), [entrada completa](prompts/imagen-1-v6-entrada-herramienta.txt). Refuerza los rasgos faciales y la silueta corporal, con precisiones en inglés; mantiene el original en español íntegro.
+- v7: [adenda v7](prompts/adenda-portada-v7.md), [entrada completa](prompts/imagen-1-v7-entrada-herramienta.txt). Coloca las correcciones antes del original para darles prioridad, sin retirar texto original.
+- v8: [precisión v8](prompts/adenda-portada-v8.md), [entrada completa](prompts/imagen-1-v8-entrada-herramienta.txt). Conserva la adenda v7 y explicita que el requisito original de cero texto también afecta a los grabados del juguete.
+
+Las cuatro son generaciones nuevas, sin edición posterior ni referencias de identidad tomadas de una candidata rechazada. Los cambios de adenda se limitan a hacer visibles las condiciones originales y las correcciones autorizadas. No se cambiaron raza, edad declarada, escena, alt ni pie. No se produjeron las otras dos escenas con un sujeto que no hubiese superado la revisión.
+
+| Imagen / versión | Original conservado | Reducción real | Resultado |
+|---|---|---|---|
+| 1 / v5 | [PNG](originales/imagen-1-v5.png) | [390 px](capturas/imagen-1-v5-390.png) | Rechazada: mejora luz/profundidad, pero ojos abiertos y cuerpo lleno; no acredita el conjunto senior. |
+| 1 / v6 | [PNG](originales/imagen-1-v6.png) | [390 px](capturas/imagen-1-v6-390.png) | Rechazada: mantiene mejora de encuadre, sin resolver caída palpebral y lectura de masa muscular. |
+| 1 / v7 | [PNG](originales/imagen-1-v7.png) | [390 px](capturas/imagen-1-v7-390.png) | Rechazada: mejor lectura del ojo y perfil, pero no acredita todos los rasgos corporales; se observan posibles caracteres grabados en el juguete a tamaño grande. |
+| 1 / v8 | [PNG](originales/imagen-1-v8.png) | [390 px](capturas/imagen-1-v8-390.png) | Rechazada: juguete sin caracteres discernibles, pero ojo muy abierto y dorso/reducción muscular insuficientemente verificables a 390. Cuarto intento adicional: parada. |
+
+### Edad y anatomía — comprobación por versión a 390 px
+
+| Rasgo | v5 | v6 | v7 | v8 |
+|---|---|---|---|---|
+| Canas simultáneas en hocico, cejas y párpados, fuego decolorado y blanco apagado | **No completo**: hocico/contorno claros, cejas menos resueltas. | **No completo**: pelo plateado visible, detalle palpebral pequeño. | **Sí en lectura general**, ceja y contorno plateados; no se acreditan pelos individuales. | **Sí en lectura general**, hocico y contorno aclarados; mismo límite de detalle. |
+| Ojos algo hundidos y párpados algo caídos, mirada serena | **No**, ojo grande y abierto. | **No**, ojo abierto sin caída clara. | **Sí**, párpado superior más bajo y mirada reposada, más claro en grande. | **No**, vuelve el ojo más abierto. |
+| Dorso ligeramente hundido y menor masa en hombros/cuarto trasero, pelvis/costillas discretas | **No**, grupa llena y silueta poco reveladora. | **No**, músculo/silueta no inequívocos. | **No completo**, perfil más visible pero no acredita todo el conjunto corporal a esa escala. | **No**, dorso y menor masa no verificables con claridad. |
+| Postura natural, cabeza baja apoyada en patas, sin pose atlética | **Sí**, recogida y cabeza baja. | **Sí**, mentón junto a patas. | **Sí**, mentón apoyado en las patas. | **Sí**, mentón apoyado en patas. |
+| Sin enfermedad inventada: lesiones, cojera aparente, ojos rojos, jadeo o sufrimiento | **Sí**, nada de ello se ve. | **Sí** | **Sí** | **Sí** |
+| Cinco rasgos de edad simultáneos claramente legibles | **No** | **No** | **No** | **No** |
+| Anatomía de las extremidades sin fusiones/duplicaciones visibles | **Sí en lo visible**; las traseras plegadas impiden contar todos los apoyos. | **Sí en lo visible**, mismo límite. | **Sí en lo visible**, mismo límite. | **Sí en lo visible**, mismo límite. |
+| Mano con cinco dedos individualmente contables | **No verificable completo** por superposición/escorzo. | **No verificable completo** | **No verificable completo** | **No verificable completo** |
+
+### Identidad, geometría, estética y alt/pie — segundo ciclo
+
+| Comprobación | v5 | v6 | v7 | v8 |
+|---|---|---|---|---|
+| Bodeguero tricolor, perfil derecho y antifaz visibles | **Sí** | **Sí** | **Sí** | **Sí** |
+| Collar gris con chapa lisa, orejas con punta plegada | **Sí** | **Sí** | **Sí** | **Sí** |
+| Cola larga/fina | **Parcial**, una porción visible. | **Sí**, extensión visible junto a grupo trasero. | **Sí**, contorno visible. | **Sí**, curva junto a cuartos traseros. |
+| Misma identidad en tres escenas | **No comprobada**, escenas 2/3 no generadas. | **No comprobada** | **No comprobada** | **No comprobada** |
+| Cabeza hacia derecha, boca cerrada, sin jadeo | **Sí** | **Sí** | **Sí** | **Sí** |
+| Persiana bajada derecha, franjas rojas y amarillas/reflejos | **Sí** | **Sí** | **Sí** | **Sí** |
+| Cama entre cama matrimonial/armario; profundidad hacia ventana | **Sí**, suelo libre y ventana al fondo; distancia no medible exactamente. | **Sí**, misma lectura. | **Sí**, misma lectura. | **Sí**, misma lectura. |
+| Mano granate desde abajo/derecha, plana, sin contacto ni tapar perro | **Sí** | **Sí** | **Sí** | **Sí** |
+| Mano a unos 20 cm | **No medible con precisión** en perspectiva. | **No medible con precisión** | **No medible con precisión** | **No medible con precisión** |
+| Lámpara fuera de campo y ambiente menos cálido | **Sí**, relleno más frío y sin lámpara visible. | **Sí** | **Sí**, con franjas amarillas localizadas. | **Sí**, sin lámpara visible, tonos cálidos localizados. |
+| Textura documental de tela, pelo y madera; sin aspecto plástico evidente | **Sí** | **Sí** | **Sí** | **Sí** |
+| Grano fino inequívoco, separado de la textura de objetos | **No verificable con claridad** | **No verificable con claridad** | **No verificable con claridad** | **No verificable con claridad** |
+| Cero texto/logos en objetos | **Sí a simple inspección**, sin inscripción discernible. | **Sí a simple inspección** | **No**, posibles caracteres grabados en el juguete; se rechaza conservadoramente. | **Sí a simple inspección**, juguete sin caracteres discernibles. |
+| Agua y juguete relleno junto al perro | **Sí** | **Sí** | **Sí** | **No completo**: agua y juguete sí, relleno no visible. |
+| Sin fuegos visibles, humo, persona completa o riesgo eléctrico al alcance | **Sí** | **Sí** | **Sí** | **Sí** |
+| Alt/pie completos sostenidos por la imagen | **No**, edad completa sin acreditar. | **No**, mismo motivo. | **No**, mismo motivo. | **No**, edad completa y relleno del juguete sin acreditar. |
+
+Estos son juicios de producción sobre el archivo grande y su reducción real, no un certificado clínico ni una auditoría independiente. Se conserva el criterio conservador: no afirmar que se ven los rasgos que no se distinguen y no asignar una ruta pública final a un descarte.
+
+## Estado de integración tras el segundo ciclo
+
+Hay ocho PNG originales, ocho reducciones a 390 px y las entradas de generación versionadas. **Cero WebP finales y cero llamadas para imágenes 2/3.** Se mantienen pendientes build y pruebas Playwright de la integración final con tres imágenes, CLS, desbordamiento, tablas y avisos. No se ha alterado ningún archivo de src ni se ha instalado Playwright de nuevo.
+
+Artículo, brief y testimonios siguen idénticos a los hashes iniciales. La entrega de redacción permanece intacta: no se actualiza su apartado de recursos para afirmar que existen binarios finales cuando no existen.
+
+## Decisión ahora pendiente
+
+Se ha agotado el segundo ciclo autorizado; no se hace un noveno intento por inercia. Se propone que el propietario abra las v7/v8 y decida si el criterio de edad corporal debe seguir exigiéndose íntegramente a 390 px en esta postura recogida o si autoriza ajustar el encuadre/postura para hacerlo comprobable. Cualquier relajación de criterios, aceptación de candidata o nuevo ciclo requiere su decisión explícita. El conjunto de tres finales sigue sin estar listo para auditoría visual independiente.
