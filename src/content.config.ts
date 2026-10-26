@@ -25,6 +25,7 @@ const blog = defineCollection({
     keywordPrincipal: z.string().optional(),
     heroImage: z.string().optional(),
     heroImageAlt: z.string().optional(),
+    heroImageCaption: z.string().optional(),
     legacyUrl: z.string().optional(),
     status: z.string().default('Publicado'),
     datePublished: z.string().default('2025-10-01'),
