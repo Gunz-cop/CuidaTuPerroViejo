@@ -198,6 +198,15 @@ Las tres rutas están bajo `/images/blog/miedo-petardos-perros-mayores/`. No se 
 
 El 2026-10-25, a petición del propietario, un agente independiente auditó los temas de fondo y bloqueantes. Veredicto: **APTO con reservas; 0 P0 y 0 P1 sustantivos**. Informe completo: [auditoria-articulo-r1.md](auditoria-articulo-r1.md).
 
-El agente no exige correcciones de fondo ni otra ronda. Se cierra el ciclo en R1 de las tres máximas autorizadas; no se consumen R2 ni R3. El borrador evaluado permanece sin cambios, SHA-256 `f0c0a6e62f4de7f448f53721fac3794e6528c12c19e35682a31096e05bfbddf9`.
+El agente no exige correcciones de fondo ni otra ronda. Se cierra el ciclo en R1 de las tres máximas autorizadas; no se consumen R2 ni R3. La versión evaluada en R1 tenía el SHA-256 `f0c0a6e62f4de7f448f53721fac3794e6528c12c19e35682a31096e05bfbddf9`.
 
-Este resultado corresponde al texto, no a una autorización de publicación. Se conservan los pendientes de imágenes, prueba visual y contrastes documentales detallados en el informe. La observación sobre notas de procedencia en la bibliografía se registra como no bloqueante y fuera del alcance de pulido solicitado.
+Este resultado corresponde al texto, no a una autorización de publicación. Se conservan los pendientes de imágenes, prueba visual y contrastes documentales detallados en el informe. El auditor registró la observación sobre notas de procedencia en la bibliografía como no bloqueante. Tras el reparo del propietario, se corrige el 2026-10-26 como se detalla a continuación; el informe R1 se conserva como evidencia de su versión.
+
+
+## Corrección de la bibliografía — 2026-10-26
+
+Se retiran las referencias al brief y a tareas internas pendientes de las cuatro entradas señaladas por el propietario. Se conserva el alcance real de la documentación: ficha y resumen en Blackwell, resumen del preprint en Riemer, ficha británica en dexmedetomidina y cobertura secundaria con guía original no localizada en Málaga. No se da por completada ninguna verificación pendiente.
+
+La corrección afecta únicamente al bloque bibliográfico excluido del recuento. El artículo conserva **5.653 palabras** y `tono.py` da **0 muletillas, 0,0/1.000**. No cambian el cuerpo, los testimonios, las citas, la fecha elegida ni la estructura. Los pendientes documentales y visuales anteriores siguen registrados en esta entrega.
+
+SHA-256 del borrador tras la corrección: `be591c192711985ba11ad5a660c24d9c25490fe080a2b195449a9781cf4867fb`. La auditoría R1 corresponde al hash anterior; no se modifica su informe ni se presenta esta comprobación de redacción como una nueva auditoría independiente. El build aprobado documentado arriba se ejecutó sobre la versión anterior a esta corrección de texto; no se repite por estas cuatro sustituciones sin cambios de sintaxis MDX.
