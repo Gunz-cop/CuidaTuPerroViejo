@@ -2,7 +2,7 @@
   "fecha": "2026-10-26",
   "branch": "claude/imagenes-miedo-petardos-perros-mayores",
   "base": "486d55f",
-  "estado": "Corrección de R1: portada original v10 (WebP v2), paseo v8 y consulta v1 conservados. Pendiente R2 independiente.",
+  "estado": "R2: tres imágenes APTO; integración NO APTO por contraste. Corrección CSS y prueba sin redondeo completas, pendiente R3 final independiente.",
   "imagenes_2_y_3": "Generadas usando portada v9 como referencia de identidad. Paseo v8 y consulta v1 seleccionadas.",
   "reference_image_paths": [],
   "generaciones": [
@@ -333,8 +333,9 @@
     "fecha": "2026-10-26",
     "respuesta_propietario": "Autorizo",
     "pregunta_previa": "¿Prefieres revisar esas candidatas o autorizar un cambio de encuadre/postura que permita comprobar mejor el dorso?",
-    "alcance": "Cambio de encuadre/postura de portada; límite de cuatro comunicado al iniciar el turno; usada v9 y no consumidas v10–v12",
-    "seleccion_portada": 9
+    "alcance": "Cambio de encuadre/postura de portada; hasta cuatro intentos v9–v12. Consumidos v9 y v10 (este último como corrección de R1); v11–v12 no consumidos.",
+    "seleccion_portada": 10,
+    "seleccion_portada_anterior_r1": 9
   },
   "paseo": {
     "estado": "v8 seleccionada por el productor tras segundo ciclo autorizado",
@@ -368,5 +369,12 @@
     "paseo_sin_cambios": true,
     "consulta_sin_cambios": true,
     "ronda_siguiente": "R2 visual"
+  },
+  "correccion_r2": {
+    "cambio": "opacity .8 solo rótulos móviles compactos",
+    "imagenes_sin_cambios": true,
+    "mdx_sin_cambios": true,
+    "ronda_siguiente": "R3 visual final",
+    "medicion_contraste": "correccion-r2/contraste.json"
   }
 }

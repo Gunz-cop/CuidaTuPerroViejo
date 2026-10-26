@@ -28,7 +28,7 @@ const { label, compacta = false } = Astro.props;
     .content-body .tabla-apilable[data-compacta] td:first-child { font-weight:700; padding-top:.5rem; }
     .content-body .tabla-apilable[data-compacta] td:first-child::before { display:none; }
     .content-body .tabla-apilable[data-compacta] td:last-child { padding-bottom:.5rem; }
-    .content-body .tabla-apilable[data-compacta] td[data-label]::before { content:attr(data-label) ": "; display:inline; letter-spacing:normal; text-transform:none; margin-bottom:0; }
+    .content-body .tabla-apilable[data-compacta] td[data-label]::before { content:attr(data-label) ": "; display:inline; letter-spacing:normal; text-transform:none; margin-bottom:0; opacity:.8; }
     .content-body .tabla-apilable[data-compacta] td[data-label-corto]::before { content:attr(data-label-corto) ": "; }
     .content-body .tabla-apilable[data-compacta] td[data-label]:first-child::before { display:none; }
   }

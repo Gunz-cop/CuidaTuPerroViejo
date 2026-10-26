@@ -8,6 +8,22 @@ Fecha: 2026-10-26. Rama: `claude/imagenes-miedo-petardos-perros-mayores`, desde 
 
 **Historial de los dos primeros ciclos:** producción detenida tras ocho versiones de portada no seleccionadas, dos ciclos autorizados de cuatro intentos. Se aplica el límite expreso del encargo: «Máximo 4 versiones por imagen; si a la cuarta sigue fallando, detente y pide decisión». El segundo ciclo fue autorizado por el propietario el 2026-10-26 con «Autorizar adenda y cuatro intentos» y comprende v5–v8. En esos dos primeros ciclos no se generaron las imágenes 2 y 3: el proceso exigía una primera imagen seleccionada como referencia de identidad. No se emite auditoría independiente ni se declara aprobado el conjunto.
 
+## Corrección de R2 lista para R3 final — 2026-10-26
+
+**R2 independiente: imágenes APTO; conjunto NO APTO por un único P1 de contraste.** [Informe inmutable](auditoria-visual-r2.md). Los tres hallazgos de R1 están cerrados. La prueba anterior del productor mostraba 4,50:1 porque redondeaba antes de decidir; el dato exacto confirmado por el auditor es **4,49765014952612:1**, inferior al mínimo4,5. Se conserva aquella evidencia histórica y se corrige el método en la prueba nueva.
+
+Único cambio de producción posterior a R2: `opacity:.8` en `.content-body .tabla-apilable[data-compacta] td[data-label]::before`, dentro del media query móvil. Sin cambios en imágenes, MDX, texto, cifras, tamaño de letra, alturas, otras tablas ni fallback del pie. El comprobador de [correccion-r2](correccion-r2/) conserva el ratio continuo sin redondeo para comparar contra4,5.
+
+`npx astro build` correcto; copia temporal retirada. Playwright de nuevo a390/1366 claro/oscuro, 32capturas nuevas. Tres imágenes decodificadas por modo, scrollWidth390/1366, CLS0 y ningún error JS. Alturas idénticas: calendario777,53125/488,5625; encuesta889,921875/650,34375 (móvil/escritorio, mismos valores en ambos temas). Se abrieron personalmente calendario móvil claro y encuesta móvil claro/oscuro y escritorio claro para comprobar el resultado de la corrección. No se afirma haber abierto individualmente las32capturas nuevas.
+
+| Contraste sin redondear | Móvil claro | Móvil oscuro | Escritorio claro | Escritorio oscuro |
+|---|---:|---:|---:|---:|
+| Mínimo de rótulos compactos | 5,1243417398846445 | 7,320617352599585 | No visibles | No visibles |
+| Mínimo total de los elementos medidos | 4,504492059318877 | 5,516990353269591 | 4,504492059318877 | 5,516990353269591 |
+| Elementos por debajo de4,5 | 0 | 0 | 0 | 0 |
+
+[Datos completos de contraste](correccion-r2/contraste.json), [navegador](correccion-r2/verificacion-navegador.json), [capturas](correccion-r2/capturas/), [build](correccion-r2/build.log). Se mantienen los límites de prueba estática:404 del backend de feedback, sin prueba de producción ni despliegue. Se solicita al auditor **R3, última ronda autorizada**; el productor no emite aprobación. Si no pasa, se detendrá sin una cuarta auditoría.
+
 ## Correcciones de R1 listas para R2 — 2026-10-26
 
 El propietario autorizó corregir y repetir auditoría hasta un máximo de tres rondas totales. R1 permanece intacta; esta es producción correctora, pendiente de R2 independiente. Portada original **v10**, WebP **v2**; paseo v8 y consulta v1 permanecen sin cambios. No se recupera el paseo v6 de tres zapatos.
