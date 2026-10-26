@@ -6,7 +6,8 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 ## Contenido
 
-- [ ] **Publicar P1-03 (miedo a los petardos).** Integración preparada el 2026-10-26; PR de código y artículo pendientes de abrir. Mantener «NO publicado» hasta fusión autorizada y comprobación pública; pasos en `docs/contenido/miedo-petardos-perros-mayores/entrega-publicacion.md`.
+- [x] **Preparar P1-03 para publicación.** Traslado mecánico, recursos activos, limpieza y pruebas completados el 2026-10-26; [código #148](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/148) y [artículo #149](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/149), abiertos como draft. No publicado.
+- [ ] **Fusionar y verificar P1-03 en producción.** Revisión independiente breve del diff y orden expresa del propietario; código → artículo. Mantener «NO publicado» hasta comprobar la URL pública, recursos, enlaces y JSON-LD; pasos en `docs/contenido/miedo-petardos-perros-mayores/entrega-publicacion.md`.
 - [ ] **Volumen de las skills: criterio de 5.000–6.000 palabras.** Pendiente de decisión/editorial y ajuste de las skills sin relleno; no se modifican en esta integración. El contrato particular de petardos sigue siendo 5.300–6.000. (2026-10-26)
 - [ ] **Base ES-06 del inventario: enlace roto.** Sustituir la referencia de Barcelona declarada 404 por una fuente vigente; no se inventa ni cambia en este PR. (2026-10-26)
 - [ ] **Reconciliar al redactar el brief de feromonas.** La comprobación de integración de 2026-10-26 no encuentra contradicción entre tabla 2/FAQ 4 de petardos (percepciones de encuesta) y «moderada solo en miedo a tormentas» en ansiedad por separación y el brief; queda pendiente trasladar esa distinción a la futura redacción de feromonas, sin modificar ahora su brief.

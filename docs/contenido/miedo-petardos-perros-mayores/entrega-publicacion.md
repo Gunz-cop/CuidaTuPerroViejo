@@ -25,7 +25,7 @@ Los apartados anteriores registran la elección de base **antes de abrir los PR*
 | Orden | PR | Base y estado |
 |---|---|---|
 | 1 | [Código #148](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/148), `claude/codigo-heroimagecaption-tablaapilable-compacta` | `main`; commit `625ef8a`; exactamente tres archivos compartidos; draft. |
-| 2 | Artículo: pendiente de abrir al cerrar las comprobaciones; `claude/publica-miedo-petardos-perros-mayores` | Base apilada en la rama de código para excluir esos tres archivos del diff editorial; draft. |
+| 2 | [Artículo #149](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/149), `claude/publica-miedo-petardos-perros-mayores` | Base apilada en la rama de código para excluir esos tres archivos del diff editorial; draft. |
 
 Revisar primero el código. Tras su fusión **ordenada por el propietario**, cambiar la base del PR editorial a main y actualizar/rebasar la rama si lo requiere la estrategia de fusión; volver a revisar el diff y CI. No se fusiona ninguna rama, no se abre un PR de fusión de las ramas históricas y no se habilita autofusión.
 
@@ -141,6 +141,13 @@ Tabla 2 y FAQ 4 distinguen encuesta de ensayos y no contradicen «moderada solo 
 
 ## Cierre de comprobaciones antes de abrir el PR editorial
 
-Código #148: CI remoto **SUCCESS**, commit625ef8a, [ejecución40302973256](https://github.com/Gunz-cop/CuidaTuPerroViejo/actions/runs/40302973256). El check final del candidato editorial da211 archivos,0 errores,0 warnings y74 hints. Se repitieron build, proyección/guarda y navegador tras cerrar los dos puentes entre pilares; las36 capturas son idénticas a las de la primera ejecución y los valores se mantienen. Se conserva la inspección real de las nueve capturas declaradas por identidad de bytes.
+Código #148: CI remoto **SUCCESS**, commit `625ef8a`, [ejecución 40302973256](https://github.com/Gunz-cop/CuidaTuPerroViejo/actions/runs/40302973256). El check final del candidato editorial da 211 archivos, 0 errores, 0 warnings y 74 hints. Se repitieron build, proyección/guarda y navegador tras cerrar los dos puentes entre pilares; las 36 capturas son idénticas a las de la primera ejecución y los valores se mantienen. Se conserva la inspección real de las nueve capturas declaradas por identidad de bytes.
 
 Como main no contenía el borrador, GitHub mostrará el MDX de destino como archivo añadido; la igualdad de hash acredita el traslado desde la rama documental. No se interpreta la ausencia de un rename en el diff como redacción nueva.
+
+
+## PR abiertos: cierre de esta sesión
+
+Ambos permanecen abiertos y draft, sin fusionar: **#148 código → main; #149 artículo → rama de código**. El primero contiene solo los tres archivos permitidos; el segundo no los incluye en su diff. Primer commit de integración editorial: `2894178` (146 archivos, 9.799.374 bytes físicos de los archivos del candidato, incluidas las modificaciones de documentación). Este cierre posterior solo actualiza referencias a PR y estados documentales, no el producto probado.
+
+CI remoto del código: SUCCESS registrado. El CI del PR editorial se lanza al abrir/sincronizar el PR; consultar su estado vigente en GitHub. No se presenta la ausencia de un estado registrado como prueba superada. La entrega conserva todas las comprobaciones locales y el checklist post-fusión. No hay autorización implícita de publicación.
