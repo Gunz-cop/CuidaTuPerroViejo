@@ -2,11 +2,11 @@
 
 **Sitio:** cuidatuperroviejo.com | **Pilar:** Salud Mental y Emocional | **Tipo:** Artículo spoke Astro/MDX | **Serie:** versión latinoamericana de P1-03 (código **LA-01**)
 
-**Estado:** v2 del 2026-10-26. R1 **NO APTO** (0 P0, 5 P1, 4 P2, 8 P3; informe `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r1.md`); todo corregido en esta versión (qué y cómo: `docs/contenido/miedo-polvora-perros-mayores/correccion-r1.md`). Pendiente de R2. No redactar hasta un APTO o APTO con reservas. No fusionar ni desplegar sin orden del propietario.
+**Estado:** v3 del 2026-10-26. R1 **NO APTO** (5 P1) corregida en v2; R2 **NO APTO** (0 P0, 1 P1, 4 P2, 13 P3; informe `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r2.md`) corregida en esta versión (`correccion-r2.md`). Pendiente de **R3, la última ronda**: si falla, se detiene y se revisa con el propietario. No redactar hasta un APTO o APTO con reservas. No fusionar ni desplegar sin orden del propietario.
 
 **Seis decisiones de esta versión que el propietario debe conocer:**
 
-1. **Es otro artículo, no una traducción.** El de España (`/salud-mental-emocional-perros/miedo-petardos-perros-mayores`) responde a «petardos en un piso español». Este responde a **«pólvora en el barrio el 24 y el 31, en una casa con patio, con la familia de visita y una ley que cambia por país»**. En la v2 el esqueleto también es distinto: los H2 siguen el recorrido de la casa (barrio → patio → cuarto → perro que no se levanta → consulta → noches → cuartos donde se esconden → portón → ley → enero), no el del artículo de España. Comparación H2, H3 y FAQ en §2 y §9.5.
+1. **Es otro artículo, no una traducción.** El de España (`/salud-mental-emocional-perros/miedo-petardos-perros-mayores`) responde a «petardos en un piso español». Este responde a **«pólvora en el barrio el 24 y el 31, en una casa con patio, con la familia de visita y una ley que cambia por país»**. En la v2 el esqueleto también es distinto: los H2 siguen el recorrido de la casa (barrio → patio → cuarto → perro que no se levanta → consulta → noches → cuartos donde se esconden → portón → ley → enero), no el del artículo de España. Comparación de temas en §2; la tabla de H3 y FAQ frente a España la rellena el auditor del artículo (§9.5).
 2. **Keyword «pólvora».** «Petardos» no aparece en H1, slug, seoTitle, meta ni H2.
 3. **Testimonios:** Osa y Baltor (reservados para esta versión, decisión del propietario del 2026-10-25). De Luna, **solo** que sus sustos incluyen temblores y terremotos (lo único que el artículo de España no contó). **Dakota no aparece**: todo lo suyo ya está publicado.
 4. **Nuevo H2 a propuesta del propietario (2026-10-26): el perro mayor que ya no puede levantarse.** El propietario señaló que nadie explica qué hacer con un perro inmóvil esas noches. No hay estudios sobre miedo al ruido en perros que no caminan (búsqueda del 2026-10-26): es **guía sin caso**, con criterio editorial declarado. Si un compañero del propietario autoriza contar el caso de su perro, entra como testimonio aportado; si no, la sección no lo necesita (§2).
@@ -28,7 +28,7 @@
 | Intención principal | Urgente-estacional: «se viene diciembre, mi perro mayor sufre con la pólvora; ¿dónde lo pongo, qué le pido a la veterinaria y qué hago esas dos noches?» |
 | Intención secundaria | Práctica y local: el perro de patio, el que ya no se levanta, qué dice la ley en mi país, qué hago si se sale por el portón |
 | Objetivo global | **5.700 palabras** (suelo 5.300, techo 6.000), preferencia del propietario (2026-10-25) y diez decisiones distintas (§6) |
-| Fecha brief | 2026-10-26 (v2) |
+| Fecha brief | 2026-10-26 (v3) |
 | Ventana editorial | Idealmente antes del **20 de noviembre de 2026**, para dejar unas dos semanas para la consulta antes de que empiece la pólvora de diciembre (en Bogotá, el formulario de reportes de 2025 se abrió el 7 de diciembre, S8). Si sale más tarde, «en noviembre» pasa a «cuanto antes» |
 
 Conteos con Python (2026-10-26): seoTitle 55; meta 156.
@@ -57,7 +57,7 @@ datePublished: "{{FECHA_DE_PUBLICACION_AAAA-MM-DD}}"
 **Tipo:** **experiencia aportada (a) + guía**, con un H2 de **guía sin caso** (H2-4). Los testimonios son **recuerdos, no casos clínicos**, y nunca prueban que un método funcione. Reserva Luna/Dakota activada por el propietario para este tema (2026-10-25); Dakota y Jaspe no se usan.
 
 **Testimonios (único origen: `docs/contenido/miedo-petardos-perros-mayores/testimonios-propietario.md`), con la incertidumbre del archivo:**
-- **Osa** (El Salvador, perra de la familia de un tío del propietario): perros que vivían en el patio («el perro tiene que estar en el patio»); el 24 y el 31 casi no se oía a la gente, solo fiesta y pólvora; buscaban entrar: si se abría la puerta, entraban corriendo, a los cuartos, bajo la cama o al armario, y no se los podía agarrar; para sacarlos había que jalarlos, a veces los regañaban y alguna vez les echaron agua; lloraban. Una noche, **durante una cena (sin fecha)**, alguien abrió la puerta para tirar algo a la basura y Osa se metió bajo la mesa del comedor y no quiso salir: «un miedo terrible». En el patio, al principio ladraban y después se metían bajo la pila (el lavadero) u otro sitio. **No recuerda con seguridad si se escapaban; cree que a veces, al abrir el portón, salían disparados, y que una vez salieron y fueron a esconderse, no a morder.** Nunca se lastimaron. Osa era **muy brava: si salía a la calle podía morder a alguien** (el archivo no dice que mordiera por miedo). **Sin edad ni desenlace: no es «perra mayor».** Impresión del propietario (hipótesis suya): el conjunto de tantos sonidos es lo que los ahuyenta.
+- **Osa** (El Salvador, perra de la familia de un tío del propietario): perros que vivían en el patio («el perro tiene que estar en el patio»); el 24 y el 31 casi no se oía a la gente, solo fiesta y pólvora; buscaban entrar: si se abría la puerta, entraban corriendo, a los cuartos, bajo la cama o al armario, y no se los podía agarrar; para sacarlos había que jalarlos, a veces los regañaban y alguna vez les echaron agua; lloraban. Una noche, **durante una cena (sin fecha)**, alguien abrió la puerta para tirar algo a la basura y Osa se metió bajo la mesa del comedor y no quiso salir: «un miedo terrible». En el patio, al principio ladraban y después se metían bajo la pila (el lavadero) u otro sitio. **No recuerda con seguridad si se escapaban; cree que a veces, al abrir el portón, salían disparados, y que una vez salieron y fueron a esconderse, no a morder.** Nunca se lastimaron. Osa era **muy brava: si salía a la calle podía morder a alguien** (frase del archivo; no dice que mordiera por miedo). **Sin edad ni desenlace: no es «perra mayor».** Impresión del propietario (hipótesis suya): el conjunto de tantos sonidos es lo que los ahuyenta.
 - **Baltor** (El Salvador, perro de un vecino del apartamento de arriba): vivía dentro; los días de pólvora **no salía de las habitaciones**; aunque le abrieran la puerta de la casa, no huía, se quedaba dentro; **una vez** se orinó o se defecó (el propietario no recuerda cuál) por el miedo; la chow chow muy enérgica que llegó después solía molestarlo, y aun así los días de pólvora **los dos se escondían**. Duda del propietario: si el piso de arriba se oía más. **No decir que estaba «quieto» ni que se orinara de forma habitual.**
 - **Luna** (beagle, 2015, Costa Rica): solo el hecho nuevo: **sus sustos no son solo la pólvora, también temblores, terremotos y choques**, y en esos momentos busca a la familia. Lo de alzarla y que se calme con él ya está publicado en España: no se repite.
 - **No se usan:** Dakota (todo ya contado en España), la perra de unos vecinos y la hipótesis «buscan un lugar menos ruidoso» (publicadas en España).
@@ -137,17 +137,17 @@ Regla 1 de la [guía de voz y tono](../.agents/skills/references/guia-voz-tono.m
 - *Afirmaciones:* el 52 % al menos en parte afectado; casi tres cuartas partes recuperadas a la mañana siguiente, 10 % hasta un día, 12 % hasta una semana, más del 3 % semanas o meses; en la Discusión, la prevalencia sube con la edad **en perros sanos hasta los 10 años y baja desde los 11; en perros con problemas de salud, hasta los 8 y baja desde los 9**; la autora lo atribuye, como hipótesis, a la pérdida de oído.
 - *H2:* 1 y 10. *Límites:* encuesta internacional cuya lista de países incluye México y España; no presentarla como latinoamericana. Mantener el matiz sanos/con problemas de salud.
 
-**S7. IDPYBA, Alcaldía de Bogotá. «En Bogotá van 1.900 animales atendidos por afectaciones con pólvora» (diciembre de 2024; la página no muestra la fecha: se deduce de la ruta y del contenido).** https://bogota.gov.co/mi-ciudad/ambiente/en-bogota-van-1900-animales-atendidos-por-afectaciones-con-polvora
+**S7. IDPYBA, Alcaldía de Bogotá. «En Bogotá van 1.900 animales atendidos por afectaciones con pólvora» (7 de diciembre de 2024, fecha visible bajo el titular; la R1 dijo lo contrario por error).** https://bogota.gov.co/mi-ciudad/ambiente/en-bogota-van-1900-animales-atendidos-por-afectaciones-con-polvora
 - *Afirmaciones:* 1.901 animales presuntamente afectados por pólvora entre noviembre de 2022 y noviembre de 2024 (702 de compañía y 1.199 silvestres), según **reportes ciudadanos en una encuesta que «no constituye una denuncia»**; recomendaciones: refugio, cortinas cerradas, música, juguetes, actividad física antes, puertas, ventanas y balcones cerrados, correa y arnés; también feromonas y esencias florales.
 - *H2:* 1 y 10. *Límites:* titular «atendidos» frente a texto «reportes»: usar «reportados» o «presuntamente afectados». No usar la frase de los picos del 24 y 31 de 2024. Bogotá no es Latinoamérica.
 
 **S8. Alcaldía de Bogotá. Reportes de afectación de animales por pólvora del 24 y 25 de diciembre de 2025 (publicado el 25 de diciembre de 2025).** https://bogota.gov.co/en/node/282673
 - *Afirmaciones:* 115 reportes ciudadanos el 24 y 25 de diciembre de 2025; perros 74 %; gatos y aves 23 %; miedo y estrés 31 %, huida y desorientación 21 %, contaminación 18 %; formulario abierto desde el 7 de diciembre, 730 respuestas; campaña «La Pólvora Explota Mis Sentidos».
-- *H2:* 1, 8 y 9. *Límites:* reportes voluntarios de una ciudad; porcentajes de los reportes.
+- *H2:* 1, 8 y 9. *Límites:* reportes voluntarios de una ciudad. La base de los porcentajes es ambigua (el subtítulo los liga a los casos de las dos noches; el cuerpo habla de respuestas acumuladas): escribir «según la nota», sin afirmar que sean de los 115.
 
 **S9. Colegio de Médicos Veterinarios de Costa Rica (COLVET), según El Delfino (10 de diciembre de 2024).** https://delfino.cr/2024/12/recomendaciones-para-tranquilizar-a-sus-mascotas-durante-la-pirotecnia-de-navidad-y-fin-de-ano
-- *Afirmaciones (atribuidas):* pasear y dejar olfatear antes; refugio tipo cueva dentro de la casa, con cama o transportín y frazadas que sirvan de aislante ante ruidos, luces y destellos; música; placa con nombre y teléfono; consultar según edad, temperamento y enfermedades previas (Dra. Silvia Coto, presidenta). **CBD:** la nota lo presenta como un recurso útil y seguro, **pero solo con indicación veterinaria y no recomendable en pacientes con problemas hepáticos** (Dr. Daniel Meza).
-- *H2:* 3, 5, 6, 8 y 10. *Límites:* nota de prensa. **No dar a entender que el COLVET desaconseja el CBD**; tampoco presentarlo como recomendado por el sitio.
+- *Afirmaciones (atribuidas):* pasear y dejar olfatear antes; refugio tipo cueva dentro de la casa, con cama o transportín y frazadas que sirvan de aislante ante ruidos, luces y destellos; música; placa con nombre y teléfono; consultar según edad, temperamento y enfermedades previas (Dra. Silvia Coto, presidenta). **CBD:** el comunicado del COLVET pide que los productos a base de cáñamo como el CBD **solo se den con indicación veterinaria**; un veterinario citado en la nota (Dr. Daniel Meza Ramírez, énfasis en analgesia y anestesia) lo describe como un recurso y dice que **no es recomendable en pacientes con problemas hepáticos**. La nota añade que en Costa Rica aún no hay suficiente regulación.
+- *H2:* 3, 5, 6, 8 y 10. *Límites:* nota de prensa. **Atribuir bien:** «solo con indicación» = COLVET; «recurso» y «no recomendable con problemas de hígado» = Dr. Meza. No dar a entender que el COLVET lo desaconseja ni que el sitio lo recomienda.
 
 **S10. COLVET, según Teletica (17 de diciembre de 2022).** https://www.teletica.com/mascoticas/consejos-para-calmar-a-su-mascota-ante-el-ruido-de-la-polvora_325734
 - *Afirmaciones (atribuidas):* los costarricenses celebran diciembre e inicios de enero con juegos pirotécnicos; el pánico puede generar problemas **en el control de esfínteres** o actitudes agresivas; lugar oscuro y seguro tipo cueva; cerrar cortinas, puertas y ventanas; masticables; música; «reconforte y vigile»; **nunca acepromazina**, porque «solo actúa sobre la función motora»; collar con datos de contacto; averiguar los horarios de la pólvora.
@@ -163,7 +163,7 @@ Regla 1 de la [guía de voz y tono](../.agents/skills/references/guia-voz-tono.m
 
 **S13. Colombia. Ley 670 de 2001, texto de la Secretaría del Senado.** http://www.secretariasenado.gov.co/senado/basedoc/ley_0670_2001.html
 - *Afirmaciones:* art. 4: los alcaldes **pueden permitir** el uso y la distribución de pirotecnia con las condiciones de seguridad que fijen las autoridades o los bomberos; art. 7: prohíbe la venta a menores de edad y a personas en estado de embriaguez; el art. 15 fue modificado por la Ley 2224 de 2022.
-- *H2:* 9. *Límites:* la Ley 670 protege a los niños y no menciona a los animales; el art. 4 tiene notas de jurisprudencia y vigencia que no se revisaron: no detallar categorías.
+- *H2:* 9. *Límites:* la Ley 670 protege a los niños y no menciona a los animales; los apartes del art. 4 se declararon exequibles (C-790-02, comprobado por la R2); no detallar categorías, que la Ley 2224 redefine en su art. 4.
 
 **S14. Colombia. Ley 2224 de 2022 (30 de junio de 2022), texto de la Secretaría del Senado.** http://www.secretariasenado.gov.co/senado/basedoc/ley_2224_2022.html
 - *Leído:* arts. 1 a 11 (2026-10-26).
@@ -173,13 +173,14 @@ Regla 1 de la [guía de voz y tono](../.agents/skills/references/guia-voz-tono.m
 ### Cobertura, lagunas y límites
 
 1. **No hay estudios latinoamericanos de prevalencia.** Lo regional son reportes de Bogotá y recomendaciones colegiales y universitarias. Decirlo una vez.
-2. **No hay estudios sobre miedo al ruido en perros que no pueden caminar** (búsqueda del 2026-10-26: los estudios disponibles son de perros que se mueven). H2-4 es criterio editorial apoyado en principios generales (S2, S4, S5) y en lo que el sitio ya publica sobre perros postrados (úlceras por presión). Decirlo en el H2.
+2. **No hay estudios sobre miedo al ruido en perros que no pueden caminar.** Búsquedas del 2026-10-26: buscador web general con «non-ambulatory recumbent dog noise phobia fireworks fear management study» (solo estudios de perros que se mueven) y PubMed con `(fireworks OR noise) AND (fear OR phobia OR sensitivity) AND dog* AND (recumbent OR non-ambulatory OR paraplegi* OR immobile)` (1 resultado, sin relación: toxicidad por meperidina, PMID 20712614) y `(fireworks OR noise phobia) AND dog* AND (geriatric OR senior) AND (mobility OR recumbent)` (0 resultados). H2-4 es criterio editorial apoyado en principios generales (S2, S4, S5) y en lo que el sitio ya publica sobre perros postrados (úlceras por presión, cambios de postura) y sobre el riesgo de aspiración al comer (alimentación sin dientes). Decirlo en el H2.
 3. **Leyes:** solo Chile y Colombia. México, Costa Rica, El Salvador, Argentina, Perú y el resto **no se verificaron**.
 4. **Fármacos:** disponibilidad por país no verificada; no se nombran fármacos aprobados.
 5. **Microchip:** obligatoriedad por país no verificada; placa con teléfono como mínimo (S9, S10).
 6. **Calor:** criterio editorial (estaciones), sin cifras.
 7. **Techo de lámina:** no afirmar que amplifique el ruido; «escucha dónde se oye menos».
-8. **Descartadas:** cifras de audición y «20 % de perros perdidos» (S11), «parálisis» de la UAS, «problemas cardíacos» e «infartos» (S10), feromonas y esencias florales de prensa generalista, Ley 19.680 (copia no oficial).
+9. **CBD:** su legalidad y regulación varían por país y no se verificaron; la propia S9 dice que en Costa Rica aún no hay suficiente regulación.
+10. **Descartadas:** cifras de audición y «20 % de perros perdidos» (S11), «parálisis» de la UAS, «problemas cardíacos» e «infartos» (S10), feromonas y esencias florales de prensa generalista, Ley 19.680 (copia no oficial).
 
 ## 4. REQUISITOS TÉCNICOS DE ASTRO Y MDX
 
@@ -214,6 +215,7 @@ Regla 1 de la [guía de voz y tono](../.agents/skills/references/guia-voz-tono.m
 | Cruzado | chequeo geriátrico | `/salud-perros-mayores/chequeo-geriatrico-canino` | H2-5 |
 | Cruzado | cómo dar medicación a tu perro | `/cuidados-paliativos-perros/como-dar-medicacion-perro` | H2-5, junto al aviso |
 | Cruzado | cama ortopédica | `/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis` | H2-4 (colchoneta del perro que no se levanta) |
+| Cruzado | cómo alimentar a un perro mayor sin dientes | `/alimentacion-perros-senior/alimentacion-perros-mayores-sin-dientes` | H2-4, a propósito de darle agua y comida sin riesgo de aspiración (el artículo cita el Manual Merck y avisa de no dar comida ni agua a la fuerza) |
 
 No se enlaza `prevencion-caidas-perro-mayor` (lo usa España). **Pendientes sin URL:** feromonas (`[~]`), P1-14, P1-15: no se enlazan ni se anuncian.
 
@@ -251,7 +253,7 @@ Objetivo: que cada lector sepa en dos segundos si está en su versión, sin que 
 
 > **Target total: 5.700 (suelo 5.300; techo 6.000).** Cuentan títulos de H2 y H3, avisos con título, la tabla y el FAQ con preguntas. ±10 % por sección; el suelo global manda. Si no se llega sin relleno, **parar y consultar**; si se pasa, **recortar**.
 
-Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 600 + 500 = **5.700**.
+Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 560 + 540 = **5.700**.
 
 **Matriz fuente → H2 (única; idéntica en §3 y §9.2):** S1: H2-1 · S2: H2-4 · S3: H2-5, H2-10 · S4: H2-4, H2-6, H2-10 · S5: H2-2, H2-3, H2-4, H2-5, H2-10 · S6: H2-1, H2-10 · S7: H2-1, H2-10 · S8: H2-1, H2-8, H2-9 · S9: H2-3, H2-5, H2-6, H2-8, H2-10 · S10: H2-3, H2-5, H2-6, H2-7 · S11: H2-2, H2-6, H2-7, H2-10 · S12: H2-9 · S13: H2-9 · S14: H2-9.
 
@@ -268,7 +270,7 @@ Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 600 + 500 = **
 * **(Opción A del §5.2) Tarjeta de versiones**, si existe; no cuenta para el total.
 * **`AlertBox` (`info`):**
     ```mdx
-    <AlertBox type="info" title="No es mañas ni falta de carácter">
+    <AlertBox type="info" title="No son mañas ni falta de carácter">
       Un perro que tiembla, aúlla o se mete bajo la cama con la pólvora tiene miedo de verdad. No se le quita regañándolo ni dejándolo afuera para que «se acostumbre». Se prepara, y esta guía te dice cómo.
     </AlertBox>
     ```
@@ -282,7 +284,7 @@ Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 600 + 500 = **
 * `### Pólvora de vecinos, no de espectáculo` (≈170)
     * Criterio editorial descriptivo: la pólvora de barrio se revienta en la calle, en el patio de al lado o en la azotea, a horas que nadie anuncia, y a menudo empieza días antes. No suena igual en todos los países ni en todos los barrios: el lector mide el suyo (¿cuántos días hubo ruido el diciembre pasado?). Sin testimonio de Dakota.
 * `### Lo que reportó la gente en Bogotá` (≈190)
-    * S8: el 24 y 25 de diciembre de 2025, 115 reportes ciudadanos de animales afectados; 74 % perros; lo más reportado, miedo y estrés (31 %) y huida y desorientación (21 %). S7: 1.901 animales presuntamente afectados entre noviembre de 2022 y noviembre de 2024 (702 de compañía). Límite en la misma frase: reportes voluntarios de una ciudad, no un estudio. Lectura: además del miedo, lo que más preocupa es la huida → H2-2 y H2-8.
+    * S8: el 24 y 25 de diciembre de 2025, 115 reportes ciudadanos de animales afectados; según la nota, 74 % eran perros y lo más reportado fue miedo y estrés (31 %) y huida y desorientación (21 %), sin afirmar que los porcentajes sean de esos 115. S7: 1.901 animales presuntamente afectados entre noviembre de 2022 y noviembre de 2024 (702 de compañía). Límite en la misma frase: reportes voluntarios de una ciudad, no un estudio. Lectura: además del miedo, lo que más preocupa es la huida → H2-2 y H2-8.
 * `### La edad, en dos datos` (≈140)
     * S1 (una frase): el miedo a los fuegos artificiales fue el miedo a un ruido más frecuente en 13.700 perros finlandeses y la sensibilidad al ruido aumentó con la edad. S6 (una frase, con su matiz): en perros sanos aumenta hasta los 10 años y baja desde los 11; con problemas de salud, hasta los 8 y baja desde los 9; la autora sospecha la pérdida de oído. Datos de otros países. El dolor va a H2-5.
 
@@ -300,7 +302,7 @@ Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 600 + 500 = **
 * `### Cómo hacerlo entrar sin jalarlo` (≈140)
     * S5: zona segura condicionada antes y de la que pueda entrar y salir. Pasos (criterio editorial): días antes, dejarlo entrar a ratos al cuarto elegido con comida o su cama; el día, invitarlo a entrar **antes** del ruido, con comida y sin arrastrarlo (imagen 2); cerrar portón y puerta del patio. Si se metió solo bajo una cama o una mesa, ese es su refugio esa noche: se le deja.
 * `### Si es bravo` (≈50)
-    * Osa era brava con la gente de la calle; el archivo no dice que mordiera por miedo. Un perro en pánico puede morder a quien lo saca: entrarlo antes del ruido, no meter la mano bajo la mesa. Si muerde al manipularlo, hablarlo con la veterinaria (dolor): enlace a `agresividad-tardia-perros-mayores-dolor`.
+    * Osa era muy brava: si salía a la calle podía morder a alguien (el archivo no dice que mordiera por miedo). Un perro en pánico puede morder a quien lo saca: entrarlo antes del ruido, no meter la mano bajo la mesa. Si muerde al manipularlo, hablarlo con la veterinaria (dolor): enlace a `agresividad-tardia-perros-mayores-dolor`.
 
 ---
 
@@ -308,12 +310,12 @@ Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 600 + 500 = **
 * *Sustentado en:* S5, S9, S10.
 * *Decisión:* **¿en qué cuarto y con qué la armo?**
 
-* `### El cuarto donde menos se oye` (≈150)
+* `### El cuarto donde menos se oye` (≈160)
     * S10: lugar oscuro tipo cueva; cortinas, puertas y ventanas cerradas. El cuarto más interior, sin ventana a la calle; si hay uno con techo de concreto o cielorraso, probar si se oye menos («escucha dónde se oye menos»; laguna 7). Ventanas de celosía: cerrarlas y correr una cortina gruesa.
-* `### Una mesa, una sábana y su frazada` (≈140)
+* `### Una mesa, una sábana y su frazada` (≈150)
     * S9: cama o transportín con frazadas que aíslen de ruidos, luces y destellos; S5: que pueda entrar y salir y la conozca de antes. Idea: una mesa con una sábana por tres lados y el frente abierto (la portada). Agua y un juguete conocido; sin amarrarlo ni cerrar el transportín.
-* `### Cerrado no es caliente` (≈130)
-    * En el Cono Sur diciembre es verano y en buena parte del trópico hace calor; un cuarto cerrado se calienta. Ventilador de techo, o de pie fuera de su alcance y sin cables por el suelo; agua fresca; si jadea, revisar si es calor. Enlace a golpe de calor aclarando que es la guía general. Criterio editorial.
+* `### Cerrado no es caliente` (≈140)
+    * En el Cono Sur diciembre es verano y en buena parte del trópico hace calor; un cuarto cerrado se calienta. Ventilador de techo, o de pie fuera de su alcance y sin cables por el suelo; agua fresca; si jadea, revisar si es calor. En zonas altas (Bogotá, Ciudad de México, Quito, tierras altas de Centroamérica) las noches de diciembre son frescas: una frazada más. Enlace a golpe de calor aclarando que es la guía general. Criterio editorial.
 * *(La cama baja para articulaciones se trata en H2-4; aquí no se repite.)*
 
 ---
@@ -325,10 +327,12 @@ Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 600 + 500 = **
 
 * `### Tú eliges el sitio por él` (≈150)
     * S5 pide una zona segura de la que el perro pueda entrar y salir; un perro que no se levanta no puede elegir ni alejarse: la familia decide por él y **antes** del ruido, porque moverlo en pleno estruendo puede asustarlo más (criterio editorial). Criterio para elegir: el lugar donde suele estar tranquilo, lejos de ventanas a la calle, sin calor acumulado.
+    * **Cómo moverlo (pauta clínica general, no evidencia sobre ruido):** como lo haya enseñado la veterinaria; si no lo ha hecho, pedir una demostración en la consulta de noviembre. Entre dos personas o sobre una manta firme usada como camilla, sin arrastrarlo; con cuidado si se queja o intenta morder (un perro con dolor o asustado puede hacerlo). Remitir al apartado de cambios de postura de `ulceras-presion-perros`, que ya da esta pauta. Moverlo una vez, de día, y no durante la pólvora.
 * `### ¿Con la familia o en un cuarto aparte?` (≈130)
     * No hay una respuesta única (decirlo). Si se calma con su gente, que esté con la familia, en un rincón sin paso de visitas; si el ruido de la cena lo altera, un cuarto tranquilo con alguien que entre a verlo a menudo. Observar cómo reaccionó en otras reuniones. Nunca solo toda la noche.
 * `### Lo que no puede hacer por sí mismo` (≈140)
-    * Cambiar de postura (cambiarlo de lado según lo que ya indicó la veterinaria; enlace a `ulceras-presion-perros`), alejarse del calor (ventilador, sin taparlo de más), llegar al agua (ofrecérsela), salir a orinar (empapadores; colchoneta firme: enlace a `cama-ortopedica-perros-mayores-displasia-artrosis`). S4: si come, un masticable o comida durante el ruido.
+    * Pautas clínicas generales, declaradas como tales (no hay evidencia sobre miedo al ruido en perros postrados): cambiar de postura según lo que ya indicó la veterinaria (enlace a `ulceras-presion-perros`); alejarse del calor (ventilador, sin taparlo de más; en zonas altas, una frazada si refresca); orinar (empapadores; colchoneta firme: enlace a `cama-ortopedica-perros-mayores-displasia-artrosis`).
+    * **Agua y comida, solo de forma segura:** con el perro **incorporado de pecho, nunca tumbado de lado**, en poca cantidad, con alguien a su lado y según lo que ya haya indicado la veterinaria; si tose o le cuesta tragar, parar y consultar. Nunca a la fuerza. Enlace a `alimentacion-perros-mayores-sin-dientes` (riesgo de aspiración). **Sin masticables nuevos:** S4 (comida durante los fuegos) es una encuesta de perros que se mueven; en este perro, como mucho, lo que ya come habitualmente en esa postura y siempre vigilado.
 * `### Cómo saber si tiene miedo si no puede esconderse` (≈100)
     * S2: en Año Nuevo lo que más cambió fueron las orejas hacia atrás y el jadeo (también el movimiento, que en él no cuenta). Mirar eso, el llanto y si deja de comer; jadear también puede ser calor o dolor → la veterinaria (remisión al aviso de H2-7).
     * Cierre con tacto: si cada diciembre lo pasa peor y ya no se levanta, es momento de hablar de su calidad de vida con la veterinaria; enlace a la calculadora de calidad de vida y al pilar de cuidados paliativos. **Sin abrir la decisión de eutanasia ni mencionar el caso del compañero.**
@@ -344,13 +348,13 @@ Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 600 + 500 = **
 * `### Un miedo que aparece de mayor` (≈120)
     * S3 en 2–3 frases propias: en una serie de 20 perros, los que tenían dolor de músculos o articulaciones empezaron con el miedo años más tarde, y los autores piden revisar el dolor. Pedir exploración: enlace a `chequeo-geriatrico-canino`; otras posibilidades por criterio clínico: `disfuncion-cognitiva-canina`.
 * `### Acepromazina y CBD: lo que dicen los colegios` (≈150)
-    * S5: plan inmediato y de fondo; en algunos países hay medicamentos aprobados para el miedo al ruido y tu veterinaria sabe cuáles hay donde vives. **Acepromazina:** S10, «nunca», porque solo actúa sobre la función motora y el perro sigue oyendo y sintiendo miedo; S5 dice lo mismo. **CBD:** S9: el COLVET lo menciona como recurso, pero solo con indicación veterinaria y no en perros con problemas de hígado.
+    * S5: plan inmediato y de fondo; en algunos países hay medicamentos aprobados para el miedo al ruido y tu veterinaria sabe cuáles hay donde vives. **Acepromazina:** S10, «nunca», porque solo actúa sobre la función motora y el perro sigue oyendo y sintiendo miedo; S5 dice lo mismo. **CBD:** S9: en un comunicado del COLVET, que pide darlo solo con indicación veterinaria, un veterinario especialista en analgesia lo describe como un recurso y advierte que no es recomendable en perros con problemas de hígado.
 * `### Pregunta quién atiende el 24 y el 31` (≈50)
     * Anotar la clínica de guardia de esas noches (criterio editorial). Enlace a `como-dar-medicacion-perro` si le recetan algo.
 * **`AlertBox` (`warning`):**
     ```mdx
     <AlertBox type="warning" title="Ni pastillas de la casa ni «algo para que duerma»">
-      No le des calmantes de personas, restos de otros tratamientos ni gotas compradas sin receta. La acepromazina lo deja quieto pero no le quita el miedo, y en un perro mayor cualquier medicamento puede chocar con el corazón, el riñón o el hígado.
+      Nada del botiquín de la familia, ni sobras de tratamientos viejos, ni gotas compradas sin receta. La acepromazina lo deja quieto pero sigue asustado, y en un perro mayor cualquier fármaco puede afectar al corazón, al riñón o al hígado. Que lo decida la veterinaria tras revisarlo.
     </AlertBox>
     ```
 
@@ -360,11 +364,11 @@ Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 600 + 500 = **
 * *Sustentado en:* S4, S9, S10, S11.
 * *Decisión:* **¿cómo organizo esas dos noches con visitas, cena y niños?**
 
-* `### Antes de que lleguen los invitados` (≈140)
+* `### Antes de que lleguen los invitados` (≈160)
     * S9: paseo corto con olfateo; comer antes; S10: averiguar con los vecinos a qué horas suele empezar; entrarlo del patio (remisión a H2-2); portón cerrado; placa puesta (remisión a H2-8).
-* `### Seis acuerdos para la familia` (≈170)
+* `### Seis acuerdos para la familia` (≈190)
     * Lista numerada: quién abre la puerta y la cierra detrás; los invitados saben que el perro no sale; nadie revienta pólvora en el patio ni cerca (S11: no fomentarla); música o televisión en su cuarto (S10, S11); masticable o comida si los acepta (S4: lo único del manejo asociado a mejoría según los dueños); alguien con calma lo visita (S10: «reconforte y vigile»; S11: mantener la calma). Remisión de una frase: tocarlo o hablarle no se asoció con mejoría en la encuesta de dueños (S4); si busca a su gente, acompañarlo.
-* `### A la mañana siguiente, los restos` (≈120)
+* `### A la mañana siguiente, los restos` (≈130)
     * S11: algunos perros podrían querer jugar con la pirotecnia. Recorrer el patio y la acera antes de sacarlo y recoger restos (criterio editorial); si mordió o tragó restos, al aviso de H2-7.
 
 ---
@@ -378,11 +382,11 @@ Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 600 + 500 = **
 * `### Cuando se orina o se hace del miedo` (≈110)
     * S10: el COLVET cita problemas en el control de esfínteres y actitudes agresivas entre los efectos del pánico. No regañar; limpiar después. Si los escapes siguen días después o ya los tenía: enlace a `incontinencia-urinaria-perros-mayores`. Si solo pasa cuando se queda solo, es otra cosa: `ansiedad-separacion-perros-senior` (una frase).
 * `### Luna y los temblores` (≈80)
-    * En casa, en Costa Rica, Luna no se asusta solo con la pólvora: también con temblores, terremotos y choques, y entonces busca a la familia. Lectura: hay perros que se esconden y perros que buscan a su gente; los dos están asustados. Sin repetir alzarla ni que se calme.
+    * En casa, en Costa Rica, Luna, aunque suele estar tranquila, cuando se asusta no es solo por la pólvora: también con temblores, terremotos y choques, y entonces busca a la familia. Lectura: hay perros que se esconden y perros que buscan a su gente; los dos están asustados. Sin repetir alzarla ni que se calme.
 * `### Cuándo ir a urgencias` (≈60) + **`AlertBox` (`danger`)**:
     ```mdx
     <AlertBox type="danger" title="Busca una veterinaria de urgencia si...">
-      Le cuesta respirar o el jadeo no cede cuando termina el ruido, tiene las encías muy pálidas o azuladas, se desmaya o se queda desorientado, se lastimó al intentar salir o mordió o tragó restos de pólvora. Averigua antes del 24 cuál atiende esas noches.
+      Respira con dificultad o sigue jadeando mucho cuando ya paró la pólvora, sus encías se ven blancas o moradas, se desploma o no reconoce dónde está, volvió herido de la calle, o mordisqueó o se tragó restos de cohetes. Ten anotada la veterinaria de guardia del 24 y el 31.
     </AlertBox>
     ```
     *(«Restos de pólvora» se apoya en S11; criterio editorial para la urgencia.)*
@@ -395,10 +399,10 @@ Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 600 + 500 = **
 
 * `### La placa, puesta desde la tarde` (≈120)
     * S9: placa con nombre y teléfono; un número que conteste esas noches; microchip recomendable, sin afirmar obligación (laguna 5); una foto reciente en el teléfono. **Imagen 3 aquí.**
-* `### Dónde buscar en el barrio` (≈170)
-    * S8: la huida y la desorientación fueron el segundo efecto más reportado en Bogotá. Patios vecinos, bajo vehículos, lotes baldíos, bajo pilas y escaleras, rincones oscuros. Avisar en el grupo de vecinos y en las veterinarias del barrio; llevar su comida y su frazada; no perseguirlo si corre. Criterio editorial.
-* `### Al amanecer` (≈70)
-    * Volver a recorrer la zona cuando hay menos ruido y publicar con foto en grupos locales (criterio editorial).
+* `### La ruta del portón al lote baldío` (≈170)
+    * S8: la huida y la desorientación fueron el segundo efecto más reportado en Bogotá. Partir de lo propio del barrio (criterio editorial): por dónde salió (el portón, la reja), los escondites que un perro de patio conoce (debajo de pilas y escaleras, lotes baldíos, zanjas, la parte trasera de las casas vecinas); mensaje con foto en el grupo de WhatsApp de la cuadra; llamada a las veterinarias del barrio. Si lo ves, agáchate, háblale bajito y deja que venga él. **No reproducir** la secuencia del artículo de España (coches, patios de vecinos, premio y manta, no perseguir).
+* `### Cuando baja la pólvora` (≈70)
+    * Muchos perros escondidos salen cuando el ruido para: volver a pasar por la ruta a esa hora y al amanecer del 25 o del 1 (criterio editorial).
 
 ---
 
@@ -410,47 +414,49 @@ Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 600 + 500 = **
     * Chile (S12): la Ley 21.310 de 2021 sanciona tener, fabricar, vender y usar fuegos artificiales **sin autorización** → el uso particular sin autorización está sancionado; dónde denunciar, «a la policía o la autoridad local» (sin nombrar cuerpos).
     * Colombia (S13, S14): la Ley 670 de 2001 deja a cada alcaldía permitir la pólvora con condiciones y prohíbe venderla a menores; la Ley 2224 de 2022 regula su uso y venta en todo el país, prevé multas en su reglamentación y obliga a cada municipio a hacer pedagogía que explique sus impactos sobre las personas, **los animales** y el ambiente → busca el decreto de tu alcaldía; en Bogotá hay un formulario para reportar animales afectados (S8).
     * «Otros países»: no verificado; municipalidad, alcaldía o bomberos.
-* `### Cómo averiguarlo donde vives` (≈150)
+* `### Dónde buscar el decreto de tu alcaldía o municipalidad` (≈150)
     * Web de la municipalidad o alcaldía con «pólvora» o «pirotecnia» y el año; bomberos; canales de reporte de animales si existen. No afirmar que ninguna ley no verificada proteja a los perros; de las leídas, solo la Ley 2224 menciona a los animales, y lo hace en la pedagogía obligatoria, no como prohibición.
 * `### Si vives en España` (≈40)
     * Enlace en contexto (§5.2 B), sin repetir su contenido.
 
 ---
 
-### H2-10 — Lo que te van a recomendar y lo que empieza en enero — Target: ~600
+### H2-10 — Lo que te van a recomendar y lo que empieza en enero — Target: ~560
 * *Sustentado en:* S3, S4, S5, S6, S7, S9, S11.
 * *Decisión:* **¿qué consejos valen la pena, cómo sé si se recuperó y qué empiezo para el próximo diciembre?** Formato de la primera parte: **lista «lo que oyes → lo que dicen las fuentes»**, no tabla.
 
 * `### Lo que oyes en diciembre` (≈280)
     * «Déjalo afuera para que se acostumbre» → S11 pide no dejarlo en patios; S5, zona segura dentro.
     * «Dale algo para que duerma» → remisión a H2-5 (acepromazina).
-    * «CBD» → S9: el COLVET lo considera un recurso, solo con indicación veterinaria y no con problemas de hígado.
+    * «CBD» → S9: solo con indicación veterinaria (COLVET); el veterinario citado lo ve como recurso pero no recomendable con problemas de hígado. La regulación del CBD varía por país (laguna 9).
     * «Feromonas y esencias florales» (el IDPYBA las menciona, S7) → S4: entre el 27 % y el 35 % de los dueños las vio eficaces, compatible con placebo según la autora; encuesta, no ensayo; pueden acompañar, no sustituyen la cueva ni la veterinaria. **Sin veredicto sobre ensayos de feromonas** (no contradecir `ansiedad-separacion-perros-senior`).
     * «Ponle grabaciones de cohetes» → S4: los CD de ruidos, 55 % según los dueños (N = 377); se hacen con volumen bajo y guiados (fondo, abajo).
     * «Dale algo rico cada vez que suene» → S4: ese contracondicionamiento durante el ruido, más del 70 % (N = 694).
-* `### Los días después` (≈150)
-    * S6: casi tres cuartas partes se recuperan a la mañana siguiente; 10 % tarda hasta un día, 12 % hasta una semana, más del 3 % semanas o meses (encuesta de dueños). A la veterinaria si sigue escondido, no come, tiene escapes nuevos o rehúye sitios donde oyó la pólvora (S3: 8 de 10 con dolor generalizaron).
-* `### Enero tiene once meses por delante` (≈160)
+* `### Si el 2 de enero sigue escondido` (≈60)
+    * Remisión breve, sin lista: S6 (una frase): la mayoría de los perros de la encuesta se recuperó a la mañana siguiente y una minoría tardó días o más; S3 (una frase): si empieza a evitar el patio o el cuarto donde oyó la pólvora, a la veterinaria. **No repetir** las cuatro cifras ni la lista de signos del artículo de España.
+* `### El perro que no se levanta, después de una noche larga` (≈90)
+    * Criterio clínico general, propio de esta versión: revisar la piel de los apoyos tras una noche en la misma postura (enlace a úlceras ya dado en H2-4, sin repetirlo), que haya bebido (incorporado de pecho), y anotar cómo reaccionó para la próxima consulta.
+* `### Enero tiene once meses por delante` (≈130)
     * S5: desensibilización y contracondicionamiento como plan de fondo (sonido muy bajo asociado a algo que le gusta; subir solo si está tranquilo), mejor con una veterinaria con formación en comportamiento; sin volúmenes ni calendarios. Anotar qué pasó este diciembre para la consulta de noviembre.
 
 ---
 
-### CONCLUSIÓN Y PREGUNTAS FRECUENTES — Target: ~500 (título ≈4 + cierre ≈80 + FAQ ≈416)
+### CONCLUSIÓN Y PREGUNTAS FRECUENTES — Target: ~540 (título ≈4 + cierre ≈80 + FAQ ≈456, preguntas incluidas)
 * *Cierre (≈80):* qué depende de ti (dentro de casa, consulta a tiempo, cueva fresca, placa, portón cerrado) y qué no (la pólvora de los vecinos). Sin promesas. Enlace al pilar.
 * **`FAQ` (8 preguntas, ninguna equivalente a las de España; respuestas de 40–55 palabras):**
     ```mdx
     <FAQ items={[
-      { question: '¿Puedo dejar a mi perro mayor en el patio el 24 y el 31?', answer: 'Mejor no. La UNAM recomienda no dejar a los animales en patios ni terrazas durante la pirotecnia, y en los reportes de Bogotá la huida es uno de los efectos más frecuentes. Entra a tu perro antes de que empiece el ruido, a un cuarto que ya conozca.' },
+      { question: '¿Puedo dejar a mi perro mayor en el patio el 24 y el 31?', answer: 'Mejor no. La UNAM recomienda no dejar a los animales en patios ni terrazas durante la pirotecnia, y en los reportes de Bogotá la huida es uno de los efectos más frecuentes. Entra a tu perro antes de que empiece la pólvora, a un cuarto que ya conozca.' },
       { question: '¿Qué hago si se mete debajo de la cama y no quiere salir?', answer: 'Déjalo ahí. Si encontró un sitio dentro de la casa, ese es su refugio esa noche. No lo jales, no lo regañes y no metas la mano si está muy asustado: puede morder. Cierra las puertas que dan a la calle y quédate cerca con calma.' },
-      { question: 'Mi perro ya no se levanta: ¿dónde lo pongo esas noches?', answer: 'Elige el sitio antes del ruido, donde suele estar tranquilo y lejos de ventanas a la calle. Si se calma con la familia, a su lado; si el bullicio lo altera, en un cuarto tranquilo con visitas frecuentes. Cámbialo de postura, ofrécele agua y vigila el calor.' },
+      { question: 'Mi perro ya no se levanta: ¿dónde lo pongo esas noches?', answer: 'Elige el sitio de día, antes del ruido, y muévelo como te enseñó la veterinaria, sin arrastrarlo. Si se calma con la familia, a su lado; si el bullicio lo altera, en un cuarto tranquilo con visitas frecuentes. Cámbialo de postura y ofrécele agua incorporado de pecho, nunca de lado.' },
       { question: '¿Sirve la acepromazina para la pólvora?', answer: 'No para el miedo. El Colegio de Médicos Veterinarios de Costa Rica y la sociedad europea de etología clínica la desaconsejan: deja al perro quieto, pero sigue oyendo y sintiendo miedo. Si necesita un medicamento, lo decide tu veterinaria después de revisarlo.' },
-      { question: '¿Le puedo dar CBD a mi perro para la pólvora?', answer: 'Solo con indicación veterinaria. El Colegio de Médicos Veterinarios de Costa Rica lo menciona como recurso, pero advierte que no se use sin receta y que no se dé a perros con problemas de hígado. En un perro mayor, que la veterinaria revise antes qué otros medicamentos toma.' },
+      { question: '¿Le puedo dar CBD a mi perro para la pólvora?', answer: 'Solo con indicación veterinaria, como pide el Colegio de Médicos Veterinarios de Costa Rica. Un veterinario citado en su comunicado lo considera un recurso, pero no recomendable en perros con problemas de hígado. Su regulación cambia según el país; en un perro mayor, que la veterinaria revise antes sus otros medicamentos.' },
       { question: '¿Por qué mi perro se orinó del miedo?', answer: 'El pánico puede afectar el control de esfínteres, según el Colegio de Médicos Veterinarios de Costa Rica. No lo regañes; limpia después, cuando esté tranquilo. Si los escapes siguen en los días siguientes o ya los tenía, consúltalo, porque en un perro mayor pueden tener otras causas.' },
-      { question: '¿Dónde reporto un animal afectado por pólvora en Bogotá?', answer: 'La Alcaldía de Bogotá abrió en diciembre de 2025 un formulario para reportar animales afectados por la pólvora, disponible desde el 7 de diciembre. No es una denuncia: sirve para medir el problema. Si tu perro está herido o no respira bien, primero ve a una veterinaria.' },
-      { question: '¿Hace falta ventilador si lo encierro en un cuarto?', answer: 'Si hace calor, conviene. En diciembre, buena parte de la región está en verano o en temporada calurosa, y un cuarto cerrado se calienta. Usa un ventilador fuera de su alcance y sin cables por el suelo, y deja agua fresca. Si jadea mucho, revisa la temperatura.' }
+      { question: '¿Dónde reporto un animal afectado por pólvora en Bogotá?', answer: 'La Alcaldía de Bogotá abrió en diciembre de 2025 un formulario para reportar animales afectados por la pólvora, disponible desde el 7 de diciembre. En 2024, el instituto de protección animal aclaró que su encuesta no constituye una denuncia. Si tu perro está herido o no respira bien, primero ve a una veterinaria.' },
+      { question: '¿Hace falta ventilador si lo encierro en un cuarto?', answer: 'Si hace calor, conviene: un cuarto cerrado se calienta. Usa un ventilador fuera de su alcance y sin cables por el suelo, y deja agua fresca; si jadea mucho, revisa la temperatura. En ciudades altas, donde las noches de diciembre son frescas, lo que puede necesitar es una frazada más.' }
     ]} />
     ```
-    *(Borradores; el redactor ajusta y vuelve a contar. La respuesta de Bogotá se apoya en S7 («no constituye una denuncia») y S8 (fecha de 2025); antes de publicar, comprobar si el formulario de 2026 existe y actualizarla.)*
+    *(Borradores; el redactor ajusta y vuelve a contar. La respuesta de Bogotá se apoya en S8 (formulario de 2025) y S7 (aclaración de 2024 sobre su encuesta); antes de publicar, comprobar si el formulario de 2026 existe y qué dice, y actualizarla.)*
 
 ## 7. POTENCIAL DE AFILIADOS / CONVERSIÓN
 
@@ -462,8 +468,8 @@ Aplicar la [dirección visual editorial](../.agents/skills/references/direccion-
 
 ### Criterio anti-«IA genérica» y diferencia con las imágenes de España
 
-* **Conceptos distintos de España** (refugio con mano y destellos, paseo con doble correa, consulta de dolor): aquí, cueva en un cuarto interior **sin destellos dentro**, el perro que cruza solo del patio a la casa hacia la comida, y la placa en la cocina.
-* **Paleta propia:** cuarto en penumbra con luz de lámpara cálida y la serie del nacimiento al fondo del pasillo; patio en luz rasante de tarde, cemento y lámina; cocina con fluorescente cálido y mantel de plástico.
+* **Conceptos distintos de España** (refugio con mano y destellos, paseo con doble correa, consulta de dolor) **y de la portada de leishmaniosis** (cuidadora ajustando el collar): aquí, cueva en un cuarto interior **sin destellos dentro**, el perro que cruza solo del patio a la casa hacia la comida, y el portón con candado con la placa ya puesta.
+* **Paleta propia:** cuarto en penumbra con luz de lámpara cálida y la serie del nacimiento al fondo del pasillo; patio en luz rasante de tarde, cemento y lámina; portón al atardecer con luz naranja.
 * **Cámara y grano:** reportaje, 28–50 mm, ISO alto con grano fino, sin viñeteado, sin resplandor suave, sin HDR.
 * **Contexto reconocible sin postal:** piso de cerámica, block repellado, silla plástica, nacimiento con musgo, pila, portón de lámina, tendedero, latas con plantas. **Sin sombreros, sarapes, piñatas, banderas ni tópicos.**
 * **Imperfecciones de uso** y **personas reales** con edad, ropa y gesto concretos; manos con cinco dedos.
@@ -472,7 +478,7 @@ Las dos líneas finales de cada prompt son instrucciones para quien genera; no s
 
 ### Razas recientes y elección
 
-Comprobado el 2026-10-26: registro de la dirección visual (podenco, labrador chocolate, golden, cocker, beagle, San Bernardo, dogo argentino, pastor alemán, bóxer, caniche miniatura, schnauzer, teckel, galgo español, setter gordon, mestizo pastor-mastín atigrado, bodeguero andaluz).
+Comprobado el 2026-10-26: registro de la dirección visual (podenco, labrador chocolate, golden, cocker, beagle, San Bernardo, dogo argentino, pastor alemán, bóxer, caniche miniatura, schnauzer, teckel, galgo español, setter gordon, mestizo pastor-mastín atigrado de la leishmaniosis —**publicado** el 2026-10-25, con portada de una cuidadora ajustando el collar—, bodeguero andaluz).
 
 **Elección: mestizo criollo mediano (excepción declarada, requiere aprobación del propietario).** La regla de la dirección visual solo admite repetir por caso, contenido clínico o petición del propietario; el motivo aquí es otro: (1) el perro de patio más reconocible para el lector latinoamericano («zaguate», «aguacatero», «criollo») es un mestizo mediano de pelo corto, y un perro de raza pequeña de apartamento no es creíble en el patio de la imagen 2; (2) tipo, tamaño y color distintos del mestizo de leishmaniosis (canela claro con máscara negra frente a atigrado oscuro grande); (3) la máscara negra hace legibles las canas a tamaño móvil. **Si el propietario no lo aprueba:** chihuahua de pelo corto negro y fuego (sin uso previo en el sitio), con las mismas tres escenas adaptadas a su tamaño. Beagle descartado: el sujeto es ilustrativo y el propietario no pidió retratar a Luna o Dakota.
 
@@ -486,38 +492,39 @@ Comprobado el 2026-10-26: registro de la dirección visual (podenco, labrador ch
 
 ### Ficha por imagen
 
-| Decisión | Imagen 1 — Hero: la cueva en el cuarto interior | Imagen 2 — Del patio a la casa, por su cuenta | Imagen 3 — La placa antes de la noche |
+| Decisión | Imagen 1 — Hero: la cueva en el cuarto interior | Imagen 2 — Del patio a la casa, por su cuenta | Imagen 3 — Portón con candado y placa puesta |
 |---|---|---|---|
-| Función y sección | Refugio interior y miedo moderado acompañado sin forzar; `heroImage`, ancla de H2-3 | Entrar antes del ruido, sin jalarlo; H2-2, `### Cómo hacerlo entrar sin jalarlo` | Placa con teléfono puesta antes; H2-8, `### La placa, puesta desde la tarde` |
-| Entorno | Cuarto interior de una casa de una planta (sin ventana a la calle) | Puerta trasera entre la cocina y el patio de cemento | Cocina de la misma casa |
-| Detalles | Piso de cerámica beige con una junta rota; pared de block repellado verde agua con un desconchado; ropero de madera; por la puerta entreabierta, al fondo del pasillo, la serie de luces del nacimiento | En el patio: pila de cemento, tendedero con ropa, portón de lámina verde cerrado con candado, latas con plantas | Mantel de plástico de cuadros, refrigeradora con imanes sin texto, silla plástica, olla en la cocina de gas |
+| Función y sección | Refugio interior y miedo moderado acompañado sin forzar; `heroImage`, ancla de H2-3 | Entrar antes del ruido, sin jalarlo; H2-2, `### Cómo hacerlo entrar sin jalarlo` | Portón cerrado y placa ya puesta antes de la noche; H2-8, `### La placa, puesta desde la tarde` |
+| Entorno | Cuarto interior de una casa de una planta (sin ventana a la calle) | Puerta trasera entre la cocina y el patio de cemento | Patio de la misma casa, junto al portón, al atardecer |
+| Detalles | Piso de cerámica beige con una junta rota; pared de block repellado verde agua con un desconchado; ropero de madera; por la puerta entreabierta, al fondo del pasillo, la serie de luces del nacimiento | En el patio: pila de cemento, tendedero con ropa, portón de lámina verde cerrado con candado, latas con plantas | Portón de lámina verde con pintura descascarada; candado de latón y cadena; la pila al fondo; serie de luces apagada en la reja de la ventana |
 | Sujeto | Mestizo fijo; **primera imagen, referencia** | Mismo perro; imagen 1 como referencia | Mismo perro; imagen 1 como referencia |
 | Edad visible | Bloque íntegro; echado, cabeza apoyada | Bloque íntegro; caminando | Bloque íntegro; sentado |
-| Miedo | **Moderado:** base de las orejas hacia atrás, cuerpo recogido; mira a la mujer | Ninguno (aún no hay ruido); orejas relajadas | Ninguno; olfatea la mano |
-| Acción y espacio | Mesa de madera con una sábana blanca por los lados izquierdo, derecho y trasero; frente abierto hacia la cámara; el perro echado de pecho sobre una frazada, la cabeza sobre las patas, **mirando hacia la izquierda del encuadre, donde está la mujer**; ella (unos 60 años, pelo canoso recogido, blusa estampada) sentada en una silla plástica blanca **a la izquierda, a más de un metro**, manos en el regazo, sin tocarlo | **Cámara dentro de la cocina, mirando hacia el patio por la puerta trasera abierta:** el perro, sin correa, cruza el umbral **hacia la cámara**; en primer término, a la derecha del encuadre y de espaldas en tres cuartos, el tutor (hombre de unos 35 años, camiseta gris, pantalón de mezclilla) agachado sobre el piso de la cocina, con la mano derecha extendida y un trozo de comida en la palma; el perro camina hacia esa mano | La tutora (unos 55 años, delantal sobre blusa lila, anillo de casada), sentada en la silla plástica e inclinada, engancha con las dos manos la placa a la argolla del collar; el perro sentado frente a ella, **de perfil mirando hacia la izquierda del encuadre**, olfatea su muñeca |
-| Cámara y luz | 35 mm, a la altura del perro, ISO 3200; lámpara de mesa cálida a la izquierda; las luces de colores, pequeñas y nítidas, solo al fondo del pasillo; **sin destellos de pólvora en el cuarto** | 28–35 mm, a la altura del perro, ISO 800; interior en sombra suave y patio en sol rasante de las 5 de la tarde detrás del perro | 50 mm, ISO 1600; fluorescente cálido del techo y ventana lateral derecha |
-| Excluir | Ventana a la calle, destellos o fuegos, humo, persona que toca o jala, cables, velas, texto, perro joven | Correa, jalar, perro arrastrado, persona que bloquea la puerta, pólvora, texto, perro joven | Texto legible en la placa o la refrigeradora, teléfono en pantalla, cuchillos, perro joven |
-| Aceptación (390 px) | Se lee la cueva con salida libre, la mujer a distancia y la penumbra; cinco rasgos | El perro cruza por su cuenta hacia la comida; puerta abierta; patio detrás; cinco rasgos | Se ve qué hacen las manos con la placa; cinco rasgos |
-| Escena segura | Sin cables ni velas a su altura | Portón cerrado al fondo | Sin objetos peligrosos a su alcance |
-| Imagen–pie–alt | «Cueva en el cuarto más interior, con salida libre» | «Entra por su cuenta hacia la comida» | «Placa con teléfono antes de la noche» |
+| Miedo | **Moderado:** base de las orejas hacia atrás, cuerpo recogido; mira a la mujer | Ninguno (aún no hay ruido); orejas relajadas | Ninguno; atento a la mano |
+| Acción y espacio | Mesa de madera con una sábana blanca **solo por el lado derecho y por detrás**; **frente (hacia la cámara) y lado izquierdo abiertos**; el perro echado de pecho sobre una frazada, la cabeza sobre las patas, **mirando hacia la izquierda del encuadre por la abertura lateral, hacia la mujer**; ella (unos 60 años, pelo canoso recogido, blusa estampada) sentada en una silla plástica blanca **a la izquierda, a más de un metro, a la vista del perro**, manos en el regazo, sin tocarlo | **Cámara dentro de la cocina, mirando hacia el patio por la puerta trasera abierta:** el perro, sin correa, cruza el umbral **hacia la cámara**; en primer término, a la derecha del encuadre y de espaldas en tres cuartos, el tutor (hombre de unos 35 años, camiseta gris, pantalón de mezclilla) agachado sobre el piso de la cocina, con la **mano izquierda** (la del lado del perro) extendida y un trozo de comida en la palma; el perro camina hacia esa mano | En primer término, a la derecha, la mano y el antebrazo de una mujer (unos 55 años, manga de blusa lila, anillo de casada) cierran el candado de la cadena del portón; el perro, sentado en el cemento a la izquierda, a un metro del portón y **de tres cuartos mirando hacia la mano**, lleva en el collar rojo la placa redonda ya puesta, que cuelga visible sobre el pecho; **nadie toca el collar** |
+| Cámara y luz | 35 mm, a la altura del perro, ISO 3200; lámpara de mesa cálida a la izquierda; las luces de colores, pequeñas y nítidas, solo al fondo del pasillo; **sin destellos de pólvora en el cuarto** | 28–35 mm, a la altura del perro, ISO 800; interior en sombra suave y patio en sol rasante de las 5 de la tarde detrás del perro | 50 mm, ISO 1600; luz rasante naranja de las 5:30 de la tarde desde la izquierda, sombras largas |
+| Excluir | Ventana a la calle, destellos o fuegos, humo, persona que toca o jala, cables, velas, texto, perro joven | Correa, jalar, perro arrastrado, persona que bloquea la puerta, pólvora, texto, perro joven | Manos en el collar del perro (concepto de otra portada), texto, letras o marcas en la placa o el portón, portón abierto, perro joven |
+| Aceptación (390 px) | Se lee la cueva con salida libre; **la mirada del perro llega a la mujer por la abertura izquierda, sin tela de por medio**; la penumbra; cinco rasgos | El perro cruza por su cuenta hacia la comida; puerta abierta; patio detrás; cinco rasgos | Se lee «portón cerrado con candado» y la placa en el collar; cinco rasgos |
+| Escena segura | Sin cables ni velas a su altura | Portón cerrado al fondo | Portón cerrado; sin herramientas ni objetos cortantes a su alcance |
+| Imagen–pie–alt | «Cueva en el cuarto más interior, con salida libre» | «Entra por su cuenta hacia la comida» | «Portón con candado y placa puesta antes de la noche» |
 
 ### Imagen 1 — Hero: la cueva en el cuarto interior (`heroImage`)
 - **Archivo:** `mestizo-senior-cueva-cuarto-interior-v1.webp`. Originales en `docs/contenido/miedo-polvora-perros-mayores/originales/`.
-- **Prompt:** Imagen editorial para un artículo sobre el miedo a la pólvora en perros mayores en Latinoamérica; debe dejar ver un refugio interior bien preparado y cómo se acompaña a un perro asustado sin forzarlo. **Mestizo criollo, macho de unos 12 años y 16 kg, de pelo corto color canela claro (leonado), con máscara negra en el hocico y alrededor de los ojos, una mancha blanca pequeña en el pecho, orejas semierguidas con la punta doblada hacia delante y cola en hoz poco poblada, sin amputar.** Edad visible, todos estos rasgos a la vez: canas en el hocico, en las cejas y en los párpados (la máscara negra del hocico y de alrededor de los ojos está muy salpicada de gris plateado, y las cejas se ven claras); ojos marrones algo hundidos, con párpados algo caídos y mirada serena (sin velo ni catarata); lomo con la línea dorsal ligeramente hundida tras la cruz, hombros y cuartos traseros con menos masa muscular, costillas y pelvis discretas, sin delgadez extrema; postura natural de perro mayor echado, con la cabeza apoyada sobre las patas delanteras, apoyos prudentes y sin poses atléticas; sin cojera, heridas, costras, calvas, ojos rojos, jadeo extremo ni sufrimiento. Collar de nailon rojo liso con una placa metálica redonda sin texto legible. Cuarto interior de una casa de una planta en un barrio centroamericano, de noche, sin ventanas a la calle: piso de cerámica beige de 30 cm con una junta rota, pared de block repellado pintada verde agua con un desconchado junto al zócalo, un ropero de madera, y una puerta entreabierta al pasillo por la que se ven, al fondo y pequeñas, las luces de colores de la serie de un nacimiento con musgo. En el centro del cuarto, una mesa de madera tiene una sábana blanca de algodón que cuelga hasta el suelo por los lados izquierdo, derecho y trasero y deja el frente abierto hacia la cámara: es una cueva. Dentro, el perro está echado de pecho sobre una frazada de cuadros doblada, con las patas delanteras estiradas y la cabeza apoyada sobre ellas, mirando hacia la izquierda del encuadre; la base de las orejas algo echada hacia atrás, el cuerpo recogido, la boca cerrada, sin temblor. Junto a él, un traste de agua de acero y un hueso de goma. A la izquierda del encuadre, a más de un metro de la mesa, una mujer de unos 60 años, pelo canoso recogido, blusa de algodón estampada y sandalias, sentada en una silla plástica blanca, con las manos en el regazo, mira al perro con calma y no lo toca; se le ve de cuerpo entero, con el rostro en tres cuartos. Cámara a la altura del perro, plano medio-general, objetivo de 35 mm, ISO 3200 con grano fino visible; luz cálida y tenue de una lámpara de mesa fuera de campo a la izquierda, el cuarto en penumbra, sin destellos de pólvora dentro del cuarto; sombras coherentes; texturas de pelo corto, algodón, cerámica y pintura mate; profundidad de campo que mantenga nítidos al perro, la sábana y las manos de la mujer. Acabado documental natural, sin pose publicitaria, sin viñeteado, sin resplandor suave, sin HDR, color de saturación contenida, con pequeñas imperfecciones de uso (una chancleta suelta, el desconchado). Evitar ventanas a la calle, fuegos artificiales, destellos, humo, persona que toca o jala al perro, cables por el suelo, velas, bokeh de bombillas, sombreros, banderas o tópicos, texto, letras o marcas dentro de la imagen y perro de aspecto joven. *Instrucciones para quien genera, sin pintarlas:* ilustración generada, no representa a un paciente. **Rechazar si a tamaño móvil parece un adulto joven.**
+- **Prompt:** Imagen editorial para un artículo sobre el miedo a la pólvora en perros mayores en Latinoamérica; debe dejar ver un refugio interior bien preparado y cómo se acompaña a un perro asustado sin forzarlo. **Mestizo criollo, macho de unos 12 años y 16 kg, de pelo corto color canela claro (leonado), con máscara negra en el hocico y alrededor de los ojos, una mancha blanca pequeña en el pecho, orejas semierguidas con la punta doblada hacia delante y cola en hoz poco poblada, sin amputar.** Edad visible, todos estos rasgos a la vez: canas en el hocico, en las cejas y en los párpados (la máscara negra del hocico y de alrededor de los ojos está muy salpicada de gris plateado, y las cejas se ven claras); ojos marrones algo hundidos, con párpados algo caídos y mirada serena (sin velo ni catarata); lomo con la línea dorsal ligeramente hundida tras la cruz, hombros y cuartos traseros con menos masa muscular, costillas y pelvis discretas, sin delgadez extrema; postura natural de perro mayor echado, con la cabeza apoyada sobre las patas delanteras, apoyos prudentes y sin poses atléticas; sin cojera, heridas, costras, calvas, ojos rojos, jadeo extremo ni sufrimiento. Collar de nailon rojo liso con una placa metálica redonda sin texto legible. Cuarto interior de una casa de una planta en un barrio centroamericano, de noche, sin ventanas a la calle: piso de cerámica beige de 30 cm con una junta rota, pared de block repellado pintada verde agua con un desconchado junto al zócalo, un ropero de madera, y una puerta entreabierta al pasillo por la que se ven, al fondo y pequeñas, las luces de colores de la serie de un nacimiento con musgo. En el centro del cuarto, una mesa de madera tiene una sábana blanca de algodón que cuelga hasta el suelo solo por el lado derecho y por detrás, y deja abiertos el frente, hacia la cámara, y el lado izquierdo: es una cueva con dos salidas. Dentro, el perro está echado de pecho sobre una frazada de cuadros doblada, con las patas delanteras estiradas y la cabeza apoyada sobre ellas, mirando hacia la izquierda del encuadre a través de la abertura lateral, hacia la mujer, sin tela entre ellos; la base de las orejas algo echada hacia atrás, el cuerpo recogido, la boca cerrada, sin temblor. Junto a él, un traste de agua de acero y un hueso de goma. A la izquierda del encuadre, a más de un metro de la mesa y a la vista del perro, una mujer de unos 60 años, pelo canoso recogido, blusa de algodón estampada y sandalias, sentada en una silla plástica blanca, con las manos en el regazo, mira al perro con calma y no lo toca; se le ve de cuerpo entero, con el rostro en tres cuartos. Cámara a la altura del perro, plano medio-general, objetivo de 35 mm, ISO 3200 con grano fino visible; luz cálida y tenue de una lámpara de mesa fuera de campo a la izquierda, el cuarto en penumbra, sin destellos de pólvora dentro del cuarto; sombras coherentes; texturas de pelo corto, algodón, cerámica y pintura mate; profundidad de campo que mantenga nítidos al perro, la sábana y las manos de la mujer. Acabado documental natural, sin pose publicitaria, sin viñeteado, sin resplandor suave, sin HDR, color de saturación contenida, con pequeñas imperfecciones de uso (una chancleta suelta, el desconchado). Evitar ventanas a la calle, fuegos artificiales, destellos, humo, persona que toca o jala al perro, cables por el suelo, velas, bokeh de bombillas, sombreros, banderas o tópicos, texto, letras o marcas dentro de la imagen y perro de aspecto joven. *Instrucciones para quien genera, sin pintarlas:* ilustración generada, no representa a un paciente. **Rechazar si a tamaño móvil parece un adulto joven.**
 - **Alt (idéntico al frontmatter):** Ilustración de un perro mestizo senior de color canela echado bajo una mesa cubierta con una sábana, en un cuarto en penumbra; una mujer sentada cerca lo acompaña sin tocarlo.
 - **Pie (`heroImageCaption`):** Una cueva en el cuarto más interior de la casa, preparada antes de la noche y con la salida libre.
 
 ### Imagen 2 — Del patio a la casa, por su cuenta (H2-2)
 - **Archivo:** `mestizo-senior-entra-del-patio-v1.webp`.
-- **Prompt:** Imagen editorial para H2-2; debe dejar ver que al perro se le invita a entrar a la casa antes de la pólvora, con comida y sin jalarlo. **El mismo mestizo criollo, macho de unos 12 años y 16 kg, pelo corto canela claro con máscara negra en el hocico y alrededor de los ojos, mancha blanca pequeña en el pecho, orejas semierguidas con la punta doblada hacia delante, cola en hoz poco poblada, tal como en la imagen de referencia.** Edad visible, todos estos rasgos a la vez: canas en el hocico, en las cejas y en los párpados (la máscara negra del hocico y de alrededor de los ojos está muy salpicada de gris plateado, y las cejas se ven claras); ojos marrones algo hundidos, con párpados algo caídos y mirada serena (sin velo ni catarata); lomo con la línea dorsal ligeramente hundida tras la cruz, hombros y cuartos traseros con menos masa muscular, costillas y pelvis discretas, sin delgadez extrema; postura natural de perro mayor caminando, con la cabeza a la altura del lomo o algo baja, apoyos prudentes y sin poses atléticas; sin cojera, heridas, costras, calvas, ojos rojos, jadeo extremo ni sufrimiento. Collar de nailon rojo liso con placa metálica redonda sin texto legible, sin correa. La cámara está dentro de la cocina de una casa de una planta, a la altura del perro, mirando hacia el patio a través de la puerta trasera de metal con reja, abierta de par en par. Afuera, a las 5 de la tarde del 24 de diciembre, con sol bajo: un patio de cemento con una pila de cemento con lavadero, un tendedero con ropa de colores cuyas sombras largas cruzan el suelo, macetas hechas con latas y, al fondo, un portón de lámina pintado de verde, cerrado con candado. El perro cruza el umbral de la puerta caminando hacia la cámara, a su paso, con las orejas relajadas y la cola en posición neutra, mirando la mano del tutor. En primer término, a la derecha del encuadre, de espaldas en tres cuartos, el tutor, un hombre de unos 35 años con camiseta gris y pantalón de mezclilla, está agachado sobre el piso de cerámica de la cocina, con la mano derecha extendida hacia el perro y un trozo de comida en la palma abierta, sin tocarlo; se le ven la espalda, el hombro, el brazo y la mano, no la cara. Objetivo de 28–35 mm, ISO 800, grano fino; interior en sombra suave y patio a contraluz cálido detrás del perro, sombras coherentes; texturas de cemento, lámina, algodón, cerámica y pelo corto. Acabado documental natural, sin viñeteado ni resplandor suave, color de saturación contenida. Evitar correa, perro jalado o arrastrado, persona que bloquea la puerta, pólvora o humo, otros animales, texto, letras o marcas dentro de la imagen y perro de aspecto joven. *Instrucciones para quien genera, sin pintarlas:* ilustración generada, no representa a un paciente. **Rechazar si a tamaño móvil parece un adulto joven.**
+- **Prompt:** Imagen editorial para H2-2; debe dejar ver que al perro se le invita a entrar a la casa antes de la pólvora, con comida y sin jalarlo. **El mismo mestizo criollo, macho de unos 12 años y 16 kg, pelo corto canela claro con máscara negra en el hocico y alrededor de los ojos, mancha blanca pequeña en el pecho, orejas semierguidas con la punta doblada hacia delante, cola en hoz poco poblada, tal como en la imagen de referencia.** Edad visible, todos estos rasgos a la vez: canas en el hocico, en las cejas y en los párpados (la máscara negra del hocico y de alrededor de los ojos está muy salpicada de gris plateado, y las cejas se ven claras); ojos marrones algo hundidos, con párpados algo caídos y mirada serena (sin velo ni catarata); lomo con la línea dorsal ligeramente hundida tras la cruz, hombros y cuartos traseros con menos masa muscular, costillas y pelvis discretas, sin delgadez extrema; postura natural de perro mayor caminando, con la cabeza a la altura del lomo o algo baja, apoyos prudentes y sin poses atléticas; sin cojera, heridas, costras, calvas, ojos rojos, jadeo extremo ni sufrimiento. Collar de nailon rojo liso con placa metálica redonda sin texto legible, sin correa. La cámara está dentro de la cocina de una casa de una planta, a la altura del perro, mirando hacia el patio a través de la puerta trasera de metal con reja, abierta de par en par. Afuera, a las 5 de la tarde del 24 de diciembre, con sol bajo: un patio de cemento con una pila de cemento con lavadero, un tendedero con ropa de colores cuyas sombras largas cruzan el suelo, macetas hechas con latas y, al fondo, un portón de lámina pintado de verde, cerrado con candado. El perro cruza el umbral de la puerta caminando hacia la cámara, a su paso, con las orejas relajadas y la cola en posición neutra, mirando la mano del tutor. En primer término, a la derecha del encuadre, de espaldas en tres cuartos, el tutor, un hombre de unos 35 años con camiseta gris y pantalón de mezclilla, está agachado sobre el piso de cerámica de la cocina, con la mano izquierda, la del lado del perro, extendida hacia él y un trozo de comida en la palma abierta, sin tocarlo; se le ven la espalda, el hombro, el brazo y la mano, no la cara. Objetivo de 28–35 mm, ISO 800, grano fino; interior en sombra suave y patio a contraluz cálido detrás del perro, sombras coherentes; texturas de cemento, lámina, algodón, cerámica y pelo corto. Acabado documental natural, sin viñeteado ni resplandor suave, color de saturación contenida. Evitar correa, perro jalado o arrastrado, persona que bloquea la puerta, pólvora o humo, otros animales, texto, letras o marcas dentro de la imagen y perro de aspecto joven. *Instrucciones para quien genera, sin pintarlas:* ilustración generada, no representa a un paciente. **Rechazar si a tamaño móvil parece un adulto joven.**
 - **Alt:** Ilustración de un perro mestizo senior de color canela que cruza desde el patio la puerta trasera de la casa, hacia un hombre agachado que le ofrece comida en la mano.
 - **Pie:** Invitarlo a entrar con comida, antes de que empiece la pólvora, es más fácil que sacarlo después de debajo de una cama.
 
-### Imagen 3 — La placa antes de la noche (H2-8)
-- **Archivo:** `mestizo-senior-placa-collar-cocina-v1.webp`.
-- **Prompt:** Imagen editorial para H2-8; debe dejar ver que la placa con nombre y teléfono se pone antes de la noche. **El mismo mestizo criollo, macho de unos 12 años y 16 kg, pelo corto canela claro con máscara negra en el hocico y alrededor de los ojos, mancha blanca pequeña en el pecho, orejas semierguidas con la punta doblada hacia delante, cola en hoz poco poblada, tal como en la imagen de referencia.** Edad visible, todos estos rasgos a la vez: canas en el hocico, en las cejas y en los párpados (la máscara negra del hocico y de alrededor de los ojos está muy salpicada de gris plateado, y las cejas se ven claras); ojos marrones algo hundidos, con párpados algo caídos y mirada serena (sin velo ni catarata); lomo con la línea dorsal ligeramente hundida tras la cruz, hombros y cuartos traseros con menos masa muscular, costillas y pelvis discretas, sin delgadez extrema; postura natural de perro mayor sentado, con el cuello relajado, apoyos prudentes y sin poses atléticas; sin cojera, heridas, costras, calvas, ojos rojos, jadeo extremo ni sufrimiento. Cocina de la misma casa, de tarde: mesa con mantel de plástico de cuadros rojos y blancos, refrigeradora blanca con imanes de colores sin texto, cocina de gas con una olla tapada al fondo, silla plástica blanca, piso de cerámica beige. La tutora, mujer de unos 55 años, pelo negro con canas recogido, delantal de tela sobre una blusa lila y anillo de casada, está sentada en la silla e inclinada hacia el perro, y con las dos manos engancha una placa metálica redonda, sin texto legible, a la argolla del collar de nailon rojo. El perro está sentado frente a ella sobre el piso, de perfil mirando hacia la izquierda del encuadre, con el cuello relajado, y olfatea su muñeca. Primer plano medio que deja ver las manos, la placa y la cabeza del perro, objetivo de 50 mm, ISO 1600, grano fino; luz de un tubo fluorescente del techo de tono cálido y luz de ventana lateral desde la derecha; sombras suaves coherentes; texturas de plástico, metal, algodón y pelo corto. Acabado documental natural, sin viñeteado ni resplandor suave, color de saturación contenida. Evitar texto legible en la placa, en la refrigeradora o en cualquier objeto, teléfono con pantalla, cuchillos al alcance, perro tenso y perro de aspecto joven. *Instrucciones para quien genera, sin pintarlas:* ilustración generada, no representa a un paciente. **Rechazar si a tamaño móvil parece un adulto joven.**
-- **Alt:** Ilustración de una mujer que engancha una placa metálica al collar rojo de un perro mestizo senior de color canela, sentado en la cocina.
-- **Pie:** La placa con tu teléfono, puesta antes de la noche: si se escapa, es lo primero que mirará quien lo encuentre.
+### Imagen 3 — Portón con candado y placa puesta (H2-8)
+- **Archivo:** `mestizo-senior-porton-candado-placa-v1.webp`.
+- **Concepto:** distinto de la portada publicada de leishmaniosis (cuidadora ajustando el collar a una mestiza): aquí nadie toca al perro; la mano cierra el portón y la placa ya está puesta.
+- **Prompt:** Imagen editorial para H2-8; debe dejar ver que, antes de la noche, el portón queda cerrado con candado y el perro ya lleva su placa. **El mismo mestizo criollo, macho de unos 12 años y 16 kg, pelo corto canela claro con máscara negra en el hocico y alrededor de los ojos, mancha blanca pequeña en el pecho, orejas semierguidas con la punta doblada hacia delante, cola en hoz poco poblada, tal como en la imagen de referencia.** Edad visible, todos estos rasgos a la vez: canas en el hocico, en las cejas y en los párpados (la máscara negra del hocico y de alrededor de los ojos está muy salpicada de gris plateado, y las cejas se ven claras); ojos marrones algo hundidos, con párpados algo caídos y mirada serena (sin velo ni catarata); lomo con la línea dorsal ligeramente hundida tras la cruz, hombros y cuartos traseros con menos masa muscular, costillas y pelvis discretas, sin delgadez extrema; postura natural de perro mayor sentado, con el cuello relajado, apoyos prudentes y sin poses atléticas; sin cojera, heridas, costras, calvas, ojos rojos, jadeo extremo ni sufrimiento. Collar de nailon rojo liso con una placa metálica redonda, sin texto legible, que cuelga visible sobre el pecho. Patio de cemento de una casa de una planta, a las 5:30 de la tarde del 24 de diciembre: un portón de lámina pintado de verde, con la pintura descascarada en el borde inferior, cerrado; al fondo, una pila de cemento; en la reja de una ventana, una serie de luces navideñas apagada. En primer término, a la derecha del encuadre, la mano izquierda y el antebrazo de una mujer de unos 55 años (manga de blusa lila, anillo de casada) cierran un candado de latón sobre la cadena que une las dos hojas del portón; no se le ve la cara. El perro está sentado sobre el cemento a la izquierda del encuadre, a un metro del portón, de tres cuartos y mirando con calma hacia la mano y el candado; nadie toca al perro ni su collar. Objetivo de 50 mm, a la altura de la cadera de la mujer, ISO 1600 con grano fino; luz rasante naranja de atardecer desde la izquierda, con sombras largas coherentes; texturas de lámina pintada, metal, cemento y pelo corto; profundidad de campo que mantenga nítidos el candado, la placa y la cara del perro. Acabado documental natural, sin viñeteado ni resplandor suave, color de saturación contenida. Evitar manos en el collar o en el perro, portón abierto, texto, letras o marcas dentro de la imagen (en la placa, el portón o cualquier objeto), pólvora o humo y perro de aspecto joven. *Instrucciones para quien genera, sin pintarlas:* ilustración generada, no representa a un paciente. **Rechazar si a tamaño móvil parece un adulto joven.**
+- **Alt:** Ilustración de una mano que cierra con candado un portón de lámina verde mientras un perro mestizo senior de color canela, sentado en el patio, lleva una placa en su collar rojo.
+- **Pie:** Antes de que oscurezca: portón con candado y la placa con tu teléfono ya puesta.
 
 ### Recortes y animaciones
 No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mismo perro postrado contradiría las imágenes 2 y 3 y la regla de no inventar enfermedad; si el propietario quiere una, sería un segundo sujeto con su propia ficha.
@@ -536,7 +543,7 @@ No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mis
 | S4 | Riemer 2020 (encuesta de tratamientos) | H2-4, H2-6, H2-10 | ☐ |
 | S5 | ESVCE 2026 | H2-2, H2-3, H2-4, H2-5, H2-10 | ☐ |
 | S6 | Riemer 2019, *PLOS ONE* | H2-1, H2-10 | ☐ |
-| S7 | IDPYBA Bogotá (dic. 2024) | H2-1, H2-10 | ☐ |
+| S7 | IDPYBA Bogotá (7 dic. 2024) | H2-1, H2-10 | ☐ |
 | S8 | Alcaldía de Bogotá, reportes del 24–25 dic. 2025 | H2-1, H2-8, H2-9 | ☐ |
 | S9 | COLVET según El Delfino (2024) | H2-3, H2-5, H2-6, H2-8, H2-10 | ☐ |
 | S10 | COLVET según Teletica (2022) | H2-3, H2-5, H2-6, H2-7 | ☐ |
@@ -549,14 +556,14 @@ No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mis
 - [ ] 3 `AlertBox`: `info` (introducción), `warning` (H2-5), `danger` (H2-7). Ni más ni repetidos.
 - [ ] 1 `FAQ` con las 8 preguntas del §6.
 - [ ] 1 tabla (H2-9) en `<TablaApilable … compacta>` con `data-label`.
-- [ ] Enlaces del §5.1, incluidos el de la versión de España (H2-9), úlceras, paliativos y la calculadora (H2-4).
+- [ ] Enlaces del §5.1, incluidos el de la versión de España (H2-9), úlceras, alimentación sin dientes, paliativos y la calculadora (H2-4).
 - [ ] 3 imágenes con alt y pie del §8.
 - [ ] Tarjeta de versiones solo si el componente existe en `main`.
 
 **4. Testimonios** (solo del archivo):
 - [ ] Declarados en la introducción como recuerdos, con país.
 - [ ] Reparto del §6: Osa (H2-2), Baltor y Luna (H2-7).
-- [ ] **Osa:** «no recuerdo con seguridad si se escapaban; creo que a veces…»; cena sin fecha; «brava» con la gente de la calle, sin decir que mordiera por miedo; sin edad ni «mayor»; lo de la familia sin juicio ni pauta.
+- [ ] **Osa:** «no recuerdo con seguridad si se escapaban; creo que a veces…»; cena sin fecha; «muy brava; si salía a la calle podía morder a alguien», sin decir que mordiera por miedo; sin edad ni «mayor»; lo de la familia sin juicio ni pauta.
 - [ ] **Baltor:** «no salía de las habitaciones»; «una vez se orinó o se defecó (no recuerdo cuál)»; la chow chow también se escondía; sin «quieto» ni patrón.
 - [ ] **Luna:** solo temblores, terremotos y choques, y que busca a la familia. Sin alzarla ni «se calma».
 - [ ] **Dakota, la perra de unos vecinos y la hipótesis del «lugar menos ruidoso» no aparecen.**
@@ -577,23 +584,24 @@ No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mis
   " src/content/blog/miedo-polvora-perros-mayores.mdx src/content/blog/miedo-petardos-perros-mayores.mdx
   ```
 - [ ] Sin la tabla de Riemer; sin «la mayoría ni se escondía ni vocalizaba»; sin el H3 de consuelo con Luna.
+- [ ] Comprobación adicional de **6 palabras seguidas** (cambiar `n=8` por `n=6` en el script) sobre los `AlertBox`, la FAQ y los H3 de H2-8 y H2-10; ejemplos de paráfrasis ya corregidos en el brief (R2, P2-1): «Cómo averiguar las normas de tu ayuntamiento», «Lo esperable / Lo que debe mirar el veterinario», «Las primeras horas» (coches, patios, premio y manta, no perseguir), el `danger` y el `warning` de España.
 
 **6. Español neutro:** tú y ustedes; ni vosotros ni voseo; sin españolismos («piso» solo como suelo).
 
 **7. Seguridad clínica y editorial (13):**
 1. Sin dosis, pautas ni calendarios; sin nombres de fármacos aprobados ni marcas.
 2. Acepromazina desaconsejada con S10 y S5; no a los calmantes de personas.
-3. CBD: solo lo que dice S9, sin decir que el COLVET lo desaconseja ni que el sitio lo recomienda.
+3. CBD: solo lo que dice S9, con la atribución correcta (COLVET: solo con indicación; Dr. Meza: recurso, no recomendable con problemas de hígado); sin decir que el COLVET lo desaconseja ni que el sitio lo recomienda.
 4. Cifras de S4 y S6 como «según los dueños de la encuesta»; **el 70 % es del contracondicionamiento durante el ruido y el 55 % de los CD de ruidos**.
 5. Bogotá: «reportes» o «presuntamente afectados»; nunca «en Latinoamérica».
 6. Leyes: solo Chile y Colombia, sin penas concretas ni cuantías (como mucho, el rango de 1 a 200 salarios mínimos que la Ley 2224 manda fijar en su reglamentación); el resto «no verificado».
 7. Microchip sin obligatoriedad afirmada.
 8. Sin afirmar que la lámina amplifica el ruido.
-9. No recomendar alzar, jalar, regañar, mojar ni amarrar.
+9. No recomendar alzar, jalar, regañar, mojar ni amarrar. **Excepción:** mover al perro que no se levanta (H2-4), con la técnica que haya enseñado la veterinaria, entre dos personas o con una manta firme y sin arrastrarlo.
 10. No prometer que el miedo desaparezca.
 11. Señales de urgencia en el `danger` junto a su lista.
 12. Sin cifras de audición, «20 % de perros perdidos», «parálisis», «problemas cardíacos» ni «infartos».
-13. H2-4: declarado como criterio editorial sin estudios; sin abrir la decisión de eutanasia.
+13. H2-4: declarado como criterio editorial sin estudios; agua y comida solo incorporado de pecho, en poca cantidad y vigilado; sin masticables nuevos; sin abrir la decisión de eutanasia.
 
 **8. Voz y tono:** `tono.py` ≤3 muletillas por 1.000 (objetivo 0).
 
@@ -601,9 +609,9 @@ No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mis
 
 - [x] Frontmatter completo; `pilar` y `heroImageCaption` válidos.
 - [x] seoTitle 55 y meta 156, contados con Python.
-- [x] 14 fuentes con URL profunda y fecha; verificaciones parciales marcadas (S4, S9, S10, S11); S14 añadida tras R1.
+- [x] 14 fuentes con URL profunda y fecha; verificaciones parciales marcadas (S4, S9, S10, S11); S14 añadida tras R1; atribución del CBD corregida tras R2.
 - [x] Enlaces internos publicados (comprobados en `src/content/blog/` y `src/pages/herramientas/`).
-- [x] Canibalización: H2 en otro orden, H3 y FAQ distintos, tabla manual en §9.5.
+- [x] Canibalización: H2 en otro orden, H3 y FAQ distintos; paráfrasis señaladas por la R2 corregidas; tabla manual de H3 y FAQ pendiente para el auditor del artículo (§9.5).
 - [x] Suma de targets = 5.700.
 - [x] Matriz fuente→H2 idéntica en §3, §6 y §9.2.
 - [x] Raza como excepción declarada, pendiente de aprobación; bloque de edad íntegro con postura.
@@ -616,7 +624,7 @@ No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mis
 | Tabla de leyes | H2-9 | Planificada | Ver a 390 px |
 | Lista «seis acuerdos» | H2-6 | Planificada | Sin fármacos |
 | Lista «lo que oyes» | H2-10 | Planificada | Cada cifra contra S4 |
-| 3 imágenes | Portada, H2-2, H2-8 | Planificadas | 390 px, cinco rasgos, sin destellos en la portada, perro sin correa en la imagen 2, placa sin texto |
+| 3 imágenes | Portada, H2-2, H2-8 | Planificadas | 390 px, cinco rasgos, sin destellos en la portada y mirada por la abertura, perro sin correa en la imagen 2, nadie toca el collar en la imagen 3, placa sin texto |
 | Tarjeta de versiones | Tras la introducción | **Decisión del propietario** | PR aparte; móvil, modo oscuro, lector de pantalla |
 
 - [ ] Decisión del propietario: tarjeta (A/B/C) y raza (mestizo o chihuahua).
@@ -632,3 +640,4 @@ No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mis
 | Ronda | Fecha | Auditor | Veredicto | Hallazgos | Estado |
 |---|---|---|---|---|---|
 | R1 | 2026-10-26 | Agente independiente (sesión distinta) | **NO APTO** | 0 P0, 5 P1 (testimonios ya publicados; Osa y Baltor alterados; diferenciación no real; 70 % mal asignado; Ley 2224 omitida), 4 P2, 8 P3. Informe: `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r1.md` | Corregido el 2026-10-26 en v2 (ver `correccion-r1.md`) |
+| R2 | 2026-10-26 | Agente independiente (sesión distinta) | **NO APTO** | 0 P0, 1 P1 (seguridad del H2-4: aspiración y cómo moverlo), 4 P2 (paráfrasis restantes; atribución del CBD; geometría de la portada; imagen 3 repetía la portada de leishmaniosis), 13 P3. Informe: `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r2.md` | Corregido el 2026-10-26 en v3 (ver `correccion-r2.md`). **Queda la R3, la última** |
