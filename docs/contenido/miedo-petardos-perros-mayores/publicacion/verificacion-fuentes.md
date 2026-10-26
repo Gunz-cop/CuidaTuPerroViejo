@@ -1,5 +1,7 @@
 # Comprobación documental para la integración
 
+**Estado vigente posterior a este registro:** [corroboración S2/S7](corroboracion-s2-s7.md). Blackwell se contrastó después con la transcripción pública del texto publicado; para el medicamento se conserva la fuente primaria británica por decisión delegada del propietario. Las verificaciones parciales que figuran en el registro siguiente describen el estado anterior. No se reescriben los informes de auditoría.
+
 26 de octubre de 2026. Comprobación de acceso y de los pasajes utilizados, sin reauditar el artículo ni cambiar su texto. Se empleó la herramienta de navegación web, además de descargas HTTP con Python y lectura local de PDF; no se deduce accesibilidad pública de un código 200 sin comprobar el contenido. Las búsquedas por sí solas no se consideran lectura del documento.
 
 | Fuente | URL bibliográfica y resultado de esta sesión | Alternativa y límite |

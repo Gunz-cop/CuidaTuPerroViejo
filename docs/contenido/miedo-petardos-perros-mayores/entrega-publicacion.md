@@ -3,6 +3,17 @@
 Fecha: 2026-10-26. Integración y comprobación técnica; no es auditoría ni aprobación editorial. Sin fusión o despliegue.
 
 
+## Estado vigente — corroboración posterior a R1
+
+Por orden del propietario se corroboraron los datos de Blackwell y la ficha del medicamento. **S2 ya no está limitado al resumen:** se leyó y contrastó el texto publicado en la transcripción pública de una copia de tercero, con límites de soporte documentados. **S7 queda respaldado por el documento primario británico**, cuya atribución explícita ya constaba en el artículo; el propietario delegó mantener esa fuente sin exigir una referencia española ornamental. No se declara leída la ficha española ni se modifica el brief.
+
+Se precisan tres atribuciones a Blackwell: grupo de la cuarta parte de respuestas, coexistencia infrecuente con conductas de separación y conductas reconocidas sin identificarlas como miedo. Su bibliografía enlaza la copia consultada. Son cuatro líneas modificadas respecto a `1d1c389`; pasaje farmacológico, recomendaciones, resto del artículo, testimonios, cifras, FAQ, fecha, código e imágenes intactos. Recuento actual **5.659**, tono **0,0/1.000**; check **0 errores / 0 advertencias / 74 hints**, build/proyección correctos y guarda semántica de **37 documentos**.
+
+[Contraste de fuentes y decisión](publicacion/corroboracion-s2-s7.md), [metadatos y resultados](publicacion/corroboracion-s2-s7.json), [lectura independiente del texto publicado](publicacion/blackwell-texto-publicado-independiente.json). Se solicita la revisión independiente **R2 de publicación** de este cambio acotado, sin otra auditoría visual o clínica completa. El resultado se añadirá al cierre. R1 y sus evidencias conservan sus versiones; las reservas citadas en el registro histórico que sigue describen el estado anterior a esta corroboración.
+
+PR #148 y #149 siguen abiertos y draft, sin fusionar. La lectura de la copia no certifica acceso editorial directo al PDF, legitimidad del cargador o gráficos no inspeccionados; el artículo no extrae datos nuevos de esos gráficos. La fuente española conserva su limitación de acceso y deja de ser condición por la decisión posterior expresamente delegada por el propietario. No quedan atribuciones S2/S7 pendientes de respaldo dentro de los pasajes utilizados; la auditoría independiente debe evaluar esa documentación.
+
+
 ## Actualización autorizada — bibliografía y auditoría del diff
 
 El propietario pide «Ok, ajusta y audita» tras los pendientes de publicación. Se sustituye exclusivamente la entrada bibliográfica de Málaga por el comunicado primario, reabierto el 2026-10-26, con su guía gráfica y la cobertura de prensa conservada. El resto del MDX es idéntico. [Prueba exacta del cambio](publicacion/ajuste-bibliografia.json). Los registros de traslado anteriores describen la versión inicial; este ajuste no se oculta como un traslado literal.
@@ -74,8 +85,8 @@ Una copia directa emitía CSS compacto incluso sin activar la prop, cambiando el
 | Proyección | `projection.mjs check`: exit0. Guarda semántica HTML/GFM: **37 documentos**, exit0. El estilo inline no se filtra al Markdown. |
 | Enlaces del cuerpo | **10/10 válidos**: nueve artículos y un pilar, contra fuentes, pilar real e inventario por slug o título; HTTP200 en rutas locales `.html`. |
 | Entradas del silo | Pilar, ansiedad por separación y agresividad tardía enlazan al nuevo artículo en el HTML construido. Dos puentes nuevos con destino real. Sin enlaces a artículos de feromonas o tormentas inexistentes. |
-| Recuento contractual | **5.653 palabras** con el script original y ruta actualizada; incluye H2/H3/tablas/avisos/FAQ y excluye frontmatter/imports/img/pies/bibliografía. |
-| Tono | **0 muletillas, 0,0/1.000**; denominador propio de tono.py:5.167, distinto del contractual. |
+| Recuento contractual actual | **5.659 palabras** con el script original y ruta actualizada; incluye H2/H3/tablas/avisos/FAQ y excluye frontmatter/imports/img/pies/bibliografía. |
+| Tono | **0 muletillas, 0,0/1.000**; denominador propio de tono.py:5.173, distinto del contractual. |
 | JSON-LD | JSON.parse y comprobación estructural de BlogPosting/ImageObject correctos: fecha 2026-10-25, imagen v2,1200×675 y caption editorial. Sin validador público de Google. FAQ HTML comprobada aparte. |
 | Descubrimiento | Artículo en sitemap, índice y documento Markdown. llms mantiene pilar, sitemap e interfaces del catálogo; **no enumera artículos individuales por diseño**. Sin cambiar su generador. |
 
