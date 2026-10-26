@@ -281,6 +281,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [~] *La importancia de una rutina diaria rígida para perros con disfunción cognitiva* (En Briefing — ver `briefings/briefing-rutina-diaria-perros-disfuncion-cognitiva.md`)
 - [~] *Feromonas, fitoterapia y terapias naturales para calmar la ansiedad geriátrica* (En Briefing — ver `briefings/briefing-feromonas-terapias-naturales-ansiedad-perros-mayores.md`)
 - [x] *Agresividad de aparición tardía en perros mayores: cuándo es dolor y cuándo es deterioro cognitivo* (Publicado — 2026-08-15) **[Nuevo - Tema añadido 2026-08-14, no previsto en el catálogo original]**
+- [~] **[LA-01]** *Miedo a la pólvora en perros mayores: cómo cuidarlo el 24 y el 31 de diciembre* (En Briefing — ver `briefings/briefing-miedo-polvora-perros-mayores.md`) **[Nuevo - 2026-10-26: versión latinoamericana de P1-03, con palabra clave, H2 y FAQ propios para no canibalizar el artículo de España]**
 
 ### Pilar 6: Higiene y Hogar para Perros Senior (11 artículos totales propuestos)
 *Estado: 5 artículos implementados y publicados, incluidos ojos/oídos; 6 temas solo en briefing. Publicación de ojos/oídos comprobada en producción el 2026-10-16.*

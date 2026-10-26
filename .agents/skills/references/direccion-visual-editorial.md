@@ -92,6 +92,8 @@ Registro de razas usadas (actualizar al cerrar cada brief):
 | Depresión (brief) | Galgo español |
 | IPE (brief) | Setter gordon |
 | Leishmaniosis (brief, 2026-10-24) | Mestizo de tipo pastor-mastín, atigrado oscuro |
+| Miedo a los petardos, España (publicado, 2026-10-26) | Bodeguero andaluz tricolor |
+| Miedo a la pólvora, Latinoamérica (brief, 2026-10-26) | Mestizo criollo mediano, canela con máscara negra |
 
 ## Revisión de la imagen generada
 
