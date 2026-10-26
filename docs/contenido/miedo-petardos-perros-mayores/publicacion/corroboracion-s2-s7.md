@@ -43,6 +43,8 @@ El acceso español sigue limitado: AEMPS devuelve la ficha del registro europeo;
 
 Método de recuento original: **5.659 palabras**, frente a 5.653 en `1d1c389`; siguen dentro de 5.300–6.000. Tono: **0 muletillas, 0,0/1.000**; denominador de `tono.py`, 5.173. `npx astro check`: 212 archivos, 0 errores, 0 advertencias y 74 hints; build correcto, proyección reproducida y guarda semántica de 37 documentos correctas. El primer build sin permiso de red falló al enumerar interfaces del prerender de Cloudflare; se repitió con el permiso necesario, sin cambios de código o configuración. Resultados y logs en el JSON adjunto. No se repiten las imágenes ni se emite una auditoría visual nueva.
 
-La revisión independiente posterior corresponde a **publicación R2**, sin reiniciar la numeración y sin alterar R1. Los expedientes anteriores describen correctamente las limitaciones de sus versiones; esta corroboración documenta el avance posterior. PR #148 y #149 permanecen sin fusionar y P1-03 sigue NO publicado.
+La revisión independiente **publicación R2** ha concluido: **APTO el ajuste documental, 0 P0/P1/P2 nuevos**, con S2/S7 resueltos para las atribuciones y fuentes elegidas. [Informe R2](../auditoria-publicacion-r2.md). Se conserva la numeración sin alterar R1. Los expedientes anteriores describen correctamente las limitaciones de sus versiones; esta corroboración documenta el avance posterior. PR #148 y #149 permanecen sin fusionar y P1-03 sigue NO publicado.
 
 [Evidencia y hashes del contraste](corroboracion-s2-s7.json). [Lectura independiente del texto publicado](blackwell-texto-publicado-independiente.json).
+
+La formulación más fuerte sobre separación también figuraba en el brief §6, línea 249. Se documenta la precisión conservadora frente a esa formulación; el brief y sus auditorías permanecen intactos. CI del producto `e35073e`: SUCCESS, ejecución 40351805943.
