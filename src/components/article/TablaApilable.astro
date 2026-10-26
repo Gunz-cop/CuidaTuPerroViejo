@@ -1,11 +1,11 @@
 ---
 // Envuelve una tabla del artículo: en escritorio se ve como tabla; por debajo de 640 px cada fila
 // se apila como tarjeta y cada celda muestra su encabezado (data-label), sin scroll horizontal.
-interface Props { label: string; }
-const { label } = Astro.props;
+interface Props { label: string; compacta?: boolean; }
+const { label, compacta = false } = Astro.props;
 ---
 
-<div class="tabla-apilable" role="region" aria-label={label}>
+<div class="tabla-apilable" data-compacta={compacta || undefined} role="region" aria-label={label}>
   <slot />
 </div>
 
@@ -21,5 +21,15 @@ const { label } = Astro.props;
     .tabla-apilable td { display:block; padding:.25rem .9rem; border:0; text-align:left; }
     .tabla-apilable td + td { border-top:1px solid #ece3d4; }
     .tabla-apilable td[data-label]::before { content:attr(data-label); display:block; font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; opacity:.75; margin-bottom:.15rem; }
+    /* Variante voluntaria: la primera celda ya identifica la tarjeta. La
+       especificidad conserva este espaciado frente a .content-body td. */
+    .content-body .tabla-apilable[data-compacta] tbody { gap:.5rem; }
+    .content-body .tabla-apilable[data-compacta] td { padding:.25rem .75rem; }
+    .content-body .tabla-apilable[data-compacta] td:first-child { font-weight:700; padding-top:.5rem; }
+    .content-body .tabla-apilable[data-compacta] td:first-child::before { display:none; }
+    .content-body .tabla-apilable[data-compacta] td:last-child { padding-bottom:.5rem; }
+    .content-body .tabla-apilable[data-compacta] td[data-label]::before { content:attr(data-label) ": "; display:inline; letter-spacing:normal; text-transform:none; margin-bottom:0; }
+    .content-body .tabla-apilable[data-compacta] td[data-label-corto]::before { content:attr(data-label-corto) ": "; }
+    .content-body .tabla-apilable[data-compacta] td[data-label]:first-child::before { display:none; }
   }
 </style>

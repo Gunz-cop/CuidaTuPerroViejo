@@ -4,9 +4,53 @@ Fecha: 2026-10-26. Rama: `claude/imagenes-miedo-petardos-perros-mayores`, desde 
 
 **Resultado posterior de auditoría independiente R1 (2026-10-26): conjunto NO APTO.** Portada NO APTO por falta de franjas rojas y amarillas sobre la pared; paseo final v8 APTO y consulta v1 APTO. El descarte de paseo v6 contiene tres zapatos; el final v8 contiene dos. [Informe independiente y evidencias](auditoria-visual-r1.md). Las revisiones del productor que siguen se conservan como historial de producción, no prevalecen sobre este resultado. No se han corregido ni regenerado recursos en esta ronda.
 
-**Estado actual: las tres imágenes tienen binario final seleccionado por el productor: portada v9, paseo v8 y consulta v1.** Se han ejecutado build y pruebas de integración con las tres. El conjunto queda documentado para auditoría visual independiente, **sin declarar aprobación**. Pendientes conocidos: altura móvil de las tablas y diferencia preexistente del pie de portada. Véase el cierre de producción al final; las secciones intermedias conservan el historial de descartes y pruebas parciales.
+**Estado anterior a la corrección R1: las tres imágenes tenían binario final seleccionado por el productor: portada v9, paseo v8 y consulta v1.** Se han ejecutado build y pruebas de integración con las tres. El conjunto queda documentado para auditoría visual independiente, **sin declarar aprobación**. Pendientes conocidos: altura móvil de las tablas y diferencia preexistente del pie de portada. Véase el cierre de producción al final; las secciones intermedias conservan el historial de descartes y pruebas parciales.
 
 **Historial de los dos primeros ciclos:** producción detenida tras ocho versiones de portada no seleccionadas, dos ciclos autorizados de cuatro intentos. Se aplica el límite expreso del encargo: «Máximo 4 versiones por imagen; si a la cuarta sigue fallando, detente y pide decisión». El segundo ciclo fue autorizado por el propietario el 2026-10-26 con «Autorizar adenda y cuatro intentos» y comprende v5–v8. En esos dos primeros ciclos no se generaron las imágenes 2 y 3: el proceso exigía una primera imagen seleccionada como referencia de identidad. No se emite auditoría independiente ni se declara aprobado el conjunto.
+
+## Correcciones de R1 listas para R2 — 2026-10-26
+
+El propietario autorizó corregir y repetir auditoría hasta un máximo de tres rondas totales. R1 permanece intacta; esta es producción correctora, pendiente de R2 independiente. Portada original **v10**, WebP **v2**; paseo v8 y consulta v1 permanecen sin cambios. No se recupera el paseo v6 de tres zapatos.
+
+### Portada
+
+Un intento nuevo, v10 (décimo original de portada; segundo intento del ciclo autorizado v9–v12), realizado como edición generativa de v9. [Entrada literal con adenda](prompts/imagen-1-v10-entrada-herramienta.txt), [original PNG](originales/imagen-1-v10.png). Se conserva el prompt original entero y la postura/encuadre autorizados. Sin retoque local posterior: únicamente escalado y conversión WebP con Sharp, calidad 92. Original idéntico byte a byte al generado. WebP principal 1200×675 y variante400 400×225. V9 y los WebP v1 se conservan como historial; la referencia activa cambia a **bodeguero-senior-refugio-dormitorio-nochevieja-v2.webp** para evitar caché antigua.
+
+| Comprobación del productor | Sí/no y observación en grande y a 390 px |
+|---|---|
+| Canas en hocico, cejas y párpados | Sí: antifaz y hocico aclarados, fuego apagado; el conjunto facial permanece gris a 390. |
+| Ojos algo hundidos y párpados bajos | Sí, leve: ojo pequeño bajo el arco palpebral, mirada serena; sin velo. |
+| Lomo y menor masa | Sí: dorso suavizado, muslo estrecho y costado con relieve discreto; cuerpo extendido visible. |
+| Postura de mayor | Sí: apoyada sobre codos, cabeza tranquila, cuerpo tumbado como en la postura autorizada. |
+| Sin enfermedad inventada | Sí: sin lesiones, jadeo ni sufrimiento visibles. |
+| Identidad | Sí: mismo antifaz derecho, manchas dorsales, fuego apagado, orejas plegadas, cola fina, collar gris y chapa lisa de v9; paseo y consulta no cambian. |
+| Anatomía y mano | Sí: cuatro patas siguiendo sus apoyos, cola independiente y una mano con cinco dedos (incluido pulgar), sin contacto ni ocultar el costado. |
+| Geometría del refugio | Sí: perfil a derecha, cama baja junto al mobiliario, persiana al fondo, agua y juguete; no se mide distancia real desde píxeles. |
+| Corrección de luz P1-01 | Sí en revisión del productor: franjas rojas y amarillas diferenciadas sobre pared y radiador junto a la persiana, visibles a 390; no solo luces dentro de la persiana o reflejos de suelo. La interpretación física queda sujeta al auditor. |
+| Estética | Sí: conserva textura/grano y relleno neutro, sin texto, logotipos, halo, HDR o dominante dorada nueva. |
+| Alt y pie | Sí: no se cambia el alt; el pie literal del §8 ahora se muestra mediante heroImageCaption. |
+
+Abiertos realmente: PNG nativo, PNG reducido a 390, WebP1200 y reducciones a390 de ese WebP y de la variante400. Evidencias en [correccion-r1](correccion-r1/).
+
+### Integración: P1-02 y P2-01
+
+La opción voluntaria `compacta` de TablaApilable se activa exclusivamente en estas dos tablas. Mantiene el tamaño de letra y todo el contenido; la primera celda identifica la tarjeta sin repetir su rótulo, y los demás rótulos van en línea. En las seis celdas de valoración se añade `data-label-corto="Según los dueños"`, manteniendo el atributo largo y la atribución de la encuesta en el texto previo. No se ocultan filas ni cifras. Resto de artículos sin esta opción conserva su presentación.
+
+Campo opcional `heroImageCaption` en el esquema y el layout, con el alt anterior como fallback para otros artículos; también se usa en ImageObject.caption. En este borrador contiene el pie literal del brief. El cuerpo clínico, cifras, FAQ, testimonios y bibliografía no cambian; [comparación exacta normalizando solo estos atributos/frontmatter](correccion-r1/integridad.json). Brief y testimonios permanecen idénticos. Son ajustes autorizados de integración respecto al frontmatter y ruta iniciales, sin editar el brief.
+
+`npx astro build`: correcto. Copia temporal MDX retirada de src/content/blog al terminar. Prueba real sobre el build estático servido con Python en localhost4466; sin despliegue. Playwright/Chromium ya instalados, 32 capturas aisladas: tres imágenes, dos tablas y tres avisos ×390/1366×claro/oscuro. [Mediciones](correccion-r1/verificacion-navegador.json), [capturas](correccion-r1/capturas/), [build](correccion-r1/build.log). Se abrieron directamente las tablas de ambos tamaños/temas en parejas cruzadas y las portadas móvil claro/escritorio oscuro; las 32 capturas están disponibles para el auditor. Las otras capturas no se declaran inspeccionadas individualmente por el productor en esta corrección.
+
+| Medida | 390 claro/oscuro | 1366 claro/oscuro |
+|---|---|---|
+| Calendario | 777,53 px | 488,56 px |
+| Encuesta | 889,92 px | 650,34 px |
+| ScrollWidth | 390 px | 1366 px |
+| CLS medido | 0 | 0 |
+| Contraste mínimo | 4,50:1 / 5,52:1 | 4,50:1 / 5,52:1 |
+
+Tres imágenes decodificadas en los cuatro modos, atributos1200×675, sin errores JS. Único404: API de feedback, no disponible con el servidor estático; no es un error de recurso visual. No se ha probado backend, producción, Astro dev ni preferencias de movimiento, porque estas correcciones no añaden animación. No se ejecutó astro check: el encargo permite build como prueba de compilación y este pasó. Las fuentes web se cargan a través del proxy heredado según el script; no se reinstaló Playwright.
+
+No se emite veredicto independiente: se solicita R2 al auditor que realizó R1. Si falla, se corregirá y se solicitará R3; no habrá R4 sin decisión del propietario.
 
 ## Archivos y método
 

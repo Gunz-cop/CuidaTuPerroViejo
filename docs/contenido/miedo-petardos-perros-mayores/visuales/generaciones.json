@@ -2,7 +2,7 @@
   "fecha": "2026-10-26",
   "branch": "claude/imagenes-miedo-petardos-perros-mayores",
   "base": "486d55f",
-  "estado": "Tres imágenes seleccionadas por productor: portada v9, paseo v8, consulta v1. Pendiente auditoría independiente; altura móvil de tablas documentada.",
+  "estado": "Corrección de R1: portada original v10 (WebP v2), paseo v8 y consulta v1 conservados. Pendiente R2 independiente.",
   "imagenes_2_y_3": "Generadas usando portada v9 como referencia de identidad. Paseo v8 y consulta v1 seleccionadas.",
   "reference_image_paths": [],
   "generaciones": [
@@ -130,9 +130,10 @@
       "sha256": "679545eb85dd4a7ea092f0c8d2fe4ba2f6ea59e23bb2f0ccd321185a9eeb9859",
       "identical_to_generated_original": true,
       "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/capturas/imagen-1-v9-390.png",
-      "seleccionada": true,
+      "seleccionada": false,
       "reference_image_paths": [],
-      "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-1-v9-entrada-herramienta.txt"
+      "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-1-v9-entrada-herramienta.txt",
+      "motivo_reemplazo": "R1 P1-01: no se distinguían franjas rojas y amarillas sobre pared."
     },
     {
       "imagen": 2,
@@ -297,6 +298,24 @@
         "/workspace/cuidatuperroviejo/docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/guia-topologia-correa.png"
       ],
       "entrada_herramienta": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-2-v8-entrada-herramienta.txt"
+    },
+    {
+      "imagen": 1,
+      "version": 10,
+      "original": "docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v10.png",
+      "source": "/workspace/generated_images/exec-21ff8dbe-2a32-47e2-aca6-8e046bbaa13e.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2590416,
+      "sha256": "c60449c8bc01403e0da35346dbef27feb633cbc2430c6fb1c82552acda52143f",
+      "identical_to_generated_original": true,
+      "seleccionada": true,
+      "reference_image_paths": [
+        "docs/contenido/miedo-petardos-perros-mayores/visuales/originales/imagen-1-v9.png"
+      ],
+      "prompt": "docs/contenido/miedo-petardos-perros-mayores/visuales/prompts/imagen-1-v10-entrada-herramienta.txt",
+      "revision_390": "docs/contenido/miedo-petardos-perros-mayores/visuales/correccion-r1/portada-v10-original-390.png",
+      "final": "public/images/blog/miedo-petardos-perros-mayores/bodeguero-senior-refugio-dormitorio-nochevieja-v2.webp"
     }
   ],
   "autorizacion_ciclo_2": {
@@ -341,5 +360,13 @@
       8
     ],
     "referencia_auxiliar_v7_v8": "guia-topologia-correa.png: solo topología, no identidad ni estilo del final"
+  },
+  "correccion_r1": {
+    "autorizada": "2026-10-26",
+    "portada": 10,
+    "webp": "v2",
+    "paseo_sin_cambios": true,
+    "consulta_sin_cambios": true,
+    "ronda_siguiente": "R2 visual"
   }
 }
