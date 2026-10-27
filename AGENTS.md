@@ -2,6 +2,14 @@
 
 Instrucciones compartidas para agentes de código (Claude Code, Codex, Antigravity u otros) que trabajen en este repositorio.
 
+## Cambios en `main`
+
+`main` despliega a producción. Ningún agente hace push directo a `main`. Todo cambio va en una rama, con un PR que fusiona el propietario.
+
+- **Contenido publicado** (`src/content/`, `src/components/`, `src/pages/`, `public/images/`): el PR necesita una auditoría independiente registrada en el expediente antes de fusionarse. Quien corrige no audita y quien audita no corrige. Vale también para correcciones urgentes de seguridad: en ese caso, la auditoría revisa solo las líneas cambiadas.
+- **Expediente coherente con lo hecho:** si el encargo o el expediente dice que no se toca `main`, ninguna sesión fusiona ni hace push a `main` en esa tarea.
+- **Cambio que llegó a `main` sin auditoría:** se registra en [`TODO.md`](TODO.md) y se audita cuanto antes, sin rehacerlo en silencio.
+
 ## Migración de stack en curso
 
 El sitio está migrando de Astro 4 a Astro 7 sobre Cloudflare Workers. **Antes de tocar `package.json`, `astro.config.mjs`, `wrangler.jsonc`, `tsconfig.json` o los estilos globales, leé [`docs/migracion-stack/README.md`](docs/migracion-stack/README.md)**: es la spec de producto y dice qué fase toca, contra qué rama va y qué está decidido.
