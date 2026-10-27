@@ -1,0 +1,67 @@
+---
+// Tarjeta horizontal para sugerir otro artículo dentro del texto. Toma título, descripción y
+// portada de la colección, así que no se copia nada a mano. Si el artículo no existe o no está
+// publicado, no muestra nada: se puede dejar puesta antes de que el destino salga.
+import { getCollection } from 'astro:content';
+import { mobileImageFor } from '../../utils/image';
+
+interface Props { slug: string; etiqueta: string; }
+const { slug, etiqueta } = Astro.props;
+
+const [post] = await getCollection('blog', ({ id, data }) => id === slug && data.status === 'Publicado');
+const href = post ? `/${post.data.pilar}/${post.id}` : undefined;
+const imagen = post ? mobileImageFor(post.data.heroImage) ?? post.data.heroImage : undefined;
+---
+
+{post && (
+  <a class="tarjeta-relacionada not-prose" href={href}>
+    {imagen && (
+      <img class="tarjeta-relacionada__img" src={imagen} alt="" width="400" height="225" loading="lazy" decoding="async" />
+    )}
+    <span class="tarjeta-relacionada__texto">
+      <span class="tarjeta-relacionada__etiqueta">{etiqueta}</span>
+      <span class="tarjeta-relacionada__titulo">{post.data.title}</span>
+      <span class="tarjeta-relacionada__resumen">{post.data.metaDescription}</span>
+    </span>
+    <span class="tarjeta-relacionada__flecha" aria-hidden="true">→</span>
+  </a>
+)}
+
+<style is:global>
+  .content-body .tarjeta-relacionada {
+    display: flex; align-items: center; gap: 1rem;
+    margin: 2rem 0; padding: .75rem;
+    border: 1px solid var(--color-brand-border); border-radius: 1rem;
+    background: var(--color-brand-card);
+    color: var(--color-brand-text); text-decoration: none; font-weight: 400;
+    transition: border-color .2s ease, box-shadow .2s ease;
+  }
+  .content-body .tarjeta-relacionada:hover { border-color: var(--color-brand-primary); box-shadow: 0 4px 14px rgb(0 0 0 / .06); color: var(--color-brand-text); }
+  .content-body .tarjeta-relacionada:focus-visible { outline: 2px solid var(--color-brand-accent); outline-offset: 3px; }
+  .content-body .tarjeta-relacionada__img {
+    flex: none; width: 6rem; aspect-ratio: 4 / 3; height: auto; object-fit: cover;
+    margin: 0; border-radius: .6rem; box-shadow: none;
+  }
+  .tarjeta-relacionada__texto { display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
+  .tarjeta-relacionada__etiqueta { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--color-brand-muted); }
+  .tarjeta-relacionada__titulo {
+    font-weight: 700; line-height: 1.3; color: var(--color-brand-text);
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .content-body .tarjeta-relacionada:hover .tarjeta-relacionada__titulo { color: var(--color-brand-accent); }
+  .tarjeta-relacionada__resumen {
+    font-size: .875rem; line-height: 1.45; color: var(--color-brand-muted);
+    display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .tarjeta-relacionada__flecha { flex: none; margin-left: auto; color: var(--color-brand-muted); transition: transform .2s ease; }
+  .content-body .tarjeta-relacionada:hover .tarjeta-relacionada__flecha { transform: translateX(3px); color: var(--color-brand-accent); }
+  @media (min-width: 640px) {
+    .content-body .tarjeta-relacionada { gap: 1.25rem; padding: 1rem; }
+    .content-body .tarjeta-relacionada__img { width: 10rem; aspect-ratio: 16 / 9; }
+    .tarjeta-relacionada__titulo { -webkit-line-clamp: 2; }
+    .tarjeta-relacionada__resumen { -webkit-line-clamp: 2; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .content-body .tarjeta-relacionada, .tarjeta-relacionada__flecha { transition: none; }
+  }
+</style>
