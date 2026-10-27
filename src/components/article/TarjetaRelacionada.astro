@@ -9,6 +9,7 @@ interface Props { slug: string; etiqueta: string; }
 const { slug, etiqueta } = Astro.props;
 
 const [post] = await getCollection('blog', ({ id, data }) => id === slug && data.status === 'Publicado');
+if (!post) console.warn(`[TarjetaRelacionada] «${slug}» no existe o no está publicado: la tarjeta no se muestra.`);
 const href = post ? `/${post.data.pilar}/${post.id}` : undefined;
 const imagen = post ? mobileImageFor(post.data.heroImage) ?? post.data.heroImage : undefined;
 ---
