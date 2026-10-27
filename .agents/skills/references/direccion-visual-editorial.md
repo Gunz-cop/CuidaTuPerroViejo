@@ -94,6 +94,7 @@ Registro de razas usadas (actualizar al cerrar cada brief):
 | Leishmaniosis (publicado, 2026-10-24; portada: cuidadora ajustando el collar) | Mestizo de tipo pastor-mastín, atigrado oscuro |
 | Miedo a los petardos, España (publicado, 2026-10-26) | Bodeguero andaluz tricolor |
 | Miedo a la pólvora, Latinoamérica (brief, 2026-10-26; excepción aprobada por el propietario el 2026-10-27) | Mestizo criollo mediano, canela con máscara negra |
+| Miedo a la pólvora, Latinoamérica: testimonios (brief, 2026-10-27) | Osa, mestiza de pastor alemán (ilustración); Baltor, chow chow café claro (ilustración); Luna y Dakota, beagles (fotografía real) |
 
 ## Revisión de la imagen generada
 
