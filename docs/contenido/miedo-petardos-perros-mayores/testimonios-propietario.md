@@ -67,6 +67,7 @@ Aclaraciones posteriores del propietario (2026-10-25):
 - Durante los eventos de pólvora no recuerda con seguridad si se escapó. Cree que a veces, al abrir el portón, los perros salían disparados; en una ocasión salieron, pero fueron a esconderse en algún lugar y no a morder a nadie.
 - Nunca se lastimaron. En el patio buscaban dónde esconderse; al principio ladraban y después se metían, por ejemplo, bajo la pila (lavadero) u otro lugar del patio.
 - Su edad y el desenlace no se conocen. No se presenta como perra mayor.
+- **Aspecto (aportado el 2026-10-27):** mestiza de pastor alemán.
 - Impresión del propietario (hipótesis suya): el conjunto de tantos sonidos es lo que los ahuyenta.
 - Límite añadido: un perro que puede morder y que está en pánico es un riesgo de manejo para quien intenta sacarlo; no convertir el relato en pauta.
 
@@ -86,6 +87,7 @@ Hechos aportados (relato oral, 2026-10-25; sin raza, edad ni fecha exacta):
 - El día que reventaban pólvora, no salía de las habitaciones. Aunque le abrieran la puerta de la casa, no huía: se quedaba dentro. El miedo a salir era tan grande que, según el propietario, una vez se orinó o se defecó (no recuerda cuál de las dos) por el miedo.
 - La familia compró después una perra chow chow, muy enérgica, que solía molestar a Baltor. Aun así, los días de pólvora los dos perros se escondían.
 - El propietario no sabe si el hecho de que fuera el apartamento de arriba hacía que se oyera más; es una duda suya, no un dato.
+- **Aspecto (aportado el 2026-10-27):** si se ilustra, Baltor se ve como un chow chow café claro. Edad no conocida.
 
 Límites: recuerdo de hace años, sin fechas ni desenlace, de un perro ajeno. Contrasta con Osa: Baltor, dentro de casa, no se escapa; Osa, en el patio, buscaba entrar. Ambos casos sostienen un único mensaje práctico, ya presente en el brief: un lugar interior y cerrado es donde los perros buscan refugio. No se interpreta como que dentro de casa el perro no sufra.
 
@@ -100,8 +102,7 @@ Hechos (texto del mensaje, sin añadir nada):
 
 Límites para el redactor:
 - No se sabe la edad de esa perra, su raza ni si es la que ya no se levanta: **no presentarla como perra mayor ni relacionarla con el H2-4**.
-- **Uso solo con permiso del compañero.** Mientras no lo dé, no aparece en ningún artículo, ni anónima.
-- Si lo da: anónima («la perra de un compañero de trabajo, en Costa Rica»), una o dos frases, como ilustración de que buscan un hueco cerrado bajo un mueble (encaja con la cueva bajo la mesa de S9). Sin causa ni pauta.
+- **Uso autorizado por el propietario el 2026-10-27.** Anónima («la perra de un compañero de trabajo, en Costa Rica»), una o dos frases, como ilustración de que buscan un hueco cerrado bajo un mueble (encaja con la cueva bajo la mesa de S9). Sin causa ni pauta.
 
 ### Otros testimonios
 

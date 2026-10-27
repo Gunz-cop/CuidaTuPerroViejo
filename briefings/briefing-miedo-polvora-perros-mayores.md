@@ -2,7 +2,7 @@
 
 **Sitio:** cuidatuperroviejo.com | **Pilar:** Salud Mental y Emocional | **Tipo:** Artículo spoke Astro/MDX | **Serie:** versión latinoamericana de P1-03 (código **LA-01**)
 
-**Estado:** v4 del 2026-10-26. R1 y R2 **NO APTO**, corregidas en v2 y v3. **R3 (última ronda): APTO con reservas** (0 P0, 0 P1, 2 P2, 8 P3; `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r3.md`); sus P2 y P3 se corrigieron en esta v4 (`correccion-r3.md`) y se comprobaron con búsquedas de texto, sin R4. **Listo para redactar** cuando el propietario resuelva las decisiones pendientes (raza, tarjeta, caso del compañero). El auditor del artículo recibe el informe R3 y comprueba sus P2. No redactar hasta un APTO o APTO con reservas. No fusionar ni desplegar sin orden del propietario.
+**Estado:** v4.1 del 2026-10-27 (decisiones del propietario tras la R3, sin nueva ronda: raza aprobada, testimonio del compañero autorizado y aspecto de Osa y Baltor; las comprueba el auditor del artículo). v4 del 2026-10-26: R1 y R2 **NO APTO**, corregidas en v2 y v3. **R3 (última ronda): APTO con reservas** (0 P0, 0 P1, 2 P2, 8 P3; `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r3.md`); sus P2 y P3 se corrigieron en esta v4 (`correccion-r3.md`) y se comprobaron con búsquedas de texto, sin R4. **Listo para redactar** cuando el propietario resuelva las decisiones pendientes (raza, tarjeta, caso del compañero). El auditor del artículo recibe el informe R3 y comprueba sus P2. No redactar hasta un APTO o APTO con reservas. No fusionar ni desplegar sin orden del propietario.
 
 **Seis decisiones de esta versión que el propietario debe conocer:**
 
@@ -11,7 +11,7 @@
 3. **Testimonios:** Osa y Baltor (reservados para esta versión, decisión del propietario del 2026-10-25). De Luna, el hecho nuevo es que sus sustos incluyen temblores, terremotos y choques; que entonces busca a la familia ya está publicado en España y solo va como media frase de contexto. **Dakota no aparece**: todo lo suyo ya está publicado.
 4. **Nuevo H2 a propuesta del propietario (2026-10-26): el perro mayor que ya no puede levantarse.** El propietario señaló que nadie explica qué hacer con un perro inmóvil esas noches. No hay estudios sobre miedo al ruido en perros que no caminan (búsqueda del 2026-10-26): es **guía sin caso**, con criterio editorial declarado. Si un compañero del propietario autoriza contar el caso de su perro, entra como testimonio aportado; si no, la sección no lo necesita (§2).
 5. **Enlace entre versiones: pendiente de decisión del propietario** (§5.2): tarjeta «Esta guía tiene dos versiones» (A, recomendada, PR de código aparte), enlace en contexto en el H2 legal (B, siempre) y `hreflang` más adelante (C).
-6. **Raza: mestizo criollo canela de máscara negra, como excepción declarada** a la regla de no repetir categoría (la leishmaniosis usó un mestizo pastor-mastín atigrado). El motivo no es uno de los tres que admite la dirección visual (caso, contenido clínico, petición del propietario), así que **necesita la aprobación del propietario**; si no la da, la alternativa es un chihuahua de pelo corto (§8).
+6. **Raza: mestizo criollo canela de máscara negra, aprobado por el propietario el 2026-10-27** como excepción a la regla de no repetir categoría (la leishmaniosis usó un mestizo pastor-mastín atigrado). Si alguna imagen ilustra un testimonio, cada perro lleva su aspecto real, dado por el propietario (§8): Osa, mestiza de pastor alemán; Baltor, chow chow café claro; Luna y Dakota, beagles.
 
 ## 1. DATOS, METADATOS Y FRONTMATTER MDX
 
@@ -62,7 +62,7 @@ datePublished: "{{FECHA_DE_PUBLICACION_AAAA-MM-DD}}"
 - **Luna** (beagle, 2015, Costa Rica): el hecho nuevo: **sus sustos no son solo la pólvora, también temblores, terremotos y choques**. Que busca a la familia ya está publicado en España («ante un susto cualquiera, Luna nos busca»): solo media frase de contexto. Lo de alzarla y que se calme con él no se repite.
 - **No se usan:** Dakota (todo ya contado en España), la perra de unos vecinos y la hipótesis «buscan un lugar menos ruidoso» (publicadas en España).
 
-**H2-4 sin caso (decidido el 2026-10-26):** un compañero de trabajo del propietario tiene un perro mayor que ya no puede levantarse, pero el propietario prefirió no preguntarle cómo lo manejan. Ese perro **no aparece en el artículo, ni anónimo**. **Testimonio opcional para H2-3, pendiente de permiso:** el mismo compañero contó por escrito (2026-10-26) que en su casa solo una de sus perras se pone muy nerviosa con la pólvora: la dejan dentro y ella se mete debajo de su escritorio y ahí se queda. Ficha y límites en el archivo de testimonios. Solo entra si el compañero autoriza que se cuente, anónimo, en una o dos frases en `### Una mesa, una sábana y su frazada`; sin edad ni relación con el H2-4. Si no hay permiso, el H3 no cambia. La consideración de la familia sobre la eutanasia **no se menciona en ningún caso** sin que ellos lo pidan.
+**H2-4 sin caso (decidido el 2026-10-26):** un compañero de trabajo del propietario tiene un perro mayor que ya no puede levantarse, pero el propietario prefirió no preguntarle cómo lo manejan. Ese perro **no aparece en el artículo, ni anónimo**. **Testimonio para H2-3 (uso autorizado por el propietario el 2026-10-27):** el mismo compañero contó por escrito (2026-10-26) que en su casa solo una de sus perras se pone muy nerviosa con la pólvora: la dejan dentro y ella se mete debajo de su escritorio y ahí se queda. Ficha y límites en el archivo de testimonios. Va **anónimo** («la perra de un compañero de trabajo, en Costa Rica»), en una o dos frases en `### Una mesa, una sábana y su frazada`; sin edad, raza ni relación con el H2-4. La consideración de la familia sobre la eutanasia **no se menciona en ningún caso** sin que ellos lo pidan.
 
 **Declaración para el lector (introducción):** una o dos frases: estudios internacionales, reportes de Bogotá y recomendaciones de colegios y universidades veterinarias de la región; además, recuerdos de perros de la familia y de un vecino en El Salvador y de casa, en Costa Rica: recuerdos, no casos clínicos.
 
@@ -257,7 +257,7 @@ Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 560 + 540 = **
 
 **Matriz fuente → H2 (única; idéntica en §3 y §9.2):** S1: H2-1 · S2: H2-4 · S3: H2-5, H2-10 · S4: H2-4, H2-6, H2-10 · S5: H2-2, H2-3, H2-4, H2-5, H2-10 · S6: H2-1, H2-10 · S7: H2-1, H2-10 · S8: H2-1, H2-8, H2-9 · S9: H2-3, H2-5, H2-6, H2-8, H2-10 · S10: H2-3, H2-5, H2-6, H2-7 · S11: H2-2, H2-6, H2-7, H2-10 · S12: H2-9 · S13: H2-9 · S14: H2-9.
 
-**Reparto de testimonios (cada hecho en un solo H2):** Osa → H2-2 · Baltor → H2-7 · Luna (temblores, terremotos y choques; busca a la familia) → H2-7. Primera persona para lo que vio el propietario; «nosotros» para su familia; nunca «el propietario» en tercera persona. País la primera vez.
+**Reparto de testimonios (cada hecho en un solo H2):** Osa → H2-2 · perra del compañero (bajo el escritorio) → H2-3 · Baltor → H2-7 · Luna (temblores, terremotos y choques; busca a la familia) → H2-7. Aspecto, solo si ayuda a la escena: Osa, mestiza de pastor alemán; Baltor, chow chow café claro (datos del propietario, 2026-10-27). Primera persona para lo que vio el propietario; «nosotros» para su familia; nunca «el propietario» en tercera persona. País la primera vez.
 
 ---
 
@@ -313,7 +313,7 @@ Suma: 320 + 510 + 560 + 450 + 520 + 520 + 480 + 460 + 360 + 420 + 560 + 540 = **
 * `### El cuarto sin ventana a la calle` (≈160)
     * S10: lugar oscuro tipo cueva; cortinas, puertas y ventanas cerradas. El cuarto más interior, sin ventana a la calle; si hay uno con techo de concreto o cielorraso, probar si se oye menos («escucha dónde se oye menos»; laguna 7). Ventanas de celosía: cerrarlas y correr una cortina gruesa.
 * `### Una mesa, una sábana y su frazada` (≈150)
-    * S9: el COLVET describe la cueva incluso debajo de una mesa, con cama o transportín y frazadas que aíslen de ruidos, luces y destellos; S5: que la conozca de antes y que pueda entrar y salir. Idea propia: una mesa con una sábana solo por un lado y por detrás, y dos salidas abiertas (la portada). Su frazada y su traste de agua; la salida, siempre libre. **No reproducir** la enumeración del artículo de España (cama, agua, juguete relleno, sin cajas cerradas ni atarlo).
+    * S9: el COLVET describe la cueva incluso debajo de una mesa, con cama o transportín y frazadas que aíslen de ruidos, luces y destellos; S5: que la conozca de antes y que pueda entrar y salir. Idea propia: una mesa con una sábana solo por un lado y por detrás, y dos salidas abiertas (la portada). Su frazada y su traste de agua; la salida, siempre libre. Testimonio en una o dos frases: la perra de un compañero de trabajo, en Costa Rica, es la única de su casa que se pone muy nerviosa; la dejan dentro y se mete debajo de su escritorio y ahí se queda (anónimo; sin edad; la idea de la cueva bajo un mueble la busca el propio perro). **No reproducir** la enumeración del artículo de España (cama, agua, juguete relleno, sin cajas cerradas ni atarlo).
 * `### Cerrado no es caliente` (≈140)
     * En el Cono Sur diciembre es verano y en buena parte del trópico hace calor; un cuarto cerrado se calienta. Ventilador de techo, o de pie fuera de su alcance y sin cables por el suelo; agua fresca; si jadea, revisar si es calor. En zonas altas (Bogotá, Ciudad de México, Quito, tierras altas de Centroamérica) las noches de diciembre son frescas: una frazada más. Enlace a golpe de calor aclarando que es la guía general. Criterio editorial.
 * *(La cama baja para articulaciones se trata en H2-4; aquí no se repite.)*
@@ -480,7 +480,7 @@ Las dos líneas finales de cada prompt son instrucciones para quien genera; no s
 
 Comprobado el 2026-10-26: registro de la dirección visual (podenco, labrador chocolate, golden, cocker, beagle, San Bernardo, dogo argentino, pastor alemán, bóxer, caniche miniatura, schnauzer, teckel, galgo español, setter gordon, mestizo pastor-mastín atigrado de la leishmaniosis —**publicado** (`datePublished` 2026-10-24), con portada de una cuidadora ajustando el collar—, bodeguero andaluz).
 
-**Elección: mestizo criollo mediano (excepción declarada, requiere aprobación del propietario).** La regla de la dirección visual solo admite repetir por caso, contenido clínico o petición del propietario; el motivo aquí es otro: (1) el perro de patio más reconocible para el lector latinoamericano («zaguate», «aguacatero», «criollo») es un mestizo mediano de pelo corto, y un perro de raza pequeña de apartamento no es creíble en el patio de la imagen 2; (2) tipo, tamaño y color distintos del mestizo de leishmaniosis (canela claro con máscara negra frente a atigrado oscuro grande); (3) la máscara negra hace legibles las canas a tamaño móvil. **Si el propietario no lo aprueba:** chihuahua de pelo corto negro y fuego (sin uso previo en el sitio), con las mismas tres escenas adaptadas a su tamaño. Beagle descartado: el sujeto es ilustrativo y el propietario no pidió retratar a Luna o Dakota.
+**Elección: mestizo criollo mediano (excepción aprobada por el propietario el 2026-10-27).** La regla de la dirección visual solo admite repetir por caso, contenido clínico o petición del propietario; el motivo aquí es otro: (1) el perro de patio más reconocible para el lector latinoamericano («zaguate», «aguacatero», «criollo») es un mestizo mediano de pelo corto, y un perro de raza pequeña de apartamento no es creíble en el patio de la imagen 2; (2) tipo, tamaño y color distintos del mestizo de leishmaniosis (canela claro con máscara negra frente a atigrado oscuro grande); (3) la máscara negra hace legibles las canas a tamaño móvil. Beagle descartado para el sujeto fijo: el sujeto es ilustrativo y el propietario no pidió retratar a Luna o Dakota.
 
 ### Sujeto fijo (ilustrativo) — nombrado en los 3 prompts
 
@@ -526,6 +526,14 @@ Comprobado el 2026-10-26: registro de la dirección visual (podenco, labrador ch
 - **Alt:** Ilustración de una mano que cierra con candado un portón de lámina verde mientras un perro mestizo senior de color canela, sentado en el patio, lleva una placa en su collar rojo.
 - **Pie:** Por la tarde, antes de entrarlo: portón con candado y la placa con tu teléfono ya puesta.
 
+### Si una imagen ilustra un testimonio (indicación del propietario, 2026-10-27)
+
+Las tres imágenes planificadas usan el mestizo ilustrativo y no retratan testimonios. Si la sesión visual o el propietario añaden una ilustración de un testimonio, el perro lleva su aspecto real, con su raza nombrada en el prompt y su propio bloque de edad solo si el archivo lo presenta como mayor (Osa y Baltor no tienen edad conocida: **no envejecerlos ni presentarlos como seniors**):
+- **Osa:** mestiza de pastor alemán (escena posible: bajo la mesa del comedor durante una cena, sin fechar).
+- **Baltor:** chow chow café claro (escena posible: en una habitación del apartamento, sin salir aunque la puerta esté abierta). La chow chow que llegó después también se escondía; su color no se conoce.
+- **Luna y Dakota:** beagles tricolores; el propietario compartió fotos de referencia en la sesión del 2026-10-27 (no se guardan en el repositorio; pedirlas a quien genere si hacen falta).
+- Cada ilustración de testimonio declara que es una ilustración, no una foto del perro.
+
 ### Recortes y animaciones
 No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mismo perro postrado contradiría las imágenes 2 y 3 y la regla de no inventar enfermedad; si el propietario quiere una, sería un segundo sujeto con su propia ficha.
 
@@ -565,6 +573,7 @@ No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mis
 - [ ] Reparto del §6: Osa (H2-2), Baltor y Luna (H2-7).
 - [ ] **Osa:** «no recuerdo con seguridad si se escapaban; creo que a veces…»; cena sin fecha; «muy brava; si salía a la calle podía morder a alguien», sin decir que mordiera por miedo; sin edad ni «mayor»; lo de la familia sin juicio ni pauta.
 - [ ] **Baltor:** «no salía de las habitaciones»; «una vez se orinó o se defecó (no recuerdo cuál)»; la chow chow también se escondía; sin «quieto» ni patrón.
+- [ ] **Perra del compañero:** anónima, en H2-3, una o dos frases con los tres hechos del archivo (solo una se pone muy nerviosa; la dejan dentro; se mete bajo su escritorio y ahí se queda); sin edad ni relación con el H2-4.
 - [ ] **Luna:** solo temblores, terremotos y choques, y que busca a la familia. Sin alzarla ni «se calma».
 - [ ] **Dakota, la perra de unos vecinos y la hipótesis del «lugar menos ruidoso» no aparecen.**
 - [ ] H2-4 sin caso salvo testimonio autorizado y dictado; nunca la eutanasia del perro del compañero.
@@ -628,9 +637,10 @@ No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mis
 | 3 imágenes | Portada, H2-2, H2-8 | Planificadas | 390 px, cinco rasgos, sin destellos en la portada y mirada por la abertura, perro sin correa en la imagen 2, nadie toca el collar en la imagen 3, placa sin texto |
 | Tarjeta de versiones | Tras la introducción | **Decisión del propietario** | PR aparte; móvil, modo oscuro, lector de pantalla |
 
-- [ ] Decisión del propietario: tarjeta (A/B/C) y raza (mestizo o chihuahua).
+- [x] Raza: mestizo aprobado (2026-10-27).
+- [ ] Decisión del propietario: tarjeta (A/B/C).
 - [x] H2-4 sin caso (2026-10-26).
-- [ ] Perra del compañero bajo el escritorio (H2-3): solo con su permiso; si no, fuera.
+- [x] Perra del compañero bajo el escritorio (H2-3): uso autorizado por el propietario (2026-10-27), anónima.
 - [ ] Verificaciones parciales cerradas o limitadas (S4 publicado; originales de S9–S11).
 - [ ] Antes de publicar, volver a abrir S12–S14 y comprobar si en Colombia se expidió la reglamentación de la Ley 2224 y si Bogotá abre el formulario en 2026.
 - [ ] Tabla manual de paráfrasis (§9.5) y comprobación de 8 palabras.

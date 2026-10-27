@@ -15,9 +15,9 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 - [ ] **Reconciliar al redactar el brief de feromonas.** La comprobación de integración de 2026-10-26 no encuentra contradicción entre tabla 2/FAQ 4 de petardos (percepciones de encuesta) y «moderada solo en miedo a tormentas» en ansiedad por separación y el brief; queda pendiente trasladar esa distinción a la futura redacción de feromonas, sin modificar ahora su brief.
 - [~] **Versión latinoamericana de petardos con Osa y Baltor (LA-01).** Brief v4 en `briefings/briefing-miedo-polvora-perros-mayores.md`, R3 APTO con reservas, rama `claude/brief-miedo-polvora-perros-mayores-latam` (2026-10-26). Falta redactar, auditar el artículo, generar imágenes y publicar.
   - [ ] Decidir el enlace entre versiones: tarjeta «Esta guía tiene dos versiones» (A), solo enlace en el texto (B) o `hreflang` con datos de Search Console (C). Ver §5.2 del brief.
-  - [ ] Aprobar la raza de las imágenes (mestizo criollo, excepción a la regla de no repetir) o elegir el chihuahua.
+  - [x] Raza de las imágenes: mestizo criollo aprobado (2026-10-27). Si se ilustra un testimonio: Osa, mestiza de pastor alemán; Baltor, chow chow café claro; Luna y Dakota, beagles.
   - [x] H2-4 del perro que no se levanta: sin caso; el propietario prefirió no preguntar (2026-10-26).
-  - [ ] Pedir permiso al compañero para contar, anónima, que su perra nerviosa se mete bajo su escritorio (testimonio opcional para H2-3).
+  - [x] Testimonio de la perra del compañero bajo el escritorio: uso autorizado, anónimo, en H2-3 (2026-10-27).
 - [ ] **Idea del propietario: perros mayores que ya no pueden levantarse.** Tema poco cubierto (dónde ponerlo, cuidados, decisiones). Entra como H2 en LA-01; valorar un artículo propio en Cuidados Paliativos sin canibalizar `ulceras-presion-perros`. (2026-10-26)
 
 - [ ] **Golpe de calor: menores aceptados al publicar (2026-10-24, `main` e22dd89).** Ninguno bloquea; retomar si se rehace el artículo o su animación. Detalle en `docs/contenido/golpe-de-calor-perros-mayores/auditoria-revision-r2.md`.
