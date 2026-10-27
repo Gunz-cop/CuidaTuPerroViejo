@@ -4,11 +4,12 @@ Instrucciones compartidas para agentes de código (Claude Code, Codex, Antigravi
 
 ## Cambios en `main`
 
-`main` despliega a producción. Ningún agente hace push directo a `main`. Todo cambio va en una rama, con un PR que fusiona el propietario.
+`main` despliega a producción. Ningún agente hace push directo a `main`, tampoco cuando trabaja con las credenciales del propietario. Todo cambio va en una rama, con un PR que fusiona el propietario. El propietario puede hacer commits directos; si tocan lo que sirve el build, se aplica la última viñeta.
 
-- **Contenido publicado** (`src/content/`, `src/components/`, `src/pages/`, `public/images/`): el PR necesita una auditoría independiente registrada en el expediente antes de fusionarse. Quien corrige no audita y quien audita no corrige. Vale también para correcciones urgentes de seguridad: en ese caso, la auditoría revisa solo las líneas cambiadas.
+- **Lo que sirve el build** (`src/` y `public/` completos): antes de fusionar, el PR necesita una auditoría independiente con veredicto explícito. Se registra en el expediente del artículo (`docs/contenido/<slug>/`) o, si no hay expediente, como comentario en el propio PR. Quien corrige no audita y quien audita no corrige. En una corrección urgente de seguridad, la auditoría puede limitarse a las líneas cambiadas; es la excepción al «lee los archivos finales» de [`calidad-editorial-adsense.md`](.agents/skills/references/calidad-editorial-adsense.md) §6.
+- **Resto del repositorio** (`docs/`, `briefings/`, `.agents/`, `.github/`, `TODO.md`, inventario): PR sin auditoría obligatoria. La configuración de build (`package.json`, `astro.config.mjs`, `wrangler.jsonc`, `tsconfig.json`) sigue la spec de la migración. En la fusión `migracion/astro-7 → main`, el informe del verificador de esa spec cuenta como auditoría.
 - **Expediente coherente con lo hecho:** si el encargo o el expediente dice que no se toca `main`, ninguna sesión fusiona ni hace push a `main` en esa tarea.
-- **Cambio que llegó a `main` sin auditoría:** se registra en [`TODO.md`](TODO.md) y se audita cuanto antes, sin rehacerlo en silencio.
+- **Cambio que llegó a `main` sin auditoría:** se registra en [`TODO.md`](TODO.md) y lo audita, en otra sesión, la siguiente que trabaje en el repositorio, sin rehacerlo en silencio.
 
 ## Migración de stack en curso
 
