@@ -2,7 +2,7 @@
 
 **Sitio:** cuidatuperroviejo.com | **Pilar:** Salud Mental y Emocional | **Tipo:** Artículo spoke Astro/MDX | **Serie:** versión latinoamericana de P1-03 (código **LA-01**)
 
-**Estado:** v6.1 del 2026-10-27 (corrige la R5, NO APTO por un P1). v6 del 2026-10-27. Rondas R1 y R2 **NO APTO**; R3 y **R4 APTO con reservas** (R4: 0 P0, 0 P1, 5 P2, 8 P3; `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r4.md`), corregidas en esta v6 (`correccion-r4.md`). El propietario autorizó el 2026-10-27 tres rondas más (R4–R6); queda margen para R5 y R6. Decisiones del propietario cerradas: raza del mestizo, testimonio del compañero (anónimo, H2-3), aspecto, edad y vivienda de Osa y Baltor, plan de 7 imágenes con foto real de Luna y Dakota y tarjeta horizontal entre versiones. **Pendiente del propietario:** confirmar qué beagle es Luna y cuál Dakota en la foto. No fusionar ni desplegar sin orden del propietario.
+**Estado:** v6.2 del 2026-10-27. **R6 (última ronda autorizada): APTO con reservas** (0 P0, 0 P1, 0 P2, 4 P3; `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r6.md`); sus 4 P3 se corrigieron en esta versión y se comprobaron con búsquedas de texto, sin R7. Historial: R1, R2 y R5 NO APTO; R3, R4 y R6 APTO con reservas (detalle al final). **Listo para redactar.** Gates antes de publicar (§11): el propietario confirma qué beagle es Luna y cuál Dakota en la foto, y la tarjeta hacia España está en el `.mdx`. El auditor del artículo recibe los informes R3 a R6. No fusionar ni desplegar sin orden del propietario.
 
 **Seis decisiones de esta versión que el propietario debe conocer:**
 
@@ -28,7 +28,7 @@
 | Intención principal | Urgente-estacional: «se viene diciembre, mi perro mayor sufre con la pólvora; ¿dónde lo pongo, qué le pido a la veterinaria y qué hago esas dos noches?» |
 | Intención secundaria | Práctica y local: el perro de patio, el que ya no se levanta, qué dice la ley en mi país, qué hago si se sale por el portón |
 | Objetivo global | **5.700 palabras** (suelo 5.300, techo 6.000), preferencia del propietario (2026-10-25) y diez decisiones distintas (§6) |
-| Fecha brief | 2026-10-27 (v6) |
+| Fecha brief | 2026-10-27 (v6.2) |
 | Ventana editorial | Idealmente antes del **20 de noviembre de 2026**, para dejar unas dos semanas para la consulta antes de que empiece la pólvora de diciembre (en Bogotá, el formulario de reportes de 2025 se abrió el 7 de diciembre, S8). Si sale más tarde, «en noviembre» pasa a «cuanto antes» |
 
 Conteos con Python (2026-10-26): seoTitle 55; meta 156.
@@ -195,7 +195,7 @@ Regla 1 de la [guía de voz y tono](../.agents/skills/references/guia-voz-tono.m
 - Cuerpo sin `#`. Párrafos de 3 líneas como máximo en móvil. H3 cada 150–200 palabras de media.
 - **Imágenes:** `<img src="/images/blog/miedo-polvora-perros-mayores/{{NOMBRE}}.webp" alt="{{ALT}}" width="1200" height="675" loading="lazy" decoding="async" />` (la foto de Luna y Dakota, con el tamaño real del recorte), con su pie visible; portada en `heroImage` con `heroImageCaption`. Siete en total, ubicadas en el §8.
 - **Una tabla** (H2-9, leyes) en `<TablaApilable label="…" compacta>` con `data-label` en cada `<td>`; tres columnas, celdas de una frase.
-- **Tarjeta horizontal (§5.2):** `<TarjetaRelacionada slug="miedo-petardos-perros-mayores" etiqueta="Versión para España" />` tras la introducción, solo si el componente ya está en `main` al redactar; si no, se deja fuera y no se escribe HTML a mano (el enlace en contexto de H2-9 va igual).
+- **Tarjeta horizontal (§5.2):** `<TarjetaRelacionada slug="miedo-petardos-perros-mayores" etiqueta="Versión para España" />` tras la introducción, solo si el componente ya está en `main` o en la rama de redacción; si no, se deja fuera y no se escribe HTML a mano (el enlace en contexto de H2-9 va igual).
 - Sin animaciones ni recortes.
 
 ## 5. ENLAZADO INTERNO
@@ -487,7 +487,7 @@ Orden de producción: la imagen 1 se genera primero y es la referencia del mesti
 
 ### Criterio anti-«IA genérica» y diferencia con imágenes publicadas
 
-* **Conceptos distintos de España** (refugio con mano y destellos, paseo con doble correa, consulta con palpación lumbar) **y de las portadas de leishmaniosis** (cuidadora ajustando el collar) **y de vacunas** (veterinaria conversando con el cuidador de un perro senior). Este artículo no tiene escena de consultorio: la imagen 4 muestra la lista escrita en casa, la noche antes de la consulta.
+* **Conceptos distintos de España** (refugio con mano y destellos, paseo con doble correa, consulta con palpación lumbar) **y de las portadas de leishmaniosis** (cuidadora ajustando el collar) **y de vacunas** (veterinaria conversando con el cuidador de un perro senior). Este artículo no tiene escena de consultorio: la imagen 4 muestra, de día y en casa, cómo se pasa a limpio la lista antes de la consulta.
 * **Paleta propia por escena:** patio en luz rasante de tarde (1); comedor con bombillo cálido y resplandor lejano (2); cuarto de trabajo en penumbra con lámpara de escritorio (3); cocina de día con luz natural de ventana (4); habitación de apartamento con luz del pasillo (5); portón a media tarde (7). Solo las imágenes 2, 3 y 5 son nocturnas, y cada una con otra fuente de luz.
 * **Cámara y grano:** reportaje, 28–50 mm, ISO alto con grano fino, sin viñeteado, sin resplandor suave, sin HDR.
 * **Contexto reconocible sin postal:** piso de cerámica, block repellado, silla plástica, pila, portón de lámina, celosías, cortinas de tela. **Sin sombreros, sarapes, piñatas, banderas ni tópicos.**
@@ -550,7 +550,7 @@ En la imagen 3 (miedo moderado), «mirada serena» se sustituye por «mirada ate
 - **Función:** mostrar que la consulta de noviembre se prepara en casa, pasando a limpio lo anotado en enero (H2-10). Sin consultorio (la portada de vacunas ya muestra a una veterinaria conversando con un cuidador).
 - **Prompt:** Imagen editorial para H2-5; debe dejar ver que, antes de la consulta, la tutora pasa a limpio en una libreta las notas que tomó en enero sobre cómo vivió su perro la pólvora. **El mismo mestizo criollo, macho de unos 12 años y 16 kg, pelo corto canela claro con máscara negra en el hocico y alrededor de los ojos, mancha blanca pequeña en el pecho, orejas semierguidas con la punta doblada hacia delante, cola en hoz poco poblada, tal como en la imagen de referencia.** Edad visible, todos estos rasgos a la vez: canas en el hocico, en las cejas y en los párpados (la máscara negra del hocico y de alrededor de los ojos está muy salpicada de gris plateado, y las cejas se ven claras); ojos marrones algo hundidos, con párpados algo caídos y mirada serena (sin velo ni catarata); lomo con la línea dorsal ligeramente hundida tras la cruz, hombros y cuartos traseros con menos masa muscular, costillas y pelvis discretas, sin delgadez extrema; postura natural de perro mayor sentado, con el cuello relajado, apoyos prudentes y sin poses atléticas; sin cojera, heridas, costras, calvas, ojos rojos, jadeo extremo ni sufrimiento. Collar de nailon rojo liso con una placa metálica redonda sin texto legible. Cocina de una casa de una planta en Centroamérica, una tarde de noviembre: mesa con mantel de plástico de cuadros verdes y blancos, una taza de café y una hoja de papel doblada y algo arrugada junto a la libreta; al fondo, una refrigeradora con imanes de colores sin texto; a la izquierda, una ventana con la cortina abierta por la que entra luz de día. La tutora, mujer de unos 55 años, pelo negro con canas recogido, blusa lila y anillo de casada, está sentada a la mesa y copia con un bolígrafo en una libreta abierta lo que dice la hoja doblada (letra manuscrita ilegible a esta distancia), con la otra mano sujetando la hoja (manos anatómicas, cinco dedos). El perro está sentado en el piso de cerámica junto a su silla, a plena luz, tranquilo, mirándola con el cuello relajado. Cámara a la altura de la mesa, plano medio que encuadra a la tutora de medio cuerpo, la libreta y al perro entero en el suelo; objetivo de 35 mm, ISO 800 con grano fino; luz natural de día desde la ventana de la izquierda, suave y neutra, sin lámparas encendidas; sombras coherentes; texturas de plástico, papel, algodón, cerámica y pelo corto. Acabado documental natural, sin viñeteado ni resplandor suave, color de saturación contenida. Evitar consultorio, bata o uniforme sanitario, teléfonos o pantallas, texto legible en la libreta o en cualquier objeto, letras o marcas dentro de la imagen, dedos de más o fundidos y perro de aspecto joven. *Instrucciones para quien genera, sin pintarlas:* ilustración generada, no representa a un paciente. **Rechazar si a tamaño móvil parece un adulto joven.**
 - **Alt:** Ilustración de una mujer que pasa notas a una libreta en la mesa de la cocina, de día, con su perro mestizo senior de color canela sentado a su lado.
-- **Pie:** Antes de la consulta, pasar a limpio lo que anotaste en enero: dónde se metió, cuánto duró y si comió.
+- **Pie:** Antes de la consulta, poner por escrito lo que pasó el diciembre anterior: dónde se metió, a qué hora empezó y si comió.
 - **Aceptación (390 px):** se entiende «pasa notas a limpio en casa, de día», no una consulta ni una escena nocturna; texto ilegible; la misma tutora que en la imagen 7; cinco rasgos de edad.
 
 ### Imagen 5 — Baltor en la habitación (H2-7, antes de `### Baltor, que no salía de las habitaciones`)
@@ -610,7 +610,7 @@ No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mis
 - [ ] 1 tabla (H2-9) en `<TablaApilable … compacta>` con `data-label`.
 - [ ] Enlaces del §5.1, incluidos el de la versión de España (H2-9), úlceras, alimentación sin dientes, paliativos y la calculadora (H2-4).
 - [ ] 7 imágenes con alt y pie del §8, en sus H3: portada (patio), Osa (H2-2), escritorio (H2-3), consulta (H2-5), Baltor y foto de Luna y Dakota (H2-7), portón (H2-8). La foto lleva «Fotografía» en el pie; las ilustraciones de testimonios, «Ilustración».
-- [ ] Tarjeta horizontal solo si `TarjetaRelacionada.astro` existe en `main`; el enlace en contexto de H2-9, siempre.
+- [ ] Tarjeta horizontal si `TarjetaRelacionada.astro` existe en `main` o en la rama de redacción (gate del §11 antes de publicar); el enlace en contexto de H2-9, siempre.
 
 **4. Testimonios** (solo del archivo):
 - [ ] Declarados en la introducción como recuerdos, con país.
@@ -691,7 +691,7 @@ No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mis
 - [ ] Antes de publicar, volver a abrir S12–S14 y comprobar si en Colombia se expidió la reglamentación de la Ley 2224 y si Bogotá abre el formulario en 2026.
 - [ ] Tabla manual de paráfrasis (§9.5) y comprobación de 8 palabras.
 - [ ] `npx astro build` sin errores.
-- [x] R1–R4 hechas; R5 y R6 autorizadas si hacen falta.
+- [x] Seis rondas hechas (R1–R6); R6 APTO con reservas y sus P3 corregidos. No hay más rondas autorizadas.
 
 ## Historial de auditoría
 
@@ -702,4 +702,5 @@ No aplica. El H2-4 (perro que no se levanta) **no lleva imagen**: mostrar al mis
 | R3 | 2026-10-26 | Agente independiente (sesión distinta) | **APTO con reservas** | 0 P0, 0 P1, 2 P2 (paralelos de H3 con España; cronología de las imágenes 2 y 3), 8 P3. Informe: `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r3.md` | Corregido el 2026-10-26 en v4 (ver `correccion-r3.md`), comprobado por búsquedas de texto. El auditor del artículo recibe el informe R3 |
 | — | 2026-10-27 | Decisiones del propietario (sin ronda de auditoría) | — | Raza aprobada; testimonio del compañero autorizado; aspecto de Osa (mestiza de pastor alemán) y Baltor (chow chow café claro); 7 imágenes con foto real de Luna y Dakota; tarjeta horizontal en los dos artículos | v5. El auditor del artículo comprueba estos puntos |
 | R4 | 2026-10-27 | Agente independiente (sesión distinta) | **APTO con reservas** | 0 P0, 0 P1, 5 P2 (Dakota y H2-4 contradictorios; identificación de la foto sin confirmar; imagen 4 repetía la portada de vacunas; geometría de Baltor; orden de la tarjeta), 8 P3. Informe: `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r4.md` | Corregido el 2026-10-27 en v6 (ver `correccion-r4.md`) |
-| R5 | 2026-10-27 | Agente independiente (sesión distinta) | **NO APTO** | 0 P0, 1 P1 (pie de la foto atribuía los temblores a Dakota), 3 P2 (norma de leishmaniosis desplazada; imagen 4 repetía luz y composición; §5.2 no describía el componente real), 7 P3. Informe: `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r5.md` | Corregido el 2026-10-27 en v6.1 (ver `correccion-r5.md`). Queda R6 |
+| R5 | 2026-10-27 | Agente independiente (sesión distinta) | **NO APTO** | 0 P0, 1 P1 (pie de la foto atribuía los temblores a Dakota), 3 P2 (norma de leishmaniosis desplazada; imagen 4 repetía luz y composición; §5.2 no describía el componente real), 7 P3. Informe: `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r5.md` | Corregido el 2026-10-27 en v6.1 (ver `correccion-r5.md`) |
+| R6 | 2026-10-27 | Agente independiente (sesión distinta) | **APTO con reservas** | 0 P0, 0 P1, 0 P2, 4 P3 (resto de «la noche antes»; pie de la imagen 4; estados viejos; `main` frente a rama de redacción). Informe: `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r6.md` | P3 corregidos el 2026-10-27 en v6.2, comprobados por búsqueda de texto. Última ronda autorizada |
