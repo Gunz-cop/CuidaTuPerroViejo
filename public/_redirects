@@ -27,3 +27,15 @@
 /2026/05/disfuncion-cognitiva-perros-mayores.html /salud-mental-emocional-perros/disfuncion-cognitiva-canina 301
 /2026/06/incontinencia-urinaria-perros-mayores.html /higiene-hogar-perros-senior/incontinencia-urinaria-perros-mayores 301
 
+
+# --- Variantes .html y con barra final de las URLs canónicas ---
+# `build.format: 'file'` genera cada página como `ruta.html`, y Cloudflare
+# Assets resuelve `/ruta.html` y `/ruta/` con un 307 (temporal). Con un 307
+# Google conserva la variante como URL propia: en Search Console el 41 % de
+# los clics de jul–oct 2026 caía en URLs .html. Estas reglas lo convierten en
+# un 301 de un solo salto. Van al final: la primera regla que coincide gana, así
+# que las redirecciones de Blogger de arriba siguen llevando a su destino.
+/index.html / 301
+/index / 301
+/*.html /:splat 301
+/*/ /:splat 301

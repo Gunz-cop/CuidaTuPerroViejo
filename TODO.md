@@ -4,6 +4,20 @@ Lista viva de ideas y tareas que el dueño del sitio menciona en las sesiones. L
 
 Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aquí.
 
+## AdSense: tercer rechazo por «contenido de bajo valor» (anotado: 2026-10-28)
+
+Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 91.000 impresiones, ~25 clics/día y subiendo) y el sitio publicado: lo técnico de AdSense está bien (`ads.txt`, código, rastreo con 200); lo que falta es valor propio visible y un poco más de tráfico. La cantidad de artículos no es el problema: la calculadora (25 % de los clics) y la comida casera con la receta de Luna (18 %) se llevan casi la mitad; los artículos que resumen guías apenas reciben visitas.
+
+- [ ] **Redirecciones `.html` y barra final de 307 a 301.** El 41 % de los clics caía en URLs `.html`; Cloudflare Assets las resolvía con un 307 temporal y Google conservaba las dos versiones. Reglas al final de `public/_redirects` y `scripts/audit-seo.mjs` las trata como fallo. PR abierto el 2026-10-28; marcar al verificar producción con `npm run audit:seo`.
+- [ ] **«Always Use HTTPS» en Cloudflare.** `http://cuidatuperroviejo.com/…` responde 200 sin redirigir a https (lo detecta `audit:seo`). Es un ajuste del panel de Cloudflare, no del repo.
+- [ ] **Enviar a Search Console capturas de Indexación → Páginas y de Acciones manuales** para descartar otros problemas.
+- [ ] **Poner cara al sitio:** firma «Gonzalo» con foto y biografía corta en los artículos en vez de «Equipo Cuida a tu Perro Viejo»; agrupar los avisos de IA y «sin caso clínico» en un pie discreto al final; quitar «sin revisión veterinaria individual acreditada» de la primera pantalla de la portada.
+- [ ] **Fotos reales de Luna y Dakota** en portada, Acerca de y artículos donde encajen (cama ortopédica, comida casera, poliquezia). Requiere material del dueño.
+- [ ] **Sección «En casa con Luna y Dakota»** solo donde haya experiencia real y documentada (enlaza con «Recuperar la experiencia propia» más abajo).
+- [ ] **Escala HHHHHMM imprimible en PDF real** desde la calculadora: se busca «escala hhhhhmm pdf» (74 impresiones, 13 clics en 3 meses).
+- [ ] **Publicar con ritmo constante** (1–2 artículos por semana) en vez de ráfagas y reescrituras en bloque.
+- [ ] **No volver a solicitar la revisión** hasta que las URLs `.html` desaparezcan de Search Console y los clics sigan subiendo; estimación propia de 4–6 semanas como mínimo, no un plazo de Google.
+
 ## Contenido
 
 - [x] **Preparar P1-03 para publicación.** Traslado mecánico, recursos activos, limpieza y pruebas completados el 2026-10-26; [código #148](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/148) y [artículo #149](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/149), preparados originalmente como draft; fusionados después por orden del propietario, ver cierre de producción.
