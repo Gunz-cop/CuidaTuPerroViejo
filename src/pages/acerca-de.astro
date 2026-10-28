@@ -22,11 +22,18 @@ const aboutSchema = {
       "about": { "@id": "https://cuidatuperroviejo.com/#organization" }
     },
     {
-      // Un equipo editorial no es una Person, y su descripción no debe reclamar
-      // una titulación que nadie del equipo tiene. La autoría de los artículos
-      // apunta a esta misma Organization.
+      // Gonzalo firma los artículos (author en [slug].astro apunta a este @id).
+      // Sin jobTitle ni credenciales: la página no reclama titulación veterinaria.
+      "@type": "Person",
+      "@id": "https://cuidatuperroviejo.com/#gonzalo",
+      "name": "Gonzalo",
+      "url": "https://cuidatuperroviejo.com/acerca-de",
+      "description": "Creador y responsable editorial de Cuida tu Perro Viejo; cuida de sus dos perras senior, Luna y Dakota."
+    },
+    {
       "@type": "Organization",
       "@id": "https://cuidatuperroviejo.com/#organization",
+      "founder": { "@id": "https://cuidatuperroviejo.com/#gonzalo" },
       "name": "Cuida tu Perro Viejo",
       "description": "Proyecto creado y dirigido editorialmente por Gonzalo, nacido de las dudas al cuidar a sus dos perras senior. Distingue experiencia doméstica y fuentes veterinarias publicadas.",
       "url": "https://cuidatuperroviejo.com/",
