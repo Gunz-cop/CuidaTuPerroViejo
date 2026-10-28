@@ -2,6 +2,16 @@
 
 Instrucciones compartidas para agentes de código (Claude Code, Codex, Antigravity u otros) que trabajen en este repositorio.
 
+## Cambios en `main`
+
+`main` despliega a producción. Ningún agente hace push directo a `main`, tampoco cuando trabaja con las credenciales del propietario. Todo cambio va en una rama, con un PR que fusiona el propietario. El propietario puede hacer commits directos; si no están exentos, se aplica la última viñeta.
+
+- **Regla general:** todo PR contra `main` necesita una auditoría independiente con veredicto explícito antes de fusionarse, salvo que solo toque archivos exentos. Se registra en el expediente del artículo (`docs/contenido/<slug>/`) o, si no hay expediente, como comentario en el propio PR. Quien corrige no audita y quien audita no corrige.
+- **Exenciones (lista cerrada):** `docs/`, `briefings/`, `.agents/`, `TODO.md` e `INVENTARIO_CONTENIDO.md`. Ninguna otra ruta está exenta. Un archivo de esas rutas que el build (`astro build`, lo que ejecuta Workers Builds) lee, importa o ejecuta deja de estar exento; por ejemplo, `docs/agent-readiness/evidencia/f4b/referencias/card-schema.txt`, con el que `scripts/agent-readiness/agent-api.mjs` valida la tarjeta MCP. Lo que solo lee la CI no pierde la exención.
+- **Casos particulares:** en una corrección urgente de seguridad, la auditoría puede limitarse a las líneas cambiadas; es la excepción al «lee los archivos finales» de [`calidad-editorial-adsense.md`](.agents/skills/references/calidad-editorial-adsense.md) §6. La configuración de build sigue además la spec de la migración; en los PR contra `migracion/astro-7`, la auditoría es la del verificador de cada fase. En la fusión `migracion/astro-7 → main`, cuenta como auditoría el informe del verificador de la última fase solo si verificó el mismo commit que se fusiona, citado por su hash en el PR de esa fusión. Los commits que la rama reciba después necesitan su propia auditoría independiente antes de fusionar.
+- **Expediente coherente con lo hecho:** si el encargo o el expediente dice que no se toca `main`, ninguna sesión fusiona ni hace push a `main` en esa tarea.
+- **Cambio no exento que llegó a `main` sin auditoría:** se registra en [`TODO.md`](TODO.md) y lo audita la siguiente sesión que trabaje en el repositorio sin haber tocado ese cambio. La entrada de `TODO.md` enlaza el informe. No se rehace en silencio.
+
 ## Migración de stack en curso
 
 El sitio está migrando de Astro 4 a Astro 7 sobre Cloudflare Workers. **Antes de tocar `package.json`, `astro.config.mjs`, `wrangler.jsonc`, `tsconfig.json` o los estilos globales, leé [`docs/migracion-stack/README.md`](docs/migracion-stack/README.md)**: es la spec de producto y dice qué fase toca, contra qué rama va y qué está decidido.
