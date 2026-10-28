@@ -1,0 +1,23 @@
+### leishmaniosis-articulo.yaml
+AVISO   LEI-A-101: P2 nuevo en texto no modificado durante R3; pasa a diferido
+AVISO   LEI-A-103: P2 nuevo en texto no modificado durante R3; pasa a diferido
+VEREDICTO articulo: NO APROBADO (LEI-A-102)
+código de salida: 0
+
+### miedo-petardos-brief.yaml
+AVISO   R3 NO APROBADO: corresponde informe de escalamiento, no R4 automática
+VEREDICTO brief: APROBADO con 1 P2 abiertos/diferidos
+código de salida: 0
+
+### control-omision-falsa.yaml
+ERROR   LEI-A-104: se declara ausente, pero 10 líneas contienen ['gato'] (líneas 241, 272, 302, 304, 305, 308, 310, 322). Explica por qué el texto presente no basta o descártalo
+VEREDICTO articulo: NO APROBADO (LEI-A-104)
+código de salida: 1
+
+### control-preferencia-bloqueante.yaml
+ERROR   PET-B-059: una preferencia de estilo no puede bloquear
+ERROR   PET-B-059: P1 nuevo en texto no modificado sin explicar por qué no se vio antes
+AVISO   R3 NO APROBADO: corresponde informe de escalamiento, no R4 automática
+VEREDICTO brief: ESCALADO AL PROPIETARIO (PET-B-059)
+código de salida: 1
+

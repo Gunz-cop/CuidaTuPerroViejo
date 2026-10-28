@@ -1,0 +1,55 @@
+# Reconstrucción parcial del brief de miedo a los petardos (seis rondas, 2026-10-25).
+# Recuentos de los informes R1-R6. Solo se modelan los hallazgos que prueban el control de iteraciones.
+# Con el contrato nuevo, R3 NO APROBADO genera un informe de escalamiento. El propietario autorizó
+# R4-R6 por escrito (correccion-r3.md, l. 3); aquí se registra esa autorización.
+articulo: miedo-petardos-perros-mayores
+fase: brief
+rondas:
+  - {n: 1, resultado: NO APROBADO, recuento: "0 P0 / 6 P1 / 9 P2"}
+  - {n: 2, resultado: NO APROBADO, recuento: "0 P0 / 4 P1 / 12 P2"}
+  - {n: 3, resultado: NO APROBADO, recuento: "0 P0 / 1 P1 / 9 P2"}
+  - {n: 4, resultado: NO APROBADO, recuento: "0 P0 / 1 P1 / 10 P2 / 9 P3", autorizada_por_propietario: "correccion-r3.md l. 3"}
+  - {n: 5, resultado: APROBADO, recuento: "0 P0 / 0 P1 / 6 P2 / 14 P3", autorizada_por_propietario: "correccion-r3.md l. 3"}
+  - {n: 6, resultado: APROBADO, recuento: "0 P0 / 0 P1 / 2 P2 / 15 P3", autorizada_por_propietario: "correccion-r3.md l. 3"}
+hallazgos:
+  - id: PET-B-012
+    severidad: P1
+    estado: cerrado
+    origen: brief
+    ronda_apertura: 2
+    regla: "generar-briefing Fase 1.4: no alterar hechos de la historia real"
+    localizacion: "§6, bullets de testimonio"
+    evidencia: "R2 P1-C; R3 N-1: dos bullets reescriben lo dicho por el propietario"
+    impacto: "El artículo atribuiría al propietario frases que no dijo"
+    correccion: "Citar solo testimonios-propietario.md"
+    criterio_cierre: "Cada frase de testimonio localizable en testimonios-propietario.md"
+    historial:
+      - {ronda: 2, estado: abierto, evidencia: "R2 P1-C"}
+      - {ronda: 3, estado: abierto, evidencia: "R3 N-1, corregido en parte"}
+      - {ronda: 4, estado: cerrado, evidencia: "R4: N-1 resuelto salvo F-1"}
+  - id: PET-B-031
+    severidad: P1
+    estado: cerrado
+    origen: brief
+    ronda_apertura: 4
+    en_texto_modificado: true   # «el último diciembre» entró con correccion-r2.md (l. 15-16)
+    regla: "generar-briefing Fase 1.4: nunca añadir datos que el usuario no dio"
+    localizacion: "cinco apariciones de «el último diciembre»"
+    evidencia: "testimonios-propietario.md dice «el año pasado (2025)»; nunca «diciembre»"
+    impacto: "Dato inventado en boca del propietario"
+    correccion: "«en 2025», sin mes"
+    criterio_cierre: "grep «diciembre» solo en la lista de evitar"
+    historial:
+      - {ronda: 4, estado: regresion, evidencia: "Introducido por la corrección de R2; R3 no lo detectó"}
+      - {ronda: 5, estado: cerrado, evidencia: "R5: cerrado"}
+  - id: PET-B-058
+    severidad: P2
+    estado: diferido
+    origen: brief
+    ronda_apertura: 6
+    en_texto_modificado: false
+    localizacion: "§8, imagen 2"
+    evidencia: "R6 P3-6: focal de 50 mm frente a 28-35 mm; bufanda por encima del corte"
+    impacto: "Prompt de imagen mejorable"
+    correccion: "Cambiar la focal o quitar la bufanda"
+    criterio_cierre: "Prompt coherente con el encuadre"
