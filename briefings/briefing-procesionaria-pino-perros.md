@@ -1,6 +1,8 @@
 # Brief de contenido: Procesionaria del pino y perros: primeros auxilios y cuándo ir a urgencias
 
-**Sitio:** cuidatuperroviejo.com · **Pilar:** Salud de Perros Mayores · **Serie:** España, P1-04 · **Tipo:** spoke Astro/MDX · **Versión:** v1, 2026-11-06.
+**Sitio:** cuidatuperroviejo.com · **Pilar:** Salud de Perros Mayores · **Serie:** España, P1-04 · **Tipo:** spoke Astro/MDX · **Versión:** v2, 2026-11-06.
+
+**Ajuste autorizado:** el propietario ha fijado para este artículo un rango de **5.500–6.000 palabras** y ha pedido ajustar únicamente el brief y esperar. Esta v2 sustituye el presupuesto de v1 (2.200 palabras; 1.870–2.530 con tolerancia), aprobado en R1. El objetivo de trabajo es **5.750 palabras**. La ampliación desarrolla decisiones prácticas, preparación de la consulta, seguimiento y prevención dentro de los cinco H2 existentes, con presupuestos por H3; no añade tratamientos, fuentes, casos ni afirmaciones clínicas. La respuesta urgente se mantiene al principio. Este encargo no inicia la redacción ni la producción visual.
 
 ## 1. Datos, metadatos y frontmatter MDX
 
@@ -16,7 +18,7 @@
 | Ruta pilar | `/salud-perros-mayores` |
 | Intención principal | Resolver una sospecha de contacto durante un paseo; actuar y localizar atención inmediata. |
 | Intención secundaria | Reconocer riesgo antes de salir y preparar una ruta alternativa accesible para un perro mayor. |
-| Objetivo | 2.200 palabras; guía urgente con respuesta al principio, explicación breve y prevención posterior. |
+| Objetivo | 5.750 palabras; entrega entre 5.500 y 6.000, con respuesta urgente al principio y desarrollo práctico posterior. |
 | Fecha del brief | 2026-11-06 |
 
 ```yaml
@@ -115,73 +117,106 @@ Dos spokes publicados del mismo pilar y calculadora por requisito del flujo de S
 
 ## 6. Estructura detallada y presupuesto
 
-**Target total exacto: 2.200 palabras.** Suma: 100 + 320 + 400 + 300 + 250 + 350 + 80 + 400. Tolerancia ±15 % por bloque; rango global 1.870–2.530 palabras de cuerpo visible. Incluye AlertBox/FAQ; excluye YAML, imports, alt, pies y bibliografía. Justificación: cinco decisiones diferentes, primera ayuda antes de fisiología, prevención sin convertir la guía en enciclopedia. No rellenar para alcanzar volumen; documentar ajustes si cambia la cobertura.
+**Target total exacto: 5.750 palabras. Rango contractual: 5.500–6.000 palabras de cuerpo visible.** Suma: 150 + 800 + 1.100 + 900 + 1.000 + 1.100 + 100 + 600. El rango global es obligatorio: la tolerancia orientativa de ±15 % por bloque no lo amplía. Incluye encabezados, listas, AlertBox y las siete preguntas/respuestas FAQ; excluye YAML, imports, alt, pies y bibliografía. Los targets de H3 incluyen su encabezado y los componentes asignados; no sumar palabras adicionales por esos elementos.
 
-### Introducción — 100 palabras
+**Justificación y control de utilidad:** ampliación solicitada por el propietario, organizada en cinco decisiones diferentes y preguntas subordinadas con una salida práctica. Mantener las instrucciones urgentes en la apertura; el resto permite preparar la consulta, entender sus límites, organizar el alta y cambiar la ruta habitual. No llenar el presupuesto con historia natural, fisiología extensa, repeticiones de síntomas, pacientes ficticios o protocolos clínicos. Las cinco fuentes de §3 conservan exactamente sus afirmaciones y límites. Las listas de organización son propuestas editoriales, no intervenciones de eficacia demostrada ni datos atribuidos a un estudio. Si la redacción necesitara una afirmación clínica adicional para completar un bloque, debe documentarla y verificarla antes de incorporarla, nunca deducirla del nuevo volumen.
+
+| Bloque | Target | Desarrollo previsto |
+|---|---:|---|
+| Introducción | 150 | Acción inmediata y orientación de lectura. |
+| H2-1 Señales | 800 | Cuatro H3 de 200. |
+| H2-2 Antes de llegar | 1.100 | Cuatro H3 de 180 y dos de 190. |
+| H2-3 Consulta | 900 | Cinco H3 de 180. |
+| H2-4 Después del alta | 1.000 | Cinco H3 de 200. |
+| H2-5 Prevención en España | 1.100 | Cuatro H3 de 180 y dos de 190. |
+| Conclusión | 100 | Decisión y siguiente paso. |
+| FAQ final | 600 | Cuatro preguntas/respuestas de 85 y tres de 86/87/87. |
+| **Total** | **5.750** | **Entrega real entre 5.500 y 6.000.** |
+
+### Introducción — 150 palabras
 
 *Sustentado en:* S1 COLVET/Murcia.
 
-- Instruir una apertura de dos frases útiles: contacto sospechado → llamada y atención inmediata; simple avistamiento → apartarse sin acercarse a comprobar. Empatía breve, nada de escena dramática ni relato de Luna.
-- `AlertBox type="info" title="Puedes centrarte en el siguiente paso"`: acompañar sin culpa y orientar al primer bloque de acciones. Redactor escribe el cuerpo, no copiar un párrafo del brief.
+- Abrir con contacto sospechado → llamada y atención inmediata; simple avistamiento → apartarse sin acercarse a comprobar. Primera acción en las dos primeras frases, antes de contexto, enlaces o imágenes de cuerpo.
+- Orientar la lectura: quien está ante una exposición utiliza los pasos inmediatos; quien prepara un paseo puede ir a prevención. Empatía breve, nada de escena dramática ni relato de Luna.
+- `AlertBox type="info" title="Puedes centrarte en el siguiente paso"`: acompañar sin culpa y orientar al bloque de acciones. Su texto cuenta dentro de las 150 palabras; el redactor lo escribe después.
 
-### H2-1. Señales de contacto: cuándo salir hacia urgencias — 320 palabras
+### H2-1. Señales de contacto: cuándo salir hacia urgencias — 800 palabras
 
 *Sustentado en:* S1 COLVET/Murcia; S4 Kaszak, Planellas y Dworecka-Kaszak (2015).
 
-- `### Lo que puedes observar sin abrirle la boca`: organizar síntomas orales y oculares, separando observación de diagnóstico. Conectar paseo reciente y exposición; no exigir que el dueño identifique la especie o vea pelos.
-- `### Respirar o tragar con dificultad exige atención inmediata`: priorizar síntomas graves; no esperar a necrosis ni a una lista completa de signos. Ante contacto confirmado/sospechado ya se consulta de inmediato aunque el perro parezca tranquilo.
-- `AlertBox type="danger" title="Dificultad respiratoria: traslado inmediato"`: concentrar respiración difícil, hinchazón marcada, lengua azulada o deterioro intenso. Indicar que nada de lo siguiente debe demorar la salida; evitar forzar líquidos o manipulación oral en esas condiciones.
-- El lector distingue gravedad para comunicarla; no recibe un algoritmo que decida que puede quedarse en casa.
+1. **H3 «Qué significa una sospecha de contacto» — 200.** Distinguir exposición vista, posible contacto durante olfateo y avistamiento lejano. Explicar el papel urticante de los pelos con S4, sin una lección entomológica ni diagnóstico casero. El resultado es saber qué contar al centro, no acercarse para confirmar especie o recoger un ejemplar.
+2. **H3 «Lo que puedes observar sin abrirle la boca» — 200.** Organizar señales orales de S1/S4 y observación a distancia. Separar lo visto de lo supuesto; no exigir encontrar pelos, forzar la lengua o tomar fotografías de lesiones. Evitar repetir estas descripciones en consulta/seguimiento.
+3. **H3 «Ojos y cara: comunica los cambios sin manipular» — 200.** Desarrollar afectación ocular e inflamación descritas en S1/S4; orientar a informar de qué zona cambia y cuándo. No convertir aspecto en gravedad diagnosticada, enseñar exploración ocular ni introducir gotas, lavado a presión o maniobras de párpados.
+4. **H3 «Respirar o tragar con dificultad exige atención inmediata» — 200.** Priorizar la comunicación de estos cambios; no esperar necrosis o una lista completa de síntomas. Incluir `AlertBox type="danger" title="Dificultad respiratoria: traslado inmediato"` con respiración difícil, hinchazón marcada, lengua azulada o deterioro intenso, sin forzar líquidos/manipulación oral. El cuadro cuenta en este H3. Toda sospecha ya requiere consulta inmediata, aunque los signos parezcan leves.
 
-### H2-2. Qué hacer antes de llegar: apartarse, llamar y lavar solo si es seguro — 400 palabras
+**Decisión resuelta:** reconocer y comunicar lo ocurrido; nunca asignar un nivel doméstico que permita quedarse en casa.
+
+### H2-2. Qué hacer antes de llegar: apartarse, llamar y lavar solo si es seguro — 1.100 palabras
 
 *Sustentado en:* S1 COLVET/Murcia; S2 Generalitat Valenciana.
 
-- `### Organiza el traslado antes de buscar remedios`: lista breve numerada: salir del lugar, contactar centro veterinario próximo para confirmar recepción e indicar sospecha, desplazar al perro. Si hay dos personas, repartir llamada/conducción; no usar móvil conduciendo. Llevar envases o lista de medicación solo si están a mano.
-- `### Deja caer el agua, sin frotar ni forzar`: describir únicamente lavado superficial de la zona accesible con agua limpia templada, sin calor, sin presión, sin introducir botella o jeringa en boca. Proteger manos y evitar tocarse ojos/cara; no intentar extraer pelos. No perder tiempo calentando agua: consulta telefónica y traslado tienen prioridad.
-- **Límite junto al gesto:** si respira o traga mal, está muy alterado, ofrece resistencia o existe riesgo de mordedura, omitir lavado oral y seguir hacia urgencias; nada de abrirle la boca a la fuerza, echar agua hacia la garganta o inmovilizarla con un bozal cerrado. El fin es arrastrar superficialmente, no hacerle beber. No dar comida ni medicación para «neutralizar» la reacción. Condiciones conservadoras de seguridad editorial, no técnica de tratamiento clínico.
-- `AlertBox type="warning" title="Evita los remedios que añaden riesgo"`: no frotar, provocar vómito, usar vinagre/bicarbonato o agua caliente, inyectar o administrar fármacos por cuenta propia. El profesional decide tratamiento según exploración y antecedentes; advertencia coherente con política editorial. No reproducir dosis históricas de S4.
-- No enseñar lavado ocular a presión ni manipulación de párpados: dolor ocular se comunica y deriva. Explicar por qué S1 prima sobre consejos antiguos de agua caliente sin convertirlo en discusión bibliográfica extensa.
+1. **H3 «Sal del lugar sin volver a comprobar» — 180.** Planificar una secuencia corta: alejarse con el perro sujeto y evitar que se acerque otra vez. Priorizar persona/perro; no recoger orugas, tocar nidos ni regresar por una foto. La protección de manos/cara se relaciona con S2, sin tutorial de recogida o descontaminación de objetos.
+2. **H3 «Llama y confirma dónde os van a recibir» — 180.** Contactar con centro veterinario próximo e indicar exposición sospechada y estado respiratorio. Confirmar ubicación/recepción para organizar la salida; evitar buscar centros, opiniones o precios durante un tiempo indefinido. La llamada orienta la atención, no es una autorización para esperar. Los datos detallados quedan en H2-3.
+3. **H3 «Reparte las tareas y facilita el desplazamiento» — 180.** Proponer reparto de llamada/conducción si hay dos personas y uso seguro del móvil si se está solo. Tener a mano dirección y antecedentes; evitar volver a casa por documentos. Adaptar ayuda al perro mayor a sus apoyos habituales y a la orientación de la clínica; sin técnica nueva de carga, bozal cerrado o maniobra respiratoria. Presentarlo como organización práctica, no evidencia clínica de S1/S2.
+4. **H3 «Deja caer el agua, sin frotar ni forzar» — 190.** Describir solo lavado superficial de zona accesible con agua limpia templada según S1: sin calor, presión, botella/jeringa dentro de boca ni intentar extraer pelos. Proteger manos, evitar tocarse ojos/cara. No perder tiempo calentando agua ni hacerlo beber; la salida tiene prioridad. No enseñar lavado ocular ni manipulación de párpados.
+5. **H3 «Cuándo omitir el lavado y seguir hacia urgencias» — 180.** Mantener el límite junto al gesto anterior y desarrollarlo aquí con la acción correspondiente: ante dificultad respiratoria/deglutoria, alteración, resistencia o mordedura, omitirlo y continuar. Nada de forzar apertura de boca, verter hacia garganta o inmovilizar con bozal cerrado. Son límites conservadores de seguridad editorial, no técnica experimental ni una secuencia que haya que completar antes de salir.
+6. **H3 «Evita los remedios que añaden riesgo» — 190.** Incluir `AlertBox type="warning" title="Evita los remedios que añaden riesgo"`: no frotar, inducir vómito, usar vinagre/bicarbonato/agua caliente, inyectar ni administrar medicamentos por cuenta propia. No comida o medicación para neutralizar. Explicar brevemente que el lavado de S1 es arrastre superficial y la clínica decide tratamiento; excluir dosis históricas de S4. Concentrar aquí las prohibiciones, sin repetirlas en cada H3.
 
-### H2-3. Qué información necesita el veterinario y cómo se valora el daño — 300 palabras
+**Decisión resuelta:** salir hacia atención con la primera ayuda limitada a lo seguro. Los pasos se presentan como prioridades, no una lista de trámites obligatorios antes del traslado.
+
+### H2-3. Qué información necesita el veterinario y cómo se valora el daño — 900 palabras
 
 *Sustentado en:* S3 Niza et al. (2012); S4 Kaszak, Planellas y Dworecka-Kaszak (2015); S5 ICOVAL.
 
-- `### Una llamada de un minuto con los datos útiles`: lista editorial: cuándo y dónde, contacto visto o sospechado, cambios observados, respiración/deglución, edad y antecedentes, tratamiento habitual, qué se ha intentado. Hora aproximada, nunca retrasar llamada por completarla. Enlazar chequeo como ampliación posterior.
-- `### Evaluación temprana, sin reloj de espera`: explicar exploración oral/ocular y atención respiratoria según clínica. Atribuir la serie de 41 perros al equipo portugués, con su límite observacional; comunicar que la demora se relacionó con lesión lingual, no que llegar antes de dos horas garantice un desenlace.
-- Usar la recomendación ICOVAL de valorar signos compatibles incluso leves. No listar pruebas de laboratorio obligatorias ni tratamientos universales, precios o porcentajes de curación.
+1. **H3 «Cuenta cuándo, dónde y qué contacto has visto» — 180.** Lista de llamada breve: hora aproximada, lugar, contacto confirmado/sospechado y primeros cambios. Diferenciar observación y duda; nunca retrasar por reconstruir minutos exactos. No escribir diálogo ficticio ni convertir un ejemplo de formulario en paciente real.
+2. **H3 «Prepara antecedentes y tratamientos sin retrasar la salida» — 180.** Propuesta editorial de información: edad, enfermedades conocidas, medicamentos habituales y qué se intentó tras el contacto. Usar envases/lista si están disponibles, sin volver a buscarlos ni modificar tratamientos. Enlazar chequeo como ampliación posterior, no cita sustitutiva de la urgencia. Evitar afirmar interacciones o riesgos geriátricos no estudiados.
+3. **H3 «Qué áreas puede necesitar valorar el equipo» — 180.** Con S4, explicar evaluación oral/ocular y prioridad respiratoria según el estado. Presentar el alcance de la atención, sin imponer análisis, sedación, pruebas o tratamiento universales. Diferenciar lo que puede observar el cuidador de la exploración profesional.
+4. **H3 «Por qué no hay un reloj seguro para esperar» — 180.** Atribuir la serie retrospectiva de 41 perros a Niza y al contexto portugués. Explicar asociación demora/lesión lingual y ausencia de garantía al llegar antes de dos horas; sin porcentajes propios ni causalidad inferida. S5 apoya evaluar incluso signos leves. No fabricar una curva de riesgo o pronóstico individual.
+5. **H3 «Qué dudas conviene resolver antes de volver a casa» — 180.** Preparar preguntas sobre lesión observada, necesidad de seguimiento y forma de obtener instrucciones de alta. Separar consulta de pronóstico de petición de certezas: la evidencia disponible no cuantifica efecto de la edad. El bloque prepara la conversación; H2-4 organiza después las indicaciones recibidas, sin repetirlas aquí en detalle.
 
-### H2-4. Después del alta: qué registrar en un perro mayor — 250 palabras
+**Decisión resuelta:** transmitir información útil y entender qué puede aclarar la valoración presencial, manteniendo los límites observacionales de S3.
+
+### H2-4. Después del alta: qué registrar en un perro mayor — 1.000 palabras
 
 *Sustentado en:* S4 Kaszak, Planellas y Dworecka-Kaszak (2015).
 
-- `### Pide por escrito alimentación, tratamiento y revisión`: el documento de alta debe concretar qué puede comer/beber, cómo usar el tratamiento prescrito y cuándo volver. Mencionar que las lesiones pueden evolucionar durante los días siguientes; evitar un calendario casero de curación. Solo la clínica decide soporte alimentario si lo precisa.
-- `### Anota los cambios y vuelve a llamar si empeora`: proponer un registro editorial sencillo (hora, ingesta permitida/tolerada, dolor observado, nuevas dificultades, contacto con clínica). Nada de forzar jeringas o estrenar recetas. Dificultad respiratoria o para tragar se mantiene como señal de urgencia, no se espera a la revisión.
-- Adaptación senior logística: cama accesible y camino sin obstáculos, medicación previa comunicada para que la clínica la concilie; no afirmar que la edad cause necrosis. Enlazar pilar y calculadora de calidad de vida como observación después de atención, condicionada a limitaciones persistentes. Mantener la calculadora fuera de la decisión aguda; no utilizar su puntuación para decidir si acudir ni para predecir recuperación.
+1. **H3 «Sal con las indicaciones y el contacto por escrito» — 200.** Proponer lista organizativa: alimentación, uso del tratamiento prescrito, próxima revisión y vía de contacto. Pedir aclaración de instrucciones ambiguas al equipo; nada de completar dosis o suspensiones por internet. Conectar la evolución posible en días de S4 con la necesidad del plan individual.
+2. **H3 «Organiza la comida y el agua según lo que os hayan indicado» — 200.** Desarrollar cómo registrar lo permitido y tolerado y qué comunicar si cuesta seguir el alta. Nada de papillas universales, jeringas, forzar ingesta o prometer recuperación oral; el soporte alimentario lo decide la clínica. Describir campos útiles, no pautas nutricionales nuevas.
+3. **H3 «Un registro breve que puedan compartir los cuidadores» — 200.** Propuesta editorial en lista: hora, ingesta permitida/tolerada, cambios observados, instrucciones recibidas y contacto con centro. Diferenciar observación de interpretación; una sola versión de las indicaciones para quienes lo cuidan. Sin plantilla descargable, app, formulario ni caso con resultados inventados.
+4. **H3 «Prepara una zona accesible y revisa cómo se encuentra» — 200.** Organización doméstica: cama accesible, pasos despejados y datos del seguimiento a mano, sin manipular lesiones ni añadir rehabilitación. Enlazar pilar Salud; calculadora solo si persisten limitaciones después de recibir atención, como registro de observación. Su puntuación nunca decide urgencia, evolución de la lesión o pronóstico.
+5. **H3 «Qué cambios comunicar y cuándo volver a pedir ayuda» — 200.** Centrar en novedades respecto al alta, dificultad para cumplir indicaciones o empeoramiento. Remitir a atención inmediata si aparecen problemas respiratorios o para tragar, sin esperar la revisión programada. No repetir catálogo completo de H2-1 ni fijar días de curación. La edad adapta organización/antecedentes, no se presenta como causa demostrada de necrosis.
 
-### H2-5. Pasear en España: evitar el contacto sin depender de un mes fijo — 350 palabras
+**Decisión resuelta:** seguir y compartir el plan real de la clínica. La utilidad del registro es organizativa; no se atribuye a S4 una validación de esa lista ni una mejora clínica probada.
+
+### H2-5. Pasear en España: evitar el contacto sin depender de un mes fijo — 1.100 palabras
 
 *Sustentado en:* S2 Generalitat Valenciana; S5 ICOVAL.
 
-- `### Revisa la ruta antes de entrar en una zona de pinos`: orientar sobre bolsones y procesiones observados a distancia; llevar sujeto al perro y escoger alternativa sin zona afectada. Explicar el periodo habitual de finales de invierno/primavera como orientación; ejemplo atribuido del aviso de Alicante de enero de 2026, sin anunciar una alerta actual ni prometer seguridad fuera de temporada.
-- `### Prepara una alternativa cómoda y deja la retirada a profesionales`: adaptar recorrido accesible/corto a movilidad y descanso; no acercar al perro al nido ni a restos para obtener una foto. Avisar al ayuntamiento de presencia en espacios públicos; en propiedad privada, solicitar valoración profesional, sin tutorial de poda, quema o biocidas. No usar bolsas y guantes como invitación a recoger orugas.
-- Dejar preparado centro y teléfono de urgencias, ruta alternativa, agua y material sencillo de protección; son logística, no «kit antídoto». Enlazar vacunas/desparasitación para situar la prevención rutinaria, dejando claro que la acción aquí es evitar contacto. No añadir estudios ecológicos ni un mapa provincial sin datos.
+1. **H3 «Mira la ruta desde una distancia segura» — 180.** Explicar observación de bolsones/procesiones y selección de alternativa sin entrar en la zona afectada. No acercar al perro para identificar especie, explorar restos o tomar fotos. No añadir una distancia numérica supuestamente segura.
+2. **H3 «El calendario orienta, los avisos locales concretan» — 190.** Periodo habitual de finales de invierno/primavera como orientación de S2 y ejemplo fechado de Alicante de enero de 2026 con S5. No convertirlo en alerta nacional actual, mapa provincial o predicción de otro invierno. Preparar consulta de avisos locales antes del paseo; sin calendario de meses garantizados.
+3. **H3 «Elige una alternativa compatible con su movilidad» — 190.** Propuesta editorial: comparar ruta habitual afectada con recorrido accesible alternativo según necesidades ya conocidas del perro. Revisar apoyos, posibilidad de descansar y regreso sencillo; sin recomendaciones nuevas de ejercicio, tratamiento articular o riesgo cuantificado por edad. No recrear una historia de dueño/paciente.
+4. **H3 «Coordina la ruta con quienes lo sacan» — 180.** Lista práctica para compartir zona que se evita, alternativa y teléfono preparado. Evitar mensajes ambiguos que lleven a otra persona a acercarse al nido para comprobar. Diferenciar esta coordinación preventiva del reparto de tareas de la urgencia en H2-2.
+5. **H3 «Avisa y deja la retirada a profesionales» — 180.** Aviso al ayuntamiento en espacios públicos y solicitud de valoración profesional en propiedad privada. No afirmar un trámite o plazo común a todos los municipios; sin tutoriales de poda, quema o biocidas. No recomendar bolsas/guantes como invitación a recoger orugas.
+6. **H3 «Prepara lo sencillo para la próxima salida» — 180.** Lista editorial: contacto y ruta al centro, alternativa de paseo, agua y protección sencilla a mano; no kit antídoto ni compra obligatoria. Enlazar vacunas/desparasitación como prevención rutinaria distinta del contacto urticante. Cerrar con la decisión práctica de ruta sin repetir todo el protocolo urgente.
 
-### Conclusión — 80 palabras
+**Decisión resuelta:** evitar una exposición futura con organización local realista. Sin afirmar prevalencias por ciudad, susceptibilidad de raza, eficacia de productos ni periodos libres de riesgo.
 
-- Cerrar con la decisión pendiente: contacto sospechado → atención; paseo futuro → alternativa de ruta y teléfono preparado. No abrir un caso o desenlace. Citas ya situadas en H2-1/2/5; evitar repetir toda la lista de síntomas.
+### Conclusión — 100 palabras
 
-### FAQ final — 400 palabras, siete preguntas
+- Retomar el siguiente paso según situación: exposición sospechada → atención; próximo paseo → alternativa y teléfono preparado. Citas ya situadas en los H2; no repetir listas, abrir caso o prometer desenlace.
 
-Planificar `<FAQ items={...} />`, único componente FAQ, al final. Los siguientes son temas/preguntas, **no párrafos finales**; el redactor desarrolla respuestas breves con las mismas fuentes y límites:
+### FAQ final — 600 palabras, siete preguntas
 
-1. **¿Qué hago si mi perro ha lamido una procesionaria?** S1/S2, salida y aviso inmediato; remitir al lavado solo seguro.
-2. **¿Tengo que ir al veterinario si solo la ha olfateado?** S1/S4, distinguir exposición sospechada de ver orugas lejos; comunicar la duda a la clínica sin manipular la boca.
-3. **¿El agua tiene que estar caliente?** S1, templada; omitir agua caliente y supuestos de neutralización.
-4. **¿Cuánto tiempo puedo esperar antes de acudir?** S1/S3, atención inmediata y sin ventana segura de dos horas.
-5. **¿Puedo darle un antihistamínico o un corticoide que tenga en casa?** Política editorial y §6 H2-2, tratamiento decidido por veterinario; nada de dosis.
-6. **¿Solo hay riesgo de procesionaria en primavera?** S2/S5, calendario orientativo y ejemplo local fechado; consultar avisos locales antes del paseo.
-7. **¿Por ser mayor tiene peor pronóstico?** S3/S4, estas fuentes no cuantifican ese efecto; antecedentes y lesión se valoran individualmente; logística adaptada, sin culpabilización.
+Un único `<FAQ items={...} />` al final, plegado. Cada presupuesto incluye pregunta y respuesta: 85 + 85 + 85 + 85 + 86 + 87 + 87 = 600. Son orientaciones de desarrollo, no respuestas ya redactadas. Responder de forma autónoma sin reproducir párrafos completos de los H2 ni añadir datos clínicos nuevos.
+
+1. **¿Qué hago si mi perro ha lamido una procesionaria? — 85.** S1/S2, salida y aviso inmediato; lavado solo si seguro.
+2. **¿Tengo que ir al veterinario si solo la ha olfateado? — 85.** S1/S4, exposición sospechada frente a avistamiento lejano; comunicar duda sin manipular boca.
+3. **¿El agua tiene que estar caliente? — 85.** S1, templada; nada de calor o neutralización supuesta.
+4. **¿Cuánto tiempo puedo esperar antes de acudir? — 85.** S1/S3, atención inmediata y ausencia de ventana segura de dos horas.
+5. **¿Puedo darle un antihistamínico o un corticoide que tenga en casa? — 86.** Política editorial y H2-2: tratamiento decidido por veterinario, sin dosis.
+6. **¿Solo hay riesgo de procesionaria en primavera? — 87.** S2/S5, orientación estacional y ejemplo local fechado; avisos antes del paseo.
+7. **¿Por ser mayor tiene peor pronóstico? — 87.** S3/S4 no cuantifican ese efecto; valorar antecedentes y lesión, organización adaptada y sin culpa.
 
 ## 7. Afiliación y conversión
 
@@ -257,7 +292,7 @@ Comprobados el 2026-11-06 en registro visual, tres briefs, `heroImageAlt`/alts d
 
 ## 9. Contrato de entrega
 
-**Volumen visible real:** 1.870–2.530 palabras, target 2.200 según §6. Recuento sobre MDX/DOM final con exclusiones declaradas, no suma de targets. Corregir omisiones útiles o documentar ajuste antes de cambiar alcance.
+**Volumen visible real:** entre **5.500 y 6.000 palabras**, con objetivo de **5.750** según §6 y sin tolerancia global adicional. Recuento sobre MDX/DOM final con las inclusiones y exclusiones declaradas, no suma de targets. La tolerancia por bloque no permite salir de ese rango. Desarrollar las decisiones/H3 previstos; no añadir relleno ni bajar el objetivo para aprobar. Cualquier nuevo ajuste de alcance requiere documentarse antes de ejecutarlo.
 
 | Fuente | H2 asignado | ¿Citada por nombre y junto a afirmación en artículo? |
 |---|---|---|
@@ -283,7 +318,7 @@ Comprobados el 2026-11-06 en registro visual, tres briefs, `heroImageAlt`/alts d
 - [x] Tema P1 pendiente, ausencia de colisión contrastada con inventario, árbol remoto y PRs.
 - [x] Metadatos completos; enum Salud válido; título/meta contados mecánicamente, evidencia en expediente.
 - [x] Fuentes específicas abiertas; registro de identidad, afirmación, pasaje, límites y trazabilidad inversa en §3/6/9.
-- [x] Presupuesto exacto 2.200, rango de entrega justificado; estructura de planificación, no artículo redactado.
+- [x] Presupuesto exacto 5.750; rango contractual 5.500–6.000; targets por H3 y suma por H2 explícitos. Cambio de extensión autorizado por el propietario; estructura de planificación, no artículo redactado.
 - [x] Tres tipos AlertBox y siete preguntas FAQ; enlazado con destinos reales en inventario.
 - [x] Guía sin caso justificada; las imágenes son ilustraciones del sujeto fijo nuevo con cinco rasgos senior en cada prompt y rechazo móvil.
 - [x] Variante de España y política editorial pública consultadas.
@@ -304,4 +339,4 @@ Comprobados el 2026-11-06 en registro visual, tres briefs, `heroImageAlt`/alts d
 
 **Gates antes de publicación:** artículo auditado, recursos operativos o retirados, referencias legibles y correctas, política coherente, pruebas locales con evidencia. **Después del despliegue:** verificar URL pública, imágenes y navegación antes de marcar Publicado. No se publica nada con este brief.
 
-**Historial de auditoría:** el auditor independiente documentará ronda, fecha, hash/versión, bloqueantes, ajustes y veredicto en este expediente. Por instrucción expresa del usuario en esta sesión, máximo **cinco** intentos (prevalece sobre tres del repositorio): R1 completa; R2–R5 misma sesión auditora y revisión limitada a bloqueantes/ajustes. Si R5 falla, detener y presentar el bloqueo; no reiniciar numeración ni abrir auditorías ocultas. El generador corrige, el auditor evalúa sin editar el brief. Estado inicial: v1 lista para R1, todavía sin veredicto independiente.
+**Historial de auditoría:** el auditor independiente documentará ronda, fecha, hash/versión, bloqueantes, ajustes y veredicto en este expediente. Por instrucción expresa del usuario en esta sesión, máximo **cinco** intentos (prevalece sobre tres del repositorio): R1 completa; R2–R5 misma sesión auditora y revisión limitada a bloqueantes/ajustes. Si R5 falla, detener y presentar el bloqueo; no reiniciar numeración ni abrir auditorías ocultas. El generador corrige, el auditor evalúa sin editar el brief. R1 aprobó v1 (2.200 palabras): `docs/contenido/procesionaria-pino-perros/auditoria-brief-r1.md`, hash `9468d4165fb05d1154b4e8941355654afd607a32a477ec98ddc211363c27ff41`. El cambio de extensión de v2 requiere R2 limitada al ajuste y posibles bloqueantes derivados; R1 no se presenta como aprobación del contrato nuevo. No se reinicia el contador. La instrucción vigente es ajustar el brief y esperar, sin iniciar el artículo.
