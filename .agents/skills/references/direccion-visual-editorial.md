@@ -92,6 +92,7 @@ Registro de razas usadas (actualizar al cerrar cada brief):
 | Depresión (brief) | Galgo español |
 | IPE (brief) | Setter gordon |
 | Leishmaniosis (brief, 2026-10-24) | Mestizo de tipo pastor-mastín, atigrado oscuro |
+| Procesionaria del pino (brief, 2026-11-06) | Perro de aguas español, marrón oscuro rizado corto |
 
 ## Revisión de la imagen generada
 
@@ -108,3 +109,4 @@ Las tres comprobaciones siguientes se añadieron en la revisión de golpe de cal
 - **La edad se ve sin buscarla:** cumple el [requisito senior verificable](#requisito-senior-verificable-obligatorio-en-todo-prompt) rasgo por rasgo, a tamaño móvil. Si parece un adulto joven, regenerar.
 
 Corregir cualquier incoherencia antes de entregar, aunque la imagen resulte visualmente atractiva. Registrar qué referencia se usó y qué se corrigió. Mantener originales y versionar las sustituciones; actualizar artículo, brief, variantes y vista previa. Diferenciar preferencia expresada por el propietario, revisión propia y aprobación de cada imagen final.
+
