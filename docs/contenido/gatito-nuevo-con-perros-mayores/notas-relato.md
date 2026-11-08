@@ -54,10 +54,29 @@ Fuente única de lo que cuenta el dueño; anotar tal cual, sin inventar ni adorn
 - Al principio lo tenían dentro de la transportadora de Jaspe (bastante grande) y, al ver a las perras, golpeaba la transportadora.
 - Ya fuera de la oficina: las veía pasar, bufaba y salía corriendo. "No le gustaban las perras." Siempre ha sido receloso con los perros.
 
+## Estrategia: enseñarle su nombre (relato 2026-11-08)
+
+- Dice "Rookie, Rookie, Rookie" mientras come, cuando lo acaricia, cuando lo alza y le da cariño. Objetivo: que reconozca su nombre asociándolo a cosas buenas.
+- Apodo cariñoso: **"el niño"** ("¿dónde está el niño?", "venga, niño"), pero prioriza el nombre.
+- Filosofía general del dueño: **no fuerza las cosas**; sí corrige y le llama la atención.
+
+## Dakota ↔ Rookie (relato 2026-11-08)
+
+- Al principio Rookie no soportaba a ninguna de las dos perras.
+- **Dakota no soporta a los gatos en general**: los ve, les ladra, los persigue. Pero "ha aprendido a sobrevivir" con Jaspe y ahora con Rookie.
+- Con Rookie: **no le ha ladrado ni una sola vez.** Hipótesis del dueño: el gatito ya tiene el olor de la familia (no afirmarlo como hecho; posible tema a verificar: olor familiar e integración).
+- Rookie a veces la agrede: la ve, la huele y le lanza un zarpazo. El dueño lo regaña a él, no a Dakota.
+- Dakota se mantiene **muy serena** con él.
+- Resultado: Rookie se restriega con Dakota, se sienta a su lado y **a veces han dormido juntos en la misma cama**. No la adora, pero la tolera (la tolera más que a Luna).
+- Retrato de Dakota (voz del dueño): "es un amor"; las dos manchas de los costados parecen **dos corazones**; la lengüita tiene forma de corazón; gordita, "pachoncita"; se lleva bien con todo el mundo. "Se ha sabido ganar al gatito."
+- "El gato es muy respetuoso, hay que estar enseñando."
+- 📌 El dueño reservará la historia de Dakota y los gatos para un futuro artículo de **memorias de Dakota**: aquí contarla en lo que toque a Rookie, sin agotarla.
+- Foto ideal pendiente: Rookie y Dakota en la misma cama.
+
 ## Conflictos y vivencias (ir llenando)
 
 - Luna ↔ Rookie: ha habido pleitos. _Detalles pendientes._
-- Dakota ↔ Rookie: ciertas cosas. _Detalles pendientes._
+- Dakota ↔ Rookie: ver sección propia arriba.
 - Jaspe ↔ Rookie: lo más activo ahora mismo. _Detalles pendientes._
 - Educación del gatito por parte de la pareja: _pendiente._
 
