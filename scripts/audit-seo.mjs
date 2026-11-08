@@ -18,8 +18,6 @@ const OFFLINE = process.argv.includes('--offline');
 const problems = [];
 const flag = (msg) => { problems.push(msg); console.log(`  ✗ ${msg}`); };
 const ok = (msg) => console.log(`  ✓ ${msg}`);
-/** Observación que no es un fallo: no cuenta para el código de salida. */
-const note = (msg) => console.log(`  · ${msg}`);
 
 function readContentFiles() {
   return ['src/content/blog', 'src/content/pilares'].flatMap((dir) =>
@@ -74,7 +72,9 @@ if (OFFLINE) {
   console.log('\n(--offline: se omiten las comprobaciones de red)');
 } else {
   console.log('\n3. Cadenas de redirección en producción');
-  const targets = [...sources, '/index.html', '/salud-perros-mayores/'];
+  // Las reglas con comodín (`/*.html`) no son URLs: se prueban con ejemplos.
+  const literalSources = [...sources].filter((src) => !src.includes('*') && !src.includes(':'));
+  const targets = [...new Set([...literalSources, '/index.html', '/salud-perros-mayores/', '/salud-perros-mayores.html'])];
   for (const src of targets) {
     const hops = await chain(new URL(src, SITE).href);
     const final = hops[hops.length - 1];
@@ -83,10 +83,10 @@ if (OFFLINE) {
     } else if (hops.length > 2) {
       flag(`${src} encadena ${hops.length - 1} saltos: ${hops.map((h) => h.status).join(' → ')}`);
     } else if (hops.length === 2 && hops[0].status !== 301) {
-      // El 307 de barra final / .html lo emite Cloudflare Assets y no es
-      // configurable. Google trata los 30x como equivalentes para
-      // canonicalización, así que se registra pero no se persigue.
-      note(`${src} redirige con ${hops[0].status} (redirección integrada de Cloudflare, no configurable)`);
+      // Cloudflare Assets resuelve barra final y .html con un 307 si no lo
+      // intercepta una regla de public/_redirects. Un 307 es temporal y Google
+      // conserva la variante como URL propia, así que se trata como fallo.
+      flag(`${src} redirige con ${hops[0].status} en vez de 301`);
     }
   }
   const httpHops = await chain(`http://cuidatuperroviejo.com/salud-perros-mayores`);
@@ -106,16 +106,18 @@ if (OFFLINE) {
   // debe servirse con 200 y canonical propio: sería contenido duplicado con dos
   // canonicals para la misma página.
   console.log('\n5. Variantes .html de las URLs canónicas');
-  for (const loc of locs.filter((l) => l !== SITE && !l.endsWith('.html')).slice(0, 12)) {
+  for (const loc of locs.filter((l) => new URL(l).pathname !== '/' && !l.endsWith('.html')).slice(0, 12)) {
     const res = await fetch(`${loc}.html`, { redirect: 'manual' });
     if (res.status === 200) {
       const canonical = (await res.text()).match(/<link rel="canonical" href="([^"]+)"/)?.[1];
       if (canonical !== loc) flag(`${loc}.html sirve 200 con canonical ${canonical ?? 'ausente'}`);
     } else if (res.status >= 400) {
       flag(`${loc}.html devuelve ${res.status}`);
+    } else if (res.status !== 301) {
+      flag(`${loc}.html redirige con ${res.status} en vez de 301`);
     }
   }
-  ok('variantes .html no duplican contenido');
+  ok('variantes .html revisadas');
 }
 
 console.log(`\n${problems.length ? `${problems.length} problema(s) detectado(s).` : 'Sin problemas detectados.'}`);

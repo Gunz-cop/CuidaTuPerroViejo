@@ -1,5 +1,8 @@
 # BRIEF DE CONTENIDOS: Miedo a la pólvora en perros mayores: cómo cuidarlo el 24 y el 31 de diciembre
 
+> [!NOTE]
+> **Estado:** ✅ Redactado y guardado en `src/content/blog/miedo-polvora-perros-mayores.mdx` el 2026-11-08 (auditorías del artículo R1–R3; reescritura narrativa por decisión del propietario). Publicación autorizada por el propietario el 2026-11-08.
+
 **Sitio:** cuidatuperroviejo.com | **Pilar:** Salud Mental y Emocional | **Tipo:** Artículo spoke Astro/MDX | **Serie:** versión latinoamericana de P1-03 (código **LA-01**)
 
 **Estado:** v6.2 del 2026-10-27. **R6 (última ronda autorizada): APTO con reservas** (0 P0, 0 P1, 0 P2, 4 P3; `docs/contenido/miedo-polvora-perros-mayores/auditoria-brief-r6.md`); sus 4 P3 se corrigieron en esta versión y se comprobaron con búsquedas de texto, sin R7. Historial: R1, R2 y R5 NO APTO; R3, R4 y R6 APTO con reservas (detalle al final). **Listo para redactar.** Gates antes de publicar (§11): el propietario confirma qué beagle es Luna y cuál Dakota en la foto, y la tarjeta hacia España está en el `.mdx`. El auditor del artículo recibe los informes R3 a R6. No fusionar ni desplegar sin orden del propietario.

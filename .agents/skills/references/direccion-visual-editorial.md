@@ -95,8 +95,9 @@ Registro de razas usadas (actualizar al cerrar cada brief):
 | IPE (brief) | Setter gordon |
 | Leishmaniosis (publicado, 2026-10-24; portada: cuidadora ajustando el collar) | Mestizo de tipo pastor-mastín, atigrado oscuro |
 | Miedo a los petardos, España (publicado, 2026-10-26) | Bodeguero andaluz tricolor |
-| Miedo a la pólvora, Latinoamérica (brief, 2026-10-26; excepción aprobada por el propietario el 2026-10-27) | Mestizo criollo mediano, canela con máscara negra |
+| Miedo a la pólvora, Latinoamérica (publicado, 2026-11-08; excepción aprobada por el propietario el 2026-10-27) | Mestizo criollo mediano, canela con máscara negra |
 | Miedo a la pólvora, Latinoamérica: testimonios (brief, 2026-10-27) | Osa, mestiza de pastor alemán (ilustración); Baltor, chow chow café claro (ilustración); Luna y Dakota, beagles (fotografía real) |
+| Procesionaria del pino (brief, 2026-11-06) | Perro de aguas español, marrón oscuro rizado corto |
 
 ## Revisión de la imagen generada
 
@@ -113,3 +114,4 @@ Las tres comprobaciones siguientes se añadieron en la revisión de golpe de cal
 - **La edad se ve sin buscarla:** cumple el [requisito senior verificable](#requisito-senior-verificable-obligatorio-en-todo-prompt) rasgo por rasgo, a tamaño móvil. Si parece un adulto joven, regenerar.
 
 Corregir cualquier incoherencia antes de entregar, aunque la imagen resulte visualmente atractiva. Registrar qué referencia se usó y qué se corrigió. Mantener originales y versionar las sustituciones; actualizar artículo, brief, variantes y vista previa. Diferenciar preferencia expresada por el propietario, revisión propia y aprobación de cada imagen final.
+

@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SiloNavigation from '../../components/SiloNavigation.astro';
 import PostReader from '../../components/PostReader.astro';
 import ArticleByline from '../../components/ArticleByline.astro';
+import AuthorNote from '../../components/AuthorNote.astro';
 import FeedbackWidget from '../../components/FeedbackWidget.astro';
 import { buildSrcset } from '../../utils/image';
 
@@ -75,13 +76,14 @@ const blogPostingSchema = {
       ],
       'datePublished': datePublished,
       'dateModified': dateModified,
-      // Autoría de organización, sin jobTitle: el equipo editorial no son
-      // veterinarios en ejercicio y el dato estructurado no debe afirmar una
-      // autoridad que el texto visible no reclama.
+      // Autor: la misma persona que firma arriba y se presenta en AuthorNote.
+      // Sin jobTitle ni credenciales: el texto visible no reclama titulación
+      // veterinaria y el dato estructurado no debe afirmarla.
       'author': {
-        '@type': 'Organization',
-        'name': 'Cuida tu Perro Viejo',
-        'url': siteURL,
+        '@type': 'Person',
+        '@id': `${siteURL}#gonzalo`,
+        'name': 'Gonzalo',
+        'url': `${siteURL}acerca-de`,
       },
       'publisher': {
         '@type': 'Organization',
@@ -208,6 +210,8 @@ const hideHeroCSS = heroImage
         <Content />
       </PostReader>
     </article>
+
+    <AuthorNote />
 
     <FeedbackWidget slug={entry.id} />
 

@@ -470,18 +470,10 @@ function auditar(slug) {
   p(`## 7. Frontmatter y fechas`);
   p(`  status: ${fm.status} | datePublished: ${fm.datePublished} | metaDescription: ${(fm.metaDescription || '').length} car.`);
   if ((fm.metaDescription || '').length > 160) v.bloqueantes.push(`metaDescription ${fm.metaDescription.length} car. (máx 160, lo rechaza el schema)`);
-  const byline = raw.match(/\*\*Actualizado:\*\*\s*(.+?)\s*$/m);
-  if (byline) {
-    const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-    const bm = byline[1].match(/(\d{1,2})\s+de\s+(\w+)\s+de\s+(\d{4})/i);
-    if (bm) {
-      const iso = `${bm[3]}-${String(meses.indexOf(norm(bm[2])) + 1).padStart(2, '0')}-${String(bm[1]).padStart(2, '0')}`;
-      p(`  byline: ${byline[1].trim()}  ->  ${iso}`);
-      if (fm.datePublished && iso !== fm.datePublished) v.avisos.push(`datePublished ${fm.datePublished} != byline ${iso} (si no es reescritura declarada, desincronizadas)`);
-    }
-  } else {
-    v.bloqueantes.push('falta el byline **Autoría:** / **Actualizado:**');
-  }
+  // La firma visible la pone ArticleByline desde el frontmatter; una línea
+  // **Autoría:** en el cuerpo la duplicaría (retiradas el 2026-10-28).
+  if (/^\*\*Autoría:\*\*/m.test(raw)) v.bloqueantes.push('firma **Autoría:** manual en el cuerpo: la pone ArticleByline desde el frontmatter, quítala');
+  if (fm.dateModified && fm.datePublished && fm.dateModified < fm.datePublished) v.bloqueantes.push(`dateModified ${fm.dateModified} anterior a datePublished ${fm.datePublished}`);
   p();
 
   return { v, total, slug };
