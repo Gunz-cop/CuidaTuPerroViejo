@@ -4,7 +4,7 @@
 
 **Ajuste autorizado:** el propietario ha fijado para este artículo un rango de **5.500–6.000 palabras** y ha pedido ajustar únicamente el brief y esperar. Esta v2 sustituye el presupuesto de v1 (2.200 palabras; 1.870–2.530 con tolerancia), aprobado en R1. El objetivo de trabajo es **5.750 palabras**. La ampliación desarrolla decisiones prácticas, preparación de la consulta, seguimiento y prevención dentro de los cinco H2 existentes, con presupuestos por H3; no añade tratamientos, fuentes, casos ni afirmaciones clínicas. La respuesta urgente se mantiene al principio. Este encargo no inicia la redacción ni la producción visual.
 
-**Estado de redacción:** texto completo guardado en `src/content/blog/procesionaria-pino-perros.mdx` el 2026-11-06; APTO en auditoría del artículo R2/5 (contador nuevo e independiente del brief). Tres imágenes y revisión final de maquetación pendientes antes de publicar. Informes: `docs/contenido/procesionaria-pino-perros/auditoria-articulo-r1.md` y `auditoria-articulo-r2.md` del mismo expediente. Esta nota administrativa no cambia el contrato v2 aprobado.
+**Estado de redacción:** texto completo guardado en `src/content/blog/procesionaria-pino-perros.mdx` el 2026-11-06; texto cerrado APTO por el propietario en R4/5 (base `6d8e476`). Alcance visual ampliado a siete recursos por petición del propietario; ver adenda de §8. Siete recursos integrados; auditoría visual R2 APTO local. Entrega en `docs/contenido/procesionaria-pino-perros/visuales/entrega-visuales.md`; sin fusionar ni publicar. Informes: `docs/contenido/procesionaria-pino-perros/auditoria-articulo-r1.md` y `auditoria-articulo-r2.md` del mismo expediente. Esta nota administrativa no cambia el contrato v2 aprobado.
 
 ## 1. Datos, metadatos y frontmatter MDX
 
@@ -30,8 +30,8 @@ seoTitle: "Procesionaria y perros: qué hacer y cuándo ir"
 metaDescription: "Qué hacer si tu perro toca o lame una procesionaria: señales de alarma, lavado seguro y traslado a urgencias. Prevención para paseos en España."
 pilar: "salud-perros-mayores"
 keywordPrincipal: "procesionaria perros"
-heroImage: "/images/blog/procesionaria-pino-perros/perro-aguas-senior-ruta-alternativa-v1.webp"
-heroImageAlt: "Ilustración de un perro de aguas español mayor y su cuidadora caminando por una acera, alejados de una zona de pinos."
+heroImage: "/images/blog/procesionaria-pino-perros/perro-aguas-senior-paseo-editorial-v2.webp"
+heroImageAlt: "Ilustración de un perro de aguas español senior y su cuidadora caminando juntos por una acera, con pinos detrás de un muro bajo."
 status: "Publicado"
 datePublished: "2026-11-06"
 ---
@@ -224,7 +224,11 @@ Un único `<FAQ items={...} />` al final, plegado. Cada presupuesto incluye preg
 
 **Sin afiliación ni recomendaciones de marcas.** La acción principal es contactar con atención veterinaria; evitar tarjetas de producto en la apertura, compra de medicación, «kit de emergencia» comercial o seguros como condición para atenderlo. Los únicos enlaces de ampliación son §5; la calculadora va después de la atención y con el límite de uso escrito.
 
-## 8. Guía visual: tres imágenes planificadas
+## 8. Guía visual — ampliación autorizada
+
+**Plan vigente:** la adenda [`visuales/ajuste-alcance.md`](../docs/contenido/procesionaria-pino-perros/visuales/ajuste-alcance.md), autorizada por el propietario el 2026-11-08, sustituye las tres imágenes originales por siete recursos: portada y una imagen en cada H2, incluida Conclusión. Cuatro escenas del mismo perro de aguas senior y tres infografías; sin animaciones ni nueva redacción. El texto queda cerrado por la auditoría R4 del propietario, base `6d8e476`. El plan original que sigue se conserva como antecedente, no como contrato visual vigente.
+
+### Plan original, sustituido por la adenda
 
 Aplicar `.agents/skills/references/direccion-visual-editorial.md` y `.agents/skills/references/apoyos-visuales-responsive.md`. Este encargo solo planifica: no genera imágenes ni animaciones. **Ningún apoyo requiere recorte del perro: no aplica recorte/animación.**
 
@@ -311,7 +315,7 @@ Comprobados el 2026-11-06 en registro visual, tres briefs, `heroImageAlt`/alts d
 - [ ] Guía sin caso: sin paciente ni arco ficticios. En lugar de H2 narrativo, cierre práctico H2-5 seguido de conclusión/FAQ.
 - [ ] Español de España, tuteo/vosotros, vocabulario peninsular y formato local; medición de tono ≤3/1.000 sobre artículo, párrafos legibles móvil.
 - [ ] Autoría automática real de Gonzalo; no revisión veterinaria ficticia ni cambio de fechas por build.
-- [ ] Tres recursos visuales producidos y verificados, o eliminación coherente de sus promesas y campos si se decide omitirlos. Ningún PDF, vídeo ni descarga prometidos.
+- [ ] Siete recursos de la adenda visual producidos y verificados (portada + seis H2), con sus rutas, alt y pies coherentes. La adenda sustituye la cantidad y las escenas del plan original. Ningún PDF, vídeo ni descarga prometidos.
 
 ## 10. Validación del brief y controles del futuro artículo
 
@@ -335,7 +339,7 @@ Comprobados el 2026-11-06 en registro visual, tres briefs, `heroImageAlt`/alts d
 | Lista de acciones urgentes | Inicio/H2-2 | Cuerpo MDX, sin descarga | Planificada; redactor | Leer orden y paradas; primera acción visible en móvil. |
 | Lista de datos para llamada | H2-3 | Cuerpo MDX | Planificada; redactor | Lista breve, sin formulario ni envío externo. |
 | Registro breve de observaciones | H2-4 | Cuerpo MDX | Planificado; redactor | Campos en lista de texto; no botón de descarga ni recurso externo. |
-| Tres imágenes de §8 | Hero, H2-3, H2-4 | `/images/blog/procesionaria-pino-perros/` | Planificadas, no creadas; productor visual | Abrir, edad, anatomía, concordancia alt/pie, variantes y capturas. O retirar promesas/inserciones. |
+| Siete recursos de la adenda visual | Hero, H2-1 a H2-5 y Conclusión | `/images/blog/procesionaria-pino-perros/` | Creados y verificados localmente; revisión visual R2 APTO | Abrir, edad, anatomía, concordancia alt/pie, variantes y capturas. O retirar promesas/inserciones. |
 | Enlaces de ampliación | §5 | Cuatro rutas reales del inventario | Existencia documental verificada; redactor prueba navegación | Abrir destinos y completar herramienta sin enviar datos externos; límites clínicos presentes. |
 | FAQ | Final | `FAQ.astro`, siete items | Planificada; redactor | Cerrada al cargar, teclado/móvil, texto y acordeón completos. |
 

@@ -1,5 +1,9 @@
 # Procesionaria del pino y perros: primeros auxilios y cuándo ir a urgencias
 
+![Ilustración de un perro de aguas español senior y su cuidadora caminando juntos por una acera, con pinos detrás de un muro bajo.](../../../../public/images/blog/procesionaria-pino-perros/perro-aguas-senior-paseo-editorial-v2.webp)
+
+*Un recorrido alternativo permite seguir el paseo fuera de una zona afectada.*
+
 Si tu perro ha tocado o lamido una procesionaria, o sospechas que lo ha hecho, apártalo de la zona y busca atención veterinaria inmediata. Llama a urgencias y organiza el traslado: el lavado, cuando sea seguro, nunca debe retrasar la salida.
 
 Si únicamente has visto orugas a distancia, cambia de camino con tu perro sujeto. Acercarte para comprobar qué son añade una exposición que puedes evitar.
@@ -63,6 +67,10 @@ La sospecha de exposición ya merece atención, aunque falten esas señales grav
 Organiza la salida con la información disponible. Si la persona al teléfono te hace preguntas, responde mientras otra prepara el desplazamiento, siempre que estéis acompañados. Si estás solo, explica desde el inicio esa circunstancia para recibir orientación práctica.
 
 Prioriza el traslado con lo que hayas observado. Puedes llegar a la clínica sin saber qué parte está afectada y sin haber visto toda la lengua. La exploración profesional es precisamente lo que necesitáis ahora.
+
+![Ilustración del mismo perro de aguas senior de pie en un recibidor, mientras su cuidadora sostiene un móvil sin manipularle la boca.](<../../../../public/images/blog/procesionaria-pino-perros/perro-aguas-senior-observacion-editorial-v2.webp>)
+
+Puedes comunicar lo que observas sin abrirle la boca ni tocarle los ojos.
 
 ## Qué hacer antes de llegar: apartarse, llamar y lavar solo si es seguro
 
@@ -138,6 +146,10 @@ La recomendación de agua templada de COLVET es una medida superficial, no un an
 
 Si ya has aplicado algo, informa del producto y del momento aproximado. Guarda el nombre o una fotografía del envase si lo tienes a mano. Contarlo abiertamente ayuda al equipo a entender qué ha sucedido, sin perder tiempo intentando corregirlo con otro remedio.
 
+![Infografía: si sospechas contacto, aléjate, llama y acude. El lavado no debe retrasar el traslado.](<../../../../public/images/blog/procesionaria-pino-perros/infografia-alejarse-llamar-acudir-v2.webp>)
+
+El orden es apartarse, contactar con la clínica y acudir; el lavado queda subordinado al traslado.
+
 ## Qué información necesita el veterinario y cómo se valora el daño
 
 ### Cuenta cuándo, dónde y qué contacto has visto
@@ -205,6 +217,9 @@ Pregunta también cómo influye su situación previa en el plan que os proponen.
 
 Puedes preparar tres preguntas escritas para no olvidarlas: qué han encontrado, qué sigue pendiente y qué próximo paso corresponde. Después del alta, las instrucciones recibidas se convierten en el punto de partida del cuidado en casa.
 
+![Ilustración del mismo perro de aguas senior en el suelo de una consulta, con su cuidadora conversando con un profesional veterinario.](<../../../../public/images/blog/procesionaria-pino-perros/perro-aguas-senior-consulta-editorial-v2.webp>)
+
+Los antecedentes y lo ocurrido durante el paseo ayudan a organizar la valoración veterinaria.
 
 ## Después del alta: qué registrar en un perro mayor
 
@@ -282,6 +297,9 @@ Cuida también la claridad entre vosotros. Al relevar a otro cuidador, comenta l
 
 Acompañarlo en casa consiste en seguir el plan y pedir ayuda cuando haga falta, no en adivinar un plazo de recuperación ni atribuir cada cambio a su edad.
 
+![Ilustración del mismo perro de aguas senior descansando en una cama baja mientras su cuidadora escribe en una libreta.](<../../../../public/images/blog/procesionaria-pino-perros/perro-aguas-senior-descanso-editorial-v2.webp>)
+
+Un registro sencillo ayuda a compartir las indicaciones recibidas y las observaciones del día.
 
 ## Pasear en España: evitar el contacto sin depender de un mes fijo
 
@@ -357,6 +375,10 @@ La [prevención y desparasitación del perro senior](<https://cuidatuperroviejo.
 
 Elige una ruta que puedas mantener con tranquilidad y revisa la información local cuando corresponda. Poder cambiar de camino antes de entrar en una zona afectada es el resultado práctico de esa preparación, aunque el paseo sea más sencillo que el previsto.
 
+![Infografía para preparar el paseo: observa de lejos, elige otra ruta y avisa al ayuntamiento.](<../../../../public/images/blog/procesionaria-pino-perros/infografia-prevencion-ruta-alternativa-v2.webp>)
+
+Observar el entorno desde lejos y preparar otro recorrido evita acercarse a una zona afectada.
+
 ## Conclusión
 
 Ante un contacto sospechado con procesionaria, el siguiente paso es buscar atención veterinaria y organizar el traslado. Puedes explicar lo ocurrido aunque no hayas identificado la especie, revisado su boca ni terminado un lavado difícil.
@@ -364,6 +386,10 @@ Ante un contacto sospechado con procesionaria, el siguiente paso es buscar atenc
 Después de la atención, conserva las indicaciones y comparte las observaciones con quienes lo cuidan. Para los próximos paseos, prepara una alternativa accesible y consulta la información local antes de volver a una zona afectada.
 
 Tu perro mayor necesita un plan que puedas seguir: saber a quién llamar, por dónde salir y qué indicaciones corresponden ahora. Empieza por esa decisión concreta y pide ayuda cuando la necesites.
+
+![Infografía con dos decisiones: ante sospecha de contacto, atención veterinaria; para el próximo paseo, elegir otra ruta.](<../../../../public/images/blog/procesionaria-pino-perros/infografia-siguiente-paso-v3.webp>)
+
+La atención ante una exposición y la preparación del próximo paseo son decisiones distintas.
 
 ### Fuentes científicas y de autoridad
 

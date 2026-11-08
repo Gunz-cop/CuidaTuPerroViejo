@@ -1,5 +1,7 @@
 # Entrega de redacción: procesionaria del pino y perros
 
+> Registro histórico de la entrega solo de texto. Estado vigente: texto cerrado por el propietario en R4 y siete recursos visuales integrados, con revisión visual R2 APTO local. Véase [entrega visual](../visuales/entrega-visuales.md). Sin publicar.
+
 Fecha: 6 de noviembre de 2026. Alcance autorizado: artículo completo, solo texto, y posterior auditoría independiente. Este documento registra la verificación del autor; no constituye una auditoría ni consume intentos del contador de cinco auditorías del artículo.
 
 Artículo definitivo: `src/content/blog/procesionaria-pino-perros.mdx`. Copia auditada idéntica en `docs/contenido/procesionaria-pino-perros/redaccion/procesionaria-pino-perros.mdx`; edición de lectura sin imágenes pendientes en `articulo-lectura.md` de esta carpeta.
