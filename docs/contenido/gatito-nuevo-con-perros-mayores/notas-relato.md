@@ -43,4 +43,15 @@ _Pendiente._
 - Qué pasó exactamente en los pleitos con Luna; ¿lesiones? ¿cómo se resolvió?
 - Comida, areneros, espacios altos, descanso de las perras.
 - ¿Intervino veterinario (vacunas, desparasitación, estrés de las perras)?
-- ¿Fotos disponibles?
+
+## Material visual
+
+Recibido (originales en `fotos-originales/`, sin procesar):
+
+- `rookie-3-meses-2026-11-08-{1..4}.jpg` — Rookie a sus ~3 meses, fotos del 2026-11-08. Gato atigrado gris (tabby), ojos verde-ámbar, sentado en piso de cerámica terracota; aparece un tenis Nike vinotinto en el borde. La 3 está movida (desenfocada); la 1 y la 2 son las más nítidas.
+
+Pendientes que el dueño va a enviar:
+
+- [ ] Fotos de la llegada de Rookie (~1 mes de edad).
+- [ ] Videos de la llegada / convivencia.
+- [ ] (Ideal) fotos de Rookie con Luna, Dakota y Jaspe.
