@@ -9,3 +9,7 @@ Revisión del propietario y de la sesión integradora (8-11-2026) sobre `origina
 | 5 Perra postrada | `perra-senior-postrada-agua-incorporada-v1.png` | Salió con aspecto de **golden retriever** (raza ya usada en el sitio) en vez de mestiza mediana crema | Repetir la ficha: «mestiza mediana de unos 14 kg, pelo semilargo color crema, orejas caídas café claro, hocico fino; que NO parezca golden retriever ni labrador». Conservar la escena: incorporada de pecho, agua sin sujetarla, colchoneta, empapador y toalla. |
 | A3 perfil | `anim-mestizo-perfil-caminando-transparente-v1.png` | **Costillas muy marcadas**: se lee como un perro desnutrido | «Costillas apenas insinuadas bajo el pelo, sin marcarse; vientre y lomo con volumen normal de perro mayor». Conservar el resto de la ficha y los cinco rasgos de edad. |
 | A2 casa en tres momentos | — | No se logró el mismo encuadre | Opcional, ya no hace falta: la escena nocturna se resuelve con el cielo animado y el recorte del perro. |
+
+## Cierre (8-11-2026)
+
+Regeneradas y revisadas por la sesión integradora: portada **v3** (la v2 tenía el pulgar al revés, según el propietario), Osa **v2** (personas completas, pelo más crespo, orejas negras), perra postrada **v2** (mestiza crema, no golden) y recorte de perfil **v2** (sin costillas marcadas). Integradas en el artículo y en las animaciones. A2 no se usa.

@@ -9,6 +9,7 @@ const { variant } = Astro.props;
 const uid = `polvora-${variant}-${crypto.randomUUID().slice(0, 8)}`;
 const planoSrc = '/images/blog/miedo-polvora-perros-mayores/anim-plano-casa-cenital-v1.webp';
 const perroSrc = '/images/blog/miedo-polvora-perros-mayores/anim-mestizo-echado-v1.webp';
+const perroCaminaSrc = '/images/blog/miedo-polvora-perros-mayores/anim-mestizo-caminando-v2.webp';
 
 const casaSteps = [
   { title: 'Afuera, todo suena', text: 'En el patio no hay techo ni paredes entre tu perro y la pólvora de la calle. Por eso los perros de patio buscan entrar, y la UNAM recomienda no dejarlos en patios ni terrazas.' },
@@ -150,6 +151,7 @@ const totalItems = fases.reduce((n, f) => n + f.items.length, 0);
             <rect x="94" y="56" width="34" height="48" fill="#7b5a3e"/>
           </g>
           <g transform="translate(500 196)"><rect width="150" height="44" fill="#4f8a5b"/><path d="M75 0V44" stroke="#2f5d39" stroke-width="3"/><rect class="pr-lock-noche" x="66" y="16" width="18" height="14" rx="3" fill="#b8892c"/></g>
+          <image class="pr-walker" href={perroCaminaSrc} x="30" y="190" width="84" height="84" aria-hidden="true"/>
           <g class="pr-debris" fill="#b04a3b"><rect x="80" y="246" width="18" height="5" rx="2" transform="rotate(-12 89 248)"/><rect x="190" y="252" width="14" height="5" rx="2" transform="rotate(20 197 254)"/><rect x="610" y="248" width="16" height="5" rx="2"/></g>
         </svg>
       </div>
@@ -465,6 +467,9 @@ const totalItems = fases.reduce((n, f) => n + f.items.length, 0);
   .pr-lock-noche { opacity:0; transition:opacity .5s ease; }
   [data-step="1"] .pr-lock-noche,[data-step="2"] .pr-lock-noche,[data-step="3"] .pr-lock-noche { opacity:1; }
   .pr-debris { opacity:0; transition:opacity .8s ease; }
+  .pr-walker { opacity:0; transition:opacity .8s ease, transform 4.5s linear; filter:drop-shadow(0 2px 2px rgba(0,0,0,.4)); }
+  [data-step="0"] .pr-walker { opacity:1; }
+  [data-playing="true"][data-step="0"] .pr-walker { transform:translateX(120px); }
   [data-step="4"] .pr-debris { opacity:1; }
 
   .pr-timeline { position:relative; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.25rem; margin:.7rem 0 0; }
