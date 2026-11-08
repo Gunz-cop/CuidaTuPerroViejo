@@ -79,3 +79,28 @@ Se abrieron los PNG nativos y reducciones a **390 px de ancho**. Cada mano visib
 Trazabilidad de salidas aceptadas de esta sesión (copiadas sin modificación): portada `exec-d764969d-c665-4b8b-a796-136bbe8b3ab9.png`; Osa `exec-a48a3039-219a-4076-8bf6-bfc6a0ee6cc9.png`; perra `exec-ad916141-88ca-4c27-8d87-25524c573b03.png`; A3 `exec-1d6f8f95-c0ed-4acd-83d3-9daabae8525f.png`, en `/workspace/generated_images/`.
 
 Verificación de entrega: cuatro PNG nuevos y esta sección del registro; sin cambios en v1 ni fuera del alcance. `git diff --check` y decodificación de los cuatro PNG correctos. No se ejecuta build porque no cambia código ni integración. Commit y push a la misma rama; sin despliegue, fusión a main ni PR.
+
+
+## Regeneración v3 — portada con referencia real de mano
+
+2026-11-08. Corrección posterior del propietario: **la portada v2 tiene el pulgar al revés**. Su revisión prevalece sobre la aceptación propia registrada arriba. Contar cinco dedos no bastaba: faltó comprobar lateralidad y correspondencia con el brazo. Se conserva v2 como historial, no como portada aceptada. Rama actualizada con `git pull --ff-only` antes de corregir (al día).
+
+El propietario aportó cuatro fotos de su mano desde distintos ángulos (`1-Foto-1.jpg` a `4-Foto-4.jpg`), inspeccionadas antes de generar. Se usaron como referencias anatómicas, sin incorporarlas al repositorio ni copiar el entorno del coche. La mano fotografiada muestra la disposición de una mano derecha; se sustituyó la indicación «izquierda» del encargo por una mano derecha compatible con el brazo visible del tutor. No se cambiaron el encargo fuente ni el artículo.
+
+Herramienta: `image_gen.imagegen` (`image_gen__imagegen`), modelo/versión exactos no expuestos. **Tres intentos:**
+
+1. Portada v2 y las cuatro fotos adjuntas; bloque de estilo y prompt completo más corrección de lateralidad. Se conserva erróneamente el pulgar en el borde lejano superior. Descartado tras ampliar.
+2. Portada v2 y fotos 1 y 4, con prompt completo corregido a «derecha» y orden explícito de dedos. Persistió la lateralidad incorrecta. Descartado; no se entregó como final.
+3. Edición focalizada de la portada v2, con **foto 2 como referencia directa de mano**. Se pidió reemplazar mano y muñeca, con pulgar en borde cercano inferior y cuatro dedos largos detrás, conservando perro y escena. Aceptado en revisión propia tras inspección; pendiente de revisión del propietario.
+
+**Archivo:** `originales/mestizo-senior-entra-del-patio-v3.png`, RGB 1672×941. Copia byte por byte de `/workspace/generated_images/exec-2e8964cb-f93c-4400-a6fd-9ad106f5df6a.png`, sin retoques ni reescalado. V1 y v2 conservadas. Los intentos descartados quedan fuera de la entrega.
+
+**Comprobaciones del resultado real:**
+
+- Original abierto, mano recortada y ampliada 3×, imagen completa reducida a 390 px de ancho; pruebas solo en `/tmp/la01-v2-review/v3-final-hand.png` y `v3-final-mobile.png`.
+- Un pulgar único corto en borde cercano/inferior, uña visible y base sobre eminencia tenar; cuatro dedos largos (índice, medio, anular, meñique) detrás, cinco puntas contables sin fusiones. Se cotejó la disposición con la foto 2, además de contar dedos. Ya no se conserva el pulgar superior de v2.
+- Palma hacia arriba con comida en el centro; muñeca y antebrazo conectados al brazo visible sin inversión de mano. Hombro, codo y torso mantienen continuidad; tutor de espaldas agachado, sin cara, según encuadre. Perro avanza hacia comida sin contacto ni correa, puerta despejada.
+- Mismo perro canela, rostro y orejas dobladas, collar rojo y placa única. Canas en hocico: sí; cejas: sí; párpados: sí. Ojos algo hundidos y párpados caídos: sí, sin catarata. Lomo suavizado y menor masa muscular de mayor: sí, con volumen normal y sin costillas marcadas. Cabeza baja y paso prudente: sí. Sin heridas, emaciación o sufrimiento inventado: sí. Edad y acción legibles también a 390 px.
+- Sin texto, marcas ni elementos del coche. Patio, pila, portón verde, tendedero, luz y composición conservados.
+
+**Límites:** no se logró corregir la lateralidad en los dos primeros intentos; la tercera edición es la candidata v3, no una aprobación del propietario. Resolución nativa 1672×941, sin obtener la resolución literal del encargo. No se publican fotos personales de referencia. Solo se añade esta portada y esta sección; sin cambios en las otras imágenes, artículo, componentes o `public/`, sin A2, despliegue, fusión ni PR. `git diff --check` correcto; no procede build por ser solo un original y su registro.
