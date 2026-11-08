@@ -53,6 +53,8 @@ En `leishmaniosis-perros-mayores`, la portada y la escena de casa representan a 
 
 Esta excepción no se aplica a otros artículos ni modifica el resto del requisito senior. No se representa un paciente real ni se diagnostica por aspecto: alts, pies y animación deben decir que son señales posibles, que muchos perros infectados se ven normales y que la ausencia de lesiones no descarta infección. Encargo y prompts: [prompt-correccion-visual-v4.md](../../../docs/contenido/leishmaniosis-perros-mayores/prompt-correccion-visual-v4.md).
 
+**Excepción para testimonios ilustrados de LA-01 (miedo a la pólvora, versión latinoamericana) — decisión del propietario, 2026-10-27.** Osa (mestiza de pastor alemán) y Baltor (chow chow café claro) eran, según el propietario, perros maduros y todavía no senior en la época del recuerdo. Sus ilustraciones piden «adulto maduro, todavía no senior: sin rasgos de cachorro, sin canas ni rasgos de vejez» y se rechazan si parecen cachorros o viejos; el pie dice que son la ilustración de un recuerdo. El mestizo ilustrativo del mismo artículo sí cumple el requisito senior completo. Esta excepción solo vale para perros reales de testimonios cuya edad en el recuerdo consta en el archivo de testimonios.
+
 Origen: en golpe de calor hubo que regenerar imágenes y el recorte transparente del podenco salió con aspecto de adulto joven, porque los prompts no exigían la edad de forma explícita y comprobable. «Senior», «mayor» o «anciano» como palabra suelta **no cuenta**, y el hocico canoso tampoco basta.
 
 **Aplica a todo prompt de imagen, de recorte transparente y de fotograma o animación que muestre al perro.** Cada prompt incluye, con palabras propias del sujeto, estos rasgos de edad a la vez:
@@ -91,7 +93,10 @@ Registro de razas usadas (actualizar al cerrar cada brief):
 | Feromonas (brief) | Teckel |
 | Depresión (brief) | Galgo español |
 | IPE (brief) | Setter gordon |
-| Leishmaniosis (brief, 2026-10-24) | Mestizo de tipo pastor-mastín, atigrado oscuro |
+| Leishmaniosis (publicado, 2026-10-24; portada: cuidadora ajustando el collar) | Mestizo de tipo pastor-mastín, atigrado oscuro |
+| Miedo a los petardos, España (publicado, 2026-10-26) | Bodeguero andaluz tricolor |
+| Miedo a la pólvora, Latinoamérica (publicado, 2026-11-08; excepción aprobada por el propietario el 2026-10-27) | Mestizo criollo mediano, canela con máscara negra |
+| Miedo a la pólvora, Latinoamérica: testimonios (brief, 2026-10-27) | Osa, mestiza de pastor alemán (ilustración); Baltor, chow chow café claro (ilustración); Luna y Dakota, beagles (fotografía real) |
 | Procesionaria del pino (brief, 2026-11-06) | Perro de aguas español, marrón oscuro rizado corto |
 
 ## Revisión de la imagen generada

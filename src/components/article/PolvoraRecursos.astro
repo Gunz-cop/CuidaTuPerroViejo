@@ -1,0 +1,531 @@
+---
+// Tres apoyos visuales del artículo LA-01 (miedo a la pólvora en perros mayores).
+// Todo el contenido sale del propio artículo; no se añaden datos clínicos nuevos.
+// Sin reproducción automática; sin JavaScript se leen todos los pasos y la lista.
+interface Props {
+  variant: 'casa' | 'noche' | 'lista';
+}
+const { variant } = Astro.props;
+const uid = `polvora-${variant}-${crypto.randomUUID().slice(0, 8)}`;
+const planoSrc = '/images/blog/miedo-polvora-perros-mayores/anim-plano-casa-cenital-v1.webp';
+const perroSrc = '/images/blog/miedo-polvora-perros-mayores/anim-mestizo-echado-v1.webp';
+const perroCaminaSrc = '/images/blog/miedo-polvora-perros-mayores/anim-mestizo-caminando-v2.webp';
+
+const casaSteps = [
+  { title: 'Afuera, todo suena', text: 'En el patio no hay techo ni paredes entre tu perro y la pólvora de la calle. Por eso los perros de patio buscan entrar, y la UNAM recomienda no dejarlos en patios ni terrazas.' },
+  { title: 'Lo entras antes del ruido', text: 'Con comida en la mano y sin jalarlo, antes de que empiece. Al entrar, se cierran el portón y la puerta del patio.' },
+  { title: 'El cuarto donde menos se oye', text: 'Cada pared y cada puerta cerrada quedan entre él y la calle. Elige el cuarto más interior, sin ventana a la calle, y compruébalo escuchando una noche cualquiera.' },
+  { title: 'Su cueva, con salida libre', text: 'Una mesa con una sábana por un lado y por detrás, su frazada y su agua, y dos lados abiertos. Si hace calor, un ventilador fuera de su alcance.' },
+];
+
+const nocheSteps = [
+  { label: 'Tarde', title: 'La tarde', text: 'Placa con un teléfono que conteste esa noche. Paseo corto en llano y salida al baño antes de la hora fuerte.' },
+  { label: 'Visitas', title: 'Antes de la primera visita', text: 'Entra a tu perro, deja su cueva lista con música o televisión y cierra el portón.' },
+  { label: 'Hora fuerte', title: 'La hora fuerte', text: 'Quien abre, cierra. Nadie lo llama al patio. Si te busca, acompáñalo; si lo acepta, algo rico. Si tiene que salir, con correa y el portón cerrado.' },
+  { label: 'Madrugada', title: 'Cuando baja la pólvora', text: 'Mira cómo respira, el color de sus encías y si te reconoce. Si se salió, repasa la ruta ahora, con la calle en silencio.' },
+  { label: 'Mañana', title: 'La mañana del 25 o del 1', text: 'Recoge restos de cohetes en el patio, la acera y la azotea. Anota dónde se metió, a qué hora empezó y si comió.' },
+];
+
+const fases = [
+  { id: 'nov', title: 'En noviembre', items: [
+    'Pedir cita con la veterinaria',
+    'Llevar escrito qué hizo el diciembre pasado, sus otros sustos y lo que toma',
+    'Preguntar qué clínica atiende el 24 y el 31',
+    'Si no se levanta: pedir que te enseñen a moverlo',
+  ] },
+  { id: 'antes', title: 'Los días antes', items: [
+    'Elegir el cuarto donde menos se oye la calle',
+    'Armar su cueva: mesa, sábana, frazada, agua y salida libre',
+    'Dejarlo entrar a ratos con su cama y algo de comer',
+    'Preguntar a los vecinos a qué hora empieza la pólvora',
+    'Revisar la malla, el portón y que el collar no se le salga',
+  ] },
+  { id: 'tarde', title: 'La tarde del 24 y del 31', items: [
+    'Placa con un teléfono que conteste esa noche',
+    'Foto reciente de cuerpo entero en el teléfono',
+    'Paseo corto en llano y salida al baño',
+    'Entrarlo antes de la primera visita',
+  ] },
+  { id: 'noche', title: 'Esa noche', items: [
+    'Acordar con la familia: quien abre, cierra',
+    'Música o televisión en su cuarto',
+    'Ventilador fuera de su alcance si hace calor',
+    'Si sale al baño: con correa y el portón cerrado',
+    'Veterinaria de guardia anotada a mano',
+  ] },
+  { id: 'manana', title: 'La mañana siguiente', items: [
+    'Recoger restos de cohetes en patio, acera y azotea',
+    'Anotar dónde se metió, a qué hora empezó y si comió',
+    'Si no se levanta: revisar la piel de los apoyos y que haya bebido y orinado',
+  ] },
+];
+const totalItems = fases.reduce((n, f) => n + f.items.length, 0);
+---
+
+<section class={`pr-visual pr-${variant}`} data-editorial-visual data-reader-atomic aria-labelledby={`${uid}-title`}>
+  {variant === 'casa' && (
+    <div data-pr-seq data-step="0" data-playing="false" data-last={casaSteps.length - 1}>
+      <header>
+        <p class="pr-kicker">Recorrido · cuatro pasos</p>
+        <h3 id={`${uid}-title`} data-toc-exclude="true">Del patio a su cueva</h3>
+      </header>
+      <div class="pr-canvas pr-canvas-casa">
+        <svg viewBox="0 0 720 460" role="img" aria-labelledby={`${uid}-svg-title ${uid}-svg-desc`}>
+          <title id={`${uid}-svg-title`}>Plano de una casa de una planta con patio, vista desde arriba</title>
+          <desc id={`${uid}-svg-desc`}>La calle arriba, con ondas de pólvora. A la izquierda, un patio con una pila, un tendedero y un portón verde a la calle. A la derecha, la casa: sala y comedor junto a la calle, cocina al fondo y un cuarto interior sin ventana a la calle, con una mesa cubierta por una sábana azul. El perro aparece primero en el patio, luego en la cocina y al final en su cueva bajo la mesa del cuarto interior.</desc>
+          <defs><marker id={`${uid}-arrow`} viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#fffdf6"/></marker></defs>
+          <image href={planoSrc} x="0" y="0" width="720" height="460" preserveAspectRatio="none"/>
+          <g class="pr-bursts">
+            <g transform="translate(130 26)"><circle class="pr-ring pr-r1" r="30"/><circle class="pr-ring pr-r2" r="30"/><circle class="pr-ring pr-r3" r="30"/><path class="pr-spark" d="M0-14V-5M0 5V14M-14 0H-5M5 0H14M-10-10l5 5M5 5l5 5M-10 10l5-5M5-5l5-5"/></g>
+            <g transform="translate(560 26)"><circle class="pr-ring pr-r2" r="30"/><circle class="pr-ring pr-r3" r="30"/><circle class="pr-ring pr-r1" r="30"/><path class="pr-spark" d="M0-14V-5M0 5V14M-14 0H-5M5 0H14M-10-10l5 5M5 5l5 5M-10 10l5-5M5-5l5-5"/></g>
+          </g>
+          <rect class="pr-heat pr-heat-patio" x="8" y="88" width="233" height="356"/>
+          <rect class="pr-heat pr-heat-high" x="244" y="90" width="460" height="176"/>
+          <rect class="pr-heat pr-heat-mid" x="246" y="272" width="214" height="168"/>
+          <rect class="pr-heat pr-heat-low" x="462" y="272" width="242" height="168"/>
+          <g class="pr-labels">
+            <g transform="translate(124 214)"><rect class="pr-pill" x="-38" y="-17" width="76" height="26" rx="13"/><text text-anchor="middle">Patio</text></g>
+            <g transform="translate(475 74)"><rect class="pr-pill" x="-74" y="-17" width="148" height="26" rx="13"/><text text-anchor="middle">Sala y comedor</text></g>
+            <g transform="translate(352 296)"><rect class="pr-pill" x="-44" y="-17" width="88" height="26" rx="13"/><text text-anchor="middle">Cocina</text></g>
+            <g transform="translate(600 296)"><rect class="pr-pill" x="-78" y="-17" width="156" height="26" rx="13"/><text text-anchor="middle">Cuarto interior</text></g>
+          </g>
+          <g class="pr-noise-tags">
+            <g class="pr-tag pr-tag-patio" transform="translate(124 244)"><rect x="-56" y="-16" width="112" height="24" rx="12"/><text text-anchor="middle">todo suena</text></g>
+            <g class="pr-tag pr-tag-high" transform="translate(475 172)"><rect x="-66" y="-16" width="132" height="24" rx="12"/><text text-anchor="middle">se oye mucho</text></g>
+            <g class="pr-tag pr-tag-mid" transform="translate(352 400)"><rect x="-40" y="-16" width="80" height="24" rx="12"/><text text-anchor="middle">se oye</text></g>
+            <g class="pr-tag pr-tag-low" transform="translate(620 412)"><rect x="-66" y="-16" width="132" height="24" rx="12"/><text text-anchor="middle">se oye menos</text></g>
+          </g>
+          <g class="pr-lock" transform="translate(246 106)"><rect x="-11" y="-2" width="22" height="18" rx="3" fill="#d9a53a" stroke="#5a3d0c" stroke-width="2"/><path d="M-6-2v-6a6 6 0 0 1 12 0v6" fill="none" stroke="#5a3d0c" stroke-width="3.5"/></g>
+          <g class="pr-lock" transform="translate(228 356)"><rect x="-10" y="-2" width="20" height="16" rx="3" fill="#d9a53a" stroke="#5a3d0c" stroke-width="2"/><path d="M-5-2v-5a5 5 0 0 1 10 0v5" fill="none" stroke="#5a3d0c" stroke-width="3"/></g>
+          <path class="pr-route" d="M160 392C200 380 225 345 250 338C300 326 330 352 380 356C420 360 440 358 468 356C482 355 490 350 494 344" fill="none" stroke="#fffdf6" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 10" marker-end={`url(#${uid}-arrow)`}/>
+          <path class="pr-route-shadow" d="M160 392C200 380 225 345 250 338C300 326 330 352 380 356C420 360 440 358 468 356C482 355 490 350 494 344" fill="none" stroke="#294b3d" stroke-width="9" stroke-linecap="round" opacity=".55"/>
+          <g class="pr-cueva">
+            <rect x="466" y="284" width="64" height="108" rx="10" fill="none" stroke="#f6c453" stroke-width="4" stroke-dasharray="8 6"/>
+            <g transform="translate(498 254)"><rect class="pr-pill" x="-50" y="-17" width="100" height="26" rx="13"/><text text-anchor="middle">su cueva</text></g>
+          </g>
+          <g class="pr-fan" transform="translate(686 420)"><circle r="15" fill="#fffdf6" stroke="#294b3d" stroke-width="3"/><g class="pr-blades" fill="#5b8a74"><path d="M0 0C-3-9-2-14 3-15C7-12 5-5 0 0Z"/><path d="M0 0C9-3 14-2 15 3C12 7 5 5 0 0Z"/><path d="M0 0C3 9 2 14-3 15C-7 12-5 5 0 0Z"/><path d="M0 0C-9 3-14 2-15-3C-12-7-5-5 0 0Z"/></g></g>
+          <g class="pr-dogs" aria-hidden="true">
+            <image class="pr-dog pr-dog-0" href={perroSrc} x="128" y="360" width="64" height="62"/>
+            <image class="pr-dog pr-dog-1" href={perroSrc} x="326" y="326" width="64" height="62"/>
+            <image class="pr-dog pr-dog-2" href={perroSrc} x="466" y="312" width="64" height="62"/>
+          </g>
+        </svg>
+      </div>
+      <div class="pr-controls" hidden>
+        <div class="pr-transport"><button type="button" data-action="prev" aria-label="Paso anterior">←</button><button type="button" data-action="play">Reproducir</button><button type="button" data-action="next" aria-label="Paso siguiente">→</button><button type="button" data-action="restart" aria-label="Volver al primer paso">↺</button></div>
+        <p class="pr-position" aria-live="polite" aria-atomic="true"></p>
+      </div>
+      <ol class="pr-steps">{casaSteps.map((s, i) => <li data-panel={i}><span class="pr-num" aria-hidden="true">{i + 1}</span><div><h4>{s.title}</h4><p>{s.text}</p></div></li>)}</ol>
+      <details class="pr-details"><summary>Qué muestra este plano</summary><p>Es un esquema de una casa cualquiera, no una medición del ruido. «Se oye más» o «menos» solo indica cuántas paredes y puertas quedan entre el cuarto y la calle; en tu casa, compruébalo escuchando. La huella marca dónde está tu perro.</p></details>
+    </div>
+  )}
+
+  {variant === 'noche' && (
+    <div data-pr-seq data-step="0" data-playing="false" data-last={nocheSteps.length - 1}>
+      <header>
+        <p class="pr-kicker">Línea de la noche · cinco momentos</p>
+        <h3 id={`${uid}-title`} data-toc-exclude="true">La noche del 24 o del 31, de la tarde al amanecer</h3>
+      </header>
+      <div class="pr-canvas pr-canvas-noche">
+        <svg viewBox="0 0 720 280" role="img" aria-labelledby={`${uid}-svg-title ${uid}-svg-desc`}>
+          <title id={`${uid}-svg-title`}>El cielo sobre una casa, de la tarde al amanecer</title>
+          <desc id={`${uid}-svg-desc`}>Una casa de una planta con patio y portón. El cielo pasa de la tarde a la noche, con estallidos de pólvora en la hora fuerte, y después a la madrugada y al amanecer.</desc>
+          <rect class="pr-sky" width="720" height="280"/>
+          <g class="pr-stars" fill="#fff"><circle cx="80" cy="40" r="2"/><circle cx="210" cy="70" r="1.6"/><circle cx="330" cy="30" r="2.2"/><circle cx="470" cy="60" r="1.6"/><circle cx="640" cy="36" r="2"/><circle cx="560" cy="96" r="1.4"/><circle cx="150" cy="110" r="1.4"/></g>
+          <g class="pr-orb"><circle class="pr-sun" r="26" fill="#f2b84b"/><g class="pr-moon"><circle r="22" fill="#f5f0dc"/><circle cx="9" cy="-6" r="20" class="pr-moon-cut"/></g></g>
+          <g class="pr-fireworks">
+            <g transform="translate(150 80)"><g class="pr-fw pr-fw1"><path d="M0-34V-12M0 12V34M-34 0H-12M12 0H34M-24-24l9 9M15 15l9 9M-24 24l9-9M15-15l9-9" stroke="#f6c453"/></g></g>
+            <g transform="translate(560 70)"><g class="pr-fw pr-fw2"><path d="M0-30V-10M0 10V30M-30 0H-10M10 0H30M-21-21l8 8M13 13l8 8M-21 21l8-8M13-13l8-8" stroke="#ef7b6b"/></g></g>
+            <g transform="translate(400 50)"><g class="pr-fw pr-fw3"><path d="M0-26V-8M0 8V26M-26 0H-8M8 0H26M-18-18l7 7M11 11l7 7M-18 18l7-7M11-11l7-7" stroke="#8fd3e8"/></g></g>
+          </g>
+          <g class="pr-glow"><circle cx="110" cy="120" r="80" fill="#fbe3a6" opacity=".55"/></g>
+          <path class="pr-hills" d="M0 200C90 170 170 186 250 196C340 208 420 172 520 180C600 186 660 200 720 192V240H0Z"/>
+          <g class="pr-neighbors"><path d="M20 186L70 158L120 186V240H20Z"/><rect x="40" y="198" width="22" height="18" class="pr-nwin"/><rect x="82" y="198" width="22" height="18" class="pr-nwin"/><path d="M640 182L684 160L728 182V240H640Z"/><rect x="660" y="196" width="20" height="16" class="pr-nwin"/></g>
+          <g class="pr-tree"><rect x="198" y="186" width="10" height="54" fill="#4a3526"/><circle cx="203" cy="176" r="24"/><circle cx="188" cy="190" r="16"/><circle cx="220" cy="190" r="16"/></g>
+          <path d="M0 238H720V280H0Z" fill="#2c3a2f"/>
+          <g transform="translate(250 136)">
+            <path d="M-12 32L110 -14L232 32" fill="#6b4f3a"/>
+            <rect x="0" y="30" width="220" height="74" fill="#e8dcc6"/>
+            <rect class="pr-window" x="26" y="48" width="44" height="34" rx="3"/>
+            <rect class="pr-window" x="150" y="48" width="44" height="34" rx="3"/>
+            <rect x="94" y="56" width="34" height="48" fill="#7b5a3e"/>
+          </g>
+          <g transform="translate(500 196)"><rect width="150" height="44" fill="#4f8a5b"/><path d="M75 0V44" stroke="#2f5d39" stroke-width="3"/><rect class="pr-lock-noche" x="66" y="16" width="18" height="14" rx="3" fill="#b8892c"/></g>
+          <image class="pr-walker" href={perroCaminaSrc} x="30" y="190" width="84" height="84" aria-hidden="true"/>
+          <g class="pr-debris" fill="#b04a3b"><rect x="80" y="246" width="18" height="5" rx="2" transform="rotate(-12 89 248)"/><rect x="190" y="252" width="14" height="5" rx="2" transform="rotate(20 197 254)"/><rect x="610" y="248" width="16" height="5" rx="2"/></g>
+        </svg>
+      </div>
+      <div class="pr-timeline" role="group" aria-label="Momentos de la noche" hidden>
+        {nocheSteps.map((s, i) => <button type="button" data-goto={i} aria-pressed={i === 0 ? 'true' : 'false'}><span class="pr-dot" aria-hidden="true"></span><span>{s.label}</span></button>)}
+      </div>
+      <div class="pr-controls" hidden>
+        <div class="pr-transport"><button type="button" data-action="prev" aria-label="Momento anterior">←</button><button type="button" data-action="play">Reproducir</button><button type="button" data-action="next" aria-label="Momento siguiente">→</button><button type="button" data-action="restart" aria-label="Volver a la tarde">↺</button></div>
+        <p class="pr-position" aria-live="polite" aria-atomic="true"></p>
+      </div>
+      <ol class="pr-steps">{nocheSteps.map((s, i) => <li data-panel={i}><span class="pr-num" aria-hidden="true">{i + 1}</span><div><h4>{s.title}</h4><p>{s.text}</p></div></li>)}</ol>
+      <details class="pr-details"><summary>Sobre esta línea</summary><p>Los momentos no tienen hora fija: en cada barrio la pólvora empieza a una hora distinta. Pregunta a tus vecinos y ajusta la tarde a eso. Las señales de urgencia completas están en el aviso del apartado siguiente.</p></details>
+    </div>
+  )}
+
+  {variant === 'lista' && (
+    <div data-pr-lista data-total={totalItems}>
+      <header class="pr-lista-head">
+        <div class="pr-progress" aria-hidden="true">
+          <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" class="pr-track"/><circle cx="60" cy="60" r="50" class="pr-fill" pathLength="100"/></svg>
+          <span class="pr-pct">0 %</span>
+        </div>
+        <div>
+          <p class="pr-kicker">Marca lo que ya tienes listo</p>
+          <h3 id={`${uid}-title`} data-toc-exclude="true">Tu lista para el 24 y el 31</h3>
+          <p class="pr-count" aria-live="polite">{totalItems} cosas, de noviembre a la mañana siguiente.</p>
+        </div>
+      </header>
+      <div class="pr-fases">
+        {fases.map(f => (
+          <details class="pr-fase" data-fase={f.id}>
+            <summary><span>{f.title}</span><span class="pr-fase-count" data-fase-count>{f.items.length} cosas</span></summary>
+            <ul>
+              {f.items.map((item, i) => (
+                <li><label><input type="checkbox" data-key={`${f.id}-${i}`} /><span class="pr-check" aria-hidden="true"></span><span>{item}</span></label></li>
+              ))}
+            </ul>
+          </details>
+        ))}
+      </div>
+      <p class="pr-done" hidden>Todo listo. Lo demás no depende de ti: quédate cerca y obsérvalo con calma.</p>
+      <div class="pr-lista-actions" hidden>
+        <button type="button" data-action="print">Imprimir la lista</button>
+        <button type="button" data-action="reset">Desmarcar todo</button>
+      </div>
+      <p class="pr-note">Lo que marcas se guarda solo en este navegador.</p>
+    </div>
+  )}
+</section>
+
+<script>
+  class PolvoraSequence {
+    private step = 0;
+    private playing = false;
+    private timer: ReturnType<typeof setTimeout> | undefined;
+    private events = new AbortController();
+    private reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    private readonly last: number;
+    constructor(private root: HTMLElement) {
+      this.last = Number(root.dataset.last);
+      root.dataset.enhanced = 'true';
+      root.querySelectorAll<HTMLElement>('.pr-controls, .pr-timeline').forEach(el => (el.hidden = false));
+      root.querySelectorAll<HTMLButtonElement>('[data-action]').forEach(button => button.addEventListener('click', () => {
+        const action = button.dataset.action;
+        if (action === 'play') {
+          if (this.playing) this.stop();
+          else if (!this.reduced.matches) {
+            if (this.step === this.last) this.step = 0;
+            this.playing = true;
+            this.render();
+            this.schedule();
+          }
+        } else {
+          this.stop();
+          if (action === 'restart') this.step = 0;
+          else this.step = Math.max(0, Math.min(this.last, this.step + (action === 'next' ? 1 : -1)));
+          this.render();
+        }
+      }, { signal: this.events.signal }));
+      root.querySelectorAll<HTMLButtonElement>('[data-goto]').forEach(button => button.addEventListener('click', () => {
+        this.stop();
+        this.step = Number(button.dataset.goto);
+        this.render();
+      }, { signal: this.events.signal }));
+      this.reduced.addEventListener('change', this.preference, { signal: this.events.signal });
+      document.addEventListener('visibilitychange', this.visibility, { signal: this.events.signal });
+      window.addEventListener('pagehide', this.stop, { signal: this.events.signal });
+      this.preference();
+    }
+    private preference = () => {
+      this.stop();
+      this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.disabled = this.reduced.matches;
+    };
+    private visibility = () => { if (document.hidden) this.stop(); };
+    private stop = () => { clearTimeout(this.timer); this.timer = undefined; this.playing = false; this.render(); };
+    private schedule() {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        if (!this.root.isConnected || !this.playing) { this.stop(); return; }
+        if (this.step < this.last) { this.step++; this.render(); this.schedule(); }
+        else this.stop();
+      }, 5000);
+    }
+    private render() {
+      const total = this.last + 1;
+      this.root.dataset.step = String(this.step);
+      this.root.dataset.playing = String(this.playing);
+      this.root.querySelectorAll<HTMLElement>('[data-panel]').forEach((panel, i) => (panel.dataset.active = String(i === this.step)));
+      this.root.querySelectorAll<HTMLButtonElement>('[data-goto]').forEach((b, i) => b.setAttribute('aria-pressed', String(i === this.step)));
+      const position = this.root.querySelector<HTMLElement>('.pr-position')!;
+      position.setAttribute('aria-live', this.playing ? 'off' : 'polite');
+      position.textContent = this.reduced.matches ? `Paso ${this.step + 1} de ${total} · movimiento reducido: usa las flechas` : `Paso ${this.step + 1} de ${total}`;
+      this.root.querySelector<HTMLButtonElement>('[data-action="prev"]')!.disabled = this.step === 0;
+      this.root.querySelector<HTMLButtonElement>('[data-action="next"]')!.disabled = this.step === this.last;
+      this.root.querySelector<HTMLButtonElement>('[data-action="play"]')!.textContent = this.playing ? 'Pausar' : this.step === this.last ? 'Reproducir de nuevo' : 'Reproducir';
+    }
+    disconnect() { this.stop(); this.events.abort(); }
+  }
+
+  const STORAGE_KEY = 'ctpv:lista-polvora:v1';
+  function readSaved(): Record<string, boolean> {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}') ?? {}; } catch { return {}; }
+  }
+  function save(state: Record<string, boolean>) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch { /* sin almacenamiento: la lista sigue funcionando */ }
+  }
+  function setupLista(root: HTMLElement): AbortController {
+    const events = new AbortController();
+    root.dataset.enhanced = 'true';
+    root.querySelector<HTMLElement>('.pr-lista-actions')!.hidden = false;
+    const boxes = [...root.querySelectorAll<HTMLInputElement>('input[type="checkbox"]')];
+    const total = boxes.length;
+    const saved = readSaved();
+    boxes.forEach(b => (b.checked = !!saved[b.dataset.key!]));
+    const update = (celebrate = false) => {
+      const done = boxes.filter(b => b.checked).length;
+      const pct = Math.round((done / total) * 100);
+      root.style.setProperty('--pr-pct', String(pct));
+      root.querySelector<HTMLElement>('.pr-pct')!.textContent = `${pct} %`;
+      root.querySelector<HTMLElement>('.pr-count')!.textContent = done === 0 ? `${total} cosas, de noviembre a la mañana siguiente.` : `${done} de ${total} hechas.`;
+      root.querySelectorAll<HTMLElement>('.pr-fase').forEach(fase => {
+        const items = [...fase.querySelectorAll<HTMLInputElement>('input')];
+        const n = items.filter(b => b.checked).length;
+        fase.querySelector<HTMLElement>('[data-fase-count]')!.textContent = `${n} de ${items.length}`;
+        fase.dataset.complete = String(n === items.length);
+      });
+      const complete = done === total;
+      root.querySelector<HTMLElement>('.pr-done')!.hidden = !complete;
+      root.dataset.complete = String(complete);
+      if (complete && celebrate) {
+        root.dataset.celebrate = 'false';
+        void root.offsetWidth;
+        root.dataset.celebrate = 'true';
+      }
+    };
+    boxes.forEach(b => b.addEventListener('change', () => {
+      const state = readSaved();
+      state[b.dataset.key!] = b.checked;
+      save(state);
+      update(true);
+    }, { signal: events.signal }));
+    root.querySelector<HTMLButtonElement>('[data-action="reset"]')!.addEventListener('click', () => {
+      boxes.forEach(b => (b.checked = false));
+      save({});
+      update();
+    }, { signal: events.signal });
+    root.querySelector<HTMLButtonElement>('[data-action="print"]')!.addEventListener('click', () => window.print(), { signal: events.signal });
+    update();
+    return events;
+  }
+
+  const sequences = new Map<HTMLElement, PolvoraSequence>();
+  const listas = new Map<HTMLElement, AbortController>();
+  function initializePolvora() {
+    document.querySelectorAll<HTMLElement>('[data-pr-seq]').forEach(root => { if (!sequences.has(root)) sequences.set(root, new PolvoraSequence(root)); });
+    document.querySelectorAll<HTMLElement>('[data-pr-lista]').forEach(root => { if (!listas.has(root)) listas.set(root, setupLista(root)); });
+  }
+  document.addEventListener('astro:before-swap', () => {
+    sequences.forEach(instance => instance.disconnect());
+    sequences.clear();
+    listas.forEach(events => events.abort());
+    listas.clear();
+  });
+  document.addEventListener('astro:page-load', initializePolvora);
+  initializePolvora();
+</script>
+
+<style>
+  .pr-visual { margin:2.1rem 0; padding:1.35rem; color:#294b3d; background:#fffdf6; border:1px solid #bccbb7; border-radius:1.1rem; font-family:system-ui,sans-serif; max-width:46rem; box-shadow:0 10px 30px -18px rgba(41,75,61,.45); }
+  .pr-visual header { margin:0 0 .9rem; }
+  .pr-visual .pr-kicker { margin:0 0 .45rem; color:#4b6249; font-size:.72rem; font-weight:700; line-height:1.5; letter-spacing:.06em; text-transform:uppercase; }
+  .pr-visual h3 { color:#294b3d!important; font-size:clamp(1.15rem,3vw,1.5rem); line-height:1.3; margin:0!important; }
+  .pr-visual h4 { color:#294b3d!important; font-size:1rem; line-height:1.4; margin:0 0 .2rem; }
+  .pr-visual p { color:#36533e; margin:.4rem 0; font-size:.94rem; line-height:1.6; }
+  .pr-visual [hidden] { display:none!important; }
+  .pr-visual li::before,.pr-visual li::marker { content:none!important; display:none!important; }
+  .pr-visual :is(button,summary,label):focus-visible,.pr-visual input:focus-visible + .pr-check { outline:3px solid #89551c; outline-offset:3px; }
+  .pr-visual .pr-details { background:#fffdf6!important; border-color:#bccbb7!important; border-radius:.7rem!important; padding:.65rem .8rem!important; margin:.75rem 0 0!important; }
+  .pr-visual .pr-details summary { color:#294b3d!important; min-height:44px; font:650 .85rem/1.5 system-ui,sans-serif!important; }
+  .pr-visual .pr-details summary::after { color:#294b3d!important; }
+  .pr-visual .pr-details p { font-size:.83rem; }
+  .pr-visual button { min-width:44px; min-height:44px; box-sizing:border-box; border:1px solid #7d9671; border-radius:.55rem; background:#fffdf6; color:#294b3d; padding:.55rem .7rem; font:650 .85rem/1.35 system-ui,sans-serif; cursor:pointer; }
+  .pr-visual button:disabled { color:#4b6146; background:#e6eddf; border-color:#a3b397; cursor:default; }
+
+  .pr-canvas { border-radius:.75rem; overflow:hidden; }
+  .pr-canvas svg { display:block; width:100%; height:auto; }
+  .pr-controls { margin:.6rem 0 .2rem; }
+  .pr-transport { display:flex; gap:.45rem; }
+  .pr-visual [data-action="play"] { flex:1; background:#294b3d; color:#fff; }
+  .pr-visual [data-action="play"]:disabled { color:#4b6146; background:#e6eddf; }
+  .pr-visual .pr-position { margin:.35rem 0 0; font-size:.8rem; font-weight:700; }
+  .pr-steps { list-style:none; padding:0!important; margin:.5rem 0!important; }
+  .pr-steps li { display:flex; gap:.7rem; margin:0!important; padding:.45rem 0; }
+  .pr-num { display:grid; place-items:center; width:2rem; height:2rem; flex:0 0 2rem; background:#294b3d; color:#fff; border-radius:50%; font-size:.85rem; font-weight:700; }
+  .pr-steps p { margin:0; font-size:.9rem; }
+  [data-enhanced="true"] .pr-steps [data-active="false"] { display:none; }
+  [data-enhanced="true"] .pr-steps [data-active="true"] { animation:pr-fade-in .45s ease; }
+  @keyframes pr-fade-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+
+  /* ---------- Casa ---------- */
+  .pr-canvas-casa { background:#3b4a52; }
+  .pr-canvas-casa text { fill:#294b3d; font:800 17px system-ui,sans-serif; dominant-baseline:auto; }
+  .pr-pill { fill:#fffdf6; opacity:.93; }
+  .pr-ring { fill:none; stroke:#f6c453; stroke-width:4; transform-box:fill-box; transform-origin:center; opacity:.55; }
+  .pr-r2 { transform:scale(1.9); opacity:.35; }
+  .pr-r3 { transform:scale(2.9); opacity:.18; }
+  .pr-spark { stroke:#f6c453; stroke-width:4; stroke-linecap:round; fill:none; }
+  [data-playing="true"] .pr-ring { animation:pr-ring 2.4s ease-out infinite; }
+  [data-playing="true"] .pr-r2 { animation-delay:.8s; }
+  [data-playing="true"] .pr-r3 { animation-delay:1.6s; }
+  [data-playing="true"] .pr-spark { animation:pr-spark 1.2s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  @keyframes pr-ring { from { transform:scale(.4); opacity:.9; } to { transform:scale(4.6); opacity:0; } }
+  @keyframes pr-spark { 0%,100% { transform:scale(.7); opacity:.5; } 50% { transform:scale(1.15); opacity:1; } }
+  .pr-heat { opacity:0; transition:opacity .6s ease; mix-blend-mode:multiply; }
+  .pr-heat-high { fill:#f0a35e; }
+  .pr-heat-mid { fill:#f0d46a; }
+  .pr-heat-low { fill:#7fc59a; }
+  .pr-heat-patio { fill:#e2674e; }
+  .pr-noise-tags .pr-tag { opacity:0; transition:opacity .6s ease; }
+  .pr-tag text { font:800 15px system-ui,sans-serif; fill:#fff!important; }
+  .pr-tag-high rect { fill:#8a3d17; }
+  .pr-tag-mid rect { fill:#6b5300; }
+  .pr-tag-low rect { fill:#1f5a3a; }
+  .pr-tag-patio rect { fill:#8a2a18; }
+  [data-step="0"] .pr-heat-patio { opacity:.55; }
+  [data-step="0"] .pr-tag-patio { opacity:1; }
+  [data-step="2"] .pr-heat { opacity:.55; }
+  [data-step="2"] .pr-tag { opacity:1; }
+  [data-step="3"] .pr-heat-low { opacity:.45; }
+  .pr-lock { opacity:0; transition:opacity .4s ease .3s; }
+  [data-step="1"] .pr-lock,[data-step="2"] .pr-lock,[data-step="3"] .pr-lock { opacity:1; }
+  .pr-route,.pr-route-shadow { opacity:0; transition:opacity .5s ease; }
+  [data-step="1"] .pr-route,[data-step="1"] .pr-route-shadow { opacity:1; }
+  .pr-route-shadow { stroke-dasharray:none; }
+  [data-playing="true"][data-step="1"] .pr-route { animation:pr-march 1.2s linear infinite; }
+  @keyframes pr-march { to { stroke-dashoffset:-40; } }
+  .pr-cueva,.pr-fan { opacity:0; transition:opacity .6s ease; }
+  [data-step="3"] .pr-cueva,[data-step="3"] .pr-fan { opacity:1; }
+  [data-playing="true"][data-step="3"] .pr-cueva rect:first-child { animation:pr-march 1.6s linear infinite; }
+  .pr-blades { transform-box:fill-box; transform-origin:center; }
+  [data-playing="true"][data-step="3"] .pr-blades { animation:pr-spin 1s linear infinite; }
+  @keyframes pr-spin { to { transform:rotate(360deg); } }
+  .pr-dog { opacity:0; transition:opacity .9s ease; filter:drop-shadow(0 3px 3px rgba(0,0,0,.45)); }
+  [data-step="0"] .pr-dog-0,[data-step="1"] .pr-dog-1,[data-step="2"] .pr-dog-2,[data-step="3"] .pr-dog-2 { opacity:1; }
+  [data-pr-seq]:not([data-enhanced]) .pr-dog-0 { opacity:1; }
+
+  /* ---------- Noche ---------- */
+  .pr-canvas-noche { background:#1d2a44; }
+  .pr-sky { fill:#f2c38b; transition:fill 1.4s ease; }
+  [data-step="1"] .pr-sky { fill:#6b5a8e; }
+  [data-step="2"] .pr-sky { fill:#17213a; }
+  [data-step="3"] .pr-sky { fill:#24304f; }
+  [data-step="4"] .pr-sky { fill:#b9d7e4; }
+  .pr-stars { opacity:0; transition:opacity 1.2s ease; }
+  [data-step="2"] .pr-stars,[data-step="3"] .pr-stars { opacity:.85; }
+  .pr-orb { transform:translate(110px,120px); transition:transform 1.6s cubic-bezier(.45,.05,.3,1); }
+  [data-step="1"] .pr-orb { transform:translate(170px,190px); }
+  [data-step="2"] .pr-orb { transform:translate(330px,58px); }
+  [data-step="3"] .pr-orb { transform:translate(560px,110px); }
+  [data-step="4"] .pr-orb { transform:translate(620px,150px); }
+  .pr-sun,.pr-moon { transition:opacity 1s ease; }
+  .pr-moon { opacity:0; }
+  [data-step="2"] .pr-sun,[data-step="3"] .pr-sun { opacity:0; }
+  [data-step="2"] .pr-moon,[data-step="3"] .pr-moon { opacity:1; }
+  .pr-moon-cut { fill:#17213a; transition:fill 1.4s ease; }
+  [data-step="3"] .pr-moon-cut { fill:#24304f; }
+  .pr-fw path { fill:none; stroke-width:5; stroke-linecap:round; }
+  .pr-fw { opacity:0; transform-box:fill-box; transform-origin:center; }
+  [data-step="1"] .pr-fw1 { opacity:.5; transform:scale(.6); }
+  [data-step="2"] .pr-fw { opacity:1; }
+  [data-step="3"] .pr-fw3 { opacity:.45; transform:scale(.55); }
+  [data-playing="true"][data-step="2"] .pr-fw { animation:pr-burst 1.6s ease-out infinite; }
+  [data-playing="true"][data-step="2"] .pr-fw2 { animation-delay:.55s; }
+  [data-playing="true"][data-step="2"] .pr-fw3 { animation-delay:1.05s; }
+  @keyframes pr-burst { 0% { transform:scale(.2); opacity:0; } 25% { opacity:1; } 100% { transform:scale(1.35); opacity:0; } }
+  .pr-window { fill:#7c8a92; transition:fill 1s ease; }
+  .pr-hills { fill:#c99a6a; transition:fill 1.4s ease; }
+  [data-step="1"] .pr-hills { fill:#4e4570; }
+  [data-step="2"] .pr-hills,[data-step="3"] .pr-hills { fill:#121a2e; }
+  [data-step="4"] .pr-hills { fill:#8fb39a; }
+  .pr-neighbors path { fill:#b98f6a; transition:fill 1.4s ease; }
+  [data-step="1"] .pr-neighbors path { fill:#3e3760; }
+  [data-step="2"] .pr-neighbors path,[data-step="3"] .pr-neighbors path { fill:#0e1526; }
+  [data-step="4"] .pr-neighbors path { fill:#d8cbb4; }
+  .pr-nwin { fill:#9a8a76; transition:fill 1s ease; }
+  [data-step="1"] .pr-nwin,[data-step="2"] .pr-nwin { fill:#f3c96a; }
+  .pr-tree circle { fill:#5f8a52; transition:fill 1.4s ease; }
+  [data-step="1"] .pr-tree circle { fill:#3c4a5c; }
+  [data-step="2"] .pr-tree circle,[data-step="3"] .pr-tree circle { fill:#16243a; }
+  .pr-glow { opacity:1; transition:opacity 1.2s ease; }
+  [data-step="1"] .pr-glow,[data-step="2"] .pr-glow,[data-step="3"] .pr-glow,[data-step="4"] .pr-glow { opacity:0; }
+  [data-step="1"] .pr-window,[data-step="2"] .pr-window,[data-step="3"] .pr-window { fill:#f6d77a; }
+  .pr-lock-noche { opacity:0; transition:opacity .5s ease; }
+  [data-step="1"] .pr-lock-noche,[data-step="2"] .pr-lock-noche,[data-step="3"] .pr-lock-noche { opacity:1; }
+  .pr-debris { opacity:0; transition:opacity .8s ease; }
+  .pr-walker { opacity:0; transition:opacity .8s ease, transform 4.5s linear; filter:drop-shadow(0 2px 2px rgba(0,0,0,.4)); }
+  [data-step="0"] .pr-walker { opacity:1; }
+  [data-playing="true"][data-step="0"] .pr-walker { transform:translateX(120px); }
+  [data-step="4"] .pr-debris { opacity:1; }
+
+  .pr-timeline { position:relative; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.25rem; margin:.7rem 0 0; }
+  .pr-timeline::before { content:''; position:absolute; left:10%; right:10%; top:22px; height:3px; background:#bccbb7; border-radius:3px; }
+  .pr-timeline button { position:relative; display:flex; flex-direction:column; align-items:center; gap:.3rem; border:0; background:transparent; padding:.2rem .1rem; font-size:.75rem; line-height:1.2; text-align:center; }
+  .pr-dot { width:18px; height:18px; border-radius:50%; background:#fffdf6; border:3px solid #7d9671; transition:transform .3s ease, background .3s ease; }
+  .pr-timeline button[aria-pressed="true"] .pr-dot { background:#294b3d; border-color:#294b3d; transform:scale(1.25); }
+  .pr-timeline button[aria-pressed="true"] { font-weight:800; }
+
+  /* ---------- Lista ---------- */
+  .pr-lista-head { display:flex; gap:1rem; align-items:center; }
+  .pr-progress { position:relative; width:5.5rem; height:5.5rem; flex:0 0 5.5rem; }
+  .pr-progress svg { width:100%; height:100%; transform:rotate(-90deg); }
+  .pr-track { fill:none; stroke:#e6eddf; stroke-width:12; }
+  .pr-fill { fill:none; stroke:#294b3d; stroke-width:12; stroke-linecap:round; stroke-dasharray:100; stroke-dashoffset:calc(100 - var(--pr-pct, 0)); transition:stroke-dashoffset .7s cubic-bezier(.3,.7,.3,1), stroke .4s ease; }
+  [data-complete="true"] .pr-fill { stroke:#b8892c; }
+  .pr-pct { position:absolute; inset:0; display:grid; place-items:center; font:800 1.05rem/1 system-ui,sans-serif; color:#294b3d; }
+  [data-celebrate="true"] .pr-progress { animation:pr-pop .7s ease; }
+  @keyframes pr-pop { 0% { transform:scale(1); } 40% { transform:scale(1.14); } 100% { transform:scale(1); } }
+  .pr-visual .pr-count { margin:.25rem 0 0; font-size:.88rem; font-weight:650; }
+  .pr-fases { display:grid; gap:.5rem; margin:1rem 0 .3rem; }
+  .pr-visual .pr-fase { background:#f4f7ef!important; border:1px solid #d4dfcc!important; border-radius:.7rem!important; padding:0!important; margin:0!important; overflow:hidden; }
+  .pr-visual .pr-fase summary { display:flex; justify-content:space-between; align-items:center; gap:.6rem; min-height:48px; padding:.55rem .85rem!important; color:#294b3d!important; font:700 .92rem/1.35 system-ui,sans-serif!important; cursor:pointer; }
+  .pr-visual .pr-fase summary::after { color:#294b3d!important; }
+  .pr-fase-count { margin-left:auto; font-size:.78rem; font-weight:700; color:#4b6249; background:#fffdf6; border:1px solid #d4dfcc; border-radius:999px; padding:.15rem .55rem; white-space:nowrap; }
+  .pr-fase[data-complete="true"] .pr-fase-count { background:#294b3d; color:#fff; border-color:#294b3d; }
+  .pr-fase ul { list-style:none; margin:0!important; padding:.1rem .6rem .6rem!important; display:grid; gap:.15rem; }
+  .pr-fase li { margin:0!important; padding:0!important; }
+  .pr-fase label { display:flex; gap:.7rem; align-items:flex-start; min-height:44px; padding:.5rem .35rem; border-radius:.5rem; cursor:pointer; color:#36533e; font-size:.92rem; line-height:1.45; }
+  .pr-fase label:hover { background:#e9f0e2; }
+  .pr-fase input { position:absolute; opacity:0; width:1px; height:1px; }
+  .pr-check { position:relative; flex:0 0 1.45rem; width:1.45rem; height:1.45rem; margin-top:.05rem; border:2px solid #7d9671; border-radius:.4rem; background:#fffdf6; transition:background .25s ease, border-color .25s ease; }
+  .pr-check::after { content:''; position:absolute; left:.38rem; top:.12rem; width:.42rem; height:.78rem; border:solid #fff; border-width:0 3px 3px 0; transform:rotate(45deg) scale(0); transition:transform .25s cubic-bezier(.3,1.6,.5,1); }
+  .pr-fase input:checked + .pr-check { background:#294b3d; border-color:#294b3d; }
+  .pr-fase input:checked + .pr-check::after { transform:rotate(45deg) scale(1); }
+  .pr-fase input:checked ~ span:last-child { color:#5f7a62; text-decoration:line-through; text-decoration-color:rgba(41,75,61,.45); }
+  .pr-visual .pr-done { margin:.6rem 0 0; padding:.6rem .8rem; background:#fdf6dc; border-left:5px solid #b8892c; border-radius:.5rem; font-weight:650; color:#5a4300; animation:pr-fade-in .5s ease; }
+  .pr-lista-actions { display:flex; gap:.5rem; flex-wrap:wrap; margin:.7rem 0 0; }
+  .pr-visual .pr-note { font-size:.78rem; color:#4b6249; margin:.5rem 0 0; }
+
+  @media(max-width:640px) {
+    .pr-visual { padding:1rem; }
+    .pr-visual .pr-kicker { font-size:.67rem; }
+    .pr-steps h4 { font-size:.95rem; }
+    .pr-steps p { font-size:.86rem; line-height:1.5; }
+    .pr-timeline button { font-size:.68rem; }
+    .pr-progress { width:4.6rem; height:4.6rem; flex-basis:4.6rem; }
+    .pr-pct { font-size:.92rem; }
+    .pr-fase label { font-size:.88rem; }
+  }
+  @media(prefers-reduced-motion:reduce) { .pr-visual *,.pr-visual *::before,.pr-visual *::after { animation:none!important; transition:none!important; } }
+  @media print {
+    .pr-visual { color:#111; background:white; border-color:#777; box-shadow:none; break-inside:avoid; }
+    .pr-controls,.pr-timeline,.pr-canvas,.pr-details,.pr-lista-actions,.pr-note,.pr-progress { display:none!important; }
+    [data-enhanced="true"] .pr-steps [data-active="false"] { display:flex!important; }
+    .pr-visual details > :not(summary) { display:block!important; }
+    .pr-fase summary::after { display:none!important; }
+  }
+</style>

@@ -24,6 +24,10 @@ Límites para el redactor:
 - Alzarla funciona porque ella lo busca y lo tolera. No convertirlo en consejo general: el brief dice que el perro elija (ESVCE) y en un perro mayor con dolor, alzarlo puede molestar.
 - «Temblores y terremotos» corresponde al país del propietario, no a España. No usarlo en la versión de España salvo como «otros sustos».
 
+## Cómo distinguirlas en fotos (aportado el 2026-10-27)
+
+Luna es la de tres colores, la más delgada. Dakota es la más gordita. En la foto de la sala con dos camas (`docs/contenido/miedo-polvora-perros-mayores/originales/fotos-propietario/luna-dakota-sala-dos-camas-2026-10-27.jpg`), por esa descripción, Luna sería la tricolor echada en la cama mirando a la cámara y Dakota la que está en el suelo junto al sillón; quien prepare la imagen lo confirma con el propietario si duda.
+
 ## Dakota (beagle, nacida en 2014)
 
 Hechos aportados (relato oral, 2026-10-25; aproximados donde se indica):
@@ -67,6 +71,8 @@ Aclaraciones posteriores del propietario (2026-10-25):
 - Durante los eventos de pólvora no recuerda con seguridad si se escapó. Cree que a veces, al abrir el portón, los perros salían disparados; en una ocasión salieron, pero fueron a esconderse en algún lugar y no a morder a nadie.
 - Nunca se lastimaron. En el patio buscaban dónde esconderse; al principio ladraban y después se metían, por ejemplo, bajo la pila (lavadero) u otro lugar del patio.
 - Su edad y el desenlace no se conocen. No se presenta como perra mayor.
+- **Aspecto (aportado el 2026-10-27):** mestiza de pastor alemán.
+- **Edad (aportado el 2026-10-27):** en esa época era una perra madura, adulta, todavía no senior. Sigue sin presentarse como perra mayor.
 - Impresión del propietario (hipótesis suya): el conjunto de tantos sonidos es lo que los ahuyenta.
 - Límite añadido: un perro que puede morder y que está en pánico es un riesgo de manejo para quien intenta sacarlo; no convertir el relato en pauta.
 
@@ -86,8 +92,24 @@ Hechos aportados (relato oral, 2026-10-25; sin raza, edad ni fecha exacta):
 - El día que reventaban pólvora, no salía de las habitaciones. Aunque le abrieran la puerta de la casa, no huía: se quedaba dentro. El miedo a salir era tan grande que, según el propietario, una vez se orinó o se defecó (no recuerda cuál de las dos) por el miedo.
 - La familia compró después una perra chow chow, muy enérgica, que solía molestar a Baltor. Aun así, los días de pólvora los dos perros se escondían.
 - El propietario no sabe si el hecho de que fuera el apartamento de arriba hacía que se oyera más; es una duda suya, no un dato.
+- **Aspecto (aportado el 2026-10-27):** si se ilustra, Baltor se ve como un chow chow café claro.
+- **Edad (aportado el 2026-10-27):** en esa época era un perro maduro, adulto, todavía no senior. No se presenta como perro mayor.
+- **Vivienda (aportado el 2026-10-27):** El Salvador. Apartamento de segundo piso en una casa dividida en cuatro apartamentos; cada uno tenía salida a la calle; los dos de arriba bajaban por una misma escalera central hasta la calle. «La puerta de la casa» que le abrían es la del apartamento, que daba a esa escalera.
 
 Límites: recuerdo de hace años, sin fechas ni desenlace, de un perro ajeno. Contrasta con Osa: Baltor, dentro de casa, no se escapa; Osa, en el patio, buscaba entrar. Ambos casos sostienen un único mensaje práctico, ya presente en el brief: un lugar interior y cerrado es donde los perros buscan refugio. No se interpreta como que dentro de casa el perro no sufra.
+
+### Perra de un compañero de trabajo del propietario (Costa Rica, 2026-10-26)
+
+Procedencia: mensaje escrito del compañero al propietario, en un chat de trabajo, el 2026-10-26. El propietario lo compartió como captura en la sesión. **No se registra el nombre del compañero.** No se le pidió permiso para publicarlo ni se le preguntó por su perro que ya no se levanta (el propietario prefirió no ser directo).
+
+Hechos (texto del mensaje, sin añadir nada):
+- En su casa, «solo una se pone muy nerviosa» con la pólvora (tiene más de un perro; no se sabe cuántos).
+- Lo que hacen: dejarla dentro de la casa.
+- Ella busca meterse debajo del escritorio del compañero y ahí se queda.
+
+Límites para el redactor:
+- No se sabe la edad de esa perra, su raza ni si es la que ya no se levanta: **no presentarla como perra mayor ni relacionarla con el H2-4**.
+- **Uso autorizado por el propietario el 2026-10-27.** Anónima («la perra de un compañero de trabajo, en Costa Rica»), una o dos frases, como ilustración de que buscan un hueco cerrado bajo un mueble (encaja con la cueva bajo la mesa de S9). Sin causa ni pauta.
 
 ### Otros testimonios
 

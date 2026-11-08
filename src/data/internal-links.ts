@@ -58,6 +58,10 @@ export const CROSS_PILLAR_LINKS: Record<string, string[]> = {
     'insuficiencia-pancreatica-exocrina-perros-mayores-malabsorcion',
     'incontinencia-fecal-perros-senior',
   ],
+  'miedo-polvora-perros-mayores': [
+    'golpe-de-calor-perros-mayores',
+    'ulceras-presion-perros',
+  ],
   'miedo-petardos-perros-mayores': [
     'chequeo-geriatrico-canino',
     'prevencion-caidas-perro-mayor',
