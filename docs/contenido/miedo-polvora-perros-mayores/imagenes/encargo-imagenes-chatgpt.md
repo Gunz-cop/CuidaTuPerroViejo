@@ -45,7 +45,11 @@ Lo exige la dirección visual del sitio: «senior» como palabra suelta no basta
 
 **Baltor (testimonio, El Salvador):** chow chow color café claro, macho, **adulto maduro, todavía no senior**. Pelo denso y esponjoso, melena alrededor del cuello, orejas pequeñas y redondeadas, hocico ancho y corto, cola enroscada sobre el lomo, cuerpo compacto.
 
-**Luna y Dakota (casa del propietario, Costa Rica):** beagles reales. Luna es tricolor y más delgada (2015); Dakota, la más gordita (2014). **No se generan con IA sin sus fotos**: ver imagen 7.
+**Luna y Dakota (casa del propietario, Costa Rica):** beagles reales. **No se generan con IA sin sus fotos**: ver imagen 7. Fotos de referencia del 8-11-2026, sin metadatos, en `docs/contenido/miedo-polvora-perros-mayores/originales/fotos-propietario/` (`luna-referencia-2026-11-08-1…4.jpg` y `dakota-referencia-2026-11-08-1…4.jpg`).
+
+- **Luna (2015):** beagle tricolor delgada, de patas largas y finas. Manto negro en el lomo con zonas café en los cuartos traseros, collar blanco en el pecho y patas blancas con algunas pecas café. Cabeza muy aclarada por la edad: frente y mejillas casi blancas con un velo canela claro, una línea blanca en el centro de la frente y orejas canela claro. Ojos oscuros grandes, algo hundidos, con ojeras negras. Trufa negra. Collar negro con placa metálica.
+- **Dakota (2014):** beagle robusta, con sobrepeso. Cuerpo blanco con **una sola mancha negra grande en el lomo** (no tiene manto tricolor completo) y unas pecas negras en la grupa. Cabeza canela claro con hocico, mejillas y cejas blancas por la edad, orejas largas canela claro, ojos marrones algo hundidos con ojeras oscuras y párpados caídos, y expresión serena y algo cansada. Cola blanca. Patas blancas.
+- **Cuidado:** en la foto 4 de Luna se leen dos teléfonos en la placa. No se publica así ni se sube a ChatGPT sin tapar la placa.
 
 ---
 
@@ -235,7 +239,8 @@ Fotografía documental horizontal 16:9, de noche, en la sala de una casa en Cost
 Instrucciones para quien genera (no dibujar): si las perras no se parecen a las de las fotos, la imagen se rechaza.
 ```
 
-- **Pie** (tras confirmar quién es quién): con la foto real, «Fotografía de la familia: Luna, en la cama, y Dakota, junto al sillón». Con la recreación: «Ilustración a partir de fotos de Luna y Dakota, la noche del 31 en casa».
+- **Identificación de la foto de la sala (8-11-2026):** al compararla con las fotos de referencia, Luna es la tricolor echada en la cama y Dakota la blanca con la mancha negra, en el suelo junto al sillón, como se había deducido. Falta solo el visto bueno del propietario.
+- **Pie:** con la foto real, «Fotografía de la familia: Luna, en la cama, y Dakota, junto al sillón». Con la recreación: «Ilustración a partir de fotos de Luna y Dakota, la noche del 31 en casa».
 - **Pendiente:** las fotos de Dakota y Luna que vas a pasar. Con ellas decidimos entre la foto real y la recreación.
 
 ---
