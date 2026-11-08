@@ -35,6 +35,25 @@ Fuente única de lo que cuenta el dueño; anotar tal cual, sin inventar ni adorn
 - **Clave para el artículo:** esa energía también desespera a veces a los otros animales (perras mayores y Jaspe). Detallar cómo reacciona cada una. _Pendiente._
 - Nota técnica para el brief: las carreras repentinas en gatitos suelen corresponder a juego/actividad predatoria normal ("zoomies"); verificar con fuente revisada antes de afirmarlo.
 
+## Llegada y método de adaptación del dueño (relato 2026-11-08)
+
+- Rookie llegó **un poco asustado**.
+- **Método propio, el de siempre con gatos cachorros** (le funcionó con Jaspe y con **Ágata**, gatita anterior que ya murió):
+  - Confinar al gatito en una sola habitación **3–4 semanas (~1 mes)** sin dejarlo salir. Con Rookie fue **la oficina**.
+  - Razonamiento del dueño: el gato adopta ese cuarto como su casa, refugio y lugar seguro; si algún día sale a la calle, va a querer regresar ahí.
+  - Ahí recibe comida, mimos y la mayor parte de la compañía. Tiene arenero, cama y comida en el mismo cuarto.
+  - La pareja teletrabaja en esa oficina, así que Rookie pasaba el día acompañado.
+  - Al inicio: **pechera + correa sujeta a un tornillo en la pared** para poder dejar la puerta abierta sin que se escapara (siempre con ellos presentes, según el contexto; _confirmar si nunca quedó amarrado solo_).
+  - Cuando "agarró cierto cuerpecito", empezó a dejarlo salir de la oficina con las puertas de la casa cerradas, a andar "chiroteando" por la casa.
+- ⚠️ Para el brief: contrastar el método con la evidencia (habitación base / "safe room" sí es recomendación habitual; atar a un gatito tiene riesgo de enredo/estrangulamiento si queda sin supervisión). Contar la experiencia tal cual, pero sin presentarla como pauta sin matices.
+- Temperamento inicial: **muy arisco, apartado, introvertido**. Al **tercer mes** sorprendió: ahora es más social y divertido con las personas.
+
+### Reacción inicial de Rookie a las perras
+
+- No podía ver a las perras: les **bufaba** y les tiraba **zarpazos**.
+- Al principio lo tenían dentro de la transportadora de Jaspe (bastante grande) y, al ver a las perras, golpeaba la transportadora.
+- Ya fuera de la oficina: las veía pasar, bufaba y salía corriendo. "No le gustaban las perras." Siempre ha sido receloso con los perros.
+
 ## Conflictos y vivencias (ir llenando)
 
 - Luna ↔ Rookie: ha habido pleitos. _Detalles pendientes._
@@ -48,7 +67,11 @@ _Pendiente._
 
 ## Preguntas abiertas para el dueño
 
-- Cómo fue la presentación inicial (¿separados, de golpe?).
+- ~~Cómo fue la presentación inicial~~ → respondido (confinamiento en la oficina).
+- Pareja: en un mensaje dijo "mi novia" y en otro "mi novio" (quizá error de dictado). Confirmar cómo nombrarla/o en el artículo.
+- ¿Rookie quedó alguna vez amarrado sin nadie presente?
+- ¿Cuándo y cómo empezaron a reaccionar las perras (y Jaspe) al verlo fuera de la oficina?
+- ¿Se puede mencionar a Ágata en el artículo?
 - Qué pasó exactamente en los pleitos con Luna; ¿lesiones? ¿cómo se resolvió?
 - Comida, areneros, espacios altos, descanso de las perras.
 - ¿Intervino veterinario (vacunas, desparasitación, estrés de las perras)?
