@@ -26,6 +26,15 @@ Fuente única de lo que cuenta el dueño; anotar tal cual, sin inventar ni adorn
 - Adoptado hace ~2 meses; llegó ya destetado, con ~1 mes de edad.
 - Cachorro "bien necio".
 
+### Energía desbordada (relato 2026-11-08)
+
+- "Había olvidado lo que era tener un cachorro en la casa." Contraste fuerte con el ritmo de dos perras mayores y una gata adulta.
+- Corre de un lado a otro sin aviso: va caminando y de golpe "pega la carrera"; a veces solo se le ve pasar la sombra; "parece un dibujo animado"; sale disparado hacia afuera y cuando uno se voltea ya lo tiene al lado.
+- Onomatopeyas del dueño (posible color para la voz): "¡shum, shum, shum!", "¡pum!".
+- Sentimiento honesto: le desespera, pero lo quiere mucho; Rookie es **muy cariñoso**. "No es que lo deje de querer… me encanta, pero eso me desespera."
+- **Clave para el artículo:** esa energía también desespera a veces a los otros animales (perras mayores y Jaspe). Detallar cómo reacciona cada una. _Pendiente._
+- Nota técnica para el brief: las carreras repentinas en gatitos suelen corresponder a juego/actividad predatoria normal ("zoomies"); verificar con fuente revisada antes de afirmarlo.
+
 ## Conflictos y vivencias (ir llenando)
 
 - Luna ↔ Rookie: ha habido pleitos. _Detalles pendientes._
