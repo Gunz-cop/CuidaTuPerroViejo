@@ -7,6 +7,8 @@ interface Props {
 }
 const { variant } = Astro.props;
 const uid = `polvora-${variant}-${crypto.randomUUID().slice(0, 8)}`;
+const planoSrc = '/images/blog/miedo-polvora-perros-mayores/anim-plano-casa-cenital-v1.webp';
+const perroSrc = '/images/blog/miedo-polvora-perros-mayores/anim-mestizo-echado-v1.webp';
 
 const casaSteps = [
   { title: 'Afuera, todo suena', text: 'En el patio no hay techo ni paredes entre tu perro y la pólvora de la calle. Por eso los perros de patio buscan entrar, y la UNAM recomienda no dejarlos en patios ni terrazas.' },
@@ -69,71 +71,42 @@ const totalItems = fases.reduce((n, f) => n + f.items.length, 0);
       <div class="pr-canvas pr-canvas-casa">
         <svg viewBox="0 0 720 460" role="img" aria-labelledby={`${uid}-svg-title ${uid}-svg-desc`}>
           <title id={`${uid}-svg-title`}>Plano de una casa de una planta con patio, vista desde arriba</title>
-          <desc id={`${uid}-svg-desc`}>La calle arriba, con ondas de pólvora. A la izquierda, un patio con una pila y un portón a la calle. A la derecha, la casa: sala y comedor junto a la calle, cocina al fondo y un cuarto interior sin ventana a la calle. Una huella marca dónde está el perro: primero en el patio, luego entra por la puerta de la cocina y termina en una cueva bajo una mesa en el cuarto interior.</desc>
-          <defs>
-            <pattern id={`${uid}-tiles`} width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="#f6f1e6"/><path d="M24 0V24H0" fill="none" stroke="#e6dccb" stroke-width="1.5"/></pattern>
-            <pattern id={`${uid}-cement`} width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#dcdcd2"/><circle cx="3" cy="4" r="1" fill="#c8c8bc"/><circle cx="8" cy="8" r=".8" fill="#c8c8bc"/></pattern>
-            <marker id={`${uid}-arrow`} viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#294b3d"/></marker>
-          </defs>
-
-          <rect x="0" y="0" width="720" height="62" fill="#3b4a52"/>
-          <path d="M0 31H300M420 31H720" stroke="#f3e7b5" stroke-width="3" stroke-dasharray="26 18"/>
-          <text class="pr-street" x="360" y="40" text-anchor="middle">Calle</text>
+          <desc id={`${uid}-svg-desc`}>La calle arriba, con ondas de pólvora. A la izquierda, un patio con una pila, un tendedero y un portón verde a la calle. A la derecha, la casa: sala y comedor junto a la calle, cocina al fondo y un cuarto interior sin ventana a la calle, con una mesa cubierta por una sábana azul. El perro aparece primero en el patio, luego en la cocina y al final en su cueva bajo la mesa del cuarto interior.</desc>
+          <defs><marker id={`${uid}-arrow`} viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#fffdf6"/></marker></defs>
+          <image href={planoSrc} x="0" y="0" width="720" height="460" preserveAspectRatio="none"/>
           <g class="pr-bursts">
-            <g transform="translate(130 31)"><circle class="pr-ring pr-r1" r="40"/><circle class="pr-ring pr-r2" r="40"/><circle class="pr-ring pr-r3" r="40"/><path class="pr-spark" d="M0-16V-6M0 6V16M-16 0H-6M6 0H16M-11-11l6 6M5 5l6 6M-11 11l6-6M5-5l6-6"/></g>
-            <g transform="translate(560 31)"><circle class="pr-ring pr-r2" r="40"/><circle class="pr-ring pr-r3" r="40"/><circle class="pr-ring pr-r1" r="40"/><path class="pr-spark" d="M0-16V-6M0 6V16M-16 0H-6M6 0H16M-11-11l6 6M5 5l6 6M-11 11l6-6M5-5l6-6"/></g>
+            <g transform="translate(130 26)"><circle class="pr-ring pr-r1" r="30"/><circle class="pr-ring pr-r2" r="30"/><circle class="pr-ring pr-r3" r="30"/><path class="pr-spark" d="M0-14V-5M0 5V14M-14 0H-5M5 0H14M-10-10l5 5M5 5l5 5M-10 10l5-5M5-5l5-5"/></g>
+            <g transform="translate(560 26)"><circle class="pr-ring pr-r2" r="30"/><circle class="pr-ring pr-r3" r="30"/><circle class="pr-ring pr-r1" r="30"/><path class="pr-spark" d="M0-14V-5M0 5V14M-14 0H-5M5 0H14M-10-10l5 5M5 5l5 5M-10 10l5-5M5-5l5-5"/></g>
           </g>
-
-          <rect x="30" y="72" width="270" height="372" fill={`url(#${uid}-cement)`} stroke="#8c8c80" stroke-width="4"/>
-          <text x="165" y="128" text-anchor="middle">Patio</text>
-          <g class="pr-porton">
-            <rect x="96" y="66" width="120" height="12" rx="2" fill="#4f8a5b"/>
-            <text class="pr-small" x="156" y="100" text-anchor="middle">portón</text>
+          <rect class="pr-heat pr-heat-patio" x="8" y="88" width="233" height="356"/>
+          <rect class="pr-heat pr-heat-high" x="244" y="90" width="460" height="176"/>
+          <rect class="pr-heat pr-heat-mid" x="246" y="272" width="214" height="168"/>
+          <rect class="pr-heat pr-heat-low" x="462" y="272" width="242" height="168"/>
+          <g class="pr-labels">
+            <g transform="translate(124 214)"><rect class="pr-pill" x="-38" y="-17" width="76" height="26" rx="13"/><text text-anchor="middle">Patio</text></g>
+            <g transform="translate(475 74)"><rect class="pr-pill" x="-74" y="-17" width="148" height="26" rx="13"/><text text-anchor="middle">Sala y comedor</text></g>
+            <g transform="translate(352 296)"><rect class="pr-pill" x="-44" y="-17" width="88" height="26" rx="13"/><text text-anchor="middle">Cocina</text></g>
+            <g transform="translate(600 296)"><rect class="pr-pill" x="-78" y="-17" width="156" height="26" rx="13"/><text text-anchor="middle">Cuarto interior</text></g>
           </g>
-          <g class="pr-lock pr-lock-porton" transform="translate(228 72)"><rect x="-11" y="-2" width="22" height="18" rx="3" fill="#b8892c"/><path d="M-6-2v-6a6 6 0 0 1 12 0v6" fill="none" stroke="#b8892c" stroke-width="3.5"/></g>
-          <g transform="translate(58 352)"><rect width="96" height="62" rx="6" fill="#c9cbc0" stroke="#8c8c80" stroke-width="3"/><rect x="10" y="10" width="44" height="42" rx="4" fill="#9fb9c6"/><text class="pr-small" x="48" y="-8" text-anchor="middle">pila</text></g>
-
-          <rect x="300" y="72" width="390" height="372" fill={`url(#${uid}-tiles)`} stroke="#5a4a3a" stroke-width="6"/>
-          <path d="M300 236H690M480 236V444" stroke="#5a4a3a" stroke-width="6"/>
-          <rect class="pr-heat pr-heat-high" x="303" y="75" width="384" height="158"/>
-          <rect class="pr-heat pr-heat-mid" x="303" y="239" width="174" height="202"/>
-          <rect class="pr-heat pr-heat-low" x="483" y="239" width="204" height="202"/>
-          <rect class="pr-heat pr-heat-patio" x="33" y="75" width="264" height="366"/>
-          <path d="M360 72H470" stroke="#b9d3df" stroke-width="10"/>
-          <path d="M366 72H464" stroke="#7e98a5" stroke-width="2" stroke-dasharray="6 5"/>
-          <text x="495" y="130" text-anchor="middle">Sala y comedor</text>
-          <text class="pr-small" x="415" y="96" text-anchor="middle">celosías</text>
-          <text x="390" y="282" text-anchor="middle">Cocina</text>
-          <text x="585" y="282" text-anchor="middle">Cuarto interior</text>
           <g class="pr-noise-tags">
-            <text class="pr-tag pr-tag-high" x="495" y="170" text-anchor="middle">se oye mucho</text>
-            <text class="pr-tag pr-tag-mid" x="390" y="318" text-anchor="middle">se oye</text>
-            <text class="pr-tag pr-tag-low" x="585" y="318" text-anchor="middle">se oye menos</text>
-            <text class="pr-tag pr-tag-patio" x="165" y="170" text-anchor="middle">todo suena</text>
+            <g class="pr-tag pr-tag-patio" transform="translate(124 244)"><rect x="-56" y="-16" width="112" height="24" rx="12"/><text text-anchor="middle">todo suena</text></g>
+            <g class="pr-tag pr-tag-high" transform="translate(475 172)"><rect x="-66" y="-16" width="132" height="24" rx="12"/><text text-anchor="middle">se oye mucho</text></g>
+            <g class="pr-tag pr-tag-mid" transform="translate(352 400)"><rect x="-40" y="-16" width="80" height="24" rx="12"/><text text-anchor="middle">se oye</text></g>
+            <g class="pr-tag pr-tag-low" transform="translate(620 412)"><rect x="-66" y="-16" width="132" height="24" rx="12"/><text text-anchor="middle">se oye menos</text></g>
           </g>
-
-          <rect class="pr-door-gap" x="296" y="330" width="8" height="58" fill="#f6f1e6"/>
-          <path class="pr-door pr-door-back" d="M300 330L300 388"/>
-          <g class="pr-lock pr-lock-door" transform="translate(286 402)"><rect x="-10" y="-2" width="20" height="16" rx="3" fill="#b8892c"/><path d="M-5-2v-5a5 5 0 0 1 10 0v5" fill="none" stroke="#b8892c" stroke-width="3"/></g>
-          <rect x="476" y="360" width="8" height="54" fill="#f6f1e6"/>
-
-          <path class="pr-route" d="M180 300C240 300 270 360 300 360C350 360 380 384 470 386C520 388 540 392 560 392" fill="none" stroke="#294b3d" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 10" marker-end={`url(#${uid}-arrow)`}/>
-
+          <g class="pr-lock" transform="translate(246 106)"><rect x="-11" y="-2" width="22" height="18" rx="3" fill="#d9a53a" stroke="#5a3d0c" stroke-width="2"/><path d="M-6-2v-6a6 6 0 0 1 12 0v6" fill="none" stroke="#5a3d0c" stroke-width="3.5"/></g>
+          <g class="pr-lock" transform="translate(228 356)"><rect x="-10" y="-2" width="20" height="16" rx="3" fill="#d9a53a" stroke="#5a3d0c" stroke-width="2"/><path d="M-5-2v-5a5 5 0 0 1 10 0v5" fill="none" stroke="#5a3d0c" stroke-width="3"/></g>
+          <path class="pr-route" d="M160 392C200 380 225 345 250 338C300 326 330 352 380 356C420 360 440 358 468 356C482 355 490 350 494 344" fill="none" stroke="#fffdf6" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 10" marker-end={`url(#${uid}-arrow)`}/>
+          <path class="pr-route-shadow" d="M160 392C200 380 225 345 250 338C300 326 330 352 380 356C420 360 440 358 468 356C482 355 490 350 494 344" fill="none" stroke="#294b3d" stroke-width="9" stroke-linecap="round" opacity=".55"/>
           <g class="pr-cueva">
-            <rect x="510" y="356" width="150" height="74" rx="6" fill="#a9825a" stroke="#6b4f33" stroke-width="3"/>
-            <path d="M510 356H660V364H518V430H510Z" fill="#e7d9f1" opacity=".95"/>
-            <path d="M660 356V430" stroke="#e7d9f1" stroke-width="8"/>
-            <rect x="540" y="378" width="70" height="40" rx="10" fill="#c96f5b"/>
-            <path d="M548 386h54M548 398h54M548 410h54" stroke="#e79b88" stroke-width="3"/>
-            <circle cx="630" cy="400" r="9" fill="#9fc3d6" stroke="#4d7d95" stroke-width="2.5"/>
-            <text class="pr-small pr-cueva-label" x="585" y="346" text-anchor="middle">cueva bajo la mesa</text>
-            <path class="pr-exit" d="M500 393H488" stroke="#294b3d" stroke-width="4" stroke-linecap="round" marker-end={`url(#${uid}-arrow)`}/>
+            <rect x="466" y="284" width="64" height="108" rx="10" fill="none" stroke="#f6c453" stroke-width="4" stroke-dasharray="8 6"/>
+            <g transform="translate(498 254)"><rect class="pr-pill" x="-50" y="-17" width="100" height="26" rx="13"/><text text-anchor="middle">su cueva</text></g>
           </g>
-          <g class="pr-fan" transform="translate(668 318)"><circle r="16" fill="#fffdf6" stroke="#294b3d" stroke-width="3"/><g class="pr-blades" fill="#5b8a74"><path d="M0 0C-3-9-2-14 3-15C7-12 5-5 0 0Z"/><path d="M0 0C9-3 14-2 15 3C12 7 5 5 0 0Z"/><path d="M0 0C3 9 2 14-3 15C-7 12-5 5 0 0Z"/><path d="M0 0C-9 3-14 2-15-3C-12-7-5-5 0 0Z"/></g></g>
-
-          <g class="pr-dog" aria-hidden="true">
-            <circle r="24" fill="#294b3d"/>
-            <g fill="#fffdf6"><ellipse cx="0" cy="5" rx="8" ry="7"/><circle cx="-9" cy="-5" r="3.6"/><circle cx="-3" cy="-11" r="3.6"/><circle cx="4" cy="-11" r="3.6"/><circle cx="10" cy="-5" r="3.6"/></g>
+          <g class="pr-fan" transform="translate(686 420)"><circle r="15" fill="#fffdf6" stroke="#294b3d" stroke-width="3"/><g class="pr-blades" fill="#5b8a74"><path d="M0 0C-3-9-2-14 3-15C7-12 5-5 0 0Z"/><path d="M0 0C9-3 14-2 15 3C12 7 5 5 0 0Z"/><path d="M0 0C3 9 2 14-3 15C-7 12-5 5 0 0Z"/><path d="M0 0C-9 3-14 2-15-3C-12-7-5-5 0 0Z"/></g></g>
+          <g class="pr-dogs" aria-hidden="true">
+            <image class="pr-dog pr-dog-0" href={perroSrc} x="128" y="360" width="64" height="62"/>
+            <image class="pr-dog pr-dog-1" href={perroSrc} x="326" y="326" width="64" height="62"/>
+            <image class="pr-dog pr-dog-2" href={perroSrc} x="466" y="312" width="64" height="62"/>
           </g>
         </svg>
       </div>
@@ -397,11 +370,9 @@ const totalItems = fases.reduce((n, f) => n + f.items.length, 0);
   @keyframes pr-fade-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
 
   /* ---------- Casa ---------- */
-  .pr-canvas-casa { background:#edf2e8; }
-  .pr-canvas-casa text { fill:#294b3d; font:700 24px system-ui,sans-serif; }
-  .pr-canvas-casa .pr-small { font:600 18px system-ui,sans-serif; fill:#4b6249; }
-  .pr-canvas-casa .pr-cueva-label { fill:#294b3d; font-weight:700; }
-  .pr-canvas-casa .pr-street { fill:#f3e7b5; font:700 20px system-ui,sans-serif; letter-spacing:.2em; }
+  .pr-canvas-casa { background:#3b4a52; }
+  .pr-canvas-casa text { fill:#294b3d; font:800 17px system-ui,sans-serif; dominant-baseline:auto; }
+  .pr-pill { fill:#fffdf6; opacity:.93; }
   .pr-ring { fill:none; stroke:#f6c453; stroke-width:4; transform-box:fill-box; transform-origin:center; opacity:.55; }
   .pr-r2 { transform:scale(1.9); opacity:.35; }
   .pr-r3 { transform:scale(2.9); opacity:.18; }
@@ -410,43 +381,40 @@ const totalItems = fases.reduce((n, f) => n + f.items.length, 0);
   [data-playing="true"] .pr-r2 { animation-delay:.8s; }
   [data-playing="true"] .pr-r3 { animation-delay:1.6s; }
   [data-playing="true"] .pr-spark { animation:pr-spark 1.2s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
-  @keyframes pr-ring { from { transform:scale(.4); opacity:.9; } to { transform:scale(4.2); opacity:0; } }
+  @keyframes pr-ring { from { transform:scale(.4); opacity:.9; } to { transform:scale(4.6); opacity:0; } }
   @keyframes pr-spark { 0%,100% { transform:scale(.7); opacity:.5; } 50% { transform:scale(1.15); opacity:1; } }
-
-  .pr-heat { opacity:0; transition:opacity .6s ease; }
-  .pr-heat-high { fill:#e8a25a; }
-  .pr-heat-mid { fill:#e9d37a; }
-  .pr-heat-low { fill:#9cc3a5; }
-  .pr-heat-patio { fill:#d9715a; }
-  .pr-noise-tags .pr-tag { font:700 18px system-ui,sans-serif; opacity:0; transition:opacity .6s ease; }
-  .pr-tag-high { fill:#7a3b1f!important; }
-  .pr-tag-mid { fill:#6b5300!important; }
-  .pr-tag-low { fill:#1f5a3a!important; }
-  .pr-tag-patio { fill:#7a2618!important; }
-  [data-step="0"] .pr-heat-patio { opacity:.38; }
+  .pr-heat { opacity:0; transition:opacity .6s ease; mix-blend-mode:multiply; }
+  .pr-heat-high { fill:#f0a35e; }
+  .pr-heat-mid { fill:#f0d46a; }
+  .pr-heat-low { fill:#7fc59a; }
+  .pr-heat-patio { fill:#e2674e; }
+  .pr-noise-tags .pr-tag { opacity:0; transition:opacity .6s ease; }
+  .pr-tag text { font:800 15px system-ui,sans-serif; fill:#fff!important; }
+  .pr-tag-high rect { fill:#8a3d17; }
+  .pr-tag-mid rect { fill:#6b5300; }
+  .pr-tag-low rect { fill:#1f5a3a; }
+  .pr-tag-patio rect { fill:#8a2a18; }
+  [data-step="0"] .pr-heat-patio { opacity:.55; }
   [data-step="0"] .pr-tag-patio { opacity:1; }
-  [data-step="2"] .pr-heat:not(.pr-heat-patio),[data-step="3"] .pr-heat-low { opacity:.5; }
-  [data-step="2"] .pr-heat-patio { opacity:.38; }
+  [data-step="2"] .pr-heat { opacity:.55; }
   [data-step="2"] .pr-tag { opacity:1; }
-  .pr-door { stroke:#5a4a3a; stroke-width:6; transition:transform .6s ease; transform-box:fill-box; transform-origin:top; }
-  [data-step="0"] .pr-door-back { transform:rotate(-70deg); }
+  [data-step="3"] .pr-heat-low { opacity:.45; }
   .pr-lock { opacity:0; transition:opacity .4s ease .3s; }
   [data-step="1"] .pr-lock,[data-step="2"] .pr-lock,[data-step="3"] .pr-lock { opacity:1; }
-  .pr-route { opacity:0; stroke-dashoffset:0; }
-  [data-step="1"] .pr-route { opacity:1; }
+  .pr-route,.pr-route-shadow { opacity:0; transition:opacity .5s ease; }
+  [data-step="1"] .pr-route,[data-step="1"] .pr-route-shadow { opacity:1; }
+  .pr-route-shadow { stroke-dasharray:none; }
   [data-playing="true"][data-step="1"] .pr-route { animation:pr-march 1.2s linear infinite; }
   @keyframes pr-march { to { stroke-dashoffset:-40; } }
   .pr-cueva,.pr-fan { opacity:0; transition:opacity .6s ease; }
   [data-step="3"] .pr-cueva,[data-step="3"] .pr-fan { opacity:1; }
+  [data-playing="true"][data-step="3"] .pr-cueva rect:first-child { animation:pr-march 1.6s linear infinite; }
   .pr-blades { transform-box:fill-box; transform-origin:center; }
   [data-playing="true"][data-step="3"] .pr-blades { animation:pr-spin 1s linear infinite; }
   @keyframes pr-spin { to { transform:rotate(360deg); } }
-  .pr-dog { transform:translate(180px,300px); transition:transform 1.4s cubic-bezier(.45,.05,.3,1); }
-  [data-step="1"] .pr-dog { transform:translate(400px,372px); }
-  [data-step="2"] .pr-dog { transform:translate(585px,370px); }
-  [data-step="3"] .pr-dog { transform:translate(585px,398px) scale(.85); }
-  [data-step="0"] .pr-dog circle:first-child { fill:#943d36; }
-  [data-pr-seq]:not([data-enhanced]) .pr-route { opacity:1; }
+  .pr-dog { opacity:0; transition:opacity .9s ease; filter:drop-shadow(0 3px 3px rgba(0,0,0,.45)); }
+  [data-step="0"] .pr-dog-0,[data-step="1"] .pr-dog-1,[data-step="2"] .pr-dog-2,[data-step="3"] .pr-dog-2 { opacity:1; }
+  [data-pr-seq]:not([data-enhanced]) .pr-dog-0 { opacity:1; }
 
   /* ---------- Noche ---------- */
   .pr-canvas-noche { background:#1d2a44; }

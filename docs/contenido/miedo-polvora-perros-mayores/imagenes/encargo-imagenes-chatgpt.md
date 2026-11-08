@@ -41,7 +41,7 @@ Lo exige la dirección visual del sitio: «senior» como palabra suelta no basta
 
 **Familia del mestizo:** la tutora, mujer de unos 55 años, pelo negro con canas recogido, blusa lila y anillo de casada (imágenes 6, 9 y 10); el tutor, hombre de unos 35 años, camiseta gris y pantalón de mezclilla (portada y 4).
 
-**Osa (testimonio, El Salvador):** mestiza de pastor alemán, hembra, **adulta madura, todavía no senior** (excepción aprobada por el propietario). Manto negro y fuego algo irregular, orejas erguidas, hocico largo, tamaño mediano-grande.
+**Osa (testimonio, El Salvador):** mestiza de pastor alemán, hembra, **adulta madura, todavía no senior** (excepción aprobada por el propietario). Manto negro y fuego algo irregular, con el pelo algo más largo y un poco crespo (no raso), orejas erguidas totalmente negras, hocico largo, tamaño mediano-grande (ajuste del propietario, 8-11-2026, tras ver la primera versión).
 
 **Baltor (testimonio, El Salvador):** chow chow color café claro, macho, **adulto maduro, todavía no senior**. Pelo denso y esponjoso, melena alrededor del cuello, orejas pequeñas y redondeadas, hocico ancho y corto, cola enroscada sobre el lomo, cuerpo compacto.
 
