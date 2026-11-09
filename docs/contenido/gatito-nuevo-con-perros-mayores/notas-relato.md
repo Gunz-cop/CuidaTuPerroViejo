@@ -73,9 +73,41 @@ Fuente única de lo que cuenta el dueño; anotar tal cual, sin inventar ni adorn
 - 📌 El dueño reservará la historia de Dakota y los gatos para un futuro artículo de **memorias de Dakota**: aquí contarla en lo que toque a Rookie, sin agotarla.
 - Foto ideal pendiente: Rookie y Dakota en la misma cama.
 
+## Luna ↔ Rookie (relato 2026-11-09)
+
+### Contexto: Luna, la reina
+
+- Es la que **más tiempo lleva en la casa** (Dakota es mayor, pero llegó ya senior). "La alfa, la reina, todo el mundo le obedece." Siempre quiere mandar y corregir.
+- ⚠️ Cuidado al redactar: "alfa" es la palabra del dueño; la etología actual cuestiona el modelo de dominancia. Citarla como voz suya, no como explicación.
+- Precedente con Dakota: cuando llegó Dakota, que era muy pegajosa con él, Luna se peleó con ella varias veces y él tuvo que separarlas. Cuando Dakota, recién llegada, quiso morderlo, **Luna salió a defenderlo**. (Material también para las memorias de Dakota.)
+- Él corrige a Luna cuando ella corrige: "si estoy yo, yo soy el que corrige y punto".
+
+### Conflictos con Rookie
+
+- Luna le ha gruñido, ladrado, lo ha empujado con el hocico y le hace **amagos de mordisco** (mordiscos de amenaza sin contacto). Según el dueño, si quisiera hacerle daño lo haría; solo lo amedrenta. Rookie se defiende.
+- **Lección de la correa:** al principio Rookie salía de la oficina con la correa. El dueño notó que **con correa se volvía más violento: como no podía huir, tenía que defenderse**. Decidió dejarlo andar suelto. (Buen punto para el artículo: la importancia de que el gato tenga ruta de escape; verificar con fuente.)
+
+### El incidente de ayer (2026-11-08)
+
+1. Rookie se acerca a Luna y le tira un zarpazo.
+2. Luna no se aguanta: gruñe, ladra, lo empuja con el hocico, amagos de mordisco.
+3. Rookie queda **arrinconado**, se para y tira zarpazos sin parar, aterrorizado.
+4. Miedo del dueño: que en ese frenesí Rookie le dañe **un ojo o el hocico** a Luna. Luna no le hace daño, pero él, por miedo, podría hacérselo a ella.
+5. Lo resolvió así: regañó a Luna y la sacó de la casa; regañó a Rookie y lo encerró en el cuarto.
+6. Reencuentro: primero soltó al gato. Cuando vio que pasaba cerca de Luna sin que ella hiciera nada, esperó unos 2 minutos y dejó entrar a Luna.
+- "Situaciones así han ido pasando y ha sido complicado."
+
+### Vigilancia diaria y manejo
+
+- Ahora tiene que **vigilar siempre** a Rookie cuando está cerca de las perras.
+- Escena de hoy (pan con natilla): Rookie quería que le diera; se restregó con Dakota y la "abrazó" con la cola. Dakota se apartó. Rookie se paró en las patas traseras y le tiraba zarpazos **jugando**, pero a Dakota no le gusta, así que lo regaña.
+- **Señal de alerta:** cuando Luna "pela los ojos", él dice "Rookie" (siempre el nombre del gato, para que Luna no sienta que va por ella). Si ya se pone serio, dice "Luna, no".
+- Sentimiento: "es cansado, es agotador". Esperanza: que **al año** Rookie ya haya aprendido las reglas de la casa.
+- Para el artículo: posibles notas de seguridad (arañazo en el ojo de un perro = urgencia veterinaria; no darle pan/natilla al gato). Verificar con fuentes.
+
 ## Conflictos y vivencias (ir llenando)
 
-- Luna ↔ Rookie: ha habido pleitos. _Detalles pendientes._
+- Luna ↔ Rookie: ver sección propia arriba.
 - Dakota ↔ Rookie: ver sección propia arriba.
 - Jaspe ↔ Rookie: lo más activo ahora mismo. _Detalles pendientes._
 - Educación del gatito por parte de la pareja: _pendiente._
