@@ -83,10 +83,10 @@ const schema = {
 };
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} search={{ tipo: 'Herramienta', seccion: 'Herramientas' }}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
 
-  <main id="main-content" tabindex="-1" class="mob max-w-3xl mx-auto px-5 pb-12 sm:px-6">
+  <main id="main-content" tabindex="-1" data-pagefind-body class="mob max-w-3xl mx-auto px-5 pb-12 sm:px-6">
     <header class="mob-hero">
       <picture class="mob-hero__media">
         <source media="(max-width: 63.999rem)" srcset="/images/herramientas/movilidad-hero-movil-400.webp 400w, /images/herramientas/movilidad-hero-movil-600.webp 600w, /images/herramientas/movilidad-hero-movil.webp 900w" sizes="100vw" width="900" height="675" />

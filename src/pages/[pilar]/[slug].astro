@@ -127,6 +127,7 @@ const hideHeroCSS = heroImage
   keywords={entry.data.keywordPrincipal}
   image={entry.data.heroImage}
   ogType="article"
+  search={{ tipo: 'Guía', seccion: pilarName }}
 >
   <!-- Schema BlogPosting + BreadcrumbList -->
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
@@ -140,11 +141,11 @@ const hideHeroCSS = heroImage
     <!-- Breadcrumbs -->
     <Breadcrumbs pilarSlug={entry.data.pilar} pilarName={pilarName} title={entry.data.title} />
 
-    <article>
+    <article data-pagefind-body>
       <!-- ===== HERO HEADER ===== -->
       <header class="mb-8 md:mb-10 max-w-3xl mx-auto lg:max-w-none">
         <!-- Badge de pilar -->
-        <div class="mb-4">
+        <div class="mb-4" data-pagefind-ignore>
           <a
             href={`/${entry.data.pilar}`}
             class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-secondary text-brand-primary border border-brand-primary/20 uppercase tracking-wider hover:bg-brand-primary/10 transition-colors duration-200"
@@ -162,7 +163,7 @@ const hideHeroCSS = heroImage
         </h1>
 
         <!-- Firma editorial: autoría y fechas, siempre desde el frontmatter -->
-        <div class="mb-5">
+        <div class="mb-5" data-pagefind-ignore>
           <ArticleByline datePublished={entry.data.datePublished} dateModified={entry.data.dateModified} />
         </div>
 

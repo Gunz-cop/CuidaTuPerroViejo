@@ -69,6 +69,10 @@ Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 
 
 ## Mejoras del sitio
 
+- [~] **Buscador en el sitio.** El dueño quiso encontrar el artículo de camas, no supo por dónde empezar y tuvo que usar el asistente de IA para ubicarse (2026-11-10). Construido en la rama `feat/buscador-sitio`: índice Pagefind generado dentro del build (`scripts/pagefind-integration.mjs`), diálogo propio (`src/components/SiteSearch.astro`, `src/scripts/site-search.ts`, `src/lib/site-search.ts` con tests), lupa en la cabecera, campo en la portada y atajos Ctrl/Cmd+K y «/». Sin resultados ofrece el asistente con la consulta ya escrita. Pendiente: visto bueno del dueño, PR y fusión.
+  - [ ] Miniaturas: las guías sin variante `-400.webp` cargan la imagen de 1200 px para una miniatura de 56 px. Generar las variantes que falten con `npm run images:optimize`.
+  - [ ] Sinónimos: «pipí» o «colchón» solo aparecen si el texto de la guía los usa. Valorar una lista corta de sinónimos por guía si las búsquedas reales lo piden.
+
 - [ ] **API de valoraciones caída (menor, lo arregla el dueño en otra sesión):** `GET /api/feedback?slug=…` devuelve 500 «Error interno del servidor» en producción para todos los artículos; el dueño lo vio fallar desde hace uno o dos días. No tumba el sitio y hoy no se usa como métrica: los votos «útil / no útil» se guardan como contadores en D1 (`feedback_counts`, `src/pages/api/feedback.ts`), pero solo los muestra el propio widget y no hay panel que los lea. Primera pista: comprobar que la tabla existe en la D1 de producción y revisar el log del Worker. (Anotado: 2026-10-24) Reconfirmado el 2026-10-26 tras #149: HTTP500 también en petardos, golpe de calor y leishmaniosis; mismo cuerpo de error, sin cambios en la API en estos PR. Evidencia: `docs/contenido/miedo-petardos-perros-mayores/publicacion/produccion/feedback-comparacion.json`.
 - [ ] **Botón flotante de opiniones:** a 390 px tapa la esquina inferior derecha de tarjetas y recursos (visto en golpe de calor, pasa en todo el sitio). Valorar desplazarlo o reducirlo en móvil. (Anotado: 2026-10-24)
 

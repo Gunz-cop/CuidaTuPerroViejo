@@ -1,0 +1,446 @@
+---
+// Buscador del sitio: un <dialog> nativo que consulta el índice de Pagefind
+// generado en el build. Se monta una sola vez desde BaseLayout y se abre desde
+// cualquier elemento con `data-search-open`, con Ctrl/Cmd+K o con «/».
+// La lógica está en src/scripts/site-search.ts y src/lib/site-search.ts.
+
+const topics = [
+  { label: 'Camas ortopédicas', query: 'cama ortopédica' },
+  { label: 'Comida casera', query: 'comida casera' },
+  { label: 'Incontinencia', query: 'incontinencia' },
+  { label: 'Artrosis', query: 'artrosis' },
+  { label: 'Mal aliento', query: 'mal aliento' },
+  { label: 'Desorientación', query: 'disfunción cognitiva' },
+];
+
+const sections = [
+  { label: 'Salud', href: '/salud-perros-mayores' },
+  { label: 'Alimentación', href: '/alimentacion-perros-senior' },
+  { label: 'Movilidad y dolor', href: '/movilidad-dolor-perros-mayores' },
+  { label: 'Mente y comportamiento', href: '/salud-mental-emocional-perros' },
+  { label: 'Higiene y hogar', href: '/higiene-hogar-perros-senior' },
+  { label: 'Cuidados paliativos', href: '/cuidados-paliativos-perros' },
+  { label: 'Herramientas', href: '/herramientas' },
+];
+
+const PAW = 'M12 11.2c-3.5 0-6.4 2.7-6.4 6 0 2 1.5 3.2 3.4 3.2 1.1 0 2-.5 3-.5s1.9.5 3 .5c1.9 0 3.4-1.2 3.4-3.2 0-3.3-2.9-6-6.4-6Z';
+---
+
+<dialog id="site-search" class="ss" aria-labelledby="ss-title" data-site-search>
+  <div class="ss-panel">
+    <h2 id="ss-title" class="ss-sr">Buscar en Cuida tu Perro Viejo</h2>
+
+    <div class="ss-bar" role="search">
+      <svg class="ss-bar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.6-3.6"></path></svg>
+      <label class="ss-sr" for="ss-input">Buscar guías y herramientas</label>
+      <input
+        id="ss-input"
+        class="ss-input"
+        type="text"
+        inputmode="search"
+        role="combobox"
+        aria-expanded="false"
+        aria-controls="ss-results"
+        aria-autocomplete="list"
+        autocomplete="off"
+        autocapitalize="none"
+        autocorrect="off"
+        spellcheck="false"
+        enterkeyhint="search"
+        maxlength="80"
+        placeholder="Camas, artrosis, comida casera…"
+        autofocus
+      />
+      <button type="button" class="ss-clear" data-ss-clear aria-label="Borrar la búsqueda" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"></path></svg>
+      </button>
+      <button type="button" class="ss-close" data-ss-close aria-label="Cerrar el buscador">
+        <span class="ss-close-key" aria-hidden="true">Esc</span>
+        <span class="ss-close-text" aria-hidden="true">Cerrar</span>
+      </button>
+    </div>
+
+    <p class="ss-sr" role="status" aria-live="polite" data-ss-status></p>
+
+    <div class="ss-body">
+      <!-- Antes de escribir: atajos a lo más buscado y a los temas -->
+      <div class="ss-view" data-ss-view="idle">
+        <p class="ss-eyebrow">Lo que más se busca</p>
+        <div class="ss-chips">
+          {topics.map(({ label, query }) => (
+            <button type="button" class="ss-chip" data-ss-query={query}>{label}</button>
+          ))}
+        </div>
+        <p class="ss-eyebrow ss-eyebrow--spaced">Explorar por tema</p>
+        <ul class="ss-sections">
+          {sections.map(({ label, href }) => (
+            <li>
+              <a class="ss-section" href={href}>
+                <span>{label}</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Buscando: un rastro de huellas -->
+      <div class="ss-view ss-loading" data-ss-view="loading" hidden aria-hidden="true">
+        <div class="ss-trail">
+          {[0, 1, 2, 3, 4].map((i) => (
+            <svg class="ss-trail-paw" style={`--i:${i}`} viewBox="0 0 24 24" fill="currentColor"><circle cx="7.2" cy="8" r="2.2"></circle><circle cx="16.8" cy="8" r="2.2"></circle><circle cx="4.8" cy="12.7" r="1.9"></circle><circle cx="19.2" cy="12.7" r="1.9"></circle><path d={PAW}></path></svg>
+          ))}
+        </div>
+        <p>Siguiendo el rastro…</p>
+      </div>
+
+      <!-- Resultados -->
+      <div class="ss-view" data-ss-view="found" hidden>
+        <p class="ss-eyebrow" data-ss-summary aria-hidden="true"></p>
+        <ul id="ss-results" class="ss-results" role="listbox" aria-label="Resultados de la búsqueda"></ul>
+        <button type="button" class="ss-more" data-ss-more hidden>Ver más resultados</button>
+        <p class="ss-alt">¿No es lo que buscabas? <a href="/asistente-ia" data-ss-ask>Pregúntale al asistente</a></p>
+      </div>
+
+      <!-- Sin resultados: nunca un callejón sin salida -->
+      <div class="ss-view ss-empty" data-ss-view="empty" hidden>
+        <svg class="ss-dog" viewBox="0 0 200 110" aria-hidden="true">
+          <path class="ss-dog-ground" d="M14 96h172" />
+          <g class="ss-dog-tail"><path d="M148 52c10-4 16-14 15-26" /></g>
+          <g class="ss-dog-body">
+            <path d="M128 92V70M142 92V68M84 92V72M98 92V72" class="ss-dog-legs" />
+            <rect x="76" y="44" width="76" height="34" rx="17" />
+          </g>
+          <g class="ss-dog-head">
+            <path d="M92 50 66 66" class="ss-dog-neck" />
+            <ellipse cx="62" cy="68" rx="17" ry="13" />
+            <path d="M50 70c-9 1-15 5-18 10 4 4 11 5 18 2" class="ss-dog-snout" />
+            <circle cx="33" cy="80" r="3.2" class="ss-dog-nose" />
+            <path d="M70 58c8 2 12 10 10 20-6-1-11-6-13-13" class="ss-dog-ear" />
+            <circle cx="56" cy="66" r="1.9" class="ss-dog-eye" />
+          </g>
+          <g class="ss-dog-sniff">
+            <circle cx="24" cy="86" r="2" style="--i:0" />
+            <circle cx="16" cy="80" r="2.6" style="--i:1" />
+            <circle cx="9" cy="72" r="3.2" style="--i:2" />
+          </g>
+        </svg>
+        <p class="ss-empty-title">No encontramos nada para <strong data-ss-term></strong></p>
+        <p class="ss-empty-text">Prueba con una palabra más corta o con otro nombre para lo mismo. También puedes describir lo que le pasa a tu perro y el asistente te orienta.</p>
+        <a class="ss-ask" href="/asistente-ia" data-ss-ask>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="7.2" cy="8" r="2.2"></circle><circle cx="16.8" cy="8" r="2.2"></circle><circle cx="4.8" cy="12.7" r="1.9"></circle><circle cx="19.2" cy="12.7" r="1.9"></circle><path d={PAW}></path></svg>
+          Pregúntale al asistente
+        </a>
+        <p class="ss-eyebrow ss-eyebrow--spaced">O prueba con</p>
+        <div class="ss-chips ss-chips--center">
+          {topics.slice(0, 4).map(({ label, query }) => (
+            <button type="button" class="ss-chip" data-ss-query={query}>{label}</button>
+          ))}
+        </div>
+      </div>
+
+      <!-- El índice no cargó (sin conexión, bloqueo): quedan los temas -->
+      <div class="ss-view ss-empty" data-ss-view="error" hidden>
+        <p class="ss-empty-title">El buscador no pudo cargar</p>
+        <p class="ss-empty-text">Revisa tu conexión y vuelve a intentarlo. Mientras tanto puedes entrar por tema.</p>
+        <button type="button" class="ss-ask" data-ss-retry>Reintentar</button>
+        <ul class="ss-sections ss-sections--spaced">
+          {sections.map(({ label, href }) => (
+            <li><a class="ss-section" href={href}><span>{label}</span></a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="ss-foot" aria-hidden="true">
+      <span><kbd>↑</kbd><kbd>↓</kbd> moverse</span>
+      <span><kbd>↵</kbd> abrir</span>
+      <span><kbd>Esc</kbd> cerrar</span>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  import { initSiteSearch } from '../scripts/site-search';
+  initSiteSearch();
+</script>
+
+<style is:global>
+  .ss-sr {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+  }
+
+  /* La página no se desplaza por detrás; se compensa el hueco de la barra. */
+  html:has(dialog.ss[open]) { overflow: hidden; padding-right: var(--ss-scrollbar, 0px); }
+
+  dialog.ss {
+    --ss-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: fixed; inset: 0; z-index: 90;
+    width: min(42rem, calc(100vw - 2rem)); max-width: none;
+    height: fit-content; max-height: min(44rem, calc(100dvh - 12vh - 1.5rem));
+    margin: 12vh auto auto; padding: 0;
+    overflow: hidden;
+    color: var(--color-text-base);
+    background: transparent; border: 0;
+    border-radius: 1.5rem;
+    opacity: 0; transform: translateY(-0.75rem) scale(0.97);
+    transition:
+      opacity 0.24s ease, transform 0.3s var(--ss-ease),
+      overlay 0.3s allow-discrete, display 0.3s allow-discrete;
+  }
+  dialog.ss[open] { display: flex; opacity: 1; transform: none; }
+  @starting-style {
+    dialog.ss[open] { opacity: 0; transform: translateY(-0.75rem) scale(0.97); }
+  }
+  dialog.ss::backdrop {
+    background: rgb(18 20 18 / 0); backdrop-filter: blur(0);
+    transition: background 0.3s ease, backdrop-filter 0.3s ease, overlay 0.3s allow-discrete, display 0.3s allow-discrete;
+  }
+  dialog.ss[open]::backdrop { background: rgb(18 20 18 / 0.5); backdrop-filter: blur(6px); }
+  @starting-style {
+    dialog.ss[open]::backdrop { background: rgb(18 20 18 / 0); backdrop-filter: blur(0); }
+  }
+  /* Con View Transitions la lupa se transforma en el campo: el propio diálogo
+     no anima su entrada para no superponer dos movimientos. */
+  dialog.ss.ss--morph, dialog.ss.ss--morph::backdrop { transition: none; }
+  .ss-bar { view-transition-name: ss-bar; }
+  ::view-transition-group(ss-bar) { overflow: clip; border-radius: 1.5rem; animation-duration: 0.36s; animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1); }
+  /* Sin escalar las capturas: la caja crece y va descubriendo el campo, en vez
+     de estirar la lupa hasta el tamaño de la barra. */
+  ::view-transition-old(ss-bar), ::view-transition-new(ss-bar) { width: 100%; height: 100%; object-fit: none; object-position: left center; }
+  ::view-transition-old(ss-bar) { animation-duration: 0.12s; }
+
+  .ss-panel {
+    display: flex; flex-direction: column; width: 100%; min-height: 0;
+    background: var(--color-bg-base);
+    border: 1px solid var(--color-brand-border);
+    border-radius: inherit;
+    box-shadow: 0 32px 80px -24px rgb(18 20 18 / 0.55);
+  }
+
+  .ss-bar {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.5rem 0.75rem 0.5rem 1.15rem;
+    border-bottom: 1px solid var(--color-brand-border);
+    background: var(--color-bg-base);
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+  .ss-bar-icon { width: 1.35rem; height: 1.35rem; flex: none; color: var(--color-brand-primary); }
+  .ss-input {
+    flex: 1; min-width: 0; height: 3.25rem;
+    font: 500 1.0625rem/1.4 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: var(--color-text-base); background: transparent; border: 0; outline: none;
+  }
+  .ss-input::placeholder { color: rgb(var(--color-text-muted-rgb) / 0.75); }
+  .ss-input:focus-visible { outline: none; }
+  .ss-bar:focus-within { box-shadow: inset 0 -2px 0 var(--color-brand-primary); }
+
+  .ss-clear, .ss-close {
+    display: inline-flex; align-items: center; justify-content: center; flex: none;
+    min-width: 2.75rem; height: 2.75rem; border: 0; cursor: pointer;
+    color: var(--color-text-muted); background: transparent; border-radius: 999px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .ss-clear[hidden] { display: none; }
+  .ss-clear svg { width: 1.1rem; height: 1.1rem; }
+  .ss-clear:hover, .ss-close:hover { background: var(--color-bg-card-hover); color: var(--color-text-base); }
+  .ss-close { padding: 0 0.6rem; font: 700 0.8125rem/1 'Plus Jakarta Sans', system-ui, sans-serif; }
+  .ss-close-key {
+    padding: 0.3rem 0.45rem; font-size: 0.6875rem; letter-spacing: 0.04em;
+    border: 1px solid var(--color-brand-border); border-radius: 0.45rem; background: var(--color-bg-card);
+  }
+  .ss-close-text { display: none; color: var(--color-brand-primary); }
+
+  .ss-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 1.1rem 1.15rem 1.25rem; }
+  .ss-view[hidden] { display: none; }
+
+  .ss-eyebrow {
+    margin: 0 0 0.7rem; font: 700 0.6875rem/1.3 'Plus Jakarta Sans', system-ui, sans-serif;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-brand-primary);
+  }
+  .ss-eyebrow--spaced { margin-top: 1.5rem; }
+
+  .ss-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .ss-chips--center { justify-content: center; }
+  .ss-chip {
+    min-height: 2.75rem; padding: 0 1rem; cursor: pointer;
+    font: 600 0.875rem/1 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: var(--color-text-base); background: var(--color-bg-card);
+    border: 1px solid var(--color-brand-border); border-radius: 999px;
+    transition: transform 0.18s var(--ss-ease), border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+  }
+  .ss-chip:hover { transform: translateY(-2px); border-color: rgb(var(--color-brand-primary-rgb) / 0.5); color: var(--color-brand-primary); background: rgb(var(--color-brand-primary-rgb) / 0.08); }
+
+  .ss-sections { display: grid; gap: 0.35rem; margin: 0; padding: 0; list-style: none; }
+  .ss-sections--spaced { margin-top: 1.5rem; text-align: left; }
+  .ss-section {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+    min-height: 2.75rem; padding: 0 0.85rem;
+    font: 600 0.9375rem/1.3 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: var(--color-text-base); text-decoration: none; border-radius: 0.8rem;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .ss-section svg { width: 1rem; height: 1rem; color: var(--color-brand-primary); opacity: 0; transform: translateX(-0.4rem); transition: opacity 0.18s ease, transform 0.18s var(--ss-ease); }
+  .ss-section:hover, .ss-section:focus-visible { background: var(--color-bg-card-hover); color: var(--color-brand-primary); }
+  .ss-section:hover svg, .ss-section:focus-visible svg { opacity: 1; transform: none; }
+
+  /* ---- Resultados ---- */
+  .ss-results { display: grid; gap: 0.3rem; margin: 0; padding: 0; list-style: none; }
+  .ss-opt { border-radius: 1rem; animation: ss-rise 0.34s var(--ss-ease) both; animation-delay: calc(var(--i, 0) * 32ms); }
+  .ss-opt-link {
+    display: grid; grid-template-columns: 3.5rem 1fr auto; align-items: center; gap: 0.85rem;
+    padding: 0.7rem 0.8rem; color: inherit; text-decoration: none;
+    border: 1px solid transparent; border-radius: inherit;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .ss-opt[aria-selected='true'] > .ss-opt-link { background: var(--color-bg-card); border-color: rgb(var(--color-brand-primary-rgb) / 0.4); }
+  .ss-opt-thumb {
+    width: 3.5rem; height: 3.5rem; overflow: hidden; border-radius: 0.8rem;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--color-brand-primary); background: rgb(var(--color-brand-primary-rgb) / 0.1);
+  }
+  .ss-opt-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .ss-opt-thumb svg { width: 1.5rem; height: 1.5rem; }
+  .ss-opt-text { min-width: 0; }
+  .ss-opt-meta {
+    display: block; margin-bottom: 0.2rem;
+    font: 700 0.6875rem/1.3 'Plus Jakarta Sans', system-ui, sans-serif;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-brand-accent);
+  }
+  .ss-opt-title { display: block; font: 700 1rem/1.3 'Outfit', system-ui, sans-serif; color: var(--color-text-base); }
+  .ss-opt-excerpt {
+    display: -webkit-box; margin-top: 0.25rem; overflow: hidden;
+    -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical;
+    font: 400 0.875rem/1.5 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--color-text-muted);
+  }
+  .ss-opt-go { width: 1.1rem; height: 1.1rem; color: var(--color-brand-primary); opacity: 0; transform: translateX(-0.4rem); transition: opacity 0.18s ease, transform 0.18s var(--ss-ease); }
+  .ss-opt[aria-selected='true'] .ss-opt-go { opacity: 1; transform: none; }
+
+  /* Sección dentro de una guía: enlace directo al apartado */
+  .ss-opt--section { margin-left: 2.1rem; position: relative; }
+  .ss-opt--section::before {
+    content: ''; position: absolute; left: -0.95rem; top: -0.3rem; bottom: 50%; width: 0.7rem;
+    border-left: 2px solid var(--color-brand-border); border-bottom: 2px solid var(--color-brand-border); border-bottom-left-radius: 0.6rem;
+  }
+  .ss-opt--section .ss-opt-link { grid-template-columns: 1fr auto; padding: 0.5rem 0.8rem; }
+  .ss-opt--section .ss-opt-title { font-size: 0.9rem; font-weight: 600; }
+  .ss-opt--section .ss-opt-excerpt { -webkit-line-clamp: 1; line-clamp: 1; font-size: 0.8125rem; }
+
+  .ss-results mark {
+    padding: 0 0.12em; color: inherit; font-weight: 700; border-radius: 0.25em;
+    background: linear-gradient(rgb(var(--color-brand-secondary-rgb)), rgb(var(--color-brand-secondary-rgb))) no-repeat left / 0% 100%;
+    animation: ss-sweep 0.5s var(--ss-ease) 0.18s forwards;
+  }
+  .dark .ss-results mark { background-image: linear-gradient(rgb(var(--color-brand-accent-rgb) / 0.2), rgb(var(--color-brand-accent-rgb) / 0.2)); color: var(--color-brand-accent-hover); }
+
+  .ss-more {
+    display: block; width: 100%; min-height: 2.75rem; margin-top: 0.75rem; cursor: pointer;
+    font: 700 0.875rem/1 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--color-brand-primary);
+    background: transparent; border: 1px dashed rgb(var(--color-brand-primary-rgb) / 0.4); border-radius: 999px;
+    transition: background 0.15s ease;
+  }
+  .ss-more[hidden] { display: none; }
+  .ss-more:hover { background: rgb(var(--color-brand-primary-rgb) / 0.08); }
+
+  .ss-alt { margin: 1rem 0 0; text-align: center; font: 500 0.875rem/1.5 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--color-text-muted); }
+  .ss-alt a { display: inline-block; padding: 0.4rem 0.2rem; font-weight: 700; color: var(--color-brand-primary); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ---- Buscando ---- */
+  .ss-loading { padding: 2.25rem 0 2rem; text-align: center; color: var(--color-text-muted); font: 500 0.875rem/1.4 'Plus Jakarta Sans', system-ui, sans-serif; }
+  .ss-trail { display: flex; justify-content: center; gap: 0.9rem; margin-bottom: 0.9rem; color: var(--color-brand-primary); }
+  .ss-trail-paw {
+    width: 1.5rem; height: 1.5rem; opacity: 0.12;
+    transform: rotate(90deg) translateX(calc((var(--i) * 2 - 4) * 0.5px));
+    animation: ss-step 1.25s ease-in-out infinite; animation-delay: calc(var(--i) * 0.16s);
+  }
+  .ss-trail-paw:nth-child(odd) { margin-top: 0.55rem; }
+
+  /* ---- Sin resultados ---- */
+  .ss-empty { padding: 0.75rem 0 0.5rem; text-align: center; }
+  .ss-empty-title { margin: 0.5rem 0 0; font: 700 1.125rem/1.35 'Outfit', system-ui, sans-serif; color: var(--color-text-base); overflow-wrap: anywhere; }
+  .ss-empty-title strong { color: var(--color-brand-primary); }
+  .ss-empty-title strong::before { content: '«'; }
+  .ss-empty-title strong::after { content: '»'; }
+  .ss-empty-text { max-width: 30rem; margin: 0.5rem auto 0; font: 400 0.9375rem/1.55 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--color-text-muted); }
+  .ss-ask {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+    min-height: 3rem; margin-top: 1.1rem; padding: 0 1.4rem; cursor: pointer;
+    font: 700 0.9375rem/1 'Plus Jakarta Sans', system-ui, sans-serif; text-decoration: none;
+    color: #fff; background: var(--color-brand-primary); border: 0; border-radius: 999px;
+    transition: transform 0.18s var(--ss-ease), background 0.18s ease;
+  }
+  .dark .ss-ask { color: var(--color-bg-base); }
+  .ss-ask:hover { transform: translateY(-2px); background: var(--color-brand-primary-hover); }
+  .ss-ask svg { width: 1.15rem; height: 1.15rem; }
+
+  .ss-dog { width: 13rem; height: auto; margin: 0 auto; overflow: visible; fill: none; stroke: var(--color-brand-primary); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+  .ss-dog-ground { stroke: var(--color-brand-border); stroke-dasharray: 2 9; }
+  .ss-dog-body rect, .ss-dog-head ellipse { fill: var(--color-bg-card); }
+  .ss-dog-snout { fill: var(--color-bg-card); }
+  .ss-dog-ear { fill: var(--color-brand-primary); }
+  .ss-dog-nose, .ss-dog-eye { fill: var(--color-brand-primary); stroke: none; }
+  .ss-dog-neck { stroke-width: 15; stroke: var(--color-bg-card); }
+  .ss-dog-head { transform-origin: 92px 50px; animation: ss-nod 1.5s ease-in-out infinite; }
+  .ss-dog-tail { transform-origin: 148px 52px; animation: ss-wag 0.5s ease-in-out infinite alternate; }
+  .ss-dog-sniff circle { stroke: none; fill: var(--color-brand-accent); opacity: 0; animation: ss-puff 1.5s ease-out infinite; animation-delay: calc(var(--i) * 0.18s + 0.3s); }
+
+  /* ---- Pie con atajos (solo donde hay teclado) ---- */
+  .ss-foot {
+    display: none; gap: 1.25rem; padding: 0.7rem 1.15rem;
+    font: 500 0.75rem/1 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--color-text-muted);
+    border-top: 1px solid var(--color-brand-border); background: var(--color-bg-card);
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+  .ss-foot span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .ss-foot kbd {
+    min-width: 1.4rem; padding: 0.2rem 0.35rem; text-align: center; font: inherit; font-weight: 700;
+    color: var(--color-text-base); background: var(--color-bg-base);
+    border: 1px solid var(--color-brand-border); border-bottom-width: 2px; border-radius: 0.4rem;
+  }
+  @media (hover: hover) and (pointer: fine) { .ss-foot { display: flex; } }
+
+  /* ---- Teléfono: pantalla completa, texto de 16 px para que iOS no amplíe ---- */
+  @media (max-width: 639px) {
+    dialog.ss {
+      width: 100vw; height: 100dvh; max-height: none; margin: 0; border-radius: 0;
+      transform: translateY(1.5rem);
+    }
+    @starting-style { dialog.ss[open] { transform: translateY(1.5rem); } }
+    .ss-panel { height: 100%; border: 0; }
+    .ss-bar { padding: max(0.5rem, env(safe-area-inset-top)) 0.5rem 0.5rem 1rem; border-radius: 0; }
+    .ss-input { font-size: 1rem; }
+    .ss-close-key { display: none; }
+    .ss-close-text { display: inline; }
+    .ss-body { padding-bottom: max(1.25rem, env(safe-area-inset-bottom)); }
+    .ss-opt--section { margin-left: 1.4rem; }
+  }
+
+  /* ---- Disparadores (cabecera y portada) ---- */
+  .ss-trigger-key {
+    padding: 0.25rem 0.4rem; font: 700 0.6875rem/1 'Plus Jakarta Sans', system-ui, sans-serif; letter-spacing: 0.03em;
+    color: var(--color-text-muted); background: var(--color-bg-base);
+    border: 1px solid var(--color-brand-border); border-radius: 0.4rem;
+  }
+  .ss-rotator { display: inline-grid; height: 1.5em; overflow: hidden; vertical-align: bottom; text-align: left; }
+  .ss-rotator > span { grid-area: 1 / 1; height: 1.5em; white-space: nowrap; opacity: 0; animation: ss-rotate 12s infinite; animation-delay: calc(var(--i) * 3s); }
+
+  @keyframes ss-rise { from { opacity: 0; transform: translateY(0.6rem); } }
+  @keyframes ss-sweep { to { background-size: 100% 100%; } }
+  @keyframes ss-step { 0%, 100% { opacity: 0.12; } 35% { opacity: 0.9; } 70% { opacity: 0.12; } }
+  @keyframes ss-nod { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-5deg); } }
+  @keyframes ss-wag { from { transform: rotate(-9deg); } to { transform: rotate(13deg); } }
+  @keyframes ss-puff { 0% { opacity: 0; transform: translate(4px, 4px) scale(0.6); } 30% { opacity: 0.7; } 100% { opacity: 0; transform: translate(-6px, -8px) scale(1.2); } }
+  @keyframes ss-rotate {
+    0% { opacity: 0; transform: translateY(70%); }
+    3%, 22% { opacity: 1; transform: none; }
+    25%, 100% { opacity: 0; transform: translateY(-70%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ss-rotator > span { animation: none; }
+    .ss-rotator > span:first-child { opacity: 1; }
+    .ss-trail-paw { opacity: 0.6; }
+    .ss-results mark { background-size: 100% 100%; }
+  }
+</style>

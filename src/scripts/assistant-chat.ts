@@ -7,6 +7,7 @@
  * visitante abre una guía recomendada y el chat sigue ahí) y se borra al cerrar
  * la pestaña.
  */
+import { ASSISTANT_PREFILL_KEY as SEARCH_PREFILL_KEY } from '../lib/site-search';
 
 type Recommendation = { title: string; description: string; href: string; pillar: string };
 
@@ -484,6 +485,21 @@ const mountChat = (root: HTMLElement) => {
   });
 
   render();
+
+  // El buscador del sitio, cuando no encuentra nada, deja aquí la consulta del
+  // visitante. Se escribe en el campo de la página del asistente pero no se
+  // envía: cada envío consume IA y la decisión es de quien pregunta.
+  if (root.closest('[data-assistant-widget]') === null) {
+    try {
+      const prefill = sessionStorage.getItem(SEARCH_PREFILL_KEY);
+      if (prefill) {
+        sessionStorage.removeItem(SEARCH_PREFILL_KEY);
+        input.value = prefill.slice(0, input.maxLength);
+        autoGrow();
+        input.focus();
+      }
+    } catch { /* sin almacenamiento */ }
+  }
 };
 
 /* --------------------------- Widget flotante --------------------------- */
