@@ -80,6 +80,7 @@ function excluded(node) {
   const classes = (attrs.class ?? '').split(/\s+/u);
   return skippedTags.has(node.tagName) || attrs['aria-hidden'] === 'true' || attrs.role === 'progressbar' ||
     (node.tagName === 'span' && attrs.id === 'localized-emergency-text') ||
+    (node.tagName === 'aside' && Object.hasOwn(attrs, 'data-affiliate-placement')) ||
     (node.tagName === 'div' && classes.includes('ad-slot') && Object.hasOwn(attrs, 'data-ad-pending')) ||
     ['back-btn', 'breadcrumb', 'breadcrumbs', 'health-toc__nav'].some((name) => classes.includes(name));
 }

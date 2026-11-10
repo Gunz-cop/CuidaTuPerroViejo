@@ -45,6 +45,10 @@ Para planificar o producir imágenes, aplica además la [dirección visual edito
 
 Sigue el flujo descrito en esos archivos en vez de improvisar la estructura del brief o del artículo desde cero.
 
+## Afiliación con AliExpress
+
+Para preparar, incorporar, revisar o retirar enlaces de AliExpress, sigue la [guía de afiliación](docs/seo/afiliacion-aliexpress.md). Empieza por el artículo de camas y registra país, variante, elegibilidad, destino y fecha de revisión antes de proponer un enlace público. El selector de movilidad conserva enlaces legados desactivados y su prueba de paridad exige cero enlaces comerciales en los resultados.
+
 ## Pendientes del dueño
 
 Cuando el usuario mencione una idea, propuesta o algo que no quiere olvidar, regístralo en [`TODO.md`](TODO.md) y marca lo terminado con fecha y PR.
