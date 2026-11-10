@@ -19,6 +19,12 @@ Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 
 - [ ] **Publicar con ritmo constante** (1–2 artículos por semana) en vez de ráfagas y reescrituras en bloque.
 - [ ] **No volver a solicitar la revisión** hasta que las URLs `.html` desaparezcan de Search Console y los clics sigan subiendo; estimación propia de 4–6 semanas como mínimo, no un plazo de Google.
 
+## Afiliación con AliExpress
+
+- [ ] **Piloto en la guía de camas para perros mayores** (2026-11-10). Bloque incorporado localmente como ejemplo de comparación con la ficha `1005009119696851` de Hicarer Home Store. Pendientes de publicación y medición. Confirmar las medidas de una variante y su núcleo, comparar demanda en Search Console y comprobar costo final y devolución. Operativa y retirada en [la guía de afiliación](docs/seo/afiliacion-aliexpress.md).
+
+- [ ] **Comparativa de camas de entrada baja para perros mayores** (2026-11-10). Comprobar demanda por país y documentar medidas y condiciones de dos o tres modelos antes de redactar. Usar la [guía de afiliación](docs/seo/afiliacion-aliexpress.md) para separar la comparativa de la guía general y medir su rendimiento.
+
 ## Contenido
 
 - [x] **Preparar P1-03 para publicación.** Traslado mecánico, recursos activos, limpieza y pruebas completados el 2026-10-26; [código #148](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/148) y [artículo #149](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/149), preparados originalmente como draft; fusionados después por orden del propietario, ver cierre de producción.
