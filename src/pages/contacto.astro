@@ -123,14 +123,7 @@ const turnstileSiteKey = env.TURNSTILE_SITE_KEY || import.meta.env.TURNSTILE_SIT
         </div>
 
         <!-- Anti-spam -->
-        <input
-          type="text"
-          name="website"
-          tabindex="-1"
-          autocomplete="off"
-          style="position:absolute; left:-9999px;"
-          aria-hidden="true"
-        />
+        <input type="hidden" name="website" value="" />
         <input type="hidden" name="startedAt" value={Date.now().toString()} data-started-at />
 
         <!-- Redirección tras enviar -->
