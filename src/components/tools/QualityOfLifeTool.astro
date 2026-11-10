@@ -1,0 +1,612 @@
+---
+/**
+ * Herramienta interactiva HHHHHMM (registro de siete observaciones 0–10).
+ *
+ * Contratos que dependen de este marcado; no cambies ids ni clases sin revisarlos:
+ * - `scripts/agent-readiness/projection-dom.mjs` proyecta `#qol-intro`,
+ *   `#qol-result-box > p.mt-4.text-xs.font-light` y `#qol-result > .qol-anti-guilt`.
+ * - `scripts/agent-readiness/agent-api.mjs check` compara esos dos avisos y el
+ *   enlace `#qol-cta-pilar > a` con `src/lib/agent-tools/calidad-vida.ts`.
+ * - `scripts/agent-readiness/tools-ui-parity.mjs` completa la UI con clics
+ *   (`#qol-start`, `#qol-q-chips button`, `#qol-next`) y lee el resultado.
+ *
+ * La suma no clasifica el bienestar: no hay bandas ni colores por total.
+ */
+import { CRITERION_MAX, GUIDE_PATH, MAX_SCORE, QUALITY_NOTICES } from '../../lib/agent-tools/calidad-vida.ts';
+import { NOTE_MAX_LENGTH } from '../../lib/quality-history.ts';
+
+const values = Array.from({ length: CRITERION_MAX + 1 }, (_, value) => value);
+const [staticNotice, urgentNotice] = QUALITY_NOTICES;
+const secondaryBtn = 'w-full sm:w-auto min-h-12 font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 active:scale-[0.98] text-center flex items-center justify-center gap-2 cursor-pointer';
+---
+
+<div id="cvc-calc" class="scroll-mt-20"></div>
+<div id="qol-widget" aria-label="Calculadora interactiva de calidad de vida HHHHHMM" class="qol-container scroll-mt-20 bg-brand-card/50 dark:bg-slate-900/30 border border-brand-border/60 rounded-3xl p-4 sm:p-6 md:p-10 shadow-sm mb-10 sm:mb-12" role="region">
+
+  <!-- PANTALLA 0: Intro -->
+  <div class="text-center py-2" id="qol-intro">
+    <span class="inline-block text-[11px] font-bold tracking-widest uppercase text-brand-primary mb-2">Registro • 7 preguntas</span>
+    <h2 class="text-2xl md:text-3xl font-extrabold text-brand-text mb-3 font-display leading-tight">Registra cómo está tu perro</h2>
+    <p class="text-brand-muted text-sm max-w-lg mx-auto leading-relaxed mb-2">
+      Responde según el <strong>periodo que estás observando</strong> y anota cuándo fue. Al final verás la suma, el desglose y los avisos; no es un diagnóstico.
+    </p>
+    <p class="text-sm text-brand-muted max-w-lg mx-auto mb-6 mt-3">Siete observaciones de 0 a 10. Las advertencias se muestran por separado: ninguna suma garantiza bienestar.</p>
+    <button class="w-full sm:w-auto min-h-14 px-8 py-4 rounded-xl font-bold bg-brand-primary text-white hover:bg-brand-primary-hover active:bg-brand-primary-hover active:scale-[0.98] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-150 cursor-pointer" id="qol-start" type="button">
+      Empezar ahora →
+    </button>
+  </div>
+
+  <!-- PANTALLA 1..7: Pregunta (el contenido se repinta en cada paso) -->
+  <div class="off" id="qol-question">
+    <div class="flex items-center gap-3 mb-6">
+      <button class="min-h-11 px-4 rounded-full bg-brand-card/70 hover:bg-brand-card-hover active:bg-brand-card-hover active:scale-95 text-brand-text text-sm font-semibold transition-all duration-150 cursor-pointer border border-brand-border/40" id="qol-back" type="button">← Volver</button>
+      <div aria-label="Progreso del registro" class="flex-1 h-2 bg-brand-border/40 rounded-full overflow-hidden" id="qol-progress-wrap" role="progressbar" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1">
+        <div class="h-full bg-brand-primary rounded-full transition-all duration-300" id="qol-progress-bar"></div>
+      </div>
+      <span class="text-xs font-bold text-brand-primary whitespace-nowrap" id="qol-step-label">1 / 7</span>
+    </div>
+
+    <div class="flex items-center gap-2 mb-2">
+      <span class="text-2xl" aria-hidden="true" id="qol-q-emoji"></span>
+      <p class="text-xs font-bold tracking-widest uppercase text-brand-primary" id="qol-q-name"></p>
+    </div>
+    <h2 class="text-xl md:text-2xl font-bold text-brand-text font-display mb-2 leading-tight outline-none" id="qol-q-text" tabindex="-1"></h2>
+    <p class="text-sm text-brand-muted leading-relaxed mb-5" id="qol-q-help"></p>
+
+    <div class="grid grid-cols-6 sm:grid-cols-11 gap-1.5 sm:gap-2" id="qol-q-chips" role="radiogroup" aria-describedby="qol-q-help qol-q-scale">
+      {values.map((value) => (
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-value={value} aria-label={`Valor ${value} de ${CRITERION_MAX}`} class="qol-chip min-h-12 w-full flex items-center justify-center rounded-xl font-bold text-lg border-2 border-brand-border/50 bg-brand-bg text-brand-text transition-all duration-150 cursor-pointer select-none active:scale-90 outline-none hover:border-brand-primary/60 focus-visible:ring-3 focus-visible:ring-brand-primary/40 aria-checked:bg-brand-primary aria-checked:border-brand-primary aria-checked:text-white aria-checked:shadow-sm">{value}</button>
+      ))}
+    </div>
+    <div class="flex items-start justify-between gap-4 text-xs text-brand-muted font-semibold mt-2 px-0.5" id="qol-q-scale">
+      <span id="qol-q-help-lo"></span>
+      <span class="text-right" id="qol-q-help-hi"></span>
+    </div>
+
+    <p class="mt-5 min-h-6 text-sm font-semibold text-brand-text" id="qol-q-picked" aria-live="polite"></p>
+    <button class="mt-2 w-full min-h-14 px-8 py-4 rounded-xl font-bold bg-brand-primary text-white hover:bg-brand-primary-hover active:scale-[0.98] shadow-sm transition-all duration-150 cursor-pointer disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none" id="qol-next" type="button" disabled>
+      Siguiente →
+    </button>
+  </div>
+
+  <!-- PANTALLA 8: Resultado -->
+  <div class="off" id="qol-result" role="status" aria-live="polite" aria-atomic="true">
+    <div class="p-6 md:p-8 rounded-2xl border border-brand-border bg-brand-primary/5 text-brand-text text-center shadow-sm my-2 sm:my-4 outline-none" id="qol-result-box" tabindex="-1">
+      <span class="text-xs font-semibold tracking-wider uppercase text-brand-muted">Suma del registro <span id="qol-result-date"></span></span>
+      <span class="block my-3 font-display font-extrabold leading-none"><span class="text-6xl" id="qol-result-score">35</span><span class="text-2xl text-brand-muted"> / {MAX_SCORE}</span></span>
+
+      <div class="font-semibold text-lg" id="qol-interpretation">—</div>
+      <p class="mt-2 text-sm opacity-90" id="qol-human-msg"></p>
+
+      <div aria-label="Puntuación registrada; no indica un porcentaje de bienestar" aria-valuemax={MAX_SCORE} aria-valuemin="0" aria-valuenow="35" class="qol-progress-wrap mt-4" id="qol-result-progress" role="progressbar">
+        <div class="h-2.5 bg-brand-border/40 rounded-full overflow-hidden">
+          <div class="h-full rounded-full transition-all duration-500 bg-brand-primary" id="qol-result-fill" style="width:50%"></div>
+        </div>
+      </div>
+      <div class="off mt-3 text-sm text-brand-muted" id="qol-compare"></div>
+      <p class="mt-4 text-xs font-light">{staticNotice}</p>
+    </div>
+
+    <section class="my-5 rounded-2xl border border-amber-500/40 bg-amber-500/5 p-5" aria-labelledby="qol-warnings-title">
+      <h3 id="qol-warnings-title" class="font-bold text-brand-text">Advertencias independientes del total</h3>
+      <p class="text-xs mt-2 text-brand-muted">Destacar las respuestas en 0 es una adaptación propia; no es un umbral clínico validado. La ausencia de estos avisos no garantiza bienestar.</p>
+      <ul id="qol-warnings" class="mt-3 space-y-3 list-disc pl-5 text-sm text-brand-text"></ul>
+    </section>
+
+    <!-- DESGLOSE POR CRITERIO -->
+    <div class="mb-6">
+      <h3 class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-1 flex items-center gap-2">
+        <span aria-hidden="true">📋</span> Desglose por criterio
+      </h3>
+      <p class="off text-xs text-brand-muted mb-2" id="qol-breakdown-legend">La marca vertical indica la respuesta del registro anterior.</p>
+      <div class="bg-brand-bg/60 dark:bg-brand-bg/25 border border-brand-border/30 rounded-2xl px-4" id="qol-breakdown"></div>
+    </div>
+
+    <!-- RECOMENDACIÓN -->
+    <div class="bg-brand-card border border-brand-border text-brand-text text-sm rounded-2xl p-5 my-6 leading-relaxed" id="qol-recommendation"></div>
+
+    <!-- NOTA DEL REGISTRO -->
+    <div class="qol-note my-6">
+      <label class="block text-sm font-bold text-brand-text mb-1" for="qol-note">Nota para la consulta <span class="font-normal text-brand-muted">(opcional)</span></label>
+      <textarea id="qol-note" rows="2" maxlength={NOTE_MAX_LENGTH} placeholder="Qué periodo observaste y qué ha cambiado" class="w-full rounded-xl border border-brand-border bg-brand-bg px-4 py-3 text-base text-brand-text placeholder:text-brand-muted/70 outline-none focus-visible:border-brand-primary focus-visible:ring-3 focus-visible:ring-brand-primary/30"></textarea>
+      <p class="mt-1 text-xs text-brand-muted" id="qol-saved"></p>
+    </div>
+
+    <!-- CTA PILAR -->
+    <div class="qol-cta-pilar my-6 text-center" id="qol-cta-pilar" style="display:none">
+      <a href={GUIDE_PATH} class="inline-block w-full sm:w-auto font-semibold rounded-xl px-5 py-3 transition-all border border-brand-primary text-brand-primary hover:bg-brand-primary/5 text-center no-underline">
+        Preparar la consulta sobre cuidados y bienestar
+      </a>
+    </div>
+
+    <p class="qol-anti-guilt text-xs text-brand-muted text-center mt-4 max-w-md mx-auto leading-relaxed">
+      {urgentNotice}
+    </p>
+
+    <!-- ACCIONES (en móvil, WhatsApp y Repetir viven en la barra fija de abajo) -->
+    <div class="qol-actions flex flex-wrap gap-3 justify-center mt-8 border-t border-brand-border/40 pt-8">
+      <button class="w-full sm:w-auto min-h-12 font-semibold rounded-xl px-5 py-3 transition-all bg-brand-primary hover:bg-brand-primary-hover active:scale-[0.98] text-white text-center shadow-sm flex items-center justify-center gap-2 cursor-pointer" id="qol-copy" type="button">
+        📋 Copiar resumen para el veterinario
+      </button>
+      <button class:list={[secondaryBtn, 'hidden sm:flex']} id="qol-wa" type="button">
+        📲 Enviar por WhatsApp
+      </button>
+      <button class={secondaryBtn} id="qol-ics" type="button">
+        📅 Recordatorio opcional: 3 días
+      </button>
+      <button class={secondaryBtn} id="qol-print" type="button">
+        🖨️ Guardar PDF
+      </button>
+      <button class="hidden sm:flex sm:w-auto min-h-12 font-semibold rounded-xl px-5 py-3 transition-all border border-brand-border text-brand-muted hover:bg-brand-card-hover active:scale-[0.98] text-center items-center justify-center gap-2 cursor-pointer" id="qol-reset" type="button">
+        🔄 Nuevo registro
+      </button>
+    </div>
+
+    <p aria-live="polite" id="qol-copy-confirm" class="text-sm font-semibold text-brand-primary text-center mt-3" style="display:none;">
+      ¡Copiado! Ahora pégalo donde quieras.
+    </p>
+  </div>
+
+  <!-- HISTORIAL (solo en este navegador; visible en la intro y en el resultado) -->
+  <section class="off qol-history mt-8 border-t border-brand-border/40 pt-6" id="qol-history" aria-labelledby="qol-history-title">
+    <div class="flex items-baseline justify-between gap-3">
+      <h3 class="text-xs font-bold tracking-widest uppercase text-brand-primary" id="qol-history-title">Registros guardados</h3>
+      <button class="min-h-11 px-2 text-xs font-semibold text-brand-muted underline underline-offset-2 hover:text-brand-text cursor-pointer" id="qol-history-clear" type="button">Borrar todos</button>
+    </div>
+    <p class="text-xs text-brand-muted leading-relaxed">Se guardan solo en este navegador y no se envían a ningún servidor. Si borras los datos del navegador, se pierden.</p>
+    <ol class="mt-3 space-y-3 list-none pl-0" id="qol-history-list"></ol>
+  </section>
+
+  <!-- Espaciador para que la barra fija de móvil no tape el contenido -->
+  <div class="off h-20 sm:hidden" id="qol-sticky-spacer" aria-hidden="true"></div>
+</div><!--/.qol-container-->
+
+<!-- Barra de acciones fija (solo móvil, solo mientras se ve el resultado) -->
+<div id="qol-stickybar" class="off sm:hidden fixed bottom-0 inset-x-0 z-40 border-t border-brand-border bg-brand-bg/95 backdrop-blur-md [-webkit-backdrop-filter:blur(12px)] px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
+  <div class="flex items-center gap-3">
+    <button class="shrink-0 flex items-center justify-center gap-1.5 h-12 px-4 rounded-full border border-brand-border text-brand-text text-sm font-semibold active:bg-brand-card-hover active:scale-95 transition-all duration-150 cursor-pointer" id="qol-reset-fixed" type="button">
+      <span aria-hidden="true">↻</span> Repetir
+    </button>
+    <button class="flex-1 flex items-center justify-center gap-2 h-12 rounded-full font-semibold bg-brand-primary text-white text-sm active:bg-brand-primary-hover active:scale-[0.98] transition-all duration-150 cursor-pointer" id="qol-wa-fixed" type="button">
+      📲 Enviar por WhatsApp
+    </button>
+  </div>
+</div>
+
+<style>
+  .off {
+    display: none !important;
+  }
+
+  /* Reciben el foco por script para anunciar el cambio de pantalla; no son
+     controles, así que no llevan el contorno global de foco. */
+  #qol-result-box:focus,
+  #qol-q-text:focus {
+    outline: none !important;
+  }
+
+  @keyframes qolin {
+    from { opacity: 0; transform: translateY(7px); }
+    to { opacity: 1; transform: none; }
+  }
+  .qolanim {
+    animation: qolin 0.26s ease forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .qolanim { animation: none !important; }
+  }
+
+  /* Mientras se ve el resultado en móvil, ocultamos el botón flotante del
+     asistente IA para que no choque con la barra de acciones fija de abajo. */
+  @media (max-width: 639px) {
+    :global(body.qol-result-active #ai-chat-toggle) {
+      display: none !important;
+    }
+  }
+
+  @media print {
+    .qol-actions,
+    .qol-cta-pilar,
+    .qol-history,
+    #qol-copy-confirm,
+    #qol-saved,
+    #qol-stickybar {
+      display: none !important;
+    }
+
+    #qol-widget {
+      margin: 0 !important;
+      box-shadow: none !important;
+      border: 1px solid #ccc !important;
+      background: white !important;
+      color: black !important;
+      padding: 1.5rem !important;
+    }
+
+    #qol-result-score {
+      color: #000 !important;
+    }
+
+    #qol-result-box {
+      border: 2px solid #000 !important;
+      background: #fff !important;
+      color: #000 !important;
+      box-shadow: none !important;
+    }
+
+    #qol-note {
+      border: 1px solid #999 !important;
+      background: #fff !important;
+      color: #000 !important;
+    }
+  }
+</style>
+
+<script>
+  import { CRITERIA, CRITERION_MAX, MAX_SCORE, evaluateQualityOfLife, type QualityInput, type QualityOfLifeResult } from '../../lib/agent-tools/calidad-vida.ts';
+  import { CRITERION_DETAILS } from '../../lib/quality-criteria.ts';
+  import {
+    HISTORY_STORAGE_KEY, addRecord, buildShareText, changeLabel, compareAnswers, createRecord, formatRecordDate,
+    parseHistory, previousRecord, removeRecord, updateNote, type QualityRecord,
+  } from '../../lib/quality-history.ts';
+
+  const PAGE_URL = 'https://cuidatuperroviejo.com/herramientas/calculadora-calidad-vida-perros';
+  const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
+
+  const widget = $('qol-widget');
+  const screens = { intro: $('qol-intro'), question: $('qol-question'), result: $('qol-result') };
+  type Screen = keyof typeof screens;
+  const chips = [...$('qol-q-chips').querySelectorAll<HTMLButtonElement>('button')];
+  const nextBtn = $<HTMLButtonElement>('qol-next');
+  const noteInput = $<HTMLTextAreaElement>('qol-note');
+
+  /* ── Estado ── */
+  let answers: (number | null)[] = CRITERIA.map(() => null);
+  let step = 0;
+  let history: QualityRecord[] = [];
+  let current: { record: QualityRecord; result: QualityOfLifeResult } | null = null;
+  let storageOk = true;
+
+  /* ── Almacenamiento local (puede fallar en modo privado o con el almacenamiento bloqueado) ── */
+  function loadHistory() {
+    try { history = parseHistory(localStorage.getItem(HISTORY_STORAGE_KEY)); }
+    catch { history = []; storageOk = false; }
+  }
+  function saveHistory() {
+    try {
+      if (history.length) localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(history));
+      else localStorage.removeItem(HISTORY_STORAGE_KEY);
+      storageOk = true;
+    } catch { storageOk = false; }
+  }
+  const newId = () => (typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`);
+
+  /* ── Navegación entre pantallas ── */
+  const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function scrollToWidget() {
+    widget.scrollIntoView({ behavior: reducedMotion() ? 'auto' : 'smooth', block: 'start' });
+  }
+  function replay(el: HTMLElement) {
+    el.classList.remove('qolanim');
+    void el.offsetWidth;
+    el.classList.add('qolanim');
+  }
+  function show(screen: Screen, scroll = true) {
+    for (const [name, el] of Object.entries(screens)) el.classList.toggle('off', name !== screen);
+    replay(screens[screen]);
+    const onResult = screen === 'result';
+    $('qol-stickybar').classList.toggle('off', !onResult);
+    $('qol-sticky-spacer').classList.toggle('off', !onResult);
+    document.body.classList.toggle('qol-result-active', onResult);
+    renderHistory(screen);
+    if (scroll) scrollToWidget();
+  }
+
+  /* ── Pregunta ── */
+  function paintSelection(focus = false) {
+    const selected = answers[step];
+    const criterion = CRITERIA[step];
+    // Patrón radiogroup: un solo botón en el orden de tabulación.
+    const tabStop = selected ?? 0;
+    chips.forEach((chip, value) => {
+      chip.setAttribute('aria-checked', value === selected ? 'true' : 'false');
+      chip.tabIndex = value === tabStop ? 0 : -1;
+    });
+    if (focus && selected !== null) chips[selected].focus();
+    $('qol-q-picked').textContent = selected === null
+      ? 'Elige un valor de 0 a 10.'
+      : `Has marcado ${selected} de ${CRITERION_MAX} en ${criterion.label.toLowerCase()}.`;
+    nextBtn.disabled = selected === null;
+  }
+
+  function renderQuestion(moveFocus = true) {
+    const criterion = CRITERIA[step];
+    const total = CRITERIA.length;
+    $('qol-q-emoji').textContent = criterion.emoji;
+    $('qol-q-name').textContent = criterion.name;
+    $('qol-q-text').textContent = criterion.question;
+    $('qol-q-help').textContent = CRITERION_DETAILS[criterion.key].help;
+    $('qol-q-help-lo').textContent = `0 = ${criterion.lo}`;
+    $('qol-q-help-hi').textContent = `${CRITERION_MAX} = ${criterion.hi}`;
+    $('qol-step-label').textContent = `${step + 1} / ${total}`;
+    $('qol-step-label').setAttribute('aria-label', `Pregunta ${step + 1} de ${total}`);
+    $('qol-progress-bar').style.width = `${Math.round(((step + 1) / total) * 100)}%`;
+    $('qol-progress-wrap').setAttribute('aria-valuenow', String(step + 1));
+    $('qol-q-chips').setAttribute('aria-label', `${criterion.name}: ${criterion.question}`);
+    nextBtn.textContent = step === total - 1 ? 'Ver el resultado →' : 'Siguiente →';
+    paintSelection();
+    if (moveFocus) $('qol-q-text').focus({ preventScroll: true });
+  }
+
+  function goToStep(index: number) {
+    step = index;
+    renderQuestion();
+    replay(screens.question);
+    scrollToWidget();
+  }
+
+  function pick(value: number, focus = false) {
+    answers[step] = value;
+    paintSelection(focus);
+  }
+
+  chips.forEach((chip, value) => {
+    chip.addEventListener('click', () => pick(value));
+    chip.addEventListener('keydown', (event) => {
+      const from = answers[step] ?? value;
+      const target = { ArrowRight: from + 1, ArrowUp: from + 1, ArrowLeft: from - 1, ArrowDown: from - 1, Home: 0, End: CRITERION_MAX }[event.key];
+      if (target === undefined) return;
+      event.preventDefault();
+      pick(Math.max(0, Math.min(CRITERION_MAX, target)), true);
+    });
+  });
+
+  /* ── Resultado ── */
+  function finish() {
+    const input = Object.fromEntries(CRITERIA.map((c, i) => [c.key, answers[i] ?? 0])) as QualityInput;
+    const result = evaluateQualityOfLife(input);
+    const record = createRecord(result.input, new Date(), newId());
+    history = addRecord(history, record);
+    saveHistory();
+    current = { record, result };
+    noteInput.value = '';
+    renderResult();
+    show('result');
+    $('qol-result-box').focus({ preventScroll: true });
+  }
+
+  function el<K extends keyof HTMLElementTagNameMap>(tag: K, className: string, text?: string) {
+    const node = document.createElement(tag);
+    node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+  // `appendChild` y no `append`: los tipos globales de Workers redefinen `Element.append`.
+  function add(parent: Node, ...children: Node[]) {
+    for (const child of children) parent.appendChild(child);
+  }
+
+  function renderResult() {
+    if (!current) return;
+    const { record, result } = current;
+    const previous = previousRecord(history, record.id);
+    const changes = previous ? compareAnswers(record.answers, previous.answers) : null;
+
+    $('qol-result-date').textContent = `· ${formatRecordDate(record.at)}`;
+    $('qol-result-score').textContent = String(result.score);
+    $('qol-result-fill').style.width = `${Math.round((result.score / MAX_SCORE) * 100)}%`;
+    $('qol-result-progress').setAttribute('aria-valuenow', String(result.score));
+
+    const strong = document.createElement('strong');
+    strong.textContent = result.interpretation;
+    $('qol-interpretation').replaceChildren(strong);
+    $('qol-human-msg').textContent = result.message;
+    $('qol-recommendation').textContent = result.recommendation;
+
+    const compare = $('qol-compare');
+    compare.classList.toggle('off', !previous);
+    compare.textContent = previous ? `Registro anterior: ${previous.score}/${MAX_SCORE} · ${formatRecordDate(previous.at)}. Revisa abajo qué áreas han cambiado.` : '';
+    $('qol-breakdown-legend').classList.toggle('off', !previous);
+
+    /* Desglose: los dos primeros hijos de cada fila (etiqueta y valor) son contrato de tools-ui-parity. */
+    const rows = CRITERIA.map((criterion, index) => {
+      const value = record.answers[criterion.key];
+      const row = el('div', 'grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-1.5 py-3 border-b border-brand-border/30 last:border-b-0');
+
+      const label = el('span', 'text-sm text-brand-text flex items-center gap-2');
+      const icon = el('span', '', criterion.emoji);
+      icon.setAttribute('aria-hidden', 'true');
+      add(label, icon, document.createTextNode(` ${criterion.label}`));
+
+      const zero = value === 0;
+      const badge = el('span', `font-bold text-sm px-2.5 py-0.5 rounded-lg border shrink-0 ${zero ? 'text-amber-800 dark:text-amber-200 bg-amber-500/10 border-amber-500/50' : 'text-brand-primary bg-brand-card border-brand-border'}`, `${value}/${CRITERION_MAX}`);
+
+      const detail = el('div', 'col-span-2 flex items-center gap-3');
+      const track = el('div', 'relative flex-1 h-2 rounded-full bg-brand-border/40');
+      track.setAttribute('aria-hidden', 'true');
+      const fill = el('div', `h-full rounded-full ${zero ? 'bg-amber-500' : 'bg-brand-primary'}`);
+      fill.style.width = `${(value / CRITERION_MAX) * 100}%`;
+      add(track, fill);
+      add(detail, track);
+      if (changes) {
+        const change = changes[index];
+        const tick = el('div', 'absolute -top-1 h-4 w-0.5 rounded bg-brand-text/70');
+        tick.style.left = `calc(${(change.from / CRITERION_MAX) * 100}% - 1px)`;
+        add(track, tick);
+        add(detail, el('span', `w-20 text-right text-xs ${change.delta === 0 ? 'text-brand-muted' : 'font-semibold text-brand-text'}`, changeLabel(change)));
+      }
+
+      add(row, label, badge, detail);
+      return row;
+    });
+    $('qol-breakdown').replaceChildren(...rows);
+
+    const warningTexts = result.warnings.length
+      ? result.warnings.map((warning) => warning.message)
+      : ['No has marcado respuestas en 0. Revisa también las dificultades y cambios que la puntuación no recoja; esto no es una confirmación de bienestar.'];
+    $('qol-warnings').replaceChildren(...warningTexts.map((text) => el('li', '', text)));
+
+    const cta = $('qol-cta-pilar');
+    if (result.guide) {
+      cta.querySelector('a')!.textContent = result.guide.label;
+      cta.style.display = 'block';
+    } else {
+      cta.style.display = 'none';
+    }
+
+    $('qol-saved').textContent = storageOk
+      ? 'Registro guardado solo en este navegador. La nota se guarda mientras escribes.'
+      : 'No se pudo guardar en este navegador (modo privado o almacenamiento bloqueado). Copia o envía el resumen para conservarlo.';
+  }
+
+  noteInput.addEventListener('input', () => {
+    if (!current) return;
+    history = updateNote(history, current.record.id, noteInput.value);
+    current.record = history.find((item) => item.id === current!.record.id) ?? { ...current.record, note: noteInput.value };
+    saveHistory();
+    renderHistory('result');
+  });
+
+  /* ── Historial ── */
+  function renderHistory(screen: Screen) {
+    const section = $('qol-history');
+    section.classList.toggle('off', screen === 'question' || history.length === 0);
+    if (screen === 'question') return;
+    const items = history.map((record) => {
+      const item = el('li', 'rounded-2xl border border-brand-border/40 bg-brand-bg/60 dark:bg-brand-bg/25 p-4');
+      const head = el('div', 'flex items-center justify-between gap-3');
+      const title = el('p', 'text-sm text-brand-text m-0');
+      const date = formatRecordDate(record.at);
+      add(title, el('strong', '', date), document.createTextNode(` · ${record.score}/${MAX_SCORE}`));
+      if (current?.record.id === record.id) add(title, el('span', 'block text-[11px] font-bold uppercase tracking-wider text-brand-primary', 'Este registro'));
+      const remove = el('button', 'min-h-11 px-2 text-xs font-semibold text-brand-muted underline underline-offset-2 hover:text-brand-text cursor-pointer shrink-0', 'Borrar');
+      remove.type = 'button';
+      remove.setAttribute('aria-label', `Borrar el registro del ${date}`);
+      remove.addEventListener('click', () => {
+        if (!window.confirm(`¿Borrar el registro del ${date}? No se puede deshacer.`)) return;
+        history = removeRecord(history, record.id);
+        saveHistory();
+        if (current) renderResult();
+        renderHistory(screen);
+      });
+      add(head, title, remove);
+
+      const values = el('ul', 'mt-2 flex flex-wrap gap-x-3 gap-y-1 list-none pl-0 text-xs text-brand-muted');
+      for (const criterion of CRITERIA) {
+        const value = el('li', '');
+        add(value, document.createTextNode(`${criterion.label} `), el('strong', 'text-brand-text', String(record.answers[criterion.key])));
+        add(values, value);
+      }
+      add(item, head, values);
+      if (record.note) add(item, el('p', 'mt-2 mb-0 text-xs text-brand-text', `Nota: ${record.note}`));
+      return item;
+    });
+    $('qol-history-list').replaceChildren(...items);
+  }
+
+  $('qol-history-clear').addEventListener('click', () => {
+    if (!window.confirm('¿Borrar todos los registros guardados en este navegador? No se puede deshacer.')) return;
+    history = [];
+    saveHistory();
+    if (current) renderResult();
+    renderHistory(screens.result.classList.contains('off') ? 'intro' : 'result');
+  });
+
+  /* ── Compartir ── */
+  function shareText() {
+    if (!current) return '';
+    const { record, result } = current;
+    return buildShareText({
+      record,
+      previous: previousRecord(history, record.id),
+      message: result.message,
+      warnings: result.warnings.map((warning) => warning.message),
+      recommendation: result.recommendation,
+      notices: result.notices,
+      url: PAGE_URL,
+    });
+  }
+
+  async function copyResult() {
+    const text = shareText();
+    if (!text || !navigator.clipboard) return;
+    try {
+      await navigator.clipboard.writeText(text);
+      const ok = $('qol-copy-confirm');
+      ok.style.display = 'block';
+      setTimeout(() => { ok.style.display = 'none'; }, 3000);
+    } catch (error) {
+      console.error('Error al copiar: ', error);
+    }
+  }
+
+  function shareWhatsApp() {
+    const text = shareText();
+    if (text) window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+  }
+
+  function downloadICS() {
+    const now = new Date();
+    const future = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
+    const pad = (n: number) => String(n).padStart(2, '0');
+    const day = (d: Date) => `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}`;
+    const stamp = `${now.getUTCFullYear()}${pad(now.getUTCMonth() + 1)}${pad(now.getUTCDate())}T${pad(now.getUTCHours())}${pad(now.getUTCMinutes())}${pad(now.getUTCSeconds())}Z`;
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Cuida tu Perro Viejo//HHHHHMM//ES',
+      'BEGIN:VEVENT',
+      `UID:${Date.now()}@cuidatuperroviejo.com`,
+      `DTSTAMP:${stamp}`,
+      `DTSTART;VALUE=DATE:${day(future)}`,
+      'SUMMARY:Repetir el registro de calidad de vida de mi perro (HHHHHMM)',
+      `DESCRIPTION:Última suma: ${current ? current.record.score : ''}/${MAX_SCORE}.\\nRepite el registro en: ${PAGE_URL}`,
+      `URL:${PAGE_URL}`,
+      'END:VEVENT',
+      'END:VCALENDAR',
+    ].join('\r\n');
+    const url = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'reevaluar-perro-hhhhhmm.ics';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  function reset() {
+    answers = CRITERIA.map(() => null);
+    step = 0;
+    current = null;
+    show('intro');
+    $('qol-start').focus({ preventScroll: true });
+  }
+
+  /* ── Eventos ── */
+  $('qol-start').addEventListener('click', () => {
+    step = 0;
+    renderQuestion(false);
+    show('question');
+    $('qol-q-text').focus({ preventScroll: true });
+  });
+  $('qol-back').addEventListener('click', () => {
+    if (step === 0) show('intro');
+    else goToStep(step - 1);
+  });
+  nextBtn.addEventListener('click', () => {
+    if (answers[step] === null) return;
+    if (step < CRITERIA.length - 1) goToStep(step + 1);
+    else finish();
+  });
+  $('qol-copy').addEventListener('click', copyResult);
+  $('qol-wa').addEventListener('click', shareWhatsApp);
+  $('qol-wa-fixed').addEventListener('click', shareWhatsApp);
+  $('qol-ics').addEventListener('click', downloadICS);
+  $('qol-print').addEventListener('click', () => window.print());
+  $('qol-reset').addEventListener('click', reset);
+  $('qol-reset-fixed').addEventListener('click', reset);
+
+  loadHistory();
+  renderHistory('intro');
+</script>

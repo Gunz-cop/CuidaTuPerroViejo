@@ -34,6 +34,8 @@ const QUALITY_UI = (values) => `(async () => {
   for (const value of values) {
     const chip = [...document.querySelectorAll('#qol-q-chips button')].find((b) => b.textContent === String(value));
     chip.click();
+    // Desde el rediseño de noviembre de 2026 el valor se confirma con «Siguiente».
+    document.getElementById('qol-next').click();
   }
   const text = (el) => el ? el.textContent : null;
   const cta = document.getElementById('qol-cta-pilar');
