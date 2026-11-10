@@ -21,7 +21,9 @@ Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 
 
 ## Afiliación con AliExpress
 
-- [ ] **Piloto en la guía de camas para perros mayores** (2026-11-10). Bloque incorporado localmente como ejemplo de comparación con la ficha `1005009119696851` de Hicarer Home Store. Pendientes de publicación y medición. Confirmar las medidas de una variante y su núcleo, comparar demanda en Search Console y comprobar costo final y devolución. Operativa y retirada en [la guía de afiliación](docs/seo/afiliacion-aliexpress.md).
+- [x] **Integrar el piloto en la guía de camas para perros mayores.** Bloque con la ficha `1005009119696851` de Hicarer Home Store y opción de afiliación voluntaria. 2026-11-10, [PR #164](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/164). Operativa y retirada en [la guía de afiliación](docs/seo/afiliacion-aliexpress.md).
+- [ ] **Medir y mantener el piloto.** Confirmar las medidas de una variante y su núcleo, comparar demanda en Search Console y comprobar costo final y devolución.
+- [ ] **Panel privado de monetización.** Reutilizar el acceso y patrón de `/admin/asistente`. Empezar por vistas del artículo, clics por ubicación cuando se puedan aislar, pedidos y comisión confirmada por moneda. Contrastar con informes de AliExpress por un Tracking ID propio y considerar Amazon, AdSense y patrocinios cuando se activen. Revisar consentimiento antes de añadir medición propia.
 
 - [ ] **Comparativa de camas de entrada baja para perros mayores** (2026-11-10). Comprobar demanda por país y documentar medidas y condiciones de dos o tres modelos antes de redactar. Usar la [guía de afiliación](docs/seo/afiliacion-aliexpress.md) para separar la comparativa de la guía general y medir su rendimiento.
 
