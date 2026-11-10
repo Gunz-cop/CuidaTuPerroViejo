@@ -1,0 +1,75 @@
+---
+// Cuerpo del chat del asistente (mensajes + redactor). Lo usan el widget
+// flotante y la página /asistente-ia; el comportamiento vive en
+// src/scripts/assistant-chat.ts.
+import '../styles/assistant-chat.css';
+
+interface Props {
+  surface: 'widget' | 'page';
+  inputId: string;
+}
+
+const { surface, inputId } = Astro.props;
+
+const suggestions = [
+  'Le cuesta levantarse y se resbala en casa',
+  'Se desorienta y camina de noche',
+  'Bebe y orina más que antes',
+  '¿Qué puede comer si le faltan dientes?',
+];
+---
+
+<div class="ac-chat" data-assistant-chat data-ac-surface={surface}>
+  <div class="ac-log" data-ac-log role="log" aria-label="Conversación con el asistente" tabindex="0">
+    <div class="ac-intro" data-ac-intro>
+      <p class="ac-intro-text">
+        Cuéntame qué has notado en tu perro mayor. Te respondo con base en las guías del sitio y te indico cuáles leer.
+      </p>
+      <p class="ac-intro-label">Puedes empezar por aquí</p>
+      <div class="ac-suggestions">
+        {suggestions.map((text) => (
+          <button type="button" class="ac-suggestion" data-ac-suggestion={text}>{text}</button>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <p class="ac-sr" data-ac-announcer role="status" aria-live="polite"></p>
+
+  <form class="ac-form" data-ac-form novalidate>
+    <label class="ac-sr" for={inputId}>Escribe tu consulta sobre tu perro mayor</label>
+    <div class="ac-field">
+      <textarea
+        id={inputId}
+        class="ac-input"
+        data-ac-input
+        name="question"
+        rows="1"
+        maxlength="500"
+        required
+        autocomplete="off"
+        enterkeyhint="send"
+        placeholder="Describe qué le pasa a tu perro…"
+      ></textarea>
+      <span class="ac-counter" data-ac-counter aria-hidden="true"></span>
+      <button type="submit" class="ac-send" data-ac-submit aria-label="Enviar consulta">
+        <svg class="ac-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="m6 11 6-6 6 6"></path></svg>
+      </button>
+    </div>
+    <p class="ac-note">
+      No sustituye a tu veterinario. No incluyas datos personales.{' '}
+      <a href="/politica-de-privacidad">Privacidad</a>
+    </p>
+  </form>
+</div>
+
+<script>
+  import { initAssistantChats } from '../scripts/assistant-chat';
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAssistantChats);
+  } else {
+    initAssistantChats();
+  }
+  document.addEventListener('astro:page-load', initAssistantChats);
+</script>
