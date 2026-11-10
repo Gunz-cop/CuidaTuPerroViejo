@@ -5,8 +5,7 @@
  * asistente sigue respondiendo y solo se pierde la medición.
  */
 import { hashIp } from '../contact/security';
-import type { AssistantUsage } from './claude';
-import type { AssistantSource, AssistantSurface } from './types';
+import type { AssistantSource, AssistantSurface, AssistantUsage } from './types';
 
 export const QUESTION_RETENTION_DAYS = 180;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/u;
@@ -95,12 +94,12 @@ export const recordInteraction = async (db: D1Database | undefined, record: Inte
   }
 };
 
-/** Consultas atendidas hoy por el modelo de pago; null si no se puede saber. */
+/** Consultas atendidas hoy por el motor principal (el que consume cuota); null si no se puede saber. */
 export const countPaidInteractionsToday = async (db: D1Database | undefined, day: string): Promise<number | null> => {
   if (!db) return null;
   try {
     const row = await db
-      .prepare(`SELECT COUNT(*) AS n FROM assistant_interactions WHERE day = ? AND source = 'claude'`)
+      .prepare(`SELECT COUNT(*) AS n FROM assistant_interactions WHERE day = ? AND source IN ('workers-ai', 'claude')`)
       .bind(day)
       .first<{ n: number }>();
     return Number(row?.n ?? 0);

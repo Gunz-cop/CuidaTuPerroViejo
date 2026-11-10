@@ -1,6 +1,6 @@
 # STATUS — Rediseño del asistente IA
 
-> **2026-11-10 — Plan sustituido.** El asistente se rehízo sobre Claude leyendo las guías publicadas; ver [`ASISTENTE-CLAUDE.md`](ASISTENTE-CLAUDE.md). Lo que sigue describe el plan «Assistant V2», que quedó en Foundation y no llegó a producción; se conserva como registro histórico.
+> **2026-11-10 — Plan sustituido.** El asistente se rehízo sobre un modelo grande de Workers AI que responde leyendo las guías publicadas; ver [`ASISTENTE-IA.md`](ASISTENTE-IA.md). Lo que sigue describe el plan «Assistant V2», que quedó en Foundation y no llegó a producción; se conserva como registro histórico.
 
 - **Estado actual:** **Foundation completada.** Contratos TypeScript, configuración pendiente del bake-off, schemas editoriales, ownership y plan de implementación verificados; no se modificó el flujo de producción.
 - **Fase actual:** Foundation de Assistant V2 (completada).

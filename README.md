@@ -47,7 +47,7 @@ npx wrangler d1 migrations apply cuidatuperroviejo-contact --remote
 
 La migración está en `migrations/0001_contact_messages.sql` y crea `contact_messages` con índices por estado/IP hash.
 
-El asistente IA usa Claude y necesita el secreto `ANTHROPIC_API_KEY` (`npx wrangler secret put ANTHROPIC_API_KEY`); sin él responde el flujo de respaldo. Sus métricas viven en la misma base (`migrations/0003_assistant_metrics.sql`) y se consultan en `/admin/asistente`. Arquitectura, variables y costes: [`docs/asistente-ia/ASISTENTE-CLAUDE.md`](docs/asistente-ia/ASISTENTE-CLAUDE.md).
+El asistente IA usa Workers AI (binding `AI`), sin claves adicionales. Sus métricas viven en la misma base (`migrations/0003_assistant_metrics.sql`) y se consultan en `/admin/asistente`. Arquitectura, modelo, variables y costes: [`docs/asistente-ia/ASISTENTE-IA.md`](docs/asistente-ia/ASISTENTE-IA.md).
 
 El admin está en `/admin/contact-messages` y exige Basic Auth con `CONTACT_ADMIN_USER` y `CONTACT_ADMIN_PASSWORD`. Permite filtrar por `quarantine`, `rejected` y `allowed`, cambiar estados y reenviar email al marcar como `allowed`.
 

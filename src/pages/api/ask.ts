@@ -6,7 +6,6 @@ import {
   DEFAULT_ASSISTANT_MODEL,
   answerWithClaude,
   parseEffort,
-  type AssistantUsage,
 } from '../../lib/assistant/claude';
 import { generateAssistantDecision } from '../../lib/assistant/generation';
 import {
@@ -24,9 +23,18 @@ import {
 } from '../../lib/assistant/metrics';
 import { MAX_REQUEST_BYTES, parseAssistantRequest, type AssistantRequest } from '../../lib/assistant/request';
 import { findFallbackRecommendations, verifyCatalogRecommendation } from '../../lib/assistant/retrieval';
+import {
+  DEFAULT_WORKERS_AI_MODEL,
+  answerWithWorkersAi,
+  parseWorkersAiEffort,
+  type AiRunner,
+} from '../../lib/assistant/workers-ai';
 import type {
   ArticleCandidate,
   AssistantSource,
+  AssistantUsage,
+  EngineAnswer,
+  EngineEvents,
   Recommendation,
   RetrievalMethod,
 } from '../../lib/assistant/types';
@@ -96,40 +104,61 @@ const dailyLimit = (): number => {
   return Number.isFinite(configured) && configured >= 0 ? configured : DEFAULT_DAILY_LIMIT;
 };
 
-/** Motor principal: Claude con lectura de las guías publicadas. */
-const answerFromClaude = async (
+/** Claude solo se usa si se pide expresamente y hay clave; el motor por defecto es Workers AI. */
+const useAnthropic = (): boolean => env.ASSISTANT_PROVIDER === 'anthropic' && Boolean(env.ANTHROPIC_API_KEY);
+
+/** Motor principal: un modelo grande que responde con las guías publicadas. */
+const answerFromPrimary = async (
   httpRequest: Request,
   input: AssistantRequest,
   emit: Emit,
   signal: AbortSignal,
 ): Promise<Outcome> => {
-  const apiKey = env.ANTHROPIC_API_KEY;
-  if (!apiKey) throw new Error('ANTHROPIC_API_KEY no está configurada.');
   if (!env.ASSETS) throw new Error('ASSETS no está configurado.');
 
   const knowledge = await loadKnowledge(env.ASSETS, httpRequest.url);
-  const result = await answerWithClaude({
-    apiKey,
-    baseURL: env.ANTHROPIC_BASE_URL,
-    model: env.ASSISTANT_MODEL || DEFAULT_ASSISTANT_MODEL,
-    effort: parseEffort(env.ASSISTANT_EFFORT),
+  const events: EngineEvents = {
+    onReading: (guide) => emit({ type: 'reading', title: guide.title }),
+    onText: (text) => emit({ type: 'delta', text }),
+    onReset: () => emit({ type: 'reset' }),
+  };
+  const common = {
     knowledge,
-    readGuide: (guide) => readGuide(env.ASSETS, httpRequest.url, guide),
+    readGuide: (guide: Parameters<typeof readGuide>[2]) => readGuide(env.ASSETS, httpRequest.url, guide),
     question: input.question,
     history: input.history,
     signal,
-    events: {
-      onReading: (guide) => emit({ type: 'reading', title: guide.title }),
-      onText: (text) => emit({ type: 'delta', text }),
-      onReset: () => emit({ type: 'reset' }),
-    },
-  });
+    events,
+  };
+
+  let result: EngineAnswer;
+  let source: AssistantSource;
+  if (useAnthropic()) {
+    source = 'claude';
+    result = await answerWithClaude({
+      ...common,
+      apiKey: env.ANTHROPIC_API_KEY!,
+      baseURL: env.ANTHROPIC_BASE_URL,
+      model: env.ASSISTANT_MODEL || DEFAULT_ASSISTANT_MODEL,
+      effort: parseEffort(env.ASSISTANT_EFFORT),
+    });
+  } else {
+    if (!env.AI) throw new Error('El binding AI no está configurado.');
+    source = 'workers-ai';
+    result = await answerWithWorkersAi({
+      ...common,
+      ai: env.AI as unknown as AiRunner,
+      model: env.ASSISTANT_MODEL || DEFAULT_WORKERS_AI_MODEL,
+      effort: parseWorkersAiEffort(env.ASSISTANT_EFFORT),
+      sessionId: input.conversationId ?? undefined,
+    });
+  }
 
   const checked = checkAnswerLinks(result.answer, knowledge);
   return {
     answer: checked.answer,
     recommendations: checked.recommendations,
-    source: 'claude',
+    source,
     retrieval: checked.recommendations.length > 0 || result.guidesRead.length > 0 ? 'site-guides' : 'none',
     model: result.model,
     usage: result.usage,
@@ -139,9 +168,9 @@ const answerFromClaude = async (
 };
 
 /**
- * Respaldo: el flujo anterior (Workers AI + triage por frases). Entra cuando
- * falta la clave de Anthropic, se supera el tope diario o Claude falla, de modo
- * que el asistente nunca queda peor que antes del rediseño.
+ * Respaldo: el flujo anterior (un modelo pequeño de Workers AI + triage por
+ * frases). Entra cuando se supera el tope diario o el motor principal falla, de
+ * modo que el asistente nunca queda peor que antes del rediseño.
  */
 const answerFromFallback = async (
   httpRequest: Request,
@@ -221,20 +250,19 @@ export const POST: APIRoute = async ({ request }) => {
       emit({ type: 'meta', id, urgent });
 
       let outcome: Outcome | null = null;
-      let degraded = 'sin-clave';
-      if (env.ANTHROPIC_API_KEY) {
-        const usedToday = await countPaidInteractionsToday(env.CONTACT_DB, day);
-        if (usedToday !== null && usedToday >= dailyLimit()) {
-          degraded = 'tope-diario';
-        } else {
-          try {
-            outcome = await answerFromClaude(request, input, emit, abort.signal);
-          } catch (error) {
-            if (abort.signal.aborted) return null;
-            degraded = error instanceof AssistantRefusalError ? 'declinada' : 'error-claude';
-            logError('assistant_claude_failed', error);
-            emit({ type: 'reset' });
-          }
+      let degraded: string;
+      const usedToday = await countPaidInteractionsToday(env.CONTACT_DB, day);
+      if (usedToday !== null && usedToday >= dailyLimit()) {
+        degraded = 'tope-diario';
+      } else {
+        try {
+          outcome = await answerFromPrimary(request, input, emit, abort.signal);
+          degraded = '';
+        } catch (error) {
+          if (abort.signal.aborted) return null;
+          degraded = error instanceof AssistantRefusalError ? 'declinada' : 'error-motor';
+          logError('assistant_primary_failed', error);
+          emit({ type: 'reset' });
         }
       }
       outcome ??= await answerFromFallback(request, input.question, emergencyAnswer, degraded);

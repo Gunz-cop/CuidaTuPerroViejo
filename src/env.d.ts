@@ -8,16 +8,18 @@ declare namespace Cloudflare {
     CONTACT_ADMIN_USER?: string;
     CONTACT_ADMIN_PASSWORD?: string;
     CONTACT_DESTINATION_EMAIL?: string;
-    /** Clave de la API de Anthropic. Sin ella el asistente usa el flujo de respaldo. */
-    ANTHROPIC_API_KEY?: string;
-    /** Opcional: enrutar por Cloudflare AI Gateway u otro proxy compatible. */
-    ANTHROPIC_BASE_URL?: string;
-    /** Modelo del asistente; por defecto claude-sonnet-5-5. */
+    /** Motor del asistente: "workers-ai" (por defecto) o "anthropic". */
+    ASSISTANT_PROVIDER?: string;
+    /** Modelo del motor elegido; por defecto @cf/deepseek-ai/deepseek-v4.1-flash-1017. */
     ASSISTANT_MODEL?: string;
-    /** Profundidad de razonamiento: low (por defecto), medium o high. */
+    /** Razonamiento. Workers AI: none, low (por defecto), high o max. Anthropic: low, medium o high. */
     ASSISTANT_EFFORT?: string;
-    /** Tope de consultas diarias atendidas por Claude; por defecto 200. */
+    /** Tope de consultas diarias atendidas por el motor principal; por defecto 200. */
     ASSISTANT_DAILY_LIMIT?: string;
+    /** Solo con ASSISTANT_PROVIDER=anthropic: clave de la API de Anthropic. */
+    ANTHROPIC_API_KEY?: string;
+    /** Solo con Anthropic: enrutar por Cloudflare AI Gateway u otro proxy compatible. */
+    ANTHROPIC_BASE_URL?: string;
     /** "off" para no guardar el texto de las consultas en las métricas. */
     ASSISTANT_LOG_QUESTIONS?: string;
   }

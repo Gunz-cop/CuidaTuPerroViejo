@@ -56,7 +56,7 @@ if (db) {
                 COUNT(DISTINCT day || visitor_hash) AS visitantes,
                 COALESCE(SUM(recommended_count > 0), 0) AS con_guia,
                 COALESCE(SUM(urgent), 0) AS urgentes,
-                COALESCE(SUM(source = 'claude'), 0) AS claude,
+                COALESCE(SUM(source IN ('workers-ai', 'claude')), 0) AS claude,
                 COALESCE(SUM(feedback = 'up'), 0) AS util,
                 COALESCE(SUM(feedback = 'down'), 0) AS no_util,
                 COALESCE(SUM(input_tokens), 0) AS tokens_entrada,
@@ -74,7 +74,7 @@ if (db) {
                 COUNT(*) AS consultas,
                 COUNT(DISTINCT i.visitor_hash) AS visitantes,
                 SUM(i.recommended_count > 0) AS con_guia,
-                SUM(i.source = 'claude') AS claude,
+                SUM(i.source IN ('workers-ai', 'claude')) AS claude,
                 (SELECT COUNT(*) FROM assistant_clicks c JOIN assistant_interactions j ON j.id = c.interaction_id WHERE j.day = i.day) AS clics
          FROM assistant_interactions i WHERE i.day >= ? GROUP BY i.day ORDER BY i.day DESC`,
       ).bind(since),
@@ -124,7 +124,7 @@ const parseHrefs = (value: string): string[] => {
   }
 };
 const SOURCE_LABEL: Record<string, string> = {
-  claude: 'Claude', ai: 'Respaldo (Workers AI)', emergency: 'Urgencia (texto fijo)',
+  'workers-ai': 'Workers AI', claude: 'Claude', ai: 'Respaldo (modelo pequeño)', emergency: 'Urgencia (texto fijo)',
   clarification: 'Aclaración (texto fijo)', articles: 'Respaldo (solo guías)',
 };
 const total = Number(totals?.consultas ?? 0);
@@ -189,7 +189,7 @@ const total = Number(totals?.consultas ?? 0);
             <div class="tile"><b>{percent(Number(totals.con_guia), total)}</b><span>con guía recomendada</span></div>
             <div class="tile"><b>{number(clicks)}</b><span>clics en guías ({percent(clicks, Number(totals.con_guia))} de las respuestas con guía)</span></div>
             <div class="tile"><b>{number(totals.util)} / {number(totals.no_util)}</b><span>votos útil / no útil</span></div>
-            <div class="tile"><b>{percent(Number(totals.claude), total)}</b><span>respondidas por Claude</span></div>
+            <div class="tile"><b>{percent(Number(totals.claude), total)}</b><span>respondidas por el modelo principal</span></div>
             <div class="tile"><b>{number(totals.urgentes)}</b><span>posibles urgencias</span></div>
             <div class="tile"><b>{totals.latencia_media === null ? '—' : `${(Number(totals.latencia_media) / 1000).toFixed(1)} s`}</b><span>tiempo medio de respuesta</span></div>
             <div class="tile"><b>{number(totals.tokens_entrada)}</b><span>tokens de entrada ({number(totals.tokens_cache)} desde caché)</span></div>
@@ -203,7 +203,7 @@ const total = Number(totals?.consultas ?? 0);
               <h2>Por día</h2>
               <div class="scroll">
                 <table>
-                  <thead><tr><th>Día</th><th class="n">Consultas</th><th class="n">Visitantes</th><th class="n">Con guía</th><th class="n">Clics</th><th class="n">Claude</th></tr></thead>
+                  <thead><tr><th>Día</th><th class="n">Consultas</th><th class="n">Visitantes</th><th class="n">Con guía</th><th class="n">Clics</th><th class="n">Modelo principal</th></tr></thead>
                   <tbody>
                     {byDay.map((row) => (
                       <tr><td>{row.day}</td><td class="n">{number(row.consultas)}</td><td class="n">{number(row.visitantes)}</td><td class="n">{number(row.con_guia)}</td><td class="n">{number(row.clics)}</td><td class="n">{number(row.claude)}</td></tr>

@@ -8,6 +8,12 @@ import { checkAnswerLinks, toSitePath } from '../src/lib/assistant/links';
 import { isInteractionId } from '../src/lib/assistant/metrics';
 import { buildSystemPrompt } from '../src/lib/assistant/prompt';
 import { parseAssistantRequest, parseHistory } from '../src/lib/assistant/request';
+import {
+  DEFAULT_WORKERS_AI_MODEL,
+  answerWithWorkersAi,
+  parseWorkersAiEffort,
+  type AiRunner,
+} from '../src/lib/assistant/workers-ai';
 
 const document = (documentId: string, kind: string, canonicalPath: string, title: string) => ({
   documentId,
@@ -240,4 +246,131 @@ test('sin guía pertinente responde directo; el fallback de servidor solo se pid
 
 test('una negativa del modelo se convierte en un error tipado para activar el respaldo', async () => {
   await assert.rejects(ask('declina esto').result, AssistantRefusalError);
+});
+
+/* --- Motor de Workers AI con un binding `AI` simulado --- */
+
+type AiCall = { model: string; inputs: Record<string, unknown>; options?: Record<string, unknown> };
+
+const sseStream = (chunks: string[]): ReadableStream<Uint8Array> => {
+  const encoder = new TextEncoder();
+  return new ReadableStream({
+    start(controller) {
+      chunks.forEach((chunk) => controller.enqueue(encoder.encode(chunk)));
+      controller.close();
+    },
+  });
+};
+
+const openAiChunk = (content: string) => `data: ${JSON.stringify({ choices: [{ index: 0, delta: { content } }] })}\n\n`;
+
+const fakeAi = (reply: (call: AiCall) => unknown) => {
+  const calls: AiCall[] = [];
+  const ai: AiRunner = {
+    run: async (model, inputs, options) => {
+      const call = { model, inputs, options };
+      calls.push(call);
+      return reply(call);
+    },
+  };
+  return { ai, calls };
+};
+
+const askWorkersAi = (ai: AiRunner, question = '¿Puede ser Cushing?') => {
+  const events: string[] = [];
+  const result = answerWithWorkersAi({
+    ai,
+    model: DEFAULT_WORKERS_AI_MODEL,
+    effort: 'low',
+    knowledge,
+    readGuide: async (guide) => `Contenido de ${guide.id}`,
+    question,
+    history: [{ role: 'user', content: 'Bebe mucha agua' }, { role: 'assistant', content: 'Cuéntame más.' }],
+    sessionId: 'conversacion-1',
+    events: {
+      onReading: (guide) => events.push(`reading:${guide.id}`),
+      onText: (text) => events.push(`text:${text}`),
+    },
+  });
+  return { result, events };
+};
+
+test('Workers AI elige guías, las lee y responde en streaming con ellas', async () => {
+  const { ai, calls } = fakeAi(({ inputs }) => (inputs.stream
+    ? sseStream([
+      openAiChunk('Según la guía, '),
+      // Un evento partido entre dos trozos de red.
+      openAiChunk('conviene revisarlo.').slice(0, 30),
+      openAiChunk('conviene revisarlo.').slice(30),
+      `data: ${JSON.stringify({ choices: [], usage: { prompt_tokens: 9000, completion_tokens: 300, prompt_tokens_details: { cached_tokens: 4000 } } })}\n\n`,
+      'data: [DONE]\n\n',
+    ])
+    : {
+      choices: [{ message: { content: 'article--cushing\ntool--calidad-vida\narticle--caidas\narticle--inventada' } }],
+      usage: { prompt_tokens: 5000, completion_tokens: 20 },
+    }));
+
+  const { result, events } = askWorkersAi(ai);
+  const answer = await result;
+
+  assert.equal(answer.answer, 'Según la guía, conviene revisarlo.');
+  // Como máximo dos, en el orden que dio el modelo; los id inventados se ignoran.
+  assert.deepEqual(answer.guidesRead, ['article--cushing', 'tool--calidad-vida']);
+  assert.deepEqual(answer.usage, { inputTokens: 14000, outputTokens: 320, cacheReadTokens: 4000, cacheWriteTokens: 0 });
+  assert.deepEqual(events, ['reading:article--cushing', 'reading:tool--calidad-vida', 'text:Según la guía, ', 'text:conviene revisarlo.']);
+
+  assert.equal(calls.length, 2);
+  const [router, generation] = calls as [AiCall, AiCall];
+  assert.equal(router.model, DEFAULT_WORKERS_AI_MODEL);
+  assert.equal(router.inputs.reasoning_effort, 'none');
+  assert.equal(generation.inputs.reasoning_effort, 'low');
+  assert.deepEqual(generation.options, { extraHeaders: { 'x-session-affinity': 'conversacion-1' } });
+
+  const routerMessages = router.inputs.messages as Array<{ role: string; content: string }>;
+  assert.ok(routerMessages[1]!.content.includes('- Bebe mucha agua'));
+  assert.ok(routerMessages[1]!.content.includes('¿Puede ser Cushing?'));
+
+  const messages = generation.inputs.messages as Array<{ role: string; content: string }>;
+  assert.deepEqual(messages.map((message) => message.role), ['system', 'user', 'assistant', 'user']);
+  assert.equal(messages[0]!.content, buildSystemPrompt(knowledge.guides, 'provided'));
+  assert.ok(messages[3]!.content.includes('<guia ruta="/salud-perros-mayores/cushing" titulo="Síndrome de Cushing">\nContenido de article--cushing\n</guia>'));
+  assert.ok(messages[3]!.content.endsWith('<consulta>\n¿Puede ser Cushing?\n</consulta>'));
+});
+
+test('Workers AI responde sin guías cuando ninguna encaja o la selección falla', async () => {
+  const none = fakeAi(({ inputs }) => (inputs.stream
+    ? sseStream(['data: {"response":"Respuesta "}\n\n', 'data: {"response":"general."}\n\n', 'data: [DONE]\n\n'])
+    : { response: 'ninguno' }));
+  const first = askWorkersAi(none.ai, 'Mi perro tose');
+  assert.equal((await first.result).answer, 'Respuesta general.');
+  assert.deepEqual((await first.result).guidesRead, []);
+  const prompt = (none.calls[1]!.inputs.messages as Array<{ content: string }>).at(-1)!.content;
+  assert.ok(prompt.includes('Ninguna guía del sitio cubre directamente esta consulta.'));
+
+  const broken = fakeAi(({ inputs }) => {
+    if (!inputs.stream) throw new Error('selector caído');
+    return sseStream([openAiChunk('Sigo respondiendo.')]);
+  });
+  assert.equal((await askWorkersAi(broken.ai).result).answer, 'Sigo respondiendo.');
+});
+
+test('Workers AI oculta el razonamiento en línea y reintenta sin reasoning_effort', async () => {
+  const { ai, calls } = fakeAi(({ inputs }) => {
+    if ('reasoning_effort' in inputs) throw new Error('parámetro no admitido');
+    return inputs.stream
+      ? sseStream([openAiChunk('<thi'), openAiChunk('nk>pensando en voz alta</think>\n\nRespuesta '), openAiChunk('limpia.')])
+      : { response: '<think>¿cuál leo?</think>article--caidas' };
+  });
+  const { result, events } = askWorkersAi(ai);
+  const answer = await result;
+  assert.equal(answer.answer, 'Respuesta limpia.');
+  assert.deepEqual(answer.guidesRead, ['article--caidas']);
+  assert.deepEqual(events, ['reading:article--caidas', 'text:Respuesta ', 'text:limpia.']);
+  // Cada paso falló una vez con el parámetro y se repitió sin él.
+  assert.equal(calls.length, 4);
+
+  const empty = fakeAi(({ inputs }) => (inputs.stream ? sseStream(['data: [DONE]\n\n']) : { response: 'ninguno' }));
+  await assert.rejects(askWorkersAi(empty.ai).result, /no devolvió texto/u);
+  assert.equal(parseWorkersAiEffort('medium'), 'low');
+  assert.equal(parseWorkersAiEffort('none'), 'none');
 });

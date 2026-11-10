@@ -1,7 +1,9 @@
 import Anthropic from '@anthropic-ai/sdk';
 import type { GuideEntry, Knowledge } from './knowledge';
 import { READ_GUIDE_TOOL_DESCRIPTION, READ_GUIDE_TOOL_NAME, buildSystemPrompt } from './prompt';
-import type { ChatTurn } from './types';
+import type { AssistantUsage, ChatTurn, EngineAnswer, EngineEvents } from './types';
+
+export type { AssistantUsage } from './types';
 
 export const DEFAULT_ASSISTANT_MODEL = 'claude-sonnet-5-5';
 export const DEFAULT_ASSISTANT_EFFORT = 'low';
@@ -27,28 +29,8 @@ export class AssistantRefusalError extends Error {
   }
 }
 
-export type AssistantUsage = {
-  inputTokens: number;
-  outputTokens: number;
-  cacheReadTokens: number;
-  cacheWriteTokens: number;
-};
-
-export type ClaudeAnswer = {
-  answer: string;
-  guidesRead: string[];
-  model: string;
-  usage: AssistantUsage;
-  truncated: boolean;
-};
-
-export type ClaudeEvents = {
-  /** El modelo va a consultar una guía del sitio. */
-  onReading?: (guide: GuideEntry) => void;
-  onText?: (delta: string) => void;
-  /** El texto emitido hasta ahora era un comentario previo a una lectura: descartarlo. */
-  onReset?: () => void;
-};
+export type ClaudeAnswer = EngineAnswer;
+export type ClaudeEvents = EngineEvents;
 
 export type ClaudeRequest = {
   apiKey: string;
