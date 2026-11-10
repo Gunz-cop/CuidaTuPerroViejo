@@ -364,6 +364,8 @@ const mountChat = (root: HTMLElement) => {
       answer.failed = true;
     };
 
+    // Se pone a true cuando el servidor cierra la respuesta con `done` o `error`.
+    let finished = false;
     const handle = (event: StreamEvent) => {
       if (event.type === 'meta') {
         answer.id = event.id;
@@ -377,26 +379,33 @@ const mountChat = (root: HTMLElement) => {
         answer.content = '';
         paint();
       } else if (event.type === 'done') {
+        finished = true;
         answer.id = event.id;
         answer.content = event.answer;
         answer.recommendations = event.recommendations;
         answer.urgent = event.urgent;
       } else if (event.type === 'error') {
+        finished = true;
         fail(event.error);
       }
     };
 
     try {
-      const response = await fetch('/api/ask', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question, history, stream: true, surface, conversationId: state.conversationId }),
-      });
+      // Si el servidor corta la respuesta antes de enviar nada, se reintenta una
+      // vez: es un fallo transitorio y la consulta no llegó a responderse.
+      for (let attempt = 0; attempt < 2 && !finished; attempt += 1) {
+        const response = await fetch('/api/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question, history, stream: true, surface, conversationId: state.conversationId }),
+        });
 
-      if (!response.ok || !response.body) {
-        const data = await response.json().catch(() => ({})) as { error?: string };
-        fail(data.error || 'No pudimos procesar la consulta. Inténtalo de nuevo en unos segundos.');
-      } else {
+        if (!response.ok || !response.body) {
+          const data = await response.json().catch(() => ({})) as { error?: string };
+          fail(data.error || 'No pudimos procesar la consulta. Inténtalo de nuevo en unos segundos.');
+          break;
+        }
+
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
         let buffer = '';
@@ -411,7 +420,14 @@ const mountChat = (root: HTMLElement) => {
           }
         }
         if (buffer.trim()) handle(JSON.parse(buffer) as StreamEvent);
-        if (!answer.content) fail('No conseguimos preparar una respuesta. Inténtalo de nuevo en unos segundos.');
+
+        if (finished) break;
+        if (answer.content) {
+          answer.content += '\n\n*La respuesta se interrumpió antes de terminar.*';
+          break;
+        }
+        if (attempt === 1) fail('No conseguimos preparar una respuesta. Inténtalo de nuevo en unos segundos.');
+        else if (statusText) statusText.textContent = 'Buscando en nuestras guías…';
       }
     } catch {
       // Si el corte llegó a mitad de respuesta, se conserva lo recibido y se avisa.
