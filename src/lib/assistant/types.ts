@@ -11,9 +11,16 @@ export type ArticleCandidate = Recommendation & {
   routingText: string;
 };
 
-export type RetrievalMethod = 'catalog-router' | 'fallback' | 'none';
+export type RetrievalMethod = 'site-guides' | 'catalog-router' | 'fallback' | 'none';
 
-export type AssistantSource = 'emergency' | 'clarification' | 'ai' | 'articles';
+export type AssistantSource = 'claude' | 'emergency' | 'clarification' | 'ai' | 'articles';
+
+export type ChatTurn = {
+  role: 'user' | 'assistant';
+  content: string;
+};
+
+export type AssistantSurface = 'widget' | 'page' | 'api';
 
 export type TextGenerationResponse = {
   response?: unknown;

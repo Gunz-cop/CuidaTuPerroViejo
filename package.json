@@ -24,15 +24,17 @@
     "images:optimize:dry": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "1.7.0",
     "@astrojs/cloudflare": "^14.2.6",
     "@astrojs/markdown-satteri": "0.3.8",
     "@astrojs/mdx": "^7.0.8",
     "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.2.10",
-    "@modelcontextprotocol/server": "2.3.1"
+    "@modelcontextprotocol/server": "2.3.1",
+    "astro": "^7.2.10"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@modelcontextprotocol/client": "2.3.1",
     "@tailwindcss/vite": "^4.3.3",
     "ajv": "8.20.0",
     "fast-xml-parser": "5.11.0",
@@ -45,7 +47,6 @@
     "tailwindcss": "^4.3.3",
     "tsx": "^4.23.12",
     "typescript": "^5.9.3",
-    "wrangler": "^4.128.0",
-    "@modelcontextprotocol/client": "2.3.1"
+    "wrangler": "^4.128.0"
   }
 }
