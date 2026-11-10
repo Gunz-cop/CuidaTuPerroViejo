@@ -81,7 +81,10 @@ Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 
 El dueño está rediseñando estas piezas; van **en cola** y se retoman cuando él lo indique. No tocarlas antes.
 
 - [ ] **Calculadora de calidad de vida (HHHHHMM):** llevarla al estándar de la calculadora de edad. Hoy su lógica de interfaz vive en una página de 812 líneas, sin componente en `src/components/tools/` ni tests. Pasarla por `crear-herramienta-interactiva` (componente, `src/lib/`, tarjeta, imagen hero, responsive 390/820/1366) y auditarla en otra sesión. Antes, el dueño decide si muestra tramos por el total o sigue sin clasificarlo, y se registra en `docs/herramientas/decisiones-del-propietario.md`. (Anotado: 2026-10-21)
-- [ ] **Asistente IA (chat):** rediseño, incluida la pantalla en modo oscuro, que hoy se percibe poco pulida y con bajo confort visual.
+- [x] **Asistente IA (chat):** rehecho sobre Claude Sonnet 5.5 leyendo las guías publicadas, con recomendación de artículos, conversación con seguimiento, interfaz nueva (claro/oscuro) y métricas en `/admin/asistente` — rama `claude/laughing-pascal-811xgf` (2026-11-10). Detalle en `docs/asistente-ia/ASISTENTE-CLAUDE.md`.
+  - [ ] **Activarlo en producción (propietario):** `npx wrangler secret put ANTHROPIC_API_KEY` y `npx wrangler d1 migrations apply cuidatuperroviejo-contact --remote`. Sin la clave sigue respondiendo el flujo anterior. Fijar también un límite de gasto en la consola de Anthropic. (2026-11-10)
+  - [ ] **Validar la calidad de las respuestas con la API real:** el rediseño se probó contra una API simulada. Revisar 15–20 consultas reales, y con los datos del panel decidir modelo (`ASSISTANT_MODEL`) y esfuerzo (`ASSISTANT_EFFORT`). (2026-11-10)
+  - [ ] **Decidir si se retira «Assistant V2»** (`src/lib/assistant/v2/`, `src/content/assistant/`, `tests/assistant-v2/`, `scripts/assistant-v2-eval/` y sus documentos): quedó sin uso. (2026-11-10)
 - [ ] **Aplicación de IA:** rediseño en cola junto con el asistente. (Anotado: 2026-10-21)
 - [ ] **Tests de lógica para movilidad y calidad de vida:** solo `dog-age` tiene tests (`tests/dog-age.test.ts`). (Anotado: 2026-10-21)
 - [x] Pilar `/herramientas` alineado con la calculadora: el total HHHHHMM no se clasifica por tramos; se retiran «la más usada» (sin dato) y se precisa qué se envía y qué no — PR #140 (2026-10-21).

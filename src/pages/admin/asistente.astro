@@ -1,0 +1,276 @@
+---
+// Panel de uso del asistente IA. Lee las tablas de
+// migrations/0003_assistant_metrics.sql y está protegido igual que el resto de /admin.
+import { env } from 'cloudflare:workers';
+import { hashIp, hasValidBasicAuth, unauthorizedResponse } from '../../lib/contact/security';
+
+export const prerender = false;
+
+if (env.ADMIN_LIMIT) {
+  const ip = Astro.request.headers.get('cf-connecting-ip') || 'unknown';
+  const key = await hashIp(ip, env.CONTACT_IP_HASH_SALT || 'admin-rate-limit');
+  const outcome = await env.ADMIN_LIMIT.limit({ key });
+  if (!outcome.success) {
+    return new Response('Demasiadas solicitudes. Inténtalo de nuevo en un minuto.', {
+      status: 429,
+      headers: { 'Retry-After': '60', 'Cache-Control': 'no-store' },
+    });
+  }
+}
+
+if (!hasValidBasicAuth(Astro.request, env.CONTACT_ADMIN_USER, env.CONTACT_ADMIN_PASSWORD)) {
+  return unauthorizedResponse();
+}
+
+Astro.response.headers.set('Cache-Control', 'no-store');
+
+const RANGES = [7, 30, 90] as const;
+const requestedDays = Number(new URL(Astro.request.url).searchParams.get('dias'));
+const days = RANGES.find((value) => value === requestedDays) ?? 30;
+const since = new Date(Date.now() - (days - 1) * 86_400_000).toISOString().slice(0, 10);
+
+type Totals = {
+  consultas: number; conversaciones: number; visitantes: number; con_guia: number; urgentes: number;
+  claude: number; util: number; no_util: number; tokens_entrada: number; tokens_salida: number;
+  tokens_cache: number; latencia_media: number | null;
+};
+type DayRow = { day: string; consultas: number; visitantes: number; con_guia: number; claude: number; clics: number };
+type GuideRow = { href: string; recomendaciones: number; clics: number };
+type QuestionRow = { created_at: string; surface: string; source: string; question: string | null; recommended: string; feedback: string | null; urgent: number };
+
+const db = env.CONTACT_DB;
+let loadError = '';
+let totals: Totals | null = null;
+let clicks = 0;
+let byDay: DayRow[] = [];
+let guides: GuideRow[] = [];
+let gaps: QuestionRow[] = [];
+let recent: QuestionRow[] = [];
+
+if (db) {
+  try {
+    const [totalsRow, clicksRow, dayRows, guideRows, gapRows, recentRows] = await db.batch([
+      db.prepare(
+        `SELECT COUNT(*) AS consultas,
+                COUNT(DISTINCT conversation_id) AS conversaciones,
+                COUNT(DISTINCT day || visitor_hash) AS visitantes,
+                COALESCE(SUM(recommended_count > 0), 0) AS con_guia,
+                COALESCE(SUM(urgent), 0) AS urgentes,
+                COALESCE(SUM(source = 'claude'), 0) AS claude,
+                COALESCE(SUM(feedback = 'up'), 0) AS util,
+                COALESCE(SUM(feedback = 'down'), 0) AS no_util,
+                COALESCE(SUM(input_tokens), 0) AS tokens_entrada,
+                COALESCE(SUM(output_tokens), 0) AS tokens_salida,
+                COALESCE(SUM(cache_read_tokens), 0) AS tokens_cache,
+                ROUND(AVG(latency_ms)) AS latencia_media
+         FROM assistant_interactions WHERE day >= ?`,
+      ).bind(since),
+      db.prepare(
+        `SELECT COUNT(*) AS n FROM assistant_clicks c
+         JOIN assistant_interactions i ON i.id = c.interaction_id WHERE i.day >= ?`,
+      ).bind(since),
+      db.prepare(
+        `SELECT i.day,
+                COUNT(*) AS consultas,
+                COUNT(DISTINCT i.visitor_hash) AS visitantes,
+                SUM(i.recommended_count > 0) AS con_guia,
+                SUM(i.source = 'claude') AS claude,
+                (SELECT COUNT(*) FROM assistant_clicks c JOIN assistant_interactions j ON j.id = c.interaction_id WHERE j.day = i.day) AS clics
+         FROM assistant_interactions i WHERE i.day >= ? GROUP BY i.day ORDER BY i.day DESC`,
+      ).bind(since),
+      db.prepare(
+        `SELECT r.value AS href,
+                COUNT(*) AS recomendaciones,
+                (SELECT COUNT(*) FROM assistant_clicks c JOIN assistant_interactions j ON j.id = c.interaction_id
+                 WHERE c.href = r.value AND j.day >= ?1) AS clics
+         FROM assistant_interactions i, json_each(i.recommended) r
+         WHERE i.day >= ?1 GROUP BY r.value ORDER BY recomendaciones DESC LIMIT 30`,
+      ).bind(since),
+      db.prepare(
+        `SELECT created_at, surface, source, question, recommended, feedback, urgent
+         FROM assistant_interactions
+         WHERE day >= ? AND recommended_count = 0 AND question IS NOT NULL
+         ORDER BY created_at DESC LIMIT 60`,
+      ).bind(since),
+      db.prepare(
+        `SELECT created_at, surface, source, question, recommended, feedback, urgent
+         FROM assistant_interactions WHERE day >= ? ORDER BY created_at DESC LIMIT 60`,
+      ).bind(since),
+    ]);
+    totals = (totalsRow?.results?.[0] as Totals | undefined) ?? null;
+    clicks = Number((clicksRow?.results?.[0] as { n?: number } | undefined)?.n ?? 0);
+    byDay = (dayRows?.results ?? []) as DayRow[];
+    guides = (guideRows?.results ?? []) as GuideRow[];
+    gaps = (gapRows?.results ?? []) as QuestionRow[];
+    recent = (recentRows?.results ?? []) as QuestionRow[];
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    loadError = message.includes('no such table')
+      ? 'Faltan las tablas de métricas. Aplica la migración: npx wrangler d1 migrations apply cuidatuperroviejo-contact --remote'
+      : `No se pudieron cargar las métricas: ${message}`;
+  }
+} else {
+  loadError = 'CONTACT_DB no está configurado.';
+}
+
+const percent = (part: number, whole: number) => (whole > 0 ? `${Math.round((part / whole) * 100)} %` : '—');
+const number = (value: number | null | undefined) => Number(value ?? 0).toLocaleString('es');
+const parseHrefs = (value: string): string[] => {
+  try {
+    const parsed = JSON.parse(value) as unknown;
+    return Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === 'string') : [];
+  } catch {
+    return [];
+  }
+};
+const SOURCE_LABEL: Record<string, string> = {
+  claude: 'Claude', ai: 'Respaldo (Workers AI)', emergency: 'Urgencia (texto fijo)',
+  clarification: 'Aclaración (texto fijo)', articles: 'Respaldo (solo guías)',
+};
+const total = Number(totals?.consultas ?? 0);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Uso del asistente IA</title>
+    <style>
+      body { margin: 0; font-family: system-ui, sans-serif; color: #1f2933; background: #f6f5ef; line-height: 1.45; }
+      main { max-width: 1100px; margin: 0 auto; padding: 32px 20px 64px; }
+      header { display: flex; justify-content: space-between; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 24px; }
+      h1 { margin: 0; font-size: 28px; }
+      h2 { margin: 36px 0 6px; font-size: 20px; }
+      .hint { margin: 0 0 12px; color: #647067; font-size: 14px; }
+      nav { display: flex; gap: 8px; flex-wrap: wrap; }
+      nav a { color: #45634f; border: 1px solid #c9d3c4; padding: 8px 12px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+      nav a[aria-current="page"] { background: #45634f; color: #fff; border-color: #45634f; }
+      .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+      .tile { background: #fff; border: 1px solid #e2dfd3; border-radius: 8px; padding: 14px 16px; }
+      .tile b { display: block; font-size: 26px; font-variant-numeric: tabular-nums; }
+      .tile span { color: #647067; font-size: 13px; }
+      .scroll { overflow-x: auto; background: #fff; border: 1px solid #e2dfd3; border-radius: 8px; }
+      table { width: 100%; border-collapse: collapse; font-size: 14px; }
+      th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid #efece2; vertical-align: top; }
+      th { background: #faf9f4; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: #647067; white-space: nowrap; }
+      td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+      tr:last-child td { border-bottom: 0; }
+      td a { color: #45634f; word-break: break-all; }
+      .empty, .error { background: #fff; border: 1px solid #e2dfd3; border-radius: 8px; padding: 18px; }
+      .error { border-color: #fecaca; color: #7f1d1d; }
+      .tag { display: inline-block; background: #f1f0e8; border-radius: 999px; padding: 2px 8px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+      .tag.urgent { background: #fee2e2; color: #7f1d1d; }
+      .q { min-width: 260px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Uso del asistente IA</h1>
+        <nav aria-label="Periodo">
+          {RANGES.map((value) => (
+            <a href={`/admin/asistente?dias=${value}`} aria-current={value === days ? 'page' : undefined}>{value} días</a>
+          ))}
+          <a href="/admin/contact-messages">Mensajes</a>
+        </nav>
+      </header>
+
+      {loadError && <p class="error">{loadError}</p>}
+
+      {!loadError && totals && (
+        <>
+          <p class="hint">Desde el {since} (UTC). «Visitantes» cuenta huellas anónimas distintas por día; una misma persona en dos días cuenta dos veces.</p>
+          <div class="tiles">
+            <div class="tile"><b>{number(total)}</b><span>consultas</span></div>
+            <div class="tile"><b>{number(totals.visitantes)}</b><span>visitantes (por día)</span></div>
+            <div class="tile"><b>{number(totals.conversaciones)}</b><span>conversaciones</span></div>
+            <div class="tile"><b>{percent(Number(totals.con_guia), total)}</b><span>con guía recomendada</span></div>
+            <div class="tile"><b>{number(clicks)}</b><span>clics en guías ({percent(clicks, Number(totals.con_guia))} de las respuestas con guía)</span></div>
+            <div class="tile"><b>{number(totals.util)} / {number(totals.no_util)}</b><span>votos útil / no útil</span></div>
+            <div class="tile"><b>{percent(Number(totals.claude), total)}</b><span>respondidas por Claude</span></div>
+            <div class="tile"><b>{number(totals.urgentes)}</b><span>posibles urgencias</span></div>
+            <div class="tile"><b>{totals.latencia_media === null ? '—' : `${(Number(totals.latencia_media) / 1000).toFixed(1)} s`}</b><span>tiempo medio de respuesta</span></div>
+            <div class="tile"><b>{number(totals.tokens_entrada)}</b><span>tokens de entrada ({number(totals.tokens_cache)} desde caché)</span></div>
+            <div class="tile"><b>{number(totals.tokens_salida)}</b><span>tokens de salida</span></div>
+          </div>
+
+          {total === 0 && <p class="empty" style="margin-top:16px">Todavía no hay consultas registradas en este periodo.</p>}
+
+          {byDay.length > 0 && (
+            <>
+              <h2>Por día</h2>
+              <div class="scroll">
+                <table>
+                  <thead><tr><th>Día</th><th class="n">Consultas</th><th class="n">Visitantes</th><th class="n">Con guía</th><th class="n">Clics</th><th class="n">Claude</th></tr></thead>
+                  <tbody>
+                    {byDay.map((row) => (
+                      <tr><td>{row.day}</td><td class="n">{number(row.consultas)}</td><td class="n">{number(row.visitantes)}</td><td class="n">{number(row.con_guia)}</td><td class="n">{number(row.clics)}</td><td class="n">{number(row.claude)}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+
+          {guides.length > 0 && (
+            <>
+              <h2>Guías más recomendadas</h2>
+              <div class="scroll">
+                <table>
+                  <thead><tr><th>Guía</th><th class="n">Recomendada</th><th class="n">Clics</th></tr></thead>
+                  <tbody>
+                    {guides.map((row) => (
+                      <tr><td><a href={row.href}>{row.href}</a></td><td class="n">{number(row.recomendaciones)}</td><td class="n">{number(row.clics)}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+
+          {gaps.length > 0 && (
+            <>
+              <h2>Consultas sin guía recomendada</h2>
+              <p class="hint">Temas que la gente pregunta y el sitio aún no cubre: candidatos a artículo nuevo.</p>
+              <div class="scroll">
+                <table>
+                  <thead><tr><th>Fecha (UTC)</th><th>Consulta</th><th>Origen</th></tr></thead>
+                  <tbody>
+                    {gaps.map((row) => (
+                      <tr><td>{row.created_at}</td><td class="q">{row.question}</td><td>{SOURCE_LABEL[row.source] ?? row.source}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+
+          {recent.length > 0 && (
+            <>
+              <h2>Últimas consultas</h2>
+              <div class="scroll">
+                <table>
+                  <thead><tr><th>Fecha (UTC)</th><th>Consulta</th><th>Guías recomendadas</th><th>Dónde</th><th>Origen</th><th>Voto</th></tr></thead>
+                  <tbody>
+                    {recent.map((row) => (
+                      <tr>
+                        <td>{row.created_at}</td>
+                        <td class="q">{row.urgent ? <span class="tag urgent">urgencia</span> : null} {row.question ?? <em>(texto no guardado)</em>}</td>
+                        <td>{parseHrefs(row.recommended).map((href) => <div><a href={href}>{href}</a></div>)}</td>
+                        <td>{row.surface === 'widget' ? 'Widget' : row.surface === 'page' ? 'Página' : 'API'}</td>
+                        <td>{SOURCE_LABEL[row.source] ?? row.source}</td>
+                        <td>{row.feedback === 'up' ? '👍' : row.feedback === 'down' ? '👎' : ''}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+        </>
+      )}
+    </main>
+  </body>
+</html>
