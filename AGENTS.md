@@ -25,6 +25,16 @@ Cuando el usuario pida crear, rediseñar o mejorar una herramienta o app del pil
 
 Para revisar una herramienta ya hecha, usa [`.agents/skills/auditar-herramienta-interactiva/SKILL.md`](.agents/skills/auditar-herramienta-interactiva/SKILL.md). Igual que con los artículos: quien crea no audita y quien audita no corrige.
 
+## Ilustraciones y dibujos
+
+**No dibujes perros, personas ni escenas a mano en SVG o CSS.** Preferencia del propietario del 2026-11-10: el perro del estado «sin resultados» del buscador, hecho con trazos SVG, quedó feo. Los iconos geométricos simples (lupa, flecha, huella de la marca) sí se hacen en código.
+
+Cuando una interfaz, animación o artículo necesite una ilustración:
+
+1. Dilo antes de construirla y entrega el encargo listo: qué se ve, estilo, paleta del sitio, fondo (transparente si va sobre claro y oscuro), proporción y tamaño, y las capas o fotogramas que haga falta para animarla.
+2. El propietario la genera con ChatGPT o con Higgsfield (conectado el 2026-11-10). Si el conector de la sesión permite generar, úsalo; si solo permite leer, pide la imagen y recógela del historial de generaciones.
+3. Mientras llega, deja un marcador sobrio (la huella de la marca), no un dibujo propio.
+
 ## Redacción de contenido de blog
 
 Antes de generar un briefing o redactar/auditar un artículo de blog para `cuidatuperroviejo.com`, lee el [control compartido de calidad editorial](.agents/skills/references/calidad-editorial-adsense.md) y consulta las skills en `.agents/skills/`. La extensión se justifica por utilidad, los casos requieren procedencia y cada recurso prometido debe funcionar. Máximo tres auditorías por documento; si la tercera falla, detener y revisar con el usuario. La voz y el tono se rigen por la [guía de voz y tono](.agents/skills/references/guia-voz-tono.md); mídelos con `python3 .agents/skills/references/scripts/tono.py`.

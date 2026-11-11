@@ -104,27 +104,11 @@ const PAW = 'M12 11.2c-3.5 0-6.4 2.7-6.4 6 0 2 1.5 3.2 3.4 3.2 1.1 0 2-.5 3-.5s1
 
       <!-- Sin resultados: nunca un callejón sin salida -->
       <div class="ss-view ss-empty" data-ss-view="empty" hidden>
-        <svg class="ss-dog" viewBox="0 0 200 110" aria-hidden="true">
-          <path class="ss-dog-ground" d="M14 96h172" />
-          <g class="ss-dog-tail"><path d="M148 52c10-4 16-14 15-26" /></g>
-          <g class="ss-dog-body">
-            <path d="M128 92V70M142 92V68M84 92V72M98 92V72" class="ss-dog-legs" />
-            <rect x="76" y="44" width="76" height="34" rx="17" />
-          </g>
-          <g class="ss-dog-head">
-            <path d="M92 50 66 66" class="ss-dog-neck" />
-            <ellipse cx="62" cy="68" rx="17" ry="13" />
-            <path d="M50 70c-9 1-15 5-18 10 4 4 11 5 18 2" class="ss-dog-snout" />
-            <circle cx="33" cy="80" r="3.2" class="ss-dog-nose" />
-            <path d="M70 58c8 2 12 10 10 20-6-1-11-6-13-13" class="ss-dog-ear" />
-            <circle cx="56" cy="66" r="1.9" class="ss-dog-eye" />
-          </g>
-          <g class="ss-dog-sniff">
-            <circle cx="24" cy="86" r="2" style="--i:0" />
-            <circle cx="16" cy="80" r="2.6" style="--i:1" />
-            <circle cx="9" cy="72" r="3.2" style="--i:2" />
-          </g>
-        </svg>
+        {/* Marcador provisional. Aquí va la ilustración del perro olfateando que
+            genera el propietario (ver «Ilustraciones y dibujos» en AGENTS.md). */}
+        <span class="ss-empty-art" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="7.2" cy="8" r="2.2"></circle><circle cx="16.8" cy="8" r="2.2"></circle><circle cx="4.8" cy="12.7" r="1.9"></circle><circle cx="19.2" cy="12.7" r="1.9"></circle><path d={PAW}></path></svg>
+        </span>
         <p class="ss-empty-title">No encontramos nada para <strong data-ss-term></strong></p>
         <p class="ss-empty-text">Prueba con una palabra más corta o con otro nombre para lo mismo. También puedes describir lo que le pasa a tu perro y el asistente te orienta.</p>
         <a class="ss-ask" href="/asistente-ia" data-ss-ask>
@@ -374,16 +358,12 @@ const PAW = 'M12 11.2c-3.5 0-6.4 2.7-6.4 6 0 2 1.5 3.2 3.4 3.2 1.1 0 2-.5 3-.5s1
   .ss-ask:hover { transform: translateY(-2px); background: var(--color-brand-primary-hover); }
   .ss-ask svg { width: 1.15rem; height: 1.15rem; }
 
-  .ss-dog { width: 13rem; height: auto; margin: 0 auto; overflow: visible; fill: none; stroke: var(--color-brand-primary); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
-  .ss-dog-ground { stroke: var(--color-brand-border); stroke-dasharray: 2 9; }
-  .ss-dog-body rect, .ss-dog-head ellipse { fill: var(--color-bg-card); }
-  .ss-dog-snout { fill: var(--color-bg-card); }
-  .ss-dog-ear { fill: var(--color-brand-primary); }
-  .ss-dog-nose, .ss-dog-eye { fill: var(--color-brand-primary); stroke: none; }
-  .ss-dog-neck { stroke-width: 15; stroke: var(--color-bg-card); }
-  .ss-dog-head { transform-origin: 92px 50px; animation: ss-nod 1.5s ease-in-out infinite; }
-  .ss-dog-tail { transform-origin: 148px 52px; animation: ss-wag 0.5s ease-in-out infinite alternate; }
-  .ss-dog-sniff circle { stroke: none; fill: var(--color-brand-accent); opacity: 0; animation: ss-puff 1.5s ease-out infinite; animation-delay: calc(var(--i) * 0.18s + 0.3s); }
+  .ss-empty-art {
+    display: inline-flex; align-items: center; justify-content: center; width: 4.5rem; height: 4.5rem;
+    color: var(--color-brand-primary); background: rgb(var(--color-brand-primary-rgb) / 0.1); border-radius: 999px;
+    animation: ss-breathe 2.4s ease-in-out infinite;
+  }
+  .ss-empty-art svg { width: 2.25rem; height: 2.25rem; }
 
   /* ---- Pie con atajos (solo donde hay teclado) ---- */
   .ss-foot {
@@ -428,9 +408,7 @@ const PAW = 'M12 11.2c-3.5 0-6.4 2.7-6.4 6 0 2 1.5 3.2 3.4 3.2 1.1 0 2-.5 3-.5s1
   @keyframes ss-rise { from { opacity: 0; transform: translateY(0.6rem); } }
   @keyframes ss-sweep { to { background-size: 100% 100%; } }
   @keyframes ss-step { 0%, 100% { opacity: 0.12; } 35% { opacity: 0.9; } 70% { opacity: 0.12; } }
-  @keyframes ss-nod { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-5deg); } }
-  @keyframes ss-wag { from { transform: rotate(-9deg); } to { transform: rotate(13deg); } }
-  @keyframes ss-puff { 0% { opacity: 0; transform: translate(4px, 4px) scale(0.6); } 30% { opacity: 0.7; } 100% { opacity: 0; transform: translate(-6px, -8px) scale(1.2); } }
+  @keyframes ss-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
   @keyframes ss-rotate {
     0% { opacity: 0; transform: translateY(70%); }
     3%, 22% { opacity: 1; transform: none; }
