@@ -4,7 +4,7 @@ Experiencia propia aportada por el dueño el 2026-11-11. Material de procedencia
 
 ## Relato del dueño
 
-Dakota (beagle, nacida en 2014) dormía en su cama ortopédica cuando una abeja le picó una pata. Despertó moviendo la pata y la abeja cayó al suelo. Le revisaron la pata sin encontrar hinchazón ni aguijón; no se sabe si la picadura fue por encima o en las almohadillas. Le dieron un analgésico masticable en forma de huesito, identificado en el blíster (`blister-analgesico.jpg`): **COX-II 1 mg, Kirón México, meloxicam 1 mg por tableta, uso veterinario, registro Q-0790-005**. Le dieron **una sola tableta**. Dakota pesa entre 20 y 23 kg y tiene sobrepeso; el dueño eligió una tableta a propósito, para desinflamar y aliviar sin pasarse. Después solo se lamía las patas. No encontraron el aguijón; al dueño le preocupa que se lo trague al lamerse.
+Dakota (beagle, nacida en 2014) dormía en su cama ortopédica cuando una abeja le picó una pata. Despertó moviendo la pata y la abeja cayó al suelo; ya se iba a morir, pero el dueño igual la mató. Le revisaron la pata sin encontrar hinchazón ni aguijón; no se sabe si la picadura fue por encima o en las almohadillas. Le dieron un analgésico masticable en forma de huesito, identificado en el blíster (`blister-analgesico.jpg`): **COX-II 1 mg, Kirón México, meloxicam 1 mg por tableta, uso veterinario, registro Q-0790-005**. Le dieron **una sola tableta**. Dakota pesa entre 20 y 23 kg y tiene sobrepeso; el dueño eligió una tableta a propósito, para desinflamar y aliviar sin pasarse. Después solo se lamía las patas. No encontraron el aguijón; al dueño le preocupa que se lo trague al lamerse.
 
 ## Segunda revisión (esa misma noche)
 
@@ -42,3 +42,10 @@ En las fotos no se ve hinchazón en la cara ni en el hocico, ni ronchas. Se ve t
 ## Pendiente
 
 - Nada pendiente del relato. Antes de publicar: recortar fotos para no mostrar el interior de la casa.
+
+## Decisiones del propietario (2026-11-12)
+
+- **Meloxicam (D1):** en palabras del dueño, sus veterinarios se lo recetan siempre para el dolor: cuando a Luna o a Dakota se les reventaba una verruga o un bulto, cuando Dakota se mordió la pata arrancándose una verruga y en su episodio de displasia de cadera, cuando no se podía mover. Los veterinarios le preguntan si lo tiene en casa y le indicaron darles una tableta como máximo ante un dolor puntual, por pocos días, y consultar si el dolor es mucho. Lo guarda para emergencias (caída, golpe, herida) y renueva el blíster antes de que caduque. La tableta del 2026-11-11 se dio bajo esa indicación previa.
+- **Fotos (D2):** autoriza usar las que hagan falta («las que ocupes»), recortadas.
+- **País (D3):** Costa Rica; se puede decir.
+- **Edad:** nacida en 2014; el mes no consta en el expediente.

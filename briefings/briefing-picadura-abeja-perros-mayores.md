@@ -1,6 +1,6 @@
 # 📋 BRIEF DE CONTENIDOS TÉCNICO: Picadura de abeja en perros mayores: qué hacer en casa y cuándo ir al veterinario
 
-**Sitio:** cuidatuperroviejo.com | **Pilar:** Salud de Perros Mayores | **Tipo:** Artículo spoke (Astro/MDX) | **Versión:** v1, 2026-11-12
+**Sitio:** cuidatuperroviejo.com | **Pilar:** Salud de Perros Mayores | **Tipo:** Artículo spoke (Astro/MDX) | **Versión:** v2, 2026-11-12 (corrige la auditoría R1, `docs/contenido/picadura-abeja-perros-mayores/auditoria-brief-r1.md`)
 
 **Origen del encargo:** el propietario vivió la picadura de Dakota la noche del 2026-11-11, la documentó con fotos durante la noche y la mañana siguiente, y pidió el briefing el 2026-11-12. Expediente con relato, fotos y vídeo: `docs/experiencias/dakota-picadura-abeja-2026-11-11/`.
 
@@ -15,9 +15,9 @@
 | **Título H1** | Picadura de abeja en perros mayores: qué hacer en casa y cuándo ir al veterinario |
 | **Título SEO (seoTitle)** | Picadura de abeja en perros: qué hacer y cuándo ir (50 caracteres, contados con `len()`) |
 | **Keyword Principal** | picadura de abeja en perros |
-| **Keywords Secundarias** | a mi perro le picó una abeja · perro picado por abeja en la pata · cómo sacar el aguijón a un perro · reacción alérgica picadura perro · meloxicam picadura perro |
+| **Keywords Secundarias** | a mi perro le picó una abeja · perro picado por abeja en la pata · cómo sacar el aguijón a un perro · reacción alérgica picadura perro · qué darle a mi perro por una picadura de abeja (se responde «nada sin llamar al veterinario»; nunca con pauta) |
 | **Slug** | `picadura-abeja-perros-mayores` |
-| **Meta descripción** | A mi perro le picó una abeja: qué hacer, qué no darle y qué señales vigilar. Lo que vivimos con Dakota, nuestra beagle de 12 años, y cuándo ir a urgencias. (155 caracteres, contados con `len()`) |
+| **Meta descripción** | A mi perro le picó una abeja: qué hacer, qué no darle y qué señales vigilar. Lo que vivimos con Dakota, nuestra beagle senior, y cuándo ir a urgencias. (151 caracteres, contados con `len()`) |
 | **Ruta Relativa** | `/salud-perros-mayores/picadura-abeja-perros-mayores` |
 | **Pilar** | Salud de Perros Mayores |
 | **Ruta Pilar** | `/salud-perros-mayores` |
@@ -36,7 +36,7 @@
 ---
 title: "Picadura de abeja en perros mayores: qué hacer en casa y cuándo ir al veterinario"
 seoTitle: "Picadura de abeja en perros: qué hacer y cuándo ir"
-metaDescription: "A mi perro le picó una abeja: qué hacer, qué no darle y qué señales vigilar. Lo que vivimos con Dakota, nuestra beagle de 12 años, y cuándo ir a urgencias."
+metaDescription: "A mi perro le picó una abeja: qué hacer, qué no darle y qué señales vigilar. Lo que vivimos con Dakota, nuestra beagle senior, y cuándo ir a urgencias."
 pilar: "salud-perros-mayores"
 keywordPrincipal: "picadura de abeja en perros"
 heroImage: "/images/blog/picadura-abeja-perros-mayores/beagle-senior-pata-almohadilla-revision.webp"
@@ -58,7 +58,7 @@ datePublished: "AAAA-MM-DD"
 
 **Relato depurado (limpieza de transcripción, Fase 1.4):** se quitaron muletillas («¿verdad?», «pues», «este») y se ordenaron los hechos. No se añadió ningún dato. Las correcciones de dictado fueron «Cox-11 / Cox-II» y «Quirón / Corión», que el blíster resuelve como **COX-II 1 mg, Kirón México**.
 
-> Dakota, nuestra beagle nacida en 2014, dormía en su cama ortopédica cuando una abeja le picó en una pata. Se despertó moviendo la pata y vimos caer la abeja al suelo, ya moribunda. Le revisamos la pata y no encontramos hinchazón ni aguijón; no sabíamos si le había picado por encima o en las almohadillas. Le dimos una tableta de un antiinflamatorio veterinario con meloxicam que teníamos en casa. Después solo se lamía las patas.
+> Dakota, nuestra beagle nacida en 2014, dormía en su cama ortopédica cuando una abeja le picó en una pata. Se despertó moviendo la pata y vimos caer la abeja al suelo; ya se iba a morir, pero igual la matamos. Le revisamos la pata y no encontramos hinchazón ni aguijón; no sabíamos si le había picado por encima o en las almohadillas. Le dimos una tableta de un antiinflamatorio veterinario con meloxicam que teníamos en casa. Después solo se lamía las patas.
 >
 > Más tarde vimos por dónde le había picado: una de las almohadillas estaba roja, sin aguijón a la vista. Seguía lamiéndose, pero vino a buscarnos para que la acariciáramos. Con caricias en el pecho y la panza se quedaba tranquila y hasta se ponía panza arriba; en cuanto dejábamos de acariciarla, volvía a lamerse la pata. Aprovechaba para lamérsela incluso mientras le acariciábamos el pecho.
 >
@@ -90,14 +90,14 @@ datePublished: "AAAA-MM-DD"
 - **D2 — Fotos reales.** ¿Autoriza publicar fotos de Dakota recortadas para que no se vea el interior de la casa ni a personas? Selección propuesta en §8.
 - **D3 — País.** ¿Se puede decir en qué país ocurrió? Hoy el brief no lo dice y el artículo tampoco debe hacerlo sin autorización.
 
-**Declaración para el lector:** al abrir la Introducción, una línea en cursiva: *«Lo que contamos aquí lo vivimos con Dakota, nuestra beagle de 12 años, la noche del 11 de noviembre de 2026. Es una experiencia doméstica, no un caso clínico: no la vio un veterinario. Las ilustraciones son generadas con IA; las fotografías de Dakota se identifican como tales en su pie.»*
+**Declaración para el lector:** al abrir la Introducción, una línea en cursiva: *«Lo que contamos aquí lo vivimos con Dakota, nuestra beagle senior nacida en 2014, la noche del 11 de noviembre de 2026. Es una experiencia doméstica, no un caso clínico: no la vio un veterinario. Las ilustraciones son generadas con IA; las fotografías de Dakota se identifican como tales en su pie.»*
 
 **Pregunta del lector y respuesta práctica:** «A mi perro le acaba de picar una abeja: ¿qué hago, qué le doy y cuándo me preocupo?». Respuesta: saca el aguijón rápido y como puedas, frío local, vigila 30 minutos sin dejarlo solo, ve a urgencias ante cualquier señal sistémica, no le des medicación humana, y apunta lo que pasó porque la próxima picadura puede ser peor.
 
 **Aportación propia** (lo que no ofrecen las páginas genéricas sobre picaduras):
 
 1. **Cronología real de una reacción local en una perra senior**, con fotos con hora: qué se ve a la hora, a las tres horas y a la mañana siguiente. Sirve como referencia de «esto es lo normal».
-2. **El dato que casi nadie cuenta:** en el estudio de Zúrich, el 42 % de los perros que la primera vez solo tuvieron una reacción leve tuvieron una reacción sistémica cuando les volvió a picar (Chapman et al., 2024). Con eso se arma una **ficha para la próxima picadura** que el lector puede copiar.
+2. **Qué se sabe de la siguiente picadura, sin exagerar:** en el estudio de Zúrich, de los 24 perros alérgicos cuya primera reacción solo afectó a la piel de forma generalizada (ronchas, enrojecimiento o hinchazón por el cuerpo), 10 tuvieron una reacción sistémica grave al volver a ser picados (Chapman et al., 2024). El estudio **no incluye reacciones solo locales** como la de Dakota, y para ellas no hay dato canino. Con eso se arma una **ficha para la próxima picadura**, justificada por su utilidad: si un día la reacción es distinta, el veterinario tendrá el registro de la anterior.
 3. **Buscar el aguijón en una pata**, el segundo sitio de picadura más frecuente en ese estudio (28 %). Es justo donde le picó a Dakota.
 4. **Medicación honesta:** contamos lo que hicimos y explicamos por qué un antiinflamatorio no se improvisa en un perro mayor, con la guía de la FDA.
 
@@ -123,7 +123,7 @@ datePublished: "AAAA-MM-DD"
 
 2. **Visscher PK, Vetter RS, Camazine S. «Removing bee stings». *Lancet*. 1996;348(9023):301-2.** PMID [8709689](https://pubmed.ncbi.nlm.nih.gov/8709689/), DOI 10.1016/s0140-6736(96)01367-0. Comprobado 2026-11-12 (resumen).
    - *Dato clave (resumen, «Findings»):* el tamaño del habón, y con él la cantidad de veneno, aumentó a medida que se tardaba en quitar el aguijón, «incluso en pocos segundos». No hubo diferencia entre rasparlo o pellizcarlo a los 2 s. Interpretación de los autores: hay que insistir en quitarlo rápido, sin preocuparse por el método.
-   - *H2:* H2-1. *Límites:* es un estudio en personas, con muy pocos voluntarios (la propia literatura posterior lo califica de evidencia débil). Se usa solo para la mecánica del aguijón de abeja, que es la misma sea cual sea el animal picado. No se extrapolan resultados clínicos a perros.
+   - *H2:* H2-1. *Límites:* es un estudio en personas, con muy pocos voluntarios. Se usa solo para la mecánica del aguijón de abeja, que es la misma sea cual sea el animal picado. No se extrapolan resultados clínicos a perros.
 
 3. **Shmuel DL, Cortes Y. «Anaphylaxis in dogs and cats». *J Vet Emerg Crit Care*. 2013;23(4):377-94.** PMID [23855441](https://pubmed.ncbi.nlm.nih.gov/23855441/), DOI 10.1111/vec.12066. Comprobado 2026-11-12 (resumen).
    - *Datos clave (resumen):* la anafilaxia es una reacción de hipersensibilidad tipo I, sistémica y con frecuencia mortal. Puede desencadenarla, entre otros, el veneno de insectos. El diagnóstico es clínico, por reconocimiento de un patrón de signos. La adrenalina (epinefrina) es el fármaco de elección; fluidos, antihistamínicos H1/H2, corticoides y broncodilatadores son coadyuvantes y «no sustituyen a la adrenalina».
@@ -135,9 +135,10 @@ datePublished: "AAAA-MM-DD"
      - Estudio retrospectivo de 178 perros picados por himenópteros y atendidos en el Hospital Veterinario de la Facultad Vetsuisse de Zúrich entre 2018 y 2022 (resumen).
      - Sitio de picadura documentado en 163 perros: cara 39 %, **pata 28 %**, boca 21 % (Resultados, 3.1).
      - Factores asociados a reacciones sistémicas graves en el análisis multivariable: picadura en la boca (OR 2,62), menos de 2 años (OR 2,11), menos de 10 kg (OR 2,06), raza pura (OR 2,43) y **enfermedades concurrentes en el momento de la picadura (OR 4,48; IC 95 % 1,28–15,71)** (Resultados, 3.3).
-     - Historia natural en los 43 perros con picaduras posteriores (Resultados, 3.2): de los 24 con reacción leve la primera vez, 14 (58 %) volvieron a tener una reacción leve y **10 (42 %) tuvieron una reacción sistémica**. De los 19 con reacción moderada o grave, 12 (63 %) la repitieron igual o peor.
+     - Historia natural en los 43 perros con picaduras posteriores (Resultados, 3.2): de los 24 con reacción leve la primera vez, 14 (58 %) volvieron a tener una reacción leve y **10 (42 %) tuvieron una reacción sistémica grave (SSR, grados 2–3)**. **Atención: en este estudio «leve» es el grado 1 de anafilaxia de la tabla 2 («Skin: generalized erythema, urticaria and/or angioedema»), en perros diagnosticados de alergia al veneno; no es una reacción local en el sitio de la picadura.**
+     - Tabla 2 (grados de anafilaxia): grado 1, piel (eritema generalizado, urticaria, angioedema); grado 2, digestivo o respiratorio (vómitos, diarrea, disnea, estridor); grado 3, cardiovascular o neurológico (palidez, cianosis, colapso, pérdida de consciencia). Es el sustento de los signos de la AlertBox `danger` de H2-2. De los 19 con reacción moderada o grave, 12 (63 %) la repitieron igual o peor.
      - La mediana de edad fue 1,7 años (rango 0,2–14,7). En personas, la mayor edad aumenta el riesgo (Discusión).
-   - *H2:* H2-3 (pata), H2-5 (próxima picadura, enfermedades concurrentes, edad). *Límites:* es una población hospitalaria de referencia, con sesgo hacia los casos graves. El seguimiento de picaduras posteriores es de solo 43 perros. La población es joven, así que **no hay dato canino de que la edad avanzada aumente el riesgo**: el redactor solo puede decir que en personas sí ocurre y que en perros no se ha estudiado bien. Las enfermedades concurrentes son una asociación, no una causa demostrada.
+   - *H2:* H2-2 (signos, tabla 2), H2-3 (pata), H2-5 (próxima picadura, enfermedades concurrentes, edad). *Límites:* es una población hospitalaria de referencia, con sesgo hacia los casos graves. El seguimiento de picaduras posteriores es de solo 43 perros. La población es joven, así que **no hay dato canino de que la edad avanzada aumente el riesgo**: el redactor solo puede decir que en personas sí ocurre y que en perros no se ha estudiado bien. Las enfermedades concurrentes son una asociación, no una causa demostrada.
 
 5. **Nagy AL. «Wasp, Bee, and Ant Stings to Animals». *Merck Veterinary Manual* (versión profesional), revisión completa de abril de 2026; revisado por Brutlag A.** [URL](https://www.merckvetmanual.com/toxicology/bites-and-stings-from-spiders-scorpions-and-insects/wasp-bee-and-ant-stings-to-animals). Leída el 2026-11-12.
    - *Datos clave (sección):*
@@ -234,7 +235,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 ---
 
 ### H2-2 — Reacción normal o urgencia: las señales que no esperan — Target: ~700 palabras
-* *Sustentado en:* Fitzgerald y Flood 2006 (cuatro tipos de reacción; la anafilaxia no depende del número de picaduras; ≈20 picaduras/kg en envenenamiento masivo); Shmuel y Cortes 2013 (anafilaxia como diagnóstico clínico; adrenalina como tratamiento de elección); Manual Merck (abejas africanizadas, signos de envenenamiento masivo).
+* *Sustentado en:* Fitzgerald y Flood 2006 (cuatro tipos de reacción; la anafilaxia no depende del número de picaduras; ≈20 picaduras/kg en envenenamiento masivo); Shmuel y Cortes 2013 (anafilaxia como diagnóstico clínico; adrenalina como tratamiento de elección); Chapman et al. 2024, tabla 2 (signos por grado de anafilaxia); Manual Merck (abejas africanizadas, signos de envenenamiento masivo).
 * *Objetivo:* que el lector distinga en casa lo que puede vigilar de lo que exige salir ya.
 
 * `### Lo esperable: dolor, hinchazón y lamidas en la zona`
@@ -251,7 +252,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
     [Borrador: hinchazón de la cara, el hocico o la garganta; ronchas por el cuerpo; respiración difícil o ruidosa; vómitos o diarrea tras la picadura; debilidad, desmayo o encías pálidas; picadura dentro de la boca; muchas picaduras; tambaleo o convulsiones. Llama mientras vas.]
   </AlertBox>
   ```
-  * Fuentes de cada signo: hinchazón facial, ronchas, vómitos, colapso y respiración (patrón de anafilaxia: Shmuel y Cortes, Merck); boca (Chapman, H2-5); muchas picaduras y signos neurológicos (Merck). El redactor no añade signos que no estén en estas fuentes.
+  * Fuentes de cada signo: ronchas, hinchazón de cara y garganta, respiración difícil o ruidosa, vómitos y diarrea, encías pálidas, colapso o desmayo (Chapman et al. 2024, tabla 2, grados de anafilaxia); picadura en la boca (Chapman, análisis de riesgo, H2-5); muchas picaduras, tambaleo y convulsiones (Merck). Shmuel y Cortes sostiene el diagnóstico clínico y la adrenalina, no la lista de signos. El redactor no añade signos que no estén en estas fuentes.
 
 ---
 
@@ -261,7 +262,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 
 * `### La primera revisión: nada a la vista`
   * Le miramos la pata y no encontramos hinchazón ni aguijón. No sabíamos si había sido por encima o en la almohadilla. Dato de Chapman: la pata es uno de los sitios más frecuentes.
-  * Foto real con la hora: `foto-05` o `foto-04` (§8).
+  * Foto real: `foto-05` (§8).
 * `### La almohadilla roja y las lamidas`
   * La segunda revisión: la almohadilla roja, sin aguijón visible. Las lamidas mientras le acariciábamos el pecho («una sinvergüenza», palabra del propietario; se puede usar con cariño). Foto `foto-10`.
   * Explicar por qué una almohadilla molesta tanto, sin cifras ni anatomía no respaldadas: el redactor no añade datos de inervación que no estén en las fuentes. Basta con lo observado: «le dolía y se lo decía a su manera».
@@ -278,7 +279,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 
 * `### Lo que hicimos nosotros, y lo que haríamos distinto`
   * Decisión D1 resuelta: Dakota tomó una tableta del antiinflamatorio veterinario (meloxicam) que su veterinario ya le había recetado por otros episodios de dolor, entre ellos su displasia de cadera, y que nos indicó tener en casa. Contarlo sin marca, miligramos, mg/kg ni días de tratamiento.
-  * El mensaje para el lector: lo que hicimos funcionó porque el veterinario ya conocía a Dakota y nos había dado esa indicación. Si tu perro no tiene una indicación así, llama antes de darle nada, aunque tengas el mismo medicamento en casa. Pide a tu veterinario un plan para emergencias como el nuestro.
+  * El mensaje para el lector: lo hicimos así porque su veterinario ya conocía a Dakota y nos había dado esa indicación; no sabemos si la tableta influyó. Si tu perro no tiene una indicación así, llama antes de darle nada, aunque tengas el mismo medicamento en casa. Pide a tu veterinario un plan para emergencias como el nuestro.
   * Mencionar que Dakota pesa 20–23 kg y tiene sobrepeso solo si ayuda a explicar por qué la dosis la decide el veterinario. Nunca como cálculo.
 * `### Por qué un analgésico de persona puede hacer daño`
   * FDA: «los perros no son personas pequeñas». Ibuprofeno, naproxeno, paracetamol y aspirina no se dan sin indicación.
@@ -302,8 +303,8 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 * *Objetivo:* la aportación propia del artículo, convertir lo vivido en un plan.
 
 * `### Lo que encontró el estudio de Zúrich`
-  * 178 perros. De los que volvieron a ser picados y la primera vez solo tuvieron una reacción leve, 10 de 24 tuvieron una reacción sistémica la segunda vez. Decir el número absoluto junto al porcentaje y el límite: hospital de referencia, seguimiento solo de 43 perros.
-  * Por eso «esta vez fue leve» no promete que la próxima lo sea. Sin alarmismo: la mayoría repitió una reacción leve.
+  * 178 perros alérgicos al veneno atendidos en un hospital de referencia. De los 24 cuya primera reacción solo afectó a la piel de forma generalizada (ronchas, enrojecimiento o hinchazón por el cuerpo) y que volvieron a ser picados, 10 tuvieron una reacción sistémica grave. Decir el número absoluto, que «leve» en el estudio ya es una reacción de todo el cuerpo y el límite: hospital de referencia, seguimiento de solo 43 perros.
+  * Mensaje: si tu perro tuvo alguna vez ronchas o hinchazón por el cuerpo tras una picadura, la siguiente puede ser peor y conviene hablarlo con el veterinario antes de que ocurra. Si fue solo en el sitio, como la de Dakota, el estudio no lo incluye y en perros no hay datos. Sin alarmismo en ninguno de los dos casos.
 * `### Perros mayores con otras enfermedades`
   * Las enfermedades concurrentes se asociaron a reacciones más graves (OR 4,48): explicarlo como «los perros que ya tenían otra enfermedad tuvieron más reacciones graves», aclarando que es una asociación. La edad avanzada aumenta el riesgo en personas, pero en perros no se ha estudiado bien porque la mayoría de los perros del estudio eran jóvenes. No afirmar más.
   * Picadura en la boca, perros pequeños: mencionarlo brevemente para el lector con otros perros. Dakota pesa más de 10 kg y le picó en la pata, sin convertirlo en garantía.
@@ -318,7 +319,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 * *Sustentado en:* experiencia aportada (§2).
 * *Objetivo:* **cierre del arco** como sección propia, no como frase suelta.
 
-* 10:37 a. m. del 12 de noviembre: la pata sin hinchazón, caminando por toda la casa, salió afuera, ladró y vino a pedir comida. Fotos `foto-11`/`foto-12` con Rookie.
+* 10:37 a. m. del 12 de noviembre: la pata sin hinchazón, caminando por toda la casa, salió afuera, ladró y vino a pedir comida. Foto `foto-12` con Rookie (§8).
 * Rookie como detalle de normalidad: a Dakota normalmente le cuesta tolerarlo y esa mañana estuvo tranquila. Sin interpretarlo clínicamente.
 * El límite, dicho con calma: no la vio un veterinario; fue una reacción local que pasó sola o con ayuda, y no sabemos cuál. Seguimos revisando la almohadilla y apuntamos la picadura en su ficha (enlazar mentalmente con H2-5).
 
@@ -334,7 +335,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
     { question: '¿Puedo darle a mi perro un antihistamínico de los que tomo yo?', answer: 'Solo si te lo indica tu veterinario, que decide el producto y la dosis. En una reacción grave no sustituye a la adrenalina (Shmuel y Cortes).' },
     { question: '¿Puedo darle ibuprofeno o paracetamol para el dolor?', answer: 'No. Los analgésicos de persona pueden dañar el estómago, el riñón o el hígado de tu perro (FDA).' },
     { question: '¿Qué hago si le picó dentro de la boca?', answer: 'Ve al veterinario: en el estudio de Zúrich, las picaduras en la boca se asociaron a reacciones más graves.' },
-    { question: '¿Si esta vez fue leve, la próxima también lo será?', answer: 'No necesariamente: 10 de 24 perros con una primera reacción leve tuvieron una reacción sistémica cuando les volvieron a picar (Chapman et al.).' },
+    { question: '¿Si esta vez fue leve, la próxima también lo será?', answer: 'Depende de qué fue leve. Si tuvo ronchas o hinchazón por el cuerpo, la siguiente puede ser peor: 10 de 24 perros así tuvieron una reacción grave al volver a ser picados (Chapman et al.). Si fue solo en el sitio de la picadura, no hay datos en perros; apunta lo que pasó y coméntalo con tu veterinario.' },
     { question: '¿Bicarbonato, vinagre o barro sirven para la picadura?', answer: 'No hay estudios en perros que los respalden. Lo que sí está recomendado es retirar el aguijón y aplicar frío (Merck).' }
   ]} />
   ```
@@ -354,7 +355,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 **Plan:** una portada ilustrada, dos ilustraciones didácticas y hasta cuatro fotografías reales de Dakota, si el propietario lo autoriza (D2). Flujo: [crear-animaciones-articulo-blog](../.agents/skills/crear-animaciones-articulo-blog/SKILL.md) y [dirección visual editorial](../.agents/skills/references/direccion-visual-editorial.md). No se planifican animaciones: el artículo se entiende con imágenes estáticas y el propietario no las ha pedido.
 
 > [!IMPORTANT]
-> **Razas recientes** (registro de `direccion-visual-editorial.md`, comprobado el 2026-11-12): procesionaria, perro de aguas español; miedo a la pólvora, mestizo criollo canela; petardos, bodeguero andaluz; leishmaniosis, mestizo pastor-mastín; golpe de calor, podenco.
+> **Razas recientes** (registro de `direccion-visual-editorial.md`, comprobado el 2026-11-12): procesionaria, perro de aguas español; miedo a la pólvora, mestizo criollo canela, y en sus testimonios Luna y Dakota, beagles en fotografía real; petardos, bodeguero andaluz; leishmaniosis, mestizo pastor-mastín; golpe de calor, podenco. Además, la portada de `como-dar-medicacion-perro`, enlace puente de este artículo, también es beagle.
 > **Raza elegida: beagle**, repetida respecto de la serie de alimentación sin dientes, poliquezia, olfato y uñas. **Motivo documentado:** el caso publicado es de Dakota, que es beagle, y el artículo lleva sus fotos reales. Una ilustración de otra raza junto a las fotos de Dakota confundiría al lector. Las ilustraciones representan a una beagle senior **ilustrativa, inspirada en el tipo de Dakota**, y no se presentan como Dakota.
 
 > [!IMPORTANT]
@@ -366,10 +367,10 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 |---|---|---|---|
 | `foto-05.jpg` | H2-3, primera revisión | Solo la perra y la cama: fuera la consola, la tele y los muebles | *Fotografía: Dakota en su cama la noche de la picadura, 11 de noviembre de 2026.* |
 | `foto-10.jpg` | H2-3, la almohadilla y las lamidas | Fuera el brazo y el suelo, o conservar solo la mano si el propietario lo prefiere | *Fotografía: Dakota lamiéndose la pata mientras le acariciábamos el pecho.* |
-| `foto-12.jpg` | H2-6, la mañana siguiente | Fuera la transportadora, el escritorio y los objetos personales | *Fotografía: a la mañana siguiente, pidiendo comida con Rookie al lado.* |
+| `foto-12.jpg` | H2-6, la mañana siguiente | Fuera la transportadora, el escritorio, el sofá, la alfombra y los objetos personales | *Fotografía: a la mañana siguiente, pidiendo comida con Rookie al lado.* |
 | `foto-02.jpg` (opcional) | Introducción | Cara y cama | *Fotografía: Dakota relamiéndose después de la picadura.* |
 
-Comprobar en cada foto final: ninguna persona identificable, ningún documento, pantalla ni dato de la vivienda; exportar en `.webp`; alt fiel («Fotografía de Dakota, beagle tricolor de 12 años, …»). Las fotos tienen poca luz: corregir solo exposición y balance, sin retoque que cambie lo que se ve. El vídeo (`video-01.mov`) no se publica: es solo evidencia.
+Comprobar en cada foto final: ninguna persona identificable, ningún documento, pantalla ni dato de la vivienda; exportar en `.webp`; alt fiel («Fotografía de Dakota, beagle tricolor senior, …»). Las fotos tienen poca luz: corregir solo exposición y balance, sin retoque que cambie lo que se ve. El vídeo (`video-01.mov`) no se publica: es solo evidencia.
 
 ### Ficha y prompts de ilustración
 
@@ -409,19 +410,19 @@ Comprobar en cada foto final: ninguna persona identificable, ningún documento, 
 | Función y sección | H2-1, «Saca el aguijón cuanto antes»: enseñar el gesto de retirarlo raspando de lado con una tarjeta. |
 | Entorno | Primer plano sobre la misma funda de borrego y la baldosa. |
 | Materiales | Tarjeta plástica lisa sin logotipos, pelaje blanco del dorso de la pata, aguijón pequeño y oscuro con el saco de veneno diminuto adherido. |
-| Sujeto | Misma beagle; se ve la pata y, al fondo y desenfocado, parte del hocico canoso para mantener la identidad y la edad. |
+| Sujeto | Misma beagle; la pata en primer plano y, detrás, desenfocados pero legibles, la cabeza apoyada y parte del lomo y la cadera, para comprobar los cinco rasgos de edad. |
 | Acción | Una mano sujeta la pata por el carpo y la otra desliza el canto de la tarjeta en paralelo a la piel, desde un lado del aguijón. La tarjeta toca el pelo, no se clava. |
-| Cámara y luz | Macro editorial a 45°, luz natural difusa de ventana desde arriba a la derecha, profundidad de campo corta centrada en el aguijón y el canto de la tarjeta. |
-| Exclusiones y aceptación | Rechazar: aguijón desproporcionado, tarjeta con marca o con números, sangre, piel lacerada, pinzas, manos con 6 dedos, pata deformada. Aceptación: a 390 px se distinguen el aguijón y la dirección del raspado; el hocico canoso del fondo cumple la edad. |
+| Cámara y luz | Plano detalle amplio (no macro extremo) a 45°, con la cabeza y el lomo dentro del encuadre; luz natural difusa de ventana desde arriba a la derecha, profundidad de campo corta centrada en el aguijón y el canto de la tarjeta. |
+| Exclusiones y aceptación | Rechazar: aguijón desproporcionado, tarjeta con marca o con números, sangre, piel lacerada, pinzas, manos con 6 dedos, pata deformada. Aceptación: a 390 px se distinguen el aguijón y la dirección del raspado; además, canas sí/no, ojos sí/no, lomo sí/no, postura sí/no, sin enfermedad sí/no, comprobados en la cabeza y el lomo desenfocados del fondo. |
 
 * **Archivo:** `beagle-senior-retirar-aguijon-abeja-tarjeta.webp`
 * **Prompt:**
   ```text
   Imagen editorial para la sección «Saca el aguijón cuanto antes» de un artículo sobre picadura de abeja en perros mayores; debe permitir entender cómo se retira un aguijón raspando de lado con una tarjeta.
-  Sujeto: la misma beagle hembra senior ilustrativa, tricolor (manto negro en el lomo, cabeza y orejas canela muy aclaradas, pecho, patas y punta de la cola blancos), complexión robusta con algo de sobrepeso, unos 20 kg; en primer plano el dorso blanco de una pata delantera y, al fondo desenfocado, parte de su cabeza. Edad visible: hocico, cejas y párpados blanquecinos y el canela aclarado y apagado; ojo visible algo hundido, con el párpado ligeramente caído y la mirada serena; lomo ancho con la línea dorsal suavizada, visible en el borde del encuadre; postura tumbada y tranquila de perra mayor; sin heridas, sangre, hinchazón exagerada ni sufrimiento.
+  Sujeto: la misma beagle hembra senior ilustrativa, tricolor (manto negro en el lomo, cabeza y orejas canela muy aclaradas, pecho, patas y punta de la cola blancos), complexión robusta con algo de sobrepeso, unos 20 kg; en primer plano el dorso blanco de una pata delantera y, detrás y desenfocados pero legibles, la cabeza apoyada y parte del lomo y la cadera. Edad visible: hocico, cejas y párpados blanquecinos y el canela aclarado y apagado; ojo visible algo hundido, con el párpado ligeramente caído y la mirada serena; lomo ancho y algo hundido, con la línea dorsal suavizada y menos masa en los cuartos traseros, visibles en el fondo; postura tumbada y tranquila de perra mayor; sin heridas, sangre, hinchazón exagerada ni sufrimiento.
   Entorno: funda de borrego beige de una cama ortopédica sobre baldosa de barro rojizo.
   Acción: una mano adulta sujeta la pata por el carpo con firmeza suave; la otra desliza el canto de una tarjeta plástica lisa, sin logotipos ni números, en paralelo a la piel, empujando de lado un aguijón pequeño y oscuro con un diminuto saco de veneno adherido; la tarjeta toca el pelo sin clavarse.
-  Cámara macro editorial a 45 grados; luz natural difusa de ventana desde arriba a la derecha; profundidad de campo corta centrada en el aguijón y el canto de la tarjeta; texturas de pelo blanco corto y borrego.
+  Cámara en plano detalle amplio a 45 grados, con la cabeza y parte del lomo dentro del encuadre; luz natural difusa de ventana desde arriba a la derecha; profundidad de campo corta centrada en el aguijón y el canto de la tarjeta; texturas de pelo blanco corto y borrego.
   Acabado documental natural, sin estética de catálogo.
   Evitar: aguijón desproporcionado o caricaturizado, pinzas, sangre, piel lacerada, manos con dedos de más, pata deformada, tarjeta de crédito con marca.
   Ilustración generada; no representa un paciente ni acredita un resultado clínico.
@@ -459,7 +460,7 @@ Comprobar en cada foto final: ninguna persona identificable, ningún documento, 
 ### Recortes transparentes y animaciones que necesitan al perro
 * No aplica: ningún apoyo visual necesita un recorte ni animación.
 
-**Al cerrar el brief:** añadir al registro de razas de `direccion-visual-editorial.md` la fila «Picadura de abeja (brief, 2026-11-12) | Beagle tricolor senior ilustrativa + fotografías reales de Dakota (repetición justificada por el caso)».
+Fila del registro de razas ya añadida en `direccion-visual-editorial.md`.
 
 ---
 
@@ -474,7 +475,7 @@ Comprobar en cada foto final: ninguna persona identificable, ningún documento, 
 | 1 | Fitzgerald y Flood 2006 | H2-1, H2-2 | ☐ |
 | 2 | Visscher, Vetter y Camazine 1996 | H2-1 | ☐ |
 | 3 | Shmuel y Cortes 2013 | H2-2, H2-4 | ☐ |
-| 4 | Chapman et al. 2024 (Zúrich) | H2-3, H2-5 | ☐ |
+| 4 | Chapman et al. 2024 (Zúrich) | H2-2 (tabla 2), H2-3, H2-5 | ☐ |
 | 5 | Manual Veterinario Merck (Nagy, 2026) | H2-1, H2-2, H2-3, H2-4 | ☐ |
 | 6 | FDA, «Get the Facts about Pain Relievers for Pets» | H2-4 | ☐ |
 
@@ -503,7 +504,7 @@ Comprobar en cada foto final: ninguna persona identificable, ningún documento, 
 
 **De este briefing (comprobado al generarlo; queda pendiente la auditoría independiente):**
 - [x] Frontmatter con `pilar: "salud-perros-mayores"`, válido en `src/content.config.ts`.
-- [x] `seoTitle` de 50 caracteres y `metaDescription` de 155 (contados con `len()`).
+- [x] `seoTitle` de 50 caracteres y `metaDescription` de 151 (contados con `len()`).
 - [x] Seis fuentes con identificador o URL profunda comprobados el 2026-11-12. Una candidata descartada por no verificable.
 - [x] Enlaces internos a artículos publicados (§5).
 - [x] Sin canibalización.
