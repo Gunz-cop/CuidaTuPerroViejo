@@ -26,6 +26,10 @@ export const CROSS_PILLAR_LINKS: Record<string, string[]> = {
     'ulceras-presion-perros',
     'prevencion-caidas-perro-mayor',
   ],
+  'camas-entrada-baja-perro-mayor-comparativa': [
+    'cama-ortopedica-perros-mayores-displasia-artrosis',
+    'prevencion-caidas-perro-mayor',
+  ],
   'chequeo-geriatrico-canino': [
     'vacunas-desparasitacion-perros-senior',
     'sindrome-cushing-perros-mayores',
@@ -103,6 +107,11 @@ export const TOOL_LINKS: Record<string, { href: string; label: string; descripti
     href: '/herramientas/selector-movilidad-perros-mayores',
     label: 'Selector de ayudas de movilidad para perros mayores',
     description: 'Compara qué apoyo puede encajar mejor según la movilidad de tu perro.',
+  },
+  'camas-entrada-baja-perro-mayor-comparativa': {
+    href: '/herramientas/selector-movilidad-perros-mayores',
+    label: 'Selector de ayudas de movilidad para perros mayores',
+    description: 'Orienta qué apoyo de movilidad conviene comentar con tu veterinario; sus resultados no incluyen ofertas.',
   },
   'prevencion-caidas-perro-mayor': {
     href: '/herramientas/selector-movilidad-perros-mayores',

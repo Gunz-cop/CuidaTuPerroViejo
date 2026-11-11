@@ -34,6 +34,27 @@ export const AFFILIATE_PLACEMENTS: readonly AffiliatePlacement[] = [
     label: 'Cama tipo sofá · guía de camas',
     trackingId: 'default',
   },
+  {
+    id: 'camas-cmp-a',
+    provider: 'aliexpress',
+    page: '/movilidad-dolor-perros-mayores/camas-entrada-baja-perro-mayor-comparativa',
+    label: 'Cama tipo sofá · comparativa de camas',
+    trackingId: 'camas-cmp-a',
+  },
+  {
+    id: 'camas-cmp-b',
+    provider: 'aliexpress',
+    page: '/movilidad-dolor-perros-mayores/camas-entrada-baja-perro-mayor-comparativa',
+    label: 'Colchón plano XL · comparativa de camas',
+    trackingId: 'camas-cmp-b',
+  },
+  {
+    id: 'camas-cmp-c',
+    provider: 'aliexpress',
+    page: '/movilidad-dolor-perros-mayores/camas-entrada-baja-perro-mayor-comparativa',
+    label: 'Cama elevada L · comparativa de camas',
+    trackingId: 'camas-cmp-c',
+  },
 ];
 
 export const PROVIDER_LABEL: Record<AffiliateProvider, string> = {

@@ -1,0 +1,103 @@
+---
+// I-2 e I-3 de la comparativa de camas de entrada baja.
+// I-2: cómo medir al perro tumbado y diferencia exterior / interior.
+// I-3: superficies útiles declaradas a escala (B XL 105×70; C L 87×69).
+// La ficha A no tiene superficie interior asignable por variante y no se dibuja.
+interface Props { pieza: 'medir' | 'escala'; }
+const { pieza } = Astro.props;
+---
+
+{pieza === 'medir' && (
+  <figure class="cmv">
+    <svg viewBox="0 0 640 300" role="img" aria-labelledby="cmv-medir-t cmv-medir-d">
+      <title id="cmv-medir-t">Cómo medir a un perro tumbado estirado y en bola, y diferencia entre medida exterior e interior de una cama</title>
+      <desc id="cmv-medir-d">A la izquierda, una cama vista desde arriba con la medida exterior por fuera de los bordes y la medida interior entre ellos. A la derecha, un perro estirado medido de la nariz a la base de la cola y un perro en bola medido de lado a lado.</desc>
+      <g class="cmv-bed">
+        <rect x="20" y="40" width="260" height="190" rx="22" class="cmv-border" />
+        <rect x="52" y="72" width="196" height="142" rx="10" class="cmv-inner" />
+        <line x1="20" y1="22" x2="280" y2="22" class="cmv-dim" marker-start="url(#cmv-a)" marker-end="url(#cmv-a)" />
+        <text x="150" y="16" class="cmv-t" text-anchor="middle">Exterior (talla anunciada)</text>
+        <line x1="52" y1="250" x2="248" y2="250" class="cmv-dim cmv-key" marker-start="url(#cmv-b)" marker-end="url(#cmv-b)" />
+        <text x="150" y="272" class="cmv-t cmv-strong" text-anchor="middle">Interior: lo que usa</text>
+        <text x="150" y="150" class="cmv-t" text-anchor="middle">Superficie útil</text>
+        <text x="150" y="62" class="cmv-s" text-anchor="middle">borde</text>
+      </g>
+      <g class="cmv-dogs">
+        <text x="470" y="40" class="cmv-t cmv-strong" text-anchor="middle">Estirado</text>
+        <ellipse cx="470" cy="85" rx="78" ry="20" class="cmv-dog" />
+        <circle cx="560" cy="80" r="16" class="cmv-dog" />
+        <path d="M392 88 q-22 4 -34 -8" class="cmv-tail" />
+        <line x1="392" y1="120" x2="576" y2="120" class="cmv-dim cmv-key" marker-start="url(#cmv-b)" marker-end="url(#cmv-b)" />
+        <text x="484" y="140" class="cmv-s" text-anchor="middle">nariz → cola</text>
+        <text x="470" y="185" class="cmv-t cmv-strong" text-anchor="middle">En bola</text>
+        <circle cx="470" cy="230" r="34" class="cmv-dog" />
+        <line x1="420" y1="282" x2="520" y2="282" class="cmv-dim cmv-key" marker-start="url(#cmv-b)" marker-end="url(#cmv-b)" />
+        <text x="575" y="236" class="cmv-s" text-anchor="middle">lado</text>
+      </g>
+      <defs>
+        <marker id="cmv-a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" class="cmv-mk" /></marker>
+        <marker id="cmv-b" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" class="cmv-mk-key" /></marker>
+      </defs>
+    </svg>
+    <figcaption>Compara la medida de tu perro tumbado con la superficie interior, la que queda entre los bordes. En el diagrama de la ficha A, los bordes restan unos 10–13 cm por eje.</figcaption>
+  </figure>
+)}
+
+{pieza === 'escala' && (
+  <figure class="cmv">
+    <svg viewBox="0 0 640 270" role="img" aria-labelledby="cmv-esc-t cmv-esc-d">
+      <title id="cmv-esc-t">Superficie útil declarada de dos camas, vista desde arriba y a la misma escala</title>
+      <desc id="cmv-esc-d">El colchón plano talla XL ocupa 105 por 70 centímetros. El área de descanso de la cama elevada talla L ocupa 87 por 69 centímetros. La cama tipo sofá no se dibuja porque su superficie interior por talla no está confirmada.</desc>
+      <defs>
+        <pattern id="cmv-grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0 L0 0 0 25" class="cmv-grid" /></pattern>
+      </defs>
+      <rect x="20" y="30" width="262.5" height="175" class="cmv-inner cmv-scaled" />
+      <rect x="20" y="30" width="262.5" height="175" fill="url(#cmv-grid)" />
+      <text x="151" y="22" class="cmv-t cmv-strong" text-anchor="middle">B · colchón plano XL</text>
+      <text x="151" y="122" class="cmv-t" text-anchor="middle">105 × 70 cm</text>
+      <rect x="340" y="30" width="217.5" height="172.5" class="cmv-inner cmv-alt cmv-scaled" />
+      <rect x="340" y="30" width="217.5" height="172.5" fill="url(#cmv-grid)" />
+      <text x="449" y="22" class="cmv-t cmv-strong" text-anchor="middle">C · cama elevada L</text>
+      <text x="449" y="122" class="cmv-t" text-anchor="middle">87 × 69 cm</text>
+      <line x1="20" y1="232" x2="70" y2="232" class="cmv-dim cmv-key" />
+      <text x="78" y="236" class="cmv-s">20 cm · cuadro: 10 cm</text>
+    </svg>
+    <figcaption>Superficies útiles declaradas por el vendedor, a escala: colchón plano XL, 105 × 70 cm; área de descanso de la cama elevada L, 87 × 69 cm. La cama tipo sofá no aparece porque su superficie interior por talla no está confirmada.</figcaption>
+  </figure>
+)}
+
+<style>
+  .cmv {
+    --cmv-line: #7a5a48;
+    --cmv-fill: #fbeee2;
+    --cmv-fill-alt: #eef3ea;
+    --cmv-key: #a33e24;
+    --cmv-text: #27160f;
+    --cmv-dog: #c9a98f;
+    margin: 2rem 0;
+  }
+  :global(.dark) .cmv {
+    --cmv-line: #c9a58c;
+    --cmv-fill: #2b231e;
+    --cmv-fill-alt: #222a22;
+    --cmv-key: #f2a66f;
+    --cmv-text: #fff5ec;
+    --cmv-dog: #8a6e5a;
+  }
+  .cmv svg { display: block; width: 100%; height: auto; max-width: 640px; margin-inline: auto; }
+  .cmv-border { fill: var(--cmv-dog); opacity: .45; stroke: var(--cmv-line); stroke-width: 2; }
+  .cmv-inner { fill: var(--cmv-fill); stroke: var(--cmv-line); stroke-width: 2; }
+  .cmv-alt { fill: var(--cmv-fill-alt); }
+  .cmv-scaled { stroke: var(--cmv-key); }
+  .cmv-grid { fill: none; stroke: var(--cmv-line); stroke-width: .6; opacity: .45; }
+  .cmv-dim { stroke: var(--cmv-line); stroke-width: 2; }
+  .cmv-key { stroke: var(--cmv-key); stroke-width: 3; }
+  .cmv-mk { fill: var(--cmv-line); }
+  .cmv-mk-key { fill: var(--cmv-key); }
+  .cmv-dog { fill: var(--cmv-dog); stroke: var(--cmv-line); stroke-width: 1.5; }
+  .cmv-tail { fill: none; stroke: var(--cmv-line); stroke-width: 4; stroke-linecap: round; }
+  .cmv-t { fill: var(--cmv-text); font-size: 21px; font-family: inherit; }
+  .cmv-s { fill: var(--cmv-text); font-size: 18px; font-family: inherit; }
+  .cmv-strong { font-weight: 700; }
+  .cmv figcaption { margin-top: .6rem; font-size: .9rem; line-height: 1.45; font-style: italic; }
+</style>
