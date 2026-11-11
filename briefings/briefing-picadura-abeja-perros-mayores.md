@@ -4,7 +4,7 @@
 
 **Origen del encargo:** el propietario vivió la picadura de Dakota la noche del 2026-11-11, la documentó con fotos durante la noche y la mañana siguiente, y pidió el briefing el 2026-11-12. Expediente con relato, fotos y vídeo: `docs/experiencias/dakota-picadura-abeja-2026-11-11/`.
 
-**Estado:** brief generado, **pendiente de auditoría independiente** (`auditar-briefing-contenido`) antes de redactar. Quien generó este brief no lo audita.
+**Estado:** **APTO CON RESERVAS en R4/5** (auditoría independiente sobre `ab81a4b`, `docs/contenido/picadura-abeja-perros-mayores/auditoria-brief-r4.md`). Las tres reservas P2 (R4-1 a R4-3) se aplicaron después como ajustes literales sin cambio de contenido. Listo para redactar.
 
 ---
 
@@ -72,7 +72,7 @@ datePublished: "AAAA-MM-DD"
 |---|---|---|
 | Picadura en una pata, mientras dormía en su cama ortopédica, en Costa Rica | Relato; país, decisión D3 del propietario | No se vio la picadura; se dedujo por la abeja en el suelo y la pata. |
 | Almohadilla enrojecida, sin aguijón visible | Relato, segunda revisión | No se sabe si el aguijón quedó dentro. |
-| Una tableta de COX-II 1 mg (meloxicam), Kirón México, registro Q-0790-005 | Relato + `blister-analgesico.jpg` | Recetado por su veterinario para episodios de dolor; tenerlo en casa fue indicación veterinaria (D1). |
+| Una tableta de COX-II 1 mg (meloxicam), Kirón México, registro Q-0790-005 | Relato + `blister-analgesico.jpg` | Recetado por su veterinario para episodios de dolor; sus veterinarios saben que lo tiene en casa y le preguntan por él (D1). |
 | Peso 20–23 kg, con sobrepeso | Relato | Estimación del propietario, no pesada en báscula ese día. |
 | Hora de las primeras fotos: 9:02 p. m. | Reloj visible en `foto-01` | La hora exacta de la picadura no consta. |
 | Dormida y roncando a las 10:02 p. m. | Relato | — |
@@ -80,7 +80,7 @@ datePublished: "AAAA-MM-DD"
 
 **Decisiones del propietario (resueltas el 2026-11-12):**
 
-- **D1 — Origen del meloxicam: recetado.** Sus veterinarios se lo han recetado a Luna y a Dakota en varias consultas por dolor: verrugas o bultos que se reventaban, la vez que Dakota se mordió la pata arrancándose una verruga y su episodio de displasia de cadera, cuando no se podía mover. Los veterinarios le preguntan si lo tiene en casa y según el propietario, le indicaron que ante un dolor puntual puede darles una tableta, por pocos días, y que si el dolor es fuerte o sigue, vayan a consulta. El propietario lo guarda para emergencias (caída, golpe o herida) y renueva el blíster antes de que caduque. **Cómo se cuenta:** «el antiinflamatorio que su veterinario ya le había recetado para episodios de dolor y que sabe que tenemos en casa». **No se publican** la cantidad de días que mencionó el propietario («menos de 5, 3 como máximo»), la potencia, el número de tabletas como pauta ni la marca: son indicaciones individuales para sus perras, no una pauta para el lector.
+- **D1 — Origen del meloxicam: recetado.** Sus veterinarios se lo han recetado a Luna y a Dakota en varias consultas por dolor: verrugas o bultos que se reventaban, la vez que Dakota se mordió la pata arrancándose una verruga y su episodio de displasia de cadera, cuando no se podía mover. Los veterinarios le preguntan si lo tiene en casa y según el propietario, le indicaron que ante un dolor puntual puede darles una tableta, por pocos días, y que si el dolor es mucho, vayan a consulta. El propietario lo guarda para emergencias (caída, golpe o herida) y renueva el blíster antes de que caduque. **Cómo se cuenta:** «el antiinflamatorio que su veterinario ya le había recetado para episodios de dolor y que sabe que tenemos en casa». **No se publican** la cantidad de días que mencionó el propietario («menos de 5, 3 como máximo»), la potencia, el número de tabletas como pauta ni la marca: son indicaciones individuales para sus perras, no una pauta para el lector.
 - **D2 — Fotos reales: autorizadas** («las que ocupes»), con los recortes de §8.
 - **D3 — País: Costa Rica**, se puede decir. Úsalo en la Introducción o en H2-3 una vez, y en H2-2 para dar contexto a las abejas africanizadas, que son las de la región, sin inventar datos locales (no hay fuente costarricense en §3). El español sigue siendo neutro.
 
@@ -115,7 +115,7 @@ datePublished: "AAAA-MM-DD"
 ## 3. FUENTES CIENTÍFICAS DE AUTORIDAD (SOURCE-FIRST)
 
 > [!IMPORTANT]
-> Las seis fuentes se comprobaron el 2026-11-12. Para las de PubMed, identificador y resumen se leyeron con NCBI E-utilities (`efetch`), no de memoria. El estudio de Zúrich se leyó a texto completo en Europe PMC (PMC11591281). La página del Manual Merck y la de la FDA se abrieron y se citaron frases literales. Se descartó una sexta candidata, Quantz et al. 2009 (edema de vesícula biliar en la anafilaxia canina), porque no se pudo confirmar su PMID ni su autoría.
+> Las seis fuentes se comprobaron el 2026-11-12. Para las de PubMed, identificador y resumen se leyeron con NCBI E-utilities (`efetch`), no de memoria. El estudio de Zúrich se leyó a texto completo en Europe PMC (PMC11591281). La página del Manual Merck y la de la FDA se abrieron y se citaron frases literales. Se descartó una séptima candidata, Quantz et al. 2009 (edema de vesícula biliar en la anafilaxia canina), porque no se pudo confirmar su PMID ni su autoría.
 
 1. **Fitzgerald KT, Flood AA. «Hymenoptera stings». *Clin Tech Small Anim Pract*. 2006;21(4):194-204.** PMID [17265905](https://pubmed.ncbi.nlm.nih.gov/17265905/), DOI 10.1053/j.ctsap.2006.10.002. Comprobado 2026-11-12 (resumen).
    - *Datos clave (resumen):* las abejas pierden el aguijón con arpón al picar, mientras que avispas y avispones pueden picar varias veces. Hay cuatro tipos de reacción: local, regional, anafilaxia sistémica y, con menos frecuencia, hipersensibilidad tardía. En una picadura de abeja o avispa lo típico es eritema, edema y dolor en el sitio. Los signos anafilácticos graves «suelen aparecer en los 10 minutos siguientes a la picadura». La anafilaxia no depende de la dosis ni del número de picaduras. La dosis letal estimada en envenenamiento masivo es de ≈20 picaduras/kg en la mayoría de los mamíferos. Las picaduras sin complicación se tratan de forma conservadora (antihistamínicos, frío o compresas frescas, lidocaína o corticoide tópicos) y la mayoría se resuelven en unas horas sin tratamiento. Todos los animales picados deben vigilarse de cerca.
@@ -330,7 +330,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 * **FAQ (7 preguntas):** borrador de datos estructurados; el redactor ajusta las respuestas a las fuentes de cada H2.
   ```mdx
   <FAQ items={[
-    { question: '¿Cuánto tarda en bajar la hinchazón de una picadura de abeja en un perro?', answer: 'Una reacción local suele mejorar en horas (Fitzgerald y Flood). Si crece, se extiende o sigue igual al día siguiente, consulta.' },
+    { question: '¿Cuánto tarda en bajar la hinchazón de una picadura de abeja en un perro?', answer: 'Una reacción local suele mejorar en minutos u horas (Manual Merck; Fitzgerald y Flood). Si crece, se extiende o sigue igual al día siguiente, consulta.' },
     { question: '¿Es malo que mi perro se trague el aguijón al lamerse?', answer: '[Respuesta prudente: no hay fuente que lo estudie; el riesgo práctico es el aguijón que queda en la piel (Merck, absceso). No afirmar inocuidad como dato.]' },
     { question: '¿Puedo darle a mi perro un antihistamínico de los que tomo yo?', answer: 'Solo si te lo indica tu veterinario, que decide el producto y la dosis. En una reacción grave no sustituye a la adrenalina (Shmuel y Cortes).' },
     { question: '¿Puedo darle ibuprofeno o paracetamol para el dolor?', answer: 'No. Los analgésicos de persona pueden dañar el estómago, el riñón o el hígado de tu perro (FDA).' },
