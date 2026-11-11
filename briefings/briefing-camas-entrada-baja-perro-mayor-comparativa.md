@@ -1,6 +1,6 @@
 # Briefing de afiliados: camas de entrada baja para perro mayor, comparadas por medida y acceso
 
-> Generado el 11 de noviembre de 2026 con la skill `generar-briefing-afiliados`. Prospecto n.º 1 del [listado](../docs/afiliacion/prospectos-afiliados.md). **Estado: corregido tras la auditoría r1** ([informe](../docs/contenido/camas-entrada-baja-perro-mayor-comparativa/auditoria-brief-r1.md)); pendiente de auditoría r2. Voz y tono: [guía de voz y tono](../.agents/skills/references/guia-voz-tono.md); el redactor mide el borrador con `python3 .agents/skills/references/scripts/tono.py`. No redactar hasta que la sección 6 tenga al menos tres fichas con datos vistos en AliExpress.
+> Generado el 11 de noviembre de 2026 con la skill `generar-briefing-afiliados`. Prospecto n.º 1 del [listado](../docs/afiliacion/prospectos-afiliados.md). **Estado: corregido tras la auditoría r1** ([informe](../docs/contenido/camas-entrada-baja-perro-mayor-comparativa/auditoria-brief-r1.md)); actualizado el 11/11/2026 con fichas reales de AliExpress Portals ([registro](../docs/afiliacion/fichas-camas-comparativa.md)) y decisiones del propietario; pendiente de nueva auditoría. Voz y tono: [guía de voz y tono](../.agents/skills/references/guia-voz-tono.md); el redactor mide el borrador con `python3 .agents/skills/references/scripts/tono.py`. Las tres fichas de §6 tienen ya datos vistos en AliExpress (2026-11-11); ver §12 para lo que sigue pendiente.
 
 ## 1. Metadatos
 
@@ -12,7 +12,7 @@
 | Pilar | `movilidad-dolor-perros-mayores` (existe en el enum de `src/content.config.ts`) |
 | Keyword principal | cama perro mayor entrada baja |
 | Secundarias | cama ortopédica perro grande; cama perro artrosis comprar; cama viscoelástica perro (ES); cama ortopédica para perro (MX) |
-| Mercados | México y España. Precios y plazos por país, nunca mezclados |
+| Mercados | México y España. Una tabla única con columna de disponibilidad por país; plazos y condiciones por país, nunca mezclados. **Sin precios en la página publicada** (regla de `crear-ficha-afiliada`); los precios viven solo en el [registro interno](../docs/afiliacion/fichas-camas-comparativa.md) |
 | Programa | AliExpress Portals (hoy). Fichas aisladas para poder cambiar de programa |
 | Intención | Comercial investigativa: ya decidió cambiar de cama y quiere elegir modelo y talla |
 | Extensión | 1 980–2 480 palabras: suma exacta de los rangos de §7 (incluida la FAQ). La justifican tres fichas completas + tabla + guía de medida; no inflar |
@@ -22,7 +22,7 @@ Frontmatter propuesto (medido con `len()`):
 ```yaml
 title: "Camas de entrada baja para perro mayor: 3 modelos comparados por medida y acceso"
 seoTitle: "Camas de entrada baja para perro mayor: comparativa"   # 51
-metaDescription: "Compara camas de entrada baja para perro mayor por medida interior, acceso y núcleo, con precio y entrega fechados para México y España. Sin promesas clínicas."   # 159
+metaDescription: "Compara camas de entrada baja para perro mayor por medida interior, acceso y núcleo, con disponibilidad, entrega y devolución para México y España."   # 147
 pilar: "movilidad-dolor-perros-mayores"
 keywordPrincipal: "cama perro mayor entrada baja"
 heroImage: "<<PENDIENTE: ruta de I-1 en /images/…>>"
@@ -54,7 +54,7 @@ Fuentes ya verificadas en la guía publicada; no se añaden fuentes clínicas nu
 | F2 | [AAHA 2022 Pain Management — Nonpharmacologic Modalities](https://www.aaha.org/resources/2022-aaha-pain-management-guidelines-for-dogs-and-cats/nonpharmacologic-modalities-for-pain-management/) | Cama acolchada y superficie de apoyo como medida no farmacológica de soporte, no como tratamiento | H2-1 |
 | F3 | [Guía de afiliación del sitio](../docs/seo/afiliacion-aliexpress.md) — diagrama de tallas del piloto | Ejemplo real de discrepancia entre medidas exteriores y superficie útil: los bordes restan unos 10–13 cm por eje en las tres filas (10,2–12,7 cm calculados) | H2-2, H2-3, ficha A |
 | F5 | [Guía de camas publicada](../src/content/blog/cama-ortopedica-perros-mayores-displasia-artrosis.mdx) | Criterios cualitativos («no se establece una cifra clínica universal»), «Cuándo reemplazar o adaptar la cama», «Qué observar después de un cambio» y experiencia de Luna y Dakota | H2-1, H2-2, H2-5, H2-6 |
-| F6 | Capturas de la ficha A del 10/11/2026 recogidas en la guía de afiliación (precio, entrega, devolución, aranceles por país) y las de B y C cuando existan | Hechos de comercio transfronterizo de H2-4; nunca cifras sin fecha | H2-3, H2-4 |
+| F6 | [Registro de fichas del 11/11/2026](../docs/afiliacion/fichas-camas-comparativa.md) (A, B y C revisadas en AliExpress Portals para MX y ES: medidas, disponibilidad, entrega, devolución, aranceles, vendedor, SiteStripe) | Hechos de comercio transfronterizo de H2-3 y H2-4, siempre con fecha. Los precios del registro son internos y no se publican | H2-3, H2-4, FAQ |
 
 **Alcance de F1 y F2.** Sus páginas devuelven 403 al leer el texto completo (r1 y r2). Solo sostienen las dos afirmaciones cualitativas de la columna «Qué respalda», que la guía publicada ya cita igual; el redactor no les atribuye ninguna otra afirmación, cifra ni recomendación.
 | F4 | [Comisión Europea — Influencer legal hub](https://commission.europa.eu/topics/consumers/consumer-rights-and-complaints/influencer-legal-hub_en) (la URL que cita la guía de afiliación; HTTP 200 el 11/11/2026) | El marketing de afiliación debe identificarse: aviso de comisión visible | §10 y bloque final |
@@ -72,46 +72,90 @@ Sin umbrales numéricos: ninguna fuente (F1, F2, F5) fija una altura de entrada,
 | Núcleo | Grosor y tipo declarados (espuma de bloque, viscoelástica, relleno suelto) | Que no se hunda hasta una base dura al apoyarse; el relleno suelto no se presenta como «ortopédico» | Superficie acolchada de soporte, no tratamiento (F2, F5) |
 | Funda | Extraíble, lavable, interior impermeable | Imprescindible si hay incontinencia | Higiene y vida útil |
 | Base | Antideslizante, comprobable en su suelo | Prueba al recibirla | Que la cama no se desplace al levantarse |
-| Precio total | Producto + envío + impuestos al país, con fecha, **precio habitual** | Comparar siempre por la misma talla; el precio promocional de comprador nuevo no entra en la tabla | Las ofertas de comprador nuevo distorsionan (guía de afiliación, «Decisión editorial») |
+| Coste al país | Envío, IVA y aranceles al pagar, vistos en el comercio el día de compra | El artículo no publica precios: el lector los comprueba en la ficha. En España, mirar si la ficha dice «Sin gastos de importación» o «Los aranceles se calculan al finalizar la compra» | Precio y stock cambian; el sitio no tiene fuente autorizada y actualizada (`crear-ficha-afiliada`) |
 | Devolución | Plazo y quién paga, por país | Preferir devolución gratis anunciada | Talla mal elegida = devolución voluminosa |
 
 ## 5. Tabla comparativa (va antes de las fichas)
 
-Columnas: Modelo · Talla analizada · Superficie útil · Entrada · Núcleo · Funda · Precio MX (fecha) · Precio ES (fecha) · Entrega MX / ES · Para quién.
+Decisión del propietario (2026-11-11): **una tabla única** con columna de disponibilidad por país y **sin columnas de precio**.
 
-Filas A, B y C según §6. Celdas sin dato = `por confirmar`, visible al lector solo si el propietario decide publicar con huecos (no recomendado).
+Columnas: Modelo · Talla analizada · Medidas declaradas · Superficie útil · Entrada · Núcleo / tejido · Funda · Disponibilidad por país (fecha) · Para quién.
+
+| Modelo | Talla analizada | Medidas declaradas | Superficie útil | Entrada | Núcleo / tejido | Funda | Disponibilidad (11/11/2026) | Para quién |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| A · Sofá con bordes (Hicarer) | Variantes recomendadas (ver §6 A) | Selector: 71×58×16 a 122×89×17 cm | Sin asignar por variante: el diagrama del vendedor no coincide con el selector (§6 A) | Sin declarar por variante | «Orthopedic foam» / «egg crate foam», según el vendedor | Extraíble y lavable a máquina, según el vendedor | México y España | Perro que apoya la cabeza en un borde, si su medida cabe dentro de los bordes |
+| B · Colchón plano (Wistand889) | XL | 105×70×10 cm | 105×70 cm (sin bordes) | 10 cm de grosor declarado | Espuma: título «viscoelástica», descripción «espuma de esponja», según el vendedor | Extraíble, lavable a mano, forro impermeable declarado | **Solo envía a España** | Perro grande que duerme estirado y necesita entrar sin salvar bordes |
+| C · Catre elevado (One Newgate 4 Choice) | L | 102×70×20 cm | 87×69 cm | 20 cm sobre el suelo (contraste: no es entrada baja) | Malla sobre marco metálico | Malla extraíble y lavable, según el vendedor | México y España (talla L; la XL no envía a México) | Clima cálido, perro que sube sin dificultad a 20 cm; carga máxima declarada 50 kg |
+
+Celdas: solo datos del registro del 11/11/2026. Lo que el registro marca `pendiente` no se rellena.
 
 ## 6. Fichas de producto
 
 Tres perfiles para que la comparación sea útil y no tres camas iguales:
 
-### Ficha A — Cama tipo sofá con un lado bajo (piloto)
+Fuente de todos los datos: [registro de fichas del 11/11/2026](../docs/afiliacion/fichas-camas-comparativa.md), revisado en AliExpress y AliExpress Portals con envío a Aguascalientes (MX) y A Baña, A Coruña (ES). Los precios del registro **no pasan al artículo**. Nadie del sitio ha probado ninguno de los tres modelos.
+
+Componente de las tres fichas: generalizar `src/components/CamaAfiliada.astro` (hoy con `href`, ubicación y textos fijos) a un componente con props, p. ej. `FichaAfiliada.astro` (`placement`, `title`, `href`, `reason`, `checks`, medio opcional), sin cambiar el aspecto aprobado ni la ficha `cama-guia-01` de la guía. Cada ficha: `<aside data-affiliate-placement="camas-cmp-a|b|c">`, **un único CTA** con `target="_blank" rel="sponsored noopener noreferrer"`, aviso «Podemos recibir una comisión por las compras a través de este enlace» **bajo el botón**, frase breve de por qué considerarla y comprobaciones pendientes en una línea. Sin precio, stock ni plazos dentro de la ficha. La extracción se justifica porque hay cuatro ubicaciones reales con el mismo comportamiento.
+
+### Ficha A — Cama tipo sofá con bordes (Hicarer Home Store)
 
 | Campo | Dato |
 | --- | --- |
 | ID / vendedor | `1005009119696851` · Hicarer Home Store |
-| URL sin parámetros | https://es.aliexpress.com/item/1005009119696851.html |
-| Variante analizada (título del selector) | Negra 71 × 58 × 16 cm. Superficie interior y altura de entrada de esta variante: `pendiente` |
-| Diagrama del vendedor (aparte) | Tres filas: exterior 76,2 × 50,8 × 19,1 → interior 65,5 × 40,6; 88,9 × 55,9 × 20,1 → 76,2 × 45,0; 91,4 × 68,6 × 20,1 → 80,0 × 57,4 cm; entrada 7,6 cm en las tres. **No se sabe a qué variante corresponde cada fila** (guía de afiliación); ninguna cifra del diagrama se asigna a la de 71 cm |
-| Núcleo | «Orthopedic foam», perfil ondulado (ilustración comercial); grosor real pendiente |
-| México | Precio habitual: `pendiente`. (Visto: MX$774.61 como oferta de comprador nuevo; **no entra en la tabla ni en el bloque**.) Envío gratis 23–26 nov, devolución gratis 90 días anunciada — captura del 10/11/2026, entrega en Aguascalientes |
-| España | 53,39 € IVA incl. sin aranceles; coste total con aranceles: `pendiente` (se calculan al pagar). Envío gratis 15 dic–6 ene, devolución gratis 90 días anunciada — captura del 10/11/2026, entrega en A Baña |
-| Comisión | 7 % en SiteStripe (10/11/2026) |
-| Enlace | `https://s.click.aliexpress.com/e/_c4FQx8UJ` (Tracking ID `default`; crear uno propio para esta página) |
-| Para quién | `pendiente`: criterio propio que se derivará de la superficie interior una vez el vendedor la confirme |
-| Elegibilidad del canal | `pendiente`: la guía de afiliación la deja pendiente de validación comercial |
-| No para | `pendiente` hasta conocer la superficie interior de la variante |
-| Pendiente | Confirmar con el vendedor superficie y altura de entrada de la variante; tallas grandes y su precio |
+| URL sin parámetros | https://www.aliexpress.com/item/1005009119696851.html |
+| Variantes del selector | Gris o Negro × 71×58×16, 91×69×16, 107×76×17, 122×89×17 cm |
+| Variantes que se recomiendan | Solo las de precio normal: **Gris 91×69×16, Gris 107×76×17, Negro 71×58×16, Negro 107×76×17, Negro 122×89×17**. Se **excluyen** Gris 71×58×16, Gris 122×89×17 y Negro 91×69×16: precio unas 10 veces mayor en MX y ES (registro). El artículo no explica el motivo con cifras; dice que esas variantes muestran un precio anómalo y que no las recomendamos |
+| Diagrama del vendedor | «HOW TO SELECT THE RIGHT SIZE», 3 filas en pulgadas (M, L y otra también «L»): exterior 76,2×50,8×19,1 → interior 65,5×40,6; 88,9×55,9×20,1 → 76,2×45,0; 91,4×68,6×20,1 → 80,0×57,4 cm; columna «Respaldo» de 3" (7,6 cm). **Ninguna fila coincide con una talla del selector** y no se asigna a ninguna |
+| Discrepancia como enseñanza | Selector: 4 tallas en cm con 16–17 cm de alto; diagrama: 3 filas en pulgadas con 7,5–7,9" (unos 19–20 cm) y dos filas «L»; las reseñas hablan de M, L y XL. El H3 la usa para enseñar qué consultar: la medida interior entre bordes de la talla exacta que se compra, la altura del lado de entrada y que la tabla corresponda al selector; si la ficha no lo aclara, preguntar al vendedor antes de pagar |
+| Núcleo | Descripción: «ORTHOPEDIC FOAM»; instalación: «egg crate foam». Llega enrollada; unas 24 h para recuperar forma. Grosor: no declarado. Detalles: marco «malla» (no encaja con una cama de espuma). Todo «según el vendedor» |
+| Funda / base | Extraíble con cremallera y lavable a máquina; «impermeable» solo en el título (forro no declarado: `pendiente`); antideslizante declarado, no visible en imágenes |
+| México | Disponible. Envío gratis; entrega vista 19–23 nov o 28 nov–11 dic según variante y recarga. Devoluciones gratis en 90 días. Precio habitual sin oferta de comprador nuevo: no se muestra (y no se publica) |
+| España | Disponible. «El precio incluye el IVA \| Los aranceles se calculan al finalizar la compra»; cabecera: cargos de importación fuera de la UE. Coste con aranceles: `pendiente`. Envío gratis; devoluciones gratis en 90 días |
+| Vendedor | 4.0 (11 valoraciones), 68 ventas; tienda 83,4 % positivas. Antigüedad: `pendiente` |
+| Comisión | SiteStripe 7 % directa / 7 % indirecta en MX y ES (11/11/2026) |
+| Enlace / Tracking ID | `https://s.click.aliexpress.com/e/_c3vqNMIT` · `camas-cmp-a` (MX y ES) |
+| Para quién | Perro que descansa apoyando la cabeza en un borde, cuya medida tumbado cabe dentro de la superficie interior confirmada de la talla elegida |
+| No para | Perro que necesita entrar sin salvar ningún borde y cuya entrada no puede comprobarse antes de comprar; incontinencia, mientras el forro impermeable no esté declarado |
+| Medio | Video del vendedor en la galería (no descargado). El de la ficha piloto ya está aprobado en la guía; reutilizarlo solo si es el mismo producto y se conserva la procedencia |
 
-### Ficha B — Colchón plano de espuma de bloque, talla L/XL (perro grande)
+### Ficha B — Colchón plano de espuma, talla XL (Wistand889 Store)
 
-Perfil buscado: sin bordes (entrada = grosor del colchón), espuma viscoelástica o de bloque con grosor declarado, funda impermeable interior. Búsqueda sugerida: `memory foam dog bed large waterproof removable cover` / `cama viscoelástica perro grande funda impermeable`. **Todos los campos `pendiente`** hasta revisar 3 candidatos con entrega a MX y ES y elegir uno con la ficha de relevo.
+| Campo | Dato |
+| --- | --- |
+| ID / vendedor | `1005005134788648` · Wistand889 Store |
+| URL sin parámetros | https://www.aliexpress.com/item/1005005134788648.html |
+| Variante analizada | XL 105×70×10 cm, 2,45 kg, perro hasta 40 kg (sin color). Otras: M 78×48×8, L 92×56×8, 2XL 120×75×10 |
+| Forma | Rectángulo sin bordes: superficie útil = medida declarada; entrada = grosor (10 cm en XL) |
+| Núcleo | **Según el vendedor**: el título dice «espuma viscoelástica» y la descripción y materiales, «espuma de esponja». Qué comprobar: al recibirla, si la espuma recupera la forma despacio al presionarla (viscoelástica) o enseguida, y si al apoyarse el perro se nota la base. En 2XL, la conversión «50 kg/1110 lbs» es errónea; no se cita |
+| Funda / base | Funda con cremallera extraíble y capa superior de felpa también extraíble; lavado a mano; «forro impermeable» declarado; base Oxford 600D antideslizante declarada |
+| Disponibilidad | **Solo envía a España.** Con envío a México la ficha dice «Este artículo no puede enviarse a tu dirección» y Portals la da como no elegible |
+| España | «Precio con IVA incluido \| Sin gastos de importación». Envío gratis desde Alemania, 5–9 días (DHL), reembolso si no llega en 20 días; devoluciones gratis en 90 días |
+| Vendedor | 4.7 (30 valoraciones), 122 ventas; tienda 95,4 % positivas. Antigüedad: `pendiente` |
+| Comisión | SiteStripe ES 7 % / 7 %; MX no elegible |
+| Enlace / Tracking ID | `https://s.click.aliexpress.com/e/_c3DVbDzz` · `camas-cmp-b`. El portal lo generó también para MX, pero el producto no envía allí: la ficha y la tabla dicen «Solo envía a España» |
+| Para quién | Perro grande que duerme estirado y cuya medida tumbado cabe en 105×70 cm; entrada sin bordes |
+| No para | Lectores en México; perro que necesita un borde para apoyar la cabeza |
 
-### Ficha C — Cama elevada tipo catre transpirable
+### Ficha C — Cama elevada tipo catre, talla L (One Newgate 4 Choice Store) — contraste
 
-Perfil: para perros que pasan calor o viven en clima cálido (Monterrey, Sevilla), tejido tenso; útil también en terraza. Altura de entrada: `pendiente` (sin umbral inventado). **Encaje con el título:** el catre no es de entrada baja; se mantiene como contraste explícito («cuándo una cama más alta tiene sentido y para quién no») y su H3 lo dice en la primera frase. Si al revisar candidatos ninguno tiene entrada que un perro con rigidez salve sin saltar, se sustituye por un segundo colchón plano de otra talla y el H1 no cambia. Búsqueda: `elevated dog cot bed large`. **Campos `pendiente`.**
+| Campo | Dato |
+| --- | --- |
+| ID / vendedor | `1005011771728376` · One Newgate 4 Choice Store (Choice) |
+| URL sin parámetros | https://www.aliexpress.com/item/1005011771728376.html |
+| Variante analizada | Negro, talla L: exterior 102×70×20 cm, área de descanso 87×69 cm, perro ≤35 kg, carga máxima 50 kg (cuadro de tallas en imagen) |
+| Encaje con el título | **No es de entrada baja**: 20 cm sobre el suelo en L. Se mantiene como contraste para clima cálido y su H3 lo dice en la primera frase: para un perro que ya duda al subir, no es la opción |
+| Tejido | Malla sobre marco metálico («Stainless steel frame» en una imagen); malla extraíble y lavable, según el vendedor; antideslizante `pendiente` |
+| Discrepancia | El título promete «cojín extraíble», pero fotos y variantes muestran solo la malla en Negro. El artículo dice que, según las fotos revisadas, no incluye cojín y que conviene confirmarlo antes de comprar |
+| Aviso de reseñas | **Una sola valoración** (5.0) y 38 ventas; tienda 93,7 % positivas, 41 seguidores. El artículo lo dice explícitamente: poca experiencia de otros compradores |
+| Disponibilidad | México y España en talla L; la XL no se puede enviar a México |
+| México | Envío gratis, entrega 28 nov–11 dic; devoluciones gratis en 90 días |
+| España | «El precio incluye el IVA \| Los aranceles se calculan al finalizar la compra»; coste con aranceles `pendiente`. Envío gratis 29 nov–8 dic; devoluciones gratis en 90 días |
+| Comisión | SiteStripe MX 7 % directa; ES 7 % / 7 % |
+| Enlace / Tracking ID | `https://s.click.aliexpress.com/e/_c4PdeaEF` · `camas-cmp-c` (MX y ES) |
+| Para quién | Perro en clima cálido (Monterrey, Sevilla) que sube sin dificultad a 20 cm y pesa dentro de la carga declarada |
+| No para | Perro con rigidez, que duda o salta para subir; quien necesite cojín incluido |
 
-> Regla para las tres: comprobar precio, entrega y devolución **en la misma fecha** para MX y ES, y repetir la comprobación el día de publicación.
+> Regla para las tres: comprobar disponibilidad, entrega y devolución **en la misma fecha** para MX y ES, y repetir la comprobación el día de publicación. Si cambia vendedor, variante o envío a un país, actualizar el registro antes que el artículo.
 
 ## 7. Estructura H2/H3
 
@@ -122,15 +166,15 @@ Perfil: para perros que pasan calor o viven en clima cálido (Monterrey, Sevilla
 
 2. **H2 — Mide a tu perro en dos minutos** (250–300). Paso a paso con la medida tumbado; la trampa de la medida exterior (ejemplo real F3: bordes de unos 10–13 cm). Experiencia publicada de Luna y Dakota (camas más grandes que ellas). H3: «Si duerme hecho bola» / «Si duerme estirado». Infografía I-2. *Sustentado en: F3, F5.*
 
-3. **H2 — Los tres modelos, ficha por ficha** (850–1 000, ~300 por ficha). H3 por ficha A, B, C con: para quién, lo que declara el vendedor, lo que conviene comprobar al recibirla, precio por país con fecha, a quién no se la recomendaríamos, CTA único + aviso. `AlertBox type="warning"` antes de la primera ficha: «Mide antes de comprar: devolver una cama es un paquete voluminoso». *Sustentado en: §6, F3, F6.*
+3. **H2 — Los tres modelos, ficha por ficha** (850–1 000, ~300 por ficha). H3 por ficha A, B, C con: para quién, lo que declara el vendedor, lo que conviene comprobar al recibirla, disponibilidad por país con fecha (sin precio), a quién no se la recomendaríamos, CTA único + aviso. `AlertBox type="warning"` antes de la primera ficha: «Mide antes de comprar: devolver una cama es un paquete voluminoso». *Sustentado en: §6, F3, F6.*
 
-4. **H2 — Comprar desde México o desde España: lo que cambia** (180–220). Plazos, aranceles en ES al pagar, devolución de un paquete voluminoso, ofertas de comprador nuevo. Sin cifras sin fecha. *Sustentado en: F6 (capturas fechadas por país), F3.*
+4. **H2 — Comprar desde México o desde España: lo que cambia** (180–220). Sin cifras de precio. Disponibilidad (B solo envía a España; la XL de C no envía a México); plazos fechados; en España, la diferencia entre «Sin gastos de importación» (B, envío desde Alemania) y «Los aranceles se calculan al finalizar la compra» (A y C), por lo que el total se confirma antes de pagar; devolución gratis en 90 días anunciada en las tres y qué supone devolver un paquete voluminoso; en México, que el precio grande puede ser una oferta de comprador nuevo limitada a una unidad, así que conviene mirar el total en el pago. *Sustentado en: F6, F3.*
 
 5. **H2 — Cuándo no hace falta comprar** (120–160). Colchón existente + funda + base antideslizante; enlace a «Cuándo reemplazar o adaptar la cama» y a [prevención de caídas](/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor), sección «Cama y zona de descanso». *Sustentado en: F1, F5.*
 
 6. **H2 — Al recibirla: primera semana** (120–160). Checklist: medir, comprobar base en su suelo, observar si la usa y cómo se levanta. `AlertBox type="danger"`: si empeora la rigidez, deja de levantarse o aparece dolor, veterinario. Enlace a «Qué observar después de un cambio». *Sustentado en: F5, F1.*
 
-7. **Preguntas frecuentes** (150–200, 3–4 preguntas): ¿qué talla elijo si duerme estirado?; ¿quién paga la devolución desde MX y desde ES?; ¿hay aranceles al comprar desde España?; ¿«ortopédica» en la ficha significa que trata la artrosis? Respuestas solo con datos de F3, F5, F6. *Sustentado en: F3, F5, F6.*
+7. **Preguntas frecuentes** (150–200, 3–4 preguntas): ¿qué talla elijo si duerme estirado?; ¿cómo es la devolución desde MX y desde ES? (las tres anuncian «devoluciones gratis en 90 días»; la ficha no detalla más, así que conviene guardar la caja y confirmar el proceso en el pedido); ¿hay aranceles al comprar desde España? (B: «Sin gastos de importación»; A y C: se calculan al finalizar la compra); ¿«ortopédica» en la ficha significa que trata la artrosis? Sin cifras de precio. Respuestas solo con datos de F3, F5, F6. *Sustentado en: F3, F5, F6.*
 
 8. **Cómo elegimos y cómo ganamos dinero** (bloque final, 80–120). Método, fecha de revisión, que no se probó ningún modelo (si sigue siendo cierto) y la comisión. *Sustentado en: F4.*
 
@@ -146,11 +190,11 @@ Una página de venta necesita **menos ilustración y más información visual**.
 | --- | --- | --- | --- |
 | I-1 | Portada: mestizo grande senior entrando en una cama baja (ver prompt) | Contexto de la necesidad, sin producto identificable | Generada siguiendo la dirección visual editorial; no debe parecer un modelo concreto de la comparativa. Alt: el `heroImageAlt` de §1 |
 | I-2 | Infografía «cómo medir a tu perro» (tumbado estirado y en bola, medida interior vs exterior) | Evitar la devolución por talla | Propia, SVG responsive con modo oscuro. Alt: «Cómo medir a un perro tumbado estirado y en bola, y diferencia entre medida exterior e interior de una cama» |
-| I-3 | Esquema a escala de las tres camas vistas desde arriba con la silueta de un perro mediano y uno grande (sin pesos inventados) | Comparar superficie útil de un vistazo | Propia, solo con medidas interiores confirmadas por variante; si no hay, no se publica. Alt: «Tres camas vistas desde arriba con su medida interior y la silueta de un perro mediano y uno grande» |
+| I-3 | Esquema a escala de las camas vistas desde arriba con la silueta de un perro mediano y uno grande (sin pesos inventados) | Comparar superficie útil de un vistazo | Propia, solo con medidas interiores declaradas por variante: B XL 105×70 y C L 87×69 sí; A no tiene superficie asignable y se dibuja solo si el vendedor la confirma (si no, el esquema muestra B y C y lo dice). Alt: «Tres camas vistas desde arriba con su medida interior y la silueta de un perro mediano y uno grande» |
 | I-4 | Foto por ficha | Ver bordes y acceso | **Solo** foto propia o con derechos documentados; si no, ficha sin foto (permitido por la guía). Alt: descripción del modelo, sus bordes y lado de acceso |
 | I-5 | Foto real de Luna o Dakota en su cama actual | Experiencia genuina para el H2 de medida | Pedir al propietario; pie de foto aclarando que no es un modelo de la comparativa. Alt: «Luna (o Dakota), beagle senior, tumbada entera en su cama» según la foto |
 
-El video del vendedor de la ficha A tiene derechos sin verificar: no usar hasta resolverlo.
+Las tres fichas tienen video o fotos del vendedor (no descargados). El video de A ya se usa en la ficha aprobada de la guía; para B y C aplicar `crear-ficha-afiliada` (procedencia, uso de recursos del comercio solo con enlace a ese comercio). Si no se resuelve, ficha sin medio.
 
 ### Prompt de I-1 (dirección visual editorial)
 
@@ -185,33 +229,39 @@ Rechazar si a tamaño móvil parece un adulto joven.
 
 ## 10. Cumplimiento y avisos
 
-- Cada CTA: `<a rel="sponsored noopener noreferrer" target="_blank">` con el enlace oficial intacto; aviso «Si compras desde este enlace, recibimos una comisión sin coste para ti» bajo el botón.
+- Cada ficha: `<aside data-affiliate-placement="camas-cmp-a|b|c">` con un único CTA `<a target="_blank" rel="sponsored noopener noreferrer">` y el enlace oficial intacto; aviso «Podemos recibir una comisión por las compras a través de este enlace» bajo el botón. La proyección Markdown debe excluir los tres bloques.
 - Aviso breve en la entradilla y bloque final «Cómo elegimos y cómo ganamos dinero» (sección 8 de la estructura de §7 de este brief).
 - Sin `Review`/`AggregateRating` en schema: no hay prueba propia. Mantener `BlogPosting`.
-- Precios con fecha y «puede cambiar»; nada de «oferta por tiempo limitado».
+- **Sin precios en la página** (ni en tabla, fichas, H2 ni FAQ); disponibilidad y plazos con fecha y «puede cambiar»; nada de «oferta por tiempo limitado».
 - No usar «ortopédica» como promesa clínica; atribuirlo al vendedor.
 - Revisar política editorial, privacidad y cookies (ya contemplado en la guía de afiliación).
 - Marco por país (URLs verificadas con HTTP 200 el 11/11/2026):
   - **UE:** [Comisión Europea, Influencer legal hub](https://commission.europa.eu/topics/consumers/consumer-rights-and-complaints/influencer-legal-hub_en) (F4).
   - **España:** [TRLGDCU, RDL 1/2007](https://www.boe.es/buscar/act.php?id=BOE-A-2007-20555); [Ley 34/1988 General de Publicidad](https://www.boe.es/buscar/act.php?id=BOE-A-1988-26156); [LSSI, Ley 34/2002, art. 20](https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758) (comunicaciones comerciales identificables).
   - **México:** [LFPC, art. 32](https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPC.pdf) (publicidad veraz, comprobable y que no induzca a error), vigilada por PROFECO.
-- Precio: solo el habitual con fecha; el promocional de comprador nuevo queda fuera de tabla y bloque.
+- Precio: no se publica. Los precios (incluidos promocionales y de comprador nuevo) quedan solo en el registro interno.
 
 ## 11. Medición y mantenimiento
 
 - Un Tracking ID por ficha (`camas-cmp-a`, `-b`, `-c`) para saber cuál convierte.
-- Revisión semanal de las tres fichas durante el primer mes, mensual después; retirar o pausar si cambia vendedor, variante o envío a un país.
+- Tracking IDs creados el 11/11/2026 (ver §6). Revisión semanal de las tres fichas durante el primer mes, mensual después; retirar o pausar si cambia vendedor, variante o envío a un país.
 - A los 30 días: visitas (Cloudflare), clics y pedidos por Tracking ID (portal), consultas por país (Search Console). Decidir con eso si se sigue con el prospecto 2 (rampas).
 
 ## 12. Contrato de entrega y bloqueos
 
-**Bloquea la redacción:**
-1. Fichas B y C con datos reales vistos en AliExpress para MX y ES (propietario o sesión con acceso al portal).
-2. Respuesta del vendedor de la ficha A sobre superficie y entrada, o decisión de publicarla explicando la discrepancia.
-3. Decisión del propietario: ¿la ficha piloto se queda en la guía o se muda aquí?
-4. Ficha A: precio habitual MX, coste total con aranceles ES y validación comercial del canal.
+**Resuelto con el registro y las decisiones del 11/11/2026:**
+1. ~~Fichas B y C con datos reales para MX y ES~~ → hechas (§6). B solo envía a España; C se queda como contraste.
+2. ~~Respuesta del vendedor de A sobre superficie y entrada~~ → decisión del propietario: publicar A explicando la discrepancia selector vs diagrama como enseñanza, recomendando solo las variantes de precio normal.
+3. ~~Ficha piloto: ¿guía o aquí?~~ → no bloquea: la comparativa tiene su propia ubicación y enlace (`camas-cmp-a`); la ficha `cama-guia-01` de la guía no se toca en este encargo.
+4. ~~Validación comercial del canal de A~~ → elegible en MX y ES (SiteStripe 7 %), enlace emitido. ~~Precio habitual MX~~ → deja de bloquear: no se publican precios.
 
-**El redactor entrega:** MDX en `src/content/blog/camas-entrada-baja-perro-mayor-comparativa.mdx`, componente de ficha reutilizando `src/components/CamaAfiliada.astro` (generalizarlo a `FichaAfiliada.astro` si hace falta), tabla responsive, AlertBox info/warning/danger y FAQ de §7, I-1 con el prompt de §8, I-2 e I-3, enlaces internos actualizados, `tono.py` medido, `npm run check` y `npx astro build` en verde, proyección Markdown sin bloques comerciales.
+**Pendiente (sin dato; no bloquea si el texto lo trata como tal):**
+- Coste total con aranceles en España de A y C: solo se ve en el checkout. El artículo dice que se calculan al finalizar la compra y no da cifra.
+- Precio habitual en México: no se muestra en la ficha y no se publica.
+- Forro impermeable de A, antideslizante de C y antigüedad de las tres tiendas: `pendiente` en el registro; el texto no los afirma.
+- Repetir la comprobación de disponibilidad, entrega y devolución el día de publicación.
+
+**El redactor entrega:** MDX en `src/content/blog/camas-entrada-baja-perro-mayor-comparativa.mdx`, componente de ficha generalizado desde `src/components/CamaAfiliada.astro` (§6: `aside` con `data-affiliate-placement` `camas-cmp-a|b|c`, un CTA por ficha, aviso bajo el botón), tabla única responsive sin precios con disponibilidad por país, AlertBox info/warning/danger y FAQ de §7, I-1 con el prompt de §8, I-2 e I-3, enlaces internos actualizados, `tono.py` medido, `npm run check` y `npx astro build` en verde, proyección Markdown sin bloques comerciales.
 
 **Contra rama:** cualquiera menos `main` (despliega a producción).
 
@@ -247,3 +297,22 @@ Aplicadas desde `docs/contenido/camas-entrada-baja-perro-mayor-comparativa/audit
 | N2 referencia «§7 del artículo» | §10: ahora remite al bloque final «Cómo elegimos y cómo ganamos dinero» (sección 8 de la estructura) |
 | N3 repetición de mestizo en `heroImageAlt` | §8: la nota de raza registra las 2 apariciones previas de «mestizo/a» y la diferenciación por tipo pastor y pelo fuego y negro |
 | N4 F1 y F2 sin texto completo | §3: nota de que F1 y F2 solo sostienen las afirmaciones cualitativas ya atribuidas; el redactor no les atribuye nada más |
+
+## Actualización con fichas reales 2026-11-11
+
+Fuente: [`docs/afiliacion/fichas-camas-comparativa.md`](../docs/afiliacion/fichas-camas-comparativa.md) y decisiones del propietario del mismo día. No se añade ningún dato fuera del registro.
+
+| Ámbito | Antes | Ahora |
+| --- | --- | --- |
+| §1 Mercados y `metaDescription` | Precios fechados por país | Tabla única con disponibilidad por país; sin precios; `metaDescription` reescrita (147, `len()`) |
+| §3 F6 | Capturas de A del 10/11; B y C «cuando existan» | Registro del 11/11/2026 con A, B y C para MX y ES |
+| §4 Precio total | Precio habitual con fecha en tabla | «Coste al país»: el lector lo comprueba en el comercio; sin cifras |
+| §5 Tabla | Columnas de precio MX/ES y filas por confirmar | Tabla rellena sin precio, con columna de disponibilidad; B «Solo envía a España» |
+| §6 Ficha A | Variante 71 cm, URL `es.`, enlace `_c4FQx8UJ` (`default`), datos del 10/11 | URL global; 5 variantes recomendadas y 3 excluidas por precio anómalo; discrepancia selector vs diagrama como enseñanza; enlace `_c3vqNMIT` (`camas-cmp-a`) |
+| §6 Ficha B | Perfil de búsqueda, todo `pendiente` | Wistand889 XL 105×70×10; solo España; viscoelástica vs espuma de esponja «según el vendedor» con qué comprobar; enlace `_c3DVbDzz` (`camas-cmp-b`) |
+| §6 Ficha C | Perfil de búsqueda, todo `pendiente` | One Newgate 4 Choice L 102×70×20, área 87×69, carga 50 kg; contraste para clima cálido con aviso de 1 reseña y 20 cm; discrepancia del cojín; enlace `_c4PdeaEF` (`camas-cmp-c`) |
+| §6 Componente | Reutilizar `CamaAfiliada.astro` | Generalizarlo con props según `crear-ficha-afiliada` (`aside` + `data-affiliate-placement`, un CTA, `rel="sponsored noopener noreferrer"`, aviso bajo el botón) |
+| §7 H2-3, H2-4 y FAQ | Precio por país; ofertas de comprador nuevo | Disponibilidad, envío, aranceles y devolución sin cifras de precio |
+| §8 I-3 y medios | Solo con medidas confirmadas; video de A sin verificar | B y C con superficie declarada; A solo si se confirma; medios según `crear-ficha-afiliada` |
+| §10 | Aviso «recibimos una comisión sin coste»; precios con fecha | Aviso de `crear-ficha-afiliada`; sin precios en la página |
+| §12 | 4 bloqueos | Bloqueos cerrados; pendiente solo aranceles ES de A y C, precio habitual MX (no se publica) y campos `pendiente` del registro |
