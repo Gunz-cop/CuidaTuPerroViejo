@@ -6,7 +6,7 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 ## Escritorio administrativo (2026-11-11)
 
-- [~] **Fase 1: portada privada `/admin`.** Implementada en `feature/admin-escritorio`: navegación a los tres paneles reales, clics afiliados de producción y consultas del asistente en 7/30 días UTC, cuarentena de contacto y audiencia sin números. Fuentes, seguridad y capturas en `docs/admin/escritorio.md`. Entrega mediante PR; pendiente auditoría independiente de Claude Code y autorización del propietario. Sin merge ni despliegue.
+- [~] **Fase 1: portada privada `/admin`.** Implementada en `feature/admin-escritorio`: navegación a los tres paneles reales, clics afiliados de producción y consultas del asistente en 7/30 días UTC, cuarentena de contacto y audiencia sin números. Fuentes, seguridad y capturas en `docs/admin/escritorio.md`. Entrega en [PR #168](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/168); pendiente auditoría independiente de Claude Code y autorización del propietario. Sin merge ni despliegue.
 - [ ] **Fase 2: conectar Web Analytics, solo tras autorización.** Propuesta investigada en `docs/admin/web-analytics-propuesta.md`: configuración activa y GraphQL verificado, tendencias/páginas/países posibles; no confundir visitas con personas únicas. Falta token mínimo del Worker, validación de entrega del beacon y acuerdo de métricas. No implementada.
 
 ## AdSense: tercer rechazo por «contenido de bajo valor» (anotado: 2026-10-28)
