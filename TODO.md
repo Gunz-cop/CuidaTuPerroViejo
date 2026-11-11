@@ -4,6 +4,17 @@ Lista viva de ideas y tareas que el dueño del sitio menciona en las sesiones. L
 
 Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aquí.
 
+## Escritorio administrativo (2026-11-11)
+
+Lo desarrolla Codex y lo audita Claude Code. Quien desarrolla no audita.
+
+- [~] **Fase 1: portada privada `/admin`.** Implementada en `feature/admin-escritorio`: navegación a los tres paneles reales, clics afiliados de producción y consultas del asistente en 7/30 días UTC, cuarentena de contacto y audiencia sin números. Fuentes, seguridad y capturas en `docs/admin/escritorio.md`. Entrega en [PR #168](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/168); pendiente auditoría independiente de Claude Code y autorización del propietario. Sin merge ni despliegue.
+  - [x] Auditoría independiente de Claude Code: **APTO con observaciones menores**, sin bloqueos (2026-11-11). Informe en `docs/admin/auditoria-fase-1.md`.
+  - [ ] Prueba en Safari de un iPhone físico.
+  - [ ] Autorización del propietario para fusionar.
+- [ ] **Fase 2: conectar Web Analytics, solo tras autorización.** Propuesta investigada en `docs/admin/web-analytics-propuesta.md`: configuración activa y GraphQL verificado, tendencias/páginas/países posibles; no confundir visitas con personas únicas. Falta token mínimo del Worker, validación de entrega del beacon y acuerdo de métricas. No implementada.
+- [ ] **Después de la fase 2, solo si hace falta:** tráfico automatizado (limitado en el plan gratuito), errores recientes y medición propia.
+
 ## AdSense: tercer rechazo por «contenido de bajo valor» (anotado: 2026-10-28)
 
 Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 91.000 impresiones, ~25 clics/día y subiendo) y el sitio publicado: lo técnico de AdSense está bien (`ads.txt`, código, rastreo con 200); lo que falta es valor propio visible y un poco más de tráfico. La cantidad de artículos no es el problema: la calculadora (25 % de los clics) y la comida casera con la receta de Luna (18 %) se llevan casi la mitad; los artículos que resumen guías apenas reciben visitas.

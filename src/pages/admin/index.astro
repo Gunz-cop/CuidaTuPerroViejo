@@ -1,0 +1,115 @@
+---
+import { env } from 'cloudflare:workers';
+import { requireAdmin, privateHeaders } from '../../lib/admin/access';
+import { loadOverview } from '../../lib/admin/overview';
+
+export const prerender = false;
+const denied = await requireAdmin(Astro.request, env);
+if (denied) return denied;
+for (const [key, value] of Object.entries(privateHeaders)) Astro.response.headers.set(key, value);
+const { affiliate, assistant, messages, today, since7, since30 } = await loadOverview(env.CONTACT_DB);
+const number = (n: number) => n.toLocaleString('es');
+const failures = [affiliate, assistant, messages].filter((item) => item.error).length;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Escritorio de administración · CuidaTuPerroViejo</title>
+  </head>
+  <body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <main id="contenido">
+      <header>
+        <div><p class="eyebrow">CuidaTuPerroViejo · Administración</p><h1>Escritorio</h1></div>
+        <a class="site-link" href="/">Ver sitio público <span aria-hidden="true">↗</span></a>
+      </header>
+      <p class="intro">El estado del sitio y tus herramientas, en un solo lugar.</p>
+      <section class="attention" aria-labelledby="atencion">
+        <h2 id="atencion">Requiere atención</h2>
+        {failures > 0 && <p role="status">Hay {failures} fuentes no disponibles. Sus tarjetas muestran el detalle; puedes seguir entrando a las herramientas.</p>}
+        {messages.data && (messages.data.quarantine > 0
+          ? <p><a href="/admin/contact-messages?status=quarantine">Revisar {number(messages.data.quarantine)} mensajes en cuarentena</a>. El filtro los retuvo para moderación.</p>
+          : <p>No hay mensajes en cuarentena.</p>)}
+        <p>Audiencia: pendiente de conectar los informes de Cloudflare Web Analytics a este escritorio.</p>
+      </section>
+      <section aria-labelledby="herramientas">
+        <div class="section-heading"><h2 id="herramientas">Herramientas y actividad</h2><span>Datos consultados al abrir esta página</span></div>
+        <div class="grid">
+          <article aria-labelledby="monetizacion">
+            <p class="eyebrow">Afiliación · Sitio público</p>
+            <h3 id="monetizacion"><a href="/admin/monetizacion">Monetización <span aria-hidden="true">→</span></a></h3>
+            <p>Consulta las fichas, países y tendencias de clics.</p>
+            {affiliate.data ? <><dl class="metrics"><div><dt>Últimos 7 días</dt><dd>{number(affiliate.data.days7)}</dd></div><div><dt>Últimos 30 días</dt><dd>{number(affiliate.data.days30)}</dd></div></dl><p class="definition">Clics afiliados registrados, solo de producción. No representan ventas ni personas.</p>{affiliate.data.days30 === 0 && <p class="empty">Sin clics registrados en este periodo.</p>}</> : <p class="error">No disponible. {affiliate.error}</p>}
+            <p class="source">Fuente D1: <code>affiliate_clicks_daily</code>, suma de <code>clicks</code>.</p>
+          </article>
+          <article aria-labelledby="asistente">
+            <p class="eyebrow">Asistente IA · Consultas</p>
+            <h3 id="asistente"><a href="/admin/asistente">Asistente <span aria-hidden="true">→</span></a></h3>
+            <p>Explora recomendaciones, respuestas y valoraciones.</p>
+            {assistant.data ? <><dl class="metrics"><div><dt>Últimos 7 días</dt><dd>{number(assistant.data.days7)}</dd></div><div><dt>Últimos 30 días</dt><dd>{number(assistant.data.days30)}</dd></div></dl><p class="definition">Una fila por consulta registrada, igual que en el panel. No son conversaciones ni personas. La fuente no separa pruebas de producción.</p>{assistant.data.days30 === 0 && <p class="empty">Sin consultas registradas en este periodo.</p>}</> : <p class="error">No disponible. {assistant.error}</p>}
+            <p class="source">Fuente D1: <code>assistant_interactions</code>, recuento de filas.</p>
+          </article>
+          <article aria-labelledby="mensajes">
+            <p class="eyebrow">Contacto · Moderación</p>
+            <h3 id="mensajes"><a href="/admin/contact-messages">Mensajes de contacto <span aria-hidden="true">→</span></a></h3>
+            <p>Revisa los mensajes retenidos y cambia su moderación.</p>
+            {messages.data ? <><dl class="metrics"><div><dt>En cuarentena · Todo el historial</dt><dd>{number(messages.data.quarantine)}</dd></div></dl><p class="definition">Estado de moderación, no de lectura ni de respuesta. No existe un estado «pendiente».</p></> : <p class="error">No disponible. {messages.error}</p>}
+            <p class="source">Fuente D1: <code>contact_messages</code>, filas con <code>status = quarantine</code>.</p>
+          </article>
+          <article class="audience" aria-labelledby="audiencia">
+            <p class="eyebrow">Próxima fuente</p>
+            <h3 id="audiencia">Audiencia</h3>
+            <p class="unavailable">Pendiente de configuración</p>
+            <p>Cloudflare Web Analytics todavía no está conectado a este escritorio.</p>
+            <p class="definition">Aquí se consultarán las métricas de audiencia que permita la fuente, con sus límites y definiciones. Por ahora no hay cifras disponibles.</p>
+            <p class="source">Fuente prevista: API GraphQL de Cloudflare. Sin consultas desde este panel.</p>
+          </article>
+        </div>
+      </section>
+      <footer>
+        <p>Periodos por días UTC, incluido hoy: 7 días del <time>{since7}</time> al <time>{today}</time>; 30 días del <time>{since30}</time> al <time>{today}</time>. El día de hoy está en curso.</p>
+        <p>Los totales reflejan los registros guardados, no la actividad que no llegó a registrarse. Recarga la página para actualizar.</p>
+      </footer>
+    </main>
+  </body>
+</html>
+<style>
+  :global(body) { margin: 0; background: #f6f5ef; color: #1f2933; font-family: system-ui, sans-serif; line-height: 1.55; }
+  * { box-sizing: border-box; }
+  main { max-width: 1140px; margin: auto; padding: 36px 24px 48px; }
+  header, .section-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin: 0; letter-spacing: -.035em; }
+  h2 { font-size: 1.2rem; margin: 0; } h3 { font-size: 1.3rem; margin: 8px 0; }
+  p { margin: 10px 0; } a { color: #37533f; text-underline-offset: 4px; }
+  a:hover { text-decoration-thickness: 2px; } a:focus-visible { outline: 3px solid #8b561a; outline-offset: 5px; border-radius: 3px; }
+  .site-link { padding: 10px 0; font-weight: 600; }
+  .eyebrow { color: #526154; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; margin: 0; }
+  .intro { color: #526154; margin: 12px 0 28px; }
+  .attention { background: #edf1e9; border: 1px solid #c9d3c4; border-left: 4px solid #45634f; border-radius: 8px; padding: 20px 24px; margin-bottom: 32px; }
+  .attention p { margin-bottom: 0; }
+  .section-heading { margin-bottom: 16px; } .section-heading span { font-size: .85rem; color: #526154; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  article { min-width: 0; background: #fff; border: 1px solid #dedfd5; border-radius: 12px; padding: 24px; overflow-wrap: anywhere; }
+  h3 a { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 4px 0; }
+  .metrics { display: flex; flex-wrap: wrap; gap: 24px; margin: 24px 0 16px; }
+  dt { font-size: .85rem; color: #526154; } dd { font-size: 2.25rem; font-weight: 700; margin: 0; font-variant-numeric: tabular-nums; line-height: 1.3; }
+  .definition, .source, footer { font-size: .85rem; color: #526154; }
+  .source { border-top: 1px solid #dedfd5; padding-top: 14px; margin-top: 20px; }
+  code { font-size: .82rem; } .empty { font-size: .85rem; }
+  .error { color: #862d22; background: #fff1ee; padding: 14px; border-radius: 6px; }
+  .unavailable { font-size: 1.15rem; font-weight: 700; margin-top: 24px; }
+  footer { margin-top: 28px; } .skip { position: absolute; top: -100px; left: 16px; background: #fff; padding: 12px; } .skip:focus { top: 10px; }
+  @media (max-width: 650px) { main { padding: 24px 16px; } .grid { grid-template-columns: minmax(0, 1fr); } article, .attention { padding: 20px; } }
+  @media (prefers-color-scheme: dark) {
+    :global(body) { background: #171e1a; color: #edf1e9; }
+    article, .skip { background: #222d26; } article, .source { border-color: #47594b; }
+    a { color: #bdd8b5; } a:focus-visible { outline-color: #edc380; }
+    .eyebrow, .intro, dt, .definition, .source, footer, .section-heading span { color: #bdc9bd; }
+    .attention { background: #26372b; border-color: #789873; }
+    .error { background: #492b29; color: #ffcec5; }
+  }
+</style>

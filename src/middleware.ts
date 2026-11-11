@@ -48,7 +48,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   // caché del adaptador/CDN. Las cabeceras de seguridad sí se aplican.
   if (
     url.pathname.startsWith('/api/') ||
-    url.pathname.startsWith('/admin/') ||
+    (url.pathname === '/admin' || url.pathname.startsWith('/admin/')) ||
     ASSET_PATH_PATTERN.test(url.pathname) ||
     context.request.headers.has('Authorization')
   ) {

@@ -1,0 +1,117 @@
+{
+  "http": [
+    {
+      "path": "/admin",
+      "method": "GET",
+      "authorized": false,
+      "accept": "text/html",
+      "status": 401,
+      "cache": "private, no-store"
+    },
+    {
+      "path": "/admin",
+      "method": "GET",
+      "authorized": true,
+      "accept": "text/html",
+      "status": 200,
+      "cache": "private, no-store"
+    },
+    {
+      "path": "/admin/",
+      "method": "GET",
+      "authorized": false,
+      "accept": "text/html",
+      "status": 401,
+      "cache": "private, no-store"
+    },
+    {
+      "path": "/admin/",
+      "method": "GET",
+      "authorized": true,
+      "accept": "text/html",
+      "status": 200,
+      "cache": "private, no-store"
+    },
+    {
+      "path": "/admin/monetizacion",
+      "method": "GET",
+      "authorized": false,
+      "accept": "text/html",
+      "status": 401,
+      "cache": "no-store"
+    },
+    {
+      "path": "/admin/monetizacion",
+      "method": "GET",
+      "authorized": true,
+      "accept": "text/html",
+      "status": 200,
+      "cache": "no-store"
+    },
+    {
+      "path": "/admin/asistente",
+      "method": "GET",
+      "authorized": false,
+      "accept": "text/html",
+      "status": 401,
+      "cache": "no-store"
+    },
+    {
+      "path": "/admin/asistente",
+      "method": "GET",
+      "authorized": true,
+      "accept": "text/html",
+      "status": 200,
+      "cache": "no-store"
+    },
+    {
+      "path": "/admin/contact-messages",
+      "method": "GET",
+      "authorized": false,
+      "accept": "text/html",
+      "status": 401,
+      "cache": "no-store"
+    },
+    {
+      "path": "/admin/contact-messages",
+      "method": "GET",
+      "authorized": true,
+      "accept": "text/html",
+      "status": 200,
+      "cache": "no-store"
+    },
+    {
+      "path": "/api/admin/contact-messages/1",
+      "method": "POST",
+      "authorized": false,
+      "accept": "text/html",
+      "status": 401,
+      "cache": "no-store"
+    },
+    {
+      "path": "/admin",
+      "method": "HEAD",
+      "authorized": false,
+      "accept": "text/html",
+      "status": 401,
+      "cache": "private, no-store"
+    },
+    {
+      "path": "/admin",
+      "method": "GET",
+      "authorized": false,
+      "accept": "text/markdown",
+      "status": 401,
+      "cache": "private, no-store"
+    },
+    {
+      "path": "/admin",
+      "method": "GET",
+      "authorized": true,
+      "accept": "text/html",
+      "status": 200,
+      "cache": "private, no-store"
+    }
+  ],
+  "browser": "Chromium; 390x844 y 1440x1000; claro/oscuro; sin overflow; orden de Tab y JS verificados; D1 local vac\u00edo"
+}

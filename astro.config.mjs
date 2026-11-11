@@ -59,7 +59,8 @@ export default defineConfig({
     sitemap({
       filter(page) {
         const { pathname } = new URL(page);
-        if (NON_CANONICAL_SITEMAP_PATHS.has(pathname)) return false;
+        // La portada privada no tiene la barra final del prefijo /admin/.
+        if (pathname === '/admin' || NON_CANONICAL_SITEMAP_PATHS.has(pathname)) return false;
         return !NON_PUBLIC_SITEMAP_PREFIXES.some((prefix) => pathname.startsWith(prefix));
       },
       serialize(item) {

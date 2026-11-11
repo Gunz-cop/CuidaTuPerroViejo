@@ -487,7 +487,7 @@ async function serveRepresentation(
 export function createAgentContentWorker<Env extends AgentEnv = AgentEnv>(astroHandler: AstroHandler<Env>) {
   return async (request: Request, env: Env, context: ExecutionContext): Promise<Response> => {
     const url = new URL(request.url);
-    if (url.pathname.startsWith('/api/') || url.pathname.startsWith('/admin/') || (request.method !== 'GET' && request.method !== 'HEAD')) {
+    if (url.pathname.startsWith('/api/') || url.pathname === '/admin' || url.pathname.startsWith('/admin/') || (request.method !== 'GET' && request.method !== 'HEAD')) {
       return astroHandler(request, env, context);
     }
     let index: RuntimeIndex;
