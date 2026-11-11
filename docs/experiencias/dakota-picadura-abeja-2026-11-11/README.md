@@ -4,7 +4,7 @@ Experiencia propia aportada por el dueño el 2026-11-11. Material de procedencia
 
 ## Relato del dueño
 
-Dakota (beagle, nacida en 2014) dormía en su cama ortopédica cuando una abeja le picó una pata. Despertó moviendo la pata y la abeja cayó al suelo; ya se iba a morir, pero el dueño igual la mató. Le revisaron la pata sin encontrar hinchazón ni aguijón; no se sabe si la picadura fue por encima o en las almohadillas. Le dieron un analgésico masticable en forma de huesito, identificado en el blíster (`blister-analgesico.jpg`): **COX-II 1 mg, Kirón México, meloxicam 1 mg por tableta, uso veterinario, registro Q-0790-005**. Le dieron **una sola tableta**. Dakota pesa entre 20 y 23 kg y tiene sobrepeso; el dueño eligió una tableta a propósito, para desinflamar y aliviar sin pasarse. Después solo se lamía las patas. No encontraron el aguijón; al dueño le preocupa que se lo trague al lamerse.
+Dakota (beagle, nacida en 2014) dormía en su cama ortopédica cuando una abeja le picó una pata. Despertó moviendo la pata y la abeja cayó al suelo; ya se iba a morir, pero el dueño igual la mató. Le revisaron la pata sin encontrar hinchazón ni aguijón; no se sabe si la picadura fue por encima o en las almohadillas. Le dieron un analgésico masticable en forma de huesito, identificado en el blíster (`blister-analgesico.jpg`): **COX-II 1 mg, Kirón México, meloxicam 1 mg por tableta, uso veterinario, registro Q-0790-005**. Le dieron **una sola tableta**. Dakota pesa entre 20 y 23 kg y tiene sobrepeso; el dueño dio una tableta siguiendo la indicación previa de sus veterinarios (ver «Decisiones del propietario»). Después solo se lamía las patas. No encontraron el aguijón; al dueño le preocupa que se lo trague al lamerse.
 
 ## Segunda revisión (esa misma noche)
 

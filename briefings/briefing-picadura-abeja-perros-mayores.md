@@ -1,6 +1,6 @@
 # 📋 BRIEF DE CONTENIDOS TÉCNICO: Picadura de abeja en perros mayores: qué hacer en casa y cuándo ir al veterinario
 
-**Sitio:** cuidatuperroviejo.com | **Pilar:** Salud de Perros Mayores | **Tipo:** Artículo spoke (Astro/MDX) | **Versión:** v3, 2026-11-12 (corrige las auditorías R1 y R2; `docs/contenido/picadura-abeja-perros-mayores/auditoria-brief-r1.md`)
+**Sitio:** cuidatuperroviejo.com | **Pilar:** Salud de Perros Mayores | **Tipo:** Artículo spoke (Astro/MDX) | **Versión:** v4, 2026-11-12 (corrige las auditorías R1, R2 y R3; `docs/contenido/picadura-abeja-perros-mayores/auditoria-brief-r1.md`)
 
 **Origen del encargo:** el propietario vivió la picadura de Dakota la noche del 2026-11-11, la documentó con fotos durante la noche y la mañana siguiente, y pidió el briefing el 2026-11-12. Expediente con relato, fotos y vídeo: `docs/experiencias/dakota-picadura-abeja-2026-11-11/`.
 
@@ -80,7 +80,7 @@ datePublished: "AAAA-MM-DD"
 
 **Decisiones del propietario (resueltas el 2026-11-12):**
 
-- **D1 — Origen del meloxicam: recetado.** Sus veterinarios se lo han recetado a Luna y a Dakota en varias consultas por dolor: verrugas o bultos que se reventaban, la vez que Dakota se mordió la pata arrancándose una verruga y su episodio de displasia de cadera, cuando no se podía mover. Los veterinarios le preguntan si lo tiene en casa y le indicaron que, ante un dolor puntual, puede darles una tableta, por pocos días, y que si el dolor es fuerte o sigue, vayan a consulta. El propietario lo guarda para emergencias (caída, golpe o herida) y renueva el blíster antes de que caduque. **Cómo se cuenta:** «el antiinflamatorio que su veterinario ya le había recetado para episodios de dolor y nos indicó tener en casa». **No se publican** la cantidad de días que mencionó el propietario («menos de 5, 3 como máximo»), la potencia, el número de tabletas como pauta ni la marca: son indicaciones individuales para sus perras, no una pauta para el lector.
+- **D1 — Origen del meloxicam: recetado.** Sus veterinarios se lo han recetado a Luna y a Dakota en varias consultas por dolor: verrugas o bultos que se reventaban, la vez que Dakota se mordió la pata arrancándose una verruga y su episodio de displasia de cadera, cuando no se podía mover. Los veterinarios le preguntan si lo tiene en casa y según el propietario, le indicaron que ante un dolor puntual puede darles una tableta, por pocos días, y que si el dolor es fuerte o sigue, vayan a consulta. El propietario lo guarda para emergencias (caída, golpe o herida) y renueva el blíster antes de que caduque. **Cómo se cuenta:** «el antiinflamatorio que su veterinario ya le había recetado para episodios de dolor y que sabe que tenemos en casa». **No se publican** la cantidad de días que mencionó el propietario («menos de 5, 3 como máximo»), la potencia, el número de tabletas como pauta ni la marca: son indicaciones individuales para sus perras, no una pauta para el lector.
 - **D2 — Fotos reales: autorizadas** («las que ocupes»), con los recortes de §8.
 - **D3 — País: Costa Rica**, se puede decir. Úsalo en la Introducción o en H2-3 una vez, y en H2-2 para dar contexto a las abejas africanizadas, que son las de la región, sin inventar datos locales (no hay fuente costarricense en §3). El español sigue siendo neutro.
 
@@ -127,7 +127,7 @@ datePublished: "AAAA-MM-DD"
 
 3. **Shmuel DL, Cortes Y. «Anaphylaxis in dogs and cats». *J Vet Emerg Crit Care*. 2013;23(4):377-94.** PMID [23855441](https://pubmed.ncbi.nlm.nih.gov/23855441/), DOI 10.1111/vec.12066. Comprobado 2026-11-12 (resumen).
    - *Datos clave (resumen):* la anafilaxia es una reacción de hipersensibilidad tipo I, sistémica y con frecuencia mortal. Puede desencadenarla, entre otros, el veneno de insectos. El diagnóstico es clínico, por reconocimiento de un patrón de signos. La adrenalina (epinefrina) es el fármaco de elección; fluidos, antihistamínicos H1/H2, corticoides y broncodilatadores son coadyuvantes y «no sustituyen a la adrenalina».
-   - *Datos sin verificar en el texto completo:* que en el perro los órganos más afectados sean el hígado y el tubo digestivo procede de resúmenes secundarios, no del resumen leído. **El redactor no lo afirma como dato de esta fuente** salvo que se lea el texto completo. Puede describir vómitos, diarrea y colapso como señales de alarma apoyándose en el Manual Merck y Fitzgerald.
+   - *Datos sin verificar en el texto completo:* que en el perro los órganos más afectados sean el hígado y el tubo digestivo procede de resúmenes secundarios, no del resumen leído. **El redactor no lo afirma como dato de esta fuente** salvo que se lea el texto completo. Las señales de alarma se apoyan en la tabla 2 de Chapman et al. 2024 (ver H2-2); la diarrea no se añade.
    - *H2:* H2-2, H2-4. *Límites:* es una revisión clínica para veterinarios. Sirve para explicar por qué un antihistamínico casero no resuelve una anafilaxia, no para indicar ningún tratamiento.
 
 4. **Chapman E, West EA, Kosnik M, Fischer NM, Favrot C, Beeler L, Rostaher A. «Natural History and Risk Factors of Hymenoptera Venom Allergy in Dogs». *Animals (Basel)*. 2024;14(22):3220.** PMID 39595273, PMCID [PMC11591281](https://pmc.ncbi.nlm.nih.gov/articles/PMC11591281/), DOI [10.3390/ani14223220](https://doi.org/10.3390/ani14223220). Texto completo leído en Europe PMC, 2026-11-12. La URL de MDPI devolvió 403, que es un bloqueo de acceso y no una referencia falsa.
@@ -521,7 +521,7 @@ Fila del registro de razas ya añadida en `direccion-visual-editorial.md`.
 | Recurso y utilidad | Ubicación | Ruta/destino | Estado y responsable | Prueba antes de publicar |
 |---|---|---|---|---|
 | Ficha para la próxima picadura (lista copiable en el propio texto) | H2-5 | En el cuerpo del `.mdx`; sin PDF | Planificado · redactor | Que se lea completa en el móvil; no prometer descarga |
-| 3 ilustraciones | Portada, H2-1 y H2-2 | `public/images/blog/picadura-abeja-perros-mayores/` | Planificado · producción visual | Abrir cada `.webp`, comprobar los 5 rasgos a 390 px, alt fiel, modo oscuro |
+| 3 ilustraciones | Portada y H2-1 (dos) | `public/images/blog/picadura-abeja-perros-mayores/` | Planificado · producción visual | Abrir cada `.webp`, comprobar los 5 rasgos a 390 px, alt fiel, modo oscuro |
 | 3–4 fotografías reales de Dakota | Introducción, H2-3 y H2-6 | Misma carpeta, a partir de `docs/experiencias/…` | Autorizado (D2) · producción | Recorte sin personas ni datos de la vivienda; pie «Fotografía» |
 | 7 enlaces internos y calculadora | Según §5 | Rutas de §5 | Planificado · redactor | `npx astro build` y abrir cada enlace en local |
 
