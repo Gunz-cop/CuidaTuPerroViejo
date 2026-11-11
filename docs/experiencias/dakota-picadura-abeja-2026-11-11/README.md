@@ -6,6 +6,10 @@ Experiencia propia aportada por el dueño el 2026-11-11. Material de procedencia
 
 Dakota (beagle, nacida en 2014) dormía en su cama ortopédica cuando una abeja le picó una pata. Despertó moviendo la pata y la abeja cayó al suelo. Le revisaron la pata sin encontrar hinchazón ni aguijón; no se sabe si la picadura fue por encima o en las almohadillas. Le dieron un analgésico masticable en forma de huesito, identificado en el blíster (`blister-analgesico.jpg`): **COX-II 1 mg, Kirón México, meloxicam 1 mg por tableta, uso veterinario, registro Q-0790-005**. Le dieron **una sola tableta**. Dakota pesa entre 20 y 23 kg y tiene sobrepeso; el dueño eligió una tableta a propósito, para desinflamar y aliviar sin pasarse. Después solo se lamía las patas. No encontraron el aguijón; al dueño le preocupa que se lo trague al lamerse.
 
+## Segunda revisión (esa misma noche)
+
+El dueño encontró el sitio: una almohadilla de la pata enrojecida, sin aguijón visible. Dakota sigue lamiéndose, pero buscó al dueño para que la acariciara. Con caricias en el pecho y la panza se queda tranquila e intenta ponerse boca arriba; cuando dejan de acariciarla vuelve a lamerse la pata. Al tocarle la pata se queda quieta y la levanta.
+
 ## Fotos (tomadas esa noche, reloj visible a las 9:02)
 
 | Archivo | Qué muestra |
