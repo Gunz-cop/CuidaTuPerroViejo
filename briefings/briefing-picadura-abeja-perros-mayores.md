@@ -7,7 +7,7 @@
 **Estado:** **APTO CON RESERVAS en R4/5** (auditoría independiente sobre `ab81a4b`, `docs/contenido/picadura-abeja-perros-mayores/auditoria-brief-r4.md`). Las tres reservas P2 (R4-1 a R4-3) se aplicaron después como ajustes literales sin cambio de contenido. Listo para redactar.
 
 > [!NOTE]
-> **Estado:** texto redactado en `src/content/blog/picadura-abeja-perros-mayores.mdx` el 2026-11-12 (solo texto, 4.229 palabras; imágenes pendientes con marcadores `{/* IMAGEN … */}`). Auditoría del artículo: R2/5 PUBLICABLE CON RESERVAS (texto), reservas aplicadas (`docs/contenido/picadura-abeja-perros-mayores/auditoria-articulo-r2.md`). Pendiente: imágenes y gates de §11. No fusionar en `main` antes.
+> **Estado:** texto redactado en `src/content/blog/picadura-abeja-perros-mayores.mdx` el 2026-11-12 (solo texto, 4.229 palabras; imágenes pendientes con marcadores `{/* IMAGEN … */}`). Auditoría del artículo: R2/5 PUBLICABLE CON RESERVAS (texto), reservas aplicadas (`docs/contenido/picadura-abeja-perros-mayores/auditoria-articulo-r2.md`). Imágenes integradas el 2026-11-12: 3 ilustraciones generadas en Higgsfield (Nano Banana, referencia `foto-05`; la portada se corrigió para quitar una mancha roja que parecía sangre) y 3 fotografías reales recortadas. Pendiente: revisión visual del propietario, auditoría visual independiente y publicar. No fusionar en `main` antes.
 
 ---
 
