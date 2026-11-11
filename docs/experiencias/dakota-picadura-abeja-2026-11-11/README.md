@@ -14,6 +14,10 @@ El dueño encontró el sitio: una almohadilla de la pata enrojecida, sin aguijó
 
 Una hora después de las primeras fotos, Dakota dejó de lamerse la pata y se durmió a los pies del dueño, en el suelo fresco y no en su cama (probablemente por el calor). Ronca.
 
+## Desenlace (2026-11-12, 10:37 a. m.)
+
+Despertó bien. Pata sin hinchazón; camina por toda la casa, salió afuera, ladró y pide comida. Tranquila incluso con Rookie, el gato, al que normalmente tolera poco. Sin visita al veterinario. Resolución en menos de 14 horas con una sola tableta de meloxicam 1 mg.
+
 ## Fotos (tomadas esa noche, reloj visible a las 9:02)
 
 | Archivo | Qué muestra |
@@ -33,4 +37,4 @@ En las fotos no se ve hinchazón en la cara ni en el hocico, ni ronchas. Se ve t
 
 ## Pendiente
 
-- Desenlace: hinchazón, horas hasta volver a la normalidad, visita al veterinario o no.
+- Nada pendiente del relato. Antes de publicar: recortar fotos para no mostrar el interior de la casa.
