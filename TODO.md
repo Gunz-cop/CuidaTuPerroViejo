@@ -91,7 +91,9 @@ Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 
 
 ## Afiliados
 
-- [ ] **Listado de artículos de afiliado** (idea del propietario, 2026-11-11): 3 prospectos en `docs/afiliacion/prospectos-afiliados.md`; brief n.º 1 (camas de entrada baja) generado, pendiente de auditoría y de completar fichas B y C en AliExpress (MX y ES).
+- [ ] **Listado de artículos de afiliado** (idea del propietario, 2026-11-11): 3 prospectos en `docs/afiliacion/prospectos-afiliados.md`. Comparativa de camas redactada y auditada (aprobada con cambios, `docs/contenido/camas-entrada-baja-perro-mayor-comparativa/auditoria-articulo-r1.md`). Antes de publicar: portada I-1, comprobar a mano destino de los 3 enlaces `s.click`, revisar fichas MX/ES el día de publicación y decidir el título («entrada baja» solo lo cumple B).
+- [ ] Adaptar `metricas.mjs` de la auditoría al formato de brief de afiliados (da bloqueos falsos). (2026-11-11)
+- [ ] Registrar app en AliExpress Open Platform para usar la API de afiliados. (2026-11-11)
 - [ ] Prospecto 2 (rampas y escaleras) y 3 (carritos) tras medir 30 días el n.º 1.
 
 ## Limpieza del repositorio
