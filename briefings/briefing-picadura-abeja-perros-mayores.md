@@ -70,15 +70,21 @@ datePublished: "AAAA-MM-DD"
 
 | Hecho | Fuente en el expediente | Límite |
 |---|---|---|
-| Picadura en una pata, mientras dormía en su cama ortopédica | Relato | No se vio la picadura; se dedujo por la abeja en el suelo y la pata. |
+| Picadura en una pata, mientras dormía en su cama ortopédica, en Costa Rica | Relato | No se vio la picadura; se dedujo por la abeja en el suelo y la pata. |
 | Almohadilla enrojecida, sin aguijón visible | Relato, segunda revisión | No se sabe si el aguijón quedó dentro. |
-| Una tableta de COX-II 1 mg (meloxicam), Kirón México, registro Q-0790-005 | Relato + `blister-analgesico.jpg` | **No consta si un veterinario se lo había recetado a Dakota.** Ver decisión D1. |
+| Una tableta de COX-II 1 mg (meloxicam), Kirón México, registro Q-0790-005 | Relato + `blister-analgesico.jpg` | Recetado por su veterinario para episodios de dolor; tenerlo en casa fue indicación veterinaria (D1). |
 | Peso 20–23 kg, con sobrepeso | Relato | Estimación del propietario, no pesada en báscula ese día. |
 | Hora de las primeras fotos: 9:02 p. m. | Reloj visible en `foto-01` | La hora exacta de la picadura no consta. |
 | Dormida y roncando a las 10:02 p. m. | Relato | — |
 | Normal a las 10:37 a. m. del 2026-11-12, sin veterinario | Relato + `foto-11` a `foto-13` + vídeo | No hubo exploración veterinaria. |
 
-**Decisiones pendientes del propietario antes de redactar** (la redacción no empieza hasta tenerlas):
+**Decisiones del propietario (resueltas el 2026-11-12):**
+
+- **D1 — Origen del meloxicam: recetado.** Sus veterinarios se lo han recetado a Luna y a Dakota en varias consultas por dolor: verrugas o bultos que se reventaban, la vez que Dakota se mordió la pata arrancándose una verruga y su episodio de displasia de cadera, cuando no se podía mover. Los veterinarios le preguntan si lo tiene en casa y le indicaron que, ante un dolor puntual, puede darles una tableta, por pocos días, y que si el dolor es fuerte o sigue, vayan a consulta. El propietario lo guarda para emergencias (caída, golpe o herida) y renueva el blíster antes de que caduque. **Cómo se cuenta:** «el antiinflamatorio que su veterinario ya le había recetado para episodios de dolor y nos indicó tener en casa». **No se publican** la cantidad de días que mencionó el propietario («menos de 5, 3 como máximo»), la potencia, el número de tabletas como pauta ni la marca: son indicaciones individuales para sus perras, no una pauta para el lector.
+- **D2 — Fotos reales: autorizadas** («las que ocupes»), con los recortes de §8.
+- **D3 — País: Costa Rica**, se puede decir. Úsalo en la Introducción o en H2-3 una vez, y en H2-2 para dar contexto a las abejas africanizadas, que son las de la región, sin inventar datos locales (no hay fuente costarricense en §3). El español sigue siendo neutro.
+
+**Texto original de las decisiones antes de resolverlas:**
 
 - **D1 — Origen del meloxicam.** ¿Se lo había recetado un veterinario a Dakota (por ejemplo, para la artrosis) o era un medicamento que había en casa? Cambia cómo se cuenta: «el antiinflamatorio que su veterinario ya le había recetado» o «un antiinflamatorio que teníamos en casa, cosa que no volveríamos a hacer sin llamar antes». En ningún caso se publican dosis, mg/kg ni la potencia como pauta para el lector (política editorial y calidad editorial §4). La marca comercial tampoco se nombra en el artículo.
 - **D2 — Fotos reales.** ¿Autoriza publicar fotos de Dakota recortadas para que no se vea el interior de la casa ni a personas? Selección propuesta en §8.
@@ -271,7 +277,8 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 * *Objetivo:* contar con honestidad lo que hicimos y dar al lector un criterio seguro. Sin dosis.
 
 * `### Lo que hicimos nosotros, y lo que haríamos distinto`
-  * Según la decisión D1: Dakota tomó una tableta de un antiinflamatorio veterinario con meloxicam. Contarlo sin marca, sin miligramos y sin mg/kg. Si no estaba recetado, decirlo y añadir que la próxima vez llamaríamos antes. Si estaba recetado, decir que era su medicación pautada y que aun así lo consultaríamos.
+  * Decisión D1 resuelta: Dakota tomó una tableta del antiinflamatorio veterinario (meloxicam) que su veterinario ya le había recetado por otros episodios de dolor, entre ellos su displasia de cadera, y que nos indicó tener en casa. Contarlo sin marca, miligramos, mg/kg ni días de tratamiento.
+  * El mensaje para el lector: lo que hicimos funcionó porque el veterinario ya conocía a Dakota y nos había dado esa indicación. Si tu perro no tiene una indicación así, llama antes de darle nada, aunque tengas el mismo medicamento en casa. Pide a tu veterinario un plan para emergencias como el nuestro.
   * Mencionar que Dakota pesa 20–23 kg y tiene sobrepeso solo si ayuda a explicar por qué la dosis la decide el veterinario. Nunca como cálculo.
 * `### Por qué un analgésico de persona puede hacer daño`
   * FDA: «los perros no son personas pequeñas». Ibuprofeno, naproxeno, paracetamol y aspirina no se dan sin indicación.
@@ -353,7 +360,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 > [!IMPORTANT]
 > **Sujeto fijo en los 3 prompts:** `beagle hembra senior ilustrativa, tricolor (manto negro en el lomo, cabeza y orejas canela muy aclaradas, pecho, patas y punta de la cola blancos), complexión robusta con algo de sobrepeso, unos 20 kg`.
 
-### Fotografías reales (sujetas a D2)
+### Fotografías reales (autorizadas por el propietario, D2)
 
 | Archivo de origen | Uso | Recorte obligatorio | Pie (borrador) |
 |---|---|---|---|
@@ -484,11 +491,11 @@ Comprobar en cada foto final: ninguna persona identificable, ningún documento, 
 - [ ] Cierre en H2-6 como sección propia (mañana del 12 de noviembre con Rookie), con el límite de que no la vio un veterinario.
 
 **5. Límites clínicos (bloqueantes):**
-- [ ] Sin dosis, sin mg/kg, sin la potencia como pauta y sin marca comercial del meloxicam.
+- [ ] Sin dosis, sin mg/kg, sin la potencia, sin días de tratamiento y sin marca comercial del meloxicam.
 - [ ] Sin atribuir la mejoría de Dakota al meloxicam como causa.
 - [ ] Sin afirmar que tragarse el aguijón es inocuo (no hay fuente).
 - [ ] Sin afirmar un mayor riesgo por edad en perros: solo en personas, con el límite.
-- [ ] Las decisiones D1, D2 y D3 resueltas por el propietario y reflejadas.
+- [x] Las decisiones D1, D2 y D3 resueltas por el propietario (2026-11-12) y reflejadas en H2-4, §8 y la Introducción.
 
 ---
 
@@ -514,7 +521,7 @@ Comprobar en cada foto final: ninguna persona identificable, ningún documento, 
 |---|---|---|---|---|
 | Ficha para la próxima picadura (lista copiable en el propio texto) | H2-5 | En el cuerpo del `.mdx`; sin PDF | Planificado · redactor | Que se lea completa en el móvil; no prometer descarga |
 | 3 ilustraciones | Portada, H2-1 y H2-2 | `public/images/blog/picadura-abeja-perros-mayores/` | Planificado · producción visual | Abrir cada `.webp`, comprobar los 5 rasgos a 390 px, alt fiel, modo oscuro |
-| 3–4 fotografías reales de Dakota | Introducción, H2-3 y H2-6 | Misma carpeta, a partir de `docs/experiencias/…` | Pendiente de D2 · propietario + producción | Recorte sin personas ni datos de la vivienda; pie «Fotografía» |
+| 3–4 fotografías reales de Dakota | Introducción, H2-3 y H2-6 | Misma carpeta, a partir de `docs/experiencias/…` | Autorizado (D2) · producción | Recorte sin personas ni datos de la vivienda; pie «Fotografía» |
 | 7 enlaces internos y calculadora | Según §5 | Rutas de §5 | Planificado · redactor | `npx astro build` y abrir cada enlace en local |
 
 - [ ] Extensión y cada H2 justificados por una respuesta distinta.
