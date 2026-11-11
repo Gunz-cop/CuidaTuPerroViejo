@@ -89,7 +89,7 @@ test('sitemap + catálogo + HTML concordantes amplían el build en un documento 
   await rm(projectedRoot, { recursive: true });
   const additions = [];
   const sourceHtml = await readFile(sourceHtmlPath, 'utf8');
-  for (let index = 1; index <= 99 - EXPECTED; index += 1) {
+  for (let index = 1; index <= 98 - EXPECTED; index += 1) {
     const extraSlug = `f2-limit-${String(index).padStart(2, '0')}`;
     const extraPath = `/salud-perros-mayores/${extraSlug}`;
     const extraTitle = `Ficha sintética de límite ${index}`;
@@ -103,11 +103,11 @@ test('sitemap + catálogo + HTML concordantes amplían el build en un documento 
   await writeFile(catalogPath, `${JSON.stringify(catalog)}\n`);
   sitemap = sitemap.replace('</urlset>', `${additions.join('')}</urlset>`);
   await writeFile(sitemapPath, sitemap);
-  const inventory99 = join(temp, 'inventory-99');
-  assert.equal(await inventory(temp, inventory99), 0, 'el inventario y las 99 rutas sintéticas siguen concordantes');
-  const inventoryData99 = JSON.parse(await readFile(join(inventory99, 'inventory.json'), 'utf8'));
-  assert.equal(inventoryData99.pages.filter((page) => page.disposition === 'document').length, 99);
-  await assert.rejects(writeProjection(temp), /PROJECTION_DOCUMENT_COUNT documents=99 limit=98/u);
+  const inventory98 = join(temp, 'inventory-98');
+  assert.equal(await inventory(temp, inventory98), 0, 'el inventario y las 98 rutas sintéticas siguen concordantes');
+  const inventoryData98 = JSON.parse(await readFile(join(inventory98, 'inventory.json'), 'utf8'));
+  assert.equal(inventoryData98.pages.filter((page) => page.disposition === 'document').length, 98);
+  await assert.rejects(writeProjection(temp), /PROJECTION_DOCUMENT_COUNT documents=98 limit=97/u);
   await assert.rejects(readFile(projectedRoot), { code: 'ENOENT' }, 'no se publica artefacto al superar el límite');
 });
 

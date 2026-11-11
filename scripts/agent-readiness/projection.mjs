@@ -10,7 +10,7 @@ import { projectDocument } from './projection-dom.mjs';
 const SITE_ORIGIN = 'https://cuidatuperroviejo.com';
 const INDEX_PATH = 'agent-content/v1/index.json';
 const DOCUMENTS_DIR = 'agent-content/v1/documents';
-const MAX_DOCUMENTS = 98;
+const MAX_DOCUMENTS = 97; // Tres rutas reservadas: API, /admin y /admin/*.
 const MAX_INDEX_BYTES = 512 * 1024;
 const MAX_DOCUMENT_BYTES = 512 * 1024;
 const MAX_CORPUS_BYTES = 16 * 1024 * 1024;
@@ -258,7 +258,7 @@ export function expectedWorkerRoutes(index) {
   if (new Set(canonicals).size !== canonicals.length || canonicals.some((path) => !canonicalPathValid(path))) {
     throw new ProjectionError('ROUTING_CANONICAL_PATH_INVALID_OR_DUPLICATE', 1);
   }
-  const routes = ['/api/*', '/admin/*', ...canonicals.sort(ascii)];
+  const routes = ['/api/*', '/admin', '/admin/*', ...canonicals.sort(ascii)];
   if (routes.length > 100 || routes.some((route) => route.length > 100 || !/^[\x21-\x7e]+$/u.test(route))) {
     throw new ProjectionError(`ROUTING_RULE_LIMIT rules=${routes.length}`, 1);
   }
