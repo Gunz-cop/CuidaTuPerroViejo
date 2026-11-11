@@ -240,7 +240,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [ ] *Enfermedad cardíaca canina: cómo identificar y cuidar a un perro viejo con soplo o tos cardíaca*
 - [ ] *Diabetes canina en la tercera edad: control de glucosa, síntomas y tratamiento*
 - [ ] *Cáncer y tumores geriátricos: señales de advertencia física que no debes pasar por alto*
-- [~] *Picadura de abeja en perros mayores: qué hacer en casa y cuándo ir al veterinario* (Brief APTO CON RESERVAS en R4/5, 2026-11-12 — ver `briefings/briefing-picadura-abeja-perros-mayores.md` y `docs/contenido/picadura-abeja-perros-mayores/`; experiencia propia de Dakota, 2026-11-11; pendiente de redactar)
+- [~] *Picadura de abeja en perros mayores: qué hacer en casa y cuándo ir al veterinario* (Brief APTO CON RESERVAS en R4/5, 2026-11-12 — ver `briefings/briefing-picadura-abeja-perros-mayores.md` y `docs/contenido/picadura-abeja-perros-mayores/`; experiencia propia de Dakota, 2026-11-11; texto redactado el 2026-11-12 en `src/content/blog/picadura-abeja-perros-mayores.mdx`, solo texto; pendiente de auditoría del artículo e imágenes; no fusionar en `main` antes)
 
 ### Pilar 3: Alimentación de Perros Senior (11 artículos totales propuestos)
 *Estado: 1 publicado, 10 por redactar*

@@ -6,6 +6,9 @@
 
 **Estado:** **APTO CON RESERVAS en R4/5** (auditoría independiente sobre `ab81a4b`, `docs/contenido/picadura-abeja-perros-mayores/auditoria-brief-r4.md`). Las tres reservas P2 (R4-1 a R4-3) se aplicaron después como ajustes literales sin cambio de contenido. Listo para redactar.
 
+> [!NOTE]
+> **Estado:** texto redactado en `src/content/blog/picadura-abeja-perros-mayores.mdx` el 2026-11-12 (solo texto, 4.229 palabras; imágenes pendientes con marcadores `{/* IMAGEN … */}`). Pendiente: auditoría independiente del artículo, imágenes y gates de §11. No fusionar en `main` antes.
+
 ---
 
 ## 1. DATOS, METADATOS Y FRONTMATTER MDX
