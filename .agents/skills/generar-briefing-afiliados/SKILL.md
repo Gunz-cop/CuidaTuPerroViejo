@@ -17,6 +17,18 @@ Variante de [`generar-briefing-contenido`](../generar-briefing-contenido/SKILL.m
 6. **Tabla comparativa obligatoria** arriba del primer H2 de fichas, con las columnas que deciden la compra.
 7. **Alternativa sin compra.** Cada brief incluye cuándo NO hace falta comprar (adaptar lo que ya se tiene).
 8. **Independencia del programa.** Separa criterio (fijo) de fichas (dependen de la tienda) para poder cambiar AliExpress por Amazon, eBay u otro sin reescribir.
+9. **Criterios sin umbrales inventados.** En «Criterios de compra» no se escribe una cifra (altura, grosor, margen, densidad) salvo que la fuente citada la contenga literalmente. Si ninguna fuente la fija, el criterio es cualitativo y la única cifra es la medida del propio perro. Comprueba que no contradices la guía informativa enlazada.
+10. **Precio habitual, no promocional.** La tabla y el bloque usan el precio habitual con fecha; la oferta de comprador nuevo se anota aparte y no se compara. En España, el coste total con aranceles o `pendiente`.
+
+## Lo que sigue vigente de la skill base (no omitir)
+
+- **Frontmatter completo** (`title`, `seoTitle` ≤ 55, `metaDescription` ≤ 160, `pillar`, `heroImage`, `heroImageAlt`, `datePublished`), medido con `len()`.
+- **Componentes**: AlertBox (`info` para «no trata», `warning` para talla/devolución, `danger` para señales de urgencia) y FAQ comercial (talla, devolución, aranceles), o una exclusión razonada.
+- **Imágenes generadas**: prompt completo según la [dirección visual editorial](../references/direccion-visual-editorial.md) (8 bloques, 5 rasgos senior, «Rechazar si a tamaño móvil parece un adulto joven», aceptación), raza justificada frente a las recientes y `alt` por pieza.
+- **`Sustentado en:`** en cada H2, incluidos los de comercio (capturas fechadas como fuente).
+- **Presupuesto**: la suma de rangos por sección cuadra con la extensión del contrato.
+- **Voz y tono**: [guía](../references/guia-voz-tono.md) y medición con `tono.py`.
+- **Inventario**: marcar el artículo `[~] (En Briefing)` en `INVENTARIO_CONTENIDO.md`.
 
 ## Datos obligatorios por producto (Sección «Fichas» del brief)
 
@@ -26,7 +38,7 @@ Usa la ficha de relevo de la guía de afiliación: ID, vendedor, variante, URL s
 
 - `rel="sponsored noopener noreferrer"` en cada enlace comercial; aviso de comisión visible junto al CTA y uno breve al inicio.
 - Sin marcado `Review`/`AggregateRating` salvo prueba propia real; no copiar estrellas del vendedor.
-- España: Ley General para la Defensa de Consumidores y orientaciones UE sobre publicidad encubierta. México: PROFECO / LFPC (publicidad que no induzca a error). Precios siempre con fecha y «puede cambiar».
+- España: TRLGDCU (RDL 1/2007), Ley 34/1988 General de Publicidad y LSSI (Ley 34/2002) art. 20; orientaciones UE ([Influencer legal hub](https://commission.europa.eu/topics/consumers/consumer-rights-and-complaints/influencer-legal-hub_en)). México: LFPC art. 32 y PROFECO (publicidad veraz, comprobable y que no induzca a error). Cita URL profunda verificada. Precios siempre con fecha y «puede cambiar».
 - Fuera de afiliación lo que la guía excluye (fármacos, suplementos, órtesis, sillas de ruedas, soportes de ajuste individual).
 
 ## Plantilla

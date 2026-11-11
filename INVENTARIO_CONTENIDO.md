@@ -259,6 +259,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 *Estado: 2 publicados, 8 por redactar*
 - [x] *Cama ortopédica para perros mayores con displasia o artrosis* (Publicado)
 - [x] *Prevención de caídas en casa: tracción y layout* (Publicado)
+- [~] *Camas de entrada baja para perro mayor: 3 modelos comparados por medida y acceso* (En Briefing — afiliados; ver `briefings/briefing-camas-entrada-baja-perro-mayor-comparativa.md`)
 - [ ] *A mi perro viejo le fallan las patas traseras: causas físicas y qué hacer* (Búsqueda GSC)
 - [ ] *Masajes y estiramientos caseros para perros con artrosis y rigidez articular* (Búsqueda GSC)
 - [ ] *Mi perro mayor no se puede levantar: guía paso a paso de ayuda de emergencia* (Búsqueda GSC)
