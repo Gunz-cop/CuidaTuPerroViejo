@@ -247,7 +247,7 @@ Rechazar si a tamaño móvil parece un adulto joven.
 ## 11. Medición y mantenimiento
 
 - Un Tracking ID por ficha (`camas-cmp-a`, `-b`, `-c`) para saber cuál convierte.
-- Tracking IDs creados el 11/11/2026 (ver §6). Revisión semanal de las tres fichas durante el primer mes, mensual después; retirar o pausar si cambia vendedor, variante o envío a un país.
+- Tracking IDs creados el 11/11/2026 (ver §6). Sin revisión periódica de las fichas (decisión del propietario, 11/11/2026): el artículo queda publicado sin mantenimiento y declara la fecha de revisión y que disponibilidad, envío y condiciones pueden cambiar.
 - A los 30 días: visitas (Cloudflare), clics y pedidos por Tracking ID (portal), consultas por país (Search Console). Decidir con eso si se sigue con el prospecto 2 (rampas).
 
 ## 12. Contrato de entrega y bloqueos

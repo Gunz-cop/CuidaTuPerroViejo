@@ -86,3 +86,21 @@ Componentes: AlertBox info (entradilla), warning (H2-3), danger (H2-6), cuadro d
 3. Auditoría independiente del artículo (`auditar-articulo-blog`).
 4. Opcional: migrar `cama-guia-01` a `FichaAfiliada` con su test, en un encargo separado.
 5. El inventario pasa a «Publicado» solo tras comprobar la URL pública.
+
+## Correcciones r1
+
+Sesión correctora, 2026-11-11, a partir de `auditoria-articulo-r1.md` y de las decisiones del propietario del mismo día. Portada (P1-1) y título no se tocan: la portada la gestiona otra sesión y el título lo matiza la entradilla. P1-2 y P1-3 siguen en manos del propietario.
+
+| Hallazgo | Cambio |
+| --- | --- |
+| P2-1 `metricas.mjs` no lee briefs de afiliados | Sin cambio en el artículo (patrón de herramienta, encargo aparte). `tono.py`: 2 254 palabras, 0 muletillas |
+| P2-2 F1 ausente en H2-5/H2-6 | F1 (AAHA 2023) citada por nombre y enlazada en H2-5 «Cuándo no hace falta comprar», donde sostiene adaptar superficies y accesos de casa. En H2-2 y H2-6 basta F5 |
+| P2-3 «Los tres modelos» corto; C sin comprobación al recibirla | Añadido a C «Qué comprobar al recibirla»: marco estable sin cojear y malla tensa sin bolsa; si cede, devolver en plazo |
+| P2-4 plazos de México de A | Sin cambio: el texto ya engloba ambos rangos sin falsearlos |
+| P2-5 promesa de revisión semanal | Eliminada. Sustituida por «Datos revisados el 11 de noviembre de 2026; disponibilidad, envío y condiciones pueden cambiar, así que compruébalos en AliExpress antes de comprar». Brief §11 ajustado: sin revisión periódica (decisión del propietario). `prospectos-afiliados.md` no prometía mantenimiento |
+| P2-6 I-2 ilegible a 390 px y siluetas de perro | `CamasMedidaVisual.astro` (I-2) rehecho en vertical (viewBox 360×640, ancho máx. 400 px): texto a ~18–21 px efectivos en 390 px, «Interior» separado de su flecha, «de lado a lado» bajo su flecha. Siluetas de perro sustituidas por contornos geométricos discontinuos (rectángulo y círculo), según AGENTS.md. I-3 intacta. Captura a 390 px revisada |
+| P2-7 «la talla que anuncia un vendedor suele ser la exterior» | Acotada a lo verificado: «En la ficha A, la talla anunciada es la exterior…» |
+| P2-8 título vs. entrada baja | Título sin cambios. Entradilla: solo B acredita entrada baja (10 cm, sin bordes); A no declara el lado de entrada; C queda a 20 cm y va como contraste |
+| P2-9 teclado y movimiento reducido | Probado con Playwright (Chromium, 390 px): con Tab se alcanzan los tres CTA (`camas-cmp-a/b/c`) con `href` correcto y contorno de foco sólido de 2 px; con `reducedMotion: reduce` ninguna ficha tiene animación ni transición activa (sin `reduce`, sí) |
+
+Validación: `npm run check` 0 errores; `npm test` 141 pass / 0 fail; `npx astro build` exit 0; `projection.mjs check --build-dir dist` OK. `FichaAfiliada.astro` no se modificó: no se encontró defecto.
