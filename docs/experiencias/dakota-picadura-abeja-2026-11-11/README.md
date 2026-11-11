@@ -16,7 +16,7 @@ Una hora después de las primeras fotos, Dakota dejó de lamerse la pata y se du
 
 ## Desenlace (2026-11-12, 10:37 a. m.)
 
-Despertó bien. Pata sin hinchazón; camina por toda la casa, salió afuera, ladró y pide comida. Tranquila incluso con Rookie, el gato, al que normalmente tolera poco. Sin visita al veterinario. Resolución en menos de 14 horas con una sola tableta de meloxicam 1 mg.
+Despertó bien. Pata sin hinchazón; camina por toda la casa, salió afuera, ladró y pide comida. Tranquila incluso con Rookie, el gato, al que normalmente tolera poco. Sin visita al veterinario. Normal en menos de 14 horas; había tomado una sola tableta de meloxicam 1 mg, pero no se sabe si influyó (la mayoría de picaduras se resuelven solas en horas).
 
 ## Fotos (tomadas esa noche, reloj visible a las 9:02)
 

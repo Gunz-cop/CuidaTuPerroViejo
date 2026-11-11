@@ -1,6 +1,6 @@
 # 📋 BRIEF DE CONTENIDOS TÉCNICO: Picadura de abeja en perros mayores: qué hacer en casa y cuándo ir al veterinario
 
-**Sitio:** cuidatuperroviejo.com | **Pilar:** Salud de Perros Mayores | **Tipo:** Artículo spoke (Astro/MDX) | **Versión:** v2, 2026-11-12 (corrige la auditoría R1, `docs/contenido/picadura-abeja-perros-mayores/auditoria-brief-r1.md`)
+**Sitio:** cuidatuperroviejo.com | **Pilar:** Salud de Perros Mayores | **Tipo:** Artículo spoke (Astro/MDX) | **Versión:** v3, 2026-11-12 (corrige las auditorías R1 y R2; `docs/contenido/picadura-abeja-perros-mayores/auditoria-brief-r1.md`)
 
 **Origen del encargo:** el propietario vivió la picadura de Dakota la noche del 2026-11-11, la documentó con fotos durante la noche y la mañana siguiente, y pidió el briefing el 2026-11-12. Expediente con relato, fotos y vídeo: `docs/experiencias/dakota-picadura-abeja-2026-11-11/`.
 
@@ -70,7 +70,7 @@ datePublished: "AAAA-MM-DD"
 
 | Hecho | Fuente en el expediente | Límite |
 |---|---|---|
-| Picadura en una pata, mientras dormía en su cama ortopédica, en Costa Rica | Relato | No se vio la picadura; se dedujo por la abeja en el suelo y la pata. |
+| Picadura en una pata, mientras dormía en su cama ortopédica, en Costa Rica | Relato; país, decisión D3 del propietario | No se vio la picadura; se dedujo por la abeja en el suelo y la pata. |
 | Almohadilla enrojecida, sin aguijón visible | Relato, segunda revisión | No se sabe si el aguijón quedó dentro. |
 | Una tableta de COX-II 1 mg (meloxicam), Kirón México, registro Q-0790-005 | Relato + `blister-analgesico.jpg` | Recetado por su veterinario para episodios de dolor; tenerlo en casa fue indicación veterinaria (D1). |
 | Peso 20–23 kg, con sobrepeso | Relato | Estimación del propietario, no pesada en báscula ese día. |
@@ -136,14 +136,14 @@ datePublished: "AAAA-MM-DD"
      - Sitio de picadura documentado en 163 perros: cara 39 %, **pata 28 %**, boca 21 % (Resultados, 3.1).
      - Factores asociados a reacciones sistémicas graves en el análisis multivariable: picadura en la boca (OR 2,62), menos de 2 años (OR 2,11), menos de 10 kg (OR 2,06), raza pura (OR 2,43) y **enfermedades concurrentes en el momento de la picadura (OR 4,48; IC 95 % 1,28–15,71)** (Resultados, 3.3).
      - Historia natural en los 43 perros con picaduras posteriores (Resultados, 3.2): de los 24 con reacción leve la primera vez, 14 (58 %) volvieron a tener una reacción leve y **10 (42 %) tuvieron una reacción sistémica grave (SSR, grados 2–3)**. **Atención: en este estudio «leve» es el grado 1 de anafilaxia de la tabla 2 («Skin: generalized erythema, urticaria and/or angioedema»), en perros diagnosticados de alergia al veneno; no es una reacción local en el sitio de la picadura.**
-     - Tabla 2 (grados de anafilaxia): grado 1, piel (eritema generalizado, urticaria, angioedema); grado 2, digestivo o respiratorio (vómitos, diarrea, disnea, estridor); grado 3, cardiovascular o neurológico (palidez, cianosis, colapso, pérdida de consciencia). Es el sustento de los signos de la AlertBox `danger` de H2-2. De los 19 con reacción moderada o grave, 12 (63 %) la repitieron igual o peor.
+     - Tabla 2 (grados de anafilaxia): grado 1, piel (eritema generalizado, urticaria, angioedema); grado 2, digestivo o respiratorio («dyspnea, stridor, wheeze, nausea, vomiting and/or abdominal pain»; la diarrea no figura); grado 3, cardiovascular o neurológico (palidez, cianosis, colapso, pérdida de consciencia). Es el sustento de los signos de la AlertBox `danger` de H2-2. De los 19 con reacción moderada o grave, 12 (63 %) la repitieron igual o peor.
      - La mediana de edad fue 1,7 años (rango 0,2–14,7). En personas, la mayor edad aumenta el riesgo (Discusión).
    - *H2:* H2-2 (signos, tabla 2), H2-3 (pata), H2-5 (próxima picadura, enfermedades concurrentes, edad). *Límites:* es una población hospitalaria de referencia, con sesgo hacia los casos graves. El seguimiento de picaduras posteriores es de solo 43 perros. La población es joven, así que **no hay dato canino de que la edad avanzada aumente el riesgo**: el redactor solo puede decir que en personas sí ocurre y que en perros no se ha estudiado bien. Las enfermedades concurrentes son una asociación, no una causa demostrada.
 
 5. **Nagy AL. «Wasp, Bee, and Ant Stings to Animals». *Merck Veterinary Manual* (versión profesional), revisión completa de abril de 2026; revisado por Brutlag A.** [URL](https://www.merckvetmanual.com/toxicology/bites-and-stings-from-spiders-scorpions-and-insects/wasp-bee-and-ant-stings-to-animals). Leída el 2026-11-12.
    - *Datos clave (sección):*
-     - «Clinical Signs of Wasp and Bee Stings»: el veneno causa dolor e hinchazón locales en minutos. El aguijón de la abeja melífera puede quedar clavado y formar un absceso. Las reacciones locales se resuelven rápido salvo que haya una reacción grave.
-     - «Treatment of Wasp and Bee Stings»: retirar el aguijón si es posible, control del dolor, compresa fresca y antihistamínicos según necesidad. En anafilaxia grave, tratamiento hospitalario (fluidos intravenosos, corticoides, adrenalina, antihistamínicos).
+     - «Clinical Signs of Wasp and Bee Stings»: el veneno causa dolor e hinchazón locales en minutos. El aguijón de la abeja melífera puede quedar clavado y formar un absceso. Las reacciones locales se resuelven rápido («within minutes») salvo que haya una reacción grave.
+     - «Treatment of Wasp and Bee Stings»: retirar el aguijón si es posible, control del dolor, compresa fresca y antihistamínicos según necesidad. En anafilaxia grave, «more aggressive treatment» (fluidos intravenosos, corticoides, adrenalina, antihistamínicos).
      - Abejas africanizadas: pueden producir decenas o cientos de picaduras. Signos de envenenamiento masivo: parálisis facial, ataxia, convulsiones, orina o heces con sangre. Requiere soporte intensivo.
    - *H2:* H2-1, H2-2, H2-3, H2-4. *Límites:* es un manual profesional. Que mencione antihistamínicos no autoriza a dar uno sin indicación veterinaria: el redactor lo explica en H2-4.
 
@@ -239,7 +239,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 * *Objetivo:* que el lector distinga en casa lo que puede vigilar de lo que exige salir ya.
 
 * `### Lo esperable: dolor, hinchazón y lamidas en la zona`
-  * Enrojecimiento, hinchazón y dolor en el sitio; lamerse; levantar la pata. Suele ceder en horas (Fitzgerald). Una reacción «regional» puede hinchar más allá del sitio, por ejemplo toda la pata o media cara: hay que consultar el mismo día.
+  * Enrojecimiento, hinchazón y dolor en el sitio; lamerse; levantar la pata. Suele ceder en minutos u horas: Merck habla de minutos y Fitzgerald de unas horas; decir «de minutos a unas horas» y citar las dos. Una reacción «regional» puede hinchar más allá del sitio, por ejemplo toda la pata o media cara: hay que consultar el mismo día.
 * `### Anafilaxia: qué es y por qué no se trata en casa`
   * Reacción alérgica de todo el cuerpo, que puede ser mortal. Su tratamiento es la adrenalina, que pone el veterinario, y los antihistamínicos no la sustituyen (Shmuel y Cortes). No depende de cuántas picaduras: una sola basta (Fitzgerald).
   * No afirmar qué órganos se afectan en el perro como dato de Shmuel (ver límite en §3).
@@ -249,10 +249,10 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 * **AlertBox danger** (lista cerrada, en lenguaje de cuidador):
   ```mdx
   <AlertBox type="danger" title="Ve a urgencias ya si notas cualquiera de estas señales">
-    [Borrador: hinchazón de la cara, el hocico o la garganta; ronchas por el cuerpo; respiración difícil o ruidosa; vómitos o diarrea tras la picadura; debilidad, desmayo o encías pálidas; picadura dentro de la boca; muchas picaduras; tambaleo o convulsiones. Llama mientras vas.]
+    [Borrador: hinchazón de la cara, el hocico o la garganta; ronchas por el cuerpo; respiración difícil o ruidosa; vómitos o dolor de barriga tras la picadura; desmayo o encías pálidas; picadura dentro de la boca; muchas picaduras; tambaleo o convulsiones. Llama mientras vas.]
   </AlertBox>
   ```
-  * Fuentes de cada signo: ronchas, hinchazón de cara y garganta, respiración difícil o ruidosa, vómitos y diarrea, encías pálidas, colapso o desmayo (Chapman et al. 2024, tabla 2, grados de anafilaxia); picadura en la boca (Chapman, análisis de riesgo, H2-5); muchas picaduras, tambaleo y convulsiones (Merck). Shmuel y Cortes sostiene el diagnóstico clínico y la adrenalina, no la lista de signos. El redactor no añade signos que no estén en estas fuentes.
+  * Fuentes de cada signo: ronchas, hinchazón de cara y garganta, respiración difícil o ruidosa, vómitos o dolor abdominal, encías pálidas, colapso o desmayo (Chapman et al. 2024, tabla 2, grados de anafilaxia; la diarrea no está en esa tabla y no se añade a la lista); picadura en la boca (Chapman, análisis de riesgo, H2-5); muchas picaduras, tambaleo y convulsiones (Merck). Shmuel y Cortes sostiene el diagnóstico clínico y la adrenalina, no la lista de signos. El redactor no añade signos que no estén en estas fuentes.
 
 ---
 
@@ -278,7 +278,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 * *Objetivo:* contar con honestidad lo que hicimos y dar al lector un criterio seguro. Sin dosis.
 
 * `### Lo que hicimos nosotros, y lo que haríamos distinto`
-  * Decisión D1 resuelta: Dakota tomó una tableta del antiinflamatorio veterinario (meloxicam) que su veterinario ya le había recetado por otros episodios de dolor, entre ellos su displasia de cadera, y que nos indicó tener en casa. Contarlo sin marca, miligramos, mg/kg ni días de tratamiento.
+  * Decisión D1 resuelta: Dakota tomó una tableta del antiinflamatorio veterinario (meloxicam) que su veterinario ya le había recetado por otros episodios de dolor, entre ellos su displasia de cadera, y que, según el propietario, sus veterinarios saben que tiene en casa (le preguntan si lo tiene) para dar una tableta ante un dolor puntual. Contarlo sin marca, miligramos, mg/kg ni días de tratamiento.
   * El mensaje para el lector: lo hicimos así porque su veterinario ya conocía a Dakota y nos había dado esa indicación; no sabemos si la tableta influyó. Si tu perro no tiene una indicación así, llama antes de darle nada, aunque tengas el mismo medicamento en casa. Pide a tu veterinario un plan para emergencias como el nuestro.
   * Mencionar que Dakota pesa 20–23 kg y tiene sobrepeso solo si ayuda a explicar por qué la dosis la decide el veterinario. Nunca como cálculo.
 * `### Por qué un analgésico de persona puede hacer daño`
@@ -292,7 +292,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 * **AlertBox warning:**
   ```mdx
   <AlertBox type="warning" title="Antes de darle cualquier medicamento">
-    [Borrador: llama al veterinario aunque sea un medicamento veterinario que ya tengas en casa; nunca le des analgésicos de persona; no juntes dos antiinflamatorios ni un antiinflamatorio con cortisona; si toma medicación crónica o tiene enfermedad renal, hepática o digestiva, díselo al veterinario por teléfono.]
+    [Borrador: si tu veterinario no te dio una indicación previa para tu perro, llámalo antes de darle un medicamento que tengas en casa; nunca le des analgésicos de persona; no juntes dos antiinflamatorios ni un antiinflamatorio con cortisona; si toma medicación crónica o tiene enfermedad renal, hepática o digestiva, díselo al veterinario por teléfono.]
   </AlertBox>
   ```
 
@@ -352,7 +352,7 @@ Rutas comprobadas el 2026-11-12 en `INVENTARIO_CONTENIDO.md` y en el `pilar`/`st
 
 ## 8. GUÍA VISUAL
 
-**Plan:** una portada ilustrada, dos ilustraciones didácticas y hasta cuatro fotografías reales de Dakota, si el propietario lo autoriza (D2). Flujo: [crear-animaciones-articulo-blog](../.agents/skills/crear-animaciones-articulo-blog/SKILL.md) y [dirección visual editorial](../.agents/skills/references/direccion-visual-editorial.md). No se planifican animaciones: el artículo se entiende con imágenes estáticas y el propietario no las ha pedido.
+**Plan:** una portada ilustrada, dos ilustraciones didácticas y hasta cuatro fotografías reales de Dakota, autorizadas por el propietario (D2). Flujo: [crear-animaciones-articulo-blog](../.agents/skills/crear-animaciones-articulo-blog/SKILL.md) y [dirección visual editorial](../.agents/skills/references/direccion-visual-editorial.md). No se planifican animaciones: el artículo se entiende con imágenes estáticas y el propietario no las ha pedido.
 
 > [!IMPORTANT]
 > **Razas recientes** (registro de `direccion-visual-editorial.md`, comprobado el 2026-11-12): procesionaria, perro de aguas español; miedo a la pólvora, mestizo criollo canela, y en sus testimonios Luna y Dakota, beagles en fotografía real; petardos, bodeguero andaluz; leishmaniosis, mestizo pastor-mastín; golpe de calor, podenco. Además, la portada de `como-dar-medicacion-perro`, enlace puente de este artículo, también es beagle.
@@ -430,11 +430,11 @@ Comprobar en cada foto final: ninguna persona identificable, ningún documento, 
   ```
 * **Caption:** *Ilustración: raspar o pellizcar da igual; lo que reduce el veneno es quitarlo rápido.*
 
-#### Imagen 3 — Frío local y vigilancia (resolutiva, H2-2 o H2-1)
+#### Imagen 3 — Frío local y vigilancia (resolutiva, H2-1, al final de «Los 10 minutos que importan»)
 
 | Decisión | Contenido |
 |---|---|
-| Función y sección | Final de H2-1 o inicio de H2-2: enseñar el frío local y la vigilancia de la cara durante la primera media hora. |
+| Función y sección | H2-1, al final de «Los 10 minutos que importan»: enseñar el frío local y la vigilancia de la cara durante la primera media hora. |
 | Entorno | La misma sala. Lámpara de pie y, al fondo, un teléfono móvil boca abajo en el suelo junto al cuidador (teléfono a mano). |
 | Materiales | Paño de algodón húmedo y frío doblado sobre la pata (sin hielo directo), baldosa y cama. |
 | Sujeto | Misma beagle, tumbada en posición de esfinge, con la pata envuelta por encima con el paño. |
@@ -510,7 +510,7 @@ Fila del registro de razas ya añadida en `direccion-visual-editorial.md`.
 - [x] Sin canibalización.
 - [x] Suma de targets: 4.450.
 - [x] Trazabilidad: las 6 fuentes tienen un H2 que desarrolla su dato clave.
-- [x] Transcripción depurada sin datos añadidos; las dudas abiertas están en D1–D3.
+- [x] Transcripción depurada sin datos añadidos; las decisiones D1–D3 están resueltas y registradas también en el expediente.
 
 **Del artículo `.mdx` final:** ver la plantilla (importaciones, sin H1, párrafos, H3, prompts con los 5 rasgos, recuento real, fuentes citadas, componentes y enlace a la calculadora) más el bloque 5 del contrato.
 
@@ -529,4 +529,4 @@ Fila del registro de razas ya añadida en `direccion-visual-editorial.md`.
 - [ ] Registro fuente → afirmación → localización completo (§3).
 - [ ] Procedencia declarada; fotos reales identificadas como tales; ilustraciones sin presentarse como Dakota.
 - [ ] Coherencia con `src/pages/politica-editorial.astro`; sin pauta farmacológica.
-- [ ] Historial de auditoría numerado, máximo tres rondas.
+- [ ] Historial de auditoría numerado, máximo cinco rondas (límite autorizado por el propietario el 2026-11-12).
