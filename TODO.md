@@ -81,6 +81,11 @@ Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 
 - [ ] **API de valoraciones caída (menor, lo arregla el dueño en otra sesión):** `GET /api/feedback?slug=…` devuelve 500 «Error interno del servidor» en producción para todos los artículos; el dueño lo vio fallar desde hace uno o dos días. No tumba el sitio y hoy no se usa como métrica: los votos «útil / no útil» se guardan como contadores en D1 (`feedback_counts`, `src/pages/api/feedback.ts`), pero solo los muestra el propio widget y no hay panel que los lea. Primera pista: comprobar que la tabla existe en la D1 de producción y revisar el log del Worker. (Anotado: 2026-10-24) Reconfirmado el 2026-10-26 tras #149: HTTP500 también en petardos, golpe de calor y leishmaniosis; mismo cuerpo de error, sin cambios en la API en estos PR. Evidencia: `docs/contenido/miedo-petardos-perros-mayores/publicacion/produccion/feedback-comparacion.json`.
 - [ ] **Botón flotante de opiniones:** a 390 px tapa la esquina inferior derecha de tarjetas y recursos (visto en golpe de calor, pasa en todo el sitio). Valorar desplazarlo o reducirlo en móvil. (Anotado: 2026-10-24)
 
+## Afiliados
+
+- [ ] **Listado de artículos de afiliado** (idea del propietario, 2026-11-11): 3 prospectos en `docs/afiliacion/prospectos-afiliados.md`; brief n.º 1 (camas de entrada baja) generado, pendiente de auditoría y de completar fichas B y C en AliExpress (MX y ES).
+- [ ] Prospecto 2 (rampas y escaleras) y 3 (carritos) tras medir 30 días el n.º 1.
+
 ## Limpieza del repositorio
 
 - [x] Borrados 288 PDF y capturas de `docs/` que no usaba nada (se conservan las 3 que enlazan las skills) — PR #142 (2026-10-21).
