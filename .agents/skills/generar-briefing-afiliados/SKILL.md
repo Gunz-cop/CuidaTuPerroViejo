@@ -22,7 +22,7 @@ Variante de [`generar-briefing-contenido`](../generar-briefing-contenido/SKILL.m
 
 ## Lo que sigue vigente de la skill base (no omitir)
 
-- **Frontmatter completo** (`title`, `seoTitle` ≤ 55, `metaDescription` ≤ 160, `pillar`, `heroImage`, `heroImageAlt`, `datePublished`), medido con `len()`.
+- **Frontmatter completo** (`title`, `seoTitle` ≤ 55, `metaDescription` ≤ 160, `pilar` (valor del enum de `src/content.config.ts`, no `pillar`), `keywordPrincipal`, `heroImage`, `heroImageAlt`, `status`, `datePublished`), medido con `len()`. Nombres y valores exactos de `src/content.config.ts` (`z.strictObject`: una clave fuera del schema rompe el build). Un valor aún desconocido se escribe entre comillas como `"<<PENDIENTE: …>>"`, nunca como texto que valide (p. ej. `"pendiente"`), y el brief indica que debe sustituirse u omitirse antes del MDX (`grep PENDIENTE` vacío al entregar).
 - **Componentes**: AlertBox (`info` para «no trata», `warning` para talla/devolución, `danger` para señales de urgencia) y FAQ comercial (talla, devolución, aranceles), o una exclusión razonada.
 - **Imágenes generadas**: prompt completo según la [dirección visual editorial](../references/direccion-visual-editorial.md) (8 bloques, 5 rasgos senior, «Rechazar si a tamaño móvil parece un adulto joven», aceptación), raza justificada frente a las recientes y `alt` por pieza.
 - **`Sustentado en:`** en cada H2, incluidos los de comercio (capturas fechadas como fuente).

@@ -3,7 +3,7 @@
 ## 1. Metadatos
 Título · H1 · slug · pilar · keyword principal y secundarias · mercado(s) · programa · intención de búsqueda · extensión justificada (igual a la suma de §7).
 
-Bloque YAML de frontmatter: `title`, `seoTitle` (≤ 55, medido), `metaDescription` (≤ 160, medido), `pillar`, `heroImage`, `heroImageAlt`, `datePublished`.
+Bloque YAML de frontmatter: `title`, `seoTitle` (≤ 55, medido), `metaDescription` (≤ 160, medido), `pilar` (valor del enum de `src/content.config.ts`, no `pillar`), `keywordPrincipal`, `heroImage`, `heroImageAlt`, `status`, `datePublished`. Nombres y valores exactos de `src/content.config.ts` (`z.strictObject`: una clave fuera del schema rompe el build). Un valor aún desconocido se escribe entre comillas como `"<<PENDIENTE: …>>"`, nunca como texto que valide (p. ej. `"pendiente"`), y el brief indica que debe sustituirse u omitirse antes del MDX (`grep PENDIENTE` vacío al entregar).
 
 ## 2. Procedencia de la experiencia
 Qué se probó de verdad, qué no, y cómo se dirá en el texto.

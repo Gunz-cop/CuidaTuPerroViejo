@@ -23,13 +23,17 @@ Frontmatter propuesto (medido con `len()`):
 title: "Camas de entrada baja para perro mayor: 3 modelos comparados por medida y acceso"
 seoTitle: "Camas de entrada baja para perro mayor: comparativa"   # 51
 metaDescription: "Compara camas de entrada baja para perro mayor por medida interior, acceso y núcleo, con precio y entrega fechados para México y España. Sin promesas clínicas."   # 159
-pillar: "movilidad-dolor-perros-mayores"
-heroImage: "pendiente (I-1)"
+pilar: "movilidad-dolor-perros-mayores"
+keywordPrincipal: "cama perro mayor entrada baja"
+heroImage: "<<PENDIENTE: ruta de I-1 en /images/…>>"
 heroImageAlt: "Perro mestizo grande de hocico canoso entrando despacio en una cama baja junto al sofá de un salón"
-datePublished: pendiente (día de publicación)
+status: "Publicado"
+datePublished: "<<PENDIENTE: AAAA-MM-DD del día de publicación>>"
 ```
 
-El redactor comprueba los nombres exactos de campo contra `src/content.config.ts` antes de escribir el MDX.
+Nombres y valores comprobados contra `src/content.config.ts` (`z.strictObject`): `pilar` (no `pillar`) es obligatorio y debe ser uno de los valores del enum; `keywordPrincipal`, `heroImage` y `heroImageAlt` son opcionales; `status` tiene por defecto `"Publicado"`, y solo ese valor hace visible la entrada en portada y tarjetas relacionadas; `datePublished` es cadena (AAAA-MM-DD, entre comillas). Cualquier clave fuera del schema rompe el build.
+
+**Marcadores que no pueden llegar al MDX.** Los valores `<<PENDIENTE: …>>` de `heroImage` y `datePublished` son marcadores, no datos: el redactor los sustituye por la ruta real de I-1 y la fecha real antes de crear el MDX. Si al redactar sigue sin existir I-1, se omite `heroImage` (es opcional) en lugar de copiar el marcador. Antes de entregar, `grep -n "PENDIENTE" src/content/blog/camas-entrada-baja-perro-mayor-comparativa.mdx` debe devolver vacío.
 
 **Canibalización.** La [guía de camas](../src/content/blog/cama-ortopedica-perros-mayores-displasia-artrosis.mdx) explica *qué buscar* (informativa). Esta página compara *modelos concretos* (comercial). Regla: la guía conserva los criterios y enlaza aquí con un solo enlace contextual al final de «Cómo leer lo que promete el vendedor»; esta página no repite la explicación clínica, la resume en 2–3 frases y enlaza de vuelta. La ficha piloto `cama-guia-01` puede quedarse en la guía o mudarse aquí; decide el propietario (ver §12).
 
@@ -51,6 +55,8 @@ Fuentes ya verificadas en la guía publicada; no se añaden fuentes clínicas nu
 | F3 | [Guía de afiliación del sitio](../docs/seo/afiliacion-aliexpress.md) — diagrama de tallas del piloto | Ejemplo real de discrepancia entre medidas exteriores y superficie útil: los bordes restan unos 10–13 cm por eje en las tres filas (10,2–12,7 cm calculados) | H2-2, H2-3, ficha A |
 | F5 | [Guía de camas publicada](../src/content/blog/cama-ortopedica-perros-mayores-displasia-artrosis.mdx) | Criterios cualitativos («no se establece una cifra clínica universal»), «Cuándo reemplazar o adaptar la cama», «Qué observar después de un cambio» y experiencia de Luna y Dakota | H2-1, H2-2, H2-5, H2-6 |
 | F6 | Capturas de la ficha A del 10/11/2026 recogidas en la guía de afiliación (precio, entrega, devolución, aranceles por país) y las de B y C cuando existan | Hechos de comercio transfronterizo de H2-4; nunca cifras sin fecha | H2-3, H2-4 |
+
+**Alcance de F1 y F2.** Sus páginas devuelven 403 al leer el texto completo (r1 y r2). Solo sostienen las dos afirmaciones cualitativas de la columna «Qué respalda», que la guía publicada ya cita igual; el redactor no les atribuye ninguna otra afirmación, cifra ni recomendación.
 | F4 | [Comisión Europea — Influencer legal hub](https://commission.europa.eu/topics/consumers/consumer-rights-and-complaints/influencer-legal-hub_en) (la URL que cita la guía de afiliación; HTTP 200 el 11/11/2026) | El marketing de afiliación debe identificarse: aviso de comisión visible | §10 y bloque final |
 
 Lagunas declaradas: no hay estudios que comparen modelos comerciales de camas para perro; la página no promete alivio ni mejoría.
@@ -148,7 +154,7 @@ El video del vendedor de la ficha A tiene derechos sin verificar: no usar hasta 
 
 ### Prompt de I-1 (dirección visual editorial)
 
-**Raza.** Recientes en `heroImageAlt`: cocker (4), beagle (3), labrador (2), golden, dogo, mestizo/a. Beagle queda descartado (repetido y confundible con Luna/Dakota; esta imagen **no** es Luna ni Dakota). Se elige un **mestizo grande de tipo pastor, pelo corto-medio fuego y negro**: el artículo apunta también a perros grandes y la silueta larga hace legible el tamaño de la cama.
+**Raza.** Recientes en `heroImageAlt`: cocker (4), beagle (3), labrador (2), golden, dogo, mestizo/a. Beagle queda descartado (repetido y confundible con Luna/Dakota; esta imagen **no** es Luna ni Dakota). Se elige un **mestizo grande de tipo pastor, pelo corto-medio fuego y negro**: el artículo apunta también a perros grandes y la silueta larga hace legible el tamaño de la cama. «Mestizo/a» ya aparece 2 veces en `heroImageAlt` (tantas como labrador); esta portada se diferencia de esos casos por el tipo pastor (orejas erguidas, hocico largo, silueta alargada) y el pelo fuego y negro, que el prompt fija de forma explícita.
 
 1. **Función editorial:** portada; que se entienda «entrar en una cama sin saltar» sin enseñar un producto concreto.
 2. **Sujeto:** mestizo grande tipo pastor, senior. Cinco rasgos: canas en hocico, cejas y párpados (aclarado sobre el fuego y negro); ojos algo hundidos y mirada serena; línea dorsal suavizada y menos masa en cuartos traseros; postura prudente, cabeza a la altura del lomo, entrando paso a paso; sin cojera, heridas ni emaciación.
@@ -180,7 +186,7 @@ Rechazar si a tamaño móvil parece un adulto joven.
 ## 10. Cumplimiento y avisos
 
 - Cada CTA: `<a rel="sponsored noopener noreferrer" target="_blank">` con el enlace oficial intacto; aviso «Si compras desde este enlace, recibimos una comisión sin coste para ti» bajo el botón.
-- Aviso breve en la entradilla y bloque completo en §7 del artículo.
+- Aviso breve en la entradilla y bloque final «Cómo elegimos y cómo ganamos dinero» (sección 8 de la estructura de §7 de este brief).
 - Sin `Review`/`AggregateRating` en schema: no hay prueba propia. Mantener `BlogPosting`.
 - Precios con fecha y «puede cambiar»; nada de «oferta por tiempo limitado».
 - No usar «ortopédica» como promesa clínica; atribuirlo al vendedor.
@@ -230,3 +236,14 @@ Rechazar si a tamaño móvil parece un adulto joven.
 | P2-15 Inventario | Marcado `[~] (En Briefing)` en `INVENTARIO_CONTENIDO.md` |
 | P2-16 «Para quién» ficha A | `pendiente`, criterio propio a derivar de la superficie confirmada |
 | Skill y listado | Skill y plantilla ampliadas (frontmatter, componentes, prompts, sin umbrales sin fuente, precio habitual vs promocional, ley ES precisa); listado marca tickets y comisiones como estimaciones sin captura |
+
+## Correcciones r2
+
+Aplicadas desde `docs/contenido/camas-entrada-baja-perro-mayor-comparativa/auditoria-brief-r2.md`. No se añade ningún dato de producto, precio ni cifra; los bloqueos de §12 siguen abiertos.
+
+| Hallazgo r2 | Cambio |
+| --- | --- |
+| N1 `pillar` en lugar de `pilar` | §1: YAML con `pilar`, `keywordPrincipal: "cama perro mayor entrada baja"` y `status: "Publicado"`, verificados contra `src/content.config.ts`. `heroImage` y `datePublished` pasan a marcadores entre comillas `<<PENDIENTE: …>>`, con regla de sustitución u omisión y comprobación `grep` antes de entregar. Skill `generar-briefing-afiliados` y plantilla: `pillar` → `pilar`, añadidos `keywordPrincipal` y `status`, y regla de marcadores |
+| N2 referencia «§7 del artículo» | §10: ahora remite al bloque final «Cómo elegimos y cómo ganamos dinero» (sección 8 de la estructura) |
+| N3 repetición de mestizo en `heroImageAlt` | §8: la nota de raza registra las 2 apariciones previas de «mestizo/a» y la diferenciación por tipo pastor y pelo fuego y negro |
+| N4 F1 y F2 sin texto completo | §3: nota de que F1 y F2 solo sostienen las afirmaciones cualitativas ya atribuidas; el redactor no les atribuye nada más |
