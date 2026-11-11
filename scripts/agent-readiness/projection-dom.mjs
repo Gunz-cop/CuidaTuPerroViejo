@@ -170,6 +170,7 @@ function isExcluded(node) {
   const attr = attrs(node);
   return EXCLUDED_TAGS.has(node.tagName) || attr['aria-hidden'] === 'true' || attr.role === 'progressbar' ||
     (node.tagName === 'span' && attr.id === 'localized-emergency-text') ||
+    (node.tagName === 'aside' && Object.hasOwn(attr, 'data-affiliate-placement')) ||
     (node.tagName === 'div' && hasClass(node, 'ad-slot') && Object.hasOwn(attr, 'data-ad-pending')) ||
     hasClass(node, 'back-btn') || hasClass(node, 'breadcrumb') || hasClass(node, 'breadcrumbs') ||
     hasClass(node, 'health-toc__nav');

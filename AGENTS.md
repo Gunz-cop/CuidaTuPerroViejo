@@ -55,6 +55,14 @@ Para planificar o producir imágenes, aplica además la [dirección visual edito
 
 Sigue el flujo descrito en esos archivos en vez de improvisar la estructura del brief o del artículo desde cero.
 
+## Afiliación con AliExpress
+
+Para crear o ajustar fichas de recomendación afiliada dentro de artículos, usa [`.agents/skills/crear-ficha-afiliada/SKILL.md`](.agents/skills/crear-ficha-afiliada/SKILL.md). La referencia aprobada es `CamaAfiliada.astro`, con video, un único CTA afiliado directo y aviso breve debajo. La skill documenta el diseño, la animación, la verificación en móvil y el relevo a otras sesiones.
+
+Para preparar, incorporar, revisar o retirar enlaces de AliExpress, sigue la [guía de afiliación](docs/seo/afiliacion-aliexpress.md). Empieza por el artículo de camas y registra país, variante, elegibilidad, destino y fecha de revisión antes de proponer un enlace público. El selector de movilidad conserva enlaces legados desactivados y su prueba de paridad exige cero enlaces comerciales en los resultados.
+
 ## Pendientes del dueño
+
+Para retomar el panel privado de monetización, lee [`docs/seo/panel-monetizacion.md`](docs/seo/panel-monetizacion.md). Conserva el encargo, los datos propuestos, la medición del país del clic y un prompt de relevo para otro chat.
 
 Cuando el usuario mencione una idea, propuesta o algo que no quiere olvidar, regístralo en [`TODO.md`](TODO.md) y marca lo terminado con fecha y PR.

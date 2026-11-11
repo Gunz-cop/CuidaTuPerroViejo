@@ -94,6 +94,19 @@ test('selectores fallan cerrados ante H1 duplicado, perfil ausente o tag semánt
   assert.throws(() => projectDocument(page, Buffer.from(html.replace('</main>', '<medical-card>unclassified</medical-card></main>'))), /PROJECTION_TAG_UNSUPPORTED.*medical-card/u);
 });
 
+test('la proyección conserva el contenido editorial junto a un bloque de afiliación', async () => {
+  const golden = manifest.documents.find((item) => item.documentId === 'home');
+  const html = await readFile(join(ROOT, golden.htmlFile), 'utf8');
+  const editorial = '<aside><p>Comprueba el espacio entre los bordes.</p></aside>';
+  const affiliate = '<aside data-affiliate-placement="ejemplo"><p>Podemos recibir una comisión.</p><p><a href="https://example.org/compra" rel="sponsored">Ver la oferta</a></p></aside>';
+  const withAffiliate = html.replace('</main>', `${editorial}${affiliate}</main>`);
+  const editorialOnly = html.replace('</main>', `${editorial}</main>`);
+  const page = pageFor(golden);
+  const markdown = projectDocument(page, Buffer.from(withAffiliate)).markdown;
+  assert.match(markdown.toString('utf8'), /Comprueba el espacio entre los bordes/u);
+  assert.deepEqual(markdown, projectDocument(page, Buffer.from(editorialOnly)).markdown);
+});
+
 test('tabla no representable falla en lugar de perder celdas', async () => {
   const golden = manifest.documents.find((item) => item.documentId === 'article--comida-casera-perros-mayores');
   const html = await readFile(join(ROOT, golden.htmlFile), 'utf8');
