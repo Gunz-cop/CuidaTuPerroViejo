@@ -13,6 +13,15 @@ interface Video {
   height?: number;
 }
 
+interface Imagen {
+  src: string;
+  srcset?: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+}
+
 interface Props {
   placement: string;
   title: string;
@@ -21,6 +30,7 @@ interface Props {
   checks?: string;
   ctaLabel?: string;
   video?: Video;
+  images?: Imagen[];
 }
 
 const {
@@ -31,6 +41,7 @@ const {
   checks,
   ctaLabel = 'Ver tallas y envío en AliExpress',
   video,
+  images = [],
 } = Astro.props;
 
 const titleId = `${placement}-titulo`;
@@ -54,6 +65,25 @@ const noteId = `${placement}-aviso`;
       </video>
       <figcaption>{video.caption}</figcaption>
     </figure>
+  )}
+  {images.length > 0 && (
+    <div class={`bed-gallery${images.length === 1 ? ' bed-gallery-single' : ''}`}>
+      {images.map((image) => (
+        <figure>
+          <img
+            src={image.src}
+            srcset={image.srcset}
+            sizes={images.length === 1 ? '(max-width: 760px) 100vw, 720px' : '(max-width: 760px) 50vw, 360px'}
+            width={image.width}
+            height={image.height}
+            alt={image.alt}
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>{image.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
   )}
   <div class="bed-card-body">
     <p id={titleId} class="bed-title">{title}</p>
@@ -113,6 +143,41 @@ const noteId = `${placement}-aviso`;
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  .bed-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: #211b17;
+  }
+
+  .bed-card .bed-gallery figure {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bed-card .bed-gallery img {
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: #fff;
+  }
+
+  .bed-gallery-single {
+    grid-template-columns: 1fr;
+  }
+
+  .bed-card .bed-gallery-single img {
+    aspect-ratio: 16 / 9;
+    background: #211b17;
   }
 
   .bed-card figcaption {

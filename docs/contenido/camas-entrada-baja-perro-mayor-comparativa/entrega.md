@@ -113,3 +113,26 @@ Validación: `npm run check` 0 errores; `npm test` 141 pass / 0 fail; `npx astro
 - Intento 1 (job `88ef6117-8326-4af4-bfa1-c50aad6ba848`): rechazado, el perro tenía cinco patas.
 - Intento 2 (job `45f68a25-0c8d-4da1-a115-6e26823b9496`): aceptado. Prompt basado en §8 del brief, reforzando la anatomía: cuatro patas, delanteras sobre un colchón gris plano y traseras en el suelo, perfil lateral de izquierda a derecha, rasgos senior y luz de ventana a la izquierda.
 - `heroImageAlt` idéntico al del brief.
+
+## Medios y experiencia propia (2026-11-11)
+
+Encargo del propietario: el artículo era casi solo texto. Se añadieron medios a las tres fichas y su experiencia real con las camas de Luna y Dakota. Todos los WebP se generaron con Pillow (ancho máximo 1200 px, variantes responsive) y sin EXIF/XMP (comprobado). Los originales no están en el repo.
+
+| Archivo en `public/images/blog/camas-entrada-baja-perro-mayor-comparativa/` | Origen | Uso |
+| --- | --- | --- |
+| `cama-a-sofa-bordes-vendedor(-480).webp` | `A/a1.jpg`, ficha A del vendedor | Póster del video de la ficha A |
+| `cama-a-funda-espuma-vendedor(-480).webp` | `A/a4.jpg`, ficha A | Imagen secundaria A (funda y espuma) |
+| `/images/blog/cama-ortopedica/hicarer-demostracion.mp4` | Video ya publicado en la ficha piloto | Video de la ficha A (reutilizado, sin cambios) |
+| `colchon-b-plano-vendedor(-480).webp` | `B/b5.jpg`, ficha B | Principal B; el perro es un cachorro y el alt lo dice |
+| `colchon-b-capas-base-vendedor(-480).webp` | `B/b2.jpg`, ficha B | Secundaria B (capa impermeable y base) |
+| `catre-c-elevado-vendedor(-400).webp` | `C/c2.jpg`, ficha C | Principal C |
+| `catre-c-malla-vendedor(-400).webp` | `C/c4.jpg`, ficha C | Secundaria C |
+| `luna-dakota-juntas-una-cama(-400/-800).webp` | `propias/las-dos-en-una-cama.jpg`, recortada | Experiencia propia |
+| `beagle-cabeza-en-otra-cama(-400/-800).webp` | `propias/cabeza-en-otra-cama.jpg`, recortada a las camas (sin sofá ni puerta) | Experiencia propia; el propietario confirmó que es Dakota |
+| `dos-camas-forma-dos-anos(-400/-800).webp` | `propias/dos-camas-con-rookie.jpg`, recortada a las camas (sin televisor ni pasillo) | Punto del núcleo: enteras y con forma a los dos años |
+| `funda-colchon-mancha-lavable(-400/-800).webp` | `propias/mancha-funda.jpg`, recortada a la funda | Punto de funda lavable no impermeable (ficha B) |
+
+- Las fotos de C llevan marca de agua de otra tienda («KOSIMA GAMIA»). El propietario confirmó el 2026-11-11 que salen de la ficha 1005011771728376; se publican con el pie normal «Imagen del vendedor».
+- Pies de producto: «Imagen del vendedor» / «Video del vendedor». Pies propios: «… en sus camas de casa (no son modelos de esta comparativa)».
+- `FichaAfiliada.astro` acepta ahora `images` (src, srcset, alt, caption, width, height) además de `video`; las imágenes van en `loading="lazy"` y todo el medio queda dentro del `aside` excluido de la proyección.
+- Texto: «Lo que vivimos con Luna y Dakota» reescrito con el dato del propietario (dos años, ~7,6 cm, mordisqueo de camas de relleno, forma conservada, gatos) con tres fotos propias junto a su punto (tamaño, Dakota, forma a los dos años), y párrafo «Por qué nos fijamos en el forro» con la foto de la funda dentro de la sección del colchón B, que es el que declara forro impermeable. Cuatro fotos propias en total, por indicación del propietario; sin bloque aparte. Se dice explícitamente que no son los modelos A/B/C; no se nombra ni enlaza la tienda; sin afirmaciones de alivio.
