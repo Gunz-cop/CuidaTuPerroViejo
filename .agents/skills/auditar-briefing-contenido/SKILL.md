@@ -137,12 +137,11 @@ Notas de método:
   `warning` en tratamiento/manejo. Repetir el mismo tipo o faltar uno no pasa
   validación.
 - **FAQ:** planificado con sus preguntas borrador.
-- **Arco narrativo cuando el contrato lo justifica:** apertura en Intro, desarrollo en un H2
-  intermedio, y **cierre en el último H2 antes de Conclusión/FAQ** como sección
-  propia. Si hay varios sujetos en la historia, debe declararse cuál es el hilo
-  narrativo principal. Si el contrato justifica un cierre propio, omitirlo es P1 —
-  es el punto que más se salta después en redacción cuando el brief ya lo dejó
-  débil.
+- **Historia entretejida cuando hay material documentado** (preferencia del
+  propietario del 2026-11-12): apertura en Intro, cada momento asignado a un H2
+  práctico y desenlace en un párrafo del último H2 práctico o de la Conclusión.
+  Un H2 dedicado a la historia («la historia de…», «hora a hora», «a la mañana
+  siguiente») es P1. Si hay varios sujetos, debe declararse el hilo principal.
 - **Límite brief vs. redacción:** las secciones deben dar instrucciones y puntos
   clave al redactor, no prosa terminada. Excepción legítima: `items` de FAQ y
   `title`/tipo de AlertBox. Párrafos de desarrollo ya redactados dentro del brief
@@ -205,7 +204,7 @@ Por orden de gravedad real en este sitio:
 4. **Fuentes decorativas** listadas pero sin H2 que las desarrolle.
 5. **Excepciones aplicadas en silencio** (lagunas de evidencia, spokes faltantes)
    sin documentar ni preguntar.
-6. **Arco narrativo incompleto**, sobre todo el cierre ausente.
+6. **Historia aislada en su propio H2** en vez de entretejida, o desenlace ausente.
 7. **Metadatos fuera de límite** o `pilar` inválido.
 8. **Prosa final en vez de instrucciones** para el redactor.
 9. **Prompts de imagen genéricos, con raza inconsistente o sin los rasgos de edad senior** (incluidos los recortes y animaciones), o raza repetida sin motivo.

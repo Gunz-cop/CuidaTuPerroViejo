@@ -48,7 +48,7 @@ datePublished: "{{FECHA_PUBLICACION_AÑO_MES_DIA}}"
 **Pregunta del lector y respuesta práctica:** {{DECISIONES_QUE_RESOLVERA}}
 **Aportación propia:** {{REGISTRO_COMPARATIVA_SINTESIS_CRITICA_O_ADAPTACION; DIFERENCIA_CON_OTROS_ARTICULOS}}
 
-Si se usa arco narrativo, planificar apertura, desarrollo y cierre solo con hechos documentados. Si no hay desenlace conocido, cerrar con límites. Una guía sin caso no requiere paciente ni recuperación inventados.
+Si hay historia documentada, planificarla entretejida: apertura en la Introducción, cada momento en el H2 práctico que ilumina (con su foto real si existe) y cierre en un párrafo del último H2 práctico o de la Conclusión, solo con hechos documentados. Sin H2 dedicado a la historia. Si no hay desenlace conocido, cerrar con límites. Una guía sin caso no requiere paciente ni recuperación inventados.
 
 ---
 
@@ -183,14 +183,8 @@ El redactor debe incluir los siguientes enlaces utilizando rutas relativas de As
 
 ---
 
-### [H2 - {{TITULO_DE_CASO_REAL_Y_RESULTADOS_5}}] — Target: ~{{TARGET_SECCION}} palabras
 > [!IMPORTANT]
-> **Solo si el material y su utilidad lo justifican.** Retomar lo documentado sin fabricar recuperación. Si se omite, ajustar estructura y presupuesto explícitamente.
-
-*   *Objetivo:* Cierre narrativo y emocional uniendo el desenlace de la historia real con la esperanza práctica.
-
-*   [Desenlace documentado o límites de lo conocido, sin fabricar recuperación]
-*   [Mensaje de empoderamiento al tutor para tomar el control del bienestar de su compañero]
+> **Sin H2 dedicado a la historia.** En cada H2 práctico de arriba, añade una línea *Momento de la historia:* con el hecho documentado que abre o continúa la sección (y su foto real, si existe). El desenlace va en un párrafo del último H2 práctico o de la Conclusión, sin fabricar recuperación.
 
 ---
 
@@ -291,8 +285,8 @@ Si una fuente termina sin citar en el artículo final, el H2 correspondiente se 
 
 **4. Arco documentado, solo si se justificó en el contrato (si no, marcar guía sin caso):**
 - [ ] Apertura del caso real en la Introducción.
-- [ ] Desarrollo del caso real en el H2 intermedio asignado.
-- [ ] **Cierre del caso real en el último H2 antes de Conclusión/FAQ** — este es el punto que más se ha saltado en entregas anteriores; verificar explícitamente que existe como sección propia, no como una frase suelta en la conclusión.
+- [ ] Cada momento documentado aparece dentro del H2 práctico asignado, enlazado con su explicación y su acción (no en un H2 aparte).
+- [ ] Desenlace documentado (o sus límites) en un párrafo del último H2 práctico o de la Conclusión; no como sección propia.
 
 ---
 
