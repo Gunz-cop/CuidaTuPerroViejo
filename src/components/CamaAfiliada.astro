@@ -23,6 +23,8 @@
 </aside>
 
 <script>
+  import '../scripts/affiliate-clicks';
+
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {

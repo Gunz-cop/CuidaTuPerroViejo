@@ -3,6 +3,8 @@ import '../styles/global.css';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import CanineAiAssistant from '../components/CanineAiAssistant.astro';
 import AgentToolsScript from '../components/AgentToolsScript.astro';
+import SiteSearch from '../components/SiteSearch.astro';
+import { mobileImageFor } from '../utils/image';
 
 interface Props {
   title: string;
@@ -20,9 +22,13 @@ interface Props {
   showAiAssistant?: boolean;
   /** Marca la página como no indexable (utilidades, confirmaciones, pasarelas). */
   noindex?: boolean;
+  /** Incluye la página en el buscador del sitio. `tipo` es la etiqueta del
+   *  resultado (Guía, Tema, Herramienta) y `seccion` el pilar al que pertenece.
+   *  La plantilla debe marcar además su contenido con `data-pagefind-body`. */
+  search?: { tipo: string; seccion?: string };
 }
 
-const { title, description = 'Cuida a tu Perro Viejo', keywords, image, ogType = 'website', imageWidth = 1200, imageHeight = 800, showAiAssistant = true, noindex = false } = Astro.props;
+const { title, description = 'Cuida a tu Perro Viejo', keywords, image, ogType = 'website', imageWidth = 1200, imageHeight = 800, showAiAssistant = true, noindex = false, search } = Astro.props;
 // La URL canónica (y og:url, que usa la misma variable) apunta siempre a la
 // variante limpia. `build.format: 'file'` genera cada página como .html, así que
 // se normaliza aquí en vez de depender de que el borde redirija. `/index` es la
@@ -57,6 +63,14 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonicalURL} />
     {noindex && <meta name="robots" content="noindex, follow" />}
+    {search && (
+      <Fragment>
+        <meta data-pagefind-meta="tipo[content]" content={search.tipo} />
+        {search.seccion && <meta data-pagefind-meta="seccion[content]" content={search.seccion} />}
+        <meta data-pagefind-meta="descripcion[content]" content={description} />
+        {image && <meta data-pagefind-meta="image[content]" content={mobileImageFor(image) ?? image} />}
+      </Fragment>
+    )}
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="Cuida tu Perro Viejo" />
@@ -435,10 +449,30 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
           <a href="/herramientas" class="inline-flex min-h-11 items-center rounded-xl px-3.5 text-sm font-semibold text-brand-muted transition-colors hover:bg-brand-card hover:text-brand-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Herramientas</a>
           <a href="/acerca-de" class="inline-flex min-h-11 items-center rounded-xl px-3.5 text-sm font-semibold text-brand-muted transition-colors hover:bg-brand-card hover:text-brand-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Sobre nosotros</a>
           <a href="/asistente-ia" class="ml-1 inline-flex min-h-11 items-center rounded-full border border-brand-primary/25 bg-brand-primary/10 px-4 text-sm font-bold text-brand-primary transition-colors hover:border-brand-primary/40 hover:bg-brand-primary/15 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20">Asistente IA</a>
+          <button
+            type="button"
+            data-search-open
+            aria-haspopup="dialog"
+            aria-keyshortcuts="Control+K Meta+K"
+            class="ml-2 inline-flex min-h-11 items-center gap-2 rounded-full border border-brand-border bg-brand-card/70 pl-3.5 pr-2.5 text-sm font-semibold text-brand-muted transition-colors hover:border-brand-primary/40 hover:bg-brand-card-hover hover:text-brand-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/20"
+          >
+            <svg class="h-[1.05rem] w-[1.05rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.6-3.6"></path></svg>
+            <span>Buscar</span>
+            <span class="ss-trigger-key hidden xl:inline" data-search-key aria-hidden="true">Ctrl K</span>
+          </button>
           <ThemeToggle />
         </div>
 
-        <div class="flex items-center gap-2 lg:hidden">
+        <div class="flex items-center gap-1.5 lg:hidden">
+          <button
+            type="button"
+            data-search-open
+            aria-haspopup="dialog"
+            aria-label="Buscar en el sitio"
+            class="inline-flex h-11 w-11 items-center justify-center rounded-full text-brand-text transition-colors hover:bg-brand-card-hover hover:text-brand-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-primary/25"
+          >
+            <svg class="h-[1.35rem] w-[1.35rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.6-3.6"></path></svg>
+          </button>
           <ThemeToggle />
           <button
             type="button"
@@ -520,6 +554,7 @@ const materialSymbolsURL = 'https://fonts.googleapis.com/css2?family=Material+Sy
       </div>
     </footer>
 
+    <SiteSearch />
     {shouldShowAiAssistant && <CanineAiAssistant />}
     <template id="agent-tools-webmcp"><AgentToolsScript /></template>
     <script is:inline>

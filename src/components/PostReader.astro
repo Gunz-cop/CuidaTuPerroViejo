@@ -67,7 +67,7 @@ const processedHtml = html.replace(/<h([23])\b([^>]*?)>([\s\S]*?)<\/h\1>/gi, (ma
 
   <div class="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-10 lg:gap-14 items-start">
     <!-- Sidebar Table of Contents (Sticky on Desktop) -->
-    <aside class="hidden lg:block lg:sticky lg:top-24 max-h-[calc(100vh-8rem)] overflow-y-auto w-full pr-4 border-r border-brand-border/40 py-2">
+    <aside data-pagefind-ignore class="hidden lg:block lg:sticky lg:top-24 max-h-[calc(100vh-8rem)] overflow-y-auto w-full pr-4 border-r border-brand-border/40 py-2">
       <div class="mb-4">
         <h4 class="text-xs font-bold uppercase tracking-wider text-brand-primary">Contenido del artículo</h4>
       </div>
@@ -90,7 +90,7 @@ const processedHtml = html.replace(/<h([23])\b([^>]*?)>([\s\S]*?)<\/h\1>/gi, (ma
     <div class="w-full max-w-[740px] mx-auto lg:mx-0">
       <!-- Mobile Table of Contents (Collapsible Card) -->
       {headings.length > 0 && (
-        <div class="lg:hidden mb-8">
+        <div class="lg:hidden mb-8" data-pagefind-ignore>
           <details class="mobile-toc-container border border-brand-border bg-brand-card/50 rounded-2xl p-4 transition-all">
             <summary aria-label="Abrir tabla de contenidos" class="font-bold text-brand-text cursor-pointer select-none flex justify-between items-center text-sm">
               <span><span aria-hidden="true">📖</span> Tabla de Contenidos</span>

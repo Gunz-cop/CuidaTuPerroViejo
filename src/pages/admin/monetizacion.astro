@@ -1,0 +1,347 @@
+---
+// Panel de monetización. Lee el contador propio de clics afiliados
+// (migrations/0004_affiliate_clicks.sql) y está protegido igual que el resto de /admin.
+import { env } from 'cloudflare:workers';
+import {
+  AFFILIATE_PLACEMENTS,
+  PROVIDER_LABEL,
+  UNKNOWN_COUNTRY,
+  countryName,
+  normalizeCountry,
+  type AffiliateProvider,
+} from '../../lib/affiliate/clicks';
+import { hashIp, hasValidBasicAuth, unauthorizedResponse } from '../../lib/contact/security';
+
+export const prerender = false;
+
+if (env.ADMIN_LIMIT) {
+  const ip = Astro.request.headers.get('cf-connecting-ip') || 'unknown';
+  const key = await hashIp(ip, env.CONTACT_IP_HASH_SALT || 'admin-rate-limit');
+  const outcome = await env.ADMIN_LIMIT.limit({ key });
+  if (!outcome.success) {
+    return new Response('Demasiadas solicitudes. Inténtalo de nuevo en un minuto.', {
+      status: 429,
+      headers: { 'Retry-After': '60', 'Cache-Control': 'no-store' },
+    });
+  }
+}
+
+if (!hasValidBasicAuth(Astro.request, env.CONTACT_ADMIN_USER, env.CONTACT_ADMIN_PASSWORD)) {
+  return unauthorizedResponse();
+}
+
+Astro.response.headers.set('Cache-Control', 'no-store');
+
+const params = new URL(Astro.request.url).searchParams;
+const RANGES = [7, 30, 90] as const;
+const requestedDays = Number(params.get('dias'));
+const days = RANGES.find((value) => value === requestedDays) ?? 30;
+const environment = params.get('entorno') === 'prueba' ? 'prueba' : 'produccion';
+const rawCountry = params.get('pais');
+const country = rawCountry ? normalizeCountry(rawCountry) : '';
+const today = new Date();
+const since = new Date(today.getTime() - (days - 1) * 86_400_000).toISOString().slice(0, 10);
+
+const link = (changes: Record<string, string | number | null>) => {
+  const next = new URLSearchParams();
+  const values: Record<string, string | number | null> = {
+    dias: days,
+    entorno: environment === 'prueba' ? 'prueba' : null,
+    pais: country || null,
+    ...changes,
+  };
+  for (const [key, value] of Object.entries(values)) {
+    if (value !== null && value !== '') next.set(key, String(value));
+  }
+  const query = next.toString();
+  return `/admin/monetizacion${query ? `?${query}` : ''}`;
+};
+
+type Totals = { clics: number | null; fichas: number; paises: number; sin_pais: number | null; actualizado: string | null };
+type DayRow = { day: string; clics: number };
+type PlacementRow = { placement: string; provider: string; page: string; clics: number; paises: number; actualizado: string | null };
+type CountryRow = { country: string; clics: number };
+type CellRow = { placement: string; country: string; clics: number };
+
+const db = env.CONTACT_DB;
+let loadError = '';
+let totals: Totals | null = null;
+let byDay: DayRow[] = [];
+let byPlacement: PlacementRow[] = [];
+let byCountry: CountryRow[] = [];
+let cells: CellRow[] = [];
+
+if (db) {
+  // El filtro de país se aplica a todo salvo al desglose por país, que sirve para elegirlo.
+  const where = `day >= ?1 AND environment = ?2${country ? ' AND country = ?3' : ''}`;
+  const bindings = country ? [since, environment, country] : [since, environment];
+  try {
+    const [totalsRows, dayRows, placementRows, countryRows, cellRows] = await db.batch([
+      db.prepare(
+        `SELECT SUM(clicks) AS clics, COUNT(DISTINCT placement) AS fichas, COUNT(DISTINCT country) AS paises,
+                SUM(CASE WHEN country = '${UNKNOWN_COUNTRY}' THEN clicks ELSE 0 END) AS sin_pais,
+                MAX(updated_at) AS actualizado
+         FROM affiliate_clicks_daily WHERE ${where}`,
+      ).bind(...bindings),
+      db.prepare(
+        `SELECT day, SUM(clicks) AS clics FROM affiliate_clicks_daily WHERE ${where} GROUP BY day`,
+      ).bind(...bindings),
+      db.prepare(
+        `SELECT placement, provider, page, SUM(clicks) AS clics, COUNT(DISTINCT country) AS paises, MAX(updated_at) AS actualizado
+         FROM affiliate_clicks_daily WHERE ${where} GROUP BY placement, provider, page ORDER BY clics DESC`,
+      ).bind(...bindings),
+      db.prepare(
+        `SELECT country, SUM(clicks) AS clics FROM affiliate_clicks_daily
+         WHERE day >= ?1 AND environment = ?2 GROUP BY country ORDER BY clics DESC, country`,
+      ).bind(since, environment),
+      db.prepare(
+        `SELECT placement, country, SUM(clicks) AS clics FROM affiliate_clicks_daily
+         WHERE ${where} GROUP BY placement, country ORDER BY placement, clics DESC`,
+      ).bind(...bindings),
+    ]);
+    totals = (totalsRows?.results?.[0] as Totals | undefined) ?? null;
+    byDay = (dayRows?.results ?? []) as DayRow[];
+    byPlacement = (placementRows?.results ?? []) as PlacementRow[];
+    byCountry = (countryRows?.results ?? []) as CountryRow[];
+    cells = (cellRows?.results ?? []) as CellRow[];
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    loadError = message.includes('no such table')
+      ? 'Falta la tabla del contador. Aplica la migración: npx wrangler d1 migrations apply cuidatuperroviejo-contact --remote'
+      : `No se pudieron cargar los clics: ${message}`;
+  }
+} else {
+  loadError = 'CONTACT_DB no está configurado.';
+}
+
+const number = (value: number | null | undefined) => Number(value ?? 0).toLocaleString('es');
+const percent = (part: number, whole: number) => (whole > 0 ? `${Math.round((part / whole) * 100)} %` : '—');
+const total = Number(totals?.clics ?? 0);
+
+// Tendencia con todos los días del rango; los días sin fila valen 0 clics registrados.
+const dayMap = new Map(byDay.map((row) => [row.day, Number(row.clics)]));
+const trend = Array.from({ length: days }, (_, index) => {
+  const day = new Date(today.getTime() - (days - 1 - index) * 86_400_000).toISOString().slice(0, 10);
+  return { day, clics: dayMap.get(day) ?? 0 };
+});
+const maxDay = Math.max(1, ...trend.map((row) => row.clics));
+
+// Las fichas registradas sin clics también aparecen, para poder decidir sobre ellas.
+const registry = new Map(AFFILIATE_PLACEMENTS.map((placement) => [placement.id, placement]));
+const placements = [
+  ...byPlacement.map((row) => ({ ...row, registered: registry.get(row.placement) })),
+  ...AFFILIATE_PLACEMENTS.filter((placement) => !byPlacement.some((row) => row.placement === placement.id)).map((placement) => ({
+    placement: placement.id,
+    provider: placement.provider,
+    page: placement.page,
+    clics: 0,
+    paises: 0,
+    actualizado: null,
+    registered: placement,
+  })),
+];
+const cellsFor = (placement: string) => cells.filter((cell) => cell.placement === placement);
+const providerLabel = (provider: string) => PROVIDER_LABEL[provider as AffiliateProvider] ?? provider;
+const countryOptions = byCountry.some((row) => row.country === country) || !country
+  ? byCountry
+  : [...byCountry, { country, clics: 0 }];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Monetización</title>
+    <style>
+      body { margin: 0; font-family: system-ui, sans-serif; color: #1f2933; background: #f6f5ef; line-height: 1.45; }
+      main { max-width: 1100px; margin: 0 auto; padding: 32px 20px 64px; }
+      header { display: flex; justify-content: space-between; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+      h1 { margin: 0; font-size: 28px; }
+      h2 { margin: 36px 0 6px; font-size: 20px; }
+      .hint { margin: 0 0 12px; color: #647067; font-size: 14px; }
+      nav { display: flex; gap: 8px; flex-wrap: wrap; }
+      nav a { color: #45634f; border: 1px solid #c9d3c4; padding: 8px 12px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+      nav a[aria-current="page"] { background: #45634f; color: #fff; border-color: #45634f; }
+      .filters { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
+      .filters form { display: flex; gap: 8px; align-items: center; }
+      .filters label { font-size: 14px; color: #647067; font-weight: 700; }
+      select, button { font: inherit; padding: 7px 10px; border-radius: 8px; border: 1px solid #c9d3c4; background: #fff; }
+      button { color: #45634f; font-weight: 700; cursor: pointer; }
+      .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+      .tile { background: #fff; border: 1px solid #e2dfd3; border-radius: 8px; padding: 14px 16px; }
+      .tile b { display: block; font-size: 26px; font-variant-numeric: tabular-nums; }
+      .tile span { color: #647067; font-size: 13px; }
+      .scroll { overflow-x: auto; background: #fff; border: 1px solid #e2dfd3; border-radius: 8px; }
+      table { width: 100%; border-collapse: collapse; font-size: 14px; }
+      th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid #efece2; vertical-align: top; }
+      th { background: #faf9f4; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: #647067; white-space: nowrap; }
+      td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+      tr:last-child td { border-bottom: 0; }
+      td a { color: #45634f; word-break: break-all; }
+      .empty, .error, .notice { background: #fff; border: 1px solid #e2dfd3; border-radius: 8px; padding: 18px; }
+      .error { border-color: #fecaca; color: #7f1d1d; }
+      .notice { border-color: #f5d48a; background: #fffaeb; margin-bottom: 16px; }
+      .tag { display: inline-block; background: #f1f0e8; border-radius: 999px; padding: 2px 8px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+      .tag.off { background: #fee2e2; color: #7f1d1d; }
+      .bar-cell { width: 55%; }
+      .bar { height: 12px; background: #45634f; border-radius: 3px; min-width: 2px; }
+      .bar.zero { background: #e2dfd3; }
+      .split { margin: 0; padding: 0; list-style: none; font-size: 13px; color: #3b4740; }
+      .split li { display: inline-block; margin: 0 10px 2px 0; white-space: nowrap; }
+      .split a { word-break: normal; }
+      code { font-size: 13px; }
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Monetización</h1>
+        <nav aria-label="Periodo">
+          {RANGES.map((value) => (
+            <a href={link({ dias: value })} aria-current={value === days ? 'page' : undefined}>{value} días</a>
+          ))}
+          <a href="/admin/asistente">Asistente</a>
+          <a href="/admin/contact-messages">Mensajes</a>
+        </nav>
+      </header>
+
+      <div class="filters">
+        <form method="get" action="/admin/monetizacion">
+          <input type="hidden" name="dias" value={days} />
+          {environment === 'prueba' && <input type="hidden" name="entorno" value="prueba" />}
+          <label for="pais">País del clic</label>
+          <select id="pais" name="pais">
+            <option value="">Todos</option>
+            {countryOptions.map((row) => (
+              <option value={row.country} selected={row.country === country}>{countryName(row.country)} ({row.country})</option>
+            ))}
+          </select>
+          <button type="submit">Filtrar</button>
+        </form>
+        <nav aria-label="Entorno">
+          <a href={link({ entorno: null })} aria-current={environment === 'produccion' ? 'page' : undefined}>Sitio público</a>
+          <a href={link({ entorno: 'prueba' })} aria-current={environment === 'prueba' ? 'page' : undefined}>Pruebas y vistas previas</a>
+        </nav>
+      </div>
+
+      {environment === 'prueba' && (
+        <p class="notice">Estás viendo clics de vistas previas, <code>workers.dev</code> y desarrollo local. No son lectores reales.</p>
+      )}
+
+      {loadError && <p class="error">{loadError}</p>}
+
+      {!loadError && (
+        <>
+          <p class="hint">
+            Desde el {since} (UTC){country ? `, solo ${countryName(country)}` : ''}. Cuenta activaciones del botón afiliado
+            observadas por el sitio: no son visitantes únicos ni coinciden con los clics que atribuye el comercio.
+          </p>
+          <div class="tiles">
+            <div class="tile"><b>{number(total)}</b><span>clics en botones afiliados</span></div>
+            <div class="tile"><b>{number(totals?.fichas)}</b><span>fichas con clics (de {AFFILIATE_PLACEMENTS.length} registradas)</span></div>
+            <div class="tile"><b>{number(totals?.paises)}</b><span>países de origen</span></div>
+            <div class="tile"><b>{percent(Number(totals?.sin_pais ?? 0), total)}</b><span>clics sin país determinado</span></div>
+            <div class="tile"><b>{totals?.actualizado ? totals.actualizado.slice(0, 16) : '—'}</b><span>último clic registrado (UTC)</span></div>
+          </div>
+
+          {total === 0 && <p class="empty" style="margin-top:16px">No hay clics registrados en este periodo. Si el contador acaba de activarse, los días anteriores aparecen en cero porque no se medían.</p>}
+
+          <h2>Por ficha</h2>
+          <p class="hint">Cada ubicación se identifica por su <code>data-affiliate-placement</code>. Las fichas registradas sin clics también se listan.</p>
+          <div class="scroll">
+            <table>
+              <thead><tr><th>Ficha</th><th>Proveedor</th><th>Página</th><th class="n">Clics</th><th>Países</th><th>Tracking ID</th></tr></thead>
+              <tbody>
+                {placements.map((row) => (
+                  <tr>
+                    <td>
+                      <b>{row.registered?.label ?? row.placement}</b><br /><code>{row.placement}</code>
+                      {!row.registered && <> <span class="tag off">retirada del registro</span></>}
+                    </td>
+                    <td>{providerLabel(row.provider)}</td>
+                    <td><a href={row.page}>{row.page}</a></td>
+                    <td class="n">{number(row.clics)}</td>
+                    <td>
+                      {cellsFor(row.placement).length > 0 ? (
+                        <ul class="split">
+                          {cellsFor(row.placement).map((cell) => (
+                            <li><a href={link({ pais: cell.country })}>{countryName(cell.country)}</a> {number(cell.clics)}</li>
+                          ))}
+                        </ul>
+                      ) : '—'}
+                    </td>
+                    <td>{row.registered?.trackingId ? <code>{row.registered.trackingId}</code> : '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Por país del clic</h2>
+          <p class="hint">País estimado por Cloudflare para la conexión del lector. Una VPN lo cambia, y no es el país de envío ni el del pedido.</p>
+          {byCountry.length > 0 ? (
+            <div class="scroll">
+              <table>
+                <thead><tr><th>País</th><th class="n">Clics</th><th class="n">Parte</th></tr></thead>
+                <tbody>
+                  {byCountry.map((row) => {
+                    const all = byCountry.reduce((sum, item) => sum + Number(item.clics), 0);
+                    return (
+                      <tr>
+                        <td><a href={link({ pais: row.country })}>{countryName(row.country)}</a> <code>{row.country}</code></td>
+                        <td class="n">{number(row.clics)}</td>
+                        <td class="n">{percent(Number(row.clics), all)}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          ) : <p class="empty">Sin clics en este periodo.</p>}
+
+          <h2>Por día</h2>
+          <div class="scroll">
+            <table>
+              <thead><tr><th>Día (UTC)</th><th class="n">Clics</th><th class="bar-cell"><span class="sr-only">Tendencia</span></th></tr></thead>
+              <tbody>
+                {[...trend].reverse().map((row) => (
+                  <tr>
+                    <td>{row.day}</td>
+                    <td class="n">{number(row.clics)}</td>
+                    <td class="bar-cell" aria-hidden="true">
+                      <div class={row.clics ? 'bar' : 'bar zero'} style={`width:${Math.round((row.clics / maxDay) * 100)}%`}></div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Fuentes pendientes</h2>
+          <p class="hint">Datos que el panel todavía no recibe. «Sin datos» no equivale a cero.</p>
+          <div class="scroll">
+            <table>
+              <thead><tr><th>Dato</th><th>Fuente</th><th>Estado</th></tr></thead>
+              <tbody>
+                <tr><td>Vistas del artículo</td><td>Cloudflare Web Analytics</td><td><span class="tag">sin datos</span> Requiere un token de lectura de la API de Cloudflare.</td></tr>
+                <tr><td>Clics atribuidos, pedidos y comisión</td><td>Informe de AliExpress Portals</td><td><span class="tag">sin datos</span> El enlace usa el Tracking ID <code>default</code>; con un ID propio por ficha se podrá importar el informe.</td></tr>
+                <tr><td>Impresiones e ingresos estimados</td><td>AdSense</td><td><span class="tag">sin activar</span></td></tr>
+                <tr><td>Clics y comisiones</td><td>Amazon Associates</td><td><span class="tag">sin activar</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Cobertura del contador</h2>
+          <p class="hint">
+            Se cuentan clic, toque, Enter y clic con la rueda sobre el botón. No se cuentan «Abrir en pestaña nueva» desde el menú
+            contextual, navegadores sin JavaScript ni envíos cortados por bloqueadores o falta de conexión. Un doble clic en menos
+            de 2 s cuenta una vez. No se guarda IP, huella ni identificador del lector: solo totales por día, ficha y país.
+          </p>
+        </>
+      )}
+    </main>
+  </body>
+</html>
