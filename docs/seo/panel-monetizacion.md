@@ -2,9 +2,52 @@
 
 ## Estado del encargo
 
-El propietario pidió un panel privado para conocer qué fichas afiliadas generan clics y desde qué países, y poder incorporar Amazon, AdSense y publicidad contratada en el futuro. La implementación está pendiente. Este documento conserva el encargo para retomarlo en otro chat con poco contexto.
+El propietario pidió un panel privado para conocer qué fichas afiliadas generan clics y desde qué países, y poder incorporar Amazon, AdSense y publicidad contratada en el futuro.
 
-El piloto de AliExpress ya está publicado en la guía de camas. La referencia aprobada es `src/components/CamaAfiliada.astro`. Tiene video a petición, un único enlace afiliado directo y aviso breve de comisión debajo del CTA. La ubicación estable es `cama-guia-01`, identificada por `data-affiliate-placement`. Su enlace usa el Tracking ID `default` y actualmente carece de contador propio.
+**Primera versión implementada el 11 de noviembre de 2026** en la rama `claude/brave-brahmagupta-zm29rz`, pendiente de revisión y de fusión. No está activa en producción: falta aplicar la migración `0004` y fusionar. Ver «Implementación v1» y «Decisiones pendientes del propietario».
+
+El piloto de AliExpress ya está publicado en la guía de camas. La referencia aprobada es `src/components/CamaAfiliada.astro`. Tiene video a petición, un único enlace afiliado directo y aviso breve de comisión debajo del CTA. La ubicación estable es `cama-guia-01`, identificada por `data-affiliate-placement`. Su enlace usa el Tracking ID `default`. La v1 le añade un contador propio sin cambiar el `href`.
+
+## Implementación v1
+
+| Pieza | Archivo | Qué hace |
+| --- | --- | --- |
+| Registro de fichas | `src/lib/affiliate/clicks.ts` | `AFFILIATE_PLACEMENTS` lista las ubicaciones aceptadas con proveedor, página, nombre y Tracking ID. Una ficha nueva necesita entrada aquí para contar clics. También normaliza el país, separa producción de pruebas y valida el origen. |
+| Tabla | `migrations/0004_affiliate_clicks.sql` | `affiliate_clicks_daily`: una fila por día UTC, ubicación, país y entorno con el total. Sin IP, huella ni identificador. `XX` = sin determinar, `T1` = Tor. |
+| Recepción | `src/pages/api/affiliate-click.ts` | `POST {"placement":"…"}`. Rechaza otro origen (403), ubicaciones no registradas (400) y cuerpos grandes (413). Limita ráfagas con `CLICK_LIMIT` (20/min por IP, la clave no se guarda). Si D1 falla, responde 204 y solo se pierde la medición. |
+| Aviso del navegador | `src/scripts/affiliate-clicks.ts`, importado por `CamaAfiliada.astro` | Delegación sobre `[data-affiliate-placement] a[rel~="sponsored"]`: `sendBeacon` y, si no, `fetch` con `keepalive`. No cancela ni reescribe la navegación. Un doble clic en menos de 2 s cuenta una vez. Solo se carga en páginas con ficha. |
+| Panel | `src/pages/admin/monetizacion.astro` | Misma protección que `/admin/asistente` (Basic Auth + `ADMIN_LIMIT`, `no-store`). Rangos 7/30/90 días, filtro por país, conmutador sitio público / pruebas, totales, tabla por ficha con desglose por país y Tracking ID, tabla por país, tendencia diaria, fuentes pendientes y cobertura. |
+| Rate limit | `wrangler.jsonc`, `worker-configuration.d.ts` | Binding `CLICK_LIMIT` (`namespace_id` 1003). |
+| Políticas | `politica-de-privacidad.astro`, `politica-de-cookies.astro` | Describen el recuento: qué se envía, qué se agrega y qué no se guarda. |
+| Pruebas | `tests/affiliate-clicks.test.ts` | Registro, CTA único y directo, país, entorno, origen y agregado SQL. |
+
+**Tráfico de prueba.** El entorno lo decide el servidor por el host de la solicitud: solo `cuidatuperroviejo.com` y `www.` cuentan como `produccion`; vistas previas, `workers.dev` y local quedan como `prueba` y el panel los muestra aparte.
+
+**Verificación local del 11 de noviembre** (`wrangler dev` con D1 local y la migración aplicada, salidas a AliExpress interceptadas): clic, Enter y clic con rueda registran un aviso y abren `https://s.click.aliexpress.com/e/_c4FQx8UJ`; doble clic abre el enlace y cuenta una vez; con el endpoint caído y sin JavaScript el enlace abre igual (sin aviso en el segundo caso). Endpoint: sin `Origin` 403, otro origen 403, ficha desconocida 400, válido 204. Panel: sin credenciales 401, con credenciales 200 y `no-store`, sin desbordamiento horizontal a 390 px. `astro check` 0 errores, `npm test` 132/132, `astro build` correcto.
+
+**Para activarlo** (propietario):
+
+1. Revisar y fusionar el PR.
+2. Aplicar la migración en producción: `npx wrangler d1 migrations apply cuidatuperroviejo-contact --remote`. Si se fusiona antes, el endpoint responde 204 sin guardar nada y el panel muestra el aviso de la migración.
+3. Hacer un clic real desde el sitio público y comprobar que aparece en `/admin/monetizacion`.
+
+**Retirada.** Quitar el `import` del script en `CamaAfiliada.astro` detiene el envío; el enlace no cambia. La tabla puede quedarse o borrarse con una migración nueva.
+
+## Decisiones pendientes del propietario
+
+- **Consentimiento.** Criterio aplicado: el aviso solo se envía cuando el lector pulsa el CTA, no usa cookies ni almacenamiento local, no lee nada del dispositivo, no guarda IP ni identificadores y solo produce totales agregados de primera parte para decidir qué fichas mantener. Con ese diseño no se añadió banner, igual que con las métricas del asistente. Riesgo residual: las directrices 2/2023 del EDPB interpretan de forma amplia el «acceso» al terminal y podrían incluir una petición iniciada por JavaScript; la AEPD admite exenciones para medición de audiencia con condiciones que deben comprobarse caso a caso. Si el propietario prefiere no asumirlo, la alternativa es condicionar el script a un consentimiento o quedarse solo con los informes del comercio.
+- **Tracking ID por ficha.** Crear en AliExpress Portals un ID propio para `cama-guia-01` permitiría contrastar el contador propio con los clics, pedidos y comisión del informe. Cambiar el ID implica regenerar el enlace y actualizar `trackingId` en el registro.
+- **Informe del comercio.** Comprobar si AliExpress Portals ofrece clics por país y Tracking ID, y en qué formato se exporta, antes de diseñar la importación (manual por CSV o API).
+- **Vistas del artículo.** Para calcular clics por 100 vistas hace falta un token de lectura de la API GraphQL de Cloudflare (Web Analytics) guardado como secreto del Worker.
+
+## Datos disponibles hoy
+
+| Dato | ¿Disponible? |
+| --- | --- |
+| Clics propios por ficha, día y país estimado | Sí, en cuanto se aplique la migración y se fusione. |
+| Vistas del artículo | En el panel de Cloudflare; en este panel no, falta el token. |
+| Clics, pedidos y comisión del comercio | En AliExpress Portals bajo `default`, mezclados con cualquier otro uso de ese ID. |
+| País del pedido o de envío | Solo el que reporte el comercio. No se deduce del contador. |
 
 ## Lo pedido por el propietario
 
@@ -15,9 +58,9 @@ El piloto de AliExpress ya está publicado en la guía de camas. La referencia a
 - Posibilidad de incorporar otras fuentes de monetización cuando se activen.
 - Conservar el recorrido comercial aprobado de un clic desde el CTA hasta AliExpress.
 
-## Propuesta para la primera versión
+## Propuesta original de la primera versión
 
-Esta es una propuesta de implementación que la siguiente sesión debe contrastar con el código y los informes disponibles.
+Propuesta del encargo, conservada como referencia. La «Implementación v1» de arriba la contrasta con el código.
 
 Reutilizar la protección de `src/pages/admin/asistente.astro` y la base D1 ya vinculada al sitio. Ruta propuesta `/admin/monetizacion`, con rangos de 7, 30 y 90 días, una tendencia diaria y una tabla por proveedor, página y ubicación. El país puede actuar como filtro y como desglose de clics.
 
@@ -71,4 +114,4 @@ Preparar cualquier migración como un cambio revisable. La autorización de publ
 
 ## Encargo para pegar en otro chat
 
-> Quiero continuar el panel de monetización de CuidaTuPerroViejo. Lee `AGENTS.md`, `TODO.md` y `docs/seo/panel-monetizacion.md`. Comprueba el estado del checkout y su relación con `origin/main`, preservando el trabajo existente. El piloto afiliado ya está publicado y debe conservar un único CTA directo. Retoma el panel privado tomando `/admin/asistente` como referencia, con clics por ficha y país estimado, y una carga pequeña para el sitio. Distingue los datos propios de los informes del comercio y revisa el consentimiento del mecanismo que propongas. Antes de implementar, identifica qué datos podemos obtener ahora y qué decisiones faltan. Usa este documento como encargo y contrasta sus propuestas con el código vigente.
+> Quiero continuar el panel de monetización de CuidaTuPerroViejo. Lee `AGENTS.md`, `TODO.md` y `docs/seo/panel-monetizacion.md`. La v1 (contador propio de clics por ficha y país, panel `/admin/monetizacion`) está implementada; comprueba si ya se fusionó y si la migración `0004` está aplicada en producción. Conserva el único CTA afiliado directo. Revisa las «Decisiones pendientes del propietario» y continúa por la que haya resuelto: Tracking ID por ficha, importación del informe de AliExpress o vistas desde Cloudflare Web Analytics. Distingue siempre los datos propios de los del comercio.
