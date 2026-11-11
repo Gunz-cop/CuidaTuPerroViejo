@@ -70,7 +70,7 @@ Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 
 ## Mejoras del sitio
 
 - [~] **Buscador en el sitio.** El dueño quiso encontrar el artículo de camas, no supo por dónde empezar y tuvo que usar el asistente de IA para ubicarse (2026-11-10). Construido en la rama `feat/buscador-sitio`: índice Pagefind generado dentro del build (`scripts/pagefind-integration.mjs`), diálogo propio (`src/components/SiteSearch.astro`, `src/scripts/site-search.ts`, `src/lib/site-search.ts` con tests), lupa en la cabecera, campo en la portada y atajos Ctrl/Cmd+K y «/». Sin resultados ofrece el asistente con la consulta ya escrita. Pendiente: visto bueno del dueño, PR y fusión.
-  - [ ] Ilustración del estado «sin resultados»: perro senior olfateando, generado por el dueño con Higgsfield o ChatGPT (el dibujo SVG hecho a mano se retiró por feo, 2026-11-10). Hoy hay un marcador con la huella de la marca en `SiteSearch.astro`. Destino: `public/images/buscador/`.
+  - [x] Estado «sin resultados»: se queda con la huella de la marca, por decisión del dueño (2026-11-11). El perro SVG dibujado a mano se retiró por feo y no se encarga ilustración.
   - [ ] Miniaturas: las guías sin variante `-400.webp` cargan la imagen de 1200 px para una miniatura de 56 px. Generar las variantes que falten con `npm run images:optimize`.
   - [ ] Sinónimos: «pipí» o «colchón» solo aparecen si el texto de la guía los usa. Valorar una lista corta de sinónimos por guía si las búsquedas reales lo piden.
 
