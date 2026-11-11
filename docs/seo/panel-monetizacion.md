@@ -4,7 +4,7 @@
 
 El propietario pidió un panel privado para conocer qué fichas afiliadas generan clics y desde qué países, y poder incorporar Amazon, AdSense y publicidad contratada en el futuro.
 
-**Primera versión implementada el 11 de noviembre de 2026** en la rama `claude/brave-brahmagupta-zm29rz`, pendiente de revisión y de fusión. No está activa en producción: falta aplicar la migración `0004` y fusionar. Ver «Implementación v1» y «Decisiones pendientes del propietario».
+**Primera versión activa en producción desde el 11 de noviembre de 2026** (commit `6d9f29b` en `main`). El propietario aplicó la migración `0004` en `cuidatuperroviejo-contact` y verificó en `/admin/monetizacion` el primer clic real desde el sitio público (Costa Rica, `cama-guia-01`). Lo que queda son las «Decisiones pendientes del propietario».
 
 El piloto de AliExpress ya está publicado en la guía de camas. La referencia aprobada es `src/components/CamaAfiliada.astro`. Tiene video a petición, un único enlace afiliado directo y aviso breve de comisión debajo del CTA. La ubicación estable es `cama-guia-01`, identificada por `data-affiliate-placement`. Su enlace usa el Tracking ID `default`. La v1 le añade un contador propio sin cambiar el `href`.
 
@@ -25,7 +25,7 @@ El piloto de AliExpress ya está publicado en la guía de camas. La referencia a
 
 **Verificación local del 11 de noviembre** (`wrangler dev` con D1 local y la migración aplicada, salidas a AliExpress interceptadas): clic, Enter y clic con rueda registran un aviso y abren `https://s.click.aliexpress.com/e/_c4FQx8UJ`; doble clic abre el enlace y cuenta una vez; con el endpoint caído y sin JavaScript el enlace abre igual (sin aviso en el segundo caso). Endpoint: sin `Origin` 403, otro origen 403, ficha desconocida 400, válido 204. Panel: sin credenciales 401, con credenciales 200 y `no-store`, sin desbordamiento horizontal a 390 px. `astro check` 0 errores, `npm test` 132/132, `astro build` correcto.
 
-**Para activarlo** (propietario):
+**Activación** (hecha el 11 de noviembre; se conserva como referencia para entornos nuevos):
 
 1. Revisar y fusionar el PR.
 2. Aplicar la migración en producción: `npx wrangler d1 migrations apply cuidatuperroviejo-contact --remote`. Si se fusiona antes, el endpoint responde 204 sin guardar nada y el panel muestra el aviso de la migración.
@@ -44,7 +44,7 @@ El piloto de AliExpress ya está publicado en la guía de camas. La referencia a
 
 | Dato | ¿Disponible? |
 | --- | --- |
-| Clics propios por ficha, día y país estimado | Sí, en cuanto se aplique la migración y se fusione. |
+| Clics propios por ficha, día y país estimado | Sí, desde el 11 de noviembre de 2026. |
 | Vistas del artículo | En el panel de Cloudflare; en este panel no, falta el token. |
 | Clics, pedidos y comisión del comercio | En AliExpress Portals bajo `default`, mezclados con cualquier otro uso de ese ID. |
 | País del pedido o de envío | Solo el que reporte el comercio. No se deduce del contador. |
@@ -114,4 +114,4 @@ Preparar cualquier migración como un cambio revisable. La autorización de publ
 
 ## Encargo para pegar en otro chat
 
-> Quiero continuar el panel de monetización de CuidaTuPerroViejo. Lee `AGENTS.md`, `TODO.md` y `docs/seo/panel-monetizacion.md`. La v1 (contador propio de clics por ficha y país, panel `/admin/monetizacion`) está implementada; comprueba si ya se fusionó y si la migración `0004` está aplicada en producción. Conserva el único CTA afiliado directo. Revisa las «Decisiones pendientes del propietario» y continúa por la que haya resuelto: Tracking ID por ficha, importación del informe de AliExpress o vistas desde Cloudflare Web Analytics. Distingue siempre los datos propios de los del comercio.
+> Quiero continuar el panel de monetización de CuidaTuPerroViejo. Lee `AGENTS.md`, `TODO.md` y `docs/seo/panel-monetizacion.md`. La v1 (contador propio de clics por ficha y país, panel `/admin/monetizacion`) está activa en producción desde el 11 de noviembre de 2026. Conserva el único CTA afiliado directo. Revisa las «Decisiones pendientes del propietario» y continúa por la que haya resuelto: Tracking ID por ficha, importación del informe de AliExpress o vistas desde Cloudflare Web Analytics. Distingue siempre los datos propios de los del comercio.
