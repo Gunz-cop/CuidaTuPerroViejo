@@ -22,6 +22,7 @@ El dueño encontró el sitio: una almohadilla de la pata enrojecida, sin aguijó
 | `foto-06.jpg` | Vista cenital, de lado en la cama; Luna arriba |
 | `foto-07.jpg` | Dakota despierta y alerta |
 | `foto-08.jpg` | Dakota dormida con el hocico sobre las patas |
+| `foto-09.jpg` | Segunda revisión: panza arriba en el suelo mientras el dueño la acaricia; panza sin ronchas visibles, almohadillas a la vista |
 
 En las fotos no se ve hinchazón en la cara ni en el hocico, ni ronchas. Se ve tranquila y alerta. Es una observación de las fotos, no una valoración veterinaria.
 
