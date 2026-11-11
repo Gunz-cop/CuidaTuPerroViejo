@@ -1,7 +1,7 @@
 # Briefing de afiliados: camas de entrada baja para perro mayor, comparadas por medida y acceso
 
 > [!NOTE]
-> **Estado:** Redactado y guardado en `src/content/blog/camas-entrada-baja-perro-mayor-comparativa.mdx` el 2026-11-11 (sin portada I-1; ver [entrega](../docs/contenido/camas-entrada-baja-perro-mayor-comparativa/entrega.md)). Pendiente de auditoría del artículo.
+> **Estado:** Redactado en `src/content/blog/camas-entrada-baja-perro-mayor-comparativa.mdx`, con portada I-1 integrada el 2026-11-11. Auditoría del artículo r2: aprobado con cambios ([informe](../docs/contenido/camas-entrada-baja-perro-mayor-comparativa/auditoria-articulo-r2.md)). Pendiente del propietario: comprobar a mano los tres enlaces `s.click` y, si se publica otro día, repetir la revisión de fichas.
 
 > Generado el 11 de noviembre de 2026 con la skill `generar-briefing-afiliados`. Prospecto n.º 1 del [listado](../docs/afiliacion/prospectos-afiliados.md). **Estado: corregido tras la auditoría r1** ([informe](../docs/contenido/camas-entrada-baja-perro-mayor-comparativa/auditoria-brief-r1.md)); actualizado el 11/11/2026 con fichas reales de AliExpress Portals ([registro](../docs/afiliacion/fichas-camas-comparativa.md)) y decisiones del propietario; pendiente de nueva auditoría. Voz y tono: [guía de voz y tono](../.agents/skills/references/guia-voz-tono.md); el redactor mide el borrador con `python3 .agents/skills/references/scripts/tono.py`. Las tres fichas de §6 tienen ya datos vistos en AliExpress (2026-11-11); ver §12 para lo que sigue pendiente.
 

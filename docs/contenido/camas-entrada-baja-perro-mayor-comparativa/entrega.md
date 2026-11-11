@@ -104,3 +104,12 @@ Sesión correctora, 2026-11-11, a partir de `auditoria-articulo-r1.md` y de las 
 | P2-9 teclado y movimiento reducido | Probado con Playwright (Chromium, 390 px): con Tab se alcanzan los tres CTA (`camas-cmp-a/b/c`) con `href` correcto y contorno de foco sólido de 2 px; con `reducedMotion: reduce` ninguna ficha tiene animación ni transición activa (sin `reduce`, sí) |
 
 Validación: `npm run check` 0 errores; `npm test` 141 pass / 0 fail; `npx astro build` exit 0; `projection.mjs check --build-dir dist` OK. `FichaAfiliada.astro` no se modificó: no se encontró defecto.
+
+
+## Portada I-1 (2026-11-11, auditoría r2 P2-D)
+
+- Archivo: `public/images/blog/camas-entrada-baja-perro-mayor-comparativa/mestizo-pastor-senior-entrando-cama-baja.webp` (1344 × 752, WebP calidad 82).
+- Origen: Higgsfield, modelo `gpt_image_2_6`, 16:9, generada el 2026-11-11 desde la cuenta del propietario (0,25 créditos por intento).
+- Intento 1 (job `88ef6117-8326-4af4-bfa1-c50aad6ba848`): rechazado, el perro tenía cinco patas.
+- Intento 2 (job `45f68a25-0c8d-4da1-a115-6e26823b9496`): aceptado. Prompt basado en §8 del brief, reforzando la anatomía: cuatro patas, delanteras sobre un colchón gris plano y traseras en el suelo, perfil lateral de izquierda a derecha, rasgos senior y luz de ventana a la izquierda.
+- `heroImageAlt` idéntico al del brief.
