@@ -1,0 +1,222 @@
+<aside class="bed-card" data-affiliate-placement="cama-guia-01" aria-labelledby="cama-guia-01-titulo">
+  <figure>
+    <video
+      width="854"
+      height="480"
+      controls
+      playsinline
+      preload="none"
+      poster="/images/blog/cama-ortopedica/hicarer-portada.webp"
+      aria-label="Demostración del vendedor. Se ven los bordes, la espuma y la base de la cama."
+    >
+      <source src="/images/blog/cama-ortopedica/hicarer-demostracion.mp4" type="video/mp4" />
+    </video>
+    <figcaption>Video del vendedor</figcaption>
+  </figure>
+  <div class="bed-card-body">
+    <p id="cama-guia-01-titulo" class="bed-title">Cama tipo sofá para perros mayores</p>
+    <details class="bed-options">
+      <summary class="bed-cta" aria-describedby="cama-guia-01-aviso">Ver tallas y envío en AliExpress</summary>
+      <div class="bed-consent">
+        <p id="cama-guia-01-seguimiento">Con tu permiso, AliExpress puede registrar que llegaste desde esta guía.</p>
+        <div class="bed-choices">
+          <form action="/api/afiliacion/cama-guia-01" method="post" target="_blank" rel="noopener">
+            <button type="submit" aria-describedby="cama-guia-01-seguimiento cama-guia-01-aviso">Aceptar y abrir</button>
+          </form>
+          <a href="https://es.aliexpress.com/item/1005009119696851.html" target="_blank" rel="noopener noreferrer">Abrir sin afiliación</a>
+        </div>
+      </div>
+    </details>
+    <p class="bed-reason">Una opción para tu perro senior si buscas una funda extraíble.</p>
+    <p id="cama-guia-01-aviso" class="bed-note">Si compras con el enlace de afiliación, podemos recibir una comisión.</p>
+    <p class="bed-note">Antes de elegir talla, confirma el espacio entre los bordes.</p>
+  </div>
+</aside>
+
+<script>
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.intersectionRatio < 0.65) continue;
+        entry.target.classList.add('bed-cta-visible');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold: 0.65 });
+
+    document.querySelectorAll('.bed-cta').forEach((button) => observer.observe(button));
+  }
+</script>
+
+<style>
+  .bed-card {
+    --bed-surface: #fff5ec;
+    --bed-text: #27160f;
+    --bed-border: #bd8a72;
+    --bed-accent: #a33e24;
+    --bed-on-accent: #fff;
+    margin: 2.5rem 0;
+    overflow: hidden;
+    border: 1px solid var(--bed-border);
+    border-radius: 1rem;
+    background: var(--bed-surface);
+    color: var(--bed-text);
+  }
+
+  :global(.dark) .bed-card {
+    --bed-surface: #211b17;
+    --bed-text: #fff5ec;
+    --bed-border: #9d6d52;
+    --bed-accent: #f2a66f;
+    --bed-on-accent: #27160f;
+  }
+
+  .bed-card figure {
+    position: relative;
+    margin: 0;
+    background: #211b17;
+  }
+
+  .bed-card video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 854 / 480;
+  }
+
+  .bed-card figcaption {
+    padding: 0.3rem 1rem;
+    color: #fff5ec;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .bed-card-body {
+    padding: clamp(1rem, 4vw, 1.5rem);
+    text-align: center;
+  }
+
+  .bed-card p {
+    margin: 0;
+  }
+
+  .bed-card .bed-title {
+    margin-bottom: 0.8rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-weight: 750;
+    line-height: 1.2;
+  }
+
+  .bed-card .bed-reason {
+    margin-top: 0.7rem;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .bed-card .bed-note {
+    margin-top: 0.32rem;
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  /* Neutraliza el estilo de acordeón de FAQ que aplica el layout a todos los details. */
+  .bed-card details.bed-options {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none;
+  }
+
+  .bed-cta,
+  .bed-choices :is(a, button) {
+    display: flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    border-radius: 0.7rem;
+    font-size: 0.95rem;
+    font-weight: 750;
+    line-height: 1.3;
+    cursor: pointer;
+  }
+
+  .bed-card details .bed-cta {
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+    list-style: none;
+    background: var(--bed-accent);
+    justify-content: center !important;
+    color: var(--bed-on-accent) !important;
+    font-weight: 750 !important;
+  }
+
+  .bed-card details .bed-cta::after {
+    content: none !important;
+  }
+
+  .bed-cta:hover {
+    filter: brightness(0.93);
+  }
+
+  .bed-cta:focus-visible,
+  .bed-choices :is(a, button):focus-visible {
+    outline: 2px solid var(--bed-accent);
+    outline-offset: 4px;
+  }
+
+  .bed-consent {
+    margin: 0.85rem auto 0;
+    max-width: 29rem;
+    padding: 0.9rem;
+    border: 1px solid var(--bed-border);
+    border-radius: 0.7rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .bed-choices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+    gap: 0.5rem;
+    margin-top: 0.65rem;
+  }
+
+  .bed-choices :is(a, button) {
+    width: 100%;
+    border: 1px solid var(--bed-accent);
+    background: transparent;
+    color: var(--bed-text);
+    text-decoration: none;
+  }
+
+  .bed-choices :is(a, button):hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 480px) {
+    .bed-card details .bed-cta {
+      width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .bed-cta-visible::before {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 35%, rgb(255 255 255 / 0.27) 50%, transparent 65%);
+      content: '';
+      pointer-events: none;
+      transform: translateX(120%);
+      animation: bed-shine 750ms ease-out 180ms 1 both;
+    }
+
+    @keyframes bed-shine {
+      from { transform: translateX(-120%); }
+      to { transform: translateX(120%); }
+    }
+  }
+</style>
