@@ -25,6 +25,16 @@ Cuando el usuario pida crear, rediseñar o mejorar una herramienta o app del pil
 
 Para revisar una herramienta ya hecha, usa [`.agents/skills/auditar-herramienta-interactiva/SKILL.md`](.agents/skills/auditar-herramienta-interactiva/SKILL.md). Igual que con los artículos: quien crea no audita y quien audita no corrige.
 
+## Ilustraciones y dibujos
+
+**No dibujes perros, personas ni escenas a mano en SVG o CSS.** Preferencia del propietario del 2026-11-10: el perro del estado «sin resultados» del buscador, hecho con trazos SVG, quedó feo. Los iconos geométricos simples (lupa, flecha, huella de la marca) sí se hacen en código.
+
+Cuando una interfaz, animación o artículo necesite una ilustración:
+
+1. Dilo antes de construirla y entrega el encargo listo: qué se ve, estilo, paleta del sitio, fondo (transparente si va sobre claro y oscuro), proporción y tamaño, y las capas o fotogramas que haga falta para animarla.
+2. El propietario la genera con ChatGPT o con Higgsfield (conectado el 2026-11-10). Si el conector de la sesión permite generar, úsalo; si solo permite leer, pide la imagen y recógela del historial de generaciones.
+3. Mientras llega, deja un marcador sobrio (la huella de la marca), no un dibujo propio.
+
 ## Redacción de contenido de blog
 
 Antes de generar un briefing o redactar/auditar un artículo de blog para `cuidatuperroviejo.com`, lee el [control compartido de calidad editorial](.agents/skills/references/calidad-editorial-adsense.md) y consulta las skills en `.agents/skills/`. La extensión se justifica por utilidad, los casos requieren procedencia y cada recurso prometido debe funcionar. Máximo tres auditorías por documento; si la tercera falla, detener y revisar con el usuario. La voz y el tono se rigen por la [guía de voz y tono](.agents/skills/references/guia-voz-tono.md); mídelos con `python3 .agents/skills/references/scripts/tono.py`.
@@ -47,8 +57,12 @@ Sigue el flujo descrito en esos archivos en vez de improvisar la estructura del 
 
 ## Afiliación con AliExpress
 
+Para crear o ajustar fichas de recomendación afiliada dentro de artículos, usa [`.agents/skills/crear-ficha-afiliada/SKILL.md`](.agents/skills/crear-ficha-afiliada/SKILL.md). La referencia aprobada es `CamaAfiliada.astro`, con video, un único CTA afiliado directo y aviso breve debajo. La skill documenta el diseño, la animación, la verificación en móvil y el relevo a otras sesiones.
+
 Para preparar, incorporar, revisar o retirar enlaces de AliExpress, sigue la [guía de afiliación](docs/seo/afiliacion-aliexpress.md). Empieza por el artículo de camas y registra país, variante, elegibilidad, destino y fecha de revisión antes de proponer un enlace público. El selector de movilidad conserva enlaces legados desactivados y su prueba de paridad exige cero enlaces comerciales en los resultados.
 
 ## Pendientes del dueño
+
+Para retomar el panel privado de monetización, lee [`docs/seo/panel-monetizacion.md`](docs/seo/panel-monetizacion.md). Conserva el encargo, los datos propuestos, la medición del país del clic y un prompt de relevo para otro chat.
 
 Cuando el usuario mencione una idea, propuesta o algo que no quiere olvidar, regístralo en [`TODO.md`](TODO.md) y marca lo terminado con fecha y PR.

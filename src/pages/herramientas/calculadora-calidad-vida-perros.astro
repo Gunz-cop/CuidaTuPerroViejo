@@ -94,10 +94,10 @@ const schema = {
 };
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} search={{ tipo: 'Herramienta', seccion: 'Herramientas' }}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
 
-  <main id="main-content" tabindex="-1" class="max-w-3xl mx-auto px-4 sm:px-5 py-4 sm:py-10 md:py-16">
+  <main id="main-content" tabindex="-1" data-pagefind-body class="max-w-3xl mx-auto px-4 sm:px-5 py-4 sm:py-10 md:py-16">
     <!-- Cabecera compacta: en móvil la herramienta debe verse sin desplazarse -->
     <header class="mb-4 sm:mb-6">
       <div class="mb-2 sm:mb-4">

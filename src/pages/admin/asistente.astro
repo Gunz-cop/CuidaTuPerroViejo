@@ -173,6 +173,7 @@ const total = Number(totals?.consultas ?? 0);
           {RANGES.map((value) => (
             <a href={`/admin/asistente?dias=${value}`} aria-current={value === days ? 'page' : undefined}>{value} días</a>
           ))}
+          <a href="/admin/monetizacion">Monetización</a>
           <a href="/admin/contact-messages">Mensajes</a>
         </nav>
       </header>
