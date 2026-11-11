@@ -32,6 +32,10 @@ Despertó bien. Pata sin hinchazón; camina por toda la casa, salió afuera, lad
 | `foto-08.jpg` | Dakota dormida con el hocico sobre las patas |
 | `foto-09.jpg` | Segunda revisión: panza arriba en el suelo mientras el dueño la acaricia; panza sin ronchas visibles, almohadillas a la vista |
 | `foto-10.jpg` | Panza arriba, se lame la pata delantera mientras el dueño le acaricia el pecho («es una sinvergüenza») |
+| `foto-11.jpg` | Mañana siguiente: de pie, apoyando la pata con normalidad, pidiendo comida; Rookie (gato atigrado joven) al lado |
+| `foto-12.jpg` | Sentada pidiendo comida mientras Rookie se le restriega en el pecho |
+| `foto-13.jpg` | Igual, Rookie pasando delante; Dakota tranquila |
+| `video-01.mov` | 18 s, mañana siguiente: Dakota sentada pidiendo comida, Rookie pasa a su lado |
 
 En las fotos no se ve hinchazón en la cara ni en el hocico, ni ronchas. Se ve tranquila y alerta. Es una observación de las fotos, no una valoración veterinaria.
 
