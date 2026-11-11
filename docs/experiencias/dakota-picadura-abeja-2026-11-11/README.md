@@ -10,6 +10,10 @@ Dakota (beagle, nacida en 2014) dormía en su cama ortopédica cuando una abeja 
 
 El dueño encontró el sitio: una almohadilla de la pata enrojecida, sin aguijón visible. Dakota sigue lamiéndose, pero buscó al dueño para que la acariciara. Con caricias en el pecho y la panza se queda tranquila e intenta ponerse boca arriba; cuando dejan de acariciarla vuelve a lamerse la pata. Al tocarle la pata se queda quieta y la levanta.
 
+## 10:02 p. m.
+
+Una hora después de las primeras fotos, Dakota dejó de lamerse la pata y se durmió a los pies del dueño, en el suelo fresco y no en su cama (probablemente por el calor). Ronca.
+
 ## Fotos (tomadas esa noche, reloj visible a las 9:02)
 
 | Archivo | Qué muestra |
