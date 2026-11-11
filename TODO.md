@@ -21,7 +21,7 @@ Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 
 
 ## Afiliación con AliExpress
 
-- [x] **Guardar el formato aprobado como skill de fichas afiliadas.** 2026-11-10, creada localmente en `.agents/skills/crear-ficha-afiliada/SKILL.md` y registrada en `AGENTS.md`. Publicación de la skill pendiente de PR.
+- [x] **Guardar el formato aprobado como skill de fichas afiliadas.** 2026-11-10, [PR #167](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/167). Skill registrada en AGENTS.md, con [auditoría independiente r2 APTO](docs/seo/auditoria-skill-fichas-afiliadas-r2.md).
 
 - [x] **Integrar el piloto en la guía de camas para perros mayores.** Bloque con la ficha `1005009119696851` de Hicarer Home Store y opción de afiliación voluntaria. 2026-11-10, [PR #164](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/164). Operativa y retirada en [la guía de afiliación](docs/seo/afiliacion-aliexpress.md).
 - [ ] **Medir y mantener el piloto.** Confirmar las medidas de una variante y su núcleo, comparar demanda en Search Console y comprobar costo final y devolución.
