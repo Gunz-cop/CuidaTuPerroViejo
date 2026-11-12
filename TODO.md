@@ -7,6 +7,11 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 ## Escritorio administrativo (2026-11-11)
 
 - [~] **Entrega 1: archivo diario de audiencia (2026-11-12).** Implementación en `feature/admin-archivo-diario`: serie D1 independiente, cierre +48 h compartido con mensual, cron diario con siete días elegibles de reintento y recuperación histórica separada/deshabilitada por defecto. Pendientes auditoría de Claude Code y autorización de merge. La recuperación requiere su propia autorización; no se ejecutó. Diseño y límites: `docs/admin/archivo-diario.md`; procedimiento preparado: `docs/admin/recuperacion-diaria-procedimiento.md`. Medición real de latencia +1/+24/+48 h pendiente.
+  - [x] Auditoría de Claude Code: **APTO con observaciones**, sin bloqueantes para el merge (`docs/admin/auditoria-archivo-diario.md`). Merge autorizado por el propietario el 2026-11-12 tras la migración 0006 verificada.
+  - [ ] **B1, bloqueante de la recuperación histórica:** pasada en seco de solo lectura sobre el histórico recuperable (coincidencias, diferencias, muestreo, errores y ausencias por día) antes de decidir el criterio de igualdad. Recuperación y `AUDIENCE_RECOVERY_TOKEN` **no autorizados**.
+  - [ ] **O1:** que el evento `audience_days_archive` indique cuándo se agota el presupuesto de consultas (`budget_exhausted`).
+  - [ ] **O2:** lista de control por tramos de 7 días en el procedimiento de recuperación (~26 peticiones).
+  - [ ] **O3:** al crear o borrar `AUDIENCE_RECOVERY_TOKEN` se publica una versión: verificar antes y después que es la de `main` auditado.
 
 - [ ] **Reducir el scroll de la evolución mensual (2026-11-12).** El propietario pide evaluar un gráfico u otra alternativa para consultar uno o tres años sin una tarjeta enorme. Pendiente de definir; por ahora solo se cambia el orden a más reciente primero.
 
