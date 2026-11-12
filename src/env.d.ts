@@ -2,6 +2,7 @@
 /// <reference types="astro/client" />
 declare namespace Cloudflare {
   interface Env {
+    CF_ANALYTICS_TOKEN?: string;
     TURNSTILE_SITE_KEY?: string;
     TURNSTILE_SECRET_KEY?: string;
     CONTACT_IP_HASH_SALT?: string;

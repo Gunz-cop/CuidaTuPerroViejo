@@ -1,4 +1,5 @@
 ---
+import AdminAudience from '../../components/AdminAudience.astro';
 import { env } from 'cloudflare:workers';
 import { requireAdmin, privateHeaders } from '../../lib/admin/access';
 import { loadOverview } from '../../lib/admin/overview';
@@ -28,13 +29,14 @@ const failures = [affiliate, assistant, messages].filter((item) => item.error).l
         <a class="site-link" href="/">Ver sitio público <span aria-hidden="true">↗</span></a>
       </header>
       <p class="intro">El estado del sitio y tus herramientas, en un solo lugar.</p>
+      <AdminAudience env={env} />
       <section class="attention" aria-labelledby="atencion">
         <h2 id="atencion">Requiere atención</h2>
         {failures > 0 && <p role="status">Hay {failures} fuentes no disponibles. Sus tarjetas muestran el detalle; puedes seguir entrando a las herramientas.</p>}
         {messages.data && (messages.data.quarantine > 0
           ? <p><a href="/admin/contact-messages?status=quarantine">Revisar {number(messages.data.quarantine)} mensajes en cuarentena</a>. El filtro los retuvo para moderación.</p>
           : <p>No hay mensajes en cuarentena.</p>)}
-        <p>Audiencia: pendiente de conectar los informes de Cloudflare Web Analytics a este escritorio.</p>
+
       </section>
       <section aria-labelledby="herramientas">
         <div class="section-heading"><h2 id="herramientas">Herramientas y actividad</h2><span>Datos consultados al abrir esta página</span></div>
@@ -60,14 +62,7 @@ const failures = [affiliate, assistant, messages].filter((item) => item.error).l
             {messages.data ? <><dl class="metrics"><div><dt>En cuarentena · Todo el historial</dt><dd>{number(messages.data.quarantine)}</dd></div></dl><p class="definition">Estado de moderación, no de lectura ni de respuesta. No existe un estado «pendiente».</p></> : <p class="error">No disponible. {messages.error}</p>}
             <p class="source">Fuente D1: <code>contact_messages</code>, filas con <code>status = quarantine</code>.</p>
           </article>
-          <article class="audience" aria-labelledby="audiencia">
-            <p class="eyebrow">Próxima fuente</p>
-            <h3 id="audiencia">Audiencia</h3>
-            <p class="unavailable">Pendiente de configuración</p>
-            <p>Cloudflare Web Analytics todavía no está conectado a este escritorio.</p>
-            <p class="definition">Aquí se consultarán las métricas de audiencia que permita la fuente, con sus límites y definiciones. Por ahora no hay cifras disponibles.</p>
-            <p class="source">Fuente prevista: API GraphQL de Cloudflare. Sin consultas desde este panel.</p>
-          </article>
+
         </div>
       </section>
       <footer>

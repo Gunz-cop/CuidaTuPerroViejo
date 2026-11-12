@@ -33,6 +33,11 @@
       "database_id": "99649da3-f224-47be-b0d6-1e037234d9b2"
     }
   ],
+  "triggers": { "crons": ["0 8 2 * *"] },
+  "vars": {
+    "CF_ANALYTICS_ACCOUNT_ID": "972ab3666747a93c084965dd4585d4cc",
+    "CF_ANALYTICS_SITE_TAG": "5642920ab9f443fca3a7c9e006f3788f"
+  },
   "ai": {
     "binding": "AI"
   },
