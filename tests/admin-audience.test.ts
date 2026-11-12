@@ -69,7 +69,7 @@ db.commit();print(json.dumps(result))`,],{input:JSON.stringify({path,sql,values,
  execute(readFileSync('migrations/0005_audience_months.sql','utf8'),[],true);
  const env={...configured(),CONTACT_DB:db};
  const interrupted:typeof fetch=async(url,init)=>{const body=JSON.parse(init!.body as string);if(body.variables?.filter?.datetime_geq?.startsWith('2026-09')) throw Error('Cloudflare down');return transport(url,init);};
- const first=await archive(env,now,interrupted);assert.deepEqual(first.failures,['2026-09']);assert.deepEqual(first.inserted,['2026-10']);
+ const first=await archive(env,now,interrupted,2);assert.deepEqual(first.failures,['2026-09']);assert.deepEqual(first.inserted,['2026-10']);
  assert.deepEqual((await loadAudience(env,now,transport)).pending,['2026-09']);
  assert.deepEqual((await archive(env,now,transport)).inserted,['2026-09']);
  assert.equal((await history(env)).length,2);assert.equal((await history(env))[0].completeness,'parcial');
