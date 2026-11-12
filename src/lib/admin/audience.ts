@@ -2,6 +2,11 @@ import { googleDomains } from './google-domains';
 export const VERSION = 'rum-v1';
 export const HOSTS = ['cuidatuperroviejo.com', 'www.cuidatuperroviejo.com'];
 const DAY = 86400000;
+// Único margen para los dos archivos. Cambiarlo requiere revisión del código.
+export const ARCHIVE_CLOSE_DELAY_HOURS = 48;
+export function archiveEligible(end: string, now: Date) {
+  return Date.parse(end) + ARCHIVE_CLOSE_DELAY_HOURS * 3600000 <= now.getTime();
+}
 export interface AudienceEnv {
   CONTACT_DB?: D1Database; CONTACT_KV?: KVNamespace; ASSETS?: Fetcher;
   CF_ANALYTICS_TOKEN?: string; CF_ANALYTICS_ACCOUNT_ID?: string; CF_ANALYTICS_SITE_TAG?: string;
@@ -10,7 +15,7 @@ export type Window = { start: string; end: string };
 export type Group = { label: string; value: number };
 type Row = { count: number; sum: { visits: number }; avg: { sampleInterval: number }; dimensions?: Record<string, string> };
 export type Report = { visits: number; pageviews: number; sampleInterval: number; estimated: boolean; pages: Group[]; countries: Group[]; referrals: ReturnType<typeof referralGroups> };
-export type Settings = { enabled: boolean; notOlderThan: number; maxDuration: number };
+export type Settings = { enabled: boolean; notOlderThan: number; maxDuration: number; maxPageSize?: number };
 export function localDay(now: Date) { return new Date(now.getTime() - 6 * 3600000).toISOString().slice(0,10); }
 export function midnight(day: string) { return `${day}T06:00:00.000Z`; }
 export function windows(days: number, now = new Date()) {
@@ -31,7 +36,7 @@ export function coveredMonth(period: string, oldest: number) {
 export function closedMonths(now: Date, retention: number) {
   const current = localDay(now).slice(0,7); const oldest=now.getTime()-retention*1000;
   let cursor=localDay(new Date(oldest)).slice(0,7); const months: string[]=[];
-  while(cursor<current) { if(coveredMonth(cursor,oldest).coveredDays>0) months.push(cursor); cursor=monthWindow(cursor).end.slice(0,7); }
+  while(cursor<current) { if(archiveEligible(monthWindow(cursor).end,now)&&coveredMonth(cursor,oldest).coveredDays>0) months.push(cursor); cursor=monthWindow(cursor).end.slice(0,7); }
   return months;
 }
 export function referrerLabel(raw: string) {
@@ -69,7 +74,7 @@ export async function graphql(env: AudienceEnv, query:string, variables:Record<s
   return result.data.viewer.accounts[0];
 }
 export async function settings(env:AudienceEnv, transport:typeof fetch=fetch) {
-  const a=await graphql(env,'query($account: string!) {viewer {accounts(filter:{accountTag:$account}) {settings {rumPageloadEventsAdaptiveGroups {enabled notOlderThan maxDuration}}}}}',{account:env.CF_ANALYTICS_ACCOUNT_ID},transport);
+  const a=await graphql(env,'query($account: string!) {viewer {accounts(filter:{accountTag:$account}) {settings {rumPageloadEventsAdaptiveGroups {enabled notOlderThan maxDuration maxPageSize}}}}}',{account:env.CF_ANALYTICS_ACCOUNT_ID},transport);
   const s=(a.settings as {rumPageloadEventsAdaptiveGroups:Settings}).rumPageloadEventsAdaptiveGroups;
   if(!s?.enabled||!(s.notOlderThan>0)||!(s.maxDuration>0)) throw Error('RUM no disponible o sin retención consultable.');
   return s;

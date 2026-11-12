@@ -6,6 +6,8 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 ## Escritorio administrativo (2026-11-11)
 
+- [~] **Entrega 1: archivo diario de audiencia (2026-11-12).** Implementación en `feature/admin-archivo-diario`: serie D1 independiente, cierre +48 h compartido con mensual, cron diario con siete días elegibles de reintento y recuperación histórica separada/deshabilitada por defecto. Pendientes auditoría de Claude Code y autorización de merge. La recuperación requiere su propia autorización; no se ejecutó. Diseño y límites: `docs/admin/archivo-diario.md`; procedimiento preparado: `docs/admin/recuperacion-diaria-procedimiento.md`. Medición real de latencia +1/+24/+48 h pendiente.
+
 - [ ] **Reducir el scroll de la evolución mensual (2026-11-12).** El propietario pide evaluar un gráfico u otra alternativa para consultar uno o tres años sin una tarjeta enorme. Pendiente de definir; por ahora solo se cambia el orden a más reciente primero.
 
 Lo desarrolla Codex y lo audita Claude Code. Quien desarrolla no audita.
