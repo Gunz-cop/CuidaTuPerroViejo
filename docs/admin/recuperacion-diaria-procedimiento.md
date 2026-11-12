@@ -18,7 +18,9 @@ El **propietario ejecuta las llamadas HTTP con credenciales y las operaciones
 Wrangler de secrets/despliegue en su equipo**, con su sesión de Cloudflare y el
 lockfile del proyecto. Codex puede preparar el manifiesto, hacer las lecturas de
 verificación autorizadas y conciliar respuestas saneadas; no necesita recibir
-las credenciales Basic ni el valor del secret. No se entregan por chat.
+las credenciales Basic ni el valor del secret. No se entregan por chat. Conviene
+reservar **un bloque de 1 a 2 horas sin interrupciones**, con **Codex como
+observador de solo lectura en paralelo** al propietario.
 
 Antes de empezar, registrar una ficha privada:
 
@@ -36,13 +38,34 @@ Antes de empezar, registrar una ficha privada:
 | V− sin secret, deployment y hora de cierre | |
 | Ubicación privada de snapshots, respuestas y registro | |
 
-**Congelar merges durante toda la ventana.** Los PR documentales **#174, #175,
-#177 y #178** se fusionan antes o después, nunca durante; tampoco se fusiona
-este PR durante la recuperación. Cada merge en main despliega otra versión.
-Además, no hacer pushes que suban previews, cargas manuales, cambios de secrets
-ajenos ni despliegues concurrentes. Esperar a que terminen las builds en curso
-antes de abrir la ventana. Es una coordinación operativa, no una modificación
-de CI ni de Cloudflare.
+### Paso previo obligatorio: fusionar la documentación antes del preflight
+
+Workers Builds sube una versión de vista previa con cada push a una rama con PR.
+Los PR documentales pendientes tienen pushes posteriores al despliegue de
+`51ebd22`; no se presupone que la última versión subida sea la de ese main.
+Antes del preflight y de abrir la ventana:
+
+1. **Con autorización expresa del propietario**, fusionar todos los PR
+   documentales pendientes: **#174, #175, #177, #178 y #179**, incluido este
+   procedimiento. No abrir ninguna otra rama con push durante esta preparación.
+2. Esperar a que termine el despliegue del **último merge** y las builds en curso.
+   Comprobar que la versión activa procede de **ese SHA final de main**, recibe
+   **100 %** del tráfico, la **última versión subida es esa misma versión** y
+   el único cron es **`0 8 * * *`**. Registrar SHA, UUID y hora; no reutilizar
+   `51ebd22` como referencia si los merges han producido otro SHA de main.
+3. **Desde ese momento y hasta cerrar la ventana**, congelar los pushes a
+   cualquier rama con PR, **también los de Claude Code y Codex**, y todos los
+   merges. No hacer cargas manuales, cambios de secrets ajenos ni despliegues
+   concurrentes. Los únicos cambios de versión previstos son los del secret
+   descritos en este procedimiento.
+4. **Repetir el preflight completo** del apartado 2 con esa versión de main.
+   No crear el secret ni iniciar la recuperación antes de completarlo.
+
+Esta preparación evita necesitar una build controlada en el caso normal.
+Si aun así la última versión no coincide con la activa de main, **detenerse e
+informar**; la build controlada queda solo como contingencia del apartado 3,
+fuera de la ventana y con autorización específica. Esta secuencia es una
+coordinación operativa documentada: no autoriza ni ejecuta los merges ahora.
 
 Registrar el inicio antes de habilitar el secret. Mantener el registro de
 versiones/deployments con hora, SHA y porcentaje durante toda la ventana:
@@ -71,9 +94,11 @@ No habilitar el secret si falta cualquiera de estas comprobaciones:
 4. Ejecutar las dos pruebas sin credenciales del cliente del apartado 4:
    `/` → 200 y POST de recuperación → 401. Con Basic válido y sin el secret,
    comprobar además 503, desde el proceso privado del propietario.
-5. Guardar las instantáneas y recuentos del apartado 7. Reservar una ventana
-   breve lejos de las 08:00 UTC; no pausar el cron. Un mes nuevo añadido por el
-   cron haría fallar la condición de igualdad mensual y exige detenerse.
+5. Guardar las instantáneas y recuentos del apartado 7. Reservar la ventana
+   lejos de las 08:00 UTC y **evitar el día 3 de cada mes en Costa Rica**: ese
+   día el cron archiva el mes anterior en audience_months. No pausar el cron;
+   una fila mensual nueva rompería la igualdad con la instantánea y exige
+   detenerse.
 6. Leer settings **reales en ese momento**: enabled, notOlderThan, maxDuration y
    maxPageSize. No reutilizar la retención de B1 ni suponer un plan de Cloudflare.
 
@@ -143,11 +168,13 @@ para el borrado normal, **última = V+ de ese mismo main**. No debe haber una
 preview posterior. Congelar también las subidas, no solo los merges, evita la
 carrera entre comprobación y PATCH.
 
-Si la última es una preview, **no crear el secret ni desplegar esa preview**.
-Antes de abrir la ventana, el propietario debe preparar una build controlada
-**del SHA exacto de main autorizado**, comprobar su procedencia y que está activa
-al 100 %, dejarla como última y repetir todo el preflight. Esa preparación debe
-estar autorizada; no es un fallback automático de este documento.
+Si tras fusionar los PR documentales y verificar el despliegue final la última
+sigue siendo una preview o no coincide con V0, **detenerse e informar**. No crear
+el secret ni desplegar esa preview. La **build controlada** queda solo como
+contingencia: fuera de la ventana y con autorización específica del propietario,
+preparar una build del **SHA exacto de main autorizado**, comprobar su procedencia,
+su activación al 100 % y que sea la última, y repetir todo el preflight. No es el
+paso normal ni un fallback automático de este documento.
 
 ### Verificaciones y transiciones previstas
 
@@ -375,11 +402,14 @@ comprobar versión/crons. **Un HTTP 200 no significa cobertura completa.**
 
 La tabla siguiente es una plantilla vacía: generar las fechas al abrir la ventana,
 ajustar el número de filas y conservar también cada revisión y reintento. En
-«Estados por fecha» deben figurar todas las fechas, por ejemplo
-`AAAA-MM-DD=archivado; AAAA-MM-DD=vacío`, nunca solo el estado global del tramo.
+«Estados por fecha» deben figurar todas las fechas con la etiqueta original
+`coverage[].status`, el texto literal de `coverage[].reason` cuando exista y la
+clasificación del operador. Por ejemplo:
+`AAAA-MM-DD: status=fallido; reason="Día vacío; sigue pendiente de archivo."; clasificación=vacío`.
+No anotar solo el estado global del tramo ni sustituir la etiqueta de la API.
 No se pasa al siguiente tramo sin completar la fila y conciliar su respuesta.
 
-| Tramo/intento | Desde | Hasta | Petición UTC (inicio–fin) | Operación | Estados por fecha | Consultas datos (+settings) | HTTP | Notas/revisión |
+| Tramo/intento | Desde | Hasta | Petición UTC (inicio–fin) | Operación | Estados por fecha (API → clasificación) | Consultas datos (+settings) | HTTP | Notas/revisión |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 01/0 | | | | | | | | |
 | 02/0 | | | | | | | | |
@@ -413,25 +443,30 @@ No se pasa al siguiente tramo sin completar la fila y conciliar su respuesta.
 
 - **Archivado:** D1 tiene la fila día/versión; puede ser una fila anterior que
   ON CONFLICT omite. Conservar sus campos, incluidos fetched_at y muestreo.
-- **Vacío:** respuesta vacía comprobada; sin fila ni cero inventado. B1 observó
-  13 fechas: **13–21 mayo, 5/10/23 junio y 3 agosto de 2026**. Solo son esperables
-  las que aún pertenezcan al rango autorizado; no es una lista que permita
-  etiquetar sin evidencia ni una garantía de que el resultado se repita.
-  No son fallos de la operación una vez confirmadas y anotadas.
+- **Vacío:** `coverage[].reason` dice literalmente **«Día vacío; sigue pendiente
+  de archivo.»**. Esta es la evidencia principal para clasificarlo como vacío,
+  aunque `coverage[].status` sea `fallido`. Anotar ambos campos tal como vienen
+  y la clasificación; no hay fila ni cero inventado. B1 observó 13 fechas:
+  **13–21 mayo, 5/10/23 junio y 3 agosto de 2026**. Solo son esperables las que
+  aún pertenezcan al rango autorizado; la fecha conocida no sustituye el reason
+  ni garantiza que el resultado se repita. Los vacíos así anotados **no son
+  fallos de la operación**.
 - **Pendiente:** identificar el motivo. Si es agotamiento de presupuesto, hacer
   **una única segunda pasada** sobre esos días, con intento `/R1`; seleccionar
   subrangos contiguos que excluyan días ya vacíos o fallidos. No reenviar todo
   el tramo si con ello se reintentarían esos fallos. Los ya archivados se omiten
   por idempotencia. Si siguen pendientes tras R1, anotarlos e informar; no R2.
   Pendientes por margen/otra causa no se convierten en reintentos de presupuesto.
-- **Fallido:** conservar el estado y motivo originales, anotar e informar; no
-  reintentar a ciegas. La API actual no exporta un estado «vacío» separado y puede
-  devolver `fallido` tanto para vacíos como para otros errores. Guardar la etiqueta
-  cruda y la conciliación del operador. Solo marcar «vacío» con la razón explícita
-  del resultado o una lectura diagnóstica autorizada de GraphQL del mismo día,
-  sin writes/D1/KV, que confirme falta de grupos/agregado y ausencia de errores.
-  Una fecha conocida por B1 no basta por sí sola. Si no se puede explicar el
-  fallo, detener y cerrar; si aparecen diferencias, aplicar la parada inmediata.
+- **Fallido:** `coverage[].reason` dice **«Lote no guardado: consulta, coherencia
+  o escritura falló.»**. Conservar estado y reason literales, clasificarlo como
+  fallido, **anotar e informar; no reintentar a ciegas**. El código auditado separa
+  este caso del vacío mediante reason, aunque ambos usen status `fallido`.
+- **Caso ambiguo:** solo si reason falta, es desconocido o no permite conciliar
+  la respuesta, recurrir a una lectura diagnóstica autorizada de GraphQL del mismo
+  día, sin writes/D1/KV. Registrar la evidencia y la clasificación sin borrar los
+  campos originales. No hacer esa lectura por rutina para los dos reasons
+  anteriores. Si no se puede explicar el caso, detener y cerrar; si aparecen
+  diferencias, aplicar la parada inmediata.
 - **Fuera de retención:** día ya no completo; registrar límite/hora y la pérdida,
   sin inventar cobertura parcial ni recuperarlo desde los meses.
 
