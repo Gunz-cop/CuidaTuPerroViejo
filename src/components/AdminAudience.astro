@@ -23,7 +23,7 @@ const amount=(live:Live, key:'visits'|'pageviews')=>live.data?`${n(live.data[key
 const date=(iso:string)=>new Date(iso).toLocaleDateString('es-CR',{timeZone:'America/Costa_Rica',day:'numeric',month:'short',year:'numeric'});
 const range=(w:{start:string;end:string})=>`${date(w.start)}–${date(new Date(Date.parse(w.end)-86400000).toISOString())}`;
 const href=(path:string)=>path.startsWith('/')&&!path.startsWith('//')&&!/[\\?#]/.test(path)?`https://cuidatuperroviejo.com${path}`:null;
-const bars=[...a.months.map(m=>({period:m.period,report:m.report,state:m.completeness,coverage:`${m.covered_days} días · ${date(m.covered_start_utc)}–${date(new Date(Date.parse(m.covered_end_utc)-86400000).toISOString())}`})),...(a.provisional.data?[{period:a.period,report:a.provisional.data,state:'provisional',coverage:'Hasta ayer'}]:[])];
+const bars=[...a.months.map(m=>({period:m.period,report:m.report,state:m.completeness,coverage:`${m.covered_days} días · ${date(m.covered_start_utc)}–${date(new Date(Date.parse(m.covered_end_utc)-86400000).toISOString())}`})),...(a.provisional.data?[{period:a.period,report:a.provisional.data,state:'provisional',coverage:'Hasta ayer'}]:[])].sort((left, right) => right.period.localeCompare(left.period));
 const max=Math.max(1,...bars.flatMap(m=>[m.report.visits,m.report.pageviews]));
 ---
 <section class="audience" aria-labelledby="audiencia">
