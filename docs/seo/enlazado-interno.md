@@ -78,3 +78,7 @@ Fuentes oficiales:
 ## Incorporación propuesta: miedo a los petardos (P1-03)
 
 El candidato `miedo-petardos-perros-mayores` pertenece a `salud-mental-emocional-perros`. La página del pilar y los artículos de ese silo lo descubren por la colección y las relaciones automáticas existentes; no se reescriben sus cuerpos. El mapa añade dos salidas hacia `chequeo-geriatrico-canino` y `prevencion-caidas-perro-mayor`, como continuación de la revisión de salud y de la adaptación de accesos seguros al refugio. No se crean enlaces a feromonas o tormentas sin artículo publicado. Integración propuesta en PR; no acredita publicación.
+
+## Incorporación propuesta: comparativa de camas de entrada baja (2026-11-11)
+
+`camas-entrada-baja-perro-mayor-comparativa` pertenece a `movilidad-dolor-perros-mayores` y es la página comercial que complementa a la guía informativa de camas. Entrantes contextuales: un único enlace desde la guía de camas al final de «Cómo leer lo que promete el vendedor» y uno desde «Cama y zona de descanso» de `prevencion-caidas-perro-mayor`. Salientes en el mapa: `cama-ortopedica-perros-mayores-displasia-artrosis` y `prevencion-caidas-perro-mayor`, y el selector de movilidad en `TOOL_LINKS` como orientación (sus resultados siguen sin enlaces comerciales). Integración propuesta en PR; no acredita publicación.

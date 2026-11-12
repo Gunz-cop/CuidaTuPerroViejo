@@ -184,6 +184,10 @@ A continuación se listan los artículos de blog ya implementados en el código 
   - **Archivo físico:** `src/content/blog/cama-ortopedica-perros-mayores-displasia-artrosis.mdx`
   - **URL real:** `/movilidad-dolor-perros-mayores/cama-ortopedica-perros-mayores-displasia-artrosis`
   - **URL de origen:** *Nuevo artículo de la versión Astro (sin URL legacy)*
+- **Camas de entrada baja para perro mayor: 3 modelos comparados por medida y acceso** (redactado 2026-11-11, pendiente de publicación)
+  - **Archivo físico:** `src/content/blog/camas-entrada-baja-perro-mayor-comparativa.mdx`
+  - **URL real:** `/movilidad-dolor-perros-mayores/camas-entrada-baja-perro-mayor-comparativa`
+  - **URL de origen:** *Nuevo artículo de la versión Astro (sin URL legacy)*
 - **Prevención de caídas en casa: tracción y layout para tu perro mayor**
   - **Archivo físico:** `src/content/blog/prevencion-caidas-perro-mayor.mdx`
   - **URL real:** `/movilidad-dolor-perros-mayores/prevencion-caidas-perro-mayor`
@@ -266,6 +270,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 *Estado: 2 publicados, 8 por redactar*
 - [x] *Cama ortopédica para perros mayores con displasia o artrosis* (Publicado)
 - [x] *Prevención de caídas en casa: tracción y layout* (Publicado)
+- [~] *Camas de entrada baja para perro mayor: 3 modelos comparados por medida y acceso* (Redactado y validado localmente el 2026-11-11 — afiliados; `src/content/blog/camas-entrada-baja-perro-mayor-comparativa.mdx`; pendiente de auditoría y publicación)
 - [ ] *A mi perro viejo le fallan las patas traseras: causas físicas y qué hacer* (Búsqueda GSC)
 - [ ] *Masajes y estiramientos caseros para perros con artrosis y rigidez articular* (Búsqueda GSC)
 - [ ] *Mi perro mayor no se puede levantar: guía paso a paso de ayuda de emergencia* (Búsqueda GSC)

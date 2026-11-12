@@ -1,0 +1,272 @@
+---
+// Ficha de recomendación afiliada generalizada a partir de CamaAfiliada.astro
+// (aprobada por el propietario el 10/11/2026). Mismo aspecto, animación y
+// contrato: <aside data-affiliate-placement>, un único CTA con
+// rel="sponsored noopener noreferrer" y aviso de comisión bajo el botón.
+// Sin precio, stock ni plazos: viven en el comercio.
+interface Video {
+  src: string;
+  poster: string;
+  label: string;
+  caption: string;
+  width?: number;
+  height?: number;
+}
+
+interface Imagen {
+  src: string;
+  srcset?: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+}
+
+interface Props {
+  placement: string;
+  title: string;
+  href: string;
+  reason: string;
+  checks?: string;
+  ctaLabel?: string;
+  video?: Video;
+  images?: Imagen[];
+}
+
+const {
+  placement,
+  title,
+  href,
+  reason,
+  checks,
+  ctaLabel = 'Ver tallas y envío en AliExpress',
+  video,
+  images = [],
+} = Astro.props;
+
+const titleId = `${placement}-titulo`;
+const noteId = `${placement}-aviso`;
+---
+
+<aside class="bed-card" data-affiliate-placement={placement} aria-labelledby={titleId}>
+  {video && (
+    <figure>
+      <video
+        width={video.width ?? 854}
+        height={video.height ?? 480}
+        controls
+        playsinline
+        preload="none"
+        poster={video.poster}
+        aria-label={video.label}
+        style={`aspect-ratio: ${video.width ?? 854} / ${video.height ?? 480};`}
+      >
+        <source src={video.src} type="video/mp4" />
+      </video>
+      <figcaption>{video.caption}</figcaption>
+    </figure>
+  )}
+  {images.length > 0 && (
+    <div class={`bed-gallery${images.length === 1 ? ' bed-gallery-single' : ''}`}>
+      {images.map((image) => (
+        <figure>
+          <img
+            src={image.src}
+            srcset={image.srcset}
+            sizes={images.length === 1 ? '(max-width: 760px) 100vw, 720px' : '(max-width: 760px) 50vw, 360px'}
+            width={image.width}
+            height={image.height}
+            alt={image.alt}
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>{image.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  )}
+  <div class="bed-card-body">
+    <p id={titleId} class="bed-title">{title}</p>
+    <a class="bed-cta" href={href} target="_blank" rel="sponsored noopener noreferrer" aria-describedby={noteId}>{ctaLabel}</a>
+    <p class="bed-reason">{reason}</p>
+    <p id={noteId} class="bed-note">Podemos recibir una comisión por las compras a través de este enlace.</p>
+    {checks && <p class="bed-note">{checks}</p>}
+  </div>
+</aside>
+
+<script>
+  import '../scripts/affiliate-clicks';
+
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.intersectionRatio < 0.65) continue;
+        entry.target.classList.add('bed-cta-visible');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold: 0.65 });
+
+    document.querySelectorAll('.bed-cta').forEach((button) => observer.observe(button));
+  }
+</script>
+
+<style>
+  .bed-card {
+    --bed-surface: #fff5ec;
+    --bed-text: #27160f;
+    --bed-border: #bd8a72;
+    --bed-accent: #a33e24;
+    --bed-on-accent: #fff;
+    margin: 2.5rem 0;
+    overflow: hidden;
+    border: 1px solid var(--bed-border);
+    border-radius: 1rem;
+    background: var(--bed-surface);
+    color: var(--bed-text);
+  }
+
+  :global(.dark) .bed-card {
+    --bed-surface: #211b17;
+    --bed-text: #fff5ec;
+    --bed-border: #9d6d52;
+    --bed-accent: #f2a66f;
+    --bed-on-accent: #27160f;
+  }
+
+  .bed-card figure {
+    position: relative;
+    margin: 0;
+    background: #211b17;
+  }
+
+  .bed-card video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .bed-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: #211b17;
+  }
+
+  .bed-card .bed-gallery figure {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bed-card .bed-gallery img {
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: #fff;
+  }
+
+  .bed-gallery-single {
+    grid-template-columns: 1fr;
+  }
+
+  .bed-card .bed-gallery-single img {
+    aspect-ratio: 16 / 9;
+    background: #211b17;
+  }
+
+  .bed-card figcaption {
+    padding: 0.3rem 1rem;
+    color: #fff5ec;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .bed-card-body {
+    padding: clamp(1rem, 4vw, 1.5rem);
+    text-align: center;
+  }
+
+  .bed-card p {
+    margin: 0;
+  }
+
+  .bed-card .bed-title {
+    margin-bottom: 0.8rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-weight: 750;
+    line-height: 1.2;
+  }
+
+  .bed-card .bed-reason {
+    margin-top: 0.7rem;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .bed-card .bed-note {
+    margin-top: 0.32rem;
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  .bed-card .bed-cta {
+    display: flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    border-radius: 0.7rem;
+    font-size: 0.95rem;
+    font-weight: 750;
+    line-height: 1.3;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+    background: var(--bed-accent) !important;
+    justify-content: center !important;
+    color: var(--bed-on-accent) !important;
+    font-weight: 750 !important;
+    text-decoration: none !important;
+  }
+
+  .bed-cta:hover {
+    filter: brightness(0.93);
+  }
+
+  .bed-cta:focus-visible {
+    outline: 2px solid var(--bed-accent);
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 480px) {
+    .bed-card .bed-cta {
+      width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .bed-cta-visible::before {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 35%, rgb(255 255 255 / 0.27) 50%, transparent 65%);
+      content: '';
+      pointer-events: none;
+      transform: translateX(120%);
+      animation: bed-shine 750ms ease-out 180ms 1 both;
+    }
+
+    @keyframes bed-shine {
+      from { transform: translateX(-120%); }
+      to { transform: translateX(120%); }
+    }
+  }
+</style>
