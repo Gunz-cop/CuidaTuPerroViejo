@@ -1,9 +1,11 @@
 # Recuperación inicial: procedimiento para aprobación
 
-**Preparado, no ejecutado.** Este documento no autoriza escrituras en D1,
-cambios de cron ni despliegues. La fase 2 fue aprobada por el propietario en
-Safari de iPhone. La recuperación anticipada requiere una autorización posterior
-de este procedimiento. Hasta entonces sigue vigente el cron del 2 de diciembre.
+**Procedimiento operativo: requiere autorización para cada ejecución.** El
+propietario autorizó la recuperación del 2026-11-12 con los dos ajustes de
+[auditoría](auditoria-paises-recuperacion.md). Se ejecutó y se retiró el trigger
+temporal antes de continuar con el PR #172; ver
+[evidencia de ejecución](recuperacion-inicial-evidencia.md). El cron mensual
+permanece como respaldo. Este documento no autoriza repetir la operación.
 
 ## 1. Requisitos comprobados por lectura
 
@@ -99,9 +101,13 @@ Las lecturas realizadas no prueban ese permiso: no se ha intentado ningún PUT e
 esta preparación. Si la conexión lo deniega al ejecutar el plan aprobado, detenerse
 e informar; no sustituirlo por otra vía ni solicitar el valor del token de RUM.
 
-### Secuencia propuesta para el cron temporal (NO ejecutada)
+### Secuencia del cron temporal (ejecución del 2026-11-12 documentada)
 
-1. Con autorización del propietario, repetir los requisitos y snapshots del
+1. No fusionar el PR #172 ni publicar código durante la ventana del temporal:
+   `wrangler deploy` restablece los schedules de wrangler.jsonc y podría retirarlo
+   antes del disparo. Primero programar, ejecutar, retirar y verificar la recuperación;
+   solo después continuar con el merge de países.
+   Con autorización del propietario, repetir los requisitos y snapshots del
    apartado 4. Leer y conservar la lista actual de schedules. Si hay cambios no
    previstos respecto al cron mensual, detenerse antes de escribir.
 2. Acordar y registrar una fecha UTC **al menos 30 minutos en el futuro**, para
@@ -177,9 +183,15 @@ audience_months ORDER BY period, query_version`) y comparar íntegramente esas f
 al terminar, sin publicar su report_json. Los meses nuevos son las únicas filas
 que pueden añadirse. El código solo escribe en audience_months.
 
-El sitio sigue atendiendo tráfico: si cambia el recuento de una tabla ajena,
-detenerse e informar. No atribuirlo automáticamente a archive(), no compensarlo
-con escrituras y no borrar actividad legítima para igualar el snapshot.
+El sitio sigue atendiendo tráfico: los recuentos de las seis tablas vivas son
+**informativos**. Registrar antes y después sin exigir igualdad; aceptar aumentos
+coherentes con el tráfico y detenerse ante descensos o cambios de esquema. No
+atribuir un cambio automáticamente a archive(), no compensarlo con escrituras y
+no borrar actividad legítima para igualar un snapshot.
+
+La igualdad **estricta** se exige solo para el snapshot completo de sqlite_schema,
+las filas de d1_migrations y las filas ya existentes de audience_months. Las filas
+nuevas de audiencia son el resultado esperado de la recuperación.
 
 ## 5. Resultado, verificación y fallos
 
@@ -205,13 +217,14 @@ estimación y hora de consulta, omitiendo identificadores de cuenta/sitio.
 
 - Si falla un mes, conservar los éxitos. Queda pendiente para el cron mensual
   mientras Cloudflare lo retenga. No reintentar a ciegas ni guardar ceros.
-- Si falla una lectura de verificación, cambia una fila previa, una tabla ajena,
-  el deployment o la configuración esperada, **detenerse e informar**. No borrar,
+- Si falla una lectura de verificación, cambia el esquema o d1_migrations, una
+  fila previa, desciende un recuento vivo, cambia el deployment o la configuración esperada, **detenerse e informar**. No borrar,
   sobrescribir ni declarar éxito. La limpieza del trigger temporal sigue siendo
   obligatoria y se reportará por separado si no puede completarse.
 - La evidencia final incluirá resultado por mes, verificaciones de invariantes,
   logs disponibles, horarios del trigger temporal y confirmación de su retirada.
   Nunca el secret ni cifras absolutas de audiencia.
 
-Este PR solo entrega el plan. La aprobación del PR de nombres de países no
-constituye autorización para programar el trigger temporal ni ejecutar archive().
+La aprobación de los nombres de países sigue siendo independiente de la
+autorización operativa de recuperación. La ejecución del 2026-11-12 fue autorizada
+por separado y no habilita repeticiones automáticas ni cambios adicionales.

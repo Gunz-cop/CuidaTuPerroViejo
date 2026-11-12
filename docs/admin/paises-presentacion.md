@@ -41,6 +41,7 @@ estas capturas nuevas son de Chromium local, no de Safari ni de un iPhone físic
 
 El procedimiento separado está en
 [recuperacion-inicial-procedimiento.md](recuperacion-inicial-procedimiento.md).
-Contiene comprobaciones reales de solo lectura, la cobertura calculada con el
-notOlderThan observado y la vía propuesta para invocar el mismo archive() del
-cron. Su ejecución requiere la autorización posterior del propietario.
+La recuperación se ejecutó con autorización independiente el 2026-11-12, antes
+del merge de países, usando el mismo archive() del cron. La retirada del trigger
+temporal y las comprobaciones constan en
+[recuperacion-inicial-evidencia.md](recuperacion-inicial-evidencia.md).
