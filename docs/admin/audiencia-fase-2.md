@@ -120,6 +120,35 @@ ambos exports en `dist/server/entry.mjs`. No cambia runtime.ts.
    Los meses iniciales parciales deben mostrar sus días de cobertura. Repetir la
    ejecución no debe cambiar fetched_at ni report_json de meses existentes.
 
+### Guardar secrets y variables en el panel de Cloudflare
+
+En el panel, usar **«⌄ → Save»** para guardar el secret o la variable sin publicar
+código. **«Add variable and deploy» publica la última versión subida, aunque sea
+una vista previa de otra rama.** Antes de pulsar una opción que despliegue, revisar
+qué versión va a recibir tráfico; la última subida no tiene por qué ser `main`.
+
+Lección comprobada el 2026-11-12: al guardar el token con «Add variable and deploy»,
+el panel publicó la última preview de `feature/admin-audiencia`. Workers Builds
+la había subido automáticamente con `wrangler versions upload`; no era una subida
+manual de Codex. La corrección operativa autorizada es aplicar primero `0005` y
+publicar después desde `main` mediante la fusión del PR #170.
+
+### Recuperación inicial programada
+
+Por decisión del propietario, **no se ejecuta una recuperación manual ahora**.
+La hará el primer cron mensual: **2 de diciembre de 2026, 08:00 UTC**
+(02:00 en Costa Rica), con `0 8 2 * *`. Hasta entonces, el escritorio debe mostrar
+los meses pendientes y la evolución debe poder mostrar el mes provisional sin
+error. Los meses recuperables se determinarán con la retención que Cloudflare
+conserve en esa ejecución; no se garantiza recuperar todos los meses que hoy
+están disponibles. El primer mes conservado puede ser parcial.
+
+La migración `0005` se aplicó mediante el conector antes de la fusión: registro,
+tabla y trigger verificados con consultas simples separadas; tabla vacía y
+recuentos de las seis tablas de aplicación anteriores sin cambios. La nueva fila
+de `d1_migrations` es el registro esperado de esta operación. No se guardan cifras
+de audiencia en esta evidencia.
+
 No usar el cron local como recuperación de producción: solo modifica D1 local.
 Para probar el handler compilado sin tocar remoto:
 
@@ -155,7 +184,7 @@ esa ruta devolvió 404. La ruta `/cdn-cgi/local/scheduled` sí ejecutó el handl
   parcial y provisional; `error-migracion` elimina solo audience_months local,
   conservando las tarjetas de fase 1 y la caché de audiencia.
 
-No verificado: despliegue ni migración remota, token mínimo real del propietario,
+No verificado durante el desarrollo: despliegue y token mínimo real del propietario,
 primer cron real con archivo en D1 producción, propagación global del trigger,
 recuperación de un fallo histórico real, exactitud/cobertura del beacon en todos
 los navegadores. No se provocó truncamiento de 1000 hosts en producción; la
