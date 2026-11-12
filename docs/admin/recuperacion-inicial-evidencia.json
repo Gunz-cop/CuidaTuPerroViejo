@@ -1,0 +1,111 @@
+{
+  "checkedAt": "2026-11-12T15:00:30.830Z",
+  "scheduledAt": "2026-11-12T14:59:00.000Z",
+  "cleanup": {
+    "success": true,
+    "removedAt": "2026-11-12T14:59:38.059Z",
+    "temporaryAbsent": true,
+    "crons": [
+      "0 8 2 * *"
+    ],
+    "deploymentUnchanged": true
+  },
+  "strict": {
+    "schemaUnchanged": true,
+    "migrationsUnchanged": true,
+    "previousRowsUnchanged": true
+  },
+  "previousAudienceWasEmpty": true,
+  "liveCountsInformative": {
+    "affiliate_clicks_daily": "igual",
+    "assistant_interactions": "igual",
+    "assistant_clicks": "igual",
+    "contact_messages": "igual",
+    "feedback_counts": "igual",
+    "feedback_votes": "igual"
+  },
+  "noDuplicates": true,
+  "months": [
+    {
+      "period": "2026-05",
+      "completeness": "parcial",
+      "covered_days": 19,
+      "estimated": true,
+      "fetched_at": "2026-11-12T14:59:07.292Z",
+      "covered_start_utc": "2026-05-13T06:00:00.000Z",
+      "covered_end_utc": "2026-06-01T06:00:00.000Z"
+    },
+    {
+      "period": "2026-06",
+      "completeness": "completo",
+      "covered_days": 30,
+      "estimated": true,
+      "fetched_at": "2026-11-12T14:59:10.435Z",
+      "covered_start_utc": "2026-06-01T06:00:00.000Z",
+      "covered_end_utc": "2026-07-01T06:00:00.000Z"
+    },
+    {
+      "period": "2026-07",
+      "completeness": "completo",
+      "covered_days": 31,
+      "estimated": true,
+      "fetched_at": "2026-11-12T14:59:12.762Z",
+      "covered_start_utc": "2026-07-01T06:00:00.000Z",
+      "covered_end_utc": "2026-08-01T06:00:00.000Z"
+    },
+    {
+      "period": "2026-08",
+      "completeness": "completo",
+      "covered_days": 31,
+      "estimated": true,
+      "fetched_at": "2026-11-12T14:59:15.301Z",
+      "covered_start_utc": "2026-08-01T06:00:00.000Z",
+      "covered_end_utc": "2026-09-01T06:00:00.000Z"
+    },
+    {
+      "period": "2026-09",
+      "completeness": "completo",
+      "covered_days": 30,
+      "estimated": true,
+      "fetched_at": "2026-11-12T14:59:17.722Z",
+      "covered_start_utc": "2026-09-01T06:00:00.000Z",
+      "covered_end_utc": "2026-10-01T06:00:00.000Z"
+    },
+    {
+      "period": "2026-10",
+      "completeness": "completo",
+      "covered_days": 31,
+      "estimated": true,
+      "fetched_at": "2026-11-12T14:59:20.348Z",
+      "covered_start_utc": "2026-10-01T06:00:00.000Z",
+      "covered_end_utc": "2026-11-01T06:00:00.000Z"
+    }
+  ],
+  "pending": [],
+  "violations": [],
+  "success": true,
+  "configuredAt": "2026-11-12T14:27:17.607Z",
+  "temporaryCron": "59 14 12 11 *",
+  "archiveLog": {
+    "event": "audience_archive",
+    "inserted": [
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08",
+      "2026-09",
+      "2026-10"
+    ],
+    "failures": [],
+    "queriedAt": "2026-11-12T15:01:09.929Z"
+  },
+  "auditAdjustments": [
+    "Igualdad estricta en sqlite_schema, d1_migrations y filas previas de audience_months",
+    "Recuentos vivos informativos; detener ante descensos",
+    "PR172 sin fusionar durante el cron temporal"
+  ],
+  "retention": {
+    "notOlderThan": 15897600,
+    "maxDuration": 8035200
+  }
+}

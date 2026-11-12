@@ -1,0 +1,42 @@
+{
+  "runtime": "workerd local, Astro Cloudflare adapter; compatibility_date 2026-05-23",
+  "fixture": "sint\u00e9tica; no cifras reales de audiencia",
+  "checks": [
+    {
+      "viewport": "390x844",
+      "theme": "light",
+      "HTTP": 200,
+      "browserJavaScript": false,
+      "spanishNamesInServerHTML": true,
+      "rankingOrderAndValuesPreserved": true,
+      "overflow": false
+    },
+    {
+      "viewport": "390x844",
+      "theme": "dark",
+      "HTTP": 200,
+      "browserJavaScript": false,
+      "spanishNamesInServerHTML": true,
+      "rankingOrderAndValuesPreserved": true,
+      "overflow": false
+    },
+    {
+      "viewport": "1440x1000",
+      "theme": "light",
+      "HTTP": 200,
+      "browserJavaScript": false,
+      "spanishNamesInServerHTML": true,
+      "rankingOrderAndValuesPreserved": true,
+      "overflow": false
+    },
+    {
+      "viewport": "1440x1000",
+      "theme": "dark",
+      "HTTP": 200,
+      "browserJavaScript": false,
+      "spanishNamesInServerHTML": true,
+      "rankingOrderAndValuesPreserved": true,
+      "overflow": false
+    }
+  ]
+}
