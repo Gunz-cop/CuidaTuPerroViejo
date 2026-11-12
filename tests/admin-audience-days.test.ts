@@ -34,7 +34,7 @@ print(json.dumps(out))
   return {db,sql:(sql:string)=>execute([{sql}])[0],dispose:()=>rmSync(dir,{recursive:true,force:true})};
 }
 const configured=(db:D1Database):AudienceEnv=>({CONTACT_DB:db,CONTACT_KV:{} as KVNamespace,CF_ANALYTICS_TOKEN:'fixture',CF_ANALYTICS_ACCOUNT_ID:'account',CF_ANALYTICS_SITE_TAG:'site'});
-function api(options:{maxPageSize?:number;maxDuration?:number;retention?:number;empty?:string;zero?:string;mismatch?:boolean;dailyMismatch?:boolean;failDay?:string;invalidHour?:boolean;sample?:number}={}) {
+function api(options:{maxPageSize?:number;maxDuration?:number;retention?:number;empty?:string;zero?:string;mismatch?:boolean;dailyMismatch?:boolean;failDay?:string;invalidHour?:boolean;sample?:number;coarseBatch?:boolean}={}) {
   const requests:Record<string,any>[]=[];
   const settings:Settings={enabled:true,notOlderThan:options.retention??184*86400,maxDuration:options.maxDuration??93*86400,maxPageSize:options.maxPageSize??10000};
   const hours=(f:{datetime_geq:string;datetime_lt:string})=>{
@@ -42,7 +42,8 @@ function api(options:{maxPageSize?:number;maxDuration?:number;retention?:number;
     for(let t=Date.parse(f.datetime_geq);t<Date.parse(f.datetime_lt);t+=3600000) {
       const day=localDay(new Date(t));
       if(day===options.empty) continue;
-      rows.push({count:day===options.zero?0:3,sum:{visits:day===options.zero?0:1},dimensions:{datetimeHour:new Date(t).toISOString()}});
+      const factor=options.coarseBatch&&Date.parse(f.datetime_lt)-Date.parse(f.datetime_geq)>DAY?2:1;
+      rows.push({count:day===options.zero?0:3*factor,sum:{visits:day===options.zero?0:factor},dimensions:{datetimeHour:new Date(t).toISOString()}});
     }
     return rows;
   };
@@ -240,5 +241,20 @@ test('handler del cron integrado nunca consulta días antiguos, aunque falten to
     assert.ok(data.length>0);assert.ok(data.every(r=>r.variables.filter.datetime_geq>=dayWindow('2026-11-03').start));
     assert.deepEqual(d.sql('SELECT day FROM audience_days ORDER BY day').results.map((r:any)=>r.day),recentDays(now));
     assert.equal(d.sql("SELECT * FROM audience_days WHERE day<'2026-11-03'").results.length,0);
+  } finally {d.dispose();}
+});
+
+test('muestreo del lote amplio distinto al de cada día: descarta padre y valida sublotes antes de escribir',async()=>{
+  const d=database();try {
+    const a=api({coarseBatch:true}),env=configured(d.db);
+    const result=await archiveRecentDays(env,now,a.transport);
+    assert.ok(result.coverage.every(r=>r.status==='archivado'));
+    assert.equal(result.requests,13); // Árbol de siete hojas, sin reintentar transporte.
+    const rows=d.sql('SELECT * FROM audience_days ORDER BY day').results;
+    assert.equal(rows.length,7);assert.ok(rows.every((r:any)=>r.pageviews===72&&r.visits===24));
+    assert.equal(rows.find((r:any)=>r.day==='2026-11-08').sample_interval,2.5);
+    const before=rows;
+    await archiveRecentDays(env,now,a.transport);
+    assert.deepEqual(d.sql('SELECT * FROM audience_days ORDER BY day').results,before);
   } finally {d.dispose();}
 });

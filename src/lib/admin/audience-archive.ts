@@ -64,7 +64,7 @@ type Hour = Totals & {dimensions:{datetimeHour:string}};
 type DailyTotal = Totals & {avg:{sampleInterval:number}};
 type Budget = {requests:number};
 class BudgetExhausted extends Error {}
-class Truncated extends Error {}
+class SplitBatch extends Error {}
 
 export function dayWindow(day:string):Window {
   const start=midnight(day);
@@ -146,7 +146,7 @@ export async function fetchDays(env:AudienceEnv,days:string[],s:Settings,budget:
   const r=await queryHours(env,window,days,s,budget,transport);
   let hours=r.hours;
   if(r.truncated) {
-    if(days.length>1) throw new Truncated();
+    if(days.length>1) throw new SplitBatch();
     // Mantener el sampleInterval del agregado diario original al dividir horas.
     const middle=new Date(Date.parse(window.start)+12*HOUR_MS).toISOString();
     hours=[...await completeHours(env,{start:window.start,end:middle},s,budget,transport),...await completeHours(env,{start:middle,end:window.end},s,budget,transport)];
@@ -157,7 +157,13 @@ export async function fetchDays(env:AudienceEnv,days:string[],s:Settings,budget:
     const rows=hours.filter(row=>localDay(new Date(row.dimensions.datetimeHour))===day);
     const daily=r.daily[i];
     if(!rows.length&&!daily) {empty.push(day);continue;}
-    if(!validTotal(daily)||!Number.isFinite(daily.avg?.sampleInterval)||daily.avg.sampleInterval<1||!sameTotal(rows,daily)) throw Error('Agregado diario inválido o incoherente.');
+    if(!validTotal(daily)||!Number.isFinite(daily.avg?.sampleInterval)||daily.avg.sampleInterval<1) throw Error('Agregado diario inválido.');
+    if(!sameTotal(rows,daily)) {
+      // Un lote amplio puede usar otra muestra que sus aliases diarios.
+      // Descartar este lote y consultar sublotes; nunca repartir diferencias.
+      if(days.length>1) throw new SplitBatch();
+      throw Error('Las horas no coinciden con el agregado diario.');
+    }
     if(!rows.length||daily.count===0) {empty.push(day);continue;}
     values.push({day,visits:daily.sum.visits,pageviews:daily.count,sampleInterval:daily.avg.sampleInterval});
   }
@@ -218,7 +224,7 @@ async function runDays(env:AudienceEnv,days:string[],now:Date,transport:typeof f
         if(row.status==='fallido') row.reason='Día vacío; sigue pendiente de archivo.';
       }
     } catch(error) {
-      if(error instanceof Truncated) {
+      if(error instanceof SplitBatch) {
         const middle=Math.floor(rows.length/2);
         await process(rows.slice(0,middle));await process(rows.slice(middle));
       } else if(!(error instanceof BudgetExhausted)) {

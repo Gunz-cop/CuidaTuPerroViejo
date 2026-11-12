@@ -14,8 +14,8 @@ Wrangler 4.128.0. `npm ci --ignore-scripts`; no se añadieron dependencias.
 | `astro check` | 0 errores, 0 advertencias; 82 hints existentes |
 | `astro build` | Correcto, interfaz sin cambios |
 | `npm run types:worker` | Correcto; worker-configuration.d.ts sin diferencias |
-| `npm test` | 176 tests correctos |
-| Tests focales finales de audiencia y archivo diario | 26 correctos |
+| `npm test` | 177 tests correctos |
+| Tests focales finales de audiencia y archivo diario | 27 correctos |
 | `node --test tests/agent-readiness/*.test.mjs` | 78 correctos |
 | Auditor de specs de migración | Correcto |
 | Inventario, discovery, projection, API y routing del build | Correctos |
@@ -61,6 +61,13 @@ A través del conector, sin escrituras: settings reales habilitado, retención
 código y se ejecutó para el 8–9 de noviembre locales: sin errores, 37 horas
 presentes, suma de los dos contadores concordante con el agregado del lote,
 sampleInterval=1 para los dos aliases diarios. No se publican totales privados.
+Un segundo lote ordinario real de siete días (3–9 noviembre) devolvió 39 grupos:
+sus horas cuadraban con el total global, pero seis aliases diarios discrepaban
+por las diferentes muestras de consulta (señal 10 en el día 3 y 1 en los demás).
+Se añadió división por días para este caso: el padre se descarta y cada hijo se
+valida antes de escribir. Test sintético de regresión incluido. Las siete
+consultas individuales posteriores cuadraron con sus totales y aliases diarios,
+conservando las señales 10/1 observadas.
 No se usó la función de escritura ni la ruta de recuperación en producción.
 
 ## Lo no verificado
@@ -76,9 +83,10 @@ No se usó la función de escritura ni la ruta de recuperación en producción.
   contra esta consulta y el comportamiento bajo latencia/incidencias reales.
   El procedimiento se entrega sin ejecutar, para auditar y autorizar aparte.
 - No se provocó truncamiento ni discrepancia deliberada en producción. Se
-  verificaron con fixtures y límites reducidos en los tests.
+  verificaron con fixtures y límites reducidos en los tests. La discrepancia
+  espontánea observada en el lote amplio real sí se documenta arriba.
 
-Cota ordinaria: **36 peticiones HTTP GraphQL** por ejecución; normalmente **3**
+Cota ordinaria: **36 peticiones HTTP GraphQL** por ejecución; en el caso coherente sin divisiones **3**
 cuando hay siete días contiguos pendientes y ningún mes pendiente (1 settings y
 1 datos diarios + 1 settings mensual). El caso de mes pendiente sin complemento
 suma una más: **4**. Sin huecos diarios ni meses pendientes: **1**.

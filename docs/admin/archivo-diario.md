@@ -15,8 +15,12 @@ Una consulta común pide horas por `datetimeHour`, el total del lote y un
 agregado separado por cada día local mediante aliases. Cada día empieza a las
 06:00 UTC y termina a las 06:00 UTC siguiente. Se comprueba igualdad estricta de
 ambos contadores: horas contra total del lote, y horas del día contra su agregado.
-Si discrepan, falla el lote sin escribir. No hay tolerancia ni redondeo corrector;
-el muestreo puede causar fallos legítimos y el operador debe investigarlos.
+Si las horas discrepan del total del lote, este falla sin escribir. Si el total
+del lote cuadra pero sus horas no coinciden con los aliases diarios, se descarta
+el lote padre y se divide por días: cada sublote debe superar de nuevo todas las
+comprobaciones antes de escribir. Así se evita mezclar muestras diferentes. Un
+día indivisible incoherente falla. No hay tolerancia ni redondeo corrector; el
+operador debe investigar los fallos persistentes.
 
 `sample_interval` conserva literalmente `avg.sampleInterval` del agregado de
 ESE día, incluso al dividir la consulta de horas. No es el del lote, la media de
@@ -57,13 +61,16 @@ posteriores. No ejecuta recuperación diaria histórica.
 
 - Diario: hasta 1 petición de settings y `MAX_DAY_REQUESTS = 32` peticiones de
   datos, incluidas divisiones por truncamiento. Sin huecos diarios: 0 peticiones.
-  Caso normal con siete días contiguos pendientes: 1 settings + 1 datos.
+  Caso coherente sin divisiones con siete días contiguos pendientes: 1 settings + 1 datos.
 - Mensual: 1 settings y, como máximo, 1 informe (4 nodos), más 1 complemento si
   alcanza 1000 referidos. Total máximo mensual: 3 peticiones HTTP GraphQL.
 - **Máximo ordinario: 36 peticiones HTTP GraphQL.** Cada petición diaria tiene
   como máximo 9 nodos (horas + total + 7 días); cota conservadora de nodos de
   datos/settings de ambos archivos: 32 × 9 + 2 + 5 = **295**.
   Sin meses pendientes ni huecos diarios solo se consulta settings mensual.
+  Si el lote amplio requiere dividir hasta siete días individuales, son hasta
+  13 peticiones de datos (árbol de siete hojas) más ambos settings: 15 HTTP
+  sin mes pendiente. Todas las divisiones comparten el presupuesto de 32.
 
 Las llamadas son secuenciales. Cada transporte tiene timeout de 12 segundos.
 La cota conservadora de espera HTTP es 432 segundos más D1/CPU; el cron diario
@@ -139,6 +146,16 @@ por `daysQuery()` para 8–9 noviembre: sin errores GraphQL, 37 grupos horarios,
 sumas de visitas y páginas vistas coherentes con el total; aliases diarios
 con sampleInterval=1. No se publican cifras absolutas. Esto verifica sintaxis y
 coherencia puntual, **no la latencia ni la estabilización**.
+
+También se consultó el lote ordinario exacto de siete días (3–9 noviembre):
+39 grupos horarios, total del lote coherente, pero discrepancias en seis aliases
+diarios. El día 3 indicó sampleInterval=10 y los demás 1. Esa diferencia confirma
+la necesidad de descartar y dividir el padre antes de guardar los sublotes; no
+se ejecutó ninguna escritura. El test de muestra amplia diferente reproduce
+este comportamiento con fixtures y comprueba los días finalmente guardados.
+Se repitieron después las siete consultas individuales, siempre en solo lectura:
+las siete cuadraron tanto con su total como con su alias diario; el día 3
+conservó señal 10 y los demás 1. No se guardó ninguna fila en producción.
 
 No se encontró documentación oficial que garantice que +48 h baste. No es posible
 reconstruir observaciones pasadas a +1/+24/+48 consultando hoy el mismo día: esas
