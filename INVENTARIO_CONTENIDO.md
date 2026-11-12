@@ -167,6 +167,12 @@ A continuación se listan los artículos de blog ya implementados en el código 
   - **URL de origen:** *Nuevo artículo de la versión Astro (sin URL legacy)*
   - **Estado:** Publicado — PR #145; publicación confirmada por el propietario el 2026-10-24.
 
+- **Picadura de abeja en perros mayores: qué hacer en casa y cuándo ir al veterinario**
+  - **Archivo físico:** `src/content/blog/picadura-abeja-perros-mayores.mdx`
+  - **URL real:** `/salud-perros-mayores/picadura-abeja-perros-mayores`
+  - **URL de origen:** *Nuevo artículo de la versión Astro (sin URL legacy)*
+  - **Estado:** Publicado y verificado en producción el 2026-11-12.
+
 ### Pilar 3: Alimentación de Perros Senior
 - **Comida casera para perros mayores: recetas y pautas de nutrición**
   - **Archivo físico:** `src/content/blog/comida-casera-perros-mayores.mdx`
@@ -244,6 +250,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [ ] *Enfermedad cardíaca canina: cómo identificar y cuidar a un perro viejo con soplo o tos cardíaca*
 - [ ] *Diabetes canina en la tercera edad: control de glucosa, síntomas y tratamiento*
 - [ ] *Cáncer y tumores geriátricos: señales de advertencia física que no debes pasar por alto*
+- [x] *Picadura de abeja en perros mayores: qué hacer en casa y cuándo ir al veterinario* (Publicado y verificado en producción el 2026-11-12 — URL: `/salud-perros-mayores/picadura-abeja-perros-mayores`; brief R4/5 y artículo R2/5 con reservas aplicadas, en `docs/contenido/picadura-abeja-perros-mayores/`; experiencia propia de Dakota, `perros: ["dakota"]`)
 
 ### Pilar 3: Alimentación de Perros Senior (11 artículos totales propuestos)
 *Estado: 1 publicado, 10 por redactar*

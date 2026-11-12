@@ -98,6 +98,7 @@ Registro de razas usadas (actualizar al cerrar cada brief):
 | Miedo a la pólvora, Latinoamérica (publicado, 2026-11-08; excepción aprobada por el propietario el 2026-10-27) | Mestizo criollo mediano, canela con máscara negra |
 | Miedo a la pólvora, Latinoamérica: testimonios (brief, 2026-10-27) | Osa, mestiza de pastor alemán (ilustración); Baltor, chow chow café claro (ilustración); Luna y Dakota, beagles (fotografía real) |
 | Procesionaria del pino (brief, 2026-11-06) | Perro de aguas español, marrón oscuro rizado corto |
+| Picadura de abeja (brief, 2026-11-12) | Beagle tricolor senior ilustrativa + fotografías reales de Dakota (repetición justificada por el caso) |
 
 ## Revisión de la imagen generada
 

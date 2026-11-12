@@ -36,6 +36,17 @@ Decisión del propietario del 2026-10-24. Los artículos de la serie España del
 
 El brief de cada artículo de la serie declara esta variante y el contrato la verifica.
 
+## La historia va entretejida, no en una sección aparte
+
+Preferencia del propietario del 2026-11-12, tras el artículo de la picadura de Dakota. Cuando hay experiencia propia documentada, la historia **acompaña al lector de principio a fin**: cada H2 práctico abre o continúa con un momento de lo que pasó, explica la ciencia que lo aclara y termina en qué hacer. El patrón es **lo que nos pasó → por qué pasa → qué hicimos → qué debes hacer tú**.
+
+- No crees una sección «la historia de Luna/Dakota» ni un H2 narrativo separado de la guía. Un H2 del tipo «La pata de Dakota: hora a hora» o «A la mañana siguiente» es justo lo que se quiere evitar.
+- Reparte los momentos documentados por los H2 prácticos según el tema de cada uno (el síntoma en el H2 de señales, la decisión de medicación en el de tratamiento, el desenlace en el último H2 práctico o en la conclusión).
+- El cierre del caso puede ser un párrafo dentro del último H2 práctico o de la conclusión; no necesita sección propia.
+- Usa las fotografías reales que aportó el propietario junto al momento que ilustran, repartidas por los H2: suelen ser más valiosas que una ilustración extra.
+- Siguen valiendo los límites: solo hechos documentados en el expediente y nada de opiniones atribuidas al propietario que él no dijo.
+- Los `AlertBox` con listas cortas (qué revisar, cuándo ir a urgencias) son el ancla práctica: el propietario los valora porque ubican al lector entre la explicación científica.
+
 ## Muletillas prohibidas (las detecta `tono.py`)
 
 «no demuestra», «no sustituye», «no garantiza», «no basta», «no permite», «no convierte», «no confirma», «no autoriza», «no prueba», «no certifica», «no equivale», «no resuelve», «no descarta», «por sí solo», «sin atribuir», «sin convertir», «sin inventar», «sin deducir».

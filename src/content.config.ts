@@ -32,6 +32,11 @@ const blog = defineCollection({
     /** Fecha de la última revisión editorial/clínica real. Sin este campo,
      *  el schema no declara una actualización que no ha ocurrido. */
     dateModified: z.string().optional(),
+    /** Perras del propietario (beagles reales) cuya experiencia documentada
+     *  aparece en el artículo. Alimenta la futura línea personal de Luna y
+     *  Dakota; no cambia el pilar. Solo para Luna y Dakota reales, nunca para
+     *  perros ilustrativos o genéricos. */
+    perros: z.array(z.enum(['luna', 'dakota'])).optional(),
   }),
 });
 
