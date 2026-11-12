@@ -6,6 +6,8 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 ## Escritorio administrativo (2026-11-11)
 
+- [ ] **Reducir el scroll de la evolución mensual (2026-11-12).** El propietario pide evaluar un gráfico u otra alternativa para consultar uno o tres años sin una tarjeta enorme. Pendiente de definir; por ahora solo se cambia el orden a más reciente primero.
+
 Lo desarrolla Codex y lo audita Claude Code. Quien desarrolla no audita.
 
 - [x] **Fase 1: portada privada `/admin`, cerrada.** Fusionada en [PR #168](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/168), merge `5b86467`; despliegue y protección comprobados. **Aprobada y cerrada por el propietario el 2026-11-12**, tras revisión en escritorio y teléfono. Fuentes y capturas en `docs/admin/escritorio.md`.
