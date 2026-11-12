@@ -8,10 +8,11 @@ Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aqu
 
 Lo desarrolla Codex y lo audita Claude Code. Quien desarrolla no audita.
 
-- [~] **Fase 1: portada privada `/admin`.** Implementada en `feature/admin-escritorio`: navegación a los tres paneles reales, clics afiliados de producción y consultas del asistente en 7/30 días UTC, cuarentena de contacto y audiencia sin números. Fuentes, seguridad y capturas en `docs/admin/escritorio.md`. Entrega en [PR #168](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/168); pendiente auditoría independiente de Claude Code y autorización del propietario. Sin merge ni despliegue.
+- [x] **Fase 1: portada privada `/admin`, cerrada.** Fusionada en [PR #168](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/168), merge `5b86467`; despliegue y protección comprobados. **Aprobada y cerrada por el propietario el 2026-11-12**, tras revisión en escritorio y teléfono. Fuentes y capturas en `docs/admin/escritorio.md`.
   - [x] Auditoría independiente de Claude Code: **APTO con observaciones menores**, sin bloqueos (2026-11-11). Informe en `docs/admin/auditoria-fase-1.md`.
-  - [ ] Prueba en Safari de un iPhone físico.
-  - [ ] Autorización del propietario para fusionar.
+  - [x] Revisión visual en escritorio y teléfono por el propietario, aprobada (2026-11-12).
+  - [x] Autorización del propietario y merge del PR #168 (2026-11-11).
+- [~] **Investigación previa a fase 2: tráfico humano y automatizado (2026-11-12).** Codex investiga, Claude audita, el propietario decide. Documento `docs/admin/investigacion-trafico-humano.md`, rama `docs/admin-fase2-investigacion`: solo lecturas, sin implementación ni tokens nuevos. Workers Paid confirmado por el propietario; distinguirlo del plan Free Website de la zona. Pendiente auditoría y decisión.
 - [ ] **Fase 2: conectar Web Analytics, solo tras autorización.** Propuesta investigada en `docs/admin/web-analytics-propuesta.md`: configuración activa y GraphQL verificado, tendencias/páginas/países posibles; no confundir visitas con personas únicas. Falta token mínimo del Worker, validación de entrega del beacon y acuerdo de métricas. No implementada.
 - [ ] **Después de la fase 2, solo si hace falta:** tráfico automatizado (limitado en el plan gratuito), errores recientes y medición propia.
 
