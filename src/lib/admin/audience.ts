@@ -50,6 +50,12 @@ export function referralGroups(total: number, rows: Group[], tail = 0, sampleInt
   const pct=total ? (returnedSum+tail)/total*100 : null;
   return {groups,returnedSum,tail,difference,differencePercent:total?difference/total*100:null,note:difference===0?null:`Los grupos suman un ${pct?.toLocaleString('es',{maximumFractionDigits:1}) ?? '—'} % del total; ${sampleInterval>1?'muestreo de Cloudflare':'discrepancia de agregación o redondeo de Cloudflare'}. La diferencia no se reparte.`};
 }
+// Solo presentación: no modifica los agregados ni el residual de Cloudflare.
+export function displayReferralGroups(referrals: { groups: Group[]; tail: number }): Group[] {
+  const sources = referrals.groups.filter(group => group.value !== 0 && group.label !== 'Otros');
+  const others = referrals.tail + sources.slice(10).reduce((sum, group) => sum + group.value, 0);
+  return [...sources.slice(0, 10), ...(others !== 0 ? [{ label: 'Otros', value: others }] : [])];
+}
 export function growth(current:number, previous:number) { return previous===0 ? (current===0?'Sin cambio':'Sin base de comparación') : `${((current-previous)/previous*100).toLocaleString('es',{maximumFractionDigits:1,signDisplay:'always'})} %`; }
 export function configError(env: AudienceEnv) {
   const missing=[!env.CF_ANALYTICS_TOKEN&&'secret CF_ANALYTICS_TOKEN',!env.CF_ANALYTICS_ACCOUNT_ID&&'CF_ANALYTICS_ACCOUNT_ID',!env.CF_ANALYTICS_SITE_TAG&&'CF_ANALYTICS_SITE_TAG',!env.CONTACT_KV&&'CONTACT_KV'].filter(Boolean);

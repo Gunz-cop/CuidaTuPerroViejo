@@ -5,7 +5,7 @@ import { execFileSync } from 'node:child_process';
 import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { fetchReport, windows, coveredMonth, monthWindow, closedMonths, referrerLabel, referralGroups, live, VERSION, type AudienceEnv } from '../src/lib/admin/audience';
+import { displayReferralGroups, fetchReport, windows, coveredMonth, monthWindow, closedMonths, referrerLabel, referralGroups, live, VERSION, type AudienceEnv } from '../src/lib/admin/audience';
 import { archive, loadAudience, scheduled, history } from '../src/lib/admin/audience-archive';
 const now=new Date('2026-11-12T03:00:00Z');
 test('ventanas equivalentes de Costa Rica: medianoche, año y febrero bisiesto',()=>{
@@ -103,4 +103,43 @@ test('límite de referidos: consulta complemento real y conserva residual; vací
  await assert.rejects(fetchReport(configured(),windows(7,now).current,true,async()=>Response.json({data:{viewer:{accounts:[{total:[]}]}}})),/vacío/);
  const env=configured();env.CONTACT_KV={async get(){throw Error('KV down');}} as unknown as KVNamespace;
  assert.equal((await live(env,windows(7,now).current,true,now,api)).data,null);
+});
+
+test('presentación de referidos: oculta grupos con cero visitas', () => {
+  const referrals = referralGroups(7, [
+    { label: 'cuidatuperroviejo.com', value: 0 },
+    { label: 'www.cuidatuperroviejo.com', value: 0 },
+    { label: '', value: 7 },
+  ]);
+  assert.deepEqual(displayReferralGroups(referrals), [{ label: 'Directo o sin referente', value: 7 }]);
+  assert.equal(referrals.groups.length, 3);
+  assert.equal(referrals.returnedSum, 7);
+  assert.deepEqual(displayReferralGroups(referralGroups(0, [{ label: 'sitio.test', value: 0 }])), []);
+});
+
+test('presentación de referidos: diez fuentes agrupadas más Otros, con tail contado una sola vez', () => {
+  const referrals = referralGroups(500, [
+    { label: 'google.com', value: 50 }, { label: 'www.google.es', value: 20 },
+    { label: '', value: 50 },
+    ...Array.from({ length: 12 }, (_, i) => ({ label: `fuente${i}.test`, value: 20 - i })),
+    { label: 'cuidatuperroviejo.com', value: 0 },
+  ], 30, 2);
+  const shown = displayReferralGroups(referrals);
+  assert.equal(shown.length, 11);
+  assert.deepEqual(shown.slice(0, 2), [{ label: 'Google', value: 70 }, { label: 'Directo o sin referente', value: 50 }]);
+  assert.deepEqual(shown.at(-1), { label: 'Otros', value: 12 + 11 + 10 + 9 + 30 });
+  assert.equal(shown.reduce((sum, group) => sum + group.value, 0), referrals.returnedSum + referrals.tail);
+  assert.equal(shown.filter(group => group.label === 'Otros').length, 1);
+});
+
+test('presentación de referidos: conserva diferencia, porcentaje y nota sin mutar el informe', () => {
+  for (const tail of [0, 30]) {
+    const referrals = referralGroups(500, Array.from({ length: 12 }, (_, i) => ({ label: `f${i}.test`, value: 10 })), tail, 2);
+    const before = structuredClone(referrals);
+    const shown = displayReferralGroups(referrals);
+    assert.deepEqual(referrals, before);
+    assert.equal(referrals.difference, 500 - 120 - tail);
+    assert.equal(500 - shown.reduce((sum, group) => sum + group.value, 0), referrals.difference);
+    assert.equal(shown.length, 11);
+  }
 });
