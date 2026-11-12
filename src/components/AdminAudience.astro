@@ -1,0 +1,64 @@
+---
+import { growth, type AudienceEnv, type Live } from '../lib/admin/audience';
+import { loadAudience } from '../lib/admin/audience-archive';
+import { loadAgentIndex } from '../lib/agent-content/runtime';
+import { PILAR_NAMES } from '../data/internal-links';
+import { getCollection } from 'astro:content';
+const {env} = Astro.props as {env:AudienceEnv};
+const a=await loadAudience(env);
+const articles=await getCollection('blog');
+const titles=new Map(articles.map(p=>[`/${p.data.pilar}/${p.id}`,p.data.title]));
+for(const [path,title] of Object.entries(PILAR_NAMES)) titles.set('/'+path,title);
+for(const [path,title] of Object.entries({'/':'Inicio','/herramientas/calculadora-edad-perro':'Calculadora de edad de perros','/herramientas/calculadora-calidad-vida-perros':'Calidad de vida','/herramientas/selector-movilidad-perros-mayores':'Selector de movilidad','/sobre-nosotros':'Sobre nosotros','/contacto':'Contacto'})) titles.set(path,title);
+// El índice público ya existente aporta los títulos de las páginas estáticas.
+if(env.ASSETS) {
+  try {const {index}=await loadAgentIndex(env.ASSETS,Astro.url.href);for(const doc of index.documents) titles.set(doc.canonicalPath,doc.title);}
+  catch { /* La ausencia de metadatos no bloquea las métricas. */ }
+}
+
+
+const n=(value:number)=>value.toLocaleString('es');
+const amount=(live:Live, key:'visits'|'pageviews')=>live.data?`${n(live.data[key])}${live.data.estimated?' · estimado':''}`:'—';
+const date=(iso:string)=>new Date(iso).toLocaleDateString('es-CR',{timeZone:'America/Costa_Rica',day:'numeric',month:'short',year:'numeric'});
+const range=(w:{start:string;end:string})=>`${date(w.start)}–${date(new Date(Date.parse(w.end)-86400000).toISOString())}`;
+const href=(path:string)=>path.startsWith('/')&&!path.startsWith('//')&&!/[\\?#]/.test(path)?`https://cuidatuperroviejo.com${path}`:null;
+const bars=[...a.months.map(m=>({period:m.period,report:m.report,state:m.completeness,coverage:`${m.covered_days} días · ${date(m.covered_start_utc)}–${date(new Date(Date.parse(m.covered_end_utc)-86400000).toISOString())}`})),...(a.provisional.data?[{period:a.period,report:a.provisional.data,state:'provisional',coverage:'Hasta ayer'}]:[])];
+const max=Math.max(1,...bars.flatMap(m=>[m.report.visits,m.report.pageviews]));
+---
+<section class="audience" aria-labelledby="audiencia">
+  <h2 id="audiencia">Audiencia</h2>
+  <p class="muted">sin bots detectados · aproximado</p>
+  <div class="cards">
+    {[{days:7,current:a.days7,previous:a.previous7,windows:a.w7},{days:30,current:a.days30,previous:a.previous30,windows:a.w30}].map(p=><article>
+      <h3>Últimos {p.days} días cerrados</h3>
+      <p class="muted">{range(p.windows.current)} frente a {range(p.windows.previous)}, sin incluir hoy · Costa Rica</p>
+      <dl>{(['visits','pageviews'] as const).map(key=><div><dt>{key==='visits'?'Visitas':'Páginas vistas'}</dt><dd>{amount(p.current,key)}</dd><p>{p.current.data&&p.previous.data?growth(p.current.data[key],p.previous.data[key]):'Cambio no disponible'}{p.previous.data?.estimated?' · base estimada':''}</p></div>)}</dl>
+      {p.current.error&&<p class="error">{p.current.error}</p>}
+      {p.previous.error&&<p class="error">Periodo anterior: {p.previous.error}{p.previous.fetchedAt?` Último dato: ${new Date(p.previous.fetchedAt).toLocaleString('es-CR',{timeZone:'America/Costa_Rica'})} · Costa Rica`:''}</p>}
+      {p.current.fetchedAt&&<p class="muted">{p.current.stale?'Último dato guardado':'Consultado'}: {new Date(p.current.fetchedAt).toLocaleString('es-CR',{timeZone:'America/Costa_Rica'})} · Costa Rica</p>}
+    </article>)}
+  </div>
+  <article>
+    <h3>Evolución mensual</h3><p class="muted">Visitas y páginas vistas. Los meses parciales y el provisional no se comparan con meses completos.</p>
+    {a.historyError&&<p class="error">{a.historyError}</p>}
+    {a.settingsError&&<p class="error">{a.settingsError}</p>}
+    {a.pending===null?<p>No se pudieron determinar los meses pendientes: {a.error??a.settingsError}</p>:a.pending.length>0?<p role="status">Pendientes de archivar: {a.pending.join(', ')}. Se recuperan en el próximo cron mientras sigan retenidos.</p>:<p>Sin meses pendientes dentro de la retención actual.</p>}
+    <p class="legend">● Visitas <span>● Páginas vistas</span></p>
+    {bars.map(m=><div class:list={['month',{'unfinished':m.state!=='completo'}]}><strong>{m.period} · {m.state}{m.report.estimated?' · estimado':''}</strong><small>{m.coverage}</small><div class="bar visits" style={`width:${m.report.visits/max*100}%`}></div><p>{n(m.report.visits)} visitas</p><div class="bar views" style={`width:${m.report.pageviews/max*100}%`}></div><p>{n(m.report.pageviews)} páginas vistas</p></div>)}
+    {a.provisional.error&&<p class="error">Mes en curso · provisional: {a.provisional.error}</p>}
+    {a.provisional.fetchedAt&&<p class="muted">Mes provisional consultado: {new Date(a.provisional.fetchedAt).toLocaleString('es-CR',{timeZone:'America/Costa_Rica'})} · Costa Rica{a.provisional.stale?' · último dato guardado':''}</p>}
+  </article>
+  <article><h3>Páginas más visitadas · 30 días</h3><p class="muted">Páginas vistas{a.days30.data?.estimated?' · estimado':''}</p>
+    {a.days30.data?<ol>{a.days30.data.pages.map(p=><li>{href(p.label)?<a href={href(p.label)!}>{titles.get(p.label)??(p.label==='/'?'Inicio':p.label)}</a>:<span>{p.label}</span>} <strong>{n(p.value)}</strong></li>)}</ol>:<p class="error">{a.days30.error}</p>}
+  </article>
+  <div class="cards">
+    <article><h3>De dónde llegan · 30 días</h3>
+      {a.days30.data?<><p>% de {n(a.days30.data.visits)} visitas{a.days30.data.estimated?' · estimado':''}</p><ul>{a.days30.data.referrals.groups.map(g=><li>{g.label} <strong>{n(g.value)} · {a.days30.data!.visits?(g.value/a.days30.data!.visits*100).toLocaleString('es',{maximumFractionDigits:1})+' %':'—'}</strong></li>)}</ul>{a.days30.data.referrals.note&&<p role="note">{a.days30.data.referrals.note}</p>}</>:<p class="error">{a.days30.error}</p>}
+    </article>
+    <article><h3>Países · Top 10 de 30 días</h3><p class="muted">Por páginas vistas{a.days30.data?.estimated?' · estimado':''}</p>{a.days30.data?<ol>{a.days30.data.countries.map(g=><li>{g.label} <strong>{n(g.value)}</strong></li>)}</ol>:<p class="error">{a.days30.error}</p>}</article>
+  </div>
+  <p class="muted">Fuente: Cloudflare RUM · caché de 15 minutos. Cada visita y cada página vista suman. El país aproxima la conexión. El histórico cerrado procede de D1.</p>
+</section>
+<style>
+.audience{margin:28px 0 36px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}article{min-width:0;background:#fff;border:1px solid #dedfd5;border-radius:12px;padding:24px;margin-bottom:20px;overflow-wrap:anywhere}h2{font-size:1.5rem}h3{margin:0 0 12px}.muted,small,dt{color:#526154;font-size:.85rem}dl{display:flex;gap:24px;flex-wrap:wrap}dd{font-size:1.8rem;font-weight:700;margin:0}li{margin:12px 0}li strong{display:block;font-variant-numeric:tabular-nums}a{color:#37533f;text-underline-offset:4px}.error{background:#fff1ee;color:#862d22;padding:14px;border-radius:6px}.month{margin:18px 0;padding:12px;border-bottom:1px solid #dedfd5}.month small{display:block}.month p{margin:3px 0 9px;font-size:.85rem}.unfinished{border:2px dashed #8b743f;border-radius:6px}.bar{height:10px;min-width:1px;border-radius:3px;background:#45634f}.views{background:#a26c2c}.legend{color:#45634f}.legend span{color:#a26c2c;margin-left:20px}@media(max-width:650px){.cards{grid-template-columns:minmax(0,1fr)}article{padding:20px}}@media(prefers-color-scheme:dark){article{background:#222d26;border-color:#47594b}.muted,small,dt{color:#bdc9bd}a{color:#bdd8b5}.error{background:#492b29;color:#ffcec5}.bar{background:#a2c69e}.views{background:#edc380}.legend{color:#a2c69e}.legend span{color:#edc380}}
+</style>
