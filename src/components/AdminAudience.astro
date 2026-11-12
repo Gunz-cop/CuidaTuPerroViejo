@@ -1,5 +1,6 @@
 ---
 import { displayReferralGroups, growth, type AudienceEnv, type Live } from '../lib/admin/audience';
+import { countryName } from '../lib/admin/country-name';
 import { loadAudience } from '../lib/admin/audience-archive';
 import { loadAgentIndex } from '../lib/agent-content/runtime';
 import { PILAR_NAMES } from '../data/internal-links';
@@ -55,7 +56,7 @@ const max=Math.max(1,...bars.flatMap(m=>[m.report.visits,m.report.pageviews]));
     <article><h3>De dónde llegan · 30 días</h3>
       {a.days30.data?<><p>% de {n(a.days30.data.visits)} visitas{a.days30.data.estimated?' · estimado':''}</p><ul>{displayReferralGroups(a.days30.data.referrals).map(g=><li>{g.label} <strong>{n(g.value)} · {a.days30.data!.visits?(g.value/a.days30.data!.visits*100).toLocaleString('es',{maximumFractionDigits:1})+' %':'—'}</strong></li>)}</ul>{a.days30.data.referrals.note&&<p role="note">{a.days30.data.referrals.note}</p>}</>:<p class="error">{a.days30.error}</p>}
     </article>
-    <article><h3>Países · Top 10 de 30 días</h3><p class="muted">Por páginas vistas{a.days30.data?.estimated?' · estimado':''}</p>{a.days30.data?<ol>{a.days30.data.countries.map(g=><li>{g.label} <strong>{n(g.value)}</strong></li>)}</ol>:<p class="error">{a.days30.error}</p>}</article>
+    <article><h3>Países · Top 10 de 30 días</h3><p class="muted">Por páginas vistas{a.days30.data?.estimated?' · estimado':''}</p>{a.days30.data?<ol>{a.days30.data.countries.map(g=><li>{countryName(g.label)} <strong>{n(g.value)}</strong></li>)}</ol>:<p class="error">{a.days30.error}</p>}</article>
   </div>
   <p class="muted">Fuente: Cloudflare RUM · caché de 15 minutos. Cada visita y cada página vista suman. El país aproxima la conexión. El histórico cerrado procede de D1.</p>
 </section>
