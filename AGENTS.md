@@ -2,6 +2,10 @@
 
 Instrucciones compartidas para agentes de código (Claude Code, Codex, Antigravity u otros) que trabajen en este repositorio.
 
+## Metodología de trabajo
+
+Antes de implementar, auditar o fusionar, lee [`docs/metodologia-agentes.md`](docs/metodologia-agentes.md): roles (quien implementa no audita), vía normal con auditoría previa, vía exprés para cambios triviales de presentación y reglas operativas de producción.
+
 ## Migración de stack en curso
 
 El sitio está migrando de Astro 4 a Astro 7 sobre Cloudflare Workers. **Antes de tocar `package.json`, `astro.config.mjs`, `wrangler.jsonc`, `tsconfig.json` o los estilos globales, leé [`docs/migracion-stack/README.md`](docs/migracion-stack/README.md)**: es la spec de producto y dice qué fase toca, contra qué rama va y qué está decidido.
