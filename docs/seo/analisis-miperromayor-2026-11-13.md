@@ -1,6 +1,6 @@
 # Aprendizajes de miperromayor.com
 
-Fecha de observación: 2026-11-13 (UTC). Investigación inicial: Codex. Estado: documento de trabajo; pendiente incorporar y contrastar el análisis de Claude.
+Fecha de observación: 2026-11-13 (UTC). Investigación inicial: Codex. Estado: documento de trabajo; análisis de Claude incorporado en [un documento aparte](analisis-claude-competencia-2026-11-13.md); pendiente la priorización conjunta.
 
 ## Encargo y alcance
 
@@ -97,13 +97,20 @@ Lectura: esas dos páginas están siendo utilizadas como ampliación de sus expl
 
 Nada de esta lista se marca implementado por el hecho de documentarlo.
 
-## Incorporación del análisis de Claude — pendiente
+## Incorporación del análisis de Claude
 
-Todavía no recibido en esta conversación. No se le atribuyen hallazgos ni conclusiones.
+Recibido el 2026-11-13. El documento completo está en [analisis-claude-competencia-2026-11-13.md](analisis-claude-competencia-2026-11-13.md), con su propio alcance, método y correcciones. Abajo, solo el contraste con este análisis.
 
 | Punto de Claude | Evidencia / URL | Relación con este análisis | Decisión y motivo |
 | --- | --- | --- | --- |
-| Pendiente | Pendiente | Coincide / amplía / contradice / no comprobado | Pendiente de estudio conjunto |
+| Los enlaces entrantes van a pilares, referencias y recursos, nunca a artículos | Search Console exportado por el propietario: petmetric.vet (8 → pilar de paliativos), miperromayor (3 → chequeo, 1 → pilar de higiene), puppyhousemedellin (1 → pilar de salud mental) | Amplía la sección «Enlaces hacia nuestro sitio» (aquí había 2 enlaces comprobados; Search Console muestra 4 sitios) | Pendiente de estudio conjunto |
+| Las URLs viejas de Blogger siguen enlazadas desde otros sitios; auditar las 301 (A01) | puppyhousemedellin → `/p/salud-mental-y-emocional-en-perros.html`; miperromayor → `/2025/10/revision-veterinaria-perros-mayores.html` | Amplía (aquí se comprobó una redirección funcional) | Pendiente de estudio conjunto |
+| Reforzar el chequeo geriátrico como página de referencia y destino de «consulta al veterinario» (C11, A02) | 3 enlaces de miperromayor a esa URL | Amplía | Pendiente de estudio conjunto |
+| Patrón «descarta lo tratable primero» y «antes de comprar nada» | Artículos `perro-mayor-se-esta-apagando` y `mi-perro-mayor-se-resbala-en-el-suelo` | Coincide con «señales de urgencia cerca del comienzo» y amplía la plantilla orientativa | Pendiente de estudio conjunto |
+| Estimulación mental para perros mayores (C12) | Enlace de puppyhousemedellin; artículo `estimulacion-mental-perros-mayores` de miperromayor | Nuevo respecto a C01–C10 | Pendiente de estudio conjunto |
+| HHHHHMM v2 con historial y reporte, calendario de días buenos y malos, test cognitivo (R04–R06) | petmetric.vet (bot con informes de tendencia); llamado a la acción de miperromayor | Amplía los recursos R01–R03 | Pendiente de estudio conjunto |
+| Página de recursos por país (C14) y contacto con petmetric (A04) | Sección «Recursos por país» de `petmetric.vet/escala-hhhhhmm/` | Nuevo | Pendiente de estudio conjunto |
+| Temas de síntomas faltantes | Lista basada en la portada y seis artículos | Coincide con C01–C10; el inventario de Codex es más completo | Usar el inventario de Codex como fuente |
 
 ## Fuentes y método reproducible
 
@@ -119,6 +126,7 @@ Todavía no recibido en esta conversación. No se le atribuyen hallazgos ni conc
 ## Historial
 
 - 2026-11-13: investigación inicial y registro solicitado por el propietario. Pendiente análisis de Claude y priorización conjunta.
+- 2026-11-13: incorporado el análisis de Claude (competencia, Search Console y petmetric.vet) en un documento aparte, con la tabla de contraste completada. Pendiente la priorización conjunta.
 
 ## Inventario: Artículos del competidor (68)
 
