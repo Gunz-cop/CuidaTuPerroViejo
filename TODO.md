@@ -1,5 +1,9 @@
 # Pendientes
 
+## Aprendizajes de la competencia (2026-11-13)
+
+- [~] **Estudiar miperromayor.com para mejorar el sitio.** Investigación inicial de Codex documentada en [el análisis](docs/seo/analisis-miperromayor-2026-11-13.md), con fuentes, 68 artículos y 12 páginas del competidor, 45 URLs propias, oportunidades de contenido, recursos prácticos y dos enlaces entrantes comprobados. Rama `docs/analisis-miperromayor-2026-11-13`. Pendiente recibir y contrastar el análisis de Claude y decidir prioridades con el propietario. Las propuestas no se consideran implementadas ni encargadas para producción.
+
 Lista viva de ideas y tareas que el dueño del sitio menciona en las sesiones. Los agentes añaden aquí lo que quede pendiente y marcan con `[x]` lo terminado (con fecha y PR).
 
 Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aquí.
