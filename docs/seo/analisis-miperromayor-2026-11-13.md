@@ -1,6 +1,6 @@
 # Aprendizajes de miperromayor.com
 
-Fecha de observación: 2026-11-13 (UTC). Investigación inicial: Codex. Estado: documento de trabajo; análisis de Claude incorporado en [un documento aparte](analisis-claude-competencia-2026-11-13.md); pendiente la priorización conjunta.
+Fecha de observación: 2026-11-13 (UTC). Investigación inicial: Codex. Estado: documento de trabajo; análisis de Claude incorporado en [un documento aparte](analisis-claude-competencia-2026-11-13.md); contraste verificado en [la síntesis](contraste-claude-codex-competencia-2026-11-13.md); pendiente la priorización conjunta.
 
 ## Encargo y alcance
 
@@ -98,6 +98,8 @@ Lectura: esas dos páginas están siendo utilizadas como ampliación de sus expl
 Nada de esta lista se marca implementado por el hecho de documentarlo.
 
 ## Incorporación del análisis de Claude
+
+**Contraste posterior completado:** ver [la síntesis verificada de ambos análisis](contraste-claude-codex-competencia-2026-11-13.md). Contrasta la herramienta actual, el chequeo, el briefing de estimulación, las cadenas HTTP y las fuentes. Matiza las afirmaciones sobre artículos enlazados y fuentes, y acota R05 a funciones realmente nuevas. La tabla siguiente conserva la comparación preliminar recibida con el documento de Claude; sus estados «pendiente» quedan desarrollados en esa síntesis. La decisión de prioridades sigue pendiente del propietario.
 
 Recibido el 2026-11-13. El documento completo está en [analisis-claude-competencia-2026-11-13.md](analisis-claude-competencia-2026-11-13.md), con su propio alcance, método y correcciones. Abajo, solo el contraste con este análisis.
 
