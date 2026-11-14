@@ -63,3 +63,31 @@ for (const [name, header] of [
  ['componentes duplicados indentados',v2()+' Componentes de cuerpo: info=0; danger=0; warning=0\n'],
  ['FAQ duplicada indentada',v2()+' FAQ: 0 preguntas.\n'],
 ]) test(name+' no elude validación',async()=>{const r=await audit(x=>header+x);assert.equal(r.status,1,r.stdout);});
+
+test('destino por título exacto se interpreta y conserva la trazabilidad',async()=>{const r=await audit(x=>v2()+x.replace('| H2-1 |','| Tarea de prueba |'));assert.equal(r.status,0,r.stdout);assert.match(r.stdout,/asignada a: Tarea de prueba  ->  secciones 1/);});
+test('destino desconocido bloquea aunque el autor aparezca en cuerpo',async()=>{const r=await audit(x=>v2()+x.replace('| H2-1 |','| Destino inexistente |'));assert.equal(r.status,1);assert.match(r.stdout,/destino asignado no interpretable/);});
+test('H2 fuera de rango bloquea en vez de aceptar cualquier aparición',async()=>{const r=await audit(x=>v2()+x.replace('| H2-1 |','| H2-99 |'));assert.equal(r.status,1);assert.match(r.stdout,/destino asignado no interpretable/);});
+test('cita solo en Intro no satisface el H2 indicado por título',async()=>{
+ const r=await audit(x=>v2()+x.replace('| H2-1 |','| Tarea de prueba |'),x=>x.replace('## Tarea de prueba','EquipoPrueba (2026) figura aquí solo para la prueba.\n\n## Tarea de prueba').replace('EquipoPrueba (2026) identifica el documento simulado usado únicamente como dato de prueba.','Documento simulado únicamente como dato de prueba.'));
+ assert.equal(r.status,1,r.stdout);assert.match(r.stdout,/citada fuera de su H2 asignado/);
+});
+
+for(const label of ['Introducción a una sección que no existe','Cierre de una sección inexistente','Texto sobre FAQ desconocido','Sección H2-1 fantasma','H2-1; sección inexistente'])
+ test('título desconocido '+label+' no se interpreta parcialmente',async()=>{const r=await audit(x=>v2()+x.replace('| H2-1 |','| '+label+' |'));assert.equal(r.status,1,r.stdout);assert.match(r.stdout,/destino asignado no interpretable/);});
+test('selectores explícitos legados con conectores/apoyo se conservan',async()=>{const r=await audit(x=>x.replace('| H2-1 |','| Intro y H2-1; apoyo H2-1, con límites |'));assert.equal(r.status,0,r.stdout);});
+
+// Preparar budgets del fixture no usa la función de resolución bajo prueba.
+function collisionFixture(secondTitle='Tarea: de prueba') {
+ const a=article.replace('<AlertBox type="info" title="Orientación">',`## ${secondTitle}\n\nSegundo bloque sintético que solo sirve para verificar asignaciones ambiguas de secciones sin contenido clínico.\n\n<AlertBox type="info" title="Orientación">`);
+ const body=a.split('---')[2].split('\n').filter(l=>!l.startsWith('import '));
+ const parts=body.join('\n').split(/^## .+$/m).map(p=>p.trim().split(/\s+/).filter(Boolean).length);
+ const b=brief.replace(/^### .+$/gm,'').replace(/intervalo .+ palabras/,`intervalo 1–999 palabras`)+`\n### INTRODUCCIÓN — Target: ~${parts[0]} palabras\n### [H2 - Tarea de prueba] — Target: ~${parts[1]} palabras\n### [H2 - ${secondTitle}] — Target: ~${parts[2]} palabras\n`;
+ return {a,b};
+}
+for(const label of ['Tarea: de prueba','Tarea de prueba'])
+ test('títulos duplicados o normalizados ambiguos bloquean: '+label,async()=>{
+  const f=collisionFixture(label);const r=await audit(()=>v2()+f.b.replace('| H2-1 |','| Tarea de prueba |'),()=>f.a);
+  assert.equal(r.status,1,r.stdout);assert.match(r.stdout,/destino asignado no interpretable/);
+ });
+test('H2-n desambigua dos títulos normalizados iguales',async()=>{const f=collisionFixture();const r=await audit(()=>v2()+f.b,()=>f.a);assert.equal(r.status,0,r.stdout);assert.match(r.stdout,/asignada a: H2-1  ->  secciones 1/);});
+test('H2-n conserva identidad frente a un título numérico de otra sección',async()=>{const f=collisionFixture('1');const r=await audit(()=>v2()+f.b,()=>f.a);assert.equal(r.status,0,r.stdout);assert.match(r.stdout,/asignada a: H2-1  ->  secciones 1/);});
