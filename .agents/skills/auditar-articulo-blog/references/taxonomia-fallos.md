@@ -1,3 +1,16 @@
+# Criterios actuales y antecedentes de auditoría de artículos
+
+Para contratos 2.0 aplicar requisitos y cantidades justificadas del contrato compartido. Los casos históricos de abajo documentan patrones, no cuotas actuales ni obligación de tener historia clínica, cierre narrativo separado o un número universal de palabras/cajas. Cada hallazgo necesita ubicación, evidencia y efecto real.
+
+## Criterios actuales adicionales
+
+- P0: afirmación central inventada/sin respaldo, pauta contraria a política, recurso prometido ausente o instrucciones internas publicadas.
+- P1: respuesta principal inaccesible, sección sin aportación, siguiente paso inadecuado para la necesidad o contrato cambiado sin adenda. Evaluar el recorrido, no el gusto del auditor.
+- Omisión justificada de caja, FAQ, caso o recurso nuevo no es fallo. Omitir una precaución pertinente sí lo es.
+- Fuentes/afirmaciones, recursos y utilidad se revisan a mano; APTO mecánico no aprueba contenido.
+
+## Antecedentes históricos (no normativa de cantidades)
+
 # Taxonomía de fallos reales
 
 Todos los casos de este documento ocurrieron en `cuidatuperroviejo.com`, en los
@@ -199,3 +212,7 @@ nombre.
 - **Sintaxis Markdown de imagen** en vez del `<img>` anti-CLS que piden algunos
   briefs: el corpus entero del blog usa Markdown y el layout lo resuelve.
   Auditar contra el brief aquí produce un falso positivo.
+
+## Rondas actuales
+
+Máximo cinco por unidad de cambio; correcciones mantienen contador y fallo R5 detiene. Conservar historial. Un delta posterior requiere revisión sin atribuirle el APTO de otra versión.
