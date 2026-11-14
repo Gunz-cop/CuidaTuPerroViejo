@@ -1,0 +1,50 @@
+---
+title: "Prueba sintética"
+seoTitle: "Prueba sintética"
+metaDescription: "Fixture de prueba, no contenido clínico."
+pilar: "salud-perros-mayores"
+datePublished: "2026-11-14"
+---
+import AlertBox from '../../components/AlertBox.astro';
+import FAQ from '../../components/FAQ.astro';
+
+Este texto sintético permite comprobar el contrato del auditor con ejemplos de lectura y navegación sin representar recomendaciones clínicas para personas ni animales.
+
+Este texto sintético permite comprobar el contrato del auditor con ejemplos de lectura y navegación sin representar recomendaciones clínicas para personas ni animales.
+
+Este texto sintético permite comprobar el contrato del auditor con ejemplos de lectura y navegación sin representar recomendaciones clínicas para personas ni animales.
+
+## Tarea de prueba
+
+[Salud](/salud-perros-mayores)
+
+Este texto sintético permite comprobar el contrato del auditor con ejemplos de lectura y navegación sin representar recomendaciones clínicas para personas ni animales.
+
+Este texto sintético permite comprobar el contrato del auditor con ejemplos de lectura y navegación sin representar recomendaciones clínicas para personas ni animales.
+
+Este texto sintético permite comprobar el contrato del auditor con ejemplos de lectura y navegación sin representar recomendaciones clínicas para personas ni animales.
+
+Este texto sintético permite comprobar el contrato del auditor con ejemplos de lectura y navegación sin representar recomendaciones clínicas para personas ni animales.
+
+Este texto sintético permite comprobar el contrato del auditor con ejemplos de lectura y navegación sin representar recomendaciones clínicas para personas ni animales.
+
+Este texto sintético permite comprobar el contrato del auditor con ejemplos de lectura y navegación sin representar recomendaciones clínicas para personas ni animales.
+
+Este texto sintético permite comprobar el contrato del auditor con ejemplos de lectura y navegación sin representar recomendaciones clínicas para personas ni animales.
+
+Este texto sintético permite comprobar el contrato del auditor con ejemplos de lectura y navegación sin representar recomendaciones clínicas para personas ni animales.
+
+EquipoPrueba (2026) identifica el documento simulado usado únicamente como dato de prueba.
+
+<AlertBox type="info" title="Orientación">Dato de prueba.</AlertBox>
+<AlertBox type="danger" title="Precaución">Dato de prueba.</AlertBox>
+<AlertBox type="warning" title="Manejo">Dato de prueba.</AlertBox>
+
+![Referencia sintética](/images/blog/prueba-contrato/fixture.webp)
+
+<AlertBox type="info" title="Fuentes científicas y de autoridad">
+EquipoPrueba (2026), referencia simulada: https://example.invalid/fixture
+</AlertBox>
+<FAQ items={[
+  { question: '¿Pregunta sintética?', answer: 'Respuesta de prueba.' }
+]} />
