@@ -1,6 +1,6 @@
 # Plan de mejora editorial, herramientas y proceso
 
-Fecha: 2026-11-14. Estado: propuesta formal en preparación; la planificación y su registro están encargados. La implementación, los pilotos y su publicación se organizan en entregas posteriores según el alcance que se acuerde.
+Fecha: 2026-11-14. Estado: proceso interno implementado en PR #181 y aprobado por auditoría independiente de integración R2 el 2026-11-14. Primero se completaron skills, plantillas y auditorías; Search Console y páginas siguen después. [Ejecución y evidencias](ejecucion.md). No se han fusionado ni desplegado estos cambios.
 
 ## Objetivo y decisión inicial
 
@@ -22,7 +22,7 @@ La unidad es un archivo identificado por ruta, o una plaza reservada para un arc
 
 El registro canónico es [objetos.csv](objetos.csv). Contiene ID, grupo, ruta, existencia, acción prevista, fase, dependencia, responsable de entrega, estado y criterio de cierre. El recuento se obtiene del registro, no de sumar menciones en los documentos.
 
-**Base inicial: 48 objetos: 30 existentes a revisar y 18 nuevos previstos, de los que cuatro son los documentos de esta entrega.** Incluye skills, plantillas, referencias, código a revisar, artículos, contratos e informes. Cada objeto existente termina con una decisión: modificar / conservar con motivo / retirar del alcance. Los nuevos pasan de reservado a creado, verificado y, si corresponde, publicado.
+**Base histórica inicial: 48 objetos: 30 existentes a revisar y 18 nuevos previstos, de los que cuatro son los documentos de esta entrega.** Incluye skills, plantillas, referencias, código a revisar, artículos, contratos e informes. Cada objeto existente termina con una decisión: modificar / conservar con motivo / retirar del alcance. Los nuevos pasan de reservado a creado, verificado y, si corresponde, publicado.
 
 Las plazas de artículo nuevo y sus contratos/informes se reservan sin inventar un slug ni generar páginas prematuras. Cuando se elija, se sustituye la ruta reservada manteniendo el mismo ID. Cada imagen, PDF, componente o prueba adicional se añade como fila antes de encargarlo. Las carpetas no cuentan como un objeto ni esconden múltiples recursos bajo una fila genérica.
 
@@ -72,11 +72,11 @@ La prueba de coherencia de la entrega interna debe recorrer E01–E08 a través 
 | Fase | Entrega concreta | Dependencia | Criterio de salida |
 | --- | --- | --- | --- |
 | F0 — Plan e inventario | Este plan, objetos, medición y manifiesto de pilotos | Investigación ya hecha y corrección de alcance del propietario | Conteo reproducible, rutas existentes verificadas, propuestas diferenciadas de implementación |
-| F1 — Demanda y línea base | Agrupar consultas por intención y URL; revisar qué mide hoy el sitio | Export de Search Console del propietario | Selección de páginas y tareas, periodos/filtros y datos privados conservados; sin cifras inventadas |
-| F2 — Proceso editorial | Contrato compartido, cuatro skills, plantillas e informes coherentes; pares de herramientas revisados | F0; F1 afina ejemplos, pero no impide resolver contradicciones internas | Revisión independiente de la versión y entrega verificable; alcance listo para los pilotos |
-| F3 — Primera aplicación | Página HHHHHMM y pilar de paliativos: claridad de tareas, uso de funciones actuales y enlaces pertinentes | Línea base capturada y contrato F2 | Móvil, fuentes, enlaces y recursos comprobados; cambio editorial separado de una nueva función |
+| F1 — Proceso editorial | Contrato compartido, cuatro skills, plantillas e informes coherentes; pares de herramientas revisados | F0; la demanda posterior afina ejemplos; no bloquea el proceso interno | Revisión independiente de la versión y entrega verificable; alcance listo para los pilotos |
+| F2 — Demanda y línea base | Agrupar consultas por intención y URL; revisar qué mide hoy el sitio | Export de Search Console del propietario | Selección de páginas y tareas, periodos/filtros y datos privados conservados; sin cifras inventadas |
+| F3 — Primera aplicación | Página HHHHHMM y pilar de paliativos: claridad de tareas, uso de funciones actuales y enlaces pertinentes | Línea base capturada y contrato del proceso interno aprobado | Móvil, fuentes, enlaces y recursos comprobados; cambio editorial separado de una nueva función |
 | F3b — Mejora funcional acotada | Informe de varias fechas y/o calendario integrado si se confirma la necesidad | Inventario funcional, demanda, definición de entrega y medición | Cálculos, historial, impresión, accesibilidad y límites verificados; auditoría independiente |
-| F4 — Piloto editorial | Dos artículos existentes + un artículo nuevo; tercero existente opcional | F1 para escoger temas; F2 para producir; briefs/adendas auditados | Cada pieza tiene antes/después o punto de partida, contrato, auditoría, recursos y fecha de publicación verificable |
+| F4 — Piloto editorial | Dos artículos existentes + un artículo nuevo; tercero existente opcional | F2 para escoger temas; F1 para producir; briefs/adendas auditados | Cada pieza tiene antes/después o punto de partida, contrato, auditoría, recursos y fecha de publicación verificable |
 | F5 — Recepción y ajuste | Informe a 28 y 56 días completos tras cada publicación, con revisión técnica temprana | Publicación y datos comparables | Decisión con evidencia: mantener, corregir, ampliar muestra o esperar; resultado inconcluso permitido |
 | F6 — Extensión gradual | Lotes siguientes de dos o tres artículos por intención y rendimiento | F5 y resolución de defectos de proceso | Reutilizar versión validada; inventariar cada lote; revisar el proceso si el mismo fallo se repite |
 
@@ -110,7 +110,7 @@ Se captura la línea base **antes** de cada cambio. No se cambian a la vez slugs
 - Propietario: aporta Search Console, prioriza, revisa el resultado y decide publicaciones/merges conforme a la metodología.
 - Implementador: prepara proceso, código o contenido según el encargo y entrega evidencias.
 - Auditor independiente: revisa versión identificada; no es quien redactó o corrigió esa pieza. La revisión de skills también debe ser independiente del autor de la modificación.
-- Máximo de tres rondas por documento auditado, sin reiniciar numeración ni presentar la autoevaluación como auditoría independiente.
+- Por instrucción del propietario del 2026-11-14: máximo cinco rondas por unidad de cambio, cerrando al aprobar o deteniéndose si falla R5. Las correcciones mantienen contador; la unidad siguiente de alcance distinto empieza en R1. No presentar autoevaluación como auditoría independiente.
 
 Estados del registro: `planificado`, `reservado`, `en_revision`, `modificado`, `creado`, `verificado`, `publicado`, `conservar`, `fuera_de_alcance`, `bloqueado`. Cada transición registra evidencia. Un archivo guardado en una rama no es un cambio publicado.
 
@@ -118,6 +118,8 @@ Los cambios al proceso se agrupan en un PR propio coherente; herramientas y cont
 
 ## Próximo paso concreto
 
-Completar F1 con el export cuando llegue y preparar el encargo F2 de sincronización de skills, plantillas y auditorías. Mientras se esperan datos se puede documentar el contrato y resolver su alcance; todavía no se redactan los artículos ni se alteran las skills por guardar este plan.
+F1 completada: brief, auditora de brief, redacción, auditora de artículo y el par de herramientas, con auditoría por unidad e integración final. Siguiente F2: analizar Search Console, fijar línea base y decidir qué cambiar, cómo y dónde. El proceso ya tiene su contrato común; los artículos y mejoras funcionales requieren su entrega posterior.
 
-Esta entrega añade únicamente los cuatro documentos de planificación y el seguimiento en TODO.md. Las demás filas son objetos previstos a revisar o producir, no cambios ya ejecutados.
+La entrega inicial añadió cuatro documentos. La ejecución interna autorizada se registra por unidad en ejecucion.md y objetos.csv; no confundir el plan histórico con los cambios ya implementados ni con publicación de contenido.
+
+Inventario al cierre de la ejecución interna: **89 objetos** (48 de base histórica más 41 soportes y evidencias incorporados). Incluye piezas futuras aún pendientes; no equivale al número de archivos modificados ni de artículos publicados.
