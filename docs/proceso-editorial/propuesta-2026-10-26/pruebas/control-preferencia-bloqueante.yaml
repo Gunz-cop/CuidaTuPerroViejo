@@ -1,0 +1,25 @@
+# Control negativo: una preferencia de reparto de palabras marcada como P1 en R6.
+# Resultado esperado: ERROR y código 1.
+articulo: miedo-petardos-perros-mayores
+fase: brief
+rondas:
+  - {n: 1, resultado: NO APROBADO, recuento: "0 P0 / 6 P1 / 9 P2"}
+  - {n: 2, resultado: NO APROBADO, recuento: "0 P0 / 4 P1 / 12 P2"}
+  - {n: 3, resultado: NO APROBADO, recuento: "0 P0 / 1 P1 / 9 P2"}
+  - {n: 4, resultado: NO APROBADO, recuento: "0 P0 / 1 P1 / 10 P2 / 9 P3", autorizada_por_propietario: "correccion-r3.md l. 3"}
+  - {n: 5, resultado: APROBADO, recuento: "0 P0 / 0 P1 / 6 P2 / 14 P3", autorizada_por_propietario: "correccion-r3.md l. 3"}
+  - {n: 6, resultado: APROBADO, recuento: "0 P0 / 0 P1 / 2 P2 / 15 P3", autorizada_por_propietario: "correccion-r3.md l. 3"}
+hallazgos:
+  # PET-B-059: clasificación errónea deliberada (R6 lo dio como P3). Comprueba que una preferencia no bloquea.
+  - id: PET-B-059
+    severidad: P1
+    estado: abierto
+    origen: brief
+    ronda_apertura: 6
+    en_texto_modificado: false
+    regla: "preferencia de estilo"
+    localizacion: "H2-6, «Consolar»"
+    evidencia: "R6 P3-11: el H3 tiene 212 palabras de notas para un target de 140"
+    impacto: "Reparto de notas"
+    correccion: "Pasar el target a ≈190"
+    criterio_cierre: "Target ajustado"

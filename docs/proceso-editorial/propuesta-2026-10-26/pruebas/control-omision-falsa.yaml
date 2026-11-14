@@ -1,0 +1,24 @@
+# Control negativo: un auditor declara ausente el aviso de gatos, que sí está (líneas 302-310).
+# Resultado esperado: ERROR y código 1.
+articulo: leishmaniosis-perros-mayores
+fase: articulo
+documento: src/content/blog/leishmaniosis-perros-mayores.mdx
+rondas:
+  - {n: 1, hash: ebe21070, resultado: NO APROBADO}
+  - {n: 2, hash: fb0c7709, resultado: APROBADO}
+hallazgos:
+  - id: LEI-A-104
+    severidad: P1
+    estado: abierto
+    origen: redaccion
+    ronda_apertura: 3
+    en_texto_modificado: false
+    por_que_no_antes: "Prueba negativa deliberada"
+    tipo: omision
+    busqueda_negativa: {terminos: ["gato"], secciones: ["H2-5"]}
+    regla: "brief §9.6, gatos y permetrina"
+    localizacion: "H2-5"
+    evidencia: "(hallazgo falso de control) «No hay advertencia sobre la toxicidad para gatos»"
+    impacto: "Riesgo para gatos"
+    correccion: "Añadir un aviso"
+    criterio_cierre: "Existe el aviso"
