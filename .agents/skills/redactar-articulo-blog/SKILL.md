@@ -1,243 +1,66 @@
 ---
 name: Redactar Artículo de Blog - Cuida Tu Perro Viejo
-description: Convierte un briefing de contenidos (generado por la skill generar-briefing-contenido) en el artículo final .mdx listo para publicar en el blog Astro de cuidatuperroviejo.com, respetando la arquitectura real del sitio e integrando infografías y animaciones útiles, accesibles y verificadas según el tema.
+description: Ejecuta un brief auditado en MDX con respuesta práctica, fuentes trazables, recursos reales y validación de su contrato, conservando la arquitectura Astro.
 ---
 
-# Habilidad: Redactor de Artículos de Contenido (Astro/MDX)
+# Redactar un artículo
 
-Esta habilidad es la continuación natural de **`generar-briefing-contenido`**: toma un brief ya validado y lo convierte en el artículo `.mdx` final que se guarda en `src/content/blog/`. Sustituye por completo el flujo antiguo de Blogger/Gemini ("Redactor Skyscraper" en HTML crudo con JSON-LD manual, TOC manual y `cluster_cards`), que quedó obsoleto cuando el sitio migró a Astro: hoy el layout automatiza casi todo lo que ese flujo generaba a mano, y redactarlo manualmente ahora produce contenido duplicado o roto.
+Aplicar [contrato 2.0](../references/contrato-utilidad-editorial.md), [calidad editorial](../references/calidad-editorial-adsense.md), [voz](../references/guia-voz-tono.md), [reglas Astro/MDX](references/reglas_astro_mdx.md) y [experiencias visuales](references/experiencias-visuales.md). La plantilla es un soporte, no una estructura clínica obligatoria.
 
----
+## 1. Recibir y revalidar
 
-## Voz y tono (obligatorio)
+Leer el brief y su auditoría independiente con versión/hash. Si es de otra sesión y no tiene auditoría válida, encargarla antes de redactar. Identificar unidad y rondas acumuladas. Máximo cinco rondas por unidad: aprobar cierra, correcciones mantienen contador y fallo R5 detiene. Quien redacta/corrige no hace su auditoría independiente.
 
-Redacta con la [guía de voz y tono](../references/guia-voz-tono.md): de tú, primero lo afirmativo, una salvedad por H3 como máximo, experiencia propia solo con procedencia. Antes de entregar, corre `python3 .agents/skills/references/scripts/tono.py <archivo>`: el resultado debe ser ≤ 3 muletillas por cada 1000 palabras.
+El contrato define intención, secciones/targets/rango, fuentes y afirmaciones, enlaces, componentes, recursos y aceptación. Si falta una decisión indispensable, documentar una adenda y validarla antes de escribir; no inventar ni pedir al usuario datos que se puedan investigar dentro del alcance. Un brief anterior conserva su versión hasta una revisión explícita.
 
-## Control obligatorio de calidad editorial (2026-10-16)
+Revalidar schema `src/content.config.ts`, pilar, rutas y publicación real de destinos; comprobar colisiones de slug y material en curso. En revisiones ya encargadas, actualizar la misma URL preservando historia/fecha original. No reemplazar trabajo ajeno o ampliar un contrato sin autorización. Search Console no es requisito para escribir si el alcance está definido; no inventar datos de demanda.
 
-Lee y aplica [calidad-editorial-adsense.md](../references/calidad-editorial-adsense.md) antes de ejecutar esta skill. Verifica utilidad propia, correspondencia fuente→afirmación, procedencia narrativa, coherencia con la política editorial y entrega real de cada recurso anunciado. Ni el conteo de palabras ni un APTO mecánico sustituyen esos controles. Máximo tres rondas por documento; al fallar la tercera, detenerse y presentar el bloqueo al usuario.
+## 2. Escribir para la tarea del lector
 
+Abrir con la respuesta útil a la situación observable y el siguiente paso pertinente. Si hay una señal urgente, hacerla visible antes de una explicación extensa. La calma y empatía acompañan, sin dramatización ni culpa. No convertir un síntoma en diagnóstico ni atribuir todo a edad/carácter.
 
-## 📂 Recursos de la Habilidad
+Seguir el orden de preguntas del brief. Cada H2 aporta una decisión o explicación distinta; no añadir secciones para rellenar ni repetir la misma respuesta en introducción, gráfico, FAQ y cierre. El mecanismo científico se explica donde ayuda a entender o actuar. No imponer fisiología→diagnóstico→tratamiento ni un apartado de medicación a todo tema.
 
-*   [SKILL.md](./SKILL.md): este archivo, flujo de ejecución y reglas.
-*   [reglas_astro_mdx.md](./references/reglas_astro_mdx.md): qué automatiza el layout (y por tanto qué NO debe escribirse a mano), extraído directamente del código fuente de los componentes.
-*   [plantilla_articulo.mdx](./resources/plantilla_articulo.mdx): esqueleto de artículo limpio para copiar y rellenar.
-*   [analisis_corpus.md](./examples/analisis_corpus.md): barrido completo de los 11 artículos publicados con una tabla comparativa y el veredicto definitivo por elemento (qué adoptar, qué evitar y por qué, con evidencia del corpus completo, no de una muestra).
-*   [experiencias-visuales.md](./references/experiencias-visuales.md) — criterio de cantidad, utilidad, ubicación y entrega de infografías/secuencias; referencia implementada en ojos y oídos. Lectura obligatoria para artículos completos.
-*   [crear-animaciones-articulo-blog](../crear-animaciones-articulo-blog/SKILL.md) — genera imágenes coherentes de perros senior, recortes realistas, infografías y secuencias didácticas cuando el usuario o el brief las requieren. Incluye validación visual en móvil y modo oscuro.
-*   Skill hermana: [generar-briefing-contenido](../generar-briefing-contenido/SKILL.md) — produce el input de esta skill.
-*   [config.ts](../../../src/content.config.ts): schema **estricto** (`.strict()`) del frontmatter. Cualquier campo no listado ahí rompe el build.
-*   [INVENTARIO_CONTENIDO.md](../../../INVENTARIO_CONTENIDO.md): estado real de artículos publicados, para revalidar interlinking.
+Conservar voz de tú y variante de público acordada. Con experiencia documentada, entretejer hechos en H2 prácticos (lo que ocurrió → explicación → acción); cierre integrado, sin H2 dedicado ni hechos nuevos. Sin caso, usar guía de observaciones/decisiones; no fabricar paciente, diálogo o recuperación. Las referencias ilustrativas se identifican según el control compartido.
 
----
+Citar cerca de cada afirmación el nombre/título real de la fuente asignada y su enlace profundo. Verificar de nuevo identidad y afirmación si se añaden datos; no completar autores, DOI, dosis o resultados de memoria. Una fuente parcial solo sostiene lo leído; no publicar una afirmación central no comprobada. La bibliografía final complementa y no sustituye las citas de cuerpo. No insertar instrucciones editoriales, marcas de verificación parcial, números de fuente o mensajes al redactor en el texto público.
 
-## 🧭 Flujo de Ejecución
+Mantener límites clínicos y procedencia de recetas/productos; sin pautas farmacológicas para el lector. Una advertencia necesaria queda junto a la acción, no oculta en un descargo final. No suavizar una conclusión para favorecer la afiliación.
 
-### Fase 1: Recepción y Revalidación del Brief
+## 3. Componentes y recursos pactados
 
-1.  **Entrada:** una ruta a `/briefings/briefing-{{slug}}.md` (generado por `generar-briefing-contenido`) o el contenido de un brief pegado en el chat. Si el usuario no tiene un brief estructurado, ofrece generarlo primero con esa skill, o pide manualmente los datos mínimos: título, keyword, slug, pilar, historia real, fuentes, estructura H2/H3 y enlazado interno.
-    *   **Si trabajas con datos recopilados a mano (sin la numeración de secciones del brief formal):** las Fases 3 a 5 de esta skill citan "Sección 3", "Sección 5" y "Sección 9" del brief — en ese caso, léelas como su equivalente conceptual (la lista de fuentes que te dieron, el enlazado interno acordado, los criterios de cierre reunidos), no busques literalmente esos números. La validación de contenido (Fase 4) se aplica igual, tenga o no el input esa numeración.
-2.  **El brief pudo quedar desactualizado.** Antes de escribir, revalida contra el estado actual del repo:
-    *   Confirma que `pilar` sigue siendo un valor válido del enum en `src/content.config.ts`.
-    *   Relee `INVENTARIO_CONTENIDO.md` y confirma que los spokes de interlinking del brief siguen marcados como publicados (pudo cambiar desde que se generó el brief).
-    *   Confirma que el slug no colisiona ya con un archivo existente en `src/content/blog/`.
-3.  Sea brief formal o datos recopilados a mano, si falta la lista de fuentes con su H2 asignado (Sección 3) o los criterios de cierre — volumen de palabras, componentes obligatorios, arco narrativo (Sección 9) —, no improvises esos datos: pídeselos al usuario, o si es un brief formal, ofrece regenerarlo con la skill hermana antes de continuar.
+En contrato 2.0 usar las cantidades y funciones de cajas declaradas, incluidos ceros justificados. La bibliografía final con `AlertBox info` es independiente de las cajas de cuerpo. No introducir peligro o medicación solo para completar tres tipos; tampoco quitar un aviso pertinente. FAQ estructurada y plegada cuando esté pactada; si se pactó cero, omitir componente e import FAQ.
 
-### Fase 1.5: Plan visual integrado en la redacción
+Enlazar pilar y destinos publicados previstos, junto a la necesidad que amplían. No reemplazar un destino pendiente con un slug plausible ni usar la calculadora como salida automática de todos los artículos. Revisión preventiva, urgencia y seguimiento son distintos. Productos después de explicar problema y alternativas; aplicar flujo de afiliación si se encargan fichas.
 
-Para un **artículo completo**, evalúa y produce los apoyos visuales que ayuden a comprender, decidir o aplicar lo explicado; no esperes a que el usuario tenga que pedirlos en otra sesión. Lee [experiencias-visuales.md](./references/experiencias-visuales.md) y aplica [crear-animaciones-articulo-blog](../crear-animaciones-articulo-blog/SKILL.md) para ejecutarlos. Si se pidió expresamente solo texto, respeta ese alcance y deja el plan de recursos pendientes identificado.
+Inventariar cada recurso prometido. Reutilizar registros/herramientas reales antes de duplicarlos. Ejecutar el plan visual del artículo completo mediante las skills visuales; si el encargo es solo texto, dejar recursos pendientes en el expediente y retirar promesas públicas hasta su entrega. Un placeholder no es recurso terminado.
 
-- Decide la cantidad por utilidad y complejidad; no impongas dos infografías y una animación a todos los temas. Cada recurso debe responder una pregunta diferente. Si ninguno añade valor, justifica la decisión y conserva la lectura directa.
-- Antes de redactar los bloques, registra formato, pregunta, ubicación/H2, fuente y límites, interacción, archivos/componentes y prueba de aceptación. Si el brief antiguo no lo contempla, añade una adenda visual sin reabrir su contrato científico aprobado ni sus auditorías por rutina.
-- Una infografía puede orientar decisiones, comparar opciones o explicar cifras; una secuencia animada debe mostrar un orden o cambio comprensible. No añadir movimiento decorativo, sonidos, bloqueos de lectura o una segunda explicación idéntica para aparentar más contenido.
-- Integra cada apoyo junto al pasaje que explica, con la información esencial disponible sin interactuar. Los desplegables sirven para profundizar o consultar una referencia; las señales de alarma no quedan escondidas.
-- Informa de la selección con razones concretas. La finalidad es facilitar comprensión y continuidad de lectura; no afirmes que aumentó la retención sin medirlo.
+Aplicar [dirección visual](../references/direccion-visual-editorial.md) y [apoyos responsive](../references/apoyos-visuales-responsive.md): identidad continua, cinco rasgos senior por imagen/recorte y revisión a 390 px, razas justificadas, anatomía, texto fiel, claro/oscuro. Excepciones documentadas del sujeto real conservan alcance. No dibujar perros/personas en SVG/CSS. Animaciones sin autoplay, controles manuales, pausa real, reduced-motion, impresión y alternativa sin JS; limpiar temporizadores. Las fuentes de una infografía se revisan igual que la prosa.
 
-### Fase 2: Arquitectura Técnica Real (Reglas Invariables)
+## 4. Arquitectura invariable
 
-> [!IMPORTANT]
-> Estas reglas vienen de leer directamente `PostReader.astro`, `[slug].astro`, `AlertBox.astro`, `FAQ.astro` y `SiloNavigation.astro` — no de las instrucciones antiguas de Blogger. Ver el detalle y el porqué de cada una en [reglas_astro_mdx.md](./references/reglas_astro_mdx.md).
+Usar [plantilla MDX](resources/plantilla_articulo.mdx) con valores reales. Leer schema y componentes actuales, no copiar el corpus histórico como norma.
 
-**Nunca escribas en el `.mdx` (el layout ya lo genera):**
-*   Un `# H1` — el `title` del frontmatter ya se renderiza como H1 en `[slug].astro`.
-*   La `heroImage` otra vez como `<figure>`/`![]()` en el cuerpo — el header ya la muestra; si la duplicas, una regla CSS del layout la oculta en silencio (queda un hueco visual raro).
-*   Tabla de contenidos manual (`<details>` con lista de anclas `#seccion`) — `PostReader.astro` la construye solo escaneando los `H2`/`H3` reales.
-*   `<script type="application/ld+json">` — `[slug].astro` inyecta `BlogPosting` + `BreadcrumbList` usando el frontmatter.
-*   Un bloque de "artículos relacionados"/`cluster_cards` al final — `SiloNavigation.astro` ya renderiza automáticamente las tarjetas de otros posts del mismo pilar tras el artículo.
-*   Botón "volver arriba" o CSS `<style>` inline.
+- Frontmatter estricto; título H1, hero, TOC, firma/fechas, JSON-LD y relacionados los genera el layout. No duplicarlos en cuerpo ni escribir `Autoría` manual.
+- Importar solo componentes usados, con rutas reales desde `src/content/blog/`. AlertBox: `type` y `title`; FAQ: `items` con `question` y `answer`.
+- Empezar el cuerpo con párrafo, no `#`. Las FAQ van en `<FAQ>` cerrado, sin H2/TOC manual redundante. Bloques secundarios plegados; urgencias siempre visibles.
+- Hero solo en frontmatter. Imágenes de cuerpo con Markdown y pie útil, según patrón vigente; verificar recursos y dimensiones/variantes mediante el navegador. No confundir archivo creado con archivo servido.
+- Enlaces externos los transforma el pipeline actual de Astro; no añadir manualmente atributos redundantes. No cambiar configuración del stack para redactar.
+- Fecha nueva al guardar; revisión conserva `datePublished` y registra cambio real en `dateModified`. `perros` solo para Luna/Dakota reales con experiencia documentada. Contrato y estado de auditoría no son campos de YAML.
 
-**Siempre haz esto:**
-*   Importa los componentes justo debajo del frontmatter:
-    ```mdx
-    import AlertBox from '../../components/AlertBox.astro';
-    import FAQ from '../../components/FAQ.astro';
-    ```
-*   **Preguntas frecuentes siempre plegadas con el componente `<FAQ items={[...]} />`** (acordeón cerrado; el lector despliega). Nunca como `## Preguntas frecuentes` seguido de `###` o párrafos sueltos: así quedan desplegadas y ocupan pantallas enteras. Lo mismo para cualquier bloque secundario que pueda plegarse: va cerrado por defecto (ver [apoyos-visuales-responsive.md](../references/apoyos-visuales-responsive.md)).
-*   Empieza el cuerpo directo con el primer párrafo (sin encabezado).
-*   **No escribas firma ni fecha en el cuerpo.** `ArticleByline` muestra «Por Gonzalo» y las fechas desde el frontmatter, y `AuthorNote` cierra el artículo con la presentación del autor y el aviso de ilustraciones con IA. Una línea `**Autoría:** …` manual duplicaría esa firma (se retiraron las 21 que había el 2026-10-28). Tampoco abras con un aviso genérico del tipo «guía sin caso clínico; las imágenes son ilustraciones»: el aviso de IA ya está en la nota final. Sí declara al principio la procedencia de un caso o una experiencia concreta (viñeta compuesta, caso publicado, vivencia aportada por el propietario), junto a ese caso.
-    **Fechas:** `datePublished` es la fecha real de guardado si el artículo es nuevo. El brief trae la fecha en que se generó, que puede ser días antes (confirmado en producción: brief del día 14, artículo guardado el 16 y `datePublished` en 14). **Excepción:** si el brief es una reescritura de un artículo ya publicado, `datePublished` se mantiene en la fecha original para no perder la señal de antigüedad SEO, y la revisión va en `dateModified`.
-*   Usa enlaces internos **contextuales dentro de los párrafos** (`[texto ancla](/pilar/slug)`) hacia el pilar y los spokes que define el brief — esta es la sustitución real del antiguo `cluster_cards`, y sigue siendo trabajo manual porque el layout no lo hace por ti.
-*   Imágenes de cuerpo en sintaxis Markdown simple, seguidas de una línea en cursiva con el pie de foto (patrón real usado en todo el blog):
-    ```mdx
-    ![Alt descriptivo SEO](/images/blog/{{slug}}/{{archivo}}.webp)
-    *Pie de foto que aporta contexto o dato adicional.*
-    ```
-    Los nombres de archivo, alt y captions salen de la Sección 8 del brief. **Para ejecutar el plan visual del artículo completo o un encargo específico de imágenes, infografías o animaciones, aplica [crear-animaciones-articulo-blog](../crear-animaciones-articulo-blog/SKILL.md) y entrega los recursos integrados**, sin dejar los binarios a cargo del usuario cuando la herramienta está disponible. Si solo se encargó texto, pueden quedar imágenes planificadas pendientes, identificadas con precisión antes de publicar. Un placeholder no cuenta como recurso terminado.
+## 5. Validación antes de entregar
 
-### Recursos visuales y continuidad del sujeto
+1. Tabla E01–E08: requisito, pasaje/recurso y prueba. Leer recorrido a 390 px: respuesta, acción, precaución y siguiente paso encontrables. Declarar pruebas no ejecutadas.
+2. Contar cuerpo sin frontmatter/imports/`---` sueltos y cada sección contra target ±15%; comparar suma y rango. Si difiere, resolver omisiones útiles o adenda justificada; nunca relleno ni conteo falso. El texto de componentes también se revisa aunque el contador MDX no lo capture.
+3. Tabla fuente→afirmación→pasaje→sección→verificación/límite. Buscar cada fuente dentro de su H2, no solo bibliografía. Una coincidencia de nombre no verifica la afirmación.
+4. Componentes por contrato, FAQ explícita incluso cero, recursos/rutas operativos y enlaces reales. No dejar marcadores, notas al redactor o falsa descarga.
+5. Densidad móvil y ritmo: medir párrafos, revisar fragmentos y subtítulos. Reorganizar antes de ampliar. Correr `python3 .agents/skills/references/scripts/tono.py <archivo>` (≤3 muletillas/1000); no borrar seguridad para bajar una métrica.
+6. Si hay recursos: abrir cada archivo, recorrer interacciones y anclas, teclado/foco, impresión con/sin JS, reducido movimiento, 390/1366 px, claro/oscuro y contraste. Imágenes decodificadas y variantes servidas, no solo nombres existentes. Pruebas técnicas pertinentes y proyección de agentes al integrar componentes.
 
-Aplica la [dirección visual editorial compartida](../references/direccion-visual-editorial.md) incluso cuando un brief anterior solo tenga prompts genéricos. Completa la ficha visual como adenda sin alterar su contrato científico. Mantén escenas detalladas, propias del público y tema, y verifica orientación, marcha, manos y correa en el resultado real antes de entregarlo.
+Entregar tabla por sección (real/target/desviación), densidad (media/mediana/%>50), tono, fuentes, recursos y evidencias, pendientes y qué se conserva. Las validaciones propias no sustituyen la auditoría independiente.
 
-Ejecuta el plan de Fase 1.5 y consulta [experiencias-visuales.md](./references/experiencias-visuales.md) antes de darlo por terminado:
+## 6. Guardar y auditar
 
-1. Fija un sujeto ilustrativo coherente con el brief: mismo perro, anatomía y apoyos correctos, sin inventar patología, y **edad senior visible con los cinco rasgos del [requisito senior verificable](../references/direccion-visual-editorial.md#requisito-senior-verificable-obligatorio-en-todo-prompt)** (canas en hocico, cejas y párpados; ojos algo hundidos; lomo y musculatura de perro mayor; postura natural) en todo prompt de imagen, **recorte transparente** y animación. Si el brief omite alguno, complétalo como adenda. Revisa cada imagen y cada recorte a tamaño móvil rasgo por rasgo; si parece adulto joven, regenera antes de integrarlo. No cambies la raza del brief por tu cuenta ni la repitas de artículos recientes sin motivo documentado. Deriva hero, escenas y recorte de una referencia inspeccionada. Respeta el estilo elegido; una imagen IA no se presenta como paciente real.
-2. Usa recortes con transparencia real cuando se necesiten, con marcadores adaptados al encuadre. Comprueba en móvil que señalen la zona correcta y se distingan del pelo; no deformes el cuerpo para simular movimiento. Una escena estática no es un vídeo.
-3. Implementa componentes Astro con HTML estándar, CSS acotado y sin dependencias pesadas. Reutiliza patrones/configuración cuando proceda. No copies el cocker ni la cifra 39 a temas distintos: son contenido del ejemplo, no valores predeterminados.
-4. Sin autoplay; controles anterior/siguiente, reproducir/pausar/repetir, reproducción finita, teclado, foco visible y objetivos de al menos 44 px. Pausar debe detener avance y movimiento. Limpia temporizadores al ocultar/navegar y evita inicializaciones duplicadas.
-5. `prefers-reduced-motion` conserva el recorrido manual sin animaciones. Sin JavaScript se leen todos los pasos y no aparecen controles inertes. La impresión muestra todos los pasos **también con JavaScript activado**; no deducirlo de que funcione sin JavaScript.
-6. Aplica [apoyos visuales cómodos en móvil y escritorio](../references/apoyos-visuales-responsive.md): presupuesto de altura en móvil, tablas con `TablaApilable` y `data-label`, controles junto al dibujo. Verifica imágenes decodificadas, todas las anclas, móvil de 375–390 px y escritorio, claro/oscuro, contraste de texto de al menos 4,5:1 y proyección Markdown. Los estilos globales de `.content-body`, incluidos los `details` con `!important`, pueden invalidar los colores locales: comprobar el resultado calculado.
-7. Conserva recursos originales y evita caché antigua usando nombres nuevos al reemplazar imágenes publicadas. Reporta los tamaños/variantes que realmente selecciona el navegador; crear una variante no demuestra que se sirva.
-8. Entrega capturas reales de todos los estados relevantes, con transiciones finalizadas para no confundir un estado a mitad de cambio con un defecto. Identifica las pruebas propias, las del auditor y cualquier limitación; no declares aprobación visual del usuario sin ella.
+`src/content/blog/` no es scratch: todas sus entradas pueden compilar aunque `status` diga Borrador. Si hay bloqueantes guardar trabajo en scratch/expediente, no en esa colección. Con validación propia completa y dentro del encargo, guardar `src/content/blog/<slug>.mdx`, conservar brief y actualizar inventario como redactado/validado localmente.
 
-Referencias implementadas: [patrón de baño](../crear-animaciones-articulo-blog/references/patron-bano-senior.md) y [OjosOidosVisual.astro](../../../src/components/article/OjosOidosVisual.astro). La evidencia de ojos/oídos está enlazada en la referencia de experiencias visuales.
-
-### Fase 3: Redacción por Bloques
-
-La redacción debe seguir el alcance útil acordado, sin mínimo universal de palabras. Redacta por bloques, en este orden:
-
-1.  **Bloque de apertura:** frontmatter completo (solo campos del schema de `src/content.config.ts`) + imports + introducción (presupuesto justificado en el brief, con la pregunta del lector o material documentado, y `AlertBox type="info"` de acompañamiento, según lo planeado en el brief). Responde pronto a la intención; una apertura larga necesita utilidad, no dramatización para completar volumen.
-2.  **Punto de control ligero:** si el usuario ya autorizó redactar todo seguido, continúa. La voz está fijada en la guía de voz y tono; pide una preferencia solo si el usuario quiere desviarse y no consta en el encargo.
-3.  **Bloques de desarrollo:** un H2 del brief a la vez (o todos seguidos si el usuario lo pidió), respetando:
-    *   El target de palabras de esa sección (±15%). **Aviso anti-scope-creep:** si mientras investigas o redactas sientes que el tema merece un H2 o H3 adicional que no está en la Sección 6 del brief (por ejemplo, "por qué falla el tratamiento" o "complicaciones"), no lo agregues por tu cuenta — es la causa más común de exceder el presupuesto total de palabras (verificado: un artículo real llegó a 8.993 palabras, 38% sobre el target, por agregar exactamente una sección así). Anota la idea y pliégala dentro de un H2 ya existente como subsección corta, o pregúntale al usuario si la quiere antes de expandir el artículo.
-    *   El `AlertBox` planeado para esa sección (`danger` en síntomas/diagnóstico, `warning` en tratamiento/manejo), citando la fuente asignada por su nombre real.
-    *   El momento de la historia documentada que el brief asigna a esa sección, **entretejido**: abre o continúa el H2 con lo que pasó, explica la ciencia y termina en qué hacer (ver «La historia va entretejida» en la guía de voz y tono). No escribas un H2 aparte para la historia aunque un brief antiguo lo pida; si lo pide, repártelo y avísalo en la entrega. O las decisiones de una guía sin caso. No introducir paciente ni desenlace para completar la plantilla.
-    *   **Protege el presupuesto del último H2 (donde va el desenlace):** no lo escribas primero fuera de orden (pierde continuidad con los detalles concretos que se establecen en los H2 prácticos anteriores, a los que normalmente hace referencia). En su lugar, al llegar al penúltimo H2 práctico, revisa el total acumulado contra la suma de targets hasta ese punto (Sección 6) **en ambas direcciones**: si ya vas por encima, recorta ese H2 práctico ahí mismo; si vas por debajo —aunque ningún H2 individual se haya quedado corto por sí solo, el déficit puede repartirse entre varios sin que ninguno destaque a simple vista— complétalo antes de seguir, no dejes que la suma de varios recortes pequeños llegue silenciosa hasta el cierre. En los dos casos, la meta es llegar al H2 de cierre con el presupuesto ya corregido, no descubrir el desvío al contar al final en Fase 4, cuando ya toca retrofit en vez de corrección sobre la marcha. El cierre debe aportar una decisión o límite documentado; el presupuesto no justifica inventar un desenlace ni alargarlo. Si el contrato incluye un arco, conservarlo sin añadir hechos.
-    *   Los enlaces internos contextuales que correspondan a esa sección según la Sección 5 del brief. Si el brief marcó un spoke como `Pendiente` (por no haber aún 2 artículos publicados en ese pilar), no inventes un enlace para rellenarlo — omítelo tal como lo indicó el brief, y enlaza solo el pilar y la calculadora si aplican.
-    *   **Formato mobile-first (requisito del brief, Sección 4 — el brief solo lo planea, esta skill es quien lo ejecuta):** párrafos de máximo ~3 líneas en pantalla móvil (aprox. 30-40 palabras; más que eso y el párrafo se percibe como un bloque denso en el celular), y un `H3` nuevo cada 150-200 palabras dentro de cada `H2` para airear la lectura. Si un bloque de desarrollo se está escribiendo en párrafos largos o sin subtítulos por 300+ palabras seguidas, corta ahí mismo — no lo dejes para una revisión posterior.
-4.  **Bloque de cierre:** conclusión breve + cuadro de fuentes + `<FAQ items={[...]} />` con las preguntas del brief.
-    *   **Cuadro de fuentes (obligatorio, no opcional):** justo antes del FAQ, agrupa **todas** las fuentes del brief en un único `<AlertBox type="info" title="Fuentes científicas y de autoridad">` — es el patrón real verificado en los artículos ya publicados (`prevencion-caidas-perro-mayor.mdx`, `cama-ortopedica-perros-mayores-displasia-artrosis.mdx`), y le da al lector una forma concreta de verificar que el contenido no es paja. Formato de cada línea:
-        ```mdx
-        <AlertBox type="info" title="Fuentes científicas y de autoridad">
-        Este artículo se basa en evidencia publicada por organizaciones veterinarias internacionales y revistas indexadas:
-
-        - **{{Institución o autor}}**: [{{Título real del documento o guía}}]({{URL profunda}}) ({{descripción breve de una línea}}).
-
-        **Nota de responsabilidad:** Las recomendaciones aquí presentadas son de carácter meramente educativo e informativo. Siempre debes consultar con un médico veterinario ante cualquier cambio en el comportamiento, la marcha o la salud general de tu compañero mayor.
-        </AlertBox>
-        ```
-        El texto ancla es siempre el **título real del documento citado** (p. ej. "Global Pain Management Guidelines"), nunca un texto genérico ("leer más", "aquí") ni la URL en crudo — el ancla descriptiva es lo que aporta autoridad y verificabilidad real ante el lector.
-    *   **Fuentes marcadas `[URL no verificada]` en el brief:** inclúyelas igual dentro de este cuadro, citadas por nombre en texto plano y sin enlace — nunca inventes una URL para completarlas, y nunca pegues el marcador `[URL no verificada]` tal cual en el artículo publicado. Lleva la cuenta de cuáles quedaron así para reportarlas al usuario en el resumen de entrega (Fase 5).
-    *   No agregues `target="_blank"` ni `rel="noopener"` a mano en ningún enlace externo del artículo (aquí o en cualquier otra sección): `rehype-external-links` (configurado en `astro.config.mjs`) ya se lo añade automáticamente a todos en el build.
-
-### Fase 4: Validación contra el Contrato de Entrega
-
-> [!IMPORTANT]
-> **Los dos fallos que más se repiten en la práctica real:** de tres artículos redactados de forma independiente (por distintos agentes, en distintas sesiones), los **tres** fallaron en el conteo de palabras (por exceso o por defecto) y **dos de tres** tuvieron al menos una fuente citada únicamente en el cuadro de cierre, sin desarrollarla nunca en su H2 asignado. No son riesgos teóricos — son el patrón de fallo más probable. Verifícalos primero, con método explícito, no a ojo:
-> - **Palabras:** `wc -w` sobre el cuerpo real (método exacto abajo).
-> - **Fuente por H2:** localiza el nombre del autor/institución con una búsqueda de texto (`grep` o equivalente) y confirma que al menos una aparición cae **dentro del rango de líneas de su H2 asignado** — no en la introducción, no en otro H2, y no solo en el cuadro final de "Fuentes científicas y de autoridad". Si una fuente solo aparece ahí, **no cuenta como citada**, sin importar que esté listada.
-> - **Distribución por H2, no solo el total:** el conteo global puede cumplir el rango del brief aunque un H2 concreto esté muy por debajo de su propio target de la Sección 6 (visto en producción: un H2 al 45% de su target — 314 de 700 palabras — mientras otro se pasaba el suyo en +57% — 1.572 de 1.000 —, ambos "compensándose" en el total). Cuenta cada H2 por separado contra su target individual (±15%), no solo la suma. Presta atención especial al **último H2 práctico** (el que lleva el desenlace, antes de Conclusión): es el que más fácil se queda corto si el presupuesto ya se gastó en las secciones prácticas anteriores.
-
-Antes de dar el artículo por terminado, recorre la Sección 9 del brief contra el `.mdx` real (no contra lo planeado):
-*   Cuenta las palabras reales del cuerpo (excluyendo frontmatter e imports) con un conteo real, no una estimación a ojo: aísla el texto que va después del segundo `---` y de las líneas `import`, y cuenta con una herramienta (p. ej. `wc -w` sobre ese fragmento, o el archivo ya guardado en disco). Si queda por debajo del contrato, comprueba omisiones útiles; no añadas relleno. Documenta un ajuste razonado del contrato si sobran targets, antes de declararlo listo. Si se pasa por encima del máximo con tolerancia (±15% sobre el target de la Sección 6), no lo entregues así "porque el contenido es bueno" — recórtalo (ver Fase 3, aviso anti-scope-creep) antes de darlo por terminado.
-*   **Repite el conteo H2 por H2**, no solo el total: cada `## ` hasta el siguiente `## ` es un H2; compara sus palabras reales contra su target individual de la Sección 6 del brief (±15%) — un total correcto puede esconder un H2 muy por debajo compensado por otro muy por encima. Si el último H2 práctico (el que lleva el desenlace) queda por debajo de su target mientras otro H2 lo supera, no lo dejes así: recorta el H2 sobrante y desarrolla más el cierre, sin añadir hechos ni repetir contenido para completar el número.
-    *   **Deja constancia por escrito, no solo en tu razonamiento interno:** una regla de verificación que no produce un artefacto visible se puede dar por "cumplida" sin haberla corrido de verdad (confirmado en producción: la regla de conteo por H2 existía en esta misma skill y el redactor igual reportó solo el total). Construye la tabla H2 / palabras reales / target / desviación (ver formato exacto en Fase 5) mientras haces este conteo — no la reconstruyas de memoria al final.
-*   Confirma que cada una de las fuentes que el brief realmente documentó en la Sección 3 aparece citada **por su nombre dentro de su H2 asignado**, no solo en el cuadro de cierre. La cantidad se justifica por cobertura; una limitación documentada no equivale a fuente omitida. No añadir referencias débiles o inventadas para completar una cuota.
-*   Confirma que existe el cuadro de cierre `<AlertBox type="info" title="Fuentes científicas y de autoridad">` con las fuentes de la Sección 3, cada una como enlace real con texto ancla descriptivo (el título del documento, no "leer más" ni la URL en crudo) — salvo las marcadas `[URL no verificada]`, que van citadas sin enlace.
-*   Si alguna fuente estaba marcada `[URL no verificada]`, confirma que quedó citada por nombre sin enlace (ni placeholder literal ni URL inventada) y que está anotada para el resumen de entrega.
-*   Confirma que los 3 tipos narrativos de `AlertBox` están presentes (`info` en intro, `danger`, `warning`), uno de cada, sin repetir tipo entre ellos — el cuadro de fuentes (también `info`, ver arriba) es un cuarto `AlertBox` aparte, obligatorio por separado, no cuenta como repetición.
-*   Confirma que las imágenes de la Sección 8 están referenciadas con alt y caption, sin duplicar la hero en el cuerpo. Si el encargo incluye producción visual, comprueba también que existen los binarios y que el navegador los decodifica; un placeholder no cumple esa entrega. Si se encargó solo texto, conserva las referencias planificadas y declara los archivos pendientes antes de publicar.
-*   Comprueba el plan visual recurso por recurso: utilidad, ubicación, fuente, archivos reales, controles y alternativas. Las síntesis de los componentes también requieren verificación clínica; no quedan fuera del alcance porque el contador MDX no las mida. Una captura, un build o un APTO mecánico no sustituyen las pruebas de interacción.
-*   Si el encargo incluye recursos visuales, conserva la revisión independiente de esa ampliación, con alcance/versiones y máximo tres rondas. No reinicies las auditorías de un artículo para eludir un bloqueo; una ampliación nueva debe estar encargada y documentada como tal.
-*   Confirma que el `FAQ` tiene el número de preguntas pactado.
-*   Confirma que los enlaces internos obligatorios (pilar, spokes, calculadora si aplica) están presentes como enlaces reales, no como texto plano — salvo los spokes que el brief marcó explícitamente como `Pendiente`, que no deben existir como enlace (si aparecen, es que se inventó uno).
-*   Confirma el arco documentado acordado, si lo hay, o la estructura útil de una guía sin caso; no exigir resultados desconocidos.
-*   Valida el frontmatter contra el `z.object(...).strict()` de `src/content.config.ts`: solo `title`, `seoTitle`, `metaDescription` (≤160 car.), `pilar`, `keywordPrincipal`, `heroImage`, `heroImageAlt`, `legacyUrl`, `status`, `datePublished`, `dateModified` y `perros` — ningún campo extra. `perros` (`["luna"]`, `["dakota"]` o ambas) solo se pone si el artículo usa experiencia documentada de las beagles reales del propietario; nunca para perros ilustrativos.
-*   Confirma que no hay firma `**Autoría:**` manual en el cuerpo ni aviso genérico de ilustraciones al principio, y que `datePublished`/`dateModified` del frontmatter son correctas: de ahí sale la firma visible.
-*   Revisa el formato mobile-first: ningún párrafo debería superar ~3 líneas en pantalla móvil (aprox. 30-40 palabras), y cada `H2` debería traer al menos un `H3` por cada 150-200 palabras de desarrollo. Si encuentras un párrafo largo o un tramo sin subtítulos, córtalo antes de entregar — no lo dejes pasar "porque el contenido está bien".
-*   **Mide la densidad de párrafo, no la estimes a ojo** (regla existente, método nuevo — verificado que sin un comando exacto la regla no se aplica en la práctica). Corre esto sobre el `.mdx` real:
-    ```bash
-    awk '/^---$/{c++; next} c>=2' ARCHIVO.mdx \
-      | grep -v "^import \|^#\|^!\[\|^\*\|^<\|^ \|^-\|^]" \
-      | awk 'NF>5{print NF}' | sort -n \
-      | awk '{a[NR]=$1; s+=$1} END{print "media:",int(s/NR); \
-          print "mediana:",a[int(NR/2)]; c=0; \
-          for(i=1;i<=NR;i++) if(a[i]>50) c++; \
-          print ">50 palabras:",int(c*100/NR)"%"}'
-    ```
-    Referencia real: un artículo con media 30 / mediana 29 / 3% de párrafos >50 palabras se considera bien aireado; uno con media 56 / mediana 57 / 66% >50 está al doble de densidad de lo que pide el formato mobile-first, aunque el conteo total de palabras sea correcto.
-    **Causalidad, no solo síntoma:** si el artículo va corto de palabras Y la densidad sale alta, el orden de la corrección importa — **primero divide los párrafos densos, después evalúa si sigue faltando volumen**. Ampliar párrafos ya densos "arregla" el conteo total y empeora exactamente lo que el formato mobile-first existe para evitar. Un artículo corto y aireado es más fácil de completar bien que uno denso al que solo le falta relleno.
-
-### Fase 5: Guardado del Artículo
-
-1.  **Ruta de guardado:** `src/content/blog/{{slug}}.mdx` — el brief vive en `/briefings/`; ambos se versionan.
-2.  **Gate de completitud — no escribas ahí un artículo que la Fase 4 no aprobó.** `src/content/blog/` no es una carpeta de borradores: `getStaticPaths()` en `[slug].astro` genera una ruta por cada entrada de la colección `blog` sin excepción, y el campo `status` del frontmatter (`z.string().default('Publicado')` en `src/content.config.ts`) **no se lee en ningún filtro de build** — es una etiqueta decorativa, no un mecanismo de bloqueo. Poner `status: "Borrador"` en un artículo incompleto **no impide que se compile a `dist/` y se sirva en el próximo deploy** (confirmado en producción: un artículo con déficit de palabras ya declarado por el propio redactor llegó a `dist/`). Si la Fase 4 encontró cualquier fallo sin resolver — déficit de palabras, fuente sin citar en su H2, componente faltante — **no guardes el archivo en `src/content/blog/` todavía**: muestra el avance en el chat o guárdalo en el scratchpad, y dile explícitamente al usuario qué falta y por qué no se guarda aún. El campo `status` del brief puede copiarse tal cual (`"Publicado"`) únicamente cuando el artículo ya pasó la Fase 4 completa — no antes, y no como sustituto de este gate.
-3.  **Confirmación:** muestra el artículo completo (o al menos frontmatter + lista de H2 + conteo de palabras real, medido con el mismo método de la Fase 4, no estimado) **junto con la Tabla de Verificación** (formato exacto abajo). Si guardar/publicar ya está autorizado, procede sin pedir de nuevo esa autorización.
-4.  **Tabla de Verificación — inclúyela siempre en la entrega, no la reemplaces por un resumen en prosa:**
-    ```
-    | H2 | Palabras reales | Target (Sección 6) | Desviación |
-    |---|---|---|---|
-    | Introducción | {{n}} | ~{{target}} | {{%}} |
-    | {{Título H2-1}} | {{n}} | ~{{target}} | {{%}} |
-    | ... | | | |
-    | {{Último H2 práctico (con el desenlace)}} | {{n}} | ~{{target}} | {{%}} |
-    | Conclusión | {{n}} | ~{{target}} | {{%}} |
-
-    Densidad de párrafo: media {{n}} / mediana {{n}} / párrafos >50 palabras {{%}}
-    ```
-5.  **Colisión de nombres:** si ya existe `src/content/blog/{{slug}}.mdx`, no lo sobrescribas en silencio — pregunta si reemplazar, versionar el slug, o cancelar.
-6.  **Recordatorios post-guardado:**
-    *   Comprueba las imágenes en `public/images/blog/{{slug}}/`; si solo se encargó texto o faltó una herramienta, lista los archivos que aún deben añadirse antes de publicar — **cuenta la `heroImage` del frontmatter junto con las de cuerpo**, no solo estas últimas (confirmado en producción: el aviso decía "faltan 2" contando solo cuerpo, cuando el total real —hero incluida— era 3).
-    *   Si quedaron fuentes citadas sin URL (marcadas `[URL no verificada]` en el brief), lístalas explícitamente para que el usuario las confirme o agregue el enlace antes de publicar.
-    *   No hagas commit ni push a menos que el usuario lo pida explícitamente.
-7.  **Marca el estado del brief y del inventario** (una vez el artículo esté guardado y aprobado):
-    *   **En el brief** (`/briefings/briefing-{{slug}}.md`): agrega una línea de estado cerca del título, por ejemplo:
-        ```
-        > [!NOTE]
-        > **Estado:** ✅ Redactado y guardado en `src/content/blog/{{slug}}.mdx` el {{fecha}}.
-        ```
-        No muevas ni borres el archivo del brief a otra carpeta — sigue siendo referencia útil (fuentes verificadas, plan de imágenes) para una futura reescritura, y moverlo rompería cualquier ruta que ya se haya compartido hacia él (en un prompt, en otra conversación, etc.).
-    *   **En `INVENTARIO_CONTENIDO.md`:** registra redactado y validado localmente; cambia a `[x] *Título* (Publicado)` solo tras comprobar la URL pública del despliegue. Si es una reescritura de un artículo que ya existía, dilo explícitamente: `(Publicado — reescrito {{fecha}})`, para que quede claro que no es contenido nuevo desde cero y para que futuros brief no lo canibalicen por error.
-    *   No inventes un campo de estado más granular en el frontmatter (el schema de `src/content.config.ts` no lo soporta y `status` no filtra nada en el build de todas formas, ver punto 2 de esta fase): el gate real es *no escribir el archivo* hasta pasar la Fase 4, no una etiqueta dentro de un archivo ya escrito.
-
----
-
-## 🎯 Validación Final (Checklist)
-
-*   [ ] ¿El brief fue revalidado contra el `pilar` actual de `src/content.config.ts` y el estado real de `INVENTARIO_CONTENIDO.md`?
-*   [ ] ¿El frontmatter usa exclusivamente campos del schema estricto, sin campos inventados?
-*   [ ] ¿El cuerpo no incluye H1, hero image duplicada, TOC manual, JSON-LD manual, ni bloque de artículos relacionados?
-*   [ ] ¿AlertBox y FAQ están importados y se usan con las props correctas (`type`, `title`, `items`)?
-*   [ ] ¿Las preguntas frecuentes están dentro de `<FAQ>` (plegadas) y no hay ningún `<details open>` ni bloque plegable abierto por defecto?
-*   [ ] ¿Hero e imágenes de cuerpo tienen referencias válidas, alt/captions y, si se encargó producción visual, binarios reales verificados en navegador?
-*   [ ] ¿Los enlaces internos obligatorios del brief están presentes como enlaces reales dentro de los párrafos, y ningún spoke marcado `Pendiente` fue reemplazado por un enlace inventado?
-*   [ ] ¿Se cumple el material narrativo documentado y declarado, o la estructura de guía sin caso justificada?
-*   [ ] ¿Las fuentes que el brief documentó (en la cantidad justificada por su cobertura) están citadas por nombre en los H2 a los que fueron asignadas?
-*   [ ] ¿Existe el cuadro `<AlertBox type="info" title="Fuentes científicas y de autoridad">` de cierre, con enlaces reales y texto ancla descriptivo (no genérico, no URL en crudo)?
-*   [ ] ¿El cuerpo está sin firma `Autoría` manual (la pone `ArticleByline`) y las fechas del frontmatter son las reales?
-*   [ ] ¿Los párrafos se mantienen en ~3 líneas de pantalla móvil (aprox. 30-40 palabras) y hay un `H3` cada 150-200 palabras dentro de cada `H2`? ¿Se midió la densidad real con el comando de Fase 4 (media/mediana/%>50), no a ojo?
-*   [ ] ¿El conteo real de palabras del cuerpo está dentro del rango pactado en el brief, **y cada H2 individual está dentro de su propio target de la Sección 6** (no solo el total agregado), con el último H2 práctico especialmente protegido?
-*   [ ] ¿Se construyó la Tabla de Verificación (H2/real/target/desviación + densidad) y se mostró junto con el artículo, en vez de resumir "está dentro de rango" sin desglose?
-*   [ ] Si algo de lo anterior falló, ¿se evitó guardar el archivo en `src/content/blog/` (el gate de completitud, no el campo `status`, que no bloquea nada)?
-*   [ ] ¿`datePublished` coincide con la fecha real de guardado (o se mantuvo la fecha original si es una reescritura declarada)?
-*   [ ] ¿El guardado está autorizado en el encargo y se manejó correctamente cualquier colisión de slug?
-*   [ ] ¿Se avisó sobre las imágenes pendientes de colocar en `public/images/blog/{{slug}}/`, **contando la hero además de las de cuerpo**?
-*   [ ] ¿Se avisó sobre las fuentes citadas sin URL (`[URL no verificada]`), si las hubo?
-*   [ ] ¿Se marcó el estado en el brief (redactado + fecha + ruta del `.mdx`) y se actualizó `INVENTARIO_CONTENIDO.md` (título, casilla, y si aplica, "reescrito {{fecha}}")?
-
-
-### Comprobación del plan visual y sus recursos
-
-* [ ] Plan de cantidad/utilidad documentado; cada apoyo responde una pregunta distinta y está junto al pasaje correspondiente.
-* [ ] Recursos integrados en el artículo completo, o pendientes explícitos por alcance solo texto/herramienta no disponible; sin placeholders presentados como terminados.
-* [ ] Mismo perro en todas las escenas; edad senior comprobada **imagen por imagen y recorte por recorte a tamaño móvil**, rasgo por rasgo (canas en hocico/cejas/párpados, ojos hundidos, lomo y musculatura, postura), y anatomía revisada. Anotado en el informe de entrega.
-* [ ] Infografías y animaciones explican acciones del texto y respetan el número acordado.
-* [ ] Si se usa recorte realista, tiene transparencia limpia, marcadores adaptados al sujeto y el perro se ve senior sobre fondo claro y oscuro (el recorte es donde más fácil se escapa un perro joven).
-* [ ] Títulos y destacados legibles sobre sus fondos tanto en modo claro como oscuro.
-* [ ] Capturas móvil/escritorio, controles con teclado, pausa, movimiento reducido y alternativa sin JavaScript verificados.
-* [ ] Recursos y versiones responsive cargados; rutas nuevas cuando la caché pueda conservar una imagen anterior.
-* [ ] Sin autoplay; pausa real, reproducción finita y limpieza de temporizadores verificadas.
-* [ ] Impresión con y sin JavaScript muestra todos los pasos; señales de alarma visibles y anclas comprobadas.
-* [ ] Contraste calculado de títulos, resúmenes, notas y controles en claro/oscuro, incluidos desplegables abiertos.
-* [ ] Build completo, incluida la proyección Markdown, sin error por etiquetas no admitidas.
-* [ ] Entrega con tabla recurso/pregunta/H2/estado/evidencia y auditoría independiente cuando corresponda; no prometer mejora de retención sin datos.
+Encargar auditoría independiente contra el mismo hash y contrato. No marcar Publicado hasta verificar URL y recursos tras despliegue autorizado. Merge y producción siguen metodología; redactar no autoriza esas operaciones. Si se modifica un documento aprobado, revisar delta y dependencias con historial de rondas conservado.
