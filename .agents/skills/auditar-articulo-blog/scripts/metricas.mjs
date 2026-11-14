@@ -23,6 +23,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { parseEditorialContract } from './contrato.mjs';
 
 const args = process.argv.slice(2);
 const TODOS = args.includes('--todos');
@@ -107,7 +108,7 @@ function esProsa(l) {
  *  - nº de preguntas del FAQ
  */
 function parseBrief(raw) {
-  const b = { targets: [], fuentes: [], enlaces: [], min: null, max: null, faq: null };
+  const b = { targets: [], fuentes: [], enlaces: [], min: null, max: null, faq: null, editorial: parseEditorialContract(raw) };
 
   // Targets por sección, en orden de aparición.
   const reTarget = /^###\s+(?:\[)?(.+?)(?:\])?\s*[—-]\s*Target:\s*~?([\d.,]+)\s*palabras/gim;
@@ -129,7 +130,7 @@ function parseBrief(raw) {
   // trazabilidad de la Sección 9 a veces trae una paráfrasis en español que no
   // casa con nada del cuerpo; el título de aquí sí.
   const s3 = new Map();
-  const reS3 = /^\s*(\d)\.\s+\*\*Fuente \1[^*]*\*\*\s*(.+?)\s*$/gim;
+  const reS3 = /^\s*(\d+)\.\s+\*\*Fuente \1[^*]*\*\*\s*(.+?)\s*$/gim;
   while ((m = reS3.exec(raw)) !== null) {
     const linea = m[2];
     const titulo = (linea.match(/\*([^*]{12,})\*/) || [])[1] || linea.replace(/`[^`]*`/g, '').trim();
@@ -159,6 +160,7 @@ function parseBrief(raw) {
   // Nº de preguntas del FAQ definidas en el brief.
   const faqBlock = raw.match(/<FAQ items=\{\[([\s\S]*?)\]\}\s*\/>/);
   if (faqBlock) b.faq = (faqBlock[1].match(/\{\s*question:/g) || []).length;
+  if (b.editorial.version === '2.0') b.faq = b.editorial.faq;
 
   return b;
 }
@@ -425,15 +427,27 @@ function auditar(slug) {
 
   // ----- 5. COMPONENTES -----
   p(`## 5. Componentes`);
-  const boxes = [...raw.matchAll(/AlertBox type="(\w+)" title="([^"]*)"/g)].map((m) => ({ tipo: m[1], titulo: m[2] }));
+  const boxes = [...raw.matchAll(/<AlertBox\b([^>]*)>/g)].map(m => ({
+    tipo: m[1].match(/\btype=["']([^"']+)["']/)?.[1] ?? 'no-interpretable',
+    titulo: m[1].match(/\btitle=["']([^"']+)["']/)?.[1] ?? '',
+  }));
   const cuerpoBoxes = boxes.filter((b) => !/^Fuentes/.test(b.titulo));
   p(`  AlertBox de cuerpo: ${cuerpoBoxes.length} (${cuerpoBoxes.map((b) => b.tipo).join(', ') || '—'}) + cuadro de fuentes: ${boxes.length - cuerpoBoxes.length}`);
-  for (const t of ['info', 'danger', 'warning']) {
-    if (!cuerpoBoxes.some((b) => b.tipo === t)) v.bloqueantes.push(`falta AlertBox type="${t}" en el cuerpo`);
+  if (brief?.editorial.errors.length) v.bloqueantes.push(...brief.editorial.errors);
+  if (brief?.editorial.version === '2.0' && brief.editorial.boxes) {
+    for (const t of ['info', 'danger', 'warning']) {
+      const actual = cuerpoBoxes.filter(b => b.tipo === t).length;
+      if (actual !== brief.editorial.boxes[t]) v.bloqueantes.push(`AlertBox ${t}: ${actual}, contrato ${brief.editorial.boxes[t]}`);
+    }
+    if (cuerpoBoxes.some(b => !['info', 'danger', 'warning'].includes(b.tipo))) v.bloqueantes.push('tipo AlertBox no interpretable o inválido');
+  } else if (!brief || brief.editorial.version === 'legacy') {
+    for (const t of ['info', 'danger', 'warning']) {
+      if (!cuerpoBoxes.some(b => b.tipo === t)) v.bloqueantes.push(`falta AlertBox type="${t}" en el cuerpo`);
+    }
   }
   const faqN = (raw.match(/\{\s*question:/g) || []).length;
-  p(`  FAQ: ${faqN} preguntas${brief && brief.faq ? ` (brief: ${brief.faq})` : ''}`);
-  if (brief && brief.faq && faqN !== brief.faq) v.bloqueantes.push(`FAQ con ${faqN} preguntas, el brief define ${brief.faq}`);
+  p(`  FAQ: ${faqN} preguntas${brief && brief.faq !== null ? ` (brief: ${brief.faq})` : ''}`);
+  if (brief && brief.faq !== null && faqN !== brief.faq) v.bloqueantes.push(`FAQ con ${faqN} preguntas, el brief define ${brief.faq}`);
   if (/^#\s/m.test(lines.join('\n'))) v.bloqueantes.push('H1 `#` en el cuerpo (el layout ya lo genera)');
   for (const imp of ['AlertBox', 'FAQ']) {
     if (raw.includes(`<${imp}`) && !new RegExp(`import ${imp} from`).test(raw)) v.bloqueantes.push(`falta el import de ${imp}`);
