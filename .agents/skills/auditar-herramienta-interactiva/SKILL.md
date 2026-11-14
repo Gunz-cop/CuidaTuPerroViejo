@@ -1,99 +1,69 @@
 ---
 name: Auditar Herramienta Interactiva - Cuida Tu Perro Viejo
-description: Audita una herramienta interactiva ya construida del pilar /herramientas de cuidatuperroviejo.com como revisor externo — fuentes verificadas una a una contra el DOI, cálculo reproducido a mano, tono de los mensajes, responsive en tres tamaños, accesibilidad, animaciones, tarjeta para compartir, schema, enlazado e inventario de agentes. Úsala cuando el usuario pida revisar, auditar, validar o "ver si está lista" una calculadora, test o app del sitio, o comprobar el trabajo de otra sesión. Es una skill de EVALUACIÓN: entrega un veredicto y hallazgos ubicados, no corrige la herramienta.
+description: Evalúa una herramienta con evidencia y pruebas según su tipo: cálculo, registro u orientación. Comprueba tareas, datos, privacidad, accesibilidad e integración sin corregirla.
 ---
 
-# Habilidad: Auditar herramientas interactivas
+# Auditar una herramienta
 
-Eres un revisor externo, no quien la construyó. Busca motivos de rechazo. El
-estándar contra el que auditas está en
-[`crear-herramienta-interactiva`](../crear-herramienta-interactiva/SKILL.md):
-léelo primero.
+Leer [creación de herramientas](../crear-herramienta-interactiva/SKILL.md), [contrato 2.0](../references/contrato-utilidad-editorial.md), calidad/voz compartidas, AGENTS y [decisiones del propietario](../../../docs/herramientas/decisiones-del-propietario.md). No auditar un registro con criterios de edad, longevidad, etapas o tarjeta PNG obligatoria.
 
-**No corrijas nada.** Quien corrige adquiere interés en que su corrección sea
-la buena. Si hay que corregir, deja instrucciones para otra sesión.
+## Rol, contrato y rondas
 
-## Decisiones del propietario
+Revisor distinto de quien creó/corrigió. No modificar herramienta, fuentes, decisiones o inventarios: escribir informe e instrucciones para otra sesión. Registrar unidad, alcance, archivos/hash, autor, auditor y ronda R1–R5. Corregir no reinicia; aprobar cierra; fallo R5 detiene la unidad y dependientes. La siguiente unidad distinta empieza R1. Evidencia previa se identifica, no se presenta como prueba repetida.
 
-Antes de auditar, lee [`docs/herramientas/decisiones-del-propietario.md`](../../../docs/herramientas/decisiones-del-propietario.md).
-Lo que esté ahí es una decisión de producto del propietario, **no un
-hallazgo**: no lo marques como fallo ni como bloqueante. Si crees que una de
-esas decisiones causa un problema nuevo y concreto, ponlo en una sección
-aparte del informe, "Propuestas para el propietario", con el motivo.
+La auditoría de un cambio exclusivamente documental a una skill revisa contenido, enlaces y coherencia, sin fingir que se probó el producto. En herramienta funcional, aplicar las pruebas de abajo según contrato y tipo; no dispensar verificaciones indispensables para declarar LISTA.
 
-## Procedimiento
+Respetar decisiones del propietario documentadas. Una decisión de producto ya aceptada no es un defecto pendiente; si produce un problema nuevo concreto, registrarlo aparte como propuesta con evidencia, sin deshacerla de oficio. Las limitaciones de prueba se declaran y no se disfrazan de aprobación.
 
-Trabaja sobre la rama o el PR indicado. Identifica los tres archivos: lógica
-en `src/lib/`, componente en `src/components/tools/` y página en
-`src/pages/herramientas/`.
+## A. Tarea y método
 
-### A. Evidencia (bloqueante)
+Identificar página, componente, módulos puros y contrato de capacidades compartidas. Confirmar qué ya existía, qué cambió y qué se preserva. Evaluar E01–E08: necesidad, resultado comprensible, acción/siguiente paso, contenido sin relleno, fuentes y recursos reales, voz/procedencia y versión.
 
-1. Lista cada cifra o umbral que usa la lógica.
-2. Para cada uno, localiza la fuente citada y **abre el DOI/PMC**. Confirma que
-   la cifra aparece tal cual (o la derivación es correcta). Comprueba autores,
-   año, revista y DOI.
-3. Marca como fallo: cifra sin fuente, fuente que no dice eso, DOI roto,
-   fuentes no revisadas por pares presentadas como estudios, o ajuste propio
-   presentado como dato de un estudio.
+Determinar tipo: cálculo, registro u orientación editorial. Revisar que se identifique como tal y sus límites coincidan con lo implementado. No tratar un ajuste editorial como diagnóstico validado, ni un total alto como garantía de bienestar. No suponer que calidad de vida significa exclusivamente final de vida.
 
-### B. Cálculo (bloqueante)
+## B. Evidencia y lógica
 
-1. Reproduce a mano al menos 4 casos: mínimo, caso típico, límite entre etapas
-   y caso por encima de la media.
-2. Compara con lo que muestra la herramienta y con la tabla de la página: deben
-   coincidir y salir de la misma función en `src/lib/`.
-3. Si la portada u otra página calcula lo mismo, comprueba que usan el mismo
-   módulo.
+Por fórmula, cifra o umbral: abrir fuente revisada por pares/guía veterinaria, confirmar identidad, cifra/pasaje, población, aplicabilidad, derivación y licencia cuando se adapta una escala. Validar ajustes propios claramente declarados; otra app no es respaldo clínico. Si hay evidencia parcial, comprobar que el resultado se limita a lo leído.
 
-### C. Tono (bloqueante si alarma)
+Probar por tipo con entrada/esperado/observado, sin copiar esperado de la misma función:
 
-- ¿Aparece alguna cifra tipo cuenta atrás ("% de vida vivida", "le quedan")?
-- ¿Se dice que la media no es una fecha límite?
-- ¿El caso por encima de la media se presenta en positivo?
-- ¿Cada resultado lleva a una acción y aclara que no sustituye al veterinario?
+- **Cálculo:** mínimo, típico, cada frontera relevante, fuera de rango/inválido, unidades y redondeo. Reproducir a mano o con referencia independiente; coherencia entre resultado y tabla/página.
+- **Registro:** inicio vacío, respuestas extremas/incompletas, advertencia independiente de total, varias fechas/zonas horarias, orden, comparación descriptiva, notas y datos guardados anteriores. Guardar/recargar/borrar y comprobar exportación fiel.
+- **Orientación:** recorrer combinaciones/reglas relevantes, incluyendo casos que exigen consulta o no permiten una recomendación. Confirmar procedencia editorial y que las recomendaciones no aparenten prescripción individual.
 
-### D. Experiencia y diseño
+La lógica web/API/MCP debe coincidir donde el contrato la comparte. No exigir una API nueva si no se encargó. Si cambió una respuesta pública, comprobar versión y compatibilidad; si no cambió, preservar paridad.
 
-Captura con Playwright a 390, 820 y 1366 px, en claro y oscuro:
+## C. Datos, recursos y privacidad
 
-- Nada se superpone (texto sobre la imagen del hero, barras sobre botones).
-- En móvil, los datos imprescindibles aparecen sin mucho scroll y la barra
-  fija muestra el resultado sin tapar el botón del asistente.
-- Desktop en dos columnas alineadas.
-- Animaciones fluidas y apagadas con `prefers-reduced-motion`.
-- Tarjeta para compartir generada y legible.
-- Consola sin errores.
+Revisar versionado, límites y recuperación del almacenamiento; prueba con localStorage no disponible y datos corruptos. Confirmar que no se pierdan registros silenciosamente y que la persona reciba una alternativa para conservarlos. Local no significa sincronizado ni recordatorio automático de servidor.
 
-### E. Accesibilidad
+Notas, respuestas de salud, nombre del perro, correos y otros datos personales no se filtran a telemetría ni URL compartida. Comprobar la impresión/PDF/texto/tarjeta realmente obtenidos: fecha, contenido, límites y legibilidad. Un botón o HTTP 200 no prueba entrega; no realizar envíos externos durante las pruebas.
 
-`aria-live` en el resultado, texto para lectores de pantalla, etiquetas en
-todos los campos, foco visible y contraste suficiente.
+Cada recurso anunciado debe tener ruta, tarea y prueba. Si el alcance solo planifica un recurso, registrar el gate y no calificarlo disponible. Verificar que las funciones nuevas no dupliquen las que ya funcionan.
 
-Además: ningún texto de la herramienta dentro de `<figure>` (la proyección
-para agentes lo descarta).
+## D. Voz, interacción y accesibilidad
 
-### F. SEO y página
+Mensajes cálidos, precisos y con siguiente paso útil; sin cuenta atrás, pronóstico individual, años restantes ni bandas clínicas sin respaldo. Precauciones relevantes visibles y separadas del total; no esconderlas para simplificar la interfaz.
 
-H1 útil, ≥ 3 H2 editoriales, sección `#metodo` con fuentes enlazadas, FAQ.
-JSON-LD válido (`WebPage` con `citation`, `BreadcrumbList`,
-`SoftwareApplication`, `FAQPage`) y coherente con el texto visible.
+Probar 390, 820 y 1366 px, claro/oscuro, objetivos ≥44 px, contraste de texto ≥4,5:1, etiquetas/agrupación, teclado y foco, anuncios accesibles y consola. Formulario/resultado encontrables, sin scroll horizontal ni superposiciones. No imponer dos columnas, barra fija, animación o tarjeta a todo tipo de registro.
 
-### G. Integración
+Movimiento reducido, controles y pausa real donde haya animación; alternativas de lectura/impresión y recorrido sin JS cuando corresponda. Ilustración según AGENTS y dirección visual, nunca perros/personas dibujados a mano en SVG/CSS. Abrir imágenes y tarjetas; confirmar identidad, edad, anatomía y alt. Una captura recibida no reemplaza pruebas que no se ejecutaron.
 
-Tarjeta en el pilar `/herramientas`, enlaces desde los pilares y guías
-afines, `TOOL_LINKS`, ruta clasificada en
-`scripts/agent-readiness/inventory.mjs`, y todas las verificaciones de la
-sección 8 de la skill creadora en verde.
+## E. Página e integración
 
-## Informe
+H1 y apertura responden la necesidad; método/fuentes en `#metodo`, límites, FAQ y schema coherentes con contenido real (FAQPage solo si corresponde). Bibliografía complementa explicaciones; número de H2/cajas por utilidad y contrato, no mínimo universal.
 
-Entrega:
+Destinos pertinentes desde herramienta/pilares/artículos, rutas reales y TOOL_LINKS según necesidad; no CTA universal a paliativos o chequeo. Usar skill de enlazado. Revisar inventario de objetos y clasificación de rutas de agent-readiness; golden/manifest actualizados y delta semántico revisado si cambió HTML contractual. Confirmar proyección útil de texto/enlaces, sin ocultarlos en figure. No regenerar fixtures ciegamente.
 
-1. **Veredicto:** `LISTA`, `LISTA CON CAMBIOS MENORES` o `NO LISTA`.
-2. **Hallazgos** ordenados por gravedad (bloqueante, importante, menor), cada
-   uno con archivo:línea o captura, qué falla, por qué importa y qué debe
-   cambiar.
-3. **Tabla de fuentes:** fuente, DOI, cifra usada, ¿verificada? (sí/no/parcial).
-4. **Casos reproducidos:** entrada, esperado, mostrado.
-5. **Instrucciones para la sesión que corrija**, autocontenidas.
+Para implementación funcional verificar evidencias y ejecutar los controles pertinentes de la sección 6 de la skill creadora: build explícito, tests de lógica/paridad, agent-readiness/proyección y astro check según alcance. Una omisión necesita razón y no puede ocultar una prueba indispensable. Una edición de instrucciones sin código no requiere build de producto.
+
+## Informe y decisión
+
+- Veredicto LISTA / LISTA CON CAMBIOS MENORES / NO LISTA con motivo. No esconder una fuente central sin comprobar, riesgo, pérdida de datos o prueba indispensable bajo cambios menores.
+- Unidad, ronda, versión/hash, alcance y autor/auditor distintos.
+- Hallazgos por prioridad con archivo:línea/captura, prueba, efecto y corrección exacta.
+- Tablas E01–E08 y fuente→afirmación→pasaje→estado; datos/privacidad y recurso→prueba→resultado.
+- Casos reproducidos entrada/esperado/observado; capturas/interacciones/exportaciones propias frente a evidencia recibida; limitaciones claras.
+- Qué preservar, instrucciones autocontenidas para corregir y dependencias afectadas.
+
+No cambiar el objeto auditado ni marcarlo publicado. Verificación local no acredita despliegue; merge/producción y comprobación pública siguen la metodología y autorización correspondientes.

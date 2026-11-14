@@ -1,8 +1,6 @@
 # Taxonomía de fallos de brief
 
-Todos los casos de este documento ocurrieron en `cuidatuperroviejo.com` durante
-la generación o el consumo real de briefs. Ninguno es hipotético. Sirven para
-dos cosas: reconocer el patrón rápido, y no inventar hallazgos donde no los hay.
+Combina casos históricos documentados del sitio con criterios actuales del contrato 2.0. Los casos ayudan a reconocer patrones; los criterios nuevos no se presentan como incidentes observados. Las cantidades de los ejemplos no son cuotas normativas.
 
 El orden es de gravedad, no de frecuencia. La diferencia con la taxonomía de la
 skill de artículos ([auditar-articulo-blog](../../auditar-articulo-blog/references/taxonomia-fallos.md)):
@@ -85,31 +83,16 @@ asignada sugieren contenido escrito desde memoria general, no source-first.
 
 ## P1 — Excepción aplicada en silencio
 
-La skill generadora define excepciones explícitas (menos de 6 fuentes fuertes con
-aprobación del usuario; pilar sin dos spokes publicados). El fallo no es aplicar
-la excepción sino **omitir el paso de documentarla y preguntar**: el brief llega
-con 4 fuentes débiles sin explicar por qué, o con spokes inventados para no dejar
-el campo pendiente.
+El contrato 2.0 admite cantidades justificadas, incluidas cero cajas o FAQ y guía sin caso. La omisión es dejar sin motivo una decisión de alcance, omitir un riesgo pertinente o fingir disponible un recurso pendiente. No es fallo tener menos de seis fuentes, no tener dos spokes o no añadir una calculadora que no resuelve la tarea.
 
-**Cómo detectarlo:** contrastar cualquier desviación del estándar (conteo de
-fuentes, tabla de enlazado incompleta) con la existencia de su justificación
-escrita en el propio brief.
-
+**Cómo detectarlo:** comprobar intención, evidencia, riesgo y justificación, no aplicar una cuota del ejemplo histórico.
 ---
 
 ## P1 — Arco narrativo sin cierre
 
-El caso real aparece en Intro y quizá en un H2 intermedio, pero falta el tercer
-momento: el H2 final dedicado a cerrar la historia antes de Conclusión/FAQ.
+Cuando se encargó una historia documentada, sus momentos aparecen en los H2 prácticos pero falta el cierre documentado o sus límites. El cierre va dentro de la última sección útil o conclusión; no se reserva un H2 narrativo propio. La guía sin caso no necesita desenlace.
 
-Este es exactamente el punto que luego más falla en los artículos (500/700,
-314/700, 272/700 en los tres primeros): un brief que no reserva sección propia
-para el cierre garantiza ese resultado.
-
-**Cómo detectarlo:** localizar el último H2 antes de Conclusión/FAQ y verificar
-que su objetivo menciona explícitamente retomar y resolver la historia. Si hay
-varios sujetos, comprobar que se declaró el hilo narrativo principal.
-
+**Cómo detectarlo:** seguir el hilo principal desde la apertura hasta su cierre integrado y contrastarlo con los hechos disponibles. Si hay varios sujetos, comprobar cuál se declaró principal. No inventar recuperación ni añadir una sección para completar volumen.
 ---
 
 ## P1 — Prosa final dentro del brief
@@ -143,15 +126,27 @@ AlertBox anticipados como borrador corto.
 
 ## Lo que NO es un hallazgo
 
-- **Menos de 6 fuentes**, si la limitación fue documentada y aprobada (Fase 2.5).
-- **Spokes `Pendiente`** en la Sección 5 (Fase 3.3).
+- **Fuentes suficientes en la cantidad justificada**, sin cuota ni aprobación adicional solo por ser menos de seis; una laguna central sin respaldo sigue bloqueando.
+- **Destinos pendientes sin URL enlazable**, documentados en la sección de enlaces.
 - **Fuentes marcadas `[URL no verificada]` o `[Cita bibliográfica sin verificar]`**:
   es cumplimiento de la regla anti-alucinación, no pereza. El fallo sería lo
   contrario.
-- **Historia real depurada de muletillas**: es la limpieza prevista por Fase 1.4,
+- **Historia real depurada de muletillas**: es la limpieza de transcripción permitida,
   siempre que los hechos queden intactos.
 - **Títulos de H2 distintos al template**: el brief planifica contenido, no
   literalidad de encabezados.
 - **Casillas de la Sección 10 marcadas**: su estado no prueba nada en ningún
   sentido — ni su marcado es mérito ni su vacío es descuido automático. Lo que
   cuenta es la realidad que cada casilla afirma.
+
+## P1 — Contrato formal sin tarea útil
+
+Hay secciones y targets pero la pregunta principal no obtiene respuesta o el lector debe pasar por una explicación extensa antes de saber qué observar/hacer. Localizar la decisión ausente y su efecto; no rechazar por preferencia de estilo.
+
+## P1 — Recurso o siguiente paso improcedentes
+
+PDF que repite el texto sin tarea, CTA de chequeo preventivo ante urgencia, enlace a una herramienta por cuota o promesa sin responsable/prueba. Comprobar el recorrido y pedir una solución específica, incluida omisión justificada si es lo útil.
+
+## Contratos anteriores
+
+Las incidencias históricas se conservan como evidencia; no convierten sus cantidades en reglas actuales. Identificar versión/adenda antes de auditar. La siguiente unidad empieza en R1; correcciones de una unidad mantienen su contador de hasta cinco.

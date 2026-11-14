@@ -1,171 +1,75 @@
 ---
 name: Crear Herramienta Interactiva - Cuida Tu Perro Viejo
-description: Crea o rediseña una herramienta interactiva (calculadora, test, selector, app) para el pilar /herramientas de cuidatuperroviejo.com — lógica respaldada por fuentes revisadas por pares, mensajes cálidos, diseño responsive con animaciones CSS modernas, tarjeta para compartir, página con contenido editorial, método y fuentes, y registro en el inventario de agentes. Úsala siempre que el usuario pida crear, mejorar, rediseñar, animar o "llevar el estilo nuevo" a una herramienta o app del sitio (edad, calidad de vida HHHHHMM, movilidad o una nueva), aunque no diga la palabra skill. Para revisar una herramienta ya hecha usa auditar-herramienta-interactiva.
+description: Diseña o mejora cálculos, registros y ayudas de decisión con evidencia, tareas reales, datos y recursos verificados. Respeta decisiones del propietario y separa revisión independiente.
 ---
 
-# Habilidad: Crear herramientas interactivas
+# Crear o mejorar una herramienta
 
-Una herramienta del sitio tiene que ser **real y útil antes que bonita**. Lo
-bonito atrae, pero lo que hace que Google la posicione y que una persona confíe
-es que el cálculo esté respaldado y explicado. La referencia viva de este
-estándar es la calculadora de edad:
+Leer AGENTS, metodología, [contrato editorial 2.0](../references/contrato-utilidad-editorial.md), calidad/voz compartidas y [decisiones del propietario](../../../docs/herramientas/decisiones-del-propietario.md). Trabajar en rama propia. No tocar artículos, configuración de migración o producción dentro de este encargo. La revisión de herramientas es una unidad separada de la redacción de blog.
 
-- Lógica: `src/lib/dog-age.ts`
-- Componente: `src/components/tools/DogAgeTool.astro`
-- Página: `src/pages/herramientas/calculadora-edad-perro.astro`
+## 1. Especificar la tarea antes de diseñar
 
-Léelas antes de empezar; copia sus patrones en vez de inventar otros.
+Inventariar página, componente, lógica, funciones existentes y datos guardados. Declarar qué falta y qué se conserva; no reconstruir historial/PDF/recordatorio que ya existen. Datos de demanda disponibles ayudan a elegir; no inventar cifras ni bloquear el proceso interno por esperar Search Console.
 
-## 0. Antes de tocar nada
+Definir público, situación, entrada, salida útil, siguiente paso y prueba de tarea. Registrar contrato, alcance/archivos, versión, exclusiones y E01–E08 aplicables a la página. Revisar 2–3 referencias equivalentes si aportan información; documentar acceso limitado y no atribuirles funcionamiento que no se probó. Competencia inspira diseño, no valida clínica.
 
-1. Trabaja en una **rama propia**. `main` despliega a producción (Cloudflare
-   Workers Builds). Si la migración de stack sigue abierta, lee
-   `docs/migracion-stack/README.md` antes de tocar config.
-2. Las herramientas se trabajan en paralelo a la redacción de artículos: no
-   toques `src/content/blog/`. El único archivo compartido delicado es
-   `src/data/internal-links.ts` (usa la skill `enlazado-interno-sitio`).
-3. Revisa a la competencia (2–3 herramientas equivalentes) y anota qué dato
-   útil nadie muestra bien. Ese hueco es la propuesta de valor.
+Clasificar la herramienta:
 
-## 1. Evidencia primero
+- **Cálculo:** fórmula, rangos, unidades, redondeo, supuestos y datos de referencia.
+- **Registro:** observaciones, fecha/contexto, guardado, comparación descriptiva, exportación y límites del dato.
+- **Orientación editorial:** reglas de selección, procedencia y límites; no presentarla como escala diagnóstica validada.
 
-- Cada número que la herramienta use (umbrales, esperanzas de vida, tramos,
-  fórmulas) debe salir de **publicaciones con revisión por pares o guías de
-  sociedades veterinarias** (AAHA, WSAVA, ACVIM…). Nada de blogs ni de
-  calculadoras de terceros como fuente.
-- **Verifica cada fuente una a una**: abre el DOI/PMC y confirma que la cifra
-  está ahí. Anota autores, revista, año, volumen y DOI exactos. Si no pudiste
-  confirmar una cifra, no la uses.
-- Si algo es un **ajuste propio** (p. ej. equiparar la esperanza de vida a
-  80 años humanos), dilo explícitamente en la página. Nunca lo presentes como
-  dato de un estudio.
-- Si la lógica ya existe en otra parte del sitio (portada, MCP), unifícala en
-  el módulo de `src/lib/` para que todo dé el mismo resultado.
+La calculadora de edad (`dog-age.ts`, `DogAgeTool.astro` y su página) muestra patrones técnicos, no etapas, mensajes, ilustración o fórmula obligatorios para todas. HHHHHMM no hereda cuentas de edad, «longevo» o porcentajes de bienestar.
 
-## 2. Lógica en `src/lib/`
+## 2. Evidencia, límites y decisiones
 
-- Funciones puras en TypeScript, sin DOM, para que la web y el MCP
-  (`src/scripts/agent-tools.ts`, `src/agent-api/capabilities.json`) compartan
-  el resultado. Exponer la herramienta en el MCP es un trabajo aparte con su
-  propio contrato: no lo mezcles en el mismo PR salvo que se pida.
-- Comentario de cabecera con el método y los DOI.
-- Constantes con nombre (`SENIOR_FRACTION = 0.75`), no números mágicos.
+Verificar cada fórmula, cifra o umbral contra publicación revisada por pares o guía veterinaria aplicable: título, autores, año, DOI/URL, pasaje, población, afirmación y límites. No rellenar datos desde memoria ni usar otra calculadora/blog como evidencia primaria. Identificar ajustes propios por separado; verificar la licencia de escalas y cuestionarios antes de adaptarlos.
 
-## 3. Tono: cálido, nunca alarmante
+Un gráfico de registros describe lo anotado; no diagnostica evolución clínica. No introducir bandas/colores por una suma, equivalencias o nuevos umbrales para hacer más atractivo el resultado. Una advertencia crítica no desaparece por total alto. Definir manejo de datos incompletos y frecuencia de recordatorio como agenda, no pauta médica.
 
-Antes de tocar una herramienta existente, lee
-[`docs/herramientas/decisiones-del-propietario.md`](../../../docs/herramientas/decisiones-del-propietario.md):
-son decisiones del propietario (por ejemplo, que el perro senior duerma con
-"Zzz") y no se deshacen sin que él lo pida. Cuando el propietario tome una
-decisión nueva sobre una herramienta, regístrala ahí.
+Respetar las decisiones del propietario documentadas. Si surge un conflicto nuevo y concreto, explicarlo y proponer una decisión; no deshacerla silenciosamente ni tratarla como fallo antiguo pendiente. Mensajes cálidos y útiles, sin cuenta atrás, años restantes ni pronósticos individuales. El resultado tiene una acción pertinente y un límite comprensible; no saturar con salvedades repetidas ni esconder urgencias.
 
-El público convive con perros mayores y a menudo con miedo a perderlos.
+## 3. Lógica y datos
 
-- **Nunca** muestres cifras que suenen a cuenta atrás: "% de vida vivida",
-  "años que le quedan", "probabilidad de morir".
-- Una media **no es una fecha límite**: dilo en la página.
-- Al superar la media, enmárcalo en positivo ("Senior longevo: habla muy bien
-  de sus cuidados") y lleva el foco al confort y al vínculo.
-- Cada resultado termina en una acción concreta: un enlace a la guía o
-  herramienta que corresponde a ese resultado.
-- Siempre: "No sustituye una valoración veterinaria".
+Funciones puras en `src/lib/`, constantes nombradas y fuente/derivación documentadas; DOM en componente. Reutilizar lógica compartida por web/API/MCP si el alcance afecta resultados, con prueba de paridad. Añadir o cambiar capacidades MCP es encargo específico; no modificar contrato público accidentalmente.
 
-## 4. Componente en `src/components/tools/`
+Para registros: definir formato/versionado, límites, orden de fechas y zona horaria, comparación de datos, notas, borrado, exportación y compatibilidad con entradas anteriores. `localStorage` puede fallar: capturar errores, preservar lo recuperable y explicar al usuario cómo conservar su registro si no pudo guardarse. Probar vacío, datos corruptos, múltiples fechas y almacenamiento no disponible. No exponer respuestas, notas, nombre del perro u otros datos personales en telemetría o URLs compartidas. Un almacenamiento local no implica sincronización entre dispositivos ni recordatorio de servidor.
 
-**Tecnología:** Tailwind 4 y CSS moderno para lo visual; JS solo para lógica,
-eventos y la tarjeta. Nada de React ni librerías de animación.
+Nuevas reglas o lógica requieren tests de casos reales de borde; no tests que solo repitan la implementación. Para una edición de instrucciones de esta skill basta comprobar contenido/enlaces/coherencia; no fingir pruebas del producto ni recompilar sin cambio funcional.
 
-- Números que cuentan con `@property --num` + `counter()`.
-- Transiciones de estado con propiedades personalizadas (`--pos`, `--gray`…)
-  registradas con `@property` y `data-stage` en el contenedor.
-- Microanimaciones con keyframes (respirar, parpadear, aparecer).
-- `@media (prefers-reduced-motion: reduce)` apaga toda animación.
-- Ilustración SVG propia que reaccione al resultado (como el perrito que
-  envejece). Colores con los tokens `--color-brand-*`; prueba modo oscuro.
+## 4. Interfaz, ilustraciones y compartir
 
-**Responsive (obligatorio en 390, 820 y 1366 px):**
+Usar componentes Astro y CSS acotado; JS para estado/datos. Sin framework o librería nueva por decoración. Títulos y entradas comprensibles, resultado próximo, formulario progresivo cuando ayude; no imponer dos columnas, barra fija o animación a todos los registros.
 
-- Móvil: primero los datos imprescindibles; los opcionales (nombre) al final.
-  Nada de girar el teléfono ni de scroll horizontal. Botones ≥ 44–48 px.
-- Barra fija inferior en móvil con el resultado mientras se ajusta el
-  formulario, que no tape el botón flotante del asistente (`right: 5.25rem`).
-- Desktop (≥ 56rem): dos columnas, formulario | resultado.
-- Hero: en desktop la imagen a la derecha con `mask-image` y el texto en el
-  hueco; en móvil y tablet (< 64rem) un recorte de la imagen con el texto
-  debajo, nunca encima.
+390, 820 y 1366 px, claro/oscuro: no scroll horizontal, overlays ni controles tapados. Campos con etiquetas, agrupación semántica, teclado/foco, objetivos ≥44 px, contraste de texto ≥4,5:1 y cambios de resultado anunciados de forma apropiada. Movimiento reducido, sin animación que oculte tareas ni bloquee lectura.
 
-**Proyección para agentes:** nunca envuelvas texto (títulos, pasos, resultados)
-en `<figure>`: la proyección Markdown solo conserva la imagen y el
-`<figcaption>` de un figure y el resto desaparece para los agentes de IA (y
-falla `projection-semantic`). Usa `<section>` para bloques con texto.
+Ilustraciones mediante imagen de referencia/generación según AGENTS; nunca dibujar perros/personas/escenas a mano en SVG/CSS. Iconos geométricos simples sí. Mantener identidad/edad y alternativas de texto; la ilustración no es paciente ni evidencia clínica. Si falta recurso, marcador sobrio identificado, nunca darlo por terminado. Encargo visual con escena, estilo, paleta, fondo, proporción y capas antes de producir.
 
-**Accesibilidad:** `role="status"` + `aria-live="polite"` en el resultado,
-texto `sr-only` con el resultado completo, `fieldset/legend`, foco visible.
+Compartir responde a una tarea: texto/WhatsApp, impresión/PDF o tarjeta PNG si procede. No exigir tarjeta clínica o un PNG de 1080×1350 cuando el resultado útil es un informe. Comprobar contenido exportado, fecha, límites y privacidad; `navigator.share` con fallback cuando se use. Un clic de imprimir no prueba PDF guardado o enviado. No realizar envíos externos al probar.
 
-**Compartir:** tarjeta PNG 1080×1350 con `canvas` (imagen del hero, resultado,
-etapa, URL del sitio). `navigator.share({ files })` si existe; si no, descarga.
+## 5. Página y descubrimiento
 
-## 5. Imagen hero
+Página `src/pages/herramientas/<slug>.astro`: respuesta clara a la necesidad, herramienta accesible pronto, explicación breve, método/fuentes `#metodo`, límites y FAQ por dudas reales. Cantidad de H2, cajas y recursos por función, no cuota ni texto SEO de relleno. Schema válido y coherente con lo visible (WebPage, BreadcrumbList, SoftwareApplication y FAQPage solo si corresponde); fuentes declaradas antes del schema que las usa.
 
-Pídela al usuario con un prompt para ChatGPT u otro generador. Plantilla:
+Mantener enlaces pertinentes desde pilar de herramientas y otros pilares, `TOOL_LINKS` y tarjetas si existen, siguiendo skill de enlazado. Cada destino corresponde a una tarea; no llevar siempre a paliativos o chequeo. No modificar portada por defecto. Recursos y archivos nuevos se añaden al inventario de objetos.
 
-> Ilustración horizontal 16:9, estilo acuarela cálida y moderna, paleta verde
-> salvia, crema y terracota suave. [ESCENA DE LA HERRAMIENTA]. Sin texto, sin
-> marcas de agua. Mucho espacio limpio a la izquierda para un titular. Luz
-> suave, tono tierno y optimista.
+Clasificar rutas nuevas en `scripts/agent-readiness/inventory.mjs`; no exponer una API por crear una página. Si el HTML contractual cambia, revisar proyección DOM/Markdown, golden fixtures y manifest relacionados. Regenerar no equivale a aprobar: revisar el delta semántico y evitar texto útil dentro de `<figure>` (proyección conserva imagen/figcaption).
 
-Genera con Pillow, en `public/images/herramientas/`: `<slug>-hero.webp`
-(1200×675), `<slug>-hero-400.webp` (400×225, para `buildSrcset`) y
-`<slug>-hero-movil.webp` (recorte de la zona con contenido, ~900 px de ancho).
+## 6. Verificar y entregar
 
-## 6. Página en `src/pages/herramientas/<slug>.astro`
-
-1. Hero con H1 en forma de pregunta que la gente busca.
-2. El componente, inmediatamente después.
-3. Contenido editorial (≥ 3 H2 útiles): mito o duda frecuente, tabla de
-   referencia generada desde `src/lib/` (no duplicar cifras a mano), qué hacer
-   según el resultado con enlaces a pilares y guías.
-4. `<h2 id="metodo">` **Método y fuentes**: piezas del cálculo, qué es ajuste
-   propio y lista de fuentes con DOI enlazado y para qué se usó cada una.
-5. Preguntas frecuentes (alimentan el `FAQPage`).
-6. Schema JSON-LD: `WebPage` (con `citation` de las fuentes), `BreadcrumbList`
-   Inicio › Herramientas › X, `SoftwareApplication`, `FAQPage`. Declara las
-   fuentes **antes** del objeto schema en el frontmatter.
-7. Breadcrumb visible a partir de desktop.
-
-## 7. Integración en el sitio
-
-- Tarjeta en `toolCards` de `src/pages/[pilar].astro` y mención en
-  `src/content/pilares/herramientas.mdx` (tabla "¿cuál uso primero?").
-- Enlaces desde los pilares relacionados y, si encaja, CTA desde la portada.
-- `TOOL_LINKS` en `src/data/internal-links.ts` para los artículos afines.
-- **Inventario de agentes:** toda página nueva debe clasificarse en
-  `scripts/agent-readiness/inventory.mjs` (`DISCOVERY_ONLY_ROUTES` si no es
-  herramienta del MCP) o el build falla con `UNCLASSIFIED_PAGE`. Si cambias el
-  HTML de un pilar o herramienta con golden, regenera el fixture de
-  `tests/agent-readiness/fixtures/f2/` y su `manifest.json`, y revisa los
-  perfiles de `projection-dom.mjs` y `tests/agent-readiness/projection-semantic.mjs`.
-
-## 8. Verificación antes de subir
+Para cambio funcional, según alcance y CI del repositorio:
 
 ```bash
-npx astro build                       # incluye las integraciones de agent-readiness
+npx astro build
 npm test
 node --test tests/agent-readiness/*.test.mjs
 node --test tests/agent-readiness/projection-growth.mjs
 node tests/agent-readiness/projection-semantic.mjs dist
-npx astro check                       # 0 errores
+npx astro check
 ```
 
-Además, capturas con Playwright (Chromium en `/opt/pw-browsers`) a 390, 820 y
-1366 px, probando varios valores extremos (cachorro, valor máximo, caso
-"longevo"), la tarjeta descargada y la consola sin errores. Revisa las
-capturas tú mismo antes de enseñarlas.
+Build explícito sin hooks de indexación. Añadir casos del cálculo o registro, paridad si aplica, datos previos/no disponibles, interacción, exportación real, teclado, tres tamaños, ambos temas, reduced-motion y consola. Ajustar comandos solo con motivo documentado y declarar limitaciones; no afirmar que build prueba uso.
 
-Después: PR en borrador con la vista previa de Cloudflare, y fusionar solo
-cuando el usuario lo apruebe y el CI esté en verde.
+Entregar fuente→afirmación, E01–E08/tarea→prueba, archivos/objetos, capturas reales, casos entrada/esperado/observado, exportaciones, versión y límites. Actualizar decisiones nuevas cuando el propietario las adopte e inventarios pertinentes; no marcar publicación con una prueba local.
 
-## 9. Separa los roles
-
-Quien crea la herramienta no la audita. Al terminar, recomienda auditarla en
-otra sesión con `auditar-herramienta-interactiva`.
+PR y auditoría independiente con [auditar-herramienta-interactiva](../auditar-herramienta-interactiva/SKILL.md). Cinco rondas máximo por unidad: detener al aprobar o si falla R5; corregir no reinicia. Quien crea/corrige no audita. Merge y operaciones en producción requieren su autorización propia según metodología.

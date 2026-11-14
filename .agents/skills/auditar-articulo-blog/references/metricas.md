@@ -1,168 +1,27 @@
-# Cómo leer la salida de `metricas.mjs`
+# Qué comprueba metricas.mjs
 
-El script compara el `.mdx` contra `briefings/briefing-{{slug}}.md`. Sin brief no
-hay contrato y casi nada es medible: lo avisa y sigue con lo poco que puede.
+El script es un control mecánico del artículo y su brief, no una aprobación editorial ni clínica. Ejecutar `node .agents/skills/auditar-articulo-blog/scripts/metricas.mjs <slug> --strict`. Los contratos se buscan en `briefings/briefing-<slug>.md`; si se usa adenda con otro nombre, registrar y preparar el contrato consolidado de esa versión en esa ruta antes de ejecutar. No medir contra un brief antiguo por conveniencia.
 
----
+## Contrato y compatibilidad
 
-## 1. Volumen y distribución
+Sin cabecera de versión conserva el control histórico de tres tipos de caja de cuerpo. Con `Contrato editorial: 2.0` requiere una declaración única válida `Componentes de cuerpo: info=0; danger=1; warning=0` y `FAQ: N preguntas.` (N entero ≥0). Cantidades de cuerpo entre 0 y 9; bibliografía aparte. Declaración ausente, duplicada, mal formada o versión no soportada bloquea: no se degrada a legado silenciosamente. Compara cantidades exactas, incluyendo cero; evalúa función/justificación a mano.
 
-**Método de conteo.** Todo lo que va tras el segundo `---`, sin las líneas
-`import` ni los `---` sueltos. Es el método que fija el contrato de entrega. Un
-`wc -w` sobre el archivo entero da unas 100 palabras de más (frontmatter e
-imports) y **no es comparable**: es justo el margen con el que un artículo por
-debajo del mínimo puede parecer que llega.
+Secciones 1–11 y targets `### [H2 - Título] — Target: ~N palabras`; rango `intervalo MIN–MAX palabras` o formato antiguo Entre MIN y MAX palabras. Tabla de fuentes `# | Fuente | H2 asignado | ¿Citada?`, con número separado o integrado. Fichas de más de nueve fuentes admitidas. Sin rango, targets o fuentes interpretables, bloquea en lugar de declarar APTO sobre controles omitidos.
 
-**La tabla por sección es la parte que importa.** El total puede estar dentro de
-rango con la distribución rota. Caso real: un artículo cumplía el total mientras
-su H2 de higiene iba a +57 % y el H2 de cierre narrativo a −55 %, compensándose.
+## Volumen y legibilidad
 
-**Emparejamiento posicional.** El brief define N secciones en orden
-(Introducción, H2-1…H2-n, Conclusión) y el script las empareja por posición, no
-por título, porque el redactor casi siempre reformula los títulos. Si los
-títulos de una fila no se corresponden, el artículo **fusionó o reordenó
-secciones**: eso es un hallazgo en sí mismo y hay que mirarlo a mano.
+Cuenta cuerpo tras segundo `---`, sin imports ni separadores. Por sección compara real/target ±15%, además del total. Empareja por posición: verificar a mano si el título cambió y si hay omisión/reordenación; no tratar una reformulación como error automático. El texto dentro de componentes también requiere revisión aunque quede fuera del conteo.
 
-**Umbral interno: ±15 %** sobre el target de cada sección. Fuera de ahí requiere resolver el contrato, no rellenar prosa. No es un requisito de Google. Sin rango, targets o tabla de fuentes interpretables, el script bloquea: no declara APTO sobre controles omitidos. Admite rango «Entre X y Y palabras» o «intervalo X–Y palabras», tablas con número de fuente separado o integrado y referencias HTML `src`/`srcset`.
+Mide prosa, excluyendo títulos/listas/tablas/JSX/código; media 30–40 palabras sirve de referencia. El script conserva avisos/bloqueos por densidad elevada; la revisión decide cómo reorganizar sin cortar frases o citas ni rellenar. Lista fragmentos cortos para revisar deliberación. Cadencia H3 es señal de navegación, no licencia para insertar subtítulos decorativos.
 
-Presta atención especial a la **penúltima fila**, el H2 de cierre narrativo. Es
-donde vive el caso clínico y es el que más se sacrifica cuando el presupuesto se
-gastó antes.
+## Fuentes y enlaces
 
----
+Busca autor/título en H2 asignado, excluyendo bibliografía. Acepta destino por título completo normalizado o selectores completos H2-n/Intro/Introducción/cierre/Conclusión/FAQ; admite conectores y/o, punto y coma y calificador legado apoyo/con límites. Un título que coincide con varias secciones tras normalizar es ambiguo y bloquea; usar H2-n para desambiguar. H2-n es un identificador reservado, incluso si otra sección lleva un título numérico. Cualquier fragmento desconocido invalida la asignación: una frase que contenga «Introducción» o «H2-1» no es un selector. Si no interpreta el destino, bloquea aunque encuentre la cita en otra sección; nunca acepta cualquier aparición como respaldo de una asignación desconocida. Si hay autoría reconocible, prioriza esa aguja y el título completo frente a palabras débiles sueltas del título. Muestra agujas y avisa de débiles para revisar falsos positivos. No verifica autoría real ni si la fuente sostiene la afirmación: abrirla sigue siendo obligatorio. Cita solo al final no cumple la trazabilidad del contrato.
 
-## 2. Densidad de párrafo
+Compara enlaces declarados y referencias de imagen (`src`, `srcset`, Markdown, hero incluida), existencia, metadata y firma manual. Existencia de un archivo no verifica lo que contiene. Importaciones solo si se usa el componente. FAQ se cuenta y contrasta con el contrato; cero no se confunde con ausente. No comprueba por sí solo plegado, accesibilidad ni ausencia de riesgos clínicos.
 
-Se mide solo sobre prosa: se excluyen títulos, imágenes, pies en cursiva, JSX,
-listas, tablas y bloques de código.
+## Resultado y pruebas
 
-| Métrica | Bien | Alto | Fuera |
-|---|---|---|---|
-| media | 30–40 | 41–45 | > 45 |
-| >50 palabras | < 10 % | 10–30 % | > 30 % |
+`NO APTO` indica bloqueantes mecánicos; `APTO CON AVISOS` o `APTO` solo ausencia de esos bloqueantes. Siempre quedan pendientes manuales de E01–E08, fuentes, imágenes y recursos. `status: Borrador` no protege de publicar.
 
-Referencias reales de este blog: un artículo aprobado da **media 30 / mediana 29
-/ 3 %**; uno con el defecto da **media 56 / mediana 57 / 66 %**.
-
-**Lee esta métrica junto con la anterior, no por separado.** Si el artículo va
-corto de palabras **y** la densidad está alta, el orden de corrección importa:
-**reorganizar para móvil y comprobar omisiones útiles antes de ampliar**. No añadir texto solo para alcanzar el número. Dilo en el informe, porque es la corrección que se hace mal por defecto.
-
-**El otro extremo: fragmentos sueltos (<12 palabras).** Partir párrafos a lo
-bruto para bajar la media deja frases descolgadas, y la media *mejora* mientras
-el texto empeora. Un artículo bien aireado de este blog tiene **0**; uno recién
-partido a máquina llegó a **8**.
-
-El peor caso visto: el punto de **"et al."** tomado por final de frase, que dejó
-`Salvin et al.` como párrafo y la frase siguiente empezando por `(2010), en…`.
-Una cita descuartizada en mitad del bloque E-E-A-T. Por eso el barrido usa un
-listón más bajo que el filtro de prosa: tres palabras se colarían por debajo.
-
-No todos son defecto. Una frase corta puede ser énfasis deliberado. El script
-los lista para que decidas uno por uno; lo que no puede es no verlos.
-
-**Cadencia de H3:** el spec es uno cada 150–200 palabras. Por encima de 260 el
-script avisa. No es bloqueante por sí solo, pero un tramo largo sin subtítulos
-suele coincidir con la parte peor estructurada del artículo.
-
----
-
-## 3. Fuentes
-
-Para cada fila de la tabla de trazabilidad (Sección 9), el script busca la fuente
-en el cuerpo y dice **en qué sección** aparece:
-
-- `OK` — aparece en una sección que el brief le asignó.
-- `·` — aparece en otra sección. No es un fallo por sí solo; una fuente puede
-  citarse más veces de las previstas.
-- `BLOQUEA` — no aparece en ninguna, o no aparece en **ninguna** de las
-  asignadas.
-
-**El cuadro de cierre está excluido del rastreo a propósito.** Una fuente citada
-solo ahí no cuenta como citada, por mucho que esté listada con su enlace.
-
-**Las "agujas".** El script busca apellidos y palabras distintivas del título, y
-**dice con qué aguja encontró cada match** para que puedas descartar falsos
-positivos de un vistazo. Cuando la etiqueta no trae apellido+año avisa de
-`agujas débiles`: ahí el match puede ser casual y conviene mirarlo.
-
-Busca en dos sitios del brief: la etiqueta de la tabla de trazabilidad y el
-título real de la Sección 3. Hace falta porque algunas tablas traen una
-paráfrasis en español ("Caso de transposición de semitendinoso") que no aparece
-literal en ningún artículo.
-
-**Lo que el script no puede hacer, y es lo más importante:** decirte si la fuente
-**respalda** la afirmación. Que el nombre aparezca en el H2 correcto no dice nada
-sobre si la cifra que lo acompaña está en el paper, ni sobre si la autoría es la
-real. Eso es el paso 3 de la skill y no hay atajo.
-
----
-
-## 4. Enlaces internos
-
-Compara contra la Sección 5 del brief. Los spokes marcados `Pendiente` no llevan
-URL y no se exigen: es la contingencia de la Fase 3.3, no un olvido.
-
-Faltar el pilar o un spoke publicado es bloqueante: deja el artículo huérfano
-dentro de su propio silo, que es lo contrario de lo que busca la arquitectura
-hub-and-spoke del sitio.
-
----
-
-## 5. Componentes
-
-Cuenta los `AlertBox` **de cuerpo** por separado del cuadro de fuentes. La regla
-son tres en el cuerpo —`info`, `danger`, `warning`— más el cuadro de cierre, que
-es convención del sitio y aparece en todos los artículos publicados. **Cuatro
-`AlertBox` en total es lo correcto, no un exceso.**
-
-También comprueba que el número de preguntas del `FAQ` coincida con el del
-brief, que no haya un `#` de H1 en el cuerpo (lo genera el layout) y que estén
-los `import` de los componentes que se usan.
-
----
-
-## 6. Imágenes
-
-Contrasta las imágenes referenciadas —**incluida la `heroImage` del
-frontmatter**— contra los archivos de `public/images/blog/{{slug}}/`.
-
-El hero se olvida de forma sistemática al reportar imágenes pendientes. Por eso
-el script lo marca explícitamente.
-
-Avisa también de nombres con tilde o `ñ`, que se percent-encodean en la URL y
-dan problemas de indexación.
-
-Que un archivo exista **no dice nada sobre lo que contiene**. La verificación
-visual es manual y no es opcional.
-
----
-
-## 7. Frontmatter y fechas
-
-- `metaDescription` > 160 caracteres lo rechaza el schema de `config.ts`: es
-  bloqueante, no estético.
-- Compara `datePublished` con la fecha del byline `**Actualizado:**`. Si
-  difieren y no es una reescritura declarada, están desincronizadas.
-- **`status` no filtra nada.** En `config.ts` es `z.string().default('Publicado')`
-  y `getStaticPaths()` genera una ruta por cada entrada de la colección sin
-  mirarlo. Un artículo con `status: "Borrador"` **se compila a `dist/` y se
-  sirve igual**. Si el artículo tiene bloqueantes, dilo en el informe: mientras
-  el `.mdx` esté en `src/content/blog/`, está a un deploy de publicarse.
-
----
-
-## El veredicto
-
-- **NO APTO** — hay bloqueantes.
-- **APTO CON AVISOS** — sin bloqueantes, con avisos.
-- **APTO** — sin defectos mecánicos.
-
-`APTO` **no significa "el artículo es bueno"**. Significa que no queda nada que
-un script pueda detectar. Los hallazgos que hunden un artículo —un autor
-inventado, una cifra que la fuente no dice, una instrucción del brief filtrada
-al texto, una imagen que incumple su restricción— viven fuera de aquí.
-
-Por eso cada artículo imprime **PENDIENTES MANUALES**. Si el informe no dice
-explícitamente que se levantaron, el veredicto está incompleto y hay que
-escribirlo así.
+Los tests usan fixtures sintéticos estables fuera del contenido de producción. Un cambio editorial del sitio no cambia el resultado esperado de una prueba del parser. Ningún fixture es fuente clínica ni artículo publicable. Casos: legado, versión 2.0, ceros, cantidades incumplidas, datos ausentes/duplicados/invalidos, versión desconocida y recursos faltantes.

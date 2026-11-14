@@ -4,6 +4,8 @@ Revisión: 2026-10-16. Lectura obligatoria para generar y auditar briefs, redact
 
 ## 1. Utilidad, extensión y originalidad
 
+Para encargos 2.0 aplicar E01–E08 del [contrato compartido](contrato-utilidad-editorial.md); briefs antiguos necesitan adenda explícita.
+
 - Definir la pregunta del lector, la respuesta práctica y la aportación respecto de lo que ya está publicado: registro útil, criterios de decisión, comparación transparente, experiencia atribuida o síntesis con límites. No basta con reescribir fuentes o alargar una introducción.
 - No hay mínimo universal de artículos, palabras o visitas en las políticas enlazadas. No atribuir a AdSense los targets internos. La extensión se justifica por tema y cobertura, no por una cifra fija de 6.000 palabras.
 - Cada H2 debe aportar una respuesta o decisión distinta. Quitar repeticiones, dramatización y preguntas retóricas sin respuesta. Mostrar pronto qué hacer y cuándo consultar. Un porcentaje de distribución no justifica relleno.
@@ -46,7 +48,7 @@ Inventariar todo lo que se anuncia: PDF, vídeo, plantilla, checklist, animació
 
 Quien crea/corrige no emite su auditoría independiente. El auditor lee los archivos finales y verifica por sí mismo; puede inspeccionar evidencia previa identificada como tal, sin afirmar que repitió pruebas. Un APTO mecánico no resuelve fuentes ni utilidad.
 
-Máximo tres rondas por documento auditado. Registrar número, versión/hash, hallazgos, correcciones y pendientes. Si no pasa la tercera, detener la corrección/publicación de ese documento y consultar al usuario con el motivo. No reiniciar la numeración ni abrir rondas ocultas para eludir el límite. Los briefs ya aprobados no se reabren por producir imágenes, salvo fallo nuevo que afecte a su contrato.
+Por decisión del propietario del 2026-11-14, máximo cinco rondas por unidad de cambio conforme al [contrato de utilidad editorial](contrato-utilidad-editorial.md). Definir alcance y archivos antes de R1; registrar versión/hash, hallazgos y correcciones. Una corrección mantiene contador; la siguiente unidad de alcance distinto comienza en R1. Detener al aprobar o si falla R5; no renombrar ni ampliar el alcance para reiniciar. Conservar auditorías históricas. Los briefs aprobados no se reabren por producir imágenes salvo fallo nuevo que afecte al contrato.
 
 Bloquean: identificador erróneo presentado como válido; afirmación clave sin respaldo; caso real sin procedencia aclarada; ilustración presentada como evidencia clínica; pauta contradictoria con la política; recurso prometido ausente/roto; instrucciones editoriales filtradas; prueba indispensable pendiente. Distinguir fallo confirmado de limitación de acceso. No aprobar por longitud ni rechazar solo por brevedad.
 

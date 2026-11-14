@@ -1,0 +1,35 @@
+✔ contrato legado estable aprueba controles mecánicos y deja pendientes manuales (8.294018ms)
+✔ rango ausente bloquea sin aprobar controles omitidos (3.614768ms)
+✔ fuentes ausentes bloquean (3.217373ms)
+✔ imagen referenciada inexistente bloquea (4.053755ms)
+✔ contrato 2.0 válido conserva control y cantidades exactas (4.343027ms)
+✔ cero cajas de cuerpo y FAQ explícita cero son válidos (4.339422ms)
+✔ cantidad de caja incumplida bloquea (3.155952ms)
+✔ FAQ añadida contra contrato cero bloquea (3.692615ms)
+✔ versión futura bloquea y no cae a legado (3.630671ms)
+✔ cabecera duplicada bloquea y no cae a legado (4.044501ms)
+✔ componentes ausentes bloquea y no cae a legado (3.690321ms)
+✔ componentes duplicados bloquea y no cae a legado (2.64757ms)
+✔ negativo bloquea y no cae a legado (2.866298ms)
+✔ decimal bloquea y no cae a legado (2.44654ms)
+✔ FAQ ausente bloquea y no cae a legado (3.510222ms)
+✔ FAQ duplicada bloquea y no cae a legado (2.543445ms)
+✔ parser diferencia legado y cero sin inventar valores (0.631474ms)
+✔ rango legado Entre conserva compatibilidad (2.716394ms)
+✔ fuente diez conserva ficha y trazabilidad (2.663055ms)
+✔ srcset inexistente también bloquea (2.608763ms)
+✔ atributos de caja reordenados no eluden conteo (4.022348ms)
+✔ versión futura indentada no elude validación (2.619108ms)
+✔ separador de versión mal formado no elude validación (2.61364ms)
+✔ versión sin separador no elude validación (2.537897ms)
+✔ versión duplicada indentada no elude validación (2.480781ms)
+✔ componentes duplicados indentados no elude validación (3.351364ms)
+✔ FAQ duplicada indentada no elude validación (3.578674ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 104.980728

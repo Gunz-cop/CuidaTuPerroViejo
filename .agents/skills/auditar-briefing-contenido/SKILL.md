@@ -1,238 +1,63 @@
 ---
 name: Auditar Briefing de Contenido - Cuida Tu Perro Viejo
-description: Audita un briefing ya generado contra las reglas de la skill generar-briefing-contenido, como lo haría un revisor externo — fuentes verificadas una a una (PMID/DOI/URL profunda), trazabilidad fuente→H2 sin fuentes decorativas, metadatos contados, enlazado interno contra el inventario, componentes, arco narrativo, prompts de imagen y límite brief vs. redacción. Úsala cuando el usuario pida revisar, auditar o validar un brief o un briefing; cuando sospeche que un fallo del artículo nació en el brief; o antes de redactar desde un brief que otra sesión generó. Es una skill de EVALUACIÓN: produce un veredicto y hallazgos ubicados, no corrige el brief salvo que el usuario lo pida aparte.
+description: Evalúa un brief con revisión independiente de fuentes, utilidad, recursos, arquitectura y contrato antes de redactar. Entrega hallazgos; no corrige.
 ---
 
-# Habilidad: Auditoría de Briefings de Contenido
+# Auditar un briefing
 
-Tu papel aquí es el de un revisor externo del brief, no el de quien lo generó.
-Sé escéptico por defecto: busca motivos de rechazo, no de aprobación. El brief es
-el **contrato** del que nace el artículo: un error aquí no corrompe un documento,
-corrompe todo lo que se escriba después. Ya ocurrió: un brief atribuyó la escala
-CCDR de 13 ítems al estudio equivocado del mismo equipo (Salvin 2010 en vez de
-Salvin et al., 2011), el artículo obedeció, y el error estaba además propagado a
-otros briefs sin redactar.
+Leer el [generador](../generar-briefing-contenido/SKILL.md), el [contrato 2.0](../references/contrato-utilidad-editorial.md), [calidad editorial](../references/calidad-editorial-adsense.md) y [voz](../references/guia-voz-tono.md). La versión declarada y sus adendas identifican el contrato que se audita. No aplicar cuotas históricas de fuentes, cajas, enlaces, imágenes o palabras a un contrato 2.0.
 
-Dos consecuencias prácticas de ese papel:
+## Rol y alcance
 
-- **No des por bueno nada que puedas comprobar.** Si hay un PMID, búscalo. Si
-  hay un DOI, resuélvelo. Si hay un enlace interno, compruébalo contra el
-  inventario. Si hay un conteo de caracteres, cuéntalo tú.
-- **No confíes en el checklist del propio brief.** Que la Sección 10 tenga sus
-  casillas marcadas no significa nada: las marcas las puso quien generó el
-  brief, que es justo la parte interesada que esta skill existe para sustituir.
+Revisor distinto de quien generó o corrigió el brief. No modificar brief, inventario ni otros objetos evaluados. Escribir informe con instrucciones para otra sesión, sin ejecutar sus correcciones. Una comprobación propia del autor no es auditoría independiente.
 
-## Control obligatorio de calidad editorial (2026-10-16)
+Antes de R1 registrar unidad, archivos, versión/hash y alcance. Hasta cinco rondas por unidad: se termina al aprobar; las correcciones mantienen contador y un fallo en R5 detiene la unidad y sus dependientes. La siguiente unidad de alcance diferente empieza en R1. No reiniciar renombrando archivo, cambiando auditor o abriendo una falsa ampliación. Conservar los informes previos y distinguir verificaciones propias de evidencia recibida.
 
-Lee y aplica [calidad-editorial-adsense.md](../references/calidad-editorial-adsense.md) antes de ejecutar esta skill. Verifica utilidad propia, correspondencia fuente→afirmación, procedencia narrativa, coherencia con la política editorial y entrega real de cada recurso anunciado. Ni el conteo de palabras ni un APTO mecánico sustituyen esos controles. Máximo tres rondas por documento; al fallar la tercera, detenerse y presentar el bloqueo al usuario.
+## 1. Intención y correspondencia con el sitio
 
+Comprobar pregunta/situación observable, público/variante, decisión principal, propuesta de apertura y aportación frente a páginas existentes. Contrastar keyword/slug/tema con `INVENTARIO_CONTENIDO.md`, contenido y briefs; una etiqueta Publicado no basta para acreditar una URL pública.
 
-## Separación de roles: auditas, no corriges
+Validar la alternativa elegida ante solapamiento y si está dentro del encargo. Search Console solo se atribuye cuando se consultó; su ausencia no invalida el brief si la hipótesis queda declarada. No pedir historia personal o un desenlace que el tema no necesita.
 
-Esta skill **no** modifica el brief, ni el inventario, ni ningún otro archivo.
-Entrega un veredicto y una lista de hallazgos ubicados, y ahí termina.
+## 2. Metadatos y contrato técnico
 
-No es una formalidad. Quien corrige adquiere interés en que su corrección sea la
-buena y deja de poder evaluarla. Si el usuario pide además la corrección,
-propón hacerla en una sesión aparte a partir de las instrucciones del informe —
-el informe debe traer esas instrucciones listas.
+Contar SEO ≤55 y descripción ≤160, no estimar. Validar YAML contra `src/content.config.ts`, enum, rutas e imágenes. La versión E01–E08 va en la cabecera del brief, no en campos inventados de frontmatter. Revisiones conservan publicación original y distinguen fecha de modificación. Verificar que existe un bloque de metadatos concreto listo para el redactor.
 
-Lo que sí debes entregar cuando el hallazgo lo permita: **la instrucción exacta**
-para que otra sesión corrija el brief. Eso es auditoría; abrir el archivo y
-editarlo, no.
+## 3. Cada fuente, identidad y afirmación
 
-## Referencia normativa
+Por cada ficha abrir el documento y verificar:
 
-La regla con la que se audita es la propia [generar-briefing-contenido](../generar-briefing-contenido/SKILL.md):
-su flujo de 5 fases y su Validación Final son el estándar. Tenlos a mano durante
-toda la auditoría junto con el control compartido de calidad. El ejemplo de Cushing es histórico y no validado, nunca una referencia normativa ni una fuente.
+1. Calidad, autoridad y pertinencia: guías veterinarias vigentes, estudios revisados por pares o secundaria clínica identificada cuando proceda. Prestigio, indexación o cantidad no reemplazan diseño y aplicabilidad.
+2. Título, autor/institución, año, PMID/DOI/URL profunda reales. Un identificador de otro tema o rellenado de memoria bloquea.
+3. La afirmación exacta está en el pasaje/tabla declarado. Distinguir especie, población, grupo/individuo, asociación/causalidad y extrapolación.
+4. Estado verificado/parcial y límites honestos. Ante 403 buscar versión oficial alternativa o resumen identificable; no llamar falsa a una referencia solo por bloqueo. Tampoco afirmar datos no leídos.
+5. Trazabilidad directa e inversa: fuente→H2 que desarrolla su aporte y cada H2 científico→respaldo. Bibliografía decorativa es hallazgo.
+6. Coherencia con política editorial vigente y límites clínicos compartidos. No diagnosticar por observación ni planificar dosis/ajustes para el lector. Una dosis histórica requiere justificación de estudio y compatibilidad con la política.
 
-Si el brief documenta una excepción prevista por la skill generadora (Fase 2.5:
-cobertura limitada de evidencia documentada; Fase 3.3: pilar sin dos
-spokes publicados), **eso no es un fallo**: es una decisión ya tomada y
-justificada. Auditar contra ella es ruido. Lo que sí verificas es que la
-excepción esté *documentada*, no silenciosa — la omisión decidida en silencio sí
-es hallazgo.
+No fijar mínimo de fuentes. Una laguna declarada puede justificar enfoque limitado; una afirmación central sin respaldo impide validar el brief. Abrir enlaces no basta para dar por comprobado su contenido.
 
-## Orden de trabajo
+## 4. Recorrido, utilidad y componentes
 
-El orden importa: los pasos 1 y 2 son mecánicos y rápidos, el paso 3 es donde se
-concentran los hallazgos graves, y los pasos 4 a 7 comprueban que el contrato
-esté completo antes de gastar horas de redacción en él.
+Evaluar E01–E08 uno por uno con ubicación y prueba futura factible. La persona debe encontrar respuesta y acción pronto; las precauciones pertinentes quedan visibles. El orden depende de sus tareas, no de una plantilla de fisiología→diagnóstico→tratamiento.
 
-### 1. Entradas y canibalización
+Cada H2 responde algo distinto y tiene fuentes/presupuesto útiles. Sumar targets y comparar rango; ±15% por sección según el contrato, sin aprobar desvíos silenciosos ni pedir relleno. Una adenda justificada cambia un contrato, no un conteo inventado.
 
-- ¿El brief declara título, keyword principal y slug?
-- Comprueba contra `INVENTARIO_CONTENIDO.md` si la keyword o un slug muy similar
-  ya están cubiertos por otro artículo (publicado o en curso). Si hay solapamiento
-  y el brief no lo menciona ni justifica el ángulo diferencial, es hallazgo P1.
-- Si el brief incluye historia real: verifica que esté presente y depurada
-  (nombres cruzados, frases truncadas, muletillas) **sin hechos alterados**. La
-  depuración de forma es correcta; cambiar un hecho es P0.
+En 2.0 verificar declaración exacta de cantidades de cuerpo (`info`, `danger`, `warning`) y motivos, incluido cero. Bibliografía final fuera de ese conteo. No rechazar por omitir una caja innecesaria; sí por omitir un riesgo pertinente o no declarar cantidades. FAQ: cantidad explícita y preguntas no redundantes; cero con motivo es válido. Si hay items, comprobar formato FAQ real y respuestas borrador.
 
-### 2. Metadatos y frontmatter
+El brief da instrucciones, no desarrollo casi terminado; títulos de cajas y FAQ breves pueden anticiparse. Caso/historia solo con procedencia; momentos en H2 prácticos, cierre integrado, sin H2 narrativo dedicado ni recuperación inventada. Una guía sin caso es una opción válida.
 
-- Cuenta los caracteres del `seoTitle` (máx. 55) y de la `metaDescription`
-  (máx. 160) con un comando, no a ojo.
-- Verifica que el bloque YAML del frontmatter está completo según el template y
-  que el valor de `pilar` existe en el enum de `src/content.config.ts`.
-- Comprueba coherencia slug ↔ ruta relativa ↔ nombres de archivo de imágenes
-  (sin `ñ`, tildes ni espacios en rutas públicas).
+## 5. Recursos, enlaces y plan visual
 
-### 3. Fuentes: el paso crítico
+Inventariar cada PDF, vídeo, plantilla, componente o herramienta anunciados: tarea, ruta/pendiente, responsable, estado y prueba real antes de publicar. En el brief un recurso puede estar pendiente si es gate explícito o se retirará su promesa; no fingir que fue probado. Puede justificarse no crear recurso nuevo.
 
-Aquí es donde esta skill más valor aporta. Por cada fuente declarada en la
-Sección 3:
+Comprobar cada enlace contra inventario/ruta publicada y motivo contextual, con pilar correcto. Sin cuotas de spokes ni calculadora universal. Una URL pendiente no se publica como enlace; revisión, urgencia y seguimiento tienen destinos distintos. Aplicar skill de enlazado.
 
-1. **¿Es de autoridad?** Estudios indexados en PubMed, guías WSAVA, comunicados
-   FDA/AVMA, facultades veterinarias. Fuentes débiles rellenando el número son
-   hallazgo, salvo excepción documentada de Fase 2.5.
-2. **¿La URL es profunda?** Un enlace a la homepage de la institución viola la
-   regla anti-alucinación. Debe apuntar al documento específico o llevar la marca
-   `[URL no verificada]`.
-3. **¿El PMID/DOI existe y corresponde al tema exacto?** Usa búsqueda web para
-   cada identificador: resuélvelo y confirma que el estudio trata lo que el brief
-   le atribuye, no solo que el formato "parece correcto". Un PMID real de otro
-   tema es peor que ninguno. Caso real ya detectado en este proyecto: un PMID de
-   obstetricia humana presentado como cita de endocrinología veterinaria canina.
-   Si el brief cita identificadores "de memoria" sin marca de verificación, es P0.
-4. **¿El dato clave atribuido está en la fuente?** Abre la URL profunda y busca
-   la cifra, el mecanismo o la pauta que el brief dice extraer de esa fuente.
-   Que el enlace abra no es verificación.
-5. **Trazabilidad:** recorre la lista de fuentes una por una y comprueba que
-   cada una aparece como `*Sustentado en:*` de al menos un H2 de la Sección 6,
-   y que ese H2 desarrolla su dato clave — no una mención de pasada. Una fuente
-   solo listada en la Sección 3, sin H2 asignado, es una fuente decorativa (P1)
-   y además incumple la Fase 2.6.
-6. **Cobertura inversa:** cada H2 con contenido científico debería apoyarse en
-   alguna fuente. Un H2 extenso sin `*Sustentado en:*` sugiere que se escribió
-   desde memoria general y no source-first (P1).
+Aplicar dirección visual y apoyos responsive: cantidad por función, hero incluida, ficha/escena/acción/luz/anatomía/alt, continuidad y cinco rasgos senior en cada prompt y recorte, aceptación a 390 px, razas de trabajos recientes y motivo si se repiten. Respetar excepciones documentadas del sujeto real y preferencia de AGENTS contra dibujos propios de perros/personas en SVG/CSS. Verificar viabilidad móvil, claro/oscuro, accesibilidad y alternativas; no exigir tres prompts por costumbre ni aceptar un plan genérico.
 
-Notas de método:
+## Informe y decisión
 
-- `WebFetch` puede recibir muros de cookies o 403 en PubMed y ScienceDirect. Si
-  falla, prueba el dominio alternativo (`pmc.ncbi.nlm.nih.gov`) o confirma autoría
-  y DOI con una búsqueda antes de concluir nada.
-- Distingue entre fuente marcada honestamente como no verificada (cumplimiento)
-  y fuente presentada como verificada sin estarlo (invención).
+Usar [formato](references/formato-informe.md) y [taxonomía](references/taxonomia-fallos.md). Veredicto Válido / Válido con reservas / No válido para redacción con razón concreta. Una reserva no puede esconder fuente central sin comprobar, recurso imposible, falsedad, riesgo o prueba indispensable pendiente.
 
-### 4. Enlazado interno
+Por hallazgo: prioridad, ubicación, evidencia y corrección exacta. Registrar qué se preserva, tabla de cada fuente y tabla E01–E08/recurso con resultado o no aplicabilidad justificada. Si el fallo ya se propagó, identificar artículos y briefs que lo heredan sin modificarlos. El estado del inventario se reporta al implementador; no se cambia en esta auditoría.
 
-- Comprueba cada URL de la tabla de la Sección 5 contra `INVENTARIO_CONTENIDO.md`:
-  debe existir y estar marcada como publicada (`[x]`). Un enlace a un artículo no
-  publicado es la alucinación típica de esta fase (P0: el artículo nacerá con
-  enlaces rotos).
-- ¿Está el enlace al pilar correcto? ¿Aparece la calculadora
-  `/herramientas/calculadora-calidad-vida-perros` si el tema es Salud o Cuidados
-  Paliativos?
-- Los spokes marcados `Pendiente` por contingencia (Fase 3.3) son cumplimiento,
-  no fallo. Los spokes inventados, no.
-
-### 5. Estructura, componentes y arco narrativo
-
-- **Presupuesto de palabras:** suma los targets por sección de la Sección 6. Debe
-  coincidir con el target justificado del contrato, sin mínimo universal. Suma exacta, no estimación; señalar relleno aunque el total cumpla.
-- **AlertBox:** deben planificarse los 3 tipos, uno mínimo cada uno, en sus
-  secciones correctas: `info` en Introducción, `danger` en síntomas/diagnóstico,
-  `warning` en tratamiento/manejo. Repetir el mismo tipo o faltar uno no pasa
-  validación.
-- **FAQ:** planificado con sus preguntas borrador.
-- **Historia entretejida cuando hay material documentado** (preferencia del
-  propietario del 2026-11-12): apertura en Intro, cada momento asignado a un H2
-  práctico y desenlace en un párrafo del último H2 práctico o de la Conclusión.
-  Un H2 dedicado a la historia («la historia de…», «hora a hora», «a la mañana
-  siguiente») es P1. Si hay varios sujetos, debe declararse el hilo principal.
-- **Límite brief vs. redacción:** las secciones deben dar instrucciones y puntos
-  clave al redactor, no prosa terminada. Excepción legítima: `items` de FAQ y
-  `title`/tipo de AlertBox. Párrafos de desarrollo ya redactados dentro del brief
-  son P1: invitan a que el redactor copie texto sin verificar contra fuentes.
-
-### 6. Prompts de imagen
-
-- Los 3 prompts nombran explícitamente la **misma raza** (y rasgos distintivos
-  del perro real) en los tres. Un prompt generalizado a "a senior dog" rompe la
-  continuidad visual y es hallazgo.
-- Cada prompt define plano, escenario concreto, iluminación, profundidad de campo
-  y estilo fotoperiodístico. Escenas de banco de imágenes ("perro feliz en
-  parque") son hallazgo P2.
-- Si la historia tiene más de un perro, cada prompt indica cuál aparece.
-- **Perro senior, prompt por prompt.** Abre la Sección 8 y, para **cada** prompt
-  de imagen, recorte transparente y animación (no por muestreo), marca si pide
-  los cinco rasgos del [requisito senior verificable](../references/direccion-visual-editorial.md#requisito-senior-verificable-obligatorio-en-todo-prompt):
-  canas en hocico, cejas **y** párpados; ojos algo hundidos; lomo y musculatura de
-  perro mayor; postura natural; sin enfermedad inventada. Falta «senior» suelto,
-  solo «hocico canoso», o un recorte cuyo prompt omite la edad: **hallazgo P1 que
-  obliga a corregir el brief**. Comprueba también que cada prompt termine con el
-  criterio de rechazo a tamaño móvil y que la ficha de aceptación lo contemple.
-  Si un apoyo o animación necesita al perro y no hay prompt de recorte, es hallazgo.
-- **Raza no repetida.** Verifica la lista de razas recientes que declara el brief
-  contra `public/images/blog/`, los `heroImageAlt` de `src/content/blog/` y
-  `briefings/`; si omite una raza usada o repite una sin motivo documentado, es
-  hallazgo. Comprueba que la raza elegida esté justificada para el público.
-
-Comprueba que el brief remita a la [guía de voz y tono](../references/guia-voz-tono.md) y que no pida una voz contraria (usted, tono clínico distante o una salvedad por párrafo).
-
-Comprueba también que cada recurso visual planificado sea viable según [apoyos visuales cómodos en móvil y escritorio](../references/apoyos-visuales-responsive.md); una tabla de 3+ columnas con celdas de párrafo o un formulario largo sin plan móvil es un hallazgo.
-
-### 7. Contrato de Entrega (Sección 9)
-
-- Tabla de trazabilidad completa: todas las fuentes con H2 asignado.
-- Checklist de no negociables presente: volumen mínimo real, componentes
-  estructurales, arco narrativo.
-- Rango de palabras del contrato coherente con los targets de la Sección 6.
-- Estado en `INVENTARIO_CONTENIDO.md`: el artículo debería figurar como
-  `[~] (En Briefing)` tras guardarse el brief. Si no, es un pendiente menor (P2),
-  no un defecto del documento.
-
-## Cómo juzgar (y cómo no)
-
-**Distingue omisión de invención. Es el eje que ordena todo lo demás.**
-
-Un brief al que le falta un spoke, un tipo de AlertBox o palabras en el
-presupuesto tiene un problema de omisión: se detecta con conteos y se corrige en
-minutos. Un brief con un PMID inventado o mal asignado tiene un problema de
-invención: parece rigor verificado, sobrevive a cualquier revisión que no abra
-la fuente, y contamina el artículo, la auditoría del artículo y todos los briefs
-que reutilicen la misma fuente. **Una invención pesa más que diez omisiones.**
-
-Por orden de gravedad real en este sitio:
-
-1. **PMID/DOI/autoría inventados o mal asignados**, presentados como verificados.
-2. **Enlaces internos a artículos inexistentes o no publicados.**
-3. **Datos clave atribuidos a fuentes que no los contienen** (verificado abriendo
-   la URL).
-4. **Fuentes decorativas** listadas pero sin H2 que las desarrolle.
-5. **Excepciones aplicadas en silencio** (lagunas de evidencia, spokes faltantes)
-   sin documentar ni preguntar.
-6. **Historia aislada en su propio H2** en vez de entretejida, o desenlace ausente.
-7. **Metadatos fuera de límite** o `pilar` inválido.
-8. **Prosa final en vez de instrucciones** para el redactor.
-9. **Prompts de imagen genéricos, con raza inconsistente o sin los rasgos de edad senior** (incluidos los recortes y animaciones), o raza repetida sin motivo.
-
-**Mide antes de acusar.** Caracteres contados, no estimados; suma de targets
-calculada; identificadores resueltos con búsqueda. La credibilidad del informe
-se juega en que el usuario pueda verificar cada hallazgo.
-
-**Reconoce lo que funciona, con la misma especificidad.** Si el brief marcó
-honestamente sus fuentes no verificadas en lugar de inventar números, dilo:
-esa decisión protege todo el flujo posterior y nadie debe "completarla" al
-corregir.
-
-**Si mides algo que contradice una crítica tuya, corrígela en el informe.**
-Explícitamente, sin rodeos, y sigue.
-
-## Veredicto
-
-El formato exacto está en `references/formato-informe.md`. En síntesis:
-una palabra (Válido / Válido con reservas / No válido para redacción) + el motivo
-en una frase + hallazgos agrupados por prioridad con ubicación exacta.
-
-Recuerda el efecto cascada al redactar el informe: si encuentras un error de
-fuente, avisa explícitamente de que hay que comprobar si otros briefs citan la
-misma fuente, y de que el artículo ya redactado (si existe) hereda el fallo.
-
-## Referencias
-
-- `references/formato-informe.md` — la estructura del entregable.
-- `references/taxonomia-fallos.md` — los fallos reales vistos en este proyecto,
-  con el caso concreto de cada uno.
+Señalar comprobaciones no ejecutadas. No confundir aprobación de un checklist con verificación de fuentes y utilidad. Una crítica refutada por un dato propio se corrige en el informe.

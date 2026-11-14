@@ -54,6 +54,6 @@ Reutilizar el patrón cuando encaje; no copiar raza, cifras, anatomía señalada
 
 ## Cierre de la redacción
 
-Entregar la tabla del plan con estado y evidencia finales, los recursos integrados, las capturas y los pendientes reales. Si se produjo una ampliación visual, encargar su revisión independiente conforme a AGENTS y conservar el máximo de tres rondas del alcance auditado. No publicar un recurso defectuoso por haber pasado antes la auditoría textual.
+Entregar la tabla del plan con estado y evidencia finales, los recursos integrados, las capturas y los pendientes reales. Si se produjo una ampliación visual, encargar su revisión independiente conforme a AGENTS y conservar el máximo de cinco rondas por unidad de cambio según el contrato 2.0, sin reiniciar el contador por corregir. No publicar un recurso defectuoso por haber pasado antes la auditoría textual.
 
 Para una modificación exclusivamente documental de esta skill, comprobar enlaces, coherencia y formato; no repetir builds o pruebas de producto sin cambios de código.

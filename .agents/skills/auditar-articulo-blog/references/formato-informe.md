@@ -109,4 +109,8 @@ forma más rápida de que el informe deje de servir.
 
 ## Controles editoriales adicionales obligatorios
 
-Registrar versión/hash y ronda (máximo tres), utilidad distinta por sección, procedencia del material narrativo y coherencia con la política editorial. Añadir tabla fuente → afirmación → localización → comprobación/limitación y tabla recurso prometido → ruta → prueba → resultado/pendiente. Distinguir comprobación local de publicación real. Referencias erróneas, casos sin procedencia, pautas incompatibles con la política y recursos prometidos ausentes bloquean; no compensarlos con palabras o componentes. Si el brief solo planifica un recurso, comprobar su gate de entrega, sin fingir que ya existe.
+Registrar versión/hash y ronda (máximo cinco por unidad de cambio), utilidad distinta por sección, procedencia del material narrativo y coherencia con la política editorial. Añadir tabla fuente → afirmación → localización → comprobación/limitación y tabla recurso prometido → ruta → prueba → resultado/pendiente. Distinguir comprobación local de publicación real. Referencias erróneas, casos sin procedencia, pautas incompatibles con la política y recursos prometidos ausentes bloquean; no compensarlos con palabras o componentes. Si el brief solo planifica un recurso, comprobar su gate de entrega, sin fingir que ya existe.
+
+## Contrato 2.0
+
+Añadir tabla E01–E08 con ubicación, prueba y resultado, incluyendo no aplicabilidad justificada. Cantidades por contrato de cuerpo/FAQ, incluidos ceros; bibliografía aparte. Registrar unidad, autor/auditor distintos, hash, ronda R1–R5 y dependencias. Aprobación cierra; correcciones conservan contador; falla R5 y se detiene. Reservas no encubren una afirmación central sin comprobar ni recurso o prueba indispensable pendiente.

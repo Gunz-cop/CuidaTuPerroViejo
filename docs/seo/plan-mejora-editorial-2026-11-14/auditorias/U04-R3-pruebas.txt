@@ -1,0 +1,39 @@
+✔ contrato legado estable aprueba controles mecánicos y deja pendientes manuales (8.541818ms)
+✔ rango ausente bloquea sin aprobar controles omitidos (3.53299ms)
+✔ fuentes ausentes bloquean (2.906251ms)
+✔ imagen referenciada inexistente bloquea (4.059848ms)
+✔ contrato 2.0 válido conserva control y cantidades exactas (4.434659ms)
+✔ cero cajas de cuerpo y FAQ explícita cero son válidos (4.087018ms)
+✔ cantidad de caja incumplida bloquea (3.444367ms)
+✔ FAQ añadida contra contrato cero bloquea (3.851947ms)
+✔ versión futura bloquea y no cae a legado (4.144375ms)
+✔ cabecera duplicada bloquea y no cae a legado (4.000219ms)
+✔ componentes ausentes bloquea y no cae a legado (4.334239ms)
+✔ componentes duplicados bloquea y no cae a legado (2.875715ms)
+✔ negativo bloquea y no cae a legado (3.242153ms)
+✔ decimal bloquea y no cae a legado (2.93863ms)
+✔ FAQ ausente bloquea y no cae a legado (3.350387ms)
+✔ FAQ duplicada bloquea y no cae a legado (2.987132ms)
+✔ parser diferencia legado y cero sin inventar valores (0.596173ms)
+✔ rango legado Entre conserva compatibilidad (3.17955ms)
+✔ fuente diez conserva ficha y trazabilidad (3.187672ms)
+✔ srcset inexistente también bloquea (2.983287ms)
+✔ atributos de caja reordenados no eluden conteo (4.10106ms)
+✔ versión futura indentada no elude validación (3.076205ms)
+✔ separador de versión mal formado no elude validación (2.827183ms)
+✔ versión sin separador no elude validación (2.800472ms)
+✔ versión duplicada indentada no elude validación (3.10615ms)
+✔ componentes duplicados indentados no elude validación (3.843164ms)
+✔ FAQ duplicada indentada no elude validación (3.593681ms)
+✔ destino por título exacto se interpreta y conserva la trazabilidad (4.343422ms)
+✔ destino desconocido bloquea aunque el autor aparezca en cuerpo (3.82759ms)
+✔ H2 fuera de rango bloquea en vez de aceptar cualquier aparición (3.697106ms)
+✔ cita solo en Intro no satisface el H2 indicado por título (3.885758ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 128.575234

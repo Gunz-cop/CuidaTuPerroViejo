@@ -1,0 +1,45 @@
+✔ contrato legado estable aprueba controles mecánicos y deja pendientes manuales (9.054128ms)
+✔ rango ausente bloquea sin aprobar controles omitidos (3.730629ms)
+✔ fuentes ausentes bloquean (3.315255ms)
+✔ imagen referenciada inexistente bloquea (4.098501ms)
+✔ contrato 2.0 válido conserva control y cantidades exactas (4.603018ms)
+✔ cero cajas de cuerpo y FAQ explícita cero son válidos (3.678851ms)
+✔ cantidad de caja incumplida bloquea (3.393953ms)
+✔ FAQ añadida contra contrato cero bloquea (3.950478ms)
+✔ versión futura bloquea y no cae a legado (4.045562ms)
+✔ cabecera duplicada bloquea y no cae a legado (3.604279ms)
+✔ componentes ausentes bloquea y no cae a legado (3.271751ms)
+✔ componentes duplicados bloquea y no cae a legado (3.035545ms)
+✔ negativo bloquea y no cae a legado (2.934053ms)
+✔ decimal bloquea y no cae a legado (3.98468ms)
+✔ FAQ ausente bloquea y no cae a legado (2.791659ms)
+✔ FAQ duplicada bloquea y no cae a legado (3.203888ms)
+✔ parser diferencia legado y cero sin inventar valores (0.664357ms)
+✔ rango legado Entre conserva compatibilidad (3.500123ms)
+✔ fuente diez conserva ficha y trazabilidad (3.190989ms)
+✔ srcset inexistente también bloquea (3.930269ms)
+✔ atributos de caja reordenados no eluden conteo (3.062916ms)
+✔ versión futura indentada no elude validación (2.935826ms)
+✔ separador de versión mal formado no elude validación (2.902466ms)
+✔ versión sin separador no elude validación (3.135696ms)
+✔ versión duplicada indentada no elude validación (4.185662ms)
+✔ componentes duplicados indentados no elude validación (4.129117ms)
+✔ FAQ duplicada indentada no elude validación (3.891249ms)
+✔ destino por título exacto se interpreta y conserva la trazabilidad (4.675287ms)
+✔ destino desconocido bloquea aunque el autor aparezca en cuerpo (3.763068ms)
+✔ H2 fuera de rango bloquea en vez de aceptar cualquier aparición (4.342367ms)
+✔ cita solo en Intro no satisface el H2 indicado por título (3.035355ms)
+✔ título desconocido Introducción a una sección que no existe no se interpreta parcialmente (2.936697ms)
+✔ título desconocido Cierre de una sección inexistente no se interpreta parcialmente (3.246933ms)
+✔ título desconocido Texto sobre FAQ desconocido no se interpreta parcialmente (3.846212ms)
+✔ título desconocido Sección H2-1 fantasma no se interpreta parcialmente (3.95106ms)
+✔ título desconocido H2-1; sección inexistente no se interpreta parcialmente (3.990188ms)
+✔ selectores explícitos legados con conectores/apoyo se conservan (3.785621ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 160.010347
