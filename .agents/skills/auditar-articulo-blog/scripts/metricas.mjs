@@ -233,13 +233,35 @@ function agujas(etiqueta) {
  * Traduce el H2 asignado del brief ("Intro · H2-1 · H2-5 · FAQ") a índices de
  * sección del artículo. 0 = introducción, n = H2-n, última = Conclusión/FAQ.
  */
-function indicesAsignados(asignado, nSecs) {
+function indicesAsignados(asignado, secs) {
   const idx = new Set();
-  if (/intro/i.test(asignado)) idx.add(0);
-  if (/(conclus|faq)/i.test(asignado)) idx.add(nSecs - 1);
-  for (const m of asignado.matchAll(/H2-(\d+)/gi)) {
-    const n = parseInt(m[1], 10);
-    if (n >= 1 && n <= nSecs - 1) idx.add(n);
+  const clean = value => norm(value).replace(/^\s*H2\s*[-–—:]\s*/i, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  // Cada fragmento debe ser un título completo o una gramática explícita de
+  // selectores. No inferir Intro/FAQ/H2-n de palabras dentro de títulos desconocidos.
+  const fragments = asignado.split(/\s*[;|·]\s*/).map(s => s.trim()).filter(Boolean);
+  for (const fragment of fragments) {
+    // H2-n es un identificador reservado, no el título numérico de otra sección.
+    const direct = fragment.match(/^H2-(\d+)$/i);
+    if (direct) {
+      const n = Number(direct[1]);
+      if (n < 1 || n >= secs.length) return [];
+      idx.add(n); continue;
+    }
+    const exact = secs.map((sec,i) => clean(sec.titulo) === clean(fragment) ? i : -1).filter(i => i >= 0);
+    if (exact.length > 1) return []; // exigir H2-n si la normalización colisiona
+    if (exact.length === 1) { idx.add(exact[0]); continue; }
+    const tokens = fragment.split(/\s*(?:,|\by\b|\bo\b|\/)\s*/i).filter(Boolean);
+    let selectors = 0;
+    for (const rawToken of tokens) {
+      const token = norm(rawToken).replace(/^apoyo\s+/, '').trim();
+      if (token === 'con limites') continue; // calificador legado, nunca selector por sí solo
+      if (/^(?:intro|introduccion)$/.test(token)) { idx.add(0); selectors++; continue; }
+      if (/^(?:conclusion|cierre|faq)$/.test(token)) { idx.add(secs.length-1); selectors++; continue; }
+      const m = token.match(/^h2-(\d+)$/);
+      if (m && Number(m[1]) >= 1 && Number(m[1]) < secs.length) { idx.add(Number(m[1])); selectors++; continue; }
+      return []; // ni título real ni selector completo; no aceptar la parte que coincidió
+    }
+    if (!selectors) return [];
   }
   return [...idx];
 }
@@ -375,7 +397,9 @@ function auditar(slug) {
       const hits = new Map(); // índice de sección -> aguja que la encontró
       for (let i = 0; i < lines.length; i++) {
         if (cuadro && i >= cuadro[0] && i <= cuadro[1]) continue; // el cuadro no cuenta
-        let a = ag.todas.find((x) => lines[i].includes(x));
+        // Una palabra suelta del título no sustituye una autoría disponible.
+        const candidates = ag.fuertes.length ? ag.fuertes : ag.todas;
+        let a = candidates.find((x) => lines[i].includes(x));
         for (const fr of [ag.frase, ag.frase2]) {
           if (!a && fr && norm(lines[i]).includes(norm(fr))) a = `«${fr}…»`;
         }
@@ -384,9 +408,13 @@ function auditar(slug) {
         if (si !== undefined && !hits.has(si)) hits.set(si, a);
       }
       const etq = f.etiqueta.replace(/\*/g, '').slice(0, 46);
-      const esperados = indicesAsignados(f.asignado, secs.length);
+      const esperados = indicesAsignados(f.asignado, secs);
       p(`  [${f.n}] ${etq}`);
       p(`      asignada a: ${f.asignado}  ->  secciones ${esperados.join(', ') || '?'}`);
+      if (!esperados.length) {
+        p(`      BLOQUEA: destino de fuente no interpretable; usar título exacto o H2-n.`);
+        v.bloqueantes.push(`fuente ${f.n}: destino asignado no interpretable (${f.asignado})`);
+      }
       if (!hits.size) {
         p(`      BLOQUEA: no aparece en el cuerpo (solo en el cuadro de cierre, o ausente).`);
         p(`      agujas buscadas: ${ag.todas.join(', ') || '(ninguna)'}`);
@@ -396,7 +424,7 @@ function auditar(slug) {
           const ok = esperados.includes(si);
           p(`      ${ok ? 'OK ' : '·  '} sec ${si} ${secs[si].titulo.slice(0, 34)}  (aguja "${a}")`);
         }
-        const cubre = esperados.length ? esperados.some((e) => hits.has(e)) : true;
+        const cubre = esperados.length > 0 && esperados.some((e) => hits.has(e));
         if (!cubre) {
           p(`      BLOQUEA: aparece en el cuerpo pero NO en la sección que le asignó el brief.`);
           v.bloqueantes.push(`fuente ${f.n} (${etq}) citada fuera de su H2 asignado (${f.asignado})`);
