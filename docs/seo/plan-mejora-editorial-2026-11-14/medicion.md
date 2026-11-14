@@ -1,6 +1,6 @@
 # Protocolo de medición del piloto
 
-Fecha: 2026-11-14. Parte del [plan](README.md). Estado: diseñado; sin export ni línea base capturada todavía.
+Fecha: 2026-11-14. Parte del [plan](README.md). Estado: fuentes recibidas y cruce exploratorio documentado; línea base reciente por URL y periodo homogéneo pendiente.
 
 ## Datos de entrada
 
@@ -8,7 +8,7 @@ Del informe de rendimiento web de Search Console: periodo, tipo de búsqueda, co
 
 Para relacionar consulta con URL se necesita el desglose correspondiente o export filtrado por página. Las tablas globales separadas de «consultas» y «páginas» no permiten inventar esa relación. Registrar filas omitidas, consultas anonimizadas y otras limitaciones del export.
 
-Los originales y cifras absolutas de audiencia se conservan en el espacio privado que acuerde el propietario; no se suben al repo público. En el repo se documentan método, periodos, decisiones y evidencia sin esos datos. La afirmación «la calculadora es lo más buscado» es por ahora un reporte del propietario, no una cifra comprobada por esta sesión.
+Los originales y cifras absolutas de audiencia se conservan en el espacio privado que acuerde el propietario; no se suben al repo público. En el repo se documentan método, periodos, decisiones y evidencia sin esos datos. El cruce inicial confirma la importancia de HHHHHMM en las dos fuentes aportadas. Esto no equivale al volumen total de búsqueda del mercado ni demuestra uso completado; ver la adenda de recepción al final.
 
 ## Antes de cada publicación
 
@@ -54,3 +54,12 @@ Para un artículo nuevo no existe una línea base de esa URL: evaluar indexació
 | Fallo repetido que nace en el brief o plantilla | Corregir el proceso y sus auditorías antes de producir más |
 
 El umbral de «datos suficientes» y un cambio relevante se fijarán con la línea base antes del lanzamiento, no después de ver los resultados. No imponer un porcentaje arbitrario de mejora ni garantizar causalidad: estacionalidad, posición, competencia y cambios de mezcla pueden explicar parte del resultado.
+
+
+## Recepción de fuentes — 2026-11-14
+
+Se recibió el export de rendimiento Web con fechas reales del gráfico del 12 de agosto al 11 de noviembre de 2026 y la transcripción del top de páginas vistas estimadas del panel para 30 días, sin extremos ni fecha exacta de consulta aportados. El nombre del ZIP no convierte el 14 de noviembre en último día medido.
+
+Se contrastaron definiciones con el código de lectura del panel y se documentaron [prioridades y límites](prioridades-search-console-panel-2026-11-14.md), sin publicar cifras absolutas. Los originales y el cruce numérico permanecen privados. El acceso directo al panel/D1 no se completó; su fuente numérica es la transcripción del propietario.
+
+El trimestre sirve para elegir candidatos. Quedan pendientes cortes recientes por URL, consultas filtradas por página y metadatos del próximo corte del panel antes del primer experimento. No se cambiaron las reglas de medición de este protocolo ni se ejecutó un piloto público.
