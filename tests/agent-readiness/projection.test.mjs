@@ -50,6 +50,17 @@ for (const golden of manifest.documents) {
   });
 }
 
+test('un vídeo conserva pasos, pie y enlace de descarga en la alternativa Markdown', async () => {
+  const golden = manifest.documents.find((item) => item.documentId === 'home');
+  const html = await readFile(join(ROOT, golden.htmlFile), 'utf8');
+  const tutorial = '<figure><video controls><source src="/demo.mp4" type="video/mp4"><track kind="descriptions" src="/demo.vtt">Fallback del reproductor</video><figcaption>Extiende la superficie lavable.</figcaption></figure><ol><li>Revisa la humedad.</li></ol><p><a href="/demo.mp4">Descargar tutorial</a></p>';
+  const result = projectDocument(pageFor(golden), Buffer.from(html.replace('</main>', `${tutorial}</main>`))).markdown.toString();
+  assert.match(result, /Extiende la superficie lavable/u);
+  assert.match(result, /Revisa la humedad/u);
+  assert.match(result, /Descargar tutorial.*https:\/\/cuidatuperroviejo.com\/demo.mp4/u);
+  assert.doesNotMatch(result, /Fallback del reproductor|<video|<track/u);
+});
+
 test('los goldens cubren los perfiles editoriales, FAQ, tablas, citas e imágenes solicitados', async () => {
   const get = async (id) => readFile(join(ROOT, `${id}.md`), 'utf8');
   const home = await get('home');

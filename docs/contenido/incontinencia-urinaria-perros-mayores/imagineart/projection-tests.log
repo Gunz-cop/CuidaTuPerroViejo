@@ -1,0 +1,31 @@
+✔ golden F2 article--chequeo-geriatrico-canino conserva el documento completo (103.939592ms)
+✔ golden F2 article--comida-casera-perros-mayores conserva el documento completo (78.847832ms)
+✔ golden F2 article--salud-dental-perros-mayores conserva el documento completo (31.796459ms)
+✔ golden F2 article--sindrome-cushing-perros-mayores conserva el documento completo (26.029463ms)
+✔ golden F2 home conserva el documento completo (52.691867ms)
+✔ golden F2 page--acerca-de conserva el documento completo (9.149876ms)
+✔ golden F2 page--politica-editorial conserva el documento completo (6.969519ms)
+✔ golden F2 pillar--herramientas conserva el documento completo (19.372324ms)
+✔ golden F2 pillar--salud-perros-mayores conserva el documento completo (18.9241ms)
+✔ golden F2 tool--calidad-vida conserva el documento completo (38.218967ms)
+✔ golden F2 tool--movilidad conserva el documento completo (24.729483ms)
+✔ un vídeo conserva pasos, pie y enlace de descarga en la alternativa Markdown (27.182938ms)
+✔ los goldens cubren los perfiles editoriales, FAQ, tablas, citas e imágenes solicitados (11.095702ms)
+✔ selectores fallan cerrados ante H1 duplicado, perfil ausente o tag semántico nuevo (75.381987ms)
+✔ la proyección conserva el contenido editorial junto a un bloque de afiliación (80.629526ms)
+✔ tabla no representable falla en lugar de perder celdas (13.288039ms)
+✔ párrafos que empiezan con sintaxis de heading/lista siguen siendo texto literal (187.991024ms)
+✔ listas anidadas de tres niveles conservan AST, tipo y comienzo ordered (83.357369ms)
+✔ pre y code conservan LF internos y finales según el parser CommonMark (103.055935ms)
+✔ un pipe de texto ocupa una sola celda GFM sin doble escape (175.722458ms)
+✔ las seis tarjetas de inicio siguen siendo seis li con heading, texto y enlaces (110.983927ms)
+✔ mutaciones de aviso, FAQ, celda, fuente y autor se detectan contra los goldens fijos (146.065184ms)
+✔ el índice permite crecimiento derivado a 29 entradas (0.7084ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1447.154187

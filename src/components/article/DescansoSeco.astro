@@ -1,0 +1,45 @@
+---
+const base = '/images/blog/incontinencia-urinaria-perros-mayores/';
+---
+
+<aside class="descanso-seco" aria-labelledby="descanso-seco-title">
+  <h3 id="descanso-seco-title">Prepara una cama fácil de mantener seca</h3>
+  <details>
+    <summary>Ver materiales</summary>
+    <figure>
+      <img src={`${base}materiales-imagineart-v1.webp`} srcset={`${base}materiales-imagineart-v1-400.webp 400w, ${base}materiales-imagineart-v1-800.webp 800w, ${base}materiales-imagineart-v1.webp 1200w`} sizes="(max-width: 800px) 100vw, 800px" width="1200" height="670" loading="lazy" decoding="async" alt="Cama baja con funda verde, una superficie lavable beige doblada a su lado y recambios en una cesta." />
+      <figcaption>Deja un recambio limpio cerca para cambiar la superficie en cuanto esté húmeda.</figcaption>
+    </figure>
+  </details>
+  <figure class="tutorial">
+    <video controls playsinline preload="none" width="1280" height="720" poster={`${base}tutorial-poster-imagineart-v1.webp`} aria-label="Tutorial sin sonido: protege el colchón, extiende la superficie lavable y revisa la humedad. Los pasos están escritos debajo.">
+      <source src={`${base}tutorial-descanso-seco-imagineart-v1.mp4`} type="video/mp4" />
+    </video>
+    <figcaption>Preparación de la cama · 18 segundos · Sin sonido. Video ilustrativo generado con IA.</figcaption>
+  </figure>
+  <ol>
+    <li><strong>Protege el colchón.</strong> Ajusta la funda impermeable y comprueba que la base no resbale.</li>
+    <li><strong>Coloca la superficie lavable.</strong> Extiéndela plana, sin pliegues que dificulten acomodarse.</li>
+    <li><strong>Revisa después de cada escape.</strong> Cambia lo húmedo y comprueba también la funda y el colchón.</li>
+  </ol>
+  <p>Deja el agua accesible y el camino de salida despejado.</p>
+  <p><a href={`${base}tutorial-descanso-seco-imagineart-v1.mp4`} download>Descargar el tutorial (MP4)</a></p>
+</aside>
+
+<style>
+  .descanso-seco { margin: 1.5rem 0; padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid #8ba69b; border-radius: 1rem; background: #f3f7f2; color: #243e34; }
+  .descanso-seco h3 { margin: 0 0 1rem; color: #243e34; font-size: 1.3rem; line-height: 1.35; }
+  .descanso-seco figure { margin: 0; }
+  .descanso-seco details { margin: .5rem 0; }
+  .descanso-seco details summary { padding: .5rem .75rem; min-height: 44px; cursor: pointer; font-weight: 600; }
+  .descanso-seco img { display: block; width: 100%; height: auto; border-radius: .6rem; margin: 0; }
+  .descanso-seco video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: .6rem; background: #162e25; }
+  .descanso-seco .tutorial { margin-top: 1rem; }
+  .descanso-seco a { color: #1e5140; text-decoration: underline; text-underline-offset: .2em; display: inline-block; padding: .6rem 0; min-height: 44px; }
+  .descanso-seco a:focus-visible { outline: 3px solid #1e5140; outline-offset: 3px; }
+  .descanso-seco figcaption { color: #385448; margin: .6rem 0 1rem; font-size: .95rem; line-height: 1.5; }
+  .descanso-seco ol { padding-left: 1.4rem; margin: .8rem 0; }
+  .descanso-seco li { margin: .4rem 0; line-height: 1.55; }
+  .descanso-seco strong { color: #243e34; }
+  .descanso-seco p { margin: .6rem 0 0; }
+</style>

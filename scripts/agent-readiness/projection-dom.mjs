@@ -3,7 +3,7 @@ import { parse as parseHtml } from 'parse5';
 const SITE = 'https://cuidatuperroviejo.com';
 const EXCLUDED_TAGS = new Set([
   'nav', 'script', 'style', 'noscript', 'iframe', 'template', 'svg', 'form', 'button',
-  'input', 'select', 'textarea', 'progress', 'label', 'source',
+  'input', 'select', 'textarea', 'progress', 'label', 'source', 'video', 'track',
 ]);
 const INLINE_TAGS = new Set([
   'a', 'abbr', 'b', 'code', 'del', 'em', 'i', 'ins', 'mark', 's', 'small', 'span',
