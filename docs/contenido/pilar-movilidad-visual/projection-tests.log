@@ -1,0 +1,32 @@
+✔ golden F2 article--chequeo-geriatrico-canino conserva el documento completo (112.545767ms)
+✔ golden F2 article--comida-casera-perros-mayores conserva el documento completo (75.205522ms)
+✔ golden F2 article--salud-dental-perros-mayores conserva el documento completo (30.124825ms)
+✔ golden F2 article--sindrome-cushing-perros-mayores conserva el documento completo (28.12851ms)
+✔ golden F2 home conserva el documento completo (32.313146ms)
+✔ golden F2 page--acerca-de conserva el documento completo (6.468592ms)
+✔ golden F2 page--politica-editorial conserva el documento completo (5.244551ms)
+✔ golden F2 pillar--herramientas conserva el documento completo (14.47291ms)
+✔ golden F2 pillar--salud-perros-mayores conserva el documento completo (15.781148ms)
+✔ golden F2 tool--calidad-vida conserva el documento completo (12.869426ms)
+✔ golden F2 tool--movilidad conserva el documento completo (16.330637ms)
+✔ un vídeo conserva pasos, pie y enlace de descarga en la alternativa Markdown (30.612113ms)
+✔ una narración conserva transcripción y enlace MP3 sin duplicar el fallback (101.720216ms)
+✔ los goldens cubren los perfiles editoriales, FAQ, tablas, citas e imágenes solicitados (7.895112ms)
+✔ selectores fallan cerrados ante H1 duplicado, perfil ausente o tag semántico nuevo (70.625259ms)
+✔ la proyección conserva el contenido editorial junto a un bloque de afiliación (42.217888ms)
+✔ tabla no representable falla en lugar de perder celdas (15.019353ms)
+✔ párrafos que empiezan con sintaxis de heading/lista siguen siendo texto literal (175.663651ms)
+✔ listas anidadas de tres niveles conservan AST, tipo y comienzo ordered (79.195891ms)
+✔ pre y code conservan LF internos y finales según el parser CommonMark (76.938458ms)
+✔ un pipe de texto ocupa una sola celda GFM sin doble escape (130.787167ms)
+✔ las seis tarjetas de inicio siguen siendo seis li con heading, texto y enlaces (130.073354ms)
+✔ mutaciones de aviso, FAQ, celda, fuente y autor se detectan contra los goldens fijos (145.504645ms)
+✔ el índice permite crecimiento derivado a 29 entradas (0.872638ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1371.294976

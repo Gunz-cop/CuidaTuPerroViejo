@@ -1,0 +1,109 @@
+---
+const base = '/images/pilares/movilidad-dolor-perros-mayores/';
+const changes = [
+  { key: 'suelo', title: 'Agarre: aplana y fija la alfombra', text: 'Una esquina levantada se interpone en el paso. Elige una base que no se deslice y comprueba los bordes del recorrido.', label: 'Alfombra', x: 77, y: 64 },
+  { key: 'cama', title: 'Acceso: baja la entrada de la cama', text: 'Un borde alto exige levantar más las patas. Busca una entrada baja y estable, con apoyo cómodo para descansar.', label: 'Cama', x: 85, y: 30 },
+  { key: 'paso', title: 'Paso libre: aparta el cuenco del camino', text: 'Mantén el agua cerca y accesible, junto a un lateral. Deja libre el trayecto entre la cama y la salida.', label: 'Cuenco', x: 87, y: 85 },
+];
+---
+
+<section class="room" data-mobility-room aria-labelledby="room-title">
+  <div class="room-heading"><span class="room-kicker">Explora la escena</span><span class="room-count" data-room-progress hidden aria-live="polite">0 de 3 zonas exploradas</span></div>
+  <h3 id="room-title">Tres cambios. El mismo rincón.</h3>
+  <p class="room-intro">Mira la habitación. Toca los números para descubrir qué facilitaría su recorrido.</p>
+  <div class="room-scenes">
+    <figure data-room-view="before">
+      <div class="room-image">
+        <img src={`${base}collie-casa-antes-v1.webp`} srcset={`${base}collie-casa-antes-v1-400.webp 400w, ${base}collie-casa-antes-v1-800.webp 800w, ${base}collie-casa-antes-v1.webp 1200w`} sizes="(max-width: 900px) 100vw, 800px" width="1200" height="675" loading="lazy" decoding="async" alt="El mismo mestizo de border collie mayor en una habitación con esquina de alfombra levantada, cama de borde alto y cuenco en el paso." />
+        <div data-room-controls hidden>
+          {changes.map((change, index) => <button type="button" class="room-dot" style={`--x:${change.x}%;--y:${change.y}%`} data-room-zone={change.key} aria-label={`Explorar zona ${index + 1}: ${change.label}`} aria-pressed="false" aria-controls={`room-note-${change.key}`}>{index + 1}</button>)}
+        </div>
+      </div>
+      <figcaption>Antes: tres detalles del entorno que merece la pena revisar.</figcaption>
+    </figure>
+    <figure data-room-view="after">
+      <div class="room-image">
+        <img src={`${base}collie-casa-apoyos-v1.webp`} srcset={`${base}collie-casa-apoyos-v1-400.webp 400w, ${base}collie-casa-apoyos-v1-800.webp 800w, ${base}collie-casa-apoyos-v1.webp 1200w`} sizes="(max-width: 900px) 100vw, 800px" width="1200" height="675" loading="lazy" decoding="async" alt="Mismo perro y habitación con alfombra extendida, colchón bajo y cuenco junto a la pared, fuera del paso." />
+      </div>
+      <figcaption>Con apoyos: cambian los objetos, no el estado de salud del perro.</figcaption>
+    </figure>
+  </div>
+  <div class="room-switch" data-room-controls hidden role="group" aria-label="Comparar la habitación">
+    <button type="button" data-room-show="before" aria-pressed="true">Antes</button>
+    <button type="button" data-room-show="after" aria-pressed="false">Con apoyos</button>
+    <button type="button" data-room-reset>Reiniciar</button>
+  </div>
+  <p class="room-hint" data-room-hint hidden>Elige una zona. Puedes comparar las dos escenas en cualquier momento.</p>
+  <div class="room-notes">
+    {changes.map((change) => <div class="room-note" id={`room-note-${change.key}`} data-room-note={change.key}><h4>{change.title}</h4><p>{change.text}</p></div>)}
+  </div>
+  <p class="room-foot">Empieza por el trayecto que más usa: de su cama al agua y a la salida.</p>
+</section>
+
+<script>
+  function initMobilityRooms() {
+    document.querySelectorAll<HTMLElement>('[data-mobility-room]').forEach((root) => {
+      if (root.dataset.ready) return;
+      root.dataset.ready = 'true';
+      const visited = new Set<string>();
+      const progress = root.querySelector<HTMLElement>('[data-room-progress]')!;
+      const hint = root.querySelector<HTMLElement>('[data-room-hint]')!;
+      const notes = root.querySelectorAll<HTMLElement>('[data-room-note]');
+      const dots = root.querySelectorAll<HTMLButtonElement>('[data-room-zone]');
+      function show(view: string) {
+        root.querySelectorAll<HTMLElement>('[data-room-view]').forEach((el) => el.hidden = el.dataset.roomView !== view);
+        root.querySelectorAll<HTMLButtonElement>('[data-room-show]').forEach((el) => el.setAttribute('aria-pressed', String(el.dataset.roomShow === view)));
+      }
+      function reset() {
+        visited.clear();
+        dots.forEach((el) => { el.setAttribute('aria-pressed', 'false'); el.classList.remove('visited'); });
+        notes.forEach((el) => el.hidden = true);
+        progress.textContent = '0 de 3 zonas exploradas';
+        hint.hidden = false;
+        show('before');
+      }
+      root.querySelectorAll<HTMLElement>('[data-room-controls]').forEach((el) => el.hidden = false);
+      progress.hidden = false;
+      reset();
+      dots.forEach((button) => button.addEventListener('click', () => {
+        const key = button.dataset.roomZone!;
+        visited.add(key);
+        notes.forEach((el) => el.hidden = el.dataset.roomNote !== key);
+        dots.forEach((el) => el.setAttribute('aria-pressed', String(el === button)));
+        button.classList.add('visited');
+        hint.hidden = true;
+        progress.textContent = `${visited.size} de 3 zonas exploradas${visited.size === 3 ? ' · Compara el resultado' : ''}`;
+      }));
+      root.querySelectorAll<HTMLButtonElement>('[data-room-show]').forEach((button) => button.addEventListener('click', () => show(button.dataset.roomShow!)));
+      root.querySelector<HTMLButtonElement>('[data-room-reset]')!.addEventListener('click', reset);
+    });
+  }
+  initMobilityRooms();
+  document.addEventListener('astro:page-load', initMobilityRooms);
+</script>
+
+<style>
+  .room { --ink: #173e33; --muted: #466055; margin: 1.75rem 0; padding: clamp(1rem, 3vw, 1.5rem); color: var(--ink); background: #f3f4e9; border: 1px solid #a8bbab; border-radius: 1.25rem; }
+  .room [hidden] { display: none !important; }
+  .room-heading { display: flex; align-items: center; justify-content: space-between; gap: .5rem; flex-wrap: wrap; font-size: .76rem; }
+  .room-kicker { text-transform: uppercase; letter-spacing: .1em; font-weight: 700; }
+  .room-count { color: var(--muted); }
+  .room h3 { color: var(--ink); font-size: clamp(1.3rem, 3vw, 1.7rem); margin: .5rem 0; line-height: 1.25; }
+  .room p { margin: .5rem 0; line-height: 1.5; font-size: 1rem; }
+  .room-intro { color: var(--muted); }
+  .room figure { margin: 0; }
+  .room-image { position: relative; margin-top: 1rem; overflow: hidden; border-radius: .8rem; }
+  .room .room-image img { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: contain; margin: 0; }
+  .room figcaption { color: var(--muted); margin: .5rem 0; font-size: .85rem; line-height: 1.45; }
+  .room button { min-height: 44px; min-width: 44px; padding: .6rem .85rem; border-radius: 2rem; background: #fffef8; border: 1px solid #5a7768; color: var(--ink); font: inherit; font-size: .9rem; cursor: pointer; font-weight: 600; }
+  .room button:focus-visible { outline: 3px solid #ba6b20; outline-offset: 3px; }
+  .room button[aria-pressed="true"] { background: #173e33; color: #fffef8; }
+  .room .room-dot { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%); width: 44px; height: 44px; padding: 0; border: 2px solid white; background: #173e33; color: white; box-shadow: 0 2px 8px #0006; }
+  .room .room-dot.visited { background: #83501d; }
+  .room-switch { display: flex; gap: .4rem; flex-wrap: wrap; margin: .8rem 0; }
+  .room-hint, .room-note { padding: .85rem; background: #fffef8; border-radius: .75rem; border-left: 3px solid #b97837; }
+  .room h4 { margin: 0 0 .35rem; color: var(--ink); font-size: 1.05rem; line-height: 1.4; }
+  .room-note p { margin: 0; }
+  .room .room-foot { color: var(--muted); font-size: .88rem; margin: .85rem 0 0; }
+  @media print { .room [data-room-controls], .room [data-room-progress], .room [data-room-hint] { display:none!important; } .room [data-room-view], .room [data-room-note] { display:block!important; } }
+</style>

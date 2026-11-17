@@ -1,0 +1,30 @@
+---
+const base = '/images/pilares/movilidad-dolor-perros-mayores/';
+---
+<section class="walk-pause" aria-labelledby="walk-pause-title">
+  <h3 class="walk-kicker" id="walk-pause-title">Una pausa también cuenta</h3>
+  <figure>
+  <video controls playsinline preload="none" width="1280" height="720" poster={`${base}collie-paseo-poster-v1.webp`} aria-label="Clip ilustrativo sin sonido: el mismo perro camina por un sendero y se detiene. Deja que marque el ritmo.">
+    <source src={`${base}collie-paseo-imagineart-v1.mp4`} type="video/mp4" />
+  </video>
+  <figcaption>Deja que marque el ritmo: pausa, olfatea y continúa si está cómodo. Clip ilustrativo generado con IA · 6 segundos · Sin sonido.</figcaption>
+  </figure>
+  <details>
+    <summary>Qué observar en tu propio perro</summary>
+    <p>Fíjate en el paso, la respiración y las ganas de continuar. Detén la actividad si aparece cojera, jadeo inusual o rechazo a seguir, y consulta. Para la consulta, graba a tu perro real.</p>
+  </details>
+  <p class="walk-download"><a href={`${base}collie-paseo-imagineart-v1.mp4`} download>Descargar el clip (MP4)</a></p>
+</section>
+<style>
+  .walk-pause { padding:clamp(1rem,3vw,1.5rem); border:1px solid #a8bbab; border-radius:1.25rem; background:#f3f4e9; color:#173e33; margin:1.75rem 0; }
+  .walk-pause .walk-kicker { display:block; font-weight:700; font-size:1.2rem; margin:0 0 1rem; color:#173e33; }
+  .walk-pause figure { margin:0; }
+  .walk-pause video { display:block; width:100%; height:auto; aspect-ratio:16/9; border-radius:.8rem; background:#173e33; }
+  .walk-pause figcaption { color:#466055; font-size:.9rem; line-height:1.5; margin:.65rem 0; }
+  .walk-pause details { margin:.75rem 0 0; }
+  .walk-pause details summary { min-height:44px; padding:.75rem; font-size:1rem; }
+  .walk-pause details p { color:#173e33; padding:0 .75rem .75rem; font-size:1rem; line-height:1.5; }
+  .walk-pause .walk-download { margin:.5rem 0 0; }
+  .walk-pause a { display:inline-block; min-height:44px; padding:.6rem 0; color:#173e33; text-decoration:underline; font-size:1rem; }
+  .walk-pause a:focus-visible { outline:3px solid #ba6b20; outline-offset:3px; }
+</style>

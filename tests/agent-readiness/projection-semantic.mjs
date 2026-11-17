@@ -11,7 +11,7 @@ import { inventory } from '../../scripts/agent-readiness/inventory.mjs';
 const buildDir = resolve(process.argv[2] ?? 'dist');
 const scratch = await mkdtemp(join(tmpdir(), 'ctpv-f2-semantic-'));
 const mdOptions = { extensions: [gfm()], mdastExtensions: [gfmFromMarkdown()] };
-const skippedTags = new Set(['nav', 'script', 'style', 'noscript', 'iframe', 'template', 'svg', 'form', 'button', 'input', 'select', 'textarea', 'progress', 'label', 'source', 'video', 'track']);
+const skippedTags = new Set(['nav', 'script', 'style', 'noscript', 'iframe', 'template', 'svg', 'form', 'button', 'input', 'select', 'textarea', 'progress', 'label', 'source', 'video', 'audio', 'track']);
 const asAttrs = (node) => Object.fromEntries((node.attrs ?? []).map(({ name, value }) => [name.toLowerCase(), value]));
 const kids = (node) => node.childNodes ?? [];
 const visit = (root, callback) => {
