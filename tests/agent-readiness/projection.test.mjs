@@ -61,6 +61,16 @@ test('un vídeo conserva pasos, pie y enlace de descarga en la alternativa Markd
   assert.doesNotMatch(result, /Fallback del reproductor|<video|<track/u);
 });
 
+test('una narración conserva transcripción y enlace MP3 sin duplicar el fallback', async () => {
+  const golden = manifest.documents.find((item) => item.documentId === 'home');
+  const html = await readFile(join(ROOT, golden.htmlFile), 'utf8');
+  const narration = '<section><h3>Agarre</h3><p>Revisa los bordes de la alfombra.</p><audio controls><source src="/agarre.mp3" type="audio/mpeg">Fallback del audio</audio><p><a href="/agarre.mp3">Escuchar narración de agarre</a></p></section>';
+  const result = projectDocument(pageFor(golden), Buffer.from(html.replace('</main>', `${narration}</main>`))).markdown.toString();
+  assert.equal(result.split('Revisa los bordes de la alfombra.').length - 1, 1);
+  assert.match(result, /Escuchar narración de agarre.*https:\/\/cuidatuperroviejo.com\/agarre.mp3/u);
+  assert.doesNotMatch(result, /Fallback del audio|<audio/u);
+});
+
 test('los goldens cubren los perfiles editoriales, FAQ, tablas, citas e imágenes solicitados', async () => {
   const get = async (id) => readFile(join(ROOT, `${id}.md`), 'utf8');
   const home = await get('home');

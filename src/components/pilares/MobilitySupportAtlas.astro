@@ -1,0 +1,91 @@
+---
+const base = '/images/pilares/movilidad-dolor-perros-mayores/';
+const panels = [
+  { title: 'Agarre', audio: 'agarre', text: 'Una superficie plana y fijada bajo las patas, sin esquinas levantadas. Revisa también dónde se incorpora y gira.' },
+  { title: 'Acceso', audio: 'acceso', text: 'Una cama baja permite entrar sin salvar un borde alto. Comprueba que se mantenga estable al acomodarse.' },
+  { title: 'Paso libre', audio: 'paso-libre', text: 'Deja espacio para llegar al agua y a la salida. Los cuencos quedan cerca, fuera de la zona de paso.' },
+];
+---
+
+<section class="atlas" data-mobility-atlas aria-labelledby="atlas-title">
+  <span class="atlas-kicker">Infografía para explorar</span>
+  <h3 id="atlas-title">Acércate a cada apoyo</h3>
+  <p class="atlas-intro">Elige una viñeta y mira el detalle que puedes revisar en casa.</p>
+  <div class="atlas-viewport">
+    <img src={`${base}collie-infografia-apoyos-v2.webp`} srcset={`${base}collie-infografia-apoyos-v2-800.webp 800w, ${base}collie-infografia-apoyos-v2.webp 1600w`} sizes="(max-width: 900px) 100vw, 800px" width="1600" height="900" loading="lazy" decoding="async" alt="Infografía del mismo perro mayor: sobre una alfombra extendida, tumbado en una cama de acceso bajo y junto a un paso despejado." data-atlas-image />
+  </div>
+  <div class="atlas-controls" role="group" aria-label="Ampliar una viñeta de la infografía" data-atlas-controls hidden>
+    {panels.map((panel, index) => <button type="button" data-atlas-panel={index} aria-pressed="false" aria-controls={`atlas-note-${index}`}>{index + 1}. {panel.title}</button>)}
+    <button type="button" data-atlas-all aria-pressed="true">Ver completa</button>
+  </div>
+  <div class="atlas-notes">
+    {panels.map((panel, index) => <div id={`atlas-note-${index}`} data-atlas-note={index}>
+      <h4>{index + 1}. {panel.title}</h4><p>{panel.text}</p>
+      <p class="atlas-listen">Escuchar · Voz generada con IA</p>
+      <audio controls preload="none" aria-label={`Escuchar narración de ${panel.title.toLowerCase()}`}>
+        <source src={`${base}narracion-${panel.audio}-v1.mp3`} type="audio/mpeg" />
+      </audio>
+      <a class="atlas-audio-link" href={`${base}narracion-${panel.audio}-v1.mp3`} download>Descargar audio: {panel.title.toLowerCase()}</a>
+    </div>)}
+  </div>
+</section>
+
+<script>
+  function initMobilityAtlases() {
+    document.querySelectorAll<HTMLElement>('[data-mobility-atlas]').forEach((root) => {
+      if (root.dataset.ready) return;
+      root.dataset.ready = 'true';
+      const img = root.querySelector<HTMLImageElement>('[data-atlas-image]')!;
+      const notes = root.querySelectorAll<HTMLElement>('[data-atlas-note]');
+      const buttons = root.querySelectorAll<HTMLButtonElement>('[data-atlas-panel]');
+      const all = root.querySelector<HTMLButtonElement>('[data-atlas-all]')!;
+      const audios = root.querySelectorAll<HTMLAudioElement>('audio');
+      audios.forEach((audio) => audio.addEventListener('play', () => audios.forEach((other) => { if (other !== audio) other.pause(); })));
+      root.querySelector<HTMLElement>('[data-atlas-controls]')!.hidden = false;
+      function focusPanel(index: number | null) {
+        audios.forEach((audio) => { audio.pause(); if (audio.readyState > 0) audio.currentTime = 0; });
+        root.classList.toggle('is-zoomed', index !== null);
+        img.style.setProperty('--focus', String(index ?? 0));
+        img.sizes = index === null ? '(max-width: 900px) 100vw, 800px' : '(max-width: 900px) 300vw, 1600px';
+        notes.forEach((note, i) => note.hidden = index === null ? true : i !== index);
+        buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+        all.setAttribute('aria-pressed', String(index === null));
+      }
+      buttons.forEach((button) => button.addEventListener('click', () => focusPanel(Number(button.dataset.atlasPanel))));
+      all.addEventListener('click', () => focusPanel(null));
+      focusPanel(0);
+    });
+  }
+  initMobilityAtlases();
+  document.addEventListener('astro:page-load', initMobilityAtlases);
+  function pauseAtlasNarrations() {
+    document.querySelectorAll<HTMLAudioElement>('[data-mobility-atlas] audio').forEach((audio) => audio.pause());
+  }
+  document.addEventListener('visibilitychange', () => { if (document.hidden) pauseAtlasNarrations(); });
+  document.addEventListener('astro:before-swap', pauseAtlasNarrations);
+</script>
+
+<style>
+  .atlas { --ink: #173e33; margin: 1.75rem 0; padding: clamp(1rem,3vw,1.5rem); border: 1px solid #a8bbab; border-radius: 1.25rem; background: #faf7ee; color: var(--ink); }
+  .atlas [hidden] { display:none!important; }
+  .atlas-kicker { font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
+  .atlas h3 { margin: .5rem 0; color: var(--ink); font-size: clamp(1.3rem,3vw,1.7rem); line-height: 1.25; }
+  .atlas p { font-size: 1rem; line-height: 1.5; margin: .5rem 0; }
+  .atlas-intro { color: #466055; }
+  .atlas-viewport { margin-top: 1rem; overflow: hidden; border-radius: .8rem; background: #f3efdf; }
+  .atlas .atlas-viewport img { display:block; max-width:none; width:100%; height:auto; aspect-ratio:16/9; object-fit:contain; margin:0; }
+  .atlas.is-zoomed .atlas-viewport { width: min(100%, clamp(180px, 50vw, 240px)); height: auto; aspect-ratio: 16/27; position: relative; margin-inline: auto; }
+  .atlas.is-zoomed .atlas-viewport img { height: 100%; width: 300%; object-fit: fill; position: absolute; left: calc(var(--focus) * -100%); aspect-ratio: auto; }
+  .atlas-controls { display:flex; gap:.4rem; flex-wrap:wrap; margin:.8rem 0; }
+  .atlas button { min-height:44px; min-width:44px; border:1px solid #5a7768; border-radius:2rem; padding:.6rem .85rem; background:#fffef8; color:var(--ink); font:inherit; font-size:.9rem; cursor:pointer; font-weight:600; }
+  .atlas button[aria-pressed="true"] { background:#173e33; color:#fffef8; }
+  .atlas button:focus-visible { outline:3px solid #ba6b20; outline-offset:3px; }
+  .atlas h4 { color:var(--ink); margin:0 0 .3rem; font-size:1.05rem; }
+  .atlas-notes > div { padding:.85rem; background:#fffef8; border-left:3px solid #b97837; border-radius:.75rem; margin:.75rem 0 0; }
+  .atlas-notes p { margin:0; }
+  .atlas .atlas-listen { font-size:.85rem; font-weight:600; margin:.75rem 0 .35rem; color:#466055; }
+  .atlas audio { display:block; width:100%; height:44px; }
+  .atlas .atlas-audio-link { display:inline-block; padding:.6rem 0; min-height:44px; color:#173e33; text-decoration:underline; font-size:.8rem; }
+  .atlas .atlas-audio-link:focus-visible { outline:3px solid #ba6b20; outline-offset:3px; }
+  @media print { .atlas-controls { display:none!important; } .atlas .atlas-viewport { height:auto!important; } .atlas .atlas-viewport img { position:static!important; width:100%!important; height:auto!important; } .atlas [data-atlas-note] { display:block!important; } }
+</style>
