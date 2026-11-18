@@ -279,7 +279,7 @@ Para alcanzar el objetivo de **mínimo 10 artículos por cada pilar de texto**, 
 - [ ] *Arneses de soporte y sillas de ruedas para perros senior: guía de selección y uso*
 - [ ] *Ejercicios terapéuticos de bajo impacto para prevenir la atrofia muscular geriátrica*
 - [ ] *Cómo saber si tu perro siente dolor: escala visual de dolor articular y óseo*
-- [~] *Mi perro viejo se cree cachorro: mente joven, cuerpo que envejece* (Redactado 2026-11-18, `src/content/blog/perro-viejo-se-cree-cachorro.mdx`; pendiente de visuales fal.ai y auditoría; brief: `briefings/briefing-perro-viejo-se-cree-cachorro.md`) **[Nuevo - experiencia de Luna y Dakota, solicitado por el propietario 2026-11-18]**
+- [x] *Mi perro viejo se cree cachorro: mente joven, cuerpo que envejece* (Publicado 2026-11-18, PR #185; URL verificada: `/movilidad-dolor-perros-mayores/perro-viejo-se-cree-cachorro`; brief: `briefings/briefing-perro-viejo-se-cree-cachorro.md`)
 
 ### Pilar 5: Salud Mental y Emocional (11 artículos totales propuestos)
 *Estado: 3 publicados, 8 en briefing (tanda de briefings del 2026-08-14)*

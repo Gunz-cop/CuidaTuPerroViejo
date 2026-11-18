@@ -1,6 +1,6 @@
 # 📋 BRIEF DE CONTENIDOS TÉCNICO: Mi perro viejo se cree cachorro
 > [!NOTE]
-> **Estado:** ✍️ Redactado el 2026-11-18 en `src/content/blog/perro-viejo-se-cree-cachorro.mdx` (5.814 palabras). Pendientes antes de publicar: hero, imagen de palpación y video (fal.ai) y auditoría del artículo.
+> **Estado:** ✅ Publicado el 2026-11-18 (PR #185). URL pública verificada (200): https://cuidatuperroviejo.com/movilidad-dolor-perros-mayores/perro-viejo-se-cree-cachorro
 
 **Sitio:** cuidatuperroviejo.com | **Pilar:** Movilidad y Dolor en Perros Mayores | **Tipo:** Artículo spoke (Astro/MDX)
 
