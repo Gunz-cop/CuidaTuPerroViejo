@@ -110,7 +110,7 @@ Verificación hecha el 2026-11-18 con búsqueda web. Los identificadores marcado
    - *Dato clave:* Se evalúa viendo y palpando la columna, las escápulas, el cráneo y las alas del ilion, en una escala de normal a pérdida leve, moderada o grave. El músculo se valora por separado de la grasa (BCS). El gráfico dice que la pérdida suele notarse primero en los músculos epaxiales, a ambos lados de la columna, y que en otras zonas es más variable; y que un perro puede perder mucho músculo aunque tenga sobrepeso (BCS > 5).
    - *Límite:* Es una herramienta clínica, no un diagnóstico casero.
    - *H2:* «Lo que cambia por dentro» (H3 «Dónde se nota la pérdida de músculo») y «Señales que solemos confundir con "es la edad"» (H3 «Cómo palpar»).
-3. **Quimby J, et al. *2023 AAHA Senior Care Guidelines for Dogs and Cats*.** J Am Anim Hosp Assoc. 2023;59(1):1-21. PMID 36584321 ✔ · DOI 10.5326/JAAHA-MS-7343 · https://www.aaha.org/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats/
+3. **Dhaliwal R, et al. *2023 AAHA Senior Care Guidelines for Dogs and Cats*.** J Am Anim Hosp Assoc. 2023;59(1):1-21. PMID 36584321 ✔ · DOI 10.5326/JAAHA-MS-7343 · https://www.aaha.org/resources/2023-aaha-senior-care-guidelines-for-dogs-and-cats/
    - *Dato clave:* En el perro, senior es el último 25 % de su esperanza de vida estimada (definición procedente de la guía AAHA de etapas de vida canina de 2019, recogida en la de 2023). La guía plantea una evaluación sistemática del paciente senior, sano o enfermo, que incluye la condición corporal y muscular y la movilidad.
    - *Límite:* Verificación parcial (aaha.org da 403). La definición de senior y la evaluación de la condición muscular, la palpación y el examen del movimiento están confirmadas por el registro de PubMed y por la tabla 2 de la guía (https://www.aaha.org/globalassets/02-guidelines/2023-aaha-senior-care-guidelines-for-dogs-and-cats/resources/table-2-diagnostic-approaches-by-body-system-for-senior-dogs-and-cats.pdf). No atribuirle umbrales, frecuencias de visita ni pruebas concretas sin abrir el PDF.
    - *H2:* «Por qué tu perro mayor juega como si tuviera un año» (definición) y «Cuándo llevarlo al veterinario» (revisiones y evaluación).
@@ -221,7 +221,7 @@ Se rige por [`guia-voz-tono.md`](../.agents/skills/references/guia-voz-tono.md):
 ### H2 — «Por qué tu perro mayor juega como si tuviera un año» — ~750
 - *Sustentado en:* Fuentes 9, 10, 3 y 15; reflexión del dueño.
 - **Momento:** Luna parada en dos patas hace unos días intentando sacar algo de la mesa; Dakota nunca lo ha hecho.
-- `### El juego no caduca con la edad`: el perro adulto juega con personas, con otros perros y con objetos, algo raro entre animales domésticos; el juego social con humanos es más cooperativo y se ha propuesto como reflejo del vínculo (Bradshaw 2015). Presentar la hipótesis como hipótesis.
+- `### El juego no caduca con la edad`: el perro adulto juega con personas, con otros perros y con objetos, algo inusual entre los carnívoros; el juego social con humanos es más cooperativo y se ha propuesto como reflejo del vínculo (Bradshaw 2015). Presentar la hipótesis como hipótesis.
 - `### La reverencia de juego: una señal que los perros entienden`: explicar en general la reverencia de juego (Bekoff 1995) y distinguirla del estiramiento al echarse. La postura de Luna es de este segundo tipo (aclaración del dueño): no vincularla con el juego.
 - `### Qué significa «perro senior»`: último 25 % de la esperanza de vida (AAHA 2023, definición de 2019). Medianas de vida globales de McMillan 2024 (12,5 años en general; 12,7 en razas puras), sin dar cifra del beagle. Enlace a la calculadora de edad.
 - Cierre del H2: la reflexión del dueño («para ellos el tiempo debe ser distinto; solo viven cerca de uno») como observación personal, sin atribuirle estudios.
@@ -448,6 +448,7 @@ Historial de auditoría:
 - R1: NO APTO, 2026-11-18, `docs/contenido/perro-viejo-se-cree-cachorro/auditoria-brief-r1.md`.
 - Corrección v2: 2026-11-18, aplicadas las 11 instrucciones del informe R1 (sesión autora, no auditora).
 - v3 (2026-11-18): cambio de alcance pedido por el propietario: 6.000 palabras, 15 fuentes, historia tejida en todos los H2. Requiere R2 completa sobre v3.
+- Artículo R1: NO APTO, 2026-11-18, `docs/contenido/perro-viejo-se-cree-cachorro/auditoria-articulo-r1.md`. Corregido por la sesión autora (H-1 a H-12). Decisiones del propietario: historial de la rama reescrito para retirar teléfonos (H-2); hero aceptada tal cual («es Luna, se ve idéntica», H-4); video regenerado v2 con cara blanca (H-3); la imagen 3 «dos cuerpos» se sustituyó por fotos reales y no se produce (H-11); originales PNG fuera del repositorio (H-12).
 - R2: APTO CON CAMBIOS (v2), 2026-11-18, `auditoria-brief-r2.md`.
 - R3: NO APTO (v3), 2026-11-18, `auditoria-brief-r3.md`.
 - Decisión del propietario (2026-11-18): opción 1, corrección cerrada sin nueva auditoría del brief. La auditoría del artículo comprobará que se cumplieron las instrucciones R3-1 a R3-9.
