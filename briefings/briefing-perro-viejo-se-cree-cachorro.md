@@ -6,6 +6,8 @@
 
 ---
 
+> **Nota v4.2 (2026-11-18):** la hero final es una beagle a medio echarse (no reverencia de juego), aceptada por el propietario; el video es v2; la imagen 3 «dos cuerpos» no se produce y la sustituyen fotos reales; volumen final ~5.400 palabras (rango 5.100–6.900 cumplido), con varios H2 por debajo de su target por decisión de no rellenar.
+
 ## 1. DATOS, METADATOS Y FRONTMATTER MDX
 
 | Campo | Valor |
@@ -33,8 +35,8 @@ seoTitle: "Mi perro viejo se cree cachorro: cómo cuidar su cuerpo"
 metaDescription: "Luna, 11 años, cara blanca y ganas de cachorro. Por qué tu perro viejo no sabe que lo es, qué le cambia por dentro y cómo cuidarlo sin quitarle el juego."
 pilar: "movilidad-dolor-perros-mayores"
 keywordPrincipal: "perro viejo activo"
-heroImage: "/images/blog/perro-viejo-se-cree-cachorro/beagle-senior-reverencia-juego.webp"
-heroImageAlt: "Beagle tricolor senior con la cara blanca en postura de reverencia, patas delanteras estiradas y cadera en alto, invitando a jugar sobre baldosa"
+heroImage: "/images/blog/perro-viejo-se-cree-cachorro/beagle-senior-estirandose-al-echarse.webp"
+heroImageAlt: "Beagle tricolor senior con la cara blanca a medio echarse sobre baldosa: patas delanteras estiradas y la cadera todavía en alto"
 status: "Publicado"
 datePublished: "{{FECHA_DE_PUBLICACION}}"
 perros: ["luna", "dakota"]
@@ -440,7 +442,7 @@ No aplica: el video se genera completo y no reutiliza recortes.
 
 | Recurso | Ubicación | Ruta | Estado | Prueba |
 |---|---|---|---|---|
-| Video infográfico | H2 «Lo que cambia por dentro» | `/videos/blog/perro-viejo-se-cree-cachorro/reverencia-musculo.mp4` | Planificado (fal.ai) | Reproducir en móvil/escritorio, modo oscuro, transcripción |
+| Video infográfico | H2 «Lo que cambia por dentro» | `/videos/blog/perro-viejo-se-cree-cachorro/reverencia-musculo-v2.mp4` | Planificado (fal.ai) | Reproducir en móvil/escritorio, modo oscuro, transcripción |
 | 3 imágenes ilustradas | Hero, «Señales…», «El peso…» | `/images/blog/perro-viejo-se-cree-cachorro/` | Planificado | Comprobar edad a 390 px, alt fiel |
 | 8 fotos reales | Repartidas | Igual, en webp | Disponibles; `luna-01` pendiente de difuminar la placa | Revisar privacidad |
 
