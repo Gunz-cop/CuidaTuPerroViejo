@@ -58,6 +58,19 @@ Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 
 
 ## Contenido
 
+- [~] **Artículo del miedo a las visitas con el caso de una lectora** (2026-11-23). Permiso de la lectora por correo, con anonimato. **El repositorio es público:** el brief completo, el expediente y el borrador viven solo en un Google Doc privado del propietario; aquí solo queda el brief saneado. Orden: brief → auditoría → redacción con imágenes y apoyos → auditoría → visto bueno del propietario → PDF a la lectora respondiendo su correo → su respuesta y cambios → aprobación final → subir `.mdx`, PR y publicar. Si no responde, no se publica.
+  - [x] Brief v1 y auditoría R1: NO APTO por privacidad, fuentes verificadas (2026-11-23). Rama recreada sin los datos del caso, con autorización del propietario.
+  - [x] Brief v2 con las correcciones de R1, en el Doc privado (2026-11-23).
+  - [ ] Auditoría R2 del brief (otra sesión, con acceso al Doc).
+  - [ ] Redacción, imágenes, `PlanVisitaRecursos` y PDF de registro (borrador en Drive, no en el repositorio).
+  - [ ] Auditoría del artículo (otra sesión).
+  - [ ] Visto bueno del propietario y PDF a la lectora.
+  - [ ] Aprobación de la lectora (registro mínimo en `docs/contenido/perro-mayor-miedo-visitas-casa/`).
+  - [ ] Publicación y verificación en producción.
+  - [ ] Experiencia del propietario con Ágata y Jaspe (2026-11-23): `docs/experiencias/agata-jaspe-convivencia-2026-11-23/`. Va en la respuesta a la lectora; en el artículo, como adenda opcional sujeta a R2.
+
+- [ ] **Vista previa privada de artículos antes de producción** (idea del propietario, 2026-11-23). Hoy las vistas previas de Workers Builds se generan desde ramas y PR públicos, así que no sirven para borradores privados. Investigar una vista previa protegida (por ejemplo, con Cloudflare Access o tras `/admin`), con `noindex`, fuera del sitemap y sin tocar D1, KV ni secrets de producción. Cambia `wrangler.jsonc` y la configuración de Cloudflare: vía normal, encargo a Codex y auditoría de Claude; coordinar con la migración a Astro 7 (`docs/migracion-stack/README.md`).
+
 - [x] **Preparar P1-03 para publicación.** Traslado mecánico, recursos activos, limpieza y pruebas completados el 2026-10-26; [código #148](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/148) y [artículo #149](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/149), preparados originalmente como draft; fusionados después por orden del propietario, ver cierre de producción.
 - [x] **Ajuste bibliográfico y auditoría independiente de publicación P1-03.** Referencia primaria de Málaga incorporada; R1 del diff de integración APTO, 0 P0/P1/P2 nuevos. 2026-10-26, [artículo #149](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/149); informe `docs/contenido/miedo-petardos-perros-mayores/auditoria-publicacion-r1.md`. Los límites S2/S7 de aquella versión se documentan en la corroboración posterior.
 - [x] **Corroborar Blackwell y la ficha del medicamento de P1-03.** 2026-10-26, [artículo #149](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/149). Texto publicado contrastado en transcripción de copia pública; tres atribuciones precisadas. Ficha británica primaria corroborada y conservada por decisión delegada del propietario, sin afirmar lectura de la española. Expediente: `docs/contenido/miedo-petardos-perros-mayores/publicacion/corroboracion-s2-s7.md`; revisión independiente R2 del ajuste APTO, sin bloqueantes nuevos (`auditoria-publicacion-r2.md`).

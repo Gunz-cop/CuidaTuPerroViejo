@@ -101,6 +101,7 @@ Registro de razas usadas (actualizar al cerrar cada brief):
 | Picadura de abeja (brief, 2026-11-12) | Beagle tricolor senior ilustrativa + fotografías reales de Dakota (repetición justificada por el caso) |
 | Pilar movilidad (propuesta visual local, 2026-11-17) | Mestizo de border collie negro y blanco, lista blanca asimétrica, oreja izquierda erguida y derecha semicaída; mismo sujeto en casa, infografía y paseo |
 | Perro viejo se cree cachorro (brief, 2026-11-18) | Dos beagles senior ilustrativas inspiradas en Luna (tricolor delgada) y Dakota (robusta, manto negro) + fotografías reales (repetición justificada por el caso) |
+| Miedo a las visitas (brief, 2026-11-23) | Mestiza mediana color crema, orejas semicaídas (ilustrativa) |
 
 ## Revisión de la imagen generada
 
