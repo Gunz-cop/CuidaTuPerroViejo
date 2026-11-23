@@ -18,6 +18,12 @@ Jaspe entró en estrés:
 
 **Reflexión del propietario:** aunque queramos compartir la casa con otro animal, a veces la situación empeora para el que ya vivía allí; no sabemos cómo reaccionarán. La experiencia y los errores enseñan. Hoy gestiona de otra forma la llegada de un animal nuevo: **Rookie** (3 meses, en casa ahora) persigue a Jaspe y la estresa bastante, pero Jaspe lo lleva distinto «porque yo también lo he gestionado distinto»: se estresa, pero ya medio juega con él. *(Pendiente: especie de Rookie y qué hizo distinto el propietario, si se quiere usar en el artículo.)*
 
+## Consulta veterinaria (añadido por el propietario el 2026-11-23)
+
+Hubo consulta veterinaria. El veterinario dijo que la pérdida de pelo, la pupila dilatada y otros cambios de Jaspe podían deberse al estrés, y que la pérdida de pelo también podía ser un hongo. La trataron contra el hongo: la calva se redujo un poco, pero no se le quitó. Jaspe solo empezó a mejorar cuando la otra gata ya no estaba.
+
+Con esto, las dos notas de cautela de arriba quedan matizadas: se puede contar que **el veterinario lo atribuyó al estrés y a un posible hongo**, como opinión de ese veterinario en ese caso, sin presentarlo como diagnóstico general ni como relación de causa probada.
+
 ## Uso previsto
 
 - **Respuesta a la lectora:** paralelo directo con su caso (un animal residente en tensión con otro, que mejora tras la muerte del otro). Tono de experiencia compartida, sin explicaciones clínicas.

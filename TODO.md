@@ -61,6 +61,7 @@ Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 
 - [~] **Artículo del miedo a las visitas con el caso de una lectora** (2026-11-23). Permiso de la lectora por correo, con anonimato. **El repositorio es público:** el brief completo, el expediente y el borrador viven solo en un Google Doc privado del propietario; aquí solo queda el brief saneado. Orden: brief → auditoría → redacción con imágenes y apoyos → auditoría → visto bueno del propietario → PDF a la lectora respondiendo su correo → su respuesta y cambios → aprobación final → subir `.mdx`, PR y publicar. Si no responde, no se publica.
   - [x] Brief v1 y auditoría R1: NO APTO por privacidad, fuentes verificadas (2026-11-23). Rama recreada sin los datos del caso, con autorización del propietario.
   - [x] Brief v2 con las correcciones de R1, en el Doc privado (2026-11-23).
+  - [x] Ronda adicional autorizada por el propietario (2026-11-23): R1 queda registrada y el límite del brief pasa a R4.
   - [ ] Auditoría R2 del brief (otra sesión, con acceso al Doc).
   - [ ] Redacción, imágenes, `PlanVisitaRecursos` y PDF de registro (borrador en Drive, no en el repositorio).
   - [ ] Auditoría del artículo (otra sesión).

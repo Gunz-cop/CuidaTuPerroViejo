@@ -15,5 +15,7 @@
 |---|---|---|---|
 | R1 | 2026-11-23 | NO APTO (privacidad); fuentes verificadas | `docs/contenido/perro-mayor-miedo-visitas-casa/auditoria-brief-r1.md` |
 | v2 | 2026-11-23 | Correcciones de R1 aplicadas en el Doc privado; la versión R1 se retiró del historial público (rama recreada) | — |
+| — | 2026-11-23 | **Autorización del propietario:** como el brief cambió de forma sustancial tras R1, R1 queda registrada y se concede una ronda más. Límite de este brief: **R4** (R1 hecha + R2, R3 y R4). | — |
+| v2.1 | 2026-11-23 | Adenda de la experiencia del propietario actualizada con la consulta veterinaria (estrés y posible hongo; tratamiento antifúngico con mejora parcial). | — |
 
 Las fuentes científicas (AAHA 2015, Forsgård 2019, Shihab 2011, Mills 2020, Bhatti 2015, Podell 2016) y la experiencia del propietario con sus gatas (`docs/experiencias/agata-jaspe-convivencia-2026-11-23/`) no contienen datos de la lectora. Están detalladas en el Doc privado.
