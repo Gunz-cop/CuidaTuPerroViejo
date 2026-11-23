@@ -1,0 +1,284 @@
+---
+// Plan de visita en tres tiempos (antes, durante y después) con la descarga de la hoja de
+// registro, para el artículo «Mi perro mayor se estresa con las visitas».
+// Las acciones salen del propio artículo (aplicación del principio de evitación y protección
+// de la guía AAHA 2015); no añade datos clínicos. Sin dibujos de perros ni personas: solo
+// iconos geométricos (reloj, puerta, lista) y la huella de la marca.
+// Sin JavaScript se leen las tres fases enteras; con JavaScript se navegan como pestañas y
+// las casillas se recuerdan en este navegador. La impresión muestra siempre las tres fases.
+const uid = `plan-visita-${crypto.randomUUID().slice(0, 8)}`;
+const PAW = 'M12 11.2c-3.5 0-6.4 2.7-6.4 6 0 2 1.5 3.2 3.4 3.2 1.1 0 2-.5 3-.5s1.9.5 3 .5c1.9 0 3.4-1.2 3.4-3.2 0-3.3-2.9-6-6.4-6Z';
+const PDF = '/descargas/registro-visitas-perro-mayor.pdf';
+
+const fases = [
+  {
+    id: 'antes',
+    tab: 'Antes',
+    title: 'Antes de que llegue nadie',
+    icon: 'reloj',
+    items: [
+      'Elegir una habitación lejos de la entrada',
+      'Dejar su cama, agua y algo para masticar o lamer',
+      'Poner un ruido de fondo suave, como una radio baja',
+      'Sacarlo a pasear o a hacer sus necesidades',
+      'Que entre en su sitio antes del timbre, no cuando ya jadea',
+    ],
+  },
+  {
+    id: 'durante',
+    tab: 'Durante',
+    title: 'Mientras hay alguien en casa',
+    icon: 'puerta',
+    items: [
+      'Pedir a quien entra que no lo llame ni se acerque',
+      'Que no lo mire fijamente ni intente tocarlo',
+      'Puerta o barrera cerradas; cartel si entra un profesional',
+      'Si jadea o ladra: más distancia y el saludo para otro día',
+      'Si estás muy nervioso, alternar con otra persona de la casa',
+    ],
+  },
+  {
+    id: 'despues',
+    tab: 'Después',
+    title: 'Cuando la visita se ha ido',
+    icon: 'lista',
+    items: [
+      'Esperar a que la casa vuelva a sonar y oler como siempre',
+      'Abrir, dar un paseo tranquilo y seguir con su rutina',
+      'Anotar qué lo disparó y cuánto tardó en calmarse',
+      'Anotar si jadea también sin visitas: eso es para el veterinario',
+    ],
+  },
+];
+const total = fases.reduce((n, f) => n + f.items.length, 0);
+---
+
+<section class="pv" data-plan-visita data-total={total} data-reader-atomic aria-labelledby={`${uid}-title`}>
+  <header class="pv-head">
+    <svg class="pv-paw" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="7.2" cy="8" r="2.2"/><circle cx="16.8" cy="8" r="2.2"/><circle cx="4.8" cy="12.7" r="1.9"/><circle cx="19.2" cy="12.7" r="1.9"/><path d={PAW}/></svg>
+    <div>
+      <p class="pv-kicker">Plan de visita · tres tiempos</p>
+      <h3 id={`${uid}-title`} data-toc-exclude="true">Antes, durante y después</h3>
+      <p class="pv-count" aria-live="polite">{total} pasos. Márcalos a medida que los tengas listos.</p>
+    </div>
+  </header>
+
+  <div class="pv-tabs" role="tablist" aria-label="Fases de la visita" hidden>
+    {fases.map((f, i) => (
+      <button type="button" role="tab" id={`${uid}-tab-${f.id}`} aria-controls={`${uid}-panel-${f.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} data-tab={f.id}>
+        <svg class="pv-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          {f.icon === 'reloj' && (<><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></>)}
+          {f.icon === 'puerta' && (<><path d="M6 20.5V4.5h10v16"/><path d="M4 20.5h16"/><circle cx="13.3" cy="12.5" r=".9" class="pv-fill"/></>)}
+          {f.icon === 'lista' && (<><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8.5 8.5h7M8.5 12h7M8.5 15.5h4"/></>)}
+        </svg>
+        <span class="pv-tab-label">{f.tab}</span>
+        <span class="pv-tab-count" data-fase-count={f.id}>0/{f.items.length}</span>
+      </button>
+    ))}
+  </div>
+
+  {fases.map((f) => (
+    <div class="pv-panel" role="region" id={`${uid}-panel-${f.id}`} aria-labelledby={`${uid}-h-${f.id}`} data-panel={f.id}>
+      <h4 id={`${uid}-h-${f.id}`}>{f.title}</h4>
+      <ul>
+        {f.items.map((item, i) => (
+          <li><label><input type="checkbox" data-key={`${f.id}-${i}`} /><span class="pv-check" aria-hidden="true"></span><span>{item}</span></label></li>
+        ))}
+      </ul>
+      <p class="pv-done" data-done={f.id} hidden>Fase lista.</p>
+    </div>
+  ))}
+
+  <div class="pv-download">
+    <svg class="pv-icon pv-icon-big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8.5 8.5h7M8.5 12h7M8.5 15.5h4"/></svg>
+    <div>
+      <p class="pv-download-title">Hoja de registro de visitas</p>
+      <p class="pv-download-text">Una página A4 para anotar quién entró, cuánto tiempo, dónde estaba, sus señales y cuánto tardó en calmarse. Llévala al veterinario.</p>
+      <a class="pv-button" href={PDF} download type="application/pdf">Descargar la hoja (PDF)</a>
+    </div>
+  </div>
+
+  <div class="pv-actions" hidden>
+    <button type="button" data-action="reset">Desmarcar todo</button>
+    <button type="button" data-action="print">Imprimir el plan</button>
+  </div>
+  <p class="pv-note" hidden>Lo que marcas se guarda solo en este navegador.</p>
+</section>
+
+<script>
+  const STORAGE_KEY = 'ctpv:plan-visita:v1';
+  function readSaved(): Record<string, boolean> {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}') ?? {}; } catch { return {}; }
+  }
+  function save(state: Record<string, boolean>) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch { /* sin almacenamiento: el plan sigue funcionando */ }
+  }
+
+  function setup(root: HTMLElement): AbortController {
+    const events = new AbortController();
+    const signal = events.signal;
+    root.dataset.enhanced = 'true';
+    root.querySelectorAll<HTMLElement>('.pv-tabs, .pv-actions, .pv-note').forEach(el => (el.hidden = false));
+
+    const tabs = [...root.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+    const panels = [...root.querySelectorAll<HTMLElement>('[data-panel]')];
+    panels.forEach(p => {
+      p.setAttribute('role', 'tabpanel');
+      p.setAttribute('aria-labelledby', tabs.find(t => t.dataset.tab === p.dataset.panel)!.id);
+      p.tabIndex = 0;
+    });
+
+    const select = (index: number, focus = false) => {
+      tabs.forEach((t, i) => {
+        const on = i === index;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        panels[i].dataset.active = String(on);
+      });
+      if (focus) tabs[index].focus();
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(i), { signal });
+      t.addEventListener('keydown', (e) => {
+        const keys: Record<string, number> = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 };
+        if (!(e.key in keys)) return;
+        e.preventDefault();
+        select((keys[e.key] + tabs.length) % tabs.length, true);
+      }, { signal });
+    });
+
+    const boxes = [...root.querySelectorAll<HTMLInputElement>('input[type="checkbox"]')];
+    const total = boxes.length;
+    const saved = readSaved();
+    boxes.forEach(b => (b.checked = !!saved[b.dataset.key!]));
+    const update = () => {
+      const done = boxes.filter(b => b.checked).length;
+      root.querySelector<HTMLElement>('.pv-count')!.textContent = done === 0
+        ? `${total} pasos. Márcalos a medida que los tengas listos.`
+        : done === total ? `Los ${total} pasos, listos.` : `${done} de ${total} pasos listos.`;
+      panels.forEach(p => {
+        const items = [...p.querySelectorAll<HTMLInputElement>('input')];
+        const n = items.filter(b => b.checked).length;
+        root.querySelector<HTMLElement>(`[data-fase-count="${p.dataset.panel}"]`)!.textContent = `${n}/${items.length}`;
+        root.querySelector<HTMLElement>(`[data-done="${p.dataset.panel}"]`)!.hidden = n !== items.length;
+        root.querySelector<HTMLElement>(`[data-tab="${p.dataset.panel}"]`)!.dataset.complete = String(n === items.length);
+      });
+    };
+    boxes.forEach(b => b.addEventListener('change', () => {
+      const state = readSaved();
+      state[b.dataset.key!] = b.checked;
+      save(state);
+      update();
+    }, { signal }));
+    root.querySelector<HTMLButtonElement>('[data-action="reset"]')!.addEventListener('click', () => {
+      boxes.forEach(b => (b.checked = false));
+      save({});
+      update();
+    }, { signal });
+    root.querySelector<HTMLButtonElement>('[data-action="print"]')!.addEventListener('click', () => window.print(), { signal });
+
+    select(0);
+    update();
+    return events;
+  }
+
+  const instances = new Map<HTMLElement, AbortController>();
+  function initializePlanVisita() {
+    document.querySelectorAll<HTMLElement>('[data-plan-visita]').forEach(root => {
+      if (!instances.has(root)) instances.set(root, setup(root));
+    });
+  }
+  document.addEventListener('astro:before-swap', () => {
+    instances.forEach(events => events.abort());
+    instances.clear();
+  });
+  document.addEventListener('astro:page-load', initializePlanVisita);
+  initializePlanVisita();
+</script>
+
+<style>
+  .pv {
+    --pv-bg: rgb(var(--color-bg-card-rgb));
+    --pv-text: rgb(var(--color-text-base-rgb));
+    --pv-muted: rgb(var(--color-text-muted-rgb));
+    --pv-primary: rgb(var(--color-brand-primary-rgb));
+    --pv-accent: rgb(var(--color-brand-accent-rgb));
+    --pv-border: rgb(var(--color-brand-border-rgb));
+    --pv-on-primary: rgb(var(--color-bg-base-rgb));
+    margin: 2rem 0;
+    padding: 1.25rem;
+    max-width: 46rem;
+    color: var(--pv-text);
+    background: var(--pv-bg);
+    border: 1px solid var(--pv-border);
+    border-radius: 1.1rem;
+    font-family: system-ui, sans-serif;
+    box-shadow: 0 10px 30px -20px rgba(41, 75, 61, .45);
+  }
+  .pv [hidden] { display: none !important; }
+  .pv-head { display: flex; gap: .8rem; align-items: flex-start; margin-bottom: .9rem; }
+  .pv-paw { flex: 0 0 2.4rem; width: 2.4rem; height: 2.4rem; fill: var(--pv-accent); animation: pv-pop .6s ease both; }
+  .pv .pv-kicker { margin: 0 0 .3rem; color: var(--pv-muted); font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; line-height: 1.4; }
+  .pv h3 { margin: 0 !important; color: var(--pv-primary) !important; font-size: clamp(1.15rem, 3vw, 1.45rem) !important; line-height: 1.3; }
+  .pv .pv-count { margin: .35rem 0 0; color: var(--pv-muted); font-size: .88rem; line-height: 1.45; }
+
+  .pv-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; margin: 0 0 .8rem; }
+  .pv-tabs [role="tab"] {
+    display: flex; flex-direction: column; align-items: center; gap: .15rem;
+    min-height: 44px; padding: .5rem .3rem; border: 1px solid var(--pv-border); border-radius: .7rem;
+    background: transparent; color: var(--pv-text); font: 650 .9rem/1.2 system-ui, sans-serif; cursor: pointer;
+    transition: background-color .25s ease, border-color .25s ease, transform .2s ease;
+  }
+  .pv-tabs [role="tab"]:hover { border-color: var(--pv-primary); }
+  .pv-tabs [role="tab"][aria-selected="true"] { background: var(--pv-primary); border-color: var(--pv-primary); color: var(--pv-on-primary); }
+  .pv-tabs [role="tab"][data-complete="true"] .pv-tab-count::before { content: "✓ "; }
+  .pv-tab-count { font-size: .75rem; font-weight: 600; opacity: .9; }
+  .pv-icon { width: 1.5rem; height: 1.5rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .pv-icon .pv-fill { fill: currentColor; stroke: none; }
+  .pv :is(button, a, input, [role="tabpanel"]):focus-visible,
+  .pv input:focus-visible + .pv-check { outline: 3px solid var(--pv-accent); outline-offset: 3px; }
+
+  .pv-panel { margin: 0 0 .6rem; border-radius: .6rem; }
+  [data-enhanced="true"] .pv-panel[data-active="false"] { display: none; }
+  [data-enhanced="true"] .pv-panel[data-active="true"] { animation: pv-fade .35s ease; }
+  .pv h4 { margin: .2rem 0 .3rem !important; color: var(--pv-primary) !important; font-size: 1rem !important; line-height: 1.4; }
+  .pv ul { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+  .pv li { margin: 0 !important; padding: 0 !important; }
+  .pv li::before, .pv li::marker { content: none !important; display: none !important; }
+  .pv label { display: flex; gap: .7rem; align-items: flex-start; min-height: 44px; padding: .45rem .2rem; cursor: pointer; font-size: .95rem; line-height: 1.45; color: var(--pv-text); }
+  .pv input[type="checkbox"] { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .pv-check { flex: 0 0 1.4rem; width: 1.4rem; height: 1.4rem; margin-top: .05rem; border: 2px solid var(--pv-primary); border-radius: .4rem; display: grid; place-items: center; transition: background-color .2s ease; }
+  .pv input:checked + .pv-check { background: var(--pv-primary); }
+  .pv input:checked + .pv-check::after { content: ""; width: .4rem; height: .75rem; border: solid var(--pv-on-primary); border-width: 0 .17rem .17rem 0; transform: translateY(-1px) rotate(45deg); animation: pv-pop .25s ease; }
+  .pv input:checked ~ span:last-child { color: var(--pv-muted); text-decoration: line-through; text-decoration-color: var(--pv-border); }
+  .pv .pv-done { margin: .3rem 0 0; padding: .45rem .7rem; border-left: 4px solid var(--pv-accent); border-radius: .4rem; color: var(--pv-text); font-size: .88rem; font-weight: 650; animation: pv-fade .4s ease; }
+
+  .pv-download { display: flex; gap: .8rem; align-items: flex-start; margin-top: .6rem; padding: .9rem; border: 1px dashed var(--pv-border); border-radius: .8rem; color: var(--pv-primary); }
+  .pv-icon-big { flex: 0 0 2rem; width: 2rem; height: 2rem; }
+  .pv .pv-download-title { margin: 0; color: var(--pv-primary); font-weight: 700; font-size: .98rem; }
+  .pv .pv-download-text { margin: .25rem 0 .6rem; color: var(--pv-text); font-size: .88rem; line-height: 1.5; }
+  .pv a.pv-button { display: inline-flex; align-items: center; min-height: 44px; padding: .55rem 1rem; border-radius: .6rem; background: var(--pv-primary); color: var(--pv-on-primary) !important; font-weight: 700; font-size: .92rem; text-decoration: none !important; }
+  .pv a.pv-button:hover { filter: brightness(1.08); }
+
+  .pv-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+  .pv-actions button { min-height: 44px; padding: .5rem .8rem; border: 1px solid var(--pv-border); border-radius: .55rem; background: transparent; color: var(--pv-text); font: 650 .85rem/1.3 system-ui, sans-serif; cursor: pointer; }
+  .pv .pv-note { margin: .5rem 0 0; color: var(--pv-muted); font-size: .78rem; }
+
+  @keyframes pv-fade { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+  @keyframes pv-pop { from { transform: scale(.6); opacity: 0; } to { transform: none; opacity: 1; } }
+
+  @media (max-width: 640px) {
+    .pv { padding: 1rem; }
+    .pv label { font-size: .92rem; }
+    .pv-tabs [role="tab"] { font-size: .85rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pv *, .pv *::before, .pv *::after { animation: none !important; transition: none !important; }
+  }
+  @media print {
+    .pv { color: #111; background: #fff; border-color: #777; box-shadow: none; break-inside: avoid; }
+    .pv-tabs, .pv-actions, .pv-note, .pv-button { display: none !important; }
+    [data-enhanced="true"] .pv-panel[data-active="false"] { display: block !important; }
+    .pv-done { display: none !important; }
+  }
+</style>
