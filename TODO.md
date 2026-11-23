@@ -58,17 +58,19 @@ Diagnóstico con el export de Search Console del 18-jul al 17-oct (2.269 clics, 
 
 ## Contenido
 
-- [~] **Artículo del miedo a las visitas con el caso de una lectora** (2026-11-23). Permiso de la lectora por correo, con anonimato. **El repositorio es público:** el brief completo, el expediente y el borrador viven solo en un Google Doc privado del propietario; aquí solo queda el brief saneado. Orden: brief → auditoría → redacción con imágenes y apoyos → auditoría → visto bueno del propietario → PDF a la lectora respondiendo su correo → su respuesta y cambios → aprobación final → subir `.mdx`, PR y publicar. Si no responde, no se publica.
+- [~] **Artículo del miedo a las visitas con el caso de una lectora** (2026-11-23). Permiso de la lectora por correo. **Decisión del propietario (2026-11-23):** el caso vive anonimizado en este repositorio público (sin nombres); el Doc privado de Drive queda como archivo histórico. El borrador va en `borradores/`, nunca en `src/content/blog/` antes de las dos aprobaciones (`[pilar]/[slug].astro` publica cualquier `.mdx`). Orden: brief → auditoría → redacción con imágenes y apoyos → auditoría → visto bueno del propietario → PDF a la lectora respondiendo su correo → su respuesta y cambios → aprobación final → mover el `.mdx`, PR y publicar. Si no responde, no se publica. **Rama recreada:** trabajar desde `origin/claude/happy-ride-8leguk`; si un push se rechaza, no hacer merge, avisar.
   - [x] Brief v1 y auditoría R1: NO APTO por privacidad, fuentes verificadas (2026-11-23). Rama recreada sin los datos del caso, con autorización del propietario.
   - [x] Brief v2 con las correcciones de R1, en el Doc privado (2026-11-23).
   - [x] Ronda adicional autorizada por el propietario (2026-11-23): R1 queda registrada y el límite del brief pasa a R4.
-  - [ ] Auditoría R2 del brief (otra sesión, con acceso al Doc).
-  - [ ] Redacción, imágenes, `PlanVisitaRecursos` y PDF de registro (borrador en Drive, no en el repositorio).
+  - [x] Auditoría R2 del brief: APTO con observaciones (2026-11-23). Correcciones que solo quitan o acotan texto, aplicadas; brief completo devuelto al repositorio.
+  - [ ] Redacción, imágenes, `PlanVisitaRecursos` y PDF de registro (borrador en `borradores/`).
   - [ ] Auditoría del artículo (otra sesión).
   - [ ] Visto bueno del propietario y PDF a la lectora.
   - [ ] Aprobación de la lectora (registro mínimo en `docs/contenido/perro-mayor-miedo-visitas-casa/`).
   - [ ] Publicación y verificación en producción.
   - [ ] Experiencia del propietario con Ágata y Jaspe (2026-11-23): `docs/experiencias/agata-jaspe-convivencia-2026-11-23/`. Va en la respuesta a la lectora; en el artículo, como adenda opcional sujeta a R2.
+
+- [ ] **Repositorio privado de archivo** (idea del propietario, 2026-11-23). Un repositorio privado tipo «Drive» para varios sitios (casos, fotos con datos visibles, material que no debe ir al sitio público), con carpetas por sitio, fotos en `.webp` o Git LFS y limpieza periódica. Al crearlo, añadirlo a las sesiones con permiso de escritura y comprobar con un commit de prueba.
 
 - [ ] **Vista previa privada de artículos antes de producción** (idea del propietario, 2026-11-23). Hoy las vistas previas de Workers Builds se generan desde ramas y PR públicos, así que no sirven para borradores privados. Investigar una vista previa protegida (por ejemplo, con Cloudflare Access o tras `/admin`), con `noindex`, fuera del sitemap y sin tocar D1, KV ni secrets de producción. Cambia `wrangler.jsonc` y la configuración de Cloudflare: vía normal, encargo a Codex y auditoría de Claude; coordinar con la migración a Astro 7 (`docs/migracion-stack/README.md`).
 
