@@ -72,6 +72,7 @@ const html = `<!doctype html>
   .alert { border: 1pt solid var(--accent); border-radius: 2mm; padding: 1.6mm 2.5mm; background: rgb(250 245 238); color: var(--text); }
   .alert strong { color: var(--accent); }
   footer { margin-top: 1.5mm; font-size: 6.8pt; color: var(--muted); }
+  footer .url { white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -110,9 +111,9 @@ const html = `<!doctype html>
   </table>
 
   <div class="bottom">
-    <div class="alert"><strong>No esperes a rellenarla</strong> si convulsiona 5 minutos o más, tiene tres crisis en un día (o antes, si tu veterinario te dio otra pauta), le cuesta respirar, tiene las encías azuladas o pálidas, o se desmaya: llama al veterinario ya. Si jadea también tumbado y tranquilo, coméntalo en la próxima consulta.</div>
+    <div class="alert"><strong>No esperes a rellenarla</strong> si convulsiona 5 minutos o más, tiene tres crisis en 24 horas (o antes, si tu veterinario te dio otra pauta), le cuesta respirar, tiene las encías azuladas o pálidas, o se desmaya: llama al veterinario ya. Si jadea también tumbado y tranquilo, coméntalo en la próxima consulta.</div>
     <div>Las señales de la columna son señales de ansiedad recogidas por la guía de comportamiento de la AAHA (2015). La hoja ordena lo que ves en casa para enseñárselo al veterinario; el diagnóstico es suyo. No cambies ni retires ninguna medicación por lo que anotes.
-      <footer>${VERSION}. Guía completa y fuentes: ${ARTICLE_URL}</footer>
+      <footer>${VERSION}. Guía completa y fuentes:<br><span class="url">${ARTICLE_URL}</span></footer>
     </div>
   </div>
 </body>
