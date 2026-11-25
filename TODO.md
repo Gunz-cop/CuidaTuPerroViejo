@@ -4,6 +4,15 @@ Lista viva de ideas y tareas que el dueño del sitio menciona en las sesiones. L
 
 Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aquí.
 
+## Cushing: segunda fase del artículo (anotado: 2026-11-25)
+
+Tras publicar SEO-003 ([PR #186](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/186)), en otra sesión y con su propio brief y auditoría:
+
+- [ ] **Apoyos visuales.** Tabla e infografía de señales de alerta; hoja de registro descargable en PDF (agua, orina, apetito, jadeo, medicación), siguiendo el modelo HHHHHMM; esquema animado del camino diagnóstico. Imágenes de perros solo si se encargan al propietario (ChatGPT/Higgsfield); nada dibujado a mano.
+- [ ] **Experiencia personal con Luna.** El propietario quiere contar su caso (pérdida de peso, inflamación de las suprarrenales todavía en estudio, leve sospecha de Cushing sin diagnosticar), que fue lo que le llevó a investigar el tema. Hay que presentarlo como sospecha en estudio, no como Cushing confirmado, sin datos que el propietario no quiera publicar, y revisarlo cuando haya diagnóstico.
+- [ ] **FAQ con preguntas reales** e «hiperadrenocorticismo» (116 impresiones, posición 65 en Search Console) cuando se prepare el brief.
+- [ ] **Medición posterior** con la exportación de Search Console filtrada por la URL de la página (AC-03 se dio por cumplida como excepción en el PR #186).
+
 ## Escritorio administrativo (2026-11-11)
 
 - [x] **Entrega 1: archivo diario de audiencia (2026-11-12). Desplegada:** [PR #176](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/176), merge `51ebd22`; migración 0006 aplicada y verificada (meses intactos); único cron `0 8 * * *`; `AUDIENCE_RECOVERY_TOKEN` ausente; `/` 200, `/admin` 401 y recuperación 401 sin credenciales (verificado por Claude Code el 2026-11-12). Implementación en `feature/admin-archivo-diario`: serie D1 independiente, cierre +48 h compartido con mensual, cron diario con siete días elegibles de reintento y recuperación histórica separada/deshabilitada por defecto. La recuperación requiere su propia autorización; no se ejecutó. Diseño y límites: `docs/admin/archivo-diario.md`; procedimiento preparado: `docs/admin/recuperacion-diaria-procedimiento.md`. Medición real de latencia +1/+24/+48 h pendiente.
