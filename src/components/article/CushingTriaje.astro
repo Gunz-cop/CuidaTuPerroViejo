@@ -1,0 +1,99 @@
+---
+import TablaApilable from './TablaApilable.astro';
+
+const imagePath = '/images/blog/sindrome-cushing-perros-mayores';
+const rows = [
+  {
+    icon: 'urgencias',
+    signs: 'Le cuesta respirar, se desploma, presenta debilidad intensa o intenta orinar y no sale orina.',
+    heading: 'Urgencias ahora.',
+    action: 'Acude a urgencias veterinarias. No esperes a rellenar la hoja.',
+  },
+  {
+    icon: 'trilostano',
+    signs: 'Si toma trilostano y aparecen vómitos, diarrea, letargo, pérdida o disminución del apetito, debilidad o colapso.',
+    action: 'No le des la siguiente dosis y llama de inmediato al veterinario. Si se desploma o le cuesta respirar, ve a urgencias.',
+  },
+  {
+    icon: 'sed',
+    signs: 'Sed excesiva, sin señales de mayor urgencia.',
+    heading: 'Consulta dentro de 24 h.',
+  },
+];
+---
+
+<div class="cushing-triaje">
+  <TablaApilable label="Señales de alerta y cuándo consultar">
+    <table role="table" aria-label="Señales de alerta y cuándo consultar">
+      <thead role="rowgroup">
+        <tr role="row">
+          <th role="columnheader" scope="col">Qué observas</th>
+          <th role="columnheader" scope="col">Cuándo consultar</th>
+        </tr>
+      </thead>
+      <tbody role="rowgroup">
+        {rows.map(({ icon, signs, heading, action }) => (
+          <tr role="row">
+            <td role="cell" data-label="Qué observas">
+              <span class="triaje-etiqueta" aria-hidden="true">Qué observas</span>
+              <div class="triaje-senal">
+                <img src={`${imagePath}/senales-cushing-${icon}-v1.webp`} alt="" aria-hidden="true"
+                  width="120" height="120" loading="lazy" decoding="async" />
+                <span>{signs}</span>
+              </div>
+            </td>
+            <td role="cell" data-label="Cuándo consultar">
+              <span class="triaje-etiqueta" aria-hidden="true">Cuándo consultar</span>
+              {heading && <strong>{heading}</strong>}{heading && action && ' '}{action}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </TablaApilable>
+</div>
+
+<style>
+  .cushing-triaje table {
+    width: 100%;
+    margin: .5rem 0;
+  }
+
+  .triaje-senal {
+    display: grid;
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: .65rem;
+    align-items: center;
+  }
+
+  .triaje-senal img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .triaje-etiqueta {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .cushing-triaje :global(td[data-label]::before) {
+      display: none;
+    }
+
+    .triaje-etiqueta {
+      display: block;
+      margin-bottom: .15rem;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+  }
+
+  @media print {
+    .cushing-triaje tr {
+      break-inside: avoid;
+    }
+  }
+</style>
