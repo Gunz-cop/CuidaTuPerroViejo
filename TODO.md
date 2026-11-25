@@ -4,12 +4,17 @@ Lista viva de ideas y tareas que el dueño del sitio menciona en las sesiones. L
 
 Cuando el dueño mencione una idea o algo que no quiere olvidar, regístrala aquí.
 
+## Ubersuggest (2026-11-25)
+
+- [ ] **Skill de investigación con Ubersuggest**, replicable en otros sitios (Camino al Mil). Plan Lifetime Enterprise; límites en `docs/seo/ubersuggest.md`.
+
 ## Cushing: segunda fase del artículo (anotado: 2026-11-25)
 
 Tras publicar SEO-003 ([PR #186](https://github.com/Gunz-cop/CuidaTuPerroViejo/pull/186)), en otra sesión y con su propio brief y auditoría:
 
 - [ ] **Apoyos visuales.** Tabla e infografía de señales de alerta; hoja de registro descargable en PDF (agua, orina, apetito, jadeo, medicación), siguiendo el modelo HHHHHMM; esquema animado del camino diagnóstico. Imágenes de perros solo si se encargan al propietario (ChatGPT/Higgsfield); nada dibujado a mano.
 - [ ] **Animación anatómica (2026-11-25).** Perro senior generado con IA, en vista lateral o ventral y fondo transparente; órganos como capas generadas (hipófisis, suprarrenales junto a los riñones, hígado, vejiga, músculo y piel); recorrido animado en tres pasos y cambio de origen con botones. Comparación esquemática sano frente a Cushing (silueta y suprarrenales normal/bilateral/tumor unilateral). Sin 3D ni formularios en el artículo.
+- [ ] **Oportunidades de Ubersuggest (2026-11-25).** «muerte por cushing en perros» (260/mes en España; en el top 10 hay un vídeo sobre el tema): cubrir con delicadeza la fase avanzada, cuándo hablar de calidad de vida y eutanasia, y enlazar paliativos y HHHHHMM. Bloque de imágenes en la SERP: los apoyos visuales necesitan alt y nombres de archivo descriptivos. México tiene más volumen que España (3.600). Detalle en `docs/seo/investigacion/2026-11-25-cushing-ubersuggest.md`.
 - [ ] **Experiencia personal con Luna.** El propietario quiere contar su caso (pérdida de peso, inflamación de las suprarrenales todavía en estudio, leve sospecha de Cushing sin diagnosticar), que fue lo que le llevó a investigar el tema. Hay que presentarlo como sospecha en estudio, no como Cushing confirmado, sin datos que el propietario no quiera publicar, y revisarlo cuando haya diagnóstico.
 - [ ] **FAQ con preguntas reales** e «hiperadrenocorticismo» (116 impresiones, posición 65 en Search Console) cuando se prepare el brief.
 - [ ] **Medición posterior** con la exportación de Search Console filtrada por la URL de la página (AC-03 se dio por cumplida como excepción en el PR #186).
