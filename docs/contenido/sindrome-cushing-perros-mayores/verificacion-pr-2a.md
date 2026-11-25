@@ -1,6 +1,6 @@
 # Verificación de implementación del PR 2a
 
-25/11/2026. Base del cambio `docs/brief-cushing-fase-2` en `e4f4882ee38368de7dd7510668d53a1dea5059aa`. Verificaciones realizadas por la sesión implementadora sobre `astro preview` local de la compilación Cloudflare. La auditoría independiente está pendiente.
+25/11/2026. Registro actualizado tras la auditoría del PR #187. Base del cambio `docs/brief-cushing-fase-2` en `e4f4882ee38368de7dd7510668d53a1dea5059aa`. Verificaciones realizadas por la sesión implementadora sobre `astro preview` local de la compilación Cloudflare. La auditoría independiente está pendiente.
 
 ## Contenido y paridad
 
@@ -19,10 +19,16 @@
 | 1366 px | 1366 px | 686 × 351 px | [Claro](capturas-pr-2a/triaje-1366-light.png) · [Oscuro](capturas-pr-2a/triaje-1366-dark.png) |
 
 - FAQ cerrada al cargar y operable con Enter, Tab, Shift+Tab y Espacio en los seis escenarios. Mínimo del control nativo de 52 px. Contraste calculado a 390 px entre texto de triaje y fondo de al menos 6,32:1 en claro y 10,91:1 en oscuro. El contorno de foco de la pregunta probada midió 6,05:1 en claro y 9,92:1 en oscuro.
-- Axe-core, reglas WCAG 2.0 y 2.1 A/AA, dio 0 infracciones en el cuerpo del artículo en las seis combinaciones. Se comprobó la lectura de columnas y filas en el árbol accesible de Chromium en [claro](capturas-pr-2a/arbol-accesible-light.yml) y [oscuro](capturas-pr-2a/arbol-accesible-dark.yml). La prueba del árbol es automatizada. Queda pendiente la escucha con un lector de pantalla.
+- Axe-core, reglas WCAG 2.0 y 2.1 A/AA, dio 0 infracciones en el cuerpo del artículo en las seis combinaciones. Se comprobó la lectura de columnas y filas en el árbol accesible de Chromium en [claro](capturas-pr-2a/arbol-accesible-light.yml) y [oscuro](capturas-pr-2a/arbol-accesible-dark.yml). El árbol accesible complementa la prueba con Orca descrita más abajo.
 - Se amplió el texto del cuerpo al 200 % por CSS sin ensanchar la ventana ni producir desplazamiento horizontal interno en el triaje. En vista de impresión a 390 px y con JavaScript desactivado permanecen visibles sus tres acciones. Las pruebas de movimiento reducido se hicieron desde el arranque, con el apoyo estático.
 - FAQ abierta de ejemplo a 390 px en [claro](capturas-pr-2a/faq-390-light.png) y [oscuro](capturas-pr-2a/faq-390-dark.png). H3 de final de vida a 390 px en [claro](capturas-pr-2a/final-de-vida-390-light.png) y [oscuro](capturas-pr-2a/final-de-vida-390-dark.png).
 - Los tres WebP de 120 × 120 px pesan 7.924 bytes en disco. En Chromium con caché desactivada sumaron 11.317 bytes transferidos incluyendo cabeceras, tanto a 390 como a 1366 px. Los tres decodificaron al acercarse a la tabla. La espera de `img.decode()`, con carga incluida, fue de 24–36 ms a 390 px y 27–112 ms en escritorio. El bloque CSS local emitido ocupa 316 bytes con gzip y se añadió cero JavaScript.
+
+## Prueba con lector de pantalla tras la auditoría
+
+- Orca 48.1 con AT-SPI2 2.56.2, Chromium 156 y Speech Dispatcher con eSpeak NG. Se usó el registro de mensajes emitidos por Orca, con salida de voz comprobada en un monitor de audio virtual.
+- A 390 y 1366 px, se usó `T` para entrar en la tabla y flecha abajo para leer por orden. Orca anunció cuatro filas, contando la cabecera, dos columnas con sus nombres y las tres acciones completas. El rótulo visual móvil y los iconos ornamentales quedaron fuera de la lectura.
+- Desde el encabezado de la FAQ, Tab enfocó la primera pregunta. Enter abrió la respuesta, Tab enfocó su enlace y Shift+Tab devolvió el foco a la pregunta. Espacio cerró la respuesta. Al abrirla de nuevo, Enter sobre el enlace llevó al encabezado de origen. Orca anunció la pregunta, los estados abierto y cerrado y el enlace. [Registro a 390 px](capturas-pr-2a/orca-390.txt) · [Registro a 1366 px](capturas-pr-2a/orca-1366.txt).
 
 ## Descarga e impresión
 
@@ -30,4 +36,4 @@
 - Archivo de 35.979 bytes. A4 de una página, texto seleccionable, idioma `es`, tabla etiquetada con ámbitos de fila y columna y casillas para escritura en papel. Poppler abrió el archivo descargado, extrajo el texto completo y renderizó la página. El aviso y los siete días quedan en una página.
 - Se inspeccionaron las pruebas monocromas [A4](capturas-pr-2a/impresion-A4.png) y [Carta](capturas-pr-2a/impresion-Carta.png) generadas desde el PDF entregado. La salida Carta se centró al 100 % y conservó el texto y los márgenes. Las pruebas fueron digitales, sin impresión física.
 
-La publicación requiere cerrar las cuatro semanas del PR #186 con Search Console filtrada por la URL canónica, respetar el 23/12/2026 como fecha mínima y recibir la autorización explícita del propietario.
+Actualiza `dateModified` en el commit final con la fecha real de publicación. La publicación requiere cerrar las cuatro semanas del PR #186 con Search Console filtrada por la URL canónica, respetar el 23/12/2026 como fecha mínima y recibir la autorización explícita del propietario.
