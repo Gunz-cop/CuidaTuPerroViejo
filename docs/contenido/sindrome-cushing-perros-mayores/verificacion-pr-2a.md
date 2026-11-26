@@ -36,4 +36,6 @@
 - Archivo de 35.979 bytes. A4 de una página, texto seleccionable, idioma `es`, tabla etiquetada con ámbitos de fila y columna y casillas para escritura en papel. Poppler abrió el archivo descargado, extrajo el texto completo y renderizó la página. El aviso y los siete días quedan en una página.
 - Se inspeccionaron las pruebas monocromas [A4](capturas-pr-2a/impresion-A4.png) y [Carta](capturas-pr-2a/impresion-Carta.png) generadas desde el PDF entregado. La salida Carta se centró al 100 % y conservó el texto y los márgenes. Las pruebas fueron digitales, sin impresión física.
 
-Actualiza `dateModified` en el commit final con la fecha real de publicación. La publicación requiere cerrar las cuatro semanas del PR #186 con Search Console filtrada por la URL canónica, respetar el 23/12/2026 como fecha mínima y recibir la autorización explícita del propietario.
+## Decisión de publicación
+
+El 26/11/2026 el propietario autorizó la publicación y, tras conocer que seguían pendientes la fecha mínima del 23/12/2026 y la medición de cuatro semanas del PR #186 en Search Console, pidió aplicar el cambio a `main` en ese momento. La publicación adelanta ese plan antes del cierre de la medición. La rama de publicación lleva el cambio auditado en el PR #187 y fija `dateModified` en 2026-11-26.
