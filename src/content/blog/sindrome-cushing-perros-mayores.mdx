@@ -8,11 +8,12 @@ heroImage: "/images/blog/sindrome-cushing-perros-mayores/hero-perro-cushing-seni
 heroImageAlt: "Ilustración de un Cocker Spaniel senior con cuidadora y veterinaria en un domicilio; no permite diagnosticar Cushing"
 status: "Publicado"
 datePublished: "2026-07-21"
-dateModified: "2026-11-25"
+dateModified: "2026-11-26"
 ---
 
 import AlertBox from '../../components/AlertBox.astro';
 import FAQ from '../../components/FAQ.astro';
+import CushingTriaje from '../../components/article/CushingTriaje.astro';
 
 El síndrome de Cushing aparece cuando un perro está expuesto durante mucho tiempo a un exceso de glucocorticoides, como el cortisol. Suele diagnosticarse en perros de mediana edad y mayores, según los [datos de atención veterinaria primaria en Inglaterra](https://doi.org/10.1136/vr.105159).
 
@@ -24,9 +25,11 @@ Mantén agua disponible, facilita salidas para orinar y registra los cambios. Ll
 
 ## Qué es el síndrome de Cushing y por qué importa su origen
 
-El síndrome de Cushing, también llamado enfermedad de Cushing en el lenguaje habitual, se conoce como hiperadrenocorticismo o hipercortisolismo. Según la [guía AAHA sobre el síndrome de Cushing](https://www.aaha.org/resources/2023-aaha-selected-endocrinopathies-of-dogs-and-cats-guidelines/canine-hypercortisolism-cushings-syndrome/), el exceso de cortisol puede originarse en la hipófisis, que estimula las suprarrenales, o en un tumor suprarrenal que produce cortisol.
+Es común hablar de **enfermedad de Cushing**. En veterinaria, **hiperadrenocorticismo** es el término que encontrarás al leer sobre el síndrome. En sentido estricto, «enfermedad de Cushing» se refiere a la forma que empieza en la [hipófisis](https://www.msdvetmanual.com/endocrine-system/the-adrenal-glands/cushing-syndrome-hyperadrenocorticism-in-animals).
 
-El síndrome también puede aparecer por la administración de corticoides. Identificar el origen ayuda al veterinario a valorar qué pruebas y opciones de tratamiento tienen sentido.
+La hipófisis, en la base del cerebro, envía por la sangre una señal llamada ACTH (hormona adrenocorticotropa). En la forma hipofisaria, esa señal excesiva hace que las suprarrenales produzcan demasiado cortisol. Un tumor suprarrenal también puede [producir cortisol por su cuenta](https://www.fda.gov/consumers/articulos-para-el-consumidor-en-espanol/como-tratar-la-enfermedad-de-cushing-en-los-perros).
+
+El síndrome también puede aparecer por la administración de [corticoides](https://www.msdvetmanual.com/pharmacology/inflammation/corticosteroids-in-animals). Identificar el origen ayuda al veterinario a elegir las pruebas y el tratamiento.
 
 El exceso de cortisol puede acompañarse de pérdida de musculatura, alteraciones de piel y pelo, aumento del apetito y cambios en la distribución corporal. La edad ayuda a orientar la evaluación cuando hay signos compatibles, pero ser senior no es un diagnóstico.
 
@@ -50,9 +53,17 @@ El [consenso ACVIM de Behrend y colaboradores, publicado en 2013](https://pubmed
 | Piel y apetito | Cambios de pelo, heridas, hambre y peso si puedes medirlo con seguridad. |
 | Medicación | Nombre, presentación y pauta prescrita, sin hacer ajustes. |
 
+<a href="/descargas/hoja-registro-cushing-perros.pdf" download>Descargar la hoja de registro de Cushing (PDF)</a>. Puedes anotar durante siete días la sed, la orina, el apetito, el jadeo, el peso y la medicación. Lleva la hoja a la consulta.
+
+### Señales de alerta y cuándo consultar
+
 <AlertBox type="danger" title="Cuándo acudir a urgencias">
-Dificultad respiratoria, colapso, debilidad intensa o incapacidad para orinar requieren atención urgente. No esperes a completar el registro ni a la próxima revisión. Estos signos tienen varias causas posibles y no confirman Cushing.
+Si le cuesta respirar, se desploma, tiene debilidad intensa o intenta orinar sin conseguirlo, ve a urgencias veterinarias. Estos signos tienen varias causas posibles y no confirman Cushing.
 </AlertBox>
+
+<CushingTriaje />
+
+Fuentes del triaje: [tabla de MSD](https://www.msdvetmanual.com/multimedia/table/when-to-see-a-veterinarian), [urgencias de Cornell](https://www.vet.cornell.edu/hospitals/services/emergency-and-critical-care-0) y [ficha de trilostano](https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=22a5e838-c9a3-40d2-84cd-15df6ada913b).
 
 ## Pruebas diagnósticas: por qué se interpretan en conjunto
 
@@ -79,7 +90,7 @@ La presentación, la pauta y los controles los prescribe el veterinario para tu 
 En un estudio de 40 perros, [Burkhardt y colaboradores (2013)](https://pubmed.ncbi.nlm.nih.gov/23701195/) encontraron que, en las condiciones estudiadas, el cortisol basal, la ACTH endógena y su cociente no podían reemplazar a la prueba de estimulación con ACTH. El ajuste del fármaco se decide con la evaluación clínica y las recomendaciones actuales para cada paciente, no solo con esas medidas ni con la mejoría aparente.
 
 <AlertBox type="warning" title="Síntomas durante el tratamiento">
-Vómitos, diarrea, rechazo del alimento o debilidad inusual durante el tratamiento requieren contactar de inmediato con el veterinario para recibir instrucciones antes de continuar. Si hay colapso o dificultad respiratoria, acude a urgencias. No improvises ajustes, compensaciones ni reinicios de medicación.
+Si toma trilostano y aparecen vómitos, diarrea, letargo, pérdida o disminución del apetito, debilidad o colapso, no le des la siguiente dosis y llama de inmediato al veterinario. Si se desploma o le cuesta respirar, ve a urgencias.
 </AlertBox>
 
 ### La presión arterial merece atención propia
@@ -121,9 +132,17 @@ El 94,1 % de los perros recibió trilostano. La cifra de supervivencia describe 
 
 La mediana describe al grupo. Para estimar cuánto puede vivir tu perro, el veterinario necesita valorar su caso. El intervalo de confianza expresa la incertidumbre de la estimación de la mediana y no indica entre cuántos días vivirá un perro concreto.
 
-Pregunta qué cambios se esperan con el tratamiento y cómo se revisarán. Si aumenta la sed, empeora su fuerza o deja de comer, comunícalo aunque todavía no toque revisión. La [calculadora de calidad de vida HHHHHMM](/herramientas/calculadora-calidad-vida-perros) te ayuda a registrar cómo come, se mueve y descansa para comentarlo en consulta.
+### Cushing avanzado y final de vida: cuándo pedir ayuda
 
-Si le cuesta descansar o disfrutar de actividades que antes toleraba, habla con tu veterinario sobre objetivos de confort y [cuidados paliativos](/cuidados-paliativos-perros). Puedes ampliar el contexto en el pilar de [salud de perros mayores](/salud-perros-mayores).
+Puede ser difícil saber cuándo pedir ayuda si tu perro ha perdido fuerza. La [pérdida de masa muscular](https://www.msdvetmanual.com/endocrine-system/the-adrenal-glands/cushing-syndrome-hyperadrenocorticism-in-animals) es un signo descrito en perros con Cushing. Cuéntale al veterinario qué cambios has observado y cuándo empezaron.
+
+Entre las complicaciones poco frecuentes, el [consenso ACVIM](https://onlinelibrary.wiley.com/doi/10.1111/jvim.12192) describe el tromboembolismo, en el que un coágulo bloquea un vaso sanguíneo. Puede afectar a los vasos del pulmón y causar dificultad respiratoria repentina.
+
+Si se desploma o le cuesta respirar, ve a urgencias. Consulta la [tabla de triaje](#señales-de-alerta-y-cuándo-consultar) para distinguir qué cambios requieren atención inmediata.
+
+Si te preocupa su confort, habla con el equipo veterinario sobre un plan ajustado a las necesidades de tu perro. Las [guías AAHA/IAAHPC de final de vida](https://pubmed.ncbi.nlm.nih.gov/27685363/) centran el plan en mantener el confort y aliviar el sufrimiento. Pregunta qué opciones hay para aliviar el dolor y en qué momento conviene hablar de eutanasia. La [IAAHPC](https://iaahpc.org/veterinary-guidelines/general-practice-guidelines/) incluye estas conversaciones en los cuidados de final de vida.
+
+Lleva tus anotaciones y explica cómo transcurre un día habitual, desde que tu perro come hasta que descansa. Puedes preparar esa conversación con la guía de [cuidados paliativos para perros](/cuidados-paliativos-perros) y la [calculadora de calidad de vida HHHHHMM](/herramientas/calculadora-calidad-vida-perros). En el pilar de [salud de perros mayores](/salud-perros-mayores) encontrarás más guías para su cuidado.
 
 <AlertBox type="info" title="Fuentes y alcance">
 - **Behrend EN et al. (2013):** [Diagnosis of spontaneous canine hyperadrenocorticism: 2012 ACVIM consensus statement (small animal)](https://pubmed.ncbi.nlm.nih.gov/24112317/). Consenso diagnóstico; PMID 24112317, DOI 10.1111/jvim.12192.
@@ -139,8 +158,11 @@ Contenido educativo, sin revisión veterinaria individual acreditada. Iniciar o 
 </AlertBox>
 
 <FAQ items={[
-  { question: '¿La barriga caída confirma Cushing?', answer: 'No. La forma del abdomen, la sed o la pérdida de pelo pueden orientar la consulta, pero tienen otras causas. Se necesita historia, exploración y las pruebas que indique el veterinario.' },
-  { question: '¿Cuánto vivirá mi perro con Cushing?', answer: 'No puede estimarse a partir del diagnóstico por sí solo. Influyen el origen, las enfermedades concurrentes, las opciones de tratamiento y su respuesta. Pide un pronóstico individual y revisable.' },
-  { question: '¿Puedo darle remedios naturales para bajar el cortisol?', answer: 'No sustituyas la evaluación ni el tratamiento por suplementos. Consulta cualquier producto antes de añadirlo: que se venda como natural no demuestra eficacia ni seguridad para tu perro.' },
-  { question: '¿Debo quitarle el agua por la noche?', answer: 'No restrinjas el agua para evitar escapes. Facilita salidas y protección lavable y consulta por el aumento de sed u orina.' }
+  { question: '¿Por qué aparece el síndrome de Cushing en perros?', answer: 'Puede empezar en la hipófisis o en una glándula suprarrenal. También puede aparecer con el uso de corticoides. Consulta <a href="#qué-es-el-síndrome-de-cushing-y-por-qué-importa-su-origen">cómo se origina el síndrome</a>.' },
+  { question: '¿Cómo se diagnostica el Cushing en perros?', answer: 'El veterinario reúne la historia, la exploración y los resultados de las pruebas. Un abdomen caído puede ser uno de los signos que le llamen la atención. Así se <a href="#pruebas-diagnósticas-por-qué-se-interpretan-en-conjunto">interpretan los hallazgos en conjunto</a>.' },
+  { question: '¿Cómo se controla el Cushing en perros?', answer: 'El tratamiento depende del origen. Con trilostano son importantes las revisiones periódicas. Anota los cambios en casa y lleva el registro a la consulta. Consulta la <a href="#trilostano-y-seguimiento">sección de seguimiento</a>.' },
+  { question: '¿Cuánto puede vivir un perro con Cushing?', answer: 'Pide al veterinario que valore el pronóstico de tu perro. La cifra del <a href="#pronóstico-y-esperanza-de-vida">estudio de supervivencia</a> describe a los perros de esa cohorte y cuenta las muertes por cualquier causa.' },
+  { question: '¿Puede ser grave el Cushing y cuándo debo pedir ayuda?', answer: 'Sí. Entre las complicaciones poco frecuentes está el <a href="https://onlinelibrary.wiley.com/doi/10.1111/jvim.12192">tromboembolismo</a>. Si le cuesta respirar o se desploma, acude a urgencias. Revisa la <a href="#señales-de-alerta-y-cuándo-consultar">tabla de triaje</a> si notas otros cambios. Si te preocupa su confort, habla con el veterinario sobre <a href="#cushing-avanzado-y-final-de-vida-cuándo-pedir-ayuda">los cuidados y las decisiones de final de vida</a>.' },
+  { question: '¿Puedo darle remedios naturales para bajar el cortisol?', answer: 'Consulta cualquier suplemento con tu veterinario antes de dárselo. Que un producto se venda como natural no demuestra que sea eficaz ni seguro para tu perro. Sigue el <a href="#tratamiento-qué-decide-el-veterinario">tratamiento pautado</a>.' },
+  { question: '¿Debo quitarle el agua por la noche?', answer: 'Mantén el agua disponible. Facilita las salidas para orinar y consulta si notas que bebe más. Revisa los <a href="#cuidados-en-casa-agua-alimentación-y-comodidad">cuidados en casa</a>.' }
 ]} />

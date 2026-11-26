@@ -1,0 +1,21 @@
+- region "Señales de alerta y cuándo consultar":
+  - table "Señales de alerta y cuándo consultar":
+    - rowgroup:
+      - row "Qué observas Cuándo consultar":
+        - columnheader "Qué observas"
+        - columnheader "Cuándo consultar"
+    - rowgroup:
+      - row "Le cuesta respirar, se desploma, presenta debilidad intensa o intenta orinar y no sale orina. Urgencias ahora. Acude a urgencias veterinarias. No esperes a rellenar la hoja.":
+        - cell "Le cuesta respirar, se desploma, presenta debilidad intensa o intenta orinar y no sale orina."
+        - cell "Urgencias ahora. Acude a urgencias veterinarias. No esperes a rellenar la hoja.":
+          - strong: Urgencias ahora.
+          - text: Acude a urgencias veterinarias. No esperes a rellenar la hoja.
+      - row "Si toma trilostano y aparecen vómitos, diarrea, letargo, pérdida o disminución del apetito, debilidad o colapso. Llama de inmediato. No le des la siguiente dosis y llama de inmediato al veterinario. Si se desploma o le cuesta respirar, ve a urgencias.":
+        - cell "Si toma trilostano y aparecen vómitos, diarrea, letargo, pérdida o disminución del apetito, debilidad o colapso."
+        - cell "Llama de inmediato. No le des la siguiente dosis y llama de inmediato al veterinario. Si se desploma o le cuesta respirar, ve a urgencias.":
+          - strong: Llama de inmediato.
+          - text: No le des la siguiente dosis y llama de inmediato al veterinario. Si se desploma o le cuesta respirar, ve a urgencias.
+      - row "Sed excesiva, sin señales de mayor urgencia. Consulta dentro de 24 h.":
+        - cell "Sed excesiva, sin señales de mayor urgencia."
+        - cell "Consulta dentro de 24 h.":
+          - strong: Consulta dentro de 24 h.
